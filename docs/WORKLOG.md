@@ -31,6 +31,12 @@ This file tracks what has happened, what is next, and what must stay visible acr
   - `bun run typecheck` passed
   - `bun run test` passed 1 file / 3 tests
   - `bun run build` passed
+- Added gesture/weather runtime model with TDD:
+  - red run failed on missing `easing` and `gestureMapper`
+  - second red run failed on missing `stateMachine`
+  - targeted tests passed 3 files / 6 tests
+  - full `bun run test` passed 4 files / 9 tests
+  - `bun run typecheck` and `bun run build` passed
 
 ### 2026-05-13
 
