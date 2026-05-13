@@ -49,6 +49,8 @@ This file tracks what has happened, what is next, and what must stay visible acr
   - MIT for Cloudia's own code and documentation; third-party dependencies keep their original notices.
 - Added polite attribution request:
   - `NOTICE.md`
+- Created implementation plan:
+  - `docs/superpowers/plans/2026-05-13-cloudia-lab-implementation.md`
 
 ## Milestones
 
@@ -138,4 +140,4 @@ Definition of done:
 1. Fix GitHub CLI auth: `gh auth login -h github.com`.
 2. Create public GitHub repo `cloudia` with description: `Volumetric WebGL clouds with hand-tracked weather control. Partly cloudy, fully shadered.`
 3. Push local `main`.
-4. Start implementation plan in `docs/superpowers/plans/`.
+4. Execute the implementation plan in `docs/superpowers/plans/2026-05-13-cloudia-lab-implementation.md`.
