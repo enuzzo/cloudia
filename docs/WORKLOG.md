@@ -9,7 +9,9 @@ This file tracks what has happened, what is next, and what must stay visible acr
 - Foundation commit: `45795c9 chore: seed cloudia project docs`
 - Operating protocol commit: `38df028 docs: add cloudia operating protocol`
 - GitHub remote: not set yet
-- Push status: blocked by invalid `gh` auth and pending public/private visibility confirmation
+- GitHub visibility decision: public
+- License decision: MIT for Cloudia's own code and docs
+- Push status: blocked by invalid `gh` auth
 
 ## Work Completed
 
@@ -41,6 +43,10 @@ This file tracks what has happened, what is next, and what must stay visible acr
   - `docs/GOTCHAS.md`
 - Committed operating docs:
   - `38df028 docs: add cloudia operating protocol`
+- Confirmed GitHub visibility:
+  - public
+- Confirmed license:
+  - MIT for Cloudia's own code and documentation; third-party dependencies keep their original notices.
 
 ## Milestones
 
@@ -128,7 +134,6 @@ Definition of done:
 ## Next Actions
 
 1. Fix GitHub CLI auth: `gh auth login -h github.com`.
-2. Confirm repo visibility: public or private.
-3. Create GitHub repo `cloudia` with description: `Volumetric WebGL clouds with hand-tracked weather control. Partly cloudy, fully shadered.`
-4. Push local `main`.
-5. Start implementation plan in `docs/superpowers/plans/`.
+2. Create public GitHub repo `cloudia` with description: `Volumetric WebGL clouds with hand-tracked weather control. Partly cloudy, fully shadered.`
+3. Push local `main`.
+4. Start implementation plan in `docs/superpowers/plans/`.

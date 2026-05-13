@@ -54,8 +54,10 @@ Important docs:
 - The local repo exists on branch `main`.
 - Create remote repository as `cloudia` unless the user chooses another name.
 - Use this GitHub short description: `Volumetric WebGL clouds with hand-tracked weather control. Partly cloudy, fully shadered.`
+- Repository visibility: public.
+- Project license: MIT for Cloudia's own code and documentation.
+- Third-party dependencies, references, and inspirations keep their original licenses and notices.
 - Push is blocked until GitHub CLI auth is fixed.
-- Repository visibility must be explicitly confirmed before first push.
 - README must keep real credits and inspiration links intact.
 
 ## Tone Rules

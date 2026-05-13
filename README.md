@@ -217,4 +217,6 @@ Also: do not write like a B2B SaaS homepage that discovered meditation. Cloudia 
 
 MIT - Netmilk Studio sagl.
 
+Cloudia's own code and documentation are released under MIT. Third-party libraries, references, and inspirations keep their original licenses and notices.
+
 Use it, fork it, perform a small weather event in a browser tab. Attribution appreciated. Do not blame us if someone asks why the hero section needs hand tracking and you realize you agree with them.

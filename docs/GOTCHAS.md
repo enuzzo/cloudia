@@ -21,9 +21,20 @@ gh auth login -h github.com
 
 After auth works, create/push the remote repo.
 
-### Repository visibility needs explicit confirmation
+### Repository visibility is public
 
-Creating a public GitHub repository publishes local project files externally. Before first push, confirm whether `cloudia` is public or private.
+Creating a public GitHub repository publishes local project files externally. The user confirmed on 2026-05-13 that `cloudia` can be public.
+
+### License is MIT for Cloudia-owned work
+
+Cloudia's own code and documentation use MIT. Third-party dependencies, references, and inspirations keep their own licenses and notices.
+
+Useful license references checked on 2026-05-13:
+
+- Three.js: MIT
+- lil-gui: MIT
+- SardineFish `raindrop-fx`: MIT
+- MediaPipe: Apache-2.0
 
 ### GitHub repo naming and description
 
