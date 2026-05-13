@@ -42,6 +42,11 @@ This file tracks what has happened, what is next, and what must stay visible acr
   - fixed strict TypeScript with `@types/three`
   - `bun run typecheck`, `bun run build`, and `bun run test` passed
   - Browser QA at `http://127.0.0.1:5173/`: title `Cloudia Lab`, 1 canvas, no warnings/errors, visible nonblank pastel cloud render
+- Added lab controls:
+  - `LabApp` composes engine and lil-gui
+  - `LabUI` exposes mode, density, coverage, storm, compression, and copy params JSON
+  - `bun run typecheck`, `bun run build`, and `bun run test` passed
+  - Browser QA verified Flow/Cumulus switch, storm/compression controls, JSON clipboard copy, and no warnings/errors
 
 ### 2026-05-13
 
@@ -95,7 +100,7 @@ Definition of done:
 
 ### M1: Lab Scaffold
 
-Status: pending
+Status: completed locally
 
 Definition of done:
 

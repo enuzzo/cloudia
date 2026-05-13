@@ -100,6 +100,16 @@ Could not find a declaration file for module 'three'
 
 Install `@types/three` alongside `three` for strict TypeScript builds.
 
+### Lab bundle is allowed to be heavier than embed
+
+Observed after adding Three.js + lil-gui:
+
+```text
+Some chunks are larger than 500 kB after minification
+```
+
+This is acceptable for the local lab while we tune shaders. The future Elementor/WordPress embed must use a separate lightweight build path without lab UI and with hand tracking omitted unless explicitly enabled.
+
 ## Reference And Documentation
 
 ### ScryBar and Retina Cannon style references are available locally

@@ -1,6 +1,5 @@
 import "./styles.css";
-import { defaultPreset } from "./core/defaultPreset";
-import { CloudEngine } from "./render/CloudEngine";
+import { LabApp } from "./lab/LabApp";
 
 const stage = document.querySelector<HTMLElement>("[data-testid='cloudia-stage']");
 const status = document.querySelector<HTMLParagraphElement>("#cloudia-status");
@@ -9,11 +8,11 @@ if (!stage) {
   throw new Error("Cloudia stage element is missing");
 }
 
-const engine = new CloudEngine(stage, defaultPreset);
-engine.start();
+const app = new LabApp(stage);
+app.start();
 
 if (status) {
-  status.textContent = "Flow baseline running. The cloud deck has entered the chat.";
+  status.textContent = "Lab running. Tune gently; the atmosphere is listening.";
 }
 
-window.addEventListener("beforeunload", () => engine.destroy());
+window.addEventListener("beforeunload", () => app.destroy());
