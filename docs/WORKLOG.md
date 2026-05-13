@@ -65,6 +65,12 @@ This file tracks what has happened, what is next, and what must stay visible acr
   - wired lab storm state through `updateWeatherState` into both the shader and weather canvas
   - `bun run typecheck`, `bun run build`, and `bun run test` passed
   - Browser QA verified 2 canvas elements, 1 `.cloudia-weather-layer`, storm control to `1`, visible rain/droplets/mist, and no warnings/errors
+- Added first embed adapter:
+  - created `CloudiaHero.mount(...)` with no lab GUI and fixed defaults
+  - added `build:hero` and `vite.hero.config.ts` so the hero bundle does not replace the lab build
+  - created `examples/elementor-hero.html` as a `100% x 60vh` flexbox-style fixture with large brand text
+  - `bun run typecheck`, `bun run test`, `bun run build`, and `bun run build:hero` passed
+  - Browser QA verified the fixture at `/examples/elementor-hero.html`, 2 canvas elements, 1 mount, visible logo/cloud composition, and no warnings/errors
 
 ### 2026-05-13
 
@@ -176,15 +182,15 @@ Definition of done:
 
 ### M6: Embed Adapter
 
-Status: pending
+Status: first adapter and fixture completed locally
 
 Definition of done:
 
-- Lightweight no-GUI entry exists.
-- Mount API works in a `100% x 60vh` container.
+- Lightweight no-GUI entry exists. (first pass complete)
+- Mount API works in a `100% x 60vh` container. (first pass complete)
 - Hand tracking can be excluded or disabled.
 - Default approved preset is embedded.
-- Minimal Elementor-style HTML snippet is documented.
+- Minimal Elementor-style HTML snippet is documented. (first fixture complete)
 
 ## Next Actions
 

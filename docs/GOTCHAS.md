@@ -190,3 +190,15 @@ Coordinate dragging on the tiny slider track can miss, especially when the in-ap
 ### Weather canvas density is tied to rendered pixel area
 
 The weather overlay runs on a second canvas above the WebGL canvas. Droplet and rain counts scale with rendered canvas area and are capped in `computeWeatherOverlay`; keep that cap visible when tuning retina/high-DPI displays so storm mode does not silently turn into a tiny GPU tax.
+
+### The shader canvas is currently opaque
+
+Observed during the Elementor fixture QA: placing a brand/logo "behind" the Cloudia mount makes it disappear because the fragment shader outputs `alpha = 1.0`.
+
+Current fixture solution: keep the brand text above the canvas with low opacity and `mix-blend-mode: soft-light`.
+
+Future production choice:
+
+- keep brand in front and style it as part of the hero composition;
+- add an explicit embed alpha/compositing mode;
+- or render Cloudia as a background behind text rather than as an overlay above text.

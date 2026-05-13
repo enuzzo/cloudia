@@ -51,3 +51,15 @@ Comparison points:
 - Mist: softens the image and darkens the atmosphere enough to communicate storm onset; future pass should modulate mist by cloud luminance so it feels less uniform.
 - Desktop screenshot: verified via Browser plugin at `http://127.0.0.1:5173/`, 2 canvas elements, 1 `.cloudia-weather-layer`, no console warnings/errors.
 - Mobile/hero 60vh screenshot: pending dedicated embed/fixture QA.
+
+### M6 Embed Fixture
+
+Status: first `60vh` hero fixture verified locally
+
+Comparison points:
+
+- Hero shape: `examples/elementor-hero.html` renders Cloudia inside a `width: 100%; height: 60vh` section.
+- Brand layer: large `CLOUDIA` text is visible over the cloud field with soft-light blending; first attempt placed it behind the opaque canvas and made it disappear.
+- Cloud framing: Flow deck reads well in the shorter hero crop, with sky above and cloud mass through the middle.
+- Remaining visual gap: the fixture proves integration, not final artistry. We still need stronger volumetric parallax, more sculpted billows, and a deliberate alpha/brand strategy if a client wants the logo truly behind translucent clouds.
+- Browser QA: verified at `http://127.0.0.1:5173/examples/elementor-hero.html`, title `Cloudia Elementor Hero Fixture`, 2 canvas elements, 1 `#cloudia-mount`, no console warnings/errors.

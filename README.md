@@ -100,7 +100,6 @@ The future embed target is deliberately boring:
 <script src="./cloudia-hero.min.js"></script>
 <script>
   CloudiaHero.mount("#cloudia-mount", {
-    preset: "approved-default",
     handTracking: false
   });
 </script>
@@ -114,16 +113,41 @@ If the embed needs a PhD to install, we failed.
 
 ## Current status
 
-Design/spec phase.
+Local lab scaffold is alive: Vite, Three.js canvas, Flow/Cumulus baseline shaders, lil-gui controls, JSON preset copy, pointer-controlled cumulus fallback, and a first weather overlay for rain/mist/droplets.
 
-The project spec lives here:
+The embeddable hero adapter also exists as a separate build target. This is the intentionally boring doorway for WordPress/Elementor: fixed defaults, no lab GUI, `CloudiaHero.mount(...)`, and a fixture that behaves like a `100% x 60vh` flexbox hero.
+
+Project memory lives here:
 
 - [`docs/superpowers/specs/2026-05-13-cloudia-lab-design.md`](docs/superpowers/specs/2026-05-13-cloudia-lab-design.md)
 - [`docs/PROJECT_OPERATING_RULES.md`](docs/PROJECT_OPERATING_RULES.md)
 - [`docs/WORKLOG.md`](docs/WORKLOG.md)
 - [`docs/GOTCHAS.md`](docs/GOTCHAS.md)
 
-Implementation is next: Vite, Three.js, shader scaffolding, GUI, presets, then hand tracking and weather layers.
+Next up: optional MediaPipe hand tracking and much more visual cruelty toward the shaders until the clouds stop looking like they are merely auditioning.
+
+## Local usage
+
+Lab:
+
+```bash
+bun install
+bun run dev
+```
+
+Hero bundle:
+
+```bash
+bun run build:hero
+```
+
+Then open:
+
+```text
+examples/elementor-hero.html
+```
+
+The HTML fixture expects `dist/cloudia-hero.iife.js`, so run `build:hero` first. This is not the final production snippet yet; it is the proving ground where the hero embed has to earn its tiny suitcase.
 
 ---
 
