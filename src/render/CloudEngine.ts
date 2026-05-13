@@ -41,6 +41,10 @@ export class CloudEngine {
         uStorm: { value: 0 },
         uCompression: { value: 0 },
         uExpansion: { value: preset.cumulus.expansion },
+        uCameraSpeed: { value: preset.camera.speed },
+        uHorizonHeight: { value: preset.camera.horizon },
+        uCloudDensity: { value: preset.cloud.density },
+        uCloudCoverage: { value: preset.cloud.coverage },
         uSkyTop: { value: this.color(preset.palette.skyTop) },
         uSkyMid: { value: this.color(preset.palette.skyMid) },
         uHorizon: { value: this.color(preset.palette.horizon) },
@@ -82,6 +86,15 @@ export class CloudEngine {
   setPreset(preset: CloudiaPreset): void {
     this.material.uniforms.uMode.value = preset.mode === "flow" ? 0 : 1;
     this.material.uniforms.uExpansion.value = preset.cumulus.expansion;
+    this.material.uniforms.uCameraSpeed.value = preset.camera.speed;
+    this.material.uniforms.uHorizonHeight.value = preset.camera.horizon;
+    this.material.uniforms.uCloudDensity.value = preset.cloud.density;
+    this.material.uniforms.uCloudCoverage.value = preset.cloud.coverage;
+    this.material.uniforms.uSkyTop.value.copy(this.color(preset.palette.skyTop));
+    this.material.uniforms.uSkyMid.value.copy(this.color(preset.palette.skyMid));
+    this.material.uniforms.uHorizon.value.copy(this.color(preset.palette.horizon));
+    this.material.uniforms.uCloudLight.value.copy(this.color(preset.palette.cloudLight));
+    this.material.uniforms.uCloudShadow.value.copy(this.color(preset.palette.cloudShadow));
   }
 
   setRuntime(runtime: Partial<CloudEngineRuntime>): void {

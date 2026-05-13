@@ -47,6 +47,12 @@ This file tracks what has happened, what is next, and what must stay visible acr
   - `LabUI` exposes mode, density, coverage, storm, compression, and copy params JSON
   - `bun run typecheck`, `bun run build`, and `bun run test` passed
   - Browser QA verified Flow/Cumulus switch, storm/compression controls, JSON clipboard copy, and no warnings/errors
+- Upgraded Flow visual baseline:
+  - added first raymarch cloud deck pass plus hybrid screen-space fbm belt for reliable visible cloud mass
+  - preserved blue/lavender/peach palette and lower-mid cloud horizon composition
+  - documented current visual gap in `docs/VISUAL_QA.md`: needs stronger parallax, billowed edges, and richer volume
+  - `bun run build` and `bun run test` passed
+  - Browser QA verified 1 canvas, no warnings/errors, nonblank Flow cloud belt render
 
 ### 2026-05-13
 

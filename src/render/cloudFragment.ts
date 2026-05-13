@@ -9,6 +9,10 @@ export const cloudFragmentShader = /* glsl */ `
   uniform float uStorm;
   uniform float uCompression;
   uniform float uExpansion;
+  uniform float uCameraSpeed;
+  uniform float uHorizonHeight;
+  uniform float uCloudDensity;
+  uniform float uCloudCoverage;
   uniform vec3 uSkyTop;
   uniform vec3 uSkyMid;
   uniform vec3 uHorizon;
@@ -55,6 +59,36 @@ export const cloudFragmentShader = /* glsl */ `
     return value;
   }
 
+  float cloudDensity(vec3 p) {
+    float deckBand = smoothstep(-0.54, -0.08, p.y) * (1.0 - smoothstep(0.24, 0.72, p.y));
+    float base = fbm(p * vec3(0.72, 1.05, 0.64));
+    float detail = fbm(p * vec3(2.3, 2.8, 2.0) + vec3(12.7, 3.1, 8.4)) * 0.38;
+    float billow = fbm(p * vec3(4.8, 3.0, 3.8) + vec3(2.1, 9.4, 1.7)) * 0.16;
+    float density = base + detail + billow + deckBand * 0.62;
+    return smoothstep(uCloudCoverage * 0.58, 0.92, density) * deckBand * (uCloudDensity * 1.45);
+  }
+
+  vec4 marchClouds(vec3 ro, vec3 rd) {
+    vec3 color = vec3(0.0);
+    float alpha = 0.0;
+    float t = 0.0;
+
+    for (int i = 0; i < 72; i++) {
+      vec3 p = ro + rd * t;
+      float density = cloudDensity(p);
+      float shade = smoothstep(0.04, 0.78, density + p.y * 0.72);
+      float forwardLight = smoothstep(0.0, 1.0, 1.0 - t * 0.11);
+      vec3 sampleColor = mix(uCloudShadow, uCloudLight, shade * 0.72 + forwardLight * 0.28);
+      float sampleAlpha = density * 0.092 * (1.0 - alpha);
+      color += sampleColor * sampleAlpha;
+      alpha += sampleAlpha;
+      t += 0.038;
+      if (alpha > 0.96) break;
+    }
+
+    return vec4(color, alpha);
+  }
+
   void main() {
     vec2 uv = vUv;
     vec2 centered = uv * 2.0 - 1.0;
@@ -63,21 +97,32 @@ export const cloudFragmentShader = /* glsl */ `
     vec3 sky = mix(uHorizon, uSkyMid, smoothstep(0.08, 0.72, uv.y));
     sky = mix(sky, uSkyTop, smoothstep(0.45, 1.0, uv.y));
 
-    vec3 p = vec3(centered.x * 1.4, uv.y * 1.5, uTime * 0.045);
-    float deck = smoothstep(0.66, 0.18, abs(uv.y - 0.28));
-    float detail = fbm(p * vec3(1.2, 2.6, 1.0));
-    float cloud = smoothstep(0.36, 0.84, detail + deck * 0.58);
+    vec3 ro = vec3(centered.x * 0.18, 0.02, uTime * uCameraSpeed);
+    vec3 rd = normalize(vec3(centered.x * 0.48, (centered.y + uHorizonHeight) * 0.15, 1.0));
+    vec4 marched = marchClouds(ro, rd);
+    float horizonMask = 1.0 - smoothstep(0.48, 0.82, uv.y);
+    float foregroundLift = smoothstep(0.02, 0.34, uv.y);
+    marched.a *= horizonMask * foregroundLift;
+    vec3 screenP = vec3(centered.x * 1.25, uv.y * 3.2, uTime * uCameraSpeed * 1.8);
+    float screenDeck = (1.0 - smoothstep(0.14, 0.54, abs(uv.y - 0.36))) * horizonMask;
+    float screenNoise = fbm(screenP) + fbm(screenP * 2.4 + vec3(8.2, 1.3, 4.7)) * 0.34;
+    float screenCloud = smoothstep(0.2, 0.72, screenNoise + screenDeck * 0.78) * screenDeck;
+    vec3 screenCloudColor = mix(uCloudShadow * 0.82, uCloudLight * 1.06, smoothstep(0.12, 0.88, screenNoise));
+    float flowAlpha = max(marched.a, screenCloud * 0.94);
+    vec3 flowColor = mix(marched.rgb, screenCloudColor, screenCloud * 0.72);
+    vec3 color = mix(sky, flowColor, flowAlpha);
 
     if (uMode == 1) {
       float radius = 0.45 - uCompression * 0.16 + uExpansion * 0.2;
       float blob = 1.0 - smoothstep(radius, radius + 0.22, length(centered));
       float fluff = fbm(vec3(centered * 2.2, uTime * 0.04));
-      cloud = smoothstep(0.35, 0.82, blob + fluff * 0.55);
+      float cloud = smoothstep(0.35, 0.82, blob + fluff * 0.55);
+      vec3 cloudColor = mix(uCloudShadow, uCloudLight, smoothstep(0.32, 1.0, cloud));
+      cloudColor = mix(cloudColor, vec3(0.14, 0.16, 0.24), uStorm * 0.52);
+      color = mix(sky, cloudColor, cloud * 0.82);
     }
 
-    vec3 cloudColor = mix(uCloudShadow, uCloudLight, smoothstep(0.32, 1.0, cloud));
-    cloudColor = mix(cloudColor, vec3(0.14, 0.16, 0.24), uStorm * 0.52);
-    vec3 color = mix(sky, cloudColor, cloud * 0.82);
+    color = mix(color, color * vec3(0.42, 0.46, 0.58), uStorm * 0.62);
 
     gl_FragColor = vec4(color, 1.0);
   }

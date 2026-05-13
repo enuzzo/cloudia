@@ -110,6 +110,10 @@ Some chunks are larger than 500 kB after minification
 
 This is acceptable for the local lab while we tune shaders. The future Elementor/WordPress embed must use a separate lightweight build path without lab UI and with hand tracking omitted unless explicitly enabled.
 
+### Do not reuse `uHorizon` for different shader meanings
+
+During the Flow raymarch upgrade, the implementation plan wanted a camera horizon uniform named `uHorizon`, but the shader already used `uHorizon` as a color. Use `uHorizonHeight` for camera/composition and keep `uHorizon` for the palette color.
+
 ## Reference And Documentation
 
 ### ScryBar and Retina Cannon style references are available locally
