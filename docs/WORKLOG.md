@@ -7,6 +7,7 @@ This file tracks what has happened, what is next, and what must stay visible acr
 - Project folder: `/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia`
 - Local git repo: initialized on `main`
 - Foundation commit: `45795c9 chore: seed cloudia project docs`
+- Operating protocol commit: `38df028 docs: add cloudia operating protocol`
 - GitHub remote: not set yet
 - Push status: blocked by invalid `gh` auth and pending public/private visibility confirmation
 
@@ -38,6 +39,8 @@ This file tracks what has happened, what is next, and what must stay visible acr
   - `docs/PROJECT_OPERATING_RULES.md`
   - `docs/WORKLOG.md`
   - `docs/GOTCHAS.md`
+- Committed operating docs:
+  - `38df028 docs: add cloudia operating protocol`
 
 ## Milestones
 
