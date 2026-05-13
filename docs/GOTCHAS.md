@@ -80,6 +80,16 @@ bun is unable to write files to tempdir: PermissionDenied
 
 The same `bun install` succeeded after approval. This is likely a sandbox/tempdir permission issue rather than a package problem.
 
+### Vitest `jsdom` environment requires explicit `jsdom` dependency
+
+Observed on 2026-05-14 while running the first preset test:
+
+```text
+MISSING DEPENDENCY Cannot find dependency 'jsdom'
+```
+
+The project uses `environment: "jsdom"` in `vitest.config.ts`, so `jsdom` must be listed in `devDependencies`.
+
 ## Reference And Documentation
 
 ### ScryBar and Retina Cannon style references are available locally

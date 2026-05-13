@@ -24,6 +24,13 @@ This file tracks what has happened, what is next, and what must stay visible acr
 - Verified scaffold:
   - `bun run typecheck`
   - `bun run build`
+- Added preset store with TDD:
+  - first run exposed missing `jsdom` dependency for Vitest
+  - second red run failed on missing `defaultPreset`
+  - green run: `bun run test src/core/presetStore.test.ts` passed 3 tests
+  - `bun run typecheck` passed
+  - `bun run test` passed 1 file / 3 tests
+  - `bun run build` passed
 
 ### 2026-05-13
 
