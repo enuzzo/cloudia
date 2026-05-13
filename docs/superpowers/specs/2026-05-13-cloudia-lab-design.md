@@ -204,3 +204,9 @@ Performance checks:
 All project documentation must live inside this Dropbox-synced project folder, under `docs/`, so it is available on other computers:
 
 `/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs`
+
+Project operating docs:
+
+- `docs/PROJECT_OPERATING_RULES.md`: workflow, visual quality bar, documentation rules.
+- `docs/WORKLOG.md`: work done, commit notes, and milestones.
+- `docs/GOTCHAS.md`: traps and findings to preserve across sessions.

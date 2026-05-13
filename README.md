@@ -119,6 +119,9 @@ Design/spec phase.
 The project spec lives here:
 
 - [`docs/superpowers/specs/2026-05-13-cloudia-lab-design.md`](docs/superpowers/specs/2026-05-13-cloudia-lab-design.md)
+- [`docs/PROJECT_OPERATING_RULES.md`](docs/PROJECT_OPERATING_RULES.md)
+- [`docs/WORKLOG.md`](docs/WORKLOG.md)
+- [`docs/GOTCHAS.md`](docs/GOTCHAS.md)
 
 Implementation is next: Vite, Three.js, shader scaffolding, GUI, presets, then hand tracking and weather layers.
 
