@@ -24,3 +24,17 @@ Comparison points:
 - Performance: build passes; live browser render is responsive on current machine.
 - Desktop screenshot: verified via Browser plugin at `http://127.0.0.1:5173/`, title `Cloudia Lab`, 1 canvas, no console warnings/errors.
 - Hero 60vh screenshot: pending dedicated embed/fixture QA.
+
+### M3 Cumulus Pointer Control
+
+Status: first pointer-controlled baseline verified locally
+
+Comparison points:
+
+- Central mass: visible, coherent single cloud mass.
+- Compression: GUI compression value changes shape density/scale.
+- Pointer position: Browser drag moved the cloud center across the viewport.
+- Palette: shares Flow palette and storm-darkening path.
+- Visual gap: still too procedural/fbm-speckled; needs more cumulus lobes, smoother outer silhouette, and more physically plausible light/shadow.
+- Desktop screenshot: verified via Browser plugin at `http://127.0.0.1:5173/`, mode `cumulus`, no console warnings/errors.
+- Hand tracking: pending.

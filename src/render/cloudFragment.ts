@@ -9,6 +9,7 @@ export const cloudFragmentShader = /* glsl */ `
   uniform float uStorm;
   uniform float uCompression;
   uniform float uExpansion;
+  uniform vec2 uPrimary;
   uniform float uCameraSpeed;
   uniform float uHorizonHeight;
   uniform float uCloudDensity;
@@ -113,11 +114,18 @@ export const cloudFragmentShader = /* glsl */ `
     vec3 color = mix(sky, flowColor, flowAlpha);
 
     if (uMode == 1) {
-      float radius = 0.45 - uCompression * 0.16 + uExpansion * 0.2;
-      float blob = 1.0 - smoothstep(radius, radius + 0.22, length(centered));
-      float fluff = fbm(vec3(centered * 2.2, uTime * 0.04));
-      float cloud = smoothstep(0.35, 0.82, blob + fluff * 0.55);
-      vec3 cloudColor = mix(uCloudShadow, uCloudLight, smoothstep(0.32, 1.0, cloud));
+      vec2 handOffset = (uPrimary - 0.5) * vec2(1.2, -0.72);
+      vec2 cumulusUv = centered - handOffset;
+      cumulusUv.x *= 0.92 + uCompression * 0.2;
+      cumulusUv.y *= 1.08 + uCompression * 0.36;
+      float radius = 0.42 - uCompression * 0.18 + uExpansion * 0.16;
+      float blob = 1.0 - smoothstep(radius, radius + 0.24, length(cumulusUv));
+      float lobes = fbm(vec3(cumulusUv * 3.2, uTime * 0.06));
+      float upperLift = smoothstep(-0.42, 0.48, cumulusUv.y);
+      float base = smoothstep(0.34, 0.82, blob + lobes * 0.52 + upperLift * 0.12);
+      float shadowPocket = smoothstep(0.12, 0.92, fbm(vec3(cumulusUv * 5.8 + 4.0, uTime * 0.03)));
+      float cloud = base;
+      vec3 cloudColor = mix(uCloudShadow * 0.72, uCloudLight * 1.08, shadowPocket);
       cloudColor = mix(cloudColor, vec3(0.14, 0.16, 0.24), uStorm * 0.52);
       color = mix(sky, cloudColor, cloud * 0.82);
     }

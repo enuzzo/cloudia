@@ -7,6 +7,8 @@ export interface CloudEngineRuntime {
   storm: number;
   compression: number;
   expansion: number;
+  primaryX: number;
+  primaryY: number;
 }
 
 export class CloudEngine {
@@ -17,7 +19,13 @@ export class CloudEngine {
   private readonly resizeObserver: ResizeObserver;
   private animationId = 0;
   private startedAt = performance.now();
-  private runtime: CloudEngineRuntime = { storm: 0, compression: 0, expansion: 0 };
+  private runtime: CloudEngineRuntime = {
+    storm: 0,
+    compression: 0,
+    expansion: 0,
+    primaryX: 0.5,
+    primaryY: 0.5,
+  };
 
   constructor(
     private readonly host: HTMLElement,
@@ -41,6 +49,7 @@ export class CloudEngine {
         uStorm: { value: 0 },
         uCompression: { value: 0 },
         uExpansion: { value: preset.cumulus.expansion },
+        uPrimary: { value: new THREE.Vector2(0.5, 0.5) },
         uCameraSpeed: { value: preset.camera.speed },
         uHorizonHeight: { value: preset.camera.horizon },
         uCloudDensity: { value: preset.cloud.density },
@@ -106,6 +115,7 @@ export class CloudEngine {
     this.material.uniforms.uStorm.value = this.runtime.storm;
     this.material.uniforms.uCompression.value = this.runtime.compression;
     this.material.uniforms.uExpansion.value = this.runtime.expansion;
+    this.material.uniforms.uPrimary.value.set(this.runtime.primaryX, this.runtime.primaryY);
     this.renderer.render(this.scene, this.camera);
   }
 

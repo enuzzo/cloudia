@@ -53,6 +53,12 @@ This file tracks what has happened, what is next, and what must stay visible acr
   - documented current visual gap in `docs/VISUAL_QA.md`: needs stronger parallax, billowed edges, and richer volume
   - `bun run build` and `bun run test` passed
   - Browser QA verified 1 canvas, no warnings/errors, nonblank Flow cloud belt render
+- Added Cumulus pointer control:
+  - created `InputController` for pointer position and press/compression fallback
+  - extended `CloudEngine` runtime with primary pointer coordinates
+  - improved Cumulus shader shape and storm darkening path
+  - `bun run typecheck`, `bun run build`, and `bun run test` passed
+  - Browser QA verified Cumulus mode, GUI compression, pointer drag movement, and no warnings/errors
 
 ### 2026-05-13
 
@@ -130,7 +136,7 @@ Definition of done:
 
 ### M3: Cumulus Cloud
 
-Status: pending
+Status: first pointer baseline completed locally
 
 Definition of done:
 
