@@ -37,6 +37,11 @@ This file tracks what has happened, what is next, and what must stay visible acr
   - targeted tests passed 3 files / 6 tests
   - full `bun run test` passed 4 files / 9 tests
   - `bun run typecheck` and `bun run build` passed
+- Added baseline Three.js cloud renderer:
+  - created `CloudEngine`, vertex shader, and baseline fragment shader
+  - fixed strict TypeScript with `@types/three`
+  - `bun run typecheck`, `bun run build`, and `bun run test` passed
+  - Browser QA at `http://127.0.0.1:5173/`: title `Cloudia Lab`, 1 canvas, no warnings/errors, visible nonblank pastel cloud render
 
 ### 2026-05-13
 

@@ -90,6 +90,16 @@ MISSING DEPENDENCY Cannot find dependency 'jsdom'
 
 The project uses `environment: "jsdom"` in `vitest.config.ts`, so `jsdom` must be listed in `devDependencies`.
 
+### Three.js TypeScript declarations need `@types/three`
+
+Observed on 2026-05-14 during the first `CloudEngine` typecheck:
+
+```text
+Could not find a declaration file for module 'three'
+```
+
+Install `@types/three` alongside `three` for strict TypeScript builds.
+
 ## Reference And Documentation
 
 ### ScryBar and Retina Cannon style references are available locally
