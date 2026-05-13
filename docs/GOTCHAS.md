@@ -29,6 +29,8 @@ Creating a public GitHub repository publishes local project files externally. Th
 
 Cloudia's own code and documentation use MIT. Third-party dependencies, references, and inspirations keep their own licenses and notices.
 
+`NOTICE.md` contains a polite, non-binding attribution request. It must not be treated as an extra license condition.
+
 Useful license references checked on 2026-05-13:
 
 - Three.js: MIT

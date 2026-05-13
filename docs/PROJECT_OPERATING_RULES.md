@@ -57,6 +57,7 @@ Important docs:
 - Repository visibility: public.
 - Project license: MIT for Cloudia's own code and documentation.
 - Third-party dependencies, references, and inspirations keep their original licenses and notices.
+- Attribution request: polite and non-binding, recorded in `NOTICE.md`.
 - Push is blocked until GitHub CLI auth is fixed.
 - README must keep real credits and inspiration links intact.
 

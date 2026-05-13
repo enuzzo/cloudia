@@ -47,6 +47,8 @@ This file tracks what has happened, what is next, and what must stay visible acr
   - public
 - Confirmed license:
   - MIT for Cloudia's own code and documentation; third-party dependencies keep their original notices.
+- Added polite attribution request:
+  - `NOTICE.md`
 
 ## Milestones
 

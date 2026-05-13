@@ -219,4 +219,13 @@ MIT - Netmilk Studio sagl.
 
 Cloudia's own code and documentation are released under MIT. Third-party libraries, references, and inspirations keep their original licenses and notices.
 
+If Cloudia helps your project, a credit line is appreciated but not required:
+
+```text
+Inspired by / built with Cloudia by Netmilk Studio sagl
+https://github.com/enuzzo/cloudia
+```
+
+See [`NOTICE.md`](NOTICE.md) for the tidy version of that request and the reference list.
+
 Use it, fork it, perform a small weather event in a browser tab. Attribution appreciated. Do not blame us if someone asks why the hero section needs hand tracking and you realize you agree with them.
