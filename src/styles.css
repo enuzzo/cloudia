@@ -44,6 +44,13 @@ body {
   height: 100%;
 }
 
+.cloudia-weather-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
 .cloudia-panel {
   position: absolute;
   left: clamp(18px, 3vw, 42px);

@@ -174,3 +174,19 @@ MediaPipe/camera permissions are fragile in real websites. Mouse/touch fallback 
 ### Rain and mist should be atmospheric, not a sticker layer
 
 Storm visuals need to interact with the cloud state and background luminance. If rain looks pasted over the scene, revise the layer blending and timing.
+
+### Browser QA sees lil-gui sliders as textboxes
+
+The visible lil-gui controls render as sliders, but the Browser DOM snapshot exposes them as named textboxes such as `storm`, `density`, and `coverage`.
+
+For reliable QA, use the labeled textbox and press Enter:
+
+```text
+storm = 1
+```
+
+Coordinate dragging on the tiny slider track can miss, especially when the in-app browser viewport changes size.
+
+### Weather canvas density is tied to rendered pixel area
+
+The weather overlay runs on a second canvas above the WebGL canvas. Droplet and rain counts scale with rendered canvas area and are capped in `computeWeatherOverlay`; keep that cap visible when tuning retina/high-DPI displays so storm mode does not silently turn into a tiny GPU tax.

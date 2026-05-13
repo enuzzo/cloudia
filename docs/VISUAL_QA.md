@@ -38,3 +38,16 @@ Comparison points:
 - Visual gap: still too procedural/fbm-speckled; needs more cumulus lobes, smoother outer silhouette, and more physically plausible light/shadow.
 - Desktop screenshot: verified via Browser plugin at `http://127.0.0.1:5173/`, mode `cumulus`, no console warnings/errors.
 - Hand tracking: pending.
+
+### M4 Weather Layer
+
+Status: first storm overlay verified locally
+
+Comparison points:
+
+- Storm activation: setting `storm` to `1` in the lab visibly adds rain streaks, wet-screen droplets, and mist.
+- Cloud/weather relationship: storm value now feeds both the shader darkening path and the overlay; first pass reads as weather, not just a UI toggle.
+- Wet-screen feeling: droplets appear across the glass and drift subtly; this is a useful base but needs more refraction/drag trails to approach the reference ambition.
+- Mist: softens the image and darkens the atmosphere enough to communicate storm onset; future pass should modulate mist by cloud luminance so it feels less uniform.
+- Desktop screenshot: verified via Browser plugin at `http://127.0.0.1:5173/`, 2 canvas elements, 1 `.cloudia-weather-layer`, no console warnings/errors.
+- Mobile/hero 60vh screenshot: pending dedicated embed/fixture QA.

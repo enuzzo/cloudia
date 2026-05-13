@@ -59,6 +59,12 @@ This file tracks what has happened, what is next, and what must stay visible acr
   - improved Cumulus shader shape and storm darkening path
   - `bun run typecheck`, `bun run build`, and `bun run test` passed
   - Browser QA verified Cumulus mode, GUI compression, pointer drag movement, and no warnings/errors
+- Added first Weather layer:
+  - created `WeatherLayer` canvas overlay for storm rain, mist, and wet-screen droplets
+  - added TDD coverage for weather overlay parameter clamping and droplet density
+  - wired lab storm state through `updateWeatherState` into both the shader and weather canvas
+  - `bun run typecheck`, `bun run build`, and `bun run test` passed
+  - Browser QA verified 2 canvas elements, 1 `.cloudia-weather-layer`, storm control to `1`, visible rain/droplets/mist, and no warnings/errors
 
 ### 2026-05-13
 
@@ -148,13 +154,13 @@ Definition of done:
 
 ### M4: Weather Layer
 
-Status: pending
+Status: first storm overlay completed locally
 
 Definition of done:
 
-- Storm value controls cloud darkness, rain intensity, droplets, and mist.
-- Droplet/mist layer resizes with the canvas.
-- Storm on/off transitions are smooth.
+- Storm value controls cloud darkness, rain intensity, droplets, and mist. (first pass complete)
+- Droplet/mist layer resizes with the canvas. (first pass complete)
+- Storm on/off transitions are smooth. (first pass complete through `updateWeatherState`)
 - Performance remains acceptable with rain enabled.
 
 ### M5: Hand Tracking
@@ -185,4 +191,4 @@ Definition of done:
 1. Fix GitHub CLI auth: `gh auth login -h github.com`.
 2. Create public GitHub repo `cloudia` with description: `Volumetric WebGL clouds with hand-tracked weather control. Partly cloudy, fully shadered.`
 3. Push local `main`.
-4. Execute the implementation plan in `docs/superpowers/plans/2026-05-13-cloudia-lab-implementation.md`.
+4. Continue implementation plan with MediaPipe hand-tracking toggle and embed adapter.
