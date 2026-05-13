@@ -129,6 +129,6 @@ Definition of done:
 
 1. Fix GitHub CLI auth: `gh auth login -h github.com`.
 2. Confirm repo visibility: public or private.
-3. Create GitHub repo `cloudia`.
+3. Create GitHub repo `cloudia` with description: `Volumetric WebGL clouds with hand-tracked weather control. Partly cloudy, fully shadered.`
 4. Push local `main`.
 5. Start implementation plan in `docs/superpowers/plans/`.

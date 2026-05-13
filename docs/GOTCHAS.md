@@ -25,6 +25,20 @@ After auth works, create/push the remote repo.
 
 Creating a public GitHub repository publishes local project files externally. Before first push, confirm whether `cloudia` is public or private.
 
+### GitHub repo naming and description
+
+Repository name must be all lowercase:
+
+```text
+cloudia
+```
+
+Short description:
+
+```text
+Volumetric WebGL clouds with hand-tracked weather control. Partly cloudy, fully shadered.
+```
+
 ### Dropbox-synced folder is the canonical project home
 
 All project docs and implementation files must stay under:
