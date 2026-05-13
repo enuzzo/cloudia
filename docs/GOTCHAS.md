@@ -70,6 +70,16 @@ This keeps the work available from office/home machines.
 
 The command succeeded after approval. Expect sandbox/file-provider weirdness around Dropbox-synced folders.
 
+### `bun install` may need elevated tempdir access in this environment
+
+Observed on 2026-05-14:
+
+```text
+bun is unable to write files to tempdir: PermissionDenied
+```
+
+The same `bun install` succeeded after approval. This is likely a sandbox/tempdir permission issue rather than a package problem.
+
 ## Reference And Documentation
 
 ### ScryBar and Retina Cannon style references are available locally

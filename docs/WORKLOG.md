@@ -15,6 +15,16 @@ This file tracks what has happened, what is next, and what must stay visible acr
 
 ## Work Completed
 
+### 2026-05-14
+
+- Started implementation on `main` with user approval.
+- Began M1 Lab Scaffold from `docs/superpowers/plans/2026-05-13-cloudia-lab-implementation.md`.
+- Added Vite/TypeScript/Vitest config, base `index.html`, lab CSS shell, and initial `src/main.ts`.
+- Installed dependencies with Bun after sandbox tempdir approval.
+- Verified scaffold:
+  - `bun run typecheck`
+  - `bun run build`
+
 ### 2026-05-13
 
 - Defined Cloudia as a WebGL/Three.js cloud lab with two modes:
