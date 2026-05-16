@@ -14,6 +14,7 @@ export const cloudFragmentShader = /* glsl */ `
   uniform float uHorizonHeight;
   uniform float uCloudDensity;
   uniform float uCloudCoverage;
+  uniform float uRaySteps;
   uniform vec3 uSkyTop;
   uniform vec3 uSkyMid;
   uniform vec3 uHorizon;
@@ -52,7 +53,7 @@ export const cloudFragmentShader = /* glsl */ `
   float fbm(vec3 p) {
     float value = 0.0;
     float amplitude = 0.5;
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 4; i++) {
       value += amplitude * noise(p);
       p *= 2.02;
       amplitude *= 0.5;
@@ -75,6 +76,7 @@ export const cloudFragmentShader = /* glsl */ `
     float t = 0.0;
 
     for (int i = 0; i < 72; i++) {
+      if (float(i) >= uRaySteps) break;
       vec3 p = ro + rd * t;
       float density = cloudDensity(p);
       float shade = smoothstep(0.04, 0.78, density + p.y * 0.72);
@@ -83,7 +85,7 @@ export const cloudFragmentShader = /* glsl */ `
       float sampleAlpha = density * 0.092 * (1.0 - alpha);
       color += sampleColor * sampleAlpha;
       alpha += sampleAlpha;
-      t += 0.038;
+      t += 0.072;
       if (alpha > 0.96) break;
     }
 

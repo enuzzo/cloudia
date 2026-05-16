@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { resolveRenderPixelRatio } from "../core/renderQuality";
 import type { CloudiaPreset } from "../core/types";
 import { cloudFragmentShader } from "./cloudFragment";
 import { cloudVertexShader } from "./cloudVertex";
@@ -36,7 +37,7 @@ export class CloudEngine {
       alpha: true,
       powerPreference: "high-performance",
     });
-    this.renderer.setPixelRatio(Math.min(devicePixelRatio, preset.embed.pixelRatioCap));
+    this.renderer.setPixelRatio(resolveRenderPixelRatio(devicePixelRatio, preset.embed.pixelRatioCap));
     this.host.appendChild(this.renderer.domElement);
 
     this.material = new THREE.ShaderMaterial({
@@ -54,6 +55,7 @@ export class CloudEngine {
         uHorizonHeight: { value: preset.camera.horizon },
         uCloudDensity: { value: preset.cloud.density },
         uCloudCoverage: { value: preset.cloud.coverage },
+        uRaySteps: { value: preset.cloud.steps },
         uSkyTop: { value: this.color(preset.palette.skyTop) },
         uSkyMid: { value: this.color(preset.palette.skyMid) },
         uHorizon: { value: this.color(preset.palette.horizon) },
@@ -99,6 +101,7 @@ export class CloudEngine {
     this.material.uniforms.uHorizonHeight.value = preset.camera.horizon;
     this.material.uniforms.uCloudDensity.value = preset.cloud.density;
     this.material.uniforms.uCloudCoverage.value = preset.cloud.coverage;
+    this.material.uniforms.uRaySteps.value = preset.cloud.steps;
     this.material.uniforms.uSkyTop.value.copy(this.color(preset.palette.skyTop));
     this.material.uniforms.uSkyMid.value.copy(this.color(preset.palette.skyMid));
     this.material.uniforms.uHorizon.value.copy(this.color(preset.palette.horizon));

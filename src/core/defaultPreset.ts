@@ -26,8 +26,8 @@ export const defaultPreset: CloudiaPreset = {
     detailScale: 4.2,
     thickness: 0.42,
     edgeFalloff: 0.55,
-    steps: 72,
-    lightSteps: 6,
+    steps: 32,
+    lightSteps: 4,
   },
   lighting: {
     sunX: -0.42,
@@ -65,6 +65,6 @@ export const defaultPreset: CloudiaPreset = {
     autoplay: true,
     handTracking: false,
     reducedMotion: false,
-    pixelRatioCap: 1.75,
+    pixelRatioCap: 0.85,
   },
 };

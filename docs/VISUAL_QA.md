@@ -12,7 +12,7 @@ This document records visual comparisons against the accepted benchmark.
 
 ### M2 Flow Cloud Deck
 
-Status: first upgrade verified locally
+Status: first upgrade verified locally, then performance-capped for demo
 
 Comparison points:
 
@@ -21,8 +21,9 @@ Comparison points:
 - Pastel palette: lavender/blue/peach target is present.
 - Cloud volume/depth: improved over baseline; still needs more true layered cumulus structure and less airbrushed blending.
 - Edge softness: soft, with visible belt structure; needs more creamy billowed edges.
-- Performance: build passes; live browser render is responsive on current machine.
+- Performance: first local user test was severely janky. Default render cost was reduced on 2026-05-16 by capping WebGL pixel ratio, capping weather canvas ratio, and reducing raymarch/fbm work.
 - Desktop screenshot: verified via Browser plugin at `http://127.0.0.1:5173/`, title `Cloudia Lab`, 1 canvas, no console warnings/errors.
+- Optimized desktop check: DPR 2 viewport `1280 x 720` now renders WebGL at `1088 x 612` and weather at `1280 x 720`, with no console warnings/errors.
 - Hero 60vh screenshot: pending dedicated embed/fixture QA.
 
 ### M3 Cumulus Pointer Control

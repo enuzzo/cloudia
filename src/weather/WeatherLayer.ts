@@ -1,5 +1,6 @@
 import type { WeatherRuntimeState } from "../core/stateMachine";
 import { clamp01 } from "../core/easing";
+import { resolveRenderPixelRatio } from "../core/renderQuality";
 
 export interface WeatherViewport {
   width: number;
@@ -20,7 +21,7 @@ export function computeWeatherOverlay(
   state: WeatherRuntimeState,
   viewport: WeatherViewport,
 ): WeatherOverlayParams {
-  const pixelRatio = Math.max(1, Math.min(2, viewport.pixelRatio));
+  const pixelRatio = resolveRenderPixelRatio(viewport.pixelRatio, 1);
   const storm = clamp01(state.storm);
   const rain = clamp01(Math.max(state.rain, storm * 0.72));
   const droplets = clamp01(Math.max(state.droplets, storm * 0.62));
@@ -44,6 +45,7 @@ export class WeatherLayer {
   private readonly resizeObserver: ResizeObserver;
   private animationId = 0;
   private startedAt = performance.now();
+  private canvasDirty = false;
   private state: WeatherRuntimeState = {
     storm: 0,
     rain: 0,
@@ -116,18 +118,23 @@ export class WeatherLayer {
       pixelRatio: 1,
     });
 
-    this.context.clearRect(0, 0, width, height);
     if (
       overlay.rainOpacity <= 0.001 &&
       overlay.mistOpacity <= 0.001 &&
       overlay.dropletCount === 0
     ) {
+      if (this.canvasDirty) {
+        this.context.clearRect(0, 0, width, height);
+        this.canvasDirty = false;
+      }
       return;
     }
 
+    this.context.clearRect(0, 0, width, height);
     this.drawMist(width, height, overlay.mistOpacity);
     this.drawRain(width, height, overlay.rainOpacity, time);
     this.drawDroplets(width, height, overlay.dropletCount, overlay.blurPx, time);
+    this.canvasDirty = true;
   }
 
   private drawMist(width: number, height: number, opacity: number): void {

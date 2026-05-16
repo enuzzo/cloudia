@@ -8,8 +8,8 @@ describe("computeWeatherOverlay", () => {
       { width: 1200, height: 800, pixelRatio: 2 },
     );
 
-    expect(overlay.canvasWidth).toBe(2400);
-    expect(overlay.canvasHeight).toBe(1600);
+    expect(overlay.canvasWidth).toBe(1200);
+    expect(overlay.canvasHeight).toBe(800);
     expect(overlay.rainOpacity).toBeCloseTo(0.66, 2);
     expect(overlay.mistOpacity).toBeCloseTo(0.33, 2);
     expect(overlay.blurPx).toBeCloseTo(7.2, 2);

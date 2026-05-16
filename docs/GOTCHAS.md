@@ -167,6 +167,30 @@ Resize and composition must be tested in that shape, not only in a full browser 
 
 Raymarch step counts, fbm octaves, lightmarch steps, and pixel ratio caps need tuning as visible controls. Low-quality mode is useful, but the default benchmark mode must remain beautiful.
 
+### Retina defaults can quietly murder the demo
+
+Observed on 2026-05-16 after the first local demo felt under 5 fps:
+
+```text
+viewport: 1280 x 720
+devicePixelRatio: 2
+WebGL canvas before fix: 2240 x 1260
+weather canvas before fix: 2560 x 1440
+```
+
+That meant the shader and overlay were doing multi-megapixel work per frame before the raymarch cost even started.
+
+Current demo default:
+
+```text
+WebGL pixelRatioCap: 0.85
+weather pixelRatioCap: 1
+raymarch steps: 32
+fbm octaves: 4
+```
+
+High-fidelity benchmark mode should come back as an explicit quality preset, not as the default first impression.
+
 ### Hand tracking must be optional
 
 MediaPipe/camera permissions are fragile in real websites. Mouse/touch fallback and simulated storm controls are required for local QA and embed safety.

@@ -8,12 +8,39 @@ This file tracks what has happened, what is next, and what must stay visible acr
 - Local git repo: initialized on `main`
 - Foundation commit: `45795c9 chore: seed cloudia project docs`
 - Operating protocol commit: `38df028 docs: add cloudia operating protocol`
-- GitHub remote: not set yet
+- GitHub remote: `https://github.com/enuzzo/cloudia.git`
 - GitHub visibility decision: public
 - License decision: MIT for Cloudia's own code and docs
-- Push status: blocked by invalid `gh` auth
+- Push status: `main` tracks `origin/main`
 
 ## Work Completed
+
+### 2026-05-16
+
+- Investigated severe demo jank reported during local testing.
+- Root cause found through Browser QA:
+  - viewport `1280 x 720` on DPR 2 was rendering WebGL at `2240 x 1260`
+  - weather overlay was rendering at `2560 x 1440`
+  - Flow shader still ran up to 72 raymarch steps plus fbm work per fragment
+- Added render quality helper with TDD:
+  - `src/core/renderQuality.ts`
+  - `src/core/renderQuality.test.ts`
+- Changed default demo performance budget:
+  - WebGL pixel ratio cap from `1.75` to `0.85`
+  - default Flow raymarch steps from `72` to `32`
+  - default light steps from `6` to `4`
+  - fbm octaves from `5` to `4`
+  - weather overlay pixel ratio capped to `1`
+  - clear weather overlay skips repeated full-canvas clears
+- Verified optimized Browser QA:
+  - same viewport now renders WebGL at `1088 x 612`
+  - weather canvas now renders at `1280 x 720`
+  - no console warnings/errors
+- Verified:
+  - `bun run test`
+  - `bun run typecheck`
+  - `bun run build`
+  - `bun run build:hero`
 
 ### 2026-05-14
 
@@ -194,7 +221,6 @@ Definition of done:
 
 ## Next Actions
 
-1. Fix GitHub CLI auth: `gh auth login -h github.com`.
-2. Create public GitHub repo `cloudia` with description: `Volumetric WebGL clouds with hand-tracked weather control. Partly cloudy, fully shadered.`
-3. Push local `main`.
-4. Continue implementation plan with MediaPipe hand-tracking toggle and embed adapter.
+1. Have the user test the optimized local demo subjectively.
+2. If still janky, add an explicit quality selector and/or frame skipper for the weather overlay.
+3. Continue implementation plan with MediaPipe hand-tracking toggle.
