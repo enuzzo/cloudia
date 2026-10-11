@@ -15,6 +15,15 @@ This file tracks what has happened, what is next, and what must stay visible acr
 
 ## Work Completed
 
+### 2026-10-11 — fine detail, fibrous anvil and sustained production cadence
+
+- Expanded macro volume to 256³; added nested convective lobes, flatter wind-stretched anvil, tiled 64³ fine erosion/domain warp and matching baked illumination. Texel-center registration aligns bake and GPU samples.
+- Conservative empty-space mask shares detail alpha, lowering observed GPU cost from 9.115 to 3.827 ms at full HD / 256 steps.
+- Two production orbit runs, both sun directions: 59.98 fps over 90 seconds each, zero intervals >33.34 ms, maximum 18.9 ms. Development run still had 25 long intervals; all evidence is retained. No 120 fps claim.
+- 32 tests, typecheck, app and hero build pass; reviewed clipping/registration fixes and final mask. Browser console clean. Commissioner preserved.
+- Images, raw results, interpretation and restart: `docs/REFINEMENT-2026-10-11.md`. Photographic visual acceptance still open; gestures remain deferred. No deployment.
+
+
 ### 2026-10-11 — Commissioner typography
 
 - Owner requested Commissioner for the interface. Added official Google Fonts Latin variable WOFF2 (~37 KB) to local public assets with OFL license and source record.

@@ -2,6 +2,8 @@
 
 Date: 11 October 2026. Local preview: `http://127.0.0.1:5173/`. No online deployment.
 
+The following table preserves the first renderer checkpoint (224³ / 192 steps). **Current 256³ / 256-step results:** [detail refinement and production measurements](REFINEMENT-2026-10-11.md), including two 59.98 fps / 90-second runs with no long frames.
+
 ## What was measured
 
 - Three.js **r186**, actual **WebGPU** backend. Browser reports AMD / GCN-5, hardware adapter (not a fallback). Host reports Radeon Pro Vega 56; browser conceals the specific device string.
@@ -25,9 +27,9 @@ Date: 11 October 2026. Local preview: `http://127.0.0.1:5173/`. No online deploy
 | Standalone Chrome, earlier Massima | 1280×720 | 30 s | 28.42 | 100.2 / 166.3 ms | 0.913 / 0.983 ms |
 | Owner paused Backblaze/Dropbox, earlier Massima orbit | 1920×1080 | 90 s | **43.64** | 49.9 / 66.6 ms | 1.821 / 2.032 ms |
 | Stronger erosion, CPU probe, Massima orbit | 1920×1080 | 30 s | **35.09** | 50.1 / 66.7 ms | 1.937 / 2.032 ms |
-| **Current parametric generator, Massima orbit, seed 1571198069** | **1920×1080** | **90 s** | **57.09** | **17.7 / 34.0 ms** | **1.863 / 2.032 ms** |
+| **Previous parametric generator, Massima orbit, seed 1571198069** | **1920×1080** | **90 s** | **57.09** | **17.7 / 34.0 ms** | **1.863 / 2.032 ms** |
 
-The **current** 90-second run collected 5,139 intervals and 433 GPU samples. CPU submission mean/p95 was **0.324 / 0.400 ms**; GPU mean/p95 **1.863 / 2.032 ms**. It included **128 intervals over 33.34 ms** and a maximum stall of **67.1 ms**. The benchmark records the exact seed and morphology; open `/?seed=1571198069` to rebuild the shape.
+That checkpoint's 90-second run collected 5,139 intervals and 433 GPU samples. CPU submission mean/p95 was **0.324 / 0.400 ms**; GPU mean/p95 **1.863 / 2.032 ms**. It included **128 intervals over 33.34 ms** and a maximum stall of **67.1 ms**. The benchmark records the exact seed and morphology; open `/?seed=1571198069` to rebuild the shape.
 
 This is close to the browser's observed 60 Hz cadence, **not stable 60 fps acceptance; 120 fps was not demonstrated**. Earlier low-FPS results remain first-class evidence. The old near-60 samples do not substitute for the current sustained result.
 
@@ -50,7 +52,7 @@ Committed raw final measurements, including every frame interval:
 - [Standalone Chrome / 720p](benchmarks/2026-10-11-chrome-ultra-720p.json)
 - [Owner-paused sync / 1080p orbit / 90 s](benchmarks/2026-10-11-paused-sync-ultra-1080p-orbit-90s.json)
 - [CPU probe / 1080p](benchmarks/2026-10-11-cpu-probe-ultra-1080p.json)
-- [**Current generator / 1080p orbit / 90 s**](benchmarks/2026-10-11-final-parametric-ultra-1080p-90s.json)
+- [**Previous generator / 1080p orbit / 90 s**](benchmarks/2026-10-11-final-parametric-ultra-1080p-90s.json)
 - [Initial filtered UI](benchmarks/2026-10-11-initial-720p.json), [earlier near 60 / 720p](benchmarks/2026-10-11-no-css-filter-720p.json), [earlier near 60 / 1080p](benchmarks/2026-10-11-high-1080p.json)
 
 Exploratory reports and JPEG screenshots are retained in the ignored `output/cumulonimbus-2026-10-11/` directory. Export from the scene's controls to reproduce a run. For a comparable test, leave it visible, finish compilation first, close the diagnostics panel, and do not change controls during sampling.

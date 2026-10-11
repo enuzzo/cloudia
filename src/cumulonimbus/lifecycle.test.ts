@@ -29,7 +29,7 @@ describe('scene async lifecycle',()=>{
   it('starts exactly one RAF when initial generation finishes in a hidden tab',async()=>{
     const hidden=vi.spyOn(document,'hidden','get').mockReturnValue(true);
     const {app}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4)}}});await starting;
+    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)}}}});await starting;
     expect(requestAnimationFrame).not.toHaveBeenCalled();
     hidden.mockReturnValue(false);document.dispatchEvent(new Event('visibilitychange'));
     expect(requestAnimationFrame).toHaveBeenCalledOnce();
@@ -37,13 +37,13 @@ describe('scene async lifecycle',()=>{
   });
   it('rebuilds density and lighting together and never resumes a regenerated scene after teardown',async()=>{
     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4)}}});await starting;
+    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)}}}});await starting;
     root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
     expect(control.workers).toHaveLength(2);
     expect(root.querySelector<HTMLButtonElement>('[data-action="benchmark"]')!.disabled).toBe(true);
     const lateMessage=control.workers[1].onmessage!;
     app.destroy();await flush();
-    lateMessage({data:{volume:{size:1,data:new Uint8Array(4)}}});await flush();
+    lateMessage({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)}}}});await flush();
     expect(control.render).toHaveBeenCalledOnce();
     expect(device.destroy).toHaveBeenCalledOnce();
   });
@@ -60,7 +60,7 @@ describe('scene async lifecycle',()=>{
     expect(control.workers).toHaveLength(1);
     const worker=control.workers[0];const lateMessage=worker.onmessage!;
     control.renderer!.onDeviceLost();await flush();
-    lateMessage({data:{volume:{size:1,data:new Uint8Array(4)}}});await starting;await flush();
+    lateMessage({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)}}}});await starting;await flush();
     expect(control.originalLost).toHaveBeenCalledOnce();
     expect(worker.terminate).toHaveBeenCalled();
     expect(control.render).not.toHaveBeenCalled();

@@ -1,7 +1,44 @@
 import { describe, expect, it } from 'vitest';
-import { generateVolume, heightErosionScale, cloudParameters } from './volume';
+import { generateVolume, heightErosionScale, cloudParameters, generateDetail, sampleDetail, erodeDensity, sampleCloudDensity, bakeOccupancy, voxelCenter, BOUNDS_MIN, BOUNDS_SIZE } from './volume';
 
 describe('authored density volume', () => {
+  it('keeps displaced and interpolated boundaries inside the conservative skip mask', () => {
+    const size=32,data=new Uint8Array(size**3*4),detail={size:8,data:new Uint8Array(8**3*4)};
+    data[((16*size+16)*size+16)*4]=255;
+    bakeOccupancy({size,data},detail);
+    const center=[16.5/32,16.5/32,16.5/32];
+    for(const axis of [0,1,2]) for(const direction of [-1,1]) {
+      const coord=[...center]; coord[axis]+=direction*(.08/BOUNDS_SIZE[axis]+1/32);
+      expect(sampleDetail(detail,coord[0],coord[1],coord[2],3,false)).toBeGreaterThan(0);
+    }
+    expect(sampleDetail(detail,.1,.1,.1,3,false)).toBe(0);
+  });
+  it('allows a warp to extend density into an originally empty sample', () => {
+    const size=8,data=new Uint8Array(size**3*4);
+    for(let z=0;z<size;z++) for(let y=0;y<size;y++) for(let x=4;x<size;x++) data[((z*size+y)*size+x)*4]=255;
+    const detail={size:1,data:new Uint8Array([255,255,255,255])};
+    const x=-5+10*3.5/8;
+    expect(sampleDetail({size,data},3.5/8,.5,.5,0,false)).toBe(0);
+    expect(sampleCloudDensity({size,data},detail,x,3.75,0,0)).toBeCloseTo(.064,5);
+  });
+  it('registers world coordinates at the same centers as normalized GPU sampling', () => {
+    const size=4,data=new Uint8Array(size**3*4);
+    for(let i=0;i<size**3;i++) data[i*4]=(i%size)*70;
+    for(let i=0;i<size;i++) {
+      const coordinate=(voxelCenter(i,0,size)-BOUNDS_MIN[0])/BOUNDS_SIZE[0];
+      expect(sampleDetail({size,data},coordinate,.5,.5,0,false)).toBeCloseTo(i*70/255,6);
+    }
+    expect(sampleDetail({size,data},-1,.5,.5,0,false)).toBe(0);
+    expect(sampleDetail({size,data},2,.5,.5,0,false)).toBeCloseTo(210/255);
+  });
+  it('keeps tiled detail continuous at repeats and preserves fully dense interiors', () => {
+    const detail=generateDetail(16,71);
+    expect(sampleDetail(detail,0,.32,.46,0)).toBeCloseTo(sampleDetail(detail,1,.32,.46,0),6);
+    expect(Math.abs(sampleDetail(detail,-.0001,.32,.46,0)-sampleDetail(detail,.0001,.32,.46,0))).toBeLessThan(.01);
+    expect(erodeDensity(1,.4)).toBe(1);
+    expect(erodeDensity(.2,.4)).toBe(0);
+    expect(erodeDensity(.6,.4)).toBeCloseTo(1/3);
+  });
   it('varies bounded morphology by seed and can reproduce a chosen shape', () => {
     const first=cloudParameters(71), second=cloudParameters(912);
     expect(first).toEqual(cloudParameters(71));

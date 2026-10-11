@@ -1,17 +1,18 @@
 import { Data3DTexture, LinearFilter, MeshBasicNodeMaterial, NoColorSpace, QuadMesh,
-  RGBAFormat, UnsignedByteType, Vector2, Vector3, WebGPURenderer } from 'three/webgpu';
+  RGBAFormat, RepeatWrapping, UnsignedByteType, Vector2, Vector3, WebGPURenderer } from 'three/webgpu';
 import { texture3D, uniform, uv } from 'three/tsl';
 import { integrateCloud } from './cloudShader';
-import { EXTINCTION, SUN_LEFT, SUN_RIGHT, cloudParameters, type CloudVolume } from './volume';
+import { EXTINCTION, SUN_LEFT, SUN_RIGHT, VOLUME_RESOLUTION, cloudParameters, iceHeights, type CloudVolume } from './volume';
 import { FrameMeasurement, summarizeFrames } from './performance';
 import './scene.css';
 
 const QUALITY = {
   native: {label:'Alta · 100% / 128 passi', scale:1, steps:128},
-  ultra: {label:'Massima · 100% / 192 passi', scale:1, steps:192},
+  ultra: {label:'Massima · 100% / 256 passi', scale:1, steps:256},
   balanced: {label:'Fluida · 75% / 96 passi', scale:.75, steps:96},
 } as const;
 type Quality = keyof typeof QUALITY;
+type CloudTextures = {macro:Data3DTexture;detail:Data3DTexture};
 
 export class CumulonimbusApp {
   private renderer: WebGPURenderer | null = null;
@@ -19,6 +20,7 @@ export class CumulonimbusApp {
   private quad: QuadMesh | null = null;
   private material: MeshBasicNodeMaterial | null = null;
   private volume: Data3DTexture | null = null;
+  private detailVolume: Data3DTexture | null = null;
   private worker: Worker | null = null;
   private raf = 0;
   private destroyed = false;
@@ -63,6 +65,7 @@ export class CumulonimbusApp {
   private readonly drift = uniform(new Vector3());
   private readonly sun = uniform(new Vector3(...SUN_LEFT).normalize());
   private readonly lightSide = uniform(0);
+  private readonly iceRange = uniform(new Vector2());
   private readonly controls: HTMLElement;
   private readonly status: HTMLElement;
   private readonly metrics: HTMLElement;
@@ -135,12 +138,12 @@ export class CumulonimbusApp {
       renderer.domElement.setAttribute('aria-label','Cumulonembo volumetrico in un cielo diurno');
       this.root.querySelector('.cloud-stage')!.append(renderer.domElement);
       const texture = await this.loadVolume();
-      if(this.destroyed || this.deviceLost) { texture.dispose(); return; }
+      if(this.destroyed || this.deviceLost) { texture.macro.dispose();texture.detail.dispose(); return; }
       this.installVolume(texture);
       this.applySize();
       this.quad!.render(renderer); // Compile the shader before declaring the scene ready.
       this.ready=true;
-      this.status.textContent='WebGPU · volume 224³ · movimento lento';
+      this.status.textContent=`WebGPU · volume ${VOLUME_RESOLUTION}³ · movimento lento`;
       this.status.classList.add('loaded');
       this.setButtonEnabled('benchmark',true); this.setButtonEnabled('sustained',true);
       this.setButtonEnabled('new-cloud',true);
@@ -153,15 +156,16 @@ export class CumulonimbusApp {
       await this.releaseGPU();
     }
   }
-  private installVolume(texture: Data3DTexture) {
-    const oldMaterial=this.material, oldVolume=this.volume;
-    const volumeNode=texture3D(texture);
-    this.volume=texture; this.material=new MeshBasicNodeMaterial();
-    this.material.fragmentNode=integrateCloud({uv:uv(),volume:volumeNode,volumeSampler:volumeNode,
+  private installVolume(textures: CloudTextures) {
+    const oldMaterial=this.material, oldVolume=this.volume, oldDetail=this.detailVolume;
+    const volumeNode=texture3D(textures.macro), detailNode=texture3D(textures.detail);
+    this.volume=textures.macro;this.detailVolume=textures.detail; this.material=new MeshBasicNodeMaterial();
+    this.iceRange.value.fromArray(iceHeights(this.seed));
+    this.material.fragmentNode=integrateCloud({uv:uv(),volume:volumeNode,volumeSampler:volumeNode,detail:detailNode,detailSampler:detailNode,iceRange:this.iceRange,
       origin:this.origin,forward:this.forward,right:this.right,up:this.up,aspect:this.aspect,tanFov:uniform(.2867),
       stepSize:this.stepSize,resolution:this.resolution,drift:this.drift,sun:this.sun,lightSide:this.lightSide,extinction:uniform(EXTINCTION)});
     this.quad=new QuadMesh(this.material);
-    oldMaterial?.dispose(); oldVolume?.dispose();
+    oldMaterial?.dispose(); oldVolume?.dispose();oldDetail?.dispose();
   }
   private async newCloud() {
     if(!this.ready) return;
@@ -171,10 +175,10 @@ export class CumulonimbusApp {
     this.seed=crypto.getRandomValues(new Uint32Array(1))[0];
     try {
       const texture=await this.loadVolume();
-      if(this.destroyed || this.deviceLost) {texture.dispose();return;}
+      if(this.destroyed || this.deviceLost) {texture.macro.dispose();texture.detail.dispose();return;}
       this.installVolume(texture);
       this.simulationTime=0; this.previous=0; this.intervals=[]; this.ready=true;
-      this.status.textContent='WebGPU · volume 224³ · movimento lento'; this.status.classList.add('loaded');
+      this.status.textContent=`WebGPU · volume ${VOLUME_RESOLUTION}³ · movimento lento`; this.status.classList.add('loaded');
       this.setButtonEnabled('new-cloud',true); this.setButtonEnabled('benchmark',true); this.setButtonEnabled('sustained',true);
       if(!document.hidden) this.raf=requestAnimationFrame(this.frame);
     } catch(error) {
@@ -182,7 +186,7 @@ export class CumulonimbusApp {
       this.status.textContent=error instanceof Error?error.message:String(error); this.status.classList.add('failed');
     }
   }
-  private loadVolume(): Promise<Data3DTexture> {
+  private loadVolume(): Promise<CloudTextures> {
     this.worker = new Worker(new URL('./volume.worker.ts',import.meta.url),{type:'module'});
     return new Promise((resolve,reject)=>{
       const worker=this.worker!;
@@ -192,16 +196,21 @@ export class CumulonimbusApp {
         if(event.data.progress!==undefined) this.status.textContent=`Formazione della nube e della luce · ${Math.round(event.data.progress*100)}%`;
         if(event.data.error) { worker.terminate(); this.worker=null; this.rejectVolume=null; reject(new Error(event.data.error)); }
         if(event.data.volume) {
-          const {size,data}=event.data.volume;
+          const {size,data,detail}=event.data.volume;
           const texture = new Data3DTexture(data,size,size,size);
           texture.format=RGBAFormat; texture.type=UnsignedByteType; texture.colorSpace=NoColorSpace;
           texture.minFilter=LinearFilter; texture.magFilter=LinearFilter; texture.unpackAlignment=1;
           texture.generateMipmaps=false; texture.needsUpdate=true;
-          worker.terminate(); this.worker=null; this.rejectVolume=null; resolve(texture);
+          const detailTexture=new Data3DTexture(detail.data,detail.size,detail.size,detail.size);
+          detailTexture.format=RGBAFormat;detailTexture.type=UnsignedByteType;detailTexture.colorSpace=NoColorSpace;
+          detailTexture.minFilter=LinearFilter;detailTexture.magFilter=LinearFilter;detailTexture.unpackAlignment=1;
+          detailTexture.wrapS=RepeatWrapping;detailTexture.wrapT=RepeatWrapping;detailTexture.wrapR=RepeatWrapping;
+          detailTexture.generateMipmaps=false;detailTexture.needsUpdate=true;
+          worker.terminate(); this.worker=null; this.rejectVolume=null; resolve({macro:texture,detail:detailTexture});
         }
       };
       worker.onerror=()=>{ worker.terminate(); this.worker=null; this.rejectVolume=null; reject(new Error('La generazione del volume è fallita. Ricarica la scena.')); };
-      worker.postMessage({size:224,seed:this.seed});
+      worker.postMessage({size:VOLUME_RESOLUTION,seed:this.seed});
     });
   }
   private frame = (now: number) => {
@@ -252,7 +261,7 @@ export class CumulonimbusApp {
   }
   private updateMetrics(now: number) {
     const stats=summarizeFrames(this.intervals);
-    this.metrics.textContent=`WebGPU · ${stats.fps.toFixed(1)} fps rAF · ${this.adapterInfo.description || this.adapterInfo.vendor || 'GPU non identificata'}\nOutput ${this.outputWidth}×${this.outputHeight} · interno ${this.internalWidth}×${this.internalHeight}\n${QUALITY[this.quality].steps} passi nominali · mediana ${stats.medianMs.toFixed(2)} ms · p95 ${stats.p95Ms.toFixed(2)} ms\nGPU ${this.gpuMs===null?'non disponibile':`${this.gpuMs.toFixed(2)} ms`} · volume 224³ RGBA8 · nessun TAA\nSeme della nube: ${this.seed}`;
+    this.metrics.textContent=`WebGPU · ${stats.fps.toFixed(1)} fps rAF · ${this.adapterInfo.description || this.adapterInfo.vendor || 'GPU non identificata'}\nOutput ${this.outputWidth}×${this.outputHeight} · interno ${this.internalWidth}×${this.internalHeight}\n${QUALITY[this.quality].steps} passi nominali · mediana ${stats.medianMs.toFixed(2)} ms · p95 ${stats.p95Ms.toFixed(2)} ms\nGPU ${this.gpuMs===null?'non disponibile':`${this.gpuMs.toFixed(2)} ms`} · volume ${VOLUME_RESOLUTION}³ + dettaglio 64³ · nessun TAA\nSeme della nube: ${this.seed}`;
     if(this.measurement && !this.measurement.result && !this.measurement.cancelReason) {
       const remaining=Math.max(0,(this.measurement.start+this.measurement.warmup+this.measurement.duration-now)/1000);
       this.result.textContent=`Misura in corso · ${Math.ceil(remaining)} s · ${this.measurement.intervals.length} frame raccolti`;
@@ -266,7 +275,7 @@ export class CumulonimbusApp {
     this.measurement=new FrameMeasurement(performance.now(),duration,2000);
     this.benchmarkContext={date:new Date().toISOString(),backend:'WebGPU',adapter:this.adapterInfo,threeRevision:'186',quality:this.quality,
       output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],nominalSteps:QUALITY[this.quality].steps,
-      volume:[224,224,224],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
+      rendererVersion:'fibrous-detail-v3',volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[64,64,64],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
       userAgent:navigator.userAgent,devicePixelRatio:window.devicePixelRatio,
       method:'Visible requestAnimationFrame intervals, one cloud draw submission per callback; not compositor presentation. CPU callback work through draw submission, asynchronous GPU timestamp samples when available.',warmupMs:2000,targetDurationMs:duration};
     this.setButtonEnabled('benchmark',false); this.setButtonEnabled('sustained',false);
@@ -322,7 +331,7 @@ export class CumulonimbusApp {
       await this.initialization?.catch(()=>{});
       await this.timestampPromise;
       this.releasingGPU=true;
-      this.material?.dispose(); this.volume?.dispose(); this.renderer?.dispose(); this.device?.destroy(); this.renderer?.domElement.remove();
+      this.material?.dispose(); this.volume?.dispose();this.detailVolume?.dispose(); this.renderer?.dispose(); this.device?.destroy(); this.renderer?.domElement.remove();
     })();
     return this.cleanup;
   }

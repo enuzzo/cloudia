@@ -64,3 +64,8 @@ Comparison points:
 - Cloud framing: Flow deck reads well in the shorter hero crop, with sky above and cloud mass through the middle.
 - Remaining visual gap: the fixture proves integration, not final artistry. We still need stronger volumetric parallax, more sculpted billows, and a deliberate alpha/brand strategy if a client wants the logo truly behind translucent clouds.
 - Browser QA: verified at `http://127.0.0.1:5173/examples/elementor-hero.html`, title `Cloudia Elementor Hero Fixture`, 2 canvas elements, 1 `#cloudia-mount`, no console warnings/errors.
+
+
+### 2026-10-11 — central cumulonimbus fine refinement
+
+Same-seed before/after desktop images, live orbit, left/right lighting, 32 tests and sustained production measurements are recorded in [refinement report](REFINEMENT-2026-10-11.md). Incus is now flatter with stretched fine detail; convection has smaller lobes and displaced contours. Remaining broad smooth anvil patches and approximate fill light prevent a blanket photographic-quality claim. Owner visual acceptance remains open. No gestures added in this checkpoint.

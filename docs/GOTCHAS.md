@@ -237,3 +237,11 @@ Future production choice:
 - keep brand in front and style it as part of the hero composition;
 - add an explicit embed alpha/compositing mode;
 - or render Cloudia as a background behind text rather than as an overlay above text.
+
+
+## 2026-10-11 — fine density, cache registration and empty space
+
+- Domain-warp density must be evaluated before the raw-envelope empty test. Otherwise outward displaced features are clipped; the light bake must use the same support.
+- Normalized linear texture samples place voxel i at (i+.5)/size, not i/(size-1). Use the former in geometry rasterization, fine-density bake and light transport, especially for anisotropic ice detail.
+- Fine noise over every ray sample raised full-HD GPU cost to 9.1 ms. Packing a conservatively dilated occupancy mask into unused detail alpha reduced it to 3.8 ms without lowering quality. Mask is sampled in normalized world coordinates; RGB noise uses repeated cloud coordinates.
+- Near-60 averages can hide very long stalls. Keep max and count >33.34 ms. Production left/right 90-second runs reached 59.98 with max18.9 and no long intervals, while a development run averaged59.20 with a250ms stall. Host load changed too; Vite is not an established exclusive cause.

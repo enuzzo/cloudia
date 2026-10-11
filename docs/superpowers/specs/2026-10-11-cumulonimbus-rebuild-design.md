@@ -60,3 +60,8 @@ The future gesture pipeline will use a worker with at most one inference in flig
 ## Next stage after approval
 
 Write the implementation plan, select the browser prototype's concrete files/dependency versions, then implement and measure the isolated cloud. Use the research report's pinned references; keep any imported third-party source license and attribution intact.
+
+
+## 11 October refinement checkpoint
+
+The approved central WebGPU scene now uses 256³ macro density/light, 64³ periodic fine erosion and domain warp, anisotropic ice detail and a conservative skip mask packed in the fine texture alpha. All bake/GPU sampling uses texel centers. Massima is 256 nominal steps at full configured resolution. Production full-HD slow-orbit tests reached 59.98 fps for 90 seconds with both sun directions, zero intervals >33.34 ms; see `docs/REFINEMENT-2026-10-11.md` for all slow and successful runs. This is bounded RAF cadence evidence, not 120 fps or compositor presentation certification. Photographic visual acceptance remains open before hand gestures.
