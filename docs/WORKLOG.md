@@ -15,6 +15,15 @@ This file tracks what has happened, what is next, and what must stay visible acr
 
 ## Work Completed
 
+### 2026-10-11 — rebuild research and interruption recovery
+
+- User reset the brief: photographic central cumulonimbus, browser first on this Mac, online later, 60/120 fps ambition; swipes/fist/pinch control weather in subsequent stages.
+- Inspected the clean legacy code and ran baseline verification: 16 tests and TypeScript passed. Central Cumulus is screen-space 2D; camera tracking is not connected.
+- Surveyed 12 recent renderer/library/research candidates, including public GitHub metadata and pinned source inspection. Browser-inspected Three.js, Takram and Skydrift; no sustained performance claim made.
+- Recorded findings in `docs/RENDERER-RESEARCH-2026-10-11.md` and proposed first-scene design in `docs/superpowers/specs/2026-10-11-cumulonimbus-rebuild-design.md`.
+- Recovered after interrupted session and restarted Vite at `http://127.0.0.1:5173/`.
+- Product code/dependencies unchanged. No purchase, deploy or push. Design review and measured prototype remain open.
+
 ### 2026-05-16
 
 - Investigated severe demo jank reported during local testing.
