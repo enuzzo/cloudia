@@ -1,5 +1,7 @@
 # Cloudia Lab Design
 
+> October 2026: the new default WebGPU cumulonimbus scene is governed by [the approved rebuild spec](2026-10-11-cumulonimbus-rebuild-design.md). This document remains the legacy WebGL lab/embed design.
+
 Date: 2026-05-13
 Project root: `/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia`
 

@@ -5,7 +5,7 @@ This file tracks what has happened, what is next, and what must stay visible acr
 ## Current State
 
 - Project folder: `/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia`
-- Local git repo: initialized on `main`
+- Current local branch: `codex/cumulonimbus-webgpu`; legacy baseline retained in Git
 - Foundation commit: `45795c9 chore: seed cloudia project docs`
 - Operating protocol commit: `38df028 docs: add cloudia operating protocol`
 - GitHub remote: `https://github.com/enuzzo/cloudia.git`
@@ -14,6 +14,19 @@ This file tracks what has happened, what is next, and what must stay visible acr
 - Push status: `main` tracks `origin/main`
 
 ## Work Completed
+
+### 2026-10-11 — approved WebGPU cumulonimbus, local checkpoint
+
+- User approved the Three.js/WebGPU scene and measured local browser validation, gestures afterwards.
+- Upgraded Three.js and matching types to r186. New default route renders a deterministic 224³ density/optical-depth volume, worker-generated once, with a bounded cached-light WGSL ray integrator. Existing WebGL lab remains at `?legacy`; hero mounting API remains unchanged.
+- Added pause/reset/orbit, two matching cached sun directions, explicit resolution/quality presets, 30/90-second RAF benchmarks, optional GPU timestamp and CPU submission samples, raw JSON export. No hidden resolution reduction.
+- Added `Nuova nube`: bounded seeded tower/anvil/width/lean morphology plus varied lobes and erosion; regenerate density and lighting together. Report captures seed/parameters and `?seed=` reproduces a shape.
+- Browser-verified two distinct generated clouds, light/orbit/pause, narrow-screen layout, contained output aspect, legacy routes, clean current console. Independent review led to regression tests for pending init cleanup, terminal device loss, regeneration teardown and single RAF after hidden-tab loading.
+- Verification: 28 tests across 10 files, TypeScript, application build and hero build passed. Build warns about the size of Three's renderer bundle; startup optimization is separate from frame cost.
+- Final random morphology (seed 1571198069), Massima 192 steps, **1920×1080 actual internal buffer**, 90 seconds: **57.09 fps rAF**, p95 17.7 ms / p99 34.0 ms, 128 intervals >33.34 ms, CPU mean 0.324 ms, GPU mean 1.863 ms. Earlier lower results are retained in the performance report. Backblaze/Dropbox were paused by the owner; other host/browser workload still shared.
+- **Photographic visual acceptance and sustained 60/120 fps remain open.** This is an implemented and measured local checkpoint, not a claim that the full visual/performance brief has passed. No online deployment or push.
+- Code checkpoint: `6ffa9e5` on `codex/cumulonimbus-webgpu`; preceding research checkpoint `0c3553c`.
+- Next: preserve this checkpoint; deepen fine-scale cloud/anvil structure and the light model; isolate remaining browser/presentation cadence with controlled comparisons. Implement gestures only after the first-scene visual/performance gate.
 
 ### 2026-10-11 — rebuild research and interruption recovery
 
@@ -230,6 +243,8 @@ Definition of done:
 
 ## Next Actions
 
-1. Have the user test the optimized local demo subjectively.
-2. If still janky, add an explicit quality selector and/or frame skipper for the weather overlay.
-3. Continue implementation plan with MediaPipe hand-tracking toggle.
+1. Refine the new scene's photographic detail and anvil structure; retain comparable seed-based images.
+2. Isolate remaining cadence losses with the documented benchmark and browser-only control; do not substitute GPU time for visible FPS.
+3. After scene acceptance, connect hand recognition for swipes, fist/rain and pinch/lightning, with independent inference scheduling.
+
+Restart: `bun run dev`, open `http://127.0.0.1:5173/?seed=1571198069`; read `docs/PERFORMANCE-2026-10-11.md` and the approved rebuild spec. No deployment in this checkpoint.

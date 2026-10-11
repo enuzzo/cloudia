@@ -2,6 +2,17 @@
 
 This file is for traps we discover once, so we do not politely step on them again.
 
+## October 2026 WebGPU scene
+
+- Three r181 timestamp cleanup had a shadowed error-handler bug. Current implementation pins r186 and matching types. Dispose only after renderer init and pending timestamp resolve settle; device loss is terminal even if a worker message arrives late.
+- Initial worker completion in a hidden tab must not schedule RAF. Visibility resume cancels an existing pending RAF before starting one. Multiple chains would invalidate the frame metric.
+- Baked lighting supports exactly its two sun directions; continuous sun changes require rebuilding caches. Regeneration replaces density and all caches together, and disposes the old texture/material.
+- Hard height thresholds in erosion cause visible horizontal seams; use smooth transitions. Apply the same sky tone mapping on AABB hits and misses. Fullscreen quad UV needs the explicit vertical orientation correction.
+- Output buffers and internal resolution are explicit. Fixed-aspect output is contained/letterboxed, not stretched; the default window mode uses one canvas pixel per CSS pixel, not devicePixelRatio.
+- RAF cadence is not presented FPS; GPU timestamps only cover GPU work. CPU submission measurements also exclude GPU waits and compositor work. Preserve low-FPS samples and percentile tails. Current sustained 60/120 fps and photographic acceptance are still open.
+- Export filenames must use the captured report metadata, not current controls. A previous completed report can remain exportable after controls change; its recorded seed/resolution stay authoritative.
+- Application build cleans `dist`; hero build uses `emptyOutDir:false`. Run app then hero to retain both outputs. Do not run app build last if both are needed.
+
 ## Environment And GitHub
 
 ### GitHub CLI token is invalid

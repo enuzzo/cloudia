@@ -1,7 +1,7 @@
 # Cloudia — first cumulonimbus scene
 
 Date: 11 October 2026
-Status: proposed design, awaiting user review. Supersedes the May design only for the new scene after approval. The old lab/embed remains a reference.
+Status: approved by user on 2026-10-11; implemented locally and undergoing measured browser validation. Supersedes the May design for the new scene. The old lab/embed remains available.
 
 ## Intended outcome
 
