@@ -1,18 +1,18 @@
-import "./styles.css";
-import { LabApp } from "./lab/LabApp";
+import './styles.css';
 
-const stage = document.querySelector<HTMLElement>("[data-testid='cloudia-stage']");
-const status = document.querySelector<HTMLParagraphElement>("#cloudia-status");
-
-if (!stage) {
-  throw new Error("Cloudia stage element is missing");
+const root=document.querySelector<HTMLElement>('#cloudia-lab');
+if(!root) throw new Error('Cloudia root element is missing');
+if(new URLSearchParams(location.search).has('legacy')) {
+  const {LabApp}=await import('./lab/LabApp');
+  const app=new LabApp(root.querySelector<HTMLElement>("[data-testid='cloudia-stage']")!);
+  app.start();
+  const status=root.querySelector('#cloudia-status');
+  if(status) status.textContent='Laboratorio originale · WebGL';
+  window.addEventListener('beforeunload',()=>app.destroy());
+} else {
+  root.className='cloud-scene';
+  const {CumulonimbusApp}=await import('./cumulonimbus/CumulonimbusApp');
+  const app=new CumulonimbusApp(root);
+  void app.start();
+  window.addEventListener('beforeunload',()=>app.destroy());
 }
-
-const app = new LabApp(stage);
-app.start();
-
-if (status) {
-  status.textContent = "Lab running. Tune gently; the atmosphere is listening.";
-}
-
-window.addEventListener("beforeunload", () => app.destroy());
