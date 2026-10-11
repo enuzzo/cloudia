@@ -15,6 +15,13 @@ This file tracks what has happened, what is next, and what must stay visible acr
 
 ## Work Completed
 
+### 2026-10-11 — Commissioner typography
+
+- Owner requested Commissioner for the interface. Added official Google Fonts Latin variable WOFF2 (~37 KB) to local public assets with OFL license and source record.
+- Root typography now uses Commissioner; cumulonimbus UI inherits it, including native select controls. Existing cloud seed/state preserved during CSS hot reload.
+- Browser confirmed the font loaded and was applied to heading and diagnostics selectors; no console warnings/errors. Application and hero builds passed. This CSS-only change does not require new unit tests or a repeated performance claim.
+- Local change only; no online deployment. Next renderer/gesture acceptance work remains as recorded below.
+
 ### 2026-10-11 — approved WebGPU cumulonimbus, local checkpoint
 
 - User approved the Three.js/WebGPU scene and measured local browser validation, gestures afterwards.
