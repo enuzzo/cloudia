@@ -99,10 +99,10 @@ export function sampleCloudDensity(envelope:DetailVolume,detail:DetailVolume,x:n
     // Larger ice eddies bend the fine filaments. Lower vertical frequency limits
     // undersampling by the 256-volume light bake.
     const bend=sampleDetail(detail,x*.12,y*.10,z*.06,1);
-    const wisps=sampleDetail(detail,x*.035+bend*.06,y*.38+x*.026+(bend-.5)*.035,z*.022,0);
-    erosion=erosion*(1-ice)+(.16+(1-wisps)*.64)*ice;
-    const strand=smoothstep(.25,.6,wisps);
-    material=1-ice+(.01+.235*strand)*(1-.7*smoothstep(.4,3.8,x))*ice;
+    const wisps=sampleDetail(detail,x*.05+bend*.06,y*.42+x*.026+(bend-.5)*.035,z*.022,0);
+    erosion=erosion*(1-ice)+(.11+(1-wisps)*.78)*ice;
+    const strand=smoothstep(.3,.7,wisps);
+    material=1-ice+(.008+.22*strand**1.7)*(1-.7*smoothstep(.4,3.8,x))*ice;
   }
   return erodeDensity(warped,erosion)*material;
 }

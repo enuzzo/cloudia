@@ -1,0 +1,42 @@
+[
+  {
+    "name": "formation-middle",
+    "stamp": "2026-10-12T23:13:20.955Z",
+    "metric": "Worker WebGPU · 60.0 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 17.80 ms\nGPU rendering 5.37 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 17.4 s · seme: 1571198069\nCielo: clear · velocità 1× · lampi: 0 · luce 0.00"
+  },
+  {
+    "name": "storm-before-flash",
+    "stamp": "2026-10-12T23:13:53.687Z",
+    "metric": "Worker WebGPU · 60.0 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 18.40 ms\nGPU rendering 5.70 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 49.5 s · seme: 1571198069\nCielo: storm · velocità 1× · lampi: 0 · luce 0.00"
+  },
+  {
+    "name": "haze-right-orbit",
+    "stamp": "2026-10-12T23:22:16.253Z",
+    "metric": "Worker WebGPU · 54.8 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 33.30 ms\nGPU rendering 5.77 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 335.2 s · seme: 1571198069\nCielo: haze · velocità 1× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "mobile-weather-controls",
+    "stamp": "2026-10-12T23:23:49.639Z",
+    "metric": "Worker WebGPU · 60.0 fps rAF · amd\nOutput 355×767 · interno 355×767\n384 passi nominali · mediana 16.70 ms · p95 18.20 ms\nGPU rendering 1.90 ms · flusso 0.066 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 696.4 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "main-young-held-light-v13",
+    "stamp": "2026-10-12T23:29:21.169Z",
+    "metric": "WebGPU · 60.0 fps rAF · amd\nOutput 1143×954 · interno 1143×954\n384 passi nominali · mediana 16.70 ms · p95 18.40 ms\nGPU rendering 3.60 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 14.1 s · seme: 1571198069\nCielo: clear · velocità 1× · lampi: 0 · luce 0.85"
+  },
+  {
+    "name": "mobile-fixed-controls-v13",
+    "stamp": "2026-10-12T23:29:21.755Z",
+    "metric": "WebGPU · 60.0 fps rAF · amd\nOutput 1143×954 · interno 1143×954\n384 passi nominali · mediana 16.70 ms · p95 18.30 ms\nGPU rendering 3.47 ms · flusso 0.066 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 14.1 s · seme: 1571198069\nCielo: clear · velocità 1× · lampi: 0 · luce 0.85"
+  },
+  {
+    "name": "final-clear-v13",
+    "stamp": "2026-10-12T23:33:42.440Z",
+    "metric": "Worker WebGPU · 60.0 fps rAF · amd\nOutput 1143×954 · interno 1143×954\n384 passi nominali · mediana 16.70 ms · p95 18.20 ms\nGPU rendering 4.00 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 289.5 s · seme: 1571198069\nCielo: storm · velocità 1× · lampi: 11 · luce 0.00"
+  },
+  {
+    "name": "final-storm-v13",
+    "stamp": "2026-10-12T23:33:48.239Z",
+    "metric": "Worker WebGPU · 59.3 fps rAF · amd\nOutput 1143×954 · interno 1143×954\n384 passi nominali · mediana 16.70 ms · p95 18.40 ms\nGPU rendering 5.44 ms · flusso 0.066 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 294.7 s · seme: 1571198069\nCielo: storm · velocità 1× · lampi: 12 · luce 0.00"
+  }
+]

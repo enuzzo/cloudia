@@ -1,0 +1,20 @@
+[
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer: Uncaptured WebGPU GPUValidationError: [Invalid RenderPipeline \"renderPipeline_MeshBasicNodeMaterial_14\"] is invalid due to a previous error.\n - While encoding [RenderPassEncoder (unlabeled)].SetPipeline([Invalid RenderPipeline \"renderPipeline_MeshBasicNodeMaterial_14\"]).\n - While finishing [CommandEncoder \"renderContext_0\"].\n",
+    "timestamp": "2026-10-12T23:08:16.821Z",
+    "url": "http://127.0.0.1:4177/assets/three.core-DHqwlPhg.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer: Uncaptured WebGPU GPUValidationError: [Invalid CommandBuffer from CommandEncoder \"renderContext_0\"] is invalid due to a previous error.\n - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder \"renderContext_0\"]])\n",
+    "timestamp": "2026-10-12T23:08:16.821Z",
+    "url": "http://127.0.0.1:4177/assets/three.core-DHqwlPhg.js"
+  },
+  {
+    "level": "error",
+    "message": "THREE.WebGPURenderer [renderPipeline_MeshBasicNodeMaterial_14 / fragment error] at line 168:97: unresolved value 'nodeUniform1_sampler'\n  \toutput.color = integrateCloud( nodeVarying0, nodeUniform0, nodeUniform0_sampler, nodeUniform1, nodeUniform1_sampler, object.nodeUniform2, object.nodeUniform3, object.nodeUniform4, object.nodeUniform5, nodeUniform6, nodeUniform6_sampler, nodeUniform7, nodeUniform7_sampler, object.nodeUniform8, object.nodeUniform9, object.nodeUniform10, object.nodeUniform11, object.nodeUniform12, object.nodeUniform13, object.nodeUniform14, object.nodeUniform15, object.nodeUniform16, object.nodeUniform17, object.nodeUniform18, object.nodeUniform19, object.nodeUniform20, object.nodeUniform21, object.nodeUniform22, object.nodeUniform23, object.nodeUniform24, object.nodeUniform25 );\n                                                                                                  ^",
+    "timestamp": "2026-10-12T23:08:16.886Z",
+    "url": "http://127.0.0.1:4177/assets/three.core-DHqwlPhg.js"
+  }
+]

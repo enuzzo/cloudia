@@ -280,3 +280,13 @@ Future production choice:
 - Worker RAF clocks are local: retain actual timestamp/timeOrigin evidence before interpreting dispatch delay. OffscreenCanvas moves submission off the document thread but does not isolate compositor/whole-host scheduling. Do not infer improvement from one60fps run when both main and worker controls hold60.
 - Transfer the HTML canvas once. Catch synchronous constructor/postMessage failure; errors are terminal and late ready/metrics messages must not revive controls. Send device-loss text before terminal status, then stop and await cleanup with bounded worker termination.
 - `?worker=1` is experimental; main remains default. Keep shared rendering logic and explicit executionThread metadata, frozen-flow initialization and visibility cancellation. See WORKER-2026-10-13.md.
+
+
+### 13 October — atmosphere and storm
+
+- Float32 sky textures can omit a WGSL sampler on devices without float32-filterable. Use the128² half-float LUT; startup scopes validation before emitting ready. Unit tests/build do not compile actual WGSL.
+- Live flow now evaluates five analytic thermals into16³; historical atlas helpers are reference utilities, not live animation. Saturation preserves the occupancy displacement bounds. Dynamic erosion and changed fibre microstructure make cached optical-depth lighting approximate.
+- Cloud speed and acoustic delay use separate clocks. Start thunder from the first illuminated submitted frame and compensate worker-message delivery; pause/reset/hide/regeneration/teardown cancel pending sound. Audio activation/synthesis happen after the user click, never on each flash/frame.
+- Short strokes can be missed by screenshot capture; record timestamps and do not present held-light preview as an actual temporal flash. The sparse replay is not a60fps recording.
+- Diagnostic/weather panels sit above the full wrapped controls height (`100% +12px`), not a fixed mobile offset. Viewport overrides can report different CSS dimensions under zoom: record actual buffer/CSS sizes.
+- Current90s failures58.47/58.00 remain alongside59.96. Render GPU means around5.3–5.8ms do not certify presentation or stable60. WEATHER-2026-10-13.md is the latest handoff.

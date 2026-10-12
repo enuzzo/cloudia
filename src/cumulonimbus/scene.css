@@ -16,7 +16,7 @@
 .scene-controls button:disabled { opacity:.4; cursor:default; }
 .scene-controls details summary { list-style:none; }
 .scene-controls details summary::-webkit-details-marker { display:none; }
-.diagnostics { position:absolute; left:0; bottom:48px; width:400px; max-width:calc(100vw - 48px); padding:19px; background:#102e47; border:1px solid #ffffff30; border-radius:12px; box-shadow:0 12px 50px #14283e25; }
+.diagnostics { position:absolute; left:0; bottom:calc(100% + 12px); width:400px; max-width:calc(100vw - 48px); padding:19px; background:#102e47; border:1px solid #ffffff30; border-radius:12px; box-shadow:0 12px 50px #14283e25; }
 .diagnostics label { display:block; font-size:11px; color:#c6d5e0; margin-bottom:12px; }
 .diagnostics select { display:block; width:100%; margin-top:5px; padding:7px; background:#28485d; color:white; border:1px solid #8198aa66; border-radius:4px; font:inherit; font-size:12px; }
 .diagnostics p { white-space:pre-line; font-size:12px; line-height:1.65; font-variant-numeric:tabular-nums; }
@@ -24,4 +24,9 @@
 .benchmark-controls button { font-size:11px; padding:7px; }
 .diagnostics small { display:block; font-size:10px; line-height:1.5; opacity:.7; }
 .diagnostics a { display:inline-block; margin-top:12px; color:#c2dae9; font-size:11px; }
-@media(max-width:640px) { .scene-heading {top:22px;left:22px;} .scene-controls {left:16px;right:16px;bottom:22px;flex-wrap:wrap;} .scene-controls button,.scene-controls summary {font-size:11px;padding:8px 9px;} .scene-loading.loaded {bottom:5px;right:16px;font-size:9px;} .diagnostics {bottom:82px;max-height:65dvh;overflow:auto;} }
+@media(max-width:640px) { .scene-heading {top:22px;left:22px;} .scene-controls {left:16px;right:16px;bottom:22px;flex-wrap:wrap;} .scene-controls button,.scene-controls summary {font-size:11px;padding:8px 9px;} .scene-loading.loaded {bottom:5px;right:16px;font-size:9px;} .diagnostics {bottom:calc(100% + 12px);max-height:65dvh;overflow:auto;} }
+
+.scene-controls {right:28px;flex-wrap:wrap;}
+.weather-panel {max-height:70dvh;overflow:auto;}
+.scene-controls button:focus-visible,.scene-controls summary:focus-visible,.diagnostics select:focus-visible {outline:2px solid #e0f2ff;outline-offset:3px;}
+@media(max-width:640px) {.scene-controls {right:16px;} .weather-panel {max-height:60dvh;}}

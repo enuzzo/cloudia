@@ -284,11 +284,12 @@ Definition of done:
 
 ## Next Actions
 
-1. Profile compute/queue/presentation costs for the new GPU motion candidate; retain failed/full-HD/window results from `docs/MOTION-2026-10-12.md`. Stable60 remains open.
-2. Refine upper-fibre separation and local turret growth; broad anvil surfaces remain soft. Keep same-seed temporal visual evidence and do not substitute render-only GPU time for visible FPS.
-3. After scene acceptance, connect hand recognition for swipes, fist/rain and pinch/lightning, with independent inference scheduling.
+1. Review the current moving cloud, atmosphere and internal flashes; listen to the distance-delayed thunder. Latest implementation/evidence/restart: `WEATHER-2026-10-13.md`.
+2. Refine photographic anvil microstructure and lightning channel distribution. Current flow is authored and cached evolving light remains approximate.
+3. Keep stable60 and compositor timing as an open independent gate; latest90s runs59.96/58.47/58.00 retain all failures. No tracing bypass.
+4. After scene acceptance, connect hand recognition for swipes, fist/rain and pinch/lightning, with independent inference scheduling.
 
-Restart: `bun run dev`, open `http://127.0.0.1:5173/?seed=1571198069`; read `docs/PERFORMANCE-2026-10-11.md` and the approved rebuild spec. No deployment in this checkpoint.
+Restart: `npm run dev`, open `http://127.0.0.1:5173/?seed=1571198069&worker=1`; read `docs/WEATHER-2026-10-13.md`. No deployment or push.
 
 
 ## 2026-10-12 — local convective evolution
@@ -311,3 +312,8 @@ Extracted shared GPUSceneEngine and added opt-in OffscreenCanvas worker with sin
 ## 2026-10-13 — Chrome trace handoff
 
 Chrome154 reproduces55.67fps/30s at FullHD/384 with GPU5.65ms and queue completion71.1ms mean. No shader change. Browser security policy blocks chrome://tracing and expressly forbids alternative control paths; manual DevTools export requested, GPU/compositor trace not yet captured. TRACE-2026-10-13.md contains exact protocol and raw evidence. Chrome tab stays open; former in-app cloud tab closed to avoid duplicate rendering.
+
+
+## 2026-10-13 — convection, atmosphere and storm
+
+Implemented five local thermals and upper shear in an analytic16³ GPU field, dynamic entrainment, stronger ice fibre separation, a shared128² RGBA16F atmospheric LUT, irregular volumetric intracloud flashes/sky spill and gesture-enabled stereo thunder with physical acoustic delay. Explicit cloud speed, sky, automatic/manual flash, held-light and acoustic-distance controls. Initial float32-sampler shader failure diagnosed and retained; GPU validation now precedes ready.68tests/16files, TypeScript, application and hero builds pass. Live same-seed temporal/flash evidence and narrow-layout checks retained. FullHD/384 worker90s:59.96(cleargrowth),58.47(storm/audio),58.00(haze/right/orbit); stable60 still open. Static review corrected the shared cloud/sky flash coordinates; final v13 storm/audio58.88fps/40long intervals with5.998ms GPU rendering. Main-thread GPU/console and corrected narrow layout verified. Details and limitations in WEATHER-2026-10-13.md. Owner photography/listening acceptance remains open. No camera, gestures, publication or push.

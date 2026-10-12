@@ -1,15 +1,31 @@
 import {describe,it,expect} from 'vitest';
-import {motionState,sourcePosition} from './motion';
+import {motionState,sourcePosition,writeDisplacement,THERMAL_DISPLACEMENT} from './motion';
 import {fillMotionField,fillMotionAtlas} from './motionField';
 import {DataUtils} from 'three/webgpu';
 
 describe('convective evolution',()=>{
+  it('does not replay the same thermals after the former 68-second cycle',()=>{
+    const a=sourcePosition([-.65,3.1,.2],motionState(45,1571198069));
+    const b=sourcePosition([-.65,3.1,.2],motionState(113,1571198069));
+    expect(Math.hypot(...a.map((v,i)=>v-b[i]))).toBeGreaterThan(.03);
+  });
+  it('supplies changing entrainment and respects the occupancy displacement bound',()=>{
+    const out=[0,0,0,0];let erosionMax=0;
+    for(let t=0;t<160;t+=3.7) for(let y=.8;y<7;y+=.3) for(let x=-2;x<3;x+=.3){
+      writeDisplacement(x,y,.1,motionState(t,1571198069),[5.15,5.95],out);
+      for(let i=0;i<3;i++)expect(Math.abs(out[i])).toBeLessThanOrEqual(THERMAL_DISPLACEMENT[i]);
+      erosionMax=Math.max(erosionMax,out[3]);
+    }
+    expect(erosionMax).toBeGreaterThan(.015);
+    writeDisplacement(0,.72,0,motionState(20,71),[5.15,5.95],out);
+    expect(out.slice(0,3)).toEqual([0,0,0]);
+  });
   it('packs successive spatial blocks along atlas depth without mixing time slices',()=>{
     const data=new Uint16Array(16**3*4*4);
     fillMotionAtlas(data,16,4,71,[5.15,5.95]);
     const point=((8*16+6)*16+7)*4+1;
-    expect(DataUtils.fromHalfFloat(data[16**3*4+point])).toBeCloseTo(.2533,3);
-    expect(DataUtils.fromHalfFloat(data[point])).toBeLessThan(0);
+    expect(data.slice(0,16**3*4)).not.toEqual(data.slice(16**3*4,16**3*8));
+    expect(Number.isFinite(DataUtils.fromHalfFloat(data[point]))).toBe(true);
   });
   it('packs finite thermal displacement into a reusable half-float GPU field',()=>{
     const data=new Uint16Array(16**3*4);

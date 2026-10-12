@@ -6,6 +6,7 @@ export type RenderEvent=
  |{type:'layout';fixed:boolean}
  |{type:'state';paused:boolean;orbit:boolean;side:number}
  |{type:'report';report:Record<string,unknown>|null}
+ |{type:'flash';seed:number;distance:number;delay:number;emittedAt:number}|{type:'silence'}|{type:'stormState';auto:boolean}
  |{type:'ready'}|{type:'closed'};
 export type RenderCommand=
  |{type:'init';canvas:OffscreenCanvas;search:string;viewport:Viewport;visible:boolean}

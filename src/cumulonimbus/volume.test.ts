@@ -4,6 +4,12 @@ import { THERMAL_DISPLACEMENT } from './motion';
 import { densitySupportBounds } from './volume';
 
 describe('authored density volume', () => {
+  it('keeps intermediate ice wisps optically separated from bright fibres',()=>{
+    const envelope={size:1,data:new Uint8Array([255,0,0,0])};
+    const medium={size:1,data:new Uint8Array([128,128,128,255])};
+    const bright={size:1,data:new Uint8Array([255,128,128,255])};
+    expect(sampleCloudDensity(envelope,medium,0,6,0,1)).toBeLessThan(sampleCloudDensity(envelope,bright,0,6,0,1)*.35);
+  });
   it('bounds interpolated raw support, fine warp and flow including contraction toward the anchors',()=>{
     const envelope={size:4,data:new Uint8Array(4**3*4)};
     envelope.data[((1*4+2)*4+1)*4]=255;

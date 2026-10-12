@@ -1,6 +1,7 @@
 import {GPUSceneEngine,QUALITY,type Quality} from './GPUSceneEngine';
 import type {RenderEvent,RenderCommand,Viewport} from './renderProtocol';
 import './scene.css';
+import {ThunderAudio} from './ThunderAudio';
 export class CumulonimbusApp {
   private readonly profiling=new URLSearchParams(location.search).get('profile')==='1';
   private readonly timingMode=new URLSearchParams(location.search).get('timing')??'stages';
@@ -24,6 +25,8 @@ export class CumulonimbusApp {
   private report:Record<string,unknown>|null=null;
   private destroyed=false;
   private failed=false;
+  private audio=new ThunderAudio();
+  private audioEnabled=false;
   constructor(private readonly root:HTMLElement){
     root.innerHTML = `<div class="cloud-stage" data-testid="cloudia-stage"></div>
       <header class="scene-heading"><span>CLOUDIA</span><h1>Cumulonembo</h1><p>Un piccolo cielo, tutto da muovere.</p></header>
@@ -31,6 +34,14 @@ export class CumulonimbusApp {
       <div class="scene-controls" aria-label="Controlli del cielo">
         <button data-action="pause">Pausa</button><button data-action="orbit" aria-pressed="false">Orbita</button>
         <button data-action="light">Luce da destra</button><button data-action="reset">Ricomincia</button><button data-action="new-cloud" disabled>Nuova nube</button>
+        <details class="weather-controls"><summary>Atmosfera e temporale</summary><div class="diagnostics weather-panel">
+          <label>Cielo<select name="sky"><option value="clear">Limpido</option><option value="haze">Velato · più foschia</option><option value="storm">Temporale · luce attenuata</option></select></label>
+          <label>Velocità della nube<select name="speed"><option value="0.5">0,5× · osservazione lenta</option><option value="1" selected>1× · convezione</option><option value="2">2×</option><option value="4">4× · evidenzia il movimento</option></select></label>
+          <label>Distanza del tuono<select name="distance"><option value="1">1 km · tuono dopo 2,9 s</option><option value="3" selected>3 km · tuono dopo 8,7 s</option><option value="8">8 km · tuono dopo 23,3 s</option></select></label>
+          <div class="benchmark-controls"><button data-action="mature">Nube matura</button><button data-action="lightning">Lampo</button><button data-action="storm-auto" aria-pressed="false">Lampi automatici</button><button data-action="audio" aria-pressed="false">Attiva audio</button><button data-action="flash-preview">Isola luce del lampo</button></div>
+          <p data-testid="storm-status" role="status">Lampi interni alla nube. Audio attivabile qui.</p>
+          <small>La formazione è accelerata; il ritardo del tuono segue la distanza reale. Isola luce del lampo trattiene la luce per osservarla: premi Lampo o Ricomincia per tornare alla scena. Pausa o scheda nascosta interrompono i tuoni in attesa.</small>
+        </div></details>
         <details><summary>Qualità e misure</summary><div class="diagnostics">
           <label>Qualità<select name="quality">${Object.entries(QUALITY).map(([key,v])=>`<option value="${key}" ${key===this.quality?'selected':''}>${v.label}</option>`).join('')}</select></label>
           <label>Risoluzione output<select name="output"><option value="window">Finestra · 1 pixel per pixel CSS</option><option value="screen">Schermo · nitidezza nativa</option><option value="720">1280 × 720</option><option value="1080">1920 × 1080</option></select></label>
@@ -72,7 +83,7 @@ export class CumulonimbusApp {
   }
   private closeWorker(worker:Worker){if(this.renderWorker!==worker)return;if(this.workerStopTimer!==null)clearTimeout(this.workerStopTimer);this.workerStopTimer=null;worker.terminate();this.renderWorker=null;}
   private stopWorker(){const worker=this.renderWorker;if(!worker||this.workerStopTimer!==null)return;try{worker.postMessage({type:'stop'} satisfies RenderCommand);this.workerStopTimer=setTimeout(()=>this.closeWorker(worker),1000);}catch{this.closeWorker(worker);}}
-  private fail(text:string){this.failed=true;this.status.textContent=text;this.status.classList.remove('loaded');this.status.classList.add('failed');this.resolveReady?.();this.resolveReady=null;for(const input of this.controls.querySelectorAll<HTMLButtonElement|HTMLSelectElement>('button,select'))input.disabled=true;this.stopWorker();}
+  private fail(text:string){this.audio.destroy();this.failed=true;this.status.textContent=text;this.status.classList.remove('loaded');this.status.classList.add('failed');this.resolveReady?.();this.resolveReady=null;for(const input of this.controls.querySelectorAll<HTMLButtonElement|HTMLSelectElement>('button,select'))input.disabled=true;this.stopWorker();}
   private onEvent=(event:RenderEvent)=>{
     if(this.destroyed||this.failed)return;
     if(event.type==='text'){({status:this.status,metrics:this.metrics,result:this.result})[event.field].textContent=event.text;}
@@ -85,6 +96,12 @@ export class CumulonimbusApp {
       this.controls.querySelector('[data-action="light"]')!.textContent=event.side===0?'Luce da destra':'Luce da sinistra';
     }
     if(event.type==='report'){this.report=event.report;this.rawReport.textContent=event.report?JSON.stringify(event.report):'';}
+    if(event.type==='flash'){
+      this.audio.play(event.seed,event.distance,event.emittedAt);
+      this.root.querySelector('[data-testid="storm-status"]')!.textContent=`Lampo · ${event.distance} km · tuono dopo ${event.delay.toFixed(1)} s${this.audioEnabled?'':' · audio disattivato'}`;
+    }
+    if(event.type==='silence')this.audio.cancel();
+    if(event.type==='stormState')this.controls.querySelector('[data-action="storm-auto"]')!.setAttribute('aria-pressed',String(event.auto));
     if(event.type==='ready'){this.resolveReady?.();this.resolveReady=null;}
   };
   private send(command:Exclude<RenderCommand,{type:'init'}>){
@@ -98,6 +115,12 @@ export class CumulonimbusApp {
   private onClick=(event:MouseEvent)=>{
     const button=(event.target as HTMLElement).closest<HTMLButtonElement>('button');if(!button||button.disabled)return;
     const action=button.dataset.action!;
+    if(action==='audio'){
+      if(this.audioEnabled){this.audio.mute();this.audioEnabled=false;button.textContent='Attiva audio';button.setAttribute('aria-pressed','false');return;}
+      button.disabled=true;button.textContent='Preparazione audio…';
+      void this.audio.enable().then(()=>{if(this.destroyed||this.failed)return;this.audioEnabled=true;button.textContent='Disattiva audio';button.setAttribute('aria-pressed','true');this.root.querySelector('[data-testid="storm-status"]')!.textContent='Audio attivo · premi Lampo per ascoltare il tuono.';}).catch(error=>{if(!this.destroyed&&!this.failed){button.textContent='Attiva audio';this.root.querySelector('[data-testid="storm-status"]')!.textContent=error instanceof Error?error.message:String(error);}}).finally(()=>{if(!this.destroyed&&!this.failed)button.disabled=false;});return;
+    }
+    if(['pause','reset','new-cloud','mature','flash-preview'].includes(action))this.audio.cancel();
     if(action==='export'&&this.report){const url=URL.createObjectURL(new Blob([JSON.stringify(this.report,null,2)],{type:'application/json'}));const output=this.report.output as number[];const a=document.createElement('a');a.href=url;a.download=`cloudia-${this.report.quality}-${output.join('x')}-seed-${this.report.seed}-${Date.now()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);return;}
     this.send({type:'action',action});
   };
@@ -108,9 +131,9 @@ export class CumulonimbusApp {
     this.send({type:'change',name:input.name,value:input.value});
   };
   private onResize=()=>this.send({type:'resize',viewport:this.viewport()});
-  private onVisibility=()=>this.send({type:'visibility',visible:!document.hidden});
+  private onVisibility=()=>{if(document.hidden)this.audio.cancel();this.send({type:'visibility',visible:!document.hidden});};
   destroy(){
-    if(this.destroyed)return;this.destroyed=true;this.events.abort();this.resolveReady?.();this.resolveReady=null;
+    if(this.destroyed)return;this.destroyed=true;this.audio.destroy();this.events.abort();this.resolveReady?.();this.resolveReady=null;
     for(const action of ['new-cloud','benchmark','sustained'])this.controls.querySelector<HTMLButtonElement>(`[data-action="${action}"]`)!.disabled=true;
     this.stopWorker();
     void this.engine?.destroy();this.canvas.remove();

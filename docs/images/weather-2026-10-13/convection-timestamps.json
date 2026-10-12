@@ -1,0 +1,102 @@
+[
+  {
+    "name": "convection-4x-00",
+    "stamp": "2026-10-12T23:22:43.110Z",
+    "metric": "Worker WebGPU · 60.0 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.60 ms · p95 18.00 ms\nGPU rendering 5.83 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 438.3 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "convection-4x-01",
+    "stamp": "2026-10-12T23:22:45.854Z",
+    "metric": "Worker WebGPU · 60.0 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 18.00 ms\nGPU rendering 5.90 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 442.4 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "convection-4x-02",
+    "stamp": "2026-10-12T23:22:47.028Z",
+    "metric": "Worker WebGPU · 59.6 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 17.90 ms\nGPU rendering 5.83 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 446.5 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "convection-4x-03",
+    "stamp": "2026-10-12T23:22:48.246Z",
+    "metric": "Worker WebGPU · 59.6 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 17.80 ms\nGPU rendering 5.83 ms · flusso 0.066 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 452.6 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "convection-4x-04",
+    "stamp": "2026-10-12T23:22:49.409Z",
+    "metric": "Worker WebGPU · 59.7 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 17.80 ms\nGPU rendering 5.90 ms · flusso 0.066 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 456.8 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "convection-4x-05",
+    "stamp": "2026-10-12T23:22:50.662Z",
+    "metric": "Worker WebGPU · 60.0 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 17.90 ms\nGPU rendering 5.77 ms · flusso 0.066 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 460.8 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "convection-4x-06",
+    "stamp": "2026-10-12T23:22:51.895Z",
+    "metric": "Worker WebGPU · 60.0 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 18.00 ms\nGPU rendering 5.83 ms · flusso 0.066 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 467.0 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "convection-4x-07",
+    "stamp": "2026-10-12T23:22:53.122Z",
+    "metric": "Worker WebGPU · 60.0 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 17.90 ms\nGPU rendering 5.83 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 471.0 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "convection-4x-08",
+    "stamp": "2026-10-12T23:22:54.299Z",
+    "metric": "Worker WebGPU · 60.0 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 18.00 ms\nGPU rendering 5.83 ms · flusso 0.066 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 475.0 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "convection-4x-09",
+    "stamp": "2026-10-12T23:22:55.528Z",
+    "metric": "Worker WebGPU · 59.7 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 18.30 ms\nGPU rendering 5.83 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 481.1 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "convection-4x-10",
+    "stamp": "2026-10-12T23:22:56.720Z",
+    "metric": "Worker WebGPU · 59.7 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 18.30 ms\nGPU rendering 5.83 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 485.2 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "convection-4x-11",
+    "stamp": "2026-10-12T23:22:57.923Z",
+    "metric": "Worker WebGPU · 59.7 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 18.40 ms\nGPU rendering 5.77 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 491.3 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "convection-4x-12",
+    "stamp": "2026-10-12T23:22:59.060Z",
+    "metric": "Worker WebGPU · 60.0 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 18.40 ms\nGPU rendering 5.77 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 495.3 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "convection-4x-13",
+    "stamp": "2026-10-12T23:23:00.270Z",
+    "metric": "Worker WebGPU · 60.0 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 18.20 ms\nGPU rendering 5.77 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 499.4 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "convection-4x-14",
+    "stamp": "2026-10-12T23:23:01.492Z",
+    "metric": "Worker WebGPU · 59.0 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 18.40 ms\nGPU rendering 5.77 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 505.5 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "convection-4x-15",
+    "stamp": "2026-10-12T23:23:02.720Z",
+    "metric": "Worker WebGPU · 59.0 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 18.50 ms\nGPU rendering 5.83 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 509.5 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "convection-4x-16",
+    "stamp": "2026-10-12T23:23:03.892Z",
+    "metric": "Worker WebGPU · 59.3 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 18.60 ms\nGPU rendering 5.77 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 513.5 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "convection-4x-17",
+    "stamp": "2026-10-12T23:23:05.039Z",
+    "metric": "Worker WebGPU · 59.6 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 18.60 ms\nGPU rendering 5.83 ms · flusso 0.066 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 519.6 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "convection-4x-18",
+    "stamp": "2026-10-12T23:23:06.201Z",
+    "metric": "Worker WebGPU · 59.4 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 18.50 ms\nGPU rendering 5.57 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 523.7 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  },
+  {
+    "name": "convection-4x-19",
+    "stamp": "2026-10-12T23:23:07.341Z",
+    "metric": "Worker WebGPU · 59.3 fps rAF · amd\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 16.70 ms · p95 18.60 ms\nGPU rendering 4.98 ms · flusso 0.066 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 527.8 s · seme: 1571198069\nCielo: clear · velocità 4× · lampi: 14 · luce 0.00"
+  }
+]

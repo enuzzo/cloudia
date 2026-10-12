@@ -26,6 +26,18 @@ beforeEach(()=>{
 afterEach(()=>{vi.restoreAllMocks();vi.unstubAllGlobals();document.body.innerHTML='';history.replaceState(null,'','/');});
 function createApp() {const root=document.createElement('main');document.body.append(root);return {app:new CumulonimbusApp(root),root};}
 describe('scene async lifecycle',()=>{
+  it('does not declare ready when GPU shader validation fails',async()=>{
+    Object.assign(device,{pushErrorScope:vi.fn(),popErrorScope:vi.fn(async()=>({message:'invalid sampler'}))});
+    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});
+    await starting;
+    expect(root.querySelector('[data-testid="scene-status"]')!.textContent).toContain('Compilazione GPU fallita: invalid sampler');
+    expect(requestAnimationFrame).not.toHaveBeenCalled();
+    expect(root.querySelector<HTMLButtonElement>('[data-action="sustained"]')!.disabled).toBe(true);
+    app.destroy();await flush();
+    Reflect.deleteProperty(device,'pushErrorScope');Reflect.deleteProperty(device,'popErrorScope');
+  });
+
   it('bounds submitted frames until GPU completion without counting skipped callbacks as draws',async()=>{
     history.replaceState(null,'','/?profile=1&inflight=2');
     vi.spyOn(document,'hidden','get').mockReturnValue(false);
