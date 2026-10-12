@@ -8,7 +8,7 @@ The default page shows one bounded 3D cumulonimbus with **Three.js r186 / WebGPU
 
 Controls: pause, slow orbit, two sun directions, reset, seeded random regeneration, explicit quality/resolution presets and 30/90-second performance measurements with JSON export. Default quality uses 256 nominal steps and full configured resolution. No hidden dynamic resolution or temporal reconstruction.
 
-The production build measured 59.98 fps in two full-resolution 1080p / 90-second orbit runs (both sun directions), with no intervals above 33.34 ms; see [measurements](docs/REFINEMENT-2026-10-11.md). This evidence applies to the tested host/browser/seed. This is a locally validated first scene. Photographic quality remains a visual target and owner-review gate, not a property that unit tests can certify. Camera recognition, rain and lightning are the next milestone. No camera permission is requested yet.
+The current ice/light refinement measured 59.98 fps in two full-resolution 1080p / 90-second orbit runs (both sun directions), with no intervals above 33.34 ms; see [latest measurements](docs/PERFORMANCE-2026-10-11.md#12-october--ice-fibres-and-light-renderer-ice-filaments-v4). This evidence applies to the tested host/browser/seed. This is a locally validated first scene. Photographic quality remains a visual target and owner-review gate, not a property that unit tests can certify. Camera recognition, rain and lightning are the next milestone. No camera permission is requested yet.
 
 The original WebGL laboratory is preserved at `/?legacy`. The existing `CloudiaHero.mount(...)` embed build still uses that engine.
 

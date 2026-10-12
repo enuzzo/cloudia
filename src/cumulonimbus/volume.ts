@@ -10,7 +10,7 @@ export const heightErosionScale = (worldY: number) => (.48+.52*smoothstep(1.6,2.
 export interface DetailVolume { size: number; data: Uint8Array }
 export interface CloudVolume { size: number; data: Uint8Array; detail: DetailVolume }
 export interface CloudParameters { towerHeight: number; towerWidth: number; anvilSpread: number; windLean: number }
-type Lobe = [number, number, number, number, number, number];
+type Lobe = [number, number, number, number, number, number, number?];
 const clamp = (v: number) => Math.max(0, Math.min(1, v));
 const smoothstep = (a: number,b: number,x: number) => { const t=clamp((x-a)/(b-a)); return t*t*(3-2*t); };
 function random(seed: number) {
@@ -66,8 +66,16 @@ export function sampleCloudDensity(envelope:DetailVolume,detail:DetailVolume,x:n
   const wx=(g-.5)*(.16-.08*ice),wy=(b-.5)*(.12-.1*ice),wz=(r-.5)*(.16-.06*ice);
   const warped=sampleDetail(envelope,(x+wx-BOUNDS_MIN[0])/10,(y+wy-BOUNDS_MIN[1])/8.5,(z+wz-BOUNDS_MIN[2])/7,0,false);
   let erosion=(1-r)*.38+(1-b)*.08;
-  if(ice>0) erosion=erosion*(1-ice)+(1-sampleDetail(detail,x*.06,y*1.1,z*.28,0))*.52*ice;
-  return erodeDensity(warped,erosion);
+  let material=1;
+  if(ice>0) {
+    // Larger ice eddies bend the fine filaments. Lower vertical frequency limits
+    // undersampling by the 256-volume light bake.
+    const bend=sampleDetail(detail,x*.12,y*.10,z*.06,1);
+    const wisps=sampleDetail(detail,x*.035+bend*.06,y*.38+x*.026+(bend-.5)*.035,z*.022,0);
+    erosion=erosion*(1-ice)+(.16+(1-wisps)*.64)*ice;
+    material=1-ice+(.025+.21*wisps)*(1-.7*smoothstep(.4,3.8,x))*ice;
+  }
+  return erodeDensity(warped,erosion)*material;
 }
 /** Packs a conservative occupied-region mask into the unused alpha of the detail texture.
  * Noise RGB still repeats in cloud space; mask alpha is read at normalized world coordinates.
@@ -129,7 +137,7 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
       const theta=rng()*Math.PI*2, elevation=(rng()-.5)*1.8;
       const s=.34+rng()*.3, radius=i>3?.62:.72;
       lobes.push([c[0]+Math.cos(theta)*c[3]*radius*Math.cos(elevation), c[1]+Math.sin(elevation)*c[4]*radius,
-        c[2]+Math.sin(theta)*c[5]*radius*Math.cos(elevation), s*(i>3?1.7:1), s*(i>3?.16:1), s*.85]);
+        c[2]+Math.sin(theta)*c[5]*radius*Math.cos(elevation), s*(i>3?1.7:1), s*(i>3?.16:1), s*.85, i>3?.045:.2]);
       if(i<4) {
         const l=lobes.at(-1)!;
         for(let k=0;k<4;k++) {
@@ -139,16 +147,25 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
       }
     }
   });
+  // Sparse, thin ice streaks connect to the outflow and taper at varying heights.
+  // A separate RNG preserves the convective tower layout for seed comparisons.
+  const iceRng=random(seed^0x73d61a29);
+  for(let j=0;j<28;j++) {
+    const reach=iceRng(),rx=(.55+iceRng()*.75)*shape.anvilSpread;
+    const cx=(.3+reach*2.8)*shape.anvilSpread+6*shape.windLean;
+    lobes.push([Math.min(cx,4.7-rx),.72+(6.08+(iceRng()-.5)*.58-.72)*shape.towerHeight,
+      -.35+(iceRng()-.5)*2.3*shape.towerWidth,rx,.055+iceRng()*.055,.17+iceRng()*.27,.045]);
+  }
   // Rasterize lobes into their local bounds instead of testing every lobe at every voxel.
-  for (const [cx,cy,cz,rx,ry,rz] of lobes) {
+  for (const [cx,cy,cz,rx,ry,rz,blend=.2] of lobes) {
     const lo = [cx-rx-.35,cy-ry-.35,cz-rz-.35], hi=[cx+rx+.35,cy+ry+.35,cz+rz+.35];
     const start=lo.map((v,i)=>Math.max(1,Math.floor((v-BOUNDS_MIN[i])/BOUNDS_SIZE[i]*size-.5)));
     const end=hi.map((v,i)=>Math.min(size-2,Math.ceil((v-BOUNDS_MIN[i])/BOUNDS_SIZE[i]*size-.5)));
     for(let z=start[2];z<=end[2];z++) for(let y=start[1];y<=end[1];y++) for(let x=start[0];x<=end[0];x++) {
       const px=voxelCenter(x,0,size), py=voxelCenter(y,1,size), pz=voxelCenter(z,2,size);
       const sd=(1-Math.sqrt(((px-cx)/rx)**2+((py-cy)/ry)**2+((pz-cz)/rz)**2))*Math.min(rx,ry,rz);
-      const idx=(z*size+y)*size+x; const old=field[idx], h=clamp(.5+.5*(old-sd)/.2);
-      field[idx]=sd+(old-sd)*h+.2*h*(1-h);
+      const idx=(z*size+y)*size+x; const old=field[idx],h=clamp(.5+.5*(old-sd)/blend);
+      field[idx]=sd+(old-sd)*h+blend*h*(1-h);
     }
   }
   const [iceStart,iceEnd]=iceHeights(seed);
@@ -163,9 +180,9 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
       const worldY=py+BOUNDS_MIN[1];
       const erosionScale=heightErosionScale(worldY);
       const ice=smoothstep(iceStart,iceEnd,worldY);
-      const fibers=noise(px*.75+py*.2,py*8,pz*3,seed+81);
-      const carving=erosion*erosionScale*(1-ice)-(.035+(1-fibers)*.11)*ice;
-      density[idx]=clamp((field[idx]+carving-.025)*(10-ice*2)) * (.65+.35*n2) * (1-ice*(1-fibers)*.5) * baseFade;
+      const fibers=noise(px*.65+py*.17,py*5,pz*2.8,seed+81);
+      const carving=erosion*erosionScale*(1-ice)-(.008+(1-fibers)*.035)*ice;
+      density[idx]=clamp((field[idx]+carving-(.025-.017*ice))*(10+ice*4)) * (.65+.35*n2) * (1-ice*(1-fibers)*.5) * baseFade;
     }
     if(z%8===0) progress?.(.1+.45*z/size);
   }

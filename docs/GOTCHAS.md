@@ -245,3 +245,11 @@ Future production choice:
 - Normalized linear texture samples place voxel i at (i+.5)/size, not i/(size-1). Use the former in geometry rasterization, fine-density bake and light transport, especially for anisotropic ice detail.
 - Fine noise over every ray sample raised full-HD GPU cost to 9.1 ms. Packing a conservatively dilated occupancy mask into unused detail alpha reduced it to 3.8 ms without lowering quality. Mask is sampled in normalized world coordinates; RGB noise uses repeated cloud coordinates.
 - Near-60 averages can hide very long stalls. Keep max and count >33.34 ms. Production left/right 90-second runs reached 59.98 with max18.9 and no long intervals, while a development run averaged59.20 with a250ms stall. Host load changed too; Vite is not an established exclusive cause.
+
+
+## 2026-10-12 — transparent ice detail
+
+- ErodeDensity(1,e)=1 preserves liquid interiors but also erased filament contrast in dense ice. Ice uses additional smooth density modulation/taper, and the same model must enter the light bake.
+- Strong fine variation along the view-depth axis averages into a flat-looking slab. Coherent stretched fields help, but inspect orbit for artificial sheets; source coordinates and snapshot labels must track actual lighting/state after HMR resets.
+- Thin ellipsoids need narrower smooth union and gentler macro erosion to survive. Tag ice explicitly: a radius-only blend condition also catches small liquid convective lobes and changes their accepted morphology.
+- Realistic-looking ice does not imply measured crystal scattering. Distinguish authored material coefficients from HG phase theory and separate measured60Hz RAF cadence from actual compositor presentation.

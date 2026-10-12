@@ -62,3 +62,25 @@ Exploratory reports and JPEG screenshots are retained in the ignored `output/cum
 The scene now has real 3D density, an authored rain base, convective tower and asymmetric anvil, cached self-shadowing, two working light directions and orbit parallax. The new seeded generator varies bounded tower height/width, anvil spread, lean, lobe layout and erosion. A new cloud is built with matching optical-depth caches; reset preserves the seed. Desktop and narrow-screen composition, contained fixed-aspect buffers, pause/reset and benchmark cancellation were inspected in the browser. Legacy Flow/Cumulus was also checked after the Three.js update.
 
 **Absolute photographic quality is not an accepted/completed gate yet.** The current cloud remains visibly procedural and its fine structure, anvil and light model need further visual refinement. There is no owner visual approval of this new scene. The shader uses approximate multiple scattering and a sky gradient, not a full measured atmospheric model. Keep this distinction separate from the passing technical checks and the observed GPU headroom.
+
+
+## 12 October — ice fibres and light, renderer `ice-filaments-v4`
+
+The next refinement preserves 256³ macro/light, 64³ fine field, conservative empty-space skipping, full 1080p and 256 nominal steps. Explicitly tagged ice lobes use narrower smooth union; 28 seeded thin streaks have varied heights. Lower-frequency bent anisotropic detail now modulates density inside the anvil as well as eroding its borders. A smooth downwind taper thins the outflow while leaving liquid density unchanged. CPU light bake and WGSL integration use matching formulas. The material model is an authored optical approximation, not measured ice microphysics.
+
+Lighting now mixes a forward and backward HG phase with an isotropic component and two exponentially attenuated approximations for multiple scattering. The sky fill is less dominant and direct light slightly warmer. [PBRT phase functions](https://pbr-book.org/4ed/Volume_Scattering/Phase_Functions) supports the weighted-phase formulation; [NOAA glossary](https://www.weather.gov/otx/Glossary_of_Weather_Terms) supports the ice-anvil morphological reference. Numerical artistic parameters are our own. No full atmospheric or volumetric path tracing claim.
+
+Production preview: `http://127.0.0.1:4176/?seed=1571198069`, Chromium 155 IAB, AMD GCN-5 hardware WebGPU. Same method and seed as previous checkpoint, full output/internal 1920×1080, Massima 256, slow orbit, both sun directions, 2-second warmup + 90 seconds, panel closed, no builds/edits during measurement. A backup/sync pause was requested after observing active processes; no new pause confirmation was received during these runs. The performance claims rest on the collected intervals, not an assumed host state.
+
+| Sun / 90 seconds | RAF fps | p95 /p99 ms | Maximum ms | Intervals >33.34 ms | GPU mean /p95 ms | CPU mean /p95 ms |
+|---|---:|---:|---:|---:|---:|---:|
+| Left | **59.98** |18.3 /18.7 |18.8 |**0** |3.859 /3.932 |.213 /.300 |
+| Right | **59.98** |18.3 /18.7 |18.9 |**0** |3.866 /3.932 |.211 /.300 |
+
+Both collected 5,399 intervals. Previous production GPU means 3.808/3.845 ms; added detail stayed close to that budget in these tests. **Sustained 60 Hz RAF cadence is retained for the tested scene/host; 120 fps and compositor-presented-frame certification remain unmeasured.**
+
+Raw evidence: [left](benchmarks/2026-10-12-ice-light-production-left-1080p-90s.json), [right](benchmarks/2026-10-12-ice-light-production-right-1080p-90s.json). Local before/after/angle/mobile JPEGs and probes: `output/ice-light-2026-10-12/` (ignored). The desktop 1143×954 and narrow 390×844 scene/control layout were inspected, both lights exercised, production console showed no warnings/errors, temporary viewport restored. This viewport check is not physical-phone acceptance or a mobile performance claim.
+
+35 tests / 10 files, TypeScript, application and legacy hero builds passed. Read-only review verified CPU/GPU density and cache equivalence, support coverage and phase sign. One finding about inadvertently narrowing liquid-lobe unions was fixed by explicitly tagging icy lobes. Build retains the known large-Three chunk warning.
+
+Visual result: more uneven anvil edges, a lighter outflow and deeper shading of the tower. Fine fibres remain subtle in the compressed browser captures; broad surfaces are still soft. **Photographic visual acceptance remains open and no owner acceptance is inferred.** No camera/gestures, online deployment or GitHub push in this checkpoint.

@@ -65,3 +65,8 @@ Write the implementation plan, select the browser prototype's concrete files/dep
 ## 11 October refinement checkpoint
 
 The approved central WebGPU scene now uses 256³ macro density/light, 64³ periodic fine erosion and domain warp, anisotropic ice detail and a conservative skip mask packed in the fine texture alpha. All bake/GPU sampling uses texel centers. Massima is 256 nominal steps at full configured resolution. Production full-HD slow-orbit tests reached 59.98 fps for 90 seconds with both sun directions, zero intervals >33.34 ms; see `docs/REFINEMENT-2026-10-11.md` for all slow and successful runs. This is bounded RAF cadence evidence, not 120 fps or compositor presentation certification. Photographic visual acceptance remains open before hand gestures.
+
+
+## 12 October ice/light refinement
+
+Tagged narrow ice lobes, bent anisotropic density and gradual downwind thinning distinguish the anvil from the liquid tower. Shared bake/GPU density preserves matching shadows. Forward/back HG and attenuated multiple-scattering approximations refine the light. Existing volume sizes, resolution presets, nominal steps and conservative empty-space mask are retained. Both full-HD / Massima / slow-orbit production runs retained 59.98 fps across 90 seconds, zero intervals >33.34 ms. Read the latest section of `docs/PERFORMANCE-2026-10-11.md` for raw measurements and limits. Photographic owner acceptance remains open; gestures are still deferred.

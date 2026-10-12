@@ -2,6 +2,35 @@ import { describe, expect, it } from 'vitest';
 import { generateVolume, heightErosionScale, cloudParameters, generateDetail, sampleDetail, erodeDensity, sampleCloudDensity, bakeOccupancy, voxelCenter, BOUNDS_MIN, BOUNDS_SIZE } from './volume';
 
 describe('authored density volume', () => {
+  it('thins the ice outflow toward the downwind edge without thinning the liquid tower', () => {
+    const envelope={size:1,data:new Uint8Array([255,0,0,0])};
+    const detail={size:1,data:new Uint8Array([255,255,255,255])};
+    const attached=sampleCloudDensity(envelope,detail,0,6,0,1);
+    const outflow=sampleCloudDensity(envelope,detail,4,6,0,1);
+    expect(outflow).toBeGreaterThan(0);
+    expect(outflow).toBeLessThan(attached*.5);
+    expect(sampleCloudDensity(envelope,detail,4,3,0,0)).toBeCloseTo(1,6);
+  });
+  it('retains fibre contrast inside a fully occupied ice envelope', () => {
+    const envelope={size:1,data:new Uint8Array([255,0,0,0])};
+    const dense={size:1,data:new Uint8Array([255,255,255,255])};
+    const sparse={size:1,data:new Uint8Array([0,0,0,255])};
+    const bright=sampleCloudDensity(envelope,dense,0,6,0,1);
+    const thin=sampleCloudDensity(envelope,sparse,0,6,0,1);
+    expect(thin).toBeGreaterThan(0);
+    expect(bright).toBeGreaterThan(thin*3);
+    expect(sampleCloudDensity(envelope,sparse,0,3,0,0)).toBeCloseTo(1,6);
+  });
+  it('makes fully icy material transmissive while retaining dense liquid convection', () => {
+    const envelope={size:1,data:new Uint8Array([255,0,0,0])};
+    const detail={size:1,data:new Uint8Array([255,255,255,255])};
+    expect(sampleCloudDensity(envelope,detail,0,3,0,0)).toBeCloseTo(1,6);
+    expect(sampleCloudDensity(envelope,detail,0,6,0,1)).toBeGreaterThan(.2);
+    expect(sampleCloudDensity(envelope,detail,0,6,0,1)).toBeLessThan(.6);
+    const below=sampleCloudDensity(envelope,detail,0,5,0,.5-.0001);
+    const above=sampleCloudDensity(envelope,detail,0,5,0,.5+.0001);
+    expect(Math.abs(below-above)).toBeLessThan(.001);
+  });
   it('keeps displaced and interpolated boundaries inside the conservative skip mask', () => {
     const size=32,data=new Uint8Array(size**3*4),detail={size:8,data:new Uint8Array(8**3*4)};
     data[((16*size+16)*size+16)*4]=255;

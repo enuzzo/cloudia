@@ -11,9 +11,18 @@ This file tracks what has happened, what is next, and what must stay visible acr
 - GitHub remote: `https://github.com/enuzzo/cloudia.git`
 - GitHub visibility decision: public
 - License decision: MIT for Cloudia's own code and docs
-- Push status: `main` tracks `origin/main`
+- Push status: `main ` tracks `origin/main `
 
 ## Work Completed
+
+### 2026-10-12 — anvil optical detail and refined light
+
+- Added tagged thin seeded ice streaks and bent fine density modulation, including inside full-density macro regions; gradual downwind thinning. Liquid lobe unions and seeded layout preserved. Bake and GPU share material/erosion formulas.
+- Forward/back HG plus isotropic phase; less sky fill, warmer direct light and two attenuated multiple-scattering approximations. Existing resources/quality/empty-space skip retained.
+- Full-HD/Massima 256/orbit production, both lights: 59.98 fps each over 90 seconds, zero intervals>33.34 ms, maximum 18.8/18.9 ms. GPU means3.859/3.866 ms. See latest section of `docs/PERFORMANCE-2026-10-11.md` and raw 2026-10-12 reports.
+- 35 tests, typecheck, app and hero builds pass; code review and browser console clean. Desktop/narrow viewport verified; viewport override restored. Commissioner preserved.
+- Local screenshots/probes in `output/ice-light-2026-10-12/`. Fibre detail remains subtle and broad regions still soft: owner visual acceptance open. Gestures remain deferred; no online deployment or push.
+
 
 ### 2026-10-11 — fine detail, fibrous anvil and sustained production cadence
 
@@ -82,7 +91,7 @@ This file tracks what has happened, what is next, and what must stay visible acr
 
 ### 2026-05-14
 
-- Started implementation on `main` with user approval.
+- Started implementation on `main ` with user approval.
 - Began M1 Lab Scaffold from `docs/superpowers/plans/2026-05-13-cloudia-lab-implementation.md`.
 - Added Vite/TypeScript/Vitest config, base `index.html`, lab CSS shell, and initial `src/main.ts`.
 - Installed dependencies with Bun after sandbox tempdir approval.

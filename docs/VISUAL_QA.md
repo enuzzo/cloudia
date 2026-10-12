@@ -69,3 +69,8 @@ Comparison points:
 ### 2026-10-11 — central cumulonimbus fine refinement
 
 Same-seed before/after desktop images, live orbit, left/right lighting, 32 tests and sustained production measurements are recorded in [refinement report](REFINEMENT-2026-10-11.md). Incus is now flatter with stretched fine detail; convection has smaller lobes and displaced contours. Remaining broad smooth anvil patches and approximate fill light prevent a blanket photographic-quality claim. Owner visual acceptance remains open. No gestures added in this checkpoint.
+
+
+### 2026-10-12 — ice filaments and light
+
+Bent anisotropic density and downwind taper distinguish the outflow from liquid convection. Tagged thin streaks add edge variation; light uses a forward/back phase and stronger shadow separation. Same-seed before/after captures, both light directions, live orbit and 390×844 composition inspected; no production console warnings/errors.35 tests and builds pass; two full-HD256-step 90-second orbit runs retained 59.98 fps without >33.34 ms intervals. Refer to latest section of [performance report](PERFORMANCE-2026-10-11.md) and local `output/ice-light-2026-10-12/` images. Fibre changes are subtle; broad patches remain soft. Owner photographic acceptance still open before gestures.

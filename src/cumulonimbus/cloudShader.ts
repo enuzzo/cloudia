@@ -34,10 +34,11 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
   var transmittance = 1.0;
   var radiance = vec3<f32>(0.0);
   let mu = dot(ray,sun);
-  // Dual-lobe approximation retains a gentle silver edge without extreme forward peaks.
-  let g = 0.62;
-  let phase = (1.0-g*g) / pow(max(1.0+g*g-2.0*g*mu,0.04),1.5);
-  let sunPhase = 0.65 + 0.25*phase;
+  // View ray points into the volume; sun points toward the light. HG is
+  // expressed relative to isotropic scattering (the 4pi factor is absorbed by intensity).
+  let forwardPhase=(1.0-0.68*0.68)/pow(max(1.0+0.68*0.68-2.0*0.68*mu,0.04),1.5);
+  let backPhase=(1.0-0.25*0.25)/pow(max(1.0+0.25*0.25+2.0*0.25*mu,0.04),1.5);
+  let sunPhase=0.45+0.55*(0.82*forwardPhase+0.18*backPhase);
   for (var i=0u; i<640u; i++) {
     if (t > far || transmittance < 0.006) { break; }
     let position = origin + ray*t;
@@ -53,18 +54,23 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
     let warped=textureSampleLevel(volume,volumeSampler,coord+warp/vec3<f32>(10.0,8.5,7.0),0.0).r;
     if (warped < 0.002) { t += stepSize; continue; }
     var erosion=(1.0-fine.r)*0.38+(1.0-fine.b)*0.08;
+    var material=1.0;
     if(ice>0.0) {
-      let wisps=textureSampleLevel(detail,detailSampler,local*vec3<f32>(0.06,1.1,0.28),0.0).r;
-      erosion=mix(erosion,(1.0-wisps)*0.52,ice);
+      let bend=textureSampleLevel(detail,detailSampler,local*vec3<f32>(0.12,0.10,0.06),0.0).g;
+      let iceCoord=vec3<f32>(local.x*0.035+bend*0.06,local.y*0.38+local.x*0.026+(bend-0.5)*0.035,local.z*0.022);
+      let wisps=textureSampleLevel(detail,detailSampler,iceCoord,0.0).r;
+      erosion=mix(erosion,0.16+(1.0-wisps)*0.64,ice);
+      material=mix(1.0,(0.025+0.21*wisps)*(1.0-0.7*smoothstep(0.4,3.8,local.x)),ice);
     }
-    let density=clamp((warped-erosion)/(1.0-erosion),0.0,1.0);
+    let density=clamp((warped-erosion)/(1.0-erosion),0.0,1.0)*material;
     if(density<0.002) {t+=stepSize;continue;}
     let voxel = textureSampleLevel(volume,volumeSampler,coord,0.0);
-    let solar = exp(-mix(voxel.g,voxel.b,lightSide)*16.0);
+    let sunTau=mix(voxel.g,voxel.b,lightSide)*16.0;
+    let solar = exp(-sunTau);
     let skyVisibility = exp(-voxel.a*16.0);
-    let direct = vec3<f32>(1.25,1.22,1.16)*solar*sunPhase;
-    let ambient = vec3<f32>(0.18,0.215,0.27) * (0.2+0.8*pow(skyVisibility,0.28));
-    let multiple = vec3<f32>(0.32,0.33,0.35) * pow(solar,0.3) + vec3<f32>(0.03,0.036,0.048);
+    let direct = vec3<f32>(1.45,1.40,1.30)*solar*sunPhase;
+    let ambient = vec3<f32>(0.14,0.185,0.255) * (0.18+0.82*pow(skyVisibility,0.35));
+    let multiple = vec3<f32>(1.0,0.985,0.95)*(0.27*exp(-sunTau*0.45)+0.10*exp(-sunTau*0.18)) + vec3<f32>(0.028,0.032,0.04);
     let source = direct + ambient + multiple;
     let opacity = 1.0 - exp(-density * extinction * stepSize);
     radiance += transmittance * opacity * source;
