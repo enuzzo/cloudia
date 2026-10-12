@@ -306,3 +306,8 @@ Added53-test-covered separateGPUcompute/render, CPU submission stages, callback 
 ## 12–13 October — render worker, qualification still open
 
 Extracted shared GPUSceneEngine and added opt-in OffscreenCanvas worker with single-transfer ownership, DOM/engine protocol, terminal errors and bounded cleanup.58tests pass, typecheck/application/hero builds pass. Reviewed constructor/message/loss failures; live controls and regeneration verified. Full-HD growth59.99/90s zero>18; right repeat59.83/7long frames; earlier worker57.46/57.19, capped right50.95. Main/worker30s both59.99, so no proven causal improvement. Keep main default and all raw failures; quality256³/128³/384 unchanged. WORKER-2026-10-13.md is the latest restart/evidence record. Next useful step is actual Chromium GPU/compositor trace, then qualification before visual fibres/local boiling and gestures. No deployment/push/camera.
+
+
+## 2026-10-13 — Chrome trace handoff
+
+Chrome154 reproduces55.67fps/30s at FullHD/384 with GPU5.65ms and queue completion71.1ms mean. No shader change. Browser security policy blocks chrome://tracing and expressly forbids alternative control paths; manual DevTools export requested, GPU/compositor trace not yet captured. TRACE-2026-10-13.md contains exact protocol and raw evidence. Chrome tab stays open; former in-app cloud tab closed to avoid duplicate rendering.
