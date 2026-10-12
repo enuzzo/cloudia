@@ -5,7 +5,7 @@ import { integrateCloud } from './cloudShader';
 import { motionState,MOTION_LOOP_SECONDS } from './motion';
 import { fillMotionAtlas,MOTION_FIELD_SIZE,MOTION_PHASES } from './motionField';
 import { EXTINCTION, ICE_EXTINCTION, DETAIL_RESOLUTION, EMPTY_SKIP_LIMIT, SUN_LEFT, SUN_RIGHT, VOLUME_RESOLUTION, cloudParameters, iceHeights, type CloudVolume } from './volume';
-import { FrameMeasurement, summarizeFrames } from './performance';
+import { FrameMeasurement, summarizeFrames, summarizeSamples } from './performance';
 import './scene.css';
 
 const QUALITY = {
@@ -43,6 +43,18 @@ export class CumulonimbusApp {
   private timestampPromise: Promise<void> | null = null;
   private timestampSupported = false;
   private gpuMs: number | null = null;
+  private computeMs:number|null=null;
+  private queueMs:number|null=null;
+  private queuePromise:Promise<void>|null=null;
+  private queuePending=false;
+  private queueTime=0;
+  private readonly profiling=new URLSearchParams(location.search).get('profile')==='1';
+  private readonly timingMode=new URLSearchParams(location.search).get('timing')??'stages';
+  private readonly frozenFlow=new URLSearchParams(location.search).get('flow')==='frozen';
+  private frameLimit=[1,2].includes(Number(new URLSearchParams(location.search).get('inflight')))?Number(new URLSearchParams(location.search).get('inflight')):0;
+  private framesInFlight=0;
+  private skippedFrames=0;
+  private readonly frameCompletions=new Set<Promise<void>>();
   private intervals: number[] = [];
   private measurement: FrameMeasurement | null = null;
   private benchmarkContext: Record<string, unknown> = {};
@@ -92,6 +104,7 @@ export class CumulonimbusApp {
     const seedParam=new URLSearchParams(location.search).get('seed');
     const requestedSeed=seedParam===null?NaN:Number(seedParam);
     if(Number.isInteger(requestedSeed) && requestedSeed>=0 && requestedSeed<=0xffffffff) this.seed=requestedSeed;
+    if(this.profiling) {this.outputMode='1080';this.simulationTime=60;}
     root.innerHTML = `<div class="cloud-stage" data-testid="cloudia-stage"></div>
       <header class="scene-heading"><span>CLOUDIA</span><h1>Cumulonembo</h1><p>Un piccolo cielo, tutto da muovere.</p></header>
       <p class="scene-loading" role="status" data-testid="scene-status">Preparazione del cielo…</p>
@@ -101,6 +114,8 @@ export class CumulonimbusApp {
         <details><summary>Qualità e misure</summary><div class="diagnostics">
           <label>Qualità<select name="quality">${Object.entries(QUALITY).map(([key,v])=>`<option value="${key}" ${key===this.quality?'selected':''}>${v.label}</option>`).join('')}</select></label>
           <label>Risoluzione output<select name="output"><option value="window">Finestra · 1 pixel per pixel CSS</option><option value="screen">Schermo · nitidezza nativa</option><option value="720">1280 × 720</option><option value="1080">1920 × 1080</option></select></label>
+          ${this.profiling?`<label>Diagnostica GPU<select name="timing">${[['render','Readback rendering · compute automatico'],['stages','Rendering e flusso'],['queue','Rendering, flusso e coda'],['off','Disattivata · sola cadenza']].map(([value,label])=>`<option value="${value}" ${value===this.timingMode?'selected':''}>${label}</option>`).join('')}</select></label><label>Flusso di confronto<select name="flow"><option value="full" ${!this.frozenFlow?'selected':''}>Animato · completo</option><option value="frozen" ${this.frozenFlow?'selected':''}>Congelato · confronto diagnostico</option></select></label>`:''}
+          ${this.profiling?`<label>Coda dei frame<select name="inflight"><option value="0" ${!this.frameLimit?'selected':''}>Invio continuo</option><option value="1" ${this.frameLimit===1?'selected':''}>Massimo 1 in attesa</option><option value="2" ${this.frameLimit===2?'selected':''}>Massimo 2 in attesa</option></select></label>`:''}
           <p data-testid="performance-live">In attesa della GPU…</p>
           <div class="benchmark-controls"><button data-action="benchmark" disabled>Misura 30 secondi</button><button data-action="sustained" disabled>Misura 90 secondi</button><button data-action="export" disabled>Esporta JSON</button></div>
           <p data-testid="benchmark-result">Il test include 2 secondi di riscaldamento e si interrompe se cambi scena o nascondi la scheda.</p>
@@ -113,6 +128,7 @@ export class CumulonimbusApp {
     this.metrics = root.querySelector('[data-testid="performance-live"]')!;
     this.result = root.querySelector('[data-testid="benchmark-result"]')!;
     this.rawReport = root.querySelector('[data-testid="benchmark-json"]')!;
+    root.querySelector<HTMLSelectElement>('select[name="output"]')!.value=this.outputMode;
     this.controls.addEventListener('click',this.onClick,{signal:this.events.signal});
     this.controls.addEventListener('change',this.onChange,{signal:this.events.signal});
     window.addEventListener('resize',this.onResize,{signal:this.events.signal});
@@ -126,10 +142,10 @@ export class CumulonimbusApp {
       if(!adapter) throw new Error('Nessun adattatore WebGPU disponibile.');
       const info=adapter.info;
       this.adapterInfo={vendor:info.vendor,architecture:info.architecture,device:info.device,description:info.description,isFallbackAdapter:info.isFallbackAdapter};
-      const device=await adapter.requestDevice({requiredFeatures:adapter.features.has('timestamp-query')?['timestamp-query']:[]});
+      const device=await adapter.requestDevice({requiredFeatures:this.timingMode!=='off'&&adapter.features.has('timestamp-query')?['timestamp-query']:[]});
       if(this.destroyed) { device.destroy(); return; }
       this.device=device;
-      const renderer = new WebGPURenderer({antialias:false,device,trackTimestamp:true});
+      const renderer = new WebGPURenderer({antialias:false,device,trackTimestamp:this.timingMode!=='off'});
       this.renderer = renderer;
       const originalDeviceLost=renderer.onDeviceLost.bind(renderer);
       renderer.onDeviceLost=(info)=>{
@@ -150,14 +166,13 @@ export class CumulonimbusApp {
       if(this.destroyed || this.deviceLost) { await this.releaseGPU(); return; }
       if(!('isWebGPUBackend' in renderer.backend && renderer.backend.isWebGPUBackend)) throw new Error('WebGPU non è disponibile sulla GPU selezionata. Il vecchio laboratorio resta accessibile con ?legacy.');
       // Timestamp queries are optional; RAF measurements remain available without them.
-      this.timestampSupported = renderer.hasFeature('timestamp-query');
+      this.timestampSupported = this.timingMode!=='off' && renderer.hasFeature('timestamp-query');
       renderer.domElement.setAttribute('aria-label','Cumulonembo volumetrico in un cielo diurno');
       this.root.querySelector('.cloud-stage')!.append(renderer.domElement);
       const texture = await this.loadVolume();
       if(this.destroyed || this.deviceLost) { texture.macro.dispose();texture.detail.dispose(); return; }
       this.installVolume(texture);
       this.applySize();
-      renderer.compute(this.interpolateFlow);
       this.quad!.render(renderer); // Compile the shader before declaring the scene ready.
       this.ready=true;
       this.status.textContent=`WebGPU · volume ${VOLUME_RESOLUTION}³ · movimento lento`;
@@ -191,6 +206,7 @@ export class CumulonimbusApp {
       origin:this.origin,forward:this.forward,right:this.right,up:this.up,aspect:this.aspect,tanFov:uniform(.2867),
       stepSize:this.stepSize,emptyStep:this.emptyStep,resolution:this.resolution,drift:this.drift,growth:this.growth,supportMin:this.supportMin,supportMax:this.supportMax,sun:this.sun,lightSide:this.lightSide,extinction:uniform(EXTINCTION),iceExtinction:uniform(ICE_EXTINCTION)});
     this.quad=new QuadMesh(this.material);
+    this.renderer?.compute(this.interpolateFlow); // Initialize this seed even for the frozen diagnostic control.
     oldMaterial?.dispose(); oldVolume?.dispose();oldDetail?.dispose();
   }
   private async newCloud() {
@@ -243,6 +259,7 @@ export class CumulonimbusApp {
     if(this.destroyed || this.deviceLost || document.hidden || !this.renderer || !this.quad) return;
     const cpuStart=performance.now();
     this.raf=requestAnimationFrame(this.frame);
+    if(this.frameLimit && this.framesInFlight>=this.frameLimit) {this.skippedFrames++;return;}
     if(this.dirtySize) this.applySize();
     const interval=this.previous ? now-this.previous : 0;
     this.previous=now;
@@ -257,19 +274,42 @@ export class CumulonimbusApp {
     this.forward.value.copy(this.origin.value).sub(new Vector3(0,3.5,0)).negate().normalize();
     this.right.value.crossVectors(this.forward.value,new Vector3(0,1,0)).normalize();
     this.up.value.crossVectors(this.right.value,this.forward.value).normalize();
-    this.renderer.compute(this.interpolateFlow);
+    const computeStart=performance.now();
+    if(!this.frozenFlow) this.renderer.compute(this.interpolateFlow);
+    const renderStart=performance.now();
     this.quad.render(this.renderer);
+    this.measurement?.recordStages(renderStart-computeStart,performance.now()-renderStart);
+    this.measurement?.recordDispatch(Math.max(0,cpuStart-now));
     this.measurement?.recordCPU(performance.now()-cpuStart);
     this.measurement?.record(now);
     if(this.measurement?.result && !this.report) this.finishBenchmark();
     if(now-this.uiTime>500) { this.uiTime=now; this.updateMetrics(now); }
     if(this.timestampSupported && !this.timestampPending && now-this.timestampTime>=200) {
       this.timestampPending=true; this.timestampTime=now;
-      this.timestampPromise=this.renderer.resolveTimestampsAsync('render').then(()=>{
+      const run=this.measurement,renderer=this.renderer,started=performance.now();
+      this.timestampPromise=Promise.all([renderer.resolveTimestampsAsync('render'),...(this.timingMode==='render'?[]:[renderer.resolveTimestampsAsync('compute')])]).then(()=>{
         if(this.destroyed || !this.renderer) return;
-        const ms=this.renderer.info.render.timestamp;
-        if(Number.isFinite(ms) && ms>0) { this.gpuMs=ms; this.measurement?.recordGPU(ms); }
+        const ms=renderer.info.render.timestamp,compute=renderer.info.compute.timestamp;
+        if(Number.isFinite(ms) && ms>0) {this.gpuMs=ms;run?.recordGPU(ms,'render',started);}
+        if(this.timingMode!=='render' && !this.frozenFlow && Number.isFinite(compute) && compute>=0) {this.computeMs=compute;run?.recordGPU(compute,'compute',started);}
       }).catch(()=>{ this.timestampSupported=false; this.gpuMs=null; }).finally(()=>{this.timestampPending=false;});
+    }
+    if(this.timingMode==='queue' && !this.frameLimit && !this.queuePending && this.device && now-this.queueTime>=500) {
+      this.queuePending=true;this.queueTime=now;
+      const started=performance.now(),run=this.measurement;
+      this.queuePromise=this.device.queue.onSubmittedWorkDone().then(()=>{
+        if(this.destroyed) return;
+        this.queueMs=performance.now()-started;run?.recordQueue(this.queueMs,started);
+      }).catch(()=>{}).finally(()=>{this.queuePending=false;});
+    }
+    if(this.frameLimit && this.device) {
+      this.framesInFlight++;
+      const started=performance.now(),run=this.measurement;
+      const completion=this.device.queue.onSubmittedWorkDone().then(()=>{
+        if(this.destroyed) return;
+        this.queueMs=performance.now()-started;run?.recordQueue(this.queueMs,started);
+      }).catch(()=>{}).finally(()=>{this.framesInFlight--;this.frameCompletions.delete(completion);});
+      this.frameCompletions.add(completion);
     }
   };
   private updateEvolution() {
@@ -304,7 +344,7 @@ export class CumulonimbusApp {
   private updateMetrics(now: number) {
     const stats=summarizeFrames(this.intervals);
     this.status.textContent=this.simulationTime<38?`WebGPU · formazione accelerata · ${Math.round(Math.min(1,this.simulationTime/38)*100)}%`:'WebGPU · convezione attiva';
-    this.metrics.textContent=`WebGPU · ${stats.fps.toFixed(1)} fps rAF · ${this.adapterInfo.description || this.adapterInfo.vendor || 'GPU non identificata'}\nOutput ${this.outputWidth}×${this.outputHeight} · interno ${this.internalWidth}×${this.internalHeight}\n${QUALITY[this.quality].steps} passi nominali · mediana ${stats.medianMs.toFixed(2)} ms · p95 ${stats.p95Ms.toFixed(2)} ms\nGPU rendering ${this.gpuMs===null?'non disponibile':`${this.gpuMs.toFixed(2)} ms`} · volume ${VOLUME_RESOLUTION}³ + dettaglio ${DETAIL_RESOLUTION}³ · nessun TAA\nTempo della nube: ${this.simulationTime.toFixed(1)} s · seme: ${this.seed}`;
+    this.metrics.textContent=`WebGPU · ${stats.fps.toFixed(1)} fps rAF · ${this.adapterInfo.description || this.adapterInfo.vendor || 'GPU non identificata'}\nOutput ${this.outputWidth}×${this.outputHeight} · interno ${this.internalWidth}×${this.internalHeight}\n${QUALITY[this.quality].steps} passi nominali · mediana ${stats.medianMs.toFixed(2)} ms · p95 ${stats.p95Ms.toFixed(2)} ms\nGPU rendering ${this.gpuMs===null?'non disponibile':`${this.gpuMs.toFixed(2)} ms`} · flusso ${this.computeMs===null?'n/d':`${this.computeMs.toFixed(3)} ms`}\n${this.queueMs===null?'':`Coda completata: ${this.queueMs.toFixed(2)} ms · non è presentazione\n`}Volume ${VOLUME_RESOLUTION}³ + dettaglio ${DETAIL_RESOLUTION}³ · nessun TAA\nTempo della nube: ${this.simulationTime.toFixed(1)} s · seme: ${this.seed}`;
     if(this.measurement && !this.measurement.result && !this.measurement.cancelReason) {
       const remaining=Math.max(0,(this.measurement.start+this.measurement.warmup+this.measurement.duration-now)/1000);
       this.result.textContent=`Misura in corso · ${Math.ceil(remaining)} s · ${this.measurement.intervals.length} frame raccolti`;
@@ -318,9 +358,9 @@ export class CumulonimbusApp {
     this.measurement=new FrameMeasurement(performance.now(),duration,2000);
     this.benchmarkContext={date:new Date().toISOString(),backend:'WebGPU',adapter:this.adapterInfo,threeRevision:'186',quality:this.quality,
       output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],nominalSteps:QUALITY[this.quality].steps,
-      rendererVersion:'convective-bounds-v9',simulationTimeStart:this.simulationTime,motionModel:'16-cubed GPU flow, 64 atlas phases interpolated by compute every frame, 68-second loop; co-deformed cached light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
+      rendererVersion:'convective-profile-v10',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed GPU flow, 64 atlas phases interpolated by compute every frame, 68-second loop; co-deformed cached light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
       userAgent:navigator.userAgent,devicePixelRatio:window.devicePixelRatio,
-      method:'Visible requestAnimationFrame intervals, one flow-compute and one cloud draw submission per callback; not compositor presentation. CPU callback work includes compute and draw submission. GPU timestamps cover render only and exclude the compute pass.',warmupMs:2000,targetDurationMs:duration};
+      method:'Visible requestAnimationFrame intervals, CPU compute/render submission and callback dispatch delay. GPU render and compute timestamps sampled separately; their last-frame samples are not necessarily paired. Optional queue completion latency includes GPU work, readback and JS delivery; not compositor presentation.',warmupMs:2000,targetDurationMs:duration};
     this.setButtonEnabled('benchmark',false); this.setButtonEnabled('sustained',false);
     this.result.textContent='Riscaldamento · 2 s…';
   }
@@ -329,9 +369,11 @@ export class CumulonimbusApp {
     const stats=this.measurement.result;
     const gpu=this.measurement.gpuSamplesMs;
     const cpu=this.measurement.cpuSamplesMs;
-    this.report={...this.benchmarkContext,simulationTimeEnd:this.simulationTime,emptyStepWorldEnd:this.emptyStep.value,stats,gpu:gpu.length?{sampleCount:gpu.length,meanMs:gpu.reduce((a,b)=>a+b,0)/gpu.length,p95Ms:[...gpu].sort((a,b)=>a-b)[Math.floor(gpu.length*.95)]}:null,
-      cpu:cpu.length?{sampleCount:cpu.length,meanMs:cpu.reduce((a,b)=>a+b,0)/cpu.length,p95Ms:[...cpu].sort((a,b)=>a-b)[Math.floor(cpu.length*.95)]}:null,
-      frameIntervalsMs:this.measurement.intervals,gpuSamplesMs:gpu,cpuSamplesMs:cpu};
+    this.report={...this.benchmarkContext,simulationTimeEnd:this.simulationTime,skippedFrames:this.skippedFrames-(this.benchmarkContext.skippedFramesAtStart as number),emptyStepWorldEnd:this.emptyStep.value,stats,
+      gpu:summarizeSamples(gpu),cpu:summarizeSamples(cpu),gpuCompute:summarizeSamples(this.measurement.computeSamplesMs),queueCompletion:summarizeSamples(this.measurement.queueSamplesMs),
+      rafDispatch:summarizeSamples(this.measurement.dispatchSamplesMs),cpuCompute:summarizeSamples(this.measurement.cpuComputeSamplesMs),cpuRender:summarizeSamples(this.measurement.cpuRenderSamplesMs),
+      frameIntervalsMs:this.measurement.intervals,gpuSamplesMs:gpu,cpuSamplesMs:cpu,computeSamplesMs:this.measurement.computeSamplesMs,queueSamplesMs:this.measurement.queueSamplesMs,
+      dispatchSamplesMs:this.measurement.dispatchSamplesMs,cpuComputeSamplesMs:this.measurement.cpuComputeSamplesMs,cpuRenderSamplesMs:this.measurement.cpuRenderSamplesMs};
     this.rawReport.textContent=JSON.stringify(this.report);
     this.result.textContent=`${stats.fps.toFixed(1)} fps · ${(stats.durationMs/1000).toFixed(1)} s · ${stats.frames} frame\nMediana ${stats.medianMs.toFixed(2)} ms · p95 ${stats.p95Ms.toFixed(2)} · p99 ${stats.p99Ms.toFixed(2)}\n${stats.over33Ms} frame oltre 33,34 ms · massimo ${stats.maxMs.toFixed(2)} ms`;
     this.setButtonEnabled('benchmark',true); this.setButtonEnabled('sustained',true); this.setButtonEnabled('export',true);
@@ -362,6 +404,13 @@ export class CumulonimbusApp {
   };
   private onChange = (event: Event) => {
     const input=event.target as HTMLSelectElement;
+    if(this.profiling && input.name==='inflight') {
+      this.invalidate('Gestione della coda modificata');
+      this.frameLimit=[1,2].includes(Number(input.value))?Number(input.value):0;
+      const next=new URL(location.href);next.searchParams.set('inflight',String(this.frameLimit));history.replaceState(null,'',next.toString());
+      return;
+    }
+    if(this.profiling && (input.name==='timing'||input.name==='flow'||input.name==='inflight')) {const next=new URL(location.href);next.searchParams.set(input.name,input.value);location.assign(next.toString());return;}
     this.invalidate('Qualità o risoluzione modificata');
     if(input.name==='quality' && input.value in QUALITY) this.quality=input.value as Quality;
     if(input.name==='output') this.outputMode=input.value;
@@ -373,6 +422,8 @@ export class CumulonimbusApp {
       // Init can allocate Three's internal animation manager after teardown was requested.
       await this.initialization?.catch(()=>{});
       await this.timestampPromise;
+      await this.queuePromise;
+      await Promise.all(this.frameCompletions);
       this.releasingGPU=true;
       this.material?.dispose(); this.volume?.dispose();this.detailVolume?.dispose();this.flowTexture.dispose();this.currentFlow.dispose();this.interpolateFlow.dispose(); this.renderer?.dispose(); this.device?.destroy(); this.renderer?.domElement.remove();
     })();

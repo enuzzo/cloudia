@@ -15,6 +15,11 @@ export class FrameMeasurement {
   readonly intervals: number[] = [];
   readonly gpuSamplesMs: number[] = [];
   readonly cpuSamplesMs: number[] = [];
+  readonly computeSamplesMs: number[] = [];
+  readonly queueSamplesMs: number[] = [];
+  readonly dispatchSamplesMs: number[] = [];
+  readonly cpuComputeSamplesMs: number[] = [];
+  readonly cpuRenderSamplesMs: number[] = [];
   result: FrameStats | null = null;
   cancelReason = '';
   private previous: number | null = null;
@@ -27,7 +32,16 @@ export class FrameMeasurement {
     this.previous = now;
     if (now - this.first >= this.duration) this.result = summarizeFrames(this.intervals);
   }
-  recordGPU(ms: number) { if (this.previous !== null && !this.result && !this.cancelReason && Number.isFinite(ms)) this.gpuSamplesMs.push(ms); }
-  recordCPU(ms: number) { if (this.previous !== null && !this.result && !this.cancelReason && Number.isFinite(ms)) this.cpuSamplesMs.push(ms); }
+  private sample(values:number[],ms:number,startedAt=Infinity) { if(this.previous!==null && !this.result && !this.cancelReason && startedAt>=this.start+this.warmup && Number.isFinite(ms) && ms>=0) values.push(ms); }
+  recordGPU(ms: number,stage:'render'|'compute'='render',startedAt=Infinity) {this.sample(stage==='render'?this.gpuSamplesMs:this.computeSamplesMs,ms,startedAt);}
+  recordCPU(ms: number) {this.sample(this.cpuSamplesMs,ms);}
+  recordQueue(ms:number,startedAt=Infinity) {this.sample(this.queueSamplesMs,ms,startedAt);}
+  recordDispatch(ms:number) {this.sample(this.dispatchSamplesMs,ms);}
+  recordStages(compute:number,render:number) {this.sample(this.cpuComputeSamplesMs,compute);this.sample(this.cpuRenderSamplesMs,render);}
   cancel(reason: string) { if (!this.result) this.cancelReason = reason; }
+}
+export function summarizeSamples(values:readonly number[]) {
+  if(!values.length) return null;
+  const sorted=[...values].sort((a,b)=>a-b);
+  return {sampleCount:values.length,meanMs:values.reduce((a,b)=>a+b,0)/values.length,p95Ms:sorted[Math.floor(sorted.length*.95)],maxMs:sorted.at(-1)};
 }

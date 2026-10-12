@@ -13,7 +13,7 @@ vi.mock('three/webgpu',async(importOriginal)=>{
 });
 import { CumulonimbusApp } from './CumulonimbusApp';
 async function flush() {for(let i=0;i<15;i++) await Promise.resolve();}
-const device={destroy:vi.fn()};
+const device={destroy:vi.fn(),queue:{onSubmittedWorkDone:vi.fn(()=>Promise.resolve())}};
 beforeEach(()=>{
   vi.clearAllMocks(); control.renderer=null; control.workers=[];
   Object.defineProperty(navigator,'gpu',{configurable:true,value:{requestAdapter:async()=>({info:{vendor:'test'},features:new Set(),requestDevice:async()=>device})}});
@@ -23,9 +23,43 @@ beforeEach(()=>{
     constructor() {control.workers.push(this);} postMessage() {}
   });
 });
-afterEach(()=>{vi.restoreAllMocks();vi.unstubAllGlobals();document.body.innerHTML='';});
+afterEach(()=>{vi.restoreAllMocks();vi.unstubAllGlobals();document.body.innerHTML='';history.replaceState(null,'','/');});
 function createApp() {const root=document.createElement('main');document.body.append(root);return {app:new CumulonimbusApp(root),root};}
 describe('scene async lifecycle',()=>{
+  it('bounds submitted frames until GPU completion without counting skipped callbacks as draws',async()=>{
+    history.replaceState(null,'','/?profile=1&inflight=2');
+    vi.spyOn(document,'hidden','get').mockReturnValue(false);
+    const completions:Array<()=>void>=[];
+    device.queue.onSubmittedWorkDone.mockImplementation(()=>new Promise<void>(resolve=>completions.push(resolve)));
+    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    const volume={size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
+    control.workers[0].onmessage!({data:{volume}});await starting;
+    const frame=vi.mocked(requestAnimationFrame).mock.calls[0][0];
+    frame(1000);frame(1017);frame(1034);
+    expect(control.render).toHaveBeenCalledTimes(3); // initial draw + two submitted frames
+    completions.splice(0).forEach(resolve=>resolve());await flush();
+    frame(1051);
+    expect(control.render).toHaveBeenCalledTimes(4);
+    frame(1068);frame(1085);
+    expect(control.render).toHaveBeenCalledTimes(5);
+    const policy=root.querySelector<HTMLSelectElement>('select[name="inflight"]')!;
+    policy.value='0';policy.dispatchEvent(new Event('change',{bubbles:true}));
+    frame(1102);
+    expect(control.render).toHaveBeenCalledTimes(6); // switches without rebuilding the GPU context
+    completions.splice(0).forEach(resolve=>resolve());await flush();app.destroy();await flush();
+    device.queue.onSubmittedWorkDone.mockImplementation(()=>Promise.resolve());
+  });
+  it('initializes frozen flow again when a newly seeded volume is installed',async()=>{
+    history.replaceState(null,'','/?profile=1&flow=frozen');
+    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    const volume={size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
+    control.workers[0].onmessage!({data:{volume}});await starting;
+    expect(control.compute).toHaveBeenCalledOnce();
+    root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
+    control.workers[1].onmessage!({data:{volume}});await flush();
+    expect(control.compute).toHaveBeenCalledTimes(2);
+    app.destroy();await flush();
+  });
   it('starts exactly one RAF when initial generation finishes in a hidden tab',async()=>{
     const hidden=vi.spyOn(document,'hidden','get').mockReturnValue(true);
     const {app}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
