@@ -1,10 +1,10 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-const control = vi.hoisted(()=>({initResolve:()=>{},renderer:null as null | {dispose:ReturnType<typeof vi.fn>;onDeviceLost:()=>void;initialized:boolean},workers:[] as Array<{onmessage:((event:unknown)=>void)|null;terminate:ReturnType<typeof vi.fn>}>,render:vi.fn(),originalLost:vi.fn()}));
+const control = vi.hoisted(()=>({initResolve:()=>{},renderer:null as null | {dispose:ReturnType<typeof vi.fn>;onDeviceLost:()=>void;initialized:boolean},workers:[] as Array<{onmessage:((event:unknown)=>void)|null;terminate:ReturnType<typeof vi.fn>}>,render:vi.fn(),compute:vi.fn(),originalLost:vi.fn()}));
 vi.mock('three/webgpu',async(importOriginal)=>{
   const actual=await importOriginal<typeof import('three/webgpu')>();
   return {...actual,WebGPURenderer:class {
     backend={isWebGPUBackend:true}; domElement=document.createElement('canvas'); initialized=false;
-    dispose=vi.fn(); onDeviceLost=control.originalLost;
+    compute=control.compute; dispose=vi.fn(); onDeviceLost=control.originalLost;
     constructor() {control.renderer=this;}
     async init() {await new Promise<void>(resolve=>{control.initResolve=resolve;});this.initialized=true;}
     hasFeature() {return false;}
@@ -29,21 +29,23 @@ describe('scene async lifecycle',()=>{
   it('starts exactly one RAF when initial generation finishes in a hidden tab',async()=>{
     const hidden=vi.spyOn(document,'hidden','get').mockReturnValue(true);
     const {app}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)}}}});await starting;
+    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await starting;
     expect(requestAnimationFrame).not.toHaveBeenCalled();
+    expect(control.compute).toHaveBeenCalledOnce();
+    expect(control.compute.mock.invocationCallOrder[0]).toBeLessThan(control.render.mock.invocationCallOrder[0]);
     hidden.mockReturnValue(false);document.dispatchEvent(new Event('visibilitychange'));
     expect(requestAnimationFrame).toHaveBeenCalledOnce();
     app.destroy();await flush();hidden.mockRestore();
   });
   it('rebuilds density and lighting together and never resumes a regenerated scene after teardown',async()=>{
     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)}}}});await starting;
+    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await starting;
     root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
     expect(control.workers).toHaveLength(2);
     expect(root.querySelector<HTMLButtonElement>('[data-action="benchmark"]')!.disabled).toBe(true);
     const lateMessage=control.workers[1].onmessage!;
     app.destroy();await flush();
-    lateMessage({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)}}}});await flush();
+    lateMessage({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await flush();
     expect(control.render).toHaveBeenCalledOnce();
     expect(device.destroy).toHaveBeenCalledOnce();
   });
@@ -60,7 +62,7 @@ describe('scene async lifecycle',()=>{
     expect(control.workers).toHaveLength(1);
     const worker=control.workers[0];const lateMessage=worker.onmessage!;
     control.renderer!.onDeviceLost();await flush();
-    lateMessage({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)}}}});await starting;await flush();
+    lateMessage({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await starting;await flush();
     expect(control.originalLost).toHaveBeenCalledOnce();
     expect(worker.terminate).toHaveBeenCalled();
     expect(control.render).not.toHaveBeenCalled();

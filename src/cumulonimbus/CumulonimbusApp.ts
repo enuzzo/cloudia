@@ -1,7 +1,9 @@
 import { Data3DTexture, LinearFilter, MeshBasicNodeMaterial, NoColorSpace, QuadMesh,
-  RGBAFormat, RepeatWrapping, UnsignedByteType, Vector2, Vector3, WebGPURenderer } from 'three/webgpu';
-import { texture3D, uniform, uv } from 'three/tsl';
+  RGBAFormat, RepeatWrapping, UnsignedByteType, HalfFloatType, Storage3DTexture, Vector2, Vector3, WebGPURenderer } from 'three/webgpu';
+import { Fn, instanceIndex, vec3, mix, storageTexture3D, textureStore, texture3D, texture3DLoad, uniform, uv } from 'three/tsl';
 import { integrateCloud } from './cloudShader';
+import { motionState,MOTION_LOOP_SECONDS } from './motion';
+import { fillMotionAtlas,MOTION_FIELD_SIZE,MOTION_PHASES } from './motionField';
 import { EXTINCTION, ICE_EXTINCTION, DETAIL_RESOLUTION, EMPTY_SKIP_LIMIT, SUN_LEFT, SUN_RIGHT, VOLUME_RESOLUTION, cloudParameters, iceHeights, type CloudVolume } from './volume';
 import { FrameMeasurement, summarizeFrames } from './performance';
 import './scene.css';
@@ -12,7 +14,7 @@ const QUALITY = {
   balanced: {label:'Fluida · 75% / 96 passi', scale:.75, steps:96},
 } as const;
 type Quality = keyof typeof QUALITY;
-type CloudTextures = {macro:Data3DTexture;detail:Data3DTexture};
+type CloudTextures = {macro:Data3DTexture;detail:Data3DTexture;supportBounds:CloudVolume['supportBounds']};
 
 export class CumulonimbusApp {
   private renderer: WebGPURenderer | null = null;
@@ -64,6 +66,19 @@ export class CumulonimbusApp {
   private readonly stepSize = uniform(7/128);
   private readonly emptyStep = uniform(7/128);
   private readonly drift = uniform(new Vector3());
+  private readonly growth = uniform(new Vector3(.68,.88,.58));
+  private readonly supportMin=uniform(new Vector3(-5,-.5,-3.5));
+  private readonly supportMax=uniform(new Vector3(5,8,3.5));
+  private readonly flowData=new Uint16Array(MOTION_FIELD_SIZE**3*MOTION_PHASES*4);
+  private readonly flowTexture=new Data3DTexture(this.flowData,MOTION_FIELD_SIZE,MOTION_FIELD_SIZE,MOTION_FIELD_SIZE*MOTION_PHASES);
+  private readonly flowPhase=uniform(new Vector3());
+  private readonly currentFlow=new Storage3DTexture(MOTION_FIELD_SIZE,MOTION_FIELD_SIZE,MOTION_FIELD_SIZE);
+  private readonly interpolateFlow=Fn(()=>{
+    const x=instanceIndex.mod(MOTION_FIELD_SIZE).toFloat(), y=instanceIndex.div(MOTION_FIELD_SIZE).mod(MOTION_FIELD_SIZE).toFloat(), z=instanceIndex.div(MOTION_FIELD_SIZE**2).toFloat();
+    const a=texture3DLoad(this.flowTexture,vec3(x,y,z.add(this.flowPhase.x.mul(MOTION_FIELD_SIZE))));
+    const b=texture3DLoad(this.flowTexture,vec3(x,y,z.add(this.flowPhase.y.mul(MOTION_FIELD_SIZE))));
+    textureStore(storageTexture3D(this.currentFlow).toWriteOnly(),vec3(x,y,z),mix(a,b,this.flowPhase.z));
+  })().compute(MOTION_FIELD_SIZE**3);
   private readonly sun = uniform(new Vector3(...SUN_LEFT).normalize());
   private readonly lightSide = uniform(0);
   private readonly iceRange = uniform(new Vector2());
@@ -142,6 +157,7 @@ export class CumulonimbusApp {
       if(this.destroyed || this.deviceLost) { texture.macro.dispose();texture.detail.dispose(); return; }
       this.installVolume(texture);
       this.applySize();
+      renderer.compute(this.interpolateFlow);
       this.quad!.render(renderer); // Compile the shader before declaring the scene ready.
       this.ready=true;
       this.status.textContent=`WebGPU · volume ${VOLUME_RESOLUTION}³ · movimento lento`;
@@ -162,9 +178,18 @@ export class CumulonimbusApp {
     const volumeNode=texture3D(textures.macro), detailNode=texture3D(textures.detail);
     this.volume=textures.macro;this.detailVolume=textures.detail; this.material=new MeshBasicNodeMaterial();
     this.iceRange.value.fromArray(iceHeights(this.seed));
-    this.material.fragmentNode=integrateCloud({uv:uv(),volume:volumeNode,volumeSampler:volumeNode,detail:detailNode,detailSampler:detailNode,iceRange:this.iceRange,
+    this.supportMin.value.fromArray(textures.supportBounds.min);this.supportMax.value.fromArray(textures.supportBounds.max);
+    this.flowTexture.format=RGBAFormat;this.flowTexture.type=HalfFloatType;this.flowTexture.colorSpace=NoColorSpace;
+    this.flowTexture.minFilter=LinearFilter;this.flowTexture.magFilter=LinearFilter;this.flowTexture.generateMipmaps=false;this.flowTexture.unpackAlignment=1;
+    fillMotionAtlas(this.flowData,MOTION_FIELD_SIZE,MOTION_PHASES,this.seed,this.iceRange.value.toArray());
+    this.flowTexture.needsUpdate=true;
+    this.updateEvolution();
+    this.currentFlow.type=HalfFloatType;this.currentFlow.format=RGBAFormat;this.currentFlow.colorSpace=NoColorSpace;
+    this.currentFlow.generateMipmaps=false;
+    const flowNode=texture3D(this.currentFlow);
+    this.material.fragmentNode=integrateCloud({uv:uv(),volume:volumeNode,volumeSampler:volumeNode,detail:detailNode,detailSampler:detailNode,flow:flowNode,flowSampler:flowNode,iceRange:this.iceRange,
       origin:this.origin,forward:this.forward,right:this.right,up:this.up,aspect:this.aspect,tanFov:uniform(.2867),
-      stepSize:this.stepSize,emptyStep:this.emptyStep,resolution:this.resolution,drift:this.drift,sun:this.sun,lightSide:this.lightSide,extinction:uniform(EXTINCTION),iceExtinction:uniform(ICE_EXTINCTION)});
+      stepSize:this.stepSize,emptyStep:this.emptyStep,resolution:this.resolution,drift:this.drift,growth:this.growth,supportMin:this.supportMin,supportMax:this.supportMax,sun:this.sun,lightSide:this.lightSide,extinction:uniform(EXTINCTION),iceExtinction:uniform(ICE_EXTINCTION)});
     this.quad=new QuadMesh(this.material);
     oldMaterial?.dispose(); oldVolume?.dispose();oldDetail?.dispose();
   }
@@ -177,8 +202,8 @@ export class CumulonimbusApp {
     try {
       const texture=await this.loadVolume();
       if(this.destroyed || this.deviceLost) {texture.macro.dispose();texture.detail.dispose();return;}
-      this.installVolume(texture);
-      this.simulationTime=0; this.previous=0; this.intervals=[]; this.ready=true;
+      this.simulationTime=0; this.installVolume(texture);
+      this.previous=0; this.intervals=[]; this.ready=true;
       this.status.textContent=`WebGPU · volume ${VOLUME_RESOLUTION}³ · movimento lento`; this.status.classList.add('loaded');
       this.setButtonEnabled('new-cloud',true); this.setButtonEnabled('benchmark',true); this.setButtonEnabled('sustained',true);
       if(!document.hidden) this.raf=requestAnimationFrame(this.frame);
@@ -207,7 +232,7 @@ export class CumulonimbusApp {
           detailTexture.minFilter=LinearFilter;detailTexture.magFilter=LinearFilter;detailTexture.unpackAlignment=1;
           detailTexture.wrapS=RepeatWrapping;detailTexture.wrapT=RepeatWrapping;detailTexture.wrapR=RepeatWrapping;
           detailTexture.generateMipmaps=false;detailTexture.needsUpdate=true;
-          worker.terminate(); this.worker=null; this.rejectVolume=null; resolve({macro:texture,detail:detailTexture});
+          worker.terminate(); this.worker=null; this.rejectVolume=null; resolve({macro:texture,detail:detailTexture,supportBounds:event.data.volume.supportBounds});
         }
       };
       worker.onerror=()=>{ worker.terminate(); this.worker=null; this.rejectVolume=null; reject(new Error('La generazione del volume è fallita. Ricarica la scena.')); };
@@ -224,6 +249,7 @@ export class CumulonimbusApp {
     if(interval>0) { this.intervals.push(interval); if(this.intervals.length>180) this.intervals.shift(); }
     if(!this.paused) this.simulationTime+=Math.min(interval/1000,.05);
     const t=this.simulationTime;
+    this.updateEvolution();
     this.drift.value.set(Math.sin(t*.065)*.055, Math.sin(t*.04)*.018,0);
     const angle=this.orbit?Math.sin(t*.09)*.38:0;
     const distance=16*Math.max(1,.85/this.aspect.value);
@@ -231,6 +257,7 @@ export class CumulonimbusApp {
     this.forward.value.copy(this.origin.value).sub(new Vector3(0,3.5,0)).negate().normalize();
     this.right.value.crossVectors(this.forward.value,new Vector3(0,1,0)).normalize();
     this.up.value.crossVectors(this.right.value,this.forward.value).normalize();
+    this.renderer.compute(this.interpolateFlow);
     this.quad.render(this.renderer);
     this.measurement?.recordCPU(performance.now()-cpuStart);
     this.measurement?.record(now);
@@ -245,6 +272,16 @@ export class CumulonimbusApp {
       }).catch(()=>{ this.timestampSupported=false; this.gpuMs=null; }).finally(()=>{this.timestampPending=false;});
     }
   };
+  private updateEvolution() {
+    const evolution=motionState(this.simulationTime,this.seed);
+    this.growth.value.set(1/evolution.height,1/evolution.width,1/evolution.anvil);
+    // Once growth is complete, reference space is identical to world space.
+    // The enlarged mask contains the flow bound and the original fine-warp halo,
+    // so the original conservative integer stride is safe again.
+    this.emptyStep.value=this.stepSize.value*(this.simulationTime>=38?Math.max(1,Math.floor(EMPTY_SKIP_LIMIT/this.stepSize.value)):1);
+    const phase=(this.simulationTime%MOTION_LOOP_SECONDS)/MOTION_LOOP_SECONDS*MOTION_PHASES,rawIndex=Math.floor(phase),index=rawIndex%MOTION_PHASES;
+    this.flowPhase.value.set(index,(index+1)%MOTION_PHASES,phase-rawIndex);
+  }
   private applySize() {
     if(!this.renderer) return;
     const pixelScale=this.outputMode==='screen'?window.devicePixelRatio:1;
@@ -258,13 +295,16 @@ export class CumulonimbusApp {
     this.root.classList.toggle('fixed-output',this.outputMode==='720'||this.outputMode==='1080');
     this.resolution.value.set(this.internalWidth,this.internalHeight);
     this.stepSize.value=7/QUALITY[this.quality].steps;
-    this.emptyStep.value=this.stepSize.value*Math.max(1,Math.floor(EMPTY_SKIP_LIMIT/this.stepSize.value));
+    // Deformation changes the material-space distance of a world step. Retain
+    // ordinary integration steps until a new accelerated margin is proven.
+    this.emptyStep.value=this.stepSize.value;
     this.dirtySize=false;
     this.intervals=[]; this.previous=0;
   }
   private updateMetrics(now: number) {
     const stats=summarizeFrames(this.intervals);
-    this.metrics.textContent=`WebGPU · ${stats.fps.toFixed(1)} fps rAF · ${this.adapterInfo.description || this.adapterInfo.vendor || 'GPU non identificata'}\nOutput ${this.outputWidth}×${this.outputHeight} · interno ${this.internalWidth}×${this.internalHeight}\n${QUALITY[this.quality].steps} passi nominali · mediana ${stats.medianMs.toFixed(2)} ms · p95 ${stats.p95Ms.toFixed(2)} ms\nGPU ${this.gpuMs===null?'non disponibile':`${this.gpuMs.toFixed(2)} ms`} · volume ${VOLUME_RESOLUTION}³ + dettaglio ${DETAIL_RESOLUTION}³ · nessun TAA\nSeme della nube: ${this.seed}`;
+    this.status.textContent=this.simulationTime<38?`WebGPU · formazione accelerata · ${Math.round(Math.min(1,this.simulationTime/38)*100)}%`:'WebGPU · convezione attiva';
+    this.metrics.textContent=`WebGPU · ${stats.fps.toFixed(1)} fps rAF · ${this.adapterInfo.description || this.adapterInfo.vendor || 'GPU non identificata'}\nOutput ${this.outputWidth}×${this.outputHeight} · interno ${this.internalWidth}×${this.internalHeight}\n${QUALITY[this.quality].steps} passi nominali · mediana ${stats.medianMs.toFixed(2)} ms · p95 ${stats.p95Ms.toFixed(2)} ms\nGPU rendering ${this.gpuMs===null?'non disponibile':`${this.gpuMs.toFixed(2)} ms`} · volume ${VOLUME_RESOLUTION}³ + dettaglio ${DETAIL_RESOLUTION}³ · nessun TAA\nTempo della nube: ${this.simulationTime.toFixed(1)} s · seme: ${this.seed}`;
     if(this.measurement && !this.measurement.result && !this.measurement.cancelReason) {
       const remaining=Math.max(0,(this.measurement.start+this.measurement.warmup+this.measurement.duration-now)/1000);
       this.result.textContent=`Misura in corso · ${Math.ceil(remaining)} s · ${this.measurement.intervals.length} frame raccolti`;
@@ -278,9 +318,9 @@ export class CumulonimbusApp {
     this.measurement=new FrameMeasurement(performance.now(),duration,2000);
     this.benchmarkContext={date:new Date().toISOString(),backend:'WebGPU',adapter:this.adapterInfo,threeRevision:'186',quality:this.quality,
       output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],nominalSteps:QUALITY[this.quality].steps,
-      rendererVersion:'optical-detail-v5',outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
+      rendererVersion:'convective-bounds-v9',simulationTimeStart:this.simulationTime,motionModel:'16-cubed GPU flow, 64 atlas phases interpolated by compute every frame, 68-second loop; co-deformed cached light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
       userAgent:navigator.userAgent,devicePixelRatio:window.devicePixelRatio,
-      method:'Visible requestAnimationFrame intervals, one cloud draw submission per callback; not compositor presentation. CPU callback work through draw submission, asynchronous GPU timestamp samples when available.',warmupMs:2000,targetDurationMs:duration};
+      method:'Visible requestAnimationFrame intervals, one flow-compute and one cloud draw submission per callback; not compositor presentation. CPU callback work includes compute and draw submission. GPU timestamps cover render only and exclude the compute pass.',warmupMs:2000,targetDurationMs:duration};
     this.setButtonEnabled('benchmark',false); this.setButtonEnabled('sustained',false);
     this.result.textContent='Riscaldamento · 2 s…';
   }
@@ -289,7 +329,7 @@ export class CumulonimbusApp {
     const stats=this.measurement.result;
     const gpu=this.measurement.gpuSamplesMs;
     const cpu=this.measurement.cpuSamplesMs;
-    this.report={...this.benchmarkContext,stats,gpu:gpu.length?{sampleCount:gpu.length,meanMs:gpu.reduce((a,b)=>a+b,0)/gpu.length,p95Ms:[...gpu].sort((a,b)=>a-b)[Math.floor(gpu.length*.95)]}:null,
+    this.report={...this.benchmarkContext,simulationTimeEnd:this.simulationTime,emptyStepWorldEnd:this.emptyStep.value,stats,gpu:gpu.length?{sampleCount:gpu.length,meanMs:gpu.reduce((a,b)=>a+b,0)/gpu.length,p95Ms:[...gpu].sort((a,b)=>a-b)[Math.floor(gpu.length*.95)]}:null,
       cpu:cpu.length?{sampleCount:cpu.length,meanMs:cpu.reduce((a,b)=>a+b,0)/cpu.length,p95Ms:[...cpu].sort((a,b)=>a-b)[Math.floor(cpu.length*.95)]}:null,
       frameIntervalsMs:this.measurement.intervals,gpuSamplesMs:gpu,cpuSamplesMs:cpu};
     this.rawReport.textContent=JSON.stringify(this.report);
@@ -334,7 +374,7 @@ export class CumulonimbusApp {
       await this.initialization?.catch(()=>{});
       await this.timestampPromise;
       this.releasingGPU=true;
-      this.material?.dispose(); this.volume?.dispose();this.detailVolume?.dispose(); this.renderer?.dispose(); this.device?.destroy(); this.renderer?.domElement.remove();
+      this.material?.dispose(); this.volume?.dispose();this.detailVolume?.dispose();this.flowTexture.dispose();this.currentFlow.dispose();this.interpolateFlow.dispose(); this.renderer?.dispose(); this.device?.destroy(); this.renderer?.domElement.remove();
     })();
     return this.cleanup;
   }

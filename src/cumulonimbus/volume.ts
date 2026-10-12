@@ -1,4 +1,5 @@
 import { bakeOpticalDepth } from './light';
+import { THERMAL_DISPLACEMENT } from './motion';
 /** World bounds and extinction are shared by the bake and ray integrator. */
 export const BOUNDS_MIN = [-5, -0.5, -3.5] as const;
 export const BOUNDS_SIZE = [10, 8.5, 7] as const;
@@ -15,7 +16,27 @@ export const SUN_LEFT = [-0.75, 0.8, 0.24] as const;
 export const SUN_RIGHT = [0.75, 0.8, 0.24] as const;
 export const heightErosionScale = (worldY: number) => (.48+.52*smoothstep(1.6,2.5,worldY))*(1-.55*smoothstep(5.1,6.2,worldY));
 export interface DetailVolume { size: number; data: Uint8Array }
-export interface CloudVolume { size: number; data: Uint8Array; detail: DetailVolume }
+export interface CloudVolume { size: number; data: Uint8Array; detail: DetailVolume; supportBounds:{min:number[];max:number[]} }
+/** The raw linear density footprint, enlarged for fine warp and bounded flow.
+ * Growth contracts toward x/z=0 and y=.72, so including those anchors covers
+ * every growth phase as well as the mature cloud. The global texture box stays fixed.
+ */
+export function densitySupportBounds(envelope:DetailVolume): {min:number[];max:number[]} {
+  const min=[Infinity,Infinity,Infinity],max=[-Infinity,-Infinity,-Infinity];
+  for(let z=0;z<envelope.size;z++) for(let y=0;y<envelope.size;y++) for(let x=0;x<envelope.size;x++) {
+    if(!envelope.data[((z*envelope.size+y)*envelope.size+x)*4]) continue;
+    const point=[x,y,z];
+    for(let axis=0;axis<3;axis++) {min[axis]=Math.min(min[axis],point[axis]);max[axis]=Math.max(max[axis],point[axis]);}
+  }
+  if(!Number.isFinite(min[0])) return {min:[...BOUNDS_MIN],max:BOUNDS_MIN.map((v,i)=>v+BOUNDS_SIZE[i])};
+  const anchor=[0,.72,0];
+  for(let axis=0;axis<3;axis++) {
+    const voxel=BOUNDS_SIZE[axis]/envelope.size,pad=voxel+[.08,.06,.08][axis]+THERMAL_DISPLACEMENT[axis];
+    min[axis]=Math.max(BOUNDS_MIN[axis],Math.min(anchor[axis],BOUNDS_MIN[axis]+(min[axis]+.5)*voxel-pad));
+    max[axis]=Math.min(BOUNDS_MIN[axis]+BOUNDS_SIZE[axis],Math.max(anchor[axis],BOUNDS_MIN[axis]+(max[axis]+.5)*voxel+pad));
+  }
+  return {min,max};
+}
 export interface CloudParameters { towerHeight: number; towerWidth: number; anvilSpread: number; windLean: number }
 type Lobe = [number, number, number, number, number, number, number?];
 const clamp = (v: number) => Math.max(0, Math.min(1, v));
@@ -88,21 +109,28 @@ export function sampleCloudDensity(envelope:DetailVolume,detail:DetailVolume,x:n
 /** Packs a conservative occupied-region mask into the unused alpha of the detail texture.
  * Noise RGB still repeats in cloud space; mask alpha is read at normalized world coordinates.
  */
-export function bakeOccupancy(envelope:DetailVolume,detail:DetailVolume): void {
+export function bakeOccupancy(envelope:DetailVolume,detail:DetailVolume,additional:readonly number[]=[0,0,0]): void {
   const coarse=detail.size, fine=envelope.size, mask=new Uint8Array(coarse**3);
   for(let z=0;z<fine;z++) for(let y=0;y<fine;y++) for(let x=0;x<fine;x++) {
     if(envelope.data[((z*fine+y)*fine+x)*4]===0) continue;
     mask[(Math.floor(z*coarse/fine)*coarse+Math.floor(y*coarse/fine))*coarse+Math.floor(x*coarse/fine)]=1;
   }
   // Include displacement and the macro interpolation footprint on each axis.
-  const radius=BOUNDS_SIZE.map((extent,axis)=>Math.ceil(([.08,.06,.08][axis]+extent/fine)/(extent/coarse)));
-  for(let i=0;i<coarse**3;i++) detail.data[i*4+3]=0;
+  const radius=BOUNDS_SIZE.map((extent,axis)=>Math.ceil(([.08,.06,.08][axis]+additional[axis]+extent/fine)/(extent/coarse)));
+  // Cuboid union via a 3D difference array: broad deformation margins must not
+  // multiply the worker's work by the volume of every dilation neighbourhood.
+  const edge=coarse+1, difference=new Int32Array(edge**3);
   for(let z=0;z<coarse;z++) for(let y=0;y<coarse;y++) for(let x=0;x<coarse;x++) {
     if(!mask[(z*coarse+y)*coarse+x]) continue;
-    for(let c=Math.max(0,z-radius[2]);c<=Math.min(coarse-1,z+radius[2]);c++)
-      for(let b=Math.max(0,y-radius[1]);b<=Math.min(coarse-1,y+radius[1]);b++)
-        for(let a=Math.max(0,x-radius[0]);a<=Math.min(coarse-1,x+radius[0]);a++) detail.data[((c*coarse+b)*coarse+a)*4+3]=255;
+    const lo=[Math.max(0,x-radius[0]),Math.max(0,y-radius[1]),Math.max(0,z-radius[2])];
+    const hi=[Math.min(coarse,x+radius[0]+1),Math.min(coarse,y+radius[1]+1),Math.min(coarse,z+radius[2]+1)];
+    for(let c=0;c<2;c++) for(let b=0;b<2;b++) for(let a=0;a<2;a++)
+      difference[((c?hi[2]:lo[2])*edge+(b?hi[1]:lo[1]))*edge+(a?hi[0]:lo[0])]+=(a+b+c)%2?-1:1;
   }
+  for(let z=0;z<edge;z++) for(let y=0;y<edge;y++) for(let x=1;x<edge;x++) difference[(z*edge+y)*edge+x]+=difference[(z*edge+y)*edge+x-1];
+  for(let z=0;z<edge;z++) for(let y=1;y<edge;y++) for(let x=0;x<edge;x++) difference[(z*edge+y)*edge+x]+=difference[(z*edge+y-1)*edge+x];
+  for(let z=1;z<edge;z++) for(let y=0;y<edge;y++) for(let x=0;x<edge;x++) difference[(z*edge+y)*edge+x]+=difference[((z-1)*edge+y)*edge+x];
+  for(let z=0;z<coarse;z++) for(let y=0;y<coarse;y++) for(let x=0;x<coarse;x++) detail.data[((z*coarse+y)*coarse+x)*4+3]=difference[(z*edge+y)*edge+x]>0?255:0;
 }
 /** Periodic feature lattice for cellular erosion. Feature positions are allocated once per bake. */
 function cellularNoise(seed: number) {
@@ -129,7 +157,7 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
   const cores: Lobe[] = [
     [-.25,1.45,0, 2.85,.88,1.75], [-.4,2.5,-.1, 2.1,1.45,1.6],
     [-.35,3.85,0, 2.1,1.6,1.65], [-.7,5.1,-.1, 1.7,1.25,1.5],
-    [.3,6.0,-.3, 2.8,.48,1.65], [1.7,6.12,-.35, 2.55,.30,1.4]
+    [.3,6.0,-.3, 2.8,.30,1.65,.045], [1.7,6.12,-.35, 2.55,.19,1.4,.035]
   ];
   const shape=cloudParameters(seed);
   for(let i=0;i<cores.length;i++) {
@@ -158,10 +186,10 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
   // Sparse, thin ice streaks connect to the outflow and taper at varying heights.
   // A separate RNG preserves the convective tower layout for seed comparisons.
   const iceRng=random(seed^0x73d61a29);
-  for(let j=0;j<28;j++) {
+  for(let j=0;j<48;j++) {
     const reach=iceRng(),rx=(.55+iceRng()*.75)*shape.anvilSpread;
     const cx=(.3+reach*2.8)*shape.anvilSpread+6*shape.windLean;
-    lobes.push([Math.min(cx,4.7-rx),.72+(6.08+(iceRng()-.5)*.58-.72)*shape.towerHeight,
+    lobes.push([Math.min(cx,4.7-rx),.72+(6.08+(iceRng()-.5)*.8-.72)*shape.towerHeight,
       -.35+(iceRng()-.5)*2.3*shape.towerWidth,rx,.055+iceRng()*.055,.17+iceRng()*.27,.045]);
   }
   // Rasterize lobes into their local bounds instead of testing every lobe at every voxel.
@@ -188,7 +216,7 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
       const worldY=py+BOUNDS_MIN[1];
       const erosionScale=heightErosionScale(worldY);
       const ice=smoothstep(iceStart,iceEnd,worldY);
-      const fibers=noise(px*.65+py*.17,py*5,pz*2.8,seed+81);
+      const fibers=noise(px*.3+py*.17,py*5,pz*1.0,seed+81);
       const carving=erosion*erosionScale*(1-ice)-(.008+(1-fibers)*.035)*ice;
       density[idx]=clamp((field[idx]+carving-(.025-.017*ice))*(10+ice*4)) * (.65+.35*n2) * (1-ice*(1-fibers)*.5) * baseFade;
     }
@@ -218,6 +246,6 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
     for(let i=0;i<n;i++) data[i*4+channel]=Math.round(clamp(tau[i]/16)*255);
     progress?.(.55+.15*channel);
   }
-  bakeOccupancy(envelope,detail);
-  return {size, data, detail};
+  bakeOccupancy(envelope,detail,THERMAL_DISPLACEMENT);
+  return {size, data, detail, supportBounds:densitySupportBounds(envelope)};
 }

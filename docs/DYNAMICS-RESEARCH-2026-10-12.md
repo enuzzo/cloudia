@@ -40,3 +40,8 @@ Begin with one mature, central cloud and bounded activity. Real development occu
 - Repeat 90-second Full HD and default-window measurements after the final visual candidate, including max/p95/p99 and long intervals. Preserve slow runs. Target remains 60 fps on this host; no 120-fps or native-DPR guarantee.
 
 Next priority: photographic anvil morphology **and** convective motion together. Gestures remain queued after visual/performance acceptance. No renderer change, deployment, camera permission or new FPS certification in this research pass.
+
+
+## Implementation follow-up, 12 October
+
+The approved motion pass is implemented as38-second formation plus local rising thermals in a GPU flow field. The actual NWS developing/dissipating sequence was visually inspected; its21-minute caption was used for stage ordering only. [Implementation, animated phase captures and measured limitations](MOTION-2026-10-12.md) supersede the research-only status above. Stable60 and photographic acceptance remain open; gestures remain deferred.

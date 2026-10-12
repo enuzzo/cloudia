@@ -212,3 +212,8 @@ Project operating docs:
 - `docs/PROJECT_OPERATING_RULES.md`: workflow, visual quality bar, documentation rules.
 - `docs/WORKLOG.md`: work done, commit notes, and milestones.
 - `docs/GOTCHAS.md`: traps and findings to preserve across sessions.
+
+
+### October2026 default-scene evolution
+
+The original WebGL laboratory/embed remains available. Default central WebGPU scene now has seeded accelerated formation and GPU local deformation; its governing specification is2026-10-11-cumulonimbus-rebuild-design.md and current motion evidence is../../MOTION-2026-10-12.md. Stable60 and photographic acceptance remain open before gestures.

@@ -1,7 +1,38 @@
 import { describe, expect, it } from 'vitest';
 import { generateVolume, heightErosionScale, cloudParameters, generateDetail, sampleDetail, erodeDensity, sampleCloudDensity, bakeOccupancy, voxelCenter, BOUNDS_MIN, BOUNDS_SIZE, materialExtinction, EMPTY_SKIP_LIMIT, VOLUME_RESOLUTION, DETAIL_RESOLUTION } from './volume';
+import { THERMAL_DISPLACEMENT } from './motion';
+import { densitySupportBounds } from './volume';
 
 describe('authored density volume', () => {
+  it('bounds interpolated raw support, fine warp and flow including contraction toward the anchors',()=>{
+    const envelope={size:4,data:new Uint8Array(4**3*4)};
+    envelope.data[((1*4+2)*4+1)*4]=255;
+    const bounds=densitySupportBounds(envelope);
+    expect(bounds.min[0]).toBeCloseTo(-4.035);
+    expect(bounds.min[1]).toBeCloseTo(.72);
+    expect(bounds.min[2]).toBeCloseTo(-2.91);
+    expect(bounds.max[0]).toBeCloseTo(1.535);
+    expect(bounds.max[1]).toBeCloseTo(7.5775);
+    expect(bounds.max[2]).toBeCloseTo(1.16);
+  });
+  it('covers the thermal displacement before evaluating the expensive flow field',()=>{
+    const size=64,envelope={size,data:new Uint8Array(size**3*4)},detail={size,data:new Uint8Array(size**3*4)};
+    envelope.data[((32*size+32)*size+32)*4]=255;
+    bakeOccupancy(envelope,detail,THERMAL_DISPLACEMENT);
+    expect(sampleDetail(detail,.51+.2/10,.51+.535/8.5,.51,3,false)).toBeGreaterThan(0);
+    expect(sampleDetail(detail,.05,.05,.05,3,false)).toBe(0);
+  });
+  it('unions overlapping occupancy boxes and clips them at texture boundaries',()=>{
+    const envelope={size:16,data:new Uint8Array(16**3*4)},detail={size:8,data:new Uint8Array(8**3*4)};
+    for(const [x,y,z] of [[0,1,2],[6,8,12],[8,9,13]]) envelope.data[((z*16+y)*16+x)*4]=255;
+    bakeOccupancy(envelope,detail,THERMAL_DISPLACEMENT);
+    // Hand-derived 8-grid centers and dilation radii [1,2,1].
+    const centers=[[0,0,1],[3,4,6],[4,4,6]];
+    for(let z=0;z<8;z++) for(let y=0;y<8;y++) for(let x=0;x<8;x++) {
+      const covered=centers.some(c=>Math.abs(x-c[0])<=1&&Math.abs(y-c[1])<=2&&Math.abs(z-c[2])<=1);
+      expect(detail.data[((z*8+y)*8+x)*4+3]).toBe(covered?255:0);
+    }
+  });
   it('bounds accelerated empty samples by the displacement and interpolation halo', () => {
     const warp=[.08,.06,.08];
     const margins=BOUNDS_SIZE.map((extent,axis)=>{

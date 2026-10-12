@@ -263,3 +263,13 @@ Future production choice:
 - Two active cloud tabs contaminated a90-second run (21.22fps). A queued app-panel open created a second tab rather than repairing an error page. Check tab inventory and one active renderer before measurement. Do not infer all low FPS is caused by backups.
 - Port4176 was an older Python static snapshot, not the new Vite build. Current production preview4177 servesdist; inspect server identity/build assets before interpreting a shader change.
 - Making ice detail nearly invariant through depth can create a flat opaque-looking cap. A .003 Z-frequency probe was visually rejected and reverted; inspect both fixed view and orbit before accepting coherent sheets.
+
+
+## 2026-10-12 — animated flow and profiling
+
+- Analytic flow at every ray sample and broad mask dilation are costly. Per-frame CPU field uploads also performed poorly on this shared host. A64-phase atlas avoids uploads; interpolating once per voxel in a4096-invocation compute pass avoids repeated temporal sampling along every ray. Keep density/detail/light in the same material coordinates.
+- Compute must run before the initial shader-compile draw, not only during later rAFs. Update lifecycle mocks when worker data gains support bounds, and verify compute precedes the first draw.
+- Render GPU timestamps exclude compute and presentation. A5.6ms render pass did not deliver stable60; retain failed interval measurements and profile other passes/queue waits. A paused trial slower than a moving trial rules out claiming texture uploads as the sole cause.
+- Browser panel presentation and document visibility are distinct. Earlier hidden-panel trials are labelled; final timings use visible presentation. Browser-only59.98 does not certify a GPU scene, and the old renderer measured55.62 under the current host conditions.
+- Tight ray bounds include raw linear interpolation footprint, fine warp, flow bounds and growth anchors. Keep global texture coordinates unchanged. Moving ray entry changes sample phase, so inspect rendered output despite conservative support coverage.
+- Growth invalidates old stride assumptions. Ordinary steps remain until growth reaches identity at38s, when the expanded support margin permits the proven integer double stride. Broad cap softness and subtle local convection are remaining visual gaps.

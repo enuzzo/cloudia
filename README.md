@@ -8,7 +8,9 @@ The default page shows one bounded 3D cumulonimbus with **Three.js r186 / WebGPU
 
 Controls: pause, slow orbit, two sun directions, reset, seeded random regeneration, explicit quality/resolution presets and 30/90-second performance measurements with JSON export. Default quality uses 384 nominal steps and full configured resolution. The screen preset explicitly uses device pixel ratio; the default window preset uses one buffer pixel per CSS pixel. No hidden dynamic resolution or temporal reconstruction.
 
-The optical/detail refinement measured 59.98 fps in two full-resolution 1080p / 90-second fixed-camera runs (both sun directions), with no intervals above 33.34 ms; see [latest measurements](docs/PERFORMANCE-2026-10-11.md#12-october--shadow-sharpness-and-fibre-contrast-optical-detail-v5). Native 2515×2099 at Massima measured 39.18 fps and is not accepted for the 60 fps target. This evidence applies to the tested host/browser/seed. Photographic quality remains a visual target and owner-review gate, not a property that unit tests can certify. Gestures remain deferred until visual acceptance. No camera permission is requested yet.
+The cloud now grows upward, spreads its anvil later and follows local rising pulses. A compact GPU flow field deforms density, detail and cached illumination together; this is authored accelerated evolution with approximate cached lighting. A seed-specific ray box skips empty sky. Press **Ricomincia** to watch the38-second formation. The64-phase flow repeats after68seconds; no density/light rebuild or flow-data upload occurs on every frame.
+
+**Stable60fps is not yet retained by the motion candidate.** Final90-second Massima runs measured53.23fps for full-HD formation,43.28fps for opposite-light maturity,57.65fps for window/orbit and53.18fps in a full-HD mature repeat. These are visible rAF intervals, not compositor presentation. Earlier optical-detail-v5 reached59.98fps in its previous session but its current-host control reached55.62fps. See [motion, visuals and all measurements](docs/MOTION-2026-10-12.md). Photographic quality also remains an owner-review gate: the anvil still has broad soft regions. Gestures stay deferred and no camera permission is requested.
 
 The original WebGL laboratory is preserved at `/?legacy`. The existing `CloudiaHero.mount(...)` embed build still uses that engine.
 
@@ -36,7 +38,7 @@ Open **Qualità e misure**, choose an output resolution and quality, then start 
 
 Use **Nuova nube** to vary the bounded tower/anvil proportions, lobes and erosion. Density and lighting are regenerated together in the worker. The seed is visible in diagnostics and captured in the report; open `/?seed=1571198069` to reproduce that morphology. Reset resets motion/light, not the seed.
 
-Reports include seed/morphology, CPU submission samples, output/internal dimensions, volume resolution, nominal integration steps, frame intervals, median/p95/p99, long frames and asynchronous GPU timestamp samples when available. RAF cadence and GPU timings do **not** prove compositor presentation, display refresh capabilities or performance on another computer. CSS pixel sizing and fixed 720p/1080p buffers are explicit choices.
+Reports include seed/morphology, simulation timestamps, motion model and support bounds, CPU submission samples, output/internal dimensions, volume resolution, nominal integration steps, frame intervals, median/p95/p99, long frames and asynchronous GPU timestamp samples when available. RAF cadence and GPU timings do **not** prove compositor presentation, display refresh capabilities or performance on another computer. CSS pixel sizing and fixed 720p/1080p buffers are explicit choices.
 
 See [measured browser results](docs/PERFORMANCE-2026-10-11.md) and [renderer research](docs/RENDERER-RESEARCH-2026-10-11.md).
 

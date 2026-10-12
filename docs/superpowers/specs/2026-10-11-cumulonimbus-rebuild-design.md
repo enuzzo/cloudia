@@ -75,3 +75,8 @@ Tagged narrow ice lobes, bent anisotropic density and gradual downwind thinning 
 ## 12 October optical/detail sharpness checkpoint
 
 256³ macro/light plus128³ detail; Massima 384 nominal samples. Separate liquid/ice optical coefficients and parallel light-space integration sharpen tower shading and improve strand contrast. Empty-space acceleration is bounded by the conservative halo and uses integer sample strides. Explicit native-DPR output is available alongside unchanged CSS/fixed-size modes. Full HD 384 samples holds59.98 RAFfps for90 seconds with both fixed-camera lights; native2515×2099 is not stable60. See latest performance report for all successful and slower probes. Photographic anvil morphology remains the open visual gate; gestures are deferred.
+
+
+## 12 October convective motion checkpoint
+
+The approved growing/boiling cloud is implemented as accelerated38-second formation and bounded local rising pulses, with thinner48-streak anvil structure. A16³ GPU flow field interpolates a64-phase atlas, and density/detail/cached illumination share the same material deformation. Light remains approximate; no fluid simulation claim. Expanded occupancy support and a seed-specific ray AABB preserve the existing256³/128³/384-step quality budget.49tests and builds pass. Final measured cadence does not meet stable60; photography and performance gates remain open before gestures. See docs/MOTION-2026-10-12.md.

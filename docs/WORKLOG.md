@@ -284,8 +284,15 @@ Definition of done:
 
 ## Next Actions
 
-1. Refine photographic anvil structure together with internal/external convective motion, using `docs/DYNAMICS-RESEARCH-2026-10-12.md`; retain comparable seeded images and multiple animation timestamps.
-2. Isolate remaining cadence losses with the documented benchmark and browser-only control; do not substitute GPU time for visible FPS.
+1. Profile compute/queue/presentation costs for the new GPU motion candidate; retain failed/full-HD/window results from `docs/MOTION-2026-10-12.md`. Stable60 remains open.
+2. Refine upper-fibre separation and local turret growth; broad anvil surfaces remain soft. Keep same-seed temporal visual evidence and do not substitute render-only GPU time for visible FPS.
 3. After scene acceptance, connect hand recognition for swipes, fist/rain and pinch/lightning, with independent inference scheduling.
 
 Restart: `bun run dev`, open `http://127.0.0.1:5173/?seed=1571198069`; read `docs/PERFORMANCE-2026-10-11.md` and the approved rebuild spec. No deployment in this checkpoint.
+
+
+## 2026-10-12 — local convective evolution
+
+Implemented38-second formation, two unequal rising local pulses and upper outflow undulation, plus thinner tagged incus cores/48streaks. A64-phase half-float atlas is prepared once; a4096-cell compute interpolates the16³ flow each frame. Detail/density/cached light deform together. Expanded support uses efficient difference-cuboid/prefix dilation; ray box follows conservative seeded bounds. Fixed quality256³/128³/384/full output retained.
+
+49tests/12files, TypeScript, application and legacy hero builds pass; read-only review corrected initial compute ordering and render-only timestamp labelling. Temporal phases, both lights, orbit/narrow layout and console inspected. Final90s runs53.23fps Full-HD formation,43.28right mature,57.65window orbit,53.18left mature repeat. **Stable60 and photographic incus acceptance are still open.** Old-v5 control55.62 and browser-only59.98 do not establish an exclusive cause. All slow/final raw evidence and a restart prompt are in docs/MOTION-2026-10-12.md. Local checkpoint only; no camera/gestures, publication or GitHub push.

@@ -1,4 +1,5 @@
 import { wgslFn, wgsl } from 'three/tsl';
+import { MOTION_WGSL } from './motion';
 
 /** Single-scattering integration with cached solar visibility and a multiple-scattering approximation.
  * Macro density/light and tiled fine erosion are sampled separately; no nested light march.
@@ -7,20 +8,22 @@ import { wgslFn, wgsl } from 'three/tsl';
 const film = wgsl(`fn cloudFilm(color: vec3<f32>) -> vec3<f32> {
   return clamp((color*(2.51*color+vec3<f32>(0.03))) / (color*(2.43*color+vec3<f32>(0.59))+vec3<f32>(0.14)),vec3<f32>(0.0),vec3<f32>(1.0));
 }`);
+const motion = wgsl(MOTION_WGSL);
 export const integrateCloud = wgslFn(`
 fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler,
-  detail: texture_3d<f32>, detailSampler: sampler, iceRange: vec2<f32>,
+  detail: texture_3d<f32>, detailSampler: sampler, flow: texture_3d<f32>, flowSampler: sampler, iceRange: vec2<f32>,
   origin: vec3<f32>, forward: vec3<f32>, right: vec3<f32>, up: vec3<f32>,
   aspect: f32, tanFov: f32, stepSize: f32, emptyStep: f32, resolution: vec2<f32>,
-  drift: vec3<f32>, sun: vec3<f32>, lightSide: f32, extinction: f32, iceExtinction: f32) -> vec4<f32> {
+  drift: vec3<f32>, growth: vec3<f32>, supportMin:vec3<f32>, supportMax:vec3<f32>,
+  sun: vec3<f32>, lightSide: f32, extinction: f32, iceExtinction: f32) -> vec4<f32> {
   let screen = vec2<f32>(uv.x * 2.0 - 1.0, 1.0 - uv.y * 2.0);
   let ray = normalize(forward + right * screen.x * aspect * tanFov + up * screen.y * tanFov);
   let horizon = clamp(ray.y * 1.4 + 0.5, 0.0, 1.0);
   var sky = mix(vec3<f32>(0.52,0.68,0.82), vec3<f32>(0.105,0.285,0.53), horizon);
   let sunGlow = pow(max(dot(ray,sun),0.0), 24.0);
   sky += vec3<f32>(0.18,0.13,0.065) * sunGlow;
-  let lower = vec3<f32>(-5.0,-0.5,-3.5) + drift;
-  let upper = lower + vec3<f32>(10.0,8.5,7.0);
+  let lower = supportMin + drift;
+  let upper = supportMax + drift;
   let inv = 1.0 / ray;
   let t0 = (lower-origin)*inv;
   let t1 = (upper-origin)*inv;
@@ -42,12 +45,15 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
   for (var i=0u; i<1024u; i++) {
     if (t > far || transmittance < 0.006) { break; }
     let position = origin + ray*t;
-    let coord = (position-lower) / vec3<f32>(10.0,8.5,7.0);
+    let reference=cloudReference(position-drift,growth,iceRange);
     // Conservative support includes domain displacement and macro interpolation.
     // One cheap mask lookup avoids evaluating fine noise throughout empty sky.
-    let support=textureSampleLevel(detail,detailSampler,coord,0.0).a;
+    let referenceCoord=(reference-vec3<f32>(-5.0,-0.5,-3.5))/vec3<f32>(10.0,8.5,7.0);
+    let support=textureSampleLevel(detail,detailSampler,referenceCoord,0.0).a;
     if(support<=0.0) {t+=emptyStep;continue;}
-    let local = position-drift;
+    // The compute pass interpolates time once per flow voxel, rather than per ray sample.
+    let local=reference-textureSampleLevel(flow,flowSampler,referenceCoord,0.0).rgb;
+    let coord=(local-vec3<f32>(-5.0,-0.5,-3.5))/vec3<f32>(10.0,8.5,7.0);
     let ice=smoothstep(iceRange.x,iceRange.y,local.y);
     let fine=textureSampleLevel(detail,detailSampler,local*0.3,0.0);
     let warp=(fine.gbr-vec3<f32>(0.5))*mix(vec3<f32>(0.16,0.12,0.16),vec3<f32>(0.08,0.02,0.1),ice);
@@ -82,4 +88,4 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
   // Mild exposure shoulder, applied to both the cloud and its atmospheric background.
   let mapped = cloudFilm(color);
   return vec4<f32>(mapped,1.0);
-}`, [film]);
+}`, [film,motion]);

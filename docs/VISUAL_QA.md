@@ -84,3 +84,8 @@ Full-HD384 steps: both lights59.98fps over90 seconds with zero intervals>33.34ms
 
 
 Final orbit/default-window1143×954 /384-step run also held59.98fps for90 seconds, zero long intervals. Console clean; temporary390×844 controls/composition inspected and native viewport restored. [Before](images/cumulonimbus-sharpness/before.jpg), [after](images/cumulonimbus-sharpness/after-left.jpg), [opposite sun](images/cumulonimbus-sharpness/after-right.jpg), [orbit](images/cumulonimbus-sharpness/orbit.jpg). Tower relief improves substantially; broad incus softness remains the next structural refinement.
+
+
+### 2026-10-12 — formation, local motion and anvil structure
+
+Rendered phases at.3/25.6/55.4/89.7seconds, same seed and fixed left camera, show vertical growth followed by upper spreading. Local body changes remain subtle compared with initial growth; upper strands still merge into broad soft areas. Right light, orbit and390×844 layout inspected; viewport restored, no console warnings/errors.49tests and both builds pass. Stable60 is **not** accepted: final full-HD53.23/43.28/53.18fps and window-orbit57.65fps over90seconds have long intervals. See [motion record and images](MOTION-2026-10-12.md). Owner photographic review remains separate. Gestures and publication stay deferred.
