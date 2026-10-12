@@ -89,3 +89,8 @@ Final orbit/default-window1143×954 /384-step run also held59.98fps for90 second
 ### 2026-10-12 — formation, local motion and anvil structure
 
 Rendered phases at.3/25.6/55.4/89.7seconds, same seed and fixed left camera, show vertical growth followed by upper spreading. Local body changes remain subtle compared with initial growth; upper strands still merge into broad soft areas. Right light, orbit and390×844 layout inspected; viewport restored, no console warnings/errors.49tests and both builds pass. Stable60 is **not** accepted: final full-HD53.23/43.28/53.18fps and window-orbit57.65fps over90seconds have long intervals. See [motion record and images](MOTION-2026-10-12.md). Owner photographic review remains separate. Gestures and publication stay deferred.
+
+
+### 12–13 October — shared render worker
+
+Shader, volume/detail, lighting and motion remain unchanged. Live OffscreenCanvas rendered the accepted seed and forwarded pause/resume, both lights, orbit and resolution controls; random regeneration and cancelled measurements were inspected.58tests and builds pass; no new photographic-quality claim. Captures are in `images/cumulonimbus-worker/`. Performance failures and scope remain explicit in [worker qualification](WORKER-2026-10-13.md).

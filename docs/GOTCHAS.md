@@ -273,3 +273,10 @@ Future production choice:
 - Browser panel presentation and document visibility are distinct. Earlier hidden-panel trials are labelled; final timings use visible presentation. Browser-only59.98 does not certify a GPU scene, and the old renderer measured55.62 under the current host conditions.
 - Tight ray bounds include raw linear interpolation footprint, fine warp, flow bounds and growth anchors. Keep global texture coordinates unchanged. Moving ray entry changes sample phase, so inspect rendered output despite conservative support coverage.
 - Growth invalidates old stride assumptions. Ordinary steps remain until growth reaches identity at38s, when the expanded support margin permits the proven integer double stride. Broad cap softness and subtle local convection are remaining visual gaps.
+
+
+### 12–13 October — render-worker ownership
+
+- Worker RAF clocks are local: retain actual timestamp/timeOrigin evidence before interpreting dispatch delay. OffscreenCanvas moves submission off the document thread but does not isolate compositor/whole-host scheduling. Do not infer improvement from one60fps run when both main and worker controls hold60.
+- Transfer the HTML canvas once. Catch synchronous constructor/postMessage failure; errors are terminal and late ready/metrics messages must not revive controls. Send device-loss text before terminal status, then stop and await cleanup with bounded worker termination.
+- `?worker=1` is experimental; main remains default. Keep shared rendering logic and explicit executionThread metadata, frozen-flow initialization and visibility cancellation. See WORKER-2026-10-13.md.

@@ -122,3 +122,8 @@ Committed qualitative comparisons: [before](images/cumulonimbus-sharpness/before
 ## 12 October — convective motion, convective-bounds-v9
 
 The new motion candidate has49passing tests and builds, but **does not retain stable60**. Final90-second Massima results: Full-HD formation53.23fps; mature right43.28fps; window1143×954 orbit57.65fps; mature left repeat53.18fps. All have long intervals. Old-v5 same-host control55.62fps, browser-only control59.98fps. GPU rendering is5.5–5.6ms in Full HD and excludes the new compute pass; it is not a total-frame timing. Full source/reference methodology, temporal images and all slow/final raw reports are in [motion record](MOTION-2026-10-12.md). Prior v5 certification describes that earlier renderer/session, not this new candidate.
+
+
+### 12–13 October — render-worker experiment
+
+[Worker qualification](WORKER-2026-10-13.md) retains all positive/negative measurements: Full-HD growth59.99fps/90s with zero>18ms, repeated right59.83 with seven>33.34ms, first worker left/right57.46/57.19, capped right50.95. Main/worker30s control both59.99. Shader/volumes/384steps unchanged. OffscreenCanvas is opt-in; stable60 across the full scene and direct compositor presentation remain unqualified.

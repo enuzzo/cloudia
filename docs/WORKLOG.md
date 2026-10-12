@@ -301,3 +301,8 @@ Implemented38-second formation, two unequal rising local pulses and upper outflo
 ## 2026-10-12 — profiling checkpoint,60gate still open
 
 Added53-test-covered separateGPUcompute/render, CPU submission stages, callback delay and optional queue completion. Some30s and one90s run hold60, but right/growth/capped long runs remain49.95/54.45/52.21fps with unchanged~5.5ms GPU rendering. Same-context A/B does not establish a cap benefit; cap remains diagnostic. Owner confirms backups paused; service CPU is not proof of upload. Full evidence in PROFILE-2026-10-12.md. Next: shared renderer core plus optionalOffscreenCanvas worker to isolate main-thread dispatch contention, preserving all visual settings and lifecycle. No gestures or publication.
+
+
+## 12–13 October — render worker, qualification still open
+
+Extracted shared GPUSceneEngine and added opt-in OffscreenCanvas worker with single-transfer ownership, DOM/engine protocol, terminal errors and bounded cleanup.58tests pass, typecheck/application/hero builds pass. Reviewed constructor/message/loss failures; live controls and regeneration verified. Full-HD growth59.99/90s zero>18; right repeat59.83/7long frames; earlier worker57.46/57.19, capped right50.95. Main/worker30s both59.99, so no proven causal improvement. Keep main default and all raw failures; quality256³/128³/384 unchanged. WORKER-2026-10-13.md is the latest restart/evidence record. Next useful step is actual Chromium GPU/compositor trace, then qualification before visual fibres/local boiling and gestures. No deployment/push/camera.

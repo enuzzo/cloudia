@@ -100,6 +100,7 @@ describe('scene async lifecycle',()=>{
     expect(control.originalLost).toHaveBeenCalledOnce();
     expect(worker.terminate).toHaveBeenCalled();
     expect(control.render).not.toHaveBeenCalled();
+    expect(root.querySelector('[data-testid="scene-status"]')!.textContent).toContain('Connessione alla GPU persa');
     expect(root.querySelector<HTMLButtonElement>('[data-action="benchmark"]')!.disabled).toBe(true);
     app.destroy();await flush();
   });

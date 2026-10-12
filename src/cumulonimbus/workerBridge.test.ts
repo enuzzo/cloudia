@@ -1,0 +1,66 @@
+import {afterEach,beforeEach,describe,expect,it,vi} from 'vitest';
+import {CumulonimbusApp} from './CumulonimbusApp';
+const workers:Array<{onmessage:((event:MessageEvent)=>void)|null;onerror:((event:ErrorEvent)=>void)|null;postMessage:ReturnType<typeof vi.fn>;terminate:ReturnType<typeof vi.fn>}>=[];
+const offscreen={width:300,height:150} as OffscreenCanvas;
+const flush=async()=>{for(let i=0;i<15;i++) await Promise.resolve();};
+beforeEach(()=>{
+  workers.length=0;history.replaceState(null,'','/?worker=1&seed=1571198069');
+  Object.defineProperty(HTMLCanvasElement.prototype,'transferControlToOffscreen',{configurable:true,value:vi.fn(()=>offscreen)});
+  vi.stubGlobal('Worker',class {
+    onmessage:((event:MessageEvent)=>void)|null=null;onerror:((event:ErrorEvent)=>void)|null=null;
+    postMessage=vi.fn();terminate=vi.fn();constructor(){workers.push(this);}
+  });
+});
+afterEach(()=>{vi.unstubAllGlobals();vi.restoreAllMocks();history.replaceState(null,'','/');document.body.innerHTML='';delete (HTMLCanvasElement.prototype as Partial<HTMLCanvasElement>).transferControlToOffscreen;});
+function create(){const root=document.createElement('main');document.body.append(root);return{root,app:new CumulonimbusApp(root)};}
+describe('render-worker ownership',()=>{
+  it('reports a blocked worker constructor without rejecting startup',async()=>{
+    vi.stubGlobal('Worker',class {constructor(){throw new DOMException('Blocked by CSP','SecurityError');}});
+    const {root,app}=create();await expect(app.start()).resolves.toBeUndefined();
+    expect(root.querySelector('[data-testid="scene-status"]')!.textContent).toContain('Blocked by CSP');
+    expect(root.querySelector<HTMLButtonElement>('[data-action="pause"]')!.disabled).toBe(true);app.destroy();
+  });
+  it('cleans up a worker whose init message throws',async()=>{
+    const {root,app}=create();
+    const original=Worker;vi.stubGlobal('Worker',class extends original {constructor(){super('');workers.at(-1)!.postMessage.mockImplementation(()=>{throw new Error('Transfer failed');});}});
+    await expect(app.start()).resolves.toBeUndefined();
+    expect(root.textContent).toContain('Transfer failed');expect(workers[0].terminate).toHaveBeenCalledOnce();app.destroy();
+  });
+  it('makes worker errors terminal and rejects late output',async()=>{
+    const {root,app}=create();const start=app.start();await flush();const late=workers[0].onmessage!;
+    workers[0].onerror!({message:'GPU failure'} as ErrorEvent);await start;
+    late({data:{type:'text',field:'status',text:'STALE'}} as MessageEvent);
+    late({data:{type:'enabled',action:'benchmark',enabled:true}} as MessageEvent);
+    expect(root.textContent).toContain('GPU failure');expect(root.textContent).not.toContain('STALE');
+    expect(root.querySelector<HTMLButtonElement>('[data-action="benchmark"]')!.disabled).toBe(true);
+    expect(workers[0].postMessage.mock.calls.at(-1)?.[0]).toEqual({type:'stop'});
+    late({data:{type:'closed'}} as MessageEvent);expect(workers[0].terminate).toHaveBeenCalledOnce();app.destroy();
+  });
+  it('transfers one surface, forwards controls and waits for renderer readiness',async()=>{
+    const {root,app}=create();const start=app.start();await flush();
+    expect(workers).toHaveLength(1);
+    expect(workers[0].postMessage.mock.calls[0][0]).toMatchObject({type:'init',canvas:offscreen});
+    expect(workers[0].postMessage.mock.calls[0][1]).toEqual([offscreen]);
+    workers[0].onmessage!({data:{type:'ready'}} as MessageEvent);await start;
+    root.querySelector<HTMLButtonElement>('[data-action="pause"]')!.click();
+    expect(workers[0].postMessage.mock.calls.at(-1)?.[0]).toMatchObject({type:'action',action:'pause'});
+    workers[0].onmessage!({data:{type:'state',paused:true,orbit:false,side:0}} as MessageEvent);
+    expect(root.querySelector('[data-action="pause"]')!.textContent).toBe('Riprendi');
+    window.dispatchEvent(new Event('resize'));
+    expect(workers[0].postMessage.mock.calls.at(-1)?.[0]).toMatchObject({type:'resize',viewport:{dpr:window.devicePixelRatio}});
+    vi.spyOn(document,'hidden','get').mockReturnValue(true);document.dispatchEvent(new Event('visibilitychange'));
+    expect(workers[0].postMessage.mock.calls.at(-1)?.[0]).toEqual({type:'visibility',visible:false});
+    app.destroy();workers[0].onmessage!({data:{type:'closed'}} as MessageEvent);
+    expect(workers[0].terminate).toHaveBeenCalledOnce();
+  });
+  it('cannot resume or publish stale worker output after closure during startup',async()=>{
+    const {root,app}=create();const start=app.start();await flush();
+    expect(workers).toHaveLength(1);const late=workers[0].onmessage!;
+    app.destroy();await start;
+    late({data:{type:'ready'}} as MessageEvent);late({data:{type:'text',field:'metrics',text:'STALE'}} as MessageEvent);
+    expect(root.textContent).not.toContain('STALE');
+    expect(root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.disabled).toBe(true);
+    late({data:{type:'closed'}} as MessageEvent);
+    expect(workers[0].terminate).toHaveBeenCalledOnce();
+  });
+});
