@@ -74,3 +74,13 @@ Same-seed before/after desktop images, live orbit, left/right lighting, 32 tests
 ### 2026-10-12 — ice filaments and light
 
 Bent anisotropic density and downwind taper distinguish the outflow from liquid convection. Tagged thin streaks add edge variation; light uses a forward/back phase and stronger shadow separation. Same-seed before/after captures, both light directions, live orbit and 390×844 composition inspected; no production console warnings/errors.35 tests and builds pass; two full-HD256-step 90-second orbit runs retained 59.98 fps without >33.34 ms intervals. Refer to latest section of [performance report](PERFORMANCE-2026-10-11.md) and local `output/ice-light-2026-10-12/` images. Fibre changes are subtle; broad patches remain soft. Owner photographic acceptance still open before gestures.
+
+
+### 2026-10-12 — optical/detail sharpness
+
+Same seed 1571198069, reset camera and both sun directions inspected. Fixed light-space integration sharpens internal shadows; 128³ detail adds surface definition, separate body/ice extinction gives stronger tower relief, and ice strand/gap contrast is higher. Native-DPR and CSS views compared. The broad incus still reads softer than a photographic reference; owner acceptance remains open. A depth-coherence probe made it more slab-like and was rejected/reverted. Preserve this mismatch as the next morphology task, rather than claiming a contrast pass has completed photography.
+
+Full-HD384 steps: both lights59.98fps over90 seconds with zero intervals>33.34ms; native2515×2099 measured39.18 at384 and59.39 at128, neither stable60. See current performance section and raw reports.40 tests and both builds pass. Screenshots/probes are under `output/sharpness-2026-10-12/`. No gestures or deployment.
+
+
+Final orbit/default-window1143×954 /384-step run also held59.98fps for90 seconds, zero long intervals. Console clean; temporary390×844 controls/composition inspected and native viewport restored. [Before](images/cumulonimbus-sharpness/before.jpg), [after](images/cumulonimbus-sharpness/after-left.jpg), [opposite sun](images/cumulonimbus-sharpness/after-right.jpg), [orbit](images/cumulonimbus-sharpness/orbit.jpg). Tower relief improves substantially; broad incus softness remains the next structural refinement.

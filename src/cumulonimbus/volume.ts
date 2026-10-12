@@ -1,8 +1,15 @@
+import { bakeOpticalDepth } from './light';
 /** World bounds and extinction are shared by the bake and ray integrator. */
 export const BOUNDS_MIN = [-5, -0.5, -3.5] as const;
 export const BOUNDS_SIZE = [10, 8.5, 7] as const;
-export const EXTINCTION = 6.5;
+export const EXTINCTION = 18;
+export const ICE_EXTINCTION = 6.5;
+export const materialExtinction=(ice:number)=>EXTINCTION+(ICE_EXTINCTION-EXTINCTION)*ice;
 export const VOLUME_RESOLUTION = 256;
+export const DETAIL_RESOLUTION = 128;
+// The 256/128 mask leaves at least 0.043 world units beyond displaced density.
+// This limit keeps multi-step empty advances inside that proven empty margin.
+export const EMPTY_SKIP_LIMIT = .04;
 export const voxelCenter=(index:number,axis:0|1|2,size:number)=>BOUNDS_MIN[axis]+(index+.5)/size*BOUNDS_SIZE[axis];
 export const SUN_LEFT = [-0.75, 0.8, 0.24] as const;
 export const SUN_RIGHT = [0.75, 0.8, 0.24] as const;
@@ -34,7 +41,7 @@ function noise(x: number, y: number, z: number, seed: number, period = 0): numbe
   return lerp(lerp(lerp(h(ix,iy,iz),h(ix+1,iy,iz),fx),lerp(h(ix,iy+1,iz),h(ix+1,iy+1,iz),fx),fy),
     lerp(lerp(h(ix,iy,iz+1),h(ix+1,iy,iz+1),fx),lerp(h(ix,iy+1,iz+1),h(ix+1,iy+1,iz+1),fx),fy),fz);
 }
-export function generateDetail(size=64,seed=71): DetailVolume {
+export function generateDetail(size=DETAIL_RESOLUTION,seed=71): DetailVolume {
   const data=new Uint8Array(size**3*4), cellular=cellularNoise(seed+513);
   for(let z=0;z<size;z++) for(let y=0;y<size;y++) for(let x=0;x<size;x++) {
     const px=(x+.5)/size, py=(y+.5)/size, pz=(z+.5)/size, i=((z*size+y)*size+x)*4;
@@ -73,7 +80,8 @@ export function sampleCloudDensity(envelope:DetailVolume,detail:DetailVolume,x:n
     const bend=sampleDetail(detail,x*.12,y*.10,z*.06,1);
     const wisps=sampleDetail(detail,x*.035+bend*.06,y*.38+x*.026+(bend-.5)*.035,z*.022,0);
     erosion=erosion*(1-ice)+(.16+(1-wisps)*.64)*ice;
-    material=1-ice+(.025+.21*wisps)*(1-.7*smoothstep(.4,3.8,x))*ice;
+    const strand=smoothstep(.25,.6,wisps);
+    material=1-ice+(.01+.235*strand)*(1-.7*smoothstep(.4,3.8,x))*ice;
   }
   return erodeDensity(warped,erosion)*material;
 }
@@ -188,7 +196,8 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
   }
   const data = new Uint8Array(n*4);
   for(let i=0;i<n;i++) data[i*4]=Math.round(density[i]*255);
-  const detail=generateDetail(64,seed);
+  const detailSize=Math.min(DETAIL_RESOLUTION,2**Math.ceil(Math.log2(size)));
+  const detail=generateDetail(detailSize,seed);
   const envelope={size,data};
   // Bake visibility from the same fine erosion the shader applies to the macro envelope.
   // Reuse the density buffer; there is no extra full-sized light-density allocation.
@@ -199,28 +208,14 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
     const i=(z*size+y)*size+x;
     if(field[i]<-supportMargin) {density[i]=0;continue;}
     const px=voxelCenter(x,0,size),py=voxelCenter(y,1,size),pz=voxelCenter(z,2,size);
-    density[i]=sampleCloudDensity(envelope,detail,px,py,pz,smoothstep(iceStart,iceEnd,py));
+    const ice=smoothstep(iceStart,iceEnd,py);
+    density[i]=sampleCloudDensity(envelope,detail,px,py,pz,ice)*materialExtinction(ice)/EXTINCTION;
   }
-  // Upwind transport: each row integrates extinction through the preceding sunward row.
-  // Two independently baked directions. Intermediate directions are never shown using stale lighting.
+  // Parallel light-space rays preserve fine shadows without repeated diffusion.
   for (let channel=1;channel<=3;channel++) {
     const dir=channel===1?SUN_LEFT:channel===2?SUN_RIGHT:[0,1,0];
-    const dy=BOUNDS_SIZE[1]/size, length=Math.hypot(...dir);
-    const dx=dir[0]/dir[1]*dy/BOUNDS_SIZE[0]*size, dz=dir[2]/dir[1]*dy/BOUNDS_SIZE[2]*size;
-    const ds=dy*length/dir[1], tau=new Float32Array(n);
-    for(let y=size-1;y>=0;y--) {
-      for(let z=0;z<size;z++) for(let x=0;x<size;x++) {
-        const idx=(z*size+y)*size+x;
-        let upstream=0;
-        if(y<size-1) {
-          const xx=x+dx, zz=z+dz, ix=Math.floor(xx), iz=Math.floor(zz), fx=xx-ix, fz=zz-iz;
-          const at=(a:number,b:number) => a<0||a>=size||b<0||b>=size?0:tau[(b*size+y+1)*size+a];
-          upstream=at(ix,iz)*(1-fx)*(1-fz)+at(ix+1,iz)*fx*(1-fz)+at(ix,iz+1)*(1-fx)*fz+at(ix+1,iz+1)*fx*fz;
-        }
-        data[idx*4+channel]=Math.round(clamp((upstream+density[idx]*ds*EXTINCTION*.5)/16)*255);
-        tau[idx]=upstream+density[idx]*ds*EXTINCTION;
-      }
-    }
+    const tau=bakeOpticalDepth(density,size,BOUNDS_SIZE,dir,EXTINCTION);
+    for(let i=0;i<n;i++) data[i*4+channel]=Math.round(clamp(tau[i]/16)*255);
     progress?.(.55+.15*channel);
   }
   bakeOccupancy(envelope,detail);

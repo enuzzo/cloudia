@@ -84,3 +84,36 @@ Raw evidence: [left](benchmarks/2026-10-12-ice-light-production-left-1080p-90s.j
 35 tests / 10 files, TypeScript, application and legacy hero builds passed. Read-only review verified CPU/GPU density and cache equivalence, support coverage and phase sign. One finding about inadvertently narrowing liquid-lobe unions was fixed by explicitly tagging icy lobes. Build retains the known large-Three chunk warning.
 
 Visual result: more uneven anvil edges, a lighter outflow and deeper shading of the tower. Fine fibres remain subtle in the compressed browser captures; broad surfaces are still soft. **Photographic visual acceptance remains open and no owner acceptance is inferred.** No camera/gestures, online deployment or GitHub push in this checkpoint.
+
+
+## 12 October — shadow sharpness and fibre contrast, optical-detail-v5
+
+Owner reported persistent softness. The previous upwind light bake bilinearly resampled accumulated optical depth on every height layer. A narrow-blocker regression demonstrates the resulting diffusion: peak optical depth 0.374 with the old integration, 1.565 with parallel rays held in a sheared light-space grid. The new bake resamples accumulated depth only when writing the world cache. A homogeneous-medium test verifies voxel-center path length and Beer–Lambert optical depth. This is a finite-resolution approximation, not exact path tracing; 8-bit cache quantization and tau clipping at 16 remain.
+
+Fine RGBA detail is 128³ (8 MiB, formerly 64³ / 1 MiB), retaining the 256³ macro/light cache. Cellular detail now has four samples per feature cell. Massima uses 384 steps, with a 1024 loop cap covering the entire diagonal. Body extinction is 18; ice stays at 6.5. A smoother, higher-contrast ice density mask separates strands and gaps. These are authored coefficients, not measured microphysics. CPU bake and GPU integrator share density/material formulas. The new light bake runs once in the worker and adds no per-frame shadow march. [PBRT transmittance](https://pbr-book.org/4ed/Volume_Scattering/Transmittance) supports the density/path-length formulation; the light-space discretization is our implementation.
+
+The higher-resolution support mask has a minimum conservative halo of 0.043046875 world units beyond maximum warp and macro interpolation. Multi-step empty advances are limited to 0.04 and are integer multiples of the normal step. At Massima this is 2 × 7/384 = 0.0364583; occupied samples retain their original grid. Alta and Fluida use their ordinary step. Only zero support enables this shortcut. Review checked the halo bound, density/bake equivalence, loop cap, output DPR and teardown/resource use.
+
+Final production preview is **http://127.0.0.1:4177/?seed=1571198069**. The older 4176 endpoint is a separate static Python snapshot and does not serve the new build. Chromium 155 / hardware AMD GCN-5 WebGPU, seed 1571198069, 2-second warmup +90 seconds, motion on, one rendering scene, no build or editing during capture. The final Full-HD measurements use fixed framing; prior v4 orbit numbers are separate scenarios.
+
+| Scenario / 90 s | Output = internal | Steps | RAF fps | p95 / p99 ms | Max ms | >33.34 ms | GPU mean /p95 ms |
+|---|---|---:|---:|---:|---:|---:|---:|
+| Massima, left |1920×1080|384|**59.98**|18.5 /18.7|18.9|**0**|5.315 /5.505|
+| Massima, right |1920×1080|384|**59.98**|18.5 /18.7|18.8|**0**|5.313 /5.505|
+| Native screen, Massima, left |2515×2099|384|**39.18**|35.0 /38.3|51.8|639|17.821 /17.957|
+| Native screen, Alta, left |2515×2099|128|**59.39**|20.0 /24.0|38.2|10|9.598 /9.699|
+
+Both Full-HD runs have 5,399 intervals, CPU mean 0.230/0.227 ms (see raw reports for precise values). Native output explicitly uses DPR 2.2000000477 at CSS1143×954 and is **not a stable-60 result at either quality**. No automatic downgrade or pixel-ratio cap was introduced. Default remains the window/CSS mode; native output is an explicit choice.
+
+Raw final reports: [left](benchmarks/2026-10-12-sharpness-left-1080p-90s.json), [right](benchmarks/2026-10-12-sharpness-right-1080p-90s.json), [native Massima](benchmarks/2026-10-12-sharpness-native-ultra-90s.json), [native Alta](benchmarks/2026-10-12-sharpness-native-high-90s.json).
+
+Earlier experimental evidence is preserved too: [two simultaneously rendering tabs](benchmarks/2026-10-12-sharpness-duplicate-scene-probe-90s.json) reached21.22fps; closing the second scene preceded recovery to59.98. A30-second attempt was cancelled by resize and produced no result. Two [ordinary-stride left](benchmarks/2026-10-12-sharpness-single-stride-left-probe-90s.json) / [right](benchmarks/2026-10-12-sharpness-single-stride-right-probe-90s.json) runs reached59.98 with GPU means7.365/7.425ms. Final bounded skipping reduced mean GPU cost to5.315/5.313ms without changing occupied sampling. These are sequential comparisons on a shared host; they do not establish one exclusive explanation for browser cadence. A sanitized host snapshot after the contaminated run showed81.5% CPU idle with both backup and application processes active; no process was paused or stopped by the agent.
+
+A final exploratory reduction of ice variation along view depth made the cap look more like a uniform sheet and was **rejected/reverted after rendered inspection**. The committed source retains its previous bend/strand depth frequencies. Photographic acceptance remains open: tower shadow separation and fine detail improve, but broad anvil surfaces still look soft. No owner approval is inferred from unit tests or FPS. Local image/probe folder: `output/sharpness-2026-10-12/`.
+
+40 tests /11 files, TypeScript, application and legacy hero builds pass. Known large Three.js chunk warning remains. Commissioner, seed/reset controls and legacy routes are preserved. No gestures, camera permission, deployment, or GitHub push in this pass. 120fps and compositor presentation remain unmeasured.
+
+
+Final default-window orbit verification: **1143×954 output/internal, Massima 384, left light, 90 seconds:59.98fps**,5,399 intervals, p95/p99 18.5/18.7ms, maximum18.8ms, **zero >33.34ms**. GPU mean/p95 **4.348/4.456ms**. [Raw window/orbit report](benchmarks/2026-10-12-sharpness-window-orbit-90s.json). Final browser page title/URL and nonblank scene verified; console had no warnings/errors. Controls remained usable at temporary390×844; native viewport restored, orbit reset, motion on, default window/Massima left open at4177. This is desktop responsive-layout evidence, not physical-phone performance.
+
+Committed qualitative comparisons: [before](images/cumulonimbus-sharpness/before.jpg), [after left](images/cumulonimbus-sharpness/after-left.jpg), [after right](images/cumulonimbus-sharpness/after-right.jpg), [orbit](images/cumulonimbus-sharpness/orbit.jpg). Before/after use the same seed, reset camera, left light and CSS-sized window, though JPEG capture can soften the apparent detail; use the live scene to assess it. Images are rendered cloud evidence, not photographic references.

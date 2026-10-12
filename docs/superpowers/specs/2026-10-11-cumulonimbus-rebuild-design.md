@@ -70,3 +70,8 @@ The approved central WebGPU scene now uses 256³ macro density/light, 64³ perio
 ## 12 October ice/light refinement
 
 Tagged narrow ice lobes, bent anisotropic density and gradual downwind thinning distinguish the anvil from the liquid tower. Shared bake/GPU density preserves matching shadows. Forward/back HG and attenuated multiple-scattering approximations refine the light. Existing volume sizes, resolution presets, nominal steps and conservative empty-space mask are retained. Both full-HD / Massima / slow-orbit production runs retained 59.98 fps across 90 seconds, zero intervals >33.34 ms. Read the latest section of `docs/PERFORMANCE-2026-10-11.md` for raw measurements and limits. Photographic owner acceptance remains open; gestures are still deferred.
+
+
+## 12 October optical/detail sharpness checkpoint
+
+256³ macro/light plus128³ detail; Massima 384 nominal samples. Separate liquid/ice optical coefficients and parallel light-space integration sharpen tower shading and improve strand contrast. Empty-space acceleration is bounded by the conservative halo and uses integer sample strides. Explicit native-DPR output is available alongside unchanged CSS/fixed-size modes. Full HD 384 samples holds59.98 RAFfps for90 seconds with both fixed-camera lights; native2515×2099 is not stable60. See latest performance report for all successful and slower probes. Photographic anvil morphology remains the open visual gate; gestures are deferred.

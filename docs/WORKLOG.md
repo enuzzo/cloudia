@@ -15,6 +15,15 @@ This file tracks what has happened, what is next, and what must stay visible acr
 
 ## Work Completed
 
+### 2026-10-12 — sharper optical detail, measured resolution limits
+
+- Removed repeated accumulated-shadow resampling with a fixed sheared light-space bake. Regression evidence verifies homogeneous optical depth and preserves a narrow shadow (old peak 0.374, new 1.565).
+- Detail 128³, Massima 384 steps, separate body 18 / ice 6.5 extinction and greater strand/gap contrast; shared CPU/GPU density and conservative integer empty stride. Read-only review found no unresolved issue.
+- Production port 4177, Full HD left/right 90-second runs: 59.98 fps, zero intervals >33.34 ms, GPU means 5.315/5.313 ms. Native 2515×2099: Massima 39.18 and Alta 59.39 fps; native output is not stable 60. Slower duplicate-renderer/ordinary-stride probes retained, not omitted.
+- 40 tests / 11 files, typecheck, application and hero builds pass. Commissioner and legacy preserved. Photographic anvil still an open owner-review gate; a flatter depth-coherence candidate was rejected and reverted.
+- Default-window orbit also passed at 59.98 fps for 90 seconds, zero intervals >33.34 ms. Before/after images committed in docs/images/cumulonimbus-sharpness. Responsive 390×844 controls and clean console checked; viewport restored.
+- Source/docs/raw reports checkpointed locally; no gestures, online release or push. Current preview: http://127.0.0.1:4177/?seed=1571198069; port 4176 is an older static snapshot. Restart via `npm run dev` at port 5173; read the latest performance section before tuning further.
+
 ### 2026-10-12 — anvil optical detail and refined light
 
 - Added tagged thin seeded ice streaks and bent fine density modulation, including inside full-density macro regions; gradual downwind thinning. Liquid lobe unions and seeded layout preserved. Bake and GPU share material/erosion formulas.

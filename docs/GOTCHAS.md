@@ -253,3 +253,13 @@ Future production choice:
 - Strong fine variation along the view-depth axis averages into a flat-looking slab. Coherent stretched fields help, but inspect orbit for artificial sheets; source coordinates and snapshot labels must track actual lighting/state after HMR resets.
 - Thin ellipsoids need narrower smooth union and gentler macro erosion to survive. Tag ice explicitly: a radius-only blend condition also catches small liquid convective lobes and changes their accepted morphology.
 - Realistic-looking ice does not imply measured crystal scattering. Distinguish authored material coefficients from HG phase theory and separate measured60Hz RAF cadence from actual compositor presentation.
+
+
+## 2026-10-12 — shadow diffusion and output sharpness
+
+- Repeatedly bilinear-resampling accumulated optical depth diffuses narrow shadows even when density has detail. Keep parallel light rays on a fixed sheared grid; resample into the world cache once. Validate homogeneous path length and a distant narrow blocker.
+- Increasing detail resolution shrinks the occupancy halo. Never retain an unconditional old double stride: derive the minimum margin including warp, texture interpolation and macro support. Integer skip multiples preserve the occupied sampling grid; use ordinary steps when no proven accelerated stride fits.
+- Native-DPR buffers and CSS buffers are different budgets. Here DPR 2.2 produced2515×2099 and39.18fps at384 steps; full1920×1080 held59.98. Explicit mode labels and actual dimensions are mandatory; do not call CSS rendering Retina-native.
+- Two active cloud tabs contaminated a90-second run (21.22fps). A queued app-panel open created a second tab rather than repairing an error page. Check tab inventory and one active renderer before measurement. Do not infer all low FPS is caused by backups.
+- Port4176 was an older Python static snapshot, not the new Vite build. Current production preview4177 servesdist; inspect server identity/build assets before interpreting a shader change.
+- Making ice detail nearly invariant through depth can create a flat opaque-looking cap. A .003 Z-frequency probe was visually rejected and reverted; inspect both fixed view and orbit before accepting coherent sheets.

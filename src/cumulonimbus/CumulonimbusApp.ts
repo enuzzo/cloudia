@@ -2,13 +2,13 @@ import { Data3DTexture, LinearFilter, MeshBasicNodeMaterial, NoColorSpace, QuadM
   RGBAFormat, RepeatWrapping, UnsignedByteType, Vector2, Vector3, WebGPURenderer } from 'three/webgpu';
 import { texture3D, uniform, uv } from 'three/tsl';
 import { integrateCloud } from './cloudShader';
-import { EXTINCTION, SUN_LEFT, SUN_RIGHT, VOLUME_RESOLUTION, cloudParameters, iceHeights, type CloudVolume } from './volume';
+import { EXTINCTION, ICE_EXTINCTION, DETAIL_RESOLUTION, EMPTY_SKIP_LIMIT, SUN_LEFT, SUN_RIGHT, VOLUME_RESOLUTION, cloudParameters, iceHeights, type CloudVolume } from './volume';
 import { FrameMeasurement, summarizeFrames } from './performance';
 import './scene.css';
 
 const QUALITY = {
   native: {label:'Alta · 100% / 128 passi', scale:1, steps:128},
-  ultra: {label:'Massima · 100% / 256 passi', scale:1, steps:256},
+  ultra: {label:'Massima · 100% / 384 passi', scale:1, steps:384},
   balanced: {label:'Fluida · 75% / 96 passi', scale:.75, steps:96},
 } as const;
 type Quality = keyof typeof QUALITY;
@@ -62,6 +62,7 @@ export class CumulonimbusApp {
   private readonly aspect = uniform(16/9);
   private readonly resolution = uniform(new Vector2(1280,720));
   private readonly stepSize = uniform(7/128);
+  private readonly emptyStep = uniform(7/128);
   private readonly drift = uniform(new Vector3());
   private readonly sun = uniform(new Vector3(...SUN_LEFT).normalize());
   private readonly lightSide = uniform(0);
@@ -84,7 +85,7 @@ export class CumulonimbusApp {
         <button data-action="light">Luce da destra</button><button data-action="reset">Ricomincia</button><button data-action="new-cloud" disabled>Nuova nube</button>
         <details><summary>Qualità e misure</summary><div class="diagnostics">
           <label>Qualità<select name="quality">${Object.entries(QUALITY).map(([key,v])=>`<option value="${key}" ${key===this.quality?'selected':''}>${v.label}</option>`).join('')}</select></label>
-          <label>Risoluzione output<select name="output"><option value="window">Finestra · 1 pixel per pixel CSS</option><option value="720">1280 × 720</option><option value="1080">1920 × 1080</option></select></label>
+          <label>Risoluzione output<select name="output"><option value="window">Finestra · 1 pixel per pixel CSS</option><option value="screen">Schermo · nitidezza nativa</option><option value="720">1280 × 720</option><option value="1080">1920 × 1080</option></select></label>
           <p data-testid="performance-live">In attesa della GPU…</p>
           <div class="benchmark-controls"><button data-action="benchmark" disabled>Misura 30 secondi</button><button data-action="sustained" disabled>Misura 90 secondi</button><button data-action="export" disabled>Esporta JSON</button></div>
           <p data-testid="benchmark-result">Il test include 2 secondi di riscaldamento e si interrompe se cambi scena o nascondi la scheda.</p>
@@ -163,7 +164,7 @@ export class CumulonimbusApp {
     this.iceRange.value.fromArray(iceHeights(this.seed));
     this.material.fragmentNode=integrateCloud({uv:uv(),volume:volumeNode,volumeSampler:volumeNode,detail:detailNode,detailSampler:detailNode,iceRange:this.iceRange,
       origin:this.origin,forward:this.forward,right:this.right,up:this.up,aspect:this.aspect,tanFov:uniform(.2867),
-      stepSize:this.stepSize,resolution:this.resolution,drift:this.drift,sun:this.sun,lightSide:this.lightSide,extinction:uniform(EXTINCTION)});
+      stepSize:this.stepSize,emptyStep:this.emptyStep,resolution:this.resolution,drift:this.drift,sun:this.sun,lightSide:this.lightSide,extinction:uniform(EXTINCTION),iceExtinction:uniform(ICE_EXTINCTION)});
     this.quad=new QuadMesh(this.material);
     oldMaterial?.dispose(); oldVolume?.dispose();oldDetail?.dispose();
   }
@@ -246,22 +247,24 @@ export class CumulonimbusApp {
   };
   private applySize() {
     if(!this.renderer) return;
-    this.outputWidth=this.outputMode==='720'?1280:this.outputMode==='1080'?1920:Math.max(1,Math.round(this.root.clientWidth));
-    this.outputHeight=this.outputMode==='720'?720:this.outputMode==='1080'?1080:Math.max(1,Math.round(this.root.clientHeight));
+    const pixelScale=this.outputMode==='screen'?window.devicePixelRatio:1;
+    this.outputWidth=this.outputMode==='720'?1280:this.outputMode==='1080'?1920:Math.max(1,Math.round(this.root.clientWidth*pixelScale));
+    this.outputHeight=this.outputMode==='720'?720:this.outputMode==='1080'?1080:Math.max(1,Math.round(this.root.clientHeight*pixelScale));
     this.internalWidth=Math.round(this.outputWidth*QUALITY[this.quality].scale);
     this.internalHeight=Math.round(this.outputHeight*QUALITY[this.quality].scale);
     this.renderer.setPixelRatio(1);
     this.renderer.setSize(this.internalWidth,this.internalHeight,false);
     this.aspect.value=this.outputWidth/this.outputHeight;
-    this.root.classList.toggle('fixed-output',this.outputMode!=='window');
+    this.root.classList.toggle('fixed-output',this.outputMode==='720'||this.outputMode==='1080');
     this.resolution.value.set(this.internalWidth,this.internalHeight);
     this.stepSize.value=7/QUALITY[this.quality].steps;
+    this.emptyStep.value=this.stepSize.value*Math.max(1,Math.floor(EMPTY_SKIP_LIMIT/this.stepSize.value));
     this.dirtySize=false;
     this.intervals=[]; this.previous=0;
   }
   private updateMetrics(now: number) {
     const stats=summarizeFrames(this.intervals);
-    this.metrics.textContent=`WebGPU · ${stats.fps.toFixed(1)} fps rAF · ${this.adapterInfo.description || this.adapterInfo.vendor || 'GPU non identificata'}\nOutput ${this.outputWidth}×${this.outputHeight} · interno ${this.internalWidth}×${this.internalHeight}\n${QUALITY[this.quality].steps} passi nominali · mediana ${stats.medianMs.toFixed(2)} ms · p95 ${stats.p95Ms.toFixed(2)} ms\nGPU ${this.gpuMs===null?'non disponibile':`${this.gpuMs.toFixed(2)} ms`} · volume ${VOLUME_RESOLUTION}³ + dettaglio 64³ · nessun TAA\nSeme della nube: ${this.seed}`;
+    this.metrics.textContent=`WebGPU · ${stats.fps.toFixed(1)} fps rAF · ${this.adapterInfo.description || this.adapterInfo.vendor || 'GPU non identificata'}\nOutput ${this.outputWidth}×${this.outputHeight} · interno ${this.internalWidth}×${this.internalHeight}\n${QUALITY[this.quality].steps} passi nominali · mediana ${stats.medianMs.toFixed(2)} ms · p95 ${stats.p95Ms.toFixed(2)} ms\nGPU ${this.gpuMs===null?'non disponibile':`${this.gpuMs.toFixed(2)} ms`} · volume ${VOLUME_RESOLUTION}³ + dettaglio ${DETAIL_RESOLUTION}³ · nessun TAA\nSeme della nube: ${this.seed}`;
     if(this.measurement && !this.measurement.result && !this.measurement.cancelReason) {
       const remaining=Math.max(0,(this.measurement.start+this.measurement.warmup+this.measurement.duration-now)/1000);
       this.result.textContent=`Misura in corso · ${Math.ceil(remaining)} s · ${this.measurement.intervals.length} frame raccolti`;
@@ -275,7 +278,7 @@ export class CumulonimbusApp {
     this.measurement=new FrameMeasurement(performance.now(),duration,2000);
     this.benchmarkContext={date:new Date().toISOString(),backend:'WebGPU',adapter:this.adapterInfo,threeRevision:'186',quality:this.quality,
       output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],nominalSteps:QUALITY[this.quality].steps,
-      rendererVersion:'ice-filaments-v4',volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[64,64,64],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
+      rendererVersion:'optical-detail-v5',outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
       userAgent:navigator.userAgent,devicePixelRatio:window.devicePixelRatio,
       method:'Visible requestAnimationFrame intervals, one cloud draw submission per callback; not compositor presentation. CPU callback work through draw submission, asynchronous GPU timestamp samples when available.',warmupMs:2000,targetDurationMs:duration};
     this.setButtonEnabled('benchmark',false); this.setButtonEnabled('sustained',false);

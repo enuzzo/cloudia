@@ -11,8 +11,8 @@ export const integrateCloud = wgslFn(`
 fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler,
   detail: texture_3d<f32>, detailSampler: sampler, iceRange: vec2<f32>,
   origin: vec3<f32>, forward: vec3<f32>, right: vec3<f32>, up: vec3<f32>,
-  aspect: f32, tanFov: f32, stepSize: f32, resolution: vec2<f32>,
-  drift: vec3<f32>, sun: vec3<f32>, lightSide: f32, extinction: f32) -> vec4<f32> {
+  aspect: f32, tanFov: f32, stepSize: f32, emptyStep: f32, resolution: vec2<f32>,
+  drift: vec3<f32>, sun: vec3<f32>, lightSide: f32, extinction: f32, iceExtinction: f32) -> vec4<f32> {
   let screen = vec2<f32>(uv.x * 2.0 - 1.0, 1.0 - uv.y * 2.0);
   let ray = normalize(forward + right * screen.x * aspect * tanFov + up * screen.y * tanFov);
   let horizon = clamp(ray.y * 1.4 + 0.5, 0.0, 1.0);
@@ -39,14 +39,14 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
   let forwardPhase=(1.0-0.68*0.68)/pow(max(1.0+0.68*0.68-2.0*0.68*mu,0.04),1.5);
   let backPhase=(1.0-0.25*0.25)/pow(max(1.0+0.25*0.25+2.0*0.25*mu,0.04),1.5);
   let sunPhase=0.45+0.55*(0.82*forwardPhase+0.18*backPhase);
-  for (var i=0u; i<640u; i++) {
+  for (var i=0u; i<1024u; i++) {
     if (t > far || transmittance < 0.006) { break; }
     let position = origin + ray*t;
     let coord = (position-lower) / vec3<f32>(10.0,8.5,7.0);
     // Conservative support includes domain displacement and macro interpolation.
     // One cheap mask lookup avoids evaluating fine noise throughout empty sky.
     let support=textureSampleLevel(detail,detailSampler,coord,0.0).a;
-    if(support<=0.0) {t+=stepSize*2.0;continue;}
+    if(support<=0.0) {t+=emptyStep;continue;}
     let local = position-drift;
     let ice=smoothstep(iceRange.x,iceRange.y,local.y);
     let fine=textureSampleLevel(detail,detailSampler,local*0.3,0.0);
@@ -60,7 +60,8 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
       let iceCoord=vec3<f32>(local.x*0.035+bend*0.06,local.y*0.38+local.x*0.026+(bend-0.5)*0.035,local.z*0.022);
       let wisps=textureSampleLevel(detail,detailSampler,iceCoord,0.0).r;
       erosion=mix(erosion,0.16+(1.0-wisps)*0.64,ice);
-      material=mix(1.0,(0.025+0.21*wisps)*(1.0-0.7*smoothstep(0.4,3.8,local.x)),ice);
+      let strand=smoothstep(0.25,0.6,wisps);
+      material=mix(1.0,(0.01+0.235*strand)*(1.0-0.7*smoothstep(0.4,3.8,local.x)),ice);
     }
     let density=clamp((warped-erosion)/(1.0-erosion),0.0,1.0)*material;
     if(density<0.002) {t+=stepSize;continue;}
@@ -72,7 +73,7 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
     let ambient = vec3<f32>(0.14,0.185,0.255) * (0.18+0.82*pow(skyVisibility,0.35));
     let multiple = vec3<f32>(1.0,0.985,0.95)*(0.27*exp(-sunTau*0.45)+0.10*exp(-sunTau*0.18)) + vec3<f32>(0.028,0.032,0.04);
     let source = direct + ambient + multiple;
-    let opacity = 1.0 - exp(-density * extinction * stepSize);
+    let opacity = 1.0 - exp(-density * mix(extinction,iceExtinction,ice) * stepSize);
     radiance += transmittance * opacity * source;
     transmittance *= 1.0-opacity;
     t += stepSize;

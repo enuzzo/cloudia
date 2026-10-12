@@ -1,7 +1,28 @@
 import { describe, expect, it } from 'vitest';
-import { generateVolume, heightErosionScale, cloudParameters, generateDetail, sampleDetail, erodeDensity, sampleCloudDensity, bakeOccupancy, voxelCenter, BOUNDS_MIN, BOUNDS_SIZE } from './volume';
+import { generateVolume, heightErosionScale, cloudParameters, generateDetail, sampleDetail, erodeDensity, sampleCloudDensity, bakeOccupancy, voxelCenter, BOUNDS_MIN, BOUNDS_SIZE, materialExtinction, EMPTY_SKIP_LIMIT, VOLUME_RESOLUTION, DETAIL_RESOLUTION } from './volume';
 
 describe('authored density volume', () => {
+  it('bounds accelerated empty samples by the displacement and interpolation halo', () => {
+    const warp=[.08,.06,.08];
+    const margins=BOUNDS_SIZE.map((extent,axis)=>{
+      const macro=extent/VOLUME_RESOLUTION,coarse=extent/DETAIL_RESOLUTION;
+      const radius=Math.ceil((warp[axis]+macro)/coarse);
+      return (radius+.5+.5*DETAIL_RESOLUTION/VOLUME_RESOLUTION)*coarse-warp[axis]-macro;
+    });
+    expect(EMPTY_SKIP_LIMIT).toBeLessThan(Math.min(...margins));
+    expect(7/384*2).toBeLessThanOrEqual(EMPTY_SKIP_LIMIT);
+  });
+  it('gives liquid convection a shorter optical penetration length than ice', () => {
+    expect(materialExtinction(0)).toBeGreaterThan(materialExtinction(1)*2);
+    expect(materialExtinction(1)).toBeCloseTo(6.5);
+    expect(Math.abs(materialExtinction(.5-.0001)-materialExtinction(.5+.0001))).toBeLessThan(.01);
+  });
+  it('separates sparse ice gaps from connected fibres inside a dense envelope', () => {
+    const envelope={size:1,data:new Uint8Array([255,0,0,0])};
+    const low={size:1,data:new Uint8Array([64,128,128,255])};
+    const high={size:1,data:new Uint8Array([153,128,128,255])};
+    expect(sampleCloudDensity(envelope,high,0,6,0,1)).toBeGreaterThan(sampleCloudDensity(envelope,low,0,6,0,1)*15);
+  });
   it('thins the ice outflow toward the downwind edge without thinning the liquid tower', () => {
     const envelope={size:1,data:new Uint8Array([255,0,0,0])};
     const detail={size:1,data:new Uint8Array([255,255,255,255])};
