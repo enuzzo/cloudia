@@ -15,6 +15,13 @@ This file tracks what has happened, what is next, and what must stay visible acr
 
 ## Work Completed
 
+### 2026-10-12 — convective motion research queued by owner
+
+- Owner asks that the next visual pass include internal and external cumulonimbus motion, with gestures still deferred.
+- Studied primary NASA, NWS, WMO, NCAR and deep-convection research: rising thermal episodes, entrainment/evaporation at boundaries, lateral anvil outflow and differing lifecycle regions. Recorded sources and rendering implications in `docs/DYNAMICS-RESEARCH-2026-10-12.md`.
+- Verified current motion is a small rigid-volume sinusoidal drift; morphology/detail remain static. Next pass must alter both silhouette and internal features, preserve matching shadows/support and remeasure sustained cadence.
+- Research/docs only. Renderer, current browser scene and prior measurements preserved; no animation implementation or new FPS claim in this checkpoint.
+
 ### 2026-10-12 — sharper optical detail, measured resolution limits
 
 - Removed repeated accumulated-shadow resampling with a fixed sheared light-space bake. Regression evidence verifies homogeneous optical depth and preserves a narrow shadow (old peak 0.374, new 1.565).
@@ -277,7 +284,7 @@ Definition of done:
 
 ## Next Actions
 
-1. Refine the new scene's photographic detail and anvil structure; retain comparable seed-based images.
+1. Refine photographic anvil structure together with internal/external convective motion, using `docs/DYNAMICS-RESEARCH-2026-10-12.md`; retain comparable seeded images and multiple animation timestamps.
 2. Isolate remaining cadence losses with the documented benchmark and browser-only control; do not substitute GPU time for visible FPS.
 3. After scene acceptance, connect hand recognition for swipes, fist/rain and pinch/lightning, with independent inference scheduling.
 
