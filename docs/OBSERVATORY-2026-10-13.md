@@ -114,3 +114,92 @@ All raw reports record the mode; no probe is an optimization shipped as quality.
 
 Pending final rendered comparisons and raw samples. See handoff for completed
 results, viewport evidence and residual limitations.
+
+### Measured occupied-work probes
+
+Apple/Metal-3, in-app browser; worker, 1920×1080 internal/output, 256³/128³,
+384 nominal steps, continuous submission, one active renderer. Fixed probes
+use the new explicit reference action: cloud time60, forcing time0, paused,
+wind55%, camera0/0, neutral sky, rain0, left light. Paused still renders and
+executes the flow compute pass; it freezes evolution rather than the GPU.
+Warmup2s, each30s sample completed without build/test/screenshots. All raw files
+have prefix `docs/benchmarks/2026-10-13-product-`.
+
+| Probe / raw suffix | GPU mean ms | rAF fps | >33.34 ms |
+| --- | ---: | ---: | ---: |
+| full-fixed-30s | 14.302 | 59.932 | 1 |
+| density-fixed-30s | 14.359 | 59.960 | 0 |
+| cache-fixed-30s | 14.188 | 59.998 | 0 |
+| no-flow-fixed-30s | 12.751 | 59.996 | 0 |
+| no-detail-fixed-30s | 10.589 | 59.960 | 1 |
+| flash-full-fixed-30s | 14.775 | 59.994 | 0 |
+| flash-omitted-fixed-30s | 12.629 | 59.960 | 1 |
+| specialized-full-fixed-30s | 10.996 | 59.930 | 1 |
+
+The first seven use uniform-controlled probes (v17). Illumination/cache
+omission did not establish savings. The no-flow/no-detail reductions suggest
+sensitivity to density sampling; their changed early exits prohibit treating
+the differences as exact component timings. Held-flash vs omitted flash suggests
+a glow/channel cost, but the omitted sample being faster than the earlier
+unlit baseline also exposes host/order variability. Do not subtract all rows.
+
+v18 compiles each probe into a separate shader. Full mode has compile-time
+constants, allowing diagnostic branches to disappear; the complete density,
+lighting and traversal remain. The fixed comparison improved14.30→11.00ms,
+but is one ordered comparison, not randomized causal proof. Main and worker
+actually compiled; switching density→full was visually inspected. Reference
+screenshots before/after specialization are retained.
+
+### Rejected recurrence trial (v19)
+
+A mathematical recurrence replaced each occupied sample's aerial exponential
+with a step multiplier, including a separate empty-step multiplier. A float32
+numerical test bounded drift below4e-5 over1024 mixed steps. It did not produce
+a consistent measured advantage: fixed30s GPU15.099ms versus v18's10.996;
+animated90s GPU13.208ms versus v18's14.772. Host/time and animated occupancy vary.
+The simpler direct exponential was restored. The discarded trial's30s/90s raw
+JSON and screenshot remain labeled v19; final renderer is **observatory-v18**.
+No quality was reduced to secure a timing result.
+
+### Sustained worker result
+
+`v18-worker-mature-90s.json`: 59.936 fps, max36.6ms,4 intervals>33.34ms,
+GPU14.772ms mean. This is not as clean as the previous office v16 run and is not
+called perfect60. The changed morphology, per-sample aerial perspective, sky
+transition infrastructure and host conditions prevent attributing the difference
+to a single feature. Rain0/auto-lightning off in this mature sample.
+After rejecting v19, the worker rebuilt to `render.worker-Cwe6b9-C.js`, the same
+asset used by the v18 sustained sample. A later cleanup removes an unnecessary
+material reconfiguration when selecting a family; the tested integrator is unchanged.
+
+### Atmosphere refinement
+
+The first low-sun trials were excessively green/yellow. Approximate Chappuis
+absorption was added to both view and solar paths, using the ozone layer/coefficients
+from [Hillaire 2020](https://doi.org/10.1111/cgf.14050) (RGB0.650,1.881,0.085 ×10⁻³ km⁻¹,
+triangular layer10–40km). The author's36MB PDF exceeded the web text tool's limit;
+the indexed paper table was available. This is a small independent addition,
+not an implementation or claim of Hillaire's multiple-scattering model.
+Ground fill follows low-sun colour. Cloud shadow directions still remain fixed.
+
+### Responsive and family evidence
+
+Desktop1280×720 and mobile390×844 were inspected in the internal browser.
+The mobile manual/hand guide/current panels stay within the viewport; measured
+scrollWidth=clientWidth390. A stacking overlap in the hand guide was fixed.
+All panes retain manual access and can close with Escape. Screenshots include
+sheared1571198069, congestus1902626172 and multicell230780749. New-form kept the
+old scene visible while generating and switched to the next family. Cap
+attachment is thicker/less uniform; thin strands and a shelf-like silhouette
+remain visible at some angles. This is an improvement study, not photo-realistic
+acceptance. The isolated specimen still lacks environmental scale cues.
+
+### Main-thread mixed scenario, 90 seconds
+
+`v18-main-growth-storm-orbit-90s.json`:59.978fps, max37.5ms,1 interval>33.34ms,
+GPU11.365ms mean. Growth starts near0s, automatic orbit enabled, storm scene,
+rain≈.3,6 flashes by the end, output/internal1920×1080/384. The sky transition
+at start was .354 and settles during warmup. This intentionally measures a mixed
+formation→mature weather scenario, not an isolated mature comparison with worker.
+Audio remained disabled; no acoustic acceptance is claimed. All samples measure
+rAF submission and GPU passes, never compositor presentation.

@@ -217,3 +217,11 @@ Project operating docs:
 ### October2026 default-scene evolution
 
 The original WebGL laboratory/embed remains available. Default central WebGPU scene now has seeded accelerated formation and GPU local deformation; its governing specification is2026-10-11-cumulonimbus-rebuild-design.md and current motion evidence is../../MOTION-2026-10-12.md. Stable60 and photographic acceptance remain open before gestures.
+
+### 13 October personal observatory
+
+Default WebGPU UI now exposes sun/sunset/rain/storm, shared atmosphere intents,
+a future hand-control guide, and separate diagnostics. Rain is a bounded
+world-space volume; no webcam access. The legacy embed remains unchanged.
+See ../../OBSERVATORY-2026-10-13.md for current specification and limitations;
+old gesture mappings above are proposals rather than approved bindings.

@@ -7,7 +7,7 @@ Status: approved by user on 2026-10-11; implemented locally and undergoing measu
 
 Build a browser scene on the current Mac showing one photographic-looking cumulonimbus centered against a restrained natural sky. Prioritize coherent morphology, believable light through the volume and stable animation. Aim for 60 fps at an explicitly measured resolution; pursue 120 fps on an appropriate refresh-rate display without sacrificing the accepted visual result. Publish online after the local result passes technical and visual review.
 
-The larger interaction remains: lateral hand swipes select weather, closed fist produces rain, and a thumb–index closing pinch triggers lightning. This first milestone establishes the cloud and measurements; the camera recognizer and precipitation/lightning effects are subsequent work.
+The early interaction proposal used swipes/fist/pinch; it was not a definitive mapping and is superseded by the proposed vocabulary in ../../OBSERVATORY-2026-10-13.md. This first milestone establishes the cloud and measurements; the camera recognizer and precipitation/lightning effects are subsequent work.
 
 ## Evidence behind the proposal
 
@@ -80,3 +80,13 @@ Tagged narrow ice lobes, bent anisotropic density and gradual downwind thinning 
 ## 12 October convective motion checkpoint
 
 The approved growing/boiling cloud is implemented as accelerated38-second formation and bounded local rising pulses, with thinner48-streak anvil structure. A16³ GPU flow field interpolates a64-phase atlas, and density/detail/cached illumination share the same material deformation. Light remains approximate; no fluid simulation claim. Expanded occupancy support and a seed-specific ray AABB preserve the existing256³/128³/384-step quality budget.49tests and builds pass. Final measured cadence does not meet stable60; photography and performance gates remain open before gestures. See docs/MOTION-2026-10-12.md.
+
+## 13 October observatory scope extension
+
+The owner requested product UI, richer atmosphere/rain, anvil refinement and
+occupied-work profiling. Those are now implemented in observatory-v18; see
+../../OBSERVATORY-2026-10-13.md for primary sources, proposed gesture semantics,
+visual evidence, successful and slow samples, and the rejected v19 trial.
+Quality remains256³/128³/384 at100% configured output. Camera tracking and
+permission remain a later task. Sunset shadow geometry and rain microphysics
+are approximations; photographic and compositor acceptance remain open.

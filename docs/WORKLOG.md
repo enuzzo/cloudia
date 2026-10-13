@@ -346,3 +346,21 @@ atmosphere intents and occupied-work probes. See OBSERVATORY-2026-10-13.md for
 research, assumptions and proposed gestures. First real WGSL test caught reserved
 `diagnostic`; renamed to `probeMode`. No camera activation, renderer fallback,
 quality reduction, deployment or main merge. Final qualification follows.
+
+### Qualification and final choice
+
+94 tests/21 files, typecheck and application→hero builds pass. Real WGSL compiled
+on both main and worker; console inspection found no remaining errors/warnings.
+Desktop1280×720,tablet768×800,mobile390×844 and short1280×432 inspected. The short
+layout has the height of a60vh hero on a720px viewport; this is layout evidence,
+not a new Elementor/embed integration test. Family seeds and screenshots are in
+the observatory report. Main dispersion reached100%, gust/recondensation and
+Escape were exercised; camera never requested.
+
+Seven occupied-work probes showed density/detail sensitivity, no established
+cache/scattering savings, and held-lightning overhead. Compile-time specialization
+kept full rendering and improved the single fixed comparison14.302→10.996ms.
+A recurrence experiment (v19) gave inconsistent timings and was reverted; all
+raw results remain. Final v18 mature-worker90s59.936fps/max36.6ms/4 long frames;
+main growth+storm+orbit90s59.978fps/max37.5ms/1 long frame,6 flashes. No perfect60,
+compositor, physical-device, photographic or listening acceptance claim.

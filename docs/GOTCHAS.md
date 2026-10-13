@@ -323,3 +323,11 @@ Future production choice:
 - A hand-guide disclosure is not an active input mode. Keep Manuale selected,
   state that the camera is unconnected and avoid calling getUserMedia until the
   actual tracking implementation is requested.
+- Uniform-controlled ablations add branches/register pressure to the production
+  shader. Compile probe variants separately, label them visibly and record them
+  in raw JSON. Omission timings are not additive; changed density changes exits.
+- An algebraically equivalent aerial-transmittance recurrence did not establish
+  a repeatable speedup (v19); it was reverted. Keep both slow and fast samples.
+- A paused cloud can still accept sky changes: sky interpolation uses wall time,
+  while precipitation/flow evolution remains paused. Future continuous hand sun
+  control must not synchronously rebake the whole LUT for each inference frame.

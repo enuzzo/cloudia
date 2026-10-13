@@ -1,101 +1,100 @@
-# Cloudia — manual office handoff
+# Cloudia — current local handoff
 
-Updated: 2026-10-13 after the office continuation. Resume the existing feature
-branch; the owner starts sessions manually.
+Updated13 October2026 after the observatory continuation. This supersedes the
+v16 handoff; historical office evidence remains in OFFICE-REFINEMENT-2026-10-13.md.
 
 ## Authoritative checkpoint
 
-| Item | State |
+| Item | Current state |
 | --- | --- |
-| GitHub | [enuzzo/cloudia](https://github.com/enuzzo/cloudia) — public |
-| Branch | [codex/cumulonimbus-webgpu](https://github.com/enuzzo/cloudia/tree/codex/cumulonimbus-webgpu) |
-| Tested implementation | [`c457bfcf4c39ad60a75a684af03fae91e7766f8a`](https://github.com/enuzzo/cloudia/commit/c457bfcf4c39ad60a75a684af03fae91e7766f8a) |
-| Final documentation | Documentation/evidence follow that implementation; branch HEAD is the complete delivery |
-| Source base | `864f5c1`, previous complete home/office handoff |
-| Renderer | `fibrous-flow-v16`, Three.js r186/WebGPU; main default, worker optional |
-| Checks | 91 tests /20 files, typecheck, application → hero build passed; real browser main/worker, families/interactions and390×844 checked |
-| Current Mac | darwin/arm64, Bun 1.3.11, Apple/Metal-3 browser adapter |
-| Qualification | Mature FullHD/384 worker 90s: v14 59.996fps, v15 59.985fps, v16 59.996fps; zero intervals >33.34ms; final max17.8ms/GPU11.143ms |
-| Publication | Existing feature branch only; no main merge or website deployment |
+| Repository | https://github.com/enuzzo/cloudia |
+| Branch | codex/cumulonimbus-webgpu |
+| Tested implementation | 5290302f5005ab777f27037783a0e3e0cc71a0cd |
+| Complete delivery | Documentation/evidence commit follows; branch HEAD is authoritative |
+| Renderer | observatory-v18, Three.js r186/WebGPU; main default, worker optional |
+| Quality | 256³ macro,128³ detail,384 nominal steps,100% configured output; no adaptive reduction |
+| Checks | 94 tests/21 files, typecheck, application→hero builds pass; real main/worker WGSL compiled |
+| Local runtime | darwin/arm64, Bun1.3.11, Apple/Metal-3 in-app browser |
+| Publication | Local feature-branch checkpoints; push pending explicit approval after automatic review rejection. No deployment or main merge |
 
-Read [OFFICE-REFINEMENT-2026-10-13.md](OFFICE-REFINEMENT-2026-10-13.md) for
-Git recovery, conservative traversal proof, comparisons, raw measurements and
-limits. [MORPHOLOGY-2026-10-13.md](MORPHOLOGY-2026-10-13.md) remains the anatomy,
-interaction and earlier AMD evidence record. [CLOUD-REPOS-2026-10-13.md](CLOUD-REPOS-2026-10-13.md)
-contains research/licensing boundaries; [GOTCHAS.md](GOTCHAS.md) records lifecycle
-and sampling constraints.
+Read [OBSERVATORY-2026-10-13.md](OBSERVATORY-2026-10-13.md) for research,
+photographic mismatch ledger, hand vocabulary, all GPU probes and their limits.
+Read GOTCHAS.md and PROJECT_OPERATING_RULES.md before editing.
 
-## Ready and still open
+## Delivered
 
-Three connected anatomy families, rising/sinking/outflow cues, neutral overcast
-sky, internal branched flashes and delayed WebAudio thunder remain ready.
-Drag, arrows/Home and Ricentra control view; New-form cycles family while the
-previous cloud animates. Gust, held/transient dispersion and recondensation share
-`CumulonimbusApp.applyWeatherImpulse` with future hand input. Pause freezes cloud
-and forcing; manual flashes have a separate wall clock.
+- Unequal intermediate outflow billows and macro carving reduce the smooth cap;
+  seed-determined congestus/multicell/sheared families remain. The silhouette
+  still reads as a shelf from some angles: no photographic acceptance claim.
+- Neutral overcast elevation structure, per-sample aerial attenuation, smooth
+  sky/ambient/solar transitions, low-sun colour with approximate ozone absorption.
+  Sunset still uses the existing fixed cloud-shadow cache directions.
+- World-space rain/virga shaft under the cloud, sharing view transmittance.
+  This is authored precipitation, not droplet microphysics or a surface splash.
+- Personal-observatory UI: serif wordmark + existing self-hosted Commissioner,
+  charcoal-green instruments, citron state feedback, permanent sun/sunset/rain/
+  storm console, manual controls and separate diagnostics. Existing functions
+  remain. Responsive panes, keyboard focus and Escape supported.
+- Future hand guide is visible and explicit: camera unconnected, no permission
+  requested. Proposed mapping and loss/ambiguity/fatigue rules are documented.
+  `applyAtmosphereIntent` and `applyWeatherImpulse` share main/worker transport.
+- Occupied-work probes distinguish density, light-cache access, flow/detail
+  sensitivity and held lightning. v18 compiles probes as distinct shaders;
+  complete rendering has no runtime diagnostic branches. No-detail/no-flow
+  change the image and are never quality optimizations.
 
-The flow-expanded occupancy mask now supports a proven integer empty advance
-under inverse growth/shear, including saturated dispersion. Mature384 quality
-allows three original steps through empty sky; occupied sampling remains fixed.
-The acceleration-only sample did not lower GPU mean. Final v16's lower mean
-includes ice-material changes and is not a causal proof of traversal speedup.
-Ice ribbons vary through depth and break irregularly, using the existing detail
-lookup; CPU light baking matches. The cap still looks too smooth at some angles.
+## Measurements and limits
 
-The preview on this Mac is animated at normal1× speed, neutral sky,55% wind,
-automatic flashes and explicit window-sized full-resolution output. Audio is
-disabled until its button is used. Local server/browser state does not transfer
-between Macs.
+One cloud renderer, full1920×1080 output/internal,384 steps,2s warmup. No builds,
+tests or screenshots during the samples. Raw reports are in docs/benchmarks.
 
-Photographic/owner visual and listening acceptance, formation/storm/orbit,
-compositor, main-mode sustained cadence and other-device qualification remain
-open. The three successful mature worker 90s runs do not certify those cases.
-Hand recognition, its mapping, camera permission and rain remain pending.
-Lighting during deformation/disappearance is approximate; this is authored
-bounded flow, not CFD or a physically calibrated storm.
+| Final v18 scenario | Duration | rAF fps | Max interval | >33.34ms | GPU mean |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Worker, mature, wind55%, neutral, no rain/flashes | 90s | 59.936 | 36.6ms | 4 | 14.772ms |
+| Main, formation→mature, orbit, rain .3,6 flashes | 90s | 59.978 | 37.5ms | 1 | 11.365ms |
+
+These are different scenarios, not proof that main is faster. They do not certify
+perfect60 or compositor presentation. The worker result is less clean than the
+prior v16 office run. Other GPUs, physical phones and acoustic acceptance remain
+open. GPU timestamps are asynchronous pass samples.
+
+Fixed30s probes showed no established illumination/cache saving, but reductions
+when omitting flow or detail (changed density/early exits confound exact costs).
+One full-mode comparison improved14.302→10.996ms after compile-time specialization.
+Keep that bounded; no randomized attribution claim. A v19 aerial recurrence trial
+was rejected after inconsistent fixed/animated timings. Its raw evidence remains;
+**do not treat v19 files as the final implementation**.
+
+## Visual QA and preview
+
+Evidence: docs/images/product-2026-10-13 with checksum manifest and final-qa.json.
+Desktop1280×720,tablet768×800,mobile390×844 and short1280×432 inspected. Short
+viewport approximates a60vh height on720px; actual Elementor mounting was not
+requalified. Main and worker console checks were clean. Main saturated dispersion,
+recondensation, gust, orbit/recenter, weather transitions and hand-guide dismissal
+were exercised. New-form kept the previous cloud visible and cycled families.
+
+The final visible tab is the normal main preview:
+http://127.0.0.1:4177/?seed=1571198069
+
+State: window output100%,384 steps,1×,wind55%,neutral storm,automatic flashes,
+rain .3,audio disabled,manual input,panels closed. It is animated, marked as a
+browser deliverable, and temporary viewport overrides are reset. The previous
+chat closed its cloud tab before measurement; only this preview is retained.
+Local browser/server state does not transfer between machines.
 
 ## Safe restart
 
-1. Finish Dropbox source synchronization and avoid simultaneous editing on two
-   Macs. Preserve dirty/divergent state; never reset, clean or force-push.
+1. Stay in this local folder/feature branch, no new checkout and no simultaneous
+   writer. Check `git status --short --branch`, `git log -3 --oneline`, then fetch
+   and fast-forward only when appropriate. Preserve unrelated changes.
+2. Earlier Dropbox repair recovered693 identical hash-verified objects.53 old
+   unreachable placeholders remain preserved. Do not delete/reset history to
+   make fsck pass; see OFFICE-REFINEMENT-2026-10-13.md.
+3. Use the committed Bun lock for the current architecture. Build app before hero:
 
 ```sh
-git status --short --branch
-git log -2 --oneline
-git remote -v
-git fetch --no-auto-maintenance origin
-git merge-base --is-ancestor c457bfcf4c39ad60a75a684af03fae91e7766f8a HEAD
-```
-
-Keep `codex/cumulonimbus-webgpu` if already selected. In a separate clean clone,
-fetch, then `git switch codex/cumulonimbus-webgpu` and `git pull --ff-only`.
-If the local branch is absent, use `git switch --track origin/codex/cumulonimbus-webgpu`.
-
-The office recovery replaced 693 offline loose objects with identical
-hash-verified GitHub copies, without resetting refs/files. All 743 initially
-reachable objects were independently verified. Another 53 unreachable Dropbox
-placeholders were preserved. A full `git fsck` can still wait/fail on those
-until Dropbox downloads them; do not delete them or mistake that state for
-verified corruption. Future sync may leave new placeholders, so recheck locally.
-
-2. Install the committed lock for the actual architecture. Do not trust native
-   dependencies copied from another Mac.
-
-```sh
-node -p 'process.platform + "/" + process.arch'
-bun --version
 bun install --frozen-lockfile
-```
-
-Use `bun install --frozen-lockfile --force` only if native installation is wrong.
-Preserve `bun.lock`. There is no npm lock for `npm ci`. Bun's temporary directory
-may require sandbox access. The initial office Vite build waited97s for provider
-reads; later local builds took about2s. Check completed assets before opening
-preview, and reload an error document after completion.
-
-3. Build application before hero, since application clears `dist`.
-
-```sh
 bun run typecheck
 bun run test
 bun run build
@@ -103,48 +102,25 @@ bun run build:hero
 bun run preview -- --host 127.0.0.1 --port 4177 --strictPort
 ```
 
-Open [normal animated worker preview](http://127.0.0.1:4177/?seed=1571198069&worker=1)
-or omit `worker=1` for default/main. For explicit FullHD diagnostics use
-[measurement preview](http://127.0.0.1:4177/?seed=1571198069&worker=1&profile=1&timing=stages).
-Use one live cloud renderer. A supported browser/GPU and secure context are
-required; localhost works. Capture an actual startup failure instead of silently
-changing renderer. Activate audio explicitly for listening.
+4. Keep one active renderer. Normal mode is main; add `worker=1` for worker.
+   `profile=1&timing=stages` starts mature at fixed1080p. In diagnostics,
+   **Fissa stato di confronto** freezes cloud time60/forcing0,wind55%,neutral
+   sky,rain0,left light,camera0/0. Then choose a probe and measure. This is still
+   GPU rendering, not idle pause. Restore Completo and animation for delivery.
+5. Continue small commits and authorized feature-branch pushes. No force-push,
+   main merge or website deployment without a new request.
 
-4. Evidence integrity:
+## Next useful work
 
-```sh
-cd docs/images/office-2026-10-13
-shasum -a 256 -c SHA256SUMS
-```
-
-All 11 office screenshots are checksummed. Three complete raw90s JSON reports
-live in `docs/benchmarks/2026-10-13-office-*.json`. Earlier43 morphology source
-captures and their checksum record remain intact. Images are qualitative review
-material; raw JSON holds the actual buffers, controls, start times and GPU data.
-
-## Recommended next work
-
-1. Owner review of the new moving cap at side/oblique views. Preserve the thicker
-   attachment and avoid compensating for smooth sheets by simply raising opacity.
-2. Profile occupied shading versus empty traversal; a safe jump alone did not
-   establish faster GPU work. Consider a conservative distance field only if
-   profiling justifies added complexity. Keep fixed quality and retain slow runs.
-   Qualify formation/storm/orbit and presentation separately. The earlier browser
-   compositor-tracing policy block must not be bypassed via another control path.
-3. After visual acceptance, agree gesture semantics and connect hands through
-   the existing impulse API. Inference independent of rendering, at most one in
-   flight, hysteresis/cooldowns and pointer controls available. Rain still needs
-   its own atmospheric treatment.
-
-## Pasteable restart prompt
-
-> Riprendiamo Cloudia sul ramo `codex/cumulonimbus-webgpu`. Leggi prima
-> `docs/HANDOFF-OFFICE-2026-10-13.md`, `docs/OFFICE-REFINEMENT-2026-10-13.md`
-> e `docs/GOTCHAS.md`. Preserva modifiche non nostre, controlla Git/Dropbox e
-> verifica il checkpoint `c457bfc`. Il renderer è `fibrous-flow-v16`; qualità
-> 256³/128³/384 invariata. Tre misure mature worker FullHD/90s sul Mac ARM64
-> tengono60 RAF fps, ma crescita/temporale/orbita/compositore/altri dispositivi
-> restano aperti. Il salto è sicuro sotto shear, ma v15 da solo non dimostra
-> un vantaggio GPU. L'incudine ha nuova trama e resta troppo liscia in alcuni
-> angoli. Apri una sola preview animata e riprendi da revisione visiva/profiling;
-> mani e pioggia vengono dopo. Niente deploy del sito o merge a main senza richiesta.
+1. Owner review of moving cap/scale and interface. Improve surrounding depth cues
+   and lighting before claiming photorealism; preserve current detail budget.
+2. Implement the requested camera pipeline next only on the owner's subsequent
+   instruction: explicit permission/preview/stop, local inference worker, one
+   frame in flight, no impulse on reacquisition, manual fallback. Mapping remains
+   proposed. Continuous sun control needs cached/interpolated atmosphere states;
+   do not rebuild the CPU LUT at camera inference frequency.
+3. Low-sun cloud shadow transport remains approximate. Research directional cache
+   expansion or another measured solution; do not merely recolor the sky and
+   call it a physically complete sunset.
+4. Repeat matched performance trials under controlled thermal/host conditions.
+   Existing browser compositor-tracing policy block must not be bypassed.
