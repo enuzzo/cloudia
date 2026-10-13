@@ -1,5 +1,14 @@
 # Cloudia — current local handoff
 
+## Current continuation: v20
+
+Tested implementation: `c6a862194f7fdaeda5c5bb86a1d7108d61336145`.
+97 tests/21 files, TypeScript and both builds pass. Day/low-sun cache directions,
+phase and atmosphere now share the sun model; RG8 adds32 MiB GPU and32 MiB CPU
+payload. Detailed evidence and current limits: [SOLAR-2026-10-13.md](SOLAR-2026-10-13.md).
+Ordered next work: [product roadmap](plans/2026-10-13-product-roadmap.md).
+The following v18 checkpoint is preserved as historical context.
+
 Updated13 October2026 after the observatory continuation. This supersedes the
 v16 handoff; historical office evidence remains in OFFICE-REFINEMENT-2026-10-13.md.
 
@@ -10,12 +19,12 @@ v16 handoff; historical office evidence remains in OFFICE-REFINEMENT-2026-10-13.
 | Repository | https://github.com/enuzzo/cloudia |
 | Branch | codex/cumulonimbus-webgpu |
 | Tested implementation | 5290302f5005ab777f27037783a0e3e0cc71a0cd |
-| Complete delivery | Documentation/evidence commit follows; branch HEAD is authoritative |
+| Complete v18 delivery | `85d6919`, pushed and remote SHA verified after explicit user approval |
 | Renderer | observatory-v18, Three.js r186/WebGPU; main default, worker optional |
 | Quality | 256³ macro,128³ detail,384 nominal steps,100% configured output; no adaptive reduction |
 | Checks | 94 tests/21 files, typecheck, application→hero builds pass; real main/worker WGSL compiled |
 | Local runtime | darwin/arm64, Bun1.3.11, Apple/Metal-3 in-app browser |
-| Publication | Local feature-branch checkpoints; push pending explicit approval after automatic review rejection. No deployment or main merge |
+| Publication | v18 published on feature branch; v20 continuation described below. No deployment or main merge |
 
 Read [OBSERVATORY-2026-10-13.md](OBSERVATORY-2026-10-13.md) for research,
 photographic mismatch ledger, hand vocabulary, all GPU probes and their limits.
@@ -109,6 +118,13 @@ bun run preview -- --host 127.0.0.1 --port 4177 --strictPort
    GPU rendering, not idle pause. Restore Completo and animation for delivery.
 5. Continue small commits and authorized feature-branch pushes. No force-push,
    main merge or website deployment without a new request.
+
+## Active continuation: v20 solar transport
+
+The owner explicitly approved publication and an autonomous improvement plan.
+Read [the ordered roadmap](plans/2026-10-13-product-roadmap.md) and
+[SOLAR-2026-10-13.md](SOLAR-2026-10-13.md) for the new low-sun implementation
+and its current validation. The v18 data above remain historical evidence.
 
 ## Next useful work
 

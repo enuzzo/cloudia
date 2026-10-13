@@ -331,3 +331,20 @@ Future production choice:
 - A paused cloud can still accept sky changes: sky interpolation uses wall time,
   while precipitation/flow evolution remains paused. Future continuous hand sun
   control must not synchronously rebake the whole LUT for each inference frame.
+
+
+## 2026-10-13 — v20 low-sun transport
+
+- A vertical-axis light bake grows its ray plane with direction.x/direction.y.
+  Near-horizontal sunlight must sweep the dominant voxel-space axis; testing
+  only daytime angles hides this memory issue. Signed-axis Beer–Lambert and
+  blocker tests now cover it.
+- Lowering only the sky sun gives mismatched cloud shadows/phase. Direction
+  comes from sun.ts for atmosphere and bake; low-sun bounce also follows the
+  solar spectrum. Cache interpolation and deformed shadows remain approximate.
+- Two RG8 channels at256³ mean32 MiB GPU payload plus the32 MiB CPU backing
+  array, not total app memory. Regeneration retains old resources until swap.
+- The in-app tab briefly reported0-width after the user hid the surface. An
+  explicit QA viewport restored interaction; this was not a renderer error.
+- Scene switches still build a CPU sky LUT synchronously; stable-scene fps does
+  not certify switch latency. Async/cache work is now explicit P0 roadmap work.

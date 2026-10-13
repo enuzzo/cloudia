@@ -364,3 +364,23 @@ A recurrence experiment (v19) gave inconsistent timings and was reverted; all
 raw results remain. Final v18 mature-worker90s59.936fps/max36.6ms/4 long frames;
 main growth+storm+orbit90s59.978fps/max37.5ms/1 long frame,6 flashes. No perfect60,
 compositor, physical-device, photographic or listening acceptance claim.
+
+
+## 2026-10-13 — authorized publication and v20 solar continuation
+
+Explicit owner approval resolved the automatic publication block. Pushed the
+four v18 checkpoints through85d6919 and verified the exact remote SHA. Owner
+also asked for an ambitious autonomous improvement plan:18 ordered work items
+with acceptance criteria now live in plans/2026-10-13-product-roadmap.md.
+
+First implementation c6a8621 aligns low-sun sky, phase and two new256³ RG8
+cloud-shadow caches. Dominant-axis signed baking handles horizontal light
+without the old ray-plane growth. Approximate sunset bounce follows solar
+colour; established day cache output remains byte-identical in the synthetic
+CPU comparison. +32MiB GPU plus32MiB CPU backing payload.97tests/21files,
+TypeScript, app/hero builds and main/worker GPU validation pass. Fixed30s
+main day59.9996fps and sunset59.9978fps; animated worker orbit90s59.9991fps,
+all zero>33.34ms. These are rAF samples, not compositor proof or causal speedup.
+Desktop/mobile, interrupted transitions and regeneration checked; camera off.
+See SOLAR-2026-10-13.md for evidence and the remaining synchronous sky-LUT
+latency. Next: asynchronous/cached sky transitions, then depth/scale cues.

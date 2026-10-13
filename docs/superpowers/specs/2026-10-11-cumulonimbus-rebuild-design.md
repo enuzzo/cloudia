@@ -88,5 +88,14 @@ occupied-work profiling. Those are now implemented in observatory-v18; see
 ../../OBSERVATORY-2026-10-13.md for primary sources, proposed gesture semantics,
 visual evidence, successful and slow samples, and the rejected v19 trial.
 Quality remains256³/128³/384 at100% configured output. Camera tracking and
-permission remain a later task. Sunset shadow geometry and rain microphysics
+permission remain a later task. Continuous solar shadow geometry and rain microphysics
 are approximations; photographic and compositor acceptance remain open.
+
+### v20 — shared low-sun transport
+
+The two sunset endpoints now have dedicated256³ RG8 optical-depth caches,
+shared solar directions for atmosphere/phase and solar-coloured approximate
+bounce. Dominant-axis light baking bounds near-horizontal ray-plane memory.
+Daytime bake output is preserved; intermediate directions and deformed shadows
+remain approximate. See SOLAR-2026-10-13.md for measured costs and validation,
+and plans/2026-10-13-product-roadmap.md for the owner's authorized continuation.

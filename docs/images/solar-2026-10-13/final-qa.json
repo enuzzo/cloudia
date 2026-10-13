@@ -1,0 +1,11 @@
+{
+  "url": "http://127.0.0.1:4177/?seed=1571198069",
+  "title": "Cloudia · Un cielo da muovere",
+  "metrics": "WebGPU · 60.0 fps rAF · apple\nOutput 1280×720 · interno 1280×720\n384 passi nominali · mediana 16.70 ms · p95 18.60 ms\nGPU rendering 6.62 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 83.4 s · seme: 1571198069\nForma: sheared · vento 55% · dispersione 0%\nCielo: sunset · velocità 1× · lampi: 0 · luce 0.00",
+  "logs": [],
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  },
+  "captured": "2026-10-13T21:40:55.131Z"
+}
