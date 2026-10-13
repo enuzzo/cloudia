@@ -13,9 +13,9 @@ const channel=wgsl(`fn lightningChannelDistance(p:vec3<f32>,a:vec3<f32>,b:vec3<f
   let ab=b-a;let u=clamp(dot(p-a,ab)/max(dot(ab,ab),0.0001),0.0,1.0);
   let d=p-a-ab*u;return dot(d,d);
 }`);
-export const integrateCloud = wgslFn(`
+const integrationSource = `
 fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler,
-  skyLUT: texture_2d<f32>, skySampler: sampler, skyFrom:texture_2d<f32>, skyFromSampler:sampler, atmosphereBlend:f32, precipitationTime:f32, probeMode:f32, solarColor:vec3<f32>, ambientColor:vec3<f32>, weather:vec3<f32>, forcing:vec2<f32>, wind:vec2<f32>, flash:vec4<f32>, flashTop:vec3<f32>, flashBend:vec3<f32>, flashEnd:vec3<f32>, flashBranch:vec3<f32>,
+  skyLUT: texture_2d<f32>, skySampler: sampler, skyFrom:texture_2d<f32>, skyFromSampler:sampler, atmosphereBlend:f32, precipitationTime:f32, solarColor:vec3<f32>, ambientColor:vec3<f32>, weather:vec3<f32>, forcing:vec2<f32>, wind:vec2<f32>, flash:vec4<f32>, flashTop:vec3<f32>, flashBend:vec3<f32>, flashEnd:vec3<f32>, flashBranch:vec3<f32>,
   detail: texture_3d<f32>, detailSampler: sampler, flow: texture_3d<f32>, flowSampler: sampler, iceRange: vec2<f32>,
   origin: vec3<f32>, forward: vec3<f32>, right: vec3<f32>, up: vec3<f32>,
   aspect: f32, tanFov: f32, stepSize: f32, emptyStep: f32, resolution: vec2<f32>,
@@ -128,4 +128,10 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
   // Mild exposure shoulder, applied to both the cloud and its atmospheric background.
   let mapped = cloudFilm(color);
   return vec4<f32>(mapped,1.0);
-}`, [film,motion,channel]);
+}`;
+/** Compile the diagnostic choice, so production has no per-sample probe branches. */
+export function createCloudIntegrator(mode=0){
+  const selected=Number.isInteger(mode)&&mode>=0&&mode<=5?mode:0;
+  return wgslFn(integrationSource.replaceAll('probeMode',`${selected}.0`),[film,motion,channel]);
+}
+

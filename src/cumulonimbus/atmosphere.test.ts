@@ -7,6 +7,11 @@ describe('shared atmosphere lighting',()=>{
     expect(Math.max(...ambient)/Math.min(...ambient)).toBeLessThan(1.15);
     expect(Math.min(...sky)).toBeGreaterThan(.08);
   });
+  it('keeps solar radiance finite and redder at low elevation',()=>{
+    const low=atmosphereLighting([-.75,.025,.24],1.6).solar,high=atmosphereLighting([-.75,.8,.24],1.6).solar;
+    expect(low.every(v=>Number.isFinite(v)&&v>=0)).toBe(true);
+    expect(low[0]/low[2]).toBeGreaterThan(high[0]/high[2]);
+  });
   const sun=[-.65,.71,.22];
   it('has a blue zenith and a brighter less saturated horizon',()=>{
     const zenith=skyRadiance([0,1,0],sun,1),horizon=skyRadiance([0,.01,-1],sun,1);

@@ -35,7 +35,7 @@ export class CumulonimbusApp {
   constructor(private readonly root:HTMLElement){
     root.innerHTML = `<div class="cloud-stage" data-testid="cloudia-stage"></div>
       <header class="scene-heading"><span class="eyebrow">Un piccolo osservatorio personale</span><h1>Cloudia<span class="brand-dot">.</span></h1><p><span data-testid="morphology-label">Cumulonembo</span> <span class="live-dot" aria-hidden="true"></span> <span data-testid="scene-name">Cielo neutro</span></p></header>
-      <p class="view-help" id="cloud-view-help">Trascina il cielo per esplorarlo <span>· Frecce per ruotare · Home per ricentrare</span></p>
+      <p class="probe-warning" data-testid="probe-warning" hidden>Diagnostic probe</p><p class="view-help" id="cloud-view-help">Trascina il cielo per esplorarlo <span>· Frecce per ruotare · Home per ricentrare</span></p>
       <p class="scene-loading" role="status" data-testid="scene-status">Preparazione del cielo…</p>
       <div class="scene-controls" aria-label="Controlli del cielo">
         <nav class="input-switch" aria-label="Modalità di controllo"><button data-action="manual" aria-pressed="true">Manuale</button><details class="hands-guide"><summary>Mani <span>in arrivo</span></summary><section class="diagnostics hand-panel" aria-label="Controllo con le mani in preparazione">
@@ -85,6 +85,11 @@ export class CumulonimbusApp {
     this.controls.addEventListener('click',this.onClick,{signal:this.events.signal});this.controls.addEventListener('change',this.onChange,{signal:this.events.signal});
     this.controls.addEventListener('input',this.onInput,{signal:this.events.signal});
     for(const panel of this.controls.querySelectorAll('details'))panel.addEventListener('toggle',()=>{if(panel.open)for(const other of this.controls.querySelectorAll('details'))if(other!==panel)other.open=false;},{signal:this.events.signal});
+    this.controls.addEventListener('keydown',(event)=>{
+      if(event.key==='Escape')for(const panel of this.controls.querySelectorAll('details[open]')){(panel as HTMLDetailsElement).open=false;panel.querySelector('summary')?.focus();}
+    },{signal:this.events.signal});
+    const initialProbe=new URLSearchParams(location.search).get('ablation')??'full';
+    if(this.profiling)this.showProbe(initialProbe);
     this.pointer=new OrbitPointerController(this.canvas,(dx,dy,width,height)=>this.send({type:'rotate',dx,dy,width,height}),()=>this.send({type:'action',action:'center'}));
     window.addEventListener('resize',this.onResize,{signal:this.events.signal});document.addEventListener('visibilitychange',this.onVisibility,{signal:this.events.signal});
   }
@@ -182,9 +187,14 @@ export class CumulonimbusApp {
     if(action==='export'&&this.report){const url=URL.createObjectURL(new Blob([JSON.stringify(this.report,null,2)],{type:'application/json'}));const output=this.report.output as number[];const a=document.createElement('a');a.href=url;a.download=`cloudia-${this.report.quality}-${output.join('x')}-seed-${this.report.seed}-${Date.now()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);return;}
     this.send({type:'action',action});
   };
+  private showProbe(mode:string){
+    const warning=this.root.querySelector<HTMLElement>('[data-testid="probe-warning"]')!;
+    warning.hidden=mode==='full';warning.textContent=`Sonda: ${mode} · immagine diagnostica`;
+  }
   private onInput=(event:Event)=>{const input=event.target as HTMLInputElement;if(input.type==='range')this.send({type:'change',name:input.name,value:input.value});};
   private onChange=(event:Event)=>{
     const input=event.target as HTMLSelectElement;if((input as unknown as HTMLInputElement).type==='range')return;
+    if(input.name==='ablation')this.showProbe(input.value);
     if(input.name==='sky'){this.applyAtmosphereIntent({type:'scene',scene:input.value as WeatherScene});return;}
     if(this.profiling&&['timing','flow'].includes(input.name)){const next=new URL(location.href);next.searchParams.set(input.name,input.value);location.assign(next.toString());return;}
     if(this.profiling&&input.name==='inflight'){this.frameLimit=Number(input.value);const next=new URL(location.href);next.searchParams.set('inflight',input.value);history.replaceState(null,'',next.toString());}
