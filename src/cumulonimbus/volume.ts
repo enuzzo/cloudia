@@ -192,7 +192,7 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
     liquid.push([-2.45,2.7,.15,.82,1.0,.83],[-2.15,3.75,.1,.64,.72,.68]);
     // The upper tower is advected into a narrow, long incus, with a short
     // upwind shoulder and a much longer fibrous downwind end.
-    iceCores.push([-.25,5.85,-.2,1.45,.34,1.3,.045],[1.45,6.02,-.2,2.25,.25,1.05,.035]);
+    iceCores.push([-.25,5.85,-.2,1.45,.44,1.3,.045],[1.45,6.02,-.2,2.25,.36,1.05,.035]);
   }
   const transform=(c:Lobe,isIce:boolean) => {
     const width=isIce?shape.anvilSpread:shape.towerWidth;
@@ -220,6 +220,14 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
       }
     }
   });
+  // Unequal overlapping outflow billows give the cap a three-dimensional shoulder.
+  // Their heights/depths vary independently: no single smooth roof ellipsoid.
+  const capRng=random(seed^0x291fab);
+  for(const core of iceCores) for(let j=0;j<14;j++) {
+    const reach=capRng()*2-1,side=capRng()*2-1;
+    lobes.push([core[0]+reach*core[3]*.82,core[1]+(capRng()-.5)*.18,
+      core[2]+side*core[5]*.78,.35+capRng()*.7,.14+capRng()*.16,.25+capRng()*.42,.035]);
+  }
   // Sparse, thin ice streaks connect to the outflow and taper at varying heights.
   // A separate RNG preserves the convective tower layout for seed comparisons.
   const iceRng=random(seed^0x73d61a29);
@@ -266,7 +274,7 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
       const ice=smoothstep(iceStart,iceEnd,worldY);
       const fibers=noise(px*.3+py*.17,py*5,pz*1.0,seed+81);
       const interior=1-.6*smoothstep(.04,.28,field[idx]);
-      const carving=erosion*erosionScale*interior*(1-ice)-(.008+(1-fibers)*.035)*ice;
+      const carving=erosion*erosionScale*interior*(1-ice)-(.012+(1-fibers)*.045+(1-n1)*.07+(1-n2)*.025)*ice;
       density[idx]=clamp((field[idx]+carving-(.025-.017*ice))*(10+ice*4)) * (.65+.35*n2) * (1-ice*(1-fibers)*.5) * baseFade;
     }
     if(z%8===0) progress?.(.1+.45*z/size);
