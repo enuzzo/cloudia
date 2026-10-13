@@ -74,11 +74,12 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
     var material=1.0;
     if(ice>0.0) {
       let bend=textureSampleLevel(detail,detailSampler,local*vec3<f32>(0.12,0.10,0.06),0.0).g;
-      let iceCoord=vec3<f32>(local.x*0.05+bend*0.06,local.y*0.42+local.x*0.026+(bend-0.5)*0.035,local.z*0.022);
-      let wisps=textureSampleLevel(detail,detailSampler,iceCoord,0.0).r;
+      let iceCoord=vec3<f32>(local.x*0.055+bend*0.08,local.y*0.34+local.x*0.022+(bend-0.5)*0.06,local.z*0.08+(bend-0.5)*0.025);
+      let iceDetail=textureSampleLevel(detail,detailSampler,iceCoord,0.0);
+      let wisps=iceDetail.r;
       erosion=mix(erosion,0.08+(1.0-wisps)*0.5+flowValue.a,ice);
       let strand=smoothstep(0.3,0.7,wisps);
-      material=mix(1.0,(0.008+0.58*pow(strand,1.7))*(1.0-0.7*smoothstep(0.4,3.8,local.x)),ice);
+      material=mix(1.0,(0.012+0.56*pow(strand,1.7))*(0.65+0.35*smoothstep(0.25,0.75,iceDetail.b))*(1.0-0.7*smoothstep(0.4,3.8,local.x)),ice);
     }
     erosion=min(0.92,erosion+forcing.x*(0.11+0.32*(1.0-fine.r)));
     let fragments=mix(1.0,smoothstep(0.25,0.7,fine.r),forcing.x);

@@ -8,8 +8,8 @@ export const ICE_EXTINCTION = 6.5;
 export const materialExtinction=(ice:number)=>EXTINCTION+(ICE_EXTINCTION-EXTINCTION)*ice;
 export const VOLUME_RESOLUTION = 256;
 export const DETAIL_RESOLUTION = 128;
-// The 256/128 mask leaves at least 0.043 world units beyond displaced density.
-// This limit keeps multi-step empty advances inside that proven empty margin.
+// Historical fine-warp-only margin, retained for the original mask proof test.
+// The live renderer uses the flow-expanded margin in emptyTraversal.ts instead.
 export const EMPTY_SKIP_LIMIT = .04;
 export const voxelCenter=(index:number,axis:0|1|2,size:number)=>BOUNDS_MIN[axis]+(index+.5)/size*BOUNDS_SIZE[axis];
 export const SUN_LEFT = [-0.75, 0.8, 0.24] as const;
@@ -101,13 +101,14 @@ export function sampleCloudDensity(envelope:DetailVolume,detail:DetailVolume,x:n
   let erosion=(1-r)*.38+(1-b)*.08;
   let material=1;
   if(ice>0) {
-    // Larger ice eddies bend the fine filaments. Lower vertical frequency limits
-    // undersampling by the 256-volume light bake.
+    // Bent outflow ribbons vary through depth as well as height, so an oblique
+    // view does not collapse the ice into parallel sheets. RGB shares one lookup.
     const bend=sampleDetail(detail,x*.12,y*.10,z*.06,1);
-    const wisps=sampleDetail(detail,x*.05+bend*.06,y*.42+x*.026+(bend-.5)*.035,z*.022,0);
+    const ix=x*.055+bend*.08,iy=y*.34+x*.022+(bend-.5)*.06,iz=z*.08+(bend-.5)*.025;
+    const wisps=sampleDetail(detail,ix,iy,iz,0),breakup=sampleDetail(detail,ix,iy,iz,2);
     erosion=erosion*(1-ice)+(.08+(1-wisps)*.5)*ice;
     const strand=smoothstep(.3,.7,wisps);
-    material=1-ice+(.008+.58*strand**1.7)*(1-.7*smoothstep(.4,3.8,x))*ice;
+    material=1-ice+(.012+.56*strand**1.7)*(.65+.35*smoothstep(.25,.75,breakup))*(1-.7*smoothstep(.4,3.8,x))*ice;
   }
   return erodeDensity(warped,erosion)*material;
 }

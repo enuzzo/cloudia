@@ -24,11 +24,15 @@ export function motionState(time:number,seed:number): MotionState {
  * through a filtered half-float flow field; density, detail and light stay registered.
  */
 export function sourcePosition(position:readonly number[],state:MotionState,iceRange:readonly number[]=[5.15,5.95],wind:readonly number[]=[0,0]): number[] {
-  const y=.72+(position[1]-.72)/state.height,ice=smooth(iceRange[0],iceRange[1],y);
-  const shear=Math.max(0,Math.min(1,(position[1]-.72)/6.2))**1.5;
-  const p=[(position[0]-wind[0]*shear)*((1-ice)/state.width+ice/state.anvil),y,(position[2]-wind[1]*shear)/state.width];
+  const p=referencePosition(position,state,iceRange,wind);
   const d=[0,0,0];writeDisplacement(p[0],p[1],p[2],state,iceRange,d);
   return p.map((v,i)=>v-d[i]);
+}
+/** CPU reference for cloudReference, before the bounded local flow. */
+export function referencePosition(position:readonly number[],state:MotionState,iceRange:readonly number[],wind:readonly number[]):number[] {
+  const y=.72+(position[1]-.72)/state.height,ice=smooth(iceRange[0],iceRange[1],y);
+  const shear=Math.max(0,Math.min(1,(position[1]-.72)/6.2))**1.5;
+  return [(position[0]-wind[0]*shear)*((1-ice)/state.width+ice/state.anvil),y,(position[2]-wind[1]*shear)/state.width];
 }
 /** Allocation-free flow evaluation for the small GPU field. */
 export function writeDisplacement(x:number,y:number,z:number,state:MotionState,iceRange:readonly number[],out:{[index:number]:number}): void {
