@@ -11,7 +11,7 @@ This file tracks what has happened, what is next, and what must stay visible acr
 - GitHub remote: `https://github.com/enuzzo/cloudia.git`
 - GitHub visibility decision: public
 - License decision: MIT for Cloudia's own code and docs
-- Push status: `main ` tracks `origin/main `
+- Active delivery: `codex/cumulonimbus-webgpu` tracks `origin/codex/cumulonimbus-webgpu`; main is separate
 
 ## Work Completed
 
@@ -284,9 +284,9 @@ Definition of done:
 
 ## Next Actions
 
-1. Review the current three morphology families, moving turrets, attached incus, two-axis drag and dispersion. Latest authoritative record: `MORPHOLOGY-2026-10-13.md`; office restart: `HANDOFF-OFFICE-2026-10-13.md`.
-2. Improve photographic ice microstructure and prove safe faster empty traversal under shear; preserve all qualification failures and explicit quality. Stable60 remains open.
-3. After visual/listening acceptance, connect hand recognition through `applyWeatherImpulse`, with independent inference scheduling and gesture cooldowns. Rain remains pending.
+1. Owner review of the new ice ribbons and moving cloud. Latest record: `OFFICE-REFINEMENT-2026-10-13.md`; restart: `HANDOFF-OFFICE-2026-10-13.md`. The cap remains too smooth at some angles.
+2. Profile occupied-cloud shading versus empty traversal. The integer jump is proven safe, but v15 alone did not lower GPU mean; do not claim it did. Qualify formation/storm/orbit and presentation separately from the three successful mature ARM64 worker samples.
+3. After scene acceptance, agree gesture mapping and connect independent hand inference via `applyWeatherImpulse`. One inference in flight, hysteresis/cooldowns and pointer fallback; camera permission, rain and listening acceptance remain pending.
 
 ## 2026-10-12 — local convective evolution
 
@@ -322,3 +322,14 @@ Added three seed-selected anatomy families with broader connected bases/unequal 
 Initial browser review corrected fragmented necks/weak cap; static review corrected pause and regeneration visibility/queue-drain races. 88 tests/19 files, TypeScript, application and legacy hero builds pass. Main/worker, real drag/recenter/keyboard, family cycling/regeneration, wind/dispersion/recovery, flash/audio enable and narrow390×844 inspected; no GPU/console errors observed. FullHD/384 worker90s: 57.40fps formation/storm (GPU13.415ms), 59.75fps mature/right/orbit/partial dispersal (GPU13.795ms). Stable60 and owner photographic/listening acceptance remain open. Sparse temporal captures are qualitative evidence, not compositor or60fps video. All raw results/evidence and limitations: `MORPHOLOGY-2026-10-13.md`.
 
 Owner explicitly requested GitHub publication of `codex/cumulonimbus-webgpu` and a manual office handoff. Implementation checkpoint and office workflow are recorded in `HANDOFF-OFFICE-2026-10-13.md`; final remote SHA verification is reported in the completion message. Animated preview retained at normal speed with neutral sky/55%wind/automatic flashes. No website deployment or main merge requested.
+
+
+## 2026-10-13 — office continuation, conservative traversal and ice ribbons
+
+Recovered 693 Dropbox-placeholder Git objects from identical hash-verified GitHub contents; all 743 objects reachable from the initial refs verified. Fetch/ancestry succeeded; 53 unreachable placeholders preserved. Clean starting branch matched `864f5c1`. Installed locked dependencies for darwin/arm64, Bun 1.3.11.
+
+Implementation `c457bfc`: derive the safe empty stride from the flow-expanded mask and inverse growth/shear Jacobian; keep occupied sampling and fixed 256³/128³/384 quality. Three new tests cover sparse displaced density, transition/shear bounds and ordinary early/coarse steps. Ice ribbons gain depth variation and breakup using existing RGB channels; CPU/GPU material parity retained. Final renderer `fibrous-flow-v16`.
+
+91 tests/20 files, typecheck and application → hero builds pass. Worker/main startup, three families, side/oblique pointer/keyboard views, recenter, held 100% dispersion/recondensa, gust, manual flash and main narrow 390×844 inspected; no relevant console errors. Three complete mature FullHD worker 90s samples: v14 59.996fps/GPU13.242ms, traversal-only v15 59.985fps/GPU13.431ms, final v16 59.996fps/GPU11.143ms. All zero intervals >33.34ms; final maximum17.8ms. Similar settings, slightly differing start times/focus; not bit-identical causal A/B. The final reduction includes material changes, and no isolated traversal benefit is established.
+
+Raw JSON, screenshots and limitations are retained in `OFFICE-REFINEMENT-2026-10-13.md`. Owner photographic/listening acceptance, formation/storm/orbit/compositor/other-device qualification and hands/rain remain open. Manual handoff updated; publish only the existing feature branch. Preview remains animated at normal speed, neutral sky, 55% wind and automatic flashes, with window-sized full-resolution output. No main merge or site deployment.

@@ -303,3 +303,11 @@ Future production choice:
 - The held dispersion slider indicates persistent forcing; transient disperse/condense/reset clear that hold. Live status shows actual interpolated dispersion. A temporary burst recovers after3.5seconds.
 - Neutral sky chromaticity must also reach cloud ambient illumination; merely dimming a blue sky leaves blue shading.
 - Four studied repositories are reference-only; root MIT alone does not resolve all derived shader provenance. PI-CloudSim's dependency license does not establish a license for its simulation.
+
+
+### 13 October — office ARM64 and traversal qualification
+
+- Dropbox can leave `.git/objects` as dataless placeholders even when `git status`/recent log work. Fetch/ancestry may fail with `mmap failed: Operation timed out`. The office recovered693 objects from identical SHA-1-verified GitHub copies and verified all743 initially reachable objects;53 unreachable placeholders remain preserved. This is not a full unreachable-history fsck. Never reset/delete unknown objects to make the check pass.
+- The live occupancy alpha includes bounded flow, so derive its actual per-axis margin rather than reusing the historical fine-warp-only `.04` constant. Inverse growth mixes width/anvil across the ice transition; bound that cross derivative as well as height-dependent shear. Quantize advances to original step multiples. Dispersion is already inside the saturated flow halo.
+- A proven three-step empty advance is not a measured speedup. On this Apple adapter, v14/v15 GPU means13.242/13.431ms; final v16 with changed material measured11.143ms. Keep all samples, start-time/focus differences and distinguish the combined result from causal traversal evidence.
+- Similar mature90s results do not certify growth/storm/orbit, compositor presentation or another GPU. The office main/worker browser QA and390×844 inspection do not constitute physical-phone or acoustic acceptance.
