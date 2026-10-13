@@ -29,7 +29,7 @@ describe('scene async lifecycle',()=>{
   it('does not declare ready when GPU shader validation fails',async()=>{
     Object.assign(device,{pushErrorScope:vi.fn(),popErrorScope:vi.fn(async()=>({message:'invalid sampler'}))});
     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});
+    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});
     await starting;
     expect(root.querySelector('[data-testid="scene-status"]')!.textContent).toContain('Compilazione GPU fallita: invalid sampler');
     expect(requestAnimationFrame).not.toHaveBeenCalled();
@@ -44,7 +44,7 @@ describe('scene async lifecycle',()=>{
     const completions:Array<()=>void>=[];
     device.queue.onSubmittedWorkDone.mockImplementation(()=>new Promise<void>(resolve=>completions.push(resolve)));
     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    const volume={size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
+    const volume={size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
     control.workers[0].onmessage!({data:{volume}});await starting;
     const frame=vi.mocked(requestAnimationFrame).mock.calls[0][0];
     frame(1000);frame(1017);frame(1034);
@@ -64,7 +64,7 @@ describe('scene async lifecycle',()=>{
   it('initializes frozen flow again when a newly seeded volume is installed',async()=>{
     history.replaceState(null,'','/?profile=1&flow=frozen');
     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    const volume={size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
+    const volume={size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
     control.workers[0].onmessage!({data:{volume}});await starting;
     expect(control.compute).toHaveBeenCalledOnce();
     root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
@@ -75,7 +75,7 @@ describe('scene async lifecycle',()=>{
   it('starts exactly one RAF when initial generation finishes in a hidden tab',async()=>{
     const hidden=vi.spyOn(document,'hidden','get').mockReturnValue(true);
     const {app}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await starting;
+    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await starting;
     expect(requestAnimationFrame).not.toHaveBeenCalled();
     expect(control.compute).toHaveBeenCalledOnce();
     expect(control.compute.mock.invocationCallOrder[0]).toBeLessThan(control.render.mock.invocationCallOrder[0]);
@@ -85,20 +85,20 @@ describe('scene async lifecycle',()=>{
   });
   it('rebuilds density and lighting together and never resumes a regenerated scene after teardown',async()=>{
     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await starting;
+    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await starting;
     root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
     expect(control.workers).toHaveLength(2);
     expect(root.querySelector<HTMLButtonElement>('[data-action="benchmark"]')!.disabled).toBe(true);
     const lateMessage=control.workers[1].onmessage!;
     app.destroy();await flush();
-    lateMessage({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await flush();
+    lateMessage({data:{volume:{size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await flush();
     expect(control.render).toHaveBeenCalledOnce();
     expect(device.destroy).toHaveBeenCalledOnce();
   });
   it('keeps an installed scene animating after hide/show during regeneration',async()=>{
     vi.spyOn(document,'hidden','get').mockReturnValue(false);
     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    const volume={size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
+    const volume={size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
     control.workers[0].onmessage!({data:{volume}});await starting;
     root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
     const hidden=vi.spyOn(document,'hidden','get').mockReturnValue(true);document.dispatchEvent(new Event('visibilitychange'));
@@ -112,7 +112,7 @@ describe('scene async lifecycle',()=>{
   it('does not start a second RAF loop when visibility changes during the final GPU drain',async()=>{
     const hidden=vi.spyOn(document,'hidden','get').mockReturnValue(false);
     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    const volume={size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
+    const volume={size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
     control.workers[0].onmessage!({data:{volume}});await starting;
     root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
     let drained=()=>{};device.queue.onSubmittedWorkDone.mockImplementationOnce(()=>new Promise<void>(resolve=>{drained=resolve;}));
@@ -126,7 +126,7 @@ describe('scene async lifecycle',()=>{
   });
   it('freezes active dispersal when paused and resumes it on the cloud clock',async()=>{
     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await starting;
+    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await starting;
     const frame=vi.mocked(requestAnimationFrame).mock.calls[0][0];frame(1000);
     root.querySelector<HTMLButtonElement>('[data-action="disperse"]')!.click();frame(2000);
     root.querySelector<HTMLButtonElement>('[data-action="pause"]')!.click();frame(3000);
@@ -149,7 +149,7 @@ describe('scene async lifecycle',()=>{
     expect(control.workers).toHaveLength(1);
     const worker=control.workers[0];const lateMessage=worker.onmessage!;
     control.renderer!.onDeviceLost();await flush();
-    lateMessage({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await starting;await flush();
+    lateMessage({data:{volume:{size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await starting;await flush();
     expect(control.originalLost).toHaveBeenCalledOnce();
     expect(worker.terminate).toHaveBeenCalled();
     expect(control.render).not.toHaveBeenCalled();

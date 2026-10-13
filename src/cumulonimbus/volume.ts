@@ -1,4 +1,6 @@
 import { bakeOpticalDepth } from './light';
+import {SUN_LEFT,SUN_RIGHT,solarDirection} from './sun';
+export {SUN_LEFT,SUN_RIGHT} from './sun';
 import { THERMAL_DISPLACEMENT } from './motion';
 /** World bounds and extinction are shared by the bake and ray integrator. */
 export const BOUNDS_MIN = [-5, -0.5, -3.5] as const;
@@ -12,11 +14,9 @@ export const DETAIL_RESOLUTION = 128;
 // The live renderer uses the flow-expanded margin in emptyTraversal.ts instead.
 export const EMPTY_SKIP_LIMIT = .04;
 export const voxelCenter=(index:number,axis:0|1|2,size:number)=>BOUNDS_MIN[axis]+(index+.5)/size*BOUNDS_SIZE[axis];
-export const SUN_LEFT = [-0.75, 0.8, 0.24] as const;
-export const SUN_RIGHT = [0.75, 0.8, 0.24] as const;
 export const heightErosionScale = (worldY: number) => (.48+.52*smoothstep(1.6,2.5,worldY))*(1-.55*smoothstep(5.1,6.2,worldY));
 export interface DetailVolume { size: number; data: Uint8Array }
-export interface CloudVolume { size: number; data: Uint8Array; detail: DetailVolume; supportBounds:{min:number[];max:number[]} }
+export interface CloudVolume { size: number; data: Uint8Array; sunsetLight: Uint8Array; detail: DetailVolume; supportBounds:{min:number[];max:number[]} }
 /** The raw linear density footprint, enlarged for fine warp and bounded flow.
  * Growth contracts toward x/z=0 and y=.72, so including those anchors covers
  * every growth phase as well as the mature cloud. The global texture box stays fixed.
@@ -301,8 +301,15 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
     const dir=channel===1?SUN_LEFT:channel===2?SUN_RIGHT:[0,1,0];
     const tau=bakeOpticalDepth(density,size,BOUNDS_SIZE,dir,EXTINCTION);
     for(let i=0;i<n;i++) data[i*4+channel]=Math.round(clamp(tau[i]/16)*255);
-    progress?.(.55+.15*channel);
+    progress?.(.55+.09*channel);
+  }
+  // Two RG8 low-sun caches keep all 256³ shadow detail without a nested light march.
+  const sunsetLight=new Uint8Array(n*2);
+  for(let side=0;side<2;side++){
+    const tau=bakeOpticalDepth(density,size,BOUNDS_SIZE,solarDirection(side,true),EXTINCTION);
+    for(let i=0;i<n;i++)sunsetLight[i*2+side]=Math.round(clamp(tau[i]/16)*255);
+    progress?.(.82+.09*(side+1));
   }
   bakeOccupancy(envelope,detail,THERMAL_DISPLACEMENT);
-  return {size, data, detail, supportBounds:densitySupportBounds(envelope)};
+  return {size, data, sunsetLight, detail, supportBounds:densitySupportBounds(envelope)};
 }

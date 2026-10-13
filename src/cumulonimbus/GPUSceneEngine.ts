@@ -1,7 +1,8 @@
 import { DataTexture, DataUtils, Vector4, Data3DTexture, LinearFilter, MeshBasicNodeMaterial, NoColorSpace, QuadMesh,
-  RGBAFormat, RepeatWrapping, UnsignedByteType, HalfFloatType, Storage3DTexture, Vector2, Vector3, WebGPURenderer } from 'three/webgpu';
+  RGBAFormat, RGFormat, RepeatWrapping, UnsignedByteType, HalfFloatType, Storage3DTexture, Vector2, Vector3, WebGPURenderer } from 'three/webgpu';
 import { Fn, instanceIndex, vec3, wgslFn, storageTexture3D, textureStore, texture3D, texture, uniform, uv } from 'three/tsl';
 import {WeatherState,WEATHER_SCENES,type AtmosphereIntent,type WeatherScene} from './weatherState';
+import {solarDirection} from './sun';
 import {OrbitView} from './camera';
 import {DispersalState,nextMorphologySeed,type WeatherImpulse} from './weatherInteraction';
 import { createCloudIntegrator } from './cloudShader';
@@ -20,7 +21,7 @@ export const QUALITY = {
   balanced: {label:'Fluida · 75% / 96 passi', scale:.75, steps:96},
 } as const;
 export type Quality = keyof typeof QUALITY;
-type CloudTextures = {macro:Data3DTexture;detail:Data3DTexture;supportBounds:CloudVolume['supportBounds']};
+type CloudTextures = {macro:Data3DTexture;sunset:Data3DTexture;detail:Data3DTexture;supportBounds:CloudVolume['supportBounds']};
 
 export class GPUSceneEngine {
   private renderer: WebGPURenderer | null = null;
@@ -29,6 +30,10 @@ export class GPUSceneEngine {
   private material: MeshBasicNodeMaterial | null = null;
   private volume: Data3DTexture | null = null;
   private detailVolume: Data3DTexture | null = null;
+  private sunsetVolume: Data3DTexture | null = null;
+  private readonly sunsetAmount=uniform(0);
+  private readonly sunDay=new Vector3(); private readonly sunLow=new Vector3();
+  private sunsetFrom=0; private sunsetTarget=0;
   private worker: Worker | null = null;
   private raf = 0;
   private destroyed = false;
@@ -192,7 +197,7 @@ export class GPUSceneEngine {
       // Timestamp queries are optional; RAF measurements remain available without them.
       this.timestampSupported = this.timingMode!=='off' && renderer.hasFeature('timestamp-query');
       const texture = await this.loadVolume();
-      if(this.destroyed || this.deviceLost) { texture.macro.dispose();texture.detail.dispose(); return; }
+      if(this.destroyed || this.deviceLost) { texture.macro.dispose();texture.detail.dispose();texture.sunset.dispose(); return; }
       device.pushErrorScope?.('validation');
       this.installVolume(texture);
       this.applySize();
@@ -215,8 +220,8 @@ export class GPUSceneEngine {
     }
   }
   private installVolume(textures: CloudTextures) {
-    const oldMaterial=this.material, oldVolume=this.volume, oldDetail=this.detailVolume;
-    this.volume=textures.macro;this.detailVolume=textures.detail; this.material=new MeshBasicNodeMaterial();
+    const oldMaterial=this.material, oldVolume=this.volume, oldDetail=this.detailVolume,oldSunset=this.sunsetVolume;
+    this.volume=textures.macro;this.detailVolume=textures.detail;this.sunsetVolume=textures.sunset; this.material=new MeshBasicNodeMaterial();
     this.updateAtmosphere();
     this.iceRange.value.fromArray(iceHeights(this.seed));
     this.cloudCenter.fromArray(textures.supportBounds.min).add(new Vector3().fromArray(textures.supportBounds.max)).multiplyScalar(.5);
@@ -233,14 +238,14 @@ export class GPUSceneEngine {
     this.configureIntegrator();
     this.quad=new QuadMesh(this.material);
     this.renderer?.compute(this.interpolateFlow); // Initialize this seed even for the frozen diagnostic control.
-    oldMaterial?.dispose(); oldVolume?.dispose();oldDetail?.dispose();
+    oldMaterial?.dispose(); oldVolume?.dispose();oldDetail?.dispose();oldSunset?.dispose();
   }
   private configureIntegrator(){
-    if(!this.material||!this.volume||!this.detailVolume)return;
+    if(!this.material||!this.volume||!this.detailVolume||!this.sunsetVolume)return;
     const volumeNode=texture3D(this.volume),detailNode=texture3D(this.detailVolume);
-    const flowNode=texture3D(this.currentFlow);
+    const flowNode=texture3D(this.currentFlow),sunsetNode=texture3D(this.sunsetVolume);
     const skyNode=texture(this.skyTexture),skyFromNode=texture(this.skyFromTexture);
-    this.material.fragmentNode=createCloudIntegrator(this.diagnostic.value)({precipitationTime:this.precipitationTime,atmosphereBlend:this.atmosphereBlend,skyFrom:skyFromNode,skyFromSampler:skyFromNode,skyLUT:skyNode,skySampler:skyNode,solarColor:this.solarColor,ambientColor:this.ambientColor,weather:this.weather,forcing:this.forcing,wind:this.wind,flash:this.flash,flashTop:this.flashTop,flashBend:this.flashBend,flashEnd:this.flashEnd,flashBranch:this.flashBranch,uv:uv(),volume:volumeNode,volumeSampler:volumeNode,detail:detailNode,detailSampler:detailNode,flow:flowNode,flowSampler:flowNode,iceRange:this.iceRange,
+    this.material.fragmentNode=createCloudIntegrator(this.diagnostic.value)({sunsetLight:sunsetNode,sunsetSampler:sunsetNode,sunsetAmount:this.sunsetAmount,precipitationTime:this.precipitationTime,atmosphereBlend:this.atmosphereBlend,skyFrom:skyFromNode,skyFromSampler:skyFromNode,skyLUT:skyNode,skySampler:skyNode,solarColor:this.solarColor,ambientColor:this.ambientColor,weather:this.weather,forcing:this.forcing,wind:this.wind,flash:this.flash,flashTop:this.flashTop,flashBend:this.flashBend,flashEnd:this.flashEnd,flashBranch:this.flashBranch,uv:uv(),volume:volumeNode,volumeSampler:volumeNode,detail:detailNode,detailSampler:detailNode,flow:flowNode,flowSampler:flowNode,iceRange:this.iceRange,
       origin:this.origin,forward:this.forward,right:this.right,up:this.up,aspect:this.aspect,tanFov:uniform(.2867),
       stepSize:this.stepSize,emptyStep:this.emptyStep,resolution:this.resolution,drift:this.drift,growth:this.growth,supportMin:this.supportMin,supportMax:this.supportMax,sun:this.sun,lightSide:this.lightSide,extinction:uniform(EXTINCTION),iceExtinction:uniform(ICE_EXTINCTION)});
     this.material.needsUpdate=true;
@@ -253,11 +258,11 @@ export class GPUSceneEngine {
     this.seed=nextMorphologySeed(crypto.getRandomValues(new Uint32Array(1))[0],this.seed,family);
     try {
       const texture=await this.loadVolume();
-      if(this.destroyed || this.deviceLost) {texture.macro.dispose();texture.detail.dispose();return;}
+      if(this.destroyed || this.deviceLost) {texture.macro.dispose();texture.detail.dispose();texture.sunset.dispose();return;}
       this.regenerating=false; // No visibility restart while GPU resources are being swapped.
       cancelAnimationFrame(this.raf);
       await this.device?.queue.onSubmittedWorkDone();
-      if(this.destroyed||this.deviceLost){texture.macro.dispose();texture.detail.dispose();return;}
+      if(this.destroyed||this.deviceLost){texture.macro.dispose();texture.detail.dispose();texture.sunset.dispose();return;}
       this.simulationTime=0;this.dispersal.recover();this.dispersal.amount=0;this.view.reset();this.orbit=false;this.installVolume(texture);this.state();
       this.previous=0; this.intervals=[]; this.ready=true;
       this.text('status',`WebGPU · volume ${VOLUME_RESOLUTION}³ · movimento lento`); this.emit({type:'statusState',state:'loaded'});
@@ -278,7 +283,11 @@ export class GPUSceneEngine {
         if(event.data.progress!==undefined) this.text('status',`Formazione della nube e della luce · ${Math.round(event.data.progress*100)}%`);
         if(event.data.error) { worker.terminate(); this.worker=null; this.rejectVolume=null; reject(new Error(event.data.error)); }
         if(event.data.volume) {
-          const {size,data,detail}=event.data.volume;
+          const {size,data,detail,sunsetLight}=event.data.volume;
+          const sunsetTexture=new Data3DTexture(sunsetLight,size,size,size);
+          sunsetTexture.format=RGFormat;sunsetTexture.type=UnsignedByteType;sunsetTexture.colorSpace=NoColorSpace;
+          sunsetTexture.minFilter=LinearFilter;sunsetTexture.magFilter=LinearFilter;sunsetTexture.unpackAlignment=1;
+          sunsetTexture.generateMipmaps=false;sunsetTexture.needsUpdate=true;
           const texture = new Data3DTexture(data,size,size,size);
           texture.format=RGBAFormat; texture.type=UnsignedByteType; texture.colorSpace=NoColorSpace;
           texture.minFilter=LinearFilter; texture.magFilter=LinearFilter; texture.unpackAlignment=1;
@@ -288,7 +297,7 @@ export class GPUSceneEngine {
           detailTexture.minFilter=LinearFilter;detailTexture.magFilter=LinearFilter;detailTexture.unpackAlignment=1;
           detailTexture.wrapS=RepeatWrapping;detailTexture.wrapT=RepeatWrapping;detailTexture.wrapR=RepeatWrapping;
           detailTexture.generateMipmaps=false;detailTexture.needsUpdate=true;
-          worker.terminate(); this.worker=null; this.rejectVolume=null; resolve({macro:texture,detail:detailTexture,supportBounds:event.data.volume.supportBounds});
+          worker.terminate(); this.worker=null; this.rejectVolume=null; resolve({macro:texture,detail:detailTexture,sunset:sunsetTexture,supportBounds:event.data.volume.supportBounds});
         }
       };
       worker.onerror=()=>{ worker.terminate(); this.worker=null; this.rejectVolume=null; reject(new Error('La generazione del volume è fallita. Ricarica la scena.')); };
@@ -369,12 +378,14 @@ export class GPUSceneEngine {
     for(let i=0;i<this.skyData.length;i++)this.skyFromData[i]+=(this.skyData[i]-this.skyFromData[i])*blend;
     this.solarFrom.copy(this.solarColor.value);this.ambientFrom.copy(this.ambientColor.value);
     this.weatherFrom.set(this.weather.value.x,this.weather.value.y);this.weatherTarget.set(haze,overcast);
-    const skySun=this.sun.value.clone();if(preset.sunset)skySun.y=.025;skySun.normalize();
+    this.sunsetFrom=this.sunsetAmount.value;this.sunsetTarget=preset.sunset;
+    this.sunDay.fromArray(solarDirection(this.side));this.sunLow.fromArray(solarDirection(this.side,true));
+    const skySun=preset.sunset?this.sunLow:this.sunDay;
     fillSkyLUT(this.skyData,skySun.toArray(),haze,overcast);
     const lighting=atmosphereLighting(skySun.toArray(),haze,overcast);
     this.solarTarget.fromArray(lighting.solar);this.ambientTarget.fromArray(lighting.ambient);
     const initial=!this.quad;
-    if(initial){this.skyFromData.set(this.skyData);this.solarFrom.copy(this.solarTarget);this.ambientFrom.copy(this.ambientTarget);}
+    if(initial){this.sunsetFrom=this.sunsetTarget;this.skyFromData.set(this.skyData);this.solarFrom.copy(this.solarTarget);this.ambientFrom.copy(this.ambientTarget);}
     for(let i=0;i<this.skyData.length;i++){
       this.skyPacked[i]=DataUtils.toHalfFloat(this.skyData[i]);this.skyFromPacked[i]=DataUtils.toHalfFloat(this.skyFromData[i]);
     }
@@ -384,6 +395,8 @@ export class GPUSceneEngine {
   private advanceAtmosphere(dt:number,weatherDt=dt){
     this.atmosphereProgress=Math.min(1,this.atmosphereProgress+dt/2.4);
     const t=this.atmosphereProgress,b=t*t*(3-2*t);this.atmosphereBlend.value=b;
+    this.sunsetAmount.value=this.sunsetFrom+(this.sunsetTarget-this.sunsetFrom)*b;
+    this.sun.value.copy(this.sunDay).lerp(this.sunLow,this.sunsetAmount.value).normalize();
     this.solarColor.value.copy(this.solarFrom).lerp(this.solarTarget,b);this.ambientColor.value.copy(this.ambientFrom).lerp(this.ambientTarget,b);
     this.weatherState.step(weatherDt);this.weather.value.set(this.weatherFrom.x+(this.weatherTarget.x-this.weatherFrom.x)*b,this.weatherFrom.y+(this.weatherTarget.y-this.weatherFrom.y)*b,this.weatherState.rain);
     this.precipitationTime.value=this.forcingTime;
@@ -467,7 +480,7 @@ export class GPUSceneEngine {
     this.measurement=new FrameMeasurement(performance.now(),duration,2000);
     this.benchmarkContext={date:new Date().toISOString(),backend:'WebGPU',adapter:this.adapterInfo,threeRevision:'186',quality:this.quality,
       output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],nominalSteps:QUALITY[this.quality].steps,
-      rendererVersion:'observatory-v18',probeImplementation:'compile-time specialization',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
+      rendererVersion:'observatory-v20',solarVisibility:'256-cubed day + RG8 low-sun endpoints',sunDirection:this.sun.value.toArray(),sunsetAmount:this.sunsetAmount.value,extraSunsetTextureBytes:VOLUME_RESOLUTION**3*2,probeImplementation:'compile-time specialization',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
       userAgent:navigator.userAgent,devicePixelRatio:this.viewport.dpr,
       method:'Visible requestAnimationFrame intervals, CPU compute/render submission and callback dispatch delay. GPU render and compute timestamps sampled separately; their last-frame samples are not necessarily paired. Optional queue completion latency includes GPU work, readback and JS delivery; not compositor presentation.',warmupMs:2000,targetDurationMs:duration};
     this.setButtonEnabled('benchmark',false); this.setButtonEnabled('sustained',false);
@@ -564,7 +577,7 @@ export class GPUSceneEngine {
       await this.queuePromise;
       await Promise.all(this.frameCompletions);
       this.releasingGPU=true;
-      this.material?.dispose(); this.volume?.dispose();this.detailVolume?.dispose();this.currentFlow.dispose();this.skyTexture.dispose();this.skyFromTexture.dispose();this.interpolateFlow.dispose(); this.renderer?.dispose(); this.device?.destroy();
+      this.material?.dispose(); this.volume?.dispose();this.detailVolume?.dispose();this.sunsetVolume?.dispose();this.currentFlow.dispose();this.skyTexture.dispose();this.skyFromTexture.dispose();this.interpolateFlow.dispose(); this.renderer?.dispose(); this.device?.destroy();
     })();
     return this.cleanup;
   }

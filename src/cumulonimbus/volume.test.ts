@@ -209,6 +209,9 @@ describe('authored density volume', () => {
     const a = generateVolume(24, 71);
     const b = generateVolume(24, 71);
     expect(a.data).toEqual(b.data);
+    expect(a.sunsetLight).toEqual(b.sunsetLight);
+    expect(a.sunsetLight.length).toBe(24**3*2);
+    expect(a.sunsetLight.some(v=>v>0)).toBe(true);
     let occupied = 0;
     for (let z = 0; z < 24; z++) for (let y = 0; y < 24; y++) for (let x = 0; x < 24; x++) {
       const d = a.data[((z * 24 + y) * 24 + x) * 4];

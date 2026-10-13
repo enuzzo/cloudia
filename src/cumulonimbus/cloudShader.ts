@@ -15,6 +15,7 @@ const channel=wgsl(`fn lightningChannelDistance(p:vec3<f32>,a:vec3<f32>,b:vec3<f
 }`);
 const integrationSource = `
 fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler,
+  sunsetLight:texture_3d<f32>, sunsetSampler:sampler, sunsetAmount:f32,
   skyLUT: texture_2d<f32>, skySampler: sampler, skyFrom:texture_2d<f32>, skyFromSampler:sampler, atmosphereBlend:f32, precipitationTime:f32, solarColor:vec3<f32>, ambientColor:vec3<f32>, weather:vec3<f32>, forcing:vec2<f32>, wind:vec2<f32>, flash:vec4<f32>, flashTop:vec3<f32>, flashBend:vec3<f32>, flashEnd:vec3<f32>, flashBranch:vec3<f32>,
   detail: texture_3d<f32>, detailSampler: sampler, flow: texture_3d<f32>, flowSampler: sampler, iceRange: vec2<f32>,
   origin: vec3<f32>, forward: vec3<f32>, right: vec3<f32>, up: vec3<f32>,
@@ -100,12 +101,19 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
     if(probeMode!=1.0){
     let voxel = textureSampleLevel(volume,volumeSampler,coord,0.0);
     if(probeMode==2.0){source=voxel.gba;}else{
-    let sunTau=mix(voxel.g,voxel.b,lightSide)*16.0*massFactor;
+    var solarDepth=mix(voxel.g,voxel.b,lightSide);
+    if(sunsetAmount>0.0){
+      let low=textureSampleLevel(sunsetLight,sunsetSampler,coord,0.0).rg;
+      solarDepth=mix(solarDepth,mix(low.r,low.g,lightSide),sunsetAmount);
+    }
+    let sunTau=solarDepth*16.0*massFactor;
     let solar = exp(-sunTau);
     let skyVisibility = exp(-voxel.a*16.0*massFactor);
     let direct = solarColor*1.65*solar*sunPhase*(1.0-weather.y*0.15);
     let ambient = ambientColor * (0.18+0.82*pow(skyVisibility,0.35))*(1.0-weather.y*0.1);
-    let multiple = vec3<f32>(1.0,0.985,0.95)*(0.27*exp(-sunTau*0.45)+0.10*exp(-sunTau*0.18)) + vec3<f32>(0.028,0.032,0.04);
+    // Sunset bounce follows the attenuated solar spectrum; keep the established daytime look.
+    let bounceTint=mix(vec3<f32>(1.0),solarColor,sunsetAmount);
+    let multiple = bounceTint*vec3<f32>(1.0,0.985,0.95)*(0.27*exp(-sunTau*0.45)+0.10*exp(-sunTau*0.18)) + vec3<f32>(0.028,0.032,0.04);
     source = direct + ambient + multiple*(1.0-weather.y*0.13);
     if(flash.w>0.001 && probeMode!=5.0){
       // Same bent scene-space channel for every density sample; view integration
