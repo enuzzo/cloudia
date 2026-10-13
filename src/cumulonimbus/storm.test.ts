@@ -1,6 +1,14 @@
 import {describe,it,expect} from 'vitest';
 import {createFlash,flashIntensity,thunderPlan,generateThunder} from './storm';
 describe('storm timing and sound',()=>{
+  it('builds a bent branching internal channel scaled to the cloud height',()=>{
+    const f=createFlash(31,3,0,{height:.7,centerX:.2});
+    expect(f.channel).toHaveLength(4);
+    expect(f.channel[0][1]).toBeGreaterThan(f.channel[3][1]+1);
+    expect(f.channel.flat().every(Number.isFinite)).toBe(true);
+    expect(f.branch[0]).toBeGreaterThan(f.channel[2][0]+.3);
+    expect(Math.min(...f.channel.map(p=>p[1]))).toBeGreaterThan(.72);
+  });
   it('has discrete irregular strokes and no light outside the flash',()=>{
     const f=createFlash(17,3,10);
     expect(f).toEqual(createFlash(17,3,10));

@@ -4,6 +4,20 @@ import {fillMotionField,fillMotionAtlas} from './motionField';
 import {DataUtils} from 'three/webgpu';
 
 describe('convective evolution',()=>{
+  it('has a distinct descending flank while neighboring thermals rise',()=>{
+    const out=[0,0,0,0];let up=0,down=0;
+    for(let t=0;t<55;t+=1.7)for(let x=-1.5;x<2;x+=.3)for(let y=1.4;y<4.2;y+=.4){
+      writeDisplacement(x,y,.1,motionState(t,1571198069),[4.6,5.2],out);
+      up=Math.max(up,out[1]);down=Math.min(down,out[1]);
+    }
+    expect(up).toBeGreaterThan(.3);expect(down).toBeLessThan(-.15);
+  });
+  it('dispersal changes local transport and thinning rather than only fading the screen',()=>{
+    const out=[0,0,0,0],before=[0,0,0,0],state=motionState(20,71);
+    writeDisplacement(1.3,3,.5,state,[4.6,5.2],before);
+    writeDisplacement(1.3,3,.5,{...state,dispersion:.8},[4.6,5.2],out);
+    expect(Math.abs(out[0]-before[0])).toBeGreaterThan(.06);expect(out[3]).toBeGreaterThan(before[3]+.04);
+  });
   it('does not replay the same thermals after the former 68-second cycle',()=>{
     const a=sourcePosition([-.65,3.1,.2],motionState(45,1571198069));
     const b=sourcePosition([-.65,3.1,.2],motionState(113,1571198069));

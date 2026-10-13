@@ -10,6 +10,8 @@ self.onmessage=(event:MessageEvent<RenderCommand>)=>{
   }
   if(message.type==='action')engine?.action(message.action);
   if(message.type==='change')engine?.change(message.name,message.value);
+  if(message.type==='rotate')engine?.rotate(message.dx,message.dy,message.width,message.height);
+  if(message.type==='impulse')engine?.impulse(message.impulse);
   if(message.type==='resize')engine?.resize(message.viewport);
   if(message.type==='visibility')engine?.visibility(message.visible);
   if(message.type==='stop'){const closing=engine;engine=null;void (closing?.destroy()??Promise.resolve()).finally(()=>{emit({type:'closed'});self.close();});}

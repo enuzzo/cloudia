@@ -1,7 +1,21 @@
 import { describe, expect, it } from 'vitest';
-import { generateVolume, heightErosionScale, cloudParameters, generateDetail, sampleDetail, erodeDensity, sampleCloudDensity, bakeOccupancy, voxelCenter, BOUNDS_MIN, BOUNDS_SIZE, materialExtinction, EMPTY_SKIP_LIMIT, VOLUME_RESOLUTION, DETAIL_RESOLUTION } from './volume';
+import { generateVolume, heightErosionScale, cloudParameters, morphologyFamily, iceHeights, generateDetail, sampleDetail, erodeDensity, sampleCloudDensity, bakeOccupancy, voxelCenter, BOUNDS_MIN, BOUNDS_SIZE, materialExtinction, EMPTY_SKIP_LIMIT, VOLUME_RESOLUTION, DETAIL_RESOLUTION } from './volume';
 import { THERMAL_DISPLACEMENT } from './motion';
 import { densitySupportBounds } from './volume';
+
+/** Mass moments of the actual density channel, independent of the authored lobes. */
+function massMoments(volume: ReturnType<typeof generateVolume>, minY=-Infinity,maxY=Infinity) {
+  let mass=0; const first=[0,0,0],second=[0,0,0];
+  for(let z=0;z<volume.size;z++) for(let y=0;y<volume.size;y++) for(let x=0;x<volume.size;x++) {
+    const p=[voxelCenter(x,0,volume.size),voxelCenter(y,1,volume.size),voxelCenter(z,2,volume.size)];
+    if(p[1]<minY||p[1]>maxY) continue;
+    const d=volume.data[((z*volume.size+y)*volume.size+x)*4]/255;
+    mass+=d;
+    for(let a=0;a<3;a++) {first[a]+=d*p[a];second[a]+=d*p[a]*p[a];}
+  }
+  const centroid=first.map(v=>v/mass);
+  return {mass,centroid,spread:second.map((v,a)=>Math.sqrt(Math.max(0,v/mass-centroid[a]**2)))};
+}
 
 describe('authored density volume', () => {
   it('keeps intermediate ice wisps optically separated from bright fibres',()=>{
@@ -14,12 +28,12 @@ describe('authored density volume', () => {
     const envelope={size:4,data:new Uint8Array(4**3*4)};
     envelope.data[((1*4+2)*4+1)*4]=255;
     const bounds=densitySupportBounds(envelope);
-    expect(bounds.min[0]).toBeCloseTo(-4.035);
+    expect(bounds.min[0]).toBeCloseTo(-4.25);
     expect(bounds.min[1]).toBeCloseTo(.72);
-    expect(bounds.min[2]).toBeCloseTo(-2.91);
-    expect(bounds.max[0]).toBeCloseTo(1.535);
-    expect(bounds.max[1]).toBeCloseTo(7.5775);
-    expect(bounds.max[2]).toBeCloseTo(1.16);
+    expect(bounds.min[2]).toBeCloseTo(-3.045);
+    expect(bounds.max[0]).toBeCloseTo(1.75);
+    expect(bounds.max[1]).toBeCloseTo(7.8175);
+    expect(bounds.max[2]).toBeCloseTo(1.295);
   });
   it('covers the thermal displacement before evaluating the expensive flow field',()=>{
     const size=64,envelope={size,data:new Uint8Array(size**3*4)},detail={size,data:new Uint8Array(size**3*4)};
@@ -130,9 +144,63 @@ describe('authored density volume', () => {
     const first=cloudParameters(71), second=cloudParameters(912);
     expect(first).toEqual(cloudParameters(71));
     expect(first).not.toEqual(second);
-    expect(first.towerHeight).toBeGreaterThanOrEqual(.87);
-    expect(first.towerHeight).toBeLessThanOrEqual(1.1);
+    expect(first.towerHeight).toBeGreaterThanOrEqual(.65);
+    expect(first.towerHeight).toBeLessThanOrEqual(.9);
     expect(generateVolume(24,71).data).not.toEqual(generateVolume(24,912).data);
+  });
+  it('cycles reproducible topology families and derives the ice transition from their height',()=>{
+    for(const [seed,family] of [[72,'congestus'],[73,'multicell'],[74,'sheared'],[-1,'sheared']] as const) {
+      expect(morphologyFamily(seed)).toBe(family);
+      expect(cloudParameters(seed).family).toBe(family);
+      expect(cloudParameters(seed)).toEqual(cloudParameters(seed));
+      const {towerHeight}=cloudParameters(seed),[start,end]=iceHeights(seed);
+      expect(start).toBeCloseTo(.72+4.43*towerHeight);
+      expect(end).toBeCloseTo(.72+5.23*towerHeight);
+    }
+    for(let seed=0;seed<300;seed++) {
+      const shape=cloudParameters(seed);
+      expect(Object.values(shape).filter(v=>typeof v==='number').every(Number.isFinite)).toBe(true);
+      expect(shape.towerHeight).toBeGreaterThanOrEqual(.65);
+      expect(shape.towerHeight).toBeLessThanOrEqual(.9);
+    }
+  });
+  it('changes horizontal and vertical mass distribution instead of rescaling one cylindrical stack',()=>{
+    const congestus=generateVolume(32,72),multicell=generateVolume(32,73),sheared=generateVolume(32,74);
+    const a=massMoments(congestus),b=massMoments(multicell),c=massMoments(sheared);
+    expect(a.spread[0]/a.spread[1]).toBeGreaterThan(1.1);
+    expect(b.spread[0]/b.spread[1]).toBeGreaterThan(1.1);
+    expect(Math.abs(a.centroid[1]-b.centroid[1])).toBeGreaterThan(.12);
+    const low=massMoments(sheared,.9,2),high=massMoments(sheared,3.5);
+    expect(high.centroid[0]-low.centroid[0]).toBeGreaterThan(.65);
+    expect(Math.abs(c.centroid[0]-a.centroid[0])).toBeGreaterThan(.1);
+  });
+  it('retains separated elevated multicell towers above their connected rain base',()=>{
+    const volume=generateVolume(40,73),rows=new Float64Array(40);
+    for(let z=0;z<40;z++) for(let y=0;y<40;y++) for(let x=0;x<40;x++) {
+      const h=voxelCenter(y,1,40);
+      if(h>2.8&&h<3.65) rows[x]+=volume.data[((z*40+y)*40+x)*4];
+    }
+    const left=Math.max(...rows.slice(9,18)),right=Math.max(...rows.slice(22,30));
+    const saddle=Math.min(...rows.slice(18,22));
+    expect(left).toBeGreaterThan(saddle*1.3);
+    expect(right).toBeGreaterThan(saddle*1.3);
+  });
+  it('keeps every morphology away from all texture faces without a forced box cutoff',()=>{
+    for(const seed of [72,73,74,912,913,914]) {
+      const volume=generateVolume(24,seed); let occupied=0;
+      for(let z=0;z<24;z++) for(let y=0;y<24;y++) for(let x=0;x<24;x++) {
+        const density=volume.data[((z*24+y)*24+x)*4];
+        if(!density) continue;
+        occupied++;
+        const point=[voxelCenter(x,0,24),voxelCenter(y,1,24),voxelCenter(z,2,24)];
+        for(let axis=0;axis<3;axis++) {
+          expect(point[axis]).toBeGreaterThan(BOUNDS_MIN[axis]+.3);
+          expect(point[axis]).toBeLessThan(BOUNDS_MIN[axis]+BOUNDS_SIZE[axis]-.3);
+        }
+      }
+      expect(occupied).toBeGreaterThan(250);
+      expect(occupied).toBeLessThan(24**3/2);
+    }
   });
   it('does not introduce horizontal seams where base and anvil erosion change', () => {
     for(const height of [2,5.65]) expect(Math.abs(heightErosionScale(height+.001)-heightErosionScale(height-.001))).toBeLessThan(.02);

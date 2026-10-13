@@ -1,13 +1,23 @@
-export interface Flash {seed:number;distance:number;start:number;position:number[];pulses:Array<{at:number;width:number;strength:number}>;duration:number}
+export interface Flash {seed:number;distance:number;start:number;position:number[];channel:number[][];branch:number[];pulses:Array<{at:number;width:number;strength:number}>;duration:number}
 function random(seed:number){return ()=>{seed|=0;seed=seed+0x6d2b79f5|0;let t=Math.imul(seed^seed>>>15,1|seed);t^=t+Math.imul(t^t>>>7,61|t);return ((t^t>>>14)>>>0)/4294967296;};}
-export function createFlash(seed:number,distance:number,start:number):Flash{
+export function createFlash(seed:number,distance:number,start:number,geometry:{height:number;centerX:number}={height:1,centerX:0}):Flash{
   const rng=random(seed),pulses:Flash['pulses']=[];let at=0;
   const count=3+Math.floor(rng()*3);
   for(let i=0;i<count;i++){
     pulses.push({at,width:.025+rng()*.055,strength:i===0?1:.35+rng()*.6});
     at+=.065+rng()*.13;
   }
-  return {seed,distance,start,position:[-.65+rng()*1.2,2.5+rng()*1.8,.25+rng()*.55],pulses,duration:at+.22};
+  const height=Math.max(.4,Math.min(1.2,geometry.height));
+  const position=[geometry.centerX-.65+rng()*1.2,.72+(2.5+rng()*1.8-.72)*height,.25+rng()*.55];
+  const bend=.23+rng()*.24;
+  const channel=[
+    [position[0]-.35,position[1]+.85*height,position[2]-.15],
+    [...position],
+    [position[0]+bend,position[1]-.45*height,position[2]-.18],
+    [position[0]-.24,position[1]-1.1*height,position[2]+.12],
+  ];
+  const branch=[channel[2][0]+.55+rng()*.3,channel[2][1]+.18*height,channel[2][2]+.2];
+  return {seed,distance,start,position,channel,branch,pulses,duration:at+.22};
 }
 export function flashIntensity(f:Flash,time:number):number{
   const age=time-f.start;if(age<0||age>f.duration)return 0;

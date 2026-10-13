@@ -95,6 +95,47 @@ describe('scene async lifecycle',()=>{
     expect(control.render).toHaveBeenCalledOnce();
     expect(device.destroy).toHaveBeenCalledOnce();
   });
+  it('keeps an installed scene animating after hide/show during regeneration',async()=>{
+    vi.spyOn(document,'hidden','get').mockReturnValue(false);
+    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    const volume={size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
+    control.workers[0].onmessage!({data:{volume}});await starting;
+    root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
+    const hidden=vi.spyOn(document,'hidden','get').mockReturnValue(true);document.dispatchEvent(new Event('visibilitychange'));
+    const calls=vi.mocked(requestAnimationFrame).mock.calls.length;
+    hidden.mockReturnValue(false);document.dispatchEvent(new Event('visibilitychange'));
+    expect(vi.mocked(requestAnimationFrame).mock.calls.length).toBe(calls+1);
+    const frame=vi.mocked(requestAnimationFrame).mock.calls.at(-1)![0];frame(2000);
+    expect(control.render).toHaveBeenCalledTimes(2);
+    app.destroy();await flush();
+  });
+  it('does not start a second RAF loop when visibility changes during the final GPU drain',async()=>{
+    const hidden=vi.spyOn(document,'hidden','get').mockReturnValue(false);
+    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    const volume={size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
+    control.workers[0].onmessage!({data:{volume}});await starting;
+    root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
+    let drained=()=>{};device.queue.onSubmittedWorkDone.mockImplementationOnce(()=>new Promise<void>(resolve=>{drained=resolve;}));
+    control.workers[1].onmessage!({data:{volume}});await flush();
+    const calls=vi.mocked(requestAnimationFrame).mock.calls.length;
+    hidden.mockReturnValue(true);document.dispatchEvent(new Event('visibilitychange'));
+    hidden.mockReturnValue(false);document.dispatchEvent(new Event('visibilitychange'));
+    expect(vi.mocked(requestAnimationFrame).mock.calls.length).toBe(calls);
+    drained();await flush();expect(vi.mocked(requestAnimationFrame).mock.calls.length).toBe(calls+1);
+    app.destroy();await flush();
+  });
+  it('freezes active dispersal when paused and resumes it on the cloud clock',async()=>{
+    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await starting;
+    const frame=vi.mocked(requestAnimationFrame).mock.calls[0][0];frame(1000);
+    root.querySelector<HTMLButtonElement>('[data-action="disperse"]')!.click();frame(2000);
+    root.querySelector<HTMLButtonElement>('[data-action="pause"]')!.click();frame(3000);
+    const before=root.querySelector('[data-testid="cloud-flow-status"]')!.textContent;
+    frame(8000);expect(root.querySelector('[data-testid="cloud-flow-status"]')!.textContent).toBe(before);
+    root.querySelector<HTMLButtonElement>('[data-action="pause"]')!.click();frame(9000);
+    expect(root.querySelector('[data-testid="cloud-flow-status"]')!.textContent).not.toBe(before);
+    app.destroy();await flush();
+  });
   it('performs final renderer cleanup after a pending initialization completes',async()=>{
     const {app}=createApp();const starting=app.start();await flush();
     app.destroy();await flush();const callsBefore=control.renderer!.dispose.mock.calls.length;

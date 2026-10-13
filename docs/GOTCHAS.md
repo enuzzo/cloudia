@@ -290,3 +290,16 @@ Future production choice:
 - Short strokes can be missed by screenshot capture; record timestamps and do not present held-light preview as an actual temporal flash. The sparse replay is not a60fps recording.
 - Diagnostic/weather panels sit above the full wrapped controls height (`100% +12px`), not a fixed mobile offset. Viewport overrides can report different CSS dimensions under zoom: record actual buffer/CSS sizes.
 - Current90s failures58.47/58.00 remain alongside59.96. Render GPU means around5.3–5.8ms do not certify presentation or stable60. WEATHER-2026-10-13.md is the latest handoff.
+
+
+## Morphology, interaction and storm forcing — 2026-10-13
+
+- `seed%3` chooses congestus/multicell/sheared. New-form cycles the family; explicit family selection produces a new seed in that family. Preserve the visible seed in evidence and reproduce with `?seed=...`.
+- Fine carving must preserve a connected replenished core; thin macro overlaps disappear after shader erosion. CPU/GPU ice erosion and material must match the optical-depth bake. Geometry continuity and fibre opacity both affect anvil readability.
+- Height-dependent inverse shear expands world support. Ray bounds include a1.3X/0.65Z halo; occupied-mask coordinates clamp to half texels instead of wrapping. Integer empty skips are disabled while shear or dispersal is active. Keep displacement limits conservative.
+- Camera yaw/pitch is independent of weather and cloud time. Drag cancels auto-orbit and benchmarks. Recenter resets only view, aims at seeded support/current drift; it does not regenerate the cloud.
+- Pause freezes forcingTime (gust/dispersion) and cloud time. Flash/audio use a separate wall clock, so manual lightning works paused. Auto-flashes require unpaused growth. No hand camera access is introduced.
+- During volume generation the installed old cloud keeps animating. Visibility may restart it only before the final GPU drain. Disable the regeneration flag before cancelling/draining so hide/show cannot create duplicate RAF loops.
+- The held dispersion slider indicates persistent forcing; transient disperse/condense/reset clear that hold. Live status shows actual interpolated dispersion. A temporary burst recovers after3.5seconds.
+- Neutral sky chromaticity must also reach cloud ambient illumination; merely dimming a blue sky leaves blue shading.
+- Four studied repositories are reference-only; root MIT alone does not resolve all derived shader provenance. PI-CloudSim's dependency license does not establish a license for its simulation.

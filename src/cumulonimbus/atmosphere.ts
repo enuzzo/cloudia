@@ -34,16 +34,25 @@ export function skyRadiance(direction:readonly number[],sunDirection:readonly nu
   if(direction[1]<0){const blend=1-Math.exp(direction[1]*14);for(let c=0;c<3;c++)result[c]=result[c]*(1-blend)+[.18,.225,.27][c]*blend;}
   return result;
 }
-export function atmosphereLighting(sun:readonly number[],haze:number){
+/** Neutral overcast surroundings, not a colour-darkened clear atmosphere. */
+export function overcastRadiance(color:readonly number[],elevation:number):number[]{
+  const luminance=color[0]*.2126+color[1]*.7152+color[2]*.0722;
+  const height=Math.max(0,Math.min(1,elevation*1.4+.15));
+  const diffuse=.19+.085*height+.45*luminance;
+  return [diffuse*1.02,diffuse,diffuse*.965];
+}
+export function atmosphereLighting(sun:readonly number[],haze:number,overcast=0){
   const [r,m]=optical([0,OBSERVER,0],normalize(sun));
-  return {solar:RAYLEIGH.map(b=>Math.exp(-b*r-.003*haze*m)),ambient:skyRadiance([0,1,0],sun,haze).map(v=>.06+v*.48)};
+  const sky=skyRadiance([0,1,0],sun,haze),neutral=overcastRadiance(sky,1);
+  return {solar:RAYLEIGH.map(b=>Math.exp(-b*r-.003*haze*m)*(1-.32*overcast)),ambient:sky.map((v,c)=>.06+(v*(1-overcast)+neutral[c]*overcast)*.48)};
 }
 export const SKY_LUT_SIZE=128;
-export function fillSkyLUT(data:Float32Array,sun:readonly number[],haze:number){
+export function fillSkyLUT(data:Float32Array,sun:readonly number[],haze:number,overcast=0){
   const s=normalize(sun),azimuth=Math.atan2(s[2],s[0]);
   for(let y=0;y<SKY_LUT_SIZE;y++)for(let x=0;x<SKY_LUT_SIZE;x++){
     const k=2*(y+.5)/SKY_LUT_SIZE-1,elevation=Math.sign(k)*k*k,horizontal=Math.sqrt(1-elevation*elevation);
     const az=azimuth+Math.acos(2*(x+.5)/SKY_LUT_SIZE-1),color=skyRadiance([horizontal*Math.cos(az),elevation,horizontal*Math.sin(az)],s,haze),at=(y*SKY_LUT_SIZE+x)*4;
-    for(let c=0;c<3;c++)data[at+c]=color[c];data[at+3]=1;
+    const neutral=overcastRadiance(color,elevation);
+    for(let c=0;c<3;c++)data[at+c]=color[c]*(1-overcast)+neutral[c]*overcast;data[at+3]=1;
   }
 }

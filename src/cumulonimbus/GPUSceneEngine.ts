@@ -1,12 +1,14 @@
 import { DataTexture, DataUtils, Vector4, Data3DTexture, LinearFilter, MeshBasicNodeMaterial, NoColorSpace, QuadMesh,
   RGBAFormat, RepeatWrapping, UnsignedByteType, HalfFloatType, Storage3DTexture, Vector2, Vector3, WebGPURenderer } from 'three/webgpu';
 import { Fn, instanceIndex, vec3, wgslFn, storageTexture3D, textureStore, texture3D, texture, uniform, uv } from 'three/tsl';
+import {OrbitView} from './camera';
+import {DispersalState,nextMorphologySeed,type WeatherImpulse} from './weatherInteraction';
 import { integrateCloud } from './cloudShader';
 import {fillSkyLUT,SKY_LUT_SIZE,atmosphereLighting} from './atmosphere';
 import {createFlash,flashIntensity,thunderPlan,type Flash} from './storm';
 import { motionState,FLOW_WGSL } from './motion';
 import { MOTION_FIELD_SIZE } from './motionField';
-import { EXTINCTION, ICE_EXTINCTION, DETAIL_RESOLUTION, EMPTY_SKIP_LIMIT, SUN_LEFT, SUN_RIGHT, VOLUME_RESOLUTION, cloudParameters, iceHeights, type CloudVolume } from './volume';
+import { EXTINCTION, ICE_EXTINCTION, DETAIL_RESOLUTION, EMPTY_SKIP_LIMIT, SUN_LEFT, SUN_RIGHT, VOLUME_RESOLUTION, cloudParameters, morphologyFamily, iceHeights, type CloudVolume } from './volume';
 import { FrameMeasurement, summarizeFrames, summarizeSamples } from './performance';
 import type {RenderHost,Viewport,RenderEvent} from './renderProtocol';
 
@@ -34,6 +36,7 @@ export class GPUSceneEngine {
   private cleanup: Promise<void> | null = null;
   private rejectVolume: ((reason: Error)=>void) | null = null;
   private ready = false;
+  private regenerating = false;
   private seed = 71;
   private paused = false;
   private orbit = false;
@@ -73,10 +76,21 @@ export class GPUSceneEngine {
   private dirtySize = true;
   private side = 0;
   private speed=1;
-  private skyMode='clear';
+  private readonly view=new OrbitView();
+  private readonly cloudCenter=new Vector3(0,3,0);
+  private readonly viewFocus=new Vector3(0,3,0);
+  private readonly dispersal=new DispersalState();
+  private readonly forcing=uniform(new Vector2(0,0));
+  private readonly wind=uniform(new Vector2());
+  private windStrength=.55;
+  private gustStart=-100;
+  private gustStrength=0;
+  private readonly flowFamily=uniform(0);
+  private skyMode='storm';
   private stormAuto=false;
   private stormDistance=3;
   private weatherTime=0;
+  private forcingTime=0;
   private nextFlash=12;
   private flashSerial=0;
   private activeFlash:Flash|null=null;
@@ -89,6 +103,10 @@ export class GPUSceneEngine {
   private readonly ambientColor=uniform(new Vector3());
   private readonly weather=uniform(new Vector3(1,0,0));
   private readonly flash=uniform(new Vector4(0,3.5,.5,0));
+  private readonly flashTop=uniform(new Vector3());
+  private readonly flashBend=uniform(new Vector3());
+  private readonly flashEnd=uniform(new Vector3());
+  private readonly flashBranch=uniform(new Vector3());
   private adapterInfo: Record<string, unknown> = {};
   private readonly origin = uniform(new Vector3(0,3.5,16));
   private readonly forward = uniform(new Vector3(0,0,-1));
@@ -108,7 +126,7 @@ export class GPUSceneEngine {
   private readonly interpolateFlow=Fn(()=>{
     const x=instanceIndex.mod(MOTION_FIELD_SIZE).toFloat(), y=instanceIndex.div(MOTION_FIELD_SIZE).mod(MOTION_FIELD_SIZE).toFloat(), z=instanceIndex.div(MOTION_FIELD_SIZE**2).toFloat();
     const p=vec3(x.add(.5).div(MOTION_FIELD_SIZE).mul(10).sub(5),y.add(.5).div(MOTION_FIELD_SIZE).mul(8.5).sub(.5),z.add(.5).div(MOTION_FIELD_SIZE).mul(7).sub(3.5));
-    textureStore(storageTexture3D(this.currentFlow).toWriteOnly(),vec3(x,y,z),wgslFn(FLOW_WGSL)({p,time:this.flowTime,seedPhase:this.seedPhase,iceRange:this.iceRange}));
+    textureStore(storageTexture3D(this.currentFlow).toWriteOnly(),vec3(x,y,z),wgslFn(FLOW_WGSL)({p,time:this.flowTime,seedPhase:this.seedPhase,family:this.flowFamily,dispersion:this.forcing.x,iceRange:this.iceRange}));
   })().compute(MOTION_FIELD_SIZE**3);
   private readonly sun = uniform(new Vector3(...SUN_LEFT).normalize());
   private readonly lightSide = uniform(0);
@@ -122,7 +140,7 @@ export class GPUSceneEngine {
     if(this.profiling){this.outputMode='1080';this.simulationTime=60;}
   }
   private emit(event:RenderEvent){this.host.emit(event);}
-  private text(field:'status'|'metrics'|'result',text:string){this.emit({type:'text',field,text});}
+  private text(field:'status'|'metrics'|'result'|'dynamics',text:string){this.emit({type:'text',field,text});}
   private state(){this.emit({type:'state',paused:this.paused,orbit:this.orbit,side:this.side});}
   async start() {
     try {
@@ -170,7 +188,7 @@ export class GPUSceneEngine {
       this.text('status',`WebGPU · volume ${VOLUME_RESOLUTION}³ · movimento lento`);
       this.emit({type:'statusState',state:'loaded'});
       this.setButtonEnabled('benchmark',true); this.setButtonEnabled('sustained',true);
-      this.setButtonEnabled('new-cloud',true);this.emit({type:'ready'});
+      this.setButtonEnabled('new-cloud',true);this.setButtonEnabled('family',true);this.emit({type:'ready'});
       this.previous=0;
       if(!!this.visible) this.raf=requestAnimationFrame(this.frame);
     } catch(error) {
@@ -186,38 +204,48 @@ export class GPUSceneEngine {
     this.volume=textures.macro;this.detailVolume=textures.detail; this.material=new MeshBasicNodeMaterial();
     this.updateAtmosphere();
     this.iceRange.value.fromArray(iceHeights(this.seed));
-    this.supportMin.value.fromArray(textures.supportBounds.min);this.supportMax.value.fromArray(textures.supportBounds.max);
+    this.cloudCenter.fromArray(textures.supportBounds.min).add(new Vector3().fromArray(textures.supportBounds.max)).multiplyScalar(.5);
+    this.viewFocus.copy(this.cloudCenter);
+    // Added inverse shear plus any flow halo clipped by the texture-domain box.
+    this.supportMin.value.fromArray(textures.supportBounds.min).sub(new Vector3(1.3,0,.65));
+    this.supportMax.value.fromArray(textures.supportBounds.max).add(new Vector3(1.3,0,.65));
+    this.flowFamily.value=this.seed%3;
+    this.emit({type:'morphology',family:morphologyFamily(this.seed),seed:this.seed});
     this.seedPhase.value=(this.seed%71)/71*.35;
     this.updateEvolution();
     this.currentFlow.type=HalfFloatType;this.currentFlow.format=RGBAFormat;this.currentFlow.colorSpace=NoColorSpace;
     this.currentFlow.generateMipmaps=false;
     const flowNode=texture3D(this.currentFlow);
     const skyNode=texture(this.skyTexture);
-    this.material.fragmentNode=integrateCloud({skyLUT:skyNode,skySampler:skyNode,solarColor:this.solarColor,ambientColor:this.ambientColor,weather:this.weather,flash:this.flash,uv:uv(),volume:volumeNode,volumeSampler:volumeNode,detail:detailNode,detailSampler:detailNode,flow:flowNode,flowSampler:flowNode,iceRange:this.iceRange,
+    this.material.fragmentNode=integrateCloud({skyLUT:skyNode,skySampler:skyNode,solarColor:this.solarColor,ambientColor:this.ambientColor,weather:this.weather,forcing:this.forcing,wind:this.wind,flash:this.flash,flashTop:this.flashTop,flashBend:this.flashBend,flashEnd:this.flashEnd,flashBranch:this.flashBranch,uv:uv(),volume:volumeNode,volumeSampler:volumeNode,detail:detailNode,detailSampler:detailNode,flow:flowNode,flowSampler:flowNode,iceRange:this.iceRange,
       origin:this.origin,forward:this.forward,right:this.right,up:this.up,aspect:this.aspect,tanFov:uniform(.2867),
       stepSize:this.stepSize,emptyStep:this.emptyStep,resolution:this.resolution,drift:this.drift,growth:this.growth,supportMin:this.supportMin,supportMax:this.supportMax,sun:this.sun,lightSide:this.lightSide,extinction:uniform(EXTINCTION),iceExtinction:uniform(ICE_EXTINCTION)});
     this.quad=new QuadMesh(this.material);
     this.renderer?.compute(this.interpolateFlow); // Initialize this seed even for the frozen diagnostic control.
     oldMaterial?.dispose(); oldVolume?.dispose();oldDetail?.dispose();
   }
-  private async newCloud() {
+  private async newCloud(family?:number) {
     if(!this.ready) return;
-    this.clearStorm();this.invalidate('Nuova nube'); this.ready=false; cancelAnimationFrame(this.raf);
-    this.setButtonEnabled('new-cloud',false); this.setButtonEnabled('benchmark',false); this.setButtonEnabled('sustained',false);
+    this.clearStorm();this.invalidate('Nuova nube'); this.ready=false;this.regenerating=true;
+    this.setButtonEnabled('family',false);this.setButtonEnabled('new-cloud',false); this.setButtonEnabled('benchmark',false); this.setButtonEnabled('sustained',false);
     this.emit({type:'statusState',state:'loading'}); this.text('status','Formazione di una nuova nube…');
-    this.seed=crypto.getRandomValues(new Uint32Array(1))[0];
+    this.seed=nextMorphologySeed(crypto.getRandomValues(new Uint32Array(1))[0],this.seed,family);
     try {
       const texture=await this.loadVolume();
       if(this.destroyed || this.deviceLost) {texture.macro.dispose();texture.detail.dispose();return;}
-      this.simulationTime=0; this.installVolume(texture);
+      this.regenerating=false; // No visibility restart while GPU resources are being swapped.
+      cancelAnimationFrame(this.raf);
+      await this.device?.queue.onSubmittedWorkDone();
+      if(this.destroyed||this.deviceLost){texture.macro.dispose();texture.detail.dispose();return;}
+      this.simulationTime=0;this.dispersal.recover();this.dispersal.amount=0;this.view.reset();this.orbit=false;this.installVolume(texture);this.state();
       this.previous=0; this.intervals=[]; this.ready=true;
       this.text('status',`WebGPU · volume ${VOLUME_RESOLUTION}³ · movimento lento`); this.emit({type:'statusState',state:'loaded'});
-      this.setButtonEnabled('new-cloud',true); this.setButtonEnabled('benchmark',true); this.setButtonEnabled('sustained',true);
+      this.setButtonEnabled('family',true);this.setButtonEnabled('new-cloud',true); this.setButtonEnabled('benchmark',true); this.setButtonEnabled('sustained',true);
       if(!!this.visible) this.raf=requestAnimationFrame(this.frame);
     } catch(error) {
       if(this.destroyed || this.deviceLost) return;
-      this.text('status',error instanceof Error?error.message:String(error)); this.emit({type:'statusState',state:'failed'});
-    }
+      cancelAnimationFrame(this.raf);this.text('status',error instanceof Error?error.message:String(error)); this.emit({type:'statusState',state:'failed'});
+    } finally {this.regenerating=false;}
   }
   private loadVolume(): Promise<CloudTextures> {
     this.worker = new Worker(new URL('./volume.worker.ts',import.meta.url),{type:'module'});
@@ -257,15 +285,21 @@ export class GPUSceneEngine {
     this.previous=now;
     if(interval>0) { this.intervals.push(interval); if(this.intervals.length>180) this.intervals.shift(); }
     if(!this.paused) this.simulationTime+=Math.min(interval/1000,.05)*this.speed;
+    const weatherDelta=this.paused?0:Math.max(0,interval/1000);
     this.weatherTime+=Math.max(0,interval/1000);
-    this.updateStorm();
+    this.forcingTime+=weatherDelta;
+    this.dispersal.step(weatherDelta,this.forcingTime);
+    this.forcing.value.set(this.dispersal.amount,0);
     const t=this.simulationTime;
+    const gustAge=this.forcingTime-this.gustStart,gust=gustAge>=0&&gustAge<4?this.gustStrength*Math.sin(Math.PI*gustAge/4):0;
+    const windStrength=Math.min(1,this.windStrength+gust);
+    this.wind.value.set(windStrength*(.52+.23*Math.sin(t*.055+this.seedPhase.value*3)),windStrength*.26*Math.sin(t*.031+.6));
+    this.updateStorm();
     this.updateEvolution();
-    this.drift.value.set(Math.sin(t*.065)*.055, Math.sin(t*.04)*.018,0);
-    const angle=this.orbit?Math.sin(t*.09)*.38:0;
-    const distance=16*Math.max(1,.85/this.aspect.value);
-    this.origin.value.set(Math.sin(angle)*distance,3.5,Math.cos(angle)*distance);
-    this.forward.value.copy(this.origin.value).sub(new Vector3(0,3.5,0)).negate().normalize();
+    this.drift.value.set(this.windStrength*(.32*Math.sin(t*.027)+.11*Math.sin(t*.071)),Math.sin(t*.04)*.015,0);
+    const camera=this.view.frame(this.viewFocus.toArray(),this.aspect.value,this.orbit?Math.sin(t*.075)*.38:0);
+    this.origin.value.fromArray(camera.origin);
+    this.forward.value.copy(this.viewFocus).sub(this.origin.value).normalize();
     this.right.value.crossVectors(this.forward.value,new Vector3(0,1,0)).normalize();
     this.up.value.crossVectors(this.right.value,this.forward.value).normalize();
     const computeStart=performance.now();
@@ -308,17 +342,22 @@ export class GPUSceneEngine {
   };
   private updateAtmosphere(){
     const haze=this.skyMode==='haze'?2.4:this.skyMode==='storm'?1.8:1;
-    this.weather.value.set(haze,this.skyMode==='storm'?1:0,0);
-    fillSkyLUT(this.skyData,this.sun.value.toArray(),haze);
+    const overcast=this.skyMode==='storm'?1:0;
+    this.weather.value.set(haze,overcast,0);
+    fillSkyLUT(this.skyData,this.sun.value.toArray(),haze,overcast);
     for(let i=0;i<this.skyData.length;i++)this.skyPacked[i]=DataUtils.toHalfFloat(this.skyData[i]);
     this.skyTexture.minFilter=LinearFilter;this.skyTexture.magFilter=LinearFilter;this.skyTexture.colorSpace=NoColorSpace;this.skyTexture.generateMipmaps=false;this.skyTexture.needsUpdate=true;
-    const lighting=atmosphereLighting(this.sun.value.toArray(),haze);
+    const lighting=atmosphereLighting(this.sun.value.toArray(),haze,overcast);
     this.solarColor.value.fromArray(lighting.solar);this.ambientColor.value.fromArray(lighting.ambient);
+  }
+  private makeFlash(seed:number){
+    const height=cloudParameters(this.seed).towerHeight*motionState(this.simulationTime,this.seed).height;
+    return createFlash(seed,this.stormDistance,this.weatherTime,{height,centerX:this.cloudCenter.x});
   }
   private triggerFlash(){
     if(!this.ready||!this.flashPreview&&this.activeFlash&&this.weatherTime-this.activeFlash.start<.9)return;
     this.flashPreview=false;
-    this.activeFlash=createFlash((this.seed+ ++this.flashSerial*7919)>>>0,this.stormDistance,this.weatherTime);
+    this.activeFlash=this.makeFlash((this.seed+ ++this.flashSerial*7919)>>>0);
     this.flashAnnounced=false;
     this.nextFlash=this.weatherTime+7+((this.activeFlash.seed%113)/113)*11;
   }
@@ -327,7 +366,13 @@ export class GPUSceneEngine {
     const f=this.activeFlash;
     this.flash.value.w=this.flashPreview?.85:f?flashIntensity(f,this.weatherTime):0;
     if(f){
-      this.flash.value.set(f.position[0],f.position[1],f.position[2],this.flash.value.w);
+      const shear=(p:readonly number[])=>{
+        const h=Math.max(0,Math.min(1,(p[1]-.72)/6.2))**1.5;
+        return [p[0]+this.wind.value.x*h,p[1],p[2]+this.wind.value.y*h];
+      };
+      const center=shear(f.position);
+      this.flash.value.set(center[0],center[1],center[2],this.flash.value.w);
+      this.flashTop.value.fromArray(shear(f.channel[0]));this.flashBend.value.fromArray(shear(f.channel[2]));this.flashEnd.value.fromArray(shear(f.channel[3]));this.flashBranch.value.fromArray(shear(f.branch));
       if(!this.flashPreview&&!this.flashAnnounced&&this.flash.value.w>0){
         this.flashAnnounced=true;this.emit({type:'flash',seed:f.seed,distance:f.distance,delay:thunderPlan(f.distance,f.seed).delay,emittedAt:Date.now()});
       }
@@ -341,7 +386,7 @@ export class GPUSceneEngine {
     // Once growth is complete, reference space is identical to world space.
     // The enlarged mask contains the flow bound and the original fine-warp halo,
     // so the original conservative integer stride is safe again.
-    this.emptyStep.value=this.stepSize.value*(this.simulationTime>=38?Math.max(1,Math.floor(EMPTY_SKIP_LIMIT/this.stepSize.value)):1);
+    this.emptyStep.value=this.stepSize.value*(this.simulationTime>=38&&this.wind.value.lengthSq()<1e-8&&this.dispersal.amount<.001?Math.max(1,Math.floor(EMPTY_SKIP_LIMIT/this.stepSize.value)):1);
     this.flowTime.value=this.simulationTime;
   }
   private applySize() {
@@ -365,8 +410,10 @@ export class GPUSceneEngine {
   }
   private updateMetrics(now: number) {
     const stats=summarizeFrames(this.intervals);
+    if(!this.ready)return;
     this.text('status',this.simulationTime<38?`WebGPU · formazione accelerata · ${Math.round(Math.min(1,this.simulationTime/38)*100)}%`:'WebGPU · convezione attiva');
-    this.text('metrics',`${this.host.thread==='worker'?'Worker WebGPU':'WebGPU'} · ${stats.fps.toFixed(1)} fps rAF · ${this.adapterInfo.description || this.adapterInfo.vendor || 'GPU non identificata'}\nOutput ${this.outputWidth}×${this.outputHeight} · interno ${this.internalWidth}×${this.internalHeight}\n${QUALITY[this.quality].steps} passi nominali · mediana ${stats.medianMs.toFixed(2)} ms · p95 ${stats.p95Ms.toFixed(2)} ms\nGPU rendering ${this.gpuMs===null?'non disponibile':`${this.gpuMs.toFixed(2)} ms`} · flusso ${this.computeMs===null?'n/d':`${this.computeMs.toFixed(3)} ms`}\n${this.queueMs===null?'':`Coda completata: ${this.queueMs.toFixed(2)} ms · non è presentazione\n`}Volume ${VOLUME_RESOLUTION}³ + dettaglio ${DETAIL_RESOLUTION}³ · nessun TAA\nTempo della nube: ${this.simulationTime.toFixed(1)} s · seme: ${this.seed}\nCielo: ${this.skyMode} · velocità ${this.speed}× · lampi: ${this.flashSerial} · luce ${this.flash.value.w.toFixed(2)}`);
+    this.text('dynamics',`Correnti ascendenti e discendenti · vento ${Math.round(this.windStrength*100)}%\nDispersione ${Math.round(this.dispersal.amount*100)}% · vista ${(this.view.yaw*180/Math.PI).toFixed(0)}° / ${(this.view.pitch*180/Math.PI).toFixed(0)}°`);
+    this.text('metrics',`${this.host.thread==='worker'?'Worker WebGPU':'WebGPU'} · ${stats.fps.toFixed(1)} fps rAF · ${this.adapterInfo.description || this.adapterInfo.vendor || 'GPU non identificata'}\nOutput ${this.outputWidth}×${this.outputHeight} · interno ${this.internalWidth}×${this.internalHeight}\n${QUALITY[this.quality].steps} passi nominali · mediana ${stats.medianMs.toFixed(2)} ms · p95 ${stats.p95Ms.toFixed(2)} ms\nGPU rendering ${this.gpuMs===null?'non disponibile':`${this.gpuMs.toFixed(2)} ms`} · flusso ${this.computeMs===null?'n/d':`${this.computeMs.toFixed(3)} ms`}\n${this.queueMs===null?'':`Coda completata: ${this.queueMs.toFixed(2)} ms · non è presentazione\n`}Volume ${VOLUME_RESOLUTION}³ + dettaglio ${DETAIL_RESOLUTION}³ · nessun TAA\nTempo della nube: ${this.simulationTime.toFixed(1)} s · seme: ${this.seed}\nForma: ${morphologyFamily(this.seed)} · vento ${Math.round(this.windStrength*100)}% · dispersione ${Math.round(this.dispersal.amount*100)}%\nCielo: ${this.skyMode} · velocità ${this.speed}× · lampi: ${this.flashSerial} · luce ${this.flash.value.w.toFixed(2)}`);
     if(this.measurement && !this.measurement.result && !this.measurement.cancelReason) {
       const remaining=Math.max(0,(this.measurement.start+this.measurement.warmup+this.measurement.duration-now)/1000);
       this.text('result',`Misura in corso · ${Math.ceil(remaining)} s · ${this.measurement.intervals.length} frame raccolti`);
@@ -380,7 +427,7 @@ export class GPUSceneEngine {
     this.measurement=new FrameMeasurement(performance.now(),duration,2000);
     this.benchmarkContext={date:new Date().toISOString(),backend:'WebGPU',adapter:this.adapterInfo,threeRevision:'186',quality:this.quality,
       output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],nominalSteps:QUALITY[this.quality].steps,
-      rendererVersion:'convective-storm-v13',executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic GPU flow, five noncommensurate local thermals plus outflow/entrainment; co-deformed cached light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,weather:{sky:this.skyMode,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
+      rendererVersion:'morphology-flow-v14',executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
       userAgent:navigator.userAgent,devicePixelRatio:this.viewport.dpr,
       method:'Visible requestAnimationFrame intervals, CPU compute/render submission and callback dispatch delay. GPU render and compute timestamps sampled separately; their last-frame samples are not necessarily paired. Optional queue completion latency includes GPU work, readback and JS delivery; not compositor presentation.',warmupMs:2000,targetDurationMs:duration};
     this.setButtonEnabled('benchmark',false); this.setButtonEnabled('sustained',false);
@@ -412,9 +459,13 @@ export class GPUSceneEngine {
     if(action==='benchmark'||action==='sustained'){this.startBenchmark(action==='benchmark'?30000:90000);return;}
     if(action==='new-cloud'){void this.newCloud();return;}
     this.invalidate('Controlli modificati');
+    if(action==='center'){this.view.reset();this.orbit=false;this.viewFocus.copy(this.cloudCenter).add(this.drift.value);}
+    if(action==='disperse'){this.dispersal.burst(this.forcingTime);}
+    if(action==='condense'){this.dispersal.recover();}
+    if(action==='gust'){this.gustStart=this.forcingTime;this.gustStrength=.5;}
     if(action==='lightning'){this.triggerFlash();return;}
     if(action==='flash-preview'){
-      this.clearStorm();this.flashPreview=true;this.activeFlash=createFlash((this.seed+7919)>>>0,this.stormDistance,this.weatherTime);return;
+      this.clearStorm();this.flashPreview=true;this.activeFlash=this.makeFlash((this.seed+7919)>>>0);return;
     }
     if(action==='storm-auto'){this.stormAuto=!this.stormAuto;this.nextFlash=this.weatherTime+1;this.emit({type:'stormState',auto:this.stormAuto});return;}
     if(action==='mature'){this.simulationTime=60;this.paused=false;this.clearStorm();}
@@ -422,11 +473,29 @@ export class GPUSceneEngine {
     if(action==='pause')this.paused=!this.paused;
     if(action==='orbit')this.orbit=!this.orbit;
     if(action==='light'){this.side=1-this.side;this.lightSide.value=this.side;this.sun.value.fromArray(this.side===0?SUN_LEFT:SUN_RIGHT).normalize();this.updateAtmosphere();}
-    if(action==='reset'){this.simulationTime=0;this.orbit=false;this.paused=false;this.side=0;this.lightSide.value=0;this.sun.value.set(...SUN_LEFT).normalize();this.updateAtmosphere();}
+    if(action==='reset'){this.view.reset();this.viewFocus.copy(this.cloudCenter);this.dispersal.recover();this.dispersal.amount=0;this.simulationTime=0;this.orbit=false;this.paused=false;this.side=0;this.lightSide.value=0;this.sun.value.set(...SUN_LEFT).normalize();this.updateAtmosphere();}
     this.state();
+  }
+  rotate(dx:number,dy:number,width:number,height:number){
+    if(this.destroyed||this.deviceLost)return;
+    this.invalidate('Camera ruotata');this.view.drag(dx,dy,width,height);
+    if(this.orbit){this.orbit=false;this.state();}
+  }
+  impulse(impulse:WeatherImpulse){
+    if(this.destroyed||this.deviceLost)return;
+    if(impulse.strength!==undefined&&!Number.isFinite(impulse.strength))return;
+    const strength=Number.isFinite(impulse.strength)?Math.max(0,Math.min(1,impulse.strength!)):1;
+    this.invalidate('Effetto atmosferico');
+    if(impulse.type==='disperse')this.dispersal.burst(this.forcingTime,strength);
+    if(impulse.type==='condense')this.dispersal.recover();
+    if(impulse.type==='gust'){this.gustStart=this.forcingTime;this.gustStrength=strength*.5;}
+    if(impulse.type==='lightning')this.triggerFlash();
   }
   change(name:string,value:string){
     if(this.destroyed) return;
+    if(name==='family'){const families=['congestus','multicell','sheared'];if(families.includes(value))void this.newCloud(families.indexOf(value));return;}
+    if(name==='wind'){this.invalidate('Vento modificato');const n=Number(value);if(Number.isFinite(n))this.windStrength=Math.max(0,Math.min(1,n/100));return;}
+    if(name==='dispersion'){this.invalidate('Dispersione modificata');this.dispersal.set(Number(value)/100);return;}
     if(name==='speed'){this.invalidate('Velocità modificata');this.speed=[.5,1,2,4].includes(Number(value))?Number(value):1;return;}
     if(name==='sky'){this.invalidate('Atmosfera modificata');this.skyMode=['clear','haze','storm'].includes(value)?value:'clear';this.updateAtmosphere();return;}
     if(name==='distance'){this.invalidate('Distanza del temporale modificata');this.stormDistance=[1,3,8].includes(Number(value))?Number(value):3;return;}
@@ -440,7 +509,7 @@ export class GPUSceneEngine {
   visibility(visible:boolean){
     this.visible=visible;
     if(!visible){this.clearStorm();cancelAnimationFrame(this.raf);this.invalidate('Scheda nascosta');}
-    else if(this.ready&&!this.destroyed){cancelAnimationFrame(this.raf);this.previous=0;this.intervals=[];this.raf=requestAnimationFrame(this.frame);}
+    else if((this.ready||this.regenerating)&&!this.destroyed&&!this.deviceLost){cancelAnimationFrame(this.raf);this.previous=0;this.intervals=[];this.raf=requestAnimationFrame(this.frame);}
   }
   private releaseGPU(): Promise<void> {
     this.cleanup ??= (async()=>{

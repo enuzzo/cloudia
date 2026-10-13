@@ -1,4 +1,4 @@
-.cloud-scene { position:relative; width:100vw; height:100dvh; background:#91b8db; color:#f5f9fc; font-family:inherit; }
+.cloud-scene { position:relative; width:100vw; height:100dvh; background:#77756e; color:#f5f9fc; font-family:inherit; }
 .cloud-scene.fixed-output {background:#152331;}
 .cloud-stage { position:absolute; inset:0; }
 .cloud-stage canvas { display:block; width:100%; height:100%; object-fit:contain; }
@@ -30,3 +30,8 @@
 .weather-panel {max-height:70dvh;overflow:auto;}
 .scene-controls button:focus-visible,.scene-controls summary:focus-visible,.diagnostics select:focus-visible {outline:2px solid #e0f2ff;outline-offset:3px;}
 @media(max-width:640px) {.scene-controls {right:16px;} .weather-panel {max-height:60dvh;}}
+
+.cloud-stage canvas {cursor:grab;touch-action:none;}
+.cloud-stage canvas.dragging {cursor:grabbing;}
+.cloud-stage canvas:focus-visible {outline:2px solid #e6ded0;outline-offset:-3px;}
+.diagnostics input[type=range] {display:block;width:100%;margin:10px 0 16px;accent-color:#e6ded0;}

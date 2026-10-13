@@ -37,7 +37,9 @@ export function densitySupportBounds(envelope:DetailVolume): {min:number[];max:n
   }
   return {min,max};
 }
-export interface CloudParameters { towerHeight: number; towerWidth: number; anvilSpread: number; windLean: number }
+export type MorphologyFamily = 'congestus' | 'multicell' | 'sheared';
+export const morphologyFamily=(seed:number):MorphologyFamily=>['congestus','multicell','sheared'][((Math.trunc(seed)%3)+3)%3] as MorphologyFamily;
+export interface CloudParameters { family: MorphologyFamily; towerHeight: number; towerWidth: number; anvilSpread: number; windLean: number }
 type Lobe = [number, number, number, number, number, number, number?];
 const clamp = (v: number) => Math.max(0, Math.min(1, v));
 const smoothstep = (a: number,b: number,x: number) => { const t=clamp((x-a)/(b-a)); return t*t*(3-2*t); };
@@ -46,8 +48,11 @@ function random(seed: number) {
 }
 /** Bounded morphology keeps the convective tower, rain base and ice anvil recognizable. */
 export function cloudParameters(seed: number): CloudParameters {
-  const rng=random(seed^0x41c6ce57);
-  return {towerHeight:.87+rng()*.23,towerWidth:.85+rng()*.19,anvilSpread:.78+rng()*.26,windLean:(rng()-.5)*.055};
+  const rng=random(seed^0x41c6ce57),family=morphologyFamily(seed);
+  const height=rng(),width=rng(),spread=rng(),lean=rng();
+  if(family==='congestus') return {family,towerHeight:.65+height*.09,towerWidth:1+width*.12,anvilSpread:.55+spread*.16,windLean:(lean-.5)*.045};
+  if(family==='multicell') return {family,towerHeight:.78+height*.12,towerWidth:1+width*.1,anvilSpread:.82+spread*.18,windLean:.025+lean*.045};
+  return {family,towerHeight:.73+height*.13,towerWidth:.96+width*.12,anvilSpread:.94+spread*.12,windLean:.19+lean*.07};
 }
 function noise(x: number, y: number, z: number, seed: number, period = 0): number {
   const ix = Math.floor(x), iy = Math.floor(y), iz = Math.floor(z);
@@ -100,9 +105,9 @@ export function sampleCloudDensity(envelope:DetailVolume,detail:DetailVolume,x:n
     // undersampling by the 256-volume light bake.
     const bend=sampleDetail(detail,x*.12,y*.10,z*.06,1);
     const wisps=sampleDetail(detail,x*.05+bend*.06,y*.42+x*.026+(bend-.5)*.035,z*.022,0);
-    erosion=erosion*(1-ice)+(.11+(1-wisps)*.78)*ice;
+    erosion=erosion*(1-ice)+(.08+(1-wisps)*.5)*ice;
     const strand=smoothstep(.3,.7,wisps);
-    material=1-ice+(.008+.22*strand**1.7)*(1-.7*smoothstep(.4,3.8,x))*ice;
+    material=1-ice+(.008+.58*strand**1.7)*(1-.7*smoothstep(.4,3.8,x))*ice;
   }
   return erodeDensity(warped,erosion)*material;
 }
@@ -153,28 +158,59 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
   field.fill(-10);
   const rng = random(seed);
   const cellular=cellularNoise(seed+137);
-  // Wide rain base, rising convective turrets and wind-stretched ice anvil.
-  const cores: Lobe[] = [
-    [-.25,1.45,0, 2.85,.88,1.75], [-.4,2.5,-.1, 2.1,1.45,1.6],
-    [-.35,3.85,0, 2.1,1.6,1.65], [-.7,5.1,-.1, 1.7,1.25,1.5],
-    [.3,6.0,-.3, 2.8,.30,1.65,.045], [1.7,6.12,-.35, 2.55,.19,1.4,.035]
-  ];
   const shape=cloudParameters(seed);
-  for(let i=0;i<cores.length;i++) {
-    const c=cores[i], width=i>3?shape.anvilSpread:shape.towerWidth;
-    c[0]=c[0]*width+c[1]*shape.windLean; c[2]*=shape.towerWidth;
-    c[1]=.72+(c[1]-.72)*shape.towerHeight;
-    c[3]*=width; c[4]*=shape.towerHeight; c[5]*=shape.towerWidth;
+  // Separate updraft sites share a broad low condensation base. Their unequal
+  // summits and outflow geometry change topology, rather than scaling one stack.
+  const liquid:Lobe[]=[],iceCores:Lobe[]=[];
+  const turret=(x:number,z:number,height:number,width:number,lean:number) => {
+    const offset=(rng()-.5)*.35,depth=(rng()-.5)*.28;
+    liquid.push([x,2.35,z,width*1.18,1.0,width*1.05]);
+    liquid.push([x+lean*.5+offset,3.7,z+depth,width,1.15,width*.92]);
+    // Preserve a replenished neck through erosion while the surface billows move.
+    liquid.push([x+lean*.7+offset,(3.7+height)*.5,z+depth,width*.82,(height-3.7)*.5+.75,width*.83]);
+    liquid.push([x+lean+offset,height,z+depth,width*.76,.78,width*.78]);
+  };
+  if(shape.family==='congestus') {
+    liquid.push([-.25,1.6,0,3.05,.9,1.9],[-1.5,2.25,-.25,1.55,.9,1.3],[1.35,2.1,.25,1.5,.8,1.2]);
+    turret(-1.55,-.35,4.95,1.04,-.15);
+    turret(.15,.4,5.35,.99,.1);
+    turret(1.55,-.25,4.55,.88,.17);
+    // A modest ice cap: congestus retains the prominent cauliflower summits.
+    iceCores.push([.45,5.85,.1,2.05,.22,1.45,.045]);
+  } else if(shape.family==='multicell') {
+    liquid.push([-1.5,1.5,-.25,2.1,.85,1.55],[1.25,1.55,.25,2.0,.9,1.6]);
+    turret(-1.7,-.35,5.2,.98,-.22);
+    turret(1.25,.3,4.8,.9,.25);
+    // A younger neighboring pulse stays below the two mature towers.
+    liquid.push([2.15,2.45,-.65,.85,1.05,.8],[2.35,3.45,-.65,.64,.72,.62]);
+    iceCores.push([-.65,5.9,-.25,1.65,.26,1.3,.045],[1.2,5.95,-.2,2.25,.19,1.45,.035]);
+  } else {
+    liquid.push([-1.2,1.55,0,2.65,.87,1.8]);
+    turret(-1.45,-.3,5.3,1.05,.5);
+    turret(.75,.5,4.35,.82,.24);
+    liquid.push([-2.45,2.7,.15,.82,1.0,.83],[-2.15,3.75,.1,.64,.72,.68]);
+    // The upper tower is advected into a narrow, long incus, with a short
+    // upwind shoulder and a much longer fibrous downwind end.
+    iceCores.push([-.25,5.85,-.2,1.45,.34,1.3,.045],[1.45,6.02,-.2,2.25,.25,1.05,.035]);
   }
-  const lobes: Lobe[] = [...cores];
-  cores.forEach((c,i) => {
-    const count = i > 3 ? 12 : 24;
+  const transform=(c:Lobe,isIce:boolean) => {
+    const width=isIce?shape.anvilSpread:shape.towerWidth;
+    // Lean grows from the base anchor, shifting the summit more than the base.
+    c[0]=c[0]*shape.towerWidth+(c[1]-.72)*shape.windLean;
+    c[1]=.72+(c[1]-.72)*shape.towerHeight;
+    c[2]*=shape.towerWidth;
+    c[3]*=width*(isIce?1:1.16);c[4]*=shape.towerHeight*(isIce?1:1.1);c[5]*=shape.towerWidth*(isIce?1:1.16);
+  };
+  liquid.forEach(c=>transform(c,false));iceCores.forEach(c=>transform(c,true));
+  const lobes:Lobe[]=[...liquid,...iceCores];
+  [...liquid,...iceCores].forEach((c,i) => {
+    const isIce=i>=liquid.length,count=isIce?10:18;
     for (let j=0; j<count; j++) {
       const theta=rng()*Math.PI*2, elevation=(rng()-.5)*1.8;
-      const s=.34+rng()*.3, radius=i>3?.62:.72;
+      const s=.34+rng()*.3, radius=isIce?.68:.74;
       lobes.push([c[0]+Math.cos(theta)*c[3]*radius*Math.cos(elevation), c[1]+Math.sin(elevation)*c[4]*radius,
-        c[2]+Math.sin(theta)*c[5]*radius*Math.cos(elevation), s*(i>3?1.7:1), s*(i>3?.16:1), s*.85, i>3?.045:.2]);
-      if(i<4) {
+        c[2]+Math.sin(theta)*c[5]*radius*Math.cos(elevation), s*(isIce?1.7:1), s*(isIce?.16:1), s*.85, isIce?.045:.2]);
+      if(!isIce) {
         const l=lobes.at(-1)!;
         for(let k=0;k<4;k++) {
           const a=rng()*Math.PI*2,e=(rng()-.5)*2,r=s*(.24+rng()*.22);
@@ -186,11 +222,22 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
   // Sparse, thin ice streaks connect to the outflow and taper at varying heights.
   // A separate RNG preserves the convective tower layout for seed comparisons.
   const iceRng=random(seed^0x73d61a29);
-  for(let j=0;j<48;j++) {
+  const streakCount=shape.family==='congestus'?16:shape.family==='multicell'?36:48;
+  for(let j=0;j<streakCount;j++) {
     const reach=iceRng(),rx=(.55+iceRng()*.75)*shape.anvilSpread;
-    const cx=(.3+reach*2.8)*shape.anvilSpread+6*shape.windLean;
-    lobes.push([Math.min(cx,4.7-rx),.72+(6.08+(iceRng()-.5)*.8-.72)*shape.towerHeight,
-      -.35+(iceRng()-.5)*2.3*shape.towerWidth,rx,.055+iceRng()*.055,.17+iceRng()*.27,.045]);
+    const origin=shape.family==='congestus'?.1:shape.family==='multicell'?-.4:-.1;
+    const length=shape.family==='congestus'?1.9:shape.family==='multicell'?3.2:3.5;
+    const cx=(origin+reach*length)*shape.anvilSpread+5.3*shape.windLean;
+    lobes.push([cx,.72+(6.0+(iceRng()-.5)*.6-.72)*shape.towerHeight,
+      -.2+(iceRng()-.5)*(shape.family==='sheared'?1.7:2.3)*shape.towerWidth,rx,.055+iceRng()*.045,.17+iceRng()*.22,.045]);
+  }
+  // Contract whole horizontal axes if a seeded puff/outflow would approach the
+  // texture wall. This preserves curved lobe endings, without clipping any lobe
+  // or piling centres against a plane. Reserve a halo for smooth union and warp.
+  for(const [axis,radius,limit] of [[0,3,4.35],[2,5,2.8]] as const) {
+    const extent=Math.max(...lobes.map(c=>Math.abs(c[axis])+c[radius]));
+    const scale=Math.min(1,limit/extent);
+    for(const c of lobes) {c[axis]*=scale;c[radius]*=scale;}
   }
   // Rasterize lobes into their local bounds instead of testing every lobe at every voxel.
   for (const [cx,cy,cz,rx,ry,rz,blend=.2] of lobes) {
@@ -217,7 +264,8 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
       const erosionScale=heightErosionScale(worldY);
       const ice=smoothstep(iceStart,iceEnd,worldY);
       const fibers=noise(px*.3+py*.17,py*5,pz*1.0,seed+81);
-      const carving=erosion*erosionScale*(1-ice)-(.008+(1-fibers)*.035)*ice;
+      const interior=1-.6*smoothstep(.04,.28,field[idx]);
+      const carving=erosion*erosionScale*interior*(1-ice)-(.008+(1-fibers)*.035)*ice;
       density[idx]=clamp((field[idx]+carving-(.025-.017*ice))*(10+ice*4)) * (.65+.35*n2) * (1-ice*(1-fibers)*.5) * baseFade;
     }
     if(z%8===0) progress?.(.1+.45*z/size);

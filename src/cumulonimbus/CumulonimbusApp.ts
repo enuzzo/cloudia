@@ -1,6 +1,8 @@
 import {GPUSceneEngine,QUALITY,type Quality} from './GPUSceneEngine';
 import type {RenderEvent,RenderCommand,Viewport} from './renderProtocol';
 import './scene.css';
+import {OrbitPointerController} from './camera';
+import type {WeatherImpulse} from './weatherInteraction';
 import {ThunderAudio} from './ThunderAudio';
 export class CumulonimbusApp {
   private readonly profiling=new URLSearchParams(location.search).get('profile')==='1';
@@ -14,6 +16,8 @@ export class CumulonimbusApp {
   private readonly status:HTMLElement;
   private readonly metrics:HTMLElement;
   private readonly result:HTMLElement;
+  private readonly dynamics:HTMLElement;
+  private readonly pointer:OrbitPointerController;
   private readonly rawReport:HTMLElement;
   private readonly canvas:HTMLCanvasElement;
   private readonly events=new AbortController();
@@ -29,13 +33,21 @@ export class CumulonimbusApp {
   private audioEnabled=false;
   constructor(private readonly root:HTMLElement){
     root.innerHTML = `<div class="cloud-stage" data-testid="cloudia-stage"></div>
-      <header class="scene-heading"><span>CLOUDIA</span><h1>Cumulonembo</h1><p>Un piccolo cielo, tutto da muovere.</p></header>
+      <header class="scene-heading"><span>CLOUDIA</span><h1 data-testid="morphology-label">Cumulonembo</h1><p id="cloud-view-help">Trascina per ruotare · Ricentra per ritrovare la nube.</p></header>
       <p class="scene-loading" role="status" data-testid="scene-status">Preparazione del cielo…</p>
       <div class="scene-controls" aria-label="Controlli del cielo">
         <button data-action="pause">Pausa</button><button data-action="orbit" aria-pressed="false">Orbita</button>
-        <button data-action="light">Luce da destra</button><button data-action="reset">Ricomincia</button><button data-action="new-cloud" disabled>Nuova nube</button>
+        <button data-action="light">Luce da destra</button><button data-action="reset">Ricomincia</button><button data-action="new-cloud" disabled>Nuova forma</button><button data-action="center">Ricentra</button>
+        <details><summary>Nube e correnti</summary><div class="diagnostics weather-panel">
+          <label>Forma<select name="family" disabled><option value="congestus">Congesto largo</option><option value="multicell">Torri multiple</option><option value="sheared" selected>Cella inclinata</option></select></label>
+          <label>Intensità del vento<input name="wind" type="range" min="0" max="100" value="55"></label>
+          <label>Dispersione mantenuta<input name="dispersion" type="range" min="0" max="100" value="0"></label>
+          <div class="benchmark-controls"><button data-action="gust">Raffica</button><button data-action="disperse">Disperdi</button><button data-action="condense">Ricondensa</button></div>
+          <p data-testid="cloud-flow-status" role="status">Correnti in preparazione…</p>
+          <small>Nuova forma alterna tre famiglie e varia ogni nube. Disperdi allarga e assottiglia localmente il vapore, poi lo ricondensa. Tastiera sulla scena: frecce per ruotare, Home per ricentrare.</small>
+        </div></details>
         <details class="weather-controls"><summary>Atmosfera e temporale</summary><div class="diagnostics weather-panel">
-          <label>Cielo<select name="sky"><option value="clear">Limpido</option><option value="haze">Velato · più foschia</option><option value="storm">Temporale · luce attenuata</option></select></label>
+          <label>Cielo<select name="sky"><option value="clear">Limpido</option><option value="haze">Velato · più foschia</option><option value="storm" selected>Temporale · cielo neutro</option></select></label>
           <label>Velocità della nube<select name="speed"><option value="0.5">0,5× · osservazione lenta</option><option value="1" selected>1× · convezione</option><option value="2">2×</option><option value="4">4× · evidenzia il movimento</option></select></label>
           <label>Distanza del tuono<select name="distance"><option value="1">1 km · tuono dopo 2,9 s</option><option value="3" selected>3 km · tuono dopo 8,7 s</option><option value="8">8 km · tuono dopo 23,3 s</option></select></label>
           <div class="benchmark-controls"><button data-action="mature">Nube matura</button><button data-action="lightning">Lampo</button><button data-action="storm-auto" aria-pressed="false">Lampi automatici</button><button data-action="audio" aria-pressed="false">Attiva audio</button><button data-action="flash-preview">Isola luce del lampo</button></div>
@@ -56,10 +68,13 @@ export class CumulonimbusApp {
       </div><script type="application/json" data-testid="benchmark-json"></script>`;
 
     this.controls=root.querySelector('.scene-controls')!;this.status=root.querySelector('[data-testid="scene-status"]')!;
-    this.metrics=root.querySelector('[data-testid="performance-live"]')!;this.result=root.querySelector('[data-testid="benchmark-result"]')!;this.rawReport=root.querySelector('[data-testid="benchmark-json"]')!;
+    this.metrics=root.querySelector('[data-testid="performance-live"]')!;this.result=root.querySelector('[data-testid="benchmark-result"]')!;this.dynamics=root.querySelector('[data-testid="cloud-flow-status"]')!;this.rawReport=root.querySelector('[data-testid="benchmark-json"]')!;
     root.querySelector<HTMLSelectElement>('select[name="output"]')!.value=this.outputMode;
-    this.canvas=document.createElement('canvas');this.canvas.setAttribute('aria-label','Cumulonembo volumetrico in un cielo diurno');root.querySelector('.cloud-stage')!.append(this.canvas);
+    this.canvas=document.createElement('canvas');this.canvas.setAttribute('aria-label','Nube volumetrica ruotabile');this.canvas.setAttribute('aria-describedby','cloud-view-help');this.canvas.tabIndex=0;root.querySelector('.cloud-stage')!.append(this.canvas);
     this.controls.addEventListener('click',this.onClick,{signal:this.events.signal});this.controls.addEventListener('change',this.onChange,{signal:this.events.signal});
+    this.controls.addEventListener('input',this.onInput,{signal:this.events.signal});
+    for(const panel of this.controls.querySelectorAll('details'))panel.addEventListener('toggle',()=>{if(panel.open)for(const other of this.controls.querySelectorAll('details'))if(other!==panel)other.open=false;},{signal:this.events.signal});
+    this.pointer=new OrbitPointerController(this.canvas,(dx,dy,width,height)=>this.send({type:'rotate',dx,dy,width,height}),()=>this.send({type:'action',action:'center'}));
     window.addEventListener('resize',this.onResize,{signal:this.events.signal});document.addEventListener('visibilitychange',this.onVisibility,{signal:this.events.signal});
   }
   private viewport():Viewport{return {width:this.root.clientWidth,height:this.root.clientHeight,dpr:window.devicePixelRatio};}
@@ -83,17 +98,24 @@ export class CumulonimbusApp {
   }
   private closeWorker(worker:Worker){if(this.renderWorker!==worker)return;if(this.workerStopTimer!==null)clearTimeout(this.workerStopTimer);this.workerStopTimer=null;worker.terminate();this.renderWorker=null;}
   private stopWorker(){const worker=this.renderWorker;if(!worker||this.workerStopTimer!==null)return;try{worker.postMessage({type:'stop'} satisfies RenderCommand);this.workerStopTimer=setTimeout(()=>this.closeWorker(worker),1000);}catch{this.closeWorker(worker);}}
-  private fail(text:string){this.audio.destroy();this.failed=true;this.status.textContent=text;this.status.classList.remove('loaded');this.status.classList.add('failed');this.resolveReady?.();this.resolveReady=null;for(const input of this.controls.querySelectorAll<HTMLButtonElement|HTMLSelectElement>('button,select'))input.disabled=true;this.stopWorker();}
+  private fail(text:string){this.pointer.destroy();this.audio.destroy();this.failed=true;this.status.textContent=text;this.status.classList.remove('loaded');this.status.classList.add('failed');this.resolveReady?.();this.resolveReady=null;for(const input of this.controls.querySelectorAll<HTMLButtonElement|HTMLSelectElement|HTMLInputElement>('button,select,input'))input.disabled=true;this.stopWorker();}
   private onEvent=(event:RenderEvent)=>{
     if(this.destroyed||this.failed)return;
-    if(event.type==='text'){({status:this.status,metrics:this.metrics,result:this.result})[event.field].textContent=event.text;}
+    if(event.type==='text'){({status:this.status,metrics:this.metrics,result:this.result,dynamics:this.dynamics})[event.field].textContent=event.text;}
     if(event.type==='statusState'){if(event.state==='failed'){this.fail(this.status.textContent||'Rendering fallito.');return;}this.status.classList.remove('loaded','failed');if(event.state!=='loading')this.status.classList.add(event.state);}
-    if(event.type==='enabled')this.controls.querySelector<HTMLButtonElement>(`[data-action="${event.action}"]`)!.disabled=!event.enabled;
+    if(event.type==='enabled'){const input=this.controls.querySelector<HTMLButtonElement|HTMLSelectElement>(`[data-action="${event.action}"],[name="${event.action}"]`);if(input)input.disabled=!event.enabled;}
     if(event.type==='layout')this.root.classList.toggle('fixed-output',event.fixed);
     if(event.type==='state'){
       this.controls.querySelector('[data-action="pause"]')!.textContent=event.paused?'Riprendi':'Pausa';
       this.controls.querySelector('[data-action="orbit"]')!.setAttribute('aria-pressed',String(event.orbit));
       this.controls.querySelector('[data-action="light"]')!.textContent=event.side===0?'Luce da destra':'Luce da sinistra';
+    }
+    if(event.type==='morphology'){
+      const names={congestus:'Congesto largo',multicell:'Torri multiple',sheared:'Cella inclinata'};
+      this.root.querySelector('[data-testid="morphology-label"]')!.textContent=names[event.family];
+      this.root.querySelector<HTMLSelectElement>('select[name="family"]')!.value=event.family;
+      this.root.dataset.seed=String(event.seed);this.root.dataset.morphology=event.family;
+      this.root.querySelector<HTMLInputElement>('input[name="dispersion"]')!.value='0';
     }
     if(event.type==='report'){this.report=event.report;this.rawReport.textContent=event.report?JSON.stringify(event.report):'';}
     if(event.type==='flash'){
@@ -106,12 +128,17 @@ export class CumulonimbusApp {
   };
   private send(command:Exclude<RenderCommand,{type:'init'}>){
     if(this.destroyed||this.failed)return;
+    const clearsHold=command.type==='action'&&['disperse','condense','reset'].includes(command.action)||command.type==='impulse'&&['disperse','condense'].includes(command.impulse.type);
+    if(clearsHold)this.root.querySelector<HTMLInputElement>('input[name="dispersion"]')!.value='0';
     if(this.renderWorker){this.renderWorker.postMessage(command);return;}
     if(command.type==='action')this.engine?.action(command.action);
     if(command.type==='change')this.engine?.change(command.name,command.value);
+    if(command.type==='rotate')this.engine?.rotate(command.dx,command.dy,command.width,command.height);
+    if(command.type==='impulse')this.engine?.impulse(command.impulse);
     if(command.type==='resize')this.engine?.resize(command.viewport);
     if(command.type==='visibility')this.engine?.visibility(command.visible);
   }
+  applyWeatherImpulse(impulse:WeatherImpulse){this.send({type:'impulse',impulse});}
   private onClick=(event:MouseEvent)=>{
     const button=(event.target as HTMLElement).closest<HTMLButtonElement>('button');if(!button||button.disabled)return;
     const action=button.dataset.action!;
@@ -124,16 +151,17 @@ export class CumulonimbusApp {
     if(action==='export'&&this.report){const url=URL.createObjectURL(new Blob([JSON.stringify(this.report,null,2)],{type:'application/json'}));const output=this.report.output as number[];const a=document.createElement('a');a.href=url;a.download=`cloudia-${this.report.quality}-${output.join('x')}-seed-${this.report.seed}-${Date.now()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);return;}
     this.send({type:'action',action});
   };
+  private onInput=(event:Event)=>{const input=event.target as HTMLInputElement;if(input.type==='range')this.send({type:'change',name:input.name,value:input.value});};
   private onChange=(event:Event)=>{
-    const input=event.target as HTMLSelectElement;
+    const input=event.target as HTMLSelectElement;if((input as unknown as HTMLInputElement).type==='range')return;
     if(this.profiling&&(input.name==='timing'||input.name==='flow')){const next=new URL(location.href);next.searchParams.set(input.name,input.value);location.assign(next.toString());return;}
     if(this.profiling&&input.name==='inflight'){this.frameLimit=Number(input.value);const next=new URL(location.href);next.searchParams.set('inflight',input.value);history.replaceState(null,'',next.toString());}
     this.send({type:'change',name:input.name,value:input.value});
   };
   private onResize=()=>this.send({type:'resize',viewport:this.viewport()});
-  private onVisibility=()=>{if(document.hidden)this.audio.cancel();this.send({type:'visibility',visible:!document.hidden});};
+  private onVisibility=()=>{if(document.hidden){this.audio.cancel();this.pointer.cancel();}this.send({type:'visibility',visible:!document.hidden});};
   destroy(){
-    if(this.destroyed)return;this.destroyed=true;this.audio.destroy();this.events.abort();this.resolveReady?.();this.resolveReady=null;
+    if(this.destroyed)return;this.destroyed=true;this.pointer.destroy();this.audio.destroy();this.events.abort();this.resolveReady?.();this.resolveReady=null;
     for(const action of ['new-cloud','benchmark','sustained'])this.controls.querySelector<HTMLButtonElement>(`[data-action="${action}"]`)!.disabled=true;
     this.stopWorker();
     void this.engine?.destroy();this.canvas.remove();

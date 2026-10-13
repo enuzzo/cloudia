@@ -284,13 +284,9 @@ Definition of done:
 
 ## Next Actions
 
-1. Review the current moving cloud, atmosphere and internal flashes; listen to the distance-delayed thunder. Latest implementation/evidence/restart: `WEATHER-2026-10-13.md`.
-2. Refine photographic anvil microstructure and lightning channel distribution. Current flow is authored and cached evolving light remains approximate.
-3. Keep stable60 and compositor timing as an open independent gate; latest90s runs59.96/58.47/58.00 retain all failures. No tracing bypass.
-4. After scene acceptance, connect hand recognition for swipes, fist/rain and pinch/lightning, with independent inference scheduling.
-
-Restart: `npm run dev`, open `http://127.0.0.1:5173/?seed=1571198069&worker=1`; read `docs/WEATHER-2026-10-13.md`. No deployment or push.
-
+1. Review the current three morphology families, moving turrets, attached incus, two-axis drag and dispersion. Latest authoritative record: `MORPHOLOGY-2026-10-13.md`; office restart: `HANDOFF-OFFICE-2026-10-13.md`.
+2. Improve photographic ice microstructure and prove safe faster empty traversal under shear; preserve all qualification failures and explicit quality. Stable60 remains open.
+3. After visual/listening acceptance, connect hand recognition through `applyWeatherImpulse`, with independent inference scheduling and gesture cooldowns. Rain remains pending.
 
 ## 2026-10-12 — local convective evolution
 
@@ -317,3 +313,12 @@ Chrome154 reproduces55.67fps/30s at FullHD/384 with GPU5.65ms and queue completi
 ## 2026-10-13 — convection, atmosphere and storm
 
 Implemented five local thermals and upper shear in an analytic16³ GPU field, dynamic entrainment, stronger ice fibre separation, a shared128² RGBA16F atmospheric LUT, irregular volumetric intracloud flashes/sky spill and gesture-enabled stereo thunder with physical acoustic delay. Explicit cloud speed, sky, automatic/manual flash, held-light and acoustic-distance controls. Initial float32-sampler shader failure diagnosed and retained; GPU validation now precedes ready.68tests/16files, TypeScript, application and hero builds pass. Live same-seed temporal/flash evidence and narrow-layout checks retained. FullHD/384 worker90s:59.96(cleargrowth),58.47(storm/audio),58.00(haze/right/orbit); stable60 still open. Static review corrected the shared cloud/sky flash coordinates; final v13 storm/audio58.88fps/40long intervals with5.998ms GPU rendering. Main-thread GPU/console and corrected narrow layout verified. Details and limitations in WEATHER-2026-10-13.md. Owner photography/listening acceptance remains open. No camera, gestures, publication or push.
+
+
+## 2026-10-13 — morphology, circulation and office publication
+
+Added three seed-selected anatomy families with broader connected bases/unequal towers, stronger attached sheared incus, rising/sinking/outflow displacement, coherent height-dependent shear, neutral overcast sky/ambient, seeded branched intracloud channels, two-axis pointer/keyboard orbit and recenter. Smooth gust/dispersion/recovery controls share a main/worker impulse API for later hand input. Research compares four dedicated cloud repositories with primary meteorology and provenance notes; no external code/dependency imported.
+
+Initial browser review corrected fragmented necks/weak cap; static review corrected pause and regeneration visibility/queue-drain races. 88 tests/19 files, TypeScript, application and legacy hero builds pass. Main/worker, real drag/recenter/keyboard, family cycling/regeneration, wind/dispersion/recovery, flash/audio enable and narrow390×844 inspected; no GPU/console errors observed. FullHD/384 worker90s: 57.40fps formation/storm (GPU13.415ms), 59.75fps mature/right/orbit/partial dispersal (GPU13.795ms). Stable60 and owner photographic/listening acceptance remain open. Sparse temporal captures are qualitative evidence, not compositor or60fps video. All raw results/evidence and limitations: `MORPHOLOGY-2026-10-13.md`.
+
+Owner explicitly requested GitHub publication of `codex/cumulonimbus-webgpu` and a manual office handoff. Implementation checkpoint and final publication verification are recorded in `HANDOFF-OFFICE-2026-10-13.md`. Animated preview retained at normal speed with neutral sky/55%wind/automatic flashes. No website deployment or main merge requested.

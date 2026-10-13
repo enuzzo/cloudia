@@ -1,6 +1,12 @@
 import {describe,it,expect} from 'vitest';
-import {skyRadiance,atmosphereLighting} from './atmosphere';
+import {skyRadiance,atmosphereLighting,overcastRadiance} from './atmosphere';
 describe('shared atmosphere lighting',()=>{
+  it('makes the requested overcast sky and ambient neutral instead of dimming blue',()=>{
+    const sky=overcastRadiance([.02,.1,.3],.3),ambient=atmosphereLighting([-.65,.71,.22],1.8,1).ambient;
+    expect(Math.max(...sky)/Math.min(...sky)).toBeLessThan(1.15);
+    expect(Math.max(...ambient)/Math.min(...ambient)).toBeLessThan(1.15);
+    expect(Math.min(...sky)).toBeGreaterThan(.08);
+  });
   const sun=[-.65,.71,.22];
   it('has a blue zenith and a brighter less saturated horizon',()=>{
     const zenith=skyRadiance([0,1,0],sun,1),horizon=skyRadiance([0,.01,-1],sun,1);

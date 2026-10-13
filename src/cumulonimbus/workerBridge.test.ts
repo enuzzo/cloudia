@@ -53,6 +53,21 @@ describe('render-worker ownership',()=>{
     app.destroy();workers[0].onmessage!({data:{type:'closed'}} as MessageEvent);
     expect(workers[0].terminate).toHaveBeenCalledOnce();
   });
+  it('forwards keyboard orbit, recenter and future hand impulses through the same worker',async()=>{
+    const {root,app}=create();const start=app.start();await flush();workers[0].onmessage!({data:{type:'ready'}} as MessageEvent);await start;
+    const canvas=root.querySelector('canvas')!;vi.spyOn(canvas,'getBoundingClientRect').mockReturnValue({width:800,height:600} as DOMRect);
+    canvas.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowRight'}));
+    expect(workers[0].postMessage.mock.calls.at(-1)?.[0]).toEqual({type:'rotate',dx:36,dy:0,width:800,height:600});
+    canvas.dispatchEvent(new KeyboardEvent('keydown',{key:'Home'}));
+    expect(workers[0].postMessage.mock.calls.at(-1)?.[0]).toEqual({type:'action',action:'center'});
+    app.applyWeatherImpulse({type:'gust',strength:.6});
+    expect(workers[0].postMessage.mock.calls.at(-1)?.[0]).toEqual({type:'impulse',impulse:{type:'gust',strength:.6}});
+    const hold=root.querySelector<HTMLInputElement>('input[name="dispersion"]')!;hold.value='100';
+    app.applyWeatherImpulse({type:'condense'});expect(hold.value).toBe('0');
+    workers[0].onmessage!({data:{type:'morphology',family:'multicell',seed:73}} as MessageEvent);
+    expect(root.dataset.seed).toBe('73');expect(root.querySelector('[data-testid="morphology-label"]')!.textContent).toBe('Torri multiple');
+    app.destroy();workers[0].onmessage!({data:{type:'closed'}} as MessageEvent);
+  });
   it('cannot resume or publish stale worker output after closure during startup',async()=>{
     const {root,app}=create();const start=app.start();await flush();
     expect(workers).toHaveLength(1);const late=workers[0].onmessage!;
