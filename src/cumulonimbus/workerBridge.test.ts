@@ -62,6 +62,12 @@ describe('render-worker ownership',()=>{
     expect(workers[0].postMessage.mock.calls.at(-1)?.[0]).toEqual({type:'action',action:'center'});
     app.applyWeatherImpulse({type:'gust',strength:.6});
     expect(workers[0].postMessage.mock.calls.at(-1)?.[0]).toEqual({type:'impulse',impulse:{type:'gust',strength:.6}});
+    root.querySelector<HTMLButtonElement>('[data-scene="rain"]')!.click();
+    expect(workers[0].postMessage.mock.calls.at(-1)?.[0]).toEqual({type:'atmosphere',intent:{type:'scene',scene:'rain'}});
+    expect(root.querySelector<HTMLSelectElement>('[name="sky"]')!.value).toBe('rain');
+    expect(root.querySelector('[data-scene="rain"]')!.getAttribute('aria-pressed')).toBe('true');
+    app.applyAtmosphereIntent({type:'scene',scene:'sunset'});
+    expect(workers[0].postMessage.mock.calls.at(-1)?.[0]).toEqual({type:'atmosphere',intent:{type:'scene',scene:'sunset'}});
     const hold=root.querySelector<HTMLInputElement>('input[name="dispersion"]')!;hold.value='100';
     app.applyWeatherImpulse({type:'condense'});expect(hold.value).toBe('0');
     workers[0].onmessage!({data:{type:'morphology',family:'multicell',seed:73}} as MessageEvent);

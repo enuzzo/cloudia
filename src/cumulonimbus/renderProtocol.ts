@@ -1,3 +1,4 @@
+import type {AtmosphereIntent} from './weatherState';
 import type {WeatherImpulse} from './weatherInteraction';
 export interface Viewport {width:number;height:number;dpr:number}
 export type RenderEvent=
@@ -14,5 +15,6 @@ export type RenderCommand=
  |{type:'init';canvas:OffscreenCanvas;search:string;viewport:Viewport;visible:boolean}
  |{type:'action';action:string}|{type:'change';name:string;value:string}
  |{type:'rotate';dx:number;dy:number;width:number;height:number}|{type:'impulse';impulse:WeatherImpulse}
+ |{type:'atmosphere';intent:AtmosphereIntent}
  |{type:'resize';viewport:Viewport}|{type:'visibility';visible:boolean}|{type:'stop'};
 export interface RenderHost {canvas:HTMLCanvasElement|OffscreenCanvas;search:string;viewport:Viewport;visible:boolean;thread:'main'|'worker';emit:(event:RenderEvent)=>void}

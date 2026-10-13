@@ -15,23 +15,23 @@ const channel=wgsl(`fn lightningChannelDistance(p:vec3<f32>,a:vec3<f32>,b:vec3<f
 }`);
 export const integrateCloud = wgslFn(`
 fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler,
-  skyLUT: texture_2d<f32>, skySampler: sampler, solarColor:vec3<f32>, ambientColor:vec3<f32>, weather:vec3<f32>, forcing:vec2<f32>, wind:vec2<f32>, flash:vec4<f32>, flashTop:vec3<f32>, flashBend:vec3<f32>, flashEnd:vec3<f32>, flashBranch:vec3<f32>,
+  skyLUT: texture_2d<f32>, skySampler: sampler, skyFrom:texture_2d<f32>, skyFromSampler:sampler, atmosphereBlend:f32, precipitationTime:f32, probeMode:f32, solarColor:vec3<f32>, ambientColor:vec3<f32>, weather:vec3<f32>, forcing:vec2<f32>, wind:vec2<f32>, flash:vec4<f32>, flashTop:vec3<f32>, flashBend:vec3<f32>, flashEnd:vec3<f32>, flashBranch:vec3<f32>,
   detail: texture_3d<f32>, detailSampler: sampler, flow: texture_3d<f32>, flowSampler: sampler, iceRange: vec2<f32>,
   origin: vec3<f32>, forward: vec3<f32>, right: vec3<f32>, up: vec3<f32>,
   aspect: f32, tanFov: f32, stepSize: f32, emptyStep: f32, resolution: vec2<f32>,
   drift: vec3<f32>, growth: vec3<f32>, supportMin:vec3<f32>, supportMax:vec3<f32>,
   sun: vec3<f32>, lightSide: f32, extinction: f32, iceExtinction: f32) -> vec4<f32> {
-  let screen = vec2<f32>(uv.x * 2.0 - 1.0, 1.0 - uv.y * 2.0);
+  let screen = vec2<f32>(uv.x * 2.0 - 1.0, 1.0 - uv.y * 2.0 - 0.16);
   let ray = normalize(forward + right * screen.x * aspect * tanFov + up * screen.y * tanFov);
   let horizontal=max(length(ray.xz)*length(sun.xz),0.0001);
   let azimuth=clamp(dot(ray.xz,sun.xz)/horizontal,-1.0,1.0);
   let skyUV=vec2<f32>(azimuth*0.5+0.5,sign(ray.y)*sqrt(abs(ray.y))*0.5+0.5);
-  var sky=textureSampleLevel(skyLUT,skySampler,skyUV,0.0).rgb;
+  var sky=mix(textureSampleLevel(skyFrom,skyFromSampler,skyUV,0.0).rgb,textureSampleLevel(skyLUT,skySampler,skyUV,0.0).rgb,atmosphereBlend);
   sky*=1.0-weather.y*0.12;
   let flashDirection=normalize(flash.xyz+drift-origin);
   sky+=vec3<f32>(0.12,0.122,0.126)*flash.w*(0.15+pow(max(0.0,dot(ray,flashDirection)),32.0));
-  let lower = supportMin + drift;
-  let upper = supportMax + drift;
+  let lower = min(supportMin,select(supportMin,vec3<f32>(-3.6,-2.0,-2.0),weather.z>0.001)) + drift;
+  let upper = max(supportMax,select(supportMax,vec3<f32>(3.6,1.4,2.0),weather.z>0.001)) + drift;
   let inv = 1.0 / ray;
   let t0 = (lower-origin)*inv;
   let t1 = (upper-origin)*inv;
@@ -60,19 +60,30 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
     // One cheap mask lookup avoids evaluating fine noise throughout empty sky.
     let referenceCoord=(reference-vec3<f32>(-5.0,-0.5,-3.5))/vec3<f32>(10.0,8.5,7.0);
     let support=textureSampleLevel(detail,detailSampler,clamp(referenceCoord,maskInset,vec3<f32>(1.0)-maskInset),0.0).a;
+    // A world-space precipitation shaft shares view transmittance with the cloud.
+    // It is a bounded artistic rain/virga medium, not foreground screen streaks.
+    let rp=position-drift;
+    if(weather.z>0.001 && rp.y<1.4 && rp.y> -2.0){
+      let footprint=exp(-pow((rp.x+0.55-rp.y*wind.x*.18)/2.0,4.0)-pow(rp.z/1.15,4.0));
+      let fall=smoothstep(-2.0,-.8,rp.y)*(1.0-smoothstep(.9,1.4,rp.y));
+      let streak=.6+.4*sin(rp.x*38.0+rp.z*21.0+sin(rp.y*2.0+precipitationTime*3.0));
+      let rainOpacity=1.0-exp(-weather.z*footprint*fall*streak*.65*select(stepSize,emptyStep,support<=0.0));
+      radiance+=transmittance*rainOpacity*(sky*.48+ambientColor*.13);
+      transmittance*=1.0-rainOpacity;
+    }
     if(support<=0.0) {t+=emptyStep;continue;}
     // The compute pass interpolates time once per flow voxel, rather than per ray sample.
-    let flowValue=textureSampleLevel(flow,flowSampler,referenceCoord,0.0);
+    var flowValue=vec4<f32>(0.0);if(probeMode!=3.0){flowValue=textureSampleLevel(flow,flowSampler,referenceCoord,0.0);}
     let local=reference-flowValue.rgb;
     let coord=(local-vec3<f32>(-5.0,-0.5,-3.5))/vec3<f32>(10.0,8.5,7.0);
     let ice=smoothstep(iceRange.x,iceRange.y,local.y);
-    let fine=textureSampleLevel(detail,detailSampler,local*0.3,0.0);
+    var fine=vec4<f32>(.6);if(probeMode!=4.0){fine=textureSampleLevel(detail,detailSampler,local*0.3,0.0);}
     let warp=(fine.gbr-vec3<f32>(0.5))*mix(vec3<f32>(0.16,0.12,0.16),vec3<f32>(0.08,0.02,0.1),ice);
     let warped=textureSampleLevel(volume,volumeSampler,coord+warp/vec3<f32>(10.0,8.5,7.0),0.0).r;
     if (warped < 0.002) { t += stepSize; continue; }
     var erosion=(1.0-fine.r)*0.38+(1.0-fine.b)*0.08+flowValue.a;
     var material=1.0;
-    if(ice>0.0) {
+    if(ice>0.0 && probeMode!=4.0) {
       let bend=textureSampleLevel(detail,detailSampler,local*vec3<f32>(0.12,0.10,0.06),0.0).g;
       let iceCoord=vec3<f32>(local.x*0.055+bend*0.08,local.y*0.34+local.x*0.022+(bend-0.5)*0.06,local.z*0.08+(bend-0.5)*0.025);
       let iceDetail=textureSampleLevel(detail,detailSampler,iceCoord,0.0);
@@ -85,15 +96,18 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
     let fragments=mix(1.0,smoothstep(0.25,0.7,fine.r),forcing.x);
     let density=clamp((warped-erosion)/(1.0-erosion),0.0,1.0)*material*massFactor*fragments;
     if(density<0.002) {t+=stepSize;continue;}
+    var source=vec3<f32>(.65);
+    if(probeMode!=1.0){
     let voxel = textureSampleLevel(volume,volumeSampler,coord,0.0);
+    if(probeMode==2.0){source=voxel.gba;}else{
     let sunTau=mix(voxel.g,voxel.b,lightSide)*16.0*massFactor;
     let solar = exp(-sunTau);
     let skyVisibility = exp(-voxel.a*16.0*massFactor);
     let direct = solarColor*1.65*solar*sunPhase*(1.0-weather.y*0.15);
     let ambient = ambientColor * (0.18+0.82*pow(skyVisibility,0.35))*(1.0-weather.y*0.1);
     let multiple = vec3<f32>(1.0,0.985,0.95)*(0.27*exp(-sunTau*0.45)+0.10*exp(-sunTau*0.18)) + vec3<f32>(0.028,0.032,0.04);
-    var source = direct + ambient + multiple*(1.0-weather.y*0.13);
-    if(flash.w>0.001){
+    source = direct + ambient + multiple*(1.0-weather.y*0.13);
+    if(flash.w>0.001 && probeMode!=5.0){
       // Same bent scene-space channel for every density sample; view integration
       // attenuates it through the intervening cloud instead of drawing a screen bolt.
       let p=position-drift;
@@ -103,13 +117,14 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
       source+=vec3<f32>(0.92,0.95,1.0)*flash.w*glow;
 
     }
+    }}
     let opacity = 1.0 - exp(-density * mix(extinction,iceExtinction,ice) * stepSize);
-    radiance += transmittance * opacity * source;
+    let aerial=exp(-weather.x*0.0035*t);
+    radiance += transmittance * opacity * mix(sky,source,aerial);
     transmittance *= 1.0-opacity;
     t += stepSize;
   }
-  let aerial=exp(-weather.x*0.0035*near);
-  let color = mix(sky,radiance + sky*transmittance,aerial);
+  let color = radiance + sky*transmittance;
   // Mild exposure shoulder, applied to both the cloud and its atmospheric background.
   let mapped = cloudFilm(color);
   return vec4<f32>(mapped,1.0);

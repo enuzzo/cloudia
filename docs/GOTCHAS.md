@@ -311,3 +311,15 @@ Future production choice:
 - The live occupancy alpha includes bounded flow, so derive its actual per-axis margin rather than reusing the historical fine-warp-only `.04` constant. Inverse growth mixes width/anvil across the ice transition; bound that cross derivative as well as height-dependent shear. Quantize advances to original step multiples. Dispersion is already inside the saturated flow halo.
 - A proven three-step empty advance is not a measured speedup. On this Apple adapter, v14/v15 GPU means13.242/13.431ms; final v16 with changed material measured11.143ms. Keep all samples, start-time/focus differences and distinguish the combined result from causal traversal evidence.
 - Similar mature90s results do not certify growth/storm/orbit, compositor presentation or another GPU. The office main/worker browser QA and390×844 inspection do not constitute physical-phone or acoustic acceptance.
+
+### 13 October — observatory continuation
+
+- `diagnostic` is a WGSL reserved keyword. TypeScript and mocked unit tests
+  accepted the new argument; real GPU startup rejected it. Renamed it `probeMode`.
+- Low solar elevation with only Rayleigh/Mie scattering produced an excessive
+  green/yellow band. Add approximate ozone absorption to both sun and view paths,
+  not an unrelated decorative background gradient. Sunset still uses fixed
+  cloud light-cache directions and is explicitly an approximate colour study.
+- A hand-guide disclosure is not an active input mode. Keep Manuale selected,
+  state that the camera is unconnected and avoid calling getUserMedia until the
+  actual tracking implementation is requested.

@@ -333,3 +333,16 @@ Implementation `c457bfc`: derive the safe empty stride from the flow-expanded ma
 91 tests/20 files, typecheck and application → hero builds pass. Worker/main startup, three families, side/oblique pointer/keyboard views, recenter, held 100% dispersion/recondensa, gust, manual flash and main narrow 390×844 inspected; no relevant console errors. Three complete mature FullHD worker 90s samples: v14 59.996fps/GPU13.242ms, traversal-only v15 59.985fps/GPU13.431ms, final v16 59.996fps/GPU11.143ms. All zero intervals >33.34ms; final maximum17.8ms. Similar settings, slightly differing start times/focus; not bit-identical causal A/B. The final reduction includes material changes, and no isolated traversal benefit is established.
 
 Raw JSON, screenshots and limitations are retained in `OFFICE-REFINEMENT-2026-10-13.md`. Owner photographic/listening acceptance, formation/storm/orbit/compositor/other-device qualification and hands/rain remain open. Manual handoff updated; publish only the existing feature branch. Preview remains animated at normal speed, neutral sky, 55% wind and automatic flashes, with window-sized full-resolution output. No main merge or site deployment.
+
+## 2026-10-13 — Observatory continuation, first implementation
+
+Resumed dd07846 in the clean local feature checkout. Read the operating/handoff
+records and inspected animated front/side views against NASA S'COOL photography.
+Added uneven macro outflow shoulders, neutral elevation-dependent surroundings,
+per-sample aerial perspective, interruption-safe sky transitions, approximate
+low-sun colour with ozone absorption and a bounded world-space rain shaft.
+Prepared a personal-observatory interface, explicit future hand guide, shared
+atmosphere intents and occupied-work probes. See OBSERVATORY-2026-10-13.md for
+research, assumptions and proposed gestures. First real WGSL test caught reserved
+`diagnostic`; renamed to `probeMode`. No camera activation, renderer fallback,
+quality reduction, deployment or main merge. Final qualification follows.

@@ -1,6 +1,7 @@
 import { DataTexture, DataUtils, Vector4, Data3DTexture, LinearFilter, MeshBasicNodeMaterial, NoColorSpace, QuadMesh,
   RGBAFormat, RepeatWrapping, UnsignedByteType, HalfFloatType, Storage3DTexture, Vector2, Vector3, WebGPURenderer } from 'three/webgpu';
 import { Fn, instanceIndex, vec3, wgslFn, storageTexture3D, textureStore, texture3D, texture, uniform, uv } from 'three/tsl';
+import {WeatherState,WEATHER_SCENES,type AtmosphereIntent,type WeatherScene} from './weatherState';
 import {OrbitView} from './camera';
 import {DispersalState,nextMorphologySeed,type WeatherImpulse} from './weatherInteraction';
 import { integrateCloud } from './cloudShader';
@@ -87,7 +88,19 @@ export class GPUSceneEngine {
   private gustStart=-100;
   private gustStrength=0;
   private readonly flowFamily=uniform(0);
-  private skyMode='storm';
+  private skyMode:WeatherScene='storm';
+  private readonly weatherState=new WeatherState();
+  private atmosphereProgress=1;
+  private readonly atmosphereBlend=uniform(1);
+  private readonly precipitationTime=uniform(0);
+  private readonly diagnostic=uniform(0);
+  private diagnosticName:string;
+  private readonly skyFromData=new Float32Array(SKY_LUT_SIZE**2*4);
+  private readonly skyFromPacked=new Uint16Array(SKY_LUT_SIZE**2*4);
+  private readonly skyFromTexture=new DataTexture(this.skyFromPacked,SKY_LUT_SIZE,SKY_LUT_SIZE,RGBAFormat,HalfFloatType);
+  private readonly solarFrom=new Vector3(); private readonly solarTarget=new Vector3();
+  private readonly ambientFrom=new Vector3(); private readonly ambientTarget=new Vector3();
+  private weatherFrom=new Vector2(1.8,1); private weatherTarget=new Vector2(1.8,1);
   private stormAuto=false;
   private stormDistance=3;
   private weatherTime=0;
@@ -134,8 +147,10 @@ export class GPUSceneEngine {
   private readonly iceRange = uniform(new Vector2());
   constructor(private readonly host:RenderHost) {
     const params=new URLSearchParams(host.search),requested=Number(params.get('seed'));
+    this.diagnosticName=params.get('ablation')??'full';
     if(params.has('seed')&&Number.isInteger(requested)&&requested>=0&&requested<=0xffffffff) this.seed=requested;
     this.profiling=params.get('profile')==='1';this.timingMode=params.get('timing')??'stages';this.frozenFlow=params.get('flow')==='frozen';
+    this.diagnostic.value=this.profiling?Math.max(0,['full','density','cache','no-flow','no-detail','no-flash'].indexOf(this.diagnosticName)):0;
     this.frameLimit=[1,2].includes(Number(params.get('inflight')))?Number(params.get('inflight')):0;
     this.viewport={...host.viewport};this.visible=host.visible;
     if(this.profiling){this.outputMode='1080';this.simulationTime=60;}
@@ -217,8 +232,8 @@ export class GPUSceneEngine {
     this.currentFlow.type=HalfFloatType;this.currentFlow.format=RGBAFormat;this.currentFlow.colorSpace=NoColorSpace;
     this.currentFlow.generateMipmaps=false;
     const flowNode=texture3D(this.currentFlow);
-    const skyNode=texture(this.skyTexture);
-    this.material.fragmentNode=integrateCloud({skyLUT:skyNode,skySampler:skyNode,solarColor:this.solarColor,ambientColor:this.ambientColor,weather:this.weather,forcing:this.forcing,wind:this.wind,flash:this.flash,flashTop:this.flashTop,flashBend:this.flashBend,flashEnd:this.flashEnd,flashBranch:this.flashBranch,uv:uv(),volume:volumeNode,volumeSampler:volumeNode,detail:detailNode,detailSampler:detailNode,flow:flowNode,flowSampler:flowNode,iceRange:this.iceRange,
+    const skyNode=texture(this.skyTexture),skyFromNode=texture(this.skyFromTexture);
+    this.material.fragmentNode=integrateCloud({probeMode:this.diagnostic,precipitationTime:this.precipitationTime,atmosphereBlend:this.atmosphereBlend,skyFrom:skyFromNode,skyFromSampler:skyFromNode,skyLUT:skyNode,skySampler:skyNode,solarColor:this.solarColor,ambientColor:this.ambientColor,weather:this.weather,forcing:this.forcing,wind:this.wind,flash:this.flash,flashTop:this.flashTop,flashBend:this.flashBend,flashEnd:this.flashEnd,flashBranch:this.flashBranch,uv:uv(),volume:volumeNode,volumeSampler:volumeNode,detail:detailNode,detailSampler:detailNode,flow:flowNode,flowSampler:flowNode,iceRange:this.iceRange,
       origin:this.origin,forward:this.forward,right:this.right,up:this.up,aspect:this.aspect,tanFov:uniform(.2867),
       stepSize:this.stepSize,emptyStep:this.emptyStep,resolution:this.resolution,drift:this.drift,growth:this.growth,supportMin:this.supportMin,supportMax:this.supportMax,sun:this.sun,lightSide:this.lightSide,extinction:uniform(EXTINCTION),iceExtinction:uniform(ICE_EXTINCTION)});
     this.quad=new QuadMesh(this.material);
@@ -288,6 +303,7 @@ export class GPUSceneEngine {
     if(!this.paused) this.simulationTime+=Math.min(interval/1000,.05)*this.speed;
     const weatherDelta=this.paused?0:Math.max(0,interval/1000);
     this.weatherTime+=Math.max(0,interval/1000);
+    this.advanceAtmosphere(Math.max(0,interval/1000),weatherDelta);
     this.forcingTime+=weatherDelta;
     this.dispersal.step(weatherDelta,this.forcingTime);
     this.forcing.value.set(this.dispersal.amount,0);
@@ -342,14 +358,34 @@ export class GPUSceneEngine {
     }
   };
   private updateAtmosphere(){
-    const haze=this.skyMode==='haze'?2.4:this.skyMode==='storm'?1.8:1;
-    const overcast=this.skyMode==='storm'?1:0;
-    this.weather.value.set(haze,overcast,0);
-    fillSkyLUT(this.skyData,this.sun.value.toArray(),haze,overcast);
-    for(let i=0;i<this.skyData.length;i++)this.skyPacked[i]=DataUtils.toHalfFloat(this.skyData[i]);
-    this.skyTexture.minFilter=LinearFilter;this.skyTexture.magFilter=LinearFilter;this.skyTexture.colorSpace=NoColorSpace;this.skyTexture.generateMipmaps=false;this.skyTexture.needsUpdate=true;
-    const lighting=atmosphereLighting(this.sun.value.toArray(),haze,overcast);
-    this.solarColor.value.fromArray(lighting.solar);this.ambientColor.value.fromArray(lighting.ambient);
+    const preset=WEATHER_SCENES[this.skyMode],haze=preset.haze,overcast=preset.overcast;
+    // Snapshot the currently displayed radiance, including interrupted transitions.
+    const blend=this.atmosphereBlend.value;
+    for(let i=0;i<this.skyData.length;i++)this.skyFromData[i]+=(this.skyData[i]-this.skyFromData[i])*blend;
+    this.solarFrom.copy(this.solarColor.value);this.ambientFrom.copy(this.ambientColor.value);
+    this.weatherFrom.set(this.weather.value.x,this.weather.value.y);this.weatherTarget.set(haze,overcast);
+    const skySun=this.sun.value.clone();if(preset.sunset)skySun.y=.025;skySun.normalize();
+    fillSkyLUT(this.skyData,skySun.toArray(),haze,overcast);
+    const lighting=atmosphereLighting(skySun.toArray(),haze,overcast);
+    this.solarTarget.fromArray(lighting.solar);this.ambientTarget.fromArray(lighting.ambient);
+    const initial=!this.quad;
+    if(initial){this.skyFromData.set(this.skyData);this.solarFrom.copy(this.solarTarget);this.ambientFrom.copy(this.ambientTarget);}
+    for(let i=0;i<this.skyData.length;i++){
+      this.skyPacked[i]=DataUtils.toHalfFloat(this.skyData[i]);this.skyFromPacked[i]=DataUtils.toHalfFloat(this.skyFromData[i]);
+    }
+    for(const tex of [this.skyTexture,this.skyFromTexture]){tex.minFilter=LinearFilter;tex.magFilter=LinearFilter;tex.colorSpace=NoColorSpace;tex.generateMipmaps=false;tex.needsUpdate=true;}
+    this.atmosphereProgress=initial?1:0;this.advanceAtmosphere(0);
+  }
+  private advanceAtmosphere(dt:number,weatherDt=dt){
+    this.atmosphereProgress=Math.min(1,this.atmosphereProgress+dt/2.4);
+    const t=this.atmosphereProgress,b=t*t*(3-2*t);this.atmosphereBlend.value=b;
+    this.solarColor.value.copy(this.solarFrom).lerp(this.solarTarget,b);this.ambientColor.value.copy(this.ambientFrom).lerp(this.ambientTarget,b);
+    this.weatherState.step(weatherDt);this.weather.value.set(this.weatherFrom.x+(this.weatherTarget.x-this.weatherFrom.x)*b,this.weatherFrom.y+(this.weatherTarget.y-this.weatherFrom.y)*b,this.weatherState.rain);
+    this.precipitationTime.value=this.forcingTime;
+  }
+  atmosphere(intent:AtmosphereIntent){
+    this.invalidate('Scenario atmosferico modificato');this.weatherState.apply(intent);
+    if(intent.type==='scene'){this.skyMode=this.weatherState.scene;this.updateAtmosphere();this.stormAuto=this.skyMode==='storm';this.clearStorm();this.emit({type:'stormState',auto:this.stormAuto});}
   }
   private makeFlash(seed:number){
     const height=cloudParameters(this.seed).towerHeight*motionState(this.simulationTime,this.seed).height;
@@ -426,7 +462,7 @@ export class GPUSceneEngine {
     this.measurement=new FrameMeasurement(performance.now(),duration,2000);
     this.benchmarkContext={date:new Date().toISOString(),backend:'WebGPU',adapter:this.adapterInfo,threeRevision:'186',quality:this.quality,
       output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],nominalSteps:QUALITY[this.quality].steps,
-      rendererVersion:'fibrous-flow-v16',executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
+      rendererVersion:'observatory-v17',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
       userAgent:navigator.userAgent,devicePixelRatio:this.viewport.dpr,
       method:'Visible requestAnimationFrame intervals, CPU compute/render submission and callback dispatch delay. GPU render and compute timestamps sampled separately; their last-frame samples are not necessarily paired. Optional queue completion latency includes GPU work, readback and JS delivery; not compositor presentation.',warmupMs:2000,targetDurationMs:duration};
     this.setButtonEnabled('benchmark',false); this.setButtonEnabled('sustained',false);
@@ -455,6 +491,9 @@ export class GPUSceneEngine {
   private setButtonEnabled(action:string,enabled:boolean){this.emit({type:'enabled',action,enabled});}
   action(action:string){
     if(this.destroyed) return;
+    if(action==='probe-reference'&&this.profiling){
+      this.invalidate('Stato di confronto');this.simulationTime=60;this.forcingTime=0;this.weatherTime=0;this.paused=true;this.orbit=false;this.view.reset();this.viewFocus.copy(this.cloudCenter);this.windStrength=.55;this.gustStart=-100;this.dispersal.recover();this.dispersal.amount=0;this.skyMode='storm';this.weatherState.apply({type:'rain',amount:0});this.weatherState.rain=0;this.stormAuto=false;this.clearStorm();this.side=0;this.lightSide.value=0;this.sun.value.set(...SUN_LEFT).normalize();this.updateAtmosphere();this.atmosphereProgress=1;this.advanceAtmosphere(0);this.state();this.emit({type:'stormState',auto:false});return;
+    }
     if(action==='benchmark'||action==='sustained'){this.startBenchmark(action==='benchmark'?30000:90000);return;}
     if(action==='new-cloud'){void this.newCloud();return;}
     this.invalidate('Controlli modificati');
@@ -492,11 +531,13 @@ export class GPUSceneEngine {
   }
   change(name:string,value:string){
     if(this.destroyed) return;
+    if(name==='ablation'&&this.profiling){this.invalidate('Sonda modificata');this.diagnosticName=value;this.diagnostic.value=Math.max(0,['full','density','cache','no-flow','no-detail','no-flash'].indexOf(value));return;}
     if(name==='family'){const families=['congestus','multicell','sheared'];if(families.includes(value))void this.newCloud(families.indexOf(value));return;}
     if(name==='wind'){this.invalidate('Vento modificato');const n=Number(value);if(Number.isFinite(n))this.windStrength=Math.max(0,Math.min(1,n/100));return;}
     if(name==='dispersion'){this.invalidate('Dispersione modificata');this.dispersal.set(Number(value)/100);return;}
     if(name==='speed'){this.invalidate('Velocità modificata');this.speed=[.5,1,2,4].includes(Number(value))?Number(value):1;return;}
-    if(name==='sky'){this.invalidate('Atmosfera modificata');this.skyMode=['clear','haze','storm'].includes(value)?value:'clear';this.updateAtmosphere();return;}
+    if(name==='sky'){if(value in WEATHER_SCENES)this.atmosphere({type:'scene',scene:value as WeatherScene});return;}
+    if(name==='rain'){this.atmosphere({type:'rain',amount:Number(value)/100});return;}
     if(name==='distance'){this.invalidate('Distanza del temporale modificata');this.stormDistance=[1,3,8].includes(Number(value))?Number(value):3;return;}
     if(name==='inflight'){this.invalidate('Gestione della coda modificata');this.frameLimit=[1,2].includes(Number(value))?Number(value):0;return;}
     this.invalidate('Qualità o risoluzione modificata');
@@ -518,7 +559,7 @@ export class GPUSceneEngine {
       await this.queuePromise;
       await Promise.all(this.frameCompletions);
       this.releasingGPU=true;
-      this.material?.dispose(); this.volume?.dispose();this.detailVolume?.dispose();this.currentFlow.dispose();this.skyTexture.dispose();this.interpolateFlow.dispose(); this.renderer?.dispose(); this.device?.destroy();
+      this.material?.dispose(); this.volume?.dispose();this.detailVolume?.dispose();this.currentFlow.dispose();this.skyTexture.dispose();this.skyFromTexture.dispose();this.interpolateFlow.dispose(); this.renderer?.dispose(); this.device?.destroy();
     })();
     return this.cleanup;
   }
