@@ -42,10 +42,15 @@ describe('render-worker ownership',()=>{
     expect(workers[0].postMessage.mock.calls[0][0]).toMatchObject({type:'init',canvas:offscreen});
     expect(workers[0].postMessage.mock.calls[0][1]).toEqual([offscreen]);
     workers[0].onmessage!({data:{type:'ready'}} as MessageEvent);await start;
-    root.querySelector<HTMLButtonElement>('[data-action="pause"]')!.click();
+    const messages=workers[0].postMessage.mock.calls.length;
+    root.querySelector<HTMLButtonElement>('#tab-atmosphere')!.click();
+    root.querySelector<HTMLButtonElement>('[data-close-panel]')!.click();
+    expect(workers[0].postMessage.mock.calls).toHaveLength(messages);
+    root.querySelector('[data-action="pause"] svg')!.dispatchEvent(new MouseEvent('click',{bubbles:true}));
     expect(workers[0].postMessage.mock.calls.at(-1)?.[0]).toMatchObject({type:'action',action:'pause'});
     workers[0].onmessage!({data:{type:'state',paused:true,orbit:false,side:0}} as MessageEvent);
-    expect(root.querySelector('[data-action="pause"]')!.textContent).toBe('Riprendi');
+    expect(root.querySelector('[data-action="pause"]')!.getAttribute('aria-label')).toBe('Riprendi');
+    expect(root.querySelector('[data-action="pause"] svg')).not.toBeNull();
     window.dispatchEvent(new Event('resize'));
     expect(workers[0].postMessage.mock.calls.at(-1)?.[0]).toMatchObject({type:'resize',viewport:{dpr:window.devicePixelRatio}});
     vi.spyOn(document,'hidden','get').mockReturnValue(true);document.dispatchEvent(new Event('visibilitychange'));

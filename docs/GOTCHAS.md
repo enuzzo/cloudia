@@ -378,3 +378,11 @@ Future production choice:
   decoration and agricultural patchwork. Six-step heightfield refinement is
   approximate, especially at grazing angles; fade distant relief and retain
   the spherical horizon. Canopy shading is not individual tree geometry.
+
+
+## 2026-10-14 — disclosure layout and evidence boundaries
+
+- A fixed inspector inside a transformed centered dock would use the dock as its containing block. Center the dock with left/right + auto margins, not transform. Inspectors then keep viewport anchoring. Actual small-screen browser verification remains pending.
+- UI-only buttons (tabs/close) must not forward an undefined scene action. SVG targets must resolve to their parent button; pause updates its accessible name alongside the icon.
+- The browser policy denied acquiring the existing localhost tab even though the supplied URL used HTTP. Do not bypass through another browser, raw protocol or renamed local address. Tests/builds and public-reference research remain independent; they do not substitute for rendered visual acceptance.
+- A generated UI concept can embellish the cloud/landscape. Preserve the actual renderer and explicitly distinguish the concept from proof. Third-party demo FPS overlays are not matched measurements.

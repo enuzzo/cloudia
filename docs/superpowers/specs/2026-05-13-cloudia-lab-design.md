@@ -234,3 +234,8 @@ estimated density boundary, native maximum quality, global panel dismissal,
 a reversible distant procedural Earth surface and async/cached sky changes.
 See ../../ENVIRONMENT-2026-10-14.md for scope and limits. Terrain is fictional,
 close clearance approximate, photographic acceptance still open.
+
+
+## Observatory UI revision — 14 October 2026
+
+The current cumulonimbus interface is specified in [the observatory UI contract](../../UI-DESIGN-2026-10-14.md): a single weather dock and a Nube/Atmosfera/Misure inspector. It retains existing scene actions and full-quality rendering. Implementation and DOM tests are complete; rendered desktop/mobile acceptance remains pending due to local-preview browser policy denial. This does not change the deferred hand recognition scope.

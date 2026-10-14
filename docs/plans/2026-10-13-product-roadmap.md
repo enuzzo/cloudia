@@ -25,7 +25,7 @@ Manteniamo 256³/128³, 384 passi, output 100%; ogni costo nuovo va misurato.
 | P1 | Cielo continuo | Elevazione solare e meteo graduabili; cache atmosferiche interpolabili, niente bake pesante a frequenza gestuale | Dipende da P0 |
 | P1 | Mani: pipeline locale | Avvio esplicito, anteprima, stop che chiude le tracce; un frame in inferenza, worker separato, fallback manuale | Da implementare; nessuna attivazione automatica |
 | P1 | Mani: grammatica giocabile | Aprire/raccogliere la nube, evocare pioggia, spostare il sole; soglie/isteresi, nessun evento su riacquisizione, feedback e annullamento | Proposta da provare |
-| P2 | Controlli accessibili | Tastiera completa, stato annunciato, contrasto, touch, focus, riduzione movimento e guida breve contestuale | Click esterno/Esc globale e zoom tastiera aggiunti v21; audit completo aperto |
+| P2 | Controlli accessibili | Tastiera completa, stato annunciato, contrasto, touch, focus, riduzione movimento e guida breve contestuale | Dock unico e inspector a schede implementati il 14 ottobre; test DOM tastiera/focus/chiusura superati; verifica visiva desktop/mobile bloccata dalla policy browser |
 | P2 | Preset personali | Salvare seme/camera/meteo in un collegamento riproducibile; ripristino robusto dei valori | Progettato |
 | P2 | Modalità contemplazione | Nascondere strumenti con ritorno evidente; pausa, audio e movimento rispettano la scelta dell'utente | Progettato |
 | P2 | Paesaggio sonoro | Test d'ascolto per distanza, pioggia e tuoni; volume graduale, mute immediato, niente avvio sonoro inatteso | Richiede ascolto |
@@ -79,3 +79,9 @@ raffinamento della frontiera vicina con riferimento fotografico.
 Preferenza del proprietario,14 ottobre: paesaggio esclusivamente naturale,
 con foreste, montagne e mare. Nessuna strada, costruzione o tessitura urbana.
 Rimossa anche la linea del fiume perché dalla quota della nube sembrava una strada.
+
+## Approfondimento del 14 ottobre: generatori e UI
+
+[Studio sorgenti e demo](../CLOUD-RESEARCH-2026-10-14.md): Takram, Sebastian Lague, Joshbrew, Jeantimex; documentazione commerciale UDS/CloudScapes e ricerca Nubis³. Sei esperimenti ordinati nel rapporto, con criteri di accettazione. Priorità: dettaglio ravvicinato, separazione luce macro/densità fine, ombra e atmosfera del paesaggio, pioggia, transizioni, eventuale ricostruzione temporale esplicita. Nessuno di questi esperimenti è dichiarato implementato da questa revisione UI.
+
+[Contratto UI](../UI-DESIGN-2026-10-14.md): una barra, pannello Nube/Atmosfera/Misure, controlli coerenti. Resta obbligatorio riaprire la preview e confrontare desktop/mobile con il concept prima di certificare la qualità visiva.

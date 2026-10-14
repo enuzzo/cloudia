@@ -431,3 +431,12 @@ terrain ray tracer. No new photographic-acceptance claim.
 Final wilderness QA: desktop sun/sunset and mobile390×844 pass; no console
 errors. Main paused solar FullHD30s59.996rAF/s, zero intervals>33.34ms,
 GPU mean15.063ms. No new worker/animated/physical-device qualification.
+
+
+## 2026-10-14 — cloud source study and observatory UI
+
+- Read pinned shader sources from Takram, Sebastian Lague and Joshbrew; tried Takram Minimal Setup/Custom Layers and Jeantimex coverage 0.8→0.5 in the in-app browser. Reviewed public commercial UDS9.7 and CloudScapes material; no purchase or code import. [Research](CLOUD-RESEARCH-2026-10-14.md).
+- Generated an agent-selected UI concept before implementation; retained the live renderer, not the AI background. Unified dock, SVG controls, Nube/Atmosfera/Misure inspector, percentages, focus/keyboard/dismissal, mobile and reduced-motion CSS. Existing actions preserved. [Design/acceptance ledger](UI-DESIGN-2026-10-14.md).
+- Validation: 108 tests/24 files, TypeScript, app and hero builds passed. Browser acquisition of the local preview was denied by policy; no bypass attempted. Public demos remained accessible. New UI screenshots and full runtime/layout QA are explicitly pending, not passed.
+- Dropbox: original node_modules lacked its local exclusion; verified ignored/untracked, applied/read back attribute1 and restored dependencies with frozen Bun lockfile. Attribute1 remained after builds. Existing `node_modules 2/` was preserved untracked; no broad staging/deletion.
+- No renderer tuning, new benchmark, deployment, main merge or camera activation in this revision.
