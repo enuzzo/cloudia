@@ -18,7 +18,7 @@ Manteniamo 256³/128³, 384 passi, output 100%; ogni costo nuovo va misurato.
 | P0 | Sole basso condiviso fra cielo, scattering e ombre | Ombre laterali corrette nei due tramonti; giorno invariato; cambio scena/interruzione senza salti | Implementato v20; cache/worker LUT aggiunti in v21 |
 | P0 | Confronti ripetibili | Stesso seme, tempo, camera e qualità; prove giorno/tramonto; conservare anche regressioni | 30s main giorno/tramonto +90s worker animato verificati; confronto alternato da fare |
 | P0 | Latenza del cambio cielo | Cache delle LUT già visitate o calcolo asincrono; misurare anche il primo cambio scena e le interruzioni, non solo il regime stabile | Cache/worker implementati v21; misura quantitativa primo cambio ancora aperta |
-| P1 | Profondità e scala | Prototipo reversibile con orizzonte atmosferico e nube lontana; confronto con foto e possibilità di mantenere il campione isolato | Terra procedurale reversibile v21; rilievi, ombra al suolo e nubi lontane ancora da fare |
+| P1 | Profondità e scala | Prototipo reversibile con orizzonte atmosferico e nube lontana; confronto con foto e possibilità di mantenere il campione isolato | Terra procedurale reversibile v21; costa forestale, rilievo approssimato e mare aggiunti il14 ottobre; ombra al suolo e nubi lontane ancora da fare |
 | P1 | Incudine e glaciazione | Raccordo ampio, fibre distali non uniformi e silhouette plausibile da fronte/lato/retro in tutte le famiglie | Progettato |
 | P1 | Illuminazione interna | Valutare scattering multiplo legato al colore solare, bordi scuri e luce trasmessa; evitare nubi di plastica e nero pieno | Ricerca |
 | P1 | Pioggia/virga | Precipitazione che nasce dalla base, svanisce in aria se opportuno, segue vento e intensità senza un rettangolo visibile | Cortine dalla densità della base implementate v21; accettazione fotografica aperta |
@@ -75,3 +75,7 @@ nativa massima implementato in v21. Le prove e i limiti sono in
 [ENVIRONMENT-2026-10-14.md](../ENVIRONMENT-2026-10-14.md).
 Priorità successiva proposta: rilievo del suolo e ombra proiettata, poi
 raffinamento della frontiera vicina con riferimento fotografico.
+
+Preferenza del proprietario,14 ottobre: paesaggio esclusivamente naturale,
+con foreste, montagne e mare. Nessuna strada, costruzione o tessitura urbana.
+Rimossa anche la linea del fiume perché dalla quota della nube sembrava una strada.

@@ -372,3 +372,9 @@ Future production choice:
   In this session the dataless directories were preserved outside active
   objects, remote history refetched,920 reachable objects checked with zero
   missing. Never delete an unknown lock or discard the preserved directories.
+
+- At cloud altitude a thin dark procedural river can read as a road. Owner
+  explicitly prefers only forests/mountains/sea; remove ambiguous linear
+  decoration and agricultural patchwork. Six-step heightfield refinement is
+  approximate, especially at grazing angles; fade distant relief and retain
+  the spherical horizon. Canopy shading is not individual tree geometry.

@@ -11,7 +11,11 @@ acceptance claim. Native Retina workload can exceed FullHD substantially.
 See [ENVIRONMENT-2026-10-14.md](ENVIRONMENT-2026-10-14.md) for evidence,
 controls, architectural limits and the recovered Dropbox object-directory issue.
 
-Next visual work: real relief/ground shadow, near-density detail and reference
+Later14 October: owner requested only wilderness. River/field patterns removed;
+forest, mountains and sea added with bounded approximate heightfield refinement.
+See the final section of ENVIRONMENT for current evidence and limitations.
+
+Next visual work: refine relief/ground shadow, near-density detail and reference
 comparison. Next technical work: quantify first/cached sky-switch latency.
 The roadmap remains open; no hands recognition or automatic camera activation.
 

@@ -38,6 +38,7 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
   var groundDistance=earthDistance(origin,ray);
   let groundAmount=ground*pow(1.0-weather.y,2.0);
   if(groundDistance>0.0 && groundAmount>0.001){
+    groundDistance=landscapeDistance(origin,ray,groundDistance);
     backdrop=mix(sky,landscapeColor(origin+ray*groundDistance,groundDistance,sun,solarColor,ambientColor,sky,weather.x),groundAmount);
   }else{groundDistance=10000.0;}
   let lower = min(supportMin,select(supportMin,vec3<f32>(-7.0,-4.0,-5.0),weather.z>0.001)) + drift;

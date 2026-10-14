@@ -128,3 +128,35 @@ worker-sun-final/worker-sky-only-final usa la build2b880b9.
 Preview finale: modalità normale main, Sole animato, Panorama, nessun pannello
 aperto. Solo Massima e Schermo nativo presenti nei selettori; override di
 viewport rimosso. Browser1280×720, buffer1280×720, nessun errore console.
+
+
+## Correzione successiva — solo natura
+
+Richiesta esplicita del proprietario: foreste, montagne e mare, niente urbano.
+La linea del fiume è stata eliminata perché sembrava una strada. Anche la
+variazione cromatica tipo campi è sostituita da bosco continuo e roccia sui
+rilievi. Costa irregolare, acqua bassa più chiara e mare profondo più blu.
+
+Questo aggiornamento supera il precedente limite «nessun rilievo geometrico»:
+il punto d'intersezione viene ora raffinato contro un campo di altezza
+procedurale con sei iterazioni limitate. Il terreno può quindi spostare il
+punto visibile rispetto alla sfera marina, ma il metodo è approssimato e
+attenua il rilievo fra90 e180km. Non è una garanzia di intersezione esatta
+per ogni raggio radente, né geografia reale o ombreggiatura del terreno completa.
+Il bosco è una tessitura di copertura vista dall'alto, non singoli alberi 3D.
+Nessuna strada, costruzione o città è presente nel generatore.
+
+Verifica: browser interno tramite cua_repl/Playwright perché il Browser plugin
+non è disponibile. Flusso: preview→Sole/Tramonto→costa naturale senza linee
+stradali, anche in viewport mobile. Screenshot conservati in
+images/wilderness-2026-10-14. Build e104test superati; nessuna dipendenza nuova.
+
+Controlli finali: desktop1280×720 con Sole e Tramonto, mobile390×844
+con Sole; nessun overflow orizzontale, overlay o errore console osservato.
+Il formato stretto mostra soprattutto mare per la maggiore distanza della
+camera: il bosco resta visibile nel margine inferiore/sinistro.
+Main FullHD/384, Sole, nube ferma,30s:59,996fps rAF, zero intervalli
+oltre33,34ms, massimo17,8ms; GPU media15,063ms. Report:
+images/wilderness-2026-10-14/main-sun-30s.json. Non è una nuova prova
+animata, worker o su dispositivo fisico; quei risultati precedenti non
+certificano il costo di questo terreno.

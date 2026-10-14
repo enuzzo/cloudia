@@ -410,3 +410,24 @@ main merge, deploy or camera access. Publish only authorized feature branch.
 Final worker solar panorama30s59.998rAF/s,0 intervals>33.34ms, paused cloud.
 Rapid interrupted skies, worker zoom and ground off also passed rendered QA.
 Raw reports and screenshot SHA256 manifest retained with the environment report.
+
+
+## 2026-10-14 — wilderness landscape correction
+
+Owner prefers forests, mountains and sea with nothing urban. Removed the
+sinuous river line (read as a road from cloud altitude) and field-like palette.
+Added an irregular coast with shallow/deep water, continuous forest canopy,
+rocky ridges and small high-altitude pale patches. Approximate heightfield
+intersection refines the sea sphere with six bounded iterations; relief fades
+between90 and180km to avoid unstable grazing rays. No buildings, roads,
+settlements, map data or photographic assets.
+
+104tests/23files pass; TypeScript and application→hero builds pass. Real WGSL
+compilation and desktop sun render verified. Detailed final checks and raw
+measurements: images/wilderness-2026-10-14 and ENVIRONMENT-2026-10-14.md.
+The heightfield is an authored approximation, not a DEM or fully converged
+terrain ray tracer. No new photographic-acceptance claim.
+
+Final wilderness QA: desktop sun/sunset and mobile390×844 pass; no console
+errors. Main paused solar FullHD30s59.996rAF/s, zero intervals>33.34ms,
+GPU mean15.063ms. No new worker/animated/physical-device qualification.
