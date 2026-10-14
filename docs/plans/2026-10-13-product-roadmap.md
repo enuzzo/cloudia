@@ -85,3 +85,7 @@ Rimossa anche la linea del fiume perché dalla quota della nube sembrava una str
 [Studio sorgenti e demo](../CLOUD-RESEARCH-2026-10-14.md): Takram, Sebastian Lague, Joshbrew, Jeantimex; documentazione commerciale UDS/CloudScapes e ricerca Nubis³. Sei esperimenti ordinati nel rapporto, con criteri di accettazione. Priorità: dettaglio ravvicinato, separazione luce macro/densità fine, ombra e atmosfera del paesaggio, pioggia, transizioni, eventuale ricostruzione temporale esplicita. Nessuno di questi esperimenti è dichiarato implementato da questa revisione UI.
 
 [Contratto UI](../UI-DESIGN-2026-10-14.md): una barra, pannello Nube/Atmosfera/Misure, controlli coerenti. Resta obbligatorio riaprire la preview e confrontare desktop/mobile con il concept prima di certificare la qualità visiva.
+
+### Close approach follow-up
+
+Bounded boundary probing and a repeatable full-volume CPU audit are implemented: [14October audit](../APPROACH-2026-10-14.md). The thin-layer/portrait defect is covered by tests; no shading experiment is promoted without rendered comparison. Local-preview access, mobile UI fidelity and near-orbit stability remain open gates.

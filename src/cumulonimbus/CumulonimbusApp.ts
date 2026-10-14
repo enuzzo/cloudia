@@ -80,7 +80,7 @@ export class CumulonimbusApp {
     if(event.type==='statusState'){if(event.state==='failed'){this.fail(this.status.textContent||'Rendering fallito.');return;}this.status.classList.remove('loaded','failed');if(event.state!=='loading')this.status.classList.add(event.state);}
     if(event.type==='enabled'){const input=this.controls.querySelector<HTMLButtonElement|HTMLSelectElement>(`[data-action="${event.action}"],[name="${event.action}"]`);if(input)input.disabled=!event.enabled;}
     if(event.type==='layout')this.root.classList.toggle('fixed-output',event.fixed);
-    if(event.type==='view'){this.root.querySelector<HTMLInputElement>('[name=zoom]')!.value=String(event.approach*100);this.root.querySelector('[data-testid=view-distance]')!.textContent=event.approach>.98?'Al bordo della nube · distanza stimata':`Avvicinamento ${Math.round(event.approach*100)}%`; }
+    if(event.type==='view'){this.root.querySelector<HTMLInputElement>('[name=zoom]')!.value=String(event.approach*100);this.root.querySelector('[data-testid=view-distance]')!.textContent=event.approach>.98?'Avvicinamento massimo · distanza stimata':`Avvicinamento ${Math.round(event.approach*100)}%`; }
     if(event.type==='state'){
       const pause=this.controls.querySelector<HTMLButtonElement>('[data-action="pause"]')!;
       pause.innerHTML=icon(event.paused?'play':'pause');pause.setAttribute('aria-label',event.paused?'Riprendi':'Pausa');pause.title=event.paused?'Riprendi':'Pausa';
@@ -137,6 +137,8 @@ export class CumulonimbusApp {
     const action=button.dataset.action;if(!action)return;
     if(action==='zoom-in'||action==='zoom-out'){this.send({type:'zoom',delta:action==='zoom-in'?.12:-.12});return;}
     if(action==='probe-reference'){
+      this.root.querySelector<HTMLInputElement>('[name=wind]')!.value='55';
+      this.root.querySelector<HTMLInputElement>('[name=dispersion]')!.value='0';
       this.root.querySelector<HTMLSelectElement>('[name="sky"]')!.value='storm';
       this.root.querySelector<HTMLInputElement>('[name="rain"]')!.value='0';
       this.root.querySelector('[data-testid="scene-name"]')!.textContent='Cielo neutro';

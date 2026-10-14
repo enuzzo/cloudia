@@ -3,7 +3,7 @@ import { DataTexture, DataUtils, Vector4, Data3DTexture, LinearFilter, MeshBasic
 import { Fn, instanceIndex, vec3, wgslFn, storageTexture3D, textureStore, texture3D, texture, uniform, uv } from 'three/tsl';
 import {WeatherState,WEATHER_SCENES,type AtmosphereIntent,type WeatherScene} from './weatherState';
 import {solarDirection} from './sun';
-import {OrbitView,approachDistance} from './camera';
+import {OrbitView,probeApproach,type ApproachProbe} from './camera';
 import {precipitationFootprint,RAIN_MAP_SIZE} from './precipitation';
 import {DispersalState,nextMorphologySeed,type WeatherImpulse} from './weatherInteraction';
 import { createCloudIntegrator } from './cloudShader';
@@ -34,6 +34,7 @@ export class GPUSceneEngine {
   private detailVolume: Data3DTexture | null = null;
   private cameraVolume:CloudVolume|null=null;
   private approachSurface=.4;private approachTime=-1000;
+  private approachProbe:(ApproachProbe&{cpuMs:number})|null=null;
   private readonly inspection=uniform(0);private readonly ground=uniform(1);
   private readonly rainTexture=new DataTexture(new Uint8Array(RAIN_MAP_SIZE**2*2),RAIN_MAP_SIZE,RAIN_MAP_SIZE,RGFormat,UnsignedByteType);
   private sunsetVolume: Data3DTexture | null = null;
@@ -232,7 +233,7 @@ export class GPUSceneEngine {
     this.cameraVolume=textures.source;
     this.rainTexture.image.data=precipitationFootprint(textures.source);
     this.rainTexture.minFilter=LinearFilter;this.rainTexture.magFilter=LinearFilter;this.rainTexture.colorSpace=NoColorSpace;this.rainTexture.generateMipmaps=false;this.rainTexture.needsUpdate=true;
-    this.approachTime=-1000;
+    this.approachTime=-1000;this.approachProbe=null;
     this.volume=textures.macro;this.detailVolume=textures.detail;this.sunsetVolume=textures.sunset; this.material=new MeshBasicNodeMaterial();
     this.updateAtmosphere();
     this.iceRange.value.fromArray(iceHeights(this.seed));
@@ -346,12 +347,16 @@ export class GPUSceneEngine {
       const home=this.view.frame(focus,this.aspect.value,autoYaw);this.view.approach=approach;
       const state=motionState(this.simulationTime,this.seed);state.dispersion=this.dispersal.amount;
       const volume=this.cameraVolume,ice=this.iceRange.value.toArray(),wind=this.wind.value.toArray(),drift=this.drift.value.toArray();
-      this.approachSurface=approachDistance(focus,home.origin,p=>{
+      const probeStarted=performance.now();
+      const probe=probeApproach(focus,home.origin,p=>{
         const q=sourcePosition(p.map((v,i)=>v-drift[i]),state,ice,wind);
         if(q.some((v,i)=>v<BOUNDS_MIN[i]||v>BOUNDS_MIN[i]+BOUNDS_SIZE[i]))return 0;
-        const amount=Math.max(0,Math.min(1,(q[1]-ice[0])/(ice[1]-ice[0])));
+        const height=Math.max(0,Math.min(1,(q[1]-ice[0])/(ice[1]-ice[0])));
+        const amount=height*height*(3-2*height); // Match shader smoothstep, including the ice boundary.
         return sampleCloudDensity(volume,volume.detail,q[0],q[1],q[2],amount);
-      });
+      },{min:this.supportMin.value.toArray().map((v,i)=>v+drift[i]),max:this.supportMax.value.toArray().map((v,i)=>v+drift[i])});
+      this.approachSurface=probe.distance;
+      this.approachProbe={...probe,cpuMs:performance.now()-probeStarted};
       this.approachTime=now;
     }
     this.inspection.value=this.view.approach;
@@ -515,7 +520,7 @@ export class GPUSceneEngine {
     this.measurement=new FrameMeasurement(performance.now(),duration,2000);
     this.benchmarkContext={date:new Date().toISOString(),backend:'WebGPU',adapter:this.adapterInfo,threeRevision:'186',quality:this.quality,
       output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],nominalSteps:QUALITY[this.quality].steps,
-      rendererVersion:'observatory-v21',skyCalculation:'cached dedicated worker',skyPending:this.skyPending,solarVisibility:'256-cubed day + RG8 low-sun endpoints',sunDirection:this.sun.value.toArray(),sunsetAmount:this.sunsetAmount.value,extraSunsetTextureBytes:VOLUME_RESOLUTION**3*2,probeImplementation:'compile-time specialization',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{approach:this.view.approach,surfaceEstimateKm:this.approachSurface,altitudeKm:this.origin.value.y+4,ground:this.ground.value,yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
+      rendererVersion:'observatory-v21',navigationVersion:'bounded-approach-v1',skyCalculation:'cached dedicated worker',skyPending:this.skyPending,solarVisibility:'256-cubed day + RG8 low-sun endpoints',sunDirection:this.sun.value.toArray(),sunsetAmount:this.sunsetAmount.value,extraSunsetTextureBytes:VOLUME_RESOLUTION**3*2,probeImplementation:'compile-time specialization',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{approach:this.view.approach,surfaceEstimateKm:this.approachSurface,probe:this.approachProbe,probeAgeMs:this.approachProbe?performance.now()-this.approachTime:null,altitudeKm:this.origin.value.y+4,ground:this.ground.value,yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
       userAgent:navigator.userAgent,devicePixelRatio:this.viewport.dpr,
       method:'Visible requestAnimationFrame intervals, CPU compute/render submission and callback dispatch delay. GPU render and compute timestamps sampled separately; their last-frame samples are not necessarily paired. Optional queue completion latency includes GPU work, readback and JS delivery; not compositor presentation.',warmupMs:2000,targetDurationMs:duration};
     this.setButtonEnabled('benchmark',false); this.setButtonEnabled('sustained',false);
@@ -570,7 +575,7 @@ export class GPUSceneEngine {
   zoom(delta:number){this.invalidate('Avvicinamento modificato');this.view.zoom(delta);this.approachTime=-1000;this.emit({type:'view',approach:this.view.approach});}
   rotate(dx:number,dy:number,width:number,height:number){
     if(this.destroyed||this.deviceLost)return;
-    this.invalidate('Camera ruotata');this.view.drag(dx,dy,width,height);
+    this.invalidate('Camera ruotata');this.approachTime=-1000;this.view.drag(dx,dy,width,height);
     if(this.orbit){this.orbit=false;this.state();}
   }
   impulse(impulse:WeatherImpulse){

@@ -1,9 +1,17 @@
 import {afterEach,describe,expect,it} from 'vitest';
 import {CumulonimbusApp} from './CumulonimbusApp';
 let app:CumulonimbusApp|undefined;
-afterEach(()=>{app?.destroy();document.body.innerHTML='';});
+afterEach(()=>{app?.destroy();document.body.innerHTML='';history.replaceState(null,'','/');});
 function setup(){const root=document.createElement('main');document.body.append(root);app=new CumulonimbusApp(root);return root;}
 describe('observatory inspector',()=>{
+ it('resets diagnostic slider readouts with the fixed reference state',()=>{
+  history.replaceState(null,'','/?profile=1');const root=setup();
+  for(const name of ['wind','dispersion','rain']){
+   const input=root.querySelector<HTMLInputElement>(`[name=${name}]`)!;input.value='83';input.dispatchEvent(new Event('input',{bubbles:true}));
+  }
+  root.querySelector<HTMLButtonElement>('[data-action="probe-reference"]')!.click();
+  for(const [name,value] of [['wind','55%'],['dispersion','0%'],['rain','0%']])expect(root.querySelector(`[name=${name}]`)!.closest('label')!.querySelector('output')!.textContent).toBe(value);
+ });
  it('supports tab keys, isolates inactive controls and preserves the tab when reopened',()=>{
   const root=setup(),details=root.querySelector<HTMLDetailsElement>('.sky-inspector')!;
   details.open=true;

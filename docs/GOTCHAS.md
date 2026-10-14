@@ -386,3 +386,8 @@ Future production choice:
 - UI-only buttons (tabs/close) must not forward an undefined scene action. SVG targets must resolve to their parent button; pause updates its accessible name alongside the icon.
 - The browser policy denied acquiring the existing localhost tab even though the supplied URL used HTTP. Do not bypass through another browser, raw protocol or renamed local address. Tests/builds and public-reference research remain independent; they do not substitute for rendered visual acceptance.
 - A generated UI concept can embellish the cloud/landscape. Preserve the actual renderer and explicitly distinguish the concept from proof. Third-party demo FPS overlays are not matched measurements.
+
+
+## 2026-10-14 — camera boundary sampling
+
+A fixed sample count across the entire panorama-to-target segment becomes coarser in portrait view. Restrict to conservative support before choosing sample spacing; expose the cap/spacing/no-hit result. Bisection cannot recover a thin layer never hit by the initial march. The CPU ice fraction must match WGSL smoothstep, not a linear height fraction. A refined numerical crossing is not proof of a physical3m gap to animated vapor.

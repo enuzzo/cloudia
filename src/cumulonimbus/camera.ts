@@ -52,16 +52,49 @@ export class OrbitPointerController {
  cancel(){const id=this.active;this.active=null;this.canvas.classList.remove('dragging');if(id!==null)try{if(this.canvas.hasPointerCapture?.(id))this.canvas.releasePointerCapture(id);}catch{/* Pointer ended elsewhere. */}}
  destroy(){this.cancel();this.events.abort();}
 }
-/** Find the visible density boundary along the approach ray; 3 m is a visual safety margin,
- * not an exact physical surface. Cloud deformation and GPU filtering remain approximate. */
-export function approachDistance(target:readonly number[],home:readonly number[],density:(p:number[])=>number):number{
- const delta=home.map((v,i)=>v-target[i]),length=Math.hypot(...delta),d=delta.map(v=>v/length);
- const sample=(t:number)=>density(target.map((v,i)=>v+d[i]*t));
- let outside=length;
- for(let i=1;i<=192;i++){
-  const inside=length*(1-i/192);
-  if(sample(inside)>.025){let lo=inside,hi=outside;for(let j=0;j<9;j++){const mid=(lo+hi)/2;if(sample(mid)>.025)lo=mid;else hi=mid;}return Math.min(length,hi+.003);}
+export interface ApproachBounds {min:readonly number[];max:readonly number[]}
+export interface ApproachProbe {distance:number;found:boolean;samples:number;spacingKm:number;spanKm:number}
+const APPROACH_SPACING_KM=.0125,APPROACH_MAX_STEPS=2048,APPROACH_MARGIN_KM=.003;
+/** CPU boundary estimate, not an exact physical/GPU surface. Clip the search to
+ * conservative cloud support so portrait framing does not dilute sample density.
+ * Features narrower than spacing or below the density threshold may still be missed. */
+export function probeApproach(target:readonly number[],home:readonly number[],density:(p:number[])=>number,bounds?:ApproachBounds):ApproachProbe{
+ const invalid={distance:.4,found:false,samples:0,spacingKm:0,spanKm:0};
+ if(target.length!==3||home.length!==3||![...target,...home].every(Number.isFinite))return invalid;
+ const delta=home.map((v,i)=>v-target[i]),length=Math.hypot(...delta);
+ if(length<1e-9)return {...invalid,distance:0};
+ const d=delta.map(v=>v/length);
+ let start=0,end=length;
+ if(bounds){
+  if(bounds.min.length!==3||bounds.max.length!==3||![...bounds.min,...bounds.max].every(Number.isFinite))return invalid;
+  for(let axis=0;axis<3;axis++){
+   if(bounds.min[axis]>bounds.max[axis])return invalid;
+   if(Math.abs(d[axis])<1e-12){
+    if(target[axis]<bounds.min[axis]||target[axis]>bounds.max[axis])return {...invalid,distance:Math.min(length,.4)};
+   }else{
+    const a=(bounds.min[axis]-target[axis])/d[axis],b=(bounds.max[axis]-target[axis])/d[axis];
+    start=Math.max(start,Math.min(a,b));end=Math.min(end,Math.max(a,b));
+   }
+  }
+ }
+ if(end<start)return {...invalid,distance:Math.min(length,.4)};
+ const span=end-start,steps=Math.max(1,Math.min(APPROACH_MAX_STEPS,Math.ceil(span/APPROACH_SPACING_KM)));
+ let samples=0;
+ const sample=(t:number)=>{samples++;return density(target.map((v,i)=>v+d[i]*t))>.025;};
+ const result=(distance:number,found:boolean):ApproachProbe=>({distance,found,samples,spacingKm:span/steps,spanKm:span});
+ if(sample(end))return result(Math.min(length,end+APPROACH_MARGIN_KM),true);
+ let outside=end;
+ for(let i=1;i<=steps;i++){
+  const inside=end-span*i/steps;
+  if(sample(inside)){
+   let lo=inside,hi=outside;
+   for(let j=0;j<10;j++){const mid=(lo+hi)/2;if(sample(mid))lo=mid;else hi=mid;}
+   return result(Math.min(length,hi+APPROACH_MARGIN_KM),true);
+  }
   outside=inside;
  }
- return Math.min(length,.4);
+ return result(Math.min(length,.4),false);
+}
+export function approachDistance(target:readonly number[],home:readonly number[],density:(p:number[])=>number,bounds?:ApproachBounds):number{
+ return probeApproach(target,home,density,bounds).distance;
 }

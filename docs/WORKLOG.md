@@ -440,3 +440,11 @@ GPU mean15.063ms. No new worker/animated/physical-device qualification.
 - Validation: 108 tests/24 files, TypeScript, app and hero builds passed. Browser acquisition of the local preview was denied by policy; no bypass attempted. Public demos remained accessible. New UI screenshots and full runtime/layout QA are explicitly pending, not passed.
 - Dropbox: original node_modules lacked its local exclusion; verified ignored/untracked, applied/read back attribute1 and restored dependencies with frozen Bun lockfile. Attribute1 remained after builds. Existing `node_modules 2/` was preserved untracked; no broad staging/deletion.
 - No renderer tuning, new benchmark, deployment, main merge or camera activation in this revision.
+
+
+## 2026-10-14 — bounded approach probe and reproducible CPU audit
+
+- Reproduced a thin40m layer missed by the former192-sample camera search. Clipped search to conservative cloud bounds, targeted12.5m spacing, capped2048 intervals and refined the first detected edge. Invalidated on rotation and matched CPU ice smoothstep to shader. Added probe diagnostics to benchmark context.
+- Ran full256³/128³ CPU audit over18 poses: maximum error vs dense reference0.0110m (previous0.1463m), median0.0895ms, maximum0.3521ms. These are CPU/reference results, not GPU or visual acceptance. [Details](APPROACH-2026-10-14.md).
+- Fixed diagnostic reference slider readouts and softened the maximum-approach wording to reflect an estimate. No shader change or quality reduction. Local-browser visual gate remains blocked.
+- Final validation:113 tests/24 files and both builds passed; dependency exclusion remained1. Existing unrelated `node_modules 2/` left untouched.
