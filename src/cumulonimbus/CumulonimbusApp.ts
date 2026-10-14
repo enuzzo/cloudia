@@ -2,6 +2,7 @@ import {GPUSceneEngine,QUALITY,type Quality} from './GPUSceneEngine';
 import type {RenderEvent,RenderCommand,Viewport} from './renderProtocol';
 import './scene.css';
 import {OrbitPointerController} from './camera';
+import {installPanelDismissal} from './panels';
 import type {WeatherImpulse} from './weatherInteraction';
 import {WEATHER_SCENES,type AtmosphereIntent,type WeatherScene} from './weatherState';
 import {ThunderAudio} from './ThunderAudio';
@@ -12,7 +13,7 @@ export class CumulonimbusApp {
   private readonly workerMode=new URLSearchParams(location.search).get('worker')==='1';
   private frameLimit=Number(new URLSearchParams(location.search).get('inflight'))||0;
   private quality:Quality='ultra';
-  private outputMode=this.profiling?'1080':'window';
+  private outputMode=this.profiling?'1080':'screen';
   private readonly controls:HTMLElement;
   private readonly status:HTMLElement;
   private readonly metrics:HTMLElement;
@@ -35,7 +36,7 @@ export class CumulonimbusApp {
   constructor(private readonly root:HTMLElement){
     root.innerHTML = `<div class="cloud-stage" data-testid="cloudia-stage"></div>
       <header class="scene-heading"><span class="eyebrow">Un piccolo osservatorio personale</span><h1>Cloudia<span class="brand-dot">.</span></h1><p><span data-testid="morphology-label">Cumulonembo</span> <span class="live-dot" aria-hidden="true"></span> <span data-testid="scene-name">Cielo neutro</span></p></header>
-      <p class="probe-warning" data-testid="probe-warning" hidden>Diagnostic probe</p><p class="view-help" id="cloud-view-help">Trascina il cielo per esplorarlo <span>· Frecce per ruotare · Home per ricentrare</span></p>
+      <p class="probe-warning" data-testid="probe-warning" hidden>Diagnostic probe</p><p class="view-help" id="cloud-view-help">Trascina il cielo per esplorarlo <span>· Rotella o +/− per avvicinarti · Home per ricentrare</span></p>
       <p class="scene-loading" role="status" data-testid="scene-status">Preparazione del cielo…</p>
       <div class="scene-controls" aria-label="Controlli del cielo">
         <nav class="input-switch" aria-label="Modalità di controllo"><button data-action="manual" aria-pressed="true">Manuale</button><details class="hands-guide"><summary>Mani <span>in arrivo</span></summary><section class="diagnostics hand-panel" aria-label="Controllo con le mani in preparazione">
@@ -46,10 +47,13 @@ export class CumulonimbusApp {
           <small>Nessun accesso alla camera viene richiesto. La futura attivazione sarà esplicita, con anteprima, arresto immediato e controlli manuali sempre disponibili. Mappatura proposta, ancora da provare con persone reali.</small>
         </section></details></nav>
         <section class="weather-console" aria-label="Scenari atmosferici"><div class="console-caption"><span>Componi il tuo cielo</span><span data-testid="weather-feedback" role="status">Controllo manuale</span></div><div class="weather-presets">${(['clear','sunset','rain','storm'] as const).map((key,i)=>`<button data-scene="${key}" aria-pressed="false"><span class="weather-symbol" aria-hidden="true">${['☀','◒','╱╱','ϟ'][i]}</span>${WEATHER_SCENES[key].label}</button>`).join('')}</div></section>
+        <nav class="view-controls" aria-label="Distanza dalla nube"><button data-action="zoom-out" aria-label="Allontanati dalla nube">−</button><button data-action="zoom-in" aria-label="Avvicinati alla nube">＋</button><button data-action="center">Panorama</button></nav>
         <div class="scene-tools">
         <button data-action="pause">Pausa</button><button data-action="orbit" aria-pressed="false">Orbita</button>
         <button data-action="light">Luce da destra</button><button data-action="reset">Ricomincia</button><button data-action="new-cloud" disabled>Nuova forma</button><button data-action="center">Ricentra</button>
         <details><summary>Nube e correnti <span aria-hidden="true">＋</span></summary><div class="diagnostics weather-panel">
+          <label>Avvicinamento alla nube<input name="zoom" type="range" min="0" max="100" value="0"></label><small data-testid="view-distance">Panorama · rotella o +/− per avvicinarti</small>
+          <label>Paesaggio<select name="ground"><option value="1">Terra lontana · sole e tramonto</option><option value="0">Solo cielo</option></select></label>
           <label>Forma<select name="family" disabled><option value="congestus">Congesto largo</option><option value="multicell">Torri multiple</option><option value="sheared" selected>Cella inclinata</option></select></label>
           <label>Intensità del vento<input name="wind" type="range" min="0" max="100" value="55"></label>
           <label>Dispersione mantenuta<input name="dispersion" type="range" min="0" max="100" value="0"></label>
@@ -66,8 +70,8 @@ export class CumulonimbusApp {
           <small>La formazione è accelerata; il ritardo del tuono segue la distanza reale. Isola luce del lampo trattiene la luce per osservarla: premi Lampo o Ricomincia per tornare alla scena. Pausa o scheda nascosta interrompono i tuoni in attesa.</small>
         </div></details>
         <details class="technical-controls"><summary>Qualità e misure</summary><div class="diagnostics">
-          <label>Qualità<select name="quality">${Object.entries(QUALITY).map(([key,v])=>`<option value="${key}" ${key===this.quality?'selected':''}>${v.label}</option>`).join('')}</select></label>
-          <label>Risoluzione output<select name="output"><option value="window">Finestra · 1 pixel per pixel CSS</option><option value="screen">Schermo · nitidezza nativa</option><option value="720">1280 × 720</option><option value="1080">1920 × 1080</option></select></label>
+          <label>Qualità<select name="quality">${Object.entries(QUALITY).filter(([key])=>this.profiling||key==='ultra').map(([key,v])=>`<option value="${key}" ${key===this.quality?'selected':''}>${v.label}</option>`).join('')}</select></label>
+          <label>Risoluzione output<select name="output"><option value="screen">Schermo · nitidezza nativa</option>${this.profiling?'<option value="window">Finestra · 1 pixel per pixel CSS</option><option value="720">1280 × 720</option><option value="1080">1920 × 1080</option>':''}</select></label>
           ${this.profiling?`<button data-action="probe-reference">Fissa stato di confronto</button><label>Lavoro interno · confronto diagnostico<select name="ablation">${[['full','Completo · qualità finale'],['density','Densità e integrazione'],['cache','Densità + lettura luce'],['no-flow','Senza lettura flusso'],['no-detail','Senza dettaglio fine'],['no-flash','Senza shading del lampo']].map(([value,label])=>`<option value="${value}" ${value===(new URLSearchParams(location.search).get('ablation')??'full')?'selected':''}>${label}</option>`).join('')}</select></label><label>Diagnostica GPU<select name="timing">${[['render','Readback rendering · compute automatico'],['stages','Rendering e flusso'],['queue','Rendering, flusso e coda'],['off','Disattivata · sola cadenza']].map(([value,label])=>`<option value="${value}" ${value===this.timingMode?'selected':''}>${label}</option>`).join('')}</select></label><label>Flusso di confronto<select name="flow"><option value="full" ${!this.frozenFlow?'selected':''}>Animato · completo</option><option value="frozen" ${this.frozenFlow?'selected':''}>Congelato · confronto diagnostico</option></select></label>`:''}
           ${this.profiling?`<label>Coda dei frame<select name="inflight"><option value="0" ${!this.frameLimit?'selected':''}>Invio continuo</option><option value="1" ${this.frameLimit===1?'selected':''}>Massimo 1 in attesa</option><option value="2" ${this.frameLimit===2?'selected':''}>Massimo 2 in attesa</option></select></label>`:''}
           <p data-testid="performance-live">In attesa della GPU…</p>
@@ -84,13 +88,10 @@ export class CumulonimbusApp {
     this.canvas=document.createElement('canvas');this.canvas.setAttribute('aria-label','Nube volumetrica ruotabile');this.canvas.setAttribute('aria-describedby','cloud-view-help');this.canvas.tabIndex=0;root.querySelector('.cloud-stage')!.append(this.canvas);
     this.controls.addEventListener('click',this.onClick,{signal:this.events.signal});this.controls.addEventListener('change',this.onChange,{signal:this.events.signal});
     this.controls.addEventListener('input',this.onInput,{signal:this.events.signal});
-    for(const panel of this.controls.querySelectorAll('details'))panel.addEventListener('toggle',()=>{if(panel.open)for(const other of this.controls.querySelectorAll('details'))if(other!==panel)other.open=false;},{signal:this.events.signal});
-    this.controls.addEventListener('keydown',(event)=>{
-      if(event.key==='Escape')for(const panel of this.controls.querySelectorAll('details[open]')){(panel as HTMLDetailsElement).open=false;panel.querySelector('summary')?.focus();}
-    },{signal:this.events.signal});
+    installPanelDismissal(this.controls,this.events.signal);
     const initialProbe=new URLSearchParams(location.search).get('ablation')??'full';
     if(this.profiling)this.showProbe(initialProbe);
-    this.pointer=new OrbitPointerController(this.canvas,(dx,dy,width,height)=>this.send({type:'rotate',dx,dy,width,height}),()=>this.send({type:'action',action:'center'}));
+    this.pointer=new OrbitPointerController(this.canvas,(dx,dy,width,height)=>this.send({type:'rotate',dx,dy,width,height}),()=>this.send({type:'action',action:'center'}),delta=>this.send({type:'zoom',delta}));
     window.addEventListener('resize',this.onResize,{signal:this.events.signal});document.addEventListener('visibilitychange',this.onVisibility,{signal:this.events.signal});
   }
   private viewport():Viewport{return {width:this.root.clientWidth,height:this.root.clientHeight,dpr:window.devicePixelRatio};}
@@ -121,6 +122,7 @@ export class CumulonimbusApp {
     if(event.type==='statusState'){if(event.state==='failed'){this.fail(this.status.textContent||'Rendering fallito.');return;}this.status.classList.remove('loaded','failed');if(event.state!=='loading')this.status.classList.add(event.state);}
     if(event.type==='enabled'){const input=this.controls.querySelector<HTMLButtonElement|HTMLSelectElement>(`[data-action="${event.action}"],[name="${event.action}"]`);if(input)input.disabled=!event.enabled;}
     if(event.type==='layout')this.root.classList.toggle('fixed-output',event.fixed);
+    if(event.type==='view'){this.root.querySelector<HTMLInputElement>('[name=zoom]')!.value=String(event.approach*100);this.root.querySelector('[data-testid=view-distance]')!.textContent=event.approach>.98?'Al bordo della nube · distanza stimata':`Avvicinamento ${Math.round(event.approach*100)}%`; }
     if(event.type==='state'){
       this.controls.querySelector('[data-action="pause"]')!.textContent=event.paused?'Riprendi':'Pausa';
       this.controls.querySelector('[data-action="orbit"]')!.setAttribute('aria-pressed',String(event.orbit));
@@ -149,6 +151,7 @@ export class CumulonimbusApp {
     if(this.renderWorker){this.renderWorker.postMessage(command);return;}
     if(command.type==='action')this.engine?.action(command.action);
     if(command.type==='change')this.engine?.change(command.name,command.value);
+    if(command.type==='zoom')this.engine?.zoom(command.delta);
     if(command.type==='rotate')this.engine?.rotate(command.dx,command.dy,command.width,command.height);
     if(command.type==='impulse')this.engine?.impulse(command.impulse);
     if(command.type==='atmosphere')this.engine?.atmosphere(command.intent);
@@ -170,6 +173,7 @@ export class CumulonimbusApp {
     const button=(event.target as HTMLElement).closest<HTMLButtonElement>('button');if(!button||button.disabled)return;
     if(button.dataset.scene){this.applyAtmosphereIntent({type:'scene',scene:button.dataset.scene as WeatherScene});return;}
     const action=button.dataset.action!;
+    if(action==='zoom-in'||action==='zoom-out'){this.send({type:'zoom',delta:action==='zoom-in'?.12:-.12});return;}
     if(action==='probe-reference'){
       this.root.querySelector<HTMLSelectElement>('[name="sky"]')!.value='storm';
       this.root.querySelector<HTMLInputElement>('[name="rain"]')!.value='0';

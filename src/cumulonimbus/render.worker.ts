@@ -10,6 +10,7 @@ self.onmessage=(event:MessageEvent<RenderCommand>)=>{
   }
   if(message.type==='action')engine?.action(message.action);
   if(message.type==='change')engine?.change(message.name,message.value);
+  if(message.type==='zoom')engine?.zoom(message.delta);
   if(message.type==='rotate')engine?.rotate(message.dx,message.dy,message.width,message.height);
   if(message.type==='impulse')engine?.impulse(message.impulse);
   if(message.type==='atmosphere')engine?.atmosphere(message.intent);

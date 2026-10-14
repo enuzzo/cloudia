@@ -60,3 +60,8 @@
 .diagnostics {z-index:3;}
 .probe-warning {position:absolute;left:38px;top:168px;background:#302d20;color:#f0d988;padding:8px 12px;font-size:11px;}
 @media(max-width:640px){.probe-warning{left:20px;top:133px;font-size:10px;}.input-switch .hand-panel{bottom:224px;}}
+
+.view-controls{position:absolute;right:30px;top:98px;display:flex;gap:4px;}
+.view-controls button{min-width:44px;font-size:14px;}
+.view-controls button:last-child{font-size:11px;}
+@media(max-width:640px){.view-controls{right:16px;top:86px;gap:3px;}.view-controls button{min-width:36px;min-height:36px;padding:7px;font-size:12px;}.view-controls button:last-child{font-size:9px;}}
