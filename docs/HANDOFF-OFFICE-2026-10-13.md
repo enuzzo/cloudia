@@ -1,6 +1,21 @@
 # Cloudia — current local handoff
 
-## Current continuation: v20
+## Current continuation: v21 —14 October2026
+
+Implementation `2b880b9`: cloud-column rain curtains, real camera approach,
+native maximum quality, distant procedural Earth, outside/Escape panel dismissal,
+and dedicated cached sky worker.104tests/23files and both builds pass.
+Final rain90s FullHD:59.874rAF/s,3 intervals>33.34ms; near approach30s:
+47.237rAF/s,160 intervals>33.34ms. No perfect60, compositor or photographic
+acceptance claim. Native Retina workload can exceed FullHD substantially.
+See [ENVIRONMENT-2026-10-14.md](ENVIRONMENT-2026-10-14.md) for evidence,
+controls, architectural limits and the recovered Dropbox object-directory issue.
+
+Next visual work: real relief/ground shadow, near-density detail and reference
+comparison. Next technical work: quantify first/cached sky-switch latency.
+The roadmap remains open; no hands recognition or automatic camera activation.
+
+## Previous continuation: v20
 
 Tested implementation: `c6a862194f7fdaeda5c5bb86a1d7108d61336145`.
 97 tests/21 files, TypeScript and both builds pass. Day/low-sun cache directions,

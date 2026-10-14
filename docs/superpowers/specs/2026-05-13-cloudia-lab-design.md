@@ -225,3 +225,12 @@ a future hand-control guide, and separate diagnostics. Rain is a bounded
 world-space volume; no webcam access. The legacy embed remains unchanged.
 See ../../OBSERVATORY-2026-10-13.md for current specification and limitations;
 old gesture mappings above are proposals rather than approved bindings.
+
+
+### 14 October environment and close observation
+
+Default WebGPU adds cloud-sourced rain curtains, real camera dolly toward an
+estimated density boundary, native maximum quality, global panel dismissal,
+a reversible distant procedural Earth surface and async/cached sky changes.
+See ../../ENVIRONMENT-2026-10-14.md for scope and limits. Terrain is fictional,
+close clearance approximate, photographic acceptance still open.

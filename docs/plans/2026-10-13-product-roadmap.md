@@ -15,17 +15,17 @@ Manteniamo 256³/128³, 384 passi, output 100%; ogni costo nuovo va misurato.
 
 | Priorità | Intervento | Risultato verificabile | Stato |
 | --- | --- | --- | --- |
-| P0 | Sole basso condiviso fra cielo, scattering e ombre | Ombre laterali corrette nei due tramonti; giorno invariato; cambio scena/interruzione senza salti | Implementato v20; latenza LUT ancora aperta |
+| P0 | Sole basso condiviso fra cielo, scattering e ombre | Ombre laterali corrette nei due tramonti; giorno invariato; cambio scena/interruzione senza salti | Implementato v20; cache/worker LUT aggiunti in v21 |
 | P0 | Confronti ripetibili | Stesso seme, tempo, camera e qualità; prove giorno/tramonto; conservare anche regressioni | 30s main giorno/tramonto +90s worker animato verificati; confronto alternato da fare |
-| P0 | Latenza del cambio cielo | Cache delle LUT già visitate o calcolo asincrono; misurare anche il primo cambio scena e le interruzioni, non solo il regime stabile | Prossima tranche tecnica |
-| P1 | Profondità e scala | Prototipo reversibile con orizzonte atmosferico e nube lontana; confronto con foto e possibilità di mantenere il campione isolato | Progettato |
+| P0 | Latenza del cambio cielo | Cache delle LUT già visitate o calcolo asincrono; misurare anche il primo cambio scena e le interruzioni, non solo il regime stabile | Cache/worker implementati v21; misura quantitativa primo cambio ancora aperta |
+| P1 | Profondità e scala | Prototipo reversibile con orizzonte atmosferico e nube lontana; confronto con foto e possibilità di mantenere il campione isolato | Terra procedurale reversibile v21; rilievi, ombra al suolo e nubi lontane ancora da fare |
 | P1 | Incudine e glaciazione | Raccordo ampio, fibre distali non uniformi e silhouette plausibile da fronte/lato/retro in tutte le famiglie | Progettato |
 | P1 | Illuminazione interna | Valutare scattering multiplo legato al colore solare, bordi scuri e luce trasmessa; evitare nubi di plastica e nero pieno | Ricerca |
-| P1 | Pioggia/virga | Precipitazione che nasce dalla base, svanisce in aria se opportuno, segue vento e intensità senza un rettangolo visibile | Progettato |
+| P1 | Pioggia/virga | Precipitazione che nasce dalla base, svanisce in aria se opportuno, segue vento e intensità senza un rettangolo visibile | Cortine dalla densità della base implementate v21; accettazione fotografica aperta |
 | P1 | Cielo continuo | Elevazione solare e meteo graduabili; cache atmosferiche interpolabili, niente bake pesante a frequenza gestuale | Dipende da P0 |
 | P1 | Mani: pipeline locale | Avvio esplicito, anteprima, stop che chiude le tracce; un frame in inferenza, worker separato, fallback manuale | Da implementare; nessuna attivazione automatica |
 | P1 | Mani: grammatica giocabile | Aprire/raccogliere la nube, evocare pioggia, spostare il sole; soglie/isteresi, nessun evento su riacquisizione, feedback e annullamento | Proposta da provare |
-| P2 | Controlli accessibili | Tastiera completa, stato annunciato, contrasto, touch, focus, riduzione movimento e guida breve contestuale | Audit dedicato |
+| P2 | Controlli accessibili | Tastiera completa, stato annunciato, contrasto, touch, focus, riduzione movimento e guida breve contestuale | Click esterno/Esc globale e zoom tastiera aggiunti v21; audit completo aperto |
 | P2 | Preset personali | Salvare seme/camera/meteo in un collegamento riproducibile; ripristino robusto dei valori | Progettato |
 | P2 | Modalità contemplazione | Nascondere strumenti con ritorno evidente; pausa, audio e movimento rispettano la scelta dell'utente | Progettato |
 | P2 | Paesaggio sonoro | Test d'ascolto per distanza, pioggia e tuoni; volume graduale, mute immediato, niente avvio sonoro inatteso | Richiede ascolto |
@@ -67,3 +67,11 @@ Alternative al primo intervento: bake a ogni variazione (latenza e contesa),
 campionamento solare per ogni passo (costo moltiplicato), atlante direzionale
 denso (memoria). Due estremi aggiuntivi sono una prima soluzione limitata e
 misurabile; non risolvono ancora un sole libero su tutto l'emisfero.
+
+## Estensione richiesta il14 ottobre
+
+Avvicinamento reale fino al bordo stimato, con più campioni locali e qualità
+nativa massima implementato in v21. Le prove e i limiti sono in
+[ENVIRONMENT-2026-10-14.md](../ENVIRONMENT-2026-10-14.md).
+Priorità successiva proposta: rilievo del suolo e ombra proiettata, poi
+raffinamento della frontiera vicina con riferimento fotografico.

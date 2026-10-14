@@ -348,3 +348,27 @@ Future production choice:
   explicit QA viewport restored interaction; this was not a renderer error.
 - Scene switches still build a CPU sky LUT synchronously; stable-scene fps does
   not certify switch latency. Async/cache work is now explicit P0 roadmap work.
+
+
+## 2026-10-14 — v21 camera, precipitation and asynchronous sky
+
+- Worker entry imports a pure skyModel module. Importing SkyCache there would
+  also pull in its own new Worker URL and can create recursive worker bundling.
+- Snapshot the displayed sky only when the latest async result arrives;
+  request order is not completion order. Dispose rejects pending promises.
+- Near camera requires finer initial jitter as well as finer occupied steps;
+  using the old coarse initial offset could skip the nearby cloud boundary.
+- A density boundary is not a physical surface. CPU probing approximates GPU
+  filtering/flow and cannot guarantee a3m clearance during all deformation.
+- Native display pixels can multiply the rendering workload versus CSS pixels;
+  FullHD tests do not certify a large Retina surface. No adaptive reduction.
+- Procedural ground shading is not displaced relief; documenting it as terrain
+  geometry or real geography would overstate this implementation.
+- UI input invalidates performance samples. Avoid screenshots during captures;
+  preserve complete reports and distinguish paused from animated measurements.
+
+- Dropbox can evict whole .git/objects/xx directories even after reachable
+  objects were recovered. git add may hang in access()/odb_freshen_object.
+  In this session the dataless directories were preserved outside active
+  objects, remote history refetched,920 reachable objects checked with zero
+  missing. Never delete an unknown lock or discard the preserved directories.

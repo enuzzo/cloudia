@@ -384,3 +384,29 @@ all zero>33.34ms. These are rAF samples, not compositor proof or causal speedup.
 Desktop/mobile, interrupted transitions and regeneration checked; camera off.
 See SOLAR-2026-10-13.md for evidence and the remaining synchronous sky-LUT
 latency. Next: asynchronous/cached sky transitions, then depth/scale cues.
+
+
+## 2026-10-14 — v21 environment and close observation
+
+Implemented2b880b9 after owner requested visible photographic rain, close
+camera approach, maximum quality, dismissible panels and altitude cues.
+Cloud-column64² precipitation source replaces the fixed ellipse; world-space
+curtains share cloud transmittance. Native maximum output, logarithmic dolly
+toward a probed density boundary, finer near sampling, reversible procedural
+Earth sphere and global outside/Escape dismissal. Sky LUT changes use a
+dedicated worker and bounded preset cache; first startup remains synchronous.
+
+104tests/23files and application→hero builds pass. Main rain FullHD90s:
+50.486rAF/s before empty-column guard,59.874 after (3 long intervals,134.3ms max).
+Not a causal isolated A/B. Near animated30s47.237rAF/s; maximum quality costs
+more at close range. Desktop/mobile and main/worker rendered QA; photographic
+quality and physical-device acceptance remain open. See ENVIRONMENT report.
+
+Recovered Git add blocked in Dropbox dataless object directory: preserved c2
+and142 more directories outside active objects, refetched remote, verified
+920 reachable objects/zero missing before implementation commit. No deletion,
+main merge, deploy or camera access. Publish only authorized feature branch.
+
+Final worker solar panorama30s59.998rAF/s,0 intervals>33.34ms, paused cloud.
+Rapid interrupted skies, worker zoom and ground off also passed rendered QA.
+Raw reports and screenshot SHA256 manifest retained with the environment report.
