@@ -1,0 +1,157 @@
+{
+  "date": "2026-10-15T06:05:09.369Z",
+  "method": "CPU Float64 homogeneous co-located transport and Float32 real optical-depth baker. Not WGSL execution, heterogeneous convergence, browser appearance, GPU timing or presentation.",
+  "medium": {
+    "lengthKm": 5,
+    "cloudExtinction": 0.7,
+    "rainExtinction": 0.35,
+    "cloudSource": [
+      1,
+      0.7,
+      0.4
+    ],
+    "rainSource": [
+      0.1,
+      0.3,
+      0.9
+    ],
+    "analyticTransmission": 0.005247518399181389,
+    "analyticRadiance": [
+      0.6963267371205731,
+      0.5636930729071307,
+      0.5636930729071307
+    ]
+  },
+  "cases": [
+    {
+      "steps": 8,
+      "stepKm": 0.625,
+      "transmission": 0.005247518399181383,
+      "radiance": [
+        0.696326737120573,
+        0.5636930729071307,
+        0.5636930729071307
+      ],
+      "transmissionError": 6.071532165918825e-18,
+      "maxRadianceError": 1.1102230246251565e-16,
+      "previousOrderedRadiance": [
+        0.6292095297841876,
+        0.5338632029798482,
+        0.6009804103162337
+      ],
+      "previousMaxRadianceError": 0.06711720733638549
+    },
+    {
+      "steps": 16,
+      "stepKm": 0.3125,
+      "transmission": 0.005247518399181389,
+      "radiance": [
+        0.696326737120573,
+        0.5636930729071308,
+        0.5636930729071308
+      ],
+      "transmissionError": 0,
+      "maxRadianceError": 1.1102230246251565e-16,
+      "previousOrderedRadiance": [
+        0.6631581006313316,
+        0.5489514566896903,
+        0.5821200931789312
+      ],
+      "previousMaxRadianceError": 0.03316863648924151
+    },
+    {
+      "steps": 64,
+      "stepKm": 0.078125,
+      "transmission": 0.00524751839918138,
+      "radiance": [
+        0.6963267371205729,
+        0.5636930729071304,
+        0.5636930729071304
+      ],
+      "transmissionError": 8.673617379884035e-18,
+      "maxRadianceError": 2.220446049250313e-16,
+      "previousOrderedRadiance": [
+        0.6881304939509298,
+        0.560050298165067,
+        0.56824654133471
+      ],
+      "previousMaxRadianceError": 0.008196243169643291
+    },
+    {
+      "steps": 384,
+      "stepKm": 0.013020833333333334,
+      "transmission": 0.005247518399181316,
+      "radiance": [
+        0.696326737120572,
+        0.5636930729071288,
+        0.5636930729071288
+      ],
+      "transmissionError": 7.28583859910259e-17,
+      "maxRadianceError": 1.887379141862766e-15,
+      "previousOrderedRadiance": [
+        0.6949656956790332,
+        0.5630881655997799,
+        0.564449207041317
+      ],
+      "previousMaxRadianceError": 0.001361041441539923
+    },
+    {
+      "steps": 8192,
+      "stepKm": 0.0006103515625,
+      "transmission": 0.0052475183991799665,
+      "radiance": [
+        0.6963267371205389,
+        0.5636930729071052,
+        0.5636930729071052
+      ],
+      "transmissionError": 1.4224732503009818e-15,
+      "maxRadianceError": 3.419486915845482e-14,
+      "previousOrderedRadiance": [
+        0.6962629842344532,
+        0.5636647382910625,
+        0.5637284911771513
+      ],
+      "previousMaxRadianceError": 0.00006375288611992769
+    }
+  ],
+  "cache": {
+    "size": 48,
+    "dimensions": [
+      10,
+      8.5,
+      7
+    ],
+    "cases": [
+      {
+        "direction": [
+          -0.668126592347077,
+          0.7126683651702156,
+          0.21380050955106467
+        ],
+        "allFinite": true,
+        "shadowedEmptyCells": 8570,
+        "maxEmptyDepth": 17.05189323425293
+      },
+      {
+        "direction": [
+          -0.9519445346424993,
+          0.031731484488083314,
+          0.30462225108559976
+        ],
+        "allFinite": true,
+        "shadowedEmptyCells": 9771,
+        "maxEmptyDepth": 11.817914962768555
+      },
+      {
+        "direction": [
+          0.9519445346424993,
+          0.031731484488083314,
+          0.30462225108559976
+        ],
+        "allFinite": true,
+        "shadowedEmptyCells": 9362,
+        "maxEmptyDepth": 11.817914962768555
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "productBaseline": "971ce25d14483871a8f9efff374e7c78aec4cdf6",
+  "handoff": "83eab63",
+  "branch": "codex/cumulonimbus-webgpu",
+  "rendererVersion": "observatory-v22",
+  "url": "http://127.0.0.1:4177/?seed=1571198069",
+  "artifacts": [
+    {
+      "path": "dist/index.html",
+      "bytes": 911,
+      "sha256": "b9644b0a1c3ea8fc4b9c563945b9805949139d03d1896b021812b6fd0351112d"
+    },
+    {
+      "path": "dist/assets/index-BRiE4Zbd.js",
+      "bytes": 2837,
+      "sha256": "e729e2d43c97591707e8f9394f817367deae6adb719562a601f234a5ecc22e2a"
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-CmcTjPk6.js",
+      "bytes": 794591,
+      "sha256": "c5588b98f9d5f666efba5ccfc03c203782db7002a912e60e98c95f42c0ef1c67"
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-DfcK9RmR.css",
+      "bytes": 12743,
+      "sha256": "4d8513aeada014fb53f448d3aba586c6dc7e93b50d0a955ca44a846b350535b7"
+    },
+    {
+      "path": "dist/assets/render.worker-DSQ2R0G7.js",
+      "bytes": 951562,
+      "sha256": "5dfc022f05767f5a9f955279ae6562b89deac5a0dba78c1cfeb53f407486211b"
+    },
+    {
+      "path": "dist/assets/volume.worker-tzRPYPks.js",
+      "bytes": 12357,
+      "sha256": "26649dd9f77c6a8c0dc548f104f0e1a1c324050d995f43beb56b00718776f23c"
+    },
+    {
+      "path": "dist/assets/sky.worker-CHm7n211.js",
+      "bytes": 2960,
+      "sha256": "503ad9438c1738310a9cbe2a41e9af0524e7046bce79e58d6da7c1e74863caaa"
+    }
+  ]
+}

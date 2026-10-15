@@ -162,14 +162,31 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
   const shape=cloudParameters(seed);
   // Separate updraft sites share a broad low condensation base. Their unequal
   // summits and outflow geometry change topology, rather than scaling one stack.
-  const liquid:Lobe[]=[],iceCores:Lobe[]=[];
+  const liquid:Lobe[]=[],iceCores:Lobe[]=[],summits:Lobe[]=[];
+  const anatomy=random(seed^0x1b37c9a5);
   const turret=(x:number,z:number,height:number,width:number,lean:number) => {
-    const offset=(rng()-.5)*.35,depth=(rng()-.5)*.28;
-    liquid.push([x,2.35,z,width*1.18,1.0,width*1.05]);
-    liquid.push([x+lean*.5+offset,3.7,z+depth,width,1.15,width*.92]);
-    // Preserve a replenished neck through erosion while the surface billows move.
-    liquid.push([x+lean*.7+offset,(3.7+height)*.5,z+depth,width*.82,(height-3.7)*.5+.75,width*.83]);
-    liquid.push([x+lean+offset,height,z+depth,width*.76,.78,width*.78]);
+    // Each updraft has its own emergence height, course and rate of expansion.
+    // Shared horizontal rings would survive surface noise as visible ledges.
+    const siteX=x+(anatomy()-.5)*.28,siteZ=z+(anatomy()-.5)*.32;
+    const lower=2.25+(anatomy()-.5)*.3,crest=height+(anatomy()-.5)*.42;
+    const shoulder=lower+(crest-lower)*(.43+anatomy()*.16);
+    const offset=(anatomy()-.5)*.34,depth=(anatomy()-.5)*.3;
+    const girth=width*(.91+anatomy()*.18),tipWidth=girth*(.67+anatomy()*.2);
+    const top:Lobe=[siteX+lean+offset,crest,siteZ+depth,tipWidth,.65+anatomy()*.24,tipWidth*(.86+anatomy()*.2)];
+    liquid.push([siteX,lower,siteZ,girth*1.2,.94+anatomy()*.14,girth*1.06]);
+    liquid.push([siteX+lean*.4+offset*.6,shoulder,siteZ+depth*.6,girth*(.91+anatomy()*.12),(crest-lower)*.37,girth*.94]);
+    // A buried neck keeps the main mass connected without smoothing the summit.
+    liquid.push([siteX+lean*.72+offset,(shoulder+crest)*.5,siteZ+depth,girth*.74,(crest-shoulder)*.5+.48,girth*.77],top);
+    summits.push(top);
+    // Irregular lateral shoulders belong to this updraft, rather than a global
+    // height layer. They are broad enough to read before any fine erosion.
+    const shoulders=2+Math.floor(anatomy()*2),phase=anatomy()*Math.PI*2;
+    for(let j=0;j<shoulders;j++) {
+      const angle=phase+j*(2.05+anatomy()*.65),level=.3+anatomy()*.38;
+      const radius=girth*(.62+anatomy()*.24),bulge=girth*(.45+anatomy()*.2);
+      liquid.push([siteX+lean*level+Math.cos(angle)*radius,lower+(crest-lower)*level,
+        siteZ+depth*level+Math.sin(angle)*radius,bulge,bulge*(.88+anatomy()*.4),bulge*(.82+anatomy()*.3),.16]);
+    }
   };
   if(shape.family==='congestus') {
     liquid.push([-.25,1.6,0,3.05,.9,1.9],[-1.5,2.25,-.25,1.55,.9,1.3],[1.35,2.1,.25,1.5,.8,1.2]);
@@ -190,6 +207,12 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
     turret(-1.45,-.3,5.3,1.05,.5);
     turret(.75,.5,4.35,.82,.24);
     liquid.push([-2.45,2.7,.15,.82,1.0,.83],[-2.15,3.75,.1,.64,.72,.68]);
+    // A shared replenished body occupies the lower/middle space between the
+    // actual updraft sites. The younger summit remains separate above it.
+    const [a,b]=summits,rise=Math.min(a[1],b[1])-.72;
+    liquid.push([(a[0]+b[0])*.5,.72+rise*.5,(a[2]+b[2])*.5,
+      Math.abs(a[0]-b[0])*.5+Math.min(a[3],b[3])*.68,rise*.29+.16,
+      Math.max(a[5],b[5])*.95+Math.abs(a[2]-b[2])*.35,.18]);
     // The upper tower is advected into a narrow, long incus, with a short
     // upwind shoulder and a much longer fibrous downwind end.
     iceCores.push([-.25,5.85,-.2,1.45,.44,1.3,.045],[1.45,6.02,-.2,2.25,.36,1.05,.035]);
@@ -203,12 +226,32 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
     c[3]*=width*(isIce?1:1.16);c[4]*=shape.towerHeight*(isIce?1:1.1);c[5]*=shape.towerWidth*(isIce?1:1.16);
   };
   liquid.forEach(c=>transform(c,false));iceCores.forEach(c=>transform(c,true));
+  // The outflow expands from the mature summits through overlapping sloped
+  // collars. These attach to local tower/cap geometry, not a fixed world height.
+  const highest=Math.max(...summits.map(c=>c[1]));
+  for(const top of summits) {
+    if(shape.family!=='multicell'&&top[1]<highest-.28*shape.towerHeight) continue;
+    const cap=iceCores.reduce((a,b)=>Math.hypot(a[0]-top[0],a[2]-top[2])<Math.hypot(b[0]-top[0],b[2]-top[2])?a:b);
+    const broadShoulder=shape.family==='sheared'&&top[1]===highest;
+    for(const t of broadShoulder?[.1,.42,.78]:[.3,.72]) {
+      // Mature sheared convection broadens before turning into its outflow,
+      // rather than bending a thin stalk directly into the horizontal cap.
+      const reach=broadShoulder?Math.sqrt(t):t*t;
+      const rx=top[3]*(1-reach)+Math.min(cap[3]*(broadShoulder?.95:.72),top[3]*(broadShoulder?2.05:1.65))*reach;
+      const rz=top[5]*(1-reach)+cap[5]*(broadShoulder?.9:.72)*reach;
+      liquid.push([top[0]+(cap[0]-top[0])*t,top[1]+(cap[1]-top[1])*t,top[2]+(cap[2]-top[2])*t,
+        rx,.3+(cap[1]-top[1])*.48,rz,.14]);
+    }
+  }
   const lobes:Lobe[]=[...liquid,...iceCores];
   [...liquid,...iceCores].forEach((c,i) => {
     const isIce=i>=liquid.length,count=isIce?10:18;
     for (let j=0; j<count; j++) {
       const theta=rng()*Math.PI*2, elevation=(rng()-.5)*1.8;
-      const s=.34+rng()*.3, radius=isIce?.68:.74;
+      // Billow size follows the parent: shoulder relief remains subordinate to
+      // the major masses instead of wrapping every core in equal-sized beads.
+      const scale=Math.min(c[3],c[4],c[5]);
+      const s=isIce?.34+rng()*.3:Math.max(.16,Math.min(.7,scale*(.32+rng()*.27))), radius=isIce?.68:.78;
       lobes.push([c[0]+Math.cos(theta)*c[3]*radius*Math.cos(elevation), c[1]+Math.sin(elevation)*c[4]*radius,
         c[2]+Math.sin(theta)*c[5]*radius*Math.cos(elevation), s*(isIce?1.7:1), s*(isIce?.16:1), s*.85, isIce?.045:.2]);
       if(!isIce) {

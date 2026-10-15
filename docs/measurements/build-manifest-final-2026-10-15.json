@@ -1,0 +1,45 @@
+{
+  "productBaseline": "971ce25d14483871a8f9efff374e7c78aec4cdf6",
+  "handoff": "83eab63",
+  "branch": "codex/cumulonimbus-webgpu",
+  "rendererVersion": "observatory-v22",
+  "rainExtinctionPerKm": 0.85,
+  "lastChange": "Desktop cloud action row only; shader/volume worker identical to calibrated main/worker measurements.",
+  "artifacts": [
+    {
+      "path": "dist/index.html",
+      "bytes": 911,
+      "sha256": "f63eae1864243ef522aa10ef71713e9c94a6becd1fff5d82ba9bac2d57611b76"
+    },
+    {
+      "path": "dist/assets/index-BQtfpr6j.js",
+      "bytes": 2837,
+      "sha256": "a91af432ffff5f26d2ee47cc77e3928496cc53b5b564cc1abc5e5d29a401d64a"
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-Dz44Vtgt.js",
+      "bytes": 794632,
+      "sha256": "9febd29db99222f4f6ce70174ad14dbcb03a915e9747d5989bfa1fe0dd82485d"
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-wHt3JR0Y.css",
+      "bytes": 12835,
+      "sha256": "7312586845eee1f556aec082516ef016221f9dcc6fd195e86d8a5bf14805bdde"
+    },
+    {
+      "path": "dist/assets/render.worker-CDJVWhA_.js",
+      "bytes": 951603,
+      "sha256": "1ca6a1dce969c57a9c7357e5a8685a7496449ed8fe27daff354217656b36488c"
+    },
+    {
+      "path": "dist/assets/volume.worker-tzRPYPks.js",
+      "bytes": 12357,
+      "sha256": "26649dd9f77c6a8c0dc548f104f0e1a1c324050d995f43beb56b00718776f23c"
+    },
+    {
+      "path": "dist/assets/sky.worker-CHm7n211.js",
+      "bytes": 2960,
+      "sha256": "503ad9438c1738310a9cbe2a41e9af0524e7046bce79e58d6da7c1e74863caaa"
+    }
+  ]
+}

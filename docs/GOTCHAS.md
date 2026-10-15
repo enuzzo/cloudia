@@ -2,6 +2,28 @@
 
 This file is for traps we discover once, so we do not politely step on them again.
 
+## 15 October — mixed media and accessible ranges
+
+- `output` is labelable. Inserting it before a range inside an implicit label
+  steals the association from the input, even with `aria-hidden`. Assign a
+  unique input ID and explicit label `for`; verify the real accessible name.
+- A cloud-empty occupancy mask says nothing about rain below it. Keep rain's
+  sampling budget and conservative source bounds independent; clip both entry
+  and exit intervals. The attachment halo extends to source base + 0.3 km.
+- Filter rain strength and source height with the same weights. A transparent
+  neighbouring texel still contributes height through bilinear filtering, so
+  extend valid height one texel beyond the emitting footprint.
+- Sequentially compositing co-located cloud and rain invents an ordering.
+  Sum extinction and integrate their extinction-weighted source once per segment.
+- A correct boundary probe can still frame nearly uniform fog at maximum
+  approach. Small CPU boundary error is not evidence of near photographic detail.
+- The original rain gain 2.6 produced an opaque slab in the mobile view. The
+  authored 0.85 coefficient restores transmission; preserve its explicit metadata
+  and compare actual views before changing intensity or evaporation together.
+- IAB access to the exact localhost preview succeeded in this local context.
+  This does not retroactively invalidate the earlier policy denial or authorize
+  alternative browser routes when a later request is denied.
+
 ## October 2026 WebGPU scene
 
 - Three r181 timestamp cleanup had a shadowed error-handler bug. Current implementation pins r186 and matching types. Dispose only after renderer init and pending timestamp resolve settle; device loss is terminal even if a worker message arrives late.

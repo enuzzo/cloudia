@@ -1,0 +1,45 @@
+{
+  "productBaseline": "971ce25d14483871a8f9efff374e7c78aec4cdf6",
+  "handoff": "83eab63",
+  "branch": "codex/cumulonimbus-webgpu",
+  "rendererVersion": "observatory-v22",
+  "rainExtinctionPerKm": 0.85,
+  "url": "http://127.0.0.1:4177/?seed=1571198069",
+  "artifacts": [
+    {
+      "path": "dist/index.html",
+      "bytes": 911,
+      "sha256": "8e966ff672beec16a88267e9352b8fd096990b37e3eb6e099735e0a3fc25d629"
+    },
+    {
+      "path": "dist/assets/index-BV8wO3yL.js",
+      "bytes": 2837,
+      "sha256": "e54d0fd7dc1ac91c5b9bb60ff90aa8256a85060df068a7c9daec5830049467a7"
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-BElFrTF6.js",
+      "bytes": 794632,
+      "sha256": "e29da7283025d1f81c3c5884fa42c15600b0963cc56b984761c63ccd340f18b1"
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-DfcK9RmR.css",
+      "bytes": 12743,
+      "sha256": "4d8513aeada014fb53f448d3aba586c6dc7e93b50d0a955ca44a846b350535b7"
+    },
+    {
+      "path": "dist/assets/render.worker-CDJVWhA_.js",
+      "bytes": 951603,
+      "sha256": "1ca6a1dce969c57a9c7357e5a8685a7496449ed8fe27daff354217656b36488c"
+    },
+    {
+      "path": "dist/assets/volume.worker-tzRPYPks.js",
+      "bytes": 12357,
+      "sha256": "26649dd9f77c6a8c0dc548f104f0e1a1c324050d995f43beb56b00718776f23c"
+    },
+    {
+      "path": "dist/assets/sky.worker-CHm7n211.js",
+      "bytes": 2960,
+      "sha256": "503ad9438c1738310a9cbe2a41e9af0524e7046bce79e58d6da7c1e74863caaa"
+    }
+  ]
+}

@@ -40,7 +40,7 @@ export function sceneMarkup({profiling,quality,timingMode,frozenFlow,frameLimit}
           <small>Nuova forma alterna tre famiglie e varia ogni nube. Disperdi allarga e assottiglia localmente il vapore, poi lo ricondensa. Tastiera sulla scena: frecce per ruotare, Home per ricentrare.</small>
           </section>
           <section role="tabpanel" id="panel-atmosphere" aria-labelledby="tab-atmosphere" hidden>
-          <label>Paesaggio<select name="ground"><option value="1">Terra lontana · sole e tramonto</option><option value="0">Solo cielo</option></select></label>
+          <label>Paesaggio<select name="ground"><option value="1">Terra · foreste, monti e mare</option><option value="0">Solo cielo</option></select></label>
           <label>Cielo<select name="sky"><option value="clear">Limpido</option><option value="haze">Velato · più foschia</option><option value="storm" selected>Temporale · cielo neutro</option><option value="sunset">Tramonto</option><option value="rain">Pioggia</option></select></label>
           <label>Intensità della pioggia<input name="rain" type="range" min="0" max="100" value="0"></label><label>Velocità della nube<select name="speed"><option value="0.5">0,5× · osservazione lenta</option><option value="1" selected>1× · convezione</option><option value="2">2×</option><option value="4">4× · evidenzia il movimento</option></select></label>
           <label>Distanza del tuono<select name="distance"><option value="1">1 km · tuono dopo 2,9 s</option><option value="3" selected>3 km · tuono dopo 8,7 s</option><option value="8">8 km · tuono dopo 23,3 s</option></select></label>

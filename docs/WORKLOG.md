@@ -462,3 +462,29 @@ GPU mean15.063ms. No new worker/animated/physical-device qualification.
 - Rechecked dependency exclusion=1 and preserved the pre-existing untracked
   `node_modules 2/`. This checkpoint changes documentation only; no runtime
   tests/builds rerun, no rendering claim or deployment.
+
+
+## 2026-10-15 — anatomy, mixed transport and responsive qualification
+
+- Replaced shared tower levels and uniform peripheral billows with seeded local
+  shoulders and summit collars. Rendered review exposed an overly hollow sheared
+  body; added an intermediate replenished core derived from the actual summits.
+- Area-filtered rain mass and matching base heights, including the bilinear halo.
+  Added world-space evaporation, conservative source bounds and independent 6 m
+  rain sampling. Cloud and rain now share one exponential segment; land remains
+  visible under overcast. Calibrated rain extinction to 0.85 after the original
+  2.6 produced an opaque-looking curtain.
+- Improved desktop readability, safe-area offsets, keyboard focus/dismissal and
+  explicit range-label association. Real IAB checks include 1672×941, 390×844
+  and 1280×432; scrolling and keyboard can reach controls below the initial panel.
+- 131 tests/25 files, TypeScript and application→hero builds pass. Full256³/128³
+  CPU approach audit remains within0.01071m of its dense reference in18poses;
+  macro connectivity and mixed-medium integration have separate CPU artifacts.
+- Exact IAB localhost access is permitted in this context; actual main/worker
+  WebGPU compilation/drawing observed. No alternative route around the historical
+  denial. Evidence, measurements and remaining quality limits are recorded in
+  [QUALIFICATION-2026-10-15.md](QUALIFICATION-2026-10-15.md).
+- Near95–100 can still become nearly uniform fog; anvil/body material and
+  photographic acceptance remain open. No compositor, physical-device or audio
+  acceptance inferred from rAF/CPU numbers. Dependency exclusion stays1;
+  unrelated `node_modules 2/` preserved. No main merge or deployment.

@@ -1,0 +1,90 @@
+{
+  "method": "Real IAB screenshots; filesystem mtime is preservation time, not a measured compositor timestamp. Poses are sampled screenshots, not a video or continuous-motion acceptance.",
+  "files": [
+    {
+      "path": "docs/images/qualification-2026-10-15/congestus-back.jpg",
+      "bytes": 87698,
+      "sha256": "dc15e2c0828019952afd5b5e507cd0c7e43574b32118f89612c3a81b3435cc4b"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/congestus-front.jpg",
+      "bytes": 67837,
+      "sha256": "d8aa5fe965033b4111cc7a6e4487ca28d0b27fc4eade97a3ba5033f198b8db5a"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/congestus-side.jpg",
+      "bytes": 58939,
+      "sha256": "73443689ffc016aba0dad74fd69d236a215bef6d1afcf9f4850907623d290781"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/desktop-inspector-after.jpg",
+      "bytes": 76434,
+      "sha256": "6e6eb9224f011978221a9cfe077b992c131829e036be49412d9f66eeeb2fcd18"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/desktop-inspector-final.jpg",
+      "bytes": 84420,
+      "sha256": "7d3831ef1905dd8f38383d17b1e3842ab5674afcb20bb7d4ef46ef98a7643cc2"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/desktop-sun-refined.jpg",
+      "bytes": 61453,
+      "sha256": "d8c58ac73f2f14175ea7ea4509552d8ccf6ea88ecbda6ae4fec53656a38f3fee"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/main-rain-calibrated.jpg",
+      "bytes": 83073,
+      "sha256": "d71b4e91c11e0ec1a63ad260c4655ac3a3d7969cb69196d9d684c73e4297b1a4"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/mobile-inspector-keyboard.jpg",
+      "bytes": 35092,
+      "sha256": "9d1d047b4b8496a62136c3705e522b782b83cf92b3595a598d4cf22d9d924c26"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/mobile-rain-calibrated.jpg",
+      "bytes": 19988,
+      "sha256": "811177cb5e401154025a0f003fee7a5cfc8387c85d92403d23fbcffe82b351a1"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/multicell-back.jpg",
+      "bytes": 85727,
+      "sha256": "889a1508541dd83674fa172f3a2b9d3fbf17e060f03bbb612f42bc7c4a6ed021"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/multicell-front.jpg",
+      "bytes": 67122,
+      "sha256": "4ae3936ae795479ab6ece74eedbcad4dfede607f402bc972273a8286e7eef54a"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/multicell-side.jpg",
+      "bytes": 57627,
+      "sha256": "3bf4245db29d81cf3b691584a6d80cf826bb6db6775a4263624d2ee182b7bf66"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/near-sun-orbit.jpg",
+      "bytes": 26809,
+      "sha256": "14a048493afb0508a14d97d0779163d7ca620701e09fd26f1ed6a80682c3cd97"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/near80-sunset-worker.jpg",
+      "bytes": 38348,
+      "sha256": "62a0fa7c60750eb9c497fb341a46e4c18ee7c566555b085b975834ccd2c32c81"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/sheared-back-worker.jpg",
+      "bytes": 78663,
+      "sha256": "82b2403c5ce9e2e0987a19e43fa27965e57b51ed1a20c521055decb592423638"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/sheared-side-worker.jpg",
+      "bytes": 55117,
+      "sha256": "2a5b0a6c583b5ce692b63a0aefd40655c5d27f7bb32b392373ed88e7b0ba44e5"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/short-inspector-keyboard.jpg",
+      "bytes": 36541,
+      "sha256": "a22fd8b5bbb05fc244ac6d130754d7a1e340c0cdf3b986ab30b3d1f81562d46f"
+    }
+  ]
+}

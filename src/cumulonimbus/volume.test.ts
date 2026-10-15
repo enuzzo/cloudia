@@ -17,6 +17,26 @@ function massMoments(volume: ReturnType<typeof generateVolume>, minY=-Infinity,m
   return {mass,centroid,spread:second.map((v,a)=>Math.sqrt(Math.max(0,v/mass-centroid[a]**2)))};
 }
 
+/** Face-connected dense mass; thin detached ice fibres do not count as bodies. */
+function connectedBulkFraction(volume:ReturnType<typeof generateVolume>,threshold=.16) {
+  const {size,data}=volume,visited=new Uint8Array(size**3),queue=new Uint32Array(size**3);
+  let total=0,largest=0;
+  for(let i=0;i<visited.length;i++) {
+    if(visited[i]||data[i*4]/255<=threshold) continue;
+    let read=0,write=1,mass=0;queue[0]=i;visited[i]=1;
+    while(read<write) {
+      const p=queue[read++],x=p%size,y=Math.floor(p/size)%size,z=Math.floor(p/size**2);
+      mass+=data[p*4];
+      for(const q of [x?p-1:-1,x<size-1?p+1:-1,y?p-size:-1,y<size-1?p+size:-1,z?p-size**2:-1,z<size-1?p+size**2:-1]) {
+        if(q<0||visited[q]||data[q*4]/255<=threshold) continue;
+        visited[q]=1;queue[write++]=q;
+      }
+    }
+    total+=mass;largest=Math.max(largest,mass);
+  }
+  return largest/total;
+}
+
 describe('authored density volume', () => {
   it('keeps intermediate ice wisps optically separated from bright fibres',()=>{
     const envelope={size:1,data:new Uint8Array([255,0,0,0])};
@@ -166,13 +186,21 @@ describe('authored density volume', () => {
   });
   it('changes horizontal and vertical mass distribution instead of rescaling one cylindrical stack',()=>{
     const congestus=generateVolume(32,72),multicell=generateVolume(32,73),sheared=generateVolume(32,74);
-    const a=massMoments(congestus),b=massMoments(multicell),c=massMoments(sheared);
+    const a=massMoments(congestus),b=massMoments(multicell);
     expect(a.spread[0]/a.spread[1]).toBeGreaterThan(1.1);
     expect(b.spread[0]/b.spread[1]).toBeGreaterThan(1.1);
     expect(Math.abs(a.centroid[1]-b.centroid[1])).toBeGreaterThan(.12);
     const low=massMoments(sheared,.9,2),high=massMoments(sheared,3.5);
     expect(high.centroid[0]-low.centroid[0]).toBeGreaterThan(.65);
-    expect(Math.abs(c.centroid[0]-a.centroid[0])).toBeGreaterThan(.1);
+    // Whole-cloud centroids also move when shoulder/base mass changes. Compare
+    // upper/lower displacement to measure shear independently of that balance.
+    const congestusLean=massMoments(congestus,3.5).centroid[0]-massMoments(congestus,.9,2).centroid[0];
+    expect(high.centroid[0]-low.centroid[0]-congestusLean).toBeGreaterThan(.65);
+  });
+  it('keeps irregular shoulders and outflow attached to the replenished bulk',()=>{
+    for(const seed of [72,73,74,1571198069]) {
+      expect(connectedBulkFraction(generateVolume(32,seed))).toBeGreaterThan(.985);
+    }
   });
   it('retains separated elevated multicell towers above their connected rain base',()=>{
     const volume=generateVolume(40,73),rows=new Float64Array(40);
