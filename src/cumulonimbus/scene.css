@@ -17,7 +17,7 @@
 .scene-controls{position:absolute;inset:0;pointer-events:none}
 .scene-controls button,.scene-controls summary,.scene-controls .diagnostics{pointer-events:auto}
 .scene-controls button,.scene-controls summary{display:inline-flex;align-items:center;justify-content:center;gap:9px;font:inherit;font-size:12px;font-weight:450;color:var(--ink);background:transparent;border:1px solid var(--line);padding:10px 12px;min-height:44px;border-radius:9px;cursor:pointer;transition:background .18s,color .18s,border-color .18s,transform .18s}
-.scene-controls button:hover:not(:disabled),.scene-controls summary:hover{background:#ffffff0c;border-color:#ffffff55}
+.scene-controls button:hover:not(:disabled):not([aria-pressed=true]),.scene-controls summary:hover{background:#ffffff0c;border-color:#ffffff55}
 .scene-controls button:active:not(:disabled){transform:translateY(1px)}
 .scene-controls button[aria-pressed=true]{background:var(--selected);color:#202a2d;border-color:var(--selected)}
 .scene-controls button:disabled{opacity:.4;cursor:default}

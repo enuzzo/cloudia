@@ -120,8 +120,10 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
         if(column.r>0.0){
         let base=.72+(column.g*3.0-.5-.72)/growth.x;
         let attached=1.0-smoothstep(base-.08,base+.3,rp.y);
-        let evaporation=precipitationSurvival(position.y,base+drift.y,weather.z,column.r);
-        let sheets=textureSampleLevel(detail,detailSampler,vec3<f32>(xz*.20,(rp.y+precipitationTime*.012)*.025),0.0).g;
+        // Broad curtains follow the emitting column; evaporation does not gain
+        // unrelated vertical lobes while descending through this sheet field.
+        let sheets=textureSampleLevel(detail,detailSampler,vec3<f32>(xz*.20,(base+precipitationTime*.012)*.025),0.0).g;
+        let evaporation=precipitationSurvival(position.y,base+drift.y,weather.z,column.r,sheets);
         let streaks=textureSampleLevel(detail,detailSampler,vec3<f32>(xz*2.6,(rp.y+precipitationTime*.018)*.16),0.0).r;
         let rainDensity=column.r*attached*evaporation*(.15+1.85*sheets*sheets)*(.35+1.3*streaks);
         rainExtinction=weather.z*rainDensity*${RAIN_EXTINCTION};

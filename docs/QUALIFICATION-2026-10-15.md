@@ -233,3 +233,178 @@ non concept. `desktop-inspector-after` e le viste solari precedono soltanto la
 calibrazione del coefficiente pioggia, che è inattivo nelle viste senza pioggia;
 le immagini con `calibrated` usano il materiale finale. I nomi `near80` e
 `near-sun-orbit` conservano anche gli esiti visivi insufficienti.
+
+## Secondo ciclo: masse locali e frontiera filtrata
+
+Continuazione dal commit `2a265bb`. Questa sezione aggiorna il checkpoint
+precedente; le sue misure e immagini rimangono riferimenti storici distinti.
+Il goal resta attivo e la qualità fotografica ravvicinata non è raggiunta.
+
+### Anatomia e prove reali
+
+Congestus e multicell ricevono nuclei verticali sepolti derivati da fondazione
+e summit. Il piccolo cap del congestus parte dal summit dominante; ogni cella
+matura della multicell alimenta un proprio cap a quota e profondità locali.
+Billow del cap più profondi e filamenti ai margini sostituiscono il precedente
+tetto comune. Nella multicell, un impulso giovane fra i siti maturi alza la
+sella dal basso; le torri principali hanno maturità differenti.
+
+Il riferimento strutturale è coerente con le descrizioni del
+[congestus](https://cloudatlas.wmo.int/cl-2.html) e delle
+[specie di cumulonembo](https://cloudatlas.wmo.int/species-cumulonimbus-cb.html)
+nell'Atlante WMO. Le modifiche sono geometria procedurale propria, non una
+simulazione meteorologica né una riproduzione di quelle fotografie.
+
+Le nuove viste IAB frontale/laterale/posteriore mostrano il congestus più pieno
+e privo del tetto comune. La prima revisione multicell lasciava ancora una U
+troppo grande; la revisione successiva la riduce con la nuova cella giovane.
+Restano riconoscibili una sommità piuttosto piatta e una separazione fra i
+montanti: miglioramento osservato, non accettazione di ogni incudine.
+
+L'audit macro a 128³/dettaglio 128³ conserva separatamente massa e connessione:
+
+| Seme | Densità integrata precedente → finale | Massa densa connessa finale |
+| --- | --- | --- |
+| 72, congestus | 21,2538 → 22,2276 | 99,9943% |
+| 73, multicell | 26,2130 → 23,9000 | 99,9714% |
+| 74, sheared | 18,7487 → 18,7487 | 99,9036% |
+| 1571198069, sheared | 14,1570 → 14,1570 | 99,9932% |
+
+La densità integrata è un indicatore nel volume della scena, non una massa
+d'acqua fisicamente misurata.
+
+La sheared conserva anche l'uguaglianza byte per byte dei dati macro, dettaglio
+e sunset nel confronto a 64³ dei due semi. I test aggiunti misurano il
+riempimento delle sezioni basse/medie, mentre la separazione elevata multicell
+preesistente resta richiesta. Nessuna percentuale di connessione certifica da
+sola una silhouette compatta. Dati:
+[morfologia finale](measurements/morphology-final-cycle2-cpu-2026-10-15.json).
+
+### Errore concreto della camera e correzione
+
+Il vecchio audit della frontiera confrontava due ricerche della stessa densità
+CPU con spostamento analitico. Quel centimetro di precisione non verificava la
+rappresentazione disegnata dal renderer: quest'ultimo campiona invece un campo
+16³ half-float con filtro trilineare.
+
+Un confronto delle rappresentazioni su 18 pose ha trovato spostamenti della
+frontiera fino a circa 137 m. In 8 pose la camera al 100% risultava sopra la
+soglia di densità nel riferimento filtrato, con penetrazione massima di circa
+133 m. All'80% nessuna delle pose campionate era dentro: il difetto della camera
+non spiega tutta la sfocatura. Evidenza precedente alla correzione:
+[divario analitico/filtrato](measurements/near-flow-discrepancy-cpu-2026-10-15.json).
+
+La ricerca usa ora lo stesso tipo di campo filtrato, incluso il canale di
+erosione. Un buffer CPU riusabile di 32768 byte viene ricostruito quando cambia
+tempo o dispersione e serve solo alla navigazione; macro 256³ e dettaglio 128³
+rimangono invariati. Stato congelato, cambio seme e sonda senza flusso hanno
+invalidazione esplicita. La cache CPU viene riutilizzata nella nube ferma.
+
+Nel nuovo audit a 256³/128³, su 18 pose, errore massimo rispetto alla ricerca
+densa CPU a 2,5 m: **0,00982 m**. Mediana della sola ricerca **0,0956 ms**;
+campo più ricerca **2,3865 ms**, p95 **3,7304 ms**, massimo **4,2943 ms**.
+La produzione rivaluta la stima non più di una volta ogni 150 ms durante
+l'avvicinamento visibile; un frame lento può aumentarne l'età. Aritmetica CPU prima
+della conversione half e compute GPU f32 non sono identità bit per bit.
+Microerosione dipendente dalla camera e ulteriore erosione da dispersione
+sono omesse sul lato prudente, poiché rimuovono densità. Non è una garanzia
+fisica di 3 m da ogni filamento animato. Dati:
+[frontiera filtrata](measurements/approach-filtered-cpu-2026-10-15.json).
+
+### Diagnosi del materiale vicino
+
+L'immagine reale al 100%, dopo la correzione, resta quasi uniforme. La prova
+negativa è conservata. La cache luce è già costruita dalla densità con warp
+ed erosione ordinaria: spostare nuovamente il lookup luce applicherebbe il
+warp due volte e non è la correzione proposta.
+
+Un'ulteriore sonda CPU usa cinque raggi dichiarati, tempo 60, vento e deriva
+del runtime, camera corretta e quadrature a 3/6 m. Nei 15 raggi a 3 m nessun
+contributo d'opacità arriva da raw ≥ 0,98: la saturazione dell'erosione non
+spiega questo campione. La variabilità fra le sorgenti medie dei cinque raggi
+scende da CV 54,82% all'80% a 17,46% al 95% e 5,36% al 100%. Al massimo, metà
+dei contributi del raggio centrale arriva entro 70,5 m e il 90% entro 172,5 m.
+I due passi cambiano la media luminosa meno dello 0,165% e quella di densità
+meno dello 0,134% nel campione. Sono statistiche CPU pesate per opacità, prima
+di aerial/tonemapping, non pixel finali o una diagnosi universale.
+
+Questo restringe il prossimo esperimento alla scala del materiale e alla
+leggibilità luminosa, prima di aumentare i passi. La banda ordinaria ha
+strutture intorno a 104 m; quella metrica, circa 4 m, entra solo entro 300 m.
+Una banda intermedia e un raffinamento locale della luce sono ipotesi da
+confrontare isolatamente con camera/raggi fissi e costo misurato. Non sono
+ancora implementate. Dati e script:
+[sonda densità](measurements/near-density-cpu-2026-10-15.json),
+`scripts/qa-near-density.ts`.
+
+### Pioggia e controlli
+
+La virga debole varia la caduta fra 0,98 e 1,82 km usando la lettura già
+presente delle cortine ampie. Il campo segue la colonna emittente, non una
+quota di caduta indipendente, per evitare nuovi lobi verticali nel profilo
+di evaporazione. Con sorgente satura il fondo rimane il datum world fisso.
+Nessuna nuova lettura texture, nessun aumento di risoluzione del rain map.
+
+La regolazione della pioggia usa ora il tempo della transizione anche in
+pausa, come già facevano cielo e luce; il movimento della nube e delle gocce
+rimane fermo. Corretto anche il fondo dello scenario selezionato sotto il
+puntatore: il precedente hover conservava testo scuro sopra un fondo scuro.
+
+### Validazione e limiti del secondo ciclo
+
+**140 test / 26 file**, TypeScript e build applicazione → hero superati.
+Resta l'avviso Vite preesistente sui bundle grandi. Nessuna installazione;
+esclusione locale di `node_modules` riletto a 1, Git ignore verificato e nessun
+percorso tracciato al suo interno. `node_modules 2/` preesistente preservato.
+
+La misura main a 1672×941, camera 100%, Sole, animata, registra **43,9636 rAF/s**
+in 30,0021 s, p95 33,70 ms, massimo 49,80 ms e 212 intervalli oltre 33,34 ms.
+Media GPU 42,2473 ms; CPU media 0,4371 ms, p95 1,10 ms, massimo 4,40 ms. Il
+contesto iniziale conserva campo 0,90 ms e ricerca 0,20 ms: è un singolo
+aggiornamento, non una distribuzione. Questa prova `observatory-v23` precede
+la sola correzione del clock della pioggia (`v24`); usa pioggia zero. Non è un
+confronto causale con il precedente 95% o con un altro tempo della nube.
+[Report completo](measurements/main-near100-filtered-v23-30s-2026-10-15.json).
+
+Nessuna equivalenza fra rAF, timestamp GPU e frame presentati è dedotta. I
+gate del materiale vicino, dell'incudine, dell'accettazione in movimento e dei
+60 fps sostenuti restano aperti; la qualità configurata è conservata.
+
+La verifica finale `v24`, main, pioggia 100%, vento zero e nube in pausa
+conferma intensità effettiva 0,999999999 e tempo della nube **60 → 60 s**.
+Campione di 30,0019 s a 1672×941: **45,7971 rAF/s**, p95 33,40 ms, massimo
+150 ms, 164 intervalli oltre 33,34 ms; GPU media 40,2933 ms, p95 49,5452 ms.
+Il picco di 150 ms è conservato senza attribuirgli una causa non misurata.
+Non è una misura animata né un confronto causale con il precedente 80%.
+[Report finale](measurements/main-rain100-paused-v24-30s-2026-10-15.json).
+
+Osservati nel browser anche virga al 45% con vento zero e massimo, cambi di
+intensità in pausa e due campioni durante il movimento. Non sono emerse bande
+sospese nelle pose campionate; il contrasto della precipitazione è tenue e la
+sua accettazione artistica rimane aperta. Queste immagini non costituiscono un
+video o una validazione fisica della pioggia.
+
+Worker `v24`: disegno reale con flusso congelato e avvicinamento 100% al
+tramonto, reset, nuova nube con seme 840455697 e nuova ricerca al massimo.
+Console main/worker senza errori o warning osservati. Nessun nuovo benchmark
+sostenuto worker è dedotto dalla lettura istantanea del pannello.
+
+Ricontrollo UI mobile a 390×844: documento largo 390 px, focus visibile e
+Nuova forma raggiunta con Shift+Tab senza attivarla; Escape richiude. Il
+contrasto dello scenario selezionato è stato verificato nel DOM e nelle
+immagini dopo la correzione hover. Le limitazioni dei dispositivi fisici e
+del reduced motion restano quelle del primo ciclo.
+
+Manifest distinti per [v23](measurements/build-manifest-cycle2-v23-2026-10-15.json)
+e [v24 finale](measurements/build-manifest-cycle2-final-2026-10-15.json);
+[inventario delle nuove immagini](measurements/screenshots-cycle2-2026-10-15.json).
+I nomi `cycle2-multicell-front` e `cycle2-final-multicell-*` distinguono la
+revisione ancora a U dalla successiva. Gli screenshot di sola anatomia del
+congestus precedono anche la correzione del contrasto hover.
+
+Preview finale ordinaria main: seme 72, Sole, nube matura in pausa, Panorama,
+audio spento e nessun pannello aperto. Override viewport rimosso; lo stato
+effettivo di questa finestra è CSS **1280×720**, canvas **2560×1440**. Le uniche
+opzioni ordinarie sono Massima/384 e Schermo. I campioni a 1672×941 non misurano
+questo buffer nativo più grande. Stato:
+[preview finale](measurements/final-cycle2-preview-state-2026-10-15.json).

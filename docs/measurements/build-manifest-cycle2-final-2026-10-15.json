@@ -1,0 +1,93 @@
+{
+  "date": "2026-10-15T07:23:43.028842+00:00",
+  "branch": "codex/cumulonimbus-webgpu",
+  "previousCheckpoint": "2a265bb",
+  "rendererVersion": "observatory-v24",
+  "navigationVersion": "filtered-field-approach-v2",
+  "lastChange": "Rain-intensity control transitions use real elapsed time while cloud/rain motion remains paused. Density and shader unchanged from v23.",
+  "quality": {
+    "macro": 256,
+    "detail": 128,
+    "nominalSteps": 384,
+    "scale": 1
+  },
+  "artifacts": [
+    {
+      "path": "dist/index.html",
+      "bytes": 911,
+      "sha256": "f249c8e640ae4510a8d4bae749344511e6659c082614a0fff34c5bf17a767d71"
+    },
+    {
+      "path": "dist/assets/index-D6gXSqqf.js",
+      "bytes": 2837,
+      "sha256": "b19ebc3e9ce7cba200e4c33926b03f4006b2b9b2aefba1537d1f990cd1223062"
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-SczEyYMC.js",
+      "bytes": 796602,
+      "sha256": "ffbe39afbde3aef19e5a140f91a960d2c38457a02adca7353a00c77aef12e5e9"
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-BtOAAbpg.css",
+      "bytes": 12860,
+      "sha256": "48a275cea33834e49834428208e5c8bbc506c500afb961b4d2b6e3e0b126dbde"
+    },
+    {
+      "path": "dist/assets/render.worker-D9dZ3iIO.js",
+      "bytes": 953569,
+      "sha256": "2e3ba15edc92a464ff6762599b92db07d02849fe89d1b33f6449a62ad039f6fb"
+    },
+    {
+      "path": "dist/assets/volume.worker-BP-mq3wU.js",
+      "bytes": 13373,
+      "sha256": "8a681d4fa07bca14bc6d27917779d0a978241314d7f7c7a972b81b241849d59c"
+    },
+    {
+      "path": "dist/assets/sky.worker-CHm7n211.js",
+      "bytes": 2960,
+      "sha256": "503ad9438c1738310a9cbe2a41e9af0524e7046bce79e58d6da7c1e74863caaa"
+    },
+    {
+      "path": "dist/cloudia-hero.js",
+      "bytes": 838767,
+      "sha256": "bc11f99470a6298e20fa804bc2d93041d4cc1a015d812ae97b6ad5827b5fa702"
+    },
+    {
+      "path": "dist/cloudia-hero.iife.js",
+      "bytes": 526689,
+      "sha256": "d4363d2ccdbf676991be2c6ba05bc62da0ceef5debaa789f04766ab1248c30f5"
+    }
+  ],
+  "sources": [
+    {
+      "path": "src/cumulonimbus/volume.ts",
+      "bytes": 25749,
+      "sha256": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74"
+    },
+    {
+      "path": "src/cumulonimbus/cloudShader.ts",
+      "bytes": 13664,
+      "sha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd"
+    },
+    {
+      "path": "src/cumulonimbus/motionField.ts",
+      "bytes": 2639,
+      "sha256": "d8817eb9d90a70ee975eea89d2c2fca6d9c6783280bea810fdf76cff2b2d4d8a"
+    },
+    {
+      "path": "src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 50552,
+      "sha256": "91ed9bd0dfa719b9ba5194199c0bb28e42bd2f668e3ddad6b55f3632e4d562a2"
+    },
+    {
+      "path": "src/cumulonimbus/precipitation.ts",
+      "bytes": 5993,
+      "sha256": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72"
+    },
+    {
+      "path": "src/cumulonimbus/scene.css",
+      "bytes": 13087,
+      "sha256": "f9ab2bffb6de131f0ff009b3b85fa59a0bd9eb7caf075e22585bfbd08d442f3c"
+    }
+  ]
+}

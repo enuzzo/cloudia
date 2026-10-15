@@ -111,6 +111,19 @@ describe('altitude, approach and rain source',()=>{
   expect(precipitationSurvival(y+drift,base+drift,.1,.4)).toBeCloseTo(precipitationSurvival(y,base,.1,.4),12);
   expect(precipitationSurvival(GROUND_LEVEL,base+drift,1,1)).toBe(1);
  });
+ it('varies weak virga reach between sheets while saturated rain reaches sea level in every sheet',()=>{
+  const base=1.1,y=base-VIRGA_FALL_DISTANCE;
+  expect(precipitationSurvival(y,base,.1,.4,0)).toBe(0);
+  expect(precipitationSurvival(y,base,.1,.4,1)).toBeGreaterThan(.8);
+  for(const variation of [0,.25,.5,.75,1]){
+   expect(precipitationSurvival(GROUND_LEVEL,base,1,1,variation)).toBe(1);
+   let previous=0;
+   for(let height=base-2.5;height<=base;height+=.025){
+    const next=precipitationSurvival(height,base,.15,.4,variation);
+    expect(next).toBeGreaterThanOrEqual(previous);previous=next;
+   }
+  }
+ });
 });
 describe('panel dismissal',()=>{
  afterEach(()=>{document.body.innerHTML='';});

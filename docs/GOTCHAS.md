@@ -413,3 +413,22 @@ Future production choice:
 ## 2026-10-14 — camera boundary sampling
 
 A fixed sample count across the entire panorama-to-target segment becomes coarser in portrait view. Restrict to conservative support before choosing sample spacing; expose the cap/spacing/no-hit result. Bisection cannot recover a thin layer never hit by the initial march. The CPU ice fraction must match WGSL smoothstep, not a linear height fraction. A refined numerical crossing is not proof of a physical3m gap to animated vapor.
+
+## 2026-10-15 — match the rendered field before trusting the boundary
+
+- A precise crossing of the analytic flow is not a precise crossing of the
+  rendered16³ half-float trilinear field. The discrepancy reached about137m in
+  the sampled cloud. Navigation now samples the filtered reference and flow.a;
+  keep CPU/GPU arithmetic and the minimum150ms refresh interval explicit in
+  acceptance claims; slow frames can make the estimate older.
+- The optical-depth cache is baked from density that already includes ordinary
+  fine warp and erosion. Reading the cache at coord+warp would apply the warp
+  twice. The existing unwarped local lookup is deliberate.
+- Erosion has no effect on raw1, but that identity alone does not diagnose a
+  flat near image: the sampled visible contributions contained no raw>=.98.
+  Check contributing density and irradiance before inventing a material fix.
+- Rain control transitions use real elapsed time; precipitation advection uses
+  the paused forcing clock. Conflating the clocks made a paused intensity
+  control show a target the image could never reach.
+- A generic :hover:not(:disabled) rule can outrank aria-pressed styling. Exclude
+  pressed buttons from that hover treatment to retain selected-state contrast.

@@ -10,8 +10,8 @@ import { createCloudIntegrator } from './cloudShader';
 import {SKY_LUT_SIZE} from './atmosphere';
 import {SkyCache,type SkyResult} from './skyCache';
 import {createFlash,flashIntensity,thunderPlan,type Flash} from './storm';
-import { motionState,sourcePosition,FLOW_WGSL } from './motion';
-import { MOTION_FIELD_SIZE } from './motionField';
+import { motionState,FLOW_WGSL,type MotionState } from './motion';
+import { MOTION_FIELD_SIZE,fillMotionField,writeFilteredSourcePosition } from './motionField';
 import { EXTINCTION, ICE_EXTINCTION, DETAIL_RESOLUTION, SUN_LEFT, SUN_RIGHT, VOLUME_RESOLUTION, cloudParameters, morphologyFamily, iceHeights, sampleCloudDensity, BOUNDS_MIN, BOUNDS_SIZE, type CloudVolume } from './volume';
 import { conservativeEmptyStep } from './emptyTraversal';
 import { FrameMeasurement, summarizeFrames, summarizeSamples } from './performance';
@@ -34,7 +34,10 @@ export class GPUSceneEngine {
   private detailVolume: Data3DTexture | null = null;
   private cameraVolume:CloudVolume|null=null;
   private approachSurface=.4;private approachTime=-1000;
-  private approachProbe:(ApproachProbe&{cpuMs:number})|null=null;
+  private approachProbe:(ApproachProbe&{cpuMs:number;fieldFillMs:number;boundaryMs:number})|null=null;
+  private readonly approachField=new Uint16Array(MOTION_FIELD_SIZE**3*4);
+  private approachFieldTime=NaN;private approachFieldDispersion=NaN;
+  private frozenMotionState:MotionState|null=null;
   private readonly inspection=uniform(0);private readonly ground=uniform(1);
   private readonly rainTexture=new DataTexture(new Uint8Array(RAIN_MAP_SIZE**2*2),RAIN_MAP_SIZE,RAIN_MAP_SIZE,RGFormat,UnsignedByteType);
   private sunsetVolume: Data3DTexture | null = null;
@@ -236,7 +239,7 @@ export class GPUSceneEngine {
     this.rainTexture.image.data=rainMap;
     this.rainBounds.value.fromArray(precipitationSourceBounds(rainMap)??[0,0,0,0]);
     this.rainTexture.minFilter=LinearFilter;this.rainTexture.magFilter=LinearFilter;this.rainTexture.colorSpace=NoColorSpace;this.rainTexture.generateMipmaps=false;this.rainTexture.needsUpdate=true;
-    this.approachTime=-1000;this.approachProbe=null;
+    this.approachTime=-1000;this.approachProbe=null;this.approachFieldTime=NaN;
     this.volume=textures.macro;this.detailVolume=textures.detail;this.sunsetVolume=textures.sunset; this.material=new MeshBasicNodeMaterial();
     this.updateAtmosphere();
     this.iceRange.value.fromArray(iceHeights(this.seed));
@@ -249,6 +252,7 @@ export class GPUSceneEngine {
     this.emit({type:'morphology',family:morphologyFamily(this.seed),seed:this.seed});
     this.seedPhase.value=(this.seed%71)/71*.35;
     this.updateEvolution();
+    this.frozenMotionState=motionState(this.simulationTime,this.seed);this.frozenMotionState.dispersion=this.forcing.value.x;
     this.currentFlow.type=HalfFloatType;this.currentFlow.format=RGBAFormat;this.currentFlow.colorSpace=NoColorSpace;
     this.currentFlow.generateMipmaps=false;
     this.configureIntegrator();
@@ -258,6 +262,8 @@ export class GPUSceneEngine {
   }
   private configureIntegrator(){
     if(!this.material||!this.volume||!this.detailVolume||!this.sunsetVolume)return;
+    this.approachTime=-1000;this.approachFieldTime=NaN;
+    if(this.diagnostic.value===3)this.approachField.fill(0);
     const volumeNode=texture3D(this.volume),detailNode=texture3D(this.detailVolume);
     const flowNode=texture3D(this.currentFlow),sunsetNode=texture3D(this.sunsetVolume);
     const skyNode=texture(this.skyTexture),skyFromNode=texture(this.skyFromTexture),rainNode=texture(this.rainTexture);
@@ -333,7 +339,8 @@ export class GPUSceneEngine {
     if(!this.paused) this.simulationTime+=Math.min(interval/1000,.05)*this.speed;
     const weatherDelta=this.paused?0:Math.max(0,interval/1000);
     this.weatherTime+=Math.max(0,interval/1000);
-    this.advanceAtmosphere(Math.max(0,interval/1000),weatherDelta);
+    // Control transitions remain responsive while cloud/rain motion is paused.
+    this.advanceAtmosphere(Math.max(0,interval/1000));
     this.forcingTime+=weatherDelta;
     this.dispersal.step(weatherDelta,this.forcingTime);
     this.forcing.value.set(this.dispersal.amount,0);
@@ -351,15 +358,27 @@ export class GPUSceneEngine {
       const state=motionState(this.simulationTime,this.seed);state.dispersion=this.dispersal.amount;
       const volume=this.cameraVolume,ice=this.iceRange.value.toArray(),wind=this.wind.value.toArray(),drift=this.drift.value.toArray();
       const probeStarted=performance.now();
+      // Match the renderer's filtered half-float field. Analytic thermals can
+      // place the estimated front over 100 m behind the rendered front.
+      const fieldState=this.frozenFlow?this.frozenMotionState??state:state;
+      if(this.diagnostic.value!==3&&(this.approachFieldTime!==fieldState.time||this.approachFieldDispersion!==fieldState.dispersion)){
+        fillMotionField(this.approachField,MOTION_FIELD_SIZE,fieldState,ice);
+        this.approachFieldTime=fieldState.time;this.approachFieldDispersion=fieldState.dispersion??0;
+      }
+      const fieldFilled=performance.now();
+      const q=new Float64Array(4);
       const probe=probeApproach(focus,home.origin,p=>{
-        const q=sourcePosition(p.map((v,i)=>v-drift[i]),state,ice,wind);
-        if(q.some((v,i)=>v<BOUNDS_MIN[i]||v>BOUNDS_MIN[i]+BOUNDS_SIZE[i]))return 0;
+        writeFilteredSourcePosition(p.map((v,i)=>v-drift[i]),state,ice,wind,this.approachField,q);
+        if(q[0]<BOUNDS_MIN[0]||q[0]>BOUNDS_MIN[0]+BOUNDS_SIZE[0]||q[1]<BOUNDS_MIN[1]||q[1]>BOUNDS_MIN[1]+BOUNDS_SIZE[1]||q[2]<BOUNDS_MIN[2]||q[2]>BOUNDS_MIN[2]+BOUNDS_SIZE[2])return 0;
         const height=Math.max(0,Math.min(1,(q[1]-ice[0])/(ice[1]-ice[0])));
         const amount=height*height*(3-2*height); // Match shader smoothstep, including the ice boundary.
-        return sampleCloudDensity(volume,volume.detail,q[0],q[1],q[2],amount);
+        // Dynamic dispersal and metre-scale inspection erosion only remove
+        // density; omitting those terms keeps this boundary estimate outside.
+        return sampleCloudDensity(volume,volume.detail,q[0],q[1],q[2],amount,q[3]);
       },{min:this.supportMin.value.toArray().map((v,i)=>v+drift[i]),max:this.supportMax.value.toArray().map((v,i)=>v+drift[i])});
       this.approachSurface=probe.distance;
-      this.approachProbe={...probe,cpuMs:performance.now()-probeStarted};
+      const probeEnded=performance.now();
+      this.approachProbe={...probe,cpuMs:probeEnded-probeStarted,fieldFillMs:fieldFilled-probeStarted,boundaryMs:probeEnded-fieldFilled};
       this.approachTime=now;
     }
     this.inspection.value=this.view.approach;
@@ -435,13 +454,13 @@ export class GPUSceneEngine {
     for(const tex of [this.skyTexture,this.skyFromTexture]){tex.minFilter=LinearFilter;tex.magFilter=LinearFilter;tex.colorSpace=NoColorSpace;tex.generateMipmaps=false;tex.needsUpdate=true;}
     this.atmosphereProgress=initial?1:0;this.advanceAtmosphere(0);
   }
-  private advanceAtmosphere(dt:number,weatherDt=dt){
+  private advanceAtmosphere(dt:number){
     this.atmosphereProgress=Math.min(1,this.atmosphereProgress+dt/2.4);
     const t=this.atmosphereProgress,b=t*t*(3-2*t);this.atmosphereBlend.value=b;
     this.sunsetAmount.value=this.sunsetFrom+(this.sunsetTarget-this.sunsetFrom)*b;
     this.sun.value.copy(this.sunDay).lerp(this.sunLow,this.sunsetAmount.value).normalize();
     this.solarColor.value.copy(this.solarFrom).lerp(this.solarTarget,b);this.ambientColor.value.copy(this.ambientFrom).lerp(this.ambientTarget,b);
-    this.weatherState.step(weatherDt);this.weather.value.set(this.weatherFrom.x+(this.weatherTarget.x-this.weatherFrom.x)*b,this.weatherFrom.y+(this.weatherTarget.y-this.weatherFrom.y)*b,this.weatherState.rain);
+    this.weatherState.step(dt);this.weather.value.set(this.weatherFrom.x+(this.weatherTarget.x-this.weatherFrom.x)*b,this.weatherFrom.y+(this.weatherTarget.y-this.weatherFrom.y)*b,this.weatherState.rain);
     this.precipitationTime.value=this.forcingTime;
   }
   atmosphere(intent:AtmosphereIntent){
@@ -523,8 +542,8 @@ export class GPUSceneEngine {
     this.measurement=new FrameMeasurement(performance.now(),duration,2000);
     this.benchmarkContext={date:new Date().toISOString(),backend:'WebGPU',adapter:this.adapterInfo,threeRevision:'186',quality:this.quality,
       output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],nominalSteps:QUALITY[this.quality].steps,
-      mediaIntegration:'co-located cloud/rain exponential segments',precipitationMaxStepKm:RAIN_SAMPLE_STEP,precipitationExtinctionPerKm:RAIN_EXTINCTION,precipitationSourceBounds:this.rainBounds.value.toArray(),
-      rendererVersion:'observatory-v22',navigationVersion:'bounded-approach-v1',skyCalculation:'cached dedicated worker',skyPending:this.skyPending,solarVisibility:'256-cubed day + RG8 low-sun endpoints',sunDirection:this.sun.value.toArray(),sunsetAmount:this.sunsetAmount.value,extraSunsetTextureBytes:VOLUME_RESOLUTION**3*2,probeImplementation:'compile-time specialization',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{approach:this.view.approach,surfaceEstimateKm:this.approachSurface,probe:this.approachProbe,probeAgeMs:this.approachProbe?performance.now()-this.approachTime:null,altitudeKm:this.origin.value.y+4,ground:this.ground.value,yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
+      mediaIntegration:'co-located cloud/rain exponential segments',virgaReachVariation:'broad advected sheets, 0.7–1.3 of weak fall distance',precipitationMaxStepKm:RAIN_SAMPLE_STEP,precipitationExtinctionPerKm:RAIN_EXTINCTION,precipitationSourceBounds:this.rainBounds.value.toArray(),
+      rendererVersion:'observatory-v24',navigationVersion:'filtered-field-approach-v2',skyCalculation:'cached dedicated worker',skyPending:this.skyPending,solarVisibility:'256-cubed day + RG8 low-sun endpoints',sunDirection:this.sun.value.toArray(),sunsetAmount:this.sunsetAmount.value,extraSunsetTextureBytes:VOLUME_RESOLUTION**3*2,probeImplementation:'compile-time specialization',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{approach:this.view.approach,origin:this.origin.value.toArray(),probeFlow:'16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively',probeFieldBytes:this.approachField.byteLength,surfaceEstimateKm:this.approachSurface,probe:this.approachProbe,probeAgeMs:this.approachProbe?performance.now()-this.approachTime:null,altitudeKm:this.origin.value.y+4,ground:this.ground.value,yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
       userAgent:navigator.userAgent,devicePixelRatio:this.viewport.dpr,
       method:'Visible requestAnimationFrame intervals, CPU compute/render submission and callback dispatch delay. GPU render and compute timestamps sampled separately; their last-frame samples are not necessarily paired. Optional queue completion latency includes GPU work, readback and JS delivery; not compositor presentation.',warmupMs:2000,targetDurationMs:duration};
     this.setButtonEnabled('benchmark',false); this.setButtonEnabled('sustained',false);

@@ -1,0 +1,7382 @@
+{
+  "date": "2026-10-15T07:13:14.972Z",
+  "method": "CPU macro-density moments, vertical sections and six-neighbor bulk connectivity. Diagnostic sampling only; no browser, GPU or visual claim.",
+  "configuredQuality": {
+    "macro": 256,
+    "detail": 128
+  },
+  "cases": [
+    {
+      "seed": 72,
+      "parameters": {
+        "family": "congestus",
+        "towerHeight": 0.6631487672147341,
+        "towerWidth": 1.081098391311243,
+        "anvilSpread": 0.626813485659659,
+        "windLean": 0.002921091809403151
+      },
+      "ice": [
+        3.6577490387612723,
+        4.18826805253306
+      ],
+      "macroResolution": 128,
+      "detailResolution": 128,
+      "generationMs": 3533.063708,
+      "occupiedFraction": 0.05135822296142578,
+      "integratedDensity": 22.227568149560472,
+      "centroid": [
+        -0.29393370477104713,
+        2.0301706870451426,
+        -0.015510960432859678
+      ],
+      "spread": [
+        1.4467120804482672,
+        0.7446584590341678,
+        0.727129953663552
+      ],
+      "lean": {
+        "lowerBand": [
+          0.9,
+          2
+        ],
+        "upperBand": [
+          3.5,
+          null
+        ],
+        "lowerCentroidX": -0.2222180345122417,
+        "upperCentroidX": -0.653795029754629,
+        "displacementX": -0.4315769952423873
+      },
+      "bulk": {
+        "threshold": 0.16,
+        "components": 9,
+        "largestMassFraction": 0.9999430014424356
+      },
+      "sections": [
+        {
+          "height": -0.466796875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.400390625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.333984375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.267578125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.201171875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.134765625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.068359375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.001953125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.064453125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.130859375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.197265625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.263671875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.330078125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.396484375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.462890625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.529296875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.595703125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.662109375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.728515625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.794921875,
+          "mass": 0.002225240071614579,
+          "occupied": 142,
+          "dense": 4,
+          "centroidX": -0.6257031250000009,
+          "centroidZ": -0.06015625000000008,
+          "area": 0.606689453125,
+          "denseArea": 0.01708984375
+        },
+        {
+          "height": 0.861328125,
+          "mass": 0.07230027516682948,
+          "occupied": 956,
+          "dense": 672,
+          "centroidX": -0.37186860399803046,
+          "centroidZ": -0.03256995687267269,
+          "area": 4.08447265625,
+          "denseArea": 2.87109375
+        },
+        {
+          "height": 0.927734375,
+          "mass": 0.25896787643432573,
+          "occupied": 1806,
+          "dense": 1534,
+          "centroidX": -0.33752749001095633,
+          "centroidZ": -0.0050674428315183205,
+          "area": 7.716064453125,
+          "denseArea": 6.553955078125
+        },
+        {
+          "height": 0.994140625,
+          "mass": 0.4773017565409289,
+          "occupied": 2654,
+          "dense": 2377,
+          "centroidX": -0.3100970938357429,
+          "centroidZ": 0.00884602555368565,
+          "area": 11.339111328125,
+          "denseArea": 10.1556396484375
+        },
+        {
+          "height": 1.060546875,
+          "mass": 0.6294047037760344,
+          "occupied": 3291,
+          "dense": 3071,
+          "centroidX": -0.24827297921498703,
+          "centroidZ": -0.028567629521862963,
+          "area": 14.0606689453125,
+          "denseArea": 13.1207275390625
+        },
+        {
+          "height": 1.126953125,
+          "mass": 0.7441069285074929,
+          "occupied": 3648,
+          "dense": 3504,
+          "centroidX": -0.23784968573748155,
+          "centroidZ": -0.06791642119774835,
+          "area": 15.5859375,
+          "denseArea": 14.970703125
+        },
+        {
+          "height": 1.193359375,
+          "mass": 0.8193244934082171,
+          "occupied": 3905,
+          "dense": 3742,
+          "centroidX": -0.25326821516257225,
+          "centroidZ": -0.07501173160829994,
+          "area": 16.6839599609375,
+          "denseArea": 15.987548828125
+        },
+        {
+          "height": 1.259765625,
+          "mass": 0.8614538510640698,
+          "occupied": 4059,
+          "dense": 3909,
+          "centroidX": -0.24540023734043742,
+          "centroidZ": -0.0661981876253611,
+          "area": 17.3419189453125,
+          "denseArea": 16.7010498046875
+        },
+        {
+          "height": 1.326171875,
+          "mass": 0.8850436210632588,
+          "occupied": 4137,
+          "dense": 3999,
+          "centroidX": -0.22812600374437259,
+          "centroidZ": -0.05346420372545727,
+          "area": 17.6751708984375,
+          "denseArea": 17.0855712890625
+        },
+        {
+          "height": 1.392578125,
+          "mass": 0.8933148384094477,
+          "occupied": 4146,
+          "dense": 4018,
+          "centroidX": -0.19537000688447317,
+          "centroidZ": -0.04617231160472073,
+          "area": 17.713623046875,
+          "denseArea": 17.166748046875
+        },
+        {
+          "height": 1.458984375,
+          "mass": 0.876433054606139,
+          "occupied": 4084,
+          "dense": 3940,
+          "centroidX": -0.1674814853310778,
+          "centroidZ": -0.04190877826194527,
+          "area": 17.44873046875,
+          "denseArea": 16.83349609375
+        },
+        {
+          "height": 1.525390625,
+          "mass": 0.8484562238057695,
+          "occupied": 3944,
+          "dense": 3818,
+          "centroidX": -0.15429132995114803,
+          "centroidZ": -0.040423283160671175,
+          "area": 16.8505859375,
+          "denseArea": 16.312255859375
+        },
+        {
+          "height": 1.591796875,
+          "mass": 0.823601404825869,
+          "occupied": 3801,
+          "dense": 3675,
+          "centroidX": -0.15989674661188796,
+          "centroidZ": -0.0343947107746717,
+          "area": 16.2396240234375,
+          "denseArea": 15.7012939453125
+        },
+        {
+          "height": 1.658203125,
+          "mass": 0.7960117657979495,
+          "occupied": 3666,
+          "dense": 3530,
+          "centroidX": -0.171794269410107,
+          "centroidZ": -0.02171255930799172,
+          "area": 15.662841796875,
+          "denseArea": 15.081787109375
+        },
+        {
+          "height": 1.724609375,
+          "mass": 0.7707819938659817,
+          "occupied": 3494,
+          "dense": 3410,
+          "centroidX": -0.18162963244644617,
+          "centroidZ": -0.021918441308571745,
+          "area": 14.927978515625,
+          "denseArea": 14.569091796875
+        },
+        {
+          "height": 1.791015625,
+          "mass": 0.7408358256022257,
+          "occupied": 3380,
+          "dense": 3271,
+          "centroidX": -0.20328412509311164,
+          "centroidZ": -0.02555294151217692,
+          "area": 14.44091796875,
+          "denseArea": 13.9752197265625
+        },
+        {
+          "height": 1.857421875,
+          "mass": 0.7097703615824406,
+          "occupied": 3228,
+          "dense": 3138,
+          "centroidX": -0.23742485670382274,
+          "centroidZ": -0.02668691054188074,
+          "area": 13.79150390625,
+          "denseArea": 13.406982421875
+        },
+        {
+          "height": 1.923828125,
+          "mass": 0.6761992772420241,
+          "occupied": 3091,
+          "dense": 3012,
+          "centroidX": -0.28140369088479905,
+          "centroidZ": -0.027570687009052283,
+          "area": 13.2061767578125,
+          "denseArea": 12.86865234375
+        },
+        {
+          "height": 1.990234375,
+          "mass": 0.6442225774129222,
+          "occupied": 2951,
+          "dense": 2891,
+          "centroidX": -0.3232328201477,
+          "centroidZ": -0.02626013252701983,
+          "area": 12.6080322265625,
+          "denseArea": 12.3516845703125
+        },
+        {
+          "height": 2.056640625,
+          "mass": 0.6149795850117988,
+          "occupied": 2832,
+          "dense": 2758,
+          "centroidX": -0.3580661439515796,
+          "centroidZ": -0.02093200766964272,
+          "area": 12.099609375,
+          "denseArea": 11.783447265625
+        },
+        {
+          "height": 2.123046875,
+          "mass": 0.5803704261779691,
+          "occupied": 2699,
+          "dense": 2628,
+          "centroidX": -0.37204566558831165,
+          "centroidZ": -0.0063152333453150925,
+          "area": 11.5313720703125,
+          "denseArea": 11.22802734375
+        },
+        {
+          "height": 2.189453125,
+          "mass": 0.5488866170247354,
+          "occupied": 2581,
+          "dense": 2511,
+          "centroidX": -0.3663772188584488,
+          "centroidZ": 0.007123493395874865,
+          "area": 11.0272216796875,
+          "denseArea": 10.7281494140625
+        },
+        {
+          "height": 2.255859375,
+          "mass": 0.5218588511149082,
+          "occupied": 2478,
+          "dense": 2421,
+          "centroidX": -0.35948233451163786,
+          "centroidZ": 0.024307835645878247,
+          "area": 10.587158203125,
+          "denseArea": 10.3436279296875
+        },
+        {
+          "height": 2.322265625,
+          "mass": 0.49712308247883985,
+          "occupied": 2381,
+          "dense": 2313,
+          "centroidX": -0.3583593840923541,
+          "centroidZ": 0.03587054180916059,
+          "area": 10.1727294921875,
+          "denseArea": 9.8822021484375
+        },
+        {
+          "height": 2.388671875,
+          "mass": 0.48081207275390125,
+          "occupied": 2304,
+          "dense": 2231,
+          "centroidX": -0.3448682253484982,
+          "centroidZ": 0.032022528948684015,
+          "area": 9.84375,
+          "denseArea": 9.5318603515625
+        },
+        {
+          "height": 2.455078125,
+          "mass": 0.4724095662434857,
+          "occupied": 2264,
+          "dense": 2190,
+          "centroidX": -0.3319335459099593,
+          "centroidZ": 0.014389034060933803,
+          "area": 9.6728515625,
+          "denseArea": 9.356689453125
+        },
+        {
+          "height": 2.521484375,
+          "mass": 0.45802338918050006,
+          "occupied": 2201,
+          "dense": 2127,
+          "centroidX": -0.32665565135961105,
+          "centroidZ": -0.008270172192235132,
+          "area": 9.4036865234375,
+          "denseArea": 9.0875244140625
+        },
+        {
+          "height": 2.587890625,
+          "mass": 0.43892526626586725,
+          "occupied": 2131,
+          "dense": 2028,
+          "centroidX": -0.32954534112426886,
+          "centroidZ": -0.02984234314519509,
+          "area": 9.1046142578125,
+          "denseArea": 8.66455078125
+        },
+        {
+          "height": 2.654296875,
+          "mass": 0.4206260045369411,
+          "occupied": 2032,
+          "dense": 1946,
+          "centroidX": -0.33009150575321133,
+          "centroidZ": -0.03862640110435144,
+          "area": 8.681640625,
+          "denseArea": 8.314208984375
+        },
+        {
+          "height": 2.720703125,
+          "mass": 0.3984514872233023,
+          "occupied": 1925,
+          "dense": 1858,
+          "centroidX": -0.3363166501452073,
+          "centroidZ": -0.037810148309227284,
+          "area": 8.2244873046875,
+          "denseArea": 7.938232421875
+        },
+        {
+          "height": 2.787109375,
+          "mass": 0.3751532236735005,
+          "occupied": 1826,
+          "dense": 1756,
+          "centroidX": -0.3667004641437826,
+          "centroidZ": -0.02686544927783375,
+          "area": 7.801513671875,
+          "denseArea": 7.50244140625
+        },
+        {
+          "height": 2.853515625,
+          "mass": 0.347502390543619,
+          "occupied": 1705,
+          "dense": 1625,
+          "centroidX": -0.41095744097551373,
+          "centroidZ": -0.0036026078753756846,
+          "area": 7.2845458984375,
+          "denseArea": 6.9427490234375
+        },
+        {
+          "height": 2.919921875,
+          "mass": 0.33565521240234186,
+          "occupied": 1599,
+          "dense": 1552,
+          "centroidX": -0.4162981574018844,
+          "centroidZ": 0.01148169210753109,
+          "area": 6.8316650390625,
+          "denseArea": 6.630859375
+        },
+        {
+          "height": 2.986328125,
+          "mass": 0.3266018231709787,
+          "occupied": 1552,
+          "dense": 1501,
+          "centroidX": -0.39806468409228163,
+          "centroidZ": 0.00932243370221686,
+          "area": 6.630859375,
+          "denseArea": 6.4129638671875
+        },
+        {
+          "height": 3.052734375,
+          "mass": 0.31612984339396055,
+          "occupied": 1501,
+          "dense": 1440,
+          "centroidX": -0.36267780640796055,
+          "centroidZ": 0.008104357563060705,
+          "area": 6.4129638671875,
+          "denseArea": 6.15234375
+        },
+        {
+          "height": 3.119140625,
+          "mass": 0.29984219868977857,
+          "occupied": 1435,
+          "dense": 1368,
+          "centroidX": -0.2978993230782354,
+          "centroidZ": 0.02120172514397472,
+          "area": 6.1309814453125,
+          "denseArea": 5.8447265625
+        },
+        {
+          "height": 3.185546875,
+          "mass": 0.2854148546854657,
+          "occupied": 1352,
+          "dense": 1304,
+          "centroidX": -0.27311163020173423,
+          "centroidZ": 0.02254834750511656,
+          "area": 5.7763671875,
+          "denseArea": 5.5712890625
+        },
+        {
+          "height": 3.251953125,
+          "mass": 0.26857535044352226,
+          "occupied": 1293,
+          "dense": 1247,
+          "centroidX": -0.28830031277186274,
+          "centroidZ": 0.02133807065329977,
+          "area": 5.5242919921875,
+          "denseArea": 5.3277587890625
+        },
+        {
+          "height": 3.318359375,
+          "mass": 0.2505052884419757,
+          "occupied": 1236,
+          "dense": 1175,
+          "centroidX": -0.3117756532895988,
+          "centroidZ": 0.025759590732136912,
+          "area": 5.28076171875,
+          "denseArea": 5.0201416015625
+        },
+        {
+          "height": 3.384765625,
+          "mass": 0.2326143582661943,
+          "occupied": 1158,
+          "dense": 1096,
+          "centroidX": -0.3781913432287916,
+          "centroidZ": 0.0231679456004956,
+          "area": 4.947509765625,
+          "denseArea": 4.6826171875
+        },
+        {
+          "height": 3.451171875,
+          "mass": 0.21698760986328058,
+          "occupied": 1091,
+          "dense": 1032,
+          "centroidX": -0.5002256933762024,
+          "centroidZ": 0.01983005136547245,
+          "area": 4.6612548828125,
+          "denseArea": 4.4091796875
+        },
+        {
+          "height": 3.517578125,
+          "mass": 0.2033157348632809,
+          "occupied": 1019,
+          "dense": 967,
+          "centroidX": -0.6699696727793109,
+          "centroidZ": 0.017255340354391042,
+          "area": 4.3536376953125,
+          "denseArea": 4.1314697265625
+        },
+        {
+          "height": 3.583984375,
+          "mass": 0.1840585072835287,
+          "occupied": 929,
+          "dense": 872,
+          "centroidX": -0.8281836546715182,
+          "centroidZ": 0.031890903822206634,
+          "area": 3.9691162109375,
+          "denseArea": 3.7255859375
+        },
+        {
+          "height": 3.650390625,
+          "mass": 0.16587495803832986,
+          "occupied": 809,
+          "dense": 762,
+          "centroidX": -0.8708410365730956,
+          "centroidZ": 0.04330192822047811,
+          "area": 3.4564208984375,
+          "denseArea": 3.255615234375
+        },
+        {
+          "height": 3.716796875,
+          "mass": 0.14949941635131825,
+          "occupied": 747,
+          "dense": 711,
+          "centroidX": -0.8257657316342557,
+          "centroidZ": 0.06332019417900252,
+          "area": 3.1915283203125,
+          "denseArea": 3.0377197265625
+        },
+        {
+          "height": 3.783203125,
+          "mass": 0.12129116058349594,
+          "occupied": 678,
+          "dense": 616,
+          "centroidX": -0.7112174239088564,
+          "centroidZ": 0.12534922406755108,
+          "area": 2.896728515625,
+          "denseArea": 2.6318359375
+        },
+        {
+          "height": 3.849609375,
+          "mass": 0.07982158660888675,
+          "occupied": 532,
+          "dense": 450,
+          "centroidX": -0.404414647277745,
+          "centroidZ": 0.2465732241922443,
+          "area": 2.27294921875,
+          "denseArea": 1.922607421875
+        },
+        {
+          "height": 3.916015625,
+          "mass": 0.048812866210937465,
+          "occupied": 355,
+          "dense": 308,
+          "centroidX": -0.012214154244164931,
+          "centroidZ": 0.39153816785193307,
+          "area": 1.5167236328125,
+          "denseArea": 1.31591796875
+        },
+        {
+          "height": 3.982421875,
+          "mass": 0.03093417485555013,
+          "occupied": 283,
+          "dense": 221,
+          "centroidX": 0.2053524462288242,
+          "centroidZ": 0.5071374098568497,
+          "area": 1.2091064453125,
+          "denseArea": 0.9442138671875
+        },
+        {
+          "height": 4.048828125,
+          "mass": 0.01660585403442384,
+          "occupied": 197,
+          "dense": 146,
+          "centroidX": 0.3173916457286431,
+          "centroidZ": 0.6037371754606355,
+          "area": 0.8416748046875,
+          "denseArea": 0.623779296875
+        },
+        {
+          "height": 4.115234375,
+          "mass": 0.007168610890706372,
+          "occupied": 130,
+          "dense": 66,
+          "centroidX": 0.3514412443737394,
+          "centroidZ": 0.6673903606627357,
+          "area": 0.555419921875,
+          "denseArea": 0.281982421875
+        },
+        {
+          "height": 4.181640625,
+          "mass": 0.002912839253743487,
+          "occupied": 63,
+          "dense": 32,
+          "centroidX": 0.33503031894576046,
+          "centroidZ": 0.7168699866310166,
+          "area": 0.2691650390625,
+          "denseArea": 0.13671875
+        },
+        {
+          "height": 4.248046875,
+          "mass": 0.0000678698221842448,
+          "occupied": 5,
+          "dense": 0,
+          "centroidX": 0.06723872950819673,
+          "centroidZ": 0.7006275614754098,
+          "area": 0.0213623046875,
+          "denseArea": 0
+        },
+        {
+          "height": 4.314453125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 4.380859375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 4.447265625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 4.513671875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 4.580078125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 4.646484375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 4.712890625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 4.779296875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 4.845703125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 4.912109375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 4.978515625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.044921875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.111328125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.177734375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.244140625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.310546875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.376953125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.443359375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.509765625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.576171875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.642578125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.708984375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.775390625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.841796875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.908203125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.974609375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.041015625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.107421875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.173828125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.240234375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.306640625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.373046875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.439453125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.505859375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.572265625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.638671875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.705078125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.771484375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.837890625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.904296875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.970703125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.037109375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.103515625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.169921875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.236328125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.302734375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.369140625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.435546875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.501953125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.568359375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.634765625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.701171875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.767578125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.833984375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.900390625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.966796875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        }
+      ],
+      "upperProfile": [
+        {
+          "x": -4.9609375,
+          "height": 0
+        },
+        {
+          "x": -4.8828125,
+          "height": 0
+        },
+        {
+          "x": -4.8046875,
+          "height": 0
+        },
+        {
+          "x": -4.7265625,
+          "height": 0
+        },
+        {
+          "x": -4.6484375,
+          "height": 0
+        },
+        {
+          "x": -4.5703125,
+          "height": 0
+        },
+        {
+          "x": -4.4921875,
+          "height": 0
+        },
+        {
+          "x": -4.4140625,
+          "height": 0
+        },
+        {
+          "x": -4.3359375,
+          "height": 0
+        },
+        {
+          "x": -4.2578125,
+          "height": 0
+        },
+        {
+          "x": -4.1796875,
+          "height": 0
+        },
+        {
+          "x": -4.1015625,
+          "height": 0
+        },
+        {
+          "x": -4.0234375,
+          "height": 0
+        },
+        {
+          "x": -3.9453125,
+          "height": 0
+        },
+        {
+          "x": -3.8671875,
+          "height": 0
+        },
+        {
+          "x": -3.7890625,
+          "height": 0
+        },
+        {
+          "x": -3.7109375,
+          "height": 0
+        },
+        {
+          "x": -3.6328125,
+          "height": 0
+        },
+        {
+          "x": -3.5546875,
+          "height": 0
+        },
+        {
+          "x": -3.4765625,
+          "height": 1.126953125
+        },
+        {
+          "x": -3.3984375,
+          "height": 1.326171875
+        },
+        {
+          "x": -3.3203125,
+          "height": 1.458984375
+        },
+        {
+          "x": -3.2421875,
+          "height": 2.123046875
+        },
+        {
+          "x": -3.1640625,
+          "height": 2.255859375
+        },
+        {
+          "x": -3.0859375,
+          "height": 2.787109375
+        },
+        {
+          "x": -3.0078125,
+          "height": 2.919921875
+        },
+        {
+          "x": -2.9296875,
+          "height": 2.986328125
+        },
+        {
+          "x": -2.8515625,
+          "height": 3.052734375
+        },
+        {
+          "x": -2.7734375,
+          "height": 3.119140625
+        },
+        {
+          "x": -2.6953125,
+          "height": 3.052734375
+        },
+        {
+          "x": -2.6171875,
+          "height": 3.119140625
+        },
+        {
+          "x": -2.5390625,
+          "height": 3.318359375
+        },
+        {
+          "x": -2.4609375,
+          "height": 3.583984375
+        },
+        {
+          "x": -2.3828125,
+          "height": 3.849609375
+        },
+        {
+          "x": -2.3046875,
+          "height": 3.849609375
+        },
+        {
+          "x": -2.2265625,
+          "height": 3.849609375
+        },
+        {
+          "x": -2.1484375,
+          "height": 3.849609375
+        },
+        {
+          "x": -2.0703125,
+          "height": 3.849609375
+        },
+        {
+          "x": -1.9921875,
+          "height": 3.849609375
+        },
+        {
+          "x": -1.9140625,
+          "height": 3.849609375
+        },
+        {
+          "x": -1.8359375,
+          "height": 3.849609375
+        },
+        {
+          "x": -1.7578125,
+          "height": 3.916015625
+        },
+        {
+          "x": -1.6796875,
+          "height": 3.916015625
+        },
+        {
+          "x": -1.6015625,
+          "height": 3.916015625
+        },
+        {
+          "x": -1.5234375,
+          "height": 3.916015625
+        },
+        {
+          "x": -1.4453125,
+          "height": 3.916015625
+        },
+        {
+          "x": -1.3671875,
+          "height": 3.916015625
+        },
+        {
+          "x": -1.2890625,
+          "height": 3.916015625
+        },
+        {
+          "x": -1.2109375,
+          "height": 3.982421875
+        },
+        {
+          "x": -1.1328125,
+          "height": 3.982421875
+        },
+        {
+          "x": -1.0546875,
+          "height": 3.982421875
+        },
+        {
+          "x": -0.9765625,
+          "height": 3.982421875
+        },
+        {
+          "x": -0.8984375,
+          "height": 3.849609375
+        },
+        {
+          "x": -0.8203125,
+          "height": 3.716796875
+        },
+        {
+          "x": -0.7421875,
+          "height": 3.583984375
+        },
+        {
+          "x": -0.6640625,
+          "height": 3.119140625
+        },
+        {
+          "x": -0.5859375,
+          "height": 3.583984375
+        },
+        {
+          "x": -0.5078125,
+          "height": 3.783203125
+        },
+        {
+          "x": -0.4296875,
+          "height": 3.849609375
+        },
+        {
+          "x": -0.3515625,
+          "height": 3.916015625
+        },
+        {
+          "x": -0.2734375,
+          "height": 3.982421875
+        },
+        {
+          "x": -0.1953125,
+          "height": 4.048828125
+        },
+        {
+          "x": -0.1171875,
+          "height": 4.115234375
+        },
+        {
+          "x": -0.0390625,
+          "height": 4.181640625
+        },
+        {
+          "x": 0.0390625,
+          "height": 4.181640625
+        },
+        {
+          "x": 0.1171875,
+          "height": 4.181640625
+        },
+        {
+          "x": 0.1953125,
+          "height": 4.181640625
+        },
+        {
+          "x": 0.2734375,
+          "height": 4.048828125
+        },
+        {
+          "x": 0.3515625,
+          "height": 4.048828125
+        },
+        {
+          "x": 0.4296875,
+          "height": 4.115234375
+        },
+        {
+          "x": 0.5078125,
+          "height": 4.115234375
+        },
+        {
+          "x": 0.5859375,
+          "height": 4.181640625
+        },
+        {
+          "x": 0.6640625,
+          "height": 4.181640625
+        },
+        {
+          "x": 0.7421875,
+          "height": 4.181640625
+        },
+        {
+          "x": 0.8203125,
+          "height": 4.181640625
+        },
+        {
+          "x": 0.8984375,
+          "height": 4.048828125
+        },
+        {
+          "x": 0.9765625,
+          "height": 3.982421875
+        },
+        {
+          "x": 1.0546875,
+          "height": 3.451171875
+        },
+        {
+          "x": 1.1328125,
+          "height": 3.451171875
+        },
+        {
+          "x": 1.2109375,
+          "height": 2.919921875
+        },
+        {
+          "x": 1.2890625,
+          "height": 3.119140625
+        },
+        {
+          "x": 1.3671875,
+          "height": 3.318359375
+        },
+        {
+          "x": 1.4453125,
+          "height": 3.384765625
+        },
+        {
+          "x": 1.5234375,
+          "height": 3.517578125
+        },
+        {
+          "x": 1.6015625,
+          "height": 3.517578125
+        },
+        {
+          "x": 1.6796875,
+          "height": 3.583984375
+        },
+        {
+          "x": 1.7578125,
+          "height": 3.583984375
+        },
+        {
+          "x": 1.8359375,
+          "height": 3.583984375
+        },
+        {
+          "x": 1.9140625,
+          "height": 3.583984375
+        },
+        {
+          "x": 1.9921875,
+          "height": 3.583984375
+        },
+        {
+          "x": 2.0703125,
+          "height": 3.517578125
+        },
+        {
+          "x": 2.1484375,
+          "height": 3.517578125
+        },
+        {
+          "x": 2.2265625,
+          "height": 3.517578125
+        },
+        {
+          "x": 2.3046875,
+          "height": 3.451171875
+        },
+        {
+          "x": 2.3828125,
+          "height": 3.451171875
+        },
+        {
+          "x": 2.4609375,
+          "height": 3.451171875
+        },
+        {
+          "x": 2.5390625,
+          "height": 2.787109375
+        },
+        {
+          "x": 2.6171875,
+          "height": 2.720703125
+        },
+        {
+          "x": 2.6953125,
+          "height": 2.322265625
+        },
+        {
+          "x": 2.7734375,
+          "height": 2.189453125
+        },
+        {
+          "x": 2.8515625,
+          "height": 1.791015625
+        },
+        {
+          "x": 2.9296875,
+          "height": 1.724609375
+        },
+        {
+          "x": 3.0078125,
+          "height": 0
+        },
+        {
+          "x": 3.0859375,
+          "height": 0
+        },
+        {
+          "x": 3.1640625,
+          "height": 0
+        },
+        {
+          "x": 3.2421875,
+          "height": 0
+        },
+        {
+          "x": 3.3203125,
+          "height": 0
+        },
+        {
+          "x": 3.3984375,
+          "height": 0
+        },
+        {
+          "x": 3.4765625,
+          "height": 0
+        },
+        {
+          "x": 3.5546875,
+          "height": 0
+        },
+        {
+          "x": 3.6328125,
+          "height": 0
+        },
+        {
+          "x": 3.7109375,
+          "height": 0
+        },
+        {
+          "x": 3.7890625,
+          "height": 0
+        },
+        {
+          "x": 3.8671875,
+          "height": 0
+        },
+        {
+          "x": 3.9453125,
+          "height": 0
+        },
+        {
+          "x": 4.0234375,
+          "height": 0
+        },
+        {
+          "x": 4.1015625,
+          "height": 0
+        },
+        {
+          "x": 4.1796875,
+          "height": 0
+        },
+        {
+          "x": 4.2578125,
+          "height": 0
+        },
+        {
+          "x": 4.3359375,
+          "height": 0
+        },
+        {
+          "x": 4.4140625,
+          "height": 0
+        },
+        {
+          "x": 4.4921875,
+          "height": 0
+        },
+        {
+          "x": 4.5703125,
+          "height": 0
+        },
+        {
+          "x": 4.6484375,
+          "height": 0
+        },
+        {
+          "x": 4.7265625,
+          "height": 0
+        },
+        {
+          "x": 4.8046875,
+          "height": 0
+        },
+        {
+          "x": 4.8828125,
+          "height": 0
+        },
+        {
+          "x": 4.9609375,
+          "height": 0
+        }
+      ]
+    },
+    {
+      "seed": 73,
+      "parameters": {
+        "family": "multicell",
+        "towerHeight": 0.8521600715070963,
+        "towerWidth": 1.0554608615813776,
+        "anvilSpread": 0.9777257240656763,
+        "windLean": 0.0339652316540014
+      },
+      "ice": [
+        4.495069116776437,
+        5.176797173982114
+      ],
+      "macroResolution": 128,
+      "detailResolution": 128,
+      "generationMs": 3136.469833,
+      "occupiedFraction": 0.056427955627441406,
+      "integratedDensity": 23.900037447605346,
+      "centroid": [
+        -0.2379461184740284,
+        2.1807830054948476,
+        -0.07115349751504388
+      ],
+      "spread": [
+        1.6728268411582918,
+        1.0205199623173609,
+        0.6803998956912625
+      ],
+      "lean": {
+        "lowerBand": [
+          0.9,
+          2
+        ],
+        "upperBand": [
+          3.5,
+          null
+        ],
+        "lowerCentroidX": -0.06260366532788116,
+        "upperCentroidX": -0.6501664510060778,
+        "displacementX": -0.5875627856781966
+      },
+      "bulk": {
+        "threshold": 0.16,
+        "components": 12,
+        "largestMassFraction": 0.9997136847457835
+      },
+      "sections": [
+        {
+          "height": -0.466796875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.400390625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.333984375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.267578125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.201171875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.134765625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.068359375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.001953125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.064453125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.130859375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.197265625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.263671875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.330078125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.396484375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.462890625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.529296875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.595703125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.662109375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.728515625,
+          "mass": 0.0004216829935709627,
+          "occupied": 150,
+          "dense": 0,
+          "centroidX": 0.3408435026385232,
+          "centroidZ": 0.19818807717678147,
+          "area": 0.640869140625,
+          "denseArea": 0
+        },
+        {
+          "height": 0.794921875,
+          "mass": 0.03304147720336936,
+          "occupied": 983,
+          "dense": 311,
+          "centroidX": 0.011366099690204533,
+          "centroidZ": 0.06498801962319391,
+          "area": 4.1998291015625,
+          "denseArea": 1.3287353515625
+        },
+        {
+          "height": 0.861328125,
+          "mass": 0.1957031885782883,
+          "occupied": 1977,
+          "dense": 1636,
+          "centroidX": -0.09320643754192748,
+          "centroidZ": -0.021455082677635243,
+          "area": 8.4466552734375,
+          "denseArea": 6.98974609375
+        },
+        {
+          "height": 0.927734375,
+          "mass": 0.4479107856750477,
+          "occupied": 2629,
+          "dense": 2464,
+          "centroidX": -0.08272053686536335,
+          "centroidZ": -0.0006245470541982538,
+          "area": 11.2322998046875,
+          "denseArea": 10.52734375
+        },
+        {
+          "height": 0.994140625,
+          "mass": 0.6333478291829425,
+          "occupied": 3098,
+          "dense": 2930,
+          "centroidX": -0.091676786153469,
+          "centroidZ": 0.013770155712000862,
+          "area": 13.236083984375,
+          "denseArea": 12.518310546875
+        },
+        {
+          "height": 1.060546875,
+          "mass": 0.7356754938761455,
+          "occupied": 3557,
+          "dense": 3399,
+          "centroidX": -0.04549235492506057,
+          "centroidZ": 0.015010052592973888,
+          "area": 15.1971435546875,
+          "denseArea": 14.5220947265625
+        },
+        {
+          "height": 1.126953125,
+          "mass": 0.8171526590983248,
+          "occupied": 3860,
+          "dense": 3731,
+          "centroidX": -0.04308969674173439,
+          "centroidZ": 0.0071054136484939795,
+          "area": 16.49169921875,
+          "denseArea": 15.9405517578125
+        },
+        {
+          "height": 1.193359375,
+          "mass": 0.8772308031718177,
+          "occupied": 4107,
+          "dense": 3974,
+          "centroidX": -0.060311126237732306,
+          "centroidZ": 0.003522302075180508,
+          "area": 17.5469970703125,
+          "denseArea": 16.978759765625
+        },
+        {
+          "height": 1.259765625,
+          "mass": 0.9162570635478058,
+          "occupied": 4281,
+          "dense": 4141,
+          "centroidX": -0.07649113652425354,
+          "centroidZ": -0.0011805606362619433,
+          "area": 18.2904052734375,
+          "denseArea": 17.6922607421875
+        },
+        {
+          "height": 1.326171875,
+          "mass": 0.9420475959778145,
+          "occupied": 4374,
+          "dense": 4257,
+          "centroidX": -0.0876579066290828,
+          "centroidZ": 0.0008544871414428361,
+          "area": 18.687744140625,
+          "denseArea": 18.1878662109375
+        },
+        {
+          "height": 1.392578125,
+          "mass": 0.95265086491904,
+          "occupied": 4440,
+          "dense": 4294,
+          "centroidX": -0.09803434130185534,
+          "centroidZ": 0.0026269669598338267,
+          "area": 18.9697265625,
+          "denseArea": 18.345947265625
+        },
+        {
+          "height": 1.458984375,
+          "mass": 0.9443718592325969,
+          "occupied": 4411,
+          "dense": 4270,
+          "centroidX": -0.09794927098477446,
+          "centroidZ": -0.0018834341444556593,
+          "area": 18.8458251953125,
+          "denseArea": 18.243408203125
+        },
+        {
+          "height": 1.525390625,
+          "mass": 0.92358144124351,
+          "occupied": 4316,
+          "dense": 4186,
+          "centroidX": -0.08999561496501364,
+          "centroidZ": -0.0034703440927314868,
+          "area": 18.43994140625,
+          "denseArea": 17.884521484375
+        },
+        {
+          "height": 1.591796875,
+          "mass": 0.888986746470159,
+          "occupied": 4160,
+          "dense": 4044,
+          "centroidX": -0.07216537555240643,
+          "centroidZ": -0.003943268790918521,
+          "area": 17.7734375,
+          "denseArea": 17.27783203125
+        },
+        {
+          "height": 1.658203125,
+          "mass": 0.8357489903768103,
+          "occupied": 3928,
+          "dense": 3795,
+          "centroidX": -0.03945678915375401,
+          "centroidZ": 0.004376796818628167,
+          "area": 16.7822265625,
+          "denseArea": 16.2139892578125
+        },
+        {
+          "height": 1.724609375,
+          "mass": 0.7626220385233645,
+          "occupied": 3615,
+          "dense": 3461,
+          "centroidX": 0.018592085668244916,
+          "centroidZ": 0.019476790493616784,
+          "area": 15.4449462890625,
+          "denseArea": 14.7869873046875
+        },
+        {
+          "height": 1.791015625,
+          "mass": 0.6814653078715013,
+          "occupied": 3226,
+          "dense": 3120,
+          "centroidX": 0.058101424499622786,
+          "centroidZ": 0.013920340094974198,
+          "area": 13.782958984375,
+          "denseArea": 13.330078125
+        },
+        {
+          "height": 1.857421875,
+          "mass": 0.6012899080912197,
+          "occupied": 2861,
+          "dense": 2761,
+          "centroidX": 0.014516226867828703,
+          "centroidZ": -0.010770136681272144,
+          "area": 12.2235107421875,
+          "denseArea": 11.7962646484375
+        },
+        {
+          "height": 1.923828125,
+          "mass": 0.5402415593465161,
+          "occupied": 2547,
+          "dense": 2473,
+          "centroidX": -0.10071161040493624,
+          "centroidZ": -0.029542251517841865,
+          "area": 10.8819580078125,
+          "denseArea": 10.5657958984375
+        },
+        {
+          "height": 1.990234375,
+          "mass": 0.5114391644795732,
+          "occupied": 2417,
+          "dense": 2345,
+          "centroidX": -0.17047595250189784,
+          "centroidZ": -0.03410415581198284,
+          "area": 10.3265380859375,
+          "denseArea": 10.0189208984375
+        },
+        {
+          "height": 2.056640625,
+          "mass": 0.4938497543334943,
+          "occupied": 2311,
+          "dense": 2245,
+          "centroidX": -0.21781051880990118,
+          "centroidZ": -0.042249987749571005,
+          "area": 9.8736572265625,
+          "denseArea": 9.5916748046875
+        },
+        {
+          "height": 2.123046875,
+          "mass": 0.4806796709696393,
+          "occupied": 2217,
+          "dense": 2167,
+          "centroidX": -0.23827677434755185,
+          "centroidZ": -0.05071421467218413,
+          "area": 9.4720458984375,
+          "denseArea": 9.2584228515625
+        },
+        {
+          "height": 2.189453125,
+          "mass": 0.46805699666340583,
+          "occupied": 2162,
+          "dense": 2105,
+          "centroidX": -0.2642509226133901,
+          "centroidZ": -0.0590278685699348,
+          "area": 9.237060546875,
+          "denseArea": 8.9935302734375
+        },
+        {
+          "height": 2.255859375,
+          "mass": 0.4524424870808874,
+          "occupied": 2087,
+          "dense": 2037,
+          "centroidX": -0.2904876108458012,
+          "centroidZ": -0.06641681662305822,
+          "area": 8.9166259765625,
+          "denseArea": 8.7030029296875
+        },
+        {
+          "height": 2.322265625,
+          "mass": 0.4278780619303345,
+          "occupied": 2012,
+          "dense": 1952,
+          "centroidX": -0.305540283187893,
+          "centroidZ": -0.07202584702185372,
+          "area": 8.59619140625,
+          "denseArea": 8.33984375
+        },
+        {
+          "height": 2.388671875,
+          "mass": 0.39886760711669605,
+          "occupied": 1903,
+          "dense": 1836,
+          "centroidX": -0.32806206310287417,
+          "centroidZ": -0.08012440148928661,
+          "area": 8.1304931640625,
+          "denseArea": 7.84423828125
+        },
+        {
+          "height": 2.455078125,
+          "mass": 0.3758942286173495,
+          "occupied": 1823,
+          "dense": 1760,
+          "centroidX": -0.3470405155011453,
+          "centroidZ": -0.09316911403420584,
+          "area": 7.7886962890625,
+          "denseArea": 7.51953125
+        },
+        {
+          "height": 2.521484375,
+          "mass": 0.3621389071146638,
+          "occupied": 1778,
+          "dense": 1716,
+          "centroidX": -0.37976025725614,
+          "centroidZ": -0.10921210506769986,
+          "area": 7.596435546875,
+          "denseArea": 7.33154296875
+        },
+        {
+          "height": 2.587890625,
+          "mass": 0.34917688369750904,
+          "occupied": 1735,
+          "dense": 1679,
+          "centroidX": -0.43795797147686966,
+          "centroidZ": -0.12184297908840147,
+          "area": 7.4127197265625,
+          "denseArea": 7.1734619140625
+        },
+        {
+          "height": 2.654296875,
+          "mass": 0.33561182022094593,
+          "occupied": 1688,
+          "dense": 1621,
+          "centroidX": -0.5075985660520297,
+          "centroidZ": -0.14416673348865147,
+          "area": 7.2119140625,
+          "denseArea": 6.9256591796875
+        },
+        {
+          "height": 2.720703125,
+          "mass": 0.32657400767008354,
+          "occupied": 1631,
+          "dense": 1557,
+          "centroidX": -0.5638916310072994,
+          "centroidZ": -0.17052696725584152,
+          "area": 6.9683837890625,
+          "denseArea": 6.6522216796875
+        },
+        {
+          "height": 2.787109375,
+          "mass": 0.31662607192993175,
+          "occupied": 1568,
+          "dense": 1496,
+          "centroidX": -0.5915280343720677,
+          "centroidZ": -0.18763239222161374,
+          "area": 6.69921875,
+          "denseArea": 6.3916015625
+        },
+        {
+          "height": 2.853515625,
+          "mass": 0.30560557047526127,
+          "occupied": 1494,
+          "dense": 1433,
+          "centroidX": -0.5854684746716066,
+          "centroidZ": -0.20071143946234074,
+          "area": 6.383056640625,
+          "denseArea": 6.1224365234375
+        },
+        {
+          "height": 2.919921875,
+          "mass": 0.2989676793416343,
+          "occupied": 1459,
+          "dense": 1395,
+          "centroidX": -0.5623749213824781,
+          "centroidZ": -0.20776043915096765,
+          "area": 6.2335205078125,
+          "denseArea": 5.9600830078125
+        },
+        {
+          "height": 2.986328125,
+          "mass": 0.29537502924601233,
+          "occupied": 1456,
+          "dense": 1390,
+          "centroidX": -0.498949032072458,
+          "centroidZ": -0.20406333163984144,
+          "area": 6.220703125,
+          "denseArea": 5.938720703125
+        },
+        {
+          "height": 3.052734375,
+          "mass": 0.2901145617167157,
+          "occupied": 1446,
+          "dense": 1364,
+          "centroidX": -0.42206163182792683,
+          "centroidZ": -0.1957741358787569,
+          "area": 6.177978515625,
+          "denseArea": 5.82763671875
+        },
+        {
+          "height": 3.119140625,
+          "mass": 0.2829648653666177,
+          "occupied": 1403,
+          "dense": 1344,
+          "centroidX": -0.3591743140121035,
+          "centroidZ": -0.1913696946157052,
+          "area": 5.9942626953125,
+          "denseArea": 5.7421875
+        },
+        {
+          "height": 3.185546875,
+          "mass": 0.2705413500467928,
+          "occupied": 1324,
+          "dense": 1265,
+          "centroidX": -0.31959916201261096,
+          "centroidZ": -0.1888526657930892,
+          "area": 5.65673828125,
+          "denseArea": 5.4046630859375
+        },
+        {
+          "height": 3.251953125,
+          "mass": 0.2616448402404787,
+          "occupied": 1256,
+          "dense": 1208,
+          "centroidX": -0.3028903934432159,
+          "centroidZ": -0.1819038838019473,
+          "area": 5.3662109375,
+          "denseArea": 5.1611328125
+        },
+        {
+          "height": 3.318359375,
+          "mass": 0.25396776199340815,
+          "occupied": 1199,
+          "dense": 1163,
+          "centroidX": -0.30623472828253606,
+          "centroidZ": -0.17699388323563786,
+          "area": 5.1226806640625,
+          "denseArea": 4.9688720703125
+        },
+        {
+          "height": 3.384765625,
+          "mass": 0.2447196642557776,
+          "occupied": 1162,
+          "dense": 1120,
+          "centroidX": -0.30459564632028435,
+          "centroidZ": -0.16064585213504073,
+          "area": 4.964599609375,
+          "denseArea": 4.78515625
+        },
+        {
+          "height": 3.451171875,
+          "mass": 0.2312647501627606,
+          "occupied": 1099,
+          "dense": 1057,
+          "centroidX": -0.336003350877531,
+          "centroidZ": -0.15049823405386334,
+          "area": 4.6954345703125,
+          "denseArea": 4.5159912109375
+        },
+        {
+          "height": 3.517578125,
+          "mass": 0.21302111943562785,
+          "occupied": 1030,
+          "dense": 979,
+          "centroidX": -0.42448689242866694,
+          "centroidZ": -0.14577625382588477,
+          "area": 4.400634765625,
+          "denseArea": 4.1827392578125
+        },
+        {
+          "height": 3.583984375,
+          "mass": 0.20219643910725893,
+          "occupied": 979,
+          "dense": 936,
+          "centroidX": -0.44877144321245915,
+          "centroidZ": -0.15281925796511345,
+          "area": 4.1827392578125,
+          "denseArea": 3.9990234375
+        },
+        {
+          "height": 3.650390625,
+          "mass": 0.1932409604390461,
+          "occupied": 939,
+          "dense": 895,
+          "centroidX": -0.39088522024573913,
+          "centroidZ": -0.1590344465931798,
+          "area": 4.0118408203125,
+          "denseArea": 3.8238525390625
+        },
+        {
+          "height": 3.716796875,
+          "mass": 0.18211476008097327,
+          "occupied": 897,
+          "dense": 843,
+          "centroidX": -0.3056433416981815,
+          "centroidZ": -0.1650031874117952,
+          "area": 3.8323974609375,
+          "denseArea": 3.6016845703125
+        },
+        {
+          "height": 3.783203125,
+          "mass": 0.17323939005533837,
+          "occupied": 856,
+          "dense": 822,
+          "centroidX": -0.23853905085932353,
+          "centroidZ": -0.16847251034013383,
+          "area": 3.6572265625,
+          "denseArea": 3.511962890625
+        },
+        {
+          "height": 3.849609375,
+          "mass": 0.1642894744873042,
+          "occupied": 828,
+          "dense": 790,
+          "centroidX": -0.17922613605580567,
+          "centroidZ": -0.17428446261682307,
+          "area": 3.53759765625,
+          "denseArea": 3.375244140625
+        },
+        {
+          "height": 3.916015625,
+          "mass": 0.15826241175333658,
+          "occupied": 799,
+          "dense": 768,
+          "centroidX": -0.10248884171804458,
+          "centroidZ": -0.15873592527400285,
+          "area": 3.4136962890625,
+          "denseArea": 3.28125
+        },
+        {
+          "height": 3.982421875,
+          "mass": 0.15466086069742835,
+          "occupied": 795,
+          "dense": 751,
+          "centroidX": -0.012028482583485375,
+          "centroidZ": -0.13303556815892842,
+          "area": 3.3966064453125,
+          "denseArea": 3.2086181640625
+        },
+        {
+          "height": 4.048828125,
+          "mass": 0.15258916219075497,
+          "occupied": 802,
+          "dense": 756,
+          "centroidX": 0.0687661098917931,
+          "centroidZ": -0.09077485389444705,
+          "area": 3.426513671875,
+          "denseArea": 3.22998046875
+        },
+        {
+          "height": 4.115234375,
+          "mass": 0.14583555857340472,
+          "occupied": 767,
+          "dense": 720,
+          "centroidX": 0.07379776881761586,
+          "centroidZ": -0.06900294633184281,
+          "area": 3.2769775390625,
+          "denseArea": 3.076171875
+        },
+        {
+          "height": 4.181640625,
+          "mass": 0.13757658004760717,
+          "occupied": 717,
+          "dense": 672,
+          "centroidX": 0.019382614677601336,
+          "centroidZ": -0.06588165102789317,
+          "area": 3.0633544921875,
+          "denseArea": 2.87109375
+        },
+        {
+          "height": 4.248046875,
+          "mass": 0.12768205006917294,
+          "occupied": 669,
+          "dense": 625,
+          "centroidX": -0.11216538280555569,
+          "centroidZ": -0.07439745486153485,
+          "area": 2.8582763671875,
+          "denseArea": 2.6702880859375
+        },
+        {
+          "height": 4.314453125,
+          "mass": 0.11071236928304037,
+          "occupied": 613,
+          "dense": 564,
+          "centroidX": -0.3954684579321859,
+          "centroidZ": -0.13173616729141968,
+          "area": 2.6190185546875,
+          "denseArea": 2.40966796875
+        },
+        {
+          "height": 4.380859375,
+          "mass": 0.08256196975707995,
+          "occupied": 478,
+          "dense": 420,
+          "centroidX": -1.103079623172296,
+          "centroidZ": -0.32138348788828297,
+          "area": 2.042236328125,
+          "denseArea": 1.79443359375
+        },
+        {
+          "height": 4.447265625,
+          "mass": 0.0717050234476724,
+          "occupied": 362,
+          "dense": 335,
+          "centroidX": -1.5991525740143087,
+          "centroidZ": -0.4794950817144334,
+          "area": 1.546630859375,
+          "denseArea": 1.4312744140625
+        },
+        {
+          "height": 4.513671875,
+          "mass": 0.07269859313964841,
+          "occupied": 354,
+          "dense": 337,
+          "centroidX": -1.6550591138659325,
+          "centroidZ": -0.4948164170110191,
+          "area": 1.512451171875,
+          "denseArea": 1.4398193359375
+        },
+        {
+          "height": 4.580078125,
+          "mass": 0.07300901412963857,
+          "occupied": 350,
+          "dense": 335,
+          "centroidX": -1.6823960809750242,
+          "centroidZ": -0.5005295126983047,
+          "area": 1.495361328125,
+          "denseArea": 1.4312744140625
+        },
+        {
+          "height": 4.646484375,
+          "mass": 0.07265965143839505,
+          "occupied": 360,
+          "dense": 339,
+          "centroidX": -1.6810859859505431,
+          "centroidZ": -0.5030634498698429,
+          "area": 1.5380859375,
+          "denseArea": 1.4483642578125
+        },
+        {
+          "height": 4.712890625,
+          "mass": 0.0727241834004719,
+          "occupied": 376,
+          "dense": 358,
+          "centroidX": -1.6877829152196206,
+          "centroidZ": -0.5081248780846961,
+          "area": 1.6064453125,
+          "denseArea": 1.529541015625
+        },
+        {
+          "height": 4.779296875,
+          "mass": 0.07276980082194005,
+          "occupied": 393,
+          "dense": 373,
+          "centroidX": -1.6978020744144087,
+          "centroidZ": -0.502415276588588,
+          "area": 1.6790771484375,
+          "denseArea": 1.5936279296875
+        },
+        {
+          "height": 4.845703125,
+          "mass": 0.07180404663085936,
+          "occupied": 419,
+          "dense": 395,
+          "centroidX": -1.6900559861937539,
+          "centroidZ": -0.4901198555844803,
+          "area": 1.7901611328125,
+          "denseArea": 1.6876220703125
+        },
+        {
+          "height": 4.912109375,
+          "mass": 0.07549015680948899,
+          "occupied": 469,
+          "dense": 441,
+          "centroidX": -1.6292365445695562,
+          "centroidZ": -0.4645148947478954,
+          "area": 2.0037841796875,
+          "denseArea": 1.8841552734375
+        },
+        {
+          "height": 4.978515625,
+          "mass": 0.0763090451558431,
+          "occupied": 506,
+          "dense": 473,
+          "centroidX": -1.598599707479771,
+          "centroidZ": -0.4453361362725084,
+          "area": 2.161865234375,
+          "denseArea": 2.0208740234375
+        },
+        {
+          "height": 5.044921875,
+          "mass": 0.07698329289754231,
+          "occupied": 548,
+          "dense": 501,
+          "centroidX": -1.576458756377273,
+          "centroidZ": -0.43443607414620405,
+          "area": 2.34130859375,
+          "denseArea": 2.1405029296875
+        },
+        {
+          "height": 5.111328125,
+          "mass": 0.07519642512003577,
+          "occupied": 568,
+          "dense": 515,
+          "centroidX": -1.5534957137308576,
+          "centroidZ": -0.43182005761263614,
+          "area": 2.4267578125,
+          "denseArea": 2.2003173828125
+        },
+        {
+          "height": 5.177734375,
+          "mass": 0.05997578303019207,
+          "occupied": 506,
+          "dense": 453,
+          "centroidX": -1.5489685268064202,
+          "centroidZ": -0.44091131098692116,
+          "area": 2.161865234375,
+          "denseArea": 1.9354248046875
+        },
+        {
+          "height": 5.244140625,
+          "mass": 0.03819068272908528,
+          "occupied": 392,
+          "dense": 317,
+          "centroidX": -1.4714846595047342,
+          "centroidZ": -0.44301176711580526,
+          "area": 1.6748046875,
+          "denseArea": 1.3543701171875
+        },
+        {
+          "height": 5.310546875,
+          "mass": 0.017628351847330744,
+          "occupied": 258,
+          "dense": 173,
+          "centroidX": -1.2473915598964893,
+          "centroidZ": -0.3742938967432462,
+          "area": 1.102294921875,
+          "denseArea": 0.7391357421875
+        },
+        {
+          "height": 5.376953125,
+          "mass": 0.007936318715413407,
+          "occupied": 117,
+          "dense": 66,
+          "centroidX": -1.0104498895976453,
+          "centroidZ": -0.30101892173699724,
+          "area": 0.4998779296875,
+          "denseArea": 0.281982421875
+        },
+        {
+          "height": 5.443359375,
+          "mass": 0.0028249422709147134,
+          "occupied": 41,
+          "dense": 27,
+          "centroidX": -0.8884372538400949,
+          "centroidZ": -0.28051305878298544,
+          "area": 0.1751708984375,
+          "denseArea": 0.1153564453125
+        },
+        {
+          "height": 5.509765625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.576171875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.642578125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.708984375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.775390625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.841796875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.908203125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.974609375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.041015625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.107421875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.173828125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.240234375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.306640625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.373046875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.439453125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.505859375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.572265625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.638671875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.705078125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.771484375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.837890625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.904296875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.970703125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.037109375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.103515625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.169921875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.236328125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.302734375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.369140625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.435546875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.501953125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.568359375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.634765625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.701171875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.767578125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.833984375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.900390625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.966796875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        }
+      ],
+      "upperProfile": [
+        {
+          "x": -4.9609375,
+          "height": 0
+        },
+        {
+          "x": -4.8828125,
+          "height": 0
+        },
+        {
+          "x": -4.8046875,
+          "height": 0
+        },
+        {
+          "x": -4.7265625,
+          "height": 0
+        },
+        {
+          "x": -4.6484375,
+          "height": 0
+        },
+        {
+          "x": -4.5703125,
+          "height": 0
+        },
+        {
+          "x": -4.4921875,
+          "height": 0
+        },
+        {
+          "x": -4.4140625,
+          "height": 0
+        },
+        {
+          "x": -4.3359375,
+          "height": 0
+        },
+        {
+          "x": -4.2578125,
+          "height": 0
+        },
+        {
+          "x": -4.1796875,
+          "height": 0
+        },
+        {
+          "x": -4.1015625,
+          "height": 0
+        },
+        {
+          "x": -4.0234375,
+          "height": 0
+        },
+        {
+          "x": -3.9453125,
+          "height": 0
+        },
+        {
+          "x": -3.8671875,
+          "height": 0
+        },
+        {
+          "x": -3.7890625,
+          "height": 0
+        },
+        {
+          "x": -3.7109375,
+          "height": 0
+        },
+        {
+          "x": -3.6328125,
+          "height": 1.591796875
+        },
+        {
+          "x": -3.5546875,
+          "height": 1.724609375
+        },
+        {
+          "x": -3.4765625,
+          "height": 1.791015625
+        },
+        {
+          "x": -3.3984375,
+          "height": 1.791015625
+        },
+        {
+          "x": -3.3203125,
+          "height": 1.791015625
+        },
+        {
+          "x": -3.2421875,
+          "height": 1.791015625
+        },
+        {
+          "x": -3.1640625,
+          "height": 1.791015625
+        },
+        {
+          "x": -3.0859375,
+          "height": 1.923828125
+        },
+        {
+          "x": -3.0078125,
+          "height": 2.056640625
+        },
+        {
+          "x": -2.9296875,
+          "height": 2.189453125
+        },
+        {
+          "x": -2.8515625,
+          "height": 2.919921875
+        },
+        {
+          "x": -2.7734375,
+          "height": 3.119140625
+        },
+        {
+          "x": -2.6953125,
+          "height": 3.119140625
+        },
+        {
+          "x": -2.6171875,
+          "height": 3.185546875
+        },
+        {
+          "x": -2.5390625,
+          "height": 3.783203125
+        },
+        {
+          "x": -2.4609375,
+          "height": 5.177734375
+        },
+        {
+          "x": -2.3828125,
+          "height": 5.177734375
+        },
+        {
+          "x": -2.3046875,
+          "height": 5.244140625
+        },
+        {
+          "x": -2.2265625,
+          "height": 5.244140625
+        },
+        {
+          "x": -2.1484375,
+          "height": 5.244140625
+        },
+        {
+          "x": -2.0703125,
+          "height": 5.244140625
+        },
+        {
+          "x": -1.9921875,
+          "height": 5.244140625
+        },
+        {
+          "x": -1.9140625,
+          "height": 5.244140625
+        },
+        {
+          "x": -1.8359375,
+          "height": 5.310546875
+        },
+        {
+          "x": -1.7578125,
+          "height": 5.310546875
+        },
+        {
+          "x": -1.6796875,
+          "height": 5.310546875
+        },
+        {
+          "x": -1.6015625,
+          "height": 5.376953125
+        },
+        {
+          "x": -1.5234375,
+          "height": 5.376953125
+        },
+        {
+          "x": -1.4453125,
+          "height": 5.310546875
+        },
+        {
+          "x": -1.3671875,
+          "height": 5.376953125
+        },
+        {
+          "x": -1.2890625,
+          "height": 5.376953125
+        },
+        {
+          "x": -1.2109375,
+          "height": 5.376953125
+        },
+        {
+          "x": -1.1328125,
+          "height": 5.443359375
+        },
+        {
+          "x": -1.0546875,
+          "height": 5.443359375
+        },
+        {
+          "x": -0.9765625,
+          "height": 5.443359375
+        },
+        {
+          "x": -0.8984375,
+          "height": 5.443359375
+        },
+        {
+          "x": -0.8203125,
+          "height": 5.443359375
+        },
+        {
+          "x": -0.7421875,
+          "height": 5.443359375
+        },
+        {
+          "x": -0.6640625,
+          "height": 5.443359375
+        },
+        {
+          "x": -0.5859375,
+          "height": 5.376953125
+        },
+        {
+          "x": -0.5078125,
+          "height": 2.853515625
+        },
+        {
+          "x": -0.4296875,
+          "height": 2.787109375
+        },
+        {
+          "x": -0.3515625,
+          "height": 2.787109375
+        },
+        {
+          "x": -0.2734375,
+          "height": 2.853515625
+        },
+        {
+          "x": -0.1953125,
+          "height": 2.853515625
+        },
+        {
+          "x": -0.1171875,
+          "height": 3.119140625
+        },
+        {
+          "x": -0.0390625,
+          "height": 3.185546875
+        },
+        {
+          "x": 0.0390625,
+          "height": 3.119140625
+        },
+        {
+          "x": 0.1171875,
+          "height": 3.251953125
+        },
+        {
+          "x": 0.1953125,
+          "height": 3.318359375
+        },
+        {
+          "x": 0.2734375,
+          "height": 3.185546875
+        },
+        {
+          "x": 0.3515625,
+          "height": 3.185546875
+        },
+        {
+          "x": 0.4296875,
+          "height": 3.119140625
+        },
+        {
+          "x": 0.5078125,
+          "height": 3.052734375
+        },
+        {
+          "x": 0.5859375,
+          "height": 3.052734375
+        },
+        {
+          "x": 0.6640625,
+          "height": 4.248046875
+        },
+        {
+          "x": 0.7421875,
+          "height": 4.314453125
+        },
+        {
+          "x": 0.8203125,
+          "height": 4.314453125
+        },
+        {
+          "x": 0.8984375,
+          "height": 4.314453125
+        },
+        {
+          "x": 0.9765625,
+          "height": 4.380859375
+        },
+        {
+          "x": 1.0546875,
+          "height": 4.380859375
+        },
+        {
+          "x": 1.1328125,
+          "height": 4.447265625
+        },
+        {
+          "x": 1.2109375,
+          "height": 4.380859375
+        },
+        {
+          "x": 1.2890625,
+          "height": 4.380859375
+        },
+        {
+          "x": 1.3671875,
+          "height": 4.380859375
+        },
+        {
+          "x": 1.4453125,
+          "height": 4.380859375
+        },
+        {
+          "x": 1.5234375,
+          "height": 4.380859375
+        },
+        {
+          "x": 1.6015625,
+          "height": 4.380859375
+        },
+        {
+          "x": 1.6796875,
+          "height": 4.380859375
+        },
+        {
+          "x": 1.7578125,
+          "height": 4.380859375
+        },
+        {
+          "x": 1.8359375,
+          "height": 4.380859375
+        },
+        {
+          "x": 1.9140625,
+          "height": 4.447265625
+        },
+        {
+          "x": 1.9921875,
+          "height": 4.513671875
+        },
+        {
+          "x": 2.0703125,
+          "height": 4.513671875
+        },
+        {
+          "x": 2.1484375,
+          "height": 4.447265625
+        },
+        {
+          "x": 2.2265625,
+          "height": 4.380859375
+        },
+        {
+          "x": 2.3046875,
+          "height": 4.314453125
+        },
+        {
+          "x": 2.3828125,
+          "height": 4.314453125
+        },
+        {
+          "x": 2.4609375,
+          "height": 4.248046875
+        },
+        {
+          "x": 2.5390625,
+          "height": 4.181640625
+        },
+        {
+          "x": 2.6171875,
+          "height": 2.056640625
+        },
+        {
+          "x": 2.6953125,
+          "height": 2.056640625
+        },
+        {
+          "x": 2.7734375,
+          "height": 4.048828125
+        },
+        {
+          "x": 2.8515625,
+          "height": 4.048828125
+        },
+        {
+          "x": 2.9296875,
+          "height": 1.990234375
+        },
+        {
+          "x": 3.0078125,
+          "height": 1.990234375
+        },
+        {
+          "x": 3.0859375,
+          "height": 1.791015625
+        },
+        {
+          "x": 3.1640625,
+          "height": 1.658203125
+        },
+        {
+          "x": 3.2421875,
+          "height": 1.658203125
+        },
+        {
+          "x": 3.3203125,
+          "height": 1.658203125
+        },
+        {
+          "x": 3.3984375,
+          "height": 1.658203125
+        },
+        {
+          "x": 3.4765625,
+          "height": 0
+        },
+        {
+          "x": 3.5546875,
+          "height": 0
+        },
+        {
+          "x": 3.6328125,
+          "height": 0
+        },
+        {
+          "x": 3.7109375,
+          "height": 0
+        },
+        {
+          "x": 3.7890625,
+          "height": 0
+        },
+        {
+          "x": 3.8671875,
+          "height": 0
+        },
+        {
+          "x": 3.9453125,
+          "height": 0
+        },
+        {
+          "x": 4.0234375,
+          "height": 0
+        },
+        {
+          "x": 4.1015625,
+          "height": 0
+        },
+        {
+          "x": 4.1796875,
+          "height": 0
+        },
+        {
+          "x": 4.2578125,
+          "height": 0
+        },
+        {
+          "x": 4.3359375,
+          "height": 0
+        },
+        {
+          "x": 4.4140625,
+          "height": 0
+        },
+        {
+          "x": 4.4921875,
+          "height": 0
+        },
+        {
+          "x": 4.5703125,
+          "height": 0
+        },
+        {
+          "x": 4.6484375,
+          "height": 0
+        },
+        {
+          "x": 4.7265625,
+          "height": 0
+        },
+        {
+          "x": 4.8046875,
+          "height": 0
+        },
+        {
+          "x": 4.8828125,
+          "height": 0
+        },
+        {
+          "x": 4.9609375,
+          "height": 0
+        }
+      ]
+    },
+    {
+      "seed": 74,
+      "parameters": {
+        "family": "sheared",
+        "towerHeight": 0.8558616588450968,
+        "towerWidth": 1.0634891617577522,
+        "anvilSpread": 1.049836621209979,
+        "windLean": 0.24690365887014196
+      },
+      "ice": [
+        4.51146714868378,
+        5.196156475759857
+      ],
+      "macroResolution": 128,
+      "detailResolution": 128,
+      "generationMs": 2405.7502919999997,
+      "occupiedFraction": 0.04489564895629883,
+      "integratedDensity": 18.74868901570194,
+      "centroid": [
+        -0.2998310913560633,
+        2.4694915792627663,
+        -0.05644090130216826
+      ],
+      "spread": [
+        1.0866704032123857,
+        1.1862328409955358,
+        0.6631282937125194
+      ],
+      "lean": {
+        "lowerBand": [
+          0.9,
+          2
+        ],
+        "upperBand": [
+          3.5,
+          null
+        ],
+        "lowerCentroidX": -0.6605797935097039,
+        "upperCentroidX": 0.4341016202216878,
+        "displacementX": 1.0946814137313916
+      },
+      "bulk": {
+        "threshold": 0.16,
+        "components": 5,
+        "largestMassFraction": 0.9990359636607783
+      },
+      "sections": [
+        {
+          "height": -0.466796875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.400390625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.333984375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.267578125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.201171875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.134765625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.068359375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.001953125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.064453125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.130859375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.197265625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.263671875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.330078125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.396484375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.462890625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.529296875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.595703125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.662109375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.728515625,
+          "mass": 0.000027815500895182293,
+          "occupied": 16,
+          "dense": 0,
+          "centroidX": -0.5390625,
+          "centroidZ": -0.33359374999999997,
+          "area": 0.068359375,
+          "denseArea": 0
+        },
+        {
+          "height": 0.794921875,
+          "mass": 0.012683868408203156,
+          "occupied": 396,
+          "dense": 97,
+          "centroidX": -0.6961965460526306,
+          "centroidZ": -0.051435032894736575,
+          "area": 1.69189453125,
+          "denseArea": 0.4144287109375
+        },
+        {
+          "height": 0.861328125,
+          "mass": 0.08093309402465818,
+          "occupied": 856,
+          "dense": 662,
+          "centroidX": -0.7569358881167431,
+          "centroidZ": -0.050016872791823264,
+          "area": 3.6572265625,
+          "denseArea": 2.828369140625
+        },
+        {
+          "height": 0.927734375,
+          "mass": 0.2177753448486326,
+          "occupied": 1356,
+          "dense": 1232,
+          "centroidX": -0.7831914301187333,
+          "centroidZ": -0.03339722809760287,
+          "area": 5.79345703125,
+          "denseArea": 5.263671875
+        },
+        {
+          "height": 0.994140625,
+          "mass": 0.34258127212524103,
+          "occupied": 1727,
+          "dense": 1621,
+          "centroidX": -0.7673274071954078,
+          "centroidZ": -0.005048165728877819,
+          "area": 7.3785400390625,
+          "denseArea": 6.9256591796875
+        },
+        {
+          "height": 1.060546875,
+          "mass": 0.41143465042113886,
+          "occupied": 2009,
+          "dense": 1900,
+          "centroidX": -0.7408060111644829,
+          "centroidZ": 0.03309867882427577,
+          "area": 8.5833740234375,
+          "denseArea": 8.11767578125
+        },
+        {
+          "height": 1.126953125,
+          "mass": 0.4743700027465788,
+          "occupied": 2286,
+          "dense": 2192,
+          "centroidX": -0.768884615249306,
+          "centroidZ": 0.03816352579077396,
+          "area": 9.766845703125,
+          "denseArea": 9.365234375
+        },
+        {
+          "height": 1.193359375,
+          "mass": 0.5267143249511688,
+          "occupied": 2487,
+          "dense": 2395,
+          "centroidX": -0.7995141529362113,
+          "centroidZ": 0.02304892136670794,
+          "area": 10.6256103515625,
+          "denseArea": 10.2325439453125
+        },
+        {
+          "height": 1.259765625,
+          "mass": 0.5616483688354396,
+          "occupied": 2623,
+          "dense": 2534,
+          "centroidX": -0.8090494861310997,
+          "centroidZ": 0.011102863174972291,
+          "area": 11.2066650390625,
+          "denseArea": 10.826416015625
+        },
+        {
+          "height": 1.326171875,
+          "mass": 0.5889376004536822,
+          "occupied": 2717,
+          "dense": 2643,
+          "centroidX": -0.8137310046993997,
+          "centroidZ": 0.0008251295872088191,
+          "area": 11.6082763671875,
+          "denseArea": 11.2921142578125
+        },
+        {
+          "height": 1.392578125,
+          "mass": 0.6089881261189707,
+          "occupied": 2796,
+          "dense": 2704,
+          "centroidX": -0.8020989008780656,
+          "centroidZ": -0.006863189029426595,
+          "area": 11.94580078125,
+          "denseArea": 11.552734375
+        },
+        {
+          "height": 1.458984375,
+          "mass": 0.6179135640462193,
+          "occupied": 2840,
+          "dense": 2756,
+          "centroidX": -0.771539377944001,
+          "centroidZ": -0.005433418697152767,
+          "area": 12.1337890625,
+          "denseArea": 11.77490234375
+        },
+        {
+          "height": 1.525390625,
+          "mass": 0.6160443623860622,
+          "occupied": 2836,
+          "dense": 2753,
+          "centroidX": -0.727450099379077,
+          "centroidZ": 0.006857370486628293,
+          "area": 12.11669921875,
+          "denseArea": 11.7620849609375
+        },
+        {
+          "height": 1.591796875,
+          "mass": 0.6033871968587143,
+          "occupied": 2794,
+          "dense": 2717,
+          "centroidX": -0.6652109394592155,
+          "centroidZ": 0.027307547938271882,
+          "area": 11.937255859375,
+          "denseArea": 11.6082763671875
+        },
+        {
+          "height": 1.658203125,
+          "mass": 0.5816132227579686,
+          "occupied": 2701,
+          "dense": 2623,
+          "centroidX": -0.6039308109928098,
+          "centroidZ": 0.04679961625428972,
+          "area": 11.5399169921875,
+          "denseArea": 11.2066650390625
+        },
+        {
+          "height": 1.724609375,
+          "mass": 0.551441192626948,
+          "occupied": 2585,
+          "dense": 2500,
+          "centroidX": -0.5511893214412585,
+          "centroidZ": 0.056528203587801654,
+          "area": 11.0443115234375,
+          "denseArea": 10.68115234375
+        },
+        {
+          "height": 1.791015625,
+          "mass": 0.5095087687174418,
+          "occupied": 2420,
+          "dense": 2333,
+          "centroidX": -0.47858403657935245,
+          "centroidZ": 0.057919170883050784,
+          "area": 10.33935546875,
+          "denseArea": 9.9676513671875
+        },
+        {
+          "height": 1.857421875,
+          "mass": 0.4611086845397884,
+          "occupied": 2171,
+          "dense": 2098,
+          "centroidX": -0.3883062369551386,
+          "centroidZ": 0.050698249197703535,
+          "area": 9.2755126953125,
+          "denseArea": 8.963623046875
+        },
+        {
+          "height": 1.923828125,
+          "mass": 0.4248016675313293,
+          "occupied": 1996,
+          "dense": 1926,
+          "centroidX": -0.33412631563267015,
+          "centroidZ": 0.03712225079098441,
+          "area": 8.52783203125,
+          "denseArea": 8.228759765625
+        },
+        {
+          "height": 1.990234375,
+          "mass": 0.39616282780965023,
+          "occupied": 1846,
+          "dense": 1790,
+          "centroidX": -0.2997914650988737,
+          "centroidZ": 0.00017931561619747213,
+          "area": 7.886962890625,
+          "denseArea": 7.647705078125
+        },
+        {
+          "height": 2.056640625,
+          "mass": 0.3818456331888823,
+          "occupied": 1763,
+          "dense": 1713,
+          "centroidX": -0.27784985121432487,
+          "centroidZ": -0.022791491080143955,
+          "area": 7.5323486328125,
+          "denseArea": 7.3187255859375
+        },
+        {
+          "height": 2.123046875,
+          "mass": 0.3724095026651981,
+          "occupied": 1714,
+          "dense": 1672,
+          "centroidX": -0.2579132856707548,
+          "centroidZ": -0.03485377628363361,
+          "area": 7.322998046875,
+          "denseArea": 7.1435546875
+        },
+        {
+          "height": 2.189453125,
+          "mass": 0.3648637135823533,
+          "occupied": 1670,
+          "dense": 1634,
+          "centroidX": -0.25358296460851937,
+          "centroidZ": -0.04373805964346361,
+          "area": 7.135009765625,
+          "denseArea": 6.981201171875
+        },
+        {
+          "height": 2.255859375,
+          "mass": 0.3604365984598778,
+          "occupied": 1648,
+          "dense": 1616,
+          "centroidX": -0.24841216839325597,
+          "centroidZ": -0.042331987105382704,
+          "area": 7.041015625,
+          "denseArea": 6.904296875
+        },
+        {
+          "height": 2.322265625,
+          "mass": 0.35078461964925006,
+          "occupied": 1611,
+          "dense": 1572,
+          "centroidX": -0.24978699354220787,
+          "centroidZ": -0.03793422987014626,
+          "area": 6.8829345703125,
+          "denseArea": 6.71630859375
+        },
+        {
+          "height": 2.388671875,
+          "mass": 0.339315732320149,
+          "occupied": 1564,
+          "dense": 1524,
+          "centroidX": -0.2668346476702633,
+          "centroidZ": -0.02532585172312045,
+          "area": 6.68212890625,
+          "denseArea": 6.51123046875
+        },
+        {
+          "height": 2.455078125,
+          "mass": 0.3285789489746078,
+          "occupied": 1530,
+          "dense": 1487,
+          "centroidX": -0.29140582673032756,
+          "centroidZ": -0.009951228751862695,
+          "area": 6.536865234375,
+          "denseArea": 6.3531494140625
+        },
+        {
+          "height": 2.521484375,
+          "mass": 0.32052135467529164,
+          "occupied": 1508,
+          "dense": 1458,
+          "centroidX": -0.32302503575420666,
+          "centroidZ": -0.010821206626330637,
+          "area": 6.44287109375,
+          "denseArea": 6.229248046875
+        },
+        {
+          "height": 2.587890625,
+          "mass": 0.3186265627543119,
+          "occupied": 1504,
+          "dense": 1460,
+          "centroidX": -0.33820506874727374,
+          "centroidZ": -0.021035423941510617,
+          "area": 6.42578125,
+          "denseArea": 6.23779296875
+        },
+        {
+          "height": 2.654296875,
+          "mass": 0.32001066207885664,
+          "occupied": 1498,
+          "dense": 1456,
+          "centroidX": -0.31244716860673416,
+          "centroidZ": -0.02732150377322091,
+          "area": 6.400146484375,
+          "denseArea": 6.220703125
+        },
+        {
+          "height": 2.720703125,
+          "mass": 0.3194476763407379,
+          "occupied": 1480,
+          "dense": 1432,
+          "centroidX": -0.28497476929815213,
+          "centroidZ": -0.036714679303096784,
+          "area": 6.3232421875,
+          "denseArea": 6.1181640625
+        },
+        {
+          "height": 2.787109375,
+          "mass": 0.3113455772399899,
+          "occupied": 1437,
+          "dense": 1391,
+          "centroidX": -0.2630749396510754,
+          "centroidZ": -0.0452330631032663,
+          "area": 6.1395263671875,
+          "denseArea": 5.9429931640625
+        },
+        {
+          "height": 2.853515625,
+          "mass": 0.3001615206400553,
+          "occupied": 1387,
+          "dense": 1336,
+          "centroidX": -0.2360648959426049,
+          "centroidZ": -0.04916288251216766,
+          "area": 5.9259033203125,
+          "denseArea": 5.7080078125
+        },
+        {
+          "height": 2.919921875,
+          "mass": 0.2881185213724773,
+          "occupied": 1338,
+          "dense": 1285,
+          "centroidX": -0.22849544925759244,
+          "centroidZ": -0.05536635527890938,
+          "area": 5.716552734375,
+          "denseArea": 5.4901123046875
+        },
+        {
+          "height": 2.986328125,
+          "mass": 0.27018976211547907,
+          "occupied": 1275,
+          "dense": 1231,
+          "centroidX": -0.21932190841950033,
+          "centroidZ": -0.07058664735876571,
+          "area": 5.4473876953125,
+          "denseArea": 5.2593994140625
+        },
+        {
+          "height": 3.052734375,
+          "mass": 0.2516568501790362,
+          "occupied": 1215,
+          "dense": 1166,
+          "centroidX": -0.18577518745799917,
+          "centroidZ": -0.08951565014545647,
+          "area": 5.1910400390625,
+          "denseArea": 4.981689453125
+        },
+        {
+          "height": 3.119140625,
+          "mass": 0.2318088213602694,
+          "occupied": 1168,
+          "dense": 1110,
+          "centroidX": -0.1644318543161586,
+          "centroidZ": -0.11991706589431037,
+          "area": 4.990234375,
+          "denseArea": 4.742431640625
+        },
+        {
+          "height": 3.185546875,
+          "mass": 0.2205290794372553,
+          "occupied": 1097,
+          "dense": 1048,
+          "centroidX": -0.14402063719999883,
+          "centroidZ": -0.1547638840013221,
+          "area": 4.6868896484375,
+          "denseArea": 4.4775390625
+        },
+        {
+          "height": 3.251953125,
+          "mass": 0.21515067418416337,
+          "occupied": 1085,
+          "dense": 1020,
+          "centroidX": -0.12444961454029241,
+          "centroidZ": -0.18652130128689098,
+          "area": 4.6356201171875,
+          "denseArea": 4.35791015625
+        },
+        {
+          "height": 3.318359375,
+          "mass": 0.2145131429036456,
+          "occupied": 1064,
+          "dense": 1008,
+          "centroidX": -0.09765260308609973,
+          "centroidZ": -0.19031703838174313,
+          "area": 4.5458984375,
+          "denseArea": 4.306640625
+        },
+        {
+          "height": 3.384765625,
+          "mass": 0.210354169209798,
+          "occupied": 1056,
+          "dense": 1006,
+          "centroidX": -0.07237457156911457,
+          "centroidZ": -0.1748312474875963,
+          "area": 4.51171875,
+          "denseArea": 4.298095703125
+        },
+        {
+          "height": 3.451171875,
+          "mass": 0.2045685450236001,
+          "occupied": 1045,
+          "dense": 980,
+          "centroidX": -0.06530458305685737,
+          "centroidZ": -0.16417017246630625,
+          "area": 4.4647216796875,
+          "denseArea": 4.18701171875
+        },
+        {
+          "height": 3.517578125,
+          "mass": 0.1989776293436685,
+          "occupied": 1021,
+          "dense": 965,
+          "centroidX": -0.0689504880841215,
+          "centroidZ": -0.1563027933607141,
+          "area": 4.3621826171875,
+          "denseArea": 4.1229248046875
+        },
+        {
+          "height": 3.583984375,
+          "mass": 0.19657993316650385,
+          "occupied": 1008,
+          "dense": 965,
+          "centroidX": -0.052855819353414976,
+          "centroidZ": -0.12884505248129413,
+          "area": 4.306640625,
+          "denseArea": 4.1229248046875
+        },
+        {
+          "height": 3.650390625,
+          "mass": 0.18396393458048466,
+          "occupied": 963,
+          "dense": 912,
+          "centroidX": -0.01673769640988754,
+          "centroidZ": -0.10151749412584814,
+          "area": 4.1143798828125,
+          "denseArea": 3.896484375
+        },
+        {
+          "height": 3.716796875,
+          "mass": 0.17142693201700843,
+          "occupied": 878,
+          "dense": 830,
+          "centroidX": 0.036801527259451405,
+          "centroidZ": -0.09756629786629833,
+          "area": 3.751220703125,
+          "denseArea": 3.546142578125
+        },
+        {
+          "height": 3.783203125,
+          "mass": 0.1603997548421224,
+          "occupied": 813,
+          "dense": 770,
+          "centroidX": 0.07492226734829788,
+          "centroidZ": -0.10546625717932387,
+          "area": 3.4735107421875,
+          "denseArea": 3.289794921875
+        },
+        {
+          "height": 3.849609375,
+          "mass": 0.14729865392049127,
+          "occupied": 735,
+          "dense": 700,
+          "centroidX": 0.050393926704635786,
+          "centroidZ": -0.12581049619870266,
+          "area": 3.1402587890625,
+          "denseArea": 2.99072265625
+        },
+        {
+          "height": 3.916015625,
+          "mass": 0.13152281443277986,
+          "occupied": 675,
+          "dense": 638,
+          "centroidX": 0.04282963053041206,
+          "centroidZ": -0.13817048314440428,
+          "area": 2.8839111328125,
+          "denseArea": 2.725830078125
+        },
+        {
+          "height": 3.982421875,
+          "mass": 0.11214431126912426,
+          "occupied": 595,
+          "dense": 551,
+          "centroidX": 0.04019337590408059,
+          "centroidZ": -0.15948780080213928,
+          "area": 2.5421142578125,
+          "denseArea": 2.3541259765625
+        },
+        {
+          "height": 4.048828125,
+          "mass": 0.09631617863972966,
+          "occupied": 515,
+          "dense": 477,
+          "centroidX": 0.0549082466471057,
+          "centroidZ": -0.18145956491792545,
+          "area": 2.2003173828125,
+          "denseArea": 2.0379638671875
+        },
+        {
+          "height": 4.115234375,
+          "mass": 0.0830748875935871,
+          "occupied": 449,
+          "dense": 420,
+          "centroidX": 0.06829162537165522,
+          "centroidZ": -0.2153427430155629,
+          "area": 1.9183349609375,
+          "denseArea": 1.79443359375
+        },
+        {
+          "height": 4.181640625,
+          "mass": 0.07416502634684242,
+          "occupied": 413,
+          "dense": 369,
+          "centroidX": 0.04361817036214709,
+          "centroidZ": -0.2584262907302946,
+          "area": 1.7645263671875,
+          "denseArea": 1.5765380859375
+        },
+        {
+          "height": 4.248046875,
+          "mass": 0.06984583536783848,
+          "occupied": 387,
+          "dense": 367,
+          "centroidX": -0.00037086227220588307,
+          "centroidZ": -0.30093108831400583,
+          "area": 1.6534423828125,
+          "denseArea": 1.5679931640625
+        },
+        {
+          "height": 4.314453125,
+          "mass": 0.06880331039428711,
+          "occupied": 391,
+          "dense": 356,
+          "centroidX": -0.06750960659939521,
+          "centroidZ": -0.35972248752809743,
+          "area": 1.6705322265625,
+          "denseArea": 1.52099609375
+        },
+        {
+          "height": 4.380859375,
+          "mass": 0.0716460545857747,
+          "occupied": 390,
+          "dense": 361,
+          "centroidX": -0.10069600816846294,
+          "centroidZ": -0.40876090940149723,
+          "area": 1.666259765625,
+          "denseArea": 1.5423583984375
+        },
+        {
+          "height": 4.447265625,
+          "mass": 0.07808144887288403,
+          "occupied": 399,
+          "dense": 375,
+          "centroidX": -0.08168736997349606,
+          "centroidZ": -0.4236531792370833,
+          "area": 1.7047119140625,
+          "denseArea": 1.6021728515625
+        },
+        {
+          "height": 4.513671875,
+          "mass": 0.08293469746907546,
+          "occupied": 421,
+          "dense": 393,
+          "centroidX": -0.0550889203783204,
+          "centroidZ": -0.4219051851354981,
+          "area": 1.7987060546875,
+          "denseArea": 1.6790771484375
+        },
+        {
+          "height": 4.580078125,
+          "mass": 0.08656962712605784,
+          "occupied": 433,
+          "dense": 411,
+          "centroidX": -0.04657005876720612,
+          "centroidZ": -0.41627324863122944,
+          "area": 1.8499755859375,
+          "denseArea": 1.7559814453125
+        },
+        {
+          "height": 4.646484375,
+          "mass": 0.09170659383138012,
+          "occupied": 480,
+          "dense": 447,
+          "centroidX": 0.003769571059400202,
+          "centroidZ": -0.4077265496093378,
+          "area": 2.05078125,
+          "denseArea": 1.9097900390625
+        },
+        {
+          "height": 4.712890625,
+          "mass": 0.09949382146199523,
+          "occupied": 523,
+          "dense": 495,
+          "centroidX": 0.09233633614953667,
+          "centroidZ": -0.3732082612275374,
+          "area": 2.2344970703125,
+          "denseArea": 2.1148681640625
+        },
+        {
+          "height": 4.779296875,
+          "mass": 0.10682376225789393,
+          "occupied": 562,
+          "dense": 532,
+          "centroidX": 0.18946600194248553,
+          "centroidZ": -0.35741676897699187,
+          "area": 2.401123046875,
+          "denseArea": 2.27294921875
+        },
+        {
+          "height": 4.845703125,
+          "mass": 0.1101961135864257,
+          "occupied": 599,
+          "dense": 573,
+          "centroidX": 0.2842473079602591,
+          "centroidZ": -0.34444754182569076,
+          "area": 2.5592041015625,
+          "denseArea": 2.4481201171875
+        },
+        {
+          "height": 4.912109375,
+          "mass": 0.11240243911743159,
+          "occupied": 647,
+          "dense": 612,
+          "centroidX": 0.39088599665924323,
+          "centroidZ": -0.32982665955209145,
+          "area": 2.7642822265625,
+          "denseArea": 2.61474609375
+        },
+        {
+          "height": 4.978515625,
+          "mass": 0.11307668685913093,
+          "occupied": 699,
+          "dense": 651,
+          "centroidX": 0.4679785972045923,
+          "centroidZ": -0.3119231198527016,
+          "area": 2.9864501953125,
+          "denseArea": 2.7813720703125
+        },
+        {
+          "height": 5.044921875,
+          "mass": 0.11666266123453792,
+          "occupied": 796,
+          "dense": 729,
+          "centroidX": 0.5128172268106121,
+          "centroidZ": -0.247269864525912,
+          "area": 3.40087890625,
+          "denseArea": 3.1146240234375
+        },
+        {
+          "height": 5.111328125,
+          "mass": 0.1454695065816244,
+          "occupied": 1272,
+          "dense": 1060,
+          "centroidX": 0.9382053926536376,
+          "centroidZ": -0.21711474984703136,
+          "area": 5.4345703125,
+          "denseArea": 4.52880859375
+        },
+        {
+          "height": 5.177734375,
+          "mass": 0.20913028717041027,
+          "occupied": 1563,
+          "dense": 1403,
+          "centroidX": 1.4129193999319019,
+          "centroidZ": -0.23620174889073342,
+          "area": 6.6778564453125,
+          "denseArea": 5.9942626953125
+        },
+        {
+          "height": 5.244140625,
+          "mass": 0.22854328155517542,
+          "occupied": 1605,
+          "dense": 1431,
+          "centroidX": 1.5895141880872459,
+          "centroidZ": -0.19994762761063253,
+          "area": 6.8572998046875,
+          "denseArea": 6.1138916015625
+        },
+        {
+          "height": 5.310546875,
+          "mass": 0.19781160354614252,
+          "occupied": 1446,
+          "dense": 1264,
+          "centroidX": 1.7230056151533557,
+          "centroidZ": -0.1656729281268806,
+          "area": 6.177978515625,
+          "denseArea": 5.400390625
+        },
+        {
+          "height": 5.376953125,
+          "mass": 0.1055720647176107,
+          "occupied": 1036,
+          "dense": 791,
+          "centroidX": 1.9458984004489568,
+          "centroidZ": -0.1566892606654296,
+          "area": 4.42626953125,
+          "denseArea": 3.3795166015625
+        },
+        {
+          "height": 5.443359375,
+          "mass": 0.01472330093383793,
+          "occupied": 322,
+          "dense": 159,
+          "centroidX": 2.4313594564724466,
+          "centroidZ": -0.14473611189828436,
+          "area": 1.375732421875,
+          "denseArea": 0.6793212890625
+        },
+        {
+          "height": 5.509765625,
+          "mass": 0.000012238820393880209,
+          "occupied": 2,
+          "dense": 0,
+          "centroidX": 3.1214488636363633,
+          "centroidZ": 0.35546875,
+          "area": 0.008544921875,
+          "denseArea": 0
+        },
+        {
+          "height": 5.576171875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.642578125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.708984375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.775390625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.841796875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.908203125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.974609375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.041015625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.107421875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.173828125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.240234375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.306640625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.373046875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.439453125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.505859375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.572265625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.638671875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.705078125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.771484375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.837890625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.904296875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.970703125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.037109375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.103515625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.169921875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.236328125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.302734375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.369140625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.435546875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.501953125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.568359375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.634765625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.701171875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.767578125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.833984375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.900390625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.966796875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        }
+      ],
+      "upperProfile": [
+        {
+          "x": -4.9609375,
+          "height": 0
+        },
+        {
+          "x": -4.8828125,
+          "height": 0
+        },
+        {
+          "x": -4.8046875,
+          "height": 0
+        },
+        {
+          "x": -4.7265625,
+          "height": 0
+        },
+        {
+          "x": -4.6484375,
+          "height": 0
+        },
+        {
+          "x": -4.5703125,
+          "height": 0
+        },
+        {
+          "x": -4.4921875,
+          "height": 0
+        },
+        {
+          "x": -4.4140625,
+          "height": 0
+        },
+        {
+          "x": -4.3359375,
+          "height": 0
+        },
+        {
+          "x": -4.2578125,
+          "height": 0
+        },
+        {
+          "x": -4.1796875,
+          "height": 0
+        },
+        {
+          "x": -4.1015625,
+          "height": 0
+        },
+        {
+          "x": -4.0234375,
+          "height": 0
+        },
+        {
+          "x": -3.9453125,
+          "height": 0
+        },
+        {
+          "x": -3.8671875,
+          "height": 0
+        },
+        {
+          "x": -3.7890625,
+          "height": 0
+        },
+        {
+          "x": -3.7109375,
+          "height": 0
+        },
+        {
+          "x": -3.6328125,
+          "height": 0
+        },
+        {
+          "x": -3.5546875,
+          "height": 0
+        },
+        {
+          "x": -3.4765625,
+          "height": 0
+        },
+        {
+          "x": -3.3984375,
+          "height": 0
+        },
+        {
+          "x": -3.3203125,
+          "height": 0
+        },
+        {
+          "x": -3.2421875,
+          "height": 0
+        },
+        {
+          "x": -3.1640625,
+          "height": 0
+        },
+        {
+          "x": -3.0859375,
+          "height": 0
+        },
+        {
+          "x": -3.0078125,
+          "height": 1.458984375
+        },
+        {
+          "x": -2.9296875,
+          "height": 1.525390625
+        },
+        {
+          "x": -2.8515625,
+          "height": 1.591796875
+        },
+        {
+          "x": -2.7734375,
+          "height": 1.591796875
+        },
+        {
+          "x": -2.6953125,
+          "height": 1.791015625
+        },
+        {
+          "x": -2.6171875,
+          "height": 1.791015625
+        },
+        {
+          "x": -2.5390625,
+          "height": 1.791015625
+        },
+        {
+          "x": -2.4609375,
+          "height": 1.791015625
+        },
+        {
+          "x": -2.3828125,
+          "height": 1.857421875
+        },
+        {
+          "x": -2.3046875,
+          "height": 2.853515625
+        },
+        {
+          "x": -2.2265625,
+          "height": 2.853515625
+        },
+        {
+          "x": -2.1484375,
+          "height": 2.986328125
+        },
+        {
+          "x": -2.0703125,
+          "height": 3.052734375
+        },
+        {
+          "x": -1.9921875,
+          "height": 3.119140625
+        },
+        {
+          "x": -1.9140625,
+          "height": 3.185546875
+        },
+        {
+          "x": -1.8359375,
+          "height": 3.251953125
+        },
+        {
+          "x": -1.7578125,
+          "height": 3.451171875
+        },
+        {
+          "x": -1.6796875,
+          "height": 3.583984375
+        },
+        {
+          "x": -1.6015625,
+          "height": 3.650390625
+        },
+        {
+          "x": -1.5234375,
+          "height": 3.650390625
+        },
+        {
+          "x": -1.4453125,
+          "height": 3.716796875
+        },
+        {
+          "x": -1.3671875,
+          "height": 3.783203125
+        },
+        {
+          "x": -1.2890625,
+          "height": 3.783203125
+        },
+        {
+          "x": -1.2109375,
+          "height": 3.849609375
+        },
+        {
+          "x": -1.1328125,
+          "height": 3.916015625
+        },
+        {
+          "x": -1.0546875,
+          "height": 3.982421875
+        },
+        {
+          "x": -0.9765625,
+          "height": 4.048828125
+        },
+        {
+          "x": -0.8984375,
+          "height": 4.181640625
+        },
+        {
+          "x": -0.8203125,
+          "height": 4.712890625
+        },
+        {
+          "x": -0.7421875,
+          "height": 4.845703125
+        },
+        {
+          "x": -0.6640625,
+          "height": 4.912109375
+        },
+        {
+          "x": -0.5859375,
+          "height": 4.912109375
+        },
+        {
+          "x": -0.5078125,
+          "height": 4.978515625
+        },
+        {
+          "x": -0.4296875,
+          "height": 5.244140625
+        },
+        {
+          "x": -0.3515625,
+          "height": 5.310546875
+        },
+        {
+          "x": -0.2734375,
+          "height": 5.310546875
+        },
+        {
+          "x": -0.1953125,
+          "height": 5.310546875
+        },
+        {
+          "x": -0.1171875,
+          "height": 5.310546875
+        },
+        {
+          "x": -0.0390625,
+          "height": 5.376953125
+        },
+        {
+          "x": 0.0390625,
+          "height": 5.376953125
+        },
+        {
+          "x": 0.1171875,
+          "height": 5.376953125
+        },
+        {
+          "x": 0.1953125,
+          "height": 5.376953125
+        },
+        {
+          "x": 0.2734375,
+          "height": 5.376953125
+        },
+        {
+          "x": 0.3515625,
+          "height": 5.376953125
+        },
+        {
+          "x": 0.4296875,
+          "height": 5.376953125
+        },
+        {
+          "x": 0.5078125,
+          "height": 5.376953125
+        },
+        {
+          "x": 0.5859375,
+          "height": 5.376953125
+        },
+        {
+          "x": 0.6640625,
+          "height": 5.443359375
+        },
+        {
+          "x": 0.7421875,
+          "height": 5.443359375
+        },
+        {
+          "x": 0.8203125,
+          "height": 5.376953125
+        },
+        {
+          "x": 0.8984375,
+          "height": 5.376953125
+        },
+        {
+          "x": 0.9765625,
+          "height": 5.376953125
+        },
+        {
+          "x": 1.0546875,
+          "height": 5.376953125
+        },
+        {
+          "x": 1.1328125,
+          "height": 5.376953125
+        },
+        {
+          "x": 1.2109375,
+          "height": 5.376953125
+        },
+        {
+          "x": 1.2890625,
+          "height": 5.376953125
+        },
+        {
+          "x": 1.3671875,
+          "height": 5.376953125
+        },
+        {
+          "x": 1.4453125,
+          "height": 5.376953125
+        },
+        {
+          "x": 1.5234375,
+          "height": 5.376953125
+        },
+        {
+          "x": 1.6015625,
+          "height": 5.376953125
+        },
+        {
+          "x": 1.6796875,
+          "height": 5.376953125
+        },
+        {
+          "x": 1.7578125,
+          "height": 5.443359375
+        },
+        {
+          "x": 1.8359375,
+          "height": 5.443359375
+        },
+        {
+          "x": 1.9140625,
+          "height": 5.443359375
+        },
+        {
+          "x": 1.9921875,
+          "height": 5.443359375
+        },
+        {
+          "x": 2.0703125,
+          "height": 5.443359375
+        },
+        {
+          "x": 2.1484375,
+          "height": 5.443359375
+        },
+        {
+          "x": 2.2265625,
+          "height": 5.443359375
+        },
+        {
+          "x": 2.3046875,
+          "height": 5.443359375
+        },
+        {
+          "x": 2.3828125,
+          "height": 5.443359375
+        },
+        {
+          "x": 2.4609375,
+          "height": 5.443359375
+        },
+        {
+          "x": 2.5390625,
+          "height": 5.443359375
+        },
+        {
+          "x": 2.6171875,
+          "height": 5.443359375
+        },
+        {
+          "x": 2.6953125,
+          "height": 5.443359375
+        },
+        {
+          "x": 2.7734375,
+          "height": 5.443359375
+        },
+        {
+          "x": 2.8515625,
+          "height": 5.443359375
+        },
+        {
+          "x": 2.9296875,
+          "height": 5.443359375
+        },
+        {
+          "x": 3.0078125,
+          "height": 5.443359375
+        },
+        {
+          "x": 3.0859375,
+          "height": 5.443359375
+        },
+        {
+          "x": 3.1640625,
+          "height": 5.443359375
+        },
+        {
+          "x": 3.2421875,
+          "height": 5.443359375
+        },
+        {
+          "x": 3.3203125,
+          "height": 5.443359375
+        },
+        {
+          "x": 3.3984375,
+          "height": 5.376953125
+        },
+        {
+          "x": 3.4765625,
+          "height": 5.376953125
+        },
+        {
+          "x": 3.5546875,
+          "height": 5.310546875
+        },
+        {
+          "x": 3.6328125,
+          "height": 5.310546875
+        },
+        {
+          "x": 3.7109375,
+          "height": 0
+        },
+        {
+          "x": 3.7890625,
+          "height": 0
+        },
+        {
+          "x": 3.8671875,
+          "height": 0
+        },
+        {
+          "x": 3.9453125,
+          "height": 0
+        },
+        {
+          "x": 4.0234375,
+          "height": 0
+        },
+        {
+          "x": 4.1015625,
+          "height": 0
+        },
+        {
+          "x": 4.1796875,
+          "height": 0
+        },
+        {
+          "x": 4.2578125,
+          "height": 0
+        },
+        {
+          "x": 4.3359375,
+          "height": 0
+        },
+        {
+          "x": 4.4140625,
+          "height": 0
+        },
+        {
+          "x": 4.4921875,
+          "height": 0
+        },
+        {
+          "x": 4.5703125,
+          "height": 0
+        },
+        {
+          "x": 4.6484375,
+          "height": 0
+        },
+        {
+          "x": 4.7265625,
+          "height": 0
+        },
+        {
+          "x": 4.8046875,
+          "height": 0
+        },
+        {
+          "x": 4.8828125,
+          "height": 0
+        },
+        {
+          "x": 4.9609375,
+          "height": 0
+        }
+      ]
+    },
+    {
+      "seed": 1571198069,
+      "parameters": {
+        "family": "sheared",
+        "towerHeight": 0.7841883181827143,
+        "towerWidth": 0.9846471829153597,
+        "anvilSpread": 1.0299869742710144,
+        "windLean": 0.2574650433007628
+      },
+      "ice": [
+        4.193954249549424,
+        4.821304904095596
+      ],
+      "macroResolution": 128,
+      "detailResolution": 128,
+      "generationMs": 2177.1240419999995,
+      "occupiedFraction": 0.03454732894897461,
+      "integratedDensity": 14.156951745348385,
+      "centroid": [
+        -0.20952241570682045,
+        2.3566310624070193,
+        -0.04881752938518346
+      ],
+      "spread": [
+        0.9469553352586507,
+        1.0946430594747227,
+        0.6235747186221936
+      ],
+      "lean": {
+        "lowerBand": [
+          0.9,
+          2
+        ],
+        "upperBand": [
+          3.5,
+          null
+        ],
+        "lowerCentroidX": -0.5136470881010865,
+        "upperCentroidX": 0.45116016595621733,
+        "displacementX": 0.9648072540573038
+      },
+      "bulk": {
+        "threshold": 0.16,
+        "components": 5,
+        "largestMassFraction": 0.9999324333626014
+      },
+      "sections": [
+        {
+          "height": -0.466796875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.400390625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.333984375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.267578125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.201171875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.134765625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.068359375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": -0.001953125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.064453125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.130859375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.197265625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.263671875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.330078125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.396484375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.462890625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.529296875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.595703125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.662109375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.728515625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 0.794921875,
+          "mass": 0.004259109497070304,
+          "occupied": 199,
+          "dense": 16,
+          "centroidX": -0.8391702586206916,
+          "centroidZ": 0.03657262277951939,
+          "area": 0.8502197265625,
+          "denseArea": 0.068359375
+        },
+        {
+          "height": 0.861328125,
+          "mass": 0.05750465393066417,
+          "occupied": 697,
+          "dense": 492,
+          "centroidX": -0.7854960553556216,
+          "centroidZ": 0.012670900326987242,
+          "area": 2.9779052734375,
+          "denseArea": 2.10205078125
+        },
+        {
+          "height": 0.927734375,
+          "mass": 0.17355203628540028,
+          "occupied": 1088,
+          "dense": 1006,
+          "centroidX": -0.7514301755777798,
+          "centroidZ": 0.026006582163349275,
+          "area": 4.6484375,
+          "denseArea": 4.298095703125
+        },
+        {
+          "height": 0.994140625,
+          "mass": 0.27808602650960224,
+          "occupied": 1431,
+          "dense": 1348,
+          "centroidX": -0.7400954186638299,
+          "centroidZ": 0.04031205989085276,
+          "area": 6.1138916015625,
+          "denseArea": 5.75927734375
+        },
+        {
+          "height": 1.060546875,
+          "mass": 0.3412728309631327,
+          "occupied": 1708,
+          "dense": 1606,
+          "centroidX": -0.7183737262779243,
+          "centroidZ": 0.03346934763667544,
+          "area": 7.29736328125,
+          "denseArea": 6.861572265625
+        },
+        {
+          "height": 1.126953125,
+          "mass": 0.3932065963745105,
+          "occupied": 1942,
+          "dense": 1848,
+          "centroidX": -0.6968377464587504,
+          "centroidZ": 0.031632792736965405,
+          "area": 8.297119140625,
+          "denseArea": 7.8955078125
+        },
+        {
+          "height": 1.193359375,
+          "mass": 0.43857924143473187,
+          "occupied": 2154,
+          "dense": 2061,
+          "centroidX": -0.6941256396092222,
+          "centroidZ": 0.028537150767658497,
+          "area": 9.202880859375,
+          "denseArea": 8.8055419921875
+        },
+        {
+          "height": 1.259765625,
+          "mass": 0.47453355789184,
+          "occupied": 2287,
+          "dense": 2205,
+          "centroidX": -0.6717958493942663,
+          "centroidZ": 0.03468621886291099,
+          "area": 9.7711181640625,
+          "denseArea": 9.4207763671875
+        },
+        {
+          "height": 1.326171875,
+          "mass": 0.4949367841084708,
+          "occupied": 2347,
+          "dense": 2270,
+          "centroidX": -0.6533330211885794,
+          "centroidZ": 0.046208176933116185,
+          "area": 10.0274658203125,
+          "denseArea": 9.698486328125
+        },
+        {
+          "height": 1.392578125,
+          "mass": 0.5008125305175718,
+          "occupied": 2350,
+          "dense": 2278,
+          "centroidX": -0.6327908043966132,
+          "centroidZ": 0.061831914267307435,
+          "area": 10.040283203125,
+          "denseArea": 9.732666015625
+        },
+        {
+          "height": 1.458984375,
+          "mass": 0.4917724927266395,
+          "occupied": 2314,
+          "dense": 2232,
+          "centroidX": -0.5963471553694091,
+          "centroidZ": 0.07364157293917495,
+          "area": 9.886474609375,
+          "denseArea": 9.5361328125
+        },
+        {
+          "height": 1.525390625,
+          "mass": 0.47770229975381723,
+          "occupied": 2256,
+          "dense": 2179,
+          "centroidX": -0.5383345447118861,
+          "centroidZ": 0.08672469286349946,
+          "area": 9.638671875,
+          "denseArea": 9.3096923828125
+        },
+        {
+          "height": 1.591796875,
+          "mass": 0.4587744077046641,
+          "occupied": 2160,
+          "dense": 2091,
+          "centroidX": -0.4674806537189304,
+          "centroidZ": 0.09653307890451436,
+          "area": 9.228515625,
+          "denseArea": 8.9337158203125
+        },
+        {
+          "height": 1.658203125,
+          "mass": 0.4291909535725897,
+          "occupied": 2041,
+          "dense": 1963,
+          "centroidX": -0.3927667398794038,
+          "centroidZ": 0.08992628040197269,
+          "area": 8.7200927734375,
+          "denseArea": 8.3868408203125
+        },
+        {
+          "height": 1.724609375,
+          "mass": 0.39692385991414464,
+          "occupied": 1882,
+          "dense": 1815,
+          "centroidX": -0.3063628381948546,
+          "centroidZ": 0.06173469705071057,
+          "area": 8.040771484375,
+          "denseArea": 7.7545166015625
+        },
+        {
+          "height": 1.791015625,
+          "mass": 0.3732639948527015,
+          "occupied": 1756,
+          "dense": 1688,
+          "centroidX": -0.24394052810582942,
+          "centroidZ": 0.026250919386136648,
+          "area": 7.50244140625,
+          "denseArea": 7.2119140625
+        },
+        {
+          "height": 1.857421875,
+          "mass": 0.3618117968241343,
+          "occupied": 1663,
+          "dense": 1612,
+          "centroidX": -0.21344330239491707,
+          "centroidZ": 0.010096424214072364,
+          "area": 7.1051025390625,
+          "denseArea": 6.88720703125
+        },
+        {
+          "height": 1.923828125,
+          "mass": 0.35629097620645866,
+          "occupied": 1621,
+          "dense": 1592,
+          "centroidX": -0.20476185155374388,
+          "centroidZ": 0.0009110114660852665,
+          "area": 6.9256591796875,
+          "denseArea": 6.8017578125
+        },
+        {
+          "height": 1.990234375,
+          "mass": 0.34930149714151787,
+          "occupied": 1584,
+          "dense": 1547,
+          "centroidX": -0.20752552696332338,
+          "centroidZ": -0.011034439252895172,
+          "area": 6.767578125,
+          "denseArea": 6.6094970703125
+        },
+        {
+          "height": 2.056640625,
+          "mass": 0.3410336176554337,
+          "occupied": 1558,
+          "dense": 1519,
+          "centroidX": -0.21422935616317787,
+          "centroidZ": -0.02084381749283972,
+          "area": 6.656494140625,
+          "denseArea": 6.4898681640625
+        },
+        {
+          "height": 2.123046875,
+          "mass": 0.3278435071309388,
+          "occupied": 1512,
+          "dense": 1483,
+          "centroidX": -0.22292201006078377,
+          "centroidZ": -0.022797393024649424,
+          "area": 6.4599609375,
+          "denseArea": 6.3360595703125
+        },
+        {
+          "height": 2.189453125,
+          "mass": 0.3136420249938956,
+          "occupied": 1462,
+          "dense": 1424,
+          "centroidX": -0.2274779006811064,
+          "centroidZ": -0.010478206091807425,
+          "area": 6.246337890625,
+          "denseArea": 6.083984375
+        },
+        {
+          "height": 2.255859375,
+          "mass": 0.2984580993652347,
+          "occupied": 1415,
+          "dense": 1361,
+          "centroidX": -0.21506189002341086,
+          "centroidZ": 0.014957066315499352,
+          "area": 6.0455322265625,
+          "denseArea": 5.8148193359375
+        },
+        {
+          "height": 2.322265625,
+          "mass": 0.286160310109457,
+          "occupied": 1360,
+          "dense": 1320,
+          "centroidX": -0.17585832855420933,
+          "centroidZ": 0.032743926665564846,
+          "area": 5.810546875,
+          "denseArea": 5.6396484375
+        },
+        {
+          "height": 2.388671875,
+          "mass": 0.2705101966857907,
+          "occupied": 1295,
+          "dense": 1250,
+          "centroidX": -0.13541856252236523,
+          "centroidZ": 0.03102746188751625,
+          "area": 5.5328369140625,
+          "denseArea": 5.340576171875
+        },
+        {
+          "height": 2.455078125,
+          "mass": 0.2551927566528313,
+          "occupied": 1250,
+          "dense": 1201,
+          "centroidX": -0.08234015715332117,
+          "centroidZ": 0.029901899072208717,
+          "area": 5.340576171875,
+          "denseArea": 5.1312255859375
+        },
+        {
+          "height": 2.521484375,
+          "mass": 0.24840021133422852,
+          "occupied": 1210,
+          "dense": 1165,
+          "centroidX": -0.041227185765731866,
+          "centroidZ": 0.013509042409644189,
+          "area": 5.169677734375,
+          "denseArea": 4.9774169921875
+        },
+        {
+          "height": 2.587890625,
+          "mass": 0.2425033251444501,
+          "occupied": 1164,
+          "dense": 1120,
+          "centroidX": -0.010060219733708978,
+          "centroidZ": 0.004442228713691177,
+          "area": 4.97314453125,
+          "denseArea": 4.78515625
+        },
+        {
+          "height": 2.654296875,
+          "mass": 0.2316486040751139,
+          "occupied": 1127,
+          "dense": 1084,
+          "centroidX": 0.0392294810663734,
+          "centroidZ": -0.00536877899841961,
+          "area": 4.8150634765625,
+          "denseArea": 4.63134765625
+        },
+        {
+          "height": 2.720703125,
+          "mass": 0.21936972935994423,
+          "occupied": 1086,
+          "dense": 1040,
+          "centroidX": 0.08075109204219844,
+          "centroidZ": -0.014593364853042315,
+          "area": 4.639892578125,
+          "denseArea": 4.443359375
+        },
+        {
+          "height": 2.787109375,
+          "mass": 0.20362393061319958,
+          "occupied": 1020,
+          "dense": 970,
+          "centroidX": 0.11208625719211215,
+          "centroidZ": -0.032621465927284425,
+          "area": 4.35791015625,
+          "denseArea": 4.144287109375
+        },
+        {
+          "height": 2.853515625,
+          "mass": 0.1980396906534828,
+          "occupied": 973,
+          "dense": 925,
+          "centroidX": 0.09268614742631816,
+          "centroidZ": -0.04721718147802717,
+          "area": 4.1571044921875,
+          "denseArea": 3.9520263671875
+        },
+        {
+          "height": 2.919921875,
+          "mass": 0.1929416656494141,
+          "occupied": 959,
+          "dense": 924,
+          "centroidX": 0.027893290256729864,
+          "centroidZ": -0.07565558287488716,
+          "area": 4.0972900390625,
+          "denseArea": 3.94775390625
+        },
+        {
+          "height": 2.986328125,
+          "mass": 0.17985836664835575,
+          "occupied": 912,
+          "dense": 861,
+          "centroidX": -0.06103375169344208,
+          "centroidZ": -0.13811762792060775,
+          "area": 3.896484375,
+          "denseArea": 3.6785888671875
+        },
+        {
+          "height": 3.052734375,
+          "mass": 0.17564264933268176,
+          "occupied": 860,
+          "dense": 823,
+          "centroidX": -0.11877411094359724,
+          "centroidZ": -0.1872370660030154,
+          "area": 3.67431640625,
+          "denseArea": 3.5162353515625
+        },
+        {
+          "height": 3.119140625,
+          "mass": 0.1733895937601722,
+          "occupied": 841,
+          "dense": 806,
+          "centroidX": -0.15389054368611219,
+          "centroidZ": -0.2178504087150846,
+          "area": 3.5931396484375,
+          "denseArea": 3.443603515625
+        },
+        {
+          "height": 3.185546875,
+          "mass": 0.1701340675354005,
+          "occupied": 824,
+          "dense": 783,
+          "centroidX": -0.17539104139281783,
+          "centroidZ": -0.231342970553517,
+          "area": 3.5205078125,
+          "denseArea": 3.3453369140625
+        },
+        {
+          "height": 3.251953125,
+          "mass": 0.1619229316711422,
+          "occupied": 786,
+          "dense": 756,
+          "centroidX": -0.18346059184171315,
+          "centroidZ": -0.2238208806164233,
+          "area": 3.358154296875,
+          "denseArea": 3.22998046875
+        },
+        {
+          "height": 3.318359375,
+          "mass": 0.15082565943400048,
+          "occupied": 744,
+          "dense": 712,
+          "centroidX": -0.1802642783769434,
+          "centroidZ": -0.214965295323439,
+          "area": 3.1787109375,
+          "denseArea": 3.0419921875
+        },
+        {
+          "height": 3.384765625,
+          "mass": 0.14108133316040009,
+          "occupied": 704,
+          "dense": 670,
+          "centroidX": -0.14748780816003046,
+          "centroidZ": -0.20976911533623604,
+          "area": 3.0078125,
+          "denseArea": 2.862548828125
+        },
+        {
+          "height": 3.451171875,
+          "mass": 0.13050810496012355,
+          "occupied": 660,
+          "dense": 625,
+          "centroidX": -0.10829588420092448,
+          "centroidZ": -0.21742591519037036,
+          "area": 2.81982421875,
+          "denseArea": 2.6702880859375
+        },
+        {
+          "height": 3.517578125,
+          "mass": 0.11979246139526359,
+          "occupied": 618,
+          "dense": 586,
+          "centroidX": -0.057781240421856506,
+          "centroidZ": -0.22126553255640033,
+          "area": 2.640380859375,
+          "denseArea": 2.503662109375
+        },
+        {
+          "height": 3.583984375,
+          "mass": 0.10788742701212552,
+          "occupied": 574,
+          "dense": 544,
+          "centroidX": 0.018099343720028388,
+          "centroidZ": -0.22760816018593993,
+          "area": 2.452392578125,
+          "denseArea": 2.32421875
+        },
+        {
+          "height": 3.650390625,
+          "mass": 0.0979806582132976,
+          "occupied": 524,
+          "dense": 498,
+          "centroidX": 0.07145585759626631,
+          "centroidZ": -0.25178649624416555,
+          "area": 2.23876953125,
+          "denseArea": 2.127685546875
+        },
+        {
+          "height": 3.716796875,
+          "mass": 0.08960819244384766,
+          "occupied": 486,
+          "dense": 452,
+          "centroidX": 0.045973057749137215,
+          "centroidZ": -0.30724015759641427,
+          "area": 2.076416015625,
+          "denseArea": 1.93115234375
+        },
+        {
+          "height": 3.783203125,
+          "mass": 0.08229605356852207,
+          "occupied": 450,
+          "dense": 425,
+          "centroidX": -0.005518794108103639,
+          "centroidZ": -0.3684105070234975,
+          "area": 1.922607421875,
+          "denseArea": 1.8157958984375
+        },
+        {
+          "height": 3.849609375,
+          "mass": 0.074351946512858,
+          "occupied": 398,
+          "dense": 378,
+          "centroidX": -0.06466654071768496,
+          "centroidZ": -0.41192471867237335,
+          "area": 1.700439453125,
+          "denseArea": 1.614990234375
+        },
+        {
+          "height": 3.916015625,
+          "mass": 0.06955989201863602,
+          "occupied": 352,
+          "dense": 327,
+          "centroidX": -0.10761665953550127,
+          "centroidZ": -0.4223684125025994,
+          "area": 1.50390625,
+          "denseArea": 1.3970947265625
+        },
+        {
+          "height": 3.982421875,
+          "mass": 0.0711665153503418,
+          "occupied": 349,
+          "dense": 336,
+          "centroidX": -0.0760321152463143,
+          "centroidZ": -0.40423717862279734,
+          "area": 1.4910888671875,
+          "denseArea": 1.435546875
+        },
+        {
+          "height": 4.048828125,
+          "mass": 0.07551463445027662,
+          "occupied": 371,
+          "dense": 355,
+          "centroidX": -0.04655948877281914,
+          "centroidZ": -0.39564135225280367,
+          "area": 1.5850830078125,
+          "denseArea": 1.5167236328125
+        },
+        {
+          "height": 4.115234375,
+          "mass": 0.08016761144002257,
+          "occupied": 400,
+          "dense": 378,
+          "centroidX": -0.01563465001457266,
+          "centroidZ": -0.37598348828293165,
+          "area": 1.708984375,
+          "denseArea": 1.614990234375
+        },
+        {
+          "height": 4.181640625,
+          "mass": 0.08801825841267899,
+          "occupied": 431,
+          "dense": 409,
+          "centroidX": 0.028612124568633168,
+          "centroidZ": -0.35024326601587646,
+          "area": 1.8414306640625,
+          "denseArea": 1.7474365234375
+        },
+        {
+          "height": 4.248046875,
+          "mass": 0.09493652979532857,
+          "occupied": 463,
+          "dense": 439,
+          "centroidX": 0.07821427054156381,
+          "centroidZ": -0.33683666036248855,
+          "area": 1.9781494140625,
+          "denseArea": 1.8756103515625
+        },
+        {
+          "height": 4.314453125,
+          "mass": 0.09883515040079749,
+          "occupied": 503,
+          "dense": 471,
+          "centroidX": 0.13395388786009388,
+          "centroidZ": -0.31209970512827784,
+          "area": 2.1490478515625,
+          "denseArea": 2.0123291015625
+        },
+        {
+          "height": 4.380859375,
+          "mass": 0.09903097152709961,
+          "occupied": 526,
+          "dense": 502,
+          "centroidX": 0.1967168839248598,
+          "centroidZ": -0.2964643493629715,
+          "area": 2.247314453125,
+          "denseArea": 2.144775390625
+        },
+        {
+          "height": 4.447265625,
+          "mass": 0.09984763463338218,
+          "occupied": 562,
+          "dense": 530,
+          "centroidX": 0.25416502420855575,
+          "centroidZ": -0.29867214226217675,
+          "area": 2.401123046875,
+          "denseArea": 2.264404296875
+        },
+        {
+          "height": 4.513671875,
+          "mass": 0.09910662968953449,
+          "occupied": 592,
+          "dense": 562,
+          "centroidX": 0.2955528171484706,
+          "centroidZ": -0.3078342951866405,
+          "area": 2.529296875,
+          "denseArea": 2.401123046875
+        },
+        {
+          "height": 4.580078125,
+          "mass": 0.10407559076944986,
+          "occupied": 661,
+          "dense": 614,
+          "centroidX": 0.3598785392234422,
+          "centroidZ": -0.302122406551673,
+          "area": 2.8240966796875,
+          "denseArea": 2.623291015625
+        },
+        {
+          "height": 4.646484375,
+          "mass": 0.1223169962565105,
+          "occupied": 780,
+          "dense": 724,
+          "centroidX": 0.47483663790750924,
+          "centroidZ": -0.25365944447223776,
+          "area": 3.33251953125,
+          "denseArea": 3.09326171875
+        },
+        {
+          "height": 4.712890625,
+          "mass": 0.13759994506835924,
+          "occupied": 962,
+          "dense": 826,
+          "centroidX": 0.5890322536629148,
+          "centroidZ": -0.25027915322385064,
+          "area": 4.110107421875,
+          "denseArea": 3.529052734375
+        },
+        {
+          "height": 4.779296875,
+          "mass": 0.17027537027994757,
+          "occupied": 1282,
+          "dense": 1132,
+          "centroidX": 1.0324930369511267,
+          "centroidZ": -0.24928409239414617,
+          "area": 5.477294921875,
+          "denseArea": 4.83642578125
+        },
+        {
+          "height": 4.845703125,
+          "mass": 0.16444857915242542,
+          "occupied": 1367,
+          "dense": 1196,
+          "centroidX": 1.3316926182993563,
+          "centroidZ": -0.2926741221845966,
+          "area": 5.8404541015625,
+          "denseArea": 5.10986328125
+        },
+        {
+          "height": 4.912109375,
+          "mass": 0.13249635696411147,
+          "occupied": 1207,
+          "dense": 1025,
+          "centroidX": 1.5910047838728651,
+          "centroidZ": -0.2944140149368101,
+          "area": 5.1568603515625,
+          "denseArea": 4.3792724609375
+        },
+        {
+          "height": 4.978515625,
+          "mass": 0.08547592163085953,
+          "occupied": 901,
+          "dense": 682,
+          "centroidX": 1.8334419419712573,
+          "centroidZ": -0.3058161959478809,
+          "area": 3.8494873046875,
+          "denseArea": 2.913818359375
+        },
+        {
+          "height": 5.044921875,
+          "mass": 0.024438699086507264,
+          "occupied": 422,
+          "dense": 186,
+          "centroidX": 2.112574337013423,
+          "centroidZ": -0.37133098821989363,
+          "area": 1.802978515625,
+          "denseArea": 0.794677734375
+        },
+        {
+          "height": 5.111328125,
+          "mass": 0.0032176971435546845,
+          "occupied": 68,
+          "dense": 30,
+          "centroidX": 2.5746401711618288,
+          "centroidZ": -0.5607170643153532,
+          "area": 0.29052734375,
+          "denseArea": 0.128173828125
+        },
+        {
+          "height": 5.177734375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.244140625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.310546875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.376953125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.443359375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.509765625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.576171875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.642578125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.708984375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.775390625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.841796875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.908203125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 5.974609375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.041015625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.107421875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.173828125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.240234375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.306640625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.373046875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.439453125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.505859375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.572265625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.638671875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.705078125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.771484375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.837890625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.904296875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 6.970703125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.037109375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.103515625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.169921875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.236328125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.302734375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.369140625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.435546875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.501953125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.568359375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.634765625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.701171875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.767578125,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.833984375,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.900390625,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        },
+        {
+          "height": 7.966796875,
+          "mass": 0,
+          "occupied": 0,
+          "dense": 0,
+          "centroidX": null,
+          "centroidZ": null,
+          "area": 0,
+          "denseArea": 0
+        }
+      ],
+      "upperProfile": [
+        {
+          "x": -4.9609375,
+          "height": 0
+        },
+        {
+          "x": -4.8828125,
+          "height": 0
+        },
+        {
+          "x": -4.8046875,
+          "height": 0
+        },
+        {
+          "x": -4.7265625,
+          "height": 0
+        },
+        {
+          "x": -4.6484375,
+          "height": 0
+        },
+        {
+          "x": -4.5703125,
+          "height": 0
+        },
+        {
+          "x": -4.4921875,
+          "height": 0
+        },
+        {
+          "x": -4.4140625,
+          "height": 0
+        },
+        {
+          "x": -4.3359375,
+          "height": 0
+        },
+        {
+          "x": -4.2578125,
+          "height": 0
+        },
+        {
+          "x": -4.1796875,
+          "height": 0
+        },
+        {
+          "x": -4.1015625,
+          "height": 0
+        },
+        {
+          "x": -4.0234375,
+          "height": 0
+        },
+        {
+          "x": -3.9453125,
+          "height": 0
+        },
+        {
+          "x": -3.8671875,
+          "height": 0
+        },
+        {
+          "x": -3.7890625,
+          "height": 0
+        },
+        {
+          "x": -3.7109375,
+          "height": 0
+        },
+        {
+          "x": -3.6328125,
+          "height": 0
+        },
+        {
+          "x": -3.5546875,
+          "height": 0
+        },
+        {
+          "x": -3.4765625,
+          "height": 0
+        },
+        {
+          "x": -3.3984375,
+          "height": 0
+        },
+        {
+          "x": -3.3203125,
+          "height": 0
+        },
+        {
+          "x": -3.2421875,
+          "height": 0
+        },
+        {
+          "x": -3.1640625,
+          "height": 0
+        },
+        {
+          "x": -3.0859375,
+          "height": 0
+        },
+        {
+          "x": -3.0078125,
+          "height": 0
+        },
+        {
+          "x": -2.9296875,
+          "height": 0
+        },
+        {
+          "x": -2.8515625,
+          "height": 0
+        },
+        {
+          "x": -2.7734375,
+          "height": 0
+        },
+        {
+          "x": -2.6953125,
+          "height": 1.259765625
+        },
+        {
+          "x": -2.6171875,
+          "height": 1.458984375
+        },
+        {
+          "x": -2.5390625,
+          "height": 1.525390625
+        },
+        {
+          "x": -2.4609375,
+          "height": 1.591796875
+        },
+        {
+          "x": -2.3828125,
+          "height": 1.591796875
+        },
+        {
+          "x": -2.3046875,
+          "height": 1.658203125
+        },
+        {
+          "x": -2.2265625,
+          "height": 1.724609375
+        },
+        {
+          "x": -2.1484375,
+          "height": 1.724609375
+        },
+        {
+          "x": -2.0703125,
+          "height": 2.388671875
+        },
+        {
+          "x": -1.9921875,
+          "height": 2.521484375
+        },
+        {
+          "x": -1.9140625,
+          "height": 2.654296875
+        },
+        {
+          "x": -1.8359375,
+          "height": 2.654296875
+        },
+        {
+          "x": -1.7578125,
+          "height": 2.654296875
+        },
+        {
+          "x": -1.6796875,
+          "height": 2.720703125
+        },
+        {
+          "x": -1.6015625,
+          "height": 2.787109375
+        },
+        {
+          "x": -1.5234375,
+          "height": 2.787109375
+        },
+        {
+          "x": -1.4453125,
+          "height": 2.787109375
+        },
+        {
+          "x": -1.3671875,
+          "height": 3.052734375
+        },
+        {
+          "x": -1.2890625,
+          "height": 3.185546875
+        },
+        {
+          "x": -1.2109375,
+          "height": 3.318359375
+        },
+        {
+          "x": -1.1328125,
+          "height": 3.650390625
+        },
+        {
+          "x": -1.0546875,
+          "height": 3.783203125
+        },
+        {
+          "x": -0.9765625,
+          "height": 3.849609375
+        },
+        {
+          "x": -0.8984375,
+          "height": 3.849609375
+        },
+        {
+          "x": -0.8203125,
+          "height": 3.849609375
+        },
+        {
+          "x": -0.7421875,
+          "height": 3.916015625
+        },
+        {
+          "x": -0.6640625,
+          "height": 4.314453125
+        },
+        {
+          "x": -0.5859375,
+          "height": 4.380859375
+        },
+        {
+          "x": -0.5078125,
+          "height": 4.779296875
+        },
+        {
+          "x": -0.4296875,
+          "height": 4.779296875
+        },
+        {
+          "x": -0.3515625,
+          "height": 4.845703125
+        },
+        {
+          "x": -0.2734375,
+          "height": 4.845703125
+        },
+        {
+          "x": -0.1953125,
+          "height": 4.912109375
+        },
+        {
+          "x": -0.1171875,
+          "height": 4.912109375
+        },
+        {
+          "x": -0.0390625,
+          "height": 4.912109375
+        },
+        {
+          "x": 0.0390625,
+          "height": 4.912109375
+        },
+        {
+          "x": 0.1171875,
+          "height": 4.978515625
+        },
+        {
+          "x": 0.1953125,
+          "height": 4.978515625
+        },
+        {
+          "x": 0.2734375,
+          "height": 4.978515625
+        },
+        {
+          "x": 0.3515625,
+          "height": 5.044921875
+        },
+        {
+          "x": 0.4296875,
+          "height": 5.044921875
+        },
+        {
+          "x": 0.5078125,
+          "height": 5.044921875
+        },
+        {
+          "x": 0.5859375,
+          "height": 4.978515625
+        },
+        {
+          "x": 0.6640625,
+          "height": 4.978515625
+        },
+        {
+          "x": 0.7421875,
+          "height": 4.978515625
+        },
+        {
+          "x": 0.8203125,
+          "height": 4.978515625
+        },
+        {
+          "x": 0.8984375,
+          "height": 4.978515625
+        },
+        {
+          "x": 0.9765625,
+          "height": 4.978515625
+        },
+        {
+          "x": 1.0546875,
+          "height": 4.978515625
+        },
+        {
+          "x": 1.1328125,
+          "height": 5.044921875
+        },
+        {
+          "x": 1.2109375,
+          "height": 5.044921875
+        },
+        {
+          "x": 1.2890625,
+          "height": 5.044921875
+        },
+        {
+          "x": 1.3671875,
+          "height": 5.044921875
+        },
+        {
+          "x": 1.4453125,
+          "height": 5.111328125
+        },
+        {
+          "x": 1.5234375,
+          "height": 5.111328125
+        },
+        {
+          "x": 1.6015625,
+          "height": 5.111328125
+        },
+        {
+          "x": 1.6796875,
+          "height": 5.044921875
+        },
+        {
+          "x": 1.7578125,
+          "height": 5.044921875
+        },
+        {
+          "x": 1.8359375,
+          "height": 5.044921875
+        },
+        {
+          "x": 1.9140625,
+          "height": 5.044921875
+        },
+        {
+          "x": 1.9921875,
+          "height": 5.044921875
+        },
+        {
+          "x": 2.0703125,
+          "height": 5.044921875
+        },
+        {
+          "x": 2.1484375,
+          "height": 5.044921875
+        },
+        {
+          "x": 2.2265625,
+          "height": 4.978515625
+        },
+        {
+          "x": 2.3046875,
+          "height": 4.978515625
+        },
+        {
+          "x": 2.3828125,
+          "height": 4.978515625
+        },
+        {
+          "x": 2.4609375,
+          "height": 5.044921875
+        },
+        {
+          "x": 2.5390625,
+          "height": 5.044921875
+        },
+        {
+          "x": 2.6171875,
+          "height": 5.111328125
+        },
+        {
+          "x": 2.6953125,
+          "height": 5.111328125
+        },
+        {
+          "x": 2.7734375,
+          "height": 5.111328125
+        },
+        {
+          "x": 2.8515625,
+          "height": 5.111328125
+        },
+        {
+          "x": 2.9296875,
+          "height": 5.111328125
+        },
+        {
+          "x": 3.0078125,
+          "height": 5.111328125
+        },
+        {
+          "x": 3.0859375,
+          "height": 5.111328125
+        },
+        {
+          "x": 3.1640625,
+          "height": 5.111328125
+        },
+        {
+          "x": 3.2421875,
+          "height": 5.044921875
+        },
+        {
+          "x": 3.3203125,
+          "height": 4.978515625
+        },
+        {
+          "x": 3.3984375,
+          "height": 4.978515625
+        },
+        {
+          "x": 3.4765625,
+          "height": 4.978515625
+        },
+        {
+          "x": 3.5546875,
+          "height": 4.978515625
+        },
+        {
+          "x": 3.6328125,
+          "height": 0
+        },
+        {
+          "x": 3.7109375,
+          "height": 0
+        },
+        {
+          "x": 3.7890625,
+          "height": 0
+        },
+        {
+          "x": 3.8671875,
+          "height": 0
+        },
+        {
+          "x": 3.9453125,
+          "height": 0
+        },
+        {
+          "x": 4.0234375,
+          "height": 0
+        },
+        {
+          "x": 4.1015625,
+          "height": 0
+        },
+        {
+          "x": 4.1796875,
+          "height": 0
+        },
+        {
+          "x": 4.2578125,
+          "height": 0
+        },
+        {
+          "x": 4.3359375,
+          "height": 0
+        },
+        {
+          "x": 4.4140625,
+          "height": 0
+        },
+        {
+          "x": 4.4921875,
+          "height": 0
+        },
+        {
+          "x": 4.5703125,
+          "height": 0
+        },
+        {
+          "x": 4.6484375,
+          "height": 0
+        },
+        {
+          "x": 4.7265625,
+          "height": 0
+        },
+        {
+          "x": 4.8046875,
+          "height": 0
+        },
+        {
+          "x": 4.8828125,
+          "height": 0
+        },
+        {
+          "x": 4.9609375,
+          "height": 0
+        }
+      ]
+    }
+  ]
+}

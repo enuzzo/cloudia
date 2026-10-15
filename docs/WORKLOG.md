@@ -488,3 +488,31 @@ GPU mean15.063ms. No new worker/animated/physical-device qualification.
   photographic acceptance remain open. No compositor, physical-device or audio
   acceptance inferred from rAF/CPU numbers. Dependency exclusion stays1;
   unrelated `node_modules 2/` preserved. No main merge or deployment.
+
+## 2026-10-15 — compact bodies and filtered navigation
+
+- Added buried replenished nuclei and local summit-fed caps for congestus and
+  multicell. Rendered review required a second multicell revision: a younger
+  intermediate pulse raises the saddle, with distinct maturity of the towers.
+  Congestus is fuller in front/side/back; some cap flatness remains. Sheared
+  density data is preserved. Numeric connection alone is not visual acceptance.
+- Found a representation error hidden by earlier CPU-only approach precision:
+  analytic displacement and the rendered16³ half-float filtered field can move
+  the boundary by about137m. The old camera entered the filtered density in8/18
+  sampled poses at maximum approach. The corrected probe uses filtered xyz and
+  erosion; its dense-reference CPU error is at most0.00982m over18poses.
+- Added a reusable32KiB CPU motion-field reference, with separate fill/search
+  timings and invalidation for seed, diagnostic mode and frozen flow. Median
+  combined CPU cost2.3865ms in the isolated audit; not a GPU readback identity.
+- Varied weak virga reach through the existing broad sheet sample, preserving
+  the saturated world floor. Control transitions now update rain intensity while
+  cloud/rain motion is paused. Fixed selected-scenario hover contrast.
+- 140 tests/26files, TypeScript and application→hero builds pass. v23 main100%
+  animated sun sample:43.9636rAF/s, GPUmean42.2473ms. v24 changes only the rain
+  transition clock after that sample. Output1672×941 is diagnostic window output;
+  it does not certify the larger native DPR surface or compositor presentation.
+- Saved failures as well as improvements. The near100% image remains almost
+  uniform; opacity-weighted CPU diagnostics favor a scale/contrast experiment
+  before increasing ray samples. Full evidence and remaining gates are in
+  [QUALIFICATION-2026-10-15.md](QUALIFICATION-2026-10-15.md). Goal remains active;
+  no main merge, push or deployment. Dependency exclusion remains1.

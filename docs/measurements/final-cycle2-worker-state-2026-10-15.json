@@ -1,0 +1,5 @@
+{
+  "url": "http://127.0.0.1:4177/?seed=1571198069&profile=1&worker=1&flow=frozen",
+  "metrics": "Worker WebGPU · 45.2 fps rAF · apple\nOutput 1672×941 · interno 1672×941\n384 passi nominali · mediana 16.70 ms · p95 33.40 ms\nGPU rendering 38.27 ms · flusso n/d\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 84.0 s · seme: 840455697\nForma: congestus · vento 55% · dispersione 0%\nCielo: sunset · velocità 1× · lampi: 0 · luce 0.00",
+  "notes": "Observed frozen worker reset, regeneration to seed840455697, maximum approach after swap; sampled screenshot, no sustained benchmark or physical-clearance claim."
+}

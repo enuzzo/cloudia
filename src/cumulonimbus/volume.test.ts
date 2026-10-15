@@ -37,7 +37,39 @@ function connectedBulkFraction(volume:ReturnType<typeof generateVolume>,threshol
   return largest/total;
 }
 
+/** Occupied samples inside X/Z spans of lower/middle sections. Unlike component
+ * connectivity, this drops when narrow legs surround large empty cavities.
+ * The upper multicell saddle is deliberately outside the measured body band.
+ */
+function intermediateSectionFill(volume:ReturnType<typeof generateVolume>,seed:number) {
+  const {size,data}=volume,height=cloudParameters(seed).towerHeight;
+  const band=cloudParameters(seed).family==='multicell'?[.35,.5]:[.45,.7];
+  let occupied=0,spans=0;
+  for(let y=0;y<size;y++) {
+    const level=(voxelCenter(y,1,size)-.72)/(4.43*height);
+    if(level<band[0]||level>band[1]) continue;
+    for(let axis=0;axis<2;axis++) for(let row=0;row<size;row++) {
+      let lo=size,hi=-1;
+      for(let column=0;column<size;column++) {
+        const x=axis?row:column,z=axis?column:row;
+        if(data[((z*size+y)*size+x)*4]<=.16*255) continue;
+        lo=Math.min(lo,column);hi=Math.max(hi,column);occupied++;
+      }
+      if(hi>=lo) spans+=hi-lo+1;
+    }
+  }
+  return occupied/spans;
+}
+
 describe('authored density volume', () => {
+  it('applies filtered flow erosion before normalizing the probe density',()=>{
+    const envelope={size:1,data:new Uint8Array([153,0,0,0])};
+    const detail={size:1,data:new Uint8Array([128,128,128,255])};
+    const baseErosion=(1-128/255)*.46,flowErosion=.18;
+    expect(sampleCloudDensity(envelope,detail,0,3,0,0,flowErosion)).toBeCloseTo((153/255-baseErosion-flowErosion)/(1-baseErosion-flowErosion),12);
+    expect(sampleCloudDensity(envelope,detail,0,3,0,0,flowErosion)).toBeLessThan(sampleCloudDensity(envelope,detail,0,3,0,0));
+    expect(sampleCloudDensity(envelope,detail,0,3,0,0,.8)).toBe(0);
+  });
   it('keeps intermediate ice wisps optically separated from bright fibres',()=>{
     const envelope={size:1,data:new Uint8Array([255,0,0,0])};
     const medium={size:1,data:new Uint8Array([128,128,128,255])};
@@ -202,6 +234,12 @@ describe('authored density volume', () => {
       expect(connectedBulkFraction(generateVolume(32,seed))).toBeGreaterThan(.985);
     }
   });
+  it('fills lower/middle sections without turning the elevated multicell saddle into one tower',()=>{
+    // Congestus has a common compact body; multicell keeps a wider internal bay
+    // but its lower body should not consist mainly of separate supporting legs.
+    for(const seed of [72,912]) expect(intermediateSectionFill(generateVolume(64,seed),seed)).toBeGreaterThan(.9);
+    for(const seed of [73,913]) expect(intermediateSectionFill(generateVolume(64,seed),seed)).toBeGreaterThan(.82);
+  });
   it('retains separated elevated multicell towers above their connected rain base',()=>{
     const volume=generateVolume(40,73),rows=new Float64Array(40);
     for(let z=0;z<40;z++) for(let y=0;y<40;y++) for(let x=0;x<40;x++) {
@@ -212,6 +250,17 @@ describe('authored density volume', () => {
     const saddle=Math.min(...rows.slice(18,22));
     expect(left).toBeGreaterThan(saddle*1.3);
     expect(right).toBeGreaterThan(saddle*1.3);
+  });
+  it('gives mature multicell updrafts distinct summit heights',()=>{
+    for(const seed of [73,913]) {
+      const volume=generateVolume(40,seed),heads=[-Infinity,-Infinity];
+      for(let z=0;z<40;z++) for(let y=0;y<40;y++) for(let x=0;x<40;x++) {
+        if(volume.data[((z*40+y)*40+x)*4]<.4*255) continue;
+        const px=voxelCenter(x,0,40),side=px<-.75?0:px>.75?1:-1;
+        if(side>=0) heads[side]=Math.max(heads[side],voxelCenter(y,1,40));
+      }
+      expect(heads[0]-heads[1]).toBeGreaterThan(.25);
+    }
   });
   it('keeps every morphology away from all texture faces without a forced box cutoff',()=>{
     for(const seed of [72,73,74,912,913,914]) {

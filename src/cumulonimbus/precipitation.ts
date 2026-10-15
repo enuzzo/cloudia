@@ -40,17 +40,21 @@ const smooth=(a:number,b:number,v:number)=>{const t=clamp((v-a)/(b-a));return t*
 export const VIRGA_FALL_DISTANCE=1.4;
 export const EVAPORATION_FADE=.55;
 export const WET_FLOOR=GROUND_LEVEL-.65;
-export function precipitationSurvival(worldY:number,baseWorld:number,amount:number,strength:number):number{
+export function precipitationSurvival(worldY:number,baseWorld:number,amount:number,strength:number,fallVariation=.5):number{
  if(amount<=0||strength<=0)return 0;
  const reach=smooth(.2,.8,clamp(amount)*Math.sqrt(clamp(strength)));
- const floor=(baseWorld-VIRGA_FALL_DISTANCE)*(1-reach)+WET_FLOOR*reach;
+ // The broad sheet field varies weak-column reach without adding another
+ // texture lookup. Saturated rain still ends at the fixed world sea datum.
+ const fallDistance=VIRGA_FALL_DISTANCE*(.7+.6*clamp(fallVariation));
+ const floor=(baseWorld-fallDistance)*(1-reach)+WET_FLOOR*reach;
  return smooth(floor,floor+EVAPORATION_FADE,worldY);
 }
 export const PRECIPITATION_WGSL=`
-fn precipitationSurvival(worldY:f32,baseWorld:f32,amount:f32,strength:f32)->f32{
+fn precipitationSurvival(worldY:f32,baseWorld:f32,amount:f32,strength:f32,fallVariation:f32)->f32{
  if(amount<=0.0||strength<=0.0){return 0.0;}
  let reach=smoothstep(0.2,0.8,clamp(amount,0.0,1.0)*sqrt(clamp(strength,0.0,1.0)));
- let floor=mix(baseWorld-${VIRGA_FALL_DISTANCE},${WET_FLOOR},reach);
+ let fallDistance=${VIRGA_FALL_DISTANCE}*(0.7+0.6*clamp(fallVariation,0.0,1.0));
+ let floor=mix(baseWorld-fallDistance,${WET_FLOOR},reach);
  return smoothstep(floor,floor+${EVAPORATION_FADE},worldY);
 }`;
 /** Area-filtered lower-cloud mass and mass-weighted base height, in RG8.

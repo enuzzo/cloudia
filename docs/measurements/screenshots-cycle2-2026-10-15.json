@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-15T07:23:43.028022+00:00",
+  "method": "Real IAB sampled screenshots, not rendered concepts, video or compositor frame timing. cycle2-congestus and cycle2-multicell-front precede final multicell revision; sheared near images use v23 corrected camera; rain100-paused uses v24 control clock. Baseline near80 is prior v22. Exact build manifests are separate. Added finalv24 virga/mobile/frozen-worker samples; early congestus anatomy captures also precede the selected-hover fix. All are sampled screenshots, not videos.",
+  "files": [
+    {
+      "path": "docs/images/qualification-2026-10-15/cycle2-congestus-front.jpg",
+      "bytes": 64795,
+      "sha256": "624b156be4bf780c340604c3a07b7a3b0d6e25b3fb4eb64f6d8352193fd5bd4d"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/cycle2-congestus-side.jpg",
+      "bytes": 55061,
+      "sha256": "f91964c21106cd8964e8dc207f5bf0067cd036b614edd0acf7ce251699fc546a"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/cycle2-congestus-back.jpg",
+      "bytes": 78350,
+      "sha256": "7e2663db16c808e0058480a0e159212cea382ba457242a769021623eceb01c40"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/cycle2-multicell-front.jpg",
+      "bytes": 66257,
+      "sha256": "dda3cd8c84f865aa84ab591a8a80a21f3d0bf600a15e8a271e6b7c3d30b8b8c8"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/cycle2-final-multicell-front.jpg",
+      "bytes": 66489,
+      "sha256": "532748afedd7d0e239ead095c46c0c6ad316259f62c5f23d653d0d313d6307ba"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/cycle2-final-multicell-side.jpg",
+      "bytes": 50259,
+      "sha256": "e4f1925e77bcdad4c8bad6f49033fe2ef1994454f45301f15174ff356d59358e"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/cycle2-final-multicell-back.jpg",
+      "bytes": 77844,
+      "sha256": "12d752b523e4fc0d1b095c83ad9e89803e101910c7946605971c336da10a794c"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/cycle2-baseline-near80-sun.jpg",
+      "bytes": 39693,
+      "sha256": "04d315cd57af6a69030453b566f4ad62efbc8bef54ea83baa6b5cbb330852b1f"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/cycle2-near100-filtered-sun.jpg",
+      "bytes": 27810,
+      "sha256": "4efc72617d5bf1f93510e1337ee9fa5e0f2273593258f69fcd5f611f607652f7"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/cycle2-final-rain100-paused.jpg",
+      "bytes": 56320,
+      "sha256": "26c968ffce49a43c3a58ad01725ae823236ff57b29df09846370ade86cb3fd8b"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/cycle2-final-virga45-calm.jpg",
+      "bytes": 56388,
+      "sha256": "e277fe7bd8dcd9e5fc4fbfafebb3f6339726e351856c20cf676c4d2d201c1bfb"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/cycle2-final-virga45-windy-a.jpg",
+      "bytes": 56399,
+      "sha256": "94f9cd7176c9a037cef2b57e75e24e13cf87456adad32fa32373fb0111af1e9b"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/cycle2-final-virga45-windy-b.jpg",
+      "bytes": 56609,
+      "sha256": "f53dc26556dc79c0518dcc2442ac09c64a637e8b02987c7bfb876e944886f688"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/cycle2-final-mobile-inspector.jpg",
+      "bytes": 35607,
+      "sha256": "03a9baf159bf929924d6f926d5be42e2e705cffd39fa7fbff5ca87ba1bd1a869"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/cycle2-worker-frozen-near100-sunset.jpg",
+      "bytes": 27698,
+      "sha256": "834ef1592af49f4a813b1612d9d3f3fd44f72e67ee81ef4e0ec9dd83e6f514bf"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/cycle2-worker-frozen-new-seed-near100.jpg",
+      "bytes": 29423,
+      "sha256": "1c3f3c804fb15afe8c880a2d51e99ef1a4945a7173391307bca34311dbc3e58f"
+    },
+    {
+      "path": "docs/images/qualification-2026-10-15/cycle2-final-preview-native.jpg",
+      "bytes": 47853,
+      "sha256": "4bd33a78ee3adbe3fc0d8c8cfdf736a4de9feba0239902a3ff57ca6711d7c66c"
+    }
+  ]
+}

@@ -1,0 +1,1648 @@
+{
+  "date": "2026-10-15T07:04:48.479Z",
+  "method": "CPU only. One 256³ macro/128³ detail volume; 16³ half-float motionField reference with clamp-to-edge trilinear sampling at texel centers. A=current analytic-flow probe density; B=same density with filtered flow; C=filtered flow plus shader flow.a erosion, dispersion=0. Dense reference spacing2.5m/refinement12. No GPU readback; CPU analytic arithmetic before half conversion may differ slightly from GPU f32. C excludes camera-dependent micro erosion and the .002 shader cutoff (below .025 boundary threshold).",
+  "sourceHashes": {
+    "volume": "7d85df09443886b1ff152395feb189b682aff67ceb34598d68ee40c9ec80b2d6",
+    "motion": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2",
+    "motionField": "f4deca3b024117f9493f7cac06a5e108182117d1e7022e58758574208fbb8c73",
+    "camera": "b48c3b08d1a832393e798564bfd864e844de101151c93e816e1b329507087dd9",
+    "cloudShader": "ca53f923369e948565abac614740605c4908729a970ebb0d82a7ec0c850f33f9"
+  },
+  "seed": 1571198069,
+  "time": 60,
+  "wind": [
+    0.3,
+    0.1
+  ],
+  "drift": [
+    0.2,
+    0,
+    0
+  ],
+  "center": [
+    0.4296875,
+    2.9365234375,
+    0
+  ],
+  "volume": 256,
+  "detail": 128,
+  "field": 16,
+  "durationSeconds": 25.44894325,
+  "summary": {
+    "poses": 18,
+    "maxAbsoluteFlowOnlyBoundaryShiftMetres": 137.18627929687455,
+    "minFlowOnlyBoundaryShiftMetres": -85.29785156249959,
+    "maxFlowOnlyBoundaryShiftMetres": 137.18627929687455,
+    "maxAbsoluteFullBoundaryShiftMetres": 136.46179199218722,
+    "maxFilteredProbeErrorMetres": 0.011638946585568188,
+    "maxErodedProbeErrorMetres": 0.010738649766639519,
+    "maxFilteredDensityAtCurrentOrigin": 0.8207061498855318,
+    "maxFilteredErodedDensityAtCurrentOrigin": 0.8188464946033377,
+    "insideFilteredAtMaxApproach": 8,
+    "insideErodedAtMaxApproach": 8
+  },
+  "cases": [
+    {
+      "aspect": 1.7777777777777777,
+      "yaw": -0.8,
+      "pitch": -0.35,
+      "analytic": {
+        "found": true,
+        "distance": 0.9500471191406249,
+        "samples": 6034
+      },
+      "filtered": {
+        "found": true,
+        "distance": 0.8647492675781253,
+        "samples": 6068
+      },
+      "filteredEroded": {
+        "found": true,
+        "distance": 0.8634003906249997,
+        "samples": 6068
+      },
+      "currentProbe": {
+        "distance": 0.9500548896916748,
+        "found": true,
+        "samples": 207,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "filteredProbe": {
+        "distance": 0.86475140978899,
+        "found": true,
+        "samples": 213,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "erodedProbe": {
+        "distance": 0.8634000916401107,
+        "found": true,
+        "samples": 213,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "flowOnlyBoundaryShiftMetres": -85.29785156249959,
+      "fullBoundaryShiftMetres": -86.64672851562516,
+      "filteredProbeErrorMetres": 0.002142210864697347,
+      "erodedProbeErrorMetres": 0.0002989848890688762,
+      "nearCases": [
+        {
+          "approach": 0.8,
+          "origin": [
+            -0.6964610583686577,
+            2.3634798425103796,
+            1.0937319223891229
+          ],
+          "currentDistanceKm": 1.6711789417436544,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 809.4296741655291,
+          "clearanceToErodedBoundaryMetres": 810.7785511186547
+        },
+        {
+          "approach": 0.95,
+          "origin": [
+            -0.3076052993115188,
+            2.561350097235311,
+            0.716069531645807
+          ],
+          "currentDistanceKm": 1.0941258068949042,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 232.37653931677892,
+          "clearanceToErodedBoundaryMetres": 233.7254162699045
+        },
+        {
+          "approach": 1,
+          "origin": [
+            -0.21052098855423662,
+            2.610751698862394,
+            0.6217798315442465
+          ],
+          "currentDistanceKm": 0.9500548896916748,
+          "analyticDensityAtOrigin": 0.015099131470411021,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 88.30562211354953,
+          "clearanceToErodedBoundaryMetres": 89.65449906667511
+        }
+      ]
+    },
+    {
+      "aspect": 1.7777777777777777,
+      "yaw": -0.8,
+      "pitch": 0,
+      "analytic": {
+        "found": true,
+        "distance": 1.0626624755859375,
+        "samples": 5989
+      },
+      "filtered": {
+        "found": true,
+        "distance": 1.041036499023437,
+        "samples": 5997
+      },
+      "filteredEroded": {
+        "found": true,
+        "distance": 1.0408686523437496,
+        "samples": 5997
+      },
+      "currentProbe": {
+        "distance": 1.0626634801644765,
+        "found": true,
+        "samples": 181,
+        "spacingKm": 0.012494189891401346,
+        "spanKm": 3.173524232415942
+      },
+      "filteredProbe": {
+        "distance": 1.0410426750008408,
+        "found": true,
+        "samples": 182,
+        "spacingKm": 0.012494189891401346,
+        "spanKm": 3.173524232415942
+      },
+      "erodedProbe": {
+        "distance": 1.0408718559984191,
+        "found": true,
+        "samples": 182,
+        "spacingKm": 0.012494189891401346,
+        "spanKm": 3.173524232415942
+      },
+      "flowOnlyBoundaryShiftMetres": -21.625976562500426,
+      "fullBoundaryShiftMetres": -21.793823242187926,
+      "filteredProbeErrorMetres": 0.006175977403710675,
+      "erodedProbeErrorMetres": 0.003203654669547973,
+      "nearCases": [
+        {
+          "approach": 0.8,
+          "origin": [
+            -0.8815319757813984,
+            2.9365234375,
+            1.2734754995361552
+          ],
+          "currentDistanceKm": 1.8278502021739378,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 789.8137031505006,
+          "clearanceToErodedBoundaryMetres": 789.9815498301881
+        },
+        {
+          "approach": 0.95,
+          "origin": [
+            -0.4433175525859272,
+            2.9365234375,
+            0.8478752535130876
+          ],
+          "currentDistanceKm": 1.21697586967057,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 178.93937064713273,
+          "clearanceToErodedBoundaryMetres": 179.10721732682023
+        },
+        {
+          "approach": 1,
+          "origin": [
+            -0.3326206200724715,
+            2.9365234375,
+            0.7403647764087992
+          ],
+          "currentDistanceKm": 1.0626634801644765,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 24.626981141039337,
+          "clearanceToErodedBoundaryMetres": 24.794827820726837
+        }
+      ]
+    },
+    {
+      "aspect": 1.7777777777777777,
+      "yaw": -0.8,
+      "pitch": 0.35,
+      "analytic": {
+        "found": true,
+        "distance": 1.082671630859375,
+        "samples": 5981
+      },
+      "filtered": {
+        "found": true,
+        "distance": 1.0508424072265619,
+        "samples": 5993
+      },
+      "filteredEroded": {
+        "found": true,
+        "distance": 1.050306518554687,
+        "samples": 5994
+      },
+      "currentProbe": {
+        "distance": 1.0826788528798932,
+        "found": true,
+        "samples": 196,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "filteredProbe": {
+        "distance": 1.0508437451382748,
+        "found": true,
+        "samples": 198,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "erodedProbe": {
+        "distance": 1.050308087493674,
+        "found": true,
+        "samples": 198,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "flowOnlyBoundaryShiftMetres": -31.82922363281304,
+      "fullBoundaryShiftMetres": -32.36511230468797,
+      "filteredProbeErrorMetres": 0.001337911712973039,
+      "erodedProbeErrorMetres": 0.0015689389871731407,
+      "nearCases": [
+        {
+          "approach": 0.8,
+          "origin": [
+            -0.8205613118862156,
+            3.5727157661858584,
+            1.2142599005498007
+          ],
+          "currentDistanceKm": 1.8553409058134953,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 807.4984985869334,
+          "clearanceToErodedBoundaryMetres": 808.0343872588082
+        },
+        {
+          "approach": 0.95,
+          "origin": [
+            -0.40505668284275276,
+            3.3612851653184115,
+            0.8107157381849305
+          ],
+          "currentDistanceKm": 1.238741451776695,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 190.89904455013306,
+          "clearanceToErodedBoundaryMetres": 191.434933222008
+        },
+        {
+          "approach": 1,
+          "origin": [
+            -0.29989160065261455,
+            3.3077716423308985,
+            0.7085778748832612
+          ],
+          "currentDistanceKm": 1.0826788528798932,
+          "analyticDensityAtOrigin": 0.01505512369661446,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 34.83644565333122,
+          "clearanceToErodedBoundaryMetres": 35.37233432520615
+        }
+      ]
+    },
+    {
+      "aspect": 1.7777777777777777,
+      "yaw": 0,
+      "pitch": -0.35,
+      "analytic": {
+        "found": true,
+        "distance": 0.8476801757812505,
+        "samples": 6075
+      },
+      "filtered": {
+        "found": true,
+        "distance": 0.9848664550781251,
+        "samples": 6020
+      },
+      "filteredEroded": {
+        "found": true,
+        "distance": 0.9841419677734378,
+        "samples": 6020
+      },
+      "currentProbe": {
+        "distance": 0.8476866415529303,
+        "found": true,
+        "samples": 133,
+        "spacingKm": 0.012453518406885043,
+        "spanKm": 2.353714978901273
+      },
+      "filteredProbe": {
+        "distance": 0.9848699302537733,
+        "found": true,
+        "samples": 122,
+        "spacingKm": 0.012453518406885043,
+        "spanKm": 2.353714978901273
+      },
+      "erodedProbe": {
+        "distance": 0.9841523935486891,
+        "found": true,
+        "samples": 122,
+        "spacingKm": 0.012453518406885043,
+        "spanKm": 2.353714978901273
+      },
+      "flowOnlyBoundaryShiftMetres": 137.18627929687455,
+      "fullBoundaryShiftMetres": 136.46179199218722,
+      "filteredProbeErrorMetres": 0.0034751756482487295,
+      "erodedProbeErrorMetres": 0.010425775251343694,
+      "nearCases": [
+        {
+          "approach": 0.8,
+          "origin": [
+            0.4296875,
+            2.413432764794406,
+            1.4330132581802901
+          ],
+          "currentDistanceKm": 1.5255001966542259,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 543.6337415761008,
+          "clearanceToErodedBoundaryMetres": 544.3582288807881
+        },
+        {
+          "approach": 0.95,
+          "origin": [
+            0.4296875,
+            2.5998612975501962,
+            0.9222900258956537
+          ],
+          "currentDistanceKm": 0.9818147932997277,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0.025180668421155756,
+          "filteredErodedDensityAtOrigin": 0.022641276238252985,
+          "clearanceToFilteredBoundaryMetres": -0.05166177839743824,
+          "clearanceToErodedBoundaryMetres": 0.6728255262898886
+        },
+        {
+          "approach": 1,
+          "origin": [
+            0.4296875,
+            2.645853546702225,
+            0.7962937001200597
+          ],
+          "currentDistanceKm": 0.8476866415529303,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0.5151582157268537,
+          "filteredErodedDensityAtOrigin": 0.5131964160164616,
+          "clearanceToFilteredBoundaryMetres": -134.17981352519482,
+          "clearanceToErodedBoundaryMetres": -133.4553262205075
+        }
+      ]
+    },
+    {
+      "aspect": 1.7777777777777777,
+      "yaw": 0,
+      "pitch": 0,
+      "analytic": {
+        "found": true,
+        "distance": 0.48863476562499975,
+        "samples": 6218
+      },
+      "filtered": {
+        "found": true,
+        "distance": 0.5609907226562495,
+        "samples": 6189
+      },
+      "filteredEroded": {
+        "found": true,
+        "distance": 0.5605567626953116,
+        "samples": 6189
+      },
+      "currentProbe": {
+        "distance": 0.4886358802924722,
+        "found": true,
+        "samples": 150,
+        "spacingKm": 0.012491613700564971,
+        "spanKm": 2.211015625
+      },
+      "filteredProbe": {
+        "distance": 0.5609994080969168,
+        "found": true,
+        "samples": 144,
+        "spacingKm": 0.012491613700564971,
+        "spanKm": 2.211015625
+      },
+      "erodedProbe": {
+        "distance": 0.5605602498027563,
+        "found": true,
+        "samples": 144,
+        "spacingKm": 0.012491613700564971,
+        "spanKm": 2.211015625
+      },
+      "flowOnlyBoundaryShiftMetres": 72.35595703124974,
+      "fullBoundaryShiftMetres": 71.92199707031189,
+      "filteredProbeErrorMetres": 0.008685440667344224,
+      "erodedProbeErrorMetres": 0.0034871074446884975,
+      "nearCases": [
+        {
+          "approach": 0.8,
+          "origin": [
+            0.4296875,
+            2.9365234375,
+            0.9817757021673273
+          ],
+          "currentDistanceKm": 0.9817757021673273,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 423.78497951107784,
+          "clearanceToErodedBoundaryMetres": 424.21893947201573
+        },
+        {
+          "approach": 0.95,
+          "origin": [
+            0.4296875,
+            2.9365234375,
+            0.5817576264174921
+          ],
+          "currentDistanceKm": 0.5817576264174921,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 23.766903761242574,
+          "clearanceToErodedBoundaryMetres": 24.200863722180443
+        },
+        {
+          "approach": 1,
+          "origin": [
+            0.4296875,
+            2.9365234375,
+            0.4886358802924722
+          ],
+          "currentDistanceKm": 0.4886358802924722,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0.6312549408355712,
+          "filteredErodedDensityAtOrigin": 0.6287230159974558,
+          "clearanceToFilteredBoundaryMetres": -69.35484236377731,
+          "clearanceToErodedBoundaryMetres": -68.92088240283944
+        }
+      ]
+    },
+    {
+      "aspect": 1.7777777777777777,
+      "yaw": 0,
+      "pitch": 0.35,
+      "analytic": {
+        "found": true,
+        "distance": 0.27880444335937515,
+        "samples": 6302
+      },
+      "filtered": {
+        "found": true,
+        "distance": 0.3462995605468747,
+        "samples": 6275
+      },
+      "filteredEroded": {
+        "found": true,
+        "distance": 0.34541333007812436,
+        "samples": 6276
+      },
+      "currentProbe": {
+        "distance": 0.27881381245092374,
+        "found": true,
+        "samples": 178,
+        "spacingKm": 0.012453518406885043,
+        "spanKm": 2.353714978901273
+      },
+      "filteredProbe": {
+        "distance": 0.3463109092851151,
+        "found": true,
+        "samples": 173,
+        "spacingKm": 0.012453518406885043,
+        "spanKm": 2.353714978901273
+      },
+      "erodedProbe": {
+        "distance": 0.3454231096330618,
+        "found": true,
+        "samples": 173,
+        "spacingKm": 0.012453518406885043,
+        "spanKm": 2.353714978901273
+      },
+      "flowOnlyBoundaryShiftMetres": 67.49511718749956,
+      "fullBoundaryShiftMetres": 66.6088867187492,
+      "filteredProbeErrorMetres": 0.011348738240379852,
+      "erodedProbeErrorMetres": 0.00977955493741689,
+      "nearCases": [
+        {
+          "approach": 0.8,
+          "origin": [
+            0.4296875,
+            3.151425276852604,
+            0.5887262019159282
+          ],
+          "currentDistanceKm": 0.6267226989502508,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 283.4231384033761,
+          "clearanceToErodedBoundaryMetres": 284.3093688721264
+        },
+        {
+          "approach": 0.95,
+          "origin": [
+            0.4296875,
+            3.05358633731109,
+            0.3206952374100878
+          ],
+          "currentDistanceKm": 0.3413929668427484,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0.045980442452795776,
+          "filteredErodedDensityAtOrigin": 0.03638894583921655,
+          "clearanceToFilteredBoundaryMetres": -1.9065937041263248,
+          "clearanceToErodedBoundaryMetres": -1.020363235375965
+        },
+        {
+          "approach": 1,
+          "origin": [
+            0.4296875,
+            3.0321280824777173,
+            0.2619100873813445
+          ],
+          "currentDistanceKm": 0.27881381245092374,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0.8207061498855318,
+          "filteredErodedDensityAtOrigin": 0.8188464946033377,
+          "clearanceToFilteredBoundaryMetres": -64.48574809595098,
+          "clearanceToErodedBoundaryMetres": -63.59951762720062
+        }
+      ]
+    },
+    {
+      "aspect": 1.7777777777777777,
+      "yaw": 0.8,
+      "pitch": -0.35,
+      "analytic": {
+        "found": true,
+        "distance": 1.5877656250000005,
+        "samples": 5779
+      },
+      "filtered": {
+        "found": true,
+        "distance": 1.5877656250000005,
+        "samples": 5779
+      },
+      "filteredEroded": {
+        "found": true,
+        "distance": 1.5877656250000005,
+        "samples": 5779
+      },
+      "currentProbe": {
+        "distance": 1.5877674896263605,
+        "found": true,
+        "samples": 155,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "filteredProbe": {
+        "distance": 1.5877674896263605,
+        "found": true,
+        "samples": 155,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "erodedProbe": {
+        "distance": 1.5877674896263605,
+        "found": true,
+        "samples": 155,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "flowOnlyBoundaryShiftMetres": 0,
+      "fullBoundaryShiftMetres": 0,
+      "filteredProbeErrorMetres": 0.001864626359981969,
+      "erodedProbeErrorMetres": 0.001864626359981969,
+      "nearCases": [
+        {
+          "approach": 0.8,
+          "origin": [
+            2.1280338078986967,
+            2.072315543627244,
+            1.6494587311920401
+          ],
+          "currentDistanceKm": 2.5203074358678497,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 935.541810867849,
+          "clearanceToErodedBoundaryMetres": 935.541810867849
+        },
+        {
+          "approach": 0.95,
+          "origin": [
+            1.63064127005169,
+            2.3254150178402657,
+            1.1663838361804333
+          ],
+          "currentDistanceKm": 1.7821881807719884,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 197.42255577198776,
+          "clearanceToErodedBoundaryMetres": 197.42255577198776
+        },
+        {
+          "approach": 1,
+          "origin": [
+            1.499628022109345,
+            2.392081446558075,
+            1.0391418569001873
+          ],
+          "currentDistanceKm": 1.5877674896263605,
+          "analyticDensityAtOrigin": 0.012394881130306488,
+          "filteredDensityAtOrigin": 0.012394847904624948,
+          "filteredErodedDensityAtOrigin": 0.012394846886982586,
+          "clearanceToFilteredBoundaryMetres": 3.0018646263598736,
+          "clearanceToErodedBoundaryMetres": 3.0018646263598736
+        }
+      ]
+    },
+    {
+      "aspect": 1.7777777777777777,
+      "yaw": 0.8,
+      "pitch": 0,
+      "analytic": {
+        "found": true,
+        "distance": 1.4048542480468749,
+        "samples": 5852
+      },
+      "filtered": {
+        "found": true,
+        "distance": 1.4192481689453122,
+        "samples": 5846
+      },
+      "filteredEroded": {
+        "found": true,
+        "distance": 1.4191785888671873,
+        "samples": 5846
+      },
+      "currentProbe": {
+        "distance": 1.40486274744401,
+        "found": true,
+        "samples": 153,
+        "spacingKm": 0.012494189891401346,
+        "spanKm": 3.173524232415942
+      },
+      "filteredProbe": {
+        "distance": 1.419248147719364,
+        "found": true,
+        "samples": 152,
+        "spacingKm": 0.012494189891401346,
+        "spanKm": 3.173524232415942
+      },
+      "erodedProbe": {
+        "distance": 1.4191871409327848,
+        "found": true,
+        "samples": 152,
+        "spacingKm": 0.012494189891401346,
+        "spanKm": 3.173524232415942
+      },
+      "flowOnlyBoundaryShiftMetres": 14.393920898437385,
+      "fullBoundaryShiftMetres": 14.32434082031242,
+      "filteredProbeErrorMetres": 0.00002122594833231517,
+      "erodedProbeErrorMetres": 0.008552065597466907,
+      "nearCases": [
+        {
+          "approach": 0.8,
+          "origin": [
+            2.069015677919195,
+            2.9365234375,
+            1.5921394616528604
+          ],
+          "currentDistanceKm": 2.2852362985634826,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 868.9881296181703,
+          "clearanceToErodedBoundaryMetres": 869.0577096962952
+        },
+        {
+          "approach": 0.95,
+          "origin": [
+            1.567820434882584,
+            2.9365234375,
+            1.1053713238391412
+          ],
+          "currentDistanceKm": 1.5865662107300595,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 170.31804178474718,
+          "clearanceToErodedBoundaryMetres": 170.38762186287215
+        },
+        {
+          "approach": 1,
+          "origin": [
+            1.4374743487567987,
+            2.9365234375,
+            0.9787773018561341
+          ],
+          "currentDistanceKm": 1.40486274744401,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0.3378365332570734,
+          "filteredErodedDensityAtOrigin": 0.336447423480948,
+          "clearanceToFilteredBoundaryMetres": -11.385421501302284,
+          "clearanceToErodedBoundaryMetres": -11.31584142317732
+        }
+      ]
+    },
+    {
+      "aspect": 1.7777777777777777,
+      "yaw": 0.8,
+      "pitch": 0.35,
+      "analytic": {
+        "found": true,
+        "distance": 1.265047119140624,
+        "samples": 5908
+      },
+      "filtered": {
+        "found": true,
+        "distance": 1.256310546875,
+        "samples": 5911
+      },
+      "filteredEroded": {
+        "found": true,
+        "distance": 1.2551466064453118,
+        "samples": 5912
+      },
+      "currentProbe": {
+        "distance": 1.2650581068291047,
+        "found": true,
+        "samples": 181,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "filteredProbe": {
+        "distance": 1.256317147992209,
+        "found": true,
+        "samples": 182,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "erodedProbe": {
+        "distance": 1.2551484404039892,
+        "found": true,
+        "samples": 182,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "flowOnlyBoundaryShiftMetres": -8.736572265624076,
+      "fullBoundaryShiftMetres": -9.900512695312225,
+      "filteredProbeErrorMetres": 0.00660111720907075,
+      "erodedProbeErrorMetres": 0.001833958677366354,
+      "nearCases": [
+        {
+          "approach": 0.8,
+          "origin": [
+            1.8457587529301593,
+            3.657094942485145,
+            1.3753090764071814
+          ],
+          "currentDistanceKm": 2.1014176507347897,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 848.1071038597896,
+          "clearanceToErodedBoundaryMetres": 849.2710442894778
+        },
+        {
+          "approach": 0.95,
+          "origin": [
+            1.3974831821359903,
+            3.4289887634868483,
+            0.939937296936959
+          ],
+          "currentDistanceKm": 1.4361868617396403,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 182.87631486464016,
+          "clearanceToErodedBoundaryMetres": 184.04025529432832
+        },
+        {
+          "approach": 1,
+          "origin": [
+            1.2821655486832562,
+            3.370309088635444,
+            0.827939127615204
+          ],
+          "currentDistanceKm": 1.2650581068291047,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 11.747559954104592,
+          "clearanceToErodedBoundaryMetres": 12.91150038379274
+        }
+      ]
+    },
+    {
+      "aspect": 0.46208530805687204,
+      "yaw": -0.8,
+      "pitch": -0.35,
+      "analytic": {
+        "found": true,
+        "distance": 0.9500470127554469,
+        "samples": 11407
+      },
+      "filtered": {
+        "found": true,
+        "distance": 0.8647493737027588,
+        "samples": 11441
+      },
+      "filteredEroded": {
+        "found": true,
+        "distance": 0.8634005290653112,
+        "samples": 11441
+      },
+      "currentProbe": {
+        "distance": 0.9500548896916748,
+        "found": true,
+        "samples": 207,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "filteredProbe": {
+        "distance": 0.86475140978899,
+        "found": true,
+        "samples": 213,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "erodedProbe": {
+        "distance": 0.8634000916401107,
+        "found": true,
+        "samples": 213,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "flowOnlyBoundaryShiftMetres": -85.29763905268806,
+      "fullBoundaryShiftMetres": -86.64648369013572,
+      "filteredProbeErrorMetres": 0.0020360862311719075,
+      "erodedProbeErrorMetres": 0.00043742520050571443,
+      "nearCases": [
+        {
+          "approach": 0.8,
+          "origin": [
+            -0.8424528804504428,
+            2.289191527755512,
+            1.235521311570519
+          ],
+          "currentDistanceKm": 1.8878274974930784,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 1026.0781237903195,
+          "clearanceToErodedBoundaryMetres": 1027.4269684277672
+        },
+        {
+          "approach": 0.95,
+          "origin": [
+            -0.3304196726268571,
+            2.5497409446018473,
+            0.7382271841143541
+          ],
+          "currentDistanceKm": 1.1279818199140945,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 266.2324462113357,
+          "clearanceToErodedBoundaryMetres": 267.58129084878334
+        },
+        {
+          "approach": 1,
+          "origin": [
+            -0.21052098855423662,
+            2.610751698862394,
+            0.6217798315442467
+          ],
+          "currentDistanceKm": 0.950054889691675,
+          "analyticDensityAtOrigin": 0.015099131470410842,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 88.30551598891611,
+          "clearanceToErodedBoundaryMetres": 89.65436062636378
+        }
+      ]
+    },
+    {
+      "aspect": 0.46208530805687204,
+      "yaw": -0.8,
+      "pitch": 0,
+      "analytic": {
+        "found": true,
+        "distance": 1.0626627229065522,
+        "samples": 11362
+      },
+      "filtered": {
+        "found": true,
+        "distance": 1.0410366541107756,
+        "samples": 11370
+      },
+      "filteredEroded": {
+        "found": true,
+        "distance": 1.0408688114522697,
+        "samples": 11370
+      },
+      "currentProbe": {
+        "distance": 1.0626634801644765,
+        "found": true,
+        "samples": 181,
+        "spacingKm": 0.012494189891401346,
+        "spanKm": 3.173524232415942
+      },
+      "filteredProbe": {
+        "distance": 1.0410426750008408,
+        "found": true,
+        "samples": 182,
+        "spacingKm": 0.012494189891401346,
+        "spanKm": 3.173524232415942
+      },
+      "erodedProbe": {
+        "distance": 1.0408718559984191,
+        "found": true,
+        "samples": 182,
+        "spacingKm": 0.012494189891401346,
+        "spanKm": 3.173524232415942
+      },
+      "flowOnlyBoundaryShiftMetres": -21.626068795776554,
+      "fullBoundaryShiftMetres": -21.793911454282444,
+      "filteredProbeErrorMetres": 0.006020890065183693,
+      "erodedProbeErrorMetres": 0.003044546149411076,
+      "nearCases": [
+        {
+          "approach": 0.8,
+          "origin": [
+            -1.0515160502588825,
+            2.9365234375,
+            1.4385665145467454
+          ],
+          "currentDistanceKm": 2.064809331167091,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 1026.7726770563152,
+          "clearanceToErodedBoundaryMetres": 1026.9405197148212
+        },
+        {
+          "approach": 0.95,
+          "origin": [
+            -0.4703313294659811,
+            2.9365234375,
+            0.8741114280377101
+          ],
+          "currentDistanceKm": 1.254633285872585,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 216.59663176180933,
+          "clearanceToErodedBoundaryMetres": 216.76447442031522
+        },
+        {
+          "approach": 1,
+          "origin": [
+            -0.3326206200724715,
+            2.9365234375,
+            0.7403647764087992
+          ],
+          "currentDistanceKm": 1.0626634801644765,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 24.62682605370081,
+          "clearanceToErodedBoundaryMetres": 24.7946687122067
+        }
+      ]
+    },
+    {
+      "aspect": 0.46208530805687204,
+      "yaw": -0.8,
+      "pitch": 0.35,
+      "analytic": {
+        "found": true,
+        "distance": 1.0826713988112735,
+        "samples": 11354
+      },
+      "filtered": {
+        "found": true,
+        "distance": 1.0508429377260977,
+        "samples": 11366
+      },
+      "filteredEroded": {
+        "found": true,
+        "distance": 1.050306451555819,
+        "samples": 11367
+      },
+      "currentProbe": {
+        "distance": 1.0826788528798932,
+        "found": true,
+        "samples": 196,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "filteredProbe": {
+        "distance": 1.0508437451382748,
+        "found": true,
+        "samples": 198,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "erodedProbe": {
+        "distance": 1.050308087493674,
+        "found": true,
+        "samples": 198,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "flowOnlyBoundaryShiftMetres": -31.828461085175785,
+      "fullBoundaryShiftMetres": -32.36494725545458,
+      "filteredProbeErrorMetres": 0.0008074121771173282,
+      "erodedProbeErrorMetres": 0.0016359378551822346,
+      "nearCases": [
+        {
+          "approach": 0.8,
+          "origin": [
+            -0.9826412619482778,
+            3.6551905663080086,
+            1.3716743145227752
+          ],
+          "currentDistanceKm": 2.095863878923683,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 1048.0209411975854,
+          "clearanceToErodedBoundaryMetres": 1048.5574273678642
+        },
+        {
+          "approach": 0.95,
+          "origin": [
+            -0.4308865369088236,
+            3.374428753100045,
+            0.8358020695865696
+          ],
+          "currentDistanceKm": 1.277072369898244,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 229.2294321721462,
+          "clearanceToErodedBoundaryMetres": 229.76591834242498
+        },
+        {
+          "approach": 1,
+          "origin": [
+            -0.29989160065261455,
+            3.3077716423308985,
+            0.7085778748832612
+          ],
+          "currentDistanceKm": 1.0826788528798932,
+          "analyticDensityAtOrigin": 0.01505512369661446,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 34.83591515379536,
+          "clearanceToErodedBoundaryMetres": 35.372401324074154
+        }
+      ]
+    },
+    {
+      "aspect": 0.46208530805687204,
+      "yaw": 0,
+      "pitch": -0.35,
+      "analytic": {
+        "found": true,
+        "distance": 0.8476800805011803,
+        "samples": 11448
+      },
+      "filtered": {
+        "found": true,
+        "distance": 0.984866124846728,
+        "samples": 11393
+      },
+      "filteredEroded": {
+        "found": true,
+        "distance": 0.9841416548989225,
+        "samples": 11393
+      },
+      "currentProbe": {
+        "distance": 0.84768664155293,
+        "found": true,
+        "samples": 133,
+        "spacingKm": 0.01245351840688504,
+        "spanKm": 2.3537149789012726
+      },
+      "filteredProbe": {
+        "distance": 0.9848699302537733,
+        "found": true,
+        "samples": 122,
+        "spacingKm": 0.01245351840688504,
+        "spanKm": 2.3537149789012726
+      },
+      "erodedProbe": {
+        "distance": 0.9841523935486891,
+        "found": true,
+        "samples": 122,
+        "spacingKm": 0.01245351840688504,
+        "spanKm": 2.3537149789012726
+      },
+      "flowOnlyBoundaryShiftMetres": 137.1860443455477,
+      "fullBoundaryShiftMetres": 136.4615743977422,
+      "filteredProbeErrorMetres": 0.00380540704536525,
+      "erodedProbeErrorMetres": 0.010738649766639519,
+      "nearCases": [
+        {
+          "approach": 0.8,
+          "origin": [
+            0.4296875,
+            2.3456202547531895,
+            1.618786453976194
+          ],
+          "currentDistanceKm": 1.7232632285745353,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 741.3971037278073,
+          "clearanceToErodedBoundaryMetres": 742.1215736756128
+        },
+        {
+          "approach": 0.95,
+          "origin": [
+            0.4296875,
+            2.589443813819001,
+            0.9508288492443213
+          ],
+          "currentDistanceKm": 1.0121955175408675,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 30.32939269413948,
+          "clearanceToErodedBoundaryMetres": 31.053862641944985
+        },
+        {
+          "approach": 1,
+          "origin": [
+            0.4296875,
+            2.645853546702225,
+            0.7962937001200595
+          ],
+          "currentDistanceKm": 0.84768664155293,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0.5151582157268555,
+          "filteredErodedDensityAtOrigin": 0.5131964160164634,
+          "clearanceToFilteredBoundaryMetres": -134.17948329379792,
+          "clearanceToErodedBoundaryMetres": -133.45501334599243
+        }
+      ]
+    },
+    {
+      "aspect": 0.46208530805687204,
+      "yaw": 0,
+      "pitch": 0,
+      "analytic": {
+        "found": true,
+        "distance": 0.48863472744703884,
+        "samples": 11591
+      },
+      "filtered": {
+        "found": true,
+        "distance": 0.5609907820235138,
+        "samples": 11562
+      },
+      "filteredEroded": {
+        "found": true,
+        "distance": 0.5605568324591585,
+        "samples": 11562
+      },
+      "currentProbe": {
+        "distance": 0.4886358802924722,
+        "found": true,
+        "samples": 150,
+        "spacingKm": 0.012491613700564971,
+        "spanKm": 2.211015625
+      },
+      "filteredProbe": {
+        "distance": 0.5609994080969168,
+        "found": true,
+        "samples": 144,
+        "spacingKm": 0.012491613700564971,
+        "spanKm": 2.211015625
+      },
+      "erodedProbe": {
+        "distance": 0.5605602498027563,
+        "found": true,
+        "samples": 144,
+        "spacingKm": 0.012491613700564971,
+        "spanKm": 2.211015625
+      },
+      "flowOnlyBoundaryShiftMetres": 72.35605457647497,
+      "fullBoundaryShiftMetres": 71.92210501211972,
+      "filteredProbeErrorMetres": 0.008626073403017465,
+      "erodedProbeErrorMetres": 0.0034173435977669087,
+      "nearCases": [
+        {
+          "approach": 0.8,
+          "origin": [
+            0.4296875,
+            2.9365234375,
+            1.10905129344692
+          ],
+          "currentDistanceKm": 1.10905129344692,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 551.0605114234063,
+          "clearanceToErodedBoundaryMetres": 551.4944609877616
+        },
+        {
+          "approach": 0.95,
+          "origin": [
+            0.4296875,
+            2.9365234375,
+            0.5997592069029212
+          ],
+          "currentDistanceKm": 0.5997592069029212,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 41.76842487940735,
+          "clearanceToErodedBoundaryMetres": 42.20237444376262
+        },
+        {
+          "approach": 1,
+          "origin": [
+            0.4296875,
+            2.9365234375,
+            0.4886358802924722
+          ],
+          "currentDistanceKm": 0.4886358802924722,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0.6312549408355712,
+          "filteredErodedDensityAtOrigin": 0.6287230159974558,
+          "clearanceToFilteredBoundaryMetres": -69.35490173104164,
+          "clearanceToErodedBoundaryMetres": -68.92095216668636
+        }
+      ]
+    },
+    {
+      "aspect": 0.46208530805687204,
+      "yaw": 0,
+      "pitch": 0.35,
+      "analytic": {
+        "found": true,
+        "distance": 0.278804549489326,
+        "samples": 11675
+      },
+      "filtered": {
+        "found": true,
+        "distance": 0.34629927033852953,
+        "samples": 11648
+      },
+      "filteredEroded": {
+        "found": true,
+        "distance": 0.3454136714385583,
+        "samples": 11649
+      },
+      "currentProbe": {
+        "distance": 0.2788138124509236,
+        "found": true,
+        "samples": 178,
+        "spacingKm": 0.01245351840688504,
+        "spanKm": 2.3537149789012726
+      },
+      "filteredProbe": {
+        "distance": 0.3463109092851151,
+        "found": true,
+        "samples": 173,
+        "spacingKm": 0.01245351840688504,
+        "spanKm": 2.3537149789012726
+      },
+      "erodedProbe": {
+        "distance": 0.3454231096330618,
+        "found": true,
+        "samples": 173,
+        "spacingKm": 0.01245351840688504,
+        "spanKm": 2.3537149789012726
+      },
+      "flowOnlyBoundaryShiftMetres": 67.49472084920355,
+      "fullBoundaryShiftMetres": 66.6091219492323,
+      "filteredProbeErrorMetres": 0.011638946585568188,
+      "erodedProbeErrorMetres": 0.009438194503497144,
+      "nearCases": [
+        {
+          "approach": 0.8,
+          "origin": [
+            0.4296875,
+            3.1792847549495806,
+            0.6650475809083245
+          ],
+          "currentDistanceKm": 0.7079698737388975,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 364.670603400368,
+          "clearanceToErodedBoundaryMetres": 365.55620230033924
+        },
+        {
+          "approach": 0.95,
+          "origin": [
+            0.4296875,
+            3.057208665781082,
+            0.3306186502978262
+          ],
+          "currentDistanceKm": 0.35195683861805155,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 8.657568279522021,
+          "clearanceToErodedBoundaryMetres": 9.543167179493272
+        },
+        {
+          "approach": 1,
+          "origin": [
+            0.4296875,
+            3.0321280824777173,
+            0.2619100873813444
+          ],
+          "currentDistanceKm": 0.2788138124509236,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0.8207061498855318,
+          "filteredErodedDensityAtOrigin": 0.8188464946033377,
+          "clearanceToFilteredBoundaryMetres": -64.4854578876059,
+          "clearanceToErodedBoundaryMetres": -63.59985898763465
+        }
+      ]
+    },
+    {
+      "aspect": 0.46208530805687204,
+      "yaw": 0.8,
+      "pitch": -0.35,
+      "analytic": {
+        "found": true,
+        "distance": 1.5877654989170122,
+        "samples": 11152
+      },
+      "filtered": {
+        "found": true,
+        "distance": 1.5877654989170122,
+        "samples": 11152
+      },
+      "filteredEroded": {
+        "found": true,
+        "distance": 1.5877654989170122,
+        "samples": 11152
+      },
+      "currentProbe": {
+        "distance": 1.5877674896263605,
+        "found": true,
+        "samples": 155,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "filteredProbe": {
+        "distance": 1.5877674896263605,
+        "found": true,
+        "samples": 155,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "erodedProbe": {
+        "distance": 1.5877674896263605,
+        "found": true,
+        "samples": 155,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "flowOnlyBoundaryShiftMetres": 0,
+      "fullBoundaryShiftMetres": 0,
+      "filteredProbeErrorMetres": 0.0019907093482540716,
+      "erodedProbeErrorMetres": 0.0019907093482540716,
+      "nearCases": [
+        {
+          "approach": 0.8,
+          "origin": [
+            2.348204290890014,
+            1.9602812261774112,
+            1.8632915189054742
+          ],
+          "currentDistanceKm": 2.847035443495568,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 1262.2699445785554,
+          "clearanceToErodedBoundaryMetres": 1262.2699445785554
+        },
+        {
+          "approach": 0.95,
+          "origin": [
+            1.667802907422904,
+            2.306505222932079,
+            1.202475760979435
+          ],
+          "currentDistanceKm": 1.8373352085366474,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 252.5697096196351,
+          "clearanceToErodedBoundaryMetres": 252.5697096196351
+        },
+        {
+          "approach": 1,
+          "origin": [
+            1.499628022109345,
+            2.392081446558075,
+            1.0391418569001873
+          ],
+          "currentDistanceKm": 1.5877674896263605,
+          "analyticDensityAtOrigin": 0.012394881130306488,
+          "filteredDensityAtOrigin": 0.012394847904624948,
+          "filteredErodedDensityAtOrigin": 0.012394846886982586,
+          "clearanceToFilteredBoundaryMetres": 3.0019907093481457,
+          "clearanceToErodedBoundaryMetres": 3.0019907093481457
+        }
+      ]
+    },
+    {
+      "aspect": 0.46208530805687204,
+      "yaw": 0.8,
+      "pitch": 0,
+      "analytic": {
+        "found": true,
+        "distance": 1.4048542316989454,
+        "samples": 11225
+      },
+      "filtered": {
+        "found": true,
+        "distance": 1.4192478077554693,
+        "samples": 11219
+      },
+      "filteredEroded": {
+        "found": true,
+        "distance": 1.419178839681247,
+        "samples": 11219
+      },
+      "currentProbe": {
+        "distance": 1.40486274744401,
+        "found": true,
+        "samples": 153,
+        "spacingKm": 0.012494189891401346,
+        "spanKm": 3.173524232415942
+      },
+      "filteredProbe": {
+        "distance": 1.419248147719364,
+        "found": true,
+        "samples": 152,
+        "spacingKm": 0.012494189891401346,
+        "spanKm": 3.173524232415942
+      },
+      "erodedProbe": {
+        "distance": 1.4191871409327848,
+        "found": true,
+        "samples": 152,
+        "spacingKm": 0.012494189891401346,
+        "spanKm": 3.173524232415942
+      },
+      "flowOnlyBoundaryShiftMetres": 14.393576056523916,
+      "fullBoundaryShiftMetres": 14.324607982301618,
+      "filteredProbeErrorMetres": 0.0003399638945911221,
+      "erodedProbeErrorMetres": 0.00830125153772343,
+      "nearCases": [
+        {
+          "approach": 0.8,
+          "origin": [
+            2.2815351593907405,
+            2.9365234375,
+            1.7985414849806938
+          ],
+          "currentDistanceKm": 2.581490117507236,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 1165.2423097517665,
+          "clearanceToErodedBoundaryMetres": 1165.3112778259888
+        },
+        {
+          "approach": 0.95,
+          "origin": [
+            1.60303817969596,
+            2.9365234375,
+            1.1395753118038745
+          ],
+          "currentDistanceKm": 1.6356600223811393,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 219.41221462566983,
+          "clearanceToErodedBoundaryMetres": 219.48118269989214
+        },
+        {
+          "approach": 1,
+          "origin": [
+            1.4374743487567987,
+            2.9365234375,
+            0.9787773018561341
+          ],
+          "currentDistanceKm": 1.40486274744401,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0.3378365332570734,
+          "filteredErodedDensityAtOrigin": 0.336447423480948,
+          "clearanceToFilteredBoundaryMetres": -11.38506031145936,
+          "clearanceToErodedBoundaryMetres": -11.316092237237063
+        }
+      ]
+    },
+    {
+      "aspect": 0.46208530805687204,
+      "yaw": 0.8,
+      "pitch": 0.35,
+      "analytic": {
+        "found": true,
+        "distance": 1.2650467901960047,
+        "samples": 11281
+      },
+      "filtered": {
+        "found": true,
+        "distance": 1.2563104272365389,
+        "samples": 11284
+      },
+      "filteredEroded": {
+        "found": true,
+        "distance": 1.255146514691919,
+        "samples": 11285
+      },
+      "currentProbe": {
+        "distance": 1.2650581068291047,
+        "found": true,
+        "samples": 181,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "filteredProbe": {
+        "distance": 1.256317147992209,
+        "found": true,
+        "samples": 182,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "erodedProbe": {
+        "distance": 1.2551484404039892,
+        "found": true,
+        "samples": 182,
+        "spacingKm": 0.012466214274346984,
+        "spanKm": 3.378344068348033
+      },
+      "flowOnlyBoundaryShiftMetres": -8.736362959465893,
+      "fullBoundaryShiftMetres": -9.900275504085787,
+      "filteredProbeErrorMetres": 0.006720755670208689,
+      "erodedProbeErrorMetres": 0.0019257120702498298,
+      "nearCases": [
+        {
+          "approach": 0.8,
+          "origin": [
+            2.0293356184126203,
+            3.7505085033970236,
+            1.5536016085053952
+          ],
+          "currentDistanceKm": 2.3738415592020816,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 1120.5311319655427,
+          "clearanceToErodedBoundaryMetres": 1121.6950445101625
+        },
+        {
+          "approach": 0.95,
+          "origin": [
+            1.4274301068934823,
+            3.4442273332957694,
+            0.9690221875060165
+          ],
+          "currentDistanceKm": 1.4806274194731601,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 227.31699223662116,
+          "clearanceToErodedBoundaryMetres": 228.48090478124107
+        },
+        {
+          "approach": 1,
+          "origin": [
+            1.2821655486832562,
+            3.370309088635444,
+            0.827939127615204
+          ],
+          "currentDistanceKm": 1.2650581068291047,
+          "analyticDensityAtOrigin": 0,
+          "filteredDensityAtOrigin": 0,
+          "filteredErodedDensityAtOrigin": 0,
+          "clearanceToFilteredBoundaryMetres": 11.74767959256573,
+          "clearanceToErodedBoundaryMetres": 12.911592137185623
+        }
+      ]
+    }
+  ]
+}
