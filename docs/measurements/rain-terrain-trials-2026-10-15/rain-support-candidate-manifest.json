@@ -1,0 +1,80 @@
+{
+  "status": "PREPARED; NOT RENDERED OR TIMED",
+  "scope": "main app only; worker unpatched and not qualified",
+  "root": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia",
+  "distRoot": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/dist",
+  "outRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-cycle7",
+  "candidateVersion": "candidateexternal-v40-rain-cloud-support",
+  "baseVersion": "observatory-v40-terrain-camera-focus",
+  "baseIndexSha256": "e0ad25220a575b7bf73a0503826b3ff00e8a2cc473b72d802a29dd7080bc28f4",
+  "baseAppSha256": "12cef7783f8db74d41861a195956b1651dbc2b6baae51cf04e682501987a8050",
+  "overrideUrl": "/assets/CumulonimbusApp-6wBUXA1V.js",
+  "baseSourceSha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+  "candidateSourceSha256": "ceed664ac8c544c5c06823dbaf89899753768118914990984ed84074e661339d",
+  "compiledWgslEncoding": "literal-newlines",
+  "sourceBlockMatches": 1,
+  "compiledBlockMatches": 1,
+  "versionMatches": 1,
+  "gate": "rainRegion && outside inclusive world cloud box; no gate before/after rainRegion",
+  "preconditions": [
+    "Base app bytes must equal the archived cycle6 SHA256.",
+    "Readable source and compiled WGSL each match the original block exactly once.",
+    "Only that WGSL block and one renderer-version label change in the compiled asset.",
+    "No changes to step equations, jitter, timers, density/rain material or medium integration.",
+    "Inside rainRegion, original sampleStep is independent of support.",
+    "Cloud world support conservativity remains an assumption to verify visually/numerically.",
+    "Server not started; production src and dist never written."
+  ],
+  "unreadableAssets": [
+    "dist/assets/render.worker-DHcLwyw_.js: read timed out after20s; not retried or patched"
+  ],
+  "artifacts": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-cycle7/cloudShader.base.ts",
+      "bytes": 13664,
+      "sha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-cycle7/cloudShader.candidate.ts",
+      "bytes": 13886,
+      "sha256": "ceed664ac8c544c5c06823dbaf89899753768118914990984ed84074e661339d"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-cycle7/rain-cloud-support.patch",
+      "bytes": 1796,
+      "sha256": "57c5ee29acdf3dfdd4adab4074a7c4d44432ab6c6bb500ad8c395eb86e568c1b"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-cycle7/base/assets/CumulonimbusApp-6wBUXA1V.js",
+      "bytes": 799565,
+      "sha256": "12cef7783f8db74d41861a195956b1651dbc2b6baae51cf04e682501987a8050"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-cycle7/overrides/assets/CumulonimbusApp-6wBUXA1V.js",
+      "bytes": 799791,
+      "sha256": "5d713236702e52c6d96b657ae05b0b0e5949e7b415aa9bcffeef72a00e73f9a3"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-cycle7/base/index.html",
+      "bytes": 911,
+      "sha256": "e0ad25220a575b7bf73a0503826b3ff00e8a2cc473b72d802a29dd7080bc28f4"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-cycle7/rain-support-ray-analysis.json",
+      "bytes": 14966,
+      "sha256": "e8c7c0be4b9f4940363c29ff63384c6cb3489addf3848ee0cdcf9ce21ddadb5c"
+    }
+  ],
+  "scripts": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-cycle7/prepare-rain-support-candidate.py",
+      "bytes": 10957,
+      "sha256": "4b389ae4e91413839bd904ec4728daa730da3c04ba2db45fbb3a157ab4b33b1e"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-cycle7/serve-rain-support-candidate.py",
+      "bytes": 2656,
+      "sha256": "01d7bd5691783845e2a8582ab6aec378317750dc1aec0955895cb41845d67269"
+    }
+  ]
+}

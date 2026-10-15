@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-15T10:59:32.938111+00:00",
+  "scope": "Local I/O evidence, no cache deletion or ignore attribute changes. UI inventory incorrectly reported Dropbox app stopped; targeted process inspection showed existing app processes and freshly started provider. Finder app launch attempted; later UI control interrupted.",
+  "unreadable": [
+    {
+      "path": "src/cumulonimbus/pointer.test.ts",
+      "kind": "uncommitted test source",
+      "evidence": "dataless; bounded read timed out"
+    },
+    {
+      "path": "src/cumulonimbus/precipitation.ts",
+      "kind": "runtime dependency",
+      "evidence": "dataless; bounded read did not provide source"
+    },
+    {
+      "path": "docs/POWDER-OPTIONS-2026-10-15.md",
+      "kind": "documentation",
+      "evidence": "dataless; last read failed ETIMEDOUT"
+    },
+    {
+      "path": ".git/objects/pack",
+      "kind": "object files",
+      "evidence": "some pack and index files dataless; git diff fatal mmap ETIMEDOUT"
+    },
+    {
+      "path": "dist/assets/render.worker-DHcLwyw_.js",
+      "kind": "built worker",
+      "evidence": "now dataless; agent bounded read20s timed out"
+    }
+  ],
+  "readable": [
+    {
+      "path": "src/cumulonimbus/camera.ts",
+      "sha256": "a7f7b113ee4251454e4f31fd8fa470f131dae3a9bc41ec5cf1d2480871066a69",
+      "bytes": 7127
+    },
+    {
+      "path": "src/cumulonimbus/GPUSceneEngine.ts",
+      "sha256": "fb9c8b418f9c9c3f20abc4eea9c2b58fec5bd4a1cd9827ba91187eb7648eab83",
+      "bytes": 51596
+    },
+    {
+      "path": "src/cumulonimbus/landscape.ts",
+      "sha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+      "bytes": 6980
+    },
+    {
+      "path": "src/cumulonimbus/cloudShader.ts",
+      "sha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+      "bytes": 13664
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-6wBUXA1V.js",
+      "sha256": "12cef7783f8db74d41861a195956b1651dbc2b6baae51cf04e682501987a8050",
+      "bytes": 799565
+    }
+  ],
+  "gitCheckpoint": "Cannot verify complete diff or commit safely until repository objects and changed sources are readable. No git writes performed this turn.",
+  "userReportedDropboxReopened": true,
+  "afterReopen": "Bounded git status20s and pointer.test.ts read15s still timed out. No provider restart, repair or deletion attempted."
+}

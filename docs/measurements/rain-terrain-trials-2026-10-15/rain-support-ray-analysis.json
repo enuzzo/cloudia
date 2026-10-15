@@ -1,0 +1,563 @@
+{
+  "status": "GEOMETRIC OPPORTUNITY ONLY; NOT RENDERED OR TIMED",
+  "arithmetic": "Python f64 reconstruction of recorded camera, mature growth and authored wind/drift; not GPU f32 parity.",
+  "limits": [
+    "Nine rays per report are not a screen-area estimate.",
+    "Counts are ceil(length/6m) opportunities, not measured loop iterations.",
+    "No jitter phase, cloud/rain texture values or opacity early termination evaluated.",
+    "No claim of speedup, image equivalence, device cost or presented FPS.",
+    "Main and worker reports have different camera origins and are not a causal A/B."
+  ],
+  "cases": [
+    {
+      "report": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/terrain-focus-2026-10-15/main-low-rain-native-30s.json",
+      "reportSha256": "1aa0fe538124a456a226fe96aea0a6de8fc0b0edd064222a763e0b83c5057403",
+      "thread": "main",
+      "origin": [
+        -0.28995623264629566,
+        -3.0278343591735393,
+        9.665778756295405
+      ],
+      "target": [
+        -0.28995623264629566,
+        2.4981598424383944,
+        -0.02734375
+      ],
+      "growth": [
+        1,
+        1,
+        1
+      ],
+      "windReconstructed": [
+        0.2603267758810612,
+        0.08812934384974562
+      ],
+      "driftReconstructed": [
+        0.12020001735370434,
+        0.009878592438394614,
+        0
+      ],
+      "cloudBoxWorld": {
+        "min": [
+          -5.566518732646296,
+          -0.15820734506160528,
+          -3.107109375
+        ],
+        "max": [
+          4.986606267353704,
+          5.154527029938395,
+          3.052421875
+        ]
+      },
+      "rainBoxWorld": {
+        "min": [
+          -3.7079249826462957,
+          -4.740121407561605,
+          -2.2421875
+        ],
+        "max": [
+          4.130391957056357,
+          2.809878592438394,
+          2.353135859624364
+        ]
+      },
+      "rays": [
+        {
+          "uv": [
+            0,
+            0
+          ],
+          "ray": [
+            -0.4352076109721688,
+            0.17628583288538047,
+            -0.8829029620948188
+          ],
+          "seaSphereHitKm": null,
+          "terrainSolverCalled": false,
+          "rainIntervalKm": null,
+          "cloudIntervalKm": null,
+          "rainOnlyIntervalsKm": [],
+          "rainLengthKm": 0,
+          "rainOnlyLengthKm": 0,
+          "potentialRainSamplesCeil": 0,
+          "potentialCloudMaskLookupsAvoidedCeil": 0
+        },
+        {
+          "uv": [
+            0.5,
+            0
+          ],
+          "ray": [
+            0.0,
+            0.19580132647063853,
+            -0.9806435848728826
+          ],
+          "seaSphereHitKm": null,
+          "terrainSolverCalled": false,
+          "rainIntervalKm": [
+            7.4569833622263,
+            12.143011426357306
+          ],
+          "cloudIntervalKm": null,
+          "rainOnlyIntervalsKm": [
+            [
+              7.4569833622263,
+              12.143011426357306
+            ]
+          ],
+          "rainLengthKm": 4.686028064131007,
+          "rainOnlyLengthKm": 4.686028064131007,
+          "potentialRainSamplesCeil": 782,
+          "potentialCloudMaskLookupsAvoidedCeil": 782
+        },
+        {
+          "uv": [
+            1,
+            0
+          ],
+          "ray": [
+            0.4352076109721688,
+            0.17628583288538047,
+            -0.8829029620948188
+          ],
+          "seaSphereHitKm": null,
+          "terrainSolverCalled": false,
+          "rainIntervalKm": [
+            8.282498995496296,
+            10.156872440324419
+          ],
+          "cloudIntervalKm": null,
+          "rainOnlyIntervalsKm": [
+            [
+              8.282498995496296,
+              10.156872440324419
+            ]
+          ],
+          "rainLengthKm": 1.874373444828123,
+          "rainOnlyLengthKm": 1.874373444828123,
+          "potentialRainSamplesCeil": 313,
+          "potentialCloudMaskLookupsAvoidedCeil": 313
+        },
+        {
+          "uv": [
+            0,
+            0.5
+          ],
+          "ray": [
+            -0.45353583565432687,
+            0.405455884239575,
+            -0.7936691827914423
+          ],
+          "seaSphereHitKm": null,
+          "terrainSolverCalled": false,
+          "rainIntervalKm": null,
+          "cloudIntervalKm": [
+            8.332636600598917,
+            11.634279113550926
+          ],
+          "rainOnlyIntervalsKm": [],
+          "rainLengthKm": 0,
+          "rainOnlyLengthKm": 0,
+          "potentialRainSamplesCeil": 0,
+          "potentialCloudMaskLookupsAvoidedCeil": 0
+        },
+        {
+          "uv": [
+            0.5,
+            0.5
+          ],
+          "ray": [
+            0.0,
+            0.4549355677989409,
+            -0.8905243562932208
+          ],
+          "seaSphereHitKm": null,
+          "terrainSolverCalled": false,
+          "rainIntervalKm": [
+            8.211614702050017,
+            12.831955478565517
+          ],
+          "cloudIntervalKm": [
+            7.426362720524895,
+            14.343109249096953
+          ],
+          "rainOnlyIntervalsKm": [],
+          "rainLengthKm": 4.6203407765155,
+          "rainOnlyLengthKm": 0,
+          "potentialRainSamplesCeil": 771,
+          "potentialCloudMaskLookupsAvoidedCeil": 0
+        },
+        {
+          "uv": [
+            1,
+            0.5
+          ],
+          "ray": [
+            0.45353583565432687,
+            0.405455884239575,
+            -0.7936691827914423
+          ],
+          "seaSphereHitKm": null,
+          "terrainSolverCalled": false,
+          "rainIntervalKm": [
+            9.213716565069948,
+            9.746414378315468
+          ],
+          "cloudIntervalKm": [
+            8.332636600598917,
+            11.634279113550923
+          ],
+          "rainOnlyIntervalsKm": [],
+          "rainLengthKm": 0.5326978132455196,
+          "rainOnlyLengthKm": 0,
+          "potentialRainSamplesCeil": 89,
+          "potentialCloudMaskLookupsAvoidedCeil": 0
+        },
+        {
+          "uv": [
+            0,
+            1
+          ],
+          "ray": [
+            -0.44381116588406877,
+            0.6137534784528592,
+            -0.6529458757995483
+          ],
+          "seaSphereHitKm": null,
+          "terrainSolverCalled": false,
+          "rainIntervalKm": null,
+          "cloudIntervalKm": [
+            10.128491696493505,
+            11.889206278731463
+          ],
+          "rainOnlyIntervalsKm": [],
+          "rainLengthKm": 0,
+          "rainOnlyLengthKm": 0,
+          "potentialRainSamplesCeil": 0,
+          "potentialCloudMaskLookupsAvoidedCeil": 0
+        },
+        {
+          "uv": [
+            0.5,
+            1
+          ],
+          "ray": [
+            0.0,
+            0.6849007400948182,
+            -0.7286363813436509
+          ],
+          "seaSphereHitKm": null,
+          "terrainSolverCalled": false,
+          "rainIntervalKm": null,
+          "cloudIntervalKm": [
+            9.076347339533008,
+            11.946784271220325
+          ],
+          "rainOnlyIntervalsKm": [],
+          "rainLengthKm": 0,
+          "rainOnlyLengthKm": 0,
+          "potentialRainSamplesCeil": 0,
+          "potentialCloudMaskLookupsAvoidedCeil": 0
+        },
+        {
+          "uv": [
+            1,
+            1
+          ],
+          "ray": [
+            0.44381116588406877,
+            0.6137534784528592,
+            -0.6529458757995483
+          ],
+          "seaSphereHitKm": null,
+          "terrainSolverCalled": false,
+          "rainIntervalKm": null,
+          "cloudIntervalKm": [
+            10.128491696493505,
+            11.889206278731457
+          ],
+          "rainOnlyIntervalsKm": [],
+          "rainLengthKm": 0,
+          "rainOnlyLengthKm": 0,
+          "potentialRainSamplesCeil": 0,
+          "potentialCloudMaskLookupsAvoidedCeil": 0
+        }
+      ]
+    },
+    {
+      "report": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/terrain-focus-2026-10-15/worker-low-rain-native-30s.json",
+      "reportSha256": "16829a31b6e777bbd5c5c85539565695639440beee400f53f8e762d9691e400a",
+      "thread": "worker",
+      "origin": [
+        -0.41015625,
+        -2.992970715085903,
+        9.665778756295405
+      ],
+      "target": [
+        -0.41015625,
+        2.48828125,
+        -0.02734375
+      ],
+      "growth": [
+        1,
+        1,
+        1
+      ],
+      "windReconstructed": [
+        0.2602164202230054,
+        0.08807277730624581
+      ],
+      "driftReconstructed": [
+        0.12016719977406742,
+        0.009871275899679522,
+        0
+      ],
+      "cloudBoxWorld": {
+        "min": [
+          -5.566551550225933,
+          -0.15821466160032038,
+          -3.107109375
+        ],
+        "max": [
+          4.986573449774067,
+          5.154519713399679,
+          3.052421875
+        ]
+      },
+      "rainBoxWorld": {
+        "min": [
+          -3.7079578002259326,
+          -4.7401287241003205,
+          -2.2421875
+        ],
+        "max": [
+          4.13008325033158,
+          2.8098712758996793,
+          2.3529944432656147
+        ]
+      },
+      "rays": [
+        {
+          "uv": [
+            0,
+            0
+          ],
+          "ray": [
+            -0.4352076109721688,
+            0.1732029242732245,
+            -0.8835129214533883
+          ],
+          "seaSphereHitKm": null,
+          "terrainSolverCalled": false,
+          "rainIntervalKm": null,
+          "cloudIntervalKm": null,
+          "rainOnlyIntervalsKm": [],
+          "rainLengthKm": 0,
+          "rainOnlyLengthKm": 0,
+          "potentialRainSamplesCeil": 0,
+          "potentialCloudMaskLookupsAvoidedCeil": 0
+        },
+        {
+          "uv": [
+            0.5,
+            0
+          ],
+          "ray": [
+            0.0,
+            0.19237712847487348,
+            -0.9813210689880056
+          ],
+          "seaSphereHitKm": null,
+          "terrainSolverCalled": false,
+          "rainIntervalKm": [
+            7.451979320663267,
+            12.134628138144002
+          ],
+          "cloudIntervalKm": null,
+          "rainOnlyIntervalsKm": [
+            [
+              7.451979320663267,
+              12.134628138144002
+            ]
+          ],
+          "rainLengthKm": 4.682648817480735,
+          "rainOnlyLengthKm": 4.682648817480735,
+          "potentialRainSamplesCeil": 781,
+          "potentialCloudMaskLookupsAvoidedCeil": 781
+        },
+        {
+          "uv": [
+            1,
+            0
+          ],
+          "ray": [
+            0.4352076109721688,
+            0.1732029242732245,
+            -0.8835129214533883
+          ],
+          "seaSphereHitKm": null,
+          "terrainSolverCalled": false,
+          "rainIntervalKm": [
+            8.27694098802786,
+            10.432353170914388
+          ],
+          "cloudIntervalKm": null,
+          "rainOnlyIntervalsKm": [
+            [
+              8.27694098802786,
+              10.432353170914388
+            ]
+          ],
+          "rainLengthKm": 2.1554121828865274,
+          "rainOnlyLengthKm": 2.1554121828865274,
+          "potentialRainSamplesCeil": 360,
+          "potentialCloudMaskLookupsAvoidedCeil": 360
+        },
+        {
+          "uv": [
+            0,
+            0.5
+          ],
+          "ray": [
+            -0.45353583565432687,
+            0.4026830562708235,
+            -0.7950796198933288
+          ],
+          "seaSphereHitKm": null,
+          "terrainSolverCalled": false,
+          "rainIntervalKm": null,
+          "cloudIntervalKm": [
+            8.317854861105205,
+            11.369322763187345
+          ],
+          "rainOnlyIntervalsKm": [],
+          "rainLengthKm": 0,
+          "rainOnlyLengthKm": 0,
+          "potentialRainSamplesCeil": 0,
+          "potentialCloudMaskLookupsAvoidedCeil": 0
+        },
+        {
+          "uv": [
+            0.5,
+            0.5
+          ],
+          "ray": [
+            0.0,
+            0.45182435862574416,
+            -0.8921069156510529
+          ],
+          "seaSphereHitKm": null,
+          "terrainSolverCalled": false,
+          "rainIntervalKm": [
+            8.197206169725716,
+            12.843136675134865
+          ],
+          "cloudIntervalKm": [
+            7.413188671975518,
+            14.317665189237825
+          ],
+          "rainOnlyIntervalsKm": [],
+          "rainLengthKm": 4.645930505409149,
+          "rainOnlyLengthKm": 0,
+          "potentialRainSamplesCeil": 775,
+          "potentialCloudMaskLookupsAvoidedCeil": 0
+        },
+        {
+          "uv": [
+            1,
+            0.5
+          ],
+          "ray": [
+            0.45353583565432687,
+            0.4026830562708235,
+            -0.7950796198933288
+          ],
+          "seaSphereHitKm": null,
+          "terrainSolverCalled": false,
+          "rainIntervalKm": [
+            9.197549691955258,
+            10.010762421411021
+          ],
+          "cloudIntervalKm": [
+            8.317854861105205,
+            11.899235463914504
+          ],
+          "rainOnlyIntervalsKm": [],
+          "rainLengthKm": 0.8132127294557634,
+          "rainOnlyLengthKm": 0,
+          "potentialRainSamplesCeil": 136,
+          "potentialCloudMaskLookupsAvoidedCeil": 0
+        },
+        {
+          "uv": [
+            0,
+            1
+          ],
+          "ray": [
+            -0.4438111658840689,
+            0.611470586088845,
+            -0.6550842475474342
+          ],
+          "seaSphereHitKm": null,
+          "terrainSolverCalled": false,
+          "rainIntervalKm": null,
+          "cloudIntervalKm": [
+            10.09542956658645,
+            11.61844427675547
+          ],
+          "rainOnlyIntervalsKm": [],
+          "rainLengthKm": 0,
+          "rainOnlyLengthKm": 0,
+          "potentialRainSamplesCeil": 0,
+          "potentialCloudMaskLookupsAvoidedCeil": 0
+        },
+        {
+          "uv": [
+            0.5,
+            1
+          ],
+          "ray": [
+            0.0,
+            0.6823532112830686,
+            -0.7310226364837714
+          ],
+          "seaSphereHitKm": null,
+          "terrainSolverCalled": false,
+          "rainIntervalKm": null,
+          "cloudIntervalKm": [
+            9.046719692711212,
+            11.94028297040675
+          ],
+          "rainOnlyIntervalsKm": [],
+          "rainLengthKm": 0,
+          "rainOnlyLengthKm": 0,
+          "potentialRainSamplesCeil": 0,
+          "potentialCloudMaskLookupsAvoidedCeil": 0
+        },
+        {
+          "uv": [
+            1,
+            1
+          ],
+          "ray": [
+            0.4438111658840689,
+            0.611470586088845,
+            -0.6550842475474342
+          ],
+          "seaSphereHitKm": null,
+          "terrainSolverCalled": false,
+          "rainIntervalKm": null,
+          "cloudIntervalKm": [
+            10.09542956658645,
+            12.159968280707442
+          ],
+          "rainOnlyIntervalsKm": [],
+          "rainLengthKm": 0,
+          "rainOnlyLengthKm": 0,
+          "potentialRainSamplesCeil": 0,
+          "potentialCloudMaskLookupsAvoidedCeil": 0
+        }
+      ]
+    }
+  ]
+}

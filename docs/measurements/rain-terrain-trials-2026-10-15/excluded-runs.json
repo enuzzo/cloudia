@@ -1,0 +1,13 @@
+{
+  "runs": [
+    {
+      "file": "rain-candidate-invalid-half-output.json",
+      "reason": "Viewport override changed DPR to1, output1672\u00d7941; invalid for full output comparison."
+    },
+    {
+      "file": "rain-control-invalid-pitch-30s.json",
+      "reason": "Keyboard pitch increment depends on CSS height. Eleven keys at1882px yielded pitch\u2212.5049947; candidate pitch\u2212.92. Excluded from pair."
+    }
+  ],
+  "correction": "Force pitch to its\u2212.92 clamp with excess ArrowUp events; compare report geometry before claiming result."
+}

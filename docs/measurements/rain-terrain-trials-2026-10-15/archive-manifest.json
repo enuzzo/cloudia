@@ -1,0 +1,191 @@
+{
+  "clientDate": "2026-10-15",
+  "scope": "Cycle7 retired main-bundle rain experiment and CPU-only sampled terrain prototypes. Snapshot; external absolute paths in original evidence remain historical. No prototype promoted.",
+  "files": [
+    {
+      "path": "HEIGHTFIELD-PROPOSAL.md",
+      "bytes": 8791,
+      "sha256": "d6239ff577449174af778e83eb59daa7a4b969338230e729cd29894bab8a8970"
+    },
+    {
+      "path": "QUALIFICAZIONE-CPU-2026-10-15.md",
+      "bytes": 10029,
+      "sha256": "bfdd2e85e7c6bc9e3b8b432a85df25bc875af51cbf80badffd2cf22d4d18add8"
+    },
+    {
+      "path": "availability.json",
+      "bytes": 2353,
+      "sha256": "56a8be05cff2c883ec650009df6515438dcbfd7e5699d327b184512efefa862d"
+    },
+    {
+      "path": "base/assets/CumulonimbusApp-6wBUXA1V.js",
+      "bytes": 799565,
+      "sha256": "12cef7783f8db74d41861a195956b1651dbc2b6baae51cf04e682501987a8050"
+    },
+    {
+      "path": "base/index.html",
+      "bytes": 911,
+      "sha256": "e0ad25220a575b7bf73a0503826b3ff00e8a2cc473b72d802a29dd7080bc28f4"
+    },
+    {
+      "path": "cloudShader.base.ts",
+      "bytes": 13664,
+      "sha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd"
+    },
+    {
+      "path": "cloudShader.candidate.ts",
+      "bytes": 13886,
+      "sha256": "ceed664ac8c544c5c06823dbaf89899753768118914990984ed84074e661339d"
+    },
+    {
+      "path": "dist-trial-status.json",
+      "bytes": 355,
+      "sha256": "067b906d34bc2d2b66c41730d513aa60eb15909b4ece97d0ac2defc660f40b94"
+    },
+    {
+      "path": "excluded-runs.json",
+      "bytes": 556,
+      "sha256": "80d635cf85de0df310968626b30152b5575b5acb5079f7ecb799b95987aeb720"
+    },
+    {
+      "path": "landscape-source-copy.ts",
+      "bytes": 6980,
+      "sha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99"
+    },
+    {
+      "path": "overrides/assets/CumulonimbusApp-6wBUXA1V.js",
+      "bytes": 799791,
+      "sha256": "5d713236702e52c6d96b657ae05b0b0e5949e7b415aa9bcffeef72a00e73f9a3"
+    },
+    {
+      "path": "prepare-rain-support-candidate.py",
+      "bytes": 10957,
+      "sha256": "4b389ae4e91413839bd904ec4728daa730da3c04ba2db45fbb3a157ab4b33b1e"
+    },
+    {
+      "path": "rain-candidate-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "rain-candidate-full-output-30s.json",
+      "bytes": 21368,
+      "sha256": "9190849ca15d495790bf4497d68c7c69195da3f44f04e4c9259014e61885ede6"
+    },
+    {
+      "path": "rain-candidate-invalid-half-output.json",
+      "bytes": 57930,
+      "sha256": "b455976ca47495d4526ec45394f7b41cd162cfe8fbc391ecd5e69c6e548dab3f"
+    },
+    {
+      "path": "rain-candidate-metrics.png",
+      "bytes": 121556,
+      "sha256": "b273b854590595af9838cb1fa740ba44ff119301b5012d43742775dc703705c1"
+    },
+    {
+      "path": "rain-candidate-view.png",
+      "bytes": 121556,
+      "sha256": "b273b854590595af9838cb1fa740ba44ff119301b5012d43742775dc703705c1"
+    },
+    {
+      "path": "rain-cloud-support.patch",
+      "bytes": 1796,
+      "sha256": "57c5ee29acdf3dfdd4adab4074a7c4d44432ab6c6bb500ad8c395eb86e568c1b"
+    },
+    {
+      "path": "rain-control-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "rain-control-invalid-pitch-30s.json",
+      "bytes": 31449,
+      "sha256": "e918fb8224866654b5719a468bb20dc02c5918d2e0153cf49ec945b0c2114553"
+    },
+    {
+      "path": "rain-control-invalid-pitch-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "rain-control-invalid-pitch-metrics.png",
+      "bytes": 113620,
+      "sha256": "fb8bf10a24d955f501144f616c0bc6b4da46e1644ab4c0350358b7119c99c5ca"
+    },
+    {
+      "path": "rain-control-invalid-pitch-view.png",
+      "bytes": 113620,
+      "sha256": "fb8bf10a24d955f501144f616c0bc6b4da46e1644ab4c0350358b7119c99c5ca"
+    },
+    {
+      "path": "rain-control-matched-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "rain-control-matched-metrics.png",
+      "bytes": 164321,
+      "sha256": "45185e3b36a35447f363b02f0dd3acc57f0ae464b0d47435ee80b9ea6fab1167"
+    },
+    {
+      "path": "rain-control-matched-output-30s.json",
+      "bytes": 22714,
+      "sha256": "578a6c1421843ed2ff478454f361c7b87a41aa082b6994edd8abca5f4811658f"
+    },
+    {
+      "path": "rain-control-matched-view.png",
+      "bytes": 115483,
+      "sha256": "b7b2de2691f73d5f200834d55c05ec23a9c0fbcc672be49299f80792a2921308"
+    },
+    {
+      "path": "rain-control-metrics.jpg",
+      "bytes": 92636,
+      "sha256": "707ef3d9ee8229efb843294bb3feb7f49a652d3392b5c671c7f83720b09b80bb"
+    },
+    {
+      "path": "rain-control-native-30s.json",
+      "bytes": 22346,
+      "sha256": "1cfe8549d1fea4f88fa9e3c854e8047aa8e33a713444aac3d0cd8a2aef4e15d2"
+    },
+    {
+      "path": "rain-control-view.jpg",
+      "bytes": 57423,
+      "sha256": "d2684ff132dd002e95323e0c55c728cb94048c1f7223d022513c5d55d4131496"
+    },
+    {
+      "path": "rain-independent-review.json",
+      "bytes": 10536,
+      "sha256": "fa4a609db77ccf0d9864d7f92881a1d09e0635ed5b918f961248a5efcdd0c3c1"
+    },
+    {
+      "path": "rain-support-candidate-manifest.json",
+      "bytes": 3868,
+      "sha256": "e0e284392c5a3b97be39fe627cab291ad974d61e81d0bc7b7c5d2aca52c7adc9"
+    },
+    {
+      "path": "rain-support-ray-analysis.json",
+      "bytes": 14966,
+      "sha256": "e8c7c0be4b9f4940363c29ff63384c6cb3489addf3848ee0cdcf9ce21ddadb5c"
+    },
+    {
+      "path": "serve-rain-support-candidate.py",
+      "bytes": 2656,
+      "sha256": "01d7bd5691783845e2a8582ab6aec378317750dc1aec0955895cb41845d67269"
+    },
+    {
+      "path": "terrain-heightfield-prototype-62m.json",
+      "bytes": 12396,
+      "sha256": "94a6acf3633818ae1e85484e0369099480ef9f35a16dc18ff4977b28e897d15e"
+    },
+    {
+      "path": "terrain-heightfield-prototype.json",
+      "bytes": 12335,
+      "sha256": "0cfb0c2da678a91bc67c6306c1e05f63033186154b5ca99a464bf5634c81ddbf"
+    },
+    {
+      "path": "terrain-heightfield-prototype.ts",
+      "bytes": 14515,
+      "sha256": "1a16391934b016026cf8417288eb2fc03e00d7f4e2a4b4a4d7a97b77847dfbe5"
+    }
+  ]
+}

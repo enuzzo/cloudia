@@ -1,0 +1,437 @@
+{
+  "copiedLandscapeSha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+  "representationError": {
+    "method": "Canonical R32F bilinear world-Y minus original procedural radial surface converted to world-Y. Same quantized-f32 query x/z in both. Deterministic Halton2/3 points plus two diagonals. This measures approximation, not certified analytic containment, image fidelity or GPU precision.",
+    "analyticHeightEvaluations": 24096,
+    "all": {
+      "count": 24096,
+      "meanSignedMetres": -0.007866003056233412,
+      "rmsMetres": 1.478384484479527,
+      "maxAbsoluteMetres": 31.8942056655942,
+      "p95AbsoluteMetres": 1.553146245669268,
+      "p99AbsoluteMetres": 7.3665590443852125
+    },
+    "interior64km": {
+      "count": 10000,
+      "meanSignedMetres": -0.0006783786536164172,
+      "rmsMetres": 1.4952892128998028,
+      "maxAbsoluteMetres": 27.81915601599394,
+      "p95AbsoluteMetres": 1.5545603628197568,
+      "p99AbsoluteMetres": 7.7817624257363605
+    },
+    "interior32km": {
+      "count": 10000,
+      "meanSignedMetres": -0.016008449704357997,
+      "rmsMetres": 1.5106985398783355,
+      "maxAbsoluteMetres": 26.838411396056472,
+      "p95AbsoluteMetres": 1.553146245669268,
+      "p99AbsoluteMetres": 7.849407541755227
+    },
+    "diagonalPlus": {
+      "count": 2048,
+      "meanSignedMetres": -0.014026334127947848,
+      "rmsMetres": 1.0637640944239197,
+      "maxAbsoluteMetres": 13.062424872259726,
+      "p95AbsoluteMetres": 1.4047346621737233,
+      "p99AbsoluteMetres": 5.167798816728464
+    },
+    "diagonalMinus": {
+      "count": 2048,
+      "meanSignedMetres": 0.0029565460111236064,
+      "rmsMetres": 1.5882583546217395,
+      "maxAbsoluteMetres": 31.8942056655942,
+      "p95AbsoluteMetres": 1.6503061206094571,
+      "p99AbsoluteMetres": 6.700621416712238
+    },
+    "coastTransition": {
+      "count": 6269,
+      "meanSignedMetres": -0.017029322021500176,
+      "rmsMetres": 1.748945660118572,
+      "maxAbsoluteMetres": 27.81915601599394,
+      "p95AbsoluteMetres": 2.0188696835248265,
+      "p99AbsoluteMetres": 9.15103172576437
+    },
+    "shoreline": {
+      "count": 1018,
+      "meanSignedMetres": 0.03490464581276299,
+      "rmsMetres": 0.06178536298992778,
+      "maxAbsoluteMetres": 0.29558958658526535,
+      "p95AbsoluteMetres": 0.14130871295492398,
+      "p99AbsoluteMetres": 0.1971033216250362
+    },
+    "deepInland": {
+      "count": 6517,
+      "meanSignedMetres": -0.012072089024223128,
+      "rmsMetres": 2.2668736105829814,
+      "maxAbsoluteMetres": 31.8942056655942,
+      "p95AbsoluteMetres": 4.014210374407412,
+      "p99AbsoluteMetres": 11.702800863758966
+    },
+    "sea": {
+      "count": 11310,
+      "meanSignedMetres": -0.00036327017854584115,
+      "rmsMetres": 0.0012747075750427907,
+      "maxAbsoluteMetres": 0.06579310866072774,
+      "p95AbsoluteMetres": 0.000652125891065225,
+      "p99AbsoluteMetres": 0.0007272219590959139
+    },
+    "worst": [
+      {
+        "x": -9.828125,
+        "z": 9.828125,
+        "errorMetres": -31.8942056655942,
+        "coastKm": 18.419475555419922,
+        "group": "diagonal-minus"
+      },
+      {
+        "x": -10.3125,
+        "z": -6.423410892486572,
+        "errorMetres": -27.81915601599394,
+        "coastKm": 10.360684394836426,
+        "group": "interior64km-halton"
+      },
+      {
+        "x": -11.453125,
+        "z": -8.332876205444336,
+        "errorMetres": -26.838411396056472,
+        "coastKm": 10.741326332092285,
+        "group": "interior32km-halton"
+      },
+      {
+        "x": -8.83984375,
+        "z": 30.46202278137207,
+        "errorMetres": -23.86565680512831,
+        "coastKm": 24.837190628051758,
+        "group": "interior64km-halton"
+      },
+      {
+        "x": -3.06640625,
+        "z": 15.445612907409668,
+        "errorMetres": -22.014583259647225,
+        "coastKm": 14.887675285339355,
+        "group": "interior32km-halton"
+      },
+      {
+        "x": -12.703125,
+        "z": -7.906111717224121,
+        "errorMetres": -21.290955423182822,
+        "coastKm": 12.480084419250488,
+        "group": "interior64km-halton"
+      },
+      {
+        "x": -9.875,
+        "z": 9.810699462890625,
+        "errorMetres": -21.03077920855867,
+        "coastKm": 18.467159271240234,
+        "group": "interior32km-halton"
+      },
+      {
+        "x": -5.22265625,
+        "z": 7.661433696746826,
+        "errorMetres": -20.744412366326515,
+        "coastKm": 10.878230094909668,
+        "group": "interior32km-halton"
+      },
+      {
+        "x": -30.1484375,
+        "z": -12.959000587463379,
+        "errorMetres": -20.2426179213262,
+        "coastKm": 25.10845375061035,
+        "group": "interior64km-halton"
+      },
+      {
+        "x": -9.796875,
+        "z": 9.796875,
+        "errorMetres": -20.0882972776526,
+        "coastKm": 18.36140251159668,
+        "group": "diagonal-minus"
+      }
+    ]
+  },
+  "errorMs": 24.232833,
+  "method": "CPU-only prototype. Canonical sampled R32F world-Y grid, bilinear within cells; source analytic terrain is only used for authoring and model-error reporting. Quadtree min/max bounds are exact for that sampled interpolant, not bounds for the original analytic function. Front-to-back bounds, both quadratic roots, nearest eligible root, and explicit unresolved on budget exhaustion. Finite local patch only; a miss-in-domain is not a global planet miss. DDA reference enumerates cells using the same leaf solver, so agreement validates hierarchy/traversal, not an independent leaf-root implementation. Independent closed forms cover two-root/tangent fixtures only. No cloud/GPU/performance/sharpness claim.",
+  "landscapeSha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+  "scriptSha256": "1a16391934b016026cf8417288eb2fc03e00d7f4e2a4b4a4d7a97b77847dfbe5",
+  "generatedCloudVolumes": 0,
+  "grid": {
+    "cells": 512,
+    "min": -32,
+    "max": 32,
+    "stepKm": 0.125,
+    "authoringHeightEvaluations": 263169,
+    "heightBytes": 1052676,
+    "hierarchyBytes": 2796200,
+    "levels": 10
+  },
+  "buildMs": 60.528125,
+  "probeMs": 24.637749999999997,
+  "cases": [
+    {
+      "name": "six-pass-regression",
+      "origin": [
+        16.4296875,
+        2.9365234375,
+        9.797174393178826e-16
+      ],
+      "ray": [
+        -0.9641481825534892,
+        -0.26536443258056197,
+        -5.903704928339342e-17
+      ],
+      "seaDistance": 26.162488204960255,
+      "hit": {
+        "status": "hit",
+        "distance": 23.13760395578096,
+        "unresolvedNear": null,
+        "stats": {
+          "boundChecks": 37,
+          "visitedNodes": 11,
+          "leafTests": 2,
+          "queryTerrainHeightEvaluations": 0,
+          "fieldCornerReads": 8,
+          "maxStack": 3
+        }
+      },
+      "reference": {
+        "distance": 23.13760395578096,
+        "leafTests": 180
+      },
+      "budget8": {
+        "status": "unresolved",
+        "distance": null,
+        "provisionalHit": null,
+        "unresolvedNear": 23.00443842694223,
+        "stats": {
+          "boundChecks": 33,
+          "visitedNodes": 8,
+          "leafTests": 0,
+          "queryTerrainHeightEvaluations": 0,
+          "fieldCornerReads": 0,
+          "maxStack": 2
+        }
+      },
+      "analyticSurfaceClearanceMetres": 0.07029849075479433
+    },
+    {
+      "name": "mountain-with-no-sea-hit",
+      "origin": [
+        16.4296875,
+        -3.8,
+        0
+      ],
+      "ray": [
+        -1,
+        0,
+        0
+      ],
+      "seaDistance": null,
+      "hit": {
+        "status": "hit",
+        "distance": 20.736862135616665,
+        "unresolvedNear": null,
+        "stats": {
+          "boundChecks": 93,
+          "visitedNodes": 25,
+          "leafTests": 2,
+          "queryTerrainHeightEvaluations": 0,
+          "fieldCornerReads": 8,
+          "maxStack": 5
+        }
+      },
+      "reference": {
+        "distance": 20.736862135616665,
+        "leafTests": 167
+      },
+      "budget8": {
+        "status": "unresolved",
+        "distance": null,
+        "provisionalHit": null,
+        "unresolvedNear": 16.4296875,
+        "stats": {
+          "boundChecks": 33,
+          "visitedNodes": 8,
+          "leafTests": 0,
+          "queryTerrainHeightEvaluations": 0,
+          "fieldCornerReads": 0,
+          "maxStack": 5
+        }
+      },
+      "analyticSurfaceClearanceMetres": -0.6043154799044714
+    },
+    {
+      "name": "negative-cell-vertical",
+      "origin": [
+        -5,
+        2.9365234375,
+        0
+      ],
+      "ray": [
+        0,
+        -1,
+        0
+      ],
+      "seaDistance": 6.938485453184512,
+      "hit": {
+        "status": "hit",
+        "distance": 6.573529958724976,
+        "unresolvedNear": null,
+        "stats": {
+          "boundChecks": 93,
+          "visitedNodes": 27,
+          "leafTests": 4,
+          "queryTerrainHeightEvaluations": 0,
+          "fieldCornerReads": 16,
+          "maxStack": 4
+        }
+      },
+      "reference": {
+        "distance": 6.573529958724976,
+        "leafTests": 1
+      },
+      "budget8": {
+        "status": "unresolved",
+        "distance": null,
+        "provisionalHit": null,
+        "unresolvedNear": 5.036427736282349,
+        "stats": {
+          "boundChecks": 33,
+          "visitedNodes": 8,
+          "leafTests": 0,
+          "queryTerrainHeightEvaluations": 0,
+          "fieldCornerReads": 0,
+          "maxStack": 2
+        }
+      },
+      "analyticSurfaceClearanceMetres": 0.0000760201146476902
+    },
+    {
+      "name": "grid-boundary-vertical",
+      "origin": [
+        0,
+        2.9365234375,
+        0
+      ],
+      "ray": [
+        0,
+        -1,
+        0
+      ],
+      "seaDistance": 6.9365234375,
+      "hit": {
+        "status": "hit",
+        "distance": 6.9365234375,
+        "unresolvedNear": null,
+        "stats": {
+          "boundChecks": 133,
+          "visitedNodes": 37,
+          "leafTests": 4,
+          "queryTerrainHeightEvaluations": 0,
+          "fieldCornerReads": 16,
+          "maxStack": 4
+        }
+      },
+      "reference": {
+        "distance": 6.9365234375,
+        "leafTests": 1
+      },
+      "budget8": {
+        "status": "unresolved",
+        "distance": null,
+        "provisionalHit": null,
+        "unresolvedNear": 6.074420928955078,
+        "stats": {
+          "boundChecks": 33,
+          "visitedNodes": 8,
+          "leafTests": 0,
+          "queryTerrainHeightEvaluations": 0,
+          "fieldCornerReads": 0,
+          "maxStack": 4
+        }
+      },
+      "analyticSurfaceClearanceMetres": 0
+    },
+    {
+      "name": "upward-miss-domain-only",
+      "origin": [
+        16,
+        2.9365234375,
+        0
+      ],
+      "ray": [
+        0,
+        1,
+        0
+      ],
+      "seaDistance": null,
+      "hit": {
+        "status": "miss-in-domain",
+        "distance": null,
+        "unresolvedNear": null,
+        "stats": {
+          "boundChecks": 1,
+          "visitedNodes": 0,
+          "leafTests": 0,
+          "queryTerrainHeightEvaluations": 0,
+          "fieldCornerReads": 0,
+          "maxStack": 0
+        }
+      },
+      "reference": {
+        "distance": null,
+        "leafTests": 1
+      },
+      "budget8": {
+        "status": "miss-in-domain",
+        "distance": null,
+        "unresolvedNear": null,
+        "stats": {
+          "boundChecks": 1,
+          "visitedNodes": 0,
+          "leafTests": 0,
+          "queryTerrainHeightEvaluations": 0,
+          "fieldCornerReads": 0,
+          "maxStack": 0
+        }
+      },
+      "analyticSurfaceClearanceMetres": null
+    }
+  ],
+  "mathChecks": {
+    "twoForwardRootsExpected": [
+      0.4330127018922193,
+      1.299038105676658
+    ],
+    "nearest": 0.4330127018922193,
+    "tangentExpected": 0.8660254037844386,
+    "tangent": 0.8660254037844385
+  },
+  "probeSummary": {
+    "rays": 324,
+    "hits": 138,
+    "missesInDomain": 186,
+    "unresolved": 0,
+    "budget64Unresolved": 0,
+    "boundChecks": {
+      "mean": 22.604938271604937,
+      "p95": 69,
+      "max": 109
+    },
+    "visitedNodes": {
+      "mean": 5.91358024691358,
+      "p95": 18,
+      "max": 29
+    },
+    "leafTests": {
+      "mean": 0.5123456790123457,
+      "p95": 2,
+      "max": 3
+    },
+    "maxStack": {
+      "mean": 1.1975308641975309,
+      "p95": 4,
+      "max": 9
+    },
+    "referenceDDAmeanLeafTests": 365.27777777777777
+  },
+  "durationMs": 111.455583
+}
