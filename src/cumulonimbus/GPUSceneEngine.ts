@@ -212,7 +212,7 @@ export class GPUSceneEngine {
       // Timestamp queries are optional; RAF measurements remain available without them.
       this.timestampSupported = this.timingMode!=='off' && renderer.hasFeature('timestamp-query');
       const texture = await this.loadVolume();
-      if(this.destroyed || this.deviceLost) { texture.macro.dispose();texture.detail.dispose();texture.sunset.dispose(); return; }
+      if(this.destroyed || this.deviceLost) { this.disposeCloudTextures(texture); return; }
       device.pushErrorScope?.('validation');
       this.installVolume(texture);
       this.applySize();
@@ -233,6 +233,9 @@ export class GPUSceneEngine {
       this.emit({type:'statusState',state:'failed'});
       await this.releaseGPU();
     }
+  }
+  private disposeCloudTextures(textures:CloudTextures){
+    textures.macro.dispose();textures.detail.dispose();textures.sunset.dispose();
   }
   private installVolume(textures: CloudTextures) {
     const oldMaterial=this.material, oldVolume=this.volume, oldDetail=this.detailVolume,oldSunset=this.sunsetVolume;
@@ -282,11 +285,12 @@ export class GPUSceneEngine {
     this.seed=nextMorphologySeed(crypto.getRandomValues(new Uint32Array(1))[0],this.seed,family);
     try {
       const texture=await this.loadVolume();
-      if(this.destroyed || this.deviceLost) {texture.macro.dispose();texture.detail.dispose();texture.sunset.dispose();return;}
+      if(this.destroyed || this.deviceLost) {this.disposeCloudTextures(texture);return;}
       this.regenerating=false; // No visibility restart while GPU resources are being swapped.
       cancelAnimationFrame(this.raf);
-      await this.device?.queue.onSubmittedWorkDone();
-      if(this.destroyed||this.deviceLost){texture.macro.dispose();texture.detail.dispose();texture.sunset.dispose();return;}
+      try { await this.device?.queue.onSubmittedWorkDone(); }
+      catch(error){this.disposeCloudTextures(texture);throw error;}
+      if(this.destroyed||this.deviceLost){this.disposeCloudTextures(texture);return;}
       this.simulationTime=0;this.dispersal.recover();this.dispersal.amount=0;this.view.reset();this.orbit=false;this.installVolume(texture);this.state();
       this.previous=0; this.intervals=[]; this.ready=true;
       this.text('status',`WebGPU · volume ${VOLUME_RESOLUTION}³ · movimento lento`); this.emit({type:'statusState',state:'loaded'});
@@ -546,7 +550,7 @@ export class GPUSceneEngine {
     this.benchmarkContext={date:new Date().toISOString(),backend:'WebGPU',adapter:this.adapterInfo,threeRevision:'186',quality:this.quality,
       output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],nominalSteps:QUALITY[this.quality].steps,
       cloudExtinctionPerKm:EXTINCTION,iceExtinctionPerKm:ICE_EXTINCTION,mediaIntegration:'co-located cloud/rain exponential segments',virgaReachVariation:'broad advected sheets, 0.7–1.3 of weak fall distance',precipitationMaxStepKm:RAIN_SAMPLE_STEP,precipitationExtinctionPerKm:RAIN_EXTINCTION,precipitationSourceBounds:this.rainBounds.value.toArray(),
-      rendererVersion:'observatory-v31-comparison-camera',navigationVersion:'filtered-field-approach-v2',skyCalculation:'cached dedicated worker',skyPending:this.skyPending,solarVisibility:'256-cubed day + RG8 low-sun endpoints',sunDirection:this.sun.value.toArray(),sunsetAmount:this.sunsetAmount.value,extraSunsetTextureBytes:VOLUME_RESOLUTION**3*2,probeImplementation:'compile-time specialization',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{comparisonSurfaceKm:this.comparisonSurface,comparisonTargetKm:this.comparisonTarget,probeSkipped:this.comparisonSurface!==null,approach:this.view.approach,origin:this.origin.value.toArray(),probeFlow:'16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively',probeFieldBytes:this.approachField.byteLength,surfaceEstimateKm:this.comparisonSurface===null?this.approachSurface:null,probe:this.approachProbe,probeAgeMs:this.approachProbe?performance.now()-this.approachTime:null,altitudeKm:this.origin.value.y+4,ground:this.ground.value,yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
+      rendererVersion:'observatory-v34-volume-drain-guard',navigationVersion:'filtered-field-approach-v2',skyCalculation:'cached dedicated worker',skyPending:this.skyPending,solarVisibility:'256-cubed day + RG8 low-sun endpoints',sunDirection:this.sun.value.toArray(),sunsetAmount:this.sunsetAmount.value,extraSunsetTextureBytes:VOLUME_RESOLUTION**3*2,probeImplementation:'compile-time specialization',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{comparisonSurfaceKm:this.comparisonSurface,comparisonTargetKm:this.comparisonTarget,probeSkipped:this.comparisonSurface!==null,approach:this.view.approach,origin:this.origin.value.toArray(),probeFlow:'16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively',probeFieldBytes:this.approachField.byteLength,surfaceEstimateKm:this.comparisonSurface===null?this.approachSurface:null,probe:this.approachProbe,probeAgeMs:this.approachProbe?performance.now()-this.approachTime:null,altitudeKm:this.origin.value.y+4,ground:this.ground.value,yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
       userAgent:navigator.userAgent,devicePixelRatio:this.viewport.dpr,
       method:'Visible requestAnimationFrame intervals, CPU compute/render submission and callback dispatch delay. GPU render and compute timestamps sampled separately; their last-frame samples are not necessarily paired. Optional queue completion latency includes GPU work, readback and JS delivery; not compositor presentation.',warmupMs:2000,targetDurationMs:duration};
     this.setButtonEnabled('benchmark',false); this.setButtonEnabled('sustained',false);

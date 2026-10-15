@@ -489,3 +489,45 @@ la lettura istantanea del pannello non è un risultato prestazionale nuovo.
 [immagine reale](measurements/final-cycle3-2026-10-15/final-cycle3-native-sun.jpg),
 [console](measurements/final-cycle3-2026-10-15/final-cycle3-console.json).
 Il tab resta disponibile per la continuazione; nessun push o deploy.
+
+
+## Quarto ciclo: fase locale, cielo multidirezionale e risorse
+
+**Goal attivo. Nessuna variante luminosa promossa.** Il
+[resoconto dedicato](EXPERIMENT-LIGHT-SOURCE-2026-10-15.md) contiene formule,
+patch alternative contro d4c01ac, manifesti, immagini IAB a camera identica,
+report30s e audit CPU. Fase120 v32 e cielo5 v33 vengono implementati e ritirati
+dopo il fronte80 sfocato. Le prossime indicazioni del terzo ciclo sulla fase
+sono quindi storiche: la prova è ora eseguita, senza successo fotografico.
+
+L'audit CPU completo256³/128³ sul cielo5 usa cinque raggi a80/95/100 e passi3/6m.
+Al100 l'ambient cala del40,2%, ma la sua variazione fra raggi cala anch'essa;
+la deviazione assoluta della sorgente totale scende da0,013859 a0,013228.
+L'aumento del CV totale non prova nuovo dettaglio. Diretto/multiple sono
+identici, e la fase120 rimane normalizzata nello specifico audit matematico.
+Questi risultati non equivalgono a shader float32, qualità visiva o presentazione.
+Le misure GPU A/B/C singole non supportano conclusioni causali di velocità.
+
+La candidata cielo5 passa153test/27file e app build. Il sorgente finale v34
+ritira texture/helper/worker candidati e conserva solo il cleanup dei pacchetti
+non installati se l'attesa GPU fallisce; quattro nuovi test mock coprono
+rilascio allo swap, teardown prima installazione e drain interrotto/rigettato.
+Shader, volume e worker sono byte identici al parent d4c01ac. Test finali:
+**147/26**, app build e hero build superate; esclusione Dropbox riletta1,
+nessuna installazione o modifica lockfile. [Manifesto finale](measurements/light-source-2026-10-15/final-cycle4-build.json).
+
+| Verifica browser finale | Esito e limite |
+| --- | --- |
+| Identità e pagina significativa | Titolo Cloudia, route ordinaria seed72 e asset index-Dbo4hvYu; scena WebGPU pronta |
+| Overlay/console | Nessun overlay visibile, console acquisita[] |
+| Interazione | Atmosfera → Nube matura → Sole → Pausa; Misure aperto/chiuso e stato verificato |
+| Output | CSS1280×720, canvas/output/interno2560×1440,384passi,256³/128³,nessunTAA |
+| Stato lasciato |60,6s pausa,Panorama,audio spento,pannelli chiusi,nessun avviso diagnostico |
+| Non verificato di nuovo | Benchmark nativo sostenuto, matrice artistica completa, mobile/worker/dispositivi fisici |
+
+[Stato DOM/dimensioni](measurements/light-source-2026-10-15/final-cycle4-preview-state.json),
+[immagine](measurements/light-source-2026-10-15/final-cycle4-native-sun.jpg),
+[console](measurements/light-source-2026-10-15/final-cycle4-console.json).
+L'override viewport è rimosso e il tab mantenuto per la continuazione.
+Nessun push, merge o deploy. La ricostruzione campo/materiale dopo interpolazione
+resta il prossimo esperimento, senza promessa di risolvere la luce uniforme.

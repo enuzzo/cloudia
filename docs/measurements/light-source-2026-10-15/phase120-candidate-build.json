@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-15T09:02:04.134061+00:00",
+  "label": "observatory-v32-phase120",
+  "baseCommit": "d4c01acd111137dd36899ffff8899d0748ff04d4",
+  "phase": {
+    "referenceLengthKm": 0.12,
+    "baselineAnisotropicWeight": 0.55,
+    "thinLiquidExtraWeight": 0.3,
+    "density": "before camera-only micro erosion"
+  },
+  "sha256": {
+    "src/cumulonimbus/cloudShader.ts": "3d58ec5c82322f15aecf6dab8036d4f641f84d1d16772e5deb84c38c8f6522a7",
+    "src/cumulonimbus/GPUSceneEngine.ts": "8e6a322706f5c5e54077c2949e31dcf01f7287d022c5b77c2664e5c7e4aa62f1",
+    "src/cumulonimbus/volume.ts": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74",
+    "dist/assets/CumulonimbusApp-BtOAAbpg.css": "48a275cea33834e49834428208e5c8bbc506c500afb961b4d2b6e3e0b126dbde",
+    "dist/assets/CumulonimbusApp-CzuUc3CY.js": "bd10abaa2ab7e04b2f8abf89276c6698d81e48143a6f3e271e9e7a0343d6f073",
+    "dist/assets/CumulonimbusApp-CzuUc3CY.js.map": "81af6fc66a26a9e6d239899191f73c995a9fa7f08dcc54dc3d84ed5e0835edd1",
+    "dist/assets/CumulonimbusApp-YeUZ3_mH.js": "d15e5c0c4bb5465f54363e4e48ec1cba16892fc45c4ad8cc1f1c37fbe9fffbbc",
+    "dist/assets/CumulonimbusApp-YeUZ3_mH.js.map": "2869174db9df475ffd841d9a467827f5faba3f9f8941c975fb059d28ea1e8f82",
+    "dist/assets/LabApp-BIVQGmZd.js": "61b740644d902e97f0e29d2e7924b0d480f6bdfdd7eae827ea06300cd5b247b9",
+    "dist/assets/LabApp-BIVQGmZd.js.map": "17b621678323e315bd03c7d6cc1d60fb50e08c3ddfff75002d6f26b91c1e832f",
+    "dist/assets/index-Cia3ypEr.css": "99354a5ec1ade2941e4aba36f030b413c9afbad79336f11800929c7d805b4714",
+    "dist/assets/index-DAlYcBtu.js": "499ea874289a6a75547bd2cecacedec06f4b6b9a93bdbf04986416b2856cb0b4",
+    "dist/assets/index-DAlYcBtu.js.map": "0e175b56987601da4b7765020730e243a53d98239b0a6c64cc9a50ab76121f0b",
+    "dist/assets/index-XFCRPg8o.js": "b35ac1200972358317dfa8a9be4f1aef77e8560255a11894f1a2b6c03296ef74",
+    "dist/assets/index-XFCRPg8o.js.map": "c7c15eaca48b15e0c87cfc337b8a178a339555146e96bb5cadd39da991914ca7",
+    "dist/assets/render.worker-BycFdtCW.js": "6c79c142a14f73063e3e4567220bacad0438c401958e9cadf717d2c1a3260ecf",
+    "dist/assets/render.worker-BycFdtCW.js.map": "6539d93383a15e20ef5de6e8803158fc5daf8bb776f88942039c85f732d2d556",
+    "dist/assets/render.worker-synsf3nB.js": "e54127a686bd62d5407d792156653f45b9b642be182d25ddfd614943d4b3fc87",
+    "dist/assets/render.worker-synsf3nB.js.map": "1685d66aaea2400aab4754e88e936e775329edd653eff58cf25dbd01f4b26a00",
+    "dist/assets/sky.worker-CHm7n211.js": "503ad9438c1738310a9cbe2a41e9af0524e7046bce79e58d6da7c1e74863caaa",
+    "dist/assets/sky.worker-CHm7n211.js.map": "df7c7eaff6aefeb222e7b89eb86f6c9382a50f405fccd92e9886f2adaa6ac8be",
+    "dist/assets/three.core-DxR5k0T0.js": "e4d296a475f2cd168d934f17f032d4f56291682208332fc6a926b3937200a810",
+    "dist/assets/three.core-DxR5k0T0.js.map": "a1598c761dbdfcb346f4ea438cb3578603d7d430b087437b9e4c5828b8fac659",
+    "dist/assets/volume.worker-BP-mq3wU.js": "8a681d4fa07bca14bc6d27917779d0a978241314d7f7c7a972b81b241849d59c",
+    "dist/assets/volume.worker-BP-mq3wU.js.map": "cd121bae71d66cf347eea5a6cdd7da92b0fe54e8804a0d99064c6ffcb9523dd0"
+  }
+}

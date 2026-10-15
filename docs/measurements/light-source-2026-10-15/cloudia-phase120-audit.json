@@ -1,0 +1,2588 @@
+{
+  "date": "2026-10-15T09:08:03.208Z",
+  "method": "Deterministic float64 CPU mathematics audit. Hand port of the recorded v32 formula, not WGSL execution/readback, volume sampling, real GPU integration, image quality or performance evidence. Candidate shader is reconstructed in memory from the immutable patch and its verified parent, not claimed to be the current production source. All patch context and Git blob hashes must match. Gauss-Legendre integrates axisymmetric phase with solid-angle factor 1/2; positivity also has an analytic convex-mixture proof. Homogeneous recurrence uses constant density/source, clipped final segments, no early cutoff, no jitter and no camera micro erosion. The negative control deliberately replaces fixed120m by march segment length.",
+  "parameters": {
+    "lengthKm": 0.12,
+    "amplitude": 0.3,
+    "baselineAnisotropicWeight": 0.55,
+    "forwardG": 0.68,
+    "backG": -0.25,
+    "forwardWeight": 0.82,
+    "backWeight": 0.18,
+    "liquidExtinctionPerKm": 18,
+    "iceExtinctionPerKm": 6.5
+  },
+  "provenance": {
+    "shaderParentPath": "/private/tmp/cloudia-phase120-parent.ts",
+    "shaderParentSha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+    "patchPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-phase/phase120-v32.patch",
+    "patchSha256": "5db370fe3bf9df4407561441bbb8e48c70b20e5fa4982bf62902e9e4e13456f6",
+    "shaderCandidateSha256": "3d58ec5c82322f15aecf6dab8036d4f641f84d1d16772e5deb84c38c8f6522a7",
+    "shaderParentGitBlob": "52a9816414c6a7e656e88df492dbe970cf281c81",
+    "shaderCandidateGitBlob": "8f8f01efb8d1a28ab696b6ae8f37767e51de9634",
+    "expectedParentGitPrefix": "52a9816",
+    "expectedCandidateGitPrefix": "8f8f01e",
+    "verifiedPatchHunks": 3,
+    "scriptSha256": "15509cd7c45abba7a9753a8e34a72564ff94a2d7eaeae79421a67021a3cde264",
+    "sourceExcerpts": {
+      "phaseWeight": "let phaseWeight=0.55+0.30*(1.0-ice)*exp(-phaseDensity*mix(extinction,iceExtinction,ice)*0.12);",
+      "phaseDensity": "let phaseDensity=clamp((warped-phaseErosion)/(1.0-phaseErosion),0.0,1.0)*material*massFactor*fragments;",
+      "phaseErosion": "let phaseErosion=min(0.92,erosion+forcingErosion);"
+    },
+    "expectedSourceForm": true,
+    "densityBeforeMicro": true,
+    "failures": [],
+    "passed": true,
+    "source": "https://pbr-book.org/3ed-2018/Volume_Scattering/Phase_Functions",
+    "primaryMotivation": "https://www.glowybits.com/talks/real-time_samurai_cinema/real-time_samurai_cinema.pdf#page=97"
+  },
+  "angularNormalization": [
+    {
+      "order": 64,
+      "weightSum": 1.9999999999999998,
+      "maximumAbsoluteError": 1.7763568394002505e-15,
+      "cases": [
+        {
+          "rho": 0,
+          "ice": 0,
+          "phaseWeight": 0.8500000000000001,
+          "sphericalMean": 0.9999999999999986,
+          "absoluteError": 1.4432899320127035e-15
+        },
+        {
+          "rho": 0,
+          "ice": 0.25,
+          "phaseWeight": 0.775,
+          "sphericalMean": 0.9999999999999989,
+          "absoluteError": 1.1102230246251565e-15
+        },
+        {
+          "rho": 0,
+          "ice": 0.5,
+          "phaseWeight": 0.7000000000000001,
+          "sphericalMean": 0.9999999999999986,
+          "absoluteError": 1.4432899320127035e-15
+        },
+        {
+          "rho": 0,
+          "ice": 0.75,
+          "phaseWeight": 0.625,
+          "sphericalMean": 0.9999999999999983,
+          "absoluteError": 1.6653345369377348e-15
+        },
+        {
+          "rho": 0,
+          "ice": 1,
+          "phaseWeight": 0.55,
+          "sphericalMean": 0.9999999999999987,
+          "absoluteError": 1.3322676295501878e-15
+        },
+        {
+          "rho": 0.01,
+          "ice": 0,
+          "phaseWeight": 0.8435894828244654,
+          "sphericalMean": 0.9999999999999983,
+          "absoluteError": 1.6653345369377348e-15
+        },
+        {
+          "rho": 0.01,
+          "ice": 0.25,
+          "phaseWeight": 0.7709530868317465,
+          "sphericalMean": 0.9999999999999983,
+          "absoluteError": 1.6653345369377348e-15
+        },
+        {
+          "rho": 0.01,
+          "ice": 0.5,
+          "phaseWeight": 0.6978111276279122,
+          "sphericalMean": 0.9999999999999989,
+          "absoluteError": 1.1102230246251565e-15
+        },
+        {
+          "rho": 0.01,
+          "ice": 0.75,
+          "phaseWeight": 0.6241609783458425,
+          "sphericalMean": 0.9999999999999988,
+          "absoluteError": 1.2212453270876722e-15
+        },
+        {
+          "rho": 0.01,
+          "ice": 1,
+          "phaseWeight": 0.55,
+          "sphericalMean": 0.9999999999999987,
+          "absoluteError": 1.3322676295501878e-15
+        },
+        {
+          "rho": 0.05,
+          "ice": 0,
+          "phaseWeight": 0.8192882789291305,
+          "sphericalMean": 0.9999999999999982,
+          "absoluteError": 1.7763568394002505e-15
+        },
+        {
+          "rho": 0.05,
+          "ice": 0.25,
+          "phaseWeight": 0.7554803486187637,
+          "sphericalMean": 0.9999999999999983,
+          "absoluteError": 1.6653345369377348e-15
+        },
+        {
+          "rho": 0.05,
+          "ice": 0.5,
+          "phaseWeight": 0.689370421868728,
+          "sphericalMean": 0.9999999999999988,
+          "absoluteError": 1.2212453270876722e-15
+        },
+        {
+          "rho": 0.05,
+          "ice": 0.75,
+          "phaseWeight": 0.6208977085489045,
+          "sphericalMean": 0.9999999999999988,
+          "absoluteError": 1.2212453270876722e-15
+        },
+        {
+          "rho": 0.05,
+          "ice": 1,
+          "phaseWeight": 0.55,
+          "sphericalMean": 0.9999999999999987,
+          "absoluteError": 1.3322676295501878e-15
+        },
+        {
+          "rho": 0.1,
+          "ice": 0,
+          "phaseWeight": 0.7917205905620439,
+          "sphericalMean": 0.9999999999999983,
+          "absoluteError": 1.6653345369377348e-15
+        },
+        {
+          "rho": 0.1,
+          "ice": 0.25,
+          "phaseWeight": 0.7376541051932829,
+          "sphericalMean": 0.9999999999999987,
+          "absoluteError": 1.3322676295501878e-15
+        },
+        {
+          "rho": 0.1,
+          "ice": 0.5,
+          "phaseWeight": 0.679494096612448,
+          "sphericalMean": 0.9999999999999988,
+          "absoluteError": 1.2212453270876722e-15
+        },
+        {
+          "rho": 0.1,
+          "ice": 0.75,
+          "phaseWeight": 0.6170198010331387,
+          "sphericalMean": 0.9999999999999988,
+          "absoluteError": 1.2212453270876722e-15
+        },
+        {
+          "rho": 0.1,
+          "ice": 1,
+          "phaseWeight": 0.55,
+          "sphericalMean": 0.9999999999999987,
+          "absoluteError": 1.3322676295501878e-15
+        },
+        {
+          "rho": 0.25,
+          "ice": 0,
+          "phaseWeight": 0.7248244757121969,
+          "sphericalMean": 0.9999999999999987,
+          "absoluteError": 1.3322676295501878e-15
+        },
+        {
+          "rho": 0.25,
+          "ice": 0.25,
+          "phaseWeight": 0.6929293428498766,
+          "sphericalMean": 0.9999999999999984,
+          "absoluteError": 1.5543122344752192e-15
+        },
+        {
+          "rho": 0.25,
+          "ice": 0.5,
+          "phaseWeight": 0.6538694990212965,
+          "sphericalMean": 0.9999999999999988,
+          "absoluteError": 1.2212453270876722e-15
+        },
+        {
+          "rho": 0.25,
+          "ice": 0.75,
+          "phaseWeight": 0.6066129701491756,
+          "sphericalMean": 0.9999999999999987,
+          "absoluteError": 1.3322676295501878e-15
+        },
+        {
+          "rho": 0.25,
+          "ice": 1,
+          "phaseWeight": 0.55,
+          "sphericalMean": 0.9999999999999987,
+          "absoluteError": 1.3322676295501878e-15
+        },
+        {
+          "rho": 0.5,
+          "ice": 0,
+          "phaseWeight": 0.6518786576934817,
+          "sphericalMean": 0.9999999999999987,
+          "absoluteError": 1.3322676295501878e-15
+        },
+        {
+          "rho": 0.5,
+          "ice": 0.25,
+          "phaseWeight": 0.6407946535444335,
+          "sphericalMean": 0.9999999999999988,
+          "absoluteError": 1.2212453270876722e-15
+        },
+        {
+          "rho": 0.5,
+          "ice": 0.5,
+          "phaseWeight": 0.6219258188462342,
+          "sphericalMean": 0.9999999999999987,
+          "absoluteError": 1.3322676295501878e-15
+        },
+        {
+          "rho": 0.5,
+          "ice": 0.75,
+          "phaseWeight": 0.5927337118548193,
+          "sphericalMean": 0.9999999999999987,
+          "absoluteError": 1.3322676295501878e-15
+        },
+        {
+          "rho": 0.5,
+          "ice": 1,
+          "phaseWeight": 0.55,
+          "sphericalMean": 0.9999999999999987,
+          "absoluteError": 1.3322676295501878e-15
+        },
+        {
+          "rho": 0.75,
+          "ice": 0,
+          "phaseWeight": 0.6093696097250845,
+          "sphericalMean": 0.9999999999999984,
+          "absoluteError": 1.5543122344752192e-15
+        },
+        {
+          "rho": 0.75,
+          "ice": 0.25,
+          "phaseWeight": 0.6076765340683916,
+          "sphericalMean": 0.9999999999999987,
+          "absoluteError": 1.3322676295501878e-15
+        },
+        {
+          "rho": 0.75,
+          "ice": 0.5,
+          "phaseWeight": 0.5998059918016991,
+          "sphericalMean": 0.9999999999999986,
+          "absoluteError": 1.4432899320127035e-15
+        },
+        {
+          "rho": 0.75,
+          "ice": 0.75,
+          "phaseWeight": 0.5822570980480047,
+          "sphericalMean": 0.9999999999999986,
+          "absoluteError": 1.4432899320127035e-15
+        },
+        {
+          "rho": 0.75,
+          "ice": 1,
+          "phaseWeight": 0.55,
+          "sphericalMean": 0.9999999999999987,
+          "absoluteError": 1.3322676295501878e-15
+        },
+        {
+          "rho": 1,
+          "ice": 0,
+          "phaseWeight": 0.5845975363114188,
+          "sphericalMean": 0.9999999999999986,
+          "absoluteError": 1.4432899320127035e-15
+        },
+        {
+          "rho": 1,
+          "ice": 0.25,
+          "phaseWeight": 0.5866385293877944,
+          "sphericalMean": 0.9999999999999989,
+          "absoluteError": 1.1102230246251565e-15
+        },
+        {
+          "rho": 1,
+          "ice": 0.5,
+          "phaseWeight": 0.5844888227780086,
+          "sphericalMean": 0.9999999999999986,
+          "absoluteError": 1.4432899320127035e-15
+        },
+        {
+          "rho": 1,
+          "ice": 0.75,
+          "phaseWeight": 0.5743489350518762,
+          "sphericalMean": 0.9999999999999989,
+          "absoluteError": 1.1102230246251565e-15
+        },
+        {
+          "rho": 1,
+          "ice": 1,
+          "phaseWeight": 0.55,
+          "sphericalMean": 0.9999999999999987,
+          "absoluteError": 1.3322676295501878e-15
+        }
+      ]
+    },
+    {
+      "order": 128,
+      "weightSum": 2.0000000000000004,
+      "maximumAbsoluteError": 8.881784197001252e-16,
+      "cases": [
+        {
+          "rho": 0,
+          "ice": 0,
+          "phaseWeight": 0.8500000000000001,
+          "sphericalMean": 1.0000000000000009,
+          "absoluteError": 8.881784197001252e-16
+        },
+        {
+          "rho": 0,
+          "ice": 0.25,
+          "phaseWeight": 0.775,
+          "sphericalMean": 1.0000000000000007,
+          "absoluteError": 6.661338147750939e-16
+        },
+        {
+          "rho": 0,
+          "ice": 0.5,
+          "phaseWeight": 0.7000000000000001,
+          "sphericalMean": 1.0000000000000007,
+          "absoluteError": 6.661338147750939e-16
+        },
+        {
+          "rho": 0,
+          "ice": 0.75,
+          "phaseWeight": 0.625,
+          "sphericalMean": 1.0000000000000002,
+          "absoluteError": 2.220446049250313e-16
+        },
+        {
+          "rho": 0,
+          "ice": 1,
+          "phaseWeight": 0.55,
+          "sphericalMean": 1.0000000000000004,
+          "absoluteError": 4.440892098500626e-16
+        },
+        {
+          "rho": 0.01,
+          "ice": 0,
+          "phaseWeight": 0.8435894828244654,
+          "sphericalMean": 1.0000000000000004,
+          "absoluteError": 4.440892098500626e-16
+        },
+        {
+          "rho": 0.01,
+          "ice": 0.25,
+          "phaseWeight": 0.7709530868317465,
+          "sphericalMean": 1.0000000000000004,
+          "absoluteError": 4.440892098500626e-16
+        },
+        {
+          "rho": 0.01,
+          "ice": 0.5,
+          "phaseWeight": 0.6978111276279122,
+          "sphericalMean": 1.0000000000000004,
+          "absoluteError": 4.440892098500626e-16
+        },
+        {
+          "rho": 0.01,
+          "ice": 0.75,
+          "phaseWeight": 0.6241609783458425,
+          "sphericalMean": 1.0000000000000004,
+          "absoluteError": 4.440892098500626e-16
+        },
+        {
+          "rho": 0.01,
+          "ice": 1,
+          "phaseWeight": 0.55,
+          "sphericalMean": 1.0000000000000004,
+          "absoluteError": 4.440892098500626e-16
+        },
+        {
+          "rho": 0.05,
+          "ice": 0,
+          "phaseWeight": 0.8192882789291305,
+          "sphericalMean": 1,
+          "absoluteError": 0
+        },
+        {
+          "rho": 0.05,
+          "ice": 0.25,
+          "phaseWeight": 0.7554803486187637,
+          "sphericalMean": 1.0000000000000004,
+          "absoluteError": 4.440892098500626e-16
+        },
+        {
+          "rho": 0.05,
+          "ice": 0.5,
+          "phaseWeight": 0.689370421868728,
+          "sphericalMean": 1.0000000000000004,
+          "absoluteError": 4.440892098500626e-16
+        },
+        {
+          "rho": 0.05,
+          "ice": 0.75,
+          "phaseWeight": 0.6208977085489045,
+          "sphericalMean": 1.0000000000000007,
+          "absoluteError": 6.661338147750939e-16
+        },
+        {
+          "rho": 0.05,
+          "ice": 1,
+          "phaseWeight": 0.55,
+          "sphericalMean": 1.0000000000000004,
+          "absoluteError": 4.440892098500626e-16
+        },
+        {
+          "rho": 0.1,
+          "ice": 0,
+          "phaseWeight": 0.7917205905620439,
+          "sphericalMean": 1.0000000000000002,
+          "absoluteError": 2.220446049250313e-16
+        },
+        {
+          "rho": 0.1,
+          "ice": 0.25,
+          "phaseWeight": 0.7376541051932829,
+          "sphericalMean": 1.0000000000000007,
+          "absoluteError": 6.661338147750939e-16
+        },
+        {
+          "rho": 0.1,
+          "ice": 0.5,
+          "phaseWeight": 0.679494096612448,
+          "sphericalMean": 1.0000000000000002,
+          "absoluteError": 2.220446049250313e-16
+        },
+        {
+          "rho": 0.1,
+          "ice": 0.75,
+          "phaseWeight": 0.6170198010331387,
+          "sphericalMean": 1,
+          "absoluteError": 0
+        },
+        {
+          "rho": 0.1,
+          "ice": 1,
+          "phaseWeight": 0.55,
+          "sphericalMean": 1.0000000000000004,
+          "absoluteError": 4.440892098500626e-16
+        },
+        {
+          "rho": 0.25,
+          "ice": 0,
+          "phaseWeight": 0.7248244757121969,
+          "sphericalMean": 1.0000000000000002,
+          "absoluteError": 2.220446049250313e-16
+        },
+        {
+          "rho": 0.25,
+          "ice": 0.25,
+          "phaseWeight": 0.6929293428498766,
+          "sphericalMean": 1.0000000000000004,
+          "absoluteError": 4.440892098500626e-16
+        },
+        {
+          "rho": 0.25,
+          "ice": 0.5,
+          "phaseWeight": 0.6538694990212965,
+          "sphericalMean": 1.0000000000000009,
+          "absoluteError": 8.881784197001252e-16
+        },
+        {
+          "rho": 0.25,
+          "ice": 0.75,
+          "phaseWeight": 0.6066129701491756,
+          "sphericalMean": 1.0000000000000009,
+          "absoluteError": 8.881784197001252e-16
+        },
+        {
+          "rho": 0.25,
+          "ice": 1,
+          "phaseWeight": 0.55,
+          "sphericalMean": 1.0000000000000004,
+          "absoluteError": 4.440892098500626e-16
+        },
+        {
+          "rho": 0.5,
+          "ice": 0,
+          "phaseWeight": 0.6518786576934817,
+          "sphericalMean": 1.0000000000000004,
+          "absoluteError": 4.440892098500626e-16
+        },
+        {
+          "rho": 0.5,
+          "ice": 0.25,
+          "phaseWeight": 0.6407946535444335,
+          "sphericalMean": 1.0000000000000007,
+          "absoluteError": 6.661338147750939e-16
+        },
+        {
+          "rho": 0.5,
+          "ice": 0.5,
+          "phaseWeight": 0.6219258188462342,
+          "sphericalMean": 1.0000000000000002,
+          "absoluteError": 2.220446049250313e-16
+        },
+        {
+          "rho": 0.5,
+          "ice": 0.75,
+          "phaseWeight": 0.5927337118548193,
+          "sphericalMean": 1.0000000000000002,
+          "absoluteError": 2.220446049250313e-16
+        },
+        {
+          "rho": 0.5,
+          "ice": 1,
+          "phaseWeight": 0.55,
+          "sphericalMean": 1.0000000000000004,
+          "absoluteError": 4.440892098500626e-16
+        },
+        {
+          "rho": 0.75,
+          "ice": 0,
+          "phaseWeight": 0.6093696097250845,
+          "sphericalMean": 1.0000000000000002,
+          "absoluteError": 2.220446049250313e-16
+        },
+        {
+          "rho": 0.75,
+          "ice": 0.25,
+          "phaseWeight": 0.6076765340683916,
+          "sphericalMean": 1.0000000000000004,
+          "absoluteError": 4.440892098500626e-16
+        },
+        {
+          "rho": 0.75,
+          "ice": 0.5,
+          "phaseWeight": 0.5998059918016991,
+          "sphericalMean": 1.0000000000000004,
+          "absoluteError": 4.440892098500626e-16
+        },
+        {
+          "rho": 0.75,
+          "ice": 0.75,
+          "phaseWeight": 0.5822570980480047,
+          "sphericalMean": 1.0000000000000007,
+          "absoluteError": 6.661338147750939e-16
+        },
+        {
+          "rho": 0.75,
+          "ice": 1,
+          "phaseWeight": 0.55,
+          "sphericalMean": 1.0000000000000004,
+          "absoluteError": 4.440892098500626e-16
+        },
+        {
+          "rho": 1,
+          "ice": 0,
+          "phaseWeight": 0.5845975363114188,
+          "sphericalMean": 1.0000000000000002,
+          "absoluteError": 2.220446049250313e-16
+        },
+        {
+          "rho": 1,
+          "ice": 0.25,
+          "phaseWeight": 0.5866385293877944,
+          "sphericalMean": 1.0000000000000004,
+          "absoluteError": 4.440892098500626e-16
+        },
+        {
+          "rho": 1,
+          "ice": 0.5,
+          "phaseWeight": 0.5844888227780086,
+          "sphericalMean": 1,
+          "absoluteError": 0
+        },
+        {
+          "rho": 1,
+          "ice": 0.75,
+          "phaseWeight": 0.5743489350518762,
+          "sphericalMean": 1.0000000000000002,
+          "absoluteError": 2.220446049250313e-16
+        },
+        {
+          "rho": 1,
+          "ice": 1,
+          "phaseWeight": 0.55,
+          "sphericalMean": 1.0000000000000004,
+          "absoluteError": 4.440892098500626e-16
+        }
+      ]
+    }
+  ],
+  "positivity": {
+    "angularGridIntervals": 8192,
+    "rhoValues": [
+      0,
+      0.01,
+      0.05,
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "iceValues": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "minimumSampledPhase": 0.46040020383884295,
+    "maximumSampledPhase": 11.65859624999999,
+    "minimumWeight": 0.55,
+    "maximumWeight": 0.8500000000000001,
+    "analytic": "For rho>=0, ice in[0,1], a in[.55,.85]; HG(g) positive for |g|<1. Convex mixture therefore positive and normalized for every outgoing angle, not only quadrature samples. The denominator clamps do not activate: minima are (1-.68)^2=.1024 and (1-.25)^2=.5625, both>.04."
+  },
+  "endpoints": {
+    "maximumFullyIcyErrorAgainstOriginal": 4.440892098500626e-16,
+    "maximumZeroAmplitudeErrorAgainstOriginal": 4.440892098500626e-16,
+    "interpretation": "Analytic identity; reported rounding uses float64 only and does not prove bit identity on the GPU."
+  },
+  "homogeneous": {
+    "distanceKm": 0.413,
+    "stepMetres": [
+      1.5,
+      3,
+      6,
+      12,
+      24,
+      48
+    ],
+    "background": 0.16,
+    "maximumAbsoluteRadianceError": 2.0539125955565396e-15,
+    "maximumAbsoluteTransmittanceError": 5.10702591327572e-15,
+    "maximumAcrossStepRadianceSpread": 2.3314683517128287e-15,
+    "cases": [
+      {
+        "rho": 0,
+        "ice": 0,
+        "mu": -0.21380050955106467,
+        "sigmaPerKm": 0,
+        "tauReference": 0,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 0.46496927142206884,
+            "source": 0.31382913427297476,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 0.46496927142206884,
+            "source": 0.31382913427297476,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 0.46496927142206884,
+            "source": 0.31382913427297476,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 0.46496927142206884,
+            "source": 0.31382913427297476,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 0.46496927142206884,
+            "source": 0.31382913427297476,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 0.46496927142206884,
+            "source": 0.31382913427297476,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          }
+        ],
+        "stepRadianceSpread": 0,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 0,
+        "ice": 0,
+        "mu": 0.8,
+        "sigmaPerKm": 0,
+        "tauReference": 0,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 1.8667417253326009,
+            "source": 0.6268494332103596,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 1.8667417253326009,
+            "source": 0.6268494332103596,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 1.8667417253326009,
+            "source": 0.6268494332103596,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 1.8667417253326009,
+            "source": 0.6268494332103596,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 1.8667417253326009,
+            "source": 0.6268494332103596,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 1.8667417253326009,
+            "source": 0.6268494332103596,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          }
+        ],
+        "stepRadianceSpread": 0,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 0,
+        "ice": 0.5,
+        "mu": -0.21380050955106467,
+        "sigmaPerKm": 0,
+        "tauReference": 0,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 0.5593864588181743,
+            "source": 0.33491279599075763,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 0.5593864588181743,
+            "source": 0.33491279599075763,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 0.5593864588181743,
+            "source": 0.33491279599075763,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 0.5593864588181743,
+            "source": 0.33491279599075763,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 0.5593864588181743,
+            "source": 0.33491279599075763,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 0.5593864588181743,
+            "source": 0.33491279599075763,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          }
+        ],
+        "stepRadianceSpread": 0,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 0,
+        "ice": 0.5,
+        "mu": 0.8,
+        "sigmaPerKm": 0,
+        "tauReference": 0,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 1.7137873032150832,
+            "source": 0.5926942186450745,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 1.7137873032150832,
+            "source": 0.5926942186450745,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 1.7137873032150832,
+            "source": 0.5926942186450745,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 1.7137873032150832,
+            "source": 0.5926942186450745,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 1.7137873032150832,
+            "source": 0.5926942186450745,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 1.7137873032150832,
+            "source": 0.5926942186450745,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          }
+        ],
+        "stepRadianceSpread": 0,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 0,
+        "ice": 1,
+        "mu": -0.21380050955106467,
+        "sigmaPerKm": 0,
+        "tauReference": 0,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          }
+        ],
+        "stepRadianceSpread": 0,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 0,
+        "ice": 1,
+        "mu": 0.8,
+        "sigmaPerKm": 0,
+        "tauReference": 0,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 1,
+            "radianceWithBackground": 0.16,
+            "analyticRadiance": 0.16,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          }
+        ],
+        "stepRadianceSpread": 0,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 0.1,
+        "ice": 0,
+        "mu": -0.21380050955106467,
+        "sigmaPerKm": 1.8,
+        "tauReference": 0.216,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 0.5016531242369879,
+            "source": 0.3220207566309883,
+            "transmittance": 0.475494482803937,
+            "radianceWithBackground": 0.2449807807532347,
+            "analyticRadiance": 0.24498078075323426,
+            "absoluteRadianceError": 4.440892098500626e-16,
+            "absoluteTransmittanceError": 1.8318679906315083e-15
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 0.5016531242369879,
+            "source": 0.3220207566309883,
+            "transmittance": 0.47549448280393614,
+            "radianceWithBackground": 0.24498078075323443,
+            "analyticRadiance": 0.24498078075323426,
+            "absoluteRadianceError": 1.6653345369377348e-16,
+            "absoluteTransmittanceError": 9.43689570931383e-16
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 0.5016531242369879,
+            "source": 0.3220207566309883,
+            "transmittance": 0.4754944828039368,
+            "radianceWithBackground": 0.2449807807532347,
+            "analyticRadiance": 0.24498078075323426,
+            "absoluteRadianceError": 4.440892098500626e-16,
+            "absoluteTransmittanceError": 1.609823385706477e-15
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 0.5016531242369879,
+            "source": 0.3220207566309883,
+            "transmittance": 0.4754944828039349,
+            "radianceWithBackground": 0.2449807807532341,
+            "analyticRadiance": 0.24498078075323426,
+            "absoluteRadianceError": 1.6653345369377348e-16,
+            "absoluteTransmittanceError": 2.7755575615628914e-16
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 0.5016531242369879,
+            "source": 0.3220207566309883,
+            "transmittance": 0.47549448280393525,
+            "radianceWithBackground": 0.24498078075323426,
+            "analyticRadiance": 0.24498078075323426,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 5.551115123125783e-17
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 0.5016531242369879,
+            "source": 0.3220207566309883,
+            "transmittance": 0.4754944828039349,
+            "radianceWithBackground": 0.24498078075323423,
+            "analyticRadiance": 0.24498078075323426,
+            "absoluteRadianceError": 2.7755575615628914e-17,
+            "absoluteTransmittanceError": 2.7755575615628914e-16
+          }
+        ],
+        "stepRadianceSpread": 6.106226635438361e-16,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 0.1,
+        "ice": 0,
+        "mu": 0.8,
+        "sigmaPerKm": 1.8,
+        "tauReference": 0.216,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 1.8073144360530489,
+            "source": 0.6135791283164163,
+            "transmittance": 0.475494482803937,
+            "radianceWithBackground": 0.3979047552869429,
+            "analyticRadiance": 0.3979047552869422,
+            "absoluteRadianceError": 7.216449660063518e-16,
+            "absoluteTransmittanceError": 1.8318679906315083e-15
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 1.8073144360530489,
+            "source": 0.6135791283164163,
+            "transmittance": 0.47549448280393614,
+            "radianceWithBackground": 0.39790475528694247,
+            "analyticRadiance": 0.3979047552869422,
+            "absoluteRadianceError": 2.7755575615628914e-16,
+            "absoluteTransmittanceError": 9.43689570931383e-16
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 1.8073144360530489,
+            "source": 0.6135791283164163,
+            "transmittance": 0.4754944828039368,
+            "radianceWithBackground": 0.3979047552869427,
+            "analyticRadiance": 0.3979047552869422,
+            "absoluteRadianceError": 4.996003610813204e-16,
+            "absoluteTransmittanceError": 1.609823385706477e-15
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 1.8073144360530489,
+            "source": 0.6135791283164163,
+            "transmittance": 0.4754944828039349,
+            "radianceWithBackground": 0.3979047552869419,
+            "analyticRadiance": 0.3979047552869422,
+            "absoluteRadianceError": 2.7755575615628914e-16,
+            "absoluteTransmittanceError": 2.7755575615628914e-16
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 1.8073144360530489,
+            "source": 0.6135791283164163,
+            "transmittance": 0.47549448280393525,
+            "radianceWithBackground": 0.39790475528694214,
+            "analyticRadiance": 0.3979047552869422,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 5.551115123125783e-17
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 1.8073144360530489,
+            "source": 0.6135791283164163,
+            "transmittance": 0.4754944828039349,
+            "radianceWithBackground": 0.39790475528694214,
+            "analyticRadiance": 0.3979047552869422,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 2.7755575615628914e-16
+          }
+        ],
+        "stepRadianceSpread": 9.992007221626409e-16,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 0.1,
+        "ice": 0.5,
+        "mu": -0.21380050955106467,
+        "sigmaPerKm": 1.225,
+        "tauReference": 0.147,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 0.572293856970634,
+            "source": 0.33779505952569555,
+            "transmittance": 0.6029475908774152,
+            "radianceWithBackground": 0.2305939567147728,
+            "analyticRadiance": 0.23059395671477168,
+            "absoluteRadianceError": 1.1379786002407855e-15,
+            "absoluteTransmittanceError": 4.9960036108132044e-15
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 0.572293856970634,
+            "source": 0.33779505952569555,
+            "transmittance": 0.6029475908774112,
+            "radianceWithBackground": 0.23059395671477187,
+            "analyticRadiance": 0.23059395671477168,
+            "absoluteRadianceError": 1.942890293094024e-16,
+            "absoluteTransmittanceError": 9.992007221626409e-16
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 0.572293856970634,
+            "source": 0.33779505952569555,
+            "transmittance": 0.6029475908774082,
+            "radianceWithBackground": 0.23059395671477112,
+            "analyticRadiance": 0.23059395671477168,
+            "absoluteRadianceError": 5.551115123125783e-16,
+            "absoluteTransmittanceError": 1.9984014443252818e-15
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 0.572293856970634,
+            "source": 0.33779505952569555,
+            "transmittance": 0.6029475908774115,
+            "radianceWithBackground": 0.23059395671477195,
+            "analyticRadiance": 0.23059395671477168,
+            "absoluteRadianceError": 2.7755575615628914e-16,
+            "absoluteTransmittanceError": 1.2212453270876722e-15
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 0.572293856970634,
+            "source": 0.33779505952569555,
+            "transmittance": 0.6029475908774105,
+            "radianceWithBackground": 0.23059395671477173,
+            "analyticRadiance": 0.23059395671477168,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 2.220446049250313e-16
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 0.572293856970634,
+            "source": 0.33779505952569555,
+            "transmittance": 0.6029475908774103,
+            "radianceWithBackground": 0.23059395671477173,
+            "analyticRadiance": 0.23059395671477168,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 1.1102230246251565e-16
+          }
+        ],
+        "stepRadianceSpread": 1.6930901125533637e-15,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 0.1,
+        "ice": 0.5,
+        "mu": 0.8,
+        "sigmaPerKm": 1.225,
+        "tauReference": 0.147,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 1.6928775125308118,
+            "source": 0.5880249951113621,
+            "transmittance": 0.6029475908774152,
+            "radianceWithBackground": 0.3299483554736525,
+            "analyticRadiance": 0.32994835547365103,
+            "absoluteRadianceError": 1.4432899320127035e-15,
+            "absoluteTransmittanceError": 4.9960036108132044e-15
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 1.6928775125308118,
+            "source": 0.5880249951113621,
+            "transmittance": 0.6029475908774112,
+            "radianceWithBackground": 0.3299483554736512,
+            "analyticRadiance": 0.32994835547365103,
+            "absoluteRadianceError": 1.6653345369377348e-16,
+            "absoluteTransmittanceError": 9.992007221626409e-16
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 1.6928775125308118,
+            "source": 0.5880249951113621,
+            "transmittance": 0.6029475908774082,
+            "radianceWithBackground": 0.3299483554736502,
+            "analyticRadiance": 0.32994835547365103,
+            "absoluteRadianceError": 8.326672684688674e-16,
+            "absoluteTransmittanceError": 1.9984014443252818e-15
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 1.6928775125308118,
+            "source": 0.5880249951113621,
+            "transmittance": 0.6029475908774115,
+            "radianceWithBackground": 0.3299483554736514,
+            "analyticRadiance": 0.32994835547365103,
+            "absoluteRadianceError": 3.885780586188048e-16,
+            "absoluteTransmittanceError": 1.2212453270876722e-15
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 1.6928775125308118,
+            "source": 0.5880249951113621,
+            "transmittance": 0.6029475908774105,
+            "radianceWithBackground": 0.32994835547365103,
+            "analyticRadiance": 0.32994835547365103,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 2.220446049250313e-16
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 1.6928775125308118,
+            "source": 0.5880249951113621,
+            "transmittance": 0.6029475908774103,
+            "radianceWithBackground": 0.3299483554736511,
+            "analyticRadiance": 0.32994835547365103,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 1.1102230246251565e-16
+          }
+        ],
+        "stepRadianceSpread": 2.275957200481571e-15,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 0.1,
+        "ice": 1,
+        "mu": -0.21380050955106467,
+        "sigmaPerKm": 0.65,
+        "tauReference": 0.078,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 0.7645636500366597,
+            "radianceWithBackground": 0.20614469060864074,
+            "analyticRadiance": 0.20614469060864196,
+            "absoluteRadianceError": 1.2212453270876722e-15,
+            "absoluteTransmittanceError": 5.10702591327572e-15
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 0.7645636500366639,
+            "radianceWithBackground": 0.20614469060864166,
+            "analyticRadiance": 0.20614469060864196,
+            "absoluteRadianceError": 3.0531133177191805e-16,
+            "absoluteTransmittanceError": 8.881784197001252e-16
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 0.7645636500366662,
+            "radianceWithBackground": 0.20614469060864218,
+            "analyticRadiance": 0.20614469060864196,
+            "absoluteRadianceError": 2.220446049250313e-16,
+            "absoluteTransmittanceError": 1.3322676295501878e-15
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 0.7645636500366659,
+            "radianceWithBackground": 0.20614469060864216,
+            "analyticRadiance": 0.20614469060864196,
+            "absoluteRadianceError": 1.942890293094024e-16,
+            "absoluteTransmittanceError": 1.1102230246251565e-15
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 0.7645636500366647,
+            "radianceWithBackground": 0.20614469060864193,
+            "analyticRadiance": 0.20614469060864196,
+            "absoluteRadianceError": 2.7755575615628914e-17,
+            "absoluteTransmittanceError": 1.1102230246251565e-16
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 0.7645636500366648,
+            "radianceWithBackground": 0.206144690608642,
+            "analyticRadiance": 0.20614469060864196,
+            "absoluteRadianceError": 2.7755575615628914e-17,
+            "absoluteTransmittanceError": 0
+          }
+        ],
+        "stepRadianceSpread": 1.4432899320127035e-15,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 0.1,
+        "ice": 1,
+        "mu": 0.8,
+        "sigmaPerKm": 0.65,
+        "tauReference": 0.078,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 0.7645636500366597,
+            "radianceWithBackground": 0.2538305684385671,
+            "analyticRadiance": 0.2538305684385683,
+            "absoluteRadianceError": 1.2212453270876722e-15,
+            "absoluteTransmittanceError": 5.10702591327572e-15
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 0.7645636500366639,
+            "radianceWithBackground": 0.2538305684385681,
+            "analyticRadiance": 0.2538305684385683,
+            "absoluteRadianceError": 2.220446049250313e-16,
+            "absoluteTransmittanceError": 8.881784197001252e-16
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 0.7645636500366662,
+            "radianceWithBackground": 0.25383056843856855,
+            "analyticRadiance": 0.2538305684385683,
+            "absoluteRadianceError": 2.220446049250313e-16,
+            "absoluteTransmittanceError": 1.3322676295501878e-15
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 0.7645636500366659,
+            "radianceWithBackground": 0.25383056843856855,
+            "analyticRadiance": 0.2538305684385683,
+            "absoluteRadianceError": 2.220446049250313e-16,
+            "absoluteTransmittanceError": 1.1102230246251565e-15
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 0.7645636500366647,
+            "radianceWithBackground": 0.2538305684385683,
+            "analyticRadiance": 0.2538305684385683,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 1.1102230246251565e-16
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 0.7645636500366648,
+            "radianceWithBackground": 0.2538305684385684,
+            "analyticRadiance": 0.2538305684385683,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 0
+          }
+        ],
+        "stepRadianceSpread": 1.4432899320127035e-15,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 0.5,
+        "ice": 0,
+        "mu": -0.21380050955106467,
+        "sigmaPerKm": 9,
+        "tauReference": 1.08,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 0.5896763374468855,
+            "source": 0.34167662334139937,
+            "transmittance": 0.02430677891121839,
+            "radianceWithBackground": 0.33726064982450377,
+            "analyticRadiance": 0.33726064982450327,
+            "absoluteRadianceError": 4.996003610813204e-16,
+            "absoluteTransmittanceError": 1.9081958235744878e-16
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 0.5896763374468855,
+            "source": 0.34167662334139937,
+            "transmittance": 0.024306778911218244,
+            "radianceWithBackground": 0.3372606498245032,
+            "analyticRadiance": 0.33726064982450327,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 4.5102810375396984e-17
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 0.5896763374468855,
+            "source": 0.34167662334139937,
+            "transmittance": 0.024306778911218286,
+            "radianceWithBackground": 0.33726064982450327,
+            "analyticRadiance": 0.33726064982450327,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 8.673617379884035e-17
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 0.5896763374468855,
+            "source": 0.34167662334139937,
+            "transmittance": 0.02430677891121824,
+            "radianceWithBackground": 0.3372606498245033,
+            "analyticRadiance": 0.33726064982450327,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 4.163336342344337e-17
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 0.5896763374468855,
+            "source": 0.34167662334139937,
+            "transmittance": 0.0243067789112182,
+            "radianceWithBackground": 0.33726064982450327,
+            "analyticRadiance": 0.33726064982450327,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 0.5896763374468855,
+            "source": 0.34167662334139937,
+            "transmittance": 0.0243067789112182,
+            "radianceWithBackground": 0.3372606498245033,
+            "analyticRadiance": 0.33726064982450327,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 0
+          }
+        ],
+        "stepRadianceSpread": 5.551115123125783e-16,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 0.5,
+        "ice": 0,
+        "mu": 0.8,
+        "sigmaPerKm": 9,
+        "tauReference": 1.08,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 1.664718155854998,
+            "source": 0.5817369201674167,
+            "transmittance": 0.02430677891121839,
+            "radianceWithBackground": 0.5714858540902098,
+            "analyticRadiance": 0.5714858540902092,
+            "absoluteRadianceError": 5.551115123125783e-16,
+            "absoluteTransmittanceError": 1.9081958235744878e-16
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 1.664718155854998,
+            "source": 0.5817369201674167,
+            "transmittance": 0.024306778911218244,
+            "radianceWithBackground": 0.5714858540902089,
+            "analyticRadiance": 0.5714858540902092,
+            "absoluteRadianceError": 3.3306690738754696e-16,
+            "absoluteTransmittanceError": 4.5102810375396984e-17
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 1.664718155854998,
+            "source": 0.5817369201674167,
+            "transmittance": 0.024306778911218286,
+            "radianceWithBackground": 0.5714858540902096,
+            "analyticRadiance": 0.5714858540902092,
+            "absoluteRadianceError": 3.3306690738754696e-16,
+            "absoluteTransmittanceError": 8.673617379884035e-17
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 1.664718155854998,
+            "source": 0.5817369201674167,
+            "transmittance": 0.02430677891121824,
+            "radianceWithBackground": 0.571485854090209,
+            "analyticRadiance": 0.5714858540902092,
+            "absoluteRadianceError": 2.220446049250313e-16,
+            "absoluteTransmittanceError": 4.163336342344337e-17
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 1.664718155854998,
+            "source": 0.5817369201674167,
+            "transmittance": 0.0243067789112182,
+            "radianceWithBackground": 0.5714858540902091,
+            "analyticRadiance": 0.5714858540902092,
+            "absoluteRadianceError": 1.1102230246251565e-16,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 1.664718155854998,
+            "source": 0.5817369201674167,
+            "transmittance": 0.0243067789112182,
+            "radianceWithBackground": 0.5714858540902094,
+            "analyticRadiance": 0.5714858540902092,
+            "absoluteRadianceError": 1.1102230246251565e-16,
+            "absoluteTransmittanceError": 0
+          }
+        ],
+        "stepRadianceSpread": 8.881784197001252e-16,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 0.5,
+        "ice": 0.5,
+        "mu": -0.21380050955106467,
+        "sigmaPerKm": 6.125,
+        "tauReference": 0.735,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 0.6085300894367917,
+            "source": 0.34588672681968363,
+            "transmittance": 0.07968889802023135,
+            "radianceWithBackground": 0.33107361840283667,
+            "analyticRadiance": 0.3310736184028355,
+            "absoluteRadianceError": 1.1657341758564144e-15,
+            "absoluteTransmittanceError": 1.0408340855860843e-15
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 0.6085300894367917,
+            "source": 0.34588672681968363,
+            "transmittance": 0.0796888980202303,
+            "radianceWithBackground": 0.3310736184028354,
+            "analyticRadiance": 0.3310736184028355,
+            "absoluteRadianceError": 1.1102230246251565e-16,
+            "absoluteTransmittanceError": 1.3877787807814457e-17
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 0.6085300894367917,
+            "source": 0.34588672681968363,
+            "transmittance": 0.07968889802023045,
+            "radianceWithBackground": 0.33107361840283545,
+            "analyticRadiance": 0.3310736184028355,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 1.3877787807814457e-16
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 0.6085300894367917,
+            "source": 0.34588672681968363,
+            "transmittance": 0.0796888980202303,
+            "radianceWithBackground": 0.33107361840283533,
+            "analyticRadiance": 0.3310736184028355,
+            "absoluteRadianceError": 1.6653345369377348e-16,
+            "absoluteTransmittanceError": 1.3877787807814457e-17
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 0.6085300894367917,
+            "source": 0.34588672681968363,
+            "transmittance": 0.07968889802023034,
+            "radianceWithBackground": 0.33107361840283545,
+            "analyticRadiance": 0.3310736184028355,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 2.7755575615628914e-17
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 0.6085300894367917,
+            "source": 0.34588672681968363,
+            "transmittance": 0.07968889802023021,
+            "radianceWithBackground": 0.3310736184028354,
+            "analyticRadiance": 0.3310736184028355,
+            "absoluteRadianceError": 1.1102230246251565e-16,
+            "absoluteTransmittanceError": 9.71445146547012e-17
+          }
+        ],
+        "stepRadianceSpread": 1.3322676295501878e-15,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 0.5,
+        "ice": 0.5,
+        "mu": 0.8,
+        "sigmaPerKm": 6.125,
+        "tauReference": 0.735,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 1.6341753614772654,
+            "source": 0.5749166159163024,
+            "transmittance": 0.07968889802023135,
+            "radianceWithBackground": 0.541852368023651,
+            "analyticRadiance": 0.5418523680236491,
+            "absoluteRadianceError": 1.887379141862766e-15,
+            "absoluteTransmittanceError": 1.0408340855860843e-15
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 1.6341753614772654,
+            "source": 0.5749166159163024,
+            "transmittance": 0.0796888980202303,
+            "radianceWithBackground": 0.5418523680236487,
+            "analyticRadiance": 0.5418523680236491,
+            "absoluteRadianceError": 4.440892098500626e-16,
+            "absoluteTransmittanceError": 1.3877787807814457e-17
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 1.6341753614772654,
+            "source": 0.5749166159163024,
+            "transmittance": 0.07968889802023045,
+            "radianceWithBackground": 0.5418523680236491,
+            "analyticRadiance": 0.5418523680236491,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 1.3877787807814457e-16
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 1.6341753614772654,
+            "source": 0.5749166159163024,
+            "transmittance": 0.0796888980202303,
+            "radianceWithBackground": 0.541852368023649,
+            "analyticRadiance": 0.5418523680236491,
+            "absoluteRadianceError": 1.1102230246251565e-16,
+            "absoluteTransmittanceError": 1.3877787807814457e-17
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 1.6341753614772654,
+            "source": 0.5749166159163024,
+            "transmittance": 0.07968889802023034,
+            "radianceWithBackground": 0.541852368023649,
+            "analyticRadiance": 0.5418523680236491,
+            "absoluteRadianceError": 1.1102230246251565e-16,
+            "absoluteTransmittanceError": 2.7755575615628914e-17
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 1.6341753614772654,
+            "source": 0.5749166159163024,
+            "transmittance": 0.07968889802023021,
+            "radianceWithBackground": 0.541852368023649,
+            "analyticRadiance": 0.5418523680236491,
+            "absoluteRadianceError": 1.1102230246251565e-16,
+            "absoluteTransmittanceError": 9.71445146547012e-17
+          }
+        ],
+        "stepRadianceSpread": 2.3314683517128287e-15,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 0.5,
+        "ice": 1,
+        "mu": -0.21380050955106467,
+        "sigmaPerKm": 3.25,
+        "tauReference": 0.39,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 0.2612571781260483,
+            "radianceWithBackground": 0.30479097624490403,
+            "analyticRadiance": 0.30479097624490537,
+            "absoluteRadianceError": 1.3322676295501878e-15,
+            "absoluteTransmittanceError": 2.3869795029440866e-15
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 0.26125717812604987,
+            "radianceWithBackground": 0.3047909762449047,
+            "analyticRadiance": 0.30479097624490537,
+            "absoluteRadianceError": 6.661338147750939e-16,
+            "absoluteTransmittanceError": 8.326672684688674e-16
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 0.2612571781260509,
+            "radianceWithBackground": 0.3047909762449052,
+            "analyticRadiance": 0.30479097624490537,
+            "absoluteRadianceError": 1.6653345369377348e-16,
+            "absoluteTransmittanceError": 2.220446049250313e-16
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 0.261257178126051,
+            "radianceWithBackground": 0.3047909762449053,
+            "analyticRadiance": 0.30479097624490537,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 2.7755575615628914e-16
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 0.2612571781260507,
+            "radianceWithBackground": 0.30479097624490537,
+            "analyticRadiance": 0.30479097624490537,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 0.2612571781260507,
+            "radianceWithBackground": 0.30479097624490537,
+            "analyticRadiance": 0.30479097624490537,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          }
+        ],
+        "stepRadianceSpread": 1.3322676295501878e-15,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 0.5,
+        "ice": 1,
+        "mu": 0.8,
+        "sigmaPerKm": 3.25,
+        "tauReference": 0.39,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 0.2612571781260483,
+            "radianceWithBackground": 0.45441782850073503,
+            "analyticRadiance": 0.4544178285007371,
+            "absoluteRadianceError": 2.0539125955565396e-15,
+            "absoluteTransmittanceError": 2.3869795029440866e-15
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 0.26125717812604987,
+            "radianceWithBackground": 0.45441782850073587,
+            "analyticRadiance": 0.4544178285007371,
+            "absoluteRadianceError": 1.2212453270876722e-15,
+            "absoluteTransmittanceError": 8.326672684688674e-16
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 0.2612571781260509,
+            "radianceWithBackground": 0.454417828500737,
+            "analyticRadiance": 0.4544178285007371,
+            "absoluteRadianceError": 1.1102230246251565e-16,
+            "absoluteTransmittanceError": 2.220446049250313e-16
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 0.261257178126051,
+            "radianceWithBackground": 0.45441782850073703,
+            "analyticRadiance": 0.4544178285007371,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 2.7755575615628914e-16
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 0.2612571781260507,
+            "radianceWithBackground": 0.4544178285007371,
+            "analyticRadiance": 0.4544178285007371,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 0
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 0.2612571781260507,
+            "radianceWithBackground": 0.454417828500737,
+            "analyticRadiance": 0.4544178285007371,
+            "absoluteRadianceError": 1.1102230246251565e-16,
+            "absoluteTransmittanceError": 0
+          }
+        ],
+        "stepRadianceSpread": 2.0539125955565396e-15,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 1,
+        "ice": 0,
+        "mu": -0.21380050955106467,
+        "sigmaPerKm": 18,
+        "tauReference": 2.16,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 0.6320262990852212,
+            "source": 0.35113350602948273,
+            "transmittance": 0.000590819501038844,
+            "radianceWithBackground": 0.35102058062681857,
+            "analyticRadiance": 0.35102058062681857,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 2.168404344971009e-18
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 0.6320262990852212,
+            "source": 0.35113350602948273,
+            "transmittance": 0.0005908195010388466,
+            "radianceWithBackground": 0.3510205806268186,
+            "analyticRadiance": 0.35102058062681857,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 4.7704895589362195e-18
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 0.6320262990852212,
+            "source": 0.35113350602948273,
+            "transmittance": 0.0005908195010388444,
+            "radianceWithBackground": 0.3510205806268186,
+            "analyticRadiance": 0.35102058062681857,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 2.6020852139652106e-18
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 0.6320262990852212,
+            "source": 0.35113350602948273,
+            "transmittance": 0.0005908195010388428,
+            "radianceWithBackground": 0.3510205806268186,
+            "analyticRadiance": 0.35102058062681857,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 9.75781955236954e-19
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 0.6320262990852212,
+            "source": 0.35113350602948273,
+            "transmittance": 0.0005908195010388433,
+            "radianceWithBackground": 0.3510205806268187,
+            "analyticRadiance": 0.35102058062681857,
+            "absoluteRadianceError": 1.1102230246251565e-16,
+            "absoluteTransmittanceError": 1.4094628242311558e-18
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 0.6320262990852212,
+            "source": 0.35113350602948273,
+            "transmittance": 0.0005908195010388406,
+            "radianceWithBackground": 0.3510205806268186,
+            "analyticRadiance": 0.35102058062681857,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 1.1926223897340549e-18
+          }
+        ],
+        "stepRadianceSpread": 1.1102230246251565e-16,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 1,
+        "ice": 0,
+        "mu": 0.8,
+        "sigmaPerKm": 18,
+        "tauReference": 2.16,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 1.5961118555855847,
+            "source": 0.5664169125874344,
+            "transmittance": 0.000590819501038844,
+            "radianceWithBackground": 0.5661767935499263,
+            "analyticRadiance": 0.5661767935499258,
+            "absoluteRadianceError": 5.551115123125783e-16,
+            "absoluteTransmittanceError": 2.168404344971009e-18
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 1.5961118555855847,
+            "source": 0.5664169125874344,
+            "transmittance": 0.0005908195010388466,
+            "radianceWithBackground": 0.5661767935499257,
+            "analyticRadiance": 0.5661767935499258,
+            "absoluteRadianceError": 1.1102230246251565e-16,
+            "absoluteTransmittanceError": 4.7704895589362195e-18
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 1.5961118555855847,
+            "source": 0.5664169125874344,
+            "transmittance": 0.0005908195010388444,
+            "radianceWithBackground": 0.5661767935499259,
+            "analyticRadiance": 0.5661767935499258,
+            "absoluteRadianceError": 1.1102230246251565e-16,
+            "absoluteTransmittanceError": 2.6020852139652106e-18
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 1.5961118555855847,
+            "source": 0.5664169125874344,
+            "transmittance": 0.0005908195010388428,
+            "radianceWithBackground": 0.5661767935499256,
+            "analyticRadiance": 0.5661767935499258,
+            "absoluteRadianceError": 2.220446049250313e-16,
+            "absoluteTransmittanceError": 9.75781955236954e-19
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 1.5961118555855847,
+            "source": 0.5664169125874344,
+            "transmittance": 0.0005908195010388433,
+            "radianceWithBackground": 0.5661767935499259,
+            "analyticRadiance": 0.5661767935499258,
+            "absoluteRadianceError": 1.1102230246251565e-16,
+            "absoluteTransmittanceError": 1.4094628242311558e-18
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 1.5961118555855847,
+            "source": 0.5664169125874344,
+            "transmittance": 0.0005908195010388406,
+            "radianceWithBackground": 0.5661767935499258,
+            "analyticRadiance": 0.5661767935499258,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 1.1926223897340549e-18
+          }
+        ],
+        "stepRadianceSpread": 7.771561172376096e-16,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 1,
+        "ice": 0.5,
+        "mu": -0.21380050955106467,
+        "sigmaPerKm": 12.25,
+        "tauReference": 1.47,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 0.6320947285922645,
+            "source": 0.3511487865585665,
+            "transmittance": 0.006350320467678674,
+            "radianceWithBackground": 0.3499349305069114,
+            "analyticRadiance": 0.34993493050691166,
+            "absoluteRadianceError": 2.7755575615628914e-16,
+            "absoluteTransmittanceError": 7.806255641895632e-18
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 0.6320947285922645,
+            "source": 0.3511487865585665,
+            "transmittance": 0.006350320467678697,
+            "radianceWithBackground": 0.3499349305069117,
+            "analyticRadiance": 0.34993493050691166,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 3.122502256758253e-17
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 0.6320947285922645,
+            "source": 0.3511487865585665,
+            "transmittance": 0.0063503204676786645,
+            "radianceWithBackground": 0.3499349305069115,
+            "analyticRadiance": 0.34993493050691166,
+            "absoluteRadianceError": 1.6653345369377348e-16,
+            "absoluteTransmittanceError": 1.734723475976807e-18
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 0.6320947285922645,
+            "source": 0.3511487865585665,
+            "transmittance": 0.006350320467678678,
+            "radianceWithBackground": 0.3499349305069117,
+            "analyticRadiance": 0.34993493050691166,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 1.214306433183765e-17
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 0.6320947285922645,
+            "source": 0.3511487865585665,
+            "transmittance": 0.006350320467678661,
+            "radianceWithBackground": 0.34993493050691143,
+            "analyticRadiance": 0.34993493050691166,
+            "absoluteRadianceError": 2.220446049250313e-16,
+            "absoluteTransmittanceError": 5.204170427930421e-18
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 0.6320947285922645,
+            "source": 0.3511487865585665,
+            "transmittance": 0.006350320467678661,
+            "radianceWithBackground": 0.34993493050691166,
+            "analyticRadiance": 0.34993493050691166,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 5.204170427930421e-18
+          }
+        ],
+        "stepRadianceSpread": 3.3306690738754696e-16,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 1,
+        "ice": 0.5,
+        "mu": 0.8,
+        "sigmaPerKm": 12.25,
+        "tauReference": 1.47,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 1.5960010008143906,
+            "source": 0.5663921583603693,
+            "transmittance": 0.006350320467678674,
+            "radianceWithBackground": 0.5638114379192285,
+            "analyticRadiance": 0.5638114379192293,
+            "absoluteRadianceError": 7.771561172376096e-16,
+            "absoluteTransmittanceError": 7.806255641895632e-18
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 1.5960010008143906,
+            "source": 0.5663921583603693,
+            "transmittance": 0.006350320467678697,
+            "radianceWithBackground": 0.5638114379192295,
+            "analyticRadiance": 0.5638114379192293,
+            "absoluteRadianceError": 2.220446049250313e-16,
+            "absoluteTransmittanceError": 3.122502256758253e-17
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 1.5960010008143906,
+            "source": 0.5663921583603693,
+            "transmittance": 0.0063503204676786645,
+            "radianceWithBackground": 0.5638114379192288,
+            "analyticRadiance": 0.5638114379192293,
+            "absoluteRadianceError": 4.440892098500626e-16,
+            "absoluteTransmittanceError": 1.734723475976807e-18
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 1.5960010008143906,
+            "source": 0.5663921583603693,
+            "transmittance": 0.006350320467678678,
+            "radianceWithBackground": 0.5638114379192293,
+            "analyticRadiance": 0.5638114379192293,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 1.214306433183765e-17
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 1.5960010008143906,
+            "source": 0.5663921583603693,
+            "transmittance": 0.006350320467678661,
+            "radianceWithBackground": 0.5638114379192295,
+            "analyticRadiance": 0.5638114379192293,
+            "absoluteRadianceError": 2.220446049250313e-16,
+            "absoluteTransmittanceError": 5.204170427930421e-18
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 1.5960010008143906,
+            "source": 0.5663921583603693,
+            "transmittance": 0.006350320467678661,
+            "radianceWithBackground": 0.5638114379192294,
+            "analyticRadiance": 0.5638114379192293,
+            "absoluteRadianceError": 1.1102230246251565e-16,
+            "absoluteTransmittanceError": 5.204170427930421e-18
+          }
+        ],
+        "stepRadianceSpread": 9.992007221626409e-16,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 1,
+        "ice": 1,
+        "mu": -0.21380050955106467,
+        "sigmaPerKm": 6.5,
+        "tauReference": 0.78,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 0.06825531312238664,
+            "radianceWithBackground": 0.3426186581167647,
+            "analyticRadiance": 0.3426186581167654,
+            "absoluteRadianceError": 7.216449660063518e-16,
+            "absoluteTransmittanceError": 3.608224830031759e-16
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 0.06825531312238714,
+            "radianceWithBackground": 0.34261865811676523,
+            "analyticRadiance": 0.3426186581167654,
+            "absoluteRadianceError": 1.6653345369377348e-16,
+            "absoluteTransmittanceError": 1.3877787807814457e-16
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 0.06825531312238715,
+            "radianceWithBackground": 0.3426186581167654,
+            "analyticRadiance": 0.3426186581167654,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 1.5265566588595902e-16
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 0.06825531312238706,
+            "radianceWithBackground": 0.34261865811676556,
+            "analyticRadiance": 0.3426186581167654,
+            "absoluteRadianceError": 1.6653345369377348e-16,
+            "absoluteTransmittanceError": 5.551115123125783e-17
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 0.06825531312238704,
+            "radianceWithBackground": 0.34261865811676534,
+            "analyticRadiance": 0.3426186581167654,
+            "absoluteRadianceError": 5.551115123125783e-17,
+            "absoluteTransmittanceError": 4.163336342344337e-17
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 0.6538036462142798,
+            "source": 0.3559964577085405,
+            "transmittance": 0.06825531312238699,
+            "radianceWithBackground": 0.3426186581167654,
+            "analyticRadiance": 0.3426186581167654,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 1.3877787807814457e-17
+          }
+        ],
+        "stepRadianceSpread": 8.881784197001252e-16,
+        "phaseSpread": 0
+      },
+      {
+        "rho": 1,
+        "ice": 1,
+        "mu": 0.8,
+        "sigmaPerKm": 6.5,
+        "tauReference": 0.78,
+        "steps": [
+          {
+            "stepMetres": 1.5,
+            "segments": 276,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 0.06825531312238664,
+            "radianceWithBackground": 0.5313365995648374,
+            "analyticRadiance": 0.531336599564839,
+            "absoluteRadianceError": 1.6653345369377348e-15,
+            "absoluteTransmittanceError": 3.608224830031759e-16
+          },
+          {
+            "stepMetres": 3,
+            "segments": 138,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 0.06825531312238714,
+            "radianceWithBackground": 0.5313365995648391,
+            "analyticRadiance": 0.531336599564839,
+            "absoluteRadianceError": 1.1102230246251565e-16,
+            "absoluteTransmittanceError": 1.3877787807814457e-16
+          },
+          {
+            "stepMetres": 6,
+            "segments": 69,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 0.06825531312238715,
+            "radianceWithBackground": 0.5313365995648393,
+            "analyticRadiance": 0.531336599564839,
+            "absoluteRadianceError": 2.220446049250313e-16,
+            "absoluteTransmittanceError": 1.5265566588595902e-16
+          },
+          {
+            "stepMetres": 12,
+            "segments": 35,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 0.06825531312238706,
+            "radianceWithBackground": 0.5313365995648393,
+            "analyticRadiance": 0.531336599564839,
+            "absoluteRadianceError": 2.220446049250313e-16,
+            "absoluteTransmittanceError": 5.551115123125783e-17
+          },
+          {
+            "stepMetres": 24,
+            "segments": 18,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 0.06825531312238704,
+            "radianceWithBackground": 0.531336599564839,
+            "analyticRadiance": 0.531336599564839,
+            "absoluteRadianceError": 0,
+            "absoluteTransmittanceError": 4.163336342344337e-17
+          },
+          {
+            "stepMetres": 48,
+            "segments": 9,
+            "phase": 1.5608328810975651,
+            "source": 0.5585390040797894,
+            "transmittance": 0.06825531312238699,
+            "radianceWithBackground": 0.5313365995648391,
+            "analyticRadiance": 0.531336599564839,
+            "absoluteRadianceError": 1.1102230246251565e-16,
+            "absoluteTransmittanceError": 1.3877787807814457e-17
+          }
+        ],
+        "stepRadianceSpread": 1.887379141862766e-15,
+        "phaseSpread": 0
+      }
+    ]
+  },
+  "negativeControl": {
+    "method": "Incorrect phase uses the current step length in tauLocal instead of .12km; density/source are homogeneous.",
+    "rho": 0.5,
+    "ice": 0,
+    "mu": -0.21380050955106467,
+    "radianceSpread": 0.013880668455360401,
+    "steps": [
+      {
+        "stepMetres": 1.5,
+        "segments": 276,
+        "phase": 0.4675014051226212,
+        "source": 0.3143945678750442,
+        "transmittance": 0.02430677891121839,
+        "radianceWithBackground": 0.3106417332486131,
+        "analyticRadiance": 0.31064173324861244,
+        "absoluteRadianceError": 6.661338147750939e-16,
+        "absoluteTransmittanceError": 1.9081958235744878e-16
+      },
+      {
+        "stepMetres": 3,
+        "segments": 138,
+        "phase": 0.46999958472406145,
+        "source": 0.31495241941754,
+        "transmittance": 0.024306778911218244,
+        "radianceWithBackground": 0.31118602521699934,
+        "analyticRadiance": 0.31118602521699945,
+        "absoluteRadianceError": 1.1102230246251565e-16,
+        "absoluteTransmittanceError": 4.5102810375396984e-17
+      },
+      {
+        "stepMetres": 6,
+        "segments": 69,
+        "phase": 0.4748958967249453,
+        "source": 0.31604578164043984,
+        "transmittance": 0.024306778911218286,
+        "radianceWithBackground": 0.3122528113260775,
+        "analyticRadiance": 0.3122528113260774,
+        "absoluteRadianceError": 1.1102230246251565e-16,
+        "absoluteTransmittanceError": 8.673617379884035e-17
+      },
+      {
+        "stepMetres": 12,
+        "segments": 35,
+        "phase": 0.4843007002461036,
+        "source": 0.3181459045251689,
+        "transmittance": 0.02430677891121824,
+        "radianceWithBackground": 0.3143018869881611,
+        "analyticRadiance": 0.314301886988161,
+        "absoluteRadianceError": 1.1102230246251565e-16,
+        "absoluteTransmittanceError": 4.163336342344337e-17
+      },
+      {
+        "stepMetres": 24,
+        "segments": 18,
+        "phase": 0.5016531242369879,
+        "source": 0.3220207566309883,
+        "transmittance": 0.0243067789112182,
+        "radianceWithBackground": 0.3180825539205305,
+        "analyticRadiance": 0.31808255392053053,
+        "absoluteRadianceError": 5.551115123125783e-17,
+        "absoluteTransmittanceError": 0
+      },
+      {
+        "stepMetres": 48,
+        "segments": 9,
+        "phase": 0.5312105994586991,
+        "source": 0.3286210359444559,
+        "transmittance": 0.0243067789112182,
+        "radianceWithBackground": 0.3245224017039735,
+        "analyticRadiance": 0.3245224017039734,
+        "absoluteRadianceError": 1.1102230246251565e-16,
+        "absoluteTransmittanceError": 0
+      }
+    ]
+  },
+  "mathematicalFailures": [],
+  "mathematicsPassed": true,
+  "passed": true
+}

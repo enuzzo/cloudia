@@ -1,0 +1,12 @@
+[
+  {
+    "patch": "phase120-v32.patch",
+    "parent": "d4c01ac",
+    "applyCheckExit": 0
+  },
+  {
+    "patch": "sky-five-v33.patch",
+    "parent": "d4c01ac",
+    "applyCheckExit": 0
+  }
+]

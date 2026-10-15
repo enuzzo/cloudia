@@ -12,6 +12,8 @@ vi.mock('three/webgpu',async(importOriginal)=>{
   },QuadMesh:class {render=control.render;}};
 });
 import { CumulonimbusApp } from './CumulonimbusApp';
+import { Data3DTexture } from 'three/webgpu';
+import type { CloudVolume } from './volume';
 async function flush() {for(let i=0;i<15;i++) await Promise.resolve();}
 const device={destroy:vi.fn(),queue:{onSubmittedWorkDone:vi.fn(()=>Promise.resolve())}};
 beforeEach(()=>{
@@ -25,11 +27,66 @@ beforeEach(()=>{
 });
 afterEach(()=>{vi.restoreAllMocks();vi.unstubAllGlobals();document.body.innerHTML='';history.replaceState(null,'','/');});
 function createApp() {const root=document.createElement('main');document.body.append(root);return {app:new CumulonimbusApp(root),root};}
+function cloudVolume():CloudVolume {
+  return {size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
+}
 describe('scene async lifecycle',()=>{
+  it('disposes the previous macro texture at replacement and the current texture once at teardown',async()=>{
+    const dispose=vi.spyOn(Data3DTexture.prototype,'dispose');
+    const disposed=(volume:CloudVolume)=>dispose.mock.contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.data).length;
+    const initial=cloudVolume(),replacement=cloudVolume();
+    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    control.workers[0].onmessage!({data:{volume:initial}});await starting;
+    root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
+    expect(disposed(initial)).toBe(0);
+    control.workers[1].onmessage!({data:{volume:replacement}});await flush();
+    expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(0);
+    app.destroy();await flush();
+    expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(1);
+  });
+  it('disposes an uninstalled initial macro texture if teardown wins before installation',async()=>{
+    const dispose=vi.spyOn(Data3DTexture.prototype,'dispose'),volume=cloudVolume();
+    const {app}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    control.workers[0].onmessage!({data:{volume}});
+    app.destroy();await starting;await flush();
+    expect(dispose.mock.contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.data)).toHaveLength(1);
+    expect(control.render).not.toHaveBeenCalled();expect(device.destroy).toHaveBeenCalledOnce();
+  });
+  it('disposes an uninstalled replacement macro texture after teardown interrupts the GPU drain',async()=>{
+    const dispose=vi.spyOn(Data3DTexture.prototype,'dispose');
+    const disposed=(volume:CloudVolume)=>dispose.mock.contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.data).length;
+    const initial=cloudVolume(),replacement=cloudVolume();
+    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    control.workers[0].onmessage!({data:{volume:initial}});await starting;
+    root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
+    let drained=()=>{};device.queue.onSubmittedWorkDone.mockImplementationOnce(()=>new Promise<void>(resolve=>{drained=resolve;}));
+    control.workers[1].onmessage!({data:{volume:replacement}});await flush();
+    expect(disposed(initial)).toBe(0);expect(disposed(replacement)).toBe(0);
+    app.destroy();await flush();
+    expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(0);
+    drained();await flush();
+    expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(1);
+    expect(control.render).toHaveBeenCalledOnce();
+  });
+  it('disposes a rejected replacement macro texture while retaining the installed texture until teardown',async()=>{
+    const dispose=vi.spyOn(Data3DTexture.prototype,'dispose');
+    const disposed=(volume:CloudVolume)=>dispose.mock.contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.data).length;
+    const initial=cloudVolume(),replacement=cloudVolume();
+    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    control.workers[0].onmessage!({data:{volume:initial}});await starting;
+    root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
+    device.queue.onSubmittedWorkDone.mockRejectedValueOnce(new Error('GPU drain rejected'));
+    control.workers[1].onmessage!({data:{volume:replacement}});await flush();
+    expect(disposed(initial)).toBe(0);expect(disposed(replacement)).toBe(1);
+    expect(root.querySelector('[data-testid="scene-status"]')!.textContent).toContain('GPU drain rejected');
+    expect(control.render).toHaveBeenCalledOnce();
+    app.destroy();await flush();
+    expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(1);
+  });
   it('does not declare ready when GPU shader validation fails',async()=>{
     Object.assign(device,{pushErrorScope:vi.fn(),popErrorScope:vi.fn(async()=>({message:'invalid sampler'}))});
     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});
+    control.workers[0].onmessage!({data:{volume:cloudVolume()}});
     await starting;
     expect(root.querySelector('[data-testid="scene-status"]')!.textContent).toContain('Compilazione GPU fallita: invalid sampler');
     expect(requestAnimationFrame).not.toHaveBeenCalled();
@@ -44,7 +101,7 @@ describe('scene async lifecycle',()=>{
     const completions:Array<()=>void>=[];
     device.queue.onSubmittedWorkDone.mockImplementation(()=>new Promise<void>(resolve=>completions.push(resolve)));
     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    const volume={size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
+    const volume=cloudVolume();
     control.workers[0].onmessage!({data:{volume}});await starting;
     const frame=vi.mocked(requestAnimationFrame).mock.calls[0][0];
     frame(1000);frame(1017);frame(1034);
@@ -64,7 +121,7 @@ describe('scene async lifecycle',()=>{
   it('initializes frozen flow again when a newly seeded volume is installed',async()=>{
     history.replaceState(null,'','/?profile=1&flow=frozen');
     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    const volume={size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
+    const volume=cloudVolume();
     control.workers[0].onmessage!({data:{volume}});await starting;
     expect(control.compute).toHaveBeenCalledOnce();
     root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
@@ -75,7 +132,7 @@ describe('scene async lifecycle',()=>{
   it('starts exactly one RAF when initial generation finishes in a hidden tab',async()=>{
     const hidden=vi.spyOn(document,'hidden','get').mockReturnValue(true);
     const {app}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await starting;
+    control.workers[0].onmessage!({data:{volume:cloudVolume()}});await starting;
     expect(requestAnimationFrame).not.toHaveBeenCalled();
     expect(control.compute).toHaveBeenCalledOnce();
     expect(control.compute.mock.invocationCallOrder[0]).toBeLessThan(control.render.mock.invocationCallOrder[0]);
@@ -85,20 +142,20 @@ describe('scene async lifecycle',()=>{
   });
   it('rebuilds density and lighting together and never resumes a regenerated scene after teardown',async()=>{
     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await starting;
+    control.workers[0].onmessage!({data:{volume:cloudVolume()}});await starting;
     root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
     expect(control.workers).toHaveLength(2);
     expect(root.querySelector<HTMLButtonElement>('[data-action="benchmark"]')!.disabled).toBe(true);
     const lateMessage=control.workers[1].onmessage!;
     app.destroy();await flush();
-    lateMessage({data:{volume:{size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await flush();
+    lateMessage({data:{volume:cloudVolume()}});await flush();
     expect(control.render).toHaveBeenCalledOnce();
     expect(device.destroy).toHaveBeenCalledOnce();
   });
   it('keeps an installed scene animating after hide/show during regeneration',async()=>{
     vi.spyOn(document,'hidden','get').mockReturnValue(false);
     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    const volume={size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
+    const volume=cloudVolume();
     control.workers[0].onmessage!({data:{volume}});await starting;
     root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
     const hidden=vi.spyOn(document,'hidden','get').mockReturnValue(true);document.dispatchEvent(new Event('visibilitychange'));
@@ -112,7 +169,7 @@ describe('scene async lifecycle',()=>{
   it('does not start a second RAF loop when visibility changes during the final GPU drain',async()=>{
     const hidden=vi.spyOn(document,'hidden','get').mockReturnValue(false);
     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    const volume={size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
+    const volume=cloudVolume();
     control.workers[0].onmessage!({data:{volume}});await starting;
     root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
     let drained=()=>{};device.queue.onSubmittedWorkDone.mockImplementationOnce(()=>new Promise<void>(resolve=>{drained=resolve;}));
@@ -126,7 +183,7 @@ describe('scene async lifecycle',()=>{
   });
   it('freezes active dispersal when paused and resumes it on the cloud clock',async()=>{
     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    control.workers[0].onmessage!({data:{volume:{size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await starting;
+    control.workers[0].onmessage!({data:{volume:cloudVolume()}});await starting;
     const frame=vi.mocked(requestAnimationFrame).mock.calls[0][0];frame(1000);
     root.querySelector<HTMLButtonElement>('[data-action="disperse"]')!.click();frame(2000);
     root.querySelector<HTMLButtonElement>('[data-action="pause"]')!.click();frame(3000);
@@ -149,7 +206,7 @@ describe('scene async lifecycle',()=>{
     expect(control.workers).toHaveLength(1);
     const worker=control.workers[0];const lateMessage=worker.onmessage!;
     control.renderer!.onDeviceLost();await flush();
-    lateMessage({data:{volume:{size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}}}});await starting;await flush();
+    lateMessage({data:{volume:cloudVolume()}});await starting;await flush();
     expect(control.originalLost).toHaveBeenCalledOnce();
     expect(worker.terminate).toHaveBeenCalled();
     expect(control.render).not.toHaveBeenCalled();

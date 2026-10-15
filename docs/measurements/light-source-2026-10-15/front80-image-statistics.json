@@ -1,0 +1,41 @@
+{
+  "method": "Statistics of JPEG screenshot display-encoded RGB in one fixed crop. No inverse transfer, linear radiance, cloud segmentation, perceptual sharpness or photographic acceptance claim. Sky opening included; compression introduces noise. Images are not edited.",
+  "roiCssPixels": [
+    120,
+    180,
+    1530,
+    800
+  ],
+  "rows": [
+    {
+      "image": "baseline-front80.jpg",
+      "size": [
+        1672,
+        941
+      ],
+      "meanDisplayEncodedLuminance": 0.6090461838767994,
+      "sdDisplayEncodedLuminance": 0.2075729344228849,
+      "cvDisplayEncodedLuminance": 0.34081641083703706
+    },
+    {
+      "image": "phase120-front80.jpg",
+      "size": [
+        1672,
+        941
+      ],
+      "meanDisplayEncodedLuminance": 0.605485475799947,
+      "sdDisplayEncodedLuminance": 0.20460412185018484,
+      "cvDisplayEncodedLuminance": 0.3379174728838355
+    },
+    {
+      "image": "sky-five-front80.jpg",
+      "size": [
+        1672,
+        941
+      ],
+      "meanDisplayEncodedLuminance": 0.5982301824538738,
+      "sdDisplayEncodedLuminance": 0.2048591503752759,
+      "cvDisplayEncodedLuminance": 0.3424420171094785
+    }
+  ]
+}

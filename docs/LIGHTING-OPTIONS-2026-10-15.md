@@ -1,7 +1,9 @@
 # Opzioni future per la luce ravvicinata
 
-15 ottobre 2026. **Coda di ricerca, nessun nuovo modello adottato.**
-Proposte originali da valutare, non funzioni implementate o promesse fotografiche/GPU.
+15 ottobre 2026. **Nessun nuovo modello adottato.** Fase120 e cielo5 sono ora
+implementati, verificati e ritirati nel [quarto ciclo](EXPERIMENT-LIGHT-SOURCE-2026-10-15.md).
+Le sezioni seguenti conservano motivazioni e vincoli; non rimettere in coda le
+stesse formule come prove ancora da eseguire. Le altre opzioni restano ipotesi.
 
 ## Evidenza e problema circoscritto
 
@@ -19,6 +21,12 @@ quella variante come rimedio alla nebbia uniforme. **Nessuna cache GPU della
 variante è stata costruita.** Non è contrasto dei pixel né esclude altri modelli.
 
 ## 1. Ambient con visibilità volumetrica multidirezionale
+
+**Provato e ritirato:** v33 usa zenit1/4 e quattro direzioni con y=1/3,peso3/16,
+con risposta exp(-.35*m*tau). Nella guardia frontale80 non recupera dettaglio;
+l'audit100 rileva oscuramento e minore variazione ambient fra5raggi. Questa
+configurazione non è sostenuta come prossimo intervento. Altri cieli/direzioni
+non sono automaticamente esclusi da una sola posa.
 
 Proposta: integrare 4–6 direzioni verso il cielo nella stessa densità del bake,
 poi combinare la luce incidente con le rispettive trasmittanze. Questo aggiunge
@@ -39,6 +47,11 @@ la convoluzione cielo/fase fra gli sviluppi futuri [2]. Non implementa già la
 nostra proposta di auto-occlusione laterale e non ne dimostra il beneficio.
 
 ## 2. Miscela di fase legata allo spessore fisico locale
+
+**Provata e ritirata:** v32 con riferimento120m, peso anisotropo.55+.30(1-ice)T,
+densità prima della microerosione della camera, solo diretto. Normalizzazione e
+invarianza omogenea al passo passano; immagine frontale80 ancora sfocata.
+Non ripetere questo modello senza una nuova ipotesi circoscritta.
 
 Proposta economica: variare il peso fra lobi normalizzati già valutati per
 raggio, usando tau solare e trasmittanza locale su una **lunghezza fisica fissa**.
@@ -79,8 +92,9 @@ Confrontare immagini reali con stessi seme, tempo, luce, meteo, target, origini
 80/95/100%, output e cielo assestato; includere fronte, lobo laterale e controluce.
 Verificare invarianza al passo e bilancio della fase prima di misurare il costo.
 Il probe operativo normale resta attivo fuori dal confronto a camera fissata.
-Preferenza di ricerca: fase locale per il costo minimo; visibilità direzionale
-per aggiungere informazione geometrica. Nessuna delle due è approvata dal solo CV.
+Le prove fase120 e cielo5 sono concluse con esito visivo insufficiente. Il
+prossimo esperimento riguarda la [ricostruzione del materiale](RECONSTRUCTION-OPTIONS-2026-10-15.md),
+con controllo coerente; nessuna delle varianti ritirate è approvata dal solo CV.
 
 ## Fonti primarie verificate
 

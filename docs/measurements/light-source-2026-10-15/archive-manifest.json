@@ -1,0 +1,57 @@
+{
+  "method": "Byte-for-byte copies; originals preserved in private QA directory. Candidate assets are recorded by hashes, not retained in current dist.",
+  "files": [
+    {
+      "file": "docs/measurements/light-source-2026-10-15/baseline-front80.jpg",
+      "sha256": "0301df8f3f21b94d7248ca598c30cea0d333844d4c9e676513716d74445f2673"
+    },
+    {
+      "file": "docs/measurements/light-source-2026-10-15/baseline-front80.json",
+      "sha256": "9f0a813c4dc9fe22e0e56b9c3857e8b148d15e4300f98cea24f1fb465d173405"
+    },
+    {
+      "file": "docs/measurements/light-source-2026-10-15/cloudia-phase120-audit.json",
+      "sha256": "c030f9918dd7a186433439182f23102e63049d7deb705df0de3632cd7a129656"
+    },
+    {
+      "file": "docs/measurements/light-source-2026-10-15/front80-image-statistics.json",
+      "sha256": "fc8bd38534b031f2225e32ce070ca05344933a87233ffb67080ecd7974ec5b81"
+    },
+    {
+      "file": "docs/measurements/light-source-2026-10-15/phase120-candidate-build.json",
+      "sha256": "693d701c659c3407f2d063c5903438b388cb0482ef67e538bcfe12f06b5c20e5"
+    },
+    {
+      "file": "docs/measurements/light-source-2026-10-15/phase120-console.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "file": "docs/measurements/light-source-2026-10-15/phase120-front80.jpg",
+      "sha256": "91b314a6402709cbc10dfaa6a130905a39897961294b0483b6d87861d64f977b"
+    },
+    {
+      "file": "docs/measurements/light-source-2026-10-15/phase120-front80.json",
+      "sha256": "9fc6210dc89326628e5c7c3cfe8d41f2025f0f9e5694b9fdb9563db4cd974b97"
+    },
+    {
+      "file": "docs/measurements/light-source-2026-10-15/sky-five-candidate-build.json",
+      "sha256": "19794cdb49adcedfa7e3d714afd5b135fb56adaac1e6edae4682da91ec1832eb"
+    },
+    {
+      "file": "docs/measurements/light-source-2026-10-15/sky-five-console.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "file": "docs/measurements/light-source-2026-10-15/sky-five-front80.jpg",
+      "sha256": "c6b63171b29478384934cc3137fb2798ac39f6fd9eb26f2853a9ad50ed3ce495"
+    },
+    {
+      "file": "docs/measurements/light-source-2026-10-15/sky-five-front80.json",
+      "sha256": "fa82934e46bc08a9d3c78aaa8a25a53bec269afbda437c978523f11636989fe6"
+    },
+    {
+      "file": "docs/measurements/light-source-2026-10-15/sky-five-potential-cpu.json",
+      "sha256": "c62c91d869ee0235563ea4b67e29f2f352d0666542722443467fb06a62f26d65"
+    }
+  ]
+}

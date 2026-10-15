@@ -15,6 +15,14 @@ This file tracks what has happened, what is next, and what must stay visible acr
 
 ## Work Completed
 
+### 2026-10-15 — local phase and directional sky guards, lifecycle fix
+
+- Implemented two isolated lighting trials: fixed120m material phase and five-direction softened sky visibility. Same camera/time/weather/full quality in real IAB images. Both failed the initial front80 visual guard and were withdrawn; archived independent patches against d4c01ac, build hashes, raw reports and CPU audits.
+- The directional cache changed illumination but mainly dimmed it: near100 CPU ambient mean−40.2%, with lower absolute source variation across five rays. Do not interpret higher relative CV as recovered detail. No new physical or photographic acceptance.
+- Kept a concrete resource fix: dispose uninstalled volume textures if the GPU drain rejects during regeneration. Four lifecycle mock tests cover replacement, teardown and drain failure. Final shader/volume/worker restored to d4c01ac; renderer labelv34.
+- Final147 tests/26 files, app and hero build pass. Native ordinary preview verified1280×720CSS/2560×1440output,384steps, console empty. No new sustained benchmark, push, merge or deploy. Goal remains active; next isolated work is post-interpolation field/material reconstruction, already scoped in the reconstruction options.
+
+
 ### 2026-10-15 — controlled near-view experiments, material restored
 
 - Rejected meso erosion, stronger liquid extinction, post-carving billows and centered interface sharpening after real IAB guards. A CPU solar-tail audit did not support adding its GPU cache. Kept negative images, raw reports, manifests and recoverable patches in the experiment documents linked from qualification cycle 3.

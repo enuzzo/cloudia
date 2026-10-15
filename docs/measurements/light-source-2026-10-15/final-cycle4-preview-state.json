@@ -1,0 +1,19 @@
+{
+  "url": "http://127.0.0.1:4177/?seed=72",
+  "title": "Cloudia · Un cielo da muovere",
+  "geometry": {
+    "canvases": [
+      {
+        "cssHeight": 720,
+        "cssWidth": 1280,
+        "height": 1440,
+        "width": 2560
+      }
+    ],
+    "scripts": [
+      "http://127.0.0.1:4177/assets/index-Dbo4hvYu.js"
+    ],
+    "warningVisible": false
+  },
+  "inspector": "- main:\n  - generic \"Nube volumetrica ruotabile\"\n  - heading \"Cloudia.\" [level=1]\n  - paragraph:\n    - generic: Congesto largo\n    - generic: Sole\n  - paragraph: Trascina per esplorare · Scorri per avvicinarti\n  - status: WebGPU · convezione attiva\n  - generic \"Controlli del cielo\":\n    - navigation \"Modalità di controllo\":\n      - generic \"Mani in arrivo\":\n        - text: Mani\n        - generic: in arrivo\n    - status: \"Scenario: Sole\"\n    - navigation \"Distanza dalla nube\":\n      - button \"Avvicinati alla nube\":\n      - button \"Allontanati dalla nube\":\n      - button \"Torna al panorama\":\n    - navigation \"Comandi del cielo\":\n      - button \"Riprendi\":\n      - generic \"Scenari atmosferici\":\n        - button \"Sole\" [pressed]:\n          - generic: Sole\n        - button \"Tramonto\":\n          - generic: Tramonto\n        - button \"Pioggia\":\n          - generic: Pioggia\n        - button \"Temporale\":\n          - generic: Temporale\n      - generic \"Regola il cielo\":\n        - generic: Regola\n      - region \"Regola il cielo\":\n        - heading \"Regola il cielo\" [level=2]\n        - button \"Chiudi regolazioni\":\n        - tablist \"Regolazioni del cielo\":\n          - tab \"Nube\"\n          - tab \"Atmosfera\"\n          - tab \"Misure\" [active] [selected]\n        - tabpanel \"Misure\":\n          - text: Qualità\n          - combobox \"Qualità\":\n            - option \"Massima · 100% / 384 passi\" [selected]\n          - text: Risoluzione output\n          - combobox \"Risoluzione output\":\n            - option \"Schermo · nitidezza nativa\" [selected]\n          - paragraph: \"WebGPU · 60.0 fps rAF · apple Output 2560×1440 · interno 2560×1440 384 passi nominali · mediana 16.60 ms · p95 18.10 ms GPU rendering 16.38 ms · flusso 0.066 ms Volume 256³ + dettaglio 128³ · nessun TAA Tempo della nube: 60.6 s · seme: 72 Forma: congestus · vento 55% · dispersione 0% Cielo: clear · velocità 1× · lampi: 0 · luce 0.00\"\n          - button \"Misura 30 secondi\"\n          - button \"Misura 90 secondi\"\n          - button \"Esporta JSON\" [disabled]\n          - paragraph: Il test include 2 secondi di riscaldamento e si interrompe se cambi scena o nascondi la scheda.\n          - generic: FPS = frame inviati per secondo di tempo reale tra callback rAF. Non certifica la presentazione del compositore. Tempi GPU separati quando disponibili. Nessuna risoluzione adattiva nascosta.\n          - link \"Apri il vecchio laboratorio\":\n            - /url: \"?legacy\""
+}
