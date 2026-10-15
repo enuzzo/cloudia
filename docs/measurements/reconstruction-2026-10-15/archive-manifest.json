@@ -1,0 +1,320 @@
+{
+  "date": "2026-10-15T09:57:44.232522+00:00",
+  "sourceDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-reconstruction",
+  "parent": "b2613c2bb8fdb81648b0990be1949678d36b14e4",
+  "exclusions": [
+    "directories ending -source",
+    "*.patch from measurements (stored separately)",
+    "empty files or empty/invalid JSON reports"
+  ],
+  "files": [
+    {
+      "source": "baseline-v34-console.json",
+      "archive": "docs/measurements/reconstruction-2026-10-15/baseline-v34-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "validatedJsonType": "list"
+    },
+    {
+      "source": "baseline-v34-front100.jpg",
+      "archive": "docs/measurements/reconstruction-2026-10-15/baseline-v34-front100.jpg",
+      "bytes": 34214,
+      "sha256": "1d036aec0afc0415046f272e9ba48ee43e649df132d1c7fa27fd17a070458a87"
+    },
+    {
+      "source": "baseline-v34-front80.jpg",
+      "archive": "docs/measurements/reconstruction-2026-10-15/baseline-v34-front80.jpg",
+      "bytes": 47391,
+      "sha256": "0301df8f3f21b94d7248ca598c30cea0d333844d4c9e676513716d74445f2673"
+    },
+    {
+      "source": "baseline-v34-front80.json",
+      "archive": "docs/measurements/reconstruction-2026-10-15/baseline-v34-front80.json",
+      "bytes": 157029,
+      "sha256": "eb2e9c7ee1dab451fdbe880cedbfb4975e4162edb7915cf7ccbe031f881c73d6",
+      "validatedJsonType": "dict"
+    },
+    {
+      "source": "baseline-v34-front95.jpg",
+      "archive": "docs/measurements/reconstruction-2026-10-15/baseline-v34-front95.jpg",
+      "bytes": 39060,
+      "sha256": "a8ddf3f1f0a5d1c713cf769b61c3d1f5186a5dddf0ce4bdeead65cac267c03b4"
+    },
+    {
+      "source": "cloudia-visible-kernel.json",
+      "archive": "docs/measurements/reconstruction-2026-10-15/cloudia-visible-kernel.json",
+      "bytes": 21107,
+      "sha256": "9fac11a16a1f5e4d15ae9bcc0138f539af6cd8fe71aad3fc9c0d313edd571ea8",
+      "validatedJsonType": "dict"
+    },
+    {
+      "source": "cloudia-visible-kernel.ts",
+      "archive": "docs/measurements/reconstruction-2026-10-15/cloudia-visible-kernel.ts",
+      "bytes": 8204,
+      "sha256": "bb422aadc60706c8a4a8dad078f415f711993aed83e707929797cb0d0db61d7b"
+    },
+    {
+      "source": "front80-comparison-summary.json",
+      "archive": "docs/measurements/reconstruction-2026-10-15/front80-comparison-summary.json",
+      "bytes": 6494,
+      "sha256": "85d1d0c89070325eaa2a9d84390a40b3d946944f8e77cf7094855ead4fd9218b",
+      "validatedJsonType": "dict"
+    },
+    {
+      "source": "reconstruction-v35-build.json",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v35-build.json",
+      "bytes": 5517,
+      "sha256": "11874631834afad01d16e5aee1d5794f0b4e57c33a59daa3bb568e00c06e720c",
+      "validatedJsonType": "dict"
+    },
+    {
+      "source": "reconstruction-v35-console.json",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v35-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "validatedJsonType": "list"
+    },
+    {
+      "source": "reconstruction-v35-front100-state.txt",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v35-front100-state.txt",
+      "bytes": 357,
+      "sha256": "9a98d50e0c61fdc6f08030e6a78149f1f6b1f9eb4f67bb066f5bcd6370ac1c62"
+    },
+    {
+      "source": "reconstruction-v35-front100.jpg",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v35-front100.jpg",
+      "bytes": 34194,
+      "sha256": "ae377700e6ea8cb621524fbd3672004bf63181c755d49b4b246c89473c973812"
+    },
+    {
+      "source": "reconstruction-v35-front80.jpg",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v35-front80.jpg",
+      "bytes": 47402,
+      "sha256": "0bc91c6c11d95d4c35f4348da575deccd03a1fb69aa27d84de34ef186f6de547"
+    },
+    {
+      "source": "reconstruction-v35-front80.json",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v35-front80.json",
+      "bytes": 157176,
+      "sha256": "d8d522d8a042b5c0dbbfb90b27df8bc119f7dd0bc658b53e8914ac56d0505a87",
+      "validatedJsonType": "dict"
+    },
+    {
+      "source": "reconstruction-v35-front95.jpg",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v35-front95.jpg",
+      "bytes": 39170,
+      "sha256": "d3d0864a8e180a3ecfe793cddb05f6aeaec59d76ecf70ffaa0e895fbc0c1f392"
+    },
+    {
+      "source": "reconstruction-v35-gpu-sampler.json",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v35-gpu-sampler.json",
+      "bytes": 95595,
+      "sha256": "3c7547a2aaddfb66b0763c10f22858a1ae702502b8a7f25442eef8f438018720",
+      "validatedJsonType": "dict"
+    },
+    {
+      "source": "reconstruction-v36-build.json",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v36-build.json",
+      "bytes": 3675,
+      "sha256": "691543972594878b19b7783ccd44aadccf0ad1878aa8da1b2869af06f4c36fe9",
+      "validatedJsonType": "dict"
+    },
+    {
+      "source": "reconstruction-v36-console.json",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v36-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "validatedJsonType": "list"
+    },
+    {
+      "source": "reconstruction-v36-front100-state.txt",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v36-front100-state.txt",
+      "bytes": 357,
+      "sha256": "baf9ad473519a7428136293f5eba6f60a2a0fa87848d47716873cd63ea0034c9"
+    },
+    {
+      "source": "reconstruction-v36-front100.jpg",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v36-front100.jpg",
+      "bytes": 33891,
+      "sha256": "bd32def1a2b44e3a88d3c19f1abf3837e13a691216d1631f2f75869c6f1e80f2"
+    },
+    {
+      "source": "reconstruction-v36-front80.jpg",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v36-front80.jpg",
+      "bytes": 47286,
+      "sha256": "93d59fb1ca2dc8c6cb2103160ac21fa09d245daf78daae04095ca2d62ed747fe"
+    },
+    {
+      "source": "reconstruction-v36-front80.json",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v36-front80.json",
+      "bytes": 159924,
+      "sha256": "3cabff24b84b1337fd0928fbdd821963cf5c21e2aa98daa77c5db0e0c7cbf4c9",
+      "validatedJsonType": "dict"
+    },
+    {
+      "source": "reconstruction-v36-front95.jpg",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v36-front95.jpg",
+      "bytes": 40242,
+      "sha256": "65fc5e5c29df86df21bac7c2a138f6cccaf886a72d7bb8a61ad893d1d2eb601c"
+    },
+    {
+      "source": "reconstruction-v36-gpu-sampler.json",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v36-gpu-sampler.json",
+      "bytes": 95321,
+      "sha256": "cdb2e23fc06c453facb2f65d43db9461cfb1ff5260bbccbebf020deb21f2f219",
+      "validatedJsonType": "dict"
+    },
+    {
+      "source": "reconstruction-v37-build.json",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v37-build.json",
+      "bytes": 3464,
+      "sha256": "ff814184307f6eb4340fc1a479a3165fe8a89a66e03c6e92b032d44bd99de632",
+      "validatedJsonType": "dict"
+    },
+    {
+      "source": "reconstruction-v38-build.json",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v38-build.json",
+      "bytes": 3628,
+      "sha256": "dcd0f7c6ca381faeb7ec79e4547b00a2b145eb912633b5793440a6bf169041c0",
+      "validatedJsonType": "dict"
+    },
+    {
+      "source": "reconstruction-v38-cancelled-measurement.txt",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v38-cancelled-measurement.txt",
+      "bytes": 221,
+      "sha256": "f26f39f57ea14144e7525dd92c1953e11575f8d1bfde6fbcbc49ac39a675a421"
+    },
+    {
+      "source": "reconstruction-v38-console.json",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v38-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "validatedJsonType": "list"
+    },
+    {
+      "source": "reconstruction-v38-front100-state.txt",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v38-front100-state.txt",
+      "bytes": 1220,
+      "sha256": "290addced4826087ea84897e0fba3ba913ac2dc3683f7df26822c8caf033de50"
+    },
+    {
+      "source": "reconstruction-v38-front100.jpg",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v38-front100.jpg",
+      "bytes": 33495,
+      "sha256": "39b54b4fcdf5f626b19644e201e80f3ec85dd8001d67d996b30369de101a8bac"
+    },
+    {
+      "source": "reconstruction-v38-front80.jpg",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v38-front80.jpg",
+      "bytes": 48524,
+      "sha256": "26825d905f6cd3a62900d049088fb0982edbd02680e2420354cbf6e1e1e90ff2"
+    },
+    {
+      "source": "reconstruction-v38-front80.json",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v38-front80.json",
+      "bytes": 161188,
+      "sha256": "10ffe5c780f6da028890769683d0ca07a785a06a4ab48efbf7258e4e8a32c3b7",
+      "validatedJsonType": "dict"
+    },
+    {
+      "source": "reconstruction-v38-front95.jpg",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v38-front95.jpg",
+      "bytes": 42563,
+      "sha256": "e143519a1a3dc15ccb923c7bad982e56c88714605709b8b7e364eaa2819125c0"
+    },
+    {
+      "source": "reconstruction-v39-build.json",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v39-build.json",
+      "bytes": 2608,
+      "sha256": "444eb6116e34693bb9b28d913e1b4f380f51b7c79f39ed89ddfa1288d4cac996",
+      "validatedJsonType": "dict"
+    },
+    {
+      "source": "reconstruction-v39-console.json",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v39-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "validatedJsonType": "list"
+    },
+    {
+      "source": "reconstruction-v39-front80.jpg",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v39-front80.jpg",
+      "bytes": 48774,
+      "sha256": "dcd4c61c766d4e300c86aedff5bf446f950980fd0695264fee7810a34b34d197"
+    },
+    {
+      "source": "reconstruction-v39-front80.json",
+      "archive": "docs/measurements/reconstruction-2026-10-15/reconstruction-v39-front80.json",
+      "bytes": 160946,
+      "sha256": "a02d138aa507af47581159e9ad8052944708ccb164fbcc282dc048402f3898e1",
+      "validatedJsonType": "dict"
+    }
+  ],
+  "excludedEmptyOrInvalid": [],
+  "patches": [
+    {
+      "source": "reconstruction-v35.patch",
+      "archive": "docs/experiments/reconstruction-v35.patch",
+      "bytes": 76849,
+      "sha256": "b011354fb7337b9579e2bfe76aafdb7606b4ef526c75ec49304a86d5aab3647e",
+      "parent": "b2613c2bb8fdb81648b0990be1949678d36b14e4",
+      "check": "git apply --check --whitespace=nowarn",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "reconstruction-v36.patch",
+      "archive": "docs/experiments/reconstruction-v36.patch",
+      "bytes": 79235,
+      "sha256": "62f1bd6771c638c504ddb84d0b691be955306c734e0bb2adf144b7e2b2b68d53",
+      "parent": "b2613c2bb8fdb81648b0990be1949678d36b14e4",
+      "check": "git apply --check --whitespace=nowarn",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "reconstruction-v37-ext60.patch",
+      "archive": "docs/experiments/reconstruction-v37-ext60.patch",
+      "bytes": 79292,
+      "sha256": "8e30c84af9c7ee295f36302e2b52d5717196184c7fc851fc582203c5d5fce63e",
+      "parent": "b2613c2bb8fdb81648b0990be1949678d36b14e4",
+      "check": "git apply --check --whitespace=nowarn",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "reconstruction-v38.patch",
+      "archive": "docs/experiments/reconstruction-v38.patch",
+      "bytes": 79292,
+      "sha256": "9673ba4c694149db61bbd514b94b9d2916ceb3239a4f96a5b7a43158587a04a1",
+      "parent": "b2613c2bb8fdb81648b0990be1949678d36b14e4",
+      "check": "git apply --check --whitespace=nowarn",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "source": "reconstruction-v39.patch",
+      "archive": "docs/experiments/reconstruction-v39.patch",
+      "bytes": 84167,
+      "sha256": "9213fb93b4ff1237288ac33d98e0d64fde1655bb6376407c3957e673120b6cde",
+      "parent": "b2613c2bb8fdb81648b0990be1949678d36b14e4",
+      "check": "git apply --check --whitespace=nowarn",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "allPatchChecksPassed": true,
+  "patchCheckDirectory": "/private/tmp/cloudia-reconstruction-v39-b2613c2-3d65jg8e",
+  "patchCheckMutatesCheckout": false,
+  "updated": "2026-10-15T10:01:33.826974+00:00"
+}

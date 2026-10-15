@@ -1,0 +1,966 @@
+diff --git a/src/cumulonimbus/GPUSceneEngine.ts b/src/cumulonimbus/GPUSceneEngine.ts
+index 64bae87..ce0cd18 100644
+--- a/src/cumulonimbus/GPUSceneEngine.ts
++++ b/src/cumulonimbus/GPUSceneEngine.ts
+@@ -7,6 +7,7 @@ import {OrbitView,probeApproach,comparisonSurfaceDistance,comparisonCameraTarget
+ import {precipitationFootprint,precipitationSourceBounds,RAIN_MAP_SIZE,RAIN_SAMPLE_STEP,RAIN_EXTINCTION} from './precipitation';
+ import {DispersalState,nextMorphologySeed,type WeatherImpulse} from './weatherInteraction';
+ import { createCloudIntegrator } from './cloudShader';
++import {auditReconstructionSampling} from './reconstructionAudit';
+ import {SKY_LUT_SIZE} from './atmosphere';
+ import {SkyCache,type SkyResult} from './skyCache';
+ import {createFlash,flashIntensity,thunderPlan,type Flash} from './storm';
+@@ -23,7 +24,7 @@ export const QUALITY = {
+   balanced: {label:'Fluida · 75% / 96 passi', scale:.75, steps:96},
+ } as const;
+ export type Quality = keyof typeof QUALITY;
+-type CloudTextures = {source:CloudVolume;macro:Data3DTexture;sunset:Data3DTexture;detail:Data3DTexture;supportBounds:CloudVolume['supportBounds']};
++type CloudTextures = {source:CloudVolume;macro:Data3DTexture;sunset:Data3DTexture;reconstruction:Data3DTexture;detail:Data3DTexture;supportBounds:CloudVolume['supportBounds']};
+ 
+ export class GPUSceneEngine {
+   private renderer: WebGPURenderer | null = null;
+@@ -41,6 +42,7 @@ export class GPUSceneEngine {
+   private readonly inspection=uniform(0);private readonly ground=uniform(1);
+   private readonly rainTexture=new DataTexture(new Uint8Array(RAIN_MAP_SIZE**2*2),RAIN_MAP_SIZE,RAIN_MAP_SIZE,RGFormat,UnsignedByteType);
+   private sunsetVolume: Data3DTexture | null = null;
++  private reconstructionVolume:Data3DTexture|null=null;
+   private readonly sunsetAmount=uniform(0);
+   private readonly sunDay=new Vector3(); private readonly sunLow=new Vector3();
+   private sunsetFrom=0; private sunsetTarget=0;
+@@ -84,6 +86,7 @@ export class GPUSceneEngine {
+   private readonly frameCompletions=new Set<Promise<void>>();
+   private intervals: number[] = [];
+   private measurement: FrameMeasurement | null = null;
++  private reconstructionAuditPromise:Promise<void>|null=null;
+   private benchmarkContext: Record<string, unknown> = {};
+   private report: Record<string, unknown> | null = null;
+   private quality: Quality = 'ultra';
+@@ -223,7 +226,7 @@ export class GPUSceneEngine {
+       this.ready=true;
+       this.text('status',`WebGPU · volume ${VOLUME_RESOLUTION}³ · movimento lento`);
+       this.emit({type:'statusState',state:'loaded'});
+-      this.setButtonEnabled('benchmark',true); this.setButtonEnabled('sustained',true);
++      this.setButtonEnabled('benchmark',true); this.setButtonEnabled('sustained',true);this.setButtonEnabled('reconstruction-audit',true);
+       this.setButtonEnabled('new-cloud',true);this.setButtonEnabled('family',true);this.emit({type:'ready'});
+       this.previous=0;
+       if(!!this.visible) this.raf=requestAnimationFrame(this.frame);
+@@ -235,17 +238,17 @@ export class GPUSceneEngine {
+     }
+   }
+   private disposeCloudTextures(textures:CloudTextures){
+-    textures.macro.dispose();textures.detail.dispose();textures.sunset.dispose();
++    textures.macro.dispose();textures.detail.dispose();textures.sunset.dispose();textures.reconstruction.dispose();
+   }
+   private installVolume(textures: CloudTextures) {
+-    const oldMaterial=this.material, oldVolume=this.volume, oldDetail=this.detailVolume,oldSunset=this.sunsetVolume;
++    const oldMaterial=this.material, oldVolume=this.volume, oldDetail=this.detailVolume,oldSunset=this.sunsetVolume,oldReconstruction=this.reconstructionVolume;
+     this.cameraVolume=textures.source;
+     const rainMap=precipitationFootprint(textures.source);
+     this.rainTexture.image.data=rainMap;
+     this.rainBounds.value.fromArray(precipitationSourceBounds(rainMap)??[0,0,0,0]);
+     this.rainTexture.minFilter=LinearFilter;this.rainTexture.magFilter=LinearFilter;this.rainTexture.colorSpace=NoColorSpace;this.rainTexture.generateMipmaps=false;this.rainTexture.needsUpdate=true;
+     this.approachTime=-1000;this.approachProbe=null;this.approachFieldTime=NaN;
+-    this.volume=textures.macro;this.detailVolume=textures.detail;this.sunsetVolume=textures.sunset; this.material=new MeshBasicNodeMaterial();
++    this.volume=textures.macro;this.detailVolume=textures.detail;this.sunsetVolume=textures.sunset;this.reconstructionVolume=textures.reconstruction; this.material=new MeshBasicNodeMaterial();
+     this.updateAtmosphere();
+     this.iceRange.value.fromArray(iceHeights(this.seed));
+     this.cloudCenter.fromArray(textures.supportBounds.min).add(new Vector3().fromArray(textures.supportBounds.max)).multiplyScalar(.5);
+@@ -263,24 +266,24 @@ export class GPUSceneEngine {
+     this.configureIntegrator();
+     this.quad=new QuadMesh(this.material);
+     this.renderer?.compute(this.interpolateFlow); // Initialize this seed even for the frozen diagnostic control.
+-    oldMaterial?.dispose(); oldVolume?.dispose();oldDetail?.dispose();oldSunset?.dispose();
++    oldMaterial?.dispose(); oldVolume?.dispose();oldDetail?.dispose();oldSunset?.dispose();oldReconstruction?.dispose();
+   }
+   private configureIntegrator(){
+-    if(!this.material||!this.volume||!this.detailVolume||!this.sunsetVolume)return;
++    if(!this.material||!this.volume||!this.detailVolume||!this.sunsetVolume||!this.reconstructionVolume)return;
+     this.approachTime=-1000;this.approachFieldTime=NaN;
+     if(this.diagnostic.value===3)this.approachField.fill(0);
+     const volumeNode=texture3D(this.volume),detailNode=texture3D(this.detailVolume);
+-    const flowNode=texture3D(this.currentFlow),sunsetNode=texture3D(this.sunsetVolume);
++    const flowNode=texture3D(this.currentFlow),sunsetNode=texture3D(this.sunsetVolume),reconstructionNode=texture3D(this.reconstructionVolume);
+     const skyNode=texture(this.skyTexture),skyFromNode=texture(this.skyFromTexture),rainNode=texture(this.rainTexture);
+-    this.material.fragmentNode=createCloudIntegrator(this.diagnostic.value)({inspection:this.inspection,ground:this.ground,rainBounds:this.rainBounds,rainMap:rainNode,rainSampler:rainNode,sunsetLight:sunsetNode,sunsetSampler:sunsetNode,sunsetAmount:this.sunsetAmount,precipitationTime:this.precipitationTime,atmosphereBlend:this.atmosphereBlend,skyFrom:skyFromNode,skyFromSampler:skyFromNode,skyLUT:skyNode,skySampler:skyNode,solarColor:this.solarColor,ambientColor:this.ambientColor,weather:this.weather,forcing:this.forcing,wind:this.wind,flash:this.flash,flashTop:this.flashTop,flashBend:this.flashBend,flashEnd:this.flashEnd,flashBranch:this.flashBranch,uv:uv(),volume:volumeNode,volumeSampler:volumeNode,detail:detailNode,detailSampler:detailNode,flow:flowNode,flowSampler:flowNode,iceRange:this.iceRange,
++    this.material.fragmentNode=createCloudIntegrator(this.diagnostic.value)({inspection:this.inspection,ground:this.ground,rainBounds:this.rainBounds,rainMap:rainNode,rainSampler:rainNode,sunsetLight:sunsetNode,sunsetSampler:sunsetNode,sunsetAmount:this.sunsetAmount,precipitationTime:this.precipitationTime,atmosphereBlend:this.atmosphereBlend,skyFrom:skyFromNode,skyFromSampler:skyFromNode,skyLUT:skyNode,skySampler:skyNode,solarColor:this.solarColor,ambientColor:this.ambientColor,weather:this.weather,forcing:this.forcing,wind:this.wind,flash:this.flash,flashTop:this.flashTop,flashBend:this.flashBend,flashEnd:this.flashEnd,flashBranch:this.flashBranch,uv:uv(),volume:volumeNode,volumeSampler:volumeNode,reconstruction:reconstructionNode,reconstructionSampler:reconstructionNode,detail:detailNode,detailSampler:detailNode,flow:flowNode,flowSampler:flowNode,iceRange:this.iceRange,
+       origin:this.origin,forward:this.forward,right:this.right,up:this.up,aspect:this.aspect,tanFov:uniform(.2867),
+       stepSize:this.stepSize,emptyStep:this.emptyStep,resolution:this.resolution,drift:this.drift,growth:this.growth,supportMin:this.supportMin,supportMax:this.supportMax,sun:this.sun,lightSide:this.lightSide,extinction:uniform(EXTINCTION),iceExtinction:uniform(ICE_EXTINCTION)});
+     this.material.needsUpdate=true;
+   }
+   private async newCloud(family?:number) {
+-    if(!this.ready) return;
++    if(!this.ready||this.reconstructionAuditPromise) return;
+     this.clearStorm();this.invalidate('Nuova nube'); this.ready=false;this.regenerating=true;
+-    this.setButtonEnabled('family',false);this.setButtonEnabled('new-cloud',false); this.setButtonEnabled('benchmark',false); this.setButtonEnabled('sustained',false);
++    this.setButtonEnabled('family',false);this.setButtonEnabled('new-cloud',false); this.setButtonEnabled('benchmark',false); this.setButtonEnabled('sustained',false);this.setButtonEnabled('reconstruction-audit',false);
+     this.emit({type:'statusState',state:'loading'}); this.text('status','Formazione di una nuova nube…');
+     this.seed=nextMorphologySeed(crypto.getRandomValues(new Uint32Array(1))[0],this.seed,family);
+     try {
+@@ -294,7 +297,7 @@ export class GPUSceneEngine {
+       this.simulationTime=0;this.dispersal.recover();this.dispersal.amount=0;this.view.reset();this.orbit=false;this.installVolume(texture);this.state();
+       this.previous=0; this.intervals=[]; this.ready=true;
+       this.text('status',`WebGPU · volume ${VOLUME_RESOLUTION}³ · movimento lento`); this.emit({type:'statusState',state:'loaded'});
+-      this.setButtonEnabled('family',true);this.setButtonEnabled('new-cloud',true); this.setButtonEnabled('benchmark',true); this.setButtonEnabled('sustained',true);
++      this.setButtonEnabled('family',true);this.setButtonEnabled('new-cloud',true); this.setButtonEnabled('benchmark',true); this.setButtonEnabled('sustained',true);this.setButtonEnabled('reconstruction-audit',true);
+       if(!!this.visible) this.raf=requestAnimationFrame(this.frame);
+     } catch(error) {
+       if(this.destroyed || this.deviceLost) return;
+@@ -311,11 +314,15 @@ export class GPUSceneEngine {
+         if(event.data.progress!==undefined) this.text('status',`Formazione della nube e della luce · ${Math.round(event.data.progress*100)}%`);
+         if(event.data.error) { worker.terminate(); this.worker=null; this.rejectVolume=null; reject(new Error(event.data.error)); }
+         if(event.data.volume) {
+-          const {size,data,detail,sunsetLight}=event.data.volume;
++          const {size,data,detail,sunsetLight,reconstruction}=event.data.volume;
+           const sunsetTexture=new Data3DTexture(sunsetLight,size,size,size);
+           sunsetTexture.format=RGFormat;sunsetTexture.type=UnsignedByteType;sunsetTexture.colorSpace=NoColorSpace;
+           sunsetTexture.minFilter=LinearFilter;sunsetTexture.magFilter=LinearFilter;sunsetTexture.unpackAlignment=1;
+           sunsetTexture.generateMipmaps=false;sunsetTexture.needsUpdate=true;
++          const reconstructionTexture=new Data3DTexture(reconstruction.data,size,size,size);
++          reconstructionTexture.format=RGFormat;reconstructionTexture.type=HalfFloatType;reconstructionTexture.colorSpace=NoColorSpace;
++          reconstructionTexture.minFilter=LinearFilter;reconstructionTexture.magFilter=LinearFilter;reconstructionTexture.unpackAlignment=1;
++          reconstructionTexture.generateMipmaps=false;reconstructionTexture.needsUpdate=true;
+           const texture = new Data3DTexture(data,size,size,size);
+           texture.format=RGBAFormat; texture.type=UnsignedByteType; texture.colorSpace=NoColorSpace;
+           texture.minFilter=LinearFilter; texture.magFilter=LinearFilter; texture.unpackAlignment=1;
+@@ -325,7 +332,7 @@ export class GPUSceneEngine {
+           detailTexture.minFilter=LinearFilter;detailTexture.magFilter=LinearFilter;detailTexture.unpackAlignment=1;
+           detailTexture.wrapS=RepeatWrapping;detailTexture.wrapT=RepeatWrapping;detailTexture.wrapR=RepeatWrapping;
+           detailTexture.generateMipmaps=false;detailTexture.needsUpdate=true;
+-          worker.terminate(); this.worker=null; this.rejectVolume=null; resolve({source:event.data.volume,macro:texture,detail:detailTexture,sunset:sunsetTexture,supportBounds:event.data.volume.supportBounds});
++          worker.terminate(); this.worker=null; this.rejectVolume=null; resolve({source:event.data.volume,macro:texture,detail:detailTexture,sunset:sunsetTexture,reconstruction:reconstructionTexture,supportBounds:event.data.volume.supportBounds});
+         }
+       };
+       worker.onerror=()=>{ worker.terminate(); this.worker=null; this.rejectVolume=null; reject(new Error('La generazione del volume è fallita. Ricarica la scena.')); };
+@@ -542,7 +549,7 @@ export class GPUSceneEngine {
+     }
+   }
+   private startBenchmark(duration: number) {
+-    if(!this.ready || !this.visible) return;
++    if(!this.ready || !this.visible||this.reconstructionAuditPromise) return;
+     if(this.dirtySize) this.applySize();
+     this.invalidate('Nuova misura');
+     this.report=null; this.emit({type:'report',report:null}); this.setButtonEnabled('export',false);
+@@ -550,7 +557,7 @@ export class GPUSceneEngine {
+     this.benchmarkContext={date:new Date().toISOString(),backend:'WebGPU',adapter:this.adapterInfo,threeRevision:'186',quality:this.quality,
+       output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],nominalSteps:QUALITY[this.quality].steps,
+       cloudExtinctionPerKm:EXTINCTION,iceExtinctionPerKm:ICE_EXTINCTION,mediaIntegration:'co-located cloud/rain exponential segments',virgaReachVariation:'broad advected sheets, 0.7–1.3 of weak fall distance',precipitationMaxStepKm:RAIN_SAMPLE_STEP,precipitationExtinctionPerKm:RAIN_EXTINCTION,precipitationSourceBounds:this.rainBounds.value.toArray(),
+-      rendererVersion:'observatory-v34-volume-drain-guard',navigationVersion:'filtered-field-approach-v2',skyCalculation:'cached dedicated worker',skyPending:this.skyPending,solarVisibility:'256-cubed day + RG8 low-sun endpoints',sunDirection:this.sun.value.toArray(),sunsetAmount:this.sunsetAmount.value,extraSunsetTextureBytes:VOLUME_RESOLUTION**3*2,probeImplementation:'compile-time specialization',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{comparisonSurfaceKm:this.comparisonSurface,comparisonTargetKm:this.comparisonTarget,probeSkipped:this.comparisonSurface!==null,approach:this.view.approach,origin:this.origin.value.toArray(),probeFlow:'16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively',probeFieldBytes:this.approachField.byteLength,surfaceEstimateKm:this.comparisonSurface===null?this.approachSurface:null,probe:this.approachProbe,probeAgeMs:this.approachProbe?performance.now()-this.approachTime:null,altitudeKm:this.origin.value.y+4,ground:this.ground.value,yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
++      rendererVersion:'observatory-v37-reconstructed-interface32-ext60',navigationVersion:'filtered-field-approach-v2',skyCalculation:'cached dedicated worker',skyPending:this.skyPending,solarVisibility:'256-cubed day + RG8 low-sun endpoints',sunDirection:this.sun.value.toArray(),sunsetAmount:this.sunsetAmount.value,extraSunsetTextureBytes:VOLUME_RESOLUTION**3*2,densityReconstruction:'RG16F: original U sharpened about .5 by factor 1+2.2*(1-ice_voxel); original M; clamp(interpU)*interpM',condensationGainLiquid:32,condensationGainIce:14,extraReconstructionTextureBytes:VOLUME_RESOLUTION**3*4,probeImplementation:'compile-time specialization',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{comparisonSurfaceKm:this.comparisonSurface,comparisonTargetKm:this.comparisonTarget,probeSkipped:this.comparisonSurface!==null,approach:this.view.approach,origin:this.origin.value.toArray(),probeFlow:'16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively',probeFieldBytes:this.approachField.byteLength,surfaceEstimateKm:this.comparisonSurface===null?this.approachSurface:null,probe:this.approachProbe,probeAgeMs:this.approachProbe?performance.now()-this.approachTime:null,altitudeKm:this.origin.value.y+4,ground:this.ground.value,yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
+       userAgent:navigator.userAgent,devicePixelRatio:this.viewport.dpr,
+       method:'Visible requestAnimationFrame intervals, CPU compute/render submission and callback dispatch delay. GPU render and compute timestamps sampled separately; their last-frame samples are not necessarily paired. Optional queue completion latency includes GPU work, readback and JS delivery; not compositor presentation.',warmupMs:2000,targetDurationMs:duration};
+     this.setButtonEnabled('benchmark',false); this.setButtonEnabled('sustained',false);
+@@ -576,9 +583,31 @@ export class GPUSceneEngine {
+       this.setButtonEnabled('benchmark',this.ready); this.setButtonEnabled('sustained',this.ready);
+     }
+   }
++  private startReconstructionAudit(){
++    if(!this.profiling||!this.ready||!this.device||!this.cameraVolume||this.reconstructionAuditPromise)return;
++    const device=this.device,reconstruction=this.cameraVolume.reconstruction,seed=this.seed;
++    this.invalidate('Audit del sampler');this.measurement=null;this.report=null;this.emit({type:'report',report:null});
++    for(const action of ['reconstruction-audit','benchmark','sustained','new-cloud','family','export'])this.setButtonEnabled(action,false);
++    this.text('result','Confronto di 512 campioni CPU/GPU della ricostruzione…');
++    this.reconstructionAuditPromise=(async()=>{
++      try {
++        const audit=await auditReconstructionSampling(device,reconstruction);
++        if(this.destroyed||this.deviceLost)return;
++        this.report={kind:'reconstruction-sampler-audit',date:new Date().toISOString(),rendererVersion:'observatory-v37-reconstructed-interface32-ext60',seed,
++          quality:this.quality,output:[this.outputWidth,this.outputHeight],executionThread:this.host.thread,adapter:this.adapterInfo,...audit};
++        this.emit({type:'report',report:this.report});this.setButtonEnabled('export',true);
++        this.text('result','Audit del sampler completato · risultati CPU/GPU nel JSON. Non è un benchmark né una verifica fotografica.');
++      } catch(error){if(!this.destroyed&&!this.deviceLost)this.text('result',`Audit del sampler fallito: ${error instanceof Error?error.message:String(error)}`);}
++      finally {
++        this.reconstructionAuditPromise=null;
++        if(!this.destroyed&&!this.deviceLost)for(const action of ['reconstruction-audit','benchmark','sustained','new-cloud','family'])this.setButtonEnabled(action,this.ready);
++      }
++    })();
++  }
+   private setButtonEnabled(action:string,enabled:boolean){this.emit({type:'enabled',action,enabled});}
+   action(action:string){
+     if(this.destroyed) return;
++    if(action==='reconstruction-audit'){this.startReconstructionAudit();return;}
+     if(action==='probe-reference'&&this.profiling){
+       this.invalidate('Stato di confronto');this.simulationTime=60;this.forcingTime=0;this.weatherTime=0;this.paused=true;this.orbit=false;this.view.reset();this.viewFocus.copy(this.cloudCenter);this.windStrength=.55;this.gustStart=-100;this.dispersal.recover();this.dispersal.amount=0;this.skyMode='storm';this.weatherState.apply({type:'rain',amount:0});this.weatherState.rain=0;this.stormAuto=false;this.clearStorm();this.side=0;this.lightSide.value=0;this.sun.value.set(...SUN_LEFT).normalize();this.updateAtmosphere();this.atmosphereProgress=1;this.advanceAtmosphere(0);this.state();this.emit({type:'stormState',auto:false});return;
+     }
+@@ -648,9 +677,10 @@ export class GPUSceneEngine {
+       await this.initialization?.catch(()=>{});
+       await this.timestampPromise;
+       await this.queuePromise;
++      await this.reconstructionAuditPromise;
+       await Promise.all(this.frameCompletions);
+       this.releasingGPU=true;
+-      this.skyRequest++;this.skyCache.destroy();this.rainTexture.dispose();this.cameraVolume=null;this.material?.dispose(); this.volume?.dispose();this.detailVolume?.dispose();this.sunsetVolume?.dispose();this.currentFlow.dispose();this.skyTexture.dispose();this.skyFromTexture.dispose();this.interpolateFlow.dispose(); this.renderer?.dispose(); this.device?.destroy();
++      this.skyRequest++;this.skyCache.destroy();this.rainTexture.dispose();this.cameraVolume=null;this.material?.dispose(); this.volume?.dispose();this.detailVolume?.dispose();this.sunsetVolume?.dispose();this.reconstructionVolume?.dispose();this.currentFlow.dispose();this.skyTexture.dispose();this.skyFromTexture.dispose();this.interpolateFlow.dispose(); this.renderer?.dispose(); this.device?.destroy();
+     })();
+     return this.cleanup;
+   }
+diff --git a/src/cumulonimbus/cloudShader.ts b/src/cumulonimbus/cloudShader.ts
+index 52a9816..439eac2 100644
+--- a/src/cumulonimbus/cloudShader.ts
++++ b/src/cumulonimbus/cloudShader.ts
+@@ -25,6 +25,7 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
+   sunsetLight:texture_3d<f32>, sunsetSampler:sampler, sunsetAmount:f32,
+   skyLUT: texture_2d<f32>, skySampler: sampler, skyFrom:texture_2d<f32>, skyFromSampler:sampler, atmosphereBlend:f32, precipitationTime:f32, solarColor:vec3<f32>, ambientColor:vec3<f32>, weather:vec3<f32>, forcing:vec2<f32>, wind:vec2<f32>, flash:vec4<f32>, flashTop:vec3<f32>, flashBend:vec3<f32>, flashEnd:vec3<f32>, flashBranch:vec3<f32>,
+   detail: texture_3d<f32>, detailSampler: sampler, flow: texture_3d<f32>, flowSampler: sampler, iceRange: vec2<f32>,
++  reconstruction:texture_3d<f32>, reconstructionSampler:sampler,
+   origin: vec3<f32>, forward: vec3<f32>, right: vec3<f32>, up: vec3<f32>,
+   aspect: f32, tanFov: f32, stepSize: f32, emptyStep: f32, resolution: vec2<f32>,
+   drift: vec3<f32>, growth: vec3<f32>, supportMin:vec3<f32>, supportMax:vec3<f32>,
+@@ -144,7 +145,10 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
+     ice=smoothstep(iceRange.x,iceRange.y,local.y);
+     var fine=vec4<f32>(.6);if(probeMode!=4.0){fine=textureSampleLevel(detail,detailSampler,local*0.3,0.0);}
+     let warp=(fine.gbr-vec3<f32>(0.5))*mix(vec3<f32>(0.16,0.12,0.16),vec3<f32>(0.08,0.02,0.1),ice);
+-    let warped=textureSampleLevel(volume,volumeSampler,coord+warp/vec3<f32>(10.0,8.5,7.0),0.0).r;
++    // Interpolate the unclamped condensation coordinate and original material
++    // first. U is dimensionless, not a signed distance or a sphere-tracing bound.
++    let fieldMaterial=textureSampleLevel(reconstruction,reconstructionSampler,coord+warp/vec3<f32>(10.0,8.5,7.0),0.0).rg;
++    let warped=clamp(fieldMaterial.r,0.0,1.0)*fieldMaterial.g;
+     if(warped>=0.002){
+     var erosion=(1.0-fine.r)*0.38+(1.0-fine.b)*0.08+flowValue.a;
+     var material=1.0;
+diff --git a/src/cumulonimbus/lifecycle.test.ts b/src/cumulonimbus/lifecycle.test.ts
+index 669a802..c27161c 100644
+--- a/src/cumulonimbus/lifecycle.test.ts
++++ b/src/cumulonimbus/lifecycle.test.ts
+@@ -28,60 +28,63 @@ beforeEach(()=>{
+ afterEach(()=>{vi.restoreAllMocks();vi.unstubAllGlobals();document.body.innerHTML='';history.replaceState(null,'','/');});
+ function createApp() {const root=document.createElement('main');document.body.append(root);return {app:new CumulonimbusApp(root),root};}
+ function cloudVolume():CloudVolume {
+-  return {size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
++  return {size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),reconstruction:{size:1,data:new Uint16Array(2)},detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
++}
++function textureDisposals(contexts:readonly unknown[],volume:CloudVolume){
++  return [volume.data,volume.reconstruction.data].map(data=>contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===data).length);
+ }
+ describe('scene async lifecycle',()=>{
+-  it('disposes the previous macro texture at replacement and the current texture once at teardown',async()=>{
++  it('disposes previous macro and reconstruction textures at replacement and current textures once at teardown',async()=>{
+     const dispose=vi.spyOn(Data3DTexture.prototype,'dispose');
+-    const disposed=(volume:CloudVolume)=>dispose.mock.contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.data).length;
++    const disposed=(volume:CloudVolume)=>textureDisposals(dispose.mock.contexts,volume);
+     const initial=cloudVolume(),replacement=cloudVolume();
+     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+     control.workers[0].onmessage!({data:{volume:initial}});await starting;
+     root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
+-    expect(disposed(initial)).toBe(0);
++    expect(disposed(initial)).toEqual([0,0]);
+     control.workers[1].onmessage!({data:{volume:replacement}});await flush();
+-    expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(0);
++    expect(disposed(initial)).toEqual([1,1]);expect(disposed(replacement)).toEqual([0,0]);
+     app.destroy();await flush();
+-    expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(1);
++    expect(disposed(initial)).toEqual([1,1]);expect(disposed(replacement)).toEqual([1,1]);
+   });
+-  it('disposes an uninstalled initial macro texture if teardown wins before installation',async()=>{
++  it('disposes uninstalled initial macro and reconstruction textures if teardown wins before installation',async()=>{
+     const dispose=vi.spyOn(Data3DTexture.prototype,'dispose'),volume=cloudVolume();
+     const {app}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+     control.workers[0].onmessage!({data:{volume}});
+     app.destroy();await starting;await flush();
+-    expect(dispose.mock.contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.data)).toHaveLength(1);
++    expect(textureDisposals(dispose.mock.contexts,volume)).toEqual([1,1]);
+     expect(control.render).not.toHaveBeenCalled();expect(device.destroy).toHaveBeenCalledOnce();
+   });
+-  it('disposes an uninstalled replacement macro texture after teardown interrupts the GPU drain',async()=>{
++  it('disposes uninstalled replacement macro and reconstruction textures after teardown interrupts the GPU drain',async()=>{
+     const dispose=vi.spyOn(Data3DTexture.prototype,'dispose');
+-    const disposed=(volume:CloudVolume)=>dispose.mock.contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.data).length;
++    const disposed=(volume:CloudVolume)=>textureDisposals(dispose.mock.contexts,volume);
+     const initial=cloudVolume(),replacement=cloudVolume();
+     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+     control.workers[0].onmessage!({data:{volume:initial}});await starting;
+     root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
+     let drained=()=>{};device.queue.onSubmittedWorkDone.mockImplementationOnce(()=>new Promise<void>(resolve=>{drained=resolve;}));
+     control.workers[1].onmessage!({data:{volume:replacement}});await flush();
+-    expect(disposed(initial)).toBe(0);expect(disposed(replacement)).toBe(0);
++    expect(disposed(initial)).toEqual([0,0]);expect(disposed(replacement)).toEqual([0,0]);
+     app.destroy();await flush();
+-    expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(0);
++    expect(disposed(initial)).toEqual([1,1]);expect(disposed(replacement)).toEqual([0,0]);
+     drained();await flush();
+-    expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(1);
++    expect(disposed(initial)).toEqual([1,1]);expect(disposed(replacement)).toEqual([1,1]);
+     expect(control.render).toHaveBeenCalledOnce();
+   });
+-  it('disposes a rejected replacement macro texture while retaining the installed texture until teardown',async()=>{
++  it('disposes rejected replacement macro and reconstruction textures while retaining installed textures until teardown',async()=>{
+     const dispose=vi.spyOn(Data3DTexture.prototype,'dispose');
+-    const disposed=(volume:CloudVolume)=>dispose.mock.contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.data).length;
++    const disposed=(volume:CloudVolume)=>textureDisposals(dispose.mock.contexts,volume);
+     const initial=cloudVolume(),replacement=cloudVolume();
+     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+     control.workers[0].onmessage!({data:{volume:initial}});await starting;
+     root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
+     device.queue.onSubmittedWorkDone.mockRejectedValueOnce(new Error('GPU drain rejected'));
+     control.workers[1].onmessage!({data:{volume:replacement}});await flush();
+-    expect(disposed(initial)).toBe(0);expect(disposed(replacement)).toBe(1);
++    expect(disposed(initial)).toEqual([0,0]);expect(disposed(replacement)).toEqual([1,1]);
+     expect(root.querySelector('[data-testid="scene-status"]')!.textContent).toContain('GPU drain rejected');
+     expect(control.render).toHaveBeenCalledOnce();
+     app.destroy();await flush();
+-    expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(1);
++    expect(disposed(initial)).toEqual([1,1]);expect(disposed(replacement)).toEqual([1,1]);
+   });
+   it('does not declare ready when GPU shader validation fails',async()=>{
+     Object.assign(device,{pushErrorScope:vi.fn(),popErrorScope:vi.fn(async()=>({message:'invalid sampler'}))});
+diff --git a/src/cumulonimbus/sceneMarkup.ts b/src/cumulonimbus/sceneMarkup.ts
+index d64fd93..a8c2916 100644
+--- a/src/cumulonimbus/sceneMarkup.ts
++++ b/src/cumulonimbus/sceneMarkup.ts
+@@ -51,7 +51,7 @@ export function sceneMarkup({profiling,quality,timingMode,frozenFlow,frameLimit}
+           <section role="tabpanel" id="panel-measure" aria-labelledby="tab-measure" hidden>
+           <label>Qualità<select name="quality">${Object.entries(QUALITY).filter(([key])=>profiling||key==='ultra').map(([key,v])=>`<option value="${key}" ${key===quality?'selected':''}>${v.label}</option>`).join('')}</select></label>
+           <label>Risoluzione output<select name="output"><option value="screen">Schermo · nitidezza nativa</option>${profiling?'<option value="window">Finestra · 1 pixel per pixel CSS</option><option value="720">1280 × 720</option><option value="1080">1920 × 1080</option>':''}</select></label>
+-          ${profiling?`<button data-action="probe-reference">Fissa stato di confronto</button><label>Lavoro interno · confronto diagnostico<select name="ablation">${[['full','Completo · qualità finale'],['density','Densità e integrazione'],['cache','Densità + lettura luce'],['no-flow','Senza lettura flusso'],['no-detail','Senza dettaglio fine'],['no-flash','Senza shading del lampo']].map(([value,label])=>`<option value="${value}" ${value===(new URLSearchParams(location.search).get('ablation')??'full')?'selected':''}>${label}</option>`).join('')}</select></label><label>Diagnostica GPU<select name="timing">${[['render','Readback rendering · compute automatico'],['stages','Rendering e flusso'],['queue','Rendering, flusso e coda'],['off','Disattivata · sola cadenza']].map(([value,label])=>`<option value="${value}" ${value===timingMode?'selected':''}>${label}</option>`).join('')}</select></label><label>Flusso di confronto<select name="flow"><option value="full" ${!frozenFlow?'selected':''}>Animato · completo</option><option value="frozen" ${frozenFlow?'selected':''}>Congelato · confronto diagnostico</option></select></label>`:''}
++          ${profiling?`<button data-action="probe-reference">Fissa stato di confronto</button><button data-action="reconstruction-audit" disabled>Confronta campioni CPU/GPU</button><small>Audit statico del sampler RG16F, con texture temporanea. Non misura prestazioni o qualità visiva.</small><label>Lavoro interno · confronto diagnostico<select name="ablation">${[['full','Completo · qualità finale'],['density','Densità e integrazione'],['cache','Densità + lettura luce'],['no-flow','Senza lettura flusso'],['no-detail','Senza dettaglio fine'],['no-flash','Senza shading del lampo']].map(([value,label])=>`<option value="${value}" ${value===(new URLSearchParams(location.search).get('ablation')??'full')?'selected':''}>${label}</option>`).join('')}</select></label><label>Diagnostica GPU<select name="timing">${[['render','Readback rendering · compute automatico'],['stages','Rendering e flusso'],['queue','Rendering, flusso e coda'],['off','Disattivata · sola cadenza']].map(([value,label])=>`<option value="${value}" ${value===timingMode?'selected':''}>${label}</option>`).join('')}</select></label><label>Flusso di confronto<select name="flow"><option value="full" ${!frozenFlow?'selected':''}>Animato · completo</option><option value="frozen" ${frozenFlow?'selected':''}>Congelato · confronto diagnostico</option></select></label>`:''}
+           ${profiling?`<label>Coda dei frame<select name="inflight"><option value="0" ${!frameLimit?'selected':''}>Invio continuo</option><option value="1" ${frameLimit===1?'selected':''}>Massimo 1 in attesa</option><option value="2" ${frameLimit===2?'selected':''}>Massimo 2 in attesa</option></select></label>`:''}
+           <p data-testid="performance-live">In attesa della GPU…</p>
+           <div class="benchmark-controls"><button data-action="benchmark" disabled>Misura 30 secondi</button><button data-action="sustained" disabled>Misura 90 secondi</button><button data-action="export" disabled>Esporta JSON</button></div>
+diff --git a/src/cumulonimbus/volume.test.ts b/src/cumulonimbus/volume.test.ts
+index cb8c95b..e0ae12d 100644
+--- a/src/cumulonimbus/volume.test.ts
++++ b/src/cumulonimbus/volume.test.ts
+@@ -1,7 +1,9 @@
+ import { describe, expect, it } from 'vitest';
+ import { generateVolume, heightErosionScale, cloudParameters, morphologyFamily, iceHeights, generateDetail, sampleDetail, erodeDensity, sampleCloudDensity, bakeOccupancy, voxelCenter, BOUNDS_MIN, BOUNDS_SIZE, materialExtinction, EMPTY_SKIP_LIMIT, VOLUME_RESOLUTION, DETAIL_RESOLUTION } from './volume';
+ import { THERMAL_DISPLACEMENT } from './motion';
+-import { densitySupportBounds } from './volume';
++import { densitySupportBounds,sharpenCondensationCoordinate,RECONSTRUCTION_LIQUID_SCALE } from './volume';
++import {DataUtils} from 'three/webgpu';
++import {reconstructedDensity} from './reconstruction';
+ 
+ /** Mass moments of the actual density channel, independent of the authored lobes. */
+ function massMoments(volume: ReturnType<typeof generateVolume>, minY=-Infinity,maxY=Infinity) {
+@@ -62,6 +64,59 @@ function intermediateSectionFill(volume:ReturnType<typeof generateVolume>,seed:n
+ }
+ 
+ describe('authored density volume', () => {
++  it('keeps the condensation midpoint and the fully icy half payload unchanged',()=>{
++    for(const ice of [0,.25,.5,.75,1])expect(sharpenCondensationCoordinate(.5,ice)).toBe(.5);
++    for(const u of [-32,-.75,-0,0,.125,.5,.999,1,12]){
++      expect(Object.is(sharpenCondensationCoordinate(u,1),u)).toBe(true);
++      expect(DataUtils.toHalfFloat(sharpenCondensationCoordinate(u,1))).toBe(DataUtils.toHalfFloat(u));
++    }
++  });
++  it('narrows the analytic liquid ramp to 31.25 metres while preserving its original centre',()=>{
++    const centre=.025+.5/10,liquidGain=10*RECONSTRUCTION_LIQUID_SCALE;
++    const profile=(field:number)=>reconstructedDensity(sharpenCondensationCoordinate((field-.025)*10,0),1);
++    expect(profile(centre)).toBeCloseTo(.5,13);
++    expect(profile(centre-.5/liquidGain)).toBeCloseTo(0,13);
++    expect(profile(centre+.5/liquidGain)).toBeCloseTo(1,13);
++    expect(1/liquidGain).toBeCloseTo(.03125,14);
++    expect(profile(centre-.4/liquidGain)).toBeCloseTo(.1,13);
++    expect(profile(centre+.4/liquidGain)).toBeCloseTo(.9,13);
++  });
++  it('narrows nodal condensation support without adding positive vertices',()=>{
++    for(const ice of [0,.25,.5,.75,1])for(const u of [-32,-1,-.001,0,.001,.05,.2,.5,.8,1,3]){
++      const narrowed=sharpenCondensationCoordinate(u,ice);
++      if(narrowed>0)expect(u).toBeGreaterThan(0);
++      if(u<.5)expect(narrowed).toBeLessThanOrEqual(u+1e-14);
++      if(u>.5)expect(narrowed).toBeGreaterThanOrEqual(u-1e-14);
++    }
++  });
++  it('samples post-interpolation condensation even when every nodal density proxy is zero',()=>{
++    const size=2,data=new Uint8Array(size**3*4),reconstruction={size,data:new Uint16Array(size**3*2)};
++    for(let z=0;z<size;z++)for(let y=0;y<size;y++)for(let x=0;x<size;x++){
++      const at=((z*size+y)*size+x)*2;
++      reconstruction.data[at]=DataUtils.toHalfFloat(x?2:-1);
++      reconstruction.data[at+1]=DataUtils.toHalfFloat(x?0:1);
++    }
++    const detail={size:1,data:new Uint8Array([255,255,255,255])};
++    // Cancel the existing fine warp so the two field halves meet at the query.
++    expect(sampleCloudDensity({size,data,reconstruction},detail,-.08,3.75-.06,-.08,0)).toBeCloseTo(.25,12);
++    expect(sampleCloudDensity({size,data},detail,-.08,3.75-.06,-.08,0)).toBe(0);
++  });
++  it('retains finite original material beside zero condensation and derives the rain proxy from quantized fields',()=>{
++    const volume=generateVolume(16,72),packed=volume.reconstruction.data;
++    expect(packed).toBeInstanceOf(Uint16Array);
++    expect(packed.length).toBe(volume.size**3*2);
++    let uncondensedMaterial=0;
++    for(let i=0;i<volume.size**3;i++){
++      const u=DataUtils.fromHalfFloat(packed[i*2]),m=DataUtils.fromHalfFloat(packed[i*2+1]);
++      expect(Number.isFinite(u)&&Number.isFinite(m)).toBe(true);
++      expect(m).toBeGreaterThanOrEqual(0);expect(m).toBeLessThanOrEqual(1);
++      const x=i%volume.size,y=Math.floor(i/volume.size)%volume.size,z=Math.floor(i/volume.size**2);
++      if([x,y,z].some(v=>v===0||v===volume.size-1))expect(m).toBe(0);
++      expect(volume.data[i*4]).toBe(Math.round(reconstructedDensity(u,m)*255));
++      if(u<=0&&m>0)uncondensedMaterial++;
++    }
++    expect(uncondensedMaterial).toBeGreaterThan(0);
++  });
+   it('applies filtered flow erosion before normalizing the probe density',()=>{
+     const envelope={size:1,data:new Uint8Array([153,0,0,0])};
+     const detail={size:1,data:new Uint8Array([128,128,128,255])};
+@@ -286,6 +341,7 @@ describe('authored density volume', () => {
+     const a = generateVolume(24, 71);
+     const b = generateVolume(24, 71);
+     expect(a.data).toEqual(b.data);
++    expect(a.reconstruction.data).toEqual(b.reconstruction.data);
+     expect(a.sunsetLight).toEqual(b.sunsetLight);
+     expect(a.sunsetLight.length).toBe(24**3*2);
+     expect(a.sunsetLight.some(v=>v>0)).toBe(true);
+diff --git a/src/cumulonimbus/volume.ts b/src/cumulonimbus/volume.ts
+index 488587d..376118c 100644
+--- a/src/cumulonimbus/volume.ts
++++ b/src/cumulonimbus/volume.ts
+@@ -2,29 +2,38 @@ import { bakeOpticalDepth } from './light';
+ import {SUN_LEFT,SUN_RIGHT,solarDirection} from './sun';
+ export {SUN_LEFT,SUN_RIGHT} from './sun';
+ import { THERMAL_DISPLACEMENT } from './motion';
++import {DataUtils} from 'three/webgpu';
++import {RECONSTRUCTION_EMPTY_U,reconstructedDensity,sampleReconstructedDensity,type ReconstructionVolume} from './reconstruction';
+ /** World bounds and extinction are shared by the bake and ray integrator. */
+ export const BOUNDS_MIN = [-5, -0.5, -3.5] as const;
+ export const BOUNDS_SIZE = [10, 8.5, 7] as const;
+-export const EXTINCTION = 18;
++export const EXTINCTION = 60;
+ export const ICE_EXTINCTION = 6.5;
+ export const materialExtinction=(ice:number)=>EXTINCTION+(ICE_EXTINCTION-EXTINCTION)*ice;
+ export const VOLUME_RESOLUTION = 256;
+ export const DETAIL_RESOLUTION = 128;
++export const RECONSTRUCTION_LIQUID_SCALE=3.2;
++/** Centre the narrower condensation ramp at the original U=.5, before half
++ * quantization. Full ice retains its original coordinate exactly. */
++export const sharpenCondensationCoordinate=(u:number,ice:number)=>ice>=1?u:.5+(u-.5)*(1+(RECONSTRUCTION_LIQUID_SCALE-1)*(1-ice));
+ // Historical fine-warp-only margin, retained for the original mask proof test.
+ // The live renderer uses the flow-expanded margin in emptyTraversal.ts instead.
+ export const EMPTY_SKIP_LIMIT = .04;
+ export const voxelCenter=(index:number,axis:0|1|2,size:number)=>BOUNDS_MIN[axis]+(index+.5)/size*BOUNDS_SIZE[axis];
+ export const heightErosionScale = (worldY: number) => (.48+.52*smoothstep(1.6,2.5,worldY))*(1-.55*smoothstep(5.1,6.2,worldY));
+ export interface DetailVolume { size: number; data: Uint8Array }
+-export interface CloudVolume { size: number; data: Uint8Array; sunsetLight: Uint8Array; detail: DetailVolume; supportBounds:{min:number[];max:number[]} }
+-/** The raw linear density footprint, enlarged for fine warp and bounded flow.
++export type DensityEnvelope=DetailVolume&{reconstruction?:ReconstructionVolume};
++export interface CloudVolume { size: number; data: Uint8Array; reconstruction:ReconstructionVolume; sunsetLight: Uint8Array; detail: DetailVolume; supportBounds:{min:number[];max:number[]} }
++/** Conservative interpolation support, enlarged for fine warp and bounded flow.
++ * Reconstruction uses positive U vertices regardless of M; legacy fixtures use R.
+  * Growth contracts toward x/z=0 and y=.72, so including those anchors covers
+  * every growth phase as well as the mature cloud. The global texture box stays fixed.
+  */
+-export function densitySupportBounds(envelope:DetailVolume): {min:number[];max:number[]} {
++export function densitySupportBounds(envelope:DensityEnvelope): {min:number[];max:number[]} {
+   const min=[Infinity,Infinity,Infinity],max=[-Infinity,-Infinity,-Infinity];
+   for(let z=0;z<envelope.size;z++) for(let y=0;y<envelope.size;y++) for(let x=0;x<envelope.size;x++) {
+-    if(!envelope.data[((z*envelope.size+y)*envelope.size+x)*4]) continue;
++    const index=(z*envelope.size+y)*envelope.size+x;
++    if(envelope.reconstruction?DataUtils.fromHalfFloat(envelope.reconstruction.data[index*2])<=0:!envelope.data[index*4]) continue;
+     const point=[x,y,z];
+     for(let axis=0;axis<3;axis++) {min[axis]=Math.min(min[axis],point[axis]);max[axis]=Math.max(max[axis],point[axis]);}
+   }
+@@ -94,10 +103,11 @@ export function iceHeights(seed:number): [number,number] {
+   return [.72+(5.15-.72)*h,.72+(5.95-.72)*h];
+ }
+ /** Evaluates the same displaced and eroded envelope used by the GPU integrator. */
+-export function sampleCloudDensity(envelope:DetailVolume,detail:DetailVolume,x:number,y:number,z:number,ice:number,additionalErosion=0): number {
++export function sampleCloudDensity(envelope:DensityEnvelope,detail:DetailVolume,x:number,y:number,z:number,ice:number,additionalErosion=0): number {
+   const r=sampleDetail(detail,x*.3,y*.3,z*.3,0),g=sampleDetail(detail,x*.3,y*.3,z*.3,1),b=sampleDetail(detail,x*.3,y*.3,z*.3,2);
+   const wx=(g-.5)*(.16-.08*ice),wy=(b-.5)*(.12-.1*ice),wz=(r-.5)*(.16-.06*ice);
+-  const warped=sampleDetail(envelope,(x+wx-BOUNDS_MIN[0])/10,(y+wy-BOUNDS_MIN[1])/8.5,(z+wz-BOUNDS_MIN[2])/7,0,false);
++  const u=(x+wx-BOUNDS_MIN[0])/10,v=(y+wy-BOUNDS_MIN[1])/8.5,w=(z+wz-BOUNDS_MIN[2])/7;
++  const warped=envelope.reconstruction?sampleReconstructedDensity(envelope.reconstruction,u,v,w):sampleDetail(envelope,u,v,w,0,false);
+   let erosion=(1-r)*.38+(1-b)*.08;
+   let material=1;
+   if(ice>0) {
+@@ -115,10 +125,13 @@ export function sampleCloudDensity(envelope:DetailVolume,detail:DetailVolume,x:n
+ /** Packs a conservative occupied-region mask into the unused alpha of the detail texture.
+  * Noise RGB still repeats in cloud space; mask alpha is read at normalized world coordinates.
+  */
+-export function bakeOccupancy(envelope:DetailVolume,detail:DetailVolume,additional:readonly number[]=[0,0,0]): void {
++export function bakeOccupancy(envelope:DensityEnvelope,detail:DetailVolume,additional:readonly number[]=[0,0,0]): void {
+   const coarse=detail.size, fine=envelope.size, mask=new Uint8Array(coarse**3);
+   for(let z=0;z<fine;z++) for(let y=0;y<fine;y++) for(let x=0;x<fine;x++) {
+-    if(envelope.data[((z*fine+y)*fine+x)*4]===0) continue;
++    const index=(z*fine+y)*fine+x;
++    // U interpolation can be positive wherever any vertex U is positive, even
++    // when that vertex's M is zero. Rounded proxy R is not a support proof.
++    if(envelope.reconstruction?DataUtils.fromHalfFloat(envelope.reconstruction.data[index*2])<=0:envelope.data[index*4]===0) continue;
+     mask[(Math.floor(z*coarse/fine)*coarse+Math.floor(y*coarse/fine))*coarse+Math.floor(x*coarse/fine)]=1;
+   }
+   // Include displacement and the macro interpolation footprint on each axis.
+@@ -343,9 +356,23 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
+     }
+   }
+   const [iceStart,iceEnd]=iceHeights(seed);
+-  for(let z=1;z<size-1;z++) {
+-    for(let y=1;y<size-1;y++) for(let x=1;x<size-1;x++) {
+-      const idx=(z*size+y)*size+x; if(field[idx]<-.3) continue;
++  const reconstruction:ReconstructionVolume={size,data:new Uint16Array(n*2)},emptyHalf=DataUtils.toHalfFloat(RECONSTRUCTION_EMPTY_U);
++  // Reuse density as a temporary material-stencil mask. Carving never adds to
++  // raw field and the condensation offset is positive, so positive U requires
++  // a positive raw vertex. Every cell touching one needs M at all its vertices,
++  // including vertices where condensation itself is zero. This needs no SDF
++  // gradient bound and no extra full-volume scratch allocation.
++  for(let z=0;z<size;z++)for(let y=0;y<size;y++)for(let x=0;x<size;x++){
++    const idx=(z*size+y)*size+x;reconstruction.data[idx*2]=emptyHalf;
++    if(field[idx]<=0)continue;
++    for(let dz=-1;dz<=1;dz++)for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){
++      const a=x+dx,b=y+dy,c=z+dz;if(a<0||b<0||c<0||a>=size||b>=size||c>=size)continue;
++      density[(c*size+b)*size+a]=1;
++    }
++  }
++  for(let z=0;z<size;z++) {
++    for(let y=0;y<size;y++) for(let x=0;x<size;x++) {
++      const idx=(z*size+y)*size+x; if(!density[idx]) continue;
+       const px=(x+.5)/size*10, py=(y+.5)/size*8.5, pz=(z+.5)/size*7;
+       const n1=noise(px*1.25,py*1.25,pz*1.25,seed), n2=noise(px*3.6,py*3.6,pz*3.6,seed+12), n3=noise(px*9,py*9,pz*9,seed+42);
+       const c1=cellular(px*1.8,py*1.8,pz*1.8), c2=cellular(px*4.5,py*4.5,pz*4.5);
+@@ -357,23 +384,33 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
+       const fibers=noise(px*.3+py*.17,py*5,pz*1.0,seed+81);
+       const interior=1-.6*smoothstep(.04,.28,field[idx]);
+       const carving=erosion*erosionScale*interior*(1-ice)-(.012+(1-fibers)*.045+(1-n1)*.07+(1-n2)*.025)*ice;
+-      density[idx]=clamp((field[idx]+carving-(.025-.017*ice))*(10+ice*4)) * (.65+.35*n2) * (1-ice*(1-fibers)*.5) * baseFade;
++      // Remap the original unclamped profile about its midpoint before half
++      // quantization. M retains the original n2, ice fibres and base fade.
++      const originalU=(field[idx]+carving-(.025-.017*ice))*(10+ice*4),u=sharpenCondensationCoordinate(originalU,ice);
++      // Preserve the original hard empty border used by the fine-light bake.
++      const border=x===0||y===0||z===0||x===size-1||y===size-1||z===size-1;
++      const m=border?0:(.65+.35*n2)*(1-ice*(1-fibers)*.5)*baseFade;
++      reconstruction.data[idx*2]=DataUtils.toHalfFloat(u);reconstruction.data[idx*2+1]=DataUtils.toHalfFloat(m);
++      density[idx]=reconstructedDensity(DataUtils.fromHalfFloat(reconstruction.data[idx*2]),DataUtils.fromHalfFloat(reconstruction.data[idx*2+1]));
+     }
+     if(z%8===0) progress?.(.1+.45*z/size);
+   }
+   const data = new Uint8Array(n*4);
++  // Nodal pre-fine density remains the precipitation proxy. It cannot gate the
++  // post-interpolated model, which may be positive even when nodal R is zero.
+   for(let i=0;i<n;i++) data[i*4]=Math.round(density[i]*255);
+   const detailSize=Math.min(DETAIL_RESOLUTION,2**Math.ceil(Math.log2(size)));
+   const detail=generateDetail(detailSize,seed);
+-  const envelope={size,data};
++  const envelope={size,data,reconstruction};
++  bakeOccupancy(envelope,detail,THERMAL_DISPLACEMENT);
+   // Bake visibility from the same fine erosion the shader applies to the macro envelope.
+   // Reuse the density buffer; there is no extra full-sized light-density allocation.
+-  // Ellipsoid fields and their smooth union are 1-Lipschitz. Include the maximum
+-  // displacement (0.128 world units) plus a full voxel diagonal for interpolation.
+-  const supportMargin=.13+Math.hypot(...BOUNDS_SIZE)/size;
++  // U is not a distance field. The positive-vertex mask includes interpolation,
++  // fine warp and bounded flow, so it is also conservative for this static bake.
+   for(let z=1;z<size-1;z++) for(let y=1;y<size-1;y++) for(let x=1;x<size-1;x++) {
+     const i=(z*size+y)*size+x;
+-    if(field[i]<-supportMargin) {density[i]=0;continue;}
++    const maskIndex=(Math.floor(z*detail.size/size)*detail.size+Math.floor(y*detail.size/size))*detail.size+Math.floor(x*detail.size/size);
++    if(!detail.data[maskIndex*4+3]) {density[i]=0;continue;}
+     const px=voxelCenter(x,0,size),py=voxelCenter(y,1,size),pz=voxelCenter(z,2,size);
+     const ice=smoothstep(iceStart,iceEnd,py);
+     density[i]=sampleCloudDensity(envelope,detail,px,py,pz,ice)*materialExtinction(ice)/EXTINCTION;
+@@ -392,6 +429,5 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
+     for(let i=0;i<n;i++)sunsetLight[i*2+side]=Math.round(clamp(tau[i]/16)*255);
+     progress?.(.82+.09*(side+1));
+   }
+-  bakeOccupancy(envelope,detail,THERMAL_DISPLACEMENT);
+-  return {size, data, sunsetLight, detail, supportBounds:densitySupportBounds(envelope)};
++  return {size, data, reconstruction, sunsetLight, detail, supportBounds:densitySupportBounds(envelope)};
+ }
+diff --git a/src/cumulonimbus/volume.worker.ts b/src/cumulonimbus/volume.worker.ts
+index 61b3d90..8711464 100644
+--- a/src/cumulonimbus/volume.worker.ts
++++ b/src/cumulonimbus/volume.worker.ts
+@@ -2,6 +2,6 @@ import { generateVolume } from './volume';
+ self.onmessage = (event: MessageEvent<{size: number; seed: number}>) => {
+   try {
+     const volume = generateVolume(event.data.size, event.data.seed, fraction => self.postMessage({progress: fraction}));
+-    self.postMessage({volume}, {transfer: [volume.data.buffer,volume.detail.data.buffer,volume.sunsetLight.buffer]});
++    self.postMessage({volume}, {transfer: [volume.data.buffer,volume.reconstruction.data.buffer,volume.detail.data.buffer,volume.sunsetLight.buffer]});
+   } catch(error) { self.postMessage({error: error instanceof Error ? error.message : String(error)}); }
+ };
+diff --git a/src/cumulonimbus/reconstruction.ts b/src/cumulonimbus/reconstruction.ts
+new file mode 100644
+index 0000000..c1cd610
+--- /dev/null
++++ b/src/cumulonimbus/reconstruction.ts
+@@ -0,0 +1,29 @@
++import {DataUtils} from 'three/webgpu';
++
++/** RG16F: dimensionless signed condensation coordinate U before clamp, followed
++ * by original material modulation M. U already includes the voxel's ice gain
++ * and offset; it is neither a signed distance nor measured in kilometres.
++ */
++export interface ReconstructionVolume {size:number;data:Uint16Array}
++export const RECONSTRUCTION_EMPTY_U=-32;
++export const reconstructedDensity=(u:number,modulation:number)=>Math.max(0,Math.min(1,u))*modulation;
++
++/** Match normalized linear/clamp RG16F texture sampling, including half texels.
++ * Decode each vertex before interpolation. With no channel, reconstruct density
++ * from both interpolated channels in one eight-vertex traversal.
++ */
++function interpolate(volume:ReconstructionVolume,x:number,y:number,z:number,channel?:0|1):number {
++  const {size,data}=volume;
++  const px=Math.max(0,Math.min(1,x))*size-.5,py=Math.max(0,Math.min(1,y))*size-.5,pz=Math.max(0,Math.min(1,z))*size-.5;
++  const ix=Math.floor(px),iy=Math.floor(py),iz=Math.floor(pz),fx=px-ix,fy=py-iy,fz=pz-iz;
++  let u=0,m=0;
++  for(let dz=0;dz<2;dz++)for(let dy=0;dy<2;dy++)for(let dx=0;dx<2;dx++){
++    const a=Math.max(0,Math.min(size-1,ix+dx)),b=Math.max(0,Math.min(size-1,iy+dy)),c=Math.max(0,Math.min(size-1,iz+dz));
++    const at=((c*size+b)*size+a)*2,weight=(dx?fx:1-fx)*(dy?fy:1-fy)*(dz?fz:1-fz);
++    if(channel!==1)u+=DataUtils.fromHalfFloat(data[at])*weight;
++    if(channel!==0)m+=DataUtils.fromHalfFloat(data[at+1])*weight;
++  }
++  return channel===0?u:channel===1?m:reconstructedDensity(u,m);
++}
++export const sampleReconstruction=(volume:ReconstructionVolume,x:number,y:number,z:number,channel:0|1)=>interpolate(volume,x,y,z,channel);
++export const sampleReconstructedDensity=(volume:ReconstructionVolume,x:number,y:number,z:number)=>interpolate(volume,x,y,z);
+diff --git a/src/cumulonimbus/reconstruction.test.ts b/src/cumulonimbus/reconstruction.test.ts
+new file mode 100644
+index 0000000..0c9a12f
+--- /dev/null
++++ b/src/cumulonimbus/reconstruction.test.ts
+@@ -0,0 +1,52 @@
++import {describe,expect,it} from 'vitest';
++import {DataUtils} from 'three/webgpu';
++import {reconstructedDensity,sampleReconstruction,sampleReconstructedDensity,type ReconstructionVolume} from './reconstruction';
++
++const packed=(size:number,value:(x:number,y:number,z:number)=>[number,number]):ReconstructionVolume=>{
++  const data=new Uint16Array(size**3*2);
++  for(let z=0;z<size;z++)for(let y=0;y<size;y++)for(let x=0;x<size;x++){
++    const at=((z*size+y)*size+x)*2,[u,m]=value(x,y,z);
++    data[at]=DataUtils.toHalfFloat(u);data[at+1]=DataUtils.toHalfFloat(m);
++  }
++  return {size,data};
++};
++describe('condensation reconstruction after half-float interpolation',()=>{
++  it('reconstructs an affine unclamped field independently of its grid phase',()=>{
++    const size=8,gain=10,spacing=.125;
++    for(const offset of [0,.25,.5,.75]){
++      const midpoint=.5+offset*spacing,volume=packed(size,x=>[(x+.5)/size*gain-midpoint*gain+.5,.75]);
++      for(const delta of [-.045,-.02,0,.02,.045]){
++        const x=midpoint+delta;
++        expect(sampleReconstruction(volume,x,.5,.5,0)).toBeCloseTo(.5+gain*delta,10);
++        expect(sampleReconstructedDensity(volume,x,.5,.5)).toBeCloseTo((.5+gain*delta)*.75,10);
++      }
++    }
++  });
++  it('clamps condensation after interpolation rather than interpolating a pre-clamped ramp',()=>{
++    const volume=packed(2,x=>[x?2:-1,1]);
++    expect(sampleReconstructedDensity(volume,.5,.5,.5)).toBe(.5);
++    expect(sampleReconstructedDensity(volume,.4,.5,.5)).toBeCloseTo(0,12);
++    expect(sampleReconstructedDensity(volume,.6,.5,.5)).toBe(1);
++  });
++  it('interpolates original modulation separately, including zero-condensation nodes',()=>{
++    const volume=packed(2,x=>x?[2,0]:[-1,1]);
++    // Every nodal C(U)*M is zero, while the two interpolated fields overlap.
++    expect(reconstructedDensity(-1,1)).toBe(0);
++    expect(reconstructedDensity(2,0)).toBe(0);
++    expect(sampleReconstructedDensity(volume,.5,.5,.5)).toBe(.25);
++  });
++  it('uses texel centres, clamps boundaries and decodes the stored half values',()=>{
++    const volume=packed(2,(x,y,z)=>[x+2*y+4*z-.3,.65+.05*x+.1*y+.2*z]);
++    for(let z=0;z<2;z++)for(let y=0;y<2;y++)for(let x=0;x<2;x++){
++      const at=((z*2+y)*2+x)*2;
++      expect(sampleReconstruction(volume,(x+.5)/2,(y+.5)/2,(z+.5)/2,0)).toBe(DataUtils.fromHalfFloat(volume.data[at]));
++      expect(sampleReconstruction(volume,(x+.5)/2,(y+.5)/2,(z+.5)/2,1)).toBe(DataUtils.fromHalfFloat(volume.data[at+1]));
++    }
++    expect(sampleReconstruction(volume,-2,-1,0,0)).toBe(DataUtils.fromHalfFloat(volume.data[0]));
++    expect(sampleReconstruction(volume,2,1,8,1)).toBe(DataUtils.fromHalfFloat(volume.data[15]));
++  });
++  it('cannot create positive condensation when every stencil coordinate is nonpositive',()=>{
++    const volume=packed(2,(x,y,z)=>[-.1*(x+y+z),1]);
++    for(let i=0;i<=100;i++)expect(sampleReconstructedDensity(volume,i/100,.73,.16)).toBe(0);
++  });
++});
+diff --git a/src/cumulonimbus/reconstructionSupport.test.ts b/src/cumulonimbus/reconstructionSupport.test.ts
+new file mode 100644
+index 0000000..96c644c
+--- /dev/null
++++ b/src/cumulonimbus/reconstructionSupport.test.ts
+@@ -0,0 +1,95 @@
++import {describe,it,expect} from 'vitest';
++import {DataUtils} from 'three/webgpu';
++import {sampleReconstruction,sampleReconstructedDensity,type ReconstructionVolume} from './reconstruction';
++import {bakeOccupancy,densitySupportBounds,sampleDetail,BOUNDS_MIN,BOUNDS_SIZE,type DetailVolume} from './volume';
++import {THERMAL_DISPLACEMENT} from './motion';
++
++const index=(size:number,x:number,y:number,z:number)=>(z*size+y)*size+x;
++const clamp=(value:number)=>Math.max(0,Math.min(1,value));
++function emptyField(size:number,u=-.001):ReconstructionVolume {
++  const data=new Uint16Array(size**3*2);
++  for(let i=0;i<size**3;i++){
++    data[i*2]=DataUtils.toHalfFloat(u);
++    data[i*2+1]=DataUtils.toHalfFloat(1);
++  }
++  return {size,data};
++}
++function support(reconstruction:ReconstructionVolume,coarse:number){
++  const envelope:DetailVolume&{reconstruction:ReconstructionVolume}={size:reconstruction.size,data:new Uint8Array(reconstruction.size**3*4),reconstruction};
++  const detail={size:coarse,data:new Uint8Array(coarse**3*4)};
++  bakeOccupancy(envelope,detail,THERMAL_DISPLACEMENT);
++  return {envelope,detail,bounds:densitySupportBounds(envelope)};
++}
++function expectCovered(coord:readonly number[],detail:DetailVolume,bounds:{min:number[];max:number[]}){
++  const world=coord.map((v,axis)=>BOUNDS_MIN[axis]+v*BOUNDS_SIZE[axis]);
++  // Reference coordinates precede bounded flow and the fine warp. Exercise all
++  // eight signed corners of their combined displacement box, not only its axes.
++  for(let signs=0;signs<8;signs++){
++    const reference=world.map((v,axis)=>v+((signs>>axis)&1?1:-1)*([.08,.06,.08][axis]+THERMAL_DISPLACEMENT[axis]));
++    const uv=reference.map((v,axis)=>(v-BOUNDS_MIN[axis])/BOUNDS_SIZE[axis]);
++    expect(sampleDetail(detail,uv[0],uv[1],uv[2],3,false)).toBeGreaterThan(0);
++    for(let axis=0;axis<3;axis++){
++      expect(reference[axis]).toBeGreaterThanOrEqual(bounds.min[axis]-1e-12);
++      expect(reference[axis]).toBeLessThanOrEqual(bounds.max[axis]+1e-12);
++    }
++  }
++}
++
++describe('post-interpolation reconstruction support',()=>{
++  it('covers positive reconstructed density even when every nodal density proxy is zero',()=>{
++    const size=16,reconstruction=emptyField(size),site=[8,7,8],at=index(size,site[0],site[1],site[2])*2;
++    reconstruction.data[at]=DataUtils.toHalfFloat(.5);
++    reconstruction.data[at+1]=DataUtils.toHalfFloat(0);
++    // The only positive U has M=0; every other node has U<0. Their nodal
++    // clamp(U)*M and R8 proxy are zero, while their separately filtered product is not.
++    for(let i=0;i<size**3;i++)expect(clamp(DataUtils.fromHalfFloat(reconstruction.data[i*2]))*DataUtils.fromHalfFloat(reconstruction.data[i*2+1])).toBe(0);
++    const {envelope,detail,bounds}=support(reconstruction,8);
++    expect(envelope.data.every(value=>value===0)).toBe(true);
++    for(let axis=0;axis<3;axis++)for(const sign of [-1,1]){
++      const coord=site.map((v,a)=>(v+.5+(a===axis?sign*.99:0))/size);
++      expect(sampleReconstructedDensity(reconstruction,coord[0],coord[1],coord[2])).toBeGreaterThan(.002);
++      expectCovered(coord,detail,bounds);
++    }
++  });
++
++  it('retains positive half values below the R8 proxy threshold in every phase',()=>{
++    const size=12,site=[6,5,6],coord=site.map(v=>(v+.5)/size);
++    for(const ice of [0,.25,.5,.75,1])for(const desiredU of [2**-24,.0005,.0015]){
++      const reconstruction=emptyField(size),offset=.025-.017*ice,gain=10+4*ice;
++      const carved=offset+desiredU/gain,at=index(size,site[0],site[1],site[2])*2;
++      reconstruction.data[at]=DataUtils.toHalfFloat((carved-offset)*gain);
++      const u=sampleReconstruction(reconstruction,coord[0],coord[1],coord[2],0);
++      expect(u).toBeGreaterThan(0);expect(Math.round(u*255)).toBe(0);
++      const {detail,bounds}=support(reconstruction,6);
++      expectCovered(coord,detail,bounds);
++    }
++  });
++
++  it('encloses oblique, mixed-phase interfaces after quantized RG interpolation',()=>{
++    const size=12,reconstruction=emptyField(size);
++    for(let z=2;z<size-2;z++)for(let y=2;y<size-2;y++)for(let x=2;x<size-2;x++){
++      const ice=clamp((y-3)/5),carved=.017+.012*(x-5)-.009*(z-5)+.004*(y-5);
++      const at=index(size,x,y,z)*2;
++      reconstruction.data[at]=DataUtils.toHalfFloat((carved-(.025-.017*ice))*(10+4*ice));
++      reconstruction.data[at+1]=DataUtils.toHalfFloat(.3+.02*(x+y+z));
++    }
++    // An uneven macro/mask ratio also exercises the integer bucket mapping.
++    const {detail,bounds}=support(reconstruction,7);let occupied=0,empty=0;
++    for(let z=1;z<size-2;z+=2)for(let y=1;y<size-2;y+=2)for(let x=1;x<size-2;x+=2)for(const fraction of [.2,.8]){
++      const coord=[x,y,z].map((v,axis)=>(v+.5+(axis===1?1-fraction:fraction))/size);
++      const density=sampleReconstructedDensity(reconstruction,coord[0],coord[1],coord[2]);
++      if(density<=0){empty++;continue;}
++      occupied++;expectCovered(coord,detail,bounds);
++    }
++    expect(occupied).toBeGreaterThan(20);expect(empty).toBeGreaterThan(20);
++  });
++
++  it('does not invent support from negative half values or either signed zero',()=>{
++    const size=4,reconstruction=emptyField(size);
++    const nonpositive=[-.1,-(2**-24),-(2**-30),-0,0];
++    for(let i=0;i<size**3;i++)reconstruction.data[i*2]=DataUtils.toHalfFloat(nonpositive[i%nonpositive.length]);
++    const {detail}=support(reconstruction,4);
++    for(let i=3;i<detail.data.length;i+=4)expect(detail.data[i]).toBe(0);
++    for(const coord of [[.5,.5,.5],[.12,.37,.91],[-1,1,2]])expect(sampleReconstructedDensity(reconstruction,coord[0],coord[1],coord[2])).toBe(0);
++  });
++});
+diff --git a/src/cumulonimbus/reconstructionAudit.ts b/src/cumulonimbus/reconstructionAudit.ts
+new file mode 100644
+index 0000000..a23d761
+--- /dev/null
++++ b/src/cumulonimbus/reconstructionAudit.ts
+@@ -0,0 +1,201 @@
++import {DataUtils} from 'three/webgpu';
++import {sampleReconstruction,reconstructedDensity,type ReconstructionVolume} from './reconstruction';
++
++const QUERY_COUNT=512,WORKGROUP_SIZE=64,PAIR_SEARCH_LIMIT=65536;
++const CHANNELS=['U','M','rho'] as const;
++type Channel=typeof CHANNELS[number];
++type QueryKind='texel-center'|'fractional'|'edge-clamp'|'volume'|'mixed-U'|'mixed-U-unavailable';
++type Vec3=[number,number,number];
++type JsonVec3=[number|null,number|null,number|null];
++interface Query {kind:QueryKind;uvw:Vec3}
++interface ChannelError {
++  finitePairs:number;cpuNonFinite:number;gpuNonFinite:number;
++  maxAbsoluteError:number|null;rmsAbsoluteError:number|null;
++  worstQueryIndex:number|null;outsideAdvisoryTolerance:number;
++}
++export interface ReconstructionSamplingAudit {
++  method:string;queryCount:number;texture:{format:'rg16float';size:number;payloadBytes:number};
++  coordinatePrecision:string;referencePrecision:string;sampler:string;
++  advisoryTolerance:{absolute:number;relative:number;rule:string;qualification:string};
++  allFinite:boolean;withinAdvisoryTolerance:boolean;gpuPaddingAllZero:boolean;
++  errors:Record<Channel,ChannelError>;
++  coverage:{byKind:Record<QueryKind,number>;searchedPairs:number;mixedPairsFound:number;
++    referenceURange:[number,number]|null;referenceUWithinMinus1To2:number;
++    referenceUBelowZero:number;referenceUBetweenZeroAndOne:number;referenceUAboveOne:number};
++  samples:Array<{index:number;kind:QueryKind;uvw:Vec3;cpu:JsonVec3;gpu:JsonVec3;absoluteError:JsonVec3}>;
++}
++
++function radicalInverse(value:number,base:number){
++  let result=0,weight=1/base;
++  while(value>0){result+=(value%base)*weight;value=Math.floor(value/base);weight/=base;}
++  return result;
++}
++
++/** Bounded search of adjacent texels, not another volume generation or full scan. */
++function auditQueries(volume:ReconstructionVolume){
++  const {size,data}=volume,queries:Query[]=[];
++  const add=(kind:QueryKind,uvw:Vec3)=>queries.push({kind,uvw:uvw.map(Math.fround) as Vec3});
++  const anchors:Vec3[]=[];
++  for(let z=0;z<4;z++)for(let y=0;y<4;y++)for(let x=0;x<4;x++){
++    const center=[x,y,z].map(v=>(Math.min(size-1,Math.floor((v+.5)*size/4))+.5)/size) as Vec3;
++    anchors.push(center);add('texel-center',center);
++  }
++  for(const center of anchors)add('fractional',[center[0]+.375/size,center[1]-.125/size,center[2]+.25/size]);
++  const edges=[-1/size,0,1,1+1/size];
++  for(const z of edges)for(const y of edges)for(const x of edges)add('edge-clamp',[x,y,z]);
++  for(let i=1;i<=128;i++)add('volume',[radicalInverse(i,2),radicalInverse(i,3),radicalInverse(i,5)]);
++
++  let searchedPairs=0,mixedPairsFound=0;
++  const voxelCount=size**3,searchCount=Math.min(PAIR_SEARCH_LIMIT,voxelCount),strides=[1,size,size*size];
++  // Different odd increments distribute this bounded probe through all axes.
++  for(let i=0;i<searchCount&&mixedPairsFound<48;i++){
++    searchedPairs++;
++    const index=(Math.imul(i+1,0x9e3779b1)>>>0)%voxelCount,axis=i%3;
++    const xyz=[index%size,Math.floor(index/size)%size,Math.floor(index/(size*size))];
++    if(xyz[axis]===size-1)continue;
++    const next=index+strides[axis],a=DataUtils.fromHalfFloat(data[index*2]),b=DataUtils.fromHalfFloat(data[next*2]);
++    const ma=DataUtils.fromHalfFloat(data[index*2+1]),mb=DataUtils.fromHalfFloat(data[next*2+1]);
++    if(![a,b,ma,mb].every(Number.isFinite)||Math.max(ma,mb)<=0||a===b)continue;
++    const lo=Math.min(a,b),hi=Math.max(a,b);
++    if(!((lo<0&&hi>0)||(lo<1&&hi>1)))continue;
++    mixedPairsFound++;
++    const bandMin=Math.max(-1,lo),bandMax=Math.min(2,hi);
++    for(const quantile of [.125,.375,.625,.875]){
++      const target=bandMin+(bandMax-bandMin)*quantile,fraction=(target-a)/(b-a);
++      const uvw=xyz.map(v=>(v+.5)/size) as Vec3;uvw[axis]+=fraction/size;
++      add('mixed-U',uvw);
++    }
++  }
++  while(queries.length<QUERY_COUNT){
++    const i=queries.length+1;
++    add('mixed-U-unavailable',[radicalInverse(i,2),radicalInverse(i,3),radicalInverse(i,5)]);
++  }
++  return {queries,searchedPairs,mixedPairsFound};
++}
++
++/** Pop every scope before awaiting, so another renderer task cannot interleave
++ * its scopes with ours. No ownership of the caller's device is taken here. */
++async function checkedGPU<T>(device:GPUDevice,operation:()=>T|Promise<T>):Promise<T>{
++  device.pushErrorScope('out-of-memory');device.pushErrorScope('internal');device.pushErrorScope('validation');
++  let work:Promise<T>;
++  try{work=Promise.resolve(operation());}catch(error){work=Promise.reject(error);}
++  const scopes=Promise.all([device.popErrorScope(),device.popErrorScope(),device.popErrorScope()]);
++  const [result,captured]=await Promise.allSettled([work,scopes]);
++  if(result.status==='rejected')throw result.reason;
++  if(captured.status==='rejected')throw captured.reason;
++  const errors=captured.value.filter((error):error is GPUError=>error!==null);
++  if(errors.length)throw new Error(`Reconstruction audit GPU error: ${errors.map(error=>error.message).join('; ')}`);
++  return result.value;
++}
++
++const AUDIT_WGSL=`
++@group(0) @binding(0) var reconstructionField:texture_3d<f32>;
++@group(0) @binding(1) var linearClampSampler:sampler;
++@group(0) @binding(2) var<storage,read> queries:array<vec4<f32>>;
++@group(0) @binding(3) var<storage,read_write> observations:array<vec4<f32>>;
++@compute @workgroup_size(${WORKGROUP_SIZE})
++fn main(@builtin(global_invocation_id) id:vec3<u32>){
++  if(id.x>=${QUERY_COUNT}u){return;}
++  let pair=textureSampleLevel(reconstructionField,linearClampSampler,queries[id.x].xyz,0.0).rg;
++  observations[id.x]=vec4<f32>(pair,clamp(pair.x,0.0,1.0)*pair.y,0.0);
++}`;
++
++function summarize(volume:ReconstructionVolume,selection:ReturnType<typeof auditQueries>,gpuValues:Float32Array):ReconstructionSamplingAudit{
++  // Advisory thresholds chosen for inspection, not promised WebGPU bounds.
++  const absolute=2e-3,relative=2e-3;
++  const errors=Object.fromEntries(CHANNELS.map(channel=>[channel,{finitePairs:0,cpuNonFinite:0,gpuNonFinite:0,
++    maxAbsoluteError:null,rmsAbsoluteError:null,worstQueryIndex:null,outsideAdvisoryTolerance:0}])) as Record<Channel,ChannelError>;
++  const squared:Record<Channel,number>={U:0,M:0,rho:0};
++  const byKind:Record<QueryKind,number>={'texel-center':0,fractional:0,'edge-clamp':0,volume:0,'mixed-U':0,'mixed-U-unavailable':0};
++  let minU=Infinity,maxU=-Infinity,inBand=0,below=0,between=0,above=0,paddingAllZero=true;
++  const json=(value:number)=>Number.isFinite(value)?value:null;
++  const samples=selection.queries.map((query,index)=>{
++    byKind[query.kind]++;
++    const [x,y,z]=query.uvw,u=sampleReconstruction(volume,x,y,z,0),m=sampleReconstruction(volume,x,y,z,1);
++    const cpu:Vec3=[u,m,reconstructedDensity(u,m)],gpu:Vec3=[gpuValues[index*4],gpuValues[index*4+1],gpuValues[index*4+2]];
++    paddingAllZero&&=gpuValues[index*4+3]===0;
++    if(Number.isFinite(u)){minU=Math.min(minU,u);maxU=Math.max(maxU,u);if(u>=-1&&u<=2)inBand++;if(u<0)below++;else if(u<=1)between++;else above++;}
++    const difference=CHANNELS.map((channel,c)=>{
++      const stats=errors[channel],cpuFinite=Number.isFinite(cpu[c]),gpuFinite=Number.isFinite(gpu[c]);
++      if(!cpuFinite)stats.cpuNonFinite++;if(!gpuFinite)stats.gpuNonFinite++;
++      if(!cpuFinite||!gpuFinite)return null;
++      const error=Math.abs(cpu[c]-gpu[c]);stats.finitePairs++;squared[channel]+=error*error;
++      if(stats.maxAbsoluteError===null||error>stats.maxAbsoluteError){stats.maxAbsoluteError=error;stats.worstQueryIndex=index;}
++      if(error>absolute+relative*Math.abs(cpu[c]))stats.outsideAdvisoryTolerance++;
++      return error;
++    }) as JsonVec3;
++    return {index,kind:query.kind,uvw:query.uvw,cpu:cpu.map(json) as JsonVec3,gpu:gpu.map(json) as JsonVec3,absoluteError:difference};
++  });
++  for(const channel of CHANNELS){const stats=errors[channel];stats.rmsAbsoluteError=stats.finitePairs?Math.sqrt(squared[channel]/stats.finitePairs):null;}
++  const allFinite=gpuValues.every(Number.isFinite)&&CHANNELS.every(channel=>errors[channel].cpuNonFinite===0&&errors[channel].gpuNonFinite===0);
++  return {
++    method:'Raw GPU sampler diagnostic only: temporary texture uploaded from the identical half-float payload; 512 deterministic float32 coordinates; RG16F linear/clamp samples followed by clamp(U,0,1)*M. Not a cloud render, navigation proof, photographic acceptance or benchmark.',
++    queryCount:QUERY_COUNT,texture:{format:'rg16float',size:volume.size,payloadBytes:volume.data.byteLength},
++    coordinatePrecision:'Identical float32 UVW on CPU and GPU; storage input/output stride 16 bytes (vec4<f32>), output w=0.',
++    referencePrecision:'CPU reference decodes the same half payload and uses ideal binary64 trilinear weights/arithmetic at float32 coordinates. GPU sampling precision and f32 arithmetic may differ; bitwise identity is not assumed. Non-finite values are encoded as null and counted per channel.',
++    sampler:'3D normalized coordinates, linear min/mag filtering, clamp-to-edge U/V/W, mip level 0, one mip.',
++    advisoryTolerance:{absolute,relative,rule:'abs(GPU-CPU) <= absolute + relative*abs(CPU)',qualification:'Inspection aid only; not a universal texture-precision guarantee or automatic material acceptance.'},
++    allFinite,withinAdvisoryTolerance:allFinite&&paddingAllZero&&CHANNELS.every(channel=>errors[channel].outsideAdvisoryTolerance===0),
++    gpuPaddingAllZero:paddingAllZero,errors,
++    coverage:{byKind,searchedPairs:selection.searchedPairs,mixedPairsFound:selection.mixedPairsFound,
++      referenceURange:Number.isFinite(minU)?[minU,maxU]:null,referenceUWithinMinus1To2:inBand,
++      referenceUBelowZero:below,referenceUBetweenZeroAndOne:between,referenceUAboveOne:above},samples,
++  };
++}
++
++/** Explicit diagnostic activation only. Caller keeps the source immutable and
++ * waits for this promise before destroying the supplied device. All temporary
++ * buffers/textures are released here; samplers/pipelines have no destroy API. */
++export async function auditReconstructionSampling(device:GPUDevice,reconstruction:ReconstructionVolume):Promise<ReconstructionSamplingAudit>{
++  const {size,data}=reconstruction;
++  if(!Number.isSafeInteger(size)||size<1||size>device.limits.maxTextureDimension3D||
++    !(data instanceof Uint16Array)||data.length!==size**3*2)throw new Error('Invalid RG16F reconstruction volume for sampler audit.');
++  const sourceBuffer=data.buffer;
++  if(!(sourceBuffer instanceof ArrayBuffer))throw new Error('Sampler audit requires an ArrayBuffer half-float payload.');
++  const payload=new Uint8Array(sourceBuffer,data.byteOffset,data.byteLength);
++  const selection=auditQueries(reconstruction),queryData=new Float32Array(QUERY_COUNT*4);
++  selection.queries.forEach((query,index)=>queryData.set(query.uvw,index*4));
++  let texture:GPUTexture|null=null,input:GPUBuffer|null=null,output:GPUBuffer|null=null,readback:GPUBuffer|null=null;
++  try{
++    const module=await checkedGPU(device,()=>{
++      texture=device.createTexture({label:'reconstruction audit RG16F',dimension:'3d',size:{width:size,height:size,depthOrArrayLayers:size},
++        format:'rg16float',mipLevelCount:1,usage:GPUTextureUsage.TEXTURE_BINDING|GPUTextureUsage.COPY_DST});
++      input=device.createBuffer({label:'reconstruction audit queries',size:queryData.byteLength,usage:GPUBufferUsage.STORAGE|GPUBufferUsage.COPY_DST});
++      output=device.createBuffer({label:'reconstruction audit observations',size:queryData.byteLength,usage:GPUBufferUsage.STORAGE|GPUBufferUsage.COPY_SRC});
++      readback=device.createBuffer({label:'reconstruction audit readback',size:queryData.byteLength,usage:GPUBufferUsage.MAP_READ|GPUBufferUsage.COPY_DST});
++      return device.createShaderModule({label:'reconstruction sampler audit',code:AUDIT_WGSL});
++    });
++    const compilation=await module.getCompilationInfo(),failures=compilation.messages.filter(message=>message.type==='error');
++    if(failures.length)throw new Error(`Reconstruction audit WGSL: ${failures.map(message=>`${message.lineNum}:${message.linePos} ${message.message}`).join('; ')}`);
++    const pipeline=await checkedGPU(device,()=>device.createComputePipelineAsync({label:'reconstruction sampler audit',layout:'auto',compute:{module,entryPoint:'main'}}));
++    // Assignments inside the allocation callback are intentionally tracked above
++    // so partial allocation failure still reaches the same finally cleanup.
++    const field=texture as GPUTexture|null,queries=input as GPUBuffer|null,result=output as GPUBuffer|null,download=readback as GPUBuffer|null;
++    if(!field||!queries||!result||!download)throw new Error('Incomplete reconstruction audit GPU allocation.');
++    await checkedGPU(device,()=>{
++      const sampler=device.createSampler({label:'reconstruction audit linear clamp',addressModeU:'clamp-to-edge',addressModeV:'clamp-to-edge',addressModeW:'clamp-to-edge',minFilter:'linear',magFilter:'linear',mipmapFilter:'nearest'});
++      const bindGroup=device.createBindGroup({layout:pipeline.getBindGroupLayout(0),entries:[
++        {binding:0,resource:field.createView({dimension:'3d'})},{binding:1,resource:sampler},
++        {binding:2,resource:{buffer:queries}},{binding:3,resource:{buffer:result}},
++      ]});
++      // writeTexture accepts tightly packed rows; unlike buffer-to-texture
++      // commands it does not require a 256-byte row stride. Preserve half bits.
++      device.queue.writeTexture({texture:field},payload,{bytesPerRow:size*4,rowsPerImage:size},{width:size,height:size,depthOrArrayLayers:size});
++      device.queue.writeBuffer(queries,0,queryData);
++      const encoder=device.createCommandEncoder({label:'reconstruction audit commands'}),pass=encoder.beginComputePass();
++      pass.setPipeline(pipeline);pass.setBindGroup(0,bindGroup);pass.dispatchWorkgroups(Math.ceil(QUERY_COUNT/WORKGROUP_SIZE));pass.end();
++      encoder.copyBufferToBuffer(result,0,download,0,queryData.byteLength);device.queue.submit([encoder.finish()]);
++    });
++    await download.mapAsync(GPUMapMode.READ);
++    const values=new Float32Array(download.getMappedRange().slice(0));
++    download.unmap();
++    return summarize(reconstruction,selection,values);
++  }catch(error){
++    throw new Error(`Reconstruction sampler audit failed: ${error instanceof Error?error.message:String(error)}`,{cause:error});
++  }finally{
++    const download=readback as GPUBuffer|null;
++    if(download?.mapState==='mapped')download.unmap();
++    for(const buffer of [input,output,readback] as Array<GPUBuffer|null>)buffer?.destroy();
++    (texture as GPUTexture|null)?.destroy();
++  }
++}

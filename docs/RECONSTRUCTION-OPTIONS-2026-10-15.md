@@ -1,6 +1,12 @@
 # Opzioni future per la ricostruzione della densità
 
-15 ottobre 2026. **Proposta di prossimo esperimento isolato, non implementata.**
+15 ottobre 2026. **Esperimento ora implementato, verificato e ritirato.**
+Il [quinto ciclo](EXPERIMENT-RECONSTRUCTION-2026-10-15.md) conserva codice,
+audit GPU, guardie reali e limiti. La variante effettiva usa U adimensionale
+(gain/offset già incorporati), M originale e un formato RG16F; la precisione
+del sampler non ha risolto il corpo sfocato. Il seguito conserva la proposta
+storica e le sue condizioni; non rimetterla in coda come inesplorata.
+
 La baseline è ripristinata con estinzione liquida 18/km. Gli esperimenti
 [v29](EXPERIMENT-SURFACE-BILLOWS-2026-10-15.md) e
 [v30](EXPERIMENT-INTERFACE-2026-10-15.md) non hanno risolto la sfocatura.

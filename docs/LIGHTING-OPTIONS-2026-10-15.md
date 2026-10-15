@@ -4,6 +4,11 @@
 implementati, verificati e ritirati nel [quarto ciclo](EXPERIMENT-LIGHT-SOURCE-2026-10-15.md).
 Le sezioni seguenti conservano motivazioni e vincoli; non rimettere in coda le
 stesse formule come prove ancora da eseguire. Le altre opzioni restano ipotesi.
+Il successivo [quinto ciclo](EXPERIMENT-RECONSTRUCTION-2026-10-15.md) ha provato
+e ritirato anche la ricostruzione U/M e le interazioni con gain/estinzione.
+La [proposta powder circoscritta](POWDER-OPTIONS-2026-10-15.md) resta condizionata
+alla presenza di variazione di densità visibile e a un controllo di oscuramento
+uniforme; non è già un nuovo modello adottato.
 
 ## Evidenza e problema circoscritto
 

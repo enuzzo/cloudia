@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-15T09:46:30.369968+00:00",
+  "label": "observatory-v37-reconstructed-interface32-ext60",
+  "parent": "b2613c2",
+  "status": "not loaded for visual QA; rejected numeric finite-difference limit",
+  "appBuild": "pass",
+  "tests": {
+    "passed": 160,
+    "failed": 1,
+    "files": 28,
+    "failure": "volume.test.ts:176, extinction difference at ice .5\u00b1.0001 is .0107, required <.01; original test preserved"
+  },
+  "sha256": {
+    "src/cumulonimbus/GPUSceneEngine.ts": "37dc69052ce79f7eff4d69dba325363e336ed3ceb5232e60324e80874bc9d8fd",
+    "src/cumulonimbus/cloudShader.ts": "3085d27408b100f8017eb568b319c21424dc82c5f7c6d1dd99a77c0a8749b546",
+    "src/cumulonimbus/lifecycle.test.ts": "02c5bc19a5cd8568e5e1c0458f0ce4c1493545ce38c370496b99391bc51d6213",
+    "src/cumulonimbus/sceneMarkup.ts": "eaaa10e8d90c31bbabb4497b0dc8f921f7e79c69ec93e614c045403f9af8ec36",
+    "src/cumulonimbus/volume.ts": "48baebf0b5cd16974da9d447d8ec056d425c6a8dd1596ad26e004921c786604b",
+    "src/cumulonimbus/volume.test.ts": "04248c6921605a4f19d4f0276d3069c3b3f29ec5f90ed85d2301df8ba0be32ea",
+    "src/cumulonimbus/volume.worker.ts": "14d7fa7bcf17f818b57ec5b0685e9857eadd2b093b9247c96ccbc85b04c32f56",
+    "src/cumulonimbus/reconstruction.ts": "932f8ee1b277f51bf92a0d06a75929e71f4823a08d9d524af4d8684e9694e4c1",
+    "src/cumulonimbus/reconstruction.test.ts": "a6552f57e462997ffd3f271ec5b510295c65d1f8ab97fdccfb2983ec646e6444",
+    "src/cumulonimbus/reconstructionSupport.test.ts": "63eab6628a423d7a8d6dedf3bf070ead95d62eef1001fe0b041efa52c7c10ab4",
+    "src/cumulonimbus/reconstructionAudit.ts": "fb6a863bf9e376da488d152b6cb758167dbf9f7feb1611f50e7c86614c54241e",
+    "dist/assets/CumulonimbusApp-BtOAAbpg.css": "48a275cea33834e49834428208e5c8bbc506c500afb961b4d2b6e3e0b126dbde",
+    "dist/assets/CumulonimbusApp-CQgL5HTN.js": "f11362e6a084bb16925e4d526db050c53349005e9d7bbf171849d2cb4e444e0f",
+    "dist/assets/CumulonimbusApp-CQgL5HTN.js.map": "fe475a4c4f011441867f469e9b0c7076e6bed2d061e457b25eb76269a07eb7bc",
+    "dist/assets/LabApp-BIVQGmZd.js": "61b740644d902e97f0e29d2e7924b0d480f6bdfdd7eae827ea06300cd5b247b9",
+    "dist/assets/LabApp-BIVQGmZd.js.map": "17b621678323e315bd03c7d6cc1d60fb50e08c3ddfff75002d6f26b91c1e832f",
+    "dist/assets/index-Cia3ypEr.css": "99354a5ec1ade2941e4aba36f030b413c9afbad79336f11800929c7d805b4714",
+    "dist/assets/index-Dxzi9-5m.js": "2b7cd2901667aa8aee04a96b50dec925f5d5e835d2e554232bb44031f4b16297",
+    "dist/assets/index-Dxzi9-5m.js.map": "8bc0499ce917e4b5c0db5869af009ebd0a11ceb3b7ffbd0f687bb30bb29a665e",
+    "dist/assets/render.worker-Bz51W9ta.js": "110d5fc3af18dc4c4e30a142b4467eb74c9a23d7b04b4e4d752ec6354a9e0ca6",
+    "dist/assets/render.worker-Bz51W9ta.js.map": "e54bd799b1755722a258c486be57a6199fb1978efcec7093af77cddf2cc45b85",
+    "dist/assets/sky.worker-CHm7n211.js": "503ad9438c1738310a9cbe2a41e9af0524e7046bce79e58d6da7c1e74863caaa",
+    "dist/assets/sky.worker-CHm7n211.js.map": "df7c7eaff6aefeb222e7b89eb86f6c9382a50f405fccd92e9886f2adaa6ac8be",
+    "dist/assets/three.core-DxR5k0T0.js": "e4d296a475f2cd168d934f17f032d4f56291682208332fc6a926b3937200a810",
+    "dist/assets/three.core-DxR5k0T0.js.map": "a1598c761dbdfcb346f4ea438cb3578603d7d430b087437b9e4c5828b8fac659",
+    "dist/assets/volume.worker-zXfbKbEz.js": "6e9633aabf7462715539baa04ae37d3b1b939a111cfcdd9c6d6ad919151b7470",
+    "dist/assets/volume.worker-zXfbKbEz.js.map": "9aab2b6b0cfb2bad120aac950bf8360ddb422955c97fe69bdc14a42b69f5cc29"
+  }
+}

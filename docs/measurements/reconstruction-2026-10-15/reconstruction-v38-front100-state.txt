@@ -1,0 +1,35 @@
+- main:
+  - generic "Nube volumetrica ruotabile"
+  - heading "Cloudia." [level=1]
+  - paragraph:
+    - generic: Cella inclinata
+    - generic: Sole
+  - paragraph: Camera di confronto · raggio vicino 0.6045 km · mira fissa · immagine diagnostica
+  - paragraph: Trascina per esplorare · Scorri per avvicinarti
+  - status: WebGPU · convezione attiva
+  - generic "Controlli del cielo":
+    - navigation "Modalità di controllo":
+      - generic "Mani in arrivo":
+        - text: Mani
+        - generic: in arrivo
+    - status: "Scenario: Sole"
+    - navigation "Distanza dalla nube":
+      - button "Avvicinati alla nube":
+      - button "Allontanati dalla nube":
+      - button "Torna al panorama":
+    - navigation "Comandi del cielo":
+      - button "Riprendi":
+      - generic "Scenari atmosferici":
+        - button "Sole" [pressed]:
+          - generic: Sole
+        - button "Tramonto":
+          - generic: Tramonto
+        - button "Pioggia":
+          - generic: Pioggia
+        - button "Temporale":
+          - generic: Temporale
+      - generic "Regola il cielo" [active]:
+        - generic: Regola
+      - option "Congesto largo"
+      - option "Torri multiple"
+      - option "Cella inclinata" [selected]

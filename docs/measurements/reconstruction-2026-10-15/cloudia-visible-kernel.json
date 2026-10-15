@@ -1,0 +1,537 @@
+{
+  "date": "2026-10-15T09:47:48.870Z",
+  "method": "Analytic planar opacity-kernel model and CPU float64 midpoint quadrature only. All depths are measured from the OLD outer field coordinate F=.025km (d=F-.025km), including the empty lead of the sharp profile. F is treated as an affine physical distance with unit gradient solely in this model. rho=M*clamp(U), sigma=beta*rho, T=exp(-tau), kernel=sigma*T. Integration uses exact piecewise tau evaluated at segment midpoints with0.25/0.5m steps until endpoint T<1e-6. Numeric moments are normalized by integrated midpoint mass. Analytic full moments and separately conditioned cutoff moments distinguish quadrature error from discarded tail. tau1 numeric uses linear interpolation of exact endpoint depths. No volume generation, half quantization, trilinear/voxel reconstruction, camera, scene source variation, GPU/rendering, tone mapping or pixel-sharpness prediction.",
+  "parameters": {
+    "modulation": 0.8,
+    "oldOuterFieldKm": 0.025,
+    "originalGainPerKm": 10,
+    "originalCentreFieldKm": 0.07500000000000001,
+    "gainsPerKm": [
+      10,
+      32
+    ],
+    "betasPerKm": [
+      18,
+      50,
+      60
+    ],
+    "stepsMetres": [
+      0.25,
+      0.5
+    ],
+    "transmissionCutoff": 0.000001
+  },
+  "formula": {
+    "originalU": "Uold=(F-.025km)*10/km",
+    "sharpU": "Unew=.5+(Uold-.5)*(gain/10)",
+    "density": "rho=.8*clamp(Unew,0,1)",
+    "lambda": "lambda=beta*.8 [km^-1]",
+    "depth": "d=F-.025km; centre=.05km; a=centre-.5/gain; b=centre+.5/gain; w=1/gain",
+    "tau": "0 when d<=a; lambda*(d-a)^2/(2w) for a<d<b; lambda*(d-centre) for d>=b",
+    "tau1": "a+sqrt(2w/lambda) if lambda*w/2>=1; centre+1/lambda otherwise",
+    "kernel": "k(d)=beta*rho(d)*exp(-tau(d)); integral[0,infinity] k(d) dd=1"
+  },
+  "scriptSha256": "bb422aadc60706c8a4a8dad078f415f711993aed83e707929797cb0d0db61d7b",
+  "cases": [
+    {
+      "gainPerKm": 10,
+      "betaPerKm": 18,
+      "maximumDensity": 0.8,
+      "interiorExtinctionPerKm": 14.4,
+      "interiorMeanFreePathMetres": 69.44444444444444,
+      "profile": {
+        "originalCentreFieldKm": 0.07500000000000001,
+        "centreDepthMetres": 50,
+        "outerDepthMetres": 0,
+        "innerDepthMetres": 100,
+        "transitionWidthMetres": 100,
+        "tauAtEndOfRamp": 0.7200000000000001
+      },
+      "analyticFullKernel": {
+        "mass": 1,
+        "meanDepthMetres": 114.20867736266204,
+        "standardDeviationDepthMetres": 74.43132713535165,
+        "tau1DepthMetres": 119.44444444444446,
+        "tau1FieldCoordinateKm": 0.14444444444444446,
+        "tau1Region": "constant-density interior",
+        "tau1MeasuredFromOwnOuterMetres": 119.44444444444446,
+        "quantileDepthMetres": {
+          "0.1": 38.253633752201736,
+          "0.5": 98.11750187628955,
+          "0.9": 209.901742569031,
+          "0.99": 369.80348513806183
+        }
+      },
+      "numerical": [
+        {
+          "stepMetres": 0.25,
+          "segments": 4038,
+          "cutoffDepthMetres": 1009.4999999999208,
+          "cutoffFieldCoordinateKm": 1.0344999999999207,
+          "tailTransmission": 9.987113889385937e-7,
+          "numericalKernelMass": 0.9999991937576262,
+          "exactMassBeforeCutoff": 0.9999990012886111,
+          "transmissionDifferenceMass": 0.9999990012886142,
+          "massAbsoluteError": 1.924690151700048e-7,
+          "meanDepthMetres": 114.20767363490609,
+          "standardDeviationDepthMetres": 74.42511301144539,
+          "tau1DepthMetres": 119.44444444444446,
+          "analyticConditionalBeforeCutoff": {
+            "meanDepthMetres": 114.2077138691019,
+            "standardDeviationDepthMetres": 74.4250875583652
+          },
+          "errorAgainstAnalytic": {
+            "meanMetres": -0.000040234195808341866,
+            "standardDeviationMetres": 0.000025453080185200427,
+            "tau1Metres": 0
+          }
+        },
+        {
+          "stepMetres": 0.5,
+          "segments": 2019,
+          "cutoffDepthMetres": 1009.4999999999443,
+          "cutoffFieldCoordinateKm": 1.0344999999999442,
+          "tailTransmission": 9.987113889382549e-7,
+          "numericalKernelMass": 0.9999997711714329,
+          "exactMassBeforeCutoff": 0.9999990012886111,
+          "transmissionDifferenceMass": 0.9999990012886092,
+          "massAbsoluteError": 7.698828218272169e-7,
+          "meanDepthMetres": 114.20755293143982,
+          "standardDeviationDepthMetres": 74.42518937042749,
+          "tau1DepthMetres": 119.44444444444446,
+          "analyticConditionalBeforeCutoff": {
+            "meanDepthMetres": 114.2077138691019,
+            "standardDeviationDepthMetres": 74.4250875583652
+          },
+          "errorAgainstAnalytic": {
+            "meanMetres": -0.00016093766207203597,
+            "standardDeviationMetres": 0.00010181206228088158,
+            "tau1Metres": 0
+          }
+        }
+      ],
+      "convergence": {
+        "meanDifferenceMetres": -0.00012070346626558148,
+        "standardDeviationDifferenceMetres": 0.00007635898209912284,
+        "tau1DifferenceMetres": 0
+      }
+    },
+    {
+      "gainPerKm": 10,
+      "betaPerKm": 50,
+      "maximumDensity": 0.8,
+      "interiorExtinctionPerKm": 40,
+      "interiorMeanFreePathMetres": 25,
+      "profile": {
+        "originalCentreFieldKm": 0.07500000000000001,
+        "centreDepthMetres": 50,
+        "outerDepthMetres": 0,
+        "innerDepthMetres": 100,
+        "transitionWidthMetres": 100,
+        "tauAtEndOfRamp": 2
+      },
+      "analyticFullKernel": {
+        "mass": 1,
+        "meanDepthMetres": 63.197782747045714,
+        "standardDeviationDepthMetres": 34.28132669403238,
+        "tau1DepthMetres": 70.71067811865476,
+        "tau1FieldCoordinateKm": 0.09571067811865475,
+        "tau1Region": "linear-density ramp",
+        "tau1MeasuredFromOwnOuterMetres": 70.71067811865476,
+        "quantileDepthMetres": {
+          "0.1": 22.95218025132104,
+          "0.5": 58.87050112577373,
+          "0.9": 107.56462732485114,
+          "0.99": 165.1292546497023
+        }
+      },
+      "numerical": [
+        {
+          "stepMetres": 0.25,
+          "segments": 1582,
+          "cutoffDepthMetres": 395.49999999998414,
+          "cutoffFieldCoordinateKm": 0.42049999999998416,
+          "tailTransmission": 9.955206204458609e-7,
+          "numericalKernelMass": 0.9999999051803774,
+          "exactMassBeforeCutoff": 0.9999990044793795,
+          "transmissionDifferenceMass": 0.9999990044793807,
+          "massAbsoluteError": 9.007009978967417e-7,
+          "meanDepthMetres": 63.1973560272093,
+          "standardDeviationDepthMetres": 34.27952341777608,
+          "tau1DepthMetres": 70.71061946902655,
+          "analyticConditionalBeforeCutoff": {
+            "meanDepthMetres": 63.1974270449666,
+            "standardDeviationDepthMetres": 34.27948095260796
+          },
+          "errorAgainstAnalytic": {
+            "meanMetres": -0.00007101775729989601,
+            "standardDeviationMetres": 0.00004246516812494994,
+            "tau1Metres": -0.00005864962819568387
+          }
+        },
+        {
+          "stepMetres": 0.5,
+          "segments": 791,
+          "cutoffDepthMetres": 395.5000000000003,
+          "cutoffFieldCoordinateKm": 0.4205000000000003,
+          "tailTransmission": 9.955206204452173e-7,
+          "numericalKernelMass": 1.0000026073366222,
+          "exactMassBeforeCutoff": 0.9999990044793795,
+          "transmissionDifferenceMass": 0.9999990044793792,
+          "massAbsoluteError": 0.000003602857242657187,
+          "meanDepthMetres": 63.197142972819044,
+          "standardDeviationDepthMetres": 34.279650809900964,
+          "tau1DepthMetres": 70.71024734982333,
+          "analyticConditionalBeforeCutoff": {
+            "meanDepthMetres": 63.1974270449666,
+            "standardDeviationDepthMetres": 34.279480952607976
+          },
+          "errorAgainstAnalytic": {
+            "meanMetres": -0.0002840721475549923,
+            "standardDeviationMetres": 0.00016985729299479058,
+            "tau1Metres": -0.00043076883142478817
+          }
+        }
+      ],
+      "convergence": {
+        "meanDifferenceMetres": -0.00021305439025809392,
+        "standardDeviationDifferenceMetres": 0.00012739212488099838,
+        "tau1DifferenceMetres": -0.0003721192032202225
+      }
+    },
+    {
+      "gainPerKm": 10,
+      "betaPerKm": 60,
+      "maximumDensity": 0.8,
+      "interiorExtinctionPerKm": 48,
+      "interiorMeanFreePathMetres": 20.833333333333332,
+      "profile": {
+        "originalCentreFieldKm": 0.07500000000000001,
+        "centreDepthMetres": 50,
+        "outerDepthMetres": 0,
+        "innerDepthMetres": 100,
+        "transitionWidthMetres": 100,
+        "tauAtEndOfRamp": 2.4000000000000004
+      },
+      "analyticFullKernel": {
+        "mass": 1,
+        "meanDepthMetres": 57.46760018361238,
+        "standardDeviationDepthMetres": 30.706511022007117,
+        "tau1DepthMetres": 64.54972243679028,
+        "tau1FieldCoordinateKm": 0.08954972243679027,
+        "tau1Region": "linear-density ramp",
+        "tau1MeasuredFromOwnOuterMetres": 64.54972243679028,
+        "quantileDepthMetres": {
+          "0.1": 20.95237811262188,
+          "0.5": 53.74116906369925,
+          "0.9": 97.94950001986666,
+          "0.99": 145.94104554141856
+        }
+      },
+      "numerical": [
+        {
+          "stepMetres": 0.25,
+          "segments": 1352,
+          "cutoffDepthMetres": 337.99999999999045,
+          "cutoffFieldCoordinateKm": 0.3629999999999905,
+          "tailTransmission": 9.915464915205891e-7,
+          "numericalKernelMass": 1.0000001450678553,
+          "exactMassBeforeCutoff": 0.9999990084535085,
+          "transmissionDifferenceMass": 0.999999008453509,
+          "massAbsoluteError": 0.000001136614346752829,
+          "meanDepthMetres": 57.46722470934218,
+          "standardDeviationDepthMetres": 30.705099279141763,
+          "tau1DepthMetres": 64.54964539007092,
+          "analyticConditionalBeforeCutoff": {
+            "meanDepthMetres": 57.467301365180724,
+            "standardDeviationDepthMetres": 30.705052841193552
+          },
+          "errorAgainstAnalytic": {
+            "meanMetres": -0.00007665583853788682,
+            "standardDeviationMetres": 0.000046437948209021584,
+            "tau1Metres": -0.00007704671935171437
+          }
+        },
+        {
+          "stepMetres": 0.5,
+          "segments": 676,
+          "cutoffDepthMetres": 338.0000000000002,
+          "cutoffFieldCoordinateKm": 0.36300000000000027,
+          "tailTransmission": 9.915464915201241e-7,
+          "numericalKernelMass": 1.0000035549809982,
+          "exactMassBeforeCutoff": 0.9999990084535085,
+          "transmissionDifferenceMass": 0.9999990084535084,
+          "massAbsoluteError": 0.000004546527489712737,
+          "meanDepthMetres": 57.466994740843255,
+          "standardDeviationDepthMetres": 30.705238588816787,
+          "tau1DepthMetres": 64.54954954954955,
+          "analyticConditionalBeforeCutoff": {
+            "meanDepthMetres": 57.467301365180724,
+            "standardDeviationDepthMetres": 30.705052841193552
+          },
+          "errorAgainstAnalytic": {
+            "meanMetres": -0.0003066243374691413,
+            "standardDeviationMetres": 0.0001857476232339228,
+            "tau1Metres": -0.00017288724071806705
+          }
+        }
+      ],
+      "convergence": {
+        "meanDifferenceMetres": -0.00022996849892820137,
+        "standardDeviationDifferenceMetres": 0.00013930967502417957,
+        "tau1DifferenceMetres": -0.00009584052136801802
+      }
+    },
+    {
+      "gainPerKm": 32,
+      "betaPerKm": 18,
+      "maximumDensity": 0.8,
+      "interiorExtinctionPerKm": 14.4,
+      "interiorMeanFreePathMetres": 69.44444444444444,
+      "profile": {
+        "originalCentreFieldKm": 0.07500000000000001,
+        "centreDepthMetres": 50,
+        "outerDepthMetres": 34.375,
+        "innerDepthMetres": 65.625,
+        "transitionWidthMetres": 31.25,
+        "tauAtEndOfRamp": 0.225
+      },
+      "analyticFullKernel": {
+        "mass": 1,
+        "meanDepthMetres": 118.88385070743236,
+        "standardDeviationDepthMetres": 70.00192962301463,
+        "tau1DepthMetres": 119.44444444444446,
+        "tau1FieldCoordinateKm": 0.14444444444444446,
+        "tau1Region": "constant-density interior",
+        "tau1MeasuredFromOwnOuterMetres": 85.06944444444444,
+        "quantileDepthMetres": {
+          "0.1": 55.75943136407586,
+          "0.5": 98.13522087221843,
+          "0.9": 209.901742569031,
+          "0.99": 369.80348513806183
+        }
+      },
+      "numerical": [
+        {
+          "stepMetres": 0.25,
+          "segments": 4038,
+          "cutoffDepthMetres": 1009.4999999999208,
+          "cutoffFieldCoordinateKm": 1.0344999999999207,
+          "tailTransmission": 9.987113889385937e-7,
+          "numericalKernelMass": 0.9999985177249017,
+          "exactMassBeforeCutoff": 0.9999990012886111,
+          "transmissionDifferenceMass": 0.9999990012886142,
+          "massAbsoluteError": 4.835637094080525e-7,
+          "meanDepthMetres": 118.8829926375983,
+          "standardDeviationDepthMetres": 69.9952881525967,
+          "tau1DepthMetres": 119.44444444444446,
+          "analyticConditionalBeforeCutoff": {
+            "meanDepthMetres": 118.88289188302574,
+            "standardDeviationDepthMetres": 69.99535483256173
+          },
+          "errorAgainstAnalytic": {
+            "meanMetres": 0.00010075457256009113,
+            "standardDeviationMetres": -0.00006667996502174312,
+            "tau1Metres": 0
+          }
+        },
+        {
+          "stepMetres": 0.5,
+          "segments": 2019,
+          "cutoffDepthMetres": 1009.4999999999443,
+          "cutoffFieldCoordinateKm": 1.0344999999999442,
+          "tailTransmission": 9.987113889382549e-7,
+          "numericalKernelMass": 0.9999992275507702,
+          "exactMassBeforeCutoff": 0.9999990012886111,
+          "transmissionDifferenceMass": 0.9999990012886092,
+          "massAbsoluteError": 2.2626215911980552e-7,
+          "meanDepthMetres": 118.88284395299054,
+          "standardDeviationDepthMetres": 69.99538677938148,
+          "tau1DepthMetres": 119.44444444444446,
+          "analyticConditionalBeforeCutoff": {
+            "meanDepthMetres": 118.88289188302574,
+            "standardDeviationDepthMetres": 69.99535483256173
+          },
+          "errorAgainstAnalytic": {
+            "meanMetres": -0.00004793003520464634,
+            "standardDeviationMetres": 0.00003194681975904334,
+            "tau1Metres": 0
+          }
+        }
+      ],
+      "convergence": {
+        "meanDifferenceMetres": -0.0001486846077654036,
+        "standardDeviationDifferenceMetres": 0.00009862678477645659,
+        "tau1DifferenceMetres": 0
+      }
+    },
+    {
+      "gainPerKm": 32,
+      "betaPerKm": 50,
+      "maximumDensity": 0.8,
+      "interiorExtinctionPerKm": 40,
+      "interiorMeanFreePathMetres": 25,
+      "profile": {
+        "originalCentreFieldKm": 0.07500000000000001,
+        "centreDepthMetres": 50,
+        "outerDepthMetres": 34.375,
+        "innerDepthMetres": 65.625,
+        "transitionWidthMetres": 31.25,
+        "tauAtEndOfRamp": 0.625
+      },
+      "analyticFullKernel": {
+        "mass": 1,
+        "meanDepthMetres": 73.5551725640182,
+        "standardDeviationDepthMetres": 26.39111334336793,
+        "tau1DepthMetres": 75.00000000000001,
+        "tau1FieldCoordinateKm": 0.1,
+        "tau1Region": "constant-density interior",
+        "tau1MeasuredFromOwnOuterMetres": 40.62500000000001,
+        "quantileDepthMetres": {
+          "0.1": 47.205658818445514,
+          "0.5": 67.32867951399864,
+          "0.9": 107.56462732485114,
+          "0.99": 165.1292546497023
+        }
+      },
+      "numerical": [
+        {
+          "stepMetres": 0.25,
+          "segments": 1582,
+          "cutoffDepthMetres": 395.49999999998414,
+          "cutoffFieldCoordinateKm": 0.42049999999998416,
+          "tailTransmission": 9.955206204458609e-7,
+          "numericalKernelMass": 0.9999959061783058,
+          "exactMassBeforeCutoff": 0.9999990044793795,
+          "transmissionDifferenceMass": 0.9999990044793805,
+          "massAbsoluteError": 0.000003098301073700682,
+          "meanDepthMetres": 73.5550600796597,
+          "standardDeviationDepthMetres": 26.38869552234316,
+          "tau1DepthMetres": 75,
+          "analyticConditionalBeforeCutoff": {
+            "meanDepthMetres": 73.5548271729445,
+            "standardDeviationDepthMetres": 26.388844288968578
+          },
+          "errorAgainstAnalytic": {
+            "meanMetres": 0.00023290671520570516,
+            "standardDeviationMetres": -0.00014876662541782326,
+            "tau1Metres": -1.3877787807814457e-14
+          }
+        },
+        {
+          "stepMetres": 0.5,
+          "segments": 791,
+          "cutoffDepthMetres": 395.5000000000003,
+          "cutoffFieldCoordinateKm": 0.4205000000000003,
+          "tailTransmission": 9.955206204452173e-7,
+          "numericalKernelMass": 1.00000047337684,
+          "exactMassBeforeCutoff": 0.9999990044793795,
+          "transmissionDifferenceMass": 0.9999990044793794,
+          "massAbsoluteError": 0.0000014688974604437632,
+          "meanDepthMetres": 73.55471519956426,
+          "standardDeviationDepthMetres": 26.388915551464688,
+          "tau1DepthMetres": 75,
+          "analyticConditionalBeforeCutoff": {
+            "meanDepthMetres": 73.5548271729445,
+            "standardDeviationDepthMetres": 26.388844288968592
+          },
+          "errorAgainstAnalytic": {
+            "meanMetres": -0.00011197338023460901,
+            "standardDeviationMetres": 0.00007126249609509805,
+            "tau1Metres": -1.3877787807814457e-14
+          }
+        }
+      ],
+      "convergence": {
+        "meanDifferenceMetres": -0.00034488009544020315,
+        "standardDeviationDifferenceMetres": 0.000220029121528853,
+        "tau1DifferenceMetres": 0
+      }
+    },
+    {
+      "gainPerKm": 32,
+      "betaPerKm": 60,
+      "maximumDensity": 0.8,
+      "interiorExtinctionPerKm": 48,
+      "interiorMeanFreePathMetres": 20.833333333333332,
+      "profile": {
+        "originalCentreFieldKm": 0.07500000000000001,
+        "centreDepthMetres": 50,
+        "outerDepthMetres": 34.375,
+        "innerDepthMetres": 65.625,
+        "transitionWidthMetres": 31.25,
+        "tauAtEndOfRamp": 0.75
+      },
+      "analyticFullKernel": {
+        "mass": 1,
+        "meanDepthMetres": 69.13808889923938,
+        "standardDeviationDepthMetres": 22.442178902289726,
+        "tau1DepthMetres": 70.83333333333333,
+        "tau1FieldCoordinateKm": 0.09583333333333333,
+        "tau1Region": "constant-density interior",
+        "tau1MeasuredFromOwnOuterMetres": 36.45833333333333,
+        "quantileDepthMetres": {
+          "0.1": 46.08773543752532,
+          "0.5": 64.41722680418506,
+          "0.9": 97.9705227707093,
+          "0.99": 145.94104554141856
+        }
+      },
+      "numerical": [
+        {
+          "stepMetres": 0.25,
+          "segments": 1352,
+          "cutoffDepthMetres": 337.99999999999045,
+          "cutoffFieldCoordinateKm": 0.3629999999999905,
+          "tailTransmission": 9.915464915205891e-7,
+          "numericalKernelMass": 0.9999947873171999,
+          "exactMassBeforeCutoff": 0.9999990084535085,
+          "transmissionDifferenceMass": 0.999999008453509,
+          "massAbsoluteError": 0.0000042211363086019915,
+          "meanDepthMetres": 69.1380664864433,
+          "standardDeviationDepthMetres": 22.440159396239327,
+          "tau1DepthMetres": 70.83333333333333,
+          "analyticConditionalBeforeCutoff": {
+            "meanDepthMetres": 69.13780165265132,
+            "standardDeviationDepthMetres": 22.44032639834929
+          },
+          "errorAgainstAnalytic": {
+            "meanMetres": 0.0002648337919658461,
+            "standardDeviationMetres": -0.0001670021099603458,
+            "tau1Metres": 0
+          }
+        },
+        {
+          "stepMetres": 0.5,
+          "segments": 676,
+          "cutoffDepthMetres": 338.0000000000002,
+          "cutoffFieldCoordinateKm": 0.36300000000000027,
+          "tailTransmission": 9.915464915201241e-7,
+          "numericalKernelMass": 1.000001017045263,
+          "exactMassBeforeCutoff": 0.9999990084535085,
+          "transmissionDifferenceMass": 0.9999990084535089,
+          "massAbsoluteError": 0.0000020085917543655185,
+          "meanDepthMetres": 69.13767401755419,
+          "standardDeviationDepthMetres": 22.440406180865136,
+          "tau1DepthMetres": 70.83333333333333,
+          "analyticConditionalBeforeCutoff": {
+            "meanDepthMetres": 69.13780165265132,
+            "standardDeviationDepthMetres": 22.44032639834929
+          },
+          "errorAgainstAnalytic": {
+            "meanMetres": -0.0001276350971302076,
+            "standardDeviationMetres": 0.00007978251584730978,
+            "tau1Metres": 0
+          }
+        }
+      ],
+      "convergence": {
+        "meanDifferenceMetres": -0.00039246888910327016,
+        "standardDeviationDifferenceMetres": 0.000246784625808516,
+        "tau1DifferenceMetres": 0
+      }
+    }
+  ],
+  "failures": [],
+  "passed": true
+}
