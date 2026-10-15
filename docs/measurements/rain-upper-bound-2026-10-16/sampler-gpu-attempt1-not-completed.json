@@ -1,0 +1,8 @@
+{
+  "kind": "rain-rg8-sampler-audit",
+  "status": "not-run",
+  "gpuStatus": "not-run",
+  "guardKm": 0.011795223460477941,
+  "attemptStatus": "not-completed; UI remained before first dataset for over 2 minutes, no warn/error logs",
+  "initialScriptSha256": "d3fe738f87befe2a9a1978c57b3961e62c3cfc1943743ae4f84477a6ce96d9e9"
+}

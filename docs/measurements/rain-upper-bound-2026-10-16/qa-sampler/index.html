@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="it">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cloudia · audit sampler pioggia</title>
+<style>
+body{font:16px/1.5 system-ui,sans-serif;margin:24px;max-width:1120px;color:#202a2d;background:#f6f3eb}
+button{font:inherit;padding:10px 16px;margin:0 8px 12px 0;min-height:44px}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:white;padding:16px;border:1px solid #bbb}
+button:focus-visible{outline:3px solid #416a29;outline-offset:3px}
+</style>
+<h1>Audit sampler RG8 della pioggia</h1>
+<p>Pagina diagnostica autonoma: mip 0, filtro lineare, clamp. Riusa una mappa reale già generata e fixture sintetiche. Nessun bake, renderer Three.js o benchmark; la GPU parte soltanto dal pulsante.</p>
+<button id="run">Esegui audit GPU</button>
+<button id="download" disabled>Scarica JSON</button>
+<p id="status" role="status">Pronto: GPU non eseguita.</p>
+<details open><summary>JSON completo</summary><pre data-testid="sampler-audit-json"></pre></details>
+<script type="module" src="./audit.js"></script>
+</html>

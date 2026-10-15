@@ -1,0 +1,29 @@
+{
+  "status": "prepared-gpu-not-run",
+  "files": {
+    "index.html": {
+      "bytes": 1093,
+      "sha256": "773bed91b0b256e99901d0189df06d2169b826ebd4e69cfc5aeb5d621f33bcb3"
+    },
+    "audit.js": {
+      "bytes": 18659,
+      "sha256": "d3fe738f87befe2a9a1978c57b3961e62c3cfc1943743ae4f84477a6ce96d9e9"
+    },
+    "sampler.wgsl": {
+      "bytes": 2441,
+      "sha256": "ac28684c0407c6d659238fda6fe7b5b502822966943913dfbb96237953e1c190"
+    },
+    "real-map-rg8.bin": {
+      "bytes": 8192,
+      "sha256": "c8f6dc2c8abb0717ec3051c0f958648ec541604f3718eb0f7621cb047d961fe2"
+    },
+    "real-map-provenance.json": {
+      "bytes": 2306,
+      "sha256": "3af876d1c98a0a8b941b4ac5d5d53a419555b3dc6488617c2fef58f8b6b36ac6"
+    },
+    "README.md": {
+      "bytes": 2915,
+      "sha256": "acd0fd0da5126c943e577ef83e4dbb4fa3a153b05447074d68d7e8aba9ec030c"
+    }
+  }
+}

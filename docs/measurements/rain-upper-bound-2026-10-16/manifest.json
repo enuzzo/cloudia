@@ -1,0 +1,273 @@
+{
+  "date": "2026-10-15T22:44:42.642266+00:00",
+  "kind": "archived retired rain upper-bound experiment",
+  "decision": "retired-no-demonstrated-performance-benefit",
+  "baseCommit": "a1efb8e489d31c417ebb2dd6b06cbc2e8dfaca1c",
+  "notes": [
+    "All files copied byte-identically from external cycle9 evidence.",
+    "Proposal and original preparation manifests preserve their historical not-applied/not-run statuses; comparison-decision.json and the experiment document state final outcome.",
+    "Sampler attempt1 did not complete and is excluded from the PASS.",
+    "Terrain and lateral traversal proposals are separate subsequent work, excluded from this frozen experiment archive."
+  ],
+  "files": [
+    {
+      "path": "RAIN-UPPER-INDEPENDENT-REVIEW.md",
+      "bytes": 5924,
+      "sha256": "ea4dde5a348ceb7249d961a8ec5967fc13f7b4b212550c669e02d05bb3c27214"
+    },
+    {
+      "path": "SAMPLER-RESULT-REVIEW.md",
+      "bytes": 4061,
+      "sha256": "9c1d27bd181d00757b5e27b3d46cf28e4ff5b21cb6d94c03f18626a9c9a3be92"
+    },
+    {
+      "path": "candidate-build-provenance.json",
+      "bytes": 1472,
+      "sha256": "a1bac55f35b3ea57d71cbd3ff47f938e96c457f3be2fdc01c5d4e2e5cb32d202"
+    },
+    {
+      "path": "candidate-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "candidate-control-image-comparison.json",
+      "bytes": 552,
+      "sha256": "9a66c33a7c2a423dcd87961afdda83f0fda4750f1c1382c558b5cf76cebf1be0"
+    },
+    {
+      "path": "candidate-rain-30s.json",
+      "bytes": 45915,
+      "sha256": "7a510847a68aa5888381343d164cf277b90c80686b242ba63987758082a842aa"
+    },
+    {
+      "path": "candidate-rain-view.jpg",
+      "bytes": 42539,
+      "sha256": "c73b336f2ef9d2e2a1810f0cb5cf8cbba246a832e66bae531fc9f23e15021972"
+    },
+    {
+      "path": "comparison-decision.json",
+      "bytes": 5211,
+      "sha256": "4f81f5478fb85e0e4eff3a53910c528af5db5b2da07675b7a2eb45c0a9893e07"
+    },
+    {
+      "path": "control-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "control-rain-30s.json",
+      "bytes": 48089,
+      "sha256": "cbb26949110019d364f57fdcbe730e2685c34a96ab8264ec4850a16e4cd5822b"
+    },
+    {
+      "path": "control-rain-timing-off-30s.json",
+      "bytes": 44637,
+      "sha256": "abc1e1b76da9ece1ff2ecd1486729c5a17464bab0979a1c878e6ae81b91203f4"
+    },
+    {
+      "path": "control-rain-view.jpg",
+      "bytes": 42539,
+      "sha256": "c73b336f2ef9d2e2a1810f0cb5cf8cbba246a832e66bae531fc9f23e15021972"
+    },
+    {
+      "path": "control-repeat-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "control-repeat-dom-geometry.json",
+      "bytes": 184,
+      "sha256": "667b69dc54b3600379e2a74db4ac9b0b8c9abc6dd6e5f0e8360187a17d8078fd"
+    },
+    {
+      "path": "control-repeat-rain-30s.json",
+      "bytes": 45597,
+      "sha256": "9a20c66c64da9bd6780f8a186f47fe3507f869dc5aeaf0df86bb45ac9f6e6f49"
+    },
+    {
+      "path": "control-repeat-rain-view.jpg",
+      "bytes": 42539,
+      "sha256": "c73b336f2ef9d2e2a1810f0cb5cf8cbba246a832e66bae531fc9f23e15021972"
+    },
+    {
+      "path": "experiment-draft.md",
+      "bytes": 7237,
+      "sha256": "edbe4afeb16c231845a10d21ef68b6efe39c8153b06d1bf790ce65dde7d4c89d"
+    },
+    {
+      "path": "qa-sampler/README.md",
+      "bytes": 2915,
+      "sha256": "acd0fd0da5126c943e577ef83e4dbb4fa3a153b05447074d68d7e8aba9ec030c"
+    },
+    {
+      "path": "qa-sampler/audit.initial.js",
+      "bytes": 18659,
+      "sha256": "d3fe738f87befe2a9a1978c57b3961e62c3cfc1943743ae4f84477a6ce96d9e9"
+    },
+    {
+      "path": "qa-sampler/audit.js",
+      "bytes": 19158,
+      "sha256": "a255b8588ba89d2432487472e44c0e7150dbc564dc3b3a440366f9fec17ada37"
+    },
+    {
+      "path": "qa-sampler/index.html",
+      "bytes": 1093,
+      "sha256": "773bed91b0b256e99901d0189df06d2169b826ebd4e69cfc5aeb5d621f33bcb3"
+    },
+    {
+      "path": "qa-sampler/prepared-files.json",
+      "bytes": 862,
+      "sha256": "7f1efc3b63428a363809e3682f1906869c935afccb02b475d7e5f6bbfe1c1ea1"
+    },
+    {
+      "path": "qa-sampler/real-map-provenance.json",
+      "bytes": 2306,
+      "sha256": "3af876d1c98a0a8b941b4ac5d5d53a419555b3dc6488617c2fef58f8b6b36ac6"
+    },
+    {
+      "path": "qa-sampler/real-map-rg8.bin",
+      "bytes": 8192,
+      "sha256": "c8f6dc2c8abb0717ec3051c0f958648ec541604f3718eb0f7621cb047d961fe2"
+    },
+    {
+      "path": "qa-sampler/sampler.wgsl",
+      "bytes": 2441,
+      "sha256": "ac28684c0407c6d659238fda6fe7b5b502822966943913dfbb96237953e1c190"
+    },
+    {
+      "path": "rain-upper-bound/README.md",
+      "bytes": 5440,
+      "sha256": "9faf7c1a103807ebee528c285b94c32966d944ca9925ec8d7f78996483af4e4e"
+    },
+    {
+      "path": "rain-upper-bound/after/src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 54390,
+      "sha256": "b20593509ae46df2f2818b74704cf596f1aa7ec2248bb8922633cd95a394e660"
+    },
+    {
+      "path": "rain-upper-bound/after/src/cumulonimbus/cloudShader.ts",
+      "bytes": 13957,
+      "sha256": "738fc29f6f85313efe1f402c2ea851c50b3d2c17607eed79a1758fb9761c2463"
+    },
+    {
+      "path": "rain-upper-bound/after/src/cumulonimbus/precipitation.ts",
+      "bytes": 6901,
+      "sha256": "52dc45f28e05c4ff4b4f78c96db72ed4dbd3c58f1b233aeac593b02decde7ff1"
+    },
+    {
+      "path": "rain-upper-bound/after/src/cumulonimbus/precipitationUpper.test.ts",
+      "bytes": 3926,
+      "sha256": "36233f8a2bb57053449cff0773e6f170af3edda31ca4d394985f819154847830"
+    },
+    {
+      "path": "rain-upper-bound/before/src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 53971,
+      "sha256": "9b065a853212191c8af8e3ab63f44a654f4d3918ea59e98af29b4a3c090a6fca"
+    },
+    {
+      "path": "rain-upper-bound/before/src/cumulonimbus/cloudShader.ts",
+      "bytes": 13664,
+      "sha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd"
+    },
+    {
+      "path": "rain-upper-bound/before/src/cumulonimbus/precipitation.ts",
+      "bytes": 5993,
+      "sha256": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72"
+    },
+    {
+      "path": "rain-upper-bound/manifest.json",
+      "bytes": 3333,
+      "sha256": "ce34e16db49a81ef3b5fa84302589c502c7d1e30ab4e22f0649a54a902731e5b"
+    },
+    {
+      "path": "rain-upper-bound/precipitationUpper.test.patch",
+      "bytes": 4085,
+      "sha256": "9fa86e406c854fc996ca229369331b88e20b46badefecbb0ad91fe82e7912b23"
+    },
+    {
+      "path": "rain-upper-bound/precipitationUpper.test.ts",
+      "bytes": 3926,
+      "sha256": "36233f8a2bb57053449cff0773e6f170af3edda31ca4d394985f819154847830"
+    },
+    {
+      "path": "rain-upper-bound/prepare.py",
+      "bytes": 7637,
+      "sha256": "58b37c7c767629eaa07f5b94656a8bf6fb7a04515f5a84d9fdad4655f1cf3edd"
+    },
+    {
+      "path": "rain-upper-bound/rain-upper-bound.patch",
+      "bytes": 16195,
+      "sha256": "d93626af66c702ae5c2542914316b9e356d69adf08f92cfe2e6ce87d43bac16a"
+    },
+    {
+      "path": "rain-upper-bound/reference/src/cumulonimbus/medium.ts",
+      "bytes": 1176,
+      "sha256": "ddfd487055e4fde6581ab351345e91fb3466b032dda954c803082a39a9a142d6"
+    },
+    {
+      "path": "rain-upper-bound/repro-result.json",
+      "bytes": 7792,
+      "sha256": "deaa0f467f6289bb71ab71a4042b75ecd14362d445a65b9631da78dfe6a720fd"
+    },
+    {
+      "path": "rain-upper-bound/repro.mjs",
+      "bytes": 14018,
+      "sha256": "668a1666ccbfe8d4badc787d83b377be725363d0b7ffcee26ea63bc011d8b979"
+    },
+    {
+      "path": "rainmap-seed72-audit.json",
+      "bytes": 15597,
+      "sha256": "c8bf16a6040c743791a4596544de3a64f2c90f82b850c500abf72021325e2000"
+    },
+    {
+      "path": "rainmap-seed72-audit.ts",
+      "bytes": 8348,
+      "sha256": "351b24a2305ec8bba6e8445b6154956d565684be526449ed5cac4c8941c4e91e"
+    },
+    {
+      "path": "rainmap-seed72-rg8.bin",
+      "bytes": 8192,
+      "sha256": "c8f6dc2c8abb0717ec3051c0f958648ec541604f3718eb0f7621cb047d961fe2"
+    },
+    {
+      "path": "rainmap-seed72-status.json",
+      "bytes": 116,
+      "sha256": "705b05ca4264e25889a5b440c70b77ebfba14d94a98ff2a9864f03233a7110ef"
+    },
+    {
+      "path": "restored-build-provenance.json",
+      "bytes": 963,
+      "sha256": "acbc59e86fedbcfd80b1dedd90c0f199e47ebde7a6e4fd2306e209a493b11012"
+    },
+    {
+      "path": "sampler-gpu-attempt1-not-completed.json",
+      "bytes": 325,
+      "sha256": "2ebd3b40ea356533d90f59bc6dc4177760c6830c497c6ab932932ed615e478c9"
+    },
+    {
+      "path": "sampler-gpu-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "sampler-gpu-result.json",
+      "bytes": 122110,
+      "sha256": "1647cdd4c8026f069c456f9593516f0bbc0111d4ce81c2d07602de5a1df6e56a"
+    }
+  ],
+  "archiveWhitespaceExceptions": [
+    {
+      "path": "rain-upper-bound/before/src/cumulonimbus/cloudShader.ts",
+      "reason": "Original source has a blank final line; preserve bytes."
+    },
+    {
+      "path": "rain-upper-bound/after/src/cumulonimbus/cloudShader.ts",
+      "reason": "Frozen candidate preserves original blank final line; preserve bytes."
+    },
+    {
+      "path": "rain-upper-bound/rain-upper-bound.patch",
+      "reason": "Unified patch context contains one blank line with a single context prefix space; preserve patch bytes."
+    }
+  ]
+}

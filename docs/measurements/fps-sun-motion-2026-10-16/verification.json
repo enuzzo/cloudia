@@ -1,0 +1,87 @@
+{
+  "localDate": "2026-10-16 Europe/Rome",
+  "baseCommit": "a1efb8e489d31c417ebb2dd6b06cbc2e8dfaca1c",
+  "sourceChanges": false,
+  "rendererVersion": "observatory-v40-terrain-camera-focus",
+  "measurementVersion": "submission-queue-prefix-v1",
+  "builtAssetsByteIdenticalToCycle8": [
+    {
+      "path": "dist/assets/CumulonimbusApp-K95Mlj_4.js",
+      "bytes": 804704,
+      "sha256": "c5e604403a8c83b4403bf3c8b866aaad9b71a6dafc183c75ba4c350c3a909b13"
+    },
+    {
+      "path": "dist/assets/render.worker-gwTBDtGx.js",
+      "bytes": 961445,
+      "sha256": "b21c3ff877a2619be77ba8d7cd12d868c541a5d501e67fcda96b698eab1a84c2"
+    },
+    {
+      "path": "dist/cloudia-hero.iife.js",
+      "bytes": 526689,
+      "sha256": "d4363d2ccdbf676991be2c6ba05bc62da0ceef5debaa789f04766ab1248c30f5"
+    },
+    {
+      "path": "dist/cloudia-hero.js",
+      "bytes": 838767,
+      "sha256": "bc11f99470a6298e20fa804bc2d93041d4cc1a015d812ae97b6ad5827b5fa702"
+    }
+  ],
+  "finiteRun": {
+    "motion": true,
+    "cameraMotion": false,
+    "stats": {
+      "frames": 5395,
+      "durationMs": 90005.9,
+      "fps": 59.94051501068264,
+      "medianMs": 16.69999999999709,
+      "p95Ms": 18.60000000000582,
+      "p99Ms": 18.70000000001164,
+      "maxMs": 51.69999999999709,
+      "over18Ms": 623,
+      "over33Ms": 2
+    },
+    "completionBoundedSubmissionFps": 59.932324796588766,
+    "endDrainMs": 4.399999976158142,
+    "periodicCompleted": 89,
+    "periodicLatencyMinMs": 9.100000023841858,
+    "periodicLatencyMaxMs": 15.399999976158142,
+    "simulationTimeMetadataIncludingWarmup": [
+      76.40460000000245,
+      168.42560000000745
+    ]
+  },
+  "limits": [
+    "One main-thread, ordinary, sunny, unpaused scene; fixed camera; not rain or close-range visual qualification.",
+    "Submission pacing and queue prefixes are measured; compositor presentation is not.",
+    "No screenshot was requested during the measured window; final screenshots are after completion.",
+    "No GPU benchmark or volume bake was run concurrently by the agents; background OS/other applications were not controlled.",
+    "163 tests/28 files from prior exact-source checkpoint not rerun for this evidence-only update."
+  ],
+  "files": [
+    {
+      "path": "ordinary-sun-motion-90s.json",
+      "bytes": 478234,
+      "sha256": "baf70859cc07bcebc6cd87d5344c6a93abb51d5371eb09b0c319989472338861"
+    },
+    {
+      "path": "ordinary-sun-motion-90s-metrics.jpg",
+      "bytes": 73589,
+      "sha256": "b7eb462ac6cf524cd6c3e4a6bb4e19876467eb5928f90b942bd7020349f35c28"
+    },
+    {
+      "path": "ordinary-sun-preview.jpg",
+      "bytes": 50123,
+      "sha256": "aea17bc70d15312b8cba2c70f7bf39aabe0e394844a87ee96ef3ee34d43cf87c"
+    },
+    {
+      "path": "ordinary-sun-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "ordinary-dom-geometry.json",
+      "bytes": 184,
+      "sha256": "667b69dc54b3600379e2a74db4ac9b0b8c9abc6dd6e5f0e8360187a17d8078fd"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "kind": "candidate-build-provenance",
+  "date": "2026-10-15T22:39:19.797027+00:00",
+  "base": "a1efb8e489d31c417ebb2dd6b06cbc2e8dfaca1c",
+  "label": "observatory-v42-rain-upper-bound-external",
+  "targetedTests": {
+    "files": 1,
+    "tests": 7,
+    "passed": true,
+    "command": "npm test -- src/cumulonimbus/precipitationUpper.test.ts"
+  },
+  "appBuild": {
+    "passed": true,
+    "command": "npm run build"
+  },
+  "files": [
+    {
+      "path": "dist/assets/CumulonimbusApp-D9EWYhLT.js",
+      "bytes": 805430,
+      "sha256": "835145971dc30c915a48d0b793f7afe1daa7684704f0f02f71d2f91c43659017"
+    },
+    {
+      "path": "dist/assets/render.worker-ZXQe1jZr.js",
+      "bytes": 962175,
+      "sha256": "b8b7ae2f8b834d74b015bc57bcd8e9cbffc0b48323589a8414cdc1e98e36ec82"
+    },
+    {
+      "path": "src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 54390,
+      "sha256": "b20593509ae46df2f2818b74704cf596f1aa7ec2248bb8922633cd95a394e660"
+    },
+    {
+      "path": "src/cumulonimbus/cloudShader.ts",
+      "bytes": 13957,
+      "sha256": "738fc29f6f85313efe1f402c2ea851c50b3d2c17607eed79a1758fb9761c2463"
+    },
+    {
+      "path": "src/cumulonimbus/precipitation.ts",
+      "bytes": 6901,
+      "sha256": "52dc45f28e05c4ff4b4f78c96db72ed4dbd3c58f1b233aeac593b02decde7ff1"
+    },
+    {
+      "path": "src/cumulonimbus/precipitationUpper.test.ts",
+      "bytes": 3926,
+      "sha256": "36233f8a2bb57053449cff0773e6f170af3edda31ca4d394985f819154847830"
+    }
+  ]
+}

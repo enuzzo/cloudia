@@ -1,0 +1,181 @@
+{
+  "kind": "finite A-B-A experiment decision",
+  "clientDate": "2026-10-15T22:43:13.891960+00:00",
+  "decision": "retired-no-demonstrated-performance-benefit",
+  "comparisonKeysEqual": [
+    "backend",
+    "adapter",
+    "threeRevision",
+    "quality",
+    "output",
+    "internal",
+    "nominalSteps",
+    "cloudExtinctionPerKm",
+    "iceExtinctionPerKm",
+    "mediaIntegration",
+    "virgaReachVariation",
+    "precipitationMaxStepKm",
+    "precipitationExtinctionPerKm",
+    "precipitationSourceBounds",
+    "navigationVersion",
+    "terrainCameraClearanceKm",
+    "terrainHash",
+    "sunDirection",
+    "sunsetAmount",
+    "ablation",
+    "executionThread",
+    "profiling",
+    "timingMode",
+    "maxFramesInFlight",
+    "flowMode",
+    "simulationTimeStart",
+    "simulationTimeEnd",
+    "supportBounds",
+    "camera",
+    "outputMode",
+    "volume",
+    "detailVolume",
+    "seed",
+    "shape",
+    "sun",
+    "orbit",
+    "paused",
+    "devicePixelRatio",
+    "warmupMs",
+    "targetDurationMs",
+    "emptyStepWorld",
+    "emptyStepWorldEnd"
+  ],
+  "declaredDifferences": [
+    "Separate navigation clocks/start times; shader/control labels and new upper-bound metadata differ by design.",
+    "Rain approaches .8 asymptotically: maximum residue below 1e-8; exact values retained.",
+    "No environmental/thermal-state equality or causal regression attribution is claimed."
+  ],
+  "runs": [
+    {
+      "file": "control-rain-30s.json",
+      "rendererVersion": "observatory-v40-terrain-camera-focus",
+      "stats": {
+        "frames": 427,
+        "durationMs": 30051.900000000023,
+        "fps": 14.208752192041091,
+        "medianMs": 66.70000000001164,
+        "p95Ms": 83.40000000002328,
+        "p99Ms": 84.09999999997672,
+        "maxMs": 84.40000000002328,
+        "over18Ms": 427,
+        "over33Ms": 427
+      },
+      "gpuRenderPassSum": {
+        "sampleCount": 106,
+        "meanMs": 137.3801491320755,
+        "p95Ms": 153.485312,
+        "maxMs": 163.119104
+      },
+      "submissionFps": 14.208752192041091,
+      "completionBoundedSubmissionFps": 14.078516579360159,
+      "endDrainMs": 274.7999999523163,
+      "confirmedPrefixId": 427,
+      "presentedCanvasFps": null,
+      "rain": 0.7999999999999998
+    },
+    {
+      "file": "candidate-rain-30s.json",
+      "rendererVersion": "observatory-v42-rain-upper-bound-external",
+      "stats": {
+        "frames": 392,
+        "durationMs": 30002.40000000001,
+        "fps": 13.065621416953306,
+        "medianMs": 82.5,
+        "p95Ms": 84.80000000000291,
+        "p99Ms": 100,
+        "maxMs": 102,
+        "over18Ms": 392,
+        "over33Ms": 392
+      },
+      "gpuRenderPassSum": {
+        "sampleCount": 92,
+        "meanMs": 149.74049947826086,
+        "p95Ms": 170.72128,
+        "maxMs": 176.685056
+      },
+      "submissionFps": 13.065621416953306,
+      "completionBoundedSubmissionFps": 12.927821859871102,
+      "endDrainMs": 319.89999997615814,
+      "confirmedPrefixId": 392,
+      "presentedCanvasFps": null,
+      "rain": 0.7999999999037954
+    },
+    {
+      "file": "control-repeat-rain-30s.json",
+      "rendererVersion": "observatory-v40-terrain-camera-focus",
+      "stats": {
+        "frames": 404,
+        "durationMs": 30000.5,
+        "fps": 13.4664422259629,
+        "medianMs": 81.59999999999854,
+        "p95Ms": 99.90000000000873,
+        "p99Ms": 100.60000000000582,
+        "maxMs": 116.80000000000291,
+        "over18Ms": 404,
+        "over33Ms": 404
+      },
+      "gpuRenderPassSum": {
+        "sampleCount": 95,
+        "meanMs": 144.34062551578953,
+        "p95Ms": 172.68736,
+        "maxMs": 184.87705599999998
+      },
+      "submissionFps": 13.4664422259629,
+      "completionBoundedSubmissionFps": 13.351796709022487,
+      "endDrainMs": 243.19999992847443,
+      "confirmedPrefixId": 404,
+      "presentedCanvasFps": null,
+      "rain": 0.7999999990778779
+    }
+  ],
+  "candidateRelativeFpsPercent": [
+    -8.045258018702729,
+    -2.976441752646619
+  ],
+  "controlRepeatRelativeFpsPercent": -5.224314957748288,
+  "images": [
+    {
+      "file": "control-rain-view.jpg",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "c73b336f2ef9d2e2a1810f0cb5cf8cbba246a832e66bae531fc9f23e15021972",
+      "identicalDecodedRGBToFirstControl": true
+    },
+    {
+      "file": "candidate-rain-view.jpg",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "c73b336f2ef9d2e2a1810f0cb5cf8cbba246a832e66bae531fc9f23e15021972",
+      "identicalDecodedRGBToFirstControl": true
+    },
+    {
+      "file": "control-repeat-rain-view.jpg",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "c73b336f2ef9d2e2a1810f0cb5cf8cbba246a832e66bae531fc9f23e15021972",
+      "identicalDecodedRGBToFirstControl": true
+    }
+  ],
+  "imageLimit": "1280x720 JPEG CSS screenshots, not raw native framebuffer; finite static view only.",
+  "timingOffDiagnostic": {
+    "file": "control-rain-timing-off-30s.json",
+    "fps": 13.617355636053695,
+    "limit": "Separate diagnostic: not a same-timing candidate/control pair; no gain shown by this one observation."
+  },
+  "restoration": {
+    "base": "a1efb8e489d31c417ebb2dd6b06cbc2e8dfaca1c",
+    "sourceTrackedDiffEmpty": true
+  }
+}

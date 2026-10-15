@@ -1,0 +1,12 @@
+{
+  "kind": "external-proposal-only",
+  "productModified": false,
+  "generatedVolumes": 0,
+  "gpu": false,
+  "files": {
+    "PROPOSAL.md": "bf1c6abe47ed7a5cfedc9787302eb478fc26f51c8a0e3fa9bf422928b5e43cb7",
+    "cost-probe.ts": "5060dfa0f39408e729491ffd5e1b9ee25cf4f42abd3003eb74bc16cb20382e7c",
+    "cost-probe.json": "c80cfa35fc5f94bcca4aec1d1c96ee42e40f015405233873e3b4a5fd327abcb0",
+    "cost-probe-stdout.json": "c7bfab101d78ec98e3ed7b8deb5e187d36e8e8d352bca8e29cd116f10e3afb60"
+  }
+}

@@ -1,0 +1,668 @@
+{
+  "kind": "actual-rainmap-max-G-halo1",
+  "date": "2026-10-15T22:22:46.916Z",
+  "status": "completed",
+  "seed": 72,
+  "time": 60,
+  "windStrength": 0.55,
+  "bakesPerformed": 1,
+  "volumeSize": 256,
+  "detailSize": 128,
+  "mapSize": 64,
+  "mapFormat": "RG8 UNORM, linear clamp-to-edge; raw interleaved R,G bytes",
+  "mapSha256": "c8f6dc2c8abb0717ec3051c0f958648ec541604f3718eb0f7621cb047d961fe2",
+  "mapFile": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle9/rainmap-seed72-rg8.bin",
+  "sourceHashesBefore": {
+    "volume": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74",
+    "precipitation": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72",
+    "motion": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2",
+    "light": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf",
+    "sun": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc",
+    "cloudShader": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+    "GPUSceneEngine": "9b065a853212191c8af8e3ab63f44a654f4d3918ea59e98af29b4a3c090a6fca"
+  },
+  "sourceHashesAfter": {
+    "volume": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74",
+    "precipitation": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72",
+    "motion": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2",
+    "light": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf",
+    "sun": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc",
+    "cloudShader": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+    "GPUSceneEngine": "9b065a853212191c8af8e3ab63f44a654f4d3918ea59e98af29b4a3c090a6fca"
+  },
+  "changedSources": [],
+  "scriptSha256": "351b24a2305ec8bba6e8445b6154956d565684be526449ed5cac4c8941c4e91e",
+  "method": "One actual full generateVolume(256,72) including detail128 and all visibility caches, then production precipitationFootprint(volume,64). Only4096 map-texel statistics and a one-texel Chebyshev dilation of positive quantized R. No GPU execution/readback, pixel/ray integration, visual equivalence or speedup claim.",
+  "haloDefinition": "Union of each RByte>0 texel and its in-domain8 neighbours. If a bilinear sample has R>0, at least one contributing R texel is positive and every other contributing G texel is within Chebyshev distance1 of it; therefore the filtered G cannot exceed maxG of this halo under ideal convex filtering. GPU f32 arithmetic requires a separately chosen outward numerical margin.",
+  "shaderQualification": "Bound applies to the final column.r>0 lookup and attached fade ending at base+.3. The first guessUV G lookup can still read a remote sentinel255 and influences lateral source lookup; it is not itself bounded by the emission halo. Statistics do not validate that inverse source mapping.",
+  "originalAllG": {
+    "count": 4096,
+    "bounds": {
+      "minX": 0,
+      "minZ": 0,
+      "maxX": 63,
+      "maxZ": 63
+    },
+    "countAtMaximum": 2541,
+    "maximumGByte": 255,
+    "maximumGNormalized": 1,
+    "maximumDecodedBaseKm": 2.5,
+    "minimumGByte": 112,
+    "maxRByte": 255,
+    "G255Count": 2541,
+    "G255WithPositiveRCount": 0,
+    "histogram": {
+      "112": 19,
+      "113": 44,
+      "114": 31,
+      "115": 35,
+      "116": 56,
+      "117": 36,
+      "118": 32,
+      "119": 27,
+      "120": 34,
+      "121": 37,
+      "122": 38,
+      "123": 49,
+      "124": 53,
+      "125": 47,
+      "126": 45,
+      "127": 38,
+      "128": 40,
+      "129": 53,
+      "130": 50,
+      "131": 36,
+      "132": 44,
+      "133": 37,
+      "134": 28,
+      "135": 39,
+      "136": 28,
+      "137": 25,
+      "138": 22,
+      "139": 27,
+      "140": 33,
+      "141": 26,
+      "142": 13,
+      "143": 17,
+      "144": 21,
+      "145": 14,
+      "146": 20,
+      "147": 16,
+      "148": 24,
+      "149": 20,
+      "150": 17,
+      "151": 16,
+      "152": 20,
+      "153": 20,
+      "154": 16,
+      "155": 17,
+      "156": 32,
+      "157": 13,
+      "158": 15,
+      "159": 19,
+      "160": 14,
+      "161": 7,
+      "162": 11,
+      "163": 6,
+      "164": 9,
+      "165": 5,
+      "166": 5,
+      "167": 5,
+      "168": 4,
+      "169": 10,
+      "170": 5,
+      "171": 2,
+      "172": 1,
+      "173": 3,
+      "174": 4,
+      "175": 2,
+      "177": 3,
+      "178": 4,
+      "179": 1,
+      "180": 2,
+      "184": 3,
+      "187": 1,
+      "188": 1,
+      "190": 1,
+      "191": 3,
+      "193": 2,
+      "194": 1,
+      "196": 1,
+      "255": 2541
+    },
+    "witnessIndices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "witnesses": [
+      {
+        "x": 0,
+        "z": 0,
+        "index": 0,
+        "RByte": 0,
+        "GByte": 255,
+        "decodedBaseKm": 2.5,
+        "materialTexelCentreKm": [
+          -4.921875,
+          -3.4453125
+        ],
+        "worldBaseAt60Km": 2.5101319477082673,
+        "attachedZeroAtWorldYKm": 2.810131947708267,
+        "inEmission": false,
+        "inHalo1": false,
+        "positiveNeighbours": []
+      },
+      {
+        "x": 1,
+        "z": 0,
+        "index": 1,
+        "RByte": 0,
+        "GByte": 255,
+        "decodedBaseKm": 2.5,
+        "materialTexelCentreKm": [
+          -4.765625,
+          -3.4453125
+        ],
+        "worldBaseAt60Km": 2.5101319477082673,
+        "attachedZeroAtWorldYKm": 2.810131947708267,
+        "inEmission": false,
+        "inHalo1": false,
+        "positiveNeighbours": []
+      },
+      {
+        "x": 2,
+        "z": 0,
+        "index": 2,
+        "RByte": 0,
+        "GByte": 255,
+        "decodedBaseKm": 2.5,
+        "materialTexelCentreKm": [
+          -4.609375,
+          -3.4453125
+        ],
+        "worldBaseAt60Km": 2.5101319477082673,
+        "attachedZeroAtWorldYKm": 2.810131947708267,
+        "inEmission": false,
+        "inHalo1": false,
+        "positiveNeighbours": []
+      },
+      {
+        "x": 3,
+        "z": 0,
+        "index": 3,
+        "RByte": 0,
+        "GByte": 255,
+        "decodedBaseKm": 2.5,
+        "materialTexelCentreKm": [
+          -4.453125,
+          -3.4453125
+        ],
+        "worldBaseAt60Km": 2.5101319477082673,
+        "attachedZeroAtWorldYKm": 2.810131947708267,
+        "inEmission": false,
+        "inHalo1": false,
+        "positiveNeighbours": []
+      },
+      {
+        "x": 4,
+        "z": 0,
+        "index": 4,
+        "RByte": 0,
+        "GByte": 255,
+        "decodedBaseKm": 2.5,
+        "materialTexelCentreKm": [
+          -4.296875,
+          -3.4453125
+        ],
+        "worldBaseAt60Km": 2.5101319477082673,
+        "attachedZeroAtWorldYKm": 2.810131947708267,
+        "inEmission": false,
+        "inHalo1": false,
+        "positiveNeighbours": []
+      },
+      {
+        "x": 5,
+        "z": 0,
+        "index": 5,
+        "RByte": 0,
+        "GByte": 255,
+        "decodedBaseKm": 2.5,
+        "materialTexelCentreKm": [
+          -4.140625,
+          -3.4453125
+        ],
+        "worldBaseAt60Km": 2.5101319477082673,
+        "attachedZeroAtWorldYKm": 2.810131947708267,
+        "inEmission": false,
+        "inHalo1": false,
+        "positiveNeighbours": []
+      },
+      {
+        "x": 6,
+        "z": 0,
+        "index": 6,
+        "RByte": 0,
+        "GByte": 255,
+        "decodedBaseKm": 2.5,
+        "materialTexelCentreKm": [
+          -3.984375,
+          -3.4453125
+        ],
+        "worldBaseAt60Km": 2.5101319477082673,
+        "attachedZeroAtWorldYKm": 2.810131947708267,
+        "inEmission": false,
+        "inHalo1": false,
+        "positiveNeighbours": []
+      },
+      {
+        "x": 7,
+        "z": 0,
+        "index": 7,
+        "RByte": 0,
+        "GByte": 255,
+        "decodedBaseKm": 2.5,
+        "materialTexelCentreKm": [
+          -3.828125,
+          -3.4453125
+        ],
+        "worldBaseAt60Km": 2.5101319477082673,
+        "attachedZeroAtWorldYKm": 2.810131947708267,
+        "inEmission": false,
+        "inHalo1": false,
+        "positiveNeighbours": []
+      }
+    ]
+  },
+  "positiveR": {
+    "count": 1336,
+    "bounds": {
+      "minX": 8,
+      "minZ": 12,
+      "maxX": 52,
+      "maxZ": 50
+    },
+    "countAtMaximum": 1,
+    "maximumGByte": 180,
+    "maximumGNormalized": 0.7058823529411765,
+    "maximumDecodedBaseKm": 1.6176470588235294,
+    "minimumGByte": 112,
+    "maxRByte": 255,
+    "G255Count": 0,
+    "G255WithPositiveRCount": 0,
+    "histogram": {
+      "112": 19,
+      "113": 44,
+      "114": 31,
+      "115": 35,
+      "116": 56,
+      "117": 36,
+      "118": 32,
+      "119": 27,
+      "120": 34,
+      "121": 37,
+      "122": 38,
+      "123": 49,
+      "124": 53,
+      "125": 47,
+      "126": 45,
+      "127": 38,
+      "128": 39,
+      "129": 53,
+      "130": 48,
+      "131": 34,
+      "132": 40,
+      "133": 33,
+      "134": 26,
+      "135": 35,
+      "136": 27,
+      "137": 20,
+      "138": 19,
+      "139": 23,
+      "140": 29,
+      "141": 25,
+      "142": 12,
+      "143": 17,
+      "144": 20,
+      "145": 13,
+      "146": 15,
+      "147": 11,
+      "148": 17,
+      "149": 12,
+      "150": 7,
+      "151": 10,
+      "152": 9,
+      "153": 12,
+      "154": 7,
+      "155": 12,
+      "156": 12,
+      "157": 8,
+      "158": 10,
+      "159": 10,
+      "160": 9,
+      "161": 2,
+      "162": 5,
+      "163": 4,
+      "164": 5,
+      "165": 2,
+      "166": 4,
+      "167": 2,
+      "168": 3,
+      "169": 2,
+      "170": 3,
+      "171": 1,
+      "172": 1,
+      "174": 2,
+      "177": 2,
+      "178": 2,
+      "180": 1
+    },
+    "witnessIndices": [
+      855
+    ],
+    "witnesses": [
+      {
+        "x": 23,
+        "z": 13,
+        "index": 855,
+        "RByte": 2,
+        "GByte": 180,
+        "decodedBaseKm": 1.6176470588235294,
+        "materialTexelCentreKm": [
+          -1.328125,
+          -2.0234375
+        ],
+        "worldBaseAt60Km": 1.6277790065317967,
+        "attachedZeroAtWorldYKm": 1.9277790065317968,
+        "inEmission": true,
+        "inHalo1": true,
+        "positiveNeighbours": [
+          {
+            "x": 22,
+            "z": 13,
+            "RByte": 3,
+            "GByte": 178,
+            "offset": [
+              -1,
+              0
+            ]
+          },
+          {
+            "x": 23,
+            "z": 13,
+            "RByte": 2,
+            "GByte": 180,
+            "offset": [
+              0,
+              0
+            ]
+          },
+          {
+            "x": 24,
+            "z": 13,
+            "RByte": 1,
+            "GByte": 174,
+            "offset": [
+              1,
+              0
+            ]
+          },
+          {
+            "x": 22,
+            "z": 14,
+            "RByte": 18,
+            "GByte": 169,
+            "offset": [
+              -1,
+              1
+            ]
+          },
+          {
+            "x": 23,
+            "z": 14,
+            "RByte": 11,
+            "GByte": 171,
+            "offset": [
+              0,
+              1
+            ]
+          },
+          {
+            "x": 24,
+            "z": 14,
+            "RByte": 5,
+            "GByte": 167,
+            "offset": [
+              1,
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "maxGHalo1": {
+    "count": 1511,
+    "bounds": {
+      "minX": 7,
+      "minZ": 11,
+      "maxX": 53,
+      "maxZ": 51
+    },
+    "countAtMaximum": 1,
+    "maximumGByte": 196,
+    "maximumGNormalized": 0.7686274509803922,
+    "maximumDecodedBaseKm": 1.8058823529411767,
+    "minimumGByte": 112,
+    "maxRByte": 255,
+    "G255Count": 0,
+    "G255WithPositiveRCount": 0,
+    "histogram": {
+      "112": 19,
+      "113": 44,
+      "114": 31,
+      "115": 35,
+      "116": 56,
+      "117": 36,
+      "118": 32,
+      "119": 27,
+      "120": 34,
+      "121": 37,
+      "122": 38,
+      "123": 49,
+      "124": 53,
+      "125": 47,
+      "126": 45,
+      "127": 38,
+      "128": 40,
+      "129": 53,
+      "130": 50,
+      "131": 36,
+      "132": 44,
+      "133": 37,
+      "134": 28,
+      "135": 39,
+      "136": 28,
+      "137": 24,
+      "138": 22,
+      "139": 27,
+      "140": 33,
+      "141": 26,
+      "142": 13,
+      "143": 17,
+      "144": 21,
+      "145": 14,
+      "146": 20,
+      "147": 16,
+      "148": 22,
+      "149": 19,
+      "150": 17,
+      "151": 14,
+      "152": 14,
+      "153": 15,
+      "154": 13,
+      "155": 15,
+      "156": 18,
+      "157": 11,
+      "158": 15,
+      "159": 18,
+      "160": 13,
+      "161": 7,
+      "162": 11,
+      "163": 6,
+      "164": 9,
+      "165": 5,
+      "166": 5,
+      "167": 5,
+      "168": 4,
+      "169": 10,
+      "170": 5,
+      "171": 2,
+      "172": 1,
+      "173": 3,
+      "174": 2,
+      "175": 2,
+      "177": 3,
+      "178": 4,
+      "180": 2,
+      "184": 3,
+      "187": 1,
+      "190": 1,
+      "191": 3,
+      "193": 2,
+      "194": 1,
+      "196": 1
+    },
+    "witnessIndices": [
+      912
+    ],
+    "witnesses": [
+      {
+        "x": 16,
+        "z": 14,
+        "index": 912,
+        "RByte": 0,
+        "GByte": 196,
+        "decodedBaseKm": 1.8058823529411767,
+        "materialTexelCentreKm": [
+          -2.421875,
+          -1.9140625
+        ],
+        "worldBaseAt60Km": 1.816014300649444,
+        "attachedZeroAtWorldYKm": 2.116014300649444,
+        "inEmission": false,
+        "inHalo1": true,
+        "positiveNeighbours": [
+          {
+            "x": 17,
+            "z": 15,
+            "RByte": 2,
+            "GByte": 168,
+            "offset": [
+              1,
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "motionAt60": {
+    "state": {
+      "height": 1,
+      "width": 1,
+      "anvil": 1,
+      "time": 60,
+      "seedPhase": 0.004929577464788732,
+      "family": 0,
+      "thermalA": [
+        4.363359569179785,
+        0.4384697528319157,
+        1.15
+      ],
+      "thermalB": [
+        2.507771333885667,
+        0.8120878168769189,
+        1.05
+      ]
+    },
+    "growth": [
+      1,
+      1,
+      1
+    ],
+    "wind": [
+      0.2642000669961475,
+      0.09009438008941259
+    ],
+    "drift": [
+      0.121372967564859,
+      0.010131947708267265,
+      0
+    ]
+  },
+  "worldYUpperAt60": {
+    "formula": ".72 + (GmaxByte/255*3-.5-.72)/growth.x + .3 + drift.y",
+    "halo1MaxBaseLocalKm": 1.8058823529411767,
+    "halo1BaseWorldKm": 1.816014300649444,
+    "rainAttachmentZeroAtWorldYKm": 2.116014300649444,
+    "oldRainBoxUpperWorldYKm": 2.810131947708267,
+    "reductionKm": 0.6941176470588233,
+    "numericalGuardKm": 0,
+    "guardNote": "Raw CPU formula only; no GPU numerical padding applied or claimed."
+  },
+  "emissionColumnBounds": {
+    "materialPositiveTexelGridInclusive": {
+      "minX": 8,
+      "minZ": 12,
+      "maxX": 52,
+      "maxZ": 50
+    },
+    "materialLinearSupportKm": [
+      -3.828125,
+      -2.2421875,
+      3.359375,
+      2.1328125
+    ],
+    "worldConservativeAt60": {
+      "minXZ": [
+        -3.706752032435141,
+        -2.2421875
+      ],
+      "maxXZ": [
+        4.141248135055228,
+        2.3580484502235315
+      ],
+      "windDisplacementBound": 2.5
+    },
+    "cloudSupport": {
+      "min": [
+        -4.38671875,
+        -0.1680859374999999,
+        -2.457109375
+      ],
+      "max": [
+        3.56640625,
+        5.1446484375,
+        2.402421875
+      ]
+    },
+    "shape": {
+      "family": "congestus",
+      "towerHeight": 0.6631487672147341,
+      "towerWidth": 1.081098391311243,
+      "anvilSpread": 0.626813485659659,
+      "windLean": 0.002921091809403151
+    }
+  },
+  "operationalTiming": {
+    "generationMs": 26125.795625000002,
+    "mapAndStatisticsMs": 24.361292000001413,
+    "qualification": "Elapsed execution accounting only, not a performance benchmark."
+  }
+}

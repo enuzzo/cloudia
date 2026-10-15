@@ -1,0 +1,26 @@
+{
+  "comparison": "whole JPEG CSS screenshot, not native framebuffer",
+  "files": [
+    {
+      "name": "control-rain-view.jpg",
+      "sha256": "c73b336f2ef9d2e2a1810f0cb5cf8cbba246a832e66bae531fc9f23e15021972"
+    },
+    {
+      "name": "candidate-rain-view.jpg",
+      "sha256": "c73b336f2ef9d2e2a1810f0cb5cf8cbba246a832e66bae531fc9f23e15021972"
+    }
+  ],
+  "dimensions": [
+    [
+      1280,
+      720
+    ],
+    [
+      1280,
+      720
+    ]
+  ],
+  "identicalDecodedRGB": true,
+  "differentChannelFraction": 0.0,
+  "maximumChannelDifference": 0
+}

@@ -1,0 +1,3930 @@
+{
+  "kind": "rain-rg8-sampler-audit",
+  "status": "completed",
+  "gpuStatus": "completed",
+  "date": "2026-10-15T22:34:57.879Z",
+  "method": "Standalone raw WebGPU compute, one RG8UNORM 2D plane per dataset, explicit textureSampleLevel mip0, dynamic storage UV; linear clamp sampler. No Three.js integration or renderer-pipeline equivalence claim.",
+  "guard": {
+    "guardKm": 0.011795223460477941,
+    "filterAllowanceNormalized": 0.00392156862745098,
+    "filterHeightAllowanceKm": 0.011764705882352941,
+    "aluGuardKm": 0.000030517578125,
+    "growthInputsF32": [
+      1,
+      1.25,
+      1.470588207244873
+    ],
+    "condition": "Execute original optical branch when rainRegion && rp.y <= guardedCeiling; first skipped height is nextUp(guardedCeiling)."
+  },
+  "provenance": {
+    "shaderSha256": "ac28684c0407c6d659238fda6fe7b5b502822966943913dfbb96237953e1c190",
+    "scriptSha256": "a255b8588ba89d2432487472e44c0e7150dbc564dc3b3a440366f9fec17ada37",
+    "htmlSha256": "773bed91b0b256e99901d0189df06d2169b826ebd4e69cfc5aeb5d621f33bcb3",
+    "realMapSha256": "c8f6dc2c8abb0717ec3051c0f958648ec541604f3718eb0f7621cb047d961fe2",
+    "realMapProvenanceSha256": "3af876d1c98a0a8b941b4ac5d5d53a419555b3dc6488617c2fef58f8b6b36ac6",
+    "realMap": {
+      "kind": "actual-rainmap-max-G-halo1",
+      "date": "2026-10-15T22:22:46.916Z",
+      "seed": 72,
+      "time": 60,
+      "windStrength": 0.55,
+      "bakesPerformed": 1,
+      "volumeSize": 256,
+      "detailSize": 128,
+      "mapSize": 64,
+      "mapFormat": "RG8 UNORM, linear clamp-to-edge; raw interleaved R,G bytes",
+      "mapSha256": "c8f6dc2c8abb0717ec3051c0f958648ec541604f3718eb0f7621cb047d961fe2",
+      "sourceHashesBefore": {
+        "volume": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74",
+        "precipitation": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72",
+        "motion": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2",
+        "light": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf",
+        "sun": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc",
+        "cloudShader": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+        "GPUSceneEngine": "9b065a853212191c8af8e3ab63f44a654f4d3918ea59e98af29b4a3c090a6fca"
+      },
+      "sourceHashesAfter": {
+        "volume": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74",
+        "precipitation": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72",
+        "motion": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2",
+        "light": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf",
+        "sun": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc",
+        "cloudShader": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+        "GPUSceneEngine": "9b065a853212191c8af8e3ab63f44a654f4d3918ea59e98af29b4a3c090a6fca"
+      },
+      "changedSources": [],
+      "scriptSha256": "351b24a2305ec8bba6e8445b6154956d565684be526449ed5cac4c8941c4e91e",
+      "method": "One actual full generateVolume(256,72) including detail128 and all visibility caches, then production precipitationFootprint(volume,64). Only4096 map-texel statistics and a one-texel Chebyshev dilation of positive quantized R. No GPU execution/readback, pixel/ray integration, visual equivalence or speedup claim.",
+      "originalReportFile": "../rainmap-seed72-audit.json",
+      "originalReportSha256": "c8bf16a6040c743791a4596544de3a64f2c90f82b850c500abf72021325e2000",
+      "reuse": "Raw existing map copied byte-identically; this standalone audit performs no volume bake."
+    }
+  },
+  "adapter": {
+    "vendor": "apple",
+    "architecture": "metal-3",
+    "device": "",
+    "description": "",
+    "isFallbackAdapter": false
+  },
+  "datasetCount": 14,
+  "totalQueries": 39614,
+  "totalActualPositiveR": 16520,
+  "uncapturedErrors": [],
+  "passed": true,
+  "interpretation": "Finite device/driver samples only. Ideal CPU R/G error reports weight/coordinate differences; the tested certificate instead requires no false positive R on zero maps, G not more than one code above the encoded emission-halo maximum for actual GPU R>0, and zero attachment at/after the guarded ceiling. This is not a universal sampler error bound, all-UV proof, performance result, cloud bake or photographic acceptance.",
+  "results": [
+    {
+      "name": "constant-G0-R1",
+      "kind": "synthetic-fixture",
+      "size": 8,
+      "mapSha256": "aebf405592dd2d2a2e5b4a256e4a7167b6189b5272cd5cbced17a8ba139c2616",
+      "mapBytes": 128,
+      "queryInputSha256": "401254beff4c1631a3b48620c34aaed5e87fee8dbf9193cb704ebbf551abe3fa",
+      "gpuOutputSha256": "90ba50568895c397123d98efb6468ec8d8b667e199797a2e9dc19b3c0d080646",
+      "halo": {
+        "maximumGByte": 0,
+        "maximumGNormalized": 0,
+        "maxBaseReferenceKm": -0.5,
+        "positiveTexels": 64,
+        "haloTexels": 64
+      },
+      "uploadedUniformF32": [
+        -0.5,
+        0.0117952236905694,
+        1009,
+        0,
+        1,
+        1.25,
+        1.470588207244873,
+        0
+      ],
+      "results": {
+        "queryCount": 1009,
+        "strictProductionDomainQueries": 913,
+        "outsideOrEndpointQueries": 96,
+        "actualGpuPositiveR": 1009,
+        "allZeroMapFalsePositiveR": 0,
+        "nonFiniteQueries": 0,
+        "negativeOrAboveOneRG": 0,
+        "uvEchoMismatches": 0,
+        "maxAbsoluteRErrorVsIdeal": 2.3191758322799183e-10,
+        "maxAbsoluteGErrorVsIdeal": 0,
+        "maximumGAboveCpuFourCornerMaximum": 0,
+        "maximumPositiveRGAboveHaloMaximum": 0,
+        "positiveRFilterAllowanceViolations": 0,
+        "positiveRGuardAttachmentViolations": 0,
+        "positiveRNegativeCeilingSlack": 0,
+        "envelopeAttachmentViolations": 0,
+        "envelopeNegativeSlack": 0,
+        "minimumPositiveRCeilingSlackKm": 0.011795282363891602,
+        "minimumEnvelopeCeilingSlackKm": 0.000030517578125,
+        "cpuIdealRZeroButGpuPositiveR": 0,
+        "groups": {
+          "texel-centres": 64,
+          "f32-around-centres-and-footprint-ends": 256,
+          "half-cell-grid": 81,
+          "halton-interior": 512,
+          "clamp-edge-and-outside": 96
+        },
+        "worstIdealG": {
+          "queryIndex": 0,
+          "uvF32": [
+            0.0625,
+            0.0625
+          ],
+          "queryGroup": "texel-centres",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 0,
+            "corners": [
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 1
+              },
+              {
+                "x": 1,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0
+              },
+              {
+                "x": 0,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0
+              },
+              {
+                "x": 1,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0
+              }
+            ],
+            "cornerMaximumG": 0
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 0,
+            "uvEcho": [
+              0.0625,
+              0.0625
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": -0.20000004768371582,
+                "guardedCeiling": -0.18820476531982422,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 0.043999943882226944,
+                "guardedCeiling": 0.055795226246118546,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 0.19039995968341827,
+                "guardedCeiling": 0.20219524204730988,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.000030517578125,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstHaloG": {
+          "queryIndex": 0,
+          "uvF32": [
+            0.0625,
+            0.0625
+          ],
+          "queryGroup": "texel-centres",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 0,
+            "corners": [
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 1
+              },
+              {
+                "x": 1,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0
+              },
+              {
+                "x": 0,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0
+              },
+              {
+                "x": 1,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0
+              }
+            ],
+            "cornerMaximumG": 0
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 0,
+            "uvEcho": [
+              0.0625,
+              0.0625
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": -0.20000004768371582,
+                "guardedCeiling": -0.18820476531982422,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 0.043999943882226944,
+                "guardedCeiling": 0.055795226246118546,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 0.19039995968341827,
+                "guardedCeiling": 0.20219524204730988,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.000030517578125,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstEndpoint": {
+          "queryIndex": 0,
+          "uvF32": [
+            0.0625,
+            0.0625
+          ],
+          "queryGroup": "texel-centres",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 0,
+            "corners": [
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 1
+              },
+              {
+                "x": 1,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0
+              },
+              {
+                "x": 0,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0
+              },
+              {
+                "x": 1,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0
+              }
+            ],
+            "cornerMaximumG": 0
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 0,
+            "uvEcho": [
+              0.0625,
+              0.0625
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": -0.20000004768371582,
+                "guardedCeiling": -0.18820476531982422,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 0.043999943882226944,
+                "guardedCeiling": 0.055795226246118546,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 0.19039995968341827,
+                "guardedCeiling": 0.20219524204730988,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.000030517578125,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "firstViolations": [],
+        "passed": true
+      }
+    },
+    {
+      "name": "constant-G1-R1",
+      "kind": "synthetic-fixture",
+      "size": 8,
+      "mapSha256": "7eb24a18990ee4c958c89773da6cc9fbc5c278357762d02ec6ab947eb28726ff",
+      "mapBytes": 128,
+      "queryInputSha256": "401254beff4c1631a3b48620c34aaed5e87fee8dbf9193cb704ebbf551abe3fa",
+      "gpuOutputSha256": "a4f12addcaaa559a3b677769712f3d2aed6bbce4e3e8e3e15256c4761b17b177",
+      "halo": {
+        "maximumGByte": 1,
+        "maximumGNormalized": 0.00392156862745098,
+        "maxBaseReferenceKm": -0.48823529411764705,
+        "positiveTexels": 64,
+        "haloTexels": 64
+      },
+      "uploadedUniformF32": [
+        -0.4882352948188782,
+        0.0117952236905694,
+        1009,
+        0.003921568859368563,
+        1,
+        1.25,
+        1.470588207244873,
+        0
+      ],
+      "results": {
+        "queryCount": 1009,
+        "strictProductionDomainQueries": 913,
+        "outsideOrEndpointQueries": 96,
+        "actualGpuPositiveR": 1009,
+        "allZeroMapFalsePositiveR": 0,
+        "nonFiniteQueries": 0,
+        "negativeOrAboveOneRG": 0,
+        "uvEchoMismatches": 0,
+        "maxAbsoluteRErrorVsIdeal": 2.3191758322799183e-10,
+        "maxAbsoluteGErrorVsIdeal": 2.3191758322799183e-10,
+        "maximumGAboveCpuFourCornerMaximum": 2.319175823606301e-10,
+        "maximumPositiveRGAboveHaloMaximum": 2.319175823606301e-10,
+        "positiveRFilterAllowanceViolations": 0,
+        "positiveRGuardAttachmentViolations": 0,
+        "positiveRNegativeCeilingSlack": 0,
+        "envelopeAttachmentViolations": 0,
+        "envelopeNegativeSlack": 0,
+        "minimumPositiveRCeilingSlackKm": 0.011795278638601303,
+        "minimumEnvelopeCeilingSlackKm": 0.00003063678741455078,
+        "cpuIdealRZeroButGpuPositiveR": 0,
+        "groups": {
+          "texel-centres": 64,
+          "f32-around-centres-and-footprint-ends": 256,
+          "half-cell-grid": 81,
+          "halton-interior": 512,
+          "clamp-edge-and-outside": 96
+        },
+        "worstIdealG": {
+          "queryIndex": 62,
+          "uvF32": [
+            0.5624999403953552,
+            0.1875000149011612
+          ],
+          "queryGroup": "f32-around-centres-and-footprint-ends",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.0039215686274509795,
+            "g": 0.0039215686274509795,
+            "corners": [
+              {
+                "x": 3,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 1,
+                "weight": 4.7683710135970614e-7
+              },
+              {
+                "x": 4,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 1,
+                "weight": 0.9999994039536091
+              },
+              {
+                "x": 3,
+                "z": 2,
+                "RByte": 1,
+                "GByte": 1,
+                "weight": 5.684341886080802e-14
+              },
+              {
+                "x": 4,
+                "z": 2,
+                "RByte": 1,
+                "GByte": 1,
+                "weight": 1.1920923270736239e-7
+              }
+            ],
+            "cornerMaximumG": 0.00392156862745098
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 0.003921568859368563,
+            "uvEcho": [
+              0.5624999403953552,
+              0.1875000149011612
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": -0.18823528289794922,
+                "guardedCeiling": -0.17644000053405762,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 0.053411755710840225,
+                "guardedCeiling": 0.06520703434944153,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 0.19839999079704285,
+                "guardedCeiling": 0.21019527316093445,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.00003063678741455078,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstHaloG": {
+          "queryIndex": 0,
+          "uvF32": [
+            0.0625,
+            0.0625
+          ],
+          "queryGroup": "texel-centres",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 0.00392156862745098,
+            "corners": [
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 1,
+                "weight": 1
+              },
+              {
+                "x": 1,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 1,
+                "weight": 0
+              },
+              {
+                "x": 0,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 1,
+                "weight": 0
+              },
+              {
+                "x": 1,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 1,
+                "weight": 0
+              }
+            ],
+            "cornerMaximumG": 0.00392156862745098
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 0.003921568859368563,
+            "uvEcho": [
+              0.0625,
+              0.0625
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": -0.18823528289794922,
+                "guardedCeiling": -0.17644000053405762,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 0.053411755710840225,
+                "guardedCeiling": 0.06520703434944153,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 0.19839999079704285,
+                "guardedCeiling": 0.21019527316093445,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.00003063678741455078,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstEndpoint": {
+          "queryIndex": 0,
+          "uvF32": [
+            0.0625,
+            0.0625
+          ],
+          "queryGroup": "texel-centres",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 0.00392156862745098,
+            "corners": [
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 1,
+                "weight": 1
+              },
+              {
+                "x": 1,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 1,
+                "weight": 0
+              },
+              {
+                "x": 0,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 1,
+                "weight": 0
+              },
+              {
+                "x": 1,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 1,
+                "weight": 0
+              }
+            ],
+            "cornerMaximumG": 0.00392156862745098
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 0.003921568859368563,
+            "uvEcho": [
+              0.0625,
+              0.0625
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": -0.18823528289794922,
+                "guardedCeiling": -0.17644000053405762,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 0.053411755710840225,
+                "guardedCeiling": 0.06520703434944153,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 0.19839999079704285,
+                "guardedCeiling": 0.21019527316093445,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.00003063678741455078,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "firstViolations": [],
+        "passed": true
+      }
+    },
+    {
+      "name": "constant-G103-R1",
+      "kind": "synthetic-fixture",
+      "size": 8,
+      "mapSha256": "5e0be3a8d75ee81185ef510f5bcffeae7404113364d399eafd55005c65b92b7e",
+      "mapBytes": 128,
+      "queryInputSha256": "401254beff4c1631a3b48620c34aaed5e87fee8dbf9193cb704ebbf551abe3fa",
+      "gpuOutputSha256": "94c74f120cdd5de7c0299a83cab855c6fa20b6537f9bec2e3d873e53386fdea8",
+      "halo": {
+        "maximumGByte": 103,
+        "maximumGNormalized": 0.403921568627451,
+        "maxBaseReferenceKm": 0.7117647058823531,
+        "positiveTexels": 64,
+        "haloTexels": 64
+      },
+      "uploadedUniformF32": [
+        0.7117646932601929,
+        0.0117952236905694,
+        1009,
+        0.40392157435417175,
+        1,
+        1.25,
+        1.470588207244873,
+        0
+      ],
+      "results": {
+        "queryCount": 1009,
+        "strictProductionDomainQueries": 913,
+        "outsideOrEndpointQueries": 96,
+        "actualGpuPositiveR": 1009,
+        "allZeroMapFalsePositiveR": 0,
+        "nonFiniteQueries": 0,
+        "negativeOrAboveOneRG": 0,
+        "uvEchoMismatches": 0,
+        "maxAbsoluteRErrorVsIdeal": 2.3191758322799183e-10,
+        "maxAbsoluteGErrorVsIdeal": 5.726720819776432e-9,
+        "maximumGAboveCpuFourCornerMaximum": 5.726720764265281e-9,
+        "maximumPositiveRGAboveHaloMaximum": 5.726720764265281e-9,
+        "positiveRFilterAllowanceViolations": 0,
+        "positiveRGuardAttachmentViolations": 0,
+        "positiveRNegativeCeilingSlack": 0,
+        "envelopeAttachmentViolations": 0,
+        "envelopeNegativeSlack": 0,
+        "minimumPositiveRCeilingSlackKm": 0.011795282363891602,
+        "minimumEnvelopeCeilingSlackKm": 0.000030517578125,
+        "cpuIdealRZeroButGpuPositiveR": 0,
+        "groups": {
+          "texel-centres": 64,
+          "f32-around-centres-and-footprint-ends": 256,
+          "half-cell-grid": 81,
+          "halton-interior": 512,
+          "clamp-edge-and-outside": 96
+        },
+        "worstIdealG": {
+          "queryIndex": 1,
+          "uvF32": [
+            0.0624999962747097,
+            0.0624999962747097
+          ],
+          "queryGroup": "f32-around-centres-and-footprint-ends",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 0.40392156862745093,
+            "corners": [
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 103,
+                "weight": 8.881784197001252e-16
+              },
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 103,
+                "weight": 2.9802321499516893e-8
+              },
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 103,
+                "weight": 2.9802321499516893e-8
+              },
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 103,
+                "weight": 0.9999999403953561
+              }
+            ],
+            "cornerMaximumG": 0.403921568627451
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 0.40392157435417175,
+            "uvEcho": [
+              0.0624999962747097,
+              0.0624999962747097
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 1.011764645576477,
+                "guardedCeiling": 1.0235599279403687,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 1.0134117603302002,
+                "guardedCeiling": 1.0252070426940918,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 1.0144000053405762,
+                "guardedCeiling": 1.0261952877044678,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.000030517578125,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstHaloG": {
+          "queryIndex": 0,
+          "uvF32": [
+            0.0625,
+            0.0625
+          ],
+          "queryGroup": "texel-centres",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 0.403921568627451,
+            "corners": [
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 103,
+                "weight": 1
+              },
+              {
+                "x": 1,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 103,
+                "weight": 0
+              },
+              {
+                "x": 0,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 103,
+                "weight": 0
+              },
+              {
+                "x": 1,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 103,
+                "weight": 0
+              }
+            ],
+            "cornerMaximumG": 0.403921568627451
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 0.40392157435417175,
+            "uvEcho": [
+              0.0625,
+              0.0625
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 1.011764645576477,
+                "guardedCeiling": 1.0235599279403687,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 1.0134117603302002,
+                "guardedCeiling": 1.0252070426940918,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 1.0144000053405762,
+                "guardedCeiling": 1.0261952877044678,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.000030517578125,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstEndpoint": {
+          "queryIndex": 0,
+          "uvF32": [
+            0.0625,
+            0.0625
+          ],
+          "queryGroup": "texel-centres",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 0.403921568627451,
+            "corners": [
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 103,
+                "weight": 1
+              },
+              {
+                "x": 1,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 103,
+                "weight": 0
+              },
+              {
+                "x": 0,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 103,
+                "weight": 0
+              },
+              {
+                "x": 1,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 103,
+                "weight": 0
+              }
+            ],
+            "cornerMaximumG": 0.403921568627451
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 0.40392157435417175,
+            "uvEcho": [
+              0.0625,
+              0.0625
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 1.011764645576477,
+                "guardedCeiling": 1.0235599279403687,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 1.0134117603302002,
+                "guardedCeiling": 1.0252070426940918,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 1.0144000053405762,
+                "guardedCeiling": 1.0261952877044678,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.000030517578125,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "firstViolations": [],
+        "passed": true
+      }
+    },
+    {
+      "name": "constant-G104-R1",
+      "kind": "synthetic-fixture",
+      "size": 8,
+      "mapSha256": "099885dba8703a6fcf5b0cb2f9611074b6de1824889d4bcbe856fd7efcc8bb48",
+      "mapBytes": 128,
+      "queryInputSha256": "401254beff4c1631a3b48620c34aaed5e87fee8dbf9193cb704ebbf551abe3fa",
+      "gpuOutputSha256": "a351663a2057ba4218b10e6c62eb3a06bbfdb9a26bba05e0a3d4adc553cbfc96",
+      "halo": {
+        "maximumGByte": 104,
+        "maximumGNormalized": 0.40784313725490196,
+        "maxBaseReferenceKm": 0.723529411764706,
+        "positiveTexels": 64,
+        "haloTexels": 64
+      },
+      "uploadedUniformF32": [
+        0.7235293984413147,
+        0.0117952236905694,
+        1009,
+        0.40784314274787903,
+        1,
+        1.25,
+        1.470588207244873,
+        0
+      ],
+      "results": {
+        "queryCount": 1009,
+        "strictProductionDomainQueries": 913,
+        "outsideOrEndpointQueries": 96,
+        "actualGpuPositiveR": 1009,
+        "allZeroMapFalsePositiveR": 0,
+        "nonFiniteQueries": 0,
+        "negativeOrAboveOneRG": 0,
+        "uvEchoMismatches": 0,
+        "maxAbsoluteRErrorVsIdeal": 2.3191758322799183e-10,
+        "maxAbsoluteGErrorVsIdeal": 5.4929771287071105e-9,
+        "maximumGAboveCpuFourCornerMaximum": 5.492977073195959e-9,
+        "maximumPositiveRGAboveHaloMaximum": 5.492977073195959e-9,
+        "positiveRFilterAllowanceViolations": 0,
+        "positiveRGuardAttachmentViolations": 0,
+        "positiveRNegativeCeilingSlack": 0,
+        "envelopeAttachmentViolations": 0,
+        "envelopeNegativeSlack": 0,
+        "minimumPositiveRCeilingSlackKm": 0.01179516315460205,
+        "minimumEnvelopeCeilingSlackKm": 0.000030517578125,
+        "cpuIdealRZeroButGpuPositiveR": 0,
+        "groups": {
+          "texel-centres": 64,
+          "f32-around-centres-and-footprint-ends": 256,
+          "half-cell-grid": 81,
+          "halton-interior": 512,
+          "clamp-edge-and-outside": 96
+        },
+        "worstIdealG": {
+          "queryIndex": 88,
+          "uvF32": [
+            0.1875000149011612,
+            0.3124999701976776
+          ],
+          "queryGroup": "f32-around-centres-and-footprint-ends",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 0.4078431372549019,
+            "corners": [
+              {
+                "x": 1,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 104,
+                "weight": 2.3841855067985307e-7
+              },
+              {
+                "x": 2,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 104,
+                "weight": 2.842170943040401e-14
+              },
+              {
+                "x": 1,
+                "z": 2,
+                "RByte": 1,
+                "GByte": 104,
+                "weight": 0.9999996423721598
+              },
+              {
+                "x": 2,
+                "z": 2,
+                "RByte": 1,
+                "GByte": 104,
+                "weight": 1.1920926112907182e-7
+              }
+            ],
+            "cornerMaximumG": 0.40784313725490196
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 0.40784314274787903,
+            "uvEcho": [
+              0.1875000149011612,
+              0.3124999701976776
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 1.0235294103622437,
+                "guardedCeiling": 1.0353245735168457,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 1.022823452949524,
+                "guardedCeiling": 1.0346187353134155,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 1.0224000215530396,
+                "guardedCeiling": 1.0341951847076416,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.000030517578125,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstHaloG": {
+          "queryIndex": 0,
+          "uvF32": [
+            0.0625,
+            0.0625
+          ],
+          "queryGroup": "texel-centres",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 0.40784313725490196,
+            "corners": [
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 104,
+                "weight": 1
+              },
+              {
+                "x": 1,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 104,
+                "weight": 0
+              },
+              {
+                "x": 0,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 104,
+                "weight": 0
+              },
+              {
+                "x": 1,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 104,
+                "weight": 0
+              }
+            ],
+            "cornerMaximumG": 0.40784313725490196
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 0.40784314274787903,
+            "uvEcho": [
+              0.0625,
+              0.0625
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 1.0235294103622437,
+                "guardedCeiling": 1.0353245735168457,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 1.022823452949524,
+                "guardedCeiling": 1.0346187353134155,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 1.0224000215530396,
+                "guardedCeiling": 1.0341951847076416,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.000030517578125,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstEndpoint": {
+          "queryIndex": 0,
+          "uvF32": [
+            0.0625,
+            0.0625
+          ],
+          "queryGroup": "texel-centres",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 0.40784313725490196,
+            "corners": [
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 104,
+                "weight": 1
+              },
+              {
+                "x": 1,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 104,
+                "weight": 0
+              },
+              {
+                "x": 0,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 104,
+                "weight": 0
+              },
+              {
+                "x": 1,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 104,
+                "weight": 0
+              }
+            ],
+            "cornerMaximumG": 0.40784313725490196
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 0.40784314274787903,
+            "uvEcho": [
+              0.0625,
+              0.0625
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 1.0235294103622437,
+                "guardedCeiling": 1.0353245735168457,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 1.022823452949524,
+                "guardedCeiling": 1.0346187353134155,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 1.0224000215530396,
+                "guardedCeiling": 1.0341951847076416,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.000030517578125,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "firstViolations": [],
+        "passed": true
+      }
+    },
+    {
+      "name": "constant-G127-R1",
+      "kind": "synthetic-fixture",
+      "size": 8,
+      "mapSha256": "fd89d554fa6886bde5a5628b515761cf0ff38cb8b9c164d8a44dfeff2bcee509",
+      "mapBytes": 128,
+      "queryInputSha256": "401254beff4c1631a3b48620c34aaed5e87fee8dbf9193cb704ebbf551abe3fa",
+      "gpuOutputSha256": "db734fff0624b9c127f56b81e48de7faba0d4da2879e61d2d0f6630460fa5068",
+      "halo": {
+        "maximumGByte": 127,
+        "maximumGNormalized": 0.4980392156862745,
+        "maxBaseReferenceKm": 0.9941176470588236,
+        "positiveTexels": 64,
+        "haloTexels": 64
+      },
+      "uploadedUniformF32": [
+        0.9941176176071167,
+        0.0117952236905694,
+        1009,
+        0.49803921580314636,
+        1,
+        1.25,
+        1.470588207244873,
+        0
+      ],
+      "results": {
+        "queryCount": 1009,
+        "strictProductionDomainQueries": 913,
+        "outsideOrEndpointQueries": 96,
+        "actualGpuPositiveR": 1009,
+        "allZeroMapFalsePositiveR": 0,
+        "nonFiniteQueries": 0,
+        "negativeOrAboveOneRG": 0,
+        "uvEchoMismatches": 0,
+        "maxAbsoluteRErrorVsIdeal": 2.3191758322799183e-10,
+        "maxAbsoluteGErrorVsIdeal": 1.1687195655696314e-10,
+        "maximumGAboveCpuFourCornerMaximum": 1.1687184553466068e-10,
+        "maximumPositiveRGAboveHaloMaximum": 1.1687184553466068e-10,
+        "positiveRFilterAllowanceViolations": 0,
+        "positiveRGuardAttachmentViolations": 0,
+        "positiveRNegativeCeilingSlack": 0,
+        "envelopeAttachmentViolations": 0,
+        "envelopeNegativeSlack": 0,
+        "minimumPositiveRCeilingSlackKm": 0.011795282363891602,
+        "minimumEnvelopeCeilingSlackKm": 0.00003039836883544922,
+        "cpuIdealRZeroButGpuPositiveR": 0,
+        "groups": {
+          "texel-centres": 64,
+          "f32-around-centres-and-footprint-ends": 256,
+          "half-cell-grid": 81,
+          "halton-interior": 512,
+          "clamp-edge-and-outside": 96
+        },
+        "worstIdealG": {
+          "queryIndex": 162,
+          "uvF32": [
+            0.0624999962747097,
+            0.5625000596046448
+          ],
+          "queryGroup": "f32-around-centres-and-footprint-ends",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 0.4980392156862744,
+            "corners": [
+              {
+                "x": 0,
+                "z": 4,
+                "RByte": 1,
+                "GByte": 127,
+                "weight": 2.9802308176840597e-8
+              },
+              {
+                "x": 0,
+                "z": 4,
+                "RByte": 1,
+                "GByte": 127,
+                "weight": 0.9999994933605336
+              },
+              {
+                "x": 0,
+                "z": 5,
+                "RByte": 1,
+                "GByte": 127,
+                "weight": 1.4210854715202004e-14
+              },
+              {
+                "x": 0,
+                "z": 5,
+                "RByte": 1,
+                "GByte": 127,
+                "weight": 4.768371439922703e-7
+              }
+            ],
+            "cornerMaximumG": 0.4980392156862745
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 0.49803921580314636,
+            "uvEcho": [
+              0.0624999962747097,
+              0.5625000596046448
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 1.2941175699234009,
+                "guardedCeiling": 1.3059128522872925,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 1.2392940521240234,
+                "guardedCeiling": 1.251089334487915,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 1.206399917602539,
+                "guardedCeiling": 1.2181951999664307,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.00003039836883544922,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstHaloG": {
+          "queryIndex": 0,
+          "uvF32": [
+            0.0625,
+            0.0625
+          ],
+          "queryGroup": "texel-centres",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 0.4980392156862745,
+            "corners": [
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 127,
+                "weight": 1
+              },
+              {
+                "x": 1,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 127,
+                "weight": 0
+              },
+              {
+                "x": 0,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 127,
+                "weight": 0
+              },
+              {
+                "x": 1,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 127,
+                "weight": 0
+              }
+            ],
+            "cornerMaximumG": 0.4980392156862745
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 0.49803921580314636,
+            "uvEcho": [
+              0.0625,
+              0.0625
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 1.2941175699234009,
+                "guardedCeiling": 1.3059128522872925,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 1.2392940521240234,
+                "guardedCeiling": 1.251089334487915,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 1.206399917602539,
+                "guardedCeiling": 1.2181951999664307,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.00003039836883544922,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstEndpoint": {
+          "queryIndex": 0,
+          "uvF32": [
+            0.0625,
+            0.0625
+          ],
+          "queryGroup": "texel-centres",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 0.4980392156862745,
+            "corners": [
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 127,
+                "weight": 1
+              },
+              {
+                "x": 1,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 127,
+                "weight": 0
+              },
+              {
+                "x": 0,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 127,
+                "weight": 0
+              },
+              {
+                "x": 1,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 127,
+                "weight": 0
+              }
+            ],
+            "cornerMaximumG": 0.4980392156862745
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 0.49803921580314636,
+            "uvEcho": [
+              0.0625,
+              0.0625
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 1.2941175699234009,
+                "guardedCeiling": 1.3059128522872925,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 1.2392940521240234,
+                "guardedCeiling": 1.251089334487915,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 1.206399917602539,
+                "guardedCeiling": 1.2181951999664307,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.00003039836883544922,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "firstViolations": [],
+        "passed": true
+      }
+    },
+    {
+      "name": "constant-G254-R1",
+      "kind": "synthetic-fixture",
+      "size": 8,
+      "mapSha256": "1dbbf887c1968c9e5fa2248cc0a7133e8a30340734a5ba1fd9f5b038d4de676e",
+      "mapBytes": 128,
+      "queryInputSha256": "401254beff4c1631a3b48620c34aaed5e87fee8dbf9193cb704ebbf551abe3fa",
+      "gpuOutputSha256": "2fa6715484b6c1f542cdbfa56f5d0f27ced8fe73c380f59be251992e1f5edbbd",
+      "halo": {
+        "maximumGByte": 254,
+        "maximumGNormalized": 0.996078431372549,
+        "maxBaseReferenceKm": 2.488235294117647,
+        "positiveTexels": 64,
+        "haloTexels": 64
+      },
+      "uploadedUniformF32": [
+        2.4882352352142334,
+        0.0117952236905694,
+        1009,
+        0.9960784316062927,
+        1,
+        1.25,
+        1.470588207244873,
+        0
+      ],
+      "results": {
+        "queryCount": 1009,
+        "strictProductionDomainQueries": 913,
+        "outsideOrEndpointQueries": 96,
+        "actualGpuPositiveR": 1009,
+        "allZeroMapFalsePositiveR": 0,
+        "nonFiniteQueries": 0,
+        "negativeOrAboveOneRG": 0,
+        "uvEchoMismatches": 0,
+        "maxAbsoluteRErrorVsIdeal": 2.3191758322799183e-10,
+        "maxAbsoluteGErrorVsIdeal": 2.337439131139263e-10,
+        "maximumGAboveCpuFourCornerMaximum": 2.3374369106932136e-10,
+        "maximumPositiveRGAboveHaloMaximum": 2.3374369106932136e-10,
+        "positiveRFilterAllowanceViolations": 0,
+        "positiveRGuardAttachmentViolations": 0,
+        "positiveRNegativeCeilingSlack": 0,
+        "envelopeAttachmentViolations": 0,
+        "envelopeNegativeSlack": 0,
+        "minimumPositiveRCeilingSlackKm": 0.011795282363891602,
+        "minimumEnvelopeCeilingSlackKm": 0.000030517578125,
+        "cpuIdealRZeroButGpuPositiveR": 0,
+        "groups": {
+          "texel-centres": 64,
+          "f32-around-centres-and-footprint-ends": 256,
+          "half-cell-grid": 81,
+          "halton-interior": 512,
+          "clamp-edge-and-outside": 96
+        },
+        "worstIdealG": {
+          "queryIndex": 162,
+          "uvF32": [
+            0.0624999962747097,
+            0.5625000596046448
+          ],
+          "queryGroup": "f32-around-centres-and-footprint-ends",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 0.9960784313725488,
+            "corners": [
+              {
+                "x": 0,
+                "z": 4,
+                "RByte": 1,
+                "GByte": 254,
+                "weight": 2.9802308176840597e-8
+              },
+              {
+                "x": 0,
+                "z": 4,
+                "RByte": 1,
+                "GByte": 254,
+                "weight": 0.9999994933605336
+              },
+              {
+                "x": 0,
+                "z": 5,
+                "RByte": 1,
+                "GByte": 254,
+                "weight": 1.4210854715202004e-14
+              },
+              {
+                "x": 0,
+                "z": 5,
+                "RByte": 1,
+                "GByte": 254,
+                "weight": 4.768371439922703e-7
+              }
+            ],
+            "cornerMaximumG": 0.996078431372549
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 0.9960784316062927,
+            "uvEcho": [
+              0.0624999962747097,
+              0.5625000596046448
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 2.7882351875305176,
+                "guardedCeiling": 2.800030469894409,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 2.4345881938934326,
+                "guardedCeiling": 2.446383476257324,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 2.222399950027466,
+                "guardedCeiling": 2.2341952323913574,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.000030517578125,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstHaloG": {
+          "queryIndex": 0,
+          "uvF32": [
+            0.0625,
+            0.0625
+          ],
+          "queryGroup": "texel-centres",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 0.996078431372549,
+            "corners": [
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 254,
+                "weight": 1
+              },
+              {
+                "x": 1,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 254,
+                "weight": 0
+              },
+              {
+                "x": 0,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 254,
+                "weight": 0
+              },
+              {
+                "x": 1,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 254,
+                "weight": 0
+              }
+            ],
+            "cornerMaximumG": 0.996078431372549
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 0.9960784316062927,
+            "uvEcho": [
+              0.0625,
+              0.0625
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 2.7882351875305176,
+                "guardedCeiling": 2.800030469894409,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 2.4345881938934326,
+                "guardedCeiling": 2.446383476257324,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 2.222399950027466,
+                "guardedCeiling": 2.2341952323913574,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.000030517578125,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstEndpoint": {
+          "queryIndex": 0,
+          "uvF32": [
+            0.0625,
+            0.0625
+          ],
+          "queryGroup": "texel-centres",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 0.996078431372549,
+            "corners": [
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 254,
+                "weight": 1
+              },
+              {
+                "x": 1,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 254,
+                "weight": 0
+              },
+              {
+                "x": 0,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 254,
+                "weight": 0
+              },
+              {
+                "x": 1,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 254,
+                "weight": 0
+              }
+            ],
+            "cornerMaximumG": 0.996078431372549
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 0.9960784316062927,
+            "uvEcho": [
+              0.0625,
+              0.0625
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 2.7882351875305176,
+                "guardedCeiling": 2.800030469894409,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 2.4345881938934326,
+                "guardedCeiling": 2.446383476257324,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 2.222399950027466,
+                "guardedCeiling": 2.2341952323913574,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.000030517578125,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "firstViolations": [],
+        "passed": true
+      }
+    },
+    {
+      "name": "constant-G255-R1",
+      "kind": "synthetic-fixture",
+      "size": 8,
+      "mapSha256": "292e92bd2e575a7a715cb4fd5537412c14fc2ec8e57a76d3deb1515543f84520",
+      "mapBytes": 128,
+      "queryInputSha256": "401254beff4c1631a3b48620c34aaed5e87fee8dbf9193cb704ebbf551abe3fa",
+      "gpuOutputSha256": "9b179c59921f73471505b93179ade2fd3ce418486b9c9edfdd9f5009f2c82693",
+      "halo": {
+        "maximumGByte": 255,
+        "maximumGNormalized": 1,
+        "maxBaseReferenceKm": 2.5,
+        "positiveTexels": 64,
+        "haloTexels": 64
+      },
+      "uploadedUniformF32": [
+        2.5,
+        0.0117952236905694,
+        1009,
+        1,
+        1,
+        1.25,
+        1.470588207244873,
+        0
+      ],
+      "results": {
+        "queryCount": 1009,
+        "strictProductionDomainQueries": 913,
+        "outsideOrEndpointQueries": 96,
+        "actualGpuPositiveR": 1009,
+        "allZeroMapFalsePositiveR": 0,
+        "nonFiniteQueries": 0,
+        "negativeOrAboveOneRG": 0,
+        "uvEchoMismatches": 0,
+        "maxAbsoluteRErrorVsIdeal": 2.3191758322799183e-10,
+        "maxAbsoluteGErrorVsIdeal": 0,
+        "maximumGAboveCpuFourCornerMaximum": 0,
+        "maximumPositiveRGAboveHaloMaximum": 0,
+        "positiveRFilterAllowanceViolations": 0,
+        "positiveRGuardAttachmentViolations": 0,
+        "positiveRNegativeCeilingSlack": 0,
+        "envelopeAttachmentViolations": 0,
+        "envelopeNegativeSlack": 0,
+        "minimumPositiveRCeilingSlackKm": 0.011795282363891602,
+        "minimumEnvelopeCeilingSlackKm": 0.011795282363891602,
+        "cpuIdealRZeroButGpuPositiveR": 0,
+        "groups": {
+          "texel-centres": 64,
+          "f32-around-centres-and-footprint-ends": 256,
+          "half-cell-grid": 81,
+          "halton-interior": 512,
+          "clamp-edge-and-outside": 96
+        },
+        "worstIdealG": {
+          "queryIndex": 0,
+          "uvF32": [
+            0.0625,
+            0.0625
+          ],
+          "queryGroup": "texel-centres",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 1,
+            "corners": [
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 255,
+                "weight": 1
+              },
+              {
+                "x": 1,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 255,
+                "weight": 0
+              },
+              {
+                "x": 0,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 255,
+                "weight": 0
+              },
+              {
+                "x": 1,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 255,
+                "weight": 0
+              }
+            ],
+            "cornerMaximumG": 1
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 1,
+            "uvEcho": [
+              0.0625,
+              0.0625
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 2.799999952316284,
+                "guardedCeiling": 2.811795234680176,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 2.444000005722046,
+                "guardedCeiling": 2.4557952880859375,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 2.2304000854492188,
+                "guardedCeiling": 2.2421953678131104,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.011795282363891602,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstHaloG": {
+          "queryIndex": 0,
+          "uvF32": [
+            0.0625,
+            0.0625
+          ],
+          "queryGroup": "texel-centres",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 1,
+            "corners": [
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 255,
+                "weight": 1
+              },
+              {
+                "x": 1,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 255,
+                "weight": 0
+              },
+              {
+                "x": 0,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 255,
+                "weight": 0
+              },
+              {
+                "x": 1,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 255,
+                "weight": 0
+              }
+            ],
+            "cornerMaximumG": 1
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 1,
+            "uvEcho": [
+              0.0625,
+              0.0625
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 2.799999952316284,
+                "guardedCeiling": 2.811795234680176,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 2.444000005722046,
+                "guardedCeiling": 2.4557952880859375,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 2.2304000854492188,
+                "guardedCeiling": 2.2421953678131104,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.011795282363891602,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstEndpoint": {
+          "queryIndex": 0,
+          "uvF32": [
+            0.0625,
+            0.0625
+          ],
+          "queryGroup": "texel-centres",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00392156862745098,
+            "g": 1,
+            "corners": [
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 255,
+                "weight": 1
+              },
+              {
+                "x": 1,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 255,
+                "weight": 0
+              },
+              {
+                "x": 0,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 255,
+                "weight": 0
+              },
+              {
+                "x": 1,
+                "z": 1,
+                "RByte": 1,
+                "GByte": 255,
+                "weight": 0
+              }
+            ],
+            "cornerMaximumG": 1
+          },
+          "gpu": {
+            "R": 0.003921568859368563,
+            "G": 1,
+            "uvEcho": [
+              0.0625,
+              0.0625
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 2.799999952316284,
+                "guardedCeiling": 2.811795234680176,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 2.444000005722046,
+                "guardedCeiling": 2.4557952880859375,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 2.2304000854492188,
+                "guardedCeiling": 2.2421953678131104,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.011795282363891602,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "firstViolations": [],
+        "passed": true
+      }
+    },
+    {
+      "name": "single-R1-G0-neighbours-G255",
+      "kind": "synthetic-fixture",
+      "size": 8,
+      "mapSha256": "d9f94347a9f8349b4b2a402e71cb019a16413497208ea9b1030cb5b8d232a007",
+      "mapBytes": 128,
+      "queryInputSha256": "401254beff4c1631a3b48620c34aaed5e87fee8dbf9193cb704ebbf551abe3fa",
+      "gpuOutputSha256": "b17c16ecc63da60afe56531b11e9de257a2551900714de71df1b5c1ada4a4c73",
+      "halo": {
+        "maximumGByte": 255,
+        "maximumGNormalized": 1,
+        "maxBaseReferenceKm": 2.5,
+        "positiveTexels": 1,
+        "haloTexels": 9
+      },
+      "uploadedUniformF32": [
+        2.5,
+        0.0117952236905694,
+        1009,
+        1,
+        1,
+        1.25,
+        1.470588207244873,
+        0
+      ],
+      "results": {
+        "queryCount": 1009,
+        "strictProductionDomainQueries": 913,
+        "outsideOrEndpointQueries": 96,
+        "actualGpuPositiveR": 38,
+        "allZeroMapFalsePositiveR": 0,
+        "nonFiniteQueries": 0,
+        "negativeOrAboveOneRG": 0,
+        "uvEchoMismatches": 0,
+        "maxAbsoluteRErrorVsIdeal": 0.00012103601110021711,
+        "maxAbsoluteGErrorVsIdeal": 0.0015798881649971008,
+        "maximumGAboveCpuFourCornerMaximum": 0,
+        "maximumPositiveRGAboveHaloMaximum": -0.03161764144897461,
+        "positiveRFilterAllowanceViolations": 0,
+        "positiveRGuardAttachmentViolations": 0,
+        "positiveRNegativeCeilingSlack": 0,
+        "envelopeAttachmentViolations": 0,
+        "envelopeNegativeSlack": 0,
+        "minimumPositiveRCeilingSlackKm": 0.07629537582397461,
+        "minimumEnvelopeCeilingSlackKm": 0.011795282363891602,
+        "cpuIdealRZeroButGpuPositiveR": 0,
+        "groups": {
+          "texel-centres": 64,
+          "f32-around-centres-and-footprint-ends": 256,
+          "half-cell-grid": 81,
+          "halton-interior": 512,
+          "clamp-edge-and-outside": 96
+        },
+        "worstIdealG": {
+          "queryIndex": 710,
+          "uvF32": [
+            0.423828125,
+            0.5075445771217346
+          ],
+          "queryGroup": "halton-interior",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.001535519168657415,
+            "g": 0.6084426119923592,
+            "corners": [
+              {
+                "x": 2,
+                "z": 3,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.04808599501848221
+              },
+              {
+                "x": 3,
+                "z": 3,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0.39155738800764084
+              },
+              {
+                "x": 2,
+                "z": 4,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.06128900498151779
+              },
+              {
+                "x": 3,
+                "z": 4,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.49906761199235916
+              }
+            ],
+            "cornerMaximumG": 1
+          },
+          "gpu": {
+            "R": 0.00147058826405555,
+            "G": 0.6068627238273621,
+            "uvEcho": [
+              0.423828125,
+              0.5075445771217346
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 1.6205880641937256,
+                "guardedCeiling": 2.811795234680176,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 1.500470519065857,
+                "guardedCeiling": 2.4557952880859375,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 1.428399920463562,
+                "guardedCeiling": 2.2421953678131104,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.011795282363891602,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstHaloG": {
+          "queryIndex": 449,
+          "uvF32": [
+            0.546875,
+            0.5308641791343689
+          ],
+          "queryGroup": "halton-interior",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00012406204261031806,
+            "g": 0.9683641791343689,
+            "corners": [
+              {
+                "x": 3,
+                "z": 3,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0.031635820865631104
+              },
+              {
+                "x": 4,
+                "z": 3,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.22145074605941772
+              },
+              {
+                "x": 3,
+                "z": 4,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.0933641791343689
+              },
+              {
+                "x": 4,
+                "z": 4,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.6535492539405823
+              }
+            ],
+            "cornerMaximumG": 1
+          },
+          "gpu": {
+            "R": 0.00024509805371053517,
+            "G": 0.9683823585510254,
+            "uvEcho": [
+              0.546875,
+              0.5308641791343689
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 2.7051470279693604,
+                "guardedCeiling": 2.811795234680176,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 2.368117570877075,
+                "guardedCeiling": 2.4557952880859375,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 2.1658999919891357,
+                "guardedCeiling": 2.2421953678131104,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.011795282363891602,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstEndpoint": {
+          "queryIndex": 449,
+          "uvF32": [
+            0.546875,
+            0.5308641791343689
+          ],
+          "queryGroup": "halton-interior",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00012406204261031806,
+            "g": 0.9683641791343689,
+            "corners": [
+              {
+                "x": 3,
+                "z": 3,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0.031635820865631104
+              },
+              {
+                "x": 4,
+                "z": 3,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.22145074605941772
+              },
+              {
+                "x": 3,
+                "z": 4,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.0933641791343689
+              },
+              {
+                "x": 4,
+                "z": 4,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.6535492539405823
+              }
+            ],
+            "cornerMaximumG": 1
+          },
+          "gpu": {
+            "R": 0.00024509805371053517,
+            "G": 0.9683823585510254,
+            "uvEcho": [
+              0.546875,
+              0.5308641791343689
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 2.7051470279693604,
+                "guardedCeiling": 2.811795234680176,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 2.368117570877075,
+                "guardedCeiling": 2.4557952880859375,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 2.1658999919891357,
+                "guardedCeiling": 2.2421953678131104,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.011795282363891602,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "firstViolations": [],
+        "passed": true
+      }
+    },
+    {
+      "name": "corner-edge-R1-sentinel",
+      "kind": "synthetic-fixture",
+      "size": 8,
+      "mapSha256": "bba0c693107cbd9b57b2b9ae40f5a36072b39151ff0239c167c320b77d8b86cb",
+      "mapBytes": 128,
+      "queryInputSha256": "401254beff4c1631a3b48620c34aaed5e87fee8dbf9193cb704ebbf551abe3fa",
+      "gpuOutputSha256": "64d3ab73ec6e0c00457fb575227bb322bd1fd6c9eb4c11fe7b7da2072dbf75b9",
+      "halo": {
+        "maximumGByte": 255,
+        "maximumGNormalized": 1,
+        "maxBaseReferenceKm": 2.5,
+        "positiveTexels": 4,
+        "haloTexels": 16
+      },
+      "uploadedUniformF32": [
+        2.5,
+        0.0117952236905694,
+        1009,
+        1,
+        1,
+        1.25,
+        1.470588207244873,
+        0
+      ],
+      "results": {
+        "queryCount": 1009,
+        "strictProductionDomainQueries": 913,
+        "outsideOrEndpointQueries": 96,
+        "actualGpuPositiveR": 127,
+        "allZeroMapFalsePositiveR": 0,
+        "nonFiniteQueries": 0,
+        "negativeOrAboveOneRG": 0,
+        "uvEchoMismatches": 0,
+        "maxAbsoluteRErrorVsIdeal": 0.00012254912095765276,
+        "maxAbsoluteGErrorVsIdeal": 0.0013112425804138184,
+        "maximumGAboveCpuFourCornerMaximum": 2.9685450542160652e-8,
+        "maximumPositiveRGAboveHaloMaximum": -0.00024509429931640625,
+        "positiveRFilterAllowanceViolations": 0,
+        "positiveRGuardAttachmentViolations": 0,
+        "positiveRNegativeCeilingSlack": 0,
+        "envelopeAttachmentViolations": 0,
+        "envelopeNegativeSlack": 0,
+        "minimumPositiveRCeilingSlackKm": 0.01229548454284668,
+        "minimumEnvelopeCeilingSlackKm": 0.011795282363891602,
+        "cpuIdealRZeroButGpuPositiveR": 0,
+        "groups": {
+          "texel-centres": 64,
+          "f32-around-centres-and-footprint-ends": 256,
+          "half-cell-grid": 81,
+          "halton-interior": 512,
+          "clamp-edge-and-outside": 96
+        },
+        "worstIdealG": {
+          "queryIndex": 736,
+          "uvF32": [
+            0.041015625,
+            0.15363511443138123
+          ],
+          "queryGroup": "halton-interior",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.0010624277825449027,
+            "g": 0.7290809154510498,
+            "corners": [
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0.046564217656850815
+              },
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0.22435486689209938
+              },
+              {
+                "x": 0,
+                "z": 1,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.12531078234314919
+              },
+              {
+                "x": 0,
+                "z": 1,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.6037701331079006
+              }
+            ],
+            "cornerMaximumG": 1
+          },
+          "gpu": {
+            "R": 0.0009803922148421407,
+            "G": 0.7303921580314636,
+            "uvEcho": [
+              0.041015625,
+              0.15363511443138123
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 1.9911763668060303,
+                "guardedCeiling": 2.811795234680176,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 1.7969411611557007,
+                "guardedCeiling": 2.4557952880859375,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 1.680400013923645,
+                "guardedCeiling": 2.2421953678131104,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.011795282363891602,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstHaloG": {
+          "queryIndex": 495,
+          "uvF32": [
+            0.9765625,
+            0.8189300298690796
+          ],
+          "queryGroup": "halton-interior",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00020172642726524207,
+            "g": 0.9997982735727348,
+            "corners": [
+              {
+                "x": 7,
+                "z": 6,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.6521348357200623
+              },
+              {
+                "x": 7,
+                "z": 6,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.296424925327301
+              },
+              {
+                "x": 7,
+                "z": 7,
+                "RByte": 1,
+                "GByte": 254,
+                "weight": 0.035365164279937744
+              },
+              {
+                "x": 7,
+                "z": 7,
+                "RByte": 1,
+                "GByte": 254,
+                "weight": 0.016075074672698975
+              }
+            ],
+            "cornerMaximumG": 1
+          },
+          "gpu": {
+            "R": 0.00024509805371053517,
+            "G": 0.9997549057006836,
+            "uvEcho": [
+              0.9765625,
+              0.8189300298690796
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 2.799264669418335,
+                "guardedCeiling": 2.811795234680176,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 2.4434118270874023,
+                "guardedCeiling": 2.4557952880859375,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 2.2298998832702637,
+                "guardedCeiling": 2.2421953678131104,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.011795282363891602,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstEndpoint": {
+          "queryIndex": 495,
+          "uvF32": [
+            0.9765625,
+            0.8189300298690796
+          ],
+          "queryGroup": "halton-interior",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00020172642726524207,
+            "g": 0.9997982735727348,
+            "corners": [
+              {
+                "x": 7,
+                "z": 6,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.6521348357200623
+              },
+              {
+                "x": 7,
+                "z": 6,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.296424925327301
+              },
+              {
+                "x": 7,
+                "z": 7,
+                "RByte": 1,
+                "GByte": 254,
+                "weight": 0.035365164279937744
+              },
+              {
+                "x": 7,
+                "z": 7,
+                "RByte": 1,
+                "GByte": 254,
+                "weight": 0.016075074672698975
+              }
+            ],
+            "cornerMaximumG": 1
+          },
+          "gpu": {
+            "R": 0.00024509805371053517,
+            "G": 0.9997549057006836,
+            "uvEcho": [
+              0.9765625,
+              0.8189300298690796
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 2.799264669418335,
+                "guardedCeiling": 2.811795234680176,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 2.4434118270874023,
+                "guardedCeiling": 2.4557952880859375,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 2.2298998832702637,
+                "guardedCeiling": 2.2421953678131104,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.011795282363891602,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "firstViolations": [],
+        "passed": true
+      }
+    },
+    {
+      "name": "checkerboard-R1-G0-vs-R0-G255",
+      "kind": "synthetic-fixture",
+      "size": 8,
+      "mapSha256": "541fa1eea6649d88b9a3125ae69c06c16c94a7cd392502465e160a33af53cbf8",
+      "mapBytes": 128,
+      "queryInputSha256": "401254beff4c1631a3b48620c34aaed5e87fee8dbf9193cb704ebbf551abe3fa",
+      "gpuOutputSha256": "43d5d8093fbc5647faabc04c94ddc34df805c7307b4d302e49132e664cdb2cc6",
+      "halo": {
+        "maximumGByte": 255,
+        "maximumGNormalized": 1,
+        "maxBaseReferenceKm": 2.5,
+        "positiveTexels": 32,
+        "haloTexels": 64
+      },
+      "uploadedUniformF32": [
+        2.5,
+        0.0117952236905694,
+        1009,
+        1,
+        1,
+        1.25,
+        1.470588207244873,
+        0
+      ],
+      "results": {
+        "queryCount": 1009,
+        "strictProductionDomainQueries": 913,
+        "outsideOrEndpointQueries": 96,
+        "actualGpuPositiveR": 790,
+        "allZeroMapFalsePositiveR": 0,
+        "nonFiniteQueries": 0,
+        "negativeOrAboveOneRG": 0,
+        "uvEchoMismatches": 0,
+        "maxAbsoluteRErrorVsIdeal": 0.00012540700434542757,
+        "maxAbsoluteGErrorVsIdeal": 0.0020515918731689453,
+        "maximumGAboveCpuFourCornerMaximum": 0,
+        "maximumPositiveRGAboveHaloMaximum": -0.031127452850341797,
+        "positiveRFilterAllowanceViolations": 0,
+        "positiveRGuardAttachmentViolations": 0,
+        "positiveRNegativeCeilingSlack": 0,
+        "envelopeAttachmentViolations": 0,
+        "envelopeNegativeSlack": 0,
+        "minimumPositiveRCeilingSlackKm": 0.07529544830322266,
+        "minimumEnvelopeCeilingSlackKm": 0.011795282363891602,
+        "cpuIdealRZeroButGpuPositiveR": 0,
+        "groups": {
+          "texel-centres": 64,
+          "f32-around-centres-and-footprint-ends": 256,
+          "half-cell-grid": 81,
+          "halton-interior": 512,
+          "clamp-edge-and-outside": 96
+        },
+        "worstIdealG": {
+          "queryIndex": 431,
+          "uvF32": [
+            0.96875,
+            0.45679011940956116
+          ],
+          "queryGroup": "halton-interior",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.003316388410680434,
+            "g": 0.15432095527648926,
+            "corners": [
+              {
+                "x": 7,
+                "z": 3,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0.6342592835426331
+              },
+              {
+                "x": 7,
+                "z": 3,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0.21141976118087769
+              },
+              {
+                "x": 7,
+                "z": 4,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.11574071645736694
+              },
+              {
+                "x": 7,
+                "z": 4,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.038580238819122314
+              }
+            ],
+            "cornerMaximumG": 1
+          },
+          "gpu": {
+            "R": 0.0034313725773245096,
+            "G": 0.1563725471496582,
+            "uvEcho": [
+              0.96875,
+              0.45679011940956116
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 0.2691175937652588,
+                "guardedCeiling": 2.811795234680176,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 0.4192940592765808,
+                "guardedCeiling": 2.4557952880859375,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 0.509399950504303,
+                "guardedCeiling": 2.2421953678131104,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.011795282363891602,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstHaloG": {
+          "queryIndex": 642,
+          "uvF32": [
+            0.30859375,
+            0.9958847761154175
+          ],
+          "queryGroup": "halton-interior",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00012254901960784314,
+            "g": 0.96875,
+            "corners": [
+              {
+                "x": 1,
+                "z": 7,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0.01665380597114563
+              },
+              {
+                "x": 2,
+                "z": 7,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.5162679851055145
+              },
+              {
+                "x": 1,
+                "z": 7,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0.01459619402885437
+              },
+              {
+                "x": 2,
+                "z": 7,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.4524820148944855
+              }
+            ],
+            "cornerMaximumG": 1
+          },
+          "gpu": {
+            "R": 0.00024509805371053517,
+            "G": 0.9688725471496582,
+            "uvEcho": [
+              0.30859375,
+              0.9958847761154175
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 2.706617593765259,
+                "guardedCeiling": 2.811795234680176,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 2.3692941665649414,
+                "guardedCeiling": 2.4557952880859375,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 2.1668999195098877,
+                "guardedCeiling": 2.2421953678131104,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.011795282363891602,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstEndpoint": {
+          "queryIndex": 642,
+          "uvF32": [
+            0.30859375,
+            0.9958847761154175
+          ],
+          "queryGroup": "halton-interior",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00012254901960784314,
+            "g": 0.96875,
+            "corners": [
+              {
+                "x": 1,
+                "z": 7,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0.01665380597114563
+              },
+              {
+                "x": 2,
+                "z": 7,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.5162679851055145
+              },
+              {
+                "x": 1,
+                "z": 7,
+                "RByte": 1,
+                "GByte": 0,
+                "weight": 0.01459619402885437
+              },
+              {
+                "x": 2,
+                "z": 7,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.4524820148944855
+              }
+            ],
+            "cornerMaximumG": 1
+          },
+          "gpu": {
+            "R": 0.00024509805371053517,
+            "G": 0.9688725471496582,
+            "uvEcho": [
+              0.30859375,
+              0.9958847761154175
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 2.706617593765259,
+                "guardedCeiling": 2.811795234680176,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 2.3692941665649414,
+                "guardedCeiling": 2.4557952880859375,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 2.1668999195098877,
+                "guardedCeiling": 2.2421953678131104,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.011795282363891602,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "firstViolations": [],
+        "passed": true
+      }
+    },
+    {
+      "name": "finite-G80-halo-vs-remote-G255",
+      "kind": "synthetic-fixture",
+      "size": 8,
+      "mapSha256": "b3f84553b78c10b54bfdcd0dc38cea2401413a95d43587aaa5354cb9caaab53d",
+      "mapBytes": 128,
+      "queryInputSha256": "401254beff4c1631a3b48620c34aaed5e87fee8dbf9193cb704ebbf551abe3fa",
+      "gpuOutputSha256": "74f1bc4dbdf6a7f70cf6ad55d59b9aa40ee3c5ebb6974bd8032eaefa28b3c493",
+      "halo": {
+        "maximumGByte": 80,
+        "maximumGNormalized": 0.3137254901960784,
+        "maxBaseReferenceKm": 0.4411764705882353,
+        "positiveTexels": 1,
+        "haloTexels": 9
+      },
+      "uploadedUniformF32": [
+        0.44117647409439087,
+        0.0117952236905694,
+        1009,
+        0.3137255012989044,
+        1,
+        1.25,
+        1.470588207244873,
+        0
+      ],
+      "results": {
+        "queryCount": 1009,
+        "strictProductionDomainQueries": 913,
+        "outsideOrEndpointQueries": 96,
+        "actualGpuPositiveR": 38,
+        "allZeroMapFalsePositiveR": 0,
+        "nonFiniteQueries": 0,
+        "negativeOrAboveOneRG": 0,
+        "uvEchoMismatches": 0,
+        "maxAbsoluteRErrorVsIdeal": 0.00012103601110021711,
+        "maxAbsoluteGErrorVsIdeal": 0.0012422087145786964,
+        "maximumGAboveCpuFourCornerMaximum": 1.110282599192658e-8,
+        "maximumPositiveRGAboveHaloMaximum": -0.0019607730940276458,
+        "positiveRFilterAllowanceViolations": 0,
+        "positiveRGuardAttachmentViolations": 0,
+        "positiveRNegativeCeilingSlack": 0,
+        "envelopeAttachmentViolations": 0,
+        "envelopeNegativeSlack": 0,
+        "minimumPositiveRCeilingSlackKm": 0.01579529047012329,
+        "minimumEnvelopeCeilingSlackKm": 0.00003057718276977539,
+        "cpuIdealRZeroButGpuPositiveR": 0,
+        "groups": {
+          "texel-centres": 64,
+          "f32-around-centres-and-footprint-ends": 256,
+          "half-cell-grid": 81,
+          "halton-interior": 512,
+          "clamp-edge-and-outside": 96
+        },
+        "worstIdealG": {
+          "queryIndex": 794,
+          "uvF32": [
+            0.318359375,
+            0.6227709054946899
+          ],
+          "queryGroup": "halton-interior",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0,
+            "g": 0.644624579186533,
+            "corners": [
+              {
+                "x": 2,
+                "z": 4,
+                "RByte": 0,
+                "GByte": 80,
+                "weight": 0.4935593456029892
+              },
+              {
+                "x": 3,
+                "z": 4,
+                "RByte": 0,
+                "GByte": 80,
+                "weight": 0.024273410439491272
+              },
+              {
+                "x": 2,
+                "z": 5,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.4595656543970108
+              },
+              {
+                "x": 3,
+                "z": 5,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.022601589560508728
+              }
+            ],
+            "cornerMaximumG": 1
+          },
+          "gpu": {
+            "R": 0,
+            "G": 0.6433823704719543,
+            "uvEcho": [
+              0.318359375,
+              0.6227709054946899
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 1.730147123336792,
+                "guardedCeiling": 0.7529717087745667,
+                "attachedAtCeiling": 1,
+                "attachedAtFirstSkippedF32": 1
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 1.5881175994873047,
+                "guardedCeiling": 0.8087364435195923,
+                "attachedAtCeiling": 1,
+                "attachedAtFirstSkippedF32": 1
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 1.5029000043869019,
+                "guardedCeiling": 0.8421952724456787,
+                "attachedAtCeiling": 1,
+                "attachedAtFirstSkippedF32": 1
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.00003057718276977539,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstHaloG": {
+          "queryIndex": 449,
+          "uvF32": [
+            0.546875,
+            0.5308641791343689
+          ],
+          "queryGroup": "halton-interior",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00012406204261031806,
+            "g": 0.3117404975143134,
+            "corners": [
+              {
+                "x": 3,
+                "z": 3,
+                "RByte": 1,
+                "GByte": 64,
+                "weight": 0.031635820865631104
+              },
+              {
+                "x": 4,
+                "z": 3,
+                "RByte": 0,
+                "GByte": 80,
+                "weight": 0.22145074605941772
+              },
+              {
+                "x": 3,
+                "z": 4,
+                "RByte": 0,
+                "GByte": 80,
+                "weight": 0.0933641791343689
+              },
+              {
+                "x": 4,
+                "z": 4,
+                "RByte": 0,
+                "GByte": 80,
+                "weight": 0.6535492539405823
+              }
+            ],
+            "cornerMaximumG": 0.3137254901960784
+          },
+          "gpu": {
+            "R": 0.00024509805371053517,
+            "G": 0.3117647171020508,
+            "uvEcho": [
+              0.546875,
+              0.5308641791343689
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 0.7352941036224365,
+                "guardedCeiling": 0.7529717087745667,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 0.792235255241394,
+                "guardedCeiling": 0.8087364435195923,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 0.8263999819755554,
+                "guardedCeiling": 0.8421952724456787,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.00003057718276977539,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstEndpoint": {
+          "queryIndex": 449,
+          "uvF32": [
+            0.546875,
+            0.5308641791343689
+          ],
+          "queryGroup": "halton-interior",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00012406204261031806,
+            "g": 0.3117404975143134,
+            "corners": [
+              {
+                "x": 3,
+                "z": 3,
+                "RByte": 1,
+                "GByte": 64,
+                "weight": 0.031635820865631104
+              },
+              {
+                "x": 4,
+                "z": 3,
+                "RByte": 0,
+                "GByte": 80,
+                "weight": 0.22145074605941772
+              },
+              {
+                "x": 3,
+                "z": 4,
+                "RByte": 0,
+                "GByte": 80,
+                "weight": 0.0933641791343689
+              },
+              {
+                "x": 4,
+                "z": 4,
+                "RByte": 0,
+                "GByte": 80,
+                "weight": 0.6535492539405823
+              }
+            ],
+            "cornerMaximumG": 0.3137254901960784
+          },
+          "gpu": {
+            "R": 0.00024509805371053517,
+            "G": 0.3117647171020508,
+            "uvEcho": [
+              0.546875,
+              0.5308641791343689
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 0.7352941036224365,
+                "guardedCeiling": 0.7529717087745667,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 0.792235255241394,
+                "guardedCeiling": 0.8087364435195923,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 0.8263999819755554,
+                "guardedCeiling": 0.8421952724456787,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.00003057718276977539,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "firstViolations": [],
+        "passed": true
+      }
+    },
+    {
+      "name": "all-R0-varying-G",
+      "kind": "synthetic-fixture",
+      "size": 8,
+      "mapSha256": "f39a1f725e40623c73a5d6acbc0063484f62f94b7cbde678eb331a7eddd16772",
+      "mapBytes": 128,
+      "queryInputSha256": "401254beff4c1631a3b48620c34aaed5e87fee8dbf9193cb704ebbf551abe3fa",
+      "gpuOutputSha256": "3b20578b164d69ba9325e78b7cbda92ceba6ceb15cd90653afbd8e0d569be266",
+      "halo": {
+        "maximumGByte": null,
+        "maximumGNormalized": null,
+        "maxBaseReferenceKm": null,
+        "positiveTexels": 0,
+        "haloTexels": 0
+      },
+      "uploadedUniformF32": [
+        -0.5,
+        0.0117952236905694,
+        1009,
+        0,
+        1,
+        1.25,
+        1.470588207244873,
+        0
+      ],
+      "results": {
+        "queryCount": 1009,
+        "strictProductionDomainQueries": 913,
+        "outsideOrEndpointQueries": 96,
+        "actualGpuPositiveR": 0,
+        "allZeroMapFalsePositiveR": 0,
+        "nonFiniteQueries": 0,
+        "negativeOrAboveOneRG": 0,
+        "uvEchoMismatches": 0,
+        "maxAbsoluteRErrorVsIdeal": 0,
+        "maxAbsoluteGErrorVsIdeal": 0.0014493364913791273,
+        "maximumGAboveCpuFourCornerMaximum": 2.8516731975791743e-8,
+        "maximumPositiveRGAboveHaloMaximum": null,
+        "positiveRFilterAllowanceViolations": 0,
+        "positiveRGuardAttachmentViolations": 0,
+        "positiveRNegativeCeilingSlack": 0,
+        "envelopeAttachmentViolations": 0,
+        "envelopeNegativeSlack": 0,
+        "minimumPositiveRCeilingSlackKm": null,
+        "minimumEnvelopeCeilingSlackKm": 0.000030517578125,
+        "cpuIdealRZeroButGpuPositiveR": 0,
+        "groups": {
+          "texel-centres": 64,
+          "f32-around-centres-and-footprint-ends": 256,
+          "half-cell-grid": 81,
+          "halton-interior": 512,
+          "clamp-edge-and-outside": 96
+        },
+        "worstIdealG": {
+          "queryIndex": 835,
+          "uvF32": [
+            0.802734375,
+            0.13305898010730743
+          ],
+          "queryGroup": "halton-interior",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0,
+            "g": 0.44973366447523533,
+            "corners": [
+              {
+                "x": 5,
+                "z": 0,
+                "RByte": 0,
+                "GByte": 185,
+                "weight": 0.034025637432932854
+              },
+              {
+                "x": 6,
+                "z": 0,
+                "RByte": 0,
+                "GByte": 222,
+                "weight": 0.4015025217086077
+              },
+              {
+                "x": 5,
+                "z": 1,
+                "RByte": 0,
+                "GByte": 0,
+                "weight": 0.044099362567067146
+              },
+              {
+                "x": 6,
+                "z": 1,
+                "RByte": 0,
+                "GByte": 37,
+                "weight": 0.5203724782913923
+              }
+            ],
+            "cornerMaximumG": 0.8705882352941177
+          },
+          "gpu": {
+            "R": 0,
+            "G": 0.4482843279838562,
+            "uvEcho": [
+              0.802734375,
+              0.13305898010730743
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 1.144852876663208,
+                "guardedCeiling": -0.18820476531982422,
+                "attachedAtCeiling": 1,
+                "attachedAtFirstSkippedF32": 1
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 1.119882345199585,
+                "guardedCeiling": 0.055795226246118546,
+                "attachedAtCeiling": 1,
+                "attachedAtFirstSkippedF32": 1
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 1.1049000024795532,
+                "guardedCeiling": 0.20219524204730988,
+                "attachedAtCeiling": 1,
+                "attachedAtFirstSkippedF32": 1
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.000030517578125,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstHaloG": null,
+        "worstEndpoint": null,
+        "firstViolations": [],
+        "passed": true
+      }
+    },
+    {
+      "name": "all-R0-G255",
+      "kind": "synthetic-fixture",
+      "size": 8,
+      "mapSha256": "4e7304d2eb82b60c60a38fef79fbc4161d126134bc0b5aa0576d7bf8e24d0056",
+      "mapBytes": 128,
+      "queryInputSha256": "401254beff4c1631a3b48620c34aaed5e87fee8dbf9193cb704ebbf551abe3fa",
+      "gpuOutputSha256": "b59cd553b995beecf0dc3065fce0aaa1143f12d2d80ca61f7873b8a2e22c08aa",
+      "halo": {
+        "maximumGByte": null,
+        "maximumGNormalized": null,
+        "maxBaseReferenceKm": null,
+        "positiveTexels": 0,
+        "haloTexels": 0
+      },
+      "uploadedUniformF32": [
+        -0.5,
+        0.0117952236905694,
+        1009,
+        0,
+        1,
+        1.25,
+        1.470588207244873,
+        0
+      ],
+      "results": {
+        "queryCount": 1009,
+        "strictProductionDomainQueries": 913,
+        "outsideOrEndpointQueries": 96,
+        "actualGpuPositiveR": 0,
+        "allZeroMapFalsePositiveR": 0,
+        "nonFiniteQueries": 0,
+        "negativeOrAboveOneRG": 0,
+        "uvEchoMismatches": 0,
+        "maxAbsoluteRErrorVsIdeal": 0,
+        "maxAbsoluteGErrorVsIdeal": 0,
+        "maximumGAboveCpuFourCornerMaximum": 0,
+        "maximumPositiveRGAboveHaloMaximum": null,
+        "positiveRFilterAllowanceViolations": 0,
+        "positiveRGuardAttachmentViolations": 0,
+        "positiveRNegativeCeilingSlack": 0,
+        "envelopeAttachmentViolations": 0,
+        "envelopeNegativeSlack": 0,
+        "minimumPositiveRCeilingSlackKm": null,
+        "minimumEnvelopeCeilingSlackKm": 0.000030517578125,
+        "cpuIdealRZeroButGpuPositiveR": 0,
+        "groups": {
+          "texel-centres": 64,
+          "f32-around-centres-and-footprint-ends": 256,
+          "half-cell-grid": 81,
+          "halton-interior": 512,
+          "clamp-edge-and-outside": 96
+        },
+        "worstIdealG": {
+          "queryIndex": 0,
+          "uvF32": [
+            0.0625,
+            0.0625
+          ],
+          "queryGroup": "texel-centres",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0,
+            "g": 1,
+            "corners": [
+              {
+                "x": 0,
+                "z": 0,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 1
+              },
+              {
+                "x": 1,
+                "z": 0,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0
+              },
+              {
+                "x": 0,
+                "z": 1,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0
+              },
+              {
+                "x": 1,
+                "z": 1,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0
+              }
+            ],
+            "cornerMaximumG": 1
+          },
+          "gpu": {
+            "R": 0,
+            "G": 1,
+            "uvEcho": [
+              0.0625,
+              0.0625
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 2.799999952316284,
+                "guardedCeiling": -0.18820476531982422,
+                "attachedAtCeiling": 1,
+                "attachedAtFirstSkippedF32": 1
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 2.444000005722046,
+                "guardedCeiling": 0.055795226246118546,
+                "attachedAtCeiling": 1,
+                "attachedAtFirstSkippedF32": 1
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 2.2304000854492188,
+                "guardedCeiling": 0.20219524204730988,
+                "attachedAtCeiling": 1,
+                "attachedAtFirstSkippedF32": 1
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.000030517578125,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstHaloG": null,
+        "worstEndpoint": null,
+        "firstViolations": [],
+        "passed": true
+      }
+    },
+    {
+      "name": "actual-seed72-64x64",
+      "kind": "existing-real-map",
+      "size": 64,
+      "mapSha256": "c8f6dc2c8abb0717ec3051c0f958648ec541604f3718eb0f7621cb047d961fe2",
+      "mapBytes": 8192,
+      "queryInputSha256": "96834012c78b325c06ca484156cf2d62e8e1014d9bb56b7259e27337b6da8e1d",
+      "gpuOutputSha256": "3ee46aa7486edbb6298c7639c8b2188a1aa7a828a942238423120a5fe84f8ecc",
+      "halo": {
+        "maximumGByte": 196,
+        "maximumGNormalized": 0.7686274509803922,
+        "maxBaseReferenceKm": 1.8058823529411767,
+        "positiveTexels": 1336,
+        "haloTexels": 1511
+      },
+      "uploadedUniformF32": [
+        1.8058823347091675,
+        0.0117952236905694,
+        26497,
+        0.7686274647712708,
+        1,
+        1.25,
+        1.470588207244873,
+        0
+      ],
+      "results": {
+        "queryCount": 26497,
+        "strictProductionDomainQueries": 25729,
+        "outsideOrEndpointQueries": 768,
+        "actualGpuPositiveR": 8464,
+        "allZeroMapFalsePositiveR": 0,
+        "nonFiniteQueries": 0,
+        "negativeOrAboveOneRG": 0,
+        "uvEchoMismatches": 0,
+        "maxAbsoluteRErrorVsIdeal": 0.00037857305769828375,
+        "maxAbsoluteGErrorVsIdeal": 0.0007626708816079741,
+        "maximumGAboveCpuFourCornerMaximum": 2.9685450542160652e-8,
+        "maximumPositiveRGAboveHaloMaximum": -0.03627453855439733,
+        "positiveRFilterAllowanceViolations": 0,
+        "positiveRGuardAttachmentViolations": 0,
+        "positiveRNegativeCeilingSlack": 0,
+        "envelopeAttachmentViolations": 0,
+        "envelopeNegativeSlack": 0,
+        "minimumPositiveRCeilingSlackKm": 0.08579528331756592,
+        "minimumEnvelopeCeilingSlackKm": 0.000030517578125,
+        "cpuIdealRZeroButGpuPositiveR": 0,
+        "groups": {
+          "texel-centres": 4096,
+          "f32-around-centres-and-footprint-ends": 16384,
+          "half-cell-grid": 4225,
+          "halton-interior": 1024,
+          "clamp-edge-and-outside": 768
+        },
+        "worstIdealG": {
+          "queryIndex": 24806,
+          "uvF32": [
+            0.3984375,
+            0.18930041790008545
+          ],
+          "queryGroup": "halton-interior",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0,
+            "g": 0.7394333783318014,
+            "corners": [
+              {
+                "x": 25,
+                "z": 11,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0.38477325439453125
+              },
+              {
+                "x": 26,
+                "z": 11,
+                "RByte": 0,
+                "GByte": 255,
+                "weight": 0
+              },
+              {
+                "x": 25,
+                "z": 12,
+                "RByte": 0,
+                "GByte": 147,
+                "weight": 0.6152267456054688
+              },
+              {
+                "x": 26,
+                "z": 12,
+                "RByte": 0,
+                "GByte": 146,
+                "weight": 0
+              }
+            ],
+            "cornerMaximumG": 1
+          },
+          "gpu": {
+            "R": 0,
+            "G": 0.7401960492134094,
+            "uvEcho": [
+              0.3984375,
+              0.18930041790008545
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 2.0205881595611572,
+                "guardedCeiling": 2.117677688598633,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 1.8204705715179443,
+                "guardedCeiling": 1.9005011320114136,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 1.7003999948501587,
+                "guardedCeiling": 1.7701952457427979,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.000030517578125,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstHaloG": {
+          "queryIndex": 25562,
+          "uvF32": [
+            0.3544921875,
+            0.20210333168506622
+          ],
+          "queryGroup": "halton-interior",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00479352824828204,
+            "g": 0.7323521237747342,
+            "corners": [
+              {
+                "x": 22,
+                "z": 12,
+                "RByte": 0,
+                "GByte": 193,
+                "weight": 0.4593767523765564
+              },
+              {
+                "x": 23,
+                "z": 12,
+                "RByte": 0,
+                "GByte": 194,
+                "weight": 0.10601001977920532
+              },
+              {
+                "x": 22,
+                "z": 13,
+                "RByte": 3,
+                "GByte": 178,
+                "weight": 0.3531232476234436
+              },
+              {
+                "x": 23,
+                "z": 13,
+                "RByte": 2,
+                "GByte": 180,
+                "weight": 0.08148998022079468
+              }
+            ],
+            "cornerMaximumG": 0.7607843137254902
+          },
+          "gpu": {
+            "R": 0.0049019609577953815,
+            "G": 0.7323529124259949,
+            "uvEcho": [
+              0.3544921875,
+              0.20210333168506622
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 1.997058629989624,
+                "guardedCeiling": 2.117677688598633,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 1.8016469478607178,
+                "guardedCeiling": 1.9005011320114136,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 1.684399962425232,
+                "guardedCeiling": 1.7701952457427979,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.000030517578125,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "worstEndpoint": {
+          "queryIndex": 25562,
+          "uvF32": [
+            0.3544921875,
+            0.20210333168506622
+          ],
+          "queryGroup": "halton-interior",
+          "strictProductionDomain": true,
+          "cpuIdeal": {
+            "r": 0.00479352824828204,
+            "g": 0.7323521237747342,
+            "corners": [
+              {
+                "x": 22,
+                "z": 12,
+                "RByte": 0,
+                "GByte": 193,
+                "weight": 0.4593767523765564
+              },
+              {
+                "x": 23,
+                "z": 12,
+                "RByte": 0,
+                "GByte": 194,
+                "weight": 0.10601001977920532
+              },
+              {
+                "x": 22,
+                "z": 13,
+                "RByte": 3,
+                "GByte": 178,
+                "weight": 0.3531232476234436
+              },
+              {
+                "x": 23,
+                "z": 13,
+                "RByte": 2,
+                "GByte": 180,
+                "weight": 0.08148998022079468
+              }
+            ],
+            "cornerMaximumG": 0.7607843137254902
+          },
+          "gpu": {
+            "R": 0.0049019609577953815,
+            "G": 0.7323529124259949,
+            "uvEcho": [
+              0.3544921875,
+              0.20210333168506622
+            ],
+            "endpoints": [
+              {
+                "growthF32": 1,
+                "basePlusPoint3": 1.997058629989624,
+                "guardedCeiling": 2.117677688598633,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.25,
+                "basePlusPoint3": 1.8016469478607178,
+                "guardedCeiling": 1.9005011320114136,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              },
+              {
+                "growthF32": 1.470588207244873,
+                "basePlusPoint3": 1.684399962425232,
+                "guardedCeiling": 1.7701952457427979,
+                "attachedAtCeiling": 0,
+                "attachedAtFirstSkippedF32": 0
+              }
+            ],
+            "envelope": {
+              "minimumSlackKm": 0.000030517578125,
+              "maximumAttachedAtCeiling": 0,
+              "maximumAttachedAtFirstSkippedF32": 0
+            }
+          }
+        },
+        "firstViolations": [],
+        "passed": true
+      }
+    }
+  ],
+  "cleanup": {
+    "deviceDestroyed": true,
+    "perMapResourcesDestroyed": true
+  },
+  "elapsedAuditWallMs": 91470.29999995232,
+  "integrity": {
+    "algorithm": "SHA-256",
+    "scope": "UTF-8 JSON.stringify(report) before adding integrity",
+    "payloadSha256": "145eaae407ef646c035685af0b31ca3bdf9be97255d2616d51e64513e55a3ea0"
+  }
+}

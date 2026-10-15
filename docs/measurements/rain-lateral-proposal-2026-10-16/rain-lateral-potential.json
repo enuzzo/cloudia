@@ -1,0 +1,251 @@
+{
+  "kind": "rain-lateral-cheap-geometric-potential",
+  "dateSource": "existing seed72/time60/wind.55",
+  "mapSha256": "c8f6dc2c8abb0717ec3051c0f958648ec541604f3718eb0f7621cb047d961fe2",
+  "bakesPerformedByThisScript": 0,
+  "gpu": "not-run",
+  "method": "Closed full-linear-footprint rectangles of Rbyte>0 nodes, Minkowski extruded by [0,2.5]*wind, support planes for x,z,x+z,x-z. Float64 geometry only; no GPU numerical guard, cloud mask, optical termination or terrain clipping.",
+  "planesLocalXZ": [
+    [
+      1,
+      0,
+      4.019875167490369
+    ],
+    [
+      -1,
+      0,
+      3.828125
+    ],
+    [
+      0,
+      1,
+      2.3580484502235315
+    ],
+    [
+      0,
+      -1,
+      2.2421875
+    ],
+    [
+      1,
+      1,
+      5.0966736177139005
+    ],
+    [
+      -1,
+      -1,
+      4.7421875
+    ],
+    [
+      1,
+      -1,
+      4.4743267172668375
+    ],
+    [
+      -1,
+      1,
+      4.3203125
+    ]
+  ],
+  "octagonVertices": [
+    [
+      -2.5,
+      -2.2421875
+    ],
+    [
+      2.2321392172668375,
+      -2.2421875
+    ],
+    [
+      4.019875167490369,
+      -0.4544515497764685
+    ],
+    [
+      4.019875167490369,
+      1.0767984502235315
+    ],
+    [
+      2.738625167490369,
+      2.3580484502235315
+    ],
+    [
+      -1.9622640497764685,
+      2.3580484502235315
+    ],
+    [
+      -3.828125,
+      0.4921875
+    ],
+    [
+      -3.828125,
+      -0.9140625
+    ]
+  ],
+  "areasKm2": {
+    "oldAabb": 36.10265250784949,
+    "eightPlanePrism": 31.061175262141646,
+    "exactConvexHullOfFootprintsAndWindSegment": 28.815163988291076,
+    "eightPlaneAreaReductionFraction": 0.1396428488076249,
+    "bestConvexAreaReductionFraction": 0.20185465646807976
+  },
+  "fixedPose": {
+    "camera": {
+      "comparisonSurfaceKm": 0.4,
+      "comparisonTargetKm": [
+        -0.28995623264629566,
+        2.4981598424383944,
+        -0.02734375
+      ],
+      "probeSkipped": true,
+      "approach": 0,
+      "origin": [
+        -0.28995623264629566,
+        -3.0278343591735393,
+        9.665778756295405
+      ],
+      "probeFlow": "16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively",
+      "probeFieldBytes": 32768,
+      "surfaceEstimateKm": null,
+      "probe": null,
+      "probeAgeMs": null,
+      "altitudeKm": 0.9721656408264607,
+      "ground": 1,
+      "yaw": 0,
+      "pitch": -0.92,
+      "target": [
+        -0.28995623264629566,
+        2.4981598424383944,
+        -0.02734375
+      ]
+    },
+    "wind": [
+      0.2642000669961475,
+      0.09009438008941259
+    ],
+    "drift": [
+      0.121372967564859,
+      0.010131947708267265,
+      0
+    ],
+    "growthWidth": 1,
+    "tanFov": 0.2867,
+    "inspection": 0,
+    "rayGrid": [
+      64,
+      36
+    ],
+    "rainBoxIntersectingRays": 1815,
+    "wholeRainIntervalExcludedRays": 283,
+    "partialExclusionRays": 669,
+    "oldRainLengthSumKm": 5872.255545013515,
+    "lateralEmptyLengthSumKm": 846.4001071775349,
+    "fractionOldRainLengthOutsideOctagon": 0.144135434960126,
+    "lateralEmptyLengthOutsideCloudAabbProxyKm": 242.70207847845774,
+    "fractionOldRainLengthOutsideOctagonAndCloudAabbProxy": 0.041330299170060925,
+    "equivalent6mEvaluationsBeforeOpacityOld": 978709.2575022525,
+    "equivalent6mEvaluationsBeforeOpacityPotentiallyRainEmpty": 141066.68452958914,
+    "limits": "Geometric opportunity, not actual saved samples. Real batch requires fresh cloud-zero continuous certificate. Existing support AABB only supplies a coarse proxy; actual mask may certify more. Finite grid, no pixel/GPU/FPS qualification."
+  },
+  "examplesLargestGeometricExclusion": [
+    {
+      "grid": [
+        11,
+        16
+      ],
+      "ray": [
+        -0.3103244537435892,
+        0.4525521877301704,
+        -0.8359995519074034
+      ],
+      "oldRainIntervalKm": [
+        8.74130887917185,
+        11.010398177038379
+      ],
+      "octagonIntervalKm": [
+        10.951242462530706,
+        11.010398177038379
+      ],
+      "lateralEmptyKm": 2.209933583358856,
+      "outsideCloudAabbProxyKm": 0.0
+    },
+    {
+      "grid": [
+        12,
+        12
+      ],
+      "ray": [
+        -0.2963789607813096,
+        0.5071958513379379,
+        -0.8092662602578804
+      ],
+      "oldRainIntervalKm": [
+        9.03006916875936,
+        11.510280085063329
+      ],
+      "octagonIntervalKm": [
+        11.224289356319957,
+        11.510280085063329
+      ],
+      "lateralEmptyKm": 2.194220187560598,
+      "outsideCloudAabbProxyKm": 0.0
+    },
+    {
+      "grid": [
+        11,
+        15
+      ],
+      "ray": [
+        -0.3103870508616456,
+        0.46579695095093193,
+        -0.8286694631408987
+      ],
+      "oldRainIntervalKm": [
+        8.818631108202595,
+        11.008177661741035
+      ],
+      "octagonIntervalKm": null,
+      "lateralEmptyKm": 2.18954655353844,
+      "outsideCloudAabbProxyKm": 0.0
+    },
+    {
+      "grid": [
+        10,
+        21
+      ],
+      "ray": [
+        -0.3224903884563946,
+        0.38326615813572346,
+        -0.8655096772313563
+      ],
+      "oldRainIntervalKm": [
+        8.443268167085403,
+        10.595031424481805
+      ],
+      "octagonIntervalKm": null,
+      "lateralEmptyKm": 2.151763257396402,
+      "outsideCloudAabbProxyKm": 0.0
+    },
+    {
+      "grid": [
+        11,
+        17
+      ],
+      "ray": [
+        -0.3101908503186645,
+        0.4392121891505183,
+        -0.8431336129464851
+      ],
+      "oldRainIntervalKm": [
+        8.667345476280644,
+        11.015140505526553
+      ],
+      "octagonIntervalKm": [
+        10.801901930558355,
+        11.015140505526553
+      ],
+      "lateralEmptyKm": 2.1345564542777105,
+      "outsideCloudAabbProxyKm": 0.0
+    }
+  ],
+  "runtimeMs": 16.841958044096828
+}

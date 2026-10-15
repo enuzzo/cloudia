@@ -1,0 +1,322 @@
+{
+  "elapsedMs": 15.659417000000001,
+  "rays": 14,
+  "counts": [
+    {
+      "name": "documented-six-pass-failure",
+      "state": "first-root-enclosure-diagnostic",
+      "nodes": 131,
+      "evaluations": 134,
+      "firstPotential": {
+        "state": "first-root-enclosure-diagnostic",
+        "interval": [
+          23.137551756214116,
+          23.138300502859845
+        ],
+        "clearanceEnds": [
+          0.00011700572667905362,
+          -0.000557558016225812
+        ],
+        "clearanceMid": -0.000557558016225812
+      }
+    },
+    {
+      "name": "profile-reachable-level-ray",
+      "state": "first-root-enclosure-diagnostic",
+      "nodes": 322,
+      "evaluations": 325,
+      "firstPotential": {
+        "state": "first-root-enclosure-diagnostic",
+        "interval": [
+          22.165136307527824,
+          22.166020120132295
+        ],
+        "clearanceEnds": [
+          0.0006221495377758401,
+          -0.00004718990749097429
+        ],
+        "clearanceMid": 0.0005546433831113973
+      }
+    },
+    {
+      "name": "low-x-16-dy0",
+      "state": "first-root-enclosure-diagnostic",
+      "nodes": 1785,
+      "evaluations": 1788,
+      "firstPotential": {
+        "state": "first-root-enclosure-diagnostic",
+        "interval": [
+          4.751831153543984,
+          4.75247364017913
+        ],
+        "clearanceEnds": [
+          0.000017985412341658957,
+          -0.0000302363569062436
+        ],
+        "clearanceMid": -0.0000302363569062436
+      }
+    },
+    {
+      "name": "low-x-16-dy0.02",
+      "state": "first-root-enclosure-diagnostic",
+      "nodes": 576,
+      "evaluations": 579,
+      "firstPotential": {
+        "state": "first-root-enclosure-diagnostic",
+        "interval": [
+          5.495547185308891,
+          5.496232928656196
+        ],
+        "clearanceEnds": [
+          0.00007360051313298754,
+          -0.00006607886189158307
+        ],
+        "clearanceMid": -0.00006607886189158307
+      }
+    },
+    {
+      "name": "low-x-16-dy0.05",
+      "state": "first-root-enclosure-diagnostic",
+      "nodes": 559,
+      "evaluations": 562,
+      "firstPotential": {
+        "state": "first-root-enclosure-diagnostic",
+        "interval": [
+          6.512465382151202,
+          6.5131878655528155
+        ],
+        "clearanceEnds": [
+          0.000048220567805401515,
+          -0.00010681628282327438
+        ],
+        "clearanceMid": -0.00010681628282327438
+      }
+    },
+    {
+      "name": "low-x-8-dy0",
+      "state": "certified-miss-in-mathematical-model-only",
+      "nodes": 679,
+      "evaluations": 681,
+      "firstPotential": null
+    },
+    {
+      "name": "low-x-8-dy0.02",
+      "state": "certified-miss-in-mathematical-model-only",
+      "nodes": 277,
+      "evaluations": 279,
+      "firstPotential": null
+    },
+    {
+      "name": "low-x-8-dy0.05",
+      "state": "certified-miss-in-mathematical-model-only",
+      "nodes": 153,
+      "evaluations": 155,
+      "firstPotential": null
+    },
+    {
+      "name": "low-x0-dy0",
+      "state": "first-root-enclosure-diagnostic",
+      "nodes": 549,
+      "evaluations": 552,
+      "firstPotential": {
+        "state": "first-root-enclosure-diagnostic",
+        "interval": [
+          4.279567206167725,
+          4.280319326942095
+        ],
+        "clearanceEnds": [
+          0.00011960552365053445,
+          -6.780419425922446e-7
+        ],
+        "clearanceMid": -6.780419425922446e-7
+      }
+    },
+    {
+      "name": "low-x0-dy0.02",
+      "state": "first-root-enclosure-diagnostic",
+      "nodes": 431,
+      "evaluations": 434,
+      "firstPotential": {
+        "state": "first-root-enclosure-diagnostic",
+        "interval": [
+          4.745436579491958,
+          4.746411728960496
+        ],
+        "clearanceEnds": [
+          0.00018206859112979146,
+          -0.00004793385505763581
+        ],
+        "clearanceMid": 0.00017595236568013206
+      }
+    },
+    {
+      "name": "low-x0-dy0.05",
+      "state": "first-root-enclosure-diagnostic",
+      "nodes": 332,
+      "evaluations": 335,
+      "firstPotential": {
+        "state": "first-root-enclosure-diagnostic",
+        "interval": [
+          5.249810433585628,
+          5.250778180219433
+        ],
+        "clearanceEnds": [
+          0.00030231187611207133,
+          -0.00005918291662965203
+        ],
+        "clearanceMid": 0.00028222882792761084
+      }
+    },
+    {
+      "name": "low-x8-dy0",
+      "state": "first-root-enclosure-diagnostic",
+      "nodes": 787,
+      "evaluations": 790,
+      "firstPotential": {
+        "state": "first-root-enclosure-diagnostic",
+        "interval": [
+          11.99445209585758,
+          11.995430196819488
+        ],
+        "clearanceEnds": [
+          0.0000964622040555696,
+          -0.00011274165171926143
+        ],
+        "clearanceMid": 0.00007530488346674247
+      }
+    },
+    {
+      "name": "low-x8-dy0.02",
+      "state": "first-root-enclosure-diagnostic",
+      "nodes": 527,
+      "evaluations": 530,
+      "firstPotential": {
+        "state": "first-root-enclosure-diagnostic",
+        "interval": [
+          13.036682781429512,
+          13.037531523798094
+        ],
+        "clearanceEnds": [
+          0.0002338341928407317,
+          -0.00007931911932246294
+        ],
+        "clearanceMid": -0.00007931911932246294
+      }
+    },
+    {
+      "name": "low-x8-dy0.05",
+      "state": "first-root-enclosure-diagnostic",
+      "nodes": 347,
+      "evaluations": 350,
+      "firstPotential": {
+        "state": "first-root-enclosure-diagnostic",
+        "interval": [
+          13.809774626928391,
+          13.810652218096854
+        ],
+        "clearanceEnds": [
+          0.0005328299639586476,
+          -0.00009361011689179577
+        ],
+        "clearanceMid": -0.00009361011689179577
+      }
+    }
+  ],
+  "aboveHorizonScan": [
+    {
+      "name": "profile-reachable-level-ray",
+      "firstDetectedSignBracket": [
+        22.14999999999981,
+        22.17499999999981
+      ],
+      "sea": null
+    },
+    {
+      "name": "low-x-16-dy0",
+      "firstDetectedSignBracket": [
+        4.75,
+        4.775
+      ],
+      "sea": null
+    },
+    {
+      "name": "low-x-16-dy0.02",
+      "firstDetectedSignBracket": [
+        5.47500000000001,
+        5.500000000000011
+      ],
+      "sea": null
+    },
+    {
+      "name": "low-x-16-dy0.05",
+      "firstDetectedSignBracket": [
+        6.500000000000025,
+        6.525000000000025
+      ],
+      "sea": null
+    },
+    {
+      "name": "low-x-8-dy0",
+      "firstDetectedSignBracket": null,
+      "sea": null
+    },
+    {
+      "name": "low-x-8-dy0.02",
+      "firstDetectedSignBracket": null,
+      "sea": null
+    },
+    {
+      "name": "low-x-8-dy0.05",
+      "firstDetectedSignBracket": null,
+      "sea": null
+    },
+    {
+      "name": "low-x0-dy0",
+      "firstDetectedSignBracket": [
+        4.274999999999993,
+        4.299999999999994
+      ],
+      "sea": null
+    },
+    {
+      "name": "low-x0-dy0.02",
+      "firstDetectedSignBracket": [
+        4.725,
+        4.75
+      ],
+      "sea": null
+    },
+    {
+      "name": "low-x0-dy0.05",
+      "firstDetectedSignBracket": [
+        5.250000000000007,
+        5.2750000000000075
+      ],
+      "sea": null
+    },
+    {
+      "name": "low-x8-dy0",
+      "firstDetectedSignBracket": [
+        11.975000000000103,
+        12.000000000000103
+      ],
+      "sea": null
+    },
+    {
+      "name": "low-x8-dy0.02",
+      "firstDetectedSignBracket": [
+        13.025000000000118,
+        13.050000000000118
+      ],
+      "sea": null
+    },
+    {
+      "name": "low-x8-dy0.05",
+      "firstDetectedSignBracket": [
+        13.800000000000129,
+        13.825000000000129
+      ],
+      "sea": null
+    }
+  ]
+}

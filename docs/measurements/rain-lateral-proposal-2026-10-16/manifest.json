@@ -1,0 +1,21 @@
+{
+  "status": "proposal only, not implemented or GPU qualified",
+  "limits": "Geometric potential before opacity and terrain; not sample savings or FPS.",
+  "files": [
+    {
+      "path": "RAIN-LATERAL-NEXT.md",
+      "bytes": 6023,
+      "sha256": "f628ab263652a5429ccd0872fdac9e75f0d184866f07541fe77b508fe4cd99a2"
+    },
+    {
+      "path": "rain-lateral-potential.py",
+      "bytes": 6400,
+      "sha256": "0eb17402c4da3539baf9726649d918903b7977e5b1ffabd9cb23199a11b31fd4"
+    },
+    {
+      "path": "rain-lateral-potential.json",
+      "bytes": 5697,
+      "sha256": "aa0a0c69b0da2aa193e20b1c0afbe34c16c1852c8cdd4f202e68fc6e5467ec1e"
+    }
+  ]
+}
