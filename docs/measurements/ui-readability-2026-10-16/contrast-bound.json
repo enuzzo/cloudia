@@ -1,0 +1,14 @@
+{
+  "foreground": "#eeeee7",
+  "backing": "#202a2deb",
+  "backingAlpha": 0.9215686274509803,
+  "worstBackdrop": "#ffffff",
+  "sRGBChannelComposite": [
+    49.49019607843138,
+    58.70588235294119,
+    61.47058823529413
+  ],
+  "sRGBChannelCompositeContrast": 9.89517369110763,
+  "linearLightCompositeConservativeContrast": 6.076553283492739,
+  "method": "WCAG relative luminance after alpha composite; white maximizes every background channel. Also reports linear-light composition as a conservative alternative. Neither value certifies screenshot typography or all UI conformance."
+}

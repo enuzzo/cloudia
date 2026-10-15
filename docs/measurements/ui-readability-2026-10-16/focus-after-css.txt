@@ -1,0 +1,65 @@
+- main:
+  - generic "Nube volumetrica ruotabile"
+  - heading "Cloudia." [level=1]
+  - paragraph:
+    - generic: Congesto largo
+    - generic: Temporale
+  - paragraph: Camera di confronto · raggio vicino 0.4000 km · mira fissa · immagine diagnostica
+  - paragraph: Trascina per esplorare · Scorri per avvicinarti
+  - status: WebGPU · convezione attiva
+  - generic "Controlli del cielo":
+    - navigation "Modalità di controllo":
+      - generic "Mani in arrivo":
+        - text: Mani
+        - generic: in arrivo
+    - status: "Scenario: Temporale"
+    - navigation "Distanza dalla nube":
+      - button "Avvicinati alla nube":
+      - button "Allontanati dalla nube":
+      - button "Torna al panorama":
+    - navigation "Comandi del cielo":
+      - button "Riprendi":
+      - generic "Scenari atmosferici":
+        - button "Sole":
+          - generic: Sole
+        - button "Tramonto":
+          - generic: Tramonto
+        - button "Pioggia":
+          - generic: Pioggia
+        - button "Temporale" [pressed]:
+          - generic: Temporale
+      - generic "Regola il cielo" [active]:
+        - generic: Regola
+      - region "Regola il cielo":
+        - heading "Regola il cielo" [level=2]
+        - button "Chiudi regolazioni":
+        - tablist "Regolazioni del cielo":
+          - tab "Nube" [selected]
+          - tab "Atmosfera"
+          - tab "Misure"
+        - tabpanel "Nube":
+          - text: Forma
+          - combobox "Forma":
+            - option "Congesto largo" [selected]
+            - option "Torri multiple"
+            - option "Cella inclinata"
+          - text: Vento
+          - status: 55%
+          - slider "Vento": "55"
+          - text: Avvicinamento
+          - status: 0%
+          - slider "Avvicinamento": "0"
+          - generic: Avvicinamento 0%
+          - text: Dispersione
+          - status: 0%
+          - slider "Dispersione": "0"
+          - button "Raffica"
+          - button "Disperdi"
+          - button "Ricondensa"
+          - button "Nuova forma":
+            - text: Nuova forma
+          - button "Orbita"
+          - button "Luce da destra"
+          - button "Ricomincia"
+          - status: Correnti ascendenti e discendenti · vento 55% Dispersione 0% · vista -5° / 0°
+          - generic: "Nuova forma alterna tre famiglie e varia ogni nube. Disperdi allarga e assottiglia localmente il vapore, poi lo ricondensa. Tastiera sulla scena: frecce per ruotare, Home per ricentrare."

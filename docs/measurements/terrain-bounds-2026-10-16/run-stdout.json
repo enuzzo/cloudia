@@ -1,0 +1,375 @@
+{
+  "passed": true,
+  "groups": [
+    {
+      "name": "random-rectangles-and-subsets",
+      "rectangles": 288,
+      "samples": 7200,
+      "subsetChecks": 864
+    },
+    {
+      "name": "negative-coast-tile-and-f32-boundaries",
+      "rectangles": 99,
+      "samples": 2475
+    },
+    {
+      "name": "noise-lattice-and-ridge-inputs",
+      "noiseRectangles": 1000,
+      "noiseSamples": 9000
+    },
+    {
+      "name": "simultaneous-octave-transforms-negative-coefficients-and-ridge-squares",
+      "transformChecks": 4608,
+      "ridgeChecks": 6912
+    },
+    {
+      "name": "point-interval-width",
+      "points": 100,
+      "widestHeightIntervalKm": 0.00004863739013671875
+    },
+    {
+      "name": "coast-unknown-outside-wgsl-range",
+      "samples": 162,
+      "unknownRectangles": 18
+    },
+    {
+      "name": "nonunit-outer-envelope-precheck-and-geometric-scale",
+      "cases": 2
+    },
+    {
+      "name": "5m-prefix-scan-independent-point-checks",
+      "samples": 62740,
+      "note": "Finite sample bug detector, not a first-hit certificate"
+    }
+  ],
+  "failures": [],
+  "summaries": [
+    {
+      "mode": "global",
+      "elapsedMs": 8.669667000000004,
+      "statuses": {
+        "hit": 11,
+        "miss": 3
+      },
+      "totals": {
+        "visits": 7145,
+        "heightEvaluations": 7430,
+        "discarded": 3517,
+        "dynamicBounds": 0,
+        "tileLoads": 0,
+        "metadataMisses": 0
+      },
+      "metadata": {
+        "nodes": 0,
+        "loads": 0,
+        "misses": 0
+      },
+      "maxHeightEvaluations": 1728,
+      "medianHeightEvaluations": 526,
+      "maxVisits": 1637
+    },
+    {
+      "mode": "analytic",
+      "elapsedMs": 9.167917000000017,
+      "statuses": {
+        "hit": 11,
+        "miss": 3
+      },
+      "totals": {
+        "visits": 624,
+        "heightEvaluations": 58,
+        "discarded": 257,
+        "dynamicBounds": 617,
+        "tileLoads": 0,
+        "metadataMisses": 0
+      },
+      "metadata": {
+        "nodes": 0,
+        "loads": 0,
+        "misses": 0
+      },
+      "maxHeightEvaluations": 11,
+      "medianHeightEvaluations": 4,
+      "maxVisits": 160
+    },
+    {
+      "mode": "metadata",
+      "elapsedMs": 8.261917000000011,
+      "statuses": {
+        "hit": 11,
+        "miss": 3
+      },
+      "totals": {
+        "visits": 1008,
+        "heightEvaluations": 64,
+        "discarded": 333,
+        "dynamicBounds": 452,
+        "tileLoads": 640,
+        "metadataMisses": 154
+      },
+      "metadata": {
+        "nodes": 154,
+        "loads": 640,
+        "misses": 154
+      },
+      "maxHeightEvaluations": 12,
+      "medianHeightEvaluations": 4,
+      "maxVisits": 191
+    }
+  ],
+  "metadataVariants": [
+    {
+      "leafKm": 2,
+      "coldMs": 7.9021660000000224,
+      "warmMs": 4.742083000000008,
+      "metadataNodes": 122,
+      "cold": {
+        "statuses": {
+          "hit": 11,
+          "miss": 3
+        },
+        "heightEvaluations": 64,
+        "maxHeightEvaluations": 12,
+        "visits": 976,
+        "maxVisits": 187,
+        "dynamicBounds": 497,
+        "metadataLoads": 566,
+        "rectQueries": 619,
+        "hashCalls": 33968
+      },
+      "warm": {
+        "statuses": {
+          "hit": 11,
+          "miss": 3
+        },
+        "heightEvaluations": 64,
+        "maxHeightEvaluations": 12,
+        "visits": 976,
+        "maxVisits": 187,
+        "dynamicBounds": 497,
+        "metadataLoads": 566,
+        "rectQueries": 497,
+        "hashCalls": 13996
+      },
+      "limited": {
+        "statuses": {
+          "hit": 10,
+          "unresolved-budget": 1,
+          "miss": 3
+        },
+        "heightEvaluations": 54,
+        "maxHeightEvaluations": 7,
+        "visits": 917,
+        "maxVisits": 128,
+        "dynamicBounds": 439,
+        "metadataLoads": 566,
+        "rectQueries": 439,
+        "hashCalls": 12604
+      },
+      "expanded256": {
+        "statuses": {
+          "hit": 11,
+          "miss": 3
+        },
+        "heightEvaluations": 64,
+        "maxHeightEvaluations": 12,
+        "visits": 976,
+        "maxVisits": 187,
+        "dynamicBounds": 497,
+        "metadataLoads": 566,
+        "rectQueries": 497,
+        "hashCalls": 13996
+      }
+    },
+    {
+      "leafKm": 1,
+      "coldMs": 7.208208000000013,
+      "warmMs": 3.9641670000000033,
+      "metadataNodes": 154,
+      "cold": {
+        "statuses": {
+          "hit": 11,
+          "miss": 3
+        },
+        "heightEvaluations": 64,
+        "maxHeightEvaluations": 12,
+        "visits": 1008,
+        "maxVisits": 191,
+        "dynamicBounds": 452,
+        "metadataLoads": 640,
+        "rectQueries": 606,
+        "hashCalls": 33632
+      },
+      "warm": {
+        "statuses": {
+          "hit": 11,
+          "miss": 3
+        },
+        "heightEvaluations": 64,
+        "maxHeightEvaluations": 12,
+        "visits": 1008,
+        "maxVisits": 191,
+        "dynamicBounds": 452,
+        "metadataLoads": 640,
+        "rectQueries": 452,
+        "hashCalls": 11676
+      },
+      "limited": {
+        "statuses": {
+          "hit": 10,
+          "unresolved-budget": 1,
+          "miss": 3
+        },
+        "heightEvaluations": 54,
+        "maxHeightEvaluations": 7,
+        "visits": 945,
+        "maxVisits": 128,
+        "dynamicBounds": 390,
+        "metadataLoads": 640,
+        "rectQueries": 390,
+        "hashCalls": 10176
+      },
+      "expanded256": {
+        "statuses": {
+          "hit": 11,
+          "miss": 3
+        },
+        "heightEvaluations": 64,
+        "maxHeightEvaluations": 12,
+        "visits": 1008,
+        "maxVisits": 191,
+        "dynamicBounds": 452,
+        "metadataLoads": 640,
+        "rectQueries": 452,
+        "hashCalls": 11676
+      }
+    },
+    {
+      "leafKm": 0.25,
+      "coldMs": 7.46795800000001,
+      "warmMs": 3.5131250000000023,
+      "metadataNodes": 245,
+      "cold": {
+        "statuses": {
+          "hit": 11,
+          "miss": 3
+        },
+        "heightEvaluations": 64,
+        "maxHeightEvaluations": 12,
+        "visits": 1064,
+        "maxVisits": 193,
+        "dynamicBounds": 380,
+        "metadataLoads": 783,
+        "rectQueries": 625,
+        "hashCalls": 34452
+      },
+      "warm": {
+        "statuses": {
+          "hit": 11,
+          "miss": 3
+        },
+        "heightEvaluations": 64,
+        "maxHeightEvaluations": 12,
+        "visits": 1064,
+        "maxVisits": 193,
+        "dynamicBounds": 380,
+        "metadataLoads": 783,
+        "rectQueries": 380,
+        "hashCalls": 9312
+      },
+      "limited": {
+        "statuses": {
+          "hit": 10,
+          "unresolved-budget": 1,
+          "miss": 3
+        },
+        "heightEvaluations": 54,
+        "maxHeightEvaluations": 7,
+        "visits": 999,
+        "maxVisits": 128,
+        "dynamicBounds": 317,
+        "metadataLoads": 781,
+        "rectQueries": 317,
+        "hashCalls": 7800
+      },
+      "expanded256": {
+        "statuses": {
+          "hit": 11,
+          "miss": 3
+        },
+        "heightEvaluations": 64,
+        "maxHeightEvaluations": 12,
+        "visits": 1064,
+        "maxVisits": 193,
+        "dynamicBounds": 380,
+        "metadataLoads": 783,
+        "rectQueries": 380,
+        "hashCalls": 9312
+      }
+    },
+    {
+      "leafKm": 0.0625,
+      "coldMs": 7.915959000000015,
+      "warmMs": 2.799624999999992,
+      "metadataNodes": 363,
+      "cold": {
+        "statuses": {
+          "hit": 11,
+          "miss": 3
+        },
+        "heightEvaluations": 64,
+        "maxHeightEvaluations": 12,
+        "visits": 1114,
+        "maxVisits": 200,
+        "dynamicBounds": 304,
+        "metadataLoads": 917,
+        "rectQueries": 667,
+        "hashCalls": 35712
+      },
+      "warm": {
+        "statuses": {
+          "hit": 11,
+          "miss": 3
+        },
+        "heightEvaluations": 64,
+        "maxHeightEvaluations": 12,
+        "visits": 1114,
+        "maxVisits": 200,
+        "dynamicBounds": 304,
+        "metadataLoads": 917,
+        "rectQueries": 304,
+        "hashCalls": 7336
+      },
+      "limited": {
+        "statuses": {
+          "hit": 10,
+          "unresolved-budget": 1,
+          "miss": 3
+        },
+        "heightEvaluations": 54,
+        "maxHeightEvaluations": 7,
+        "visits": 1042,
+        "maxVisits": 128,
+        "dynamicBounds": 238,
+        "metadataLoads": 907,
+        "rectQueries": 238,
+        "hashCalls": 5752
+      },
+      "expanded256": {
+        "statuses": {
+          "hit": 11,
+          "miss": 3
+        },
+        "heightEvaluations": 64,
+        "maxHeightEvaluations": 12,
+        "visits": 1114,
+        "maxVisits": 200,
+        "dynamicBounds": 304,
+        "metadataLoads": 917,
+        "rectQueries": 304,
+        "hashCalls": 7336
+      }
+    }
+  ],
+  "elapsedMs": 168.983
+}

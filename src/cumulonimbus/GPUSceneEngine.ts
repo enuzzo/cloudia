@@ -17,6 +17,8 @@ import { conservativeEmptyStep } from './emptyTraversal';
 import {clampCameraAboveLandscape,CAMERA_TERRAIN_CLEARANCE_KM,TERRAIN_HASH_ID} from './landscape';
 import { FrameMeasurement, summarizeFrames, summarizeSamples } from './performance';
 import {QueuePrefixMeasurement} from './queuePrefixMeasurement';
+import {resolveThree186TimestampBatch,type TimestampPoolKind} from './three186TimestampBatch';
+import {TimestampBatchMeasurement,type TimestampDrawCounters} from './timestampBatchMeasurement';
 import type {RenderHost,Viewport,RenderEvent} from './renderProtocol';
 
 export const QUALITY = {
@@ -87,6 +89,8 @@ export class GPUSceneEngine {
   private intervals: number[] = [];
   private measurement: FrameMeasurement | null = null;
   private queuePrefix:QueuePrefixMeasurement|null=null;
+  private timestampBatch:TimestampBatchMeasurement|null=null;
+  private timestampDrawSerial=0;
   private benchmarkCompletion:Promise<void>|null=null;
   private benchmarkGeneration=0;
   private benchmarkContext: Record<string, unknown> = {};
@@ -337,6 +341,10 @@ export class GPUSceneEngine {
       worker.postMessage({size:VOLUME_RESOLUTION,seed:this.seed});
     });
   }
+  private readTimestampCounters():TimestampDrawCounters{
+    const info=this.renderer!.info;
+    return {frame:info.frame,renderFrameCalls:info.render.frameCalls,computeFrameCalls:info.compute.frameCalls};
+  }
   private frame = (now: number) => {
     if(this.destroyed || this.deviceLost || !this.visible || !this.renderer || !this.quad) return;
     const cpuStart=performance.now();
@@ -401,22 +409,35 @@ export class GPUSceneEngine {
     this.forward.value.copy(this.viewFocus).sub(this.origin.value).normalize();
     this.right.value.crossVectors(this.forward.value,new Vector3(0,1,0)).normalize();
     this.up.value.crossVectors(this.right.value,this.forward.value).normalize();
+    const timestampBatch=this.timestampBatch;
+    const countersBefore=timestampBatch?this.readTimestampCounters():null;
     const computeStart=performance.now();
     if(!this.frozenFlow) this.renderer.compute(this.interpolateFlow);
     const renderStart=performance.now();
     this.quad.render(this.renderer);
+    const drawId=timestampBatch?++this.timestampDrawSerial:0,countersAfter=timestampBatch?this.readTimestampCounters():null;
     const measured=this.measurement;
+    let measuredIntervalId:number|null=null,completed=false;
     if(measured&&!measured.result&&!measured.cancelReason){
+      const intervalCount=measured.intervals.length;
       measured.recordStages(renderStart-computeStart,performance.now()-renderStart);
       measured.recordDispatch(Math.max(0,cpuStart-now));measured.recordCPU(performance.now()-cpuStart);measured.record(now);
+      if(measured.intervals.length>intervalCount)measuredIntervalId=measured.intervals.length;
       if(now>=measured.start+measured.warmup)this.queuePrefix?.recordSubmission(now);
-      if(measured.result&&!this.report)this.finishBenchmark();
+      completed=!!measured.result&&!this.report;
     }
+    if(timestampBatch&&countersBefore&&countersAfter)timestampBatch.recordDraw({id:drawId,measuredIntervalId,before:countersBefore,after:countersAfter});
+    if(completed)this.finishBenchmark();
     if(now-this.uiTime>500) { this.uiTime=now; this.updateMetrics(now); }
     if(this.timestampSupported && !this.timestampPending && now-this.timestampTime>=200) {
       this.timestampPending=true; this.timestampTime=now;
-      const run=this.measurement,renderer=this.renderer,started=performance.now();
-      this.timestampPromise=Promise.all([renderer.resolveTimestampsAsync('render'),...(this.timingMode==='render'?[]:[renderer.resolveTimestampsAsync('compute')])]).then(()=>{
+      const run=this.measurement,renderer=this.renderer,started=performance.now(),batchRun=this.timestampBatch;
+      const resolve=(kind:TimestampPoolKind)=>batchRun?
+        resolveThree186TimestampBatch(renderer,kind,{revision:'186',requestAppDrawId:drawId}).then(batch=>{
+          batchRun.recordBatch(batch);
+          if(batch.status==='error')throw new Error(batch.reason??'Timestamp batch failed');
+        }):renderer.resolveTimestampsAsync(kind);
+      this.timestampPromise=Promise.all([resolve('render'),...(this.timingMode==='render'?[]:[resolve('compute')])]).then(()=>{
         if(this.destroyed || !this.renderer) return;
         const ms=renderer.info.render.timestamp,compute=renderer.info.compute.timestamp;
         if(Number.isFinite(ms) && ms>0) {this.gpuMs=ms;run?.recordGPU(ms,'render',started);}
@@ -556,21 +577,24 @@ export class GPUSceneEngine {
     this.report=null; this.emit({type:'report',report:null}); this.setButtonEnabled('export',false);
     this.measurement=new FrameMeasurement(performance.now(),duration,2000);
     this.queuePrefix=this.device?new QueuePrefixMeasurement(this.device.queue):null;
+    this.timestampBatch=this.timestampSupported?new TimestampBatchMeasurement():null;
     this.benchmarkGeneration++;
     this.benchmarkContext={date:new Date().toISOString(),backend:'WebGPU',adapter:this.adapterInfo,threeRevision:'186',quality:this.quality,
       output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],nominalSteps:QUALITY[this.quality].steps,
       cloudExtinctionPerKm:EXTINCTION,iceExtinctionPerKm:ICE_EXTINCTION,mediaIntegration:'co-located cloud/rain exponential segments',virgaReachVariation:'broad advected sheets, 0.7–1.3 of weak fall distance',precipitationMaxStepKm:RAIN_SAMPLE_STEP,precipitationExtinctionPerKm:RAIN_EXTINCTION,precipitationSourceBounds:this.rainBounds.value.toArray(),
       rendererVersion:'observatory-v40-terrain-camera-focus',navigationVersion:'filtered-field-terrain-clearance-v3',terrainCameraClearanceKm:CAMERA_TERRAIN_CLEARANCE_KM,terrainHash:TERRAIN_HASH_ID,skyCalculation:'cached dedicated worker',skyPending:this.skyPending,solarVisibility:'256-cubed day + RG8 low-sun endpoints',sunDirection:this.sun.value.toArray(),sunsetAmount:this.sunsetAmount.value,extraSunsetTextureBytes:VOLUME_RESOLUTION**3*2,probeImplementation:'compile-time specialization',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{comparisonSurfaceKm:this.comparisonSurface,comparisonTargetKm:this.comparisonTarget,probeSkipped:this.comparisonSurface!==null,approach:this.view.approach,origin:this.origin.value.toArray(),probeFlow:'16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively',probeFieldBytes:this.approachField.byteLength,surfaceEstimateKm:this.comparisonSurface===null?this.approachSurface:null,probe:this.approachProbe,probeAgeMs:this.approachProbe?performance.now()-this.approachTime:null,altitudeKm:this.origin.value.y+4,ground:this.ground.value,yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
+      clockStateStart:{forcingTime:this.forcingTime,weatherTime:this.weatherTime,precipitationUniformTime:this.precipitationTime.value},
       userAgent:navigator.userAgent,devicePixelRatio:this.viewport.dpr,
       method:'Visible requestAnimationFrame intervals, CPU compute/render submission and callback dispatch delay. GPU render and compute timestamps sampled separately; their last-frame samples are not necessarily paired. Optional queue completion latency includes GPU work, readback and JS delivery; not compositor presentation.',warmupMs:2000,targetDurationMs:duration};
     this.setButtonEnabled('benchmark',false); this.setButtonEnabled('sustained',false);
     this.text('result','Riscaldamento · 2 s…');
   }
   private finishBenchmark() {
-    const run=this.measurement,prefix=this.queuePrefix,generation=this.benchmarkGeneration;
+    const run=this.measurement,prefix=this.queuePrefix,batchRun=this.timestampBatch,generation=this.benchmarkGeneration;
     if(!run?.result||this.benchmarkCompletion)return;
     const stats=run.result,gpu=run.gpuSamplesMs,cpu=run.cpuSamplesMs;
     const legacy={...this.benchmarkContext,simulationTimeEnd:this.simulationTime,flashCountEnd:this.flashSerial,skippedFrames:this.skippedFrames-(this.benchmarkContext.skippedFramesAtStart as number),emptyStepWorldEnd:this.emptyStep.value,stats,
+      clockStateEnd:{forcingTime:this.forcingTime,weatherTime:this.weatherTime,precipitationUniformTime:this.precipitationTime.value},
       gpu:summarizeSamples(gpu),cpu:summarizeSamples(cpu),gpuCompute:summarizeSamples(run.computeSamplesMs),queueCompletion:summarizeSamples(run.queueSamplesMs),
       rafDispatch:summarizeSamples(run.dispatchSamplesMs),cpuCompute:summarizeSamples(run.cpuComputeSamplesMs),cpuRender:summarizeSamples(run.cpuRenderSamplesMs),
       frameIntervalsMs:run.intervals,gpuSamplesMs:gpu,cpuSamplesMs:cpu,computeSamplesMs:run.computeSamplesMs,queueSamplesMs:run.queueSamplesMs,
@@ -578,17 +602,22 @@ export class GPUSceneEngine {
     this.text('result','Campionamento concluso · attendo il prefisso GPU finale (massimo 5 s)…');
     const completion=(prefix?prefix.finish():Promise.resolve(null)).then(queuePrefix=>{
       if(this.destroyed||this.deviceLost||this.measurement!==run||this.queuePrefix!==prefix||this.benchmarkGeneration!==generation)return;
-      this.report={...legacy,metricsSchemaVersion:2,measurementVersion:'submission-queue-prefix-v1',
+      const timestampPasses=batchRun?.finish()??null;
+      this.timestampBatch=null;
+      this.report={...legacy,metricsSchemaVersion:3,measurementVersion:'submission-queue-prefix-v2-pass-ledger',timestampPasses,
         submissionFps:stats.fps,submissionPacing:stats,gpuRenderPassSumMs:legacy.gpu,presentedCanvasFps:null,queuePrefix,
         metricSemantics:{historicalFields:'unchanged',stats:'accepted render-submission intervals',gpu:'sparse last-resolved-frame sum of render-pass intervals',
-          queuePrefix:'benchmark-only completion notifications for immutable logical submitted prefixes; not physical queue depth',presentedCanvasFps:'unmeasured; does not block this report'}};
+          queuePrefix:'benchmark-only completion notifications for immutable logical submitted prefixes; not physical queue depth',
+          timestampPasses:'optional pinned-Three-186 fresh query pairs mapped by unchanged-frame and unique call ranges; complete measured draws only, explicit coverage; no extra queries or final readback wait',
+          presentedCanvasFps:'unmeasured; does not block this report'}};
       this.queuePrefix=null;this.emit({type:'report',report:this.report});
       const queueStatus=queuePrefix?({completed:'completato',incomplete:'incompleto',timeout:'tempo scaduto',cancelled:'annullato','not-started':'non avviato'}[queuePrefix.status]):'non disponibile';
-      this.text('result',`${stats.fps.toFixed(1)} fps invio · ${(stats.durationMs/1000).toFixed(1)} s · ${stats.frames} intervalli\nMediana ${stats.medianMs.toFixed(2)} ms · p95 ${stats.p95Ms.toFixed(2)} · p99 ${stats.p99Ms.toFixed(2)}\n${stats.over33Ms} oltre 33,34 ms · completamento coda: ${queueStatus}`);
+      this.text('result',`Ultima misura completata · ${stats.fps.toFixed(1)} fps invio · ${(stats.durationMs/1000).toFixed(1)} s · ${stats.frames} intervalli\nMediana ${stats.medianMs.toFixed(2)} ms · p95 ${stats.p95Ms.toFixed(2)} · p99 ${stats.p99Ms.toFixed(2)}\n${stats.over33Ms} oltre 33,34 ms · completamento coda: ${queueStatus}`);
       this.setButtonEnabled('benchmark',true);this.setButtonEnabled('sustained',true);this.setButtonEnabled('export',true);
     }).catch(error=>{
       if(this.destroyed||this.measurement!==run||this.benchmarkGeneration!==generation)return;
       this.queuePrefix?.cancel('Errore chiusura misura');this.queuePrefix=null;this.measurement=null;
+      this.timestampBatch?.close();this.timestampBatch=null;
       this.text('result',`Chiusura della misura fallita: ${error instanceof Error?error.message:String(error)}`);
       this.setButtonEnabled('benchmark',this.ready);this.setButtonEnabled('sustained',this.ready);
     }).finally(()=>{if(this.benchmarkCompletion===completion)this.benchmarkCompletion=null;});
@@ -599,6 +628,7 @@ export class GPUSceneEngine {
     if(collecting||this.benchmarkCompletion){
       this.benchmarkGeneration++;this.measurement?.cancel(reason);this.measurement=null;
       this.queuePrefix?.cancel(reason);this.queuePrefix=null;
+      this.timestampBatch?.close();this.timestampBatch=null;
       this.text('result',`Misura annullata: ${reason}.`);
       this.setButtonEnabled('benchmark',this.ready);this.setButtonEnabled('sustained',this.ready);
     }
@@ -673,6 +703,7 @@ export class GPUSceneEngine {
     this.cleanup ??= (async()=>{
       // Init can allocate Three's internal animation manager after teardown was requested.
       this.queuePrefix?.cancel('Rilascio GPU');this.queuePrefix=null;
+      this.timestampBatch?.close();this.timestampBatch=null;
       await this.benchmarkCompletion;
       await this.initialization?.catch(()=>{});
       await this.timestampPromise;

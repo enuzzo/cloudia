@@ -1,0 +1,52 @@
+{
+  "kind": "external-terrain-bounds-reference",
+  "sourceSha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+  "productModified": false,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 10386,
+      "sha256": "89518fa0252fafb4738d4e40ae1f6011f748cfaa6a2197e39501111a6078973b"
+    },
+    {
+      "path": "REVIEW.md",
+      "bytes": 1379,
+      "sha256": "0f2bad14f2f05d0fd20422e7d961fcfde2255f538c38c659c3ee1e2f86087e6d"
+    },
+    {
+      "path": "bounds.ts",
+      "bytes": 9316,
+      "sha256": "53ed370b2b1443d29274c155330bdef912836a5bf3700650ed9e4d8752e5bd2d"
+    },
+    {
+      "path": "matrix14.json",
+      "bytes": 3972,
+      "sha256": "701d2070ae2b86b72e2aa93b72d302cb25cfd9d47fe0e04c0ffafd7d7136b392"
+    },
+    {
+      "path": "results.json",
+      "bytes": 303025,
+      "sha256": "9b7b89778d92a4b41862186b25a76328e5e7cfc4812989e66ba2092e9c04fd7f"
+    },
+    {
+      "path": "run-stdout.json",
+      "bytes": 8741,
+      "sha256": "f78d58da3c3cafafcc65b5788f01d3e40c63f3a2116dda45edb9ab6b3dc600bd"
+    },
+    {
+      "path": "run.ts",
+      "bytes": 13934,
+      "sha256": "10e84b29c921dfa1b3866a0b7c44e58f0295c0b8858e93d4d4e6f0357c06821b"
+    },
+    {
+      "path": "trace.ts",
+      "bytes": 8544,
+      "sha256": "21efa901cd4c9895c5c29f7c53d2259965a303984cb9d6f284f413bd919b745b"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 1160,
+      "sha256": "b7dc056c966dde8170f99bd43cce080ca64ed8605644380a603fd33785a3e909"
+    }
+  ]
+}

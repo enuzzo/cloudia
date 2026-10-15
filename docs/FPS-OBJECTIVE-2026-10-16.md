@@ -8,6 +8,31 @@ output pieno configurato. Questo obiettivo si aggiunge ad anatomia delle tre
 famiglie, luce ravvicinata continua, pioggia/virga integrate nel paesaggio e UI.
 Nessuno di questi gate è sostituito dal contatore dei frame.
 
+## Aggiornamento del decimo ciclo
+
+[Schema 3 con pass identificati](FPS-PASS-LEDGER-2026-10-16.md) implementato e
+qualificato in main e worker: copertura dei draw completa o mancante esplicita,
+nessun doppio conteggio forzato, query precedenti e warmup esclusi. Le vecchie
+medie sparse restano distinguibili dai nuovi aggregati. Nessuna nuova query
+GPU o attesa finale di timestamp. Il build finale registra forcingTime,
+weatherTime e tempo dell'uniforme precipitazione all'inizio/fine.
+
+Sole statico: circa59,996 invii/s main/worker a2560×1440. Pioggia statica:
+13,636 e13,784 in due controlli main, tutti i prefissi completati. La somma
+dei pass resta superiore al periodo di invio; i dati non danno una timeline
+fisica né autorizzano una divisione per due o una diagnosi hardware.
+
+Un precedente [caso ravvicinato ordinario al100%](measurements/fps-pass-ledger-2026-10-16/historical-near/schema2-sun-near100.json)
+misura21,832 invii/s su30s, p9550,8ms e chiusura182,5ms. È a t533,0332 in pausa
+con superficie stimata CPU, non una coppia confrontabile con il profilo t60.
+Il raggio della superficie è misurato dal target, non dalla faccia della camera:
+la nebbia quasi bianca al massimo avvicinamento non prova da sola perdita di dettaglio.
+
+Il [conteggio del lavoro pioggia](RAIN-WORK-2026-10-16.md) non giustifica la
+maschera non convessa128²: saldo lookup soltanto+.53% prima dell'ALU. La nuova
+maschera stretta dopo flow resta una candidata esterna; il suo saldo semantico
+non è un miglioramento FPS misurato. **Obiettivo60 sostenuti ancora aperto.**
+
 ## Contratto delle misure
 
 - Salvare build/hash, dispositivo e browser, thread main/worker, CSS/DPR,

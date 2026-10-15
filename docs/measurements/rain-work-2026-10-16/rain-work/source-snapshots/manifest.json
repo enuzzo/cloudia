@@ -1,0 +1,48 @@
+{
+  "snapshots": {
+    "volume": {
+      "sha256": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74",
+      "bytes": 25749
+    },
+    "light": {
+      "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf",
+      "bytes": 3041
+    },
+    "motion": {
+      "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2",
+      "bytes": 7238
+    },
+    "motionField": {
+      "sha256": "d8817eb9d90a70ee975eea89d2c2fca6d9c6783280bea810fdf76cff2b2d4d8a",
+      "bytes": 2639
+    },
+    "precipitation": {
+      "sha256": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72",
+      "bytes": 5993
+    },
+    "emptyTraversal": {
+      "sha256": "281a4209f2afc13a63735d6526f954dc93d775972aa1d8ccd6cf46d1677c57d4",
+      "bytes": 1624
+    },
+    "medium": {
+      "sha256": "ddfd487055e4fde6581ab351345e91fb3466b032dda954c803082a39a9a142d6",
+      "bytes": 1176
+    },
+    "landscape": {
+      "sha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+      "bytes": 6980
+    },
+    "cloudShader": {
+      "sha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+      "bytes": 13664
+    }
+  },
+  "omitted": {
+    "GPUSceneEngine": {
+      "expectedAtBake": "9b065a853212191c8af8e3ab63f44a654f4d3918ea59e98af29b4a3c090a6fca",
+      "observedAfterCompletedCounts": "fadb049c86f08b4b32abda49f316d52a663df57f4817506640ae852a17a587a1",
+      "reason": "Source changed after completed bake/counts; no newer bytes substituted as historical snapshot."
+    }
+  },
+  "scope": "The two final count reports record no source change during execution. This snapshot operation happened afterwards."
+}

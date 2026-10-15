@@ -1,0 +1,242 @@
+{
+  "kind": "rain-work-cpu-durable-archive",
+  "date": "2026-10-16",
+  "createdAtUtc": "2026-10-15T23:26:19.922061+00:00",
+  "scope": "CPU diagnostics/research only; no product changes, bake, GPU or re-execution during archiving.",
+  "newBakes": 0,
+  "binaryCacheCopied": false,
+  "binaryCacheExternalBytes": 109092864,
+  "excludedBinaryFiles": {
+    "macro-rgba8.bin": {
+      "bytes": 67108864,
+      "sha256": "72e3f360b81f3c8f812800cc309a174ce893d96c80e666c9bf98fca178187b9f"
+    },
+    "detail-rgba8.bin": {
+      "bytes": 8388608,
+      "sha256": "ed9ea464b562c974bdd4bd34c56e5d0f3a8638e4b149f275392c0521fc1993f5"
+    },
+    "sunset-rg8.bin": {
+      "bytes": 33554432,
+      "sha256": "b16c0331f20382dded337616f5d18c87b25b1768d5f686b67c536a067575adf9"
+    },
+    "rain-rg8.bin": {
+      "bytes": 8192,
+      "sha256": "c8f6dc2c8abb0717ec3051c0f958648ec541604f3718eb0f7621cb047d961fe2"
+    },
+    "flow-rgba16f.bin": {
+      "bytes": 32768,
+      "sha256": "e395feffaa19d8de459f4c1ef9380a42be2fb8d3f902f50f9787c0abbea1909f"
+    }
+  },
+  "payloadCount": 27,
+  "totalPayloadBytes": 1873449,
+  "payloads": {
+    "RAIN-NONCONVEX-NEXT.md": {
+      "bytes": 10425,
+      "sha256": "47434922c260a84f18dc460dc05385dabd10fcc34bcf0075556be367d03cbb1c",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/RAIN-NONCONVEX-NEXT.md",
+      "sourceSha256": "47434922c260a84f18dc460dc05385dabd10fcc34bcf0075556be367d03cbb1c"
+    },
+    "README.md": {
+      "bytes": 2659,
+      "sha256": "374fda7c8e28e01aa64c4e1902034067e77f81ae8aad2cb6c4e27914bc16965e",
+      "kind": "archive-instructions",
+      "newExecution": false
+    },
+    "rain-work/RAIN-WORK-REVIEW.md": {
+      "bytes": 6439,
+      "sha256": "e634f4f6dcb033b939466d1b66409f7f59458ba33417237abb85c2b33f944fbd",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/RAIN-WORK-REVIEW.md",
+      "sourceSha256": "e634f4f6dcb033b939466d1b66409f7f59458ba33417237abb85c2b33f944fbd"
+    },
+    "rain-work/README.md": {
+      "bytes": 1431,
+      "sha256": "90cdac92a0edfba62772cfa4711f1c1976b45ce1ba20946232217ec2b4a7b89f",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/README.md",
+      "sourceSha256": "90cdac92a0edfba62772cfa4711f1c1976b45ce1ba20946232217ec2b4a7b89f"
+    },
+    "rain-work/count-work.ts": {
+      "bytes": 24395,
+      "sha256": "3f5d20d75db586b0d027cda1664bce9733ce5b735d1de8e06f5380bae1a0f810",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/count-work.ts",
+      "sourceSha256": "3f5d20d75db586b0d027cda1664bce9733ce5b735d1de8e06f5380bae1a0f810"
+    },
+    "rain-work/data/manifest.json": {
+      "bytes": 3853,
+      "sha256": "dd4ecf24d7a5c17e8d8c9e9dda2b189658a33cdec34e1be8ac1bdbbf475604f8",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/data/manifest.json",
+      "sourceSha256": "dd4ecf24d7a5c17e8d8c9e9dda2b189658a33cdec34e1be8ac1bdbbf475604f8"
+    },
+    "rain-work/input-control.json": {
+      "bytes": 48089,
+      "sha256": "cbb26949110019d364f57fdcbe730e2685c34a96ab8264ec4850a16e4cd5822b",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/input-control.json",
+      "sourceSha256": "cbb26949110019d364f57fdcbe730e2685c34a96ab8264ec4850a16e4cd5822b"
+    },
+    "rain-work/prepare-data.log": {
+      "bytes": 1446,
+      "sha256": "24a5ccbd21d4d2badcafb2d8342a0c3e6a3605b3ddd2ed0e1fb52be666acea4a",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/prepare-data.log",
+      "sourceSha256": "24a5ccbd21d4d2badcafb2d8342a0c3e6a3605b3ddd2ed0e1fb52be666acea4a"
+    },
+    "rain-work/prepare-data.ts": {
+      "bytes": 4130,
+      "sha256": "84cf7a8dffdc9cc800c37d04dc7ee5affd5a91a4e64e3501b67457b2fe7f6bb8",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/prepare-data.ts",
+      "sourceSha256": "84cf7a8dffdc9cc800c37d04dc7ee5affd5a91a4e64e3501b67457b2fe7f6bb8"
+    },
+    "rain-work/rain-nonconvex-estimate.json": {
+      "bytes": 2995,
+      "sha256": "6f1d34eafb4379d3e685aacc30b866cf1bb8c6280df94d45daec5d0c423090c6",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/rain-nonconvex-estimate.json",
+      "sourceSha256": "6f1d34eafb4379d3e685aacc30b866cf1bb8c6280df94d45daec5d0c423090c6"
+    },
+    "rain-work/rain-nonconvex-estimate.ts": {
+      "bytes": 30329,
+      "sha256": "089cde14525d91105748c054a4dcd92600b6a2cd66a628e9a6e7d4c92e8aa2ae",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/rain-nonconvex-estimate.ts",
+      "sourceSha256": "089cde14525d91105748c054a4dcd92600b6a2cd66a628e9a6e7d4c92e8aa2ae"
+    },
+    "rain-work/source-snapshots/cloudShader.ts": {
+      "bytes": 13664,
+      "sha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/source-snapshots/cloudShader.ts",
+      "sourceSha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd"
+    },
+    "rain-work/source-snapshots/emptyTraversal.ts": {
+      "bytes": 1624,
+      "sha256": "281a4209f2afc13a63735d6526f954dc93d775972aa1d8ccd6cf46d1677c57d4",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/source-snapshots/emptyTraversal.ts",
+      "sourceSha256": "281a4209f2afc13a63735d6526f954dc93d775972aa1d8ccd6cf46d1677c57d4"
+    },
+    "rain-work/source-snapshots/landscape.ts": {
+      "bytes": 6980,
+      "sha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/source-snapshots/landscape.ts",
+      "sourceSha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99"
+    },
+    "rain-work/source-snapshots/light.ts": {
+      "bytes": 3041,
+      "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/source-snapshots/light.ts",
+      "sourceSha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+    },
+    "rain-work/source-snapshots/manifest.json": {
+      "bytes": 1686,
+      "sha256": "1d2cfabfcb0d35f1f7e4499c1951867273659278b9797f4a7462c2d91f995ec5",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/source-snapshots/manifest.json",
+      "sourceSha256": "1d2cfabfcb0d35f1f7e4499c1951867273659278b9797f4a7462c2d91f995ec5"
+    },
+    "rain-work/source-snapshots/medium.ts": {
+      "bytes": 1176,
+      "sha256": "ddfd487055e4fde6581ab351345e91fb3466b032dda954c803082a39a9a142d6",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/source-snapshots/medium.ts",
+      "sourceSha256": "ddfd487055e4fde6581ab351345e91fb3466b032dda954c803082a39a9a142d6"
+    },
+    "rain-work/source-snapshots/motion.ts": {
+      "bytes": 7238,
+      "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/source-snapshots/motion.ts",
+      "sourceSha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+    },
+    "rain-work/source-snapshots/motionField.ts": {
+      "bytes": 2639,
+      "sha256": "d8817eb9d90a70ee975eea89d2c2fca6d9c6783280bea810fdf76cff2b2d4d8a",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/source-snapshots/motionField.ts",
+      "sourceSha256": "d8817eb9d90a70ee975eea89d2c2fca6d9c6783280bea810fdf76cff2b2d4d8a"
+    },
+    "rain-work/source-snapshots/precipitation.ts": {
+      "bytes": 5993,
+      "sha256": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/source-snapshots/precipitation.ts",
+      "sourceSha256": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72"
+    },
+    "rain-work/source-snapshots/volume.ts": {
+      "bytes": 25749,
+      "sha256": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/source-snapshots/volume.ts",
+      "sourceSha256": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74"
+    },
+    "rain-work/work-16x9-summary.json": {
+      "bytes": 10275,
+      "sha256": "c6ee4a3d7f6c8ff0358ca6c8b81c7fcdfaea1011bf107f2af4fb9ade7916a777",
+      "kind": "aggregate-json-projection",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/work-16x9.json",
+      "sourceSha256": "24b2f7580f9a21d95f26867ffe6d67eba53ba10d27ca6a356c93666e29ed430c",
+      "sourceBytes": 334287,
+      "omittedField": "rays",
+      "omittedRayCount": 144
+    },
+    "rain-work/work-16x9.log": {
+      "bytes": 2849,
+      "sha256": "17354a6240f9b5401baaff1fade3c5c83ad71b1622d9f52f7b031a04faa91955",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/work-16x9.log",
+      "sourceSha256": "17354a6240f9b5401baaff1fade3c5c83ad71b1622d9f52f7b031a04faa91955"
+    },
+    "rain-work/work-32x18-summary.json": {
+      "bytes": 10312,
+      "sha256": "10d04c0f5d464b11d2a9158b7d46d46a16f5c0a881b15803866fe2cd21ff2ff5",
+      "kind": "aggregate-json-projection",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/work-32x18.json",
+      "sourceSha256": "2acd349b164d2d9b666d40245f0c696b449decaa92a2e01307b9d08c0bf9cc02",
+      "sourceBytes": 1306861,
+      "omittedField": "rays",
+      "omittedRayCount": 576
+    },
+    "rain-work/work-32x18.log": {
+      "bytes": 2884,
+      "sha256": "e5a2ab7aebbb3126116548e9fee90f6bfaa69f805f9d637de51a0224ed6985dd",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/work-32x18.log",
+      "sourceSha256": "e5a2ab7aebbb3126116548e9fee90f6bfaa69f805f9d637de51a0224ed6985dd"
+    },
+    "rain-work/work-16x9.json": {
+      "bytes": 334287,
+      "sha256": "24b2f7580f9a21d95f26867ffe6d67eba53ba10d27ca6a356c93666e29ed430c",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/work-16x9.json",
+      "sourceSha256": "24b2f7580f9a21d95f26867ffe6d67eba53ba10d27ca6a356c93666e29ed430c"
+    },
+    "rain-work/work-32x18.json": {
+      "bytes": 1306861,
+      "sha256": "2acd349b164d2d9b666d40245f0c696b449decaa92a2e01307b9d08c0bf9cc02",
+      "kind": "byte-identical-copy",
+      "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/work-32x18.json",
+      "sourceSha256": "2acd349b164d2d9b666d40245f0c696b449decaa92a2e01307b9d08c0bf9cc02"
+    }
+  },
+  "companionDocument": {
+    "path": "../../RAIN-WORK-2026-10-16.md",
+    "bytes": 7212,
+    "sha256": "10342606931fa87ee35398f6e43e1748b7c67efe9b18959a6a4074362ebf8653"
+  },
+  "selfHashExcluded": "A manifest cannot include its own SHA256 recursively; its final hash is reported in delivery.",
+  "replay": "Existing external cache only; original scripts preserved with absolute paths and source/cache drift guards. No automatic rebake.",
+  "frozenWhitespaceExceptions": [
+    {
+      "path": "rain-work/source-snapshots/cloudShader.ts",
+      "detail": "The exact original source has one blank line at EOF. Preserve bytes/SHA rather than normalize evidence. Exclude only this frozen artifact from git diff --check; product changes and other payloads must pass."
+    }
+  ]
+}

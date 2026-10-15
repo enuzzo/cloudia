@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-15T23:07:14.623866+00:00",
+  "source": {
+    "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/landscape.ts",
+    "beforeSha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+    "afterSha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+    "unchanged": true
+  },
+  "HEAD": "ab2e122af49238221ea4fc0a5d8a6742f266c2be",
+  "architecture": "arm64",
+  "bun": "1.3.11",
+  "node": "v26.11.0",
+  "typecheck": {
+    "passed": true,
+    "exitCode": 0,
+    "files": [
+      "bounds.ts",
+      "trace.ts",
+      "run.ts"
+    ],
+    "command": "node node_modules/typescript/bin/tsc --noEmit --allowImportingTsExtensions --target ES2022 --module ESNext --moduleResolution Bundler --types node --skipLibCheck [absolute files]"
+  },
+  "generatedVolumes": 0,
+  "GPU": false,
+  "browser": false,
+  "productFilesWritten": [],
+  "numericScope": "Finite-qualified CPU reference, not universal GPU certificate",
+  "resultsPassed": true,
+  "executedImplementationMatchesCurrent": true,
+  "resultsSha256": "9b7b89778d92a4b41862186b25a76328e5e7cfc4812989e66ba2092e9c04fd7f"
+}

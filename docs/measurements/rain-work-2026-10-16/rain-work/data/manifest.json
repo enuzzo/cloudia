@@ -1,0 +1,103 @@
+{
+  "kind": "rain-work-reusable-cpu-inputs",
+  "date": "2026-10-15T22:55:23.155Z",
+  "seed": 72,
+  "time": 60,
+  "bakesPerformed": 1,
+  "rootReportedCheckpoint": "ab2e122",
+  "volumeSize": 256,
+  "detailSize": 128,
+  "flowSize": 16,
+  "supportBounds": {
+    "min": [
+      -4.38671875,
+      -0.1680859374999999,
+      -2.457109375
+    ],
+    "max": [
+      3.56640625,
+      5.1446484375,
+      2.402421875
+    ]
+  },
+  "iceRange": [
+    3.6577490387612723,
+    4.18826805253306
+  ],
+  "state": {
+    "height": 1,
+    "width": 1,
+    "anvil": 1,
+    "time": 60,
+    "seedPhase": 0.004929577464788732,
+    "family": 0,
+    "thermalA": [
+      4.363359569179785,
+      0.4384697528319157,
+      1.15
+    ],
+    "thermalB": [
+      2.507771333885667,
+      0.8120878168769189,
+      1.05
+    ],
+    "dispersion": 0
+  },
+  "rainBounds": [
+    -3.828125,
+    -2.2421875,
+    3.359375,
+    2.1328125
+  ],
+  "files": {
+    "macro-rgba8.bin": {
+      "bytes": 67108864,
+      "sha256": "72e3f360b81f3c8f812800cc309a174ce893d96c80e666c9bf98fca178187b9f"
+    },
+    "detail-rgba8.bin": {
+      "bytes": 8388608,
+      "sha256": "ed9ea464b562c974bdd4bd34c56e5d0f3a8638e4b149f275392c0521fc1993f5"
+    },
+    "sunset-rg8.bin": {
+      "bytes": 33554432,
+      "sha256": "b16c0331f20382dded337616f5d18c87b25b1768d5f686b67c536a067575adf9"
+    },
+    "rain-rg8.bin": {
+      "bytes": 8192,
+      "sha256": "c8f6dc2c8abb0717ec3051c0f958648ec541604f3718eb0f7621cb047d961fe2"
+    },
+    "flow-rgba16f.bin": {
+      "bytes": 32768,
+      "sha256": "e395feffaa19d8de459f4c1ef9380a42be2fb8d3f902f50f9787c0abbea1909f"
+    }
+  },
+  "inputControlSha256": "cbb26949110019d364f57fdcbe730e2685c34a96ab8264ec4850a16e4cd5822b",
+  "sourceHashesBefore": {
+    "volume": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74",
+    "light": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf",
+    "motion": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2",
+    "motionField": "d8817eb9d90a70ee975eea89d2c2fca6d9c6783280bea810fdf76cff2b2d4d8a",
+    "precipitation": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72",
+    "emptyTraversal": "281a4209f2afc13a63735d6526f954dc93d775972aa1d8ccd6cf46d1677c57d4",
+    "medium": "ddfd487055e4fde6581ab351345e91fb3466b032dda954c803082a39a9a142d6",
+    "landscape": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+    "cloudShader": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+    "GPUSceneEngine": "9b065a853212191c8af8e3ab63f44a654f4d3918ea59e98af29b4a3c090a6fca"
+  },
+  "sourceHashesAfter": {
+    "volume": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74",
+    "light": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf",
+    "motion": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2",
+    "motionField": "d8817eb9d90a70ee975eea89d2c2fca6d9c6783280bea810fdf76cff2b2d4d8a",
+    "precipitation": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72",
+    "emptyTraversal": "281a4209f2afc13a63735d6526f954dc93d775972aa1d8ccd6cf46d1677c57d4",
+    "medium": "ddfd487055e4fde6581ab351345e91fb3466b032dda954c803082a39a9a142d6",
+    "landscape": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+    "cloudShader": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+    "GPUSceneEngine": "9b065a853212191c8af8e3ab63f44a654f4d3918ea59e98af29b4a3c090a6fca"
+  },
+  "changedSources": [],
+  "prepareScriptSha256": "84cf7a8dffdc9cc800c37d04dc7ee5affd5a91a4e64e3501b67457b2fe7f6bb8",
+  "generationMs": 27210.464709,
+  "caveat": "Generated CPU baseline, not GPU readback. Flow is CPU analytic evaluation packed half at t60, not actual GPU compute output. Sunset cache retained for future reuse; source radiance is not needed for opacity/work counts."
+}

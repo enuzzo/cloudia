@@ -1,0 +1,82 @@
+- main:
+  - generic "Nube volumetrica ruotabile"
+  - heading "Cloudia." [level=1]
+  - paragraph:
+    - generic: Congesto largo
+    - generic: Sole
+  - paragraph: Camera di confronto · raggio vicino 0.4000 km · mira fissa · immagine diagnostica
+  - paragraph: Trascina per esplorare
+  - status: WebGPU · convezione attiva
+  - generic "Controlli del cielo":
+    - navigation "Modalità di controllo":
+      - generic "Mani in arrivo":
+        - text: Mani
+        - generic: in arrivo
+    - status: "Scenario: Sole"
+    - navigation "Distanza dalla nube":
+      - button "Avvicinati alla nube":
+      - button "Allontanati dalla nube":
+      - button "Torna al panorama":
+    - navigation "Comandi del cielo":
+      - button "Riprendi":
+      - generic "Scenari atmosferici":
+        - button "Sole" [pressed]:
+          - generic: Sole
+        - button "Tramonto":
+          - generic: Tramonto
+        - button "Pioggia":
+          - generic: Pioggia
+        - button "Temporale":
+          - generic: Temporale
+      - generic "Regola il cielo":
+      - region "Regola il cielo":
+        - heading "Regola il cielo" [level=2]
+        - button "Chiudi regolazioni":
+        - tablist "Regolazioni del cielo":
+          - tab "Nube"
+          - tab "Atmosfera"
+          - tab "Misure" [selected]
+        - tabpanel "Misure":
+          - text: Qualità
+          - combobox "Qualità":
+            - option "Alta · 100% / 128 passi"
+            - option "Massima · 100% / 384 passi" [selected]
+            - option "Fluida · 75% / 96 passi"
+          - text: Risoluzione output
+          - combobox "Risoluzione output":
+            - option "Schermo · nitidezza nativa" [selected]
+            - option "Finestra · 1 pixel per pixel CSS"
+            - option "1280 × 720"
+            - option "1920 × 1080"
+          - button "Fissa stato di confronto"
+          - text: Lavoro interno · confronto diagnostico
+          - combobox "Lavoro interno · confronto diagnostico":
+            - option "Completo · qualità finale" [selected]
+            - option "Densità e integrazione"
+            - option "Densità + lettura luce"
+            - option "Senza lettura flusso"
+            - option "Senza dettaglio fine"
+            - option "Senza shading del lampo"
+          - text: Diagnostica GPU
+          - combobox "Diagnostica GPU":
+            - option "Readback rendering · compute automatico"
+            - option "Rendering e flusso" [selected]
+            - option "Rendering, flusso e coda"
+            - option "Disattivata · sola cadenza"
+          - text: Flusso di confronto
+          - combobox "Flusso di confronto":
+            - option "Animato · completo" [selected]
+            - option "Congelato · confronto diagnostico"
+          - text: Coda dei frame
+          - combobox "Coda dei frame":
+            - option "Invio continuo" [selected]
+            - option "Massimo 1 in attesa"
+            - option "Massimo 2 in attesa"
+          - paragraph: "WebGPU · 60.0 fps rAF · apple Output 375×812 · interno 375×812 384 passi nominali · mediana 16.70 ms · p95 18.70 ms GPU rendering 12.98 ms · flusso 0.131 ms Volume 256³ + dettaglio 128³ · nessun TAA Tempo della nube: 60.0 s · seme: 72 Forma: congestus · vento 55% · dispersione 0% Cielo: clear · velocità 1× · lampi: 0 · luce 0.00"
+          - button "Misura 30 secondi"
+          - button "Misura 90 secondi"
+          - button "Esporta JSON"
+          - paragraph: "Ultima misura completata · 59.7 fps invio · 30.0 s · 1790 intervalli Mediana 16.70 ms · p95 18.30 · p99 18.60 2 oltre 33,34 ms · completamento coda: completato"
+          - generic: FPS = frame inviati per secondo di tempo reale tra callback rAF. Non certifica la presentazione del compositore. Tempi GPU separati quando disponibili. Nessuna risoluzione adattiva nascosta.
+          - link "Apri il vecchio laboratorio" [active]:
+            - /url: "?legacy"

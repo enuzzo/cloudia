@@ -1,0 +1,75 @@
+{
+  "baseCommit": "ab2e122",
+  "changeAfterFirstThreeReports": "Only clockStateStart/End metadata added; measured engine before change preserved and SHA verified. Shader, terrain, CSS and timestamp modules unchanged.",
+  "appBuildPassed": true,
+  "heroBuildPassed": true,
+  "suite": "181 tests /30 files passed before the metadata-only addition; lifecycle rerun afterwards",
+  "initialManifestNote": "build-provenance.json inventories also stale assets; measured initial app was CumulonimbusApp-CdwCZyGD.js, render.worker-DcaDV4Df.js, CSS CumulonimbusApp-C9XaZ0-O.css, via dist index-D5QFtklo.js. Final currently referenced assets are the explicit files below.",
+  "files": [
+    {
+      "path": "src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 56367,
+      "sha256": "28d1b87b6f418c36c22d698eaa5d9df0cc73e2c8009c62a8c00c767c46c5aa97"
+    },
+    {
+      "path": "src/cumulonimbus/scene.css",
+      "bytes": 13299,
+      "sha256": "5264984fa991e028de18343bcbe05c025dd87fbaa9b894c754b8ae1e19c616a2"
+    },
+    {
+      "path": "src/cumulonimbus/three186TimestampBatch.ts",
+      "bytes": 8843,
+      "sha256": "24f35dcdaeb1d0da6c57ceef55560f1140c9d151955f636fcf80cf7d7e4d7658"
+    },
+    {
+      "path": "src/cumulonimbus/timestampBatchMeasurement.ts",
+      "bytes": 12153,
+      "sha256": "43654a3918b0f5f531aff26727247291c469cd037a98d44e76e88ae03ceb905c"
+    },
+    {
+      "path": "src/cumulonimbus/cloudShader.ts",
+      "bytes": 13664,
+      "sha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd"
+    },
+    {
+      "path": "src/cumulonimbus/landscape.ts",
+      "bytes": 6980,
+      "sha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 911,
+      "sha256": "343a6f9cab3c9b806a46734a637fda4f0ecf4786af2ce23dfdd17032102fd9c3"
+    },
+    {
+      "path": "dist/assets/index-BFVq_rGe.js",
+      "bytes": 2837,
+      "sha256": "e4d2d8996f529eab19b37ffd33cbb260db999de9183452f1d2090cdd72d3078d"
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-aFiSFYxJ.js",
+      "bytes": 817159,
+      "sha256": "778ed99dadbe6dbac51011d743c9ed0641bb9e4dfa245e4ac46c45be038d2ea9"
+    },
+    {
+      "path": "dist/assets/render.worker-MOzd56lO.js",
+      "bytes": 973891,
+      "sha256": "f57b8cd8807281c385c4886499bc8cadd51943ef03a846e2d0743d1a1089bb53"
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-C9XaZ0-O.css",
+      "bytes": 13068,
+      "sha256": "7fc93cd26d97bedfed056024477eed294b69e4f12866809faf8167e349de19eb"
+    },
+    {
+      "path": "dist/cloudia-hero.js",
+      "bytes": 838767,
+      "sha256": "bc11f99470a6298e20fa804bc2d93041d4cc1a015d812ae97b6ad5827b5fa702"
+    },
+    {
+      "path": "dist/cloudia-hero.iife.js",
+      "bytes": 526689,
+      "sha256": "d4363d2ccdbf676991be2c6ba05bc62da0ceef5debaa789f04766ab1248c30f5"
+    }
+  ]
+}

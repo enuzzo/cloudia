@@ -1,0 +1,109 @@
+{
+  "kind": "fps-pass-ledger-cycle10",
+  "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10",
+  "productSchema": 3,
+  "measurementVersion": "submission-queue-prefix-v2-pass-ledger",
+  "files": [
+    {
+      "path": "GPUSceneEngine.measured-before-clock.ts",
+      "bytes": 56095,
+      "sha256": "828902885fb7aa74cbe200e096794aa73bbd8b7e5309bac3173273785b875261"
+    },
+    {
+      "path": "REVIEW-real-main.md",
+      "bytes": 4186,
+      "sha256": "550a44e263ee555e9adca7d6285ed5ca0fbc1c5b14edd6c62fbfa9110af7510b"
+    },
+    {
+      "path": "REVIEW-three-source.md",
+      "bytes": 11392,
+      "sha256": "78c2af84bff9f9c86828c59afa0fe31afc07a9138e6dacad575bda6140336ad6"
+    },
+    {
+      "path": "build-provenance.json",
+      "bytes": 2435,
+      "sha256": "76706f1dc486b58d08ee938900bc60e49ddfeacc3fd5c15065c6a7916322c7c6"
+    },
+    {
+      "path": "final-build-provenance.json",
+      "bytes": 2860,
+      "sha256": "ae7630594f514b1ff347c2b50f27987e4e534ad954ee79215d6c04f49b994e70"
+    },
+    {
+      "path": "historical-near/schema2-sun-near100-metrics.jpg",
+      "bytes": 46594,
+      "sha256": "94b41e1543872eeddc2484830317792242e3822c40ab3bf76366aeda9288abc3"
+    },
+    {
+      "path": "historical-near/schema2-sun-near100.json",
+      "bytes": 62234,
+      "sha256": "0a26adda2e50c815b747a67db883a90203986c889537969bc7b57c76276b2626"
+    },
+    {
+      "path": "main-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "main-rain-30s.json",
+      "bytes": 1104859,
+      "sha256": "0da5cc968eb5bf8dda7eb9df84bb7b047c4cea2fda46e6f1dd616dbfae85f0f1"
+    },
+    {
+      "path": "main-rain-clocks-30s.json",
+      "bytes": 1110428,
+      "sha256": "17bec5408f6c37c551aea9c3ff60e9a1023254906b8296b81dfbbd7a3dfead6a"
+    },
+    {
+      "path": "main-rain-clocks-preview.jpg",
+      "bytes": 45045,
+      "sha256": "a6f7aef76160b0d779b102cde4fff5210984bf53bc7c161b15e54b9bf6377118"
+    },
+    {
+      "path": "main-sun-30s.json",
+      "bytes": 4228446,
+      "sha256": "f316db69ae4a9a0ad4dac3f5cf66ec3dee5bd99c9e9adecf2ad801bcc0a8673b"
+    },
+    {
+      "path": "rain-clocks-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "rain-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "three186TimestampBatch.ts",
+      "bytes": 8843,
+      "sha256": "24f35dcdaeb1d0da6c57ceef55560f1140c9d151955f636fcf80cf7d7e4d7658"
+    },
+    {
+      "path": "timestampBatchMeasurement.ts",
+      "bytes": 12153,
+      "sha256": "43654a3918b0f5f531aff26727247291c469cd037a98d44e76e88ae03ceb905c"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 13739,
+      "sha256": "720dc7976aea95b97266f460402708e9a9d6775a270282e179fbb51ede0d2c56"
+    },
+    {
+      "path": "verify-reports.py",
+      "bytes": 4516,
+      "sha256": "45bf5e0f9adda86e6e4486dee4197aa6bf431d768c4f79fb73dcd757287d7a32"
+    },
+    {
+      "path": "worker-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "worker-sun-30s.json",
+      "bytes": 4252700,
+      "sha256": "6fe405c419df821a1319a27fe2c151a3d97624a9389cfb8911dc48d7b29b66f8"
+    }
+  ],
+  "historicalNearNote": "Earlier schema2 report, ordinary t533.0332 paused and CPU estimated surface. Not a matched A/B with fixed t60 profiles. Added only as preliminary slow near-view evidence; verifier intentionally targets root schema3 reports."
+}

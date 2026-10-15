@@ -1,0 +1,107 @@
+{
+  "kind": "ui-readability-cycle10",
+  "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10",
+  "scope": "Frozen proposal plus actual browser evidence. Before/after cloud state differs; no pixel A/B claim. Existing profile-only yellow banner is outside changed text scope. Mobile result proof is latest-label-mobile.jpg; no stale before-scroll screenshot included.",
+  "files": [
+    {
+      "path": "REVIEW.md",
+      "bytes": 3870,
+      "sha256": "c661531556c6517c24450fbe37302f6f74e79ff734145cf72a6362f6fcfb3c10"
+    },
+    {
+      "path": "browser-dark.jpg",
+      "bytes": 26951,
+      "sha256": "176cb639f8dad6107a6b75a3b14da4cea57ffc2cb90d05e1cde2afff784bd9c4"
+    },
+    {
+      "path": "browser-far.jpg",
+      "bytes": 57436,
+      "sha256": "081922763e8b8cecbfc5d0533bad245b68aba21a8b4dfc5c6d7c9f8831d76b1e"
+    },
+    {
+      "path": "browser-mobile.jpg",
+      "bytes": 16917,
+      "sha256": "ab042a9c2452d1ea1ddeed9e5aa6421c489e044a1327751a4c22b606bacc3472"
+    },
+    {
+      "path": "browser-near.jpg",
+      "bytes": 27017,
+      "sha256": "5d9bd909516bbc81f969d120980c5094f29c656236b195bd0453a6ec4e72ef44"
+    },
+    {
+      "path": "browser-short.jpg",
+      "bytes": 43011,
+      "sha256": "304495370404695a21e309ed0a5360ef5edd5cbd50f580f85ac19698aa57fe13"
+    },
+    {
+      "path": "contrast-bound.json",
+      "bytes": 584,
+      "sha256": "2e17a96ed1aabaa9cb4939ad94465a076e7ed2de268d4aeb32c068146fea0f66"
+    },
+    {
+      "path": "focus-after-css.txt",
+      "bytes": 2447,
+      "sha256": "ae4441a25f2f7938ac631f41ba7a87410c1d3940c0a326347fb53ef11186c6b1"
+    },
+    {
+      "path": "latest-label-after-camera-change.jpg",
+      "bytes": 42183,
+      "sha256": "70bc3c9985d1d012c1a710a8dd04b32ca00e35f798136493f981b08db0d941b8"
+    },
+    {
+      "path": "latest-label-metrics.jpg",
+      "bytes": 76992,
+      "sha256": "d51e5253d8f3098f4e770ff5d3ab35667c7fec51cdf9d8d5ee70efc26e1fc04c"
+    },
+    {
+      "path": "latest-label-mobile-dom.txt",
+      "bytes": 3943,
+      "sha256": "03b7f9199cf2557e4d00c8773e7f71b755b2eee15f63042b7916adfadc319a11"
+    },
+    {
+      "path": "latest-label-mobile.jpg",
+      "bytes": 44587,
+      "sha256": "a1d1af8836949cee43b558a5b9b4fe1e77d04fc5baad0dcd1b8abcfc180f8db8"
+    },
+    {
+      "path": "proposal-manifest.json",
+      "bytes": 717,
+      "sha256": "5380a7e77c3ec6d6685bba9c1395fc6654a16801d02f1b8eeace31c86c824b13"
+    },
+    {
+      "path": "scene-contrast.patch",
+      "bytes": 1905,
+      "sha256": "a2543a8c500d3b4923b8b358d728e085a2b2a5d9499ceacf66e33e33d4bd27d0"
+    },
+    {
+      "path": "scene.after.css",
+      "bytes": 13299,
+      "sha256": "5264984fa991e028de18343bcbe05c025dd87fbaa9b894c754b8ae1e19c616a2"
+    },
+    {
+      "path": "scene.before.css",
+      "bytes": 13087,
+      "sha256": "f9ab2bffb6de131f0ff009b3b85fa59a0bd9eb7caf075e22585bfbd08d442f3c"
+    },
+    {
+      "path": "sceneMarkup.reference.ts",
+      "bytes": 10884,
+      "sha256": "9bafd21bf506298fffab4b79bff595182e640b9233856981b0f1d11b855b5983"
+    },
+    {
+      "path": "sun-approach-0.jpg",
+      "bytes": 50213,
+      "sha256": "4afbe46a7a93c546217beb32ea5c6b69773bff24cb362c3f1c7ced478b32a790"
+    },
+    {
+      "path": "sun-approach-100.jpg",
+      "bytes": 18467,
+      "sha256": "b983d4f1cc11ce2bd6bae61c3ca147303dd9ee1048df4f9a28ca5c199b9a6561"
+    },
+    {
+      "path": "sun-approach-70.jpg",
+      "bytes": 38796,
+      "sha256": "7f21c6313cf01a54fa047f7c2a82387727038e3407f06011e7764535297541fb"
+    }
+  ]
+}

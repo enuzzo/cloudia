@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-15T23:19:56.072618+00:00",
+  "baseCommit": "ab2e122af49238221ea4fc0a5d8a6742f266c2be",
+  "measurementSchema": 3,
+  "measurementVersion": "submission-queue-prefix-v2-pass-ledger",
+  "renderer": "observatory-v40-terrain-camera-focus",
+  "shaderAndTerrainUnchanged": true,
+  "appBuildPassed": true,
+  "heroBuildPassed": true,
+  "files": [
+    {
+      "path": "src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 56095,
+      "sha256": "828902885fb7aa74cbe200e096794aa73bbd8b7e5309bac3173273785b875261"
+    },
+    {
+      "path": "src/cumulonimbus/three186TimestampBatch.ts",
+      "bytes": 8843,
+      "sha256": "24f35dcdaeb1d0da6c57ceef55560f1140c9d151955f636fcf80cf7d7e4d7658"
+    },
+    {
+      "path": "src/cumulonimbus/timestampBatchMeasurement.ts",
+      "bytes": 12153,
+      "sha256": "43654a3918b0f5f531aff26727247291c469cd037a98d44e76e88ae03ceb905c"
+    },
+    {
+      "path": "src/cumulonimbus/scene.css",
+      "bytes": 13299,
+      "sha256": "5264984fa991e028de18343bcbe05c025dd87fbaa9b894c754b8ae1e19c616a2"
+    },
+    {
+      "path": "src/cumulonimbus/cloudShader.ts",
+      "bytes": 13664,
+      "sha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd"
+    },
+    {
+      "path": "src/cumulonimbus/landscape.ts",
+      "bytes": 6980,
+      "sha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99"
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-CdwCZyGD.js",
+      "bytes": 816901,
+      "sha256": "b44c7081df3fb0209830b40f67d74c97902a8782b5bac6bfff92edc96609dc72"
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-C6ueBbmB.js",
+      "bytes": 804732,
+      "sha256": "7dd3838d492a055987e27824e88885da5db332424de89f5e60b5b9aa8e8e490e"
+    },
+    {
+      "path": "dist/assets/render.worker-kPjvAiqx.js",
+      "bytes": 961473,
+      "sha256": "48b9f0a70f9261062ba02a7e0ed769c8982e76f4a962a4d372864530a25e49b7"
+    },
+    {
+      "path": "dist/assets/render.worker-DcaDV4Df.js",
+      "bytes": 973633,
+      "sha256": "41069879f2e9499414862b9e316445b69932ce39032b39ce695b88a4379d085e"
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-BtOAAbpg.css",
+      "bytes": 12860,
+      "sha256": "48a275cea33834e49834428208e5c8bbc506c500afb961b4d2b6e3e0b126dbde"
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-C9XaZ0-O.css",
+      "bytes": 13068,
+      "sha256": "7fc93cd26d97bedfed056024477eed294b69e4f12866809faf8167e349de19eb"
+    }
+  ]
+}

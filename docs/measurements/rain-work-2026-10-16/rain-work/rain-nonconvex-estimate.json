@@ -1,0 +1,102 @@
+{
+  "kind": "nonconvex-grid-opportunity-only",
+  "date": "2026-10-15T23:12:04.007Z",
+  "newBakes": 0,
+  "scriptSha256": "089cde14525d91105748c054a4dcd92600b6a2cd66a628e9a6e7d4c92e8aa2ae",
+  "counterSha256": "3f5d20d75db586b0d027cda1664bce9733ce5b735d1de8e06f5380bae1a0f810",
+  "sequenceSha256": "a0c2dfd79e1900dce9a677fceecbd5bfcfc138a2e94cd430938f4c4c7bf3ca7a",
+  "originalSequenceSha256": "a0c2dfd79e1900dce9a677fceecbd5bfcfc138a2e94cd430938f4c4c7bf3ca7a",
+  "sameBaselineSequence": true,
+  "checks": {
+    "positiveSteps": true,
+    "rainBranchPartition": true,
+    "mediumUnionPartition": true,
+    "noPositiveRainOutsidePrism": true,
+    "noPositiveSampleInSelectedJointCertificate": true,
+    "modelSourcesUnchanged": true
+  },
+  "sourceChanges": [],
+  "rasterBuildMs": 64.50562500000001,
+  "diagnosticWallMs": 899.7105000000001,
+  "caveat": "Reuses cached CPU data and baseline loop. Ideal f64 polygon/cell geometry, 1m material padding, no native GPU numeric proof/metadata quantization. No performance forecast. Single 32x18 pose.",
+  "grids": [
+    {
+      "N": 64,
+      "lo": [
+        -3.829125,
+        -2.2431875
+      ],
+      "hi": [
+        4.020875153899193,
+        2.3590484502017497
+      ],
+      "cell": [
+        0.1226562524046749,
+        0.07190993672190234
+      ],
+      "rawOccupied": 3261,
+      "paddedOccupied": 3469,
+      "polygonCellTests": 4061,
+      "occupiedAreaKm2": 28.762683120977645,
+      "textureBytes": 4096,
+      "point": {
+        "queries": 206466,
+        "empty": 38253,
+        "emptyMask0": 29162,
+        "falsePositiveR": 0,
+        "falsePositiveRain": 0
+      },
+      "batch": {
+        "queries": 83404,
+        "certificates": 4260,
+        "following": 21272,
+        "removedCalls": 72843,
+        "falseSamples": 0,
+        "partialRejected": 3798,
+        "maxFollowing": 5,
+        "extraLookupCalls": 83404,
+        "grossSemanticRemovalPercent": 5.753037121514873,
+        "netSemanticRemovalAfterOneLookupPercent": -0.8340928440662598
+      }
+    },
+    {
+      "N": 128,
+      "lo": [
+        -3.829125,
+        -2.2431875
+      ],
+      "hi": [
+        4.020875153899193,
+        2.3590484502017497
+      ],
+      "cell": [
+        0.06132812620233745,
+        0.03595496836095117
+      ],
+      "rawOccupied": 12842,
+      "paddedOccupied": 13270,
+      "polygonCellTests": 16059,
+      "occupiedAreaKm2": 28.31726285185487,
+      "textureBytes": 16384,
+      "point": {
+        "queries": 206466,
+        "empty": 46710,
+        "emptyMask0": 35300,
+        "falsePositiveR": 0,
+        "falsePositiveRain": 0
+      },
+      "batch": {
+        "queries": 79473,
+        "certificates": 5047,
+        "following": 25199,
+        "removedCalls": 86186,
+        "falseSamples": 0,
+        "partialRejected": 5218,
+        "maxFollowing": 5,
+        "extraLookupCalls": 79473,
+        "grossSemanticRemovalPercent": 6.80684839112723,
+        "netSemanticRemovalAfterOneLookupPercent": 0.5301832461146485
+      }
+    }
+  ]
+}
