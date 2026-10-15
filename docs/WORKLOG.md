@@ -448,3 +448,17 @@ GPU mean15.063ms. No new worker/animated/physical-device qualification.
 - Ran full256³/128³ CPU audit over18 poses: maximum error vs dense reference0.0110m (previous0.1463m), median0.0895ms, maximum0.3521ms. These are CPU/reference results, not GPU or visual acceptance. [Details](APPROACH-2026-10-14.md).
 - Fixed diagnostic reference slider readouts and softened the maximum-approach wording to reflect an estimate. No shader change or quality reduction. Local-browser visual gate remains blocked.
 - Final validation:113 tests/24 files and both builds passed; dependency exclusion remained1. Existing unrelated `node_modules 2/` left untouched.
+
+
+## 2026-10-15 — local continuation handoff
+
+- Recorded the verified 971ce25 baseline, current quality contract and ordered
+  implementation/acceptance plan in [HANDOFF-2026-10-15.md](HANDOFF-2026-10-15.md).
+- Next cycle covers cloud anatomy, near-boundary light, precipitation/landscape
+  coherence and rendered UI validation, followed by scoped regression checks.
+- Preserved the distinction between the 14 October test/build evidence and open
+  visual/GPU/device acceptance. The declared browser smoke script is absent and
+  must not be reported as an available or successful check.
+- Rechecked dependency exclusion=1 and preserved the pre-existing untracked
+  `node_modules 2/`. This checkpoint changes documentation only; no runtime
+  tests/builds rerun, no rendering claim or deployment.
