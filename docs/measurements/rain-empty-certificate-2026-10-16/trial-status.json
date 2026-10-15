@@ -1,0 +1,14 @@
+{
+  "status": "RETIRED; original cloudShader restored byte-for-byte",
+  "activeCloudShaderSha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+  "matchedPair": [
+    "rain-candidate-30s.json",
+    "rain-control-matched-30s.json"
+  ],
+  "referenceOnly": [
+    "rain-control-30s.json"
+  ],
+  "reasonReferenceOnly": "Original open preview had another camera and output1358x1800; not compared to candidate2560x1440.",
+  "nativeGoalStateVerified": "active",
+  "candidateAccepted": false
+}

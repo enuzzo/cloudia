@@ -16,6 +16,7 @@ import { EXTINCTION, ICE_EXTINCTION, DETAIL_RESOLUTION, SUN_LEFT, SUN_RIGHT, VOL
 import { conservativeEmptyStep } from './emptyTraversal';
 import {clampCameraAboveLandscape,CAMERA_TERRAIN_CLEARANCE_KM,TERRAIN_HASH_ID} from './landscape';
 import { FrameMeasurement, summarizeFrames, summarizeSamples } from './performance';
+import {QueuePrefixMeasurement} from './queuePrefixMeasurement';
 import type {RenderHost,Viewport,RenderEvent} from './renderProtocol';
 
 export const QUALITY = {
@@ -85,6 +86,9 @@ export class GPUSceneEngine {
   private readonly frameCompletions=new Set<Promise<void>>();
   private intervals: number[] = [];
   private measurement: FrameMeasurement | null = null;
+  private queuePrefix:QueuePrefixMeasurement|null=null;
+  private benchmarkCompletion:Promise<void>|null=null;
+  private benchmarkGeneration=0;
   private benchmarkContext: Record<string, unknown> = {};
   private report: Record<string, unknown> | null = null;
   private quality: Quality = 'ultra';
@@ -401,11 +405,13 @@ export class GPUSceneEngine {
     if(!this.frozenFlow) this.renderer.compute(this.interpolateFlow);
     const renderStart=performance.now();
     this.quad.render(this.renderer);
-    this.measurement?.recordStages(renderStart-computeStart,performance.now()-renderStart);
-    this.measurement?.recordDispatch(Math.max(0,cpuStart-now));
-    this.measurement?.recordCPU(performance.now()-cpuStart);
-    this.measurement?.record(now);
-    if(this.measurement?.result && !this.report) this.finishBenchmark();
+    const measured=this.measurement;
+    if(measured&&!measured.result&&!measured.cancelReason){
+      measured.recordStages(renderStart-computeStart,performance.now()-renderStart);
+      measured.recordDispatch(Math.max(0,cpuStart-now));measured.recordCPU(performance.now()-cpuStart);measured.record(now);
+      if(now>=measured.start+measured.warmup)this.queuePrefix?.recordSubmission(now);
+      if(measured.result&&!this.report)this.finishBenchmark();
+    }
     if(now-this.uiTime>500) { this.uiTime=now; this.updateMetrics(now); }
     if(this.timestampSupported && !this.timestampPending && now-this.timestampTime>=200) {
       this.timestampPending=true; this.timestampTime=now;
@@ -544,11 +550,13 @@ export class GPUSceneEngine {
     }
   }
   private startBenchmark(duration: number) {
-    if(!this.ready || !this.visible) return;
+    if(!this.ready || !this.visible || this.benchmarkCompletion) return;
     if(this.dirtySize) this.applySize();
     this.invalidate('Nuova misura');
     this.report=null; this.emit({type:'report',report:null}); this.setButtonEnabled('export',false);
     this.measurement=new FrameMeasurement(performance.now(),duration,2000);
+    this.queuePrefix=this.device?new QueuePrefixMeasurement(this.device.queue):null;
+    this.benchmarkGeneration++;
     this.benchmarkContext={date:new Date().toISOString(),backend:'WebGPU',adapter:this.adapterInfo,threeRevision:'186',quality:this.quality,
       output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],nominalSteps:QUALITY[this.quality].steps,
       cloudExtinctionPerKm:EXTINCTION,iceExtinctionPerKm:ICE_EXTINCTION,mediaIntegration:'co-located cloud/rain exponential segments',virgaReachVariation:'broad advected sheets, 0.7–1.3 of weak fall distance',precipitationMaxStepKm:RAIN_SAMPLE_STEP,precipitationExtinctionPerKm:RAIN_EXTINCTION,precipitationSourceBounds:this.rainBounds.value.toArray(),
@@ -559,23 +567,40 @@ export class GPUSceneEngine {
     this.text('result','Riscaldamento · 2 s…');
   }
   private finishBenchmark() {
-    if(!this.measurement?.result) return;
-    const stats=this.measurement.result;
-    const gpu=this.measurement.gpuSamplesMs;
-    const cpu=this.measurement.cpuSamplesMs;
-    this.report={...this.benchmarkContext,simulationTimeEnd:this.simulationTime,flashCountEnd:this.flashSerial,skippedFrames:this.skippedFrames-(this.benchmarkContext.skippedFramesAtStart as number),emptyStepWorldEnd:this.emptyStep.value,stats,
-      gpu:summarizeSamples(gpu),cpu:summarizeSamples(cpu),gpuCompute:summarizeSamples(this.measurement.computeSamplesMs),queueCompletion:summarizeSamples(this.measurement.queueSamplesMs),
-      rafDispatch:summarizeSamples(this.measurement.dispatchSamplesMs),cpuCompute:summarizeSamples(this.measurement.cpuComputeSamplesMs),cpuRender:summarizeSamples(this.measurement.cpuRenderSamplesMs),
-      frameIntervalsMs:this.measurement.intervals,gpuSamplesMs:gpu,cpuSamplesMs:cpu,computeSamplesMs:this.measurement.computeSamplesMs,queueSamplesMs:this.measurement.queueSamplesMs,
-      dispatchSamplesMs:this.measurement.dispatchSamplesMs,cpuComputeSamplesMs:this.measurement.cpuComputeSamplesMs,cpuRenderSamplesMs:this.measurement.cpuRenderSamplesMs};
-    this.emit({type:'report',report:this.report});
-    this.text('result',`${stats.fps.toFixed(1)} fps · ${(stats.durationMs/1000).toFixed(1)} s · ${stats.frames} frame\nMediana ${stats.medianMs.toFixed(2)} ms · p95 ${stats.p95Ms.toFixed(2)} · p99 ${stats.p99Ms.toFixed(2)}\n${stats.over33Ms} frame oltre 33,34 ms · massimo ${stats.maxMs.toFixed(2)} ms`);
-    this.setButtonEnabled('benchmark',true); this.setButtonEnabled('sustained',true); this.setButtonEnabled('export',true);
+    const run=this.measurement,prefix=this.queuePrefix,generation=this.benchmarkGeneration;
+    if(!run?.result||this.benchmarkCompletion)return;
+    const stats=run.result,gpu=run.gpuSamplesMs,cpu=run.cpuSamplesMs;
+    const legacy={...this.benchmarkContext,simulationTimeEnd:this.simulationTime,flashCountEnd:this.flashSerial,skippedFrames:this.skippedFrames-(this.benchmarkContext.skippedFramesAtStart as number),emptyStepWorldEnd:this.emptyStep.value,stats,
+      gpu:summarizeSamples(gpu),cpu:summarizeSamples(cpu),gpuCompute:summarizeSamples(run.computeSamplesMs),queueCompletion:summarizeSamples(run.queueSamplesMs),
+      rafDispatch:summarizeSamples(run.dispatchSamplesMs),cpuCompute:summarizeSamples(run.cpuComputeSamplesMs),cpuRender:summarizeSamples(run.cpuRenderSamplesMs),
+      frameIntervalsMs:run.intervals,gpuSamplesMs:gpu,cpuSamplesMs:cpu,computeSamplesMs:run.computeSamplesMs,queueSamplesMs:run.queueSamplesMs,
+      dispatchSamplesMs:run.dispatchSamplesMs,cpuComputeSamplesMs:run.cpuComputeSamplesMs,cpuRenderSamplesMs:run.cpuRenderSamplesMs};
+    this.text('result','Campionamento concluso · attendo il prefisso GPU finale (massimo 5 s)…');
+    const completion=(prefix?prefix.finish():Promise.resolve(null)).then(queuePrefix=>{
+      if(this.destroyed||this.deviceLost||this.measurement!==run||this.queuePrefix!==prefix||this.benchmarkGeneration!==generation)return;
+      this.report={...legacy,metricsSchemaVersion:2,measurementVersion:'submission-queue-prefix-v1',
+        submissionFps:stats.fps,submissionPacing:stats,gpuRenderPassSumMs:legacy.gpu,presentedCanvasFps:null,queuePrefix,
+        metricSemantics:{historicalFields:'unchanged',stats:'accepted render-submission intervals',gpu:'sparse last-resolved-frame sum of render-pass intervals',
+          queuePrefix:'benchmark-only completion notifications for immutable logical submitted prefixes; not physical queue depth',presentedCanvasFps:'unmeasured; does not block this report'}};
+      this.queuePrefix=null;this.emit({type:'report',report:this.report});
+      const queueStatus=queuePrefix?({completed:'completato',incomplete:'incompleto',timeout:'tempo scaduto',cancelled:'annullato','not-started':'non avviato'}[queuePrefix.status]):'non disponibile';
+      this.text('result',`${stats.fps.toFixed(1)} fps invio · ${(stats.durationMs/1000).toFixed(1)} s · ${stats.frames} intervalli\nMediana ${stats.medianMs.toFixed(2)} ms · p95 ${stats.p95Ms.toFixed(2)} · p99 ${stats.p99Ms.toFixed(2)}\n${stats.over33Ms} oltre 33,34 ms · completamento coda: ${queueStatus}`);
+      this.setButtonEnabled('benchmark',true);this.setButtonEnabled('sustained',true);this.setButtonEnabled('export',true);
+    }).catch(error=>{
+      if(this.destroyed||this.measurement!==run||this.benchmarkGeneration!==generation)return;
+      this.queuePrefix?.cancel('Errore chiusura misura');this.queuePrefix=null;this.measurement=null;
+      this.text('result',`Chiusura della misura fallita: ${error instanceof Error?error.message:String(error)}`);
+      this.setButtonEnabled('benchmark',this.ready);this.setButtonEnabled('sustained',this.ready);
+    }).finally(()=>{if(this.benchmarkCompletion===completion)this.benchmarkCompletion=null;});
+    this.benchmarkCompletion=completion;
   }
   private invalidate(reason: string) {
-    if(this.measurement && !this.measurement.result && !this.measurement.cancelReason) {
-      this.measurement.cancel(reason); this.text('result',`Misura annullata: ${reason}.`);
-      this.setButtonEnabled('benchmark',this.ready); this.setButtonEnabled('sustained',this.ready);
+    const collecting=this.measurement&&!this.measurement.result&&!this.measurement.cancelReason;
+    if(collecting||this.benchmarkCompletion){
+      this.benchmarkGeneration++;this.measurement?.cancel(reason);this.measurement=null;
+      this.queuePrefix?.cancel(reason);this.queuePrefix=null;
+      this.text('result',`Misura annullata: ${reason}.`);
+      this.setButtonEnabled('benchmark',this.ready);this.setButtonEnabled('sustained',this.ready);
     }
   }
   private setButtonEnabled(action:string,enabled:boolean){this.emit({type:'enabled',action,enabled});}
@@ -647,6 +672,8 @@ export class GPUSceneEngine {
   private releaseGPU(): Promise<void> {
     this.cleanup ??= (async()=>{
       // Init can allocate Three's internal animation manager after teardown was requested.
+      this.queuePrefix?.cancel('Rilascio GPU');this.queuePrefix=null;
+      await this.benchmarkCompletion;
       await this.initialization?.catch(()=>{});
       await this.timestampPromise;
       await this.queuePromise;

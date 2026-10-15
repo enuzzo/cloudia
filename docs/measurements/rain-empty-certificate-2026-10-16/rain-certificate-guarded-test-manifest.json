@@ -1,0 +1,72 @@
+{
+  "status": "WITHDRAWN EXPERIMENT: EXTERNAL TEST AND GPU-COST INTERPRETATION ONLY",
+  "checkpoint": "8757b97591d3285d4399466056ec3a0c1239b506",
+  "productTestRestoredByteExact": true,
+  "restoredTestSha256": "209777209c81b4670d1f4593425cf02eac0e46d1db4770bffb2c703dcb1e3859",
+  "testScope": {
+    "realCpuHelpersFourTests": true,
+    "targetedPassed": 4,
+    "existingSkipped": 3,
+    "guardedSyntheticSequenceCases": 10,
+    "negativeControls": 2,
+    "actualGeneratedVolume": false,
+    "wgslExecutedByTests": false,
+    "imageEquivalenceEstablishedByTests": false
+  },
+  "gpuObservation": {
+    "candidateRenderPassSumMeanMs": 188.60069236363643,
+    "controlRenderPassSumMeanMs": 171.44448903529414,
+    "candidateSubmissionRafPerSecond": 10.370513174208003,
+    "controlSubmissionRafPerSecond": 11.380349929122382,
+    "rainDifference": 4.011085535637893e-05,
+    "causalGpuExplanationEstablished": false,
+    "presentedCanvasFpsMeasured": false
+  },
+  "artifacts": [
+    {
+      "file": "emptyTraversal.rain-certificate.test.ts",
+      "bytes": 12215,
+      "sha256": "49c66cf7ddd462d4bc4f69bdb69cd7e879f651c85e53f3372ebb38f81a658026"
+    },
+    {
+      "file": "emptyTraversal.base-before-rain-certificate.test.ts",
+      "bytes": 4011,
+      "sha256": "209777209c81b4670d1f4593425cf02eac0e46d1db4770bffb2c703dcb1e3859"
+    },
+    {
+      "file": "emptyTraversal.rain-certificate.test.patch",
+      "bytes": 9115,
+      "sha256": "0baeeb574a45488cd57dd8c5a5dfae4b59050a75139216c643f4ca4fb7b39da7"
+    },
+    {
+      "file": "cloud-empty-until-guarded-sequence-check.py",
+      "bytes": 6766,
+      "sha256": "c90e5137fea6ef8248fd0d56b280dfcd80918ee8e95b7f7f5759456abe94fdc8"
+    },
+    {
+      "file": "cloud-empty-until-guarded-sequence-result.json",
+      "bytes": 3320,
+      "sha256": "2c77b9d572e381155695c212d7e505b73a86bb1e4e006427659d6211f63a60be"
+    },
+    {
+      "file": "cloudShader.ts.guarded",
+      "bytes": 14294,
+      "sha256": "76cb9177830693ca99a6437b68601a778c9c44b31a427f5e67b6186bbeb528f6"
+    },
+    {
+      "file": "GPUSceneEngine.ts.guarded",
+      "bytes": 51698,
+      "sha256": "ed84cb89cf296ec4fe3152dce675cb59490d1ce00420097d98bc7eb14a4936ff"
+    },
+    {
+      "file": "rain-candidate-30s.json",
+      "bytes": 30943,
+      "sha256": "9048526bc2357b77f0233f3e3c9327df21c8c53ace11c035c4f1e71b391bbb7a"
+    },
+    {
+      "file": "rain-control-matched-30s.json",
+      "bytes": 34005,
+      "sha256": "d155b841dd66e41fb8de2131f5cba9deea6ab5b449cbde81c1a93be811056f13"
+    }
+  ]
+}

@@ -18,6 +18,7 @@ async function flush() {for(let i=0;i<15;i++) await Promise.resolve();}
 const device={destroy:vi.fn(),queue:{onSubmittedWorkDone:vi.fn(()=>Promise.resolve())}};
 beforeEach(()=>{
   vi.clearAllMocks(); control.renderer=null; control.workers=[];
+  device.queue.onSubmittedWorkDone.mockReset().mockResolvedValue(undefined);
   Object.defineProperty(navigator,'gpu',{configurable:true,value:{requestAdapter:async()=>({info:{vendor:'test'},features:new Set(),requestDevice:async()=>device})}});
   vi.stubGlobal('requestAnimationFrame',vi.fn(()=>1)); vi.stubGlobal('cancelAnimationFrame',vi.fn());
   vi.stubGlobal('Worker',class {
@@ -31,6 +32,60 @@ function cloudVolume():CloudVolume {
   return {size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
 }
 describe('scene async lifecycle',()=>{
+  it('does not publish an old benchmark after resize cancels its final fence and a new run starts',async()=>{
+    history.replaceState(null,'','/?profile=1&timing=off&flow=frozen');
+    vi.spyOn(document,'hidden','get').mockReturnValue(false);
+    let clock=1000;vi.spyOn(performance,'now').mockImplementation(()=>clock);
+    const fences:Array<()=>void>=[];
+    device.queue.onSubmittedWorkDone.mockImplementation(()=>new Promise<void>(resolve=>fences.push(resolve)));
+    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    control.workers[0].onmessage!({data:{volume:cloudVolume()}});await starting;
+    const frame=vi.mocked(requestAnimationFrame).mock.calls[0][0];
+    const draw=(time:number)=>{clock=time;frame(time);};
+    const benchmark=root.querySelector<HTMLButtonElement>('[data-action="benchmark"]')!;
+    const raw=root.querySelector('[data-testid="benchmark-json"]')!;
+    const exportButton=root.querySelector<HTMLButtonElement>('[data-action="export"]')!;
+    benchmark.click();draw(2999);expect(fences).toHaveLength(0);
+    draw(3000);draw(3050);draw(33000); // stats complete; start, periodic and end fences remain pending
+    expect(fences).toHaveLength(3);expect(raw.textContent).toBe('');expect(exportButton.disabled).toBe(true);
+    window.dispatchEvent(new Event('resize'));await flush();
+    expect(root.querySelector('[data-testid="benchmark-result"]')!.textContent).toContain('annullata');
+    expect(benchmark.disabled).toBe(false);
+    clock=34000;benchmark.click();draw(36000);
+    expect(fences).toHaveLength(4); // the new run owns a different initial prefix
+    clock=36010;fences.slice(0,3).forEach(resolve=>resolve());await flush();draw(36016);
+    expect(raw.textContent).toBe('');expect(exportButton.disabled).toBe(true);
+    expect(root.querySelector('[data-testid="benchmark-result"]')!.textContent).not.toContain('annullata');
+    app.destroy();fences[3]();await flush();
+  });
+  it('publishes matching measured-submission and interval counts after exactly one final fence',async()=>{
+    history.replaceState(null,'','/?profile=1&timing=off&flow=frozen');
+    vi.spyOn(document,'hidden','get').mockReturnValue(false);
+    let clock=1000;vi.spyOn(performance,'now').mockImplementation(()=>clock);
+    const fences:Array<()=>void>=[];
+    device.queue.onSubmittedWorkDone.mockImplementation(()=>new Promise<void>(resolve=>fences.push(resolve)));
+    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    control.workers[0].onmessage!({data:{volume:cloudVolume()}});await starting;
+    const frame=vi.mocked(requestAnimationFrame).mock.calls[0][0];
+    const draw=(time:number)=>{clock=time;frame(time);};
+    const raw=root.querySelector('[data-testid="benchmark-json"]')!;
+    root.querySelector<HTMLButtonElement>('[data-action="benchmark"]')!.click();
+    draw(2999);expect(fences).toHaveLength(0);draw(3000);draw(3050);draw(33000);
+    expect(fences).toHaveLength(3);draw(33016);draw(33033);expect(fences).toHaveLength(3);
+    clock=33100;fences[0]();fences[1]();await flush();
+    expect(raw.textContent).toBe(''); // an initial/periodic completion cannot publish the report
+    clock=33200;fences[2]();await flush();
+    const report=JSON.parse(raw.textContent!) as {stats:{frames:number;fps:number};submissionFps:number;presentedCanvasFps:null;
+      queuePrefix:{status:string;measuredSubmissions:number;confirmedPrefixId:number;samples:Array<{kind:string;prefixId:number}>}};
+    expect(report.stats.frames).toBe(2);expect(report.queuePrefix.measuredSubmissions).toBe(report.stats.frames);
+    expect(report.queuePrefix.status).toBe('completed');expect(report.queuePrefix.confirmedPrefixId).toBe(2);
+    expect(report.queuePrefix.samples.filter(sample=>sample.kind==='end')).toHaveLength(1);
+    expect(report.submissionFps).toBe(report.stats.fps);expect(report.presentedCanvasFps).toBeNull();
+    expect(root.querySelector<HTMLButtonElement>('[data-action="export"]')!.disabled).toBe(false);
+    const snapshot=raw.textContent;draw(34000);await flush();
+    expect(fences).toHaveLength(3);expect(raw.textContent).toBe(snapshot);
+    app.destroy();await flush();
+  });
   it('disposes the previous macro texture at replacement and the current texture once at teardown',async()=>{
     const dispose=vi.spyOn(Data3DTexture.prototype,'dispose');
     const disposed=(volume:CloudVolume)=>dispose.mock.contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.data).length;

@@ -1,0 +1,41 @@
+{
+  "status": "EXPERIMENT WITHDRAWN; FOUR CPU TESTS ARCHIVED AND REMOVED FROM PRODUCT",
+  "verifiedHead": "8757b97591d3285d4399466056ec3a0c1239b506",
+  "restoredPath": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/emptyTraversal.test.ts",
+  "restoredSha256": "209777209c81b4670d1f4593425cf02eac0e46d1db4770bffb2c703dcb1e3859",
+  "restoreVerifiedByteExactToHead": true,
+  "onlyOwnDiffRestored": true,
+  "targetedTestRun": {
+    "newPassed": 4,
+    "preexistingSkipped": 3,
+    "testBodyMs": 27,
+    "totalMs": 517,
+    "filter": "rain empty-cloud reuse certificate"
+  },
+  "limits": [
+    "Uses real conservativeEmptyStep/referencePosition/integrateMediaSegment CPU helpers.",
+    "Continuous liquid-reference Jacobian bound and exact analytic256/128 trilinear slab, not a generated actual cloud.",
+    "No real volume bake, WGSL execution, rendered equivalence or GPU timing in these tests."
+  ],
+  "artifacts": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-cycle8/emptyTraversal.rain-certificate.test.ts",
+      "bytes": 12215,
+      "sha256": "49c66cf7ddd462d4bc4f69bdb69cd7e879f651c85e53f3372ebb38f81a658026"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-cycle8/emptyTraversal.base-before-rain-certificate.test.ts",
+      "bytes": 4011,
+      "sha256": "209777209c81b4670d1f4593425cf02eac0e46d1db4770bffb2c703dcb1e3859"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-cycle8/emptyTraversal.rain-certificate.test.patch",
+      "bytes": 9115,
+      "sha256": "0baeeb574a45488cd57dd8c5a5dfae4b59050a75139216c643f4ca4fb7b39da7"
+    }
+  ],
+  "checkpoint": "8757b97",
+  "checkpointVerifiedByteExact": true,
+  "initialLiteralRefError": "fatal: invalid object name 'a8757b97'",
+  "initialLiteralRef": "a8757b97"
+}

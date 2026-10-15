@@ -1,0 +1,149 @@
+{
+  "clientDate": "2026-10-16",
+  "parentCommit": "8757b97591d3285d4399466056ec3a0c1239b506",
+  "goalStateVerified": "active",
+  "change": "Benchmark-only prefix completion tracking; renderer/cloud material unchanged. FPS target remains open.",
+  "tests": {
+    "command": "npm test",
+    "files": 28,
+    "passed": 163,
+    "result": "PASS"
+  },
+  "builds": {
+    "app": "PASS including tsc",
+    "hero": "PASS including tsc"
+  },
+  "nodeModulesProviderIgnore": "1",
+  "source": [
+    {
+      "path": "src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 53971,
+      "sha256": "9b065a853212191c8af8e3ab63f44a654f4d3918ea59e98af29b4a3c090a6fca"
+    },
+    {
+      "path": "src/cumulonimbus/queuePrefixMeasurement.ts",
+      "bytes": 5805,
+      "sha256": "bf26e53d0a1aafd6e75bd20b4903d1a3633fd19937fdecf5d8fe3cd4b354324d"
+    },
+    {
+      "path": "src/cumulonimbus/queuePrefixMeasurement.test.ts",
+      "bytes": 4451,
+      "sha256": "6408e934d56834cca922a283cbf893b979afbdb9b795ea4fddd0540ba54a2371"
+    },
+    {
+      "path": "src/cumulonimbus/lifecycle.test.ts",
+      "bytes": 19684,
+      "sha256": "f96fdda3f35188dc97a7878b33f3e4efc749f4355dc2cddff5c9937033d01433"
+    },
+    {
+      "path": "src/cumulonimbus/cloudShader.ts",
+      "bytes": 13664,
+      "sha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd"
+    },
+    {
+      "path": "src/cumulonimbus/emptyTraversal.test.ts",
+      "bytes": 4011,
+      "sha256": "209777209c81b4670d1f4593425cf02eac0e46d1db4770bffb2c703dcb1e3859"
+    }
+  ],
+  "builtAssets": [
+    {
+      "path": "dist/assets/CumulonimbusApp-K95Mlj_4.js",
+      "bytes": 804704,
+      "sha256": "c5e604403a8c83b4403bf3c8b866aaad9b71a6dafc183c75ba4c350c3a909b13"
+    },
+    {
+      "path": "dist/assets/render.worker-gwTBDtGx.js",
+      "bytes": 961445,
+      "sha256": "b21c3ff877a2619be77ba8d7cd12d868c541a5d501e67fcda96b698eab1a84c2"
+    },
+    {
+      "path": "dist/cloudia-hero.iife.js",
+      "bytes": 526689,
+      "sha256": "d4363d2ccdbf676991be2c6ba05bc62da0ceef5debaa789f04766ab1248c30f5"
+    },
+    {
+      "path": "dist/cloudia-hero.js",
+      "bytes": 838767,
+      "sha256": "bc11f99470a6298e20fa804bc2d93041d4cc1a015d812ae97b6ad5827b5fa702"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/measurements/fps-queue-2026-10-16/queue-console-main.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "docs/measurements/fps-queue-2026-10-16/queue-console-worker.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "docs/measurements/fps-queue-2026-10-16/rain-queue-prefix-30s.json",
+      "bytes": 41813,
+      "sha256": "5fed6934b94a991932f74f06e06d6d08465c7e668d631c21bc97bdbec893cbca"
+    },
+    {
+      "path": "docs/measurements/fps-queue-2026-10-16/sun-queue-metrics.jpg",
+      "bytes": 72005,
+      "sha256": "29b64361841712581ef6aba6811bed466c3b4066b6cb9fc6e2caaf84c5c2b5cb"
+    },
+    {
+      "path": "docs/measurements/fps-queue-2026-10-16/sun-queue-prefix-30s.json",
+      "bytes": 167089,
+      "sha256": "59d0a88ba3bb75cb733aa2943c45bc0221ee2dfc65995341491d7a290a411513"
+    },
+    {
+      "path": "docs/measurements/fps-queue-2026-10-16/sun-worker-queue-metrics.jpg",
+      "bytes": 72177,
+      "sha256": "2ed5f4b919544c3ab0a86ca9f946bfe6fa9e86d34f51e5fb2f2d0aa750e25278"
+    },
+    {
+      "path": "docs/measurements/fps-queue-2026-10-16/sun-worker-queue-prefix-30s.json",
+      "bytes": 153919,
+      "sha256": "d1266e2cd87f37b7b0b14a1dba0b4ea20de23ccc5fc44c6ce856a294298515bb"
+    },
+    {
+      "path": "docs/measurements/fps-queue-2026-10-16/final-main-preview.jpg",
+      "bytes": 55975,
+      "sha256": "8230d51e132f81c7994bdc33148076da94c1197e32d8cee32d8d7966cb288066"
+    },
+    {
+      "path": "docs/measurements/fps-queue-2026-10-16/final-main-preview-state.json",
+      "bytes": 176,
+      "sha256": "b323b82fd4f5ab66f75d0e424bb0ea7f55d37b401e4a8ea079d48c778521e78d"
+    }
+  ],
+  "reviews": {
+    "independentReview": "No blocking correctness defect identified in queue helper/engine; lifecycle, counting, clocks, final timeout/cancellation checked.",
+    "browser": "main rain, main sun, worker sun; three completed-prefix reports, count equal to measured intervals; no warning/error logs."
+  },
+  "limits": [
+    "30s stationary scenes only; not global 60FPS acceptance",
+    "presentedCanvasFps is explicitly null",
+    "logical unconfirmed draws are not physical queue depth",
+    "periodic fences may affect the benchmark; compare same measurement schema",
+    "no push merge or deploy",
+    "preexisting untracked node_modules 2 left untouched"
+  ],
+  "finalPreview": {
+    "url": "http://127.0.0.1:4177/?seed=72&profile=1&surface=0.4&target=-0.28995623264629566,2.4981598424383944,-0.02734375",
+    "thread": "main",
+    "scenario": "Sole",
+    "simulationTime": 60,
+    "paused": true,
+    "css": [
+      1280,
+      720
+    ],
+    "dpr": 2,
+    "canvas": [
+      2560,
+      1440
+    ],
+    "panels": "closed",
+    "tab": "marked handoff",
+    "serverPort": 4177
+  }
+}

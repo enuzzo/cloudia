@@ -1,0 +1,40 @@
+--- a/src/cumulonimbus/cloudShader.ts
++++ b/src/cumulonimbus/cloudShader.ts
+@@ -82,17 +82,31 @@
+   let forwardPhase=(1.0-0.68*0.68)/pow(max(1.0+0.68*0.68-2.0*0.68*mu,0.04),1.5);
+   let backPhase=(1.0-0.25*0.25)/pow(max(1.0+0.25*0.25+2.0*0.25*mu,0.04),1.5);
+   let sunPhase=0.45+0.55*(0.82*forwardPhase+0.18*backPhase);
++  var cloudEmptyUntil=0.0;
+   for (var i=0u; i<8192u; i++) {
+     if (t >= far || transmittance < 0.006) { break; }
+     let position = origin + ray*t;
+-    let reference=cloudReference(position-drift,growth,iceRange,wind);
+-    // Conservative support includes domain displacement and macro interpolation.
+-    // One cheap mask lookup avoids evaluating fine noise throughout empty sky.
+-    let referenceCoord=(reference-vec3<f32>(-5.0,-0.5,-3.5))/vec3<f32>(10.0,8.5,7.0);
+-    let support=textureSampleLevel(detail,detailSampler,clamp(referenceCoord,maskInset,vec3<f32>(1.0)-maskInset),0.0).a;
++    let rainRegion=hasRain && t>=rainNear && t<rainFar;
++    var reference=vec3<f32>(0.0);
++    var referenceCoord=vec3<f32>(0.0);
++    var support=0.0;
++    // The mask halo certifies a continuous empty interval. Reuse it only for
++    // cloud work: all rain samples and all occupied-cloud samples stay intact.
++    let reuseCloudEmpty=rainRegion&&t<cloudEmptyUntil;
++    if(!reuseCloudEmpty){
++      reference=cloudReference(position-drift,growth,iceRange,wind);
++      referenceCoord=(reference-vec3<f32>(-5.0,-0.5,-3.5))/vec3<f32>(10.0,8.5,7.0);
++      support=textureSampleLevel(detail,detailSampler,clamp(referenceCoord,maskInset,vec3<f32>(1.0)-maskInset),0.0).a;
++      let emptyInterval=max(0.0,emptyStep-stepSize);
++      // Rain extends beyond the cloud box used to bound the ice/shear Jacobian.
++      // Below its transition that derivative is independent of x. Otherwise use
++      // the original fresh lookup path; the extra metre guards float rounding.
++      if(rainRegion&&support<=0.0&&reference.y+growth.x*emptyInterval+.001<iceRange.x){
++        cloudEmptyUntil=t+emptyInterval;
++      }
++    }
+     let ordinaryStep=mix(stepSize,min(stepSize,max(.0015,t*.008)),inspection);
+     let rp=position-drift;
+-    let rainRegion=hasRain && t>=rainNear && t<rainFar;
+     // Integrate only the remaining visible interval, including the terrain clip.
+     // Cloud occupancy does not prove empty rain: preserve ordinary sampling
+     // throughout the precipitation region, even between source columns.

@@ -1,0 +1,152 @@
+{
+  "date": "2026-10-16",
+  "status": "Retired; cloudShader unchanged in product",
+  "scope": "Immutable cycle8 trial evidence; absolute paths in original reports are historical",
+  "files": [
+    {
+      "path": "GPUSceneEngine.ts.guarded",
+      "bytes": 51698,
+      "sha256": "ed84cb89cf296ec4fe3152dce675cb59490d1ce00420097d98bc7eb14a4936ff"
+    },
+    {
+      "path": "MASK0-CONTINUOUS-REVIEW.md",
+      "bytes": 7191,
+      "sha256": "25937940eb3a3fcb9ef71cf27063d458ca4a21f456feb5cb236e5414fe6adb20"
+    },
+    {
+      "path": "RAIN-CERTIFICATE-TEST-EVIDENCE.md",
+      "bytes": 5142,
+      "sha256": "c525c07b13081dcba1be49972b30d507bedb3dcf4024153e46dea4e8644973b0"
+    },
+    {
+      "path": "RAIN-UPPER-BOUND-OPTIONS.md",
+      "bytes": 5185,
+      "sha256": "36d4df8d26428173d44fea198e523f0bf2d92afeb7043bc3417e01172e7864f0"
+    },
+    {
+      "path": "cloud-empty-until-guarded-sequence-result.json",
+      "bytes": 3320,
+      "sha256": "2c77b9d572e381155695c212d7e505b73a86bb1e4e006427659d6211f63a60be"
+    },
+    {
+      "path": "cloud-empty-until-manifest.json",
+      "bytes": 3532,
+      "sha256": "6d0dde34f363d2da4d91efd0ec2dbe50a59021ae175d7b34aa726ab081c4e18e"
+    },
+    {
+      "path": "cloud-empty-until-sequence-check.py",
+      "bytes": 6366,
+      "sha256": "b34c2faa0105641ec7b47d9357b75f56bccb25959c43d2df5ea917b7191b5833"
+    },
+    {
+      "path": "cloud-empty-until-sequence-result.json",
+      "bytes": 3043,
+      "sha256": "26850204655db59fc53639e3cb777edd8fd40b278ab9f73a5c04e9e801bf40c1"
+    },
+    {
+      "path": "cloud-empty-until.patch",
+      "bytes": 2102,
+      "sha256": "c0fdc421f039ba266b2a16b1ccd354730c2dd07865c40563eb4c64cf6916e854"
+    },
+    {
+      "path": "cloudShader.base.ts",
+      "bytes": 13664,
+      "sha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd"
+    },
+    {
+      "path": "cloudShader.cloud-empty-until.ts",
+      "bytes": 13965,
+      "sha256": "aa61a79b7643864498d6c5b9ca6935d8d9e88cdc6a0c58c91abd7a6ab07dca1a"
+    },
+    {
+      "path": "cloudShader.ts.guarded",
+      "bytes": 14294,
+      "sha256": "76cb9177830693ca99a6437b68601a778c9c44b31a427f5e67b6186bbeb528f6"
+    },
+    {
+      "path": "emptyTraversal.base-before-rain-certificate.test.ts",
+      "bytes": 4011,
+      "sha256": "209777209c81b4670d1f4593425cf02eac0e46d1db4770bffb2c703dcb1e3859"
+    },
+    {
+      "path": "emptyTraversal.rain-certificate.test.patch",
+      "bytes": 9115,
+      "sha256": "0baeeb574a45488cd57dd8c5a5dfae4b59050a75139216c643f4ca4fb7b39da7"
+    },
+    {
+      "path": "emptyTraversal.rain-certificate.test.ts",
+      "bytes": 12215,
+      "sha256": "49c66cf7ddd462d4bc4f69bdb69cd7e879f651c85e53f3372ebb38f81a658026"
+    },
+    {
+      "path": "guarded-product-trial.patch",
+      "bytes": 2435,
+      "sha256": "6f4d3bf2520e9580e3e1950231c5cbb8711f2cb57a2911fea723de95556bd7ae"
+    },
+    {
+      "path": "prepare-cloud-empty-until.py",
+      "bytes": 6143,
+      "sha256": "219cd89f05ad1d7e3aac909077ab251ee916058ecc4942b750f763961cc62148"
+    },
+    {
+      "path": "rain-candidate-30s.json",
+      "bytes": 30943,
+      "sha256": "9048526bc2357b77f0233f3e3c9327df21c8c53ace11c035c4f1e71b391bbb7a"
+    },
+    {
+      "path": "rain-candidate-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "rain-candidate-view.jpg",
+      "bytes": 42539,
+      "sha256": "c73b336f2ef9d2e2a1810f0cb5cf8cbba246a832e66bae531fc9f23e15021972"
+    },
+    {
+      "path": "rain-certificate-guarded-test-manifest.json",
+      "bytes": 2520,
+      "sha256": "66c36513367ea37dc358292c8f40da7ed7bc6d55963432ef5f3b42ffd864c791"
+    },
+    {
+      "path": "rain-certificate-test-evidence.json",
+      "bytes": 1835,
+      "sha256": "8fe66b1d8e91f99ab79c0c4443cf53118c35332a5bbfdbc0e92eb958531271ab"
+    },
+    {
+      "path": "rain-control-30s.json",
+      "bytes": 46025,
+      "sha256": "0561b0e6575fd00e74fce94f7e410ef884f3033e80424afdf8e8ce246725acb1"
+    },
+    {
+      "path": "rain-control-matched-30s.json",
+      "bytes": 34005,
+      "sha256": "d155b841dd66e41fb8de2131f5cba9deea6ab5b449cbde81c1a93be811056f13"
+    },
+    {
+      "path": "rain-control-matched-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "rain-control-matched-view.jpg",
+      "bytes": 42539,
+      "sha256": "c73b336f2ef9d2e2a1810f0cb5cf8cbba246a832e66bae531fc9f23e15021972"
+    },
+    {
+      "path": "rain-control-view.jpg",
+      "bytes": 37090,
+      "sha256": "bce10c3ed0fc302ac89ca59b6eb08f00ca11091aa5a4e65045fef44bdee7bd47"
+    },
+    {
+      "path": "rain-empty-independent-review.json",
+      "bytes": 7455,
+      "sha256": "9b4f8a3d8e2aec5efb87f83161705ffbb6341ee01974079d8ba00d20dfbcc067"
+    },
+    {
+      "path": "trial-status.json",
+      "bytes": 508,
+      "sha256": "81c3eef86c5115aac5860c39409ca2315512ffd23c19191a8424da2f1726b596"
+    }
+  ]
+}

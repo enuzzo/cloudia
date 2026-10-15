@@ -1,0 +1,97 @@
+{
+  "status": "NINE SMALL SYNTHETIC SEQUENCE CHECKS PASSED; TWO NEGATIVE CONTROLS CONFIRMED",
+  "limits": [
+    "Not a proof of the real occupancy halo or inverse-growth/shear bound.",
+    "Not GPU/WGSL parity, renderer image equivalence or a performance measurement.",
+    "Fields deliberately satisfy the cloud-zero certificate except in the explicit negative control.",
+    "The shared step equations model the current shader; this does not execute production code."
+  ],
+  "scriptSha256": "b34c2faa0105641ec7b47d9357b75f56bccb25959c43d2df5ea917b7191b5833",
+  "cases": [
+    {
+      "case": "all empty cloud with variable rain",
+      "sequenceExactlyEqual": true,
+      "f32MediaExactlyEqual": true,
+      "samples": 25,
+      "baselineMaskQueries": 25,
+      "candidateMaskQueries": 4,
+      "reusedCloudZeros": 21
+    },
+    {
+      "case": "occupied cloud retains every6m sample",
+      "sequenceExactlyEqual": true,
+      "f32MediaExactlyEqual": true,
+      "samples": 25,
+      "baselineMaskQueries": 25,
+      "candidateMaskQueries": 25,
+      "reusedCloudZeros": 0
+    },
+    {
+      "case": "mask becomes positive inside a valid empty certificate",
+      "sequenceExactlyEqual": true,
+      "f32MediaExactlyEqual": true,
+      "samples": 25,
+      "baselineMaskQueries": 25,
+      "candidateMaskQueries": 19,
+      "reusedCloudZeros": 6
+    },
+    {
+      "case": "thin occupied cloud immediately after the certified region",
+      "sequenceExactlyEqual": true,
+      "f32MediaExactlyEqual": true,
+      "samples": 25,
+      "baselineMaskQueries": 25,
+      "candidateMaskQueries": 19,
+      "reusedCloudZeros": 6
+    },
+    {
+      "case": "clamped positive mask after rain exit",
+      "sequenceExactlyEqual": true,
+      "f32MediaExactlyEqual": true,
+      "samples": 12,
+      "baselineMaskQueries": 12,
+      "candidateMaskQueries": 9,
+      "reusedCloudZeros": 3
+    },
+    {
+      "case": "early H0 disables reuse",
+      "sequenceExactlyEqual": true,
+      "f32MediaExactlyEqual": true,
+      "samples": 25,
+      "baselineMaskQueries": 25,
+      "candidateMaskQueries": 25,
+      "reusedCloudZeros": 0
+    },
+    {
+      "case": "inspection retains its original smaller sample steps",
+      "sequenceExactlyEqual": true,
+      "f32MediaExactlyEqual": true,
+      "samples": 107,
+      "baselineMaskQueries": 107,
+      "candidateMaskQueries": 83,
+      "reusedCloudZeros": 24
+    },
+    {
+      "case": "zero rain extinction keeps the same advance",
+      "sequenceExactlyEqual": true,
+      "f32MediaExactlyEqual": true,
+      "samples": 18,
+      "baselineMaskQueries": 18,
+      "candidateMaskQueries": 5,
+      "reusedCloudZeros": 13
+    },
+    {
+      "case": "strict exclusive certificate endpoint",
+      "sequenceExactlyEqual": true,
+      "f32MediaExactlyEqual": true,
+      "samples": 16,
+      "baselineMaskQueries": 16,
+      "candidateMaskQueries": 3,
+      "reusedCloudZeros": 13
+    }
+  ],
+  "negativeControls": {
+    "reuseOutsideRainChangesSequence": true,
+    "invalidHaloCanHideCloudMatter": true
+  }
+}

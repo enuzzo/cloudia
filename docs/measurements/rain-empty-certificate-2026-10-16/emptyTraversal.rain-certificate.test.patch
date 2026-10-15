@@ -1,0 +1,149 @@
+--- a/src/cumulonimbus/emptyTraversal.test.ts
++++ b/src/cumulonimbus/emptyTraversal.test.ts
+@@ -1,7 +1,9 @@
+ import { describe,expect,it } from 'vitest';
+ import { conservativeEmptyStep,EMPTY_REFERENCE_MARGIN } from './emptyTraversal';
+ import { motionState,referencePosition,sourcePosition,THERMAL_DISPLACEMENT } from './motion';
+-import { bakeOccupancy,sampleDetail,BOUNDS_MIN,BOUNDS_SIZE,iceHeights } from './volume';
++import { bakeOccupancy,sampleDetail,BOUNDS_MIN,BOUNDS_SIZE,iceHeights,VOLUME_RESOLUTION,DETAIL_RESOLUTION } from './volume';
++import { RAIN_SAMPLE_STEP } from './precipitation';
++import { integrateMediaSegment } from './medium';
+ 
+ describe('conservative empty traversal',()=>{
+   it('keeps the reference segment inside the proven halo through growth, shear and gusts',()=>{
+@@ -63,3 +65,135 @@
+     expect(conservativeEmptyStep(7/128,state,[.75,.26],range,6.3)).toBeCloseTo(7/128);
+   });
+ });
++
++describe('rain empty-cloud reuse certificate',()=>{
++  const step=7/384,guard=.001;
++  const canArm=(referenceY:number,height:number,horizon:number,iceStart:number)=>referenceY+horizon/height+guard<iceStart;
++
++  it('bounds continuous displacement below the ice transition, including rays outside the cloud box',()=>{
++    let checked=0,rejected=0,early=0;
++    for(const seed of [72,73,74,1571198069])for(const time of [0,8,20,32,52]){
++      const state=motionState(time,seed),range=iceHeights(seed);
++      for(const wind of [[0,0],[.75,.26],[-.75,-.26]]){
++        const horizon=Math.max(0,conservativeEmptyStep(step,state,wind,range,1.3)-step);
++        if(horizon===0){early++;continue;}
++        for(const referenceY of [1.1,range[0]-.0005]){
++          if(!canArm(referenceY,state.height,horizon,range[0])){rejected++;continue;}
++          // Below the transition the exact Jacobian rows have no x-dependent
++          // ice-mixing term. Their norms bound EVERY continuous unit ray, not
++          // just the arbitrary non-6m-aligned points checked below.
++          const rates=[Math.hypot(1,wind[0]*1.5/6.2)/state.width,1/state.height,Math.hypot(1,wind[1]*1.5/6.2)/state.width];
++          for(let axis=0;axis<3;axis++)expect(horizon*rates[axis]).toBeLessThan(EMPTY_REFERENCE_MARGIN[axis]);
++          for(const x of [-20,20])for(const direction of [[1,0,0],[0,1,0],[.6,.7,-.2],[-.2,-.4,.9]]){
++            const p=[x,.72+(referenceY-.72)*state.height,.5],length=Math.hypot(...direction),ray=direction.map(v=>v/length);
++            const start=referencePosition(p,state,range,wind);
++            for(const s of [0,horizon*.017,horizon*.12345,horizon*.5,horizon*.913,horizon]){
++              const ref=referencePosition(p.map((v,i)=>v+ray[i]*s),state,range,wind);
++              expect(ref[1]).toBeLessThan(range[0]);
++              for(let axis=0;axis<3;axis++)expect(Math.abs(ref[axis]-start[axis])).toBeLessThanOrEqual(rates[axis]*s+1e-12);
++              checked++;
++            }
++          }
++        }
++      }
++    }
++    expect(checked).toBeGreaterThan(1000);expect(rejected).toBeGreaterThan(0);expect(early).toBeGreaterThan(0);
++  });
++
++  it('does not arm across the ice guard and disables reuse when early growth has H0',()=>{
++    const state=motionState(52,74),range=iceHeights(74),wind=[.75,.26];
++    const horizon=Math.max(0,conservativeEmptyStep(step,state,wind,range,6.3)-step);
++    expect(horizon).toBeGreaterThan(RAIN_SAMPLE_STEP);
++    expect(canArm(range[0]-horizon/state.height-.002,state.height,horizon,range[0])).toBe(true);
++    expect(canArm(range[0]-horizon/state.height-.0005,state.height,horizon,range[0])).toBe(false);
++    const referenceY=1.1,exactBoundary=referenceY+horizon/state.height+guard;
++    expect(canArm(referenceY,state.height,horizon,exactBoundary)).toBe(false);
++    const early=motionState(0,74),earlyH=Math.max(0,conservativeEmptyStep(step,early,wind,iceHeights(74),6.3)-step);
++    expect(earlyH).toBe(0);
++  });
++
++  it('refreshes the mask at the exclusive endpoint on a grid with a final partial rain step',()=>{
++    const state=motionState(52,74),range=iceHeights(74),wind=[.75,.26];
++    const horizon=conservativeEmptyStep(step,state,wind,range,6.3)-step;
++    const cell=BOUNDS_SIZE[0]/DETAIL_RESOLUTION,macro=BOUNDS_SIZE[0]/VOLUME_RESOLUTION;
++    const radius=Math.ceil((.08+THERMAL_DISPLACEMENT[0]+macro)/cell);
++    const first=Math.floor(128*DETAIL_RESOLUTION/VOLUME_RESOLUTION)-radius;
++    const edge=BOUNDS_MIN[0]+(first-.5)*cell,start=edge-.001;
++    const query=(t:number)=>Math.max(0,Math.min(1,(start+t-edge)/cell));
++    const queries:number[]=[],reused:number[]=[];let until=0;
++    // Every substep remains <=6m. The last partial step lands on H exactly,
++    // covering certificate boundaries which need not align to the rain grid.
++    const points=[0];
++    while(points.at(-1)!+RAIN_SAMPLE_STEP<horizon)points.push(points.at(-1)!+RAIN_SAMPLE_STEP);
++    points.push(horizon,horizon+RAIN_SAMPLE_STEP);
++    for(const t of points){
++      if(t<until){reused.push(t);continue;}
++      queries.push(t);
++      if(query(t)===0&&canArm(1.1,state.height,horizon,range[0]))until=t+horizon;
++    }
++    expect(query(0)).toBe(0);expect(query(horizon)).toBeGreaterThan(0);
++    expect(queries).toEqual([0,horizon,horizon+RAIN_SAMPLE_STEP]);
++    expect(reused).toHaveLength(points.length-3);
++    for(let i=1;i<points.length;i++)expect(points[i]-points[i-1]).toBeLessThanOrEqual(RAIN_SAMPLE_STEP+1e-12);
++  });
++
++  it('preserves the original 6m samples and co-located integration at a thin cloud entry without baking a volume',()=>{
++    const state=motionState(52,74),range=iceHeights(74),wind=[.75,.26],f=Math.fround;
++    const stride=conservativeEmptyStep(step,state,wind,range,6.3),horizon=f(f(stride)-f(step));
++    const macro=BOUNDS_SIZE[0]/VOLUME_RESOLUTION,mask=BOUNDS_SIZE[0]/DETAIL_RESOLUTION;
++    const displacement=.08+THERMAL_DISPLACEMENT[0],radius=Math.ceil((displacement+macro)/mask);
++    let reused=0,positiveMaskReused=0,occupied=0;
++    for(const voxel of [128,129])for(const sign of [-1,1]){
++      // Exact 1D filtered profiles of one positive macro slab and its dilated
++      // binary occupancy slab, constant in y/z. No packed 3D data or bake is
++      // needed. Clamping uses the same half-texel centres as the samplers.
++      const bucket=Math.floor(voxel*DETAIL_RESOLUTION/VOLUME_RESOLUTION),first=bucket-radius,last=bucket+radius;
++      const alpha=(x:number)=>{
++        const p=Math.max(0,Math.min(DETAIL_RESOLUTION-1,(x-BOUNDS_MIN[0])/mask-.5));
++        return Math.max(0,Math.min(1,p-first+1,last+1-p));
++      };
++      const density=(x:number)=>{
++        const p=Math.max(0,Math.min(VOLUME_RESOLUTION-1,(x+sign*displacement-BOUNDS_MIN[0])/macro-.5));
++        return Math.max(0,1-Math.abs(p-voxel));
++      };
++      const edge=BOUNDS_MIN[0]+(sign>0?first-.5:last+1.5)*mask;
++      const referenceStart=edge-sign*.0031,y=1.1;
++      const offset=referencePosition([0,y,0],state,range,wind)[0];
++      const origin=[referenceStart-offset,y,0];
++      const run=(optimized:boolean)=>{
++        let t=f(.0013),until=0,transmittance=1;const radiance=[0,0,0],trace:number[][]=[],hits:number[][]=[],cached:number[]=[];
++        for(let i=0;i<1000&&t<f(.25);i++){
++          const rainRegion=t<f(.20),reference=referencePosition([origin[0]+sign*t,y,0],state,range,wind);
++          const originalAlpha=alpha(reference[0]),raw=density(reference[0]);
++          const reuse=optimized&&rainRegion&&t<until;
++          let support=originalAlpha;
++          if(reuse){
++            expect(raw).toBe(0);support=0;cached.push(t);reused++;
++            if(originalAlpha>0)positiveMaskReused++;
++          }else if(optimized&&rainRegion&&support===0&&canArm(reference[1],state.height,horizon,range[0])){
++            until=f(t+horizon);
++          }
++          const rho=support>0?raw:0;
++          expect(rho).toBe(raw); // The independent slab oracle must never lose matter.
++          const ordinary=f(step),advance=rainRegion?Math.min(ordinary,f(RAIN_SAMPLE_STEP)):support<=0?f(stride):ordinary;
++          const ds=f(Math.min(advance,f(.25)-t,rainRegion?f(.20)-t:f(.25)-t));
++          expect(ds).toBeGreaterThan(0);trace.push([t,ds]);
++          if(rho>0)hits.push([t,rho]);
++          const rain=rainRegion?.3+.2*Math.sin(t*47)**2:0;
++          const segment=integrateMediaSegment(rho*18,[.5,.6,.7],rain,[.2,.3,.4],ds);
++          for(let c=0;c<3;c++)radiance[c]+=transmittance*segment.radiance[c];
++          transmittance*=segment.transmittance;t=f(t+ds);
++        }
++        return {trace,hits,cached,radiance,transmittance};
++      };
++      const baseline=run(false),candidate=run(true);
++      expect(candidate.trace).toEqual(baseline.trace);
++      expect(candidate.hits).toEqual(baseline.hits);
++      expect(candidate.radiance).toEqual(baseline.radiance);
++      expect(candidate.transmittance).toBe(baseline.transmittance);
++      expect(candidate.cached.every(t=>t<f(.20))).toBe(true);
++      occupied+=baseline.hits.length;
++    }
++    expect(reused).toBeGreaterThan(10);expect(positiveMaskReused).toBeGreaterThan(0);expect(occupied).toBeGreaterThan(20);
++  });
++});

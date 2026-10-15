@@ -1,0 +1,66 @@
+{
+  "status": "EXTERNAL PATCH ONLY; NOT APPLIED OR RENDERED; PROOF REVIEW PENDING",
+  "root": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia",
+  "scope": "One local per-ray/per-frame empty-cloud certificate; no persistent temporal cache.",
+  "performanceObjective": "Improve measured native FPS while preserving matter, <=6m rain samples, nominal384 steps and full output. No measured benefit claimed.",
+  "baseSourceSha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+  "candidateSourceSha256": "aa61a79b7643864498d6c5b9ca6935d8d9e88cdc6a0c58c91abd7a6ab07dca1a",
+  "originalBlockMatches": 1,
+  "originalLoopMatches": 1,
+  "horizon": "H=max(0,emptyStep-stepSize); cloudEmptyUntil=t+H; reuse only rainRegion && t<cloudEmptyUntil",
+  "contracts": [
+    "Occupied cloud density/light are evaluated at their original sample locations, including rain substeps.",
+    "Rain density, sources, extinction and <=6m samples are untouched.",
+    "Outside rainRegion all reference/mask evaluations follow the baseline.",
+    "sampleStep, jitter, t advance, medium integration and early termination equations are byte-identical.",
+    "No new texture, volume bake, uniform, worker upload or frame-history state.",
+    "emptyStep<=stepSize yields H=0 and cannot reuse a certificate."
+  ],
+  "proofObligation": "A zero mask at t0 must prove cloud density exactly zero at every reused sample with t<t0+H under trilinear filtering, clamp, warp, bounded half-float flow and growth/shear. Point tests alone are not this proof.",
+  "equivalenceArgument": [
+    "Inside rainRegion sampleStep is independent of mask support.",
+    "If the certificate is valid, skipped cloud values equal zero; rain coefficients and combined source remain equal.",
+    "Therefore radiance, transmittance, early termination and the entire t/sampleStep sequence agree, modulo compiler floating-point reassociation.",
+    "Outside rainRegion reference/mask and step selection are unchanged."
+  ],
+  "sequenceCheckLimit": "The lightweight model checks this induction and negative controls for synthetic certified fields; it does not establish validity of the real spatial certificate or WGSL compilation.",
+  "notPerformed": [
+    "Product edits",
+    "Bundle edits",
+    "Product tests",
+    "Cloud generation",
+    "GPU work",
+    "Browser run",
+    "Benchmark",
+    "Git writes"
+  ],
+  "artifacts": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-cycle8/cloudShader.base.ts",
+      "bytes": 13664,
+      "sha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-cycle8/cloudShader.cloud-empty-until.ts",
+      "bytes": 13965,
+      "sha256": "aa61a79b7643864498d6c5b9ca6935d8d9e88cdc6a0c58c91abd7a6ab07dca1a"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-cycle8/cloud-empty-until.patch",
+      "bytes": 2102,
+      "sha256": "c0fdc421f039ba266b2a16b1ccd354730c2dd07865c40563eb4c64cf6916e854"
+    }
+  ],
+  "scripts": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-cycle8/prepare-cloud-empty-until.py",
+      "bytes": 6143,
+      "sha256": "219cd89f05ad1d7e3aac909077ab251ee916058ecc4942b750f763961cc62148"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-15-cycle8/cloud-empty-until-sequence-check.py",
+      "bytes": 6366,
+      "sha256": "b34c2faa0105641ec7b47d9357b75f56bccb25959c43d2df5ea917b7191b5833"
+    }
+  ]
+}
