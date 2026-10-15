@@ -1,18 +1,86 @@
 /** World units are kilometres for the distant landscape: cloud datum is 4 km above sea level. */
 export const EARTH_RADIUS=6371;
 export const GROUND_LEVEL=-4;
+export const CAMERA_TERRAIN_CLEARANCE_KM=.2;
+/** Shared integer lattice hash; terrain realization changes from the legacy sine hash. */
+export const TERRAIN_HASH_ID='u32-avalanche-24-v1';
+const HASH_X=0x9e3779b9,HASH_Z=0x85ebca6b,HASH_SEED=0x243f6a88;
+const HASH_A=0x7feb352d,HASH_B=0x846ca68b;
+const f=Math.fround;
+const add=(a:number,b:number)=>f(f(a)+f(b));
+const sub=(a:number,b:number)=>f(f(a)-f(b));
+const mul=(a:number,b:number)=>f(f(a)*f(b));
+const mix=(a:number,b:number,t:number)=>add(mul(a,sub(1,t)),mul(b,t));
+const smooth=(a:number,b:number,v:number)=>{
+ const t=Math.max(0,Math.min(1,f(sub(v,a)/sub(b,a))));
+ return mul(mul(t,t),sub(3,mul(2,t)));
+};
+function terrainHash(x:number,z:number):number{
+ let h=(Math.imul(x|0,HASH_X)^Math.imul(z|0,HASH_Z)^HASH_SEED)>>>0;
+ h=Math.imul(h^(h>>>16),HASH_A)>>>0;
+ h=Math.imul(h^(h>>>15),HASH_B)>>>0;
+ h=(h^(h>>>16))>>>0;
+ // The high 24 bits and their power-of-two scale are exactly representable in f32.
+ return (h>>>8)/16777216;
+}
+/** CPU f32 reference for WGSL terrainNoise, including negative lattice coordinates.
+ * Integer hashes match exactly; GPU contraction and transcendental rounding can
+ * still differ slightly in the final height, so rendered parity is audited separately.
+ */
+export function terrainNoise(x:number,z:number):number{
+ x=f(x);z=f(z);
+ const ix=Math.floor(x),iz=Math.floor(z),fx=sub(x,ix),fz=sub(z,iz);
+ const ux=mul(mul(fx,fx),sub(3,mul(2,fx))),uz=mul(mul(fz,fz),sub(3,mul(2,fz)));
+ return mix(mix(terrainHash(ix,iz),terrainHash(ix+1,iz),ux),mix(terrainHash(ix,iz+1),terrainHash(ix+1,iz+1),ux),uz);
+}
+export function coastDistance(x:number,z:number):number{
+ x=f(x);z=f(z);
+ return add(add(add(sub(2,x),mul(z,.20)),mul(f(Math.sin(mul(z,.045))),6)),mul(sub(terrainNoise(mul(x,.055),mul(z,.055)),.5),9));
+}
+/** Authored near-field relief in kilometres above the local spherical sea. */
+export function terrainHeight(x:number,z:number):number{
+ x=f(x);z=f(z);
+ let qx=mul(x,.065),qz=mul(z,.065),h=0,a=f(.58);
+ for(let j=0;j<4;j++){
+  const ridge=sub(1,Math.abs(sub(mul(terrainNoise(qx,qz),2),1)));
+  h=add(h,mul(mul(a,ridge),ridge));
+  const nextX=add(mul(sub(mul(qx,.8),mul(qz,.6)),2.17),13.4);
+  const nextZ=add(mul(add(mul(qx,.6),mul(qz,.8)),2.17),13.4);
+  qx=nextX;qz=nextZ;a=mul(a,.43);
+ }
+ const inland=smooth(0,13,coastDistance(x,z));
+ const range=add(.55,mul(.45,terrainNoise(add(mul(x,.018),3),add(mul(z,.018),7))));
+ return mul(inland,add(.12,mul(mul(3.2,f(Math.pow(h,f(1.3)))),range)));
+}
+/** Upper local hemisphere with radial, rather than vertical, terrain clearance. */
+export function landscapeSurfaceY(x:number,z:number,clearanceKm=0):number{
+ const radius=EARTH_RADIUS+terrainHeight(x,z)+Math.max(0,clearanceKm);
+ return GROUND_LEVEL-EARTH_RADIUS+Math.sqrt(radius*radius-x*x-z*z);
+}
+/** Raise only camera y; preserve the chosen target, horizontal orbit and input array. */
+export function clampCameraAboveLandscape(origin:readonly number[],clearanceKm=CAMERA_TERRAIN_CLEARANCE_KM):[number,number,number]{
+ return [origin[0],Math.max(origin[1],landscapeSurfaceY(origin[0],origin[2],clearanceKm)),origin[2]];
+}
 export function groundIntersection(origin:readonly number[],ray:readonly number[]):number|null{
  const o=[origin[0],origin[1]+EARTH_RADIUS-GROUND_LEVEL,origin[2]];
  const b=o.reduce((sum,v,i)=>sum+v*ray[i],0),c=o.reduce((sum,v)=>sum+v*v,0)-EARTH_RADIUS**2,d=b*b-c;
  if(d<0)return null;const t=-b-Math.sqrt(d);return t>0?t:null;
 }
 export const LANDSCAPE_WGSL=`
+// ${TERRAIN_HASH_ID}: match the CPU lattice without transcendental hash drift.
+fn terrainHash(i:vec2<i32>)->f32{
+ var h=(bitcast<u32>(i.x)*0x${HASH_X.toString(16)}u)^(bitcast<u32>(i.y)*0x${HASH_Z.toString(16)}u)^0x${HASH_SEED.toString(16)}u;
+ h=(h^(h>>16u))*0x${HASH_A.toString(16)}u;
+ h=(h^(h>>15u))*0x${HASH_B.toString(16)}u;
+ h=h^(h>>16u);
+ return f32(h>>8u)*(1.0/16777216.0);
+}
 fn terrainNoise(p:vec2<f32>)->f32{
  let i=floor(p);let f=fract(p);let u=f*f*(3.0-2.0*f);
- let a=fract(sin(dot(i,vec2<f32>(127.1,311.7)))*43758.5453);
- let b=fract(sin(dot(i+vec2<f32>(1,0),vec2<f32>(127.1,311.7)))*43758.5453);
- let c=fract(sin(dot(i+vec2<f32>(0,1),vec2<f32>(127.1,311.7)))*43758.5453);
- let d=fract(sin(dot(i+vec2<f32>(1,1),vec2<f32>(127.1,311.7)))*43758.5453);
+ let a=terrainHash(vec2<i32>(i));
+ let b=terrainHash(vec2<i32>(i)+vec2<i32>(1,0));
+ let c=terrainHash(vec2<i32>(i)+vec2<i32>(0,1));
+ let d=terrainHash(vec2<i32>(i)+vec2<i32>(1,1));
  return mix(mix(a,b,u.x),mix(c,d,u.x),u.y);
 }
 // A fictional wilderness coast: wooded foothills rise into irregular ridges.

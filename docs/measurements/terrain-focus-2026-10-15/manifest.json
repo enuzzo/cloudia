@@ -1,0 +1,180 @@
+{
+  "date": "2026-10-15",
+  "parent": "b3270f96bda61c5944dcdb3af9d58bf8d0d04c89",
+  "rendererVersion": "observatory-v40-terrain-camera-focus",
+  "navigationVersion": "filtered-field-terrain-clearance-v3",
+  "checks": {
+    "tests": {
+      "passed": 155,
+      "files": 27
+    },
+    "appBuild": "passed",
+    "heroBuild": "passed",
+    "gpuTerrainSamples": 512,
+    "cpuApproachCases": 18,
+    "runtimeSourceModifiedAfterAppBuild": false
+  },
+  "checkpoint": "Uncommitted. Git status/readback failed with File Provider Operation timed out; no commit claimed.",
+  "scope": "Hashes cover three changed runtime sources, app/worker assets and archived proof. Tests and additional sources are outside this hash subset. Native rain cost and terrain ray intersection remain open.",
+  "sources": [
+    {
+      "path": "src/cumulonimbus/camera.ts",
+      "bytes": 7127,
+      "sha256": "a7f7b113ee4251454e4f31fd8fa470f131dae3a9bc41ec5cf1d2480871066a69"
+    },
+    {
+      "path": "src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 51596,
+      "sha256": "fb9c8b418f9c9c3f20abc4eea9c2b58fec5bd4a1cd9827ba91187eb7648eab83"
+    },
+    {
+      "path": "src/cumulonimbus/landscape.ts",
+      "bytes": 6980,
+      "sha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99"
+    }
+  ],
+  "assets": [
+    {
+      "path": "dist/assets/CumulonimbusApp-6wBUXA1V.js",
+      "bytes": 799565,
+      "sha256": "12cef7783f8db74d41861a195956b1651dbc2b6baae51cf04e682501987a8050"
+    },
+    {
+      "path": "dist/assets/render.worker-DHcLwyw_.js",
+      "bytes": 956312,
+      "sha256": "a22233fd2ae9898710638582ac5f4ba98d91757c85e8afbf35b4b42d7b52b727"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/approach-cpu-v40.json",
+      "bytes": 24317,
+      "sha256": "da3a257ef5bcba42de65f5d4dda00a81c782e1034a28f3aaa72c8e881f6c4818"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/baseline-low-orbit.jpg",
+      "bytes": 58548,
+      "sha256": "23c20f4dc97e749a9b1c013e970b0330d06726e9390f687bea86dc4f3db3a3bd"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/final-cycle6-preview-state.json",
+      "bytes": 4214,
+      "sha256": "03c7dbca97f2f83a1051b4543ad98a3e75990506ef35fdac9a53ab9adbef5375"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/final-cycle6-preview.jpg",
+      "bytes": 71751,
+      "sha256": "c4b0d2adf2ee40d3c3b341aad7e58aa45c14f7a7c9883c677d4339edd1ca23b2"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/fixed-low-orbit-rain.jpg",
+      "bytes": 60331,
+      "sha256": "9f40ab0772edb5ca1c1131a886e84b934312545d25ddb7a0209e6d12ef90d396"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/focus-baseline.json",
+      "bytes": 2697,
+      "sha256": "d0116f9812f1ce36d9884683002e6a7b1c629ef5164adeebf258b0b978ead721"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/focus-desktop-fixed.jpg",
+      "bytes": 89863,
+      "sha256": "476e884a82214da1e5e613d8d28d9ec19fe8d9e1a52ff110501f10e3a3ed1c00"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/focus-desktop-fixed.json",
+      "bytes": 2694,
+      "sha256": "8aafd0ddedee8ec0c1faf95f5509be4beac9242cccab8267fb22dfcb6233b295"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/focus-mobile-fixed.jpg",
+      "bytes": 29453,
+      "sha256": "d1c310e090c7febd233f4a009d0bd2ac4fe12963029df6e4bf7b3029b2873f0a"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/focus-mobile-fixed.json",
+      "bytes": 2856,
+      "sha256": "c41bcba0859251afe93082d28227d56b40187bf82cab55d1d5dff616c366ffbb"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/focus-short-fixed.jpg",
+      "bytes": 42382,
+      "sha256": "abcacb46dff216e98ed597598ad97cf455a1886d72542ab691c30204a8ecb698"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/focus-short-fixed.json",
+      "bytes": 2629,
+      "sha256": "3e64b4bf3ff4e63202f4cef75f8f02533d853f3bacafbeb7b39b2b151647ab9d"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/main-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/main-low-rain-native-30s.json",
+      "bytes": 23517,
+      "sha256": "1aa0fe538124a456a226fe96aea0a6de8fc0b0edd064222a763e0b83c5057403"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/mobile-atmosphere.jpg",
+      "bytes": 33320,
+      "sha256": "0699046ec16edc0f476a6c660c852b714db1e545c26858d6e64fb03a09d99839"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/mobile-start.jpg",
+      "bytes": 23760,
+      "sha256": "09c8f3e59ea7c0923b69287153d0c29261ba1d8dd9657c9ceeab4015081f19b4"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/short-cloud.jpg",
+      "bytes": 40203,
+      "sha256": "9d63caf1ead29aa15fb5babaad75f8f4d5aa897bca0c49cea883a91ab5842d51"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/terrain-audit-cpu.json",
+      "bytes": 317637,
+      "sha256": "9a2584d7fade3346e79a42468607e581480f787b08a2c354c8cddf6d240561c9"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/terrain-audit.html",
+      "bytes": 237043,
+      "sha256": "c9abbf5bfe8dcfb79b740058f81679c442410a1314f3942cd9c04ad74bbf110b"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/terrain-gpu-audit.jpg",
+      "bytes": 31674,
+      "sha256": "bd8ae62a7f4152be4c2e1608fac74d588a61196641ed4915dd8e37c634f0fe61"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/terrain-gpu-audit.json",
+      "bytes": 818270,
+      "sha256": "53688e07073b6b3f294ddcdf6eaf90a490ec8627f631b7438567107c6342ae33"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/terrain-gpu-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/terrain-reachable-witness.json",
+      "bytes": 913,
+      "sha256": "0316c4e53a37b6b6e2ab6ecd8843b4ab734f03c8da199edd9c40b230e0a1ec2e"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/worker-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/worker-low-rain-native-30s.jpg",
+      "bytes": 89594,
+      "sha256": "91abe9c05db10bc7d48c3581ce0ec942a59cd6a943203a4ab2279d46bbfb61f8"
+    },
+    {
+      "path": "docs/measurements/terrain-focus-2026-10-15/worker-low-rain-native-30s.json",
+      "bytes": 26504,
+      "sha256": "16829a31b6e777bbd5c5c85539565695639440beee400f53f8e762d9691e400a"
+    }
+  ]
+}

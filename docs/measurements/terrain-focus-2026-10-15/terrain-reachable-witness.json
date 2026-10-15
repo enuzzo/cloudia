@@ -1,0 +1,32 @@
+{
+  "method": "Reachable desktop panorama witness derived from raw historical GPU sample10. OrbitView CPU math then f32 equals uploaded legacy position exactly. Shader height readback, not a historical image or intersection solve.",
+  "target": [
+    0.4296875,
+    2.9365234375,
+    0
+  ],
+  "aspect": 1.7768331562167907,
+  "approach": 0,
+  "yaw": -0.6899948285928187,
+  "pitch": -0.6672846153128498,
+  "rawCameraOrigin": [
+    -7.5703125,
+    -6.965161729574762,
+    9.693122863769531
+  ],
+  "oldSeaFloorOriginF32": [
+    -7.5703125,
+    -3.799999952316284,
+    9.693122863769531
+  ],
+  "legacyGpuHeightKm": 0.6857367753982544,
+  "oldRadialHeightKm": 0.21187113329415297,
+  "legacyPenetrationKm": 0.4738656421041014,
+  "currentClampedOriginF32": [
+    -7.5703125,
+    -3.0057003498077393,
+    9.693122863769531
+  ],
+  "currentGpuHeightKm": 0.8061704635620117,
+  "currentRadialClearanceKm": 0.1999987924555171
+}

@@ -1,0 +1,16 @@
+{
+  "viewport": [
+    1280,
+    432
+  ],
+  "before": {
+    "name": "wind",
+    "tag": "INPUT"
+  },
+  "after": {
+    "aria": "Nube volumetrica ruotabile",
+    "open": 0,
+    "tag": "CANVAS"
+  },
+  "dom": "- main:\n  - generic \"Nube volumetrica ruotabile\"\n  - heading \"Cloudia.\" [level=1]\n  - paragraph:\n    - generic: Congesto largo\n    - generic: Sole\n  - status: WebGPU · convezione attiva\n  - generic \"Controlli del cielo\":\n    - navigation \"Modalità di controllo\":\n      - generic \"Mani in arrivo\":\n        - text: Mani\n        - generic: in arrivo\n    - status: \"Scenario: Sole\"\n    - navigation \"Distanza dalla nube\":\n      - button \"Avvicinati alla nube\":\n      - button \"Allontanati dalla nube\":\n      - button \"Torna al panorama\":\n    - navigation \"Comandi del cielo\":\n      - button \"Riprendi\":\n      - generic \"Scenari atmosferici\":\n        - button \"Sole\" [pressed]:\n          - generic: Sole\n        - button \"Tramonto\":\n          - generic: Tramonto\n        - button \"Pioggia\":\n          - generic: Pioggia\n        - button \"Temporale\":\n          - generic: Temporale\n      - generic \"Regola il cielo\" [active]:\n        - generic: Regola\n      - region \"Regola il cielo\":\n        - heading \"Regola il cielo\" [level=2]\n        - button \"Chiudi regolazioni\":\n        - tablist \"Regolazioni del cielo\":\n          - tab \"Nube\" [selected]\n          - tab \"Atmosfera\"\n          - tab \"Misure\"\n        - tabpanel \"Nube\":\n          - text: Forma\n          - combobox \"Forma\":\n            - option \"Congesto largo\" [selected]\n            - option \"Torri multiple\"\n            - option \"Cella inclinata\"\n          - text: Vento\n          - status: 55%\n          - slider \"Vento\": \"55\"\n          - text: Avvicinamento\n          - status: 0%\n          - slider \"Avvicinamento\": \"0\"\n          - generic: Avvicinamento 0%\n          - text: Dispersione\n          - status: 0%\n          - slider \"Dispersione\": \"0\"\n          - button \"Raffica\"\n          - button \"Disperdi\"\n          - button \"Ricondensa\"\n          - button \"Nuova forma\":\n            - text: Nuova forma\n          - button \"Orbita\"\n          - button \"Luce da destra\"\n          - button \"Ricomincia\"\n          - status: Correnti ascendenti e discendenti · vento 55% Dispersione 0% · vista 5° / 0°\n          - generic: \"Nuova forma alterna tre famiglie e varia ogni nube. Disperdi allarga e assottiglia localmente il vapore, poi lo ricondensa. Tastiera sulla scena: frecce per ruotare, Home per ricentrare.\""
+}

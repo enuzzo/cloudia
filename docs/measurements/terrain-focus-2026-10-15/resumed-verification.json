@@ -1,0 +1,23 @@
+{
+  "clientDate": "2026-10-15",
+  "purpose": "Revalidate previously qualified v40 checkpoint after user resumes and File Provider reads recover. Original manifest is historical and unchanged.",
+  "shaChecks": {
+    "verified": 31,
+    "allMatch": true
+  },
+  "checks": {
+    "tests": 155,
+    "testFiles": 27,
+    "typecheck": "passed",
+    "appBuild": "passed",
+    "heroBuild": "passed"
+  },
+  "dependencyPreparation": {
+    "installPerformed": false,
+    "platform": "darwin arm64",
+    "nodeModulesGitIgnored": true,
+    "nodeModulesTrackedPaths": 0,
+    "fileProviderIgnoreAttribute": "1"
+  },
+  "state": "Ready for exact-path local commit; no push/merge/deploy. node_modules 2 untouched."
+}

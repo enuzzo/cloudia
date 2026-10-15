@@ -48,6 +48,7 @@ export class OrbitPointerController {
  }
  private down=(e:PointerEvent)=>{
   if(e.button!==0||e.isPrimary===false||this.active!==null)return;
+  this.canvas.focus({preventScroll:true});
   this.active=e.pointerId;this.x=e.clientX;this.y=e.clientY;
   try{this.canvas.setPointerCapture?.(e.pointerId);}catch{/* Capture may be unavailable after interruption. */}
   this.canvas.classList.add('dragging');e.preventDefault();
