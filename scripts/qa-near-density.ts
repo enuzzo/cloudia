@@ -1,14 +1,16 @@
 /** CPU-only opacity-weighted material/light diagnostic. No GPU or visual acceptance. */
 import {readFileSync,writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import {generateVolume,sampleCloudDensity,sampleDetail,iceHeights,BOUNDS_MIN,BOUNDS_SIZE,materialExtinction} from '../src/cumulonimbus/volume';
+import {generateVolume,sampleCloudDensity,sampleDetail,iceHeights,materialExtinction} from '../src/cumulonimbus/volume';
 import {motionState} from '../src/cumulonimbus/motion';
 import {fillMotionField,writeFilteredSourcePosition,MOTION_FIELD_SIZE} from '../src/cumulonimbus/motionField';
-import {OrbitView,probeApproach} from '../src/cumulonimbus/camera';
+import {OrbitView,probeApproach,comparisonSurfaceDistance} from '../src/cumulonimbus/camera';
 import {solarDirection} from '../src/cumulonimbus/sun';
 import {atmosphereLighting} from '../src/cumulonimbus/atmosphere';
 
-const output=process.argv[2];if(!output)throw new Error('Usage: bun scripts/qa-near-density.ts <output.json>');
+const output=process.argv[2];if(!output)throw new Error('Usage: bun scripts/qa-near-density.ts <output.json> [fixed-surface-km]');
+const comparisonSurface=process.argv[3]===undefined?null:comparisonSurfaceDistance(`?profile=1&surface=${encodeURIComponent(process.argv[3])}`);
+if(process.argv[3]!==undefined&&comparisonSurface===null)throw new Error('Invalid fixed comparison surface');
 const seed=1571198069,time=60,windStrength=.55,aspect=1672/941,tanFov=.2867;
 const seedPhase=(seed%71)/71*.35;
 const wind=[windStrength*(.52+.23*Math.sin(time*.055+seedPhase*3)),windStrength*.26*Math.sin(time*.031+.6)];
@@ -56,7 +58,7 @@ function histogram(samples:VisibleSample[],key:'raw'|'density',edges:number[]){
  return {edges,opacityFractions:bins.map(v=>rounded(v/total))};
 }
 function march(approach:number,uv:number[],step:number){
- view.setApproach(approach);const camera=view.frame(center,aspect,0,probe.distance),origin=camera.origin;
+ view.setApproach(approach);const camera=view.frame(center,aspect,0,comparisonSurface??probe.distance),origin=camera.origin;
  const sx=uv[0]*2-1,sy=1-uv[1]*2-.16*(1-approach),ray=normal([sx*aspect*tanFov,sy*tanFov,-1]);
  let near=0,far=Infinity;
  for(let i=0;i<3;i++){
@@ -79,11 +81,11 @@ function march(approach:number,uv:number[],step:number){
  return {hit:true,opacity:rounded(opacity),transmittance:rounded(transmittance),contributingSegments:samples.length,rawSaturatedOpacityFraction:rounded(saturated/opacity),rawExactlyOneOpacityFraction:rounded(exact/opacity),distanceKm:statistics(samples,'distance'),density:statistics(samples,'density'),solarTau:statistics(samples,'solarTau'),skyTau:statistics(samples,'skyTau'),macroSourceLuminance:statistics(samples,'source'),densityDistribution:histogram(samples,'density',[0,.025,.1,.25,.5,.75,.9,.98,1.000001]),rawDistribution:histogram(samples,'raw',[0,.25,.5,.75,.9,.98,1.000001])};
 }
 const poses=[.8,.95,1].map(approach=>{
- view.setApproach(approach);const camera=view.frame(center,aspect,0,probe.distance);
+ view.setApproach(approach);const camera=view.frame(center,aspect,0,comparisonSurface??probe.distance);
  const results=rays.map(r=>({name:r.name,uv:r.uv,steps:[.003,.006].map(stepKm=>({stepKm,...march(approach,r.uv,stepKm)}))}));
  const means=results.map(r=>r.steps[0]).filter(r=>'macroSourceLuminance'in r).map(r=>(r as any).macroSourceLuminance.mean),average=means.reduce((a,b)=>a+b,0)/means.length;
  return {approach,origin:camera.origin.map(rounded),distanceFromTargetKm:rounded(camera.distance),estimatedCentralClearanceMetres:rounded((camera.distance-(probe.distance-.003))*1000),macroSourceAcrossFiveRays:{mean:rounded(average),coefficientOfVariation:rounded(Math.sqrt(means.reduce((sum,v)=>sum+(v-average)**2,0)/means.length)/average),relativeRange:rounded((Math.max(...means)-Math.min(...means))/average)},rays:results};
 });
-const report={date:new Date().toISOString(),method:'CPU diagnostic, not WGSL execution, GPU readback, final pixel rendering or photographic validation. One existing 256³ macro/128³ detail volume; current16³ half-float clamp/trilinear motion reference. Corrected probe uses filtered field+flow.a, with camera micro erosion omitted conservatively. Runtime default windStrength=.55 at cloud time60; no gust/dispersion/rain/flash; mature growth. Five specified UV rays, front yaw/pitch0,1672x941 aspect,FOV tan .2867. Fixed midpoint quadrature at3m and6m with exponential integration and transmittance cutoff.006. Density includes existing camera micro erosion; opacity weights are T_before*(1-exp(-sigma*ds)). Cache depths decoded as stored UNORM8*16 at unwarped local coordinates. Source is existing clear/day direct+ambient+multiple lighting before aerial mixing and tone mapping. No new density or light model introduced. Histograms and moments use visible opacity weights, not radiance weights. Raw>=.98 flags nearly saturated macro samples; exact raw1 is immune to normalized subtractive erosion.',sourceHashes,seed,time,windStrength,wind:wind.map(rounded),drift:drift.map(rounded),center:center.map(rounded),volume:256,detail:volume.detail.size,motionField:MOTION_FIELD_SIZE,iceRange:ice,probe,lighting,poses};
+const report={date:new Date().toISOString(),method:'CPU diagnostic, not WGSL execution, GPU readback, final pixel rendering or photographic validation. One existing 256³ macro/128³ detail volume; current16³ half-float clamp/trilinear motion reference. Corrected probe uses filtered field+flow.a, with camera micro erosion omitted conservatively. Runtime default windStrength=.55 at cloud time60; no gust/dispersion/rain/flash; mature growth. Five specified UV rays, front yaw/pitch0,1672x941 aspect,FOV tan .2867. Fixed midpoint quadrature at3m and6m with exponential integration and transmittance cutoff.006. Density includes existing camera micro erosion; opacity weights are T_before*(1-exp(-sigma*ds)). Cache depths decoded as stored UNORM8*16 at unwarped local coordinates. Source is existing clear/day direct+ambient+multiple lighting before aerial mixing and tone mapping. Density and cached lighting use the current source model and its recorded hashes; a fixed comparison radius, when supplied, is not recomputed from this material. Histograms and moments use visible opacity weights, not radiance weights. Raw>=.98 flags nearly saturated macro samples; exact raw1 is immune to normalized subtractive erosion.',sourceHashes,comparisonSurfaceKm:comparisonSurface,seed,time,windStrength,wind:wind.map(rounded),drift:drift.map(rounded),center:center.map(rounded),volume:256,detail:volume.detail.size,motionField:MOTION_FIELD_SIZE,iceRange:ice,probe,lighting,poses};
 writeFileSync(output,JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(poses.map(p=>({approach:p.approach,centralClearanceMetres:p.estimatedCentralClearanceMetres,sourceAcrossRays:p.macroSourceAcrossFiveRays,rays:p.rays.map(r=>({name:r.name,...Object.fromEntries(['rawSaturatedOpacityFraction','rawExactlyOneOpacityFraction','transmittance','density','solarTau','skyTau','macroSourceLuminance'].map(key=>[key,(r.steps[0] as any)[key]]))}))}))));

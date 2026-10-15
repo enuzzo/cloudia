@@ -1,0 +1,592 @@
+{
+  "method": "Temporary instrumented copy of current macro anatomy/density,128\u00b3; no detail texture or optical-light bake. Baseline/scaled use identical lobe RNG/positions/radii; scaled changes liquid main/child smooth-union radii only. Without-child fields retain all other lobes.",
+  "cases": [
+    {
+      "seed": 72,
+      "durationMs": 5101.612875,
+      "baseline": {
+        "size": 128,
+        "seed": 72,
+        "scaled": false,
+        "children": 2016,
+        "liquidChildren": 1882,
+        "macroMass": 22.227533448744712,
+        "withoutChildrenMacroMass": 22.152868734752545,
+        "childMassFraction": 0.0033591092850829385,
+        "occupied": 107426,
+        "childrenOnlySupport": 607,
+        "childrenOnlySupportFraction": 0.005650401206411856,
+        "changedVoxelsFraction": 0.0017023086547851562,
+        "childCentersVisibleFraction": 0.7507970244420828,
+        "childCentersOutsideParentFieldFraction": 0,
+        "childCentersVisibleOutsideParentField": 0,
+        "childCentersChangedDensityFraction": 0.1312433581296493,
+        "radiusKm": {
+          "min": 0.03466607654862106,
+          "q10": 0.05083165629811584,
+          "median": 0.0849484438780984,
+          "q90": 0.1426881216890465,
+          "max": 0.2299677060539391,
+          "mean": 0.09143110595022098
+        },
+        "blendKm": {
+          "min": 0.2,
+          "q10": 0.2,
+          "median": 0.2,
+          "q90": 0.2,
+          "max": 0.2,
+          "mean": 0.19999999999999318
+        },
+        "heightScale": {
+          "min": 0.48,
+          "q10": 0.48,
+          "median": 0.996242854003226,
+          "q90": 1,
+          "max": 1,
+          "mean": 0.8473239607693628
+        },
+        "baseErosionKm": {
+          "min": -0.693545998695356,
+          "q10": -0.5099534652837999,
+          "median": -0.37461697691884704,
+          "q90": -0.23629119794789694,
+          "max": -0.047506972107010395,
+          "mean": -0.3747326186881727
+        },
+        "carvingAtField05Km": {
+          "min": -0.6556832494958472,
+          "q10": -0.4744886507614855,
+          "median": -0.3128386164285384,
+          "q90": -0.16097993926337414,
+          "max": -0.0473626366882825,
+          "mean": -0.3157067722389015
+        },
+        "carvingAtField10Km": {
+          "min": -0.5960237809957898,
+          "q10": -0.4313157609011675,
+          "median": -0.28437397958327737,
+          "q90": -0.14633265702304102,
+          "max": -0.04305319347197817,
+          "mean": -0.2869862499166099
+        },
+        "carvingAtField20Km": {
+          "min": -0.3653785630625531,
+          "q10": -0.26440812928807206,
+          "median": -0.17434204407661874,
+          "q90": -0.08970584338577227,
+          "max": -0.026392762281672442,
+          "mean": -0.1759518861060293
+        },
+        "actualCarvingKm": {
+          "min": -0.5017915132643671,
+          "q10": -0.2584028555482054,
+          "median": -0.1424209818568438,
+          "q90": -0.07093305451295731,
+          "max": -0.01900278884280416,
+          "mean": -0.15503757353955122
+        },
+        "fieldInflationFromChildrenKm": {
+          "min": 0,
+          "q10": 0,
+          "median": 4.678964614868164e-06,
+          "q90": 0.023950599133968353,
+          "max": 0.13657362759113312,
+          "mean": 0.0066904483262081324
+        }
+      },
+      "scaled": {
+        "size": 128,
+        "seed": 72,
+        "scaled": true,
+        "children": 2016,
+        "liquidChildren": 1882,
+        "macroMass": 20.94396815405172,
+        "withoutChildrenMacroMass": 20.943853426166537,
+        "childMassFraction": 5.477848530866438e-06,
+        "occupied": 100769,
+        "childrenOnlySupport": 3,
+        "childrenOnlySupportFraction": 2.977106054441346e-05,
+        "changedVoxelsFraction": 2.384185791015625e-06,
+        "childCentersVisibleFraction": 0.6641870350690755,
+        "childCentersOutsideParentFieldFraction": 0,
+        "childCentersVisibleOutsideParentField": 0,
+        "childCentersChangedDensityFraction": 0.001594048884165781,
+        "radiusKm": {
+          "min": 0.03466607654862106,
+          "q10": 0.05083165629811584,
+          "median": 0.0849484438780984,
+          "q90": 0.1426881216890465,
+          "max": 0.2299677060539391,
+          "mean": 0.09143110595022098
+        },
+        "blendKm": {
+          "min": 0.0055465722477793696,
+          "q10": 0.008133065007698536,
+          "median": 0.013591751020495743,
+          "q90": 0.022830099470247438,
+          "max": 0.03679483296863025,
+          "mean": 0.014628976952035319
+        },
+        "heightScale": {
+          "min": 0.48,
+          "q10": 0.48,
+          "median": 0.996242854003226,
+          "q90": 1,
+          "max": 1,
+          "mean": 0.8473239607693628
+        },
+        "baseErosionKm": {
+          "min": -0.693545998695356,
+          "q10": -0.5099534652837999,
+          "median": -0.37461697691884704,
+          "q90": -0.23629119794789694,
+          "max": -0.047506972107010395,
+          "mean": -0.3747326186881727
+        },
+        "carvingAtField05Km": {
+          "min": -0.6556832494958472,
+          "q10": -0.4744886507614855,
+          "median": -0.3128386164285384,
+          "q90": -0.16097993926337414,
+          "max": -0.0473626366882825,
+          "mean": -0.3157067722389015
+        },
+        "carvingAtField10Km": {
+          "min": -0.5960237809957898,
+          "q10": -0.4313157609011675,
+          "median": -0.28437397958327737,
+          "q90": -0.14633265702304102,
+          "max": -0.04305319347197817,
+          "mean": -0.2869862499166099
+        },
+        "carvingAtField20Km": {
+          "min": -0.3653785630625531,
+          "q10": -0.26440812928807206,
+          "median": -0.17434204407661874,
+          "q90": -0.08970584338577227,
+          "max": -0.026392762281672442,
+          "mean": -0.1759518861060293
+        },
+        "actualCarvingKm": {
+          "min": -0.575300953200764,
+          "q10": -0.32597279389794376,
+          "median": -0.15216782246533286,
+          "q90": -0.07319030557970096,
+          "max": -0.01900278884280416,
+          "mean": -0.17622690072398156
+        },
+        "fieldInflationFromChildrenKm": {
+          "min": 0,
+          "q10": 0,
+          "median": 0,
+          "q90": 0,
+          "max": 0.12405363470315933,
+          "mean": 0.001536205274623984
+        }
+      },
+      "comparison": {
+        "massChangeFraction": -0.05774663651514975,
+        "absoluteDensityChangeFraction": 0.05774663651514975,
+        "changedVoxelFraction": 0.009366989135742188,
+        "lostSupportVoxels": 6657,
+        "gainedSupportVoxels": 0
+      }
+    },
+    {
+      "seed": 73,
+      "durationMs": 4835.095667,
+      "baseline": {
+        "size": 128,
+        "seed": 73,
+        "scaled": false,
+        "children": 1656,
+        "liquidChildren": 1466,
+        "macroMass": 23.899859988151306,
+        "withoutChildrenMacroMass": 23.812399786469435,
+        "childMassFraction": 0.0036594441024019077,
+        "occupied": 117937,
+        "childrenOnlySupport": 807,
+        "childrenOnlySupportFraction": 0.006842636322782502,
+        "changedVoxelsFraction": 0.0018868446350097656,
+        "childCentersVisibleFraction": 0.7510231923601637,
+        "childCentersOutsideParentFieldFraction": 0,
+        "childCentersVisibleOutsideParentField": 0,
+        "childCentersChangedDensityFraction": 0.15075034106412005,
+        "radiusKm": {
+          "min": 0.03491043338187039,
+          "q10": 0.06038006568843617,
+          "median": 0.10254638965668746,
+          "q90": 0.16267857939142613,
+          "max": 0.2664543475875757,
+          "mean": 0.10750659839770743
+        },
+        "blendKm": {
+          "min": 0.2,
+          "q10": 0.2,
+          "median": 0.2,
+          "q90": 0.2,
+          "max": 0.2,
+          "mean": 0.1999999999999945
+        },
+        "heightScale": {
+          "min": 0.48,
+          "q10": 0.48,
+          "median": 1,
+          "q90": 1,
+          "max": 1,
+          "mean": 0.8847291467087418
+        },
+        "baseErosionKm": {
+          "min": -0.6706032247101568,
+          "q10": -0.504980210132667,
+          "median": -0.37883345636979104,
+          "q90": -0.24515550008931533,
+          "max": -0.04001947661730658,
+          "mean": -0.37519463953009224
+        },
+        "carvingAtField05Km": {
+          "min": -0.6647598030356718,
+          "q10": -0.4791584289266688,
+          "median": -0.33148239040187777,
+          "q90": -0.17472669756374437,
+          "max": -0.039897889665778306,
+          "mean": -0.33052248180710075
+        },
+        "carvingAtField10Km": {
+          "min": -0.6042744748534971,
+          "q10": -0.43556064414405066,
+          "median": -0.30132138927258195,
+          "q90": -0.15882862190383032,
+          "max": -0.036267650684434084,
+          "mean": -0.300452179184809
+        },
+        "carvingAtField20Km": {
+          "min": -0.37043645968030475,
+          "q10": -0.2670103565634027,
+          "median": -0.18471809304066328,
+          "q90": -0.09736620499851668,
+          "max": -0.022233042565170322,
+          "mean": -0.18419952598475162
+        },
+        "actualCarvingKm": {
+          "min": -0.4978272762890563,
+          "q10": -0.25564841466518334,
+          "median": -0.15277996089671697,
+          "q90": -0.0779952491516944,
+          "max": -0.01600779064692263,
+          "mean": -0.16033072822269562
+        },
+        "fieldInflationFromChildrenKm": {
+          "min": 0,
+          "q10": 0,
+          "median": 0.00010526180267333984,
+          "q90": 0.032896578311920166,
+          "max": 0.10147853940725327,
+          "mean": 0.009021953741878799
+        }
+      },
+      "scaled": {
+        "size": 128,
+        "seed": 73,
+        "scaled": true,
+        "children": 1656,
+        "liquidChildren": 1466,
+        "macroMass": 22.537819897218167,
+        "withoutChildrenMacroMass": 22.537708754133337,
+        "childMassFraction": 4.931403540206539e-06,
+        "occupied": 110435,
+        "childrenOnlySupport": 3,
+        "childrenOnlySupportFraction": 2.7165300855706977e-05,
+        "changedVoxelsFraction": 2.86102294921875e-06,
+        "childCentersVisibleFraction": 0.6459754433833561,
+        "childCentersOutsideParentFieldFraction": 0,
+        "childCentersVisibleOutsideParentField": 0,
+        "childCentersChangedDensityFraction": 0.001364256480218281,
+        "radiusKm": {
+          "min": 0.03491043338187039,
+          "q10": 0.06038006568843617,
+          "median": 0.10254638965668746,
+          "q90": 0.16267857939142613,
+          "max": 0.2664543475875757,
+          "mean": 0.10750659839770743
+        },
+        "blendKm": {
+          "min": 0.005585669341099263,
+          "q10": 0.009660810510149788,
+          "median": 0.01640742234506999,
+          "q90": 0.02602857270262818,
+          "max": 0.04263269561401211,
+          "mean": 0.017201055743633203
+        },
+        "heightScale": {
+          "min": 0.48,
+          "q10": 0.48,
+          "median": 1,
+          "q90": 1,
+          "max": 1,
+          "mean": 0.8847291467087418
+        },
+        "baseErosionKm": {
+          "min": -0.6706032247101568,
+          "q10": -0.504980210132667,
+          "median": -0.37883345636979104,
+          "q90": -0.24515550008931533,
+          "max": -0.04001947661730658,
+          "mean": -0.37519463953009224
+        },
+        "carvingAtField05Km": {
+          "min": -0.6647598030356718,
+          "q10": -0.4791584289266688,
+          "median": -0.33148239040187777,
+          "q90": -0.17472669756374437,
+          "max": -0.039897889665778306,
+          "mean": -0.33052248180710075
+        },
+        "carvingAtField10Km": {
+          "min": -0.6042744748534971,
+          "q10": -0.43556064414405066,
+          "median": -0.30132138927258195,
+          "q90": -0.15882862190383032,
+          "max": -0.036267650684434084,
+          "mean": -0.300452179184809
+        },
+        "carvingAtField20Km": {
+          "min": -0.37043645968030475,
+          "q10": -0.2670103565634027,
+          "median": -0.18471809304066328,
+          "q90": -0.09736620499851668,
+          "max": -0.022233042565170322,
+          "mean": -0.18419952598475162
+        },
+        "actualCarvingKm": {
+          "min": -0.5870172004159312,
+          "q10": -0.32592745499454295,
+          "median": -0.16121875043814865,
+          "q90": -0.07991341261418997,
+          "max": -0.01600779064692263,
+          "mean": -0.18314762344790872
+        },
+        "fieldInflationFromChildrenKm": {
+          "min": 0,
+          "q10": 0,
+          "median": 0,
+          "q90": 0.005143478512763977,
+          "max": 0.10730171576142311,
+          "mean": 0.0035668867373379078
+        }
+      },
+      "comparison": {
+        "massChangeFraction": -0.056989459001366115,
+        "absoluteDensityChangeFraction": 0.056989459001366115,
+        "changedVoxelFraction": 0.010083198547363281,
+        "lostSupportVoxels": 7502,
+        "gainedSupportVoxels": 0
+      }
+    },
+    {
+      "seed": 1571198069,
+      "durationMs": 3648.585832999999,
+      "baseline": {
+        "size": 128,
+        "seed": 1571198069,
+        "scaled": false,
+        "children": 1368,
+        "liquidChildren": 1159,
+        "macroMass": 14.157112788484405,
+        "withoutChildrenMacroMass": 14.11212435658647,
+        "childMassFraction": 0.0031777970953603433,
+        "occupied": 72214,
+        "childrenOnlySupport": 387,
+        "childrenOnlySupportFraction": 0.005359071648156867,
+        "changedVoxelsFraction": 0.0010194778442382812,
+        "childCentersVisibleFraction": 0.724762726488352,
+        "childCentersOutsideParentFieldFraction": 0,
+        "childCentersVisibleOutsideParentField": 0,
+        "childCentersChangedDensityFraction": 0.11302847282139776,
+        "radiusKm": {
+          "min": 0.029093695731763125,
+          "q10": 0.05009484654443694,
+          "median": 0.0790654864025265,
+          "q90": 0.12988525543091686,
+          "max": 0.19958878063712102,
+          "mean": 0.08454276335252461
+        },
+        "blendKm": {
+          "min": 0.2,
+          "q10": 0.2,
+          "median": 0.2,
+          "q90": 0.2,
+          "max": 0.2,
+          "mean": 0.19999999999999601
+        },
+        "heightScale": {
+          "min": 0.48,
+          "q10": 0.48624299010785677,
+          "median": 1,
+          "q90": 1,
+          "max": 1,
+          "mean": 0.8908397984033538
+        },
+        "baseErosionKm": {
+          "min": -0.6984164756408701,
+          "q10": -0.5155882968947515,
+          "median": -0.38104617346009834,
+          "q90": -0.2526154873717939,
+          "max": -0.05245507133238471,
+          "mean": -0.3815525964272636
+        },
+        "carvingAtField05Km": {
+          "min": -0.6962945505846695,
+          "q10": -0.4841116513093469,
+          "median": -0.3371544864303105,
+          "q90": -0.1823446849644171,
+          "max": -0.05229570262607972,
+          "mean": -0.33712066028129684
+        },
+        "carvingAtField10Km": {
+          "min": -0.6329399310495385,
+          "q10": -0.44006318151237106,
+          "median": -0.3065699077688636,
+          "q90": -0.16575346199638788,
+          "max": -0.04753740839497364,
+          "mean": -0.306450630455851
+        },
+        "carvingAtField20Km": {
+          "min": -0.38800915313381673,
+          "q10": -0.2697705327278903,
+          "median": -0.18805897605485833,
+          "q90": -0.1016113176989351,
+          "max": -0.029141706295769284,
+          "mean": -0.18787941467135233
+        },
+        "actualCarvingKm": {
+          "min": -0.5146415059991349,
+          "q10": -0.262093177666133,
+          "median": -0.15358454631305676,
+          "q90": -0.08418836515051882,
+          "max": -0.020982028532953886,
+          "mean": -0.16614741785609047
+        },
+        "fieldInflationFromChildrenKm": {
+          "min": 0,
+          "q10": 0,
+          "median": 0,
+          "q90": 0.02411419153213501,
+          "max": 0.08602241426706314,
+          "mean": 0.006530773103545718
+        }
+      },
+      "scaled": {
+        "size": 128,
+        "seed": 1571198069,
+        "scaled": true,
+        "children": 1368,
+        "liquidChildren": 1159,
+        "macroMass": 13.43911995068414,
+        "withoutChildrenMacroMass": 13.439046209611721,
+        "childMassFraction": 5.4870462268212365e-06,
+        "occupied": 68231,
+        "childrenOnlySupport": 3,
+        "childrenOnlySupportFraction": 4.396828421098914e-05,
+        "changedVoxelsFraction": 1.9073486328125e-06,
+        "childCentersVisibleFraction": 0.6479723899913719,
+        "childCentersOutsideParentFieldFraction": 0,
+        "childCentersVisibleOutsideParentField": 0,
+        "childCentersChangedDensityFraction": 0.0008628127696289905,
+        "radiusKm": {
+          "min": 0.029093695731763125,
+          "q10": 0.05009484654443694,
+          "median": 0.0790654864025265,
+          "q90": 0.12988525543091686,
+          "max": 0.19958878063712102,
+          "mean": 0.08454276335252461
+        },
+        "blendKm": {
+          "min": 0.005608866303681889,
+          "q10": 0.009657600717410814,
+          "median": 0.015242743533032564,
+          "q90": 0.025040099382638174,
+          "max": 0.03847798494318903,
+          "mean": 0.016298687556233343
+        },
+        "heightScale": {
+          "min": 0.48,
+          "q10": 0.48624299010785677,
+          "median": 1,
+          "q90": 1,
+          "max": 1,
+          "mean": 0.8908397984033538
+        },
+        "baseErosionKm": {
+          "min": -0.6984164756408701,
+          "q10": -0.5155882968947515,
+          "median": -0.38104617346009834,
+          "q90": -0.2526154873717939,
+          "max": -0.05245507133238471,
+          "mean": -0.3815525964272636
+        },
+        "carvingAtField05Km": {
+          "min": -0.6962945505846695,
+          "q10": -0.4841116513093469,
+          "median": -0.3371544864303105,
+          "q90": -0.1823446849644171,
+          "max": -0.05229570262607972,
+          "mean": -0.33712066028129684
+        },
+        "carvingAtField10Km": {
+          "min": -0.6329399310495385,
+          "q10": -0.44006318151237106,
+          "median": -0.3065699077688636,
+          "q90": -0.16575346199638788,
+          "max": -0.04753740839497364,
+          "mean": -0.306450630455851
+        },
+        "carvingAtField20Km": {
+          "min": -0.38800915313381673,
+          "q10": -0.2697705327278903,
+          "median": -0.18805897605485833,
+          "q90": -0.1016113176989351,
+          "max": -0.029141706295769284,
+          "mean": -0.18787941467135233
+        },
+        "actualCarvingKm": {
+          "min": -0.6519780234285456,
+          "q10": -0.32745872166382756,
+          "median": -0.16333773325598916,
+          "q90": -0.08849260143452548,
+          "max": -0.020982028532953886,
+          "mean": -0.186060087124367
+        },
+        "fieldInflationFromChildrenKm": {
+          "min": 0,
+          "q10": 0,
+          "median": 0,
+          "q90": 0,
+          "max": 0.10564785078167915,
+          "mean": 0.0014518174819973305
+        }
+      },
+      "comparison": {
+        "massChangeFraction": -0.05071604984204763,
+        "absoluteDensityChangeFraction": 0.05071604984204763,
+        "changedVoxelFraction": 0.005505084991455078,
+        "lostSupportVoxels": 3983,
+        "gainedSupportVoxels": 0
+      }
+    }
+  ],
+  "provenance": {
+    "sourceCheckpoint": "76f449a anatomy, EXTINCTION restored to18 before instrumentation",
+    "instrument": "Temporary source-derived macro-density probe; no production source modified for the negative experiment",
+    "privateInstrumentPath": "/private/tmp/cloudia-billow-probe.ts",
+    "privateRunnerPath": "/private/tmp/cloudia-billow-survival.ts",
+    "instrumentSha256": "1e62d1b0ea46b7504eb525779f2a228a9d9c986c820e3f587d1ebd4a15ab4d05",
+    "runnerSha256": "c049824dd19d14179b22c6ed35cb0f979dbd68f15ad7677e3bae6ab857dfc8d4",
+    "changes": "Added a no-child comparison field, captured carving at fixed signed-field values and authored child centers, and ended before detail/light generation. A second pass changed only liquid primary/child union blend to .16 of the minimum radius; positions, radii and original RNG calls unchanged."
+  },
+  "limitations": [
+    "128 cubed macro sampling only; small blends may be under-resolved. No final detail erosion, lighting, WGSL or rendered visual result.",
+    "A visible child center can be existing parent matter: authored centers are inside the parent. Child mass/support differences use actual with/without-child fields instead.",
+    "This temporary instrument is recorded by hash and private path, not installed as a maintained production script."
+  ]
+}

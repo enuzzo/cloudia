@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-15",
+  "rendererVersion": "observatory-v28-liquid60-experiment",
+  "extinctionPerKm": 60,
+  "iceExtinctionPerKm": 6.5,
+  "change": "Only liquid extinction; unchanged density and camera probe. All solar and sky optical-depth caches freshly rebaked. No added material band or local lighting GPU cache.",
+  "sourceHashes": {
+    "src/cumulonimbus/volume.ts": "f0cc3074f860059f1f5189a9c1207275e89657dc0c0a1fcae41b79fcd6360404",
+    "src/cumulonimbus/cloudShader.ts": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+    "src/cumulonimbus/GPUSceneEngine.ts": "967ec69f7c345553788b66f923c7728fdd080993f881f51180738210db91dea3"
+  },
+  "buildAssets": {
+    "dist/assets/index-Cia3ypEr.css": "99354a5ec1ade2941e4aba36f030b413c9afbad79336f11800929c7d805b4714",
+    "dist/assets/volume.worker-Pi3DBKr8.js": "b0fbb8b6fe6d418e6ea8488c0c43c6a505114b3c667717ba050f8a12e59d0473",
+    "dist/assets/CumulonimbusApp-0qeI9QbM.js": "dbcf41a52124c4689329b988364ec698f76517d48dd67dc4c4665f8716407a62",
+    "dist/assets/LabApp-BIVQGmZd.js": "61b740644d902e97f0e29d2e7924b0d480f6bdfdd7eae827ea06300cd5b247b9",
+    "dist/assets/three.core-DxR5k0T0.js": "e4d296a475f2cd168d934f17f032d4f56291682208332fc6a926b3937200a810",
+    "dist/assets/sky.worker-CHm7n211.js": "503ad9438c1738310a9cbe2a41e9af0524e7046bce79e58d6da7c1e74863caaa",
+    "dist/assets/CumulonimbusApp-BtOAAbpg.css": "48a275cea33834e49834428208e5c8bbc506c500afb961b4d2b6e3e0b126dbde",
+    "dist/assets/index-D-u2Y49R.js": "9d2f2c0d64d426085b9861a092e5abc7316b7479d4563a28db2cfe589089f47d",
+    "dist/assets/render.worker-B_fd2bhR.js": "af852d4e3132d4af74887e8907bac97dac3bcd1a35f5557ddd38ffa6a6e565aa"
+  },
+  "macro": 256,
+  "detail": 128,
+  "steps": 384
+}

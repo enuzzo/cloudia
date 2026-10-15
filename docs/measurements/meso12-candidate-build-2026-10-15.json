@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-15T07:48:18.093668+00:00",
+  "rendererVersion": "observatory-v26-meso-experiment",
+  "parentCheckpoint": "76f449a",
+  "material": {
+    "mesoFrequency": 1.2,
+    "mesoErosion": 0.12,
+    "iceGate": "1-ice",
+    "bake": "sampleCloudDensity at macro voxel centers; undersampling remains possible"
+  },
+  "comparisonSurfaceKm": 0.6045067691053366,
+  "probeSkippedByOverride": true,
+  "artifacts": [
+    {
+      "path": "dist/index.html",
+      "bytes": 911,
+      "sha256": "4f06d7bb5cebfa36da2d87502c56a9a415876832f93e9566ee5fa7ce3832c01e"
+    },
+    {
+      "path": "dist/assets/index-Bi0DeqVa.js",
+      "bytes": 2837,
+      "sha256": "d497b1e50d546c47c74182ae586187fe3d783ae1e4bd907a0beda2bd65938914"
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-C8ENrf-k.js",
+      "bytes": 797634,
+      "sha256": "a73f741e698a507e316a9501cf1bb1e2e33f787f46af79e9920d5df3358f81ef"
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-BtOAAbpg.css",
+      "bytes": 12860,
+      "sha256": "48a275cea33834e49834428208e5c8bbc506c500afb961b4d2b6e3e0b126dbde"
+    },
+    {
+      "path": "dist/assets/render.worker-BqKsxup0.js",
+      "bytes": 954455,
+      "sha256": "4cf49b2dbf2c463c58900b019bcf7cb9877147894287d3c94085ec88fecebf68"
+    },
+    {
+      "path": "dist/assets/volume.worker-B6IgUTpb.js",
+      "bytes": 13443,
+      "sha256": "4e3b88795412dfdfb33ae851735d579f0ce9530d49b95f078b34c966fc4336b5"
+    },
+    {
+      "path": "dist/assets/sky.worker-CHm7n211.js",
+      "bytes": 2960,
+      "sha256": "503ad9438c1738310a9cbe2a41e9af0524e7046bce79e58d6da7c1e74863caaa"
+    }
+  ],
+  "sources": [
+    {
+      "path": "src/cumulonimbus/volume.ts",
+      "bytes": 26089,
+      "sha256": "2091ab0c9312c1e608cf5dbddc60ba2e8c5b96d78e01bae395458eb5ccf9f9ca"
+    },
+    {
+      "path": "src/cumulonimbus/cloudShader.ts",
+      "bytes": 14079,
+      "sha256": "5d5a74bb3594cc8ee34aa68226634635b07c6d858d2e24885a7daf8b8957987f"
+    },
+    {
+      "path": "src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 51026,
+      "sha256": "e53403f1d4a446e9f9dd6f732d8451fee0730e025af7b6b54849aa428b86b92c"
+    }
+  ]
+}

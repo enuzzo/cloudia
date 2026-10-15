@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-15",
+  "rendererVersion": "observatory-v30-interface32-experiment",
+  "parent": "76f449a02a9dd11e95f28010da3492d816c77d83",
+  "change": "Centered final raw-density interface, liquid gain32/km and ice14/km; unchanged v29 feature selection/layout, applied after placement. All caches rebuilt. No claim of global post-erosion mass conservation or actual31.25m GPU interface.",
+  "sourceHashes": {
+    "src/cumulonimbus/volume.ts": "5732ce2b0983af62002501047d702611b08af1a2f9e778ef61793ccf3bcedafd",
+    "src/cumulonimbus/cloudShader.ts": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+    "src/cumulonimbus/GPUSceneEngine.ts": "1ed38068c223f53c250ec690baff4df3b81bfdf430792f8af301650472539e30",
+    "src/cumulonimbus/camera.ts": "f8266a4c247c974a2f401c36b91495ef28ef9f5fe42bfe1d87b8c91f20695a3b"
+  },
+  "assets": {
+    "dist/assets/index-Cia3ypEr.css": "99354a5ec1ade2941e4aba36f030b413c9afbad79336f11800929c7d805b4714",
+    "dist/assets/volume.worker-BDIwFC-c.js": "60fe52ce8fac169dfd01bbf446403d48ed6c2ce713309cb319747a6a7ae705b2",
+    "dist/assets/index-CLkvqyA8.js": "fecea404d434e3d710c3c7eb37bbb3c61393e4864594422685c6bb6c98611be4",
+    "dist/assets/LabApp-BIVQGmZd.js": "61b740644d902e97f0e29d2e7924b0d480f6bdfdd7eae827ea06300cd5b247b9",
+    "dist/assets/three.core-DxR5k0T0.js": "e4d296a475f2cd168d934f17f032d4f56291682208332fc6a926b3937200a810",
+    "dist/assets/sky.worker-CHm7n211.js": "503ad9438c1738310a9cbe2a41e9af0524e7046bce79e58d6da7c1e74863caaa",
+    "dist/assets/CumulonimbusApp-BtOAAbpg.css": "48a275cea33834e49834428208e5c8bbc506c500afb961b4d2b6e3e0b126dbde",
+    "dist/assets/render.worker-CecpWeIo.js": "98c1ea9292db8abfa4901ed1d37f794768b2cee561d05e8a9860c144d9330bf2",
+    "dist/assets/CumulonimbusApp-N5dsoGSK.js": "5946f1628bf8d43fa3c97d6a1b4dcb1b6021813c08e7f100c617fdd031315e41"
+  },
+  "extinctionPerKm": 18,
+  "iceExtinctionPerKm": 6.5,
+  "macro": 256,
+  "detail": 128,
+  "steps": 384,
+  "fixedRadiusKm": 0.6045067691053366,
+  "fixedTargetKm": [
+    0.4296875,
+    2.9365234375,
+    0
+  ]
+}

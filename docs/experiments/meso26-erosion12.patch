@@ -1,0 +1,99 @@
+diff --git a/src/cumulonimbus/cloudShader.ts b/src/cumulonimbus/cloudShader.ts
+index 52a9816..bb3b0e5 100644
+--- a/src/cumulonimbus/cloudShader.ts
++++ b/src/cumulonimbus/cloudShader.ts
+@@ -3,6 +3,7 @@ import { MOTION_WGSL } from './motion';
+ import {LANDSCAPE_WGSL} from './landscape';
+ import {MEDIA_WGSL} from './medium';
+ import {PRECIPITATION_WGSL,RAIN_SAMPLE_STEP,RAIN_WIND_DISPLACEMENT_BOUND,RAIN_EXTINCTION} from './precipitation';
++import {MESO_DETAIL_FREQUENCY,MESO_DETAIL_EROSION} from './volume';
+ 
+ /** Single-scattering integration with cached solar visibility and a multiple-scattering approximation.
+  * Macro density/light and tiled fine erosion are sampled separately; no nested light march.
+@@ -157,6 +158,12 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
+       let strand=smoothstep(0.3,0.7,wisps);
+       material=mix(1.0,(0.012+0.56*pow(strand,1.7))*(0.65+0.35*smoothstep(0.25,0.75,iceDetail.b))*(1.0-0.7*smoothstep(0.4,3.8,local.x)),ice);
+     }
++    // Intermediate liquid structure fills the scale gap between large billows
++    // and metre-scale inspection. The bake evaluates the same material.
++    if(ice<1.0 && probeMode!=4.0){
++      let meso=textureSampleLevel(detail,detailSampler,local*${MESO_DETAIL_FREQUENCY},0.0).r;
++      erosion+=(1.0-meso)*${MESO_DETAIL_EROSION}*(1.0-ice);
++    }
+     // Additional metre-scale erosion appears only during near inspection.
+     let microWeight=inspection*(1.0-smoothstep(.08,.3,t))*(1.0-ice);
+     if(microWeight>.001){let micro=textureSampleLevel(detail,detailSampler,local*8.0,0.0).b;erosion+=microWeight*(1.0-micro)*.055;}
+diff --git a/src/cumulonimbus/volume.test.ts b/src/cumulonimbus/volume.test.ts
+index cb8c95b..9b74fa8 100644
+--- a/src/cumulonimbus/volume.test.ts
++++ b/src/cumulonimbus/volume.test.ts
+@@ -1,7 +1,7 @@
+ import { describe, expect, it } from 'vitest';
+ import { generateVolume, heightErosionScale, cloudParameters, morphologyFamily, iceHeights, generateDetail, sampleDetail, erodeDensity, sampleCloudDensity, bakeOccupancy, voxelCenter, BOUNDS_MIN, BOUNDS_SIZE, materialExtinction, EMPTY_SKIP_LIMIT, VOLUME_RESOLUTION, DETAIL_RESOLUTION } from './volume';
+ import { THERMAL_DISPLACEMENT } from './motion';
+-import { densitySupportBounds } from './volume';
++import { densitySupportBounds, MESO_DETAIL_FREQUENCY, MESO_DETAIL_EROSION } from './volume';
+ 
+ /** Mass moments of the actual density channel, independent of the authored lobes. */
+ function massMoments(volume: ReturnType<typeof generateVolume>, minY=-Infinity,maxY=Infinity) {
+@@ -65,11 +65,34 @@ describe('authored density volume', () => {
+   it('applies filtered flow erosion before normalizing the probe density',()=>{
+     const envelope={size:1,data:new Uint8Array([153,0,0,0])};
+     const detail={size:1,data:new Uint8Array([128,128,128,255])};
+-    const baseErosion=(1-128/255)*.46,flowErosion=.18;
++    const baseErosion=(1-128/255)*(.46+MESO_DETAIL_EROSION),flowErosion=.18;
+     expect(sampleCloudDensity(envelope,detail,0,3,0,0,flowErosion)).toBeCloseTo((153/255-baseErosion-flowErosion)/(1-baseErosion-flowErosion),12);
+     expect(sampleCloudDensity(envelope,detail,0,3,0,0,flowErosion)).toBeLessThan(sampleCloudDensity(envelope,detail,0,3,0,0));
+     expect(sampleCloudDensity(envelope,detail,0,3,0,0,.8)).toBe(0);
+   });
++  it('erodes liquid margins at the intermediate scale while retaining the core and fully icy material',()=>{
++    const size=8,position=[.2,3,.1] as const;
++    const makeDetail=(mesoValue:number)=>{
++      const data=new Uint8Array(size**3*4);
++      for(let i=0;i<size**3;i++) {data[i*4]=data[i*4+1]=data[i*4+2]=128;data[i*4+3]=255;}
++      // Only the intermediate lookup's eight neighbours change. The ordinary
++      // erosion, warp and ice coordinates retain the same underlying samples.
++      const index=position.map(v=>Math.floor((v*MESO_DETAIL_FREQUENCY%1)*size-.5));
++      for(let z=0;z<2;z++) for(let y=0;y<2;y++) for(let x=0;x<2;x++) {
++        const p=[x,y,z].map((offset,axis)=>(index[axis]+offset+size)%size);
++        data[((p[2]*size+p[1])*size+p[0])*4]=mesoValue;
++      }
++      return {size,data};
++    };
++    const eroded=makeDetail(0),intact=makeDetail(255),envelope={size:1,data:new Uint8Array([153,0,0,0])};
++    expect(sampleDetail(eroded,position[0]*.3,position[1]*.3,position[2]*.3,0)).toBeCloseTo(sampleDetail(intact,position[0]*.3,position[1]*.3,position[2]*.3,0),12);
++    expect(sampleCloudDensity(envelope,eroded,...position,0)).toBeLessThan(sampleCloudDensity(envelope,intact,...position,0));
++    const dense={size:1,data:new Uint8Array([255,0,0,0])};
++    expect(sampleCloudDensity(dense,eroded,...position,0)).toBe(1);
++    const ice=sampleCloudDensity(envelope,eroded,...position,1);
++    expect(ice).toBeGreaterThan(0);
++    expect(ice).toBeCloseTo(sampleCloudDensity(envelope,intact,...position,1),12);
++  });
+   it('keeps intermediate ice wisps optically separated from bright fibres',()=>{
+     const envelope={size:1,data:new Uint8Array([255,0,0,0])};
+     const medium={size:1,data:new Uint8Array([128,128,128,255])};
+diff --git a/src/cumulonimbus/volume.ts b/src/cumulonimbus/volume.ts
+index 488587d..4c78df7 100644
+--- a/src/cumulonimbus/volume.ts
++++ b/src/cumulonimbus/volume.ts
+@@ -10,6 +10,9 @@ export const ICE_EXTINCTION = 6.5;
+ export const materialExtinction=(ice:number)=>EXTINCTION+(ICE_EXTINCTION-EXTINCTION)*ice;
+ export const VOLUME_RESOLUTION = 256;
+ export const DETAIL_RESOLUTION = 128;
++/** Shared intermediate material band; one existing detail-texture lookup. */
++export const MESO_DETAIL_FREQUENCY = 1.2;
++export const MESO_DETAIL_EROSION = .12;
+ // Historical fine-warp-only margin, retained for the original mask proof test.
+ // The live renderer uses the flow-expanded margin in emptyTraversal.ts instead.
+ export const EMPTY_SKIP_LIMIT = .04;
+@@ -110,6 +113,10 @@ export function sampleCloudDensity(envelope:DetailVolume,detail:DetailVolume,x:n
+     const strand=smoothstep(.3,.7,wisps);
+     material=1-ice+(.012+.56*strand**1.7)*(.65+.35*smoothstep(.25,.75,breakup))*(1-.7*smoothstep(.4,3.8,x))*ice;
+   }
++  if(ice<1) {
++    const meso=sampleDetail(detail,x*MESO_DETAIL_FREQUENCY,y*MESO_DETAIL_FREQUENCY,z*MESO_DETAIL_FREQUENCY,0);
++    erosion+=(1-meso)*MESO_DETAIL_EROSION*(1-ice);
++  }
+   return erodeDensity(warped,Math.min(.92,erosion+additionalErosion))*material;
+ }
+ /** Packs a conservative occupied-region mask into the unused alpha of the detail texture.

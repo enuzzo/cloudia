@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-15T07:39:29.904557+00:00",
+  "rendererVersion": "observatory-v25-comparison",
+  "parentCheckpoint": "76f449a",
+  "material": "Existing base104m plus existing near4m; meso26m absent",
+  "comparisonSurfaceKm": 0.6045067691053366,
+  "probeSkippedByOverride": true,
+  "metadataCaveat": "surfaceEstimateKm=.4 in this baseline report is an unused initialized value; actual fixed radius is comparisonSurfaceKm and actual camera origins are recorded. Fixed comparison skips CPU navigation probe.",
+  "artifacts": [
+    {
+      "path": "dist/index.html",
+      "bytes": 911,
+      "sha256": "44007f621f5f6bde360127b8e640e3c809db38a1e0d0a58f9ce12c7bb5ad4938"
+    },
+    {
+      "path": "dist/assets/index-DapIIjEN.js",
+      "bytes": 2837,
+      "sha256": "76e450db6aa83459b6180e866c67bd7cde4fd504fe98ee7376a6cde0e5e53c40"
+    },
+    {
+      "path": "dist/assets/index-D6gXSqqf.js",
+      "bytes": 2837,
+      "sha256": "b19ebc3e9ce7cba200e4c33926b03f4006b2b9b2aefba1537d1f990cd1223062"
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-SczEyYMC.js",
+      "bytes": 796602,
+      "sha256": "ffbe39afbde3aef19e5a140f91a960d2c38457a02adca7353a00c77aef12e5e9"
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-_M8EiVnK.js",
+      "bytes": 797105,
+      "sha256": "2ec59fad93779a909f3977ba054b40f3a55e72f37213205ec72300758d9b6f87"
+    },
+    {
+      "path": "dist/assets/CumulonimbusApp-BtOAAbpg.css",
+      "bytes": 12860,
+      "sha256": "48a275cea33834e49834428208e5c8bbc506c500afb961b4d2b6e3e0b126dbde"
+    },
+    {
+      "path": "dist/assets/render.worker-DceL22hq.js",
+      "bytes": 953926,
+      "sha256": "5e9aa6ec14e0e836479df7c135f6fa7ec40b5a80204868feb81d8d425dcb278a"
+    },
+    {
+      "path": "dist/assets/render.worker-D9dZ3iIO.js",
+      "bytes": 953569,
+      "sha256": "2e3ba15edc92a464ff6762599b92db07d02849fe89d1b33f6449a62ad039f6fb"
+    },
+    {
+      "path": "dist/assets/volume.worker-BP-mq3wU.js",
+      "bytes": 13373,
+      "sha256": "8a681d4fa07bca14bc6d27917779d0a978241314d7f7c7a972b81b241849d59c"
+    },
+    {
+      "path": "dist/assets/sky.worker-CHm7n211.js",
+      "bytes": 2960,
+      "sha256": "503ad9438c1738310a9cbe2a41e9af0524e7046bce79e58d6da7c1e74863caaa"
+    }
+  ],
+  "volumeSourceSha256": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74",
+  "cloudShaderSourceSha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd"
+}

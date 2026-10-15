@@ -15,6 +15,14 @@ This file tracks what has happened, what is next, and what must stay visible acr
 
 ## Work Completed
 
+### 2026-10-15 — controlled near-view experiments, material restored
+
+- Rejected meso erosion, stronger liquid extinction, post-carving billows and centered interface sharpening after real IAB guards. A CPU solar-tail audit did not support adding its GPU cache. Kept negative images, raw reports, manifests and recoverable patches in the experiment documents linked from qualification cycle 3.
+- Added explicit profiling-only near-radius/target controls and warning/metadata; ordinary navigation ignores them. Fixed unused imports in the CPU near-density script. Density/material/shader restored to `76f449a`; no failed visual candidate kept in production.
+- Final checks:143 tests/26 files, TypeScript, application and hero builds pass. Dropbox dependency exclusion reverified locally; no install or lockfile changes, pre-existing duplicate dependency directory preserved.
+- Photographic quality and goal remain open. Recorded lighting and reconstruction options; next controlled low-cost probe is optical-thickness-dependent phase with a fixed physical reference length. No push, main merge or deploy.
+
+
 ### 2026-10-12 — convective motion research queued by owner
 
 - Owner asks that the next visual pass include internal and external cumulonimbus motion, with gestures still deferred.

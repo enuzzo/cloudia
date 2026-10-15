@@ -1,3 +1,20 @@
+/** Explicit comparison-only near radius. Ordinary navigation ignores the URL. */
+export function comparisonSurfaceDistance(search:string):number|null{
+ const params=new URLSearchParams(search),raw=params.get('surface');
+ if(params.get('profile')!=='1'||raw===null||raw.trim()==='')return null;
+ const distance=Number(raw);
+ return Number.isFinite(distance)&&distance>=.01&&distance<=16?distance:null;
+}
+/** Geometry comparisons also pin the target: support bounds may change its center. */
+export function comparisonCameraTarget(search:string):[number,number,number]|null{
+ if(comparisonSurfaceDistance(search)===null)return null;
+ const raw=new URLSearchParams(search).get('target');
+ if(raw===null)return null;
+ const parts=raw.split(',');
+ if(parts.length!==3||parts.some(value=>value.trim()===''))return null;
+ const target=parts.map(Number);
+ return target.every(value=>Number.isFinite(value)&&Math.abs(value)<=16)?target as [number,number,number]:null;
+}
 /** Camera state is independent of the cloud clock and meteorological forcing. */
 export class OrbitView {
  yaw=0;pitch=0;approach=0;

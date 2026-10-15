@@ -1,0 +1,13 @@
+diff --git a/src/cumulonimbus/volume.ts b/src/cumulonimbus/volume.ts
+index 488587d..ae02203 100644
+--- a/src/cumulonimbus/volume.ts
++++ b/src/cumulonimbus/volume.ts
+@@ -5,7 +5,7 @@ import { THERMAL_DISPLACEMENT } from './motion';
+ /** World bounds and extinction are shared by the bake and ray integrator. */
+ export const BOUNDS_MIN = [-5, -0.5, -3.5] as const;
+ export const BOUNDS_SIZE = [10, 8.5, 7] as const;
+-export const EXTINCTION = 18;
++export const EXTINCTION = 60;
+ export const ICE_EXTINCTION = 6.5;
+ export const materialExtinction=(ice:number)=>EXTINCTION+(ICE_EXTINCTION-EXTINCTION)*ice;
+ export const VOLUME_RESOLUTION = 256;

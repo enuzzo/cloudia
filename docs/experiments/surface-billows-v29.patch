@@ -1,0 +1,178 @@
+diff --git a/src/cumulonimbus/volume.test.ts b/src/cumulonimbus/volume.test.ts
+index cb8c95b..90d89ac 100644
+--- a/src/cumulonimbus/volume.test.ts
++++ b/src/cumulonimbus/volume.test.ts
+@@ -1,7 +1,7 @@
+ import { describe, expect, it } from 'vitest';
+ import { generateVolume, heightErosionScale, cloudParameters, morphologyFamily, iceHeights, generateDetail, sampleDetail, erodeDensity, sampleCloudDensity, bakeOccupancy, voxelCenter, BOUNDS_MIN, BOUNDS_SIZE, materialExtinction, EMPTY_SKIP_LIMIT, VOLUME_RESOLUTION, DETAIL_RESOLUTION } from './volume';
+ import { THERMAL_DISPLACEMENT } from './motion';
+-import { densitySupportBounds } from './volume';
++import { densitySupportBounds, addLiquidSurfaceBillows } from './volume';
+ 
+ /** Mass moments of the actual density channel, independent of the authored lobes. */
+ function massMoments(volume: ReturnType<typeof generateVolume>, minY=-Infinity,maxY=Infinity) {
+@@ -62,6 +62,34 @@ function intermediateSectionFill(volume:ReturnType<typeof generateVolume>,seed:n
+ }
+ 
+ describe('authored density volume', () => {
++  it('adds bounded surface relief with a rendered-density neck while preserving base and ice bands',()=>{
++    const size=64,seed=72,field=new Float32Array(size**3),density=new Float32Array(size**3),data=new Uint8Array(size**3*4),center=[0,2.2,0],radius=.95;
++    for(let z=0;z<size;z++)for(let y=0;y<size;y++)for(let x=0;x<size;x++){
++      const i=(z*size+y)*size+x,p=[voxelCenter(x,0,size),voxelCenter(y,1,size),voxelCenter(z,2,size)];
++      field[i]=radius-Math.hypot(...p.map((v,a)=>v-center[a]));
++      density[i]=Math.max(0,Math.min(1,field[i]*10))*.8;data[i*4]=Math.round(density[i]*255);
++    }
++    const before=data.slice(),envelope={size,data},detail=generateDetail(64,seed),[iceStart]=iceHeights(seed);
++    const billows=addLiquidSurfaceBillows(field,density,envelope,detail,seed);
++    expect(billows.length).toBeGreaterThan(8);
++    let newSupport=0;
++    for(let z=0;z<size;z++)for(let y=0;y<size;y++)for(let x=0;x<size;x++){
++      const i=((z*size+y)*size+x)*4,p=[voxelCenter(x,0,size),voxelCenter(y,1,size),voxelCenter(z,2,size)];
++      expect(data[i]).toBeGreaterThanOrEqual(before[i]);
++      if(p[1]<=1.17||p[1]>=iceStart-.2)expect(data[i]).toBe(before[i]);
++      if(data[i]&&before[i]===0){newSupport++;expect(Math.hypot(...p.map((v,a)=>v-center[a]))).toBeLessThan(radius+.33);}
++    }
++    expect(newSupport).toBeGreaterThan(20);
++    for(const b of billows)for(let j=0;j<=4;j++){
++      const p=b.anchor.map((v,a)=>v+(b.center[a]-v)*j/4);
++      expect(sampleCloudDensity(envelope,detail,p[0],p[1],p[2],0)).toBeGreaterThan(.025);
++    }
++  });
++  it('does not create unattached billows in an empty material field',()=>{
++    const size=24,field=new Float32Array(size**3).fill(-1),density=new Float32Array(size**3),envelope={size,data:new Uint8Array(size**3*4)};
++    expect(addLiquidSurfaceBillows(field,density,envelope,generateDetail(16,72),72)).toHaveLength(0);
++    expect(envelope.data.some(v=>v!==0)).toBe(false);
++  });
+   it('applies filtered flow erosion before normalizing the probe density',()=>{
+     const envelope={size:1,data:new Uint8Array([153,0,0,0])};
+     const detail={size:1,data:new Uint8Array([128,128,128,255])};
+diff --git a/src/cumulonimbus/volume.ts b/src/cumulonimbus/volume.ts
+index 488587d..ef9d8a9 100644
+--- a/src/cumulonimbus/volume.ts
++++ b/src/cumulonimbus/volume.ts
+@@ -16,7 +16,7 @@ export const EMPTY_SKIP_LIMIT = .04;
+ export const voxelCenter=(index:number,axis:0|1|2,size:number)=>BOUNDS_MIN[axis]+(index+.5)/size*BOUNDS_SIZE[axis];
+ export const heightErosionScale = (worldY: number) => (.48+.52*smoothstep(1.6,2.5,worldY))*(1-.55*smoothstep(5.1,6.2,worldY));
+ export interface DetailVolume { size: number; data: Uint8Array }
+-export interface CloudVolume { size: number; data: Uint8Array; sunsetLight: Uint8Array; detail: DetailVolume; supportBounds:{min:number[];max:number[]} }
++export interface CloudVolume { size: number; data: Uint8Array; sunsetLight: Uint8Array; detail: DetailVolume; supportBounds:{min:number[];max:number[]}; surfaceBillowCount?:number }
+ /** The raw linear density footprint, enlarged for fine warp and bounded flow.
+  * Growth contracts toward x/z=0 and y=.72, so including those anchors covers
+  * every growth phase as well as the mature cloud. The global texture box stays fixed.
+@@ -154,6 +154,76 @@ function cellularNoise(seed: number) {
+     return 1-clamp(Math.sqrt(distance));
+   };
+ }
++/** Subordinate liquid relief attaches to material that survived macro carving.
++ * Both full-sized buffers already belong to volume generation; no new field or
++ * GPU resource is allocated. The returned anchors support density diagnostics.
++ */
++export function addLiquidSurfaceBillows(field:Float32Array,density:Float32Array,envelope:DetailVolume,detail:DetailVolume,seed:number):{anchor:number[];center:number[];radii:number[]}[] {
++  const {size,data}=envelope,rng=random(seed^0x596d13af),cell=BOUNDS_SIZE.map(v=>v/size),stride=Math.max(1,Math.floor(size/128));
++  const target=.07,pool:number[][]=[],poolLimit=512,maxBillows=96,[iceStart]=iceHeights(seed);
++  const minY=.72+.45,maxY=iceStart-.2;
++  const at=(x:number,y:number,z:number)=>field[(Math.max(0,Math.min(size-1,z))*size+Math.max(0,Math.min(size-1,y)))*size+Math.max(0,Math.min(size-1,x))];
++  const sample=(p:number[])=>{
++    const q=p.map((v,a)=>(v-BOUNDS_MIN[a])/cell[a]-.5),i=q.map(Math.floor),f=q.map((v,a)=>v-i[a]);let sum=0;
++    for(let z=0;z<2;z++)for(let y=0;y<2;y++)for(let x=0;x<2;x++)sum+=at(i[0]+x,i[1]+y,i[2]+z)*(x?f[0]:1-f[0])*(y?f[1]:1-f[1])*(z?f[2]:1-f[2]);
++    return sum;
++  };
++  const gradient=(p:number[])=>cell.map((h,a)=>{const lo=[...p],hi=[...p];lo[a]-=h;hi[a]+=h;return (sample(hi)-sample(lo))/(2*h);});
++  // Reservoir sampling bounds storage and avoids preferring the first face in
++  // raster order. Jitter/projection and variable spacing break the voxel lattice.
++  let seen=0;
++  const band=Math.max(...cell)*.8;
++  for(let z=1;z<size-1;z+=stride)for(let y=1;y<size-1;y+=stride){
++    const py=voxelCenter(y,1,size);if(py<minY+.12||py>maxY-.12)continue;
++    for(let x=1;x<size-1;x+=stride){
++      const i=(z*size+y)*size+x;if(Math.abs(field[i]-target)>band||density[i]<.2||density[i]>.92)continue;
++      seen++;const slot=pool.length<poolLimit?pool.length:Math.floor(rng()*seen);if(slot>=poolLimit)continue;
++      pool[slot]=[voxelCenter(x,0,size),py,voxelCenter(z,2,size)];
++    }
++  }
++  for(let i=pool.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}
++  const billows:{anchor:number[];center:number[];radii:number[]}[]=[];
++  for(const initial of pool){
++    if(billows.length>=maxBillows)break;
++    const anchor=initial.map((v,a)=>v+(rng()-.5)*cell[a]*.8);
++    for(let j=0;j<3;j++){
++      const g=gradient(anchor),g2=g.reduce((sum,v)=>sum+v*v,0);if(g2<.01)break;
++      const delta=Math.max(-.12,Math.min(.12,(sample(anchor)-target)/Math.sqrt(g2)));
++      for(let a=0;a<3;a++)anchor[a]-=g[a]/Math.sqrt(g2)*delta;
++    }
++    if(Math.abs(sample(anchor)-target)>.035)continue;
++    const g=gradient(anchor),length=Math.hypot(...g);if(length<.1)continue;
++    const normal=g.map(v=>-v/length);if(normal[1]<-.15||rng()>.55+.45*Math.max(0,normal[1]))continue;
++    const coord=anchor.map((v,a)=>(v-BOUNDS_MIN[a])/BOUNDS_SIZE[a]);
++    const raw=sampleDetail(envelope,coord[0],coord[1],coord[2],0,false);
++    if(raw<.45||raw>.85||sampleCloudDensity(envelope,detail,anchor[0],anchor[1],anchor[2],0)<.12)continue;
++    const radius=.12+rng()*.1,radii=[0,1,2].map(()=>radius*(.85+rng()*.15));
++    const center=anchor.map((v,a)=>v+normal[a]*radius*.35),blend=Math.min(...radii)*.18;
++    if(center[1]-radii[1]-blend<minY||center[1]+radii[1]+blend>maxY)continue;
++    if([0,2].some(a=>center[a]-radii[a]-blend<BOUNDS_MIN[a]+.35||center[a]+radii[a]+blend>BOUNDS_MIN[a]+BOUNDS_SIZE[a]-.35))continue;
++    if(billows.some(b=>Math.hypot(...center.map((v,a)=>v-b.center[a]))<.85*(radius+Math.max(...b.radii))))continue;
++    billows.push({anchor,center,radii});
++  }
++  // Select all anchors against the unchanged material first. New relief cannot
++  // become the carrier of another puff and grow a chain of floating balloons.
++  for(const {center,radii} of billows){
++    const blend=Math.min(...radii)*.18;
++    const start=center.map((v,a)=>Math.max(1,Math.floor((v-radii[a]-blend-BOUNDS_MIN[a])/cell[a]-.5)));
++    const end=center.map((v,a)=>Math.min(size-2,Math.ceil((v+radii[a]+blend-BOUNDS_MIN[a])/cell[a]-.5)));
++    for(let z=start[2];z<=end[2];z++)for(let y=start[1];y<=end[1];y++)for(let x=start[0];x<=end[0];x++){
++      const p=[voxelCenter(x,0,size),voxelCenter(y,1,size),voxelCenter(z,2,size)],i=(z*size+y)*size+x;
++      // Keep the protected base/ice bands byte-identical, including bbox rounding.
++      if(p[1]<=minY||p[1]>=maxY)continue;
++      const sd=(1-Math.sqrt(p.reduce((sum,v,a)=>sum+((v-center[a])/radii[a])**2,0)))*Math.min(...radii),old=field[i],h=clamp(.5+.5*(old-sd)/blend);
++      const joined=sd+(old-sd)*h+blend*h*(1-h);if(joined<=old)continue;
++      field[i]=joined;
++      const px=p[0]-BOUNDS_MIN[0],py=p[1]-BOUNDS_MIN[1],pz=p[2]-BOUNDS_MIN[2],n2=noise(px*3.6,py*3.6,pz*3.6,seed+12);
++      density[i]=Math.max(density[i],clamp(joined*10)*(.65+.35*n2));
++      data[i*4]=Math.round(density[i]*255);
++    }
++  }
++  return billows;
++}
+ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (fraction: number) => void): CloudVolume {
+   const n = size ** 3, field = new Float32Array(n), density = new Float32Array(n);
+   field.fill(-10);
+@@ -357,7 +427,9 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
+       const fibers=noise(px*.3+py*.17,py*5,pz*1.0,seed+81);
+       const interior=1-.6*smoothstep(.04,.28,field[idx]);
+       const carving=erosion*erosionScale*interior*(1-ice)-(.012+(1-fibers)*.045+(1-n1)*.07+(1-n2)*.025)*ice;
+-      density[idx]=clamp((field[idx]+carving-(.025-.017*ice))*(10+ice*4)) * (.65+.35*n2) * (1-ice*(1-fibers)*.5) * baseFade;
++      const carved=field[idx]+carving-(.025-.017*ice);
++      density[idx]=clamp(carved*(10+ice*4)) * (.65+.35*n2) * (1-ice*(1-fibers)*.5) * baseFade;
++      field[idx]=carved;
+     }
+     if(z%8===0) progress?.(.1+.45*z/size);
+   }
+@@ -366,14 +438,16 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
+   const detailSize=Math.min(DETAIL_RESOLUTION,2**Math.ceil(Math.log2(size)));
+   const detail=generateDetail(detailSize,seed);
+   const envelope={size,data};
++  const surfaceBillowCount=addLiquidSurfaceBillows(field,density,envelope,detail,seed).length;
++  bakeOccupancy(envelope,detail,THERMAL_DISPLACEMENT);
+   // Bake visibility from the same fine erosion the shader applies to the macro envelope.
+   // Reuse the density buffer; there is no extra full-sized light-density allocation.
+-  // Ellipsoid fields and their smooth union are 1-Lipschitz. Include the maximum
+-  // displacement (0.128 world units) plus a full voxel diagonal for interpolation.
+-  const supportMargin=.13+Math.hypot(...BOUNDS_SIZE)/size;
++  // Carved signed distance is no longer 1-Lipschitz. The existing occupied mask
++  // encloses final density, interpolation, fine warp and flow conservatively.
+   for(let z=1;z<size-1;z++) for(let y=1;y<size-1;y++) for(let x=1;x<size-1;x++) {
+     const i=(z*size+y)*size+x;
+-    if(field[i]<-supportMargin) {density[i]=0;continue;}
++    const m=(Math.floor(z*detail.size/size)*detail.size+Math.floor(y*detail.size/size))*detail.size+Math.floor(x*detail.size/size);
++    if(!detail.data[m*4+3]) {density[i]=0;continue;}
+     const px=voxelCenter(x,0,size),py=voxelCenter(y,1,size),pz=voxelCenter(z,2,size);
+     const ice=smoothstep(iceStart,iceEnd,py);
+     density[i]=sampleCloudDensity(envelope,detail,px,py,pz,ice)*materialExtinction(ice)/EXTINCTION;
+@@ -392,6 +466,5 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
+     for(let i=0;i<n;i++)sunsetLight[i*2+side]=Math.round(clamp(tau[i]/16)*255);
+     progress?.(.82+.09*(side+1));
+   }
+-  bakeOccupancy(envelope,detail,THERMAL_DISPLACEMENT);
+-  return {size, data, sunsetLight, detail, supportBounds:densitySupportBounds(envelope)};
++  return {size, data, sunsetLight, detail, supportBounds:densitySupportBounds(envelope),surfaceBillowCount};
+ }

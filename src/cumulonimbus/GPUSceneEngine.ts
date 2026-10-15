@@ -3,7 +3,7 @@ import { DataTexture, DataUtils, Vector4, Data3DTexture, LinearFilter, MeshBasic
 import { Fn, instanceIndex, vec3, wgslFn, storageTexture3D, textureStore, texture3D, texture, uniform, uv } from 'three/tsl';
 import {WeatherState,WEATHER_SCENES,type AtmosphereIntent,type WeatherScene} from './weatherState';
 import {solarDirection} from './sun';
-import {OrbitView,probeApproach,type ApproachProbe} from './camera';
+import {OrbitView,probeApproach,comparisonSurfaceDistance,comparisonCameraTarget,type ApproachProbe} from './camera';
 import {precipitationFootprint,precipitationSourceBounds,RAIN_MAP_SIZE,RAIN_SAMPLE_STEP,RAIN_EXTINCTION} from './precipitation';
 import {DispersalState,nextMorphologySeed,type WeatherImpulse} from './weatherInteraction';
 import { createCloudIntegrator } from './cloudShader';
@@ -71,6 +71,8 @@ export class GPUSceneEngine {
   private queuePending=false;
   private queueTime=0;
   private readonly profiling:boolean;
+  private readonly comparisonSurface:number|null;
+  private readonly comparisonTarget:[number,number,number]|null;
   private readonly timingMode:string;
   private readonly frozenFlow:boolean;
   private frameLimit:number;
@@ -167,7 +169,7 @@ export class GPUSceneEngine {
     const params=new URLSearchParams(host.search),requested=Number(params.get('seed'));
     this.diagnosticName=params.get('ablation')??'full';
     if(params.has('seed')&&Number.isInteger(requested)&&requested>=0&&requested<=0xffffffff) this.seed=requested;
-    this.profiling=params.get('profile')==='1';this.timingMode=params.get('timing')??'stages';this.frozenFlow=params.get('flow')==='frozen';
+    this.profiling=params.get('profile')==='1';this.comparisonSurface=comparisonSurfaceDistance(host.search);this.comparisonTarget=comparisonCameraTarget(host.search);this.timingMode=params.get('timing')??'stages';this.frozenFlow=params.get('flow')==='frozen';
     this.diagnostic.value=this.profiling?Math.max(0,['full','density','cache','no-flow','no-detail','no-flash'].indexOf(this.diagnosticName)):0;
     this.frameLimit=[1,2].includes(Number(params.get('inflight')))?Number(params.get('inflight')):0;
     this.viewport={...host.viewport};this.visible=host.visible;
@@ -351,8 +353,9 @@ export class GPUSceneEngine {
     this.updateStorm();
     this.updateEvolution();
     this.drift.value.set(this.windStrength*(.32*Math.sin(t*.027)+.11*Math.sin(t*.071)),Math.sin(t*.04)*.015,0);
+    if(this.comparisonTarget)this.viewFocus.fromArray(this.comparisonTarget);
     const focus=this.viewFocus.toArray(),autoYaw=this.orbit?Math.sin(t*.075)*.38:0;
-    if(this.view.approach>0&&this.cameraVolume&&now-this.approachTime>150){
+    if(this.comparisonSurface===null&&this.view.approach>0&&this.cameraVolume&&now-this.approachTime>150){
       const approach=this.view.approach;this.view.approach=0;
       const home=this.view.frame(focus,this.aspect.value,autoYaw);this.view.approach=approach;
       const state=motionState(this.simulationTime,this.seed);state.dispersion=this.dispersal.amount;
@@ -382,7 +385,7 @@ export class GPUSceneEngine {
       this.approachTime=now;
     }
     this.inspection.value=this.view.approach;
-    const camera=this.view.frame(focus,this.aspect.value,autoYaw,this.approachSurface);
+    const camera=this.view.frame(focus,this.aspect.value,autoYaw,this.comparisonSurface??this.approachSurface);
     camera.origin[1]=Math.max(-3.8,camera.origin[1]);
     this.origin.value.fromArray(camera.origin);
     this.forward.value.copy(this.viewFocus).sub(this.origin.value).normalize();
@@ -542,8 +545,8 @@ export class GPUSceneEngine {
     this.measurement=new FrameMeasurement(performance.now(),duration,2000);
     this.benchmarkContext={date:new Date().toISOString(),backend:'WebGPU',adapter:this.adapterInfo,threeRevision:'186',quality:this.quality,
       output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],nominalSteps:QUALITY[this.quality].steps,
-      mediaIntegration:'co-located cloud/rain exponential segments',virgaReachVariation:'broad advected sheets, 0.7–1.3 of weak fall distance',precipitationMaxStepKm:RAIN_SAMPLE_STEP,precipitationExtinctionPerKm:RAIN_EXTINCTION,precipitationSourceBounds:this.rainBounds.value.toArray(),
-      rendererVersion:'observatory-v24',navigationVersion:'filtered-field-approach-v2',skyCalculation:'cached dedicated worker',skyPending:this.skyPending,solarVisibility:'256-cubed day + RG8 low-sun endpoints',sunDirection:this.sun.value.toArray(),sunsetAmount:this.sunsetAmount.value,extraSunsetTextureBytes:VOLUME_RESOLUTION**3*2,probeImplementation:'compile-time specialization',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{approach:this.view.approach,origin:this.origin.value.toArray(),probeFlow:'16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively',probeFieldBytes:this.approachField.byteLength,surfaceEstimateKm:this.approachSurface,probe:this.approachProbe,probeAgeMs:this.approachProbe?performance.now()-this.approachTime:null,altitudeKm:this.origin.value.y+4,ground:this.ground.value,yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
+      cloudExtinctionPerKm:EXTINCTION,iceExtinctionPerKm:ICE_EXTINCTION,mediaIntegration:'co-located cloud/rain exponential segments',virgaReachVariation:'broad advected sheets, 0.7–1.3 of weak fall distance',precipitationMaxStepKm:RAIN_SAMPLE_STEP,precipitationExtinctionPerKm:RAIN_EXTINCTION,precipitationSourceBounds:this.rainBounds.value.toArray(),
+      rendererVersion:'observatory-v31-comparison-camera',navigationVersion:'filtered-field-approach-v2',skyCalculation:'cached dedicated worker',skyPending:this.skyPending,solarVisibility:'256-cubed day + RG8 low-sun endpoints',sunDirection:this.sun.value.toArray(),sunsetAmount:this.sunsetAmount.value,extraSunsetTextureBytes:VOLUME_RESOLUTION**3*2,probeImplementation:'compile-time specialization',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{comparisonSurfaceKm:this.comparisonSurface,comparisonTargetKm:this.comparisonTarget,probeSkipped:this.comparisonSurface!==null,approach:this.view.approach,origin:this.origin.value.toArray(),probeFlow:'16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively',probeFieldBytes:this.approachField.byteLength,surfaceEstimateKm:this.comparisonSurface===null?this.approachSurface:null,probe:this.approachProbe,probeAgeMs:this.approachProbe?performance.now()-this.approachTime:null,altitudeKm:this.origin.value.y+4,ground:this.ground.value,yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
       userAgent:navigator.userAgent,devicePixelRatio:this.viewport.dpr,
       method:'Visible requestAnimationFrame intervals, CPU compute/render submission and callback dispatch delay. GPU render and compute timestamps sampled separately; their last-frame samples are not necessarily paired. Optional queue completion latency includes GPU work, readback and JS delivery; not compositor presentation.',warmupMs:2000,targetDurationMs:duration};
     this.setButtonEnabled('benchmark',false); this.setButtonEnabled('sustained',false);

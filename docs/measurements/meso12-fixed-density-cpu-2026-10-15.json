@@ -1,0 +1,2977 @@
+{
+  "date": "2026-10-15T07:46:25.662Z",
+  "method": "CPU diagnostic, not WGSL execution, GPU readback, final pixel rendering or photographic validation. One existing 256³ macro/128³ detail volume; current16³ half-float clamp/trilinear motion reference. Corrected probe uses filtered field+flow.a, with camera micro erosion omitted conservatively. Runtime default windStrength=.55 at cloud time60; no gust/dispersion/rain/flash; mature growth. Five specified UV rays, front yaw/pitch0,1672x941 aspect,FOV tan .2867. Fixed midpoint quadrature at3m and6m with exponential integration and transmittance cutoff.006. Density includes existing camera micro erosion; opacity weights are T_before*(1-exp(-sigma*ds)). Cache depths decoded as stored UNORM8*16 at unwarped local coordinates. Source is existing clear/day direct+ambient+multiple lighting before aerial mixing and tone mapping. Density and cached lighting use the current source model and its recorded hashes; a fixed comparison radius, when supplied, is not recomputed from this material. Histograms and moments use visible opacity weights, not radiance weights. Raw>=.98 flags nearly saturated macro samples; exact raw1 is immune to normalized subtractive erosion.",
+  "sourceHashes": {
+    "volume": "2091ab0c9312c1e608cf5dbddc60ba2e8c5b96d78e01bae395458eb5ccf9f9ca",
+    "motion": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2",
+    "motionField": "d8817eb9d90a70ee975eea89d2c2fca6d9c6783280bea810fdf76cff2b2d4d8a",
+    "camera": "3d70b7aa3f745f42dd82a1f6c5cbfe11844fbd9a0d18e40ea5c73c54dc1c7d9d",
+    "cloudShader": "5d5a74bb3594cc8ee34aa68226634635b07c6d858d2e24885a7daf8b8957987f"
+  },
+  "comparisonSurfaceKm": 0.6045067691053366,
+  "meso": {
+    "frequency": 1.2,
+    "erosion": 0.12
+  },
+  "seed": 1571198069,
+  "time": 60,
+  "windStrength": 0.55,
+  "wind": [
+    0.2321881,
+    0.0900944
+  ],
+  "drift": [
+    0.121373,
+    0.0101319,
+    0
+  ],
+  "center": [
+    0.4296875,
+    2.9365234,
+    0
+  ],
+  "volume": 256,
+  "detail": 128,
+  "motionField": 16,
+  "iceRange": [
+    4.193954249549424,
+    4.821304904095596
+  ],
+  "probe": {
+    "distance": 0.601407791004431,
+    "found": true,
+    "samples": 193,
+    "spacingKm": 0.012493518013100436,
+    "spanKm": 2.861015625
+  },
+  "lighting": {
+    "solar": [
+      0.9313426391412487,
+      0.8413836906464524,
+      0.7182507029227052
+    ],
+    "ambient": [
+      0.08283003529291265,
+      0.10718098056640879,
+      0.16000900876830515
+    ]
+  },
+  "poses": [
+    {
+      "approach": 0.8,
+      "origin": [
+        0.4296875,
+        2.9365234,
+        1.1639784
+      ],
+      "distanceFromTargetKm": 1.1639784,
+      "estimatedCentralClearanceMetres": 565.5706359,
+      "macroSourceAcrossFiveRays": {
+        "mean": 0.3130875,
+        "coefficientOfVariation": 0.5486345,
+        "relativeRange": 1.5740426
+      },
+      "rays": [
+        {
+          "name": "center",
+          "uv": [
+            0.5,
+            0.5
+          ],
+          "steps": [
+            {
+              "stepKm": 0.003,
+              "hit": true,
+              "opacity": 0.9940498,
+              "transmittance": 0.0059502,
+              "contributingSegments": 120,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.6471839,
+                "standardDeviation": 0.0625901,
+                "coefficientOfVariation": 0.0967115,
+                "q10": 0.5835,
+                "median": 0.6315,
+                "q90": 0.7335
+              },
+              "density": {
+                "mean": 0.7308904,
+                "standardDeviation": 0.163323,
+                "coefficientOfVariation": 0.2234576,
+                "q10": 0.464805,
+                "median": 0.7972497,
+                "q90": 0.8518087
+              },
+              "solarTau": {
+                "mean": 3.9325256,
+                "standardDeviation": 1.704284,
+                "coefficientOfVariation": 0.4333815,
+                "q10": 2.0500664,
+                "median": 3.5664173,
+                "q90": 6.3944303
+              },
+              "skyTau": {
+                "mean": 1.2207585,
+                "standardDeviation": 1.0416749,
+                "coefficientOfVariation": 0.8533014,
+                "q10": 0.3689546,
+                "median": 0.9636463,
+                "q90": 2.4634565
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2622091,
+                "standardDeviation": 0.1045971,
+                "coefficientOfVariation": 0.3989071,
+                "q10": 0.1351011,
+                "median": 0.2439928,
+                "q90": 0.4191849
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.00445,
+                  0.0229321,
+                  0.0787165,
+                  0.2665399,
+                  0.6273614,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0141553,
+                  0.1691549,
+                  0.6584965,
+                  0.1581932,
+                  0
+                ]
+              }
+            },
+            {
+              "stepKm": 0.006,
+              "hit": true,
+              "opacity": 0.9940562,
+              "transmittance": 0.0059438,
+              "contributingSegments": 60,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.6471381,
+                "standardDeviation": 0.0625924,
+                "coefficientOfVariation": 0.0967219,
+                "q10": 0.585,
+                "median": 0.633,
+                "q90": 0.735
+              },
+              "density": {
+                "mean": 0.7308218,
+                "standardDeviation": 0.1641654,
+                "coefficientOfVariation": 0.2246313,
+                "q10": 0.4888413,
+                "median": 0.7984786,
+                "q90": 0.8513243
+              },
+              "solarTau": {
+                "mean": 3.9311854,
+                "standardDeviation": 1.7044267,
+                "coefficientOfVariation": 0.4335656,
+                "q10": 2.0924898,
+                "median": 3.6153666,
+                "q90": 6.4240155
+              },
+              "skyTau": {
+                "mean": 1.2203069,
+                "standardDeviation": 1.041477,
+                "coefficientOfVariation": 0.853455,
+                "q10": 0.3904094,
+                "median": 0.9757295,
+                "q90": 2.497242
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2623338,
+                "standardDeviation": 0.1047143,
+                "coefficientOfVariation": 0.3991644,
+                "q10": 0.134262,
+                "median": 0.240872,
+                "q90": 0.4111855
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0,
+                  0.0141591,
+                  0.1165431,
+                  0.2162069,
+                  0.6530909,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0141591,
+                  0.1692253,
+                  0.6324767,
+                  0.1841389,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "left",
+          "uv": [
+            0.35,
+            0.5
+          ],
+          "steps": [
+            {
+              "stepKm": 0.003,
+              "hit": true,
+              "opacity": 0.9940904,
+              "transmittance": 0.0059096,
+              "contributingSegments": 132,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.7192571,
+                "standardDeviation": 0.0698945,
+                "coefficientOfVariation": 0.097176,
+                "q10": 0.6405,
+                "median": 0.7065,
+                "q90": 0.8145
+              },
+              "density": {
+                "mean": 0.6306151,
+                "standardDeviation": 0.211695,
+                "coefficientOfVariation": 0.3356961,
+                "q10": 0.3335229,
+                "median": 0.7318463,
+                "q90": 0.8290276
+              },
+              "solarTau": {
+                "mean": 7.0238102,
+                "standardDeviation": 1.7205362,
+                "coefficientOfVariation": 0.2449577,
+                "q10": 5.3338713,
+                "median": 6.5530733,
+                "q90": 9.5073204
+              },
+              "skyTau": {
+                "mean": 2.3591401,
+                "standardDeviation": 1.8214343,
+                "coefficientOfVariation": 0.7720755,
+                "q10": 0.7771059,
+                "median": 2.0096189,
+                "q90": 4.0004764
+              },
+              "macroSourceLuminance": {
+                "mean": 0.1387623,
+                "standardDeviation": 0.0323062,
+                "coefficientOfVariation": 0.2328166,
+                "q10": 0.0937312,
+                "median": 0.1392859,
+                "q90": 0.1832285
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0053662,
+                  0.0371242,
+                  0.2870681,
+                  0.1752889,
+                  0.4951526,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0571047,
+                  0.4073133,
+                  0.5328692,
+                  0.0027128,
+                  0
+                ]
+              }
+            },
+            {
+              "stepKm": 0.006,
+              "hit": true,
+              "opacity": 0.9940896,
+              "transmittance": 0.0059104,
+              "contributingSegments": 66,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.7192707,
+                "standardDeviation": 0.0699058,
+                "coefficientOfVariation": 0.0971899,
+                "q10": 0.639,
+                "median": 0.705,
+                "q90": 0.813
+              },
+              "density": {
+                "mean": 0.6305023,
+                "standardDeviation": 0.2119577,
+                "coefficientOfVariation": 0.3361727,
+                "q10": 0.3262348,
+                "median": 0.7187191,
+                "q90": 0.828967
+              },
+              "solarTau": {
+                "mean": 7.0240669,
+                "standardDeviation": 1.7208039,
+                "coefficientOfVariation": 0.2449868,
+                "q10": 5.3091287,
+                "median": 6.5208439,
+                "q90": 9.4558893
+              },
+              "skyTau": {
+                "mean": 2.3594022,
+                "standardDeviation": 1.821943,
+                "coefficientOfVariation": 0.7722053,
+                "q10": 0.748337,
+                "median": 1.9883404,
+                "q90": 3.9389309
+              },
+              "macroSourceLuminance": {
+                "mean": 0.1387612,
+                "standardDeviation": 0.03232,
+                "coefficientOfVariation": 0.2329184,
+                "q10": 0.0944527,
+                "median": 0.1400302,
+                "q90": 0.1844483
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.005398,
+                  0.0369722,
+                  0.3053101,
+                  0.1570391,
+                  0.4952807,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0423702,
+                  0.4218933,
+                  0.5330232,
+                  0.0027133,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "right",
+          "uv": [
+            0.65,
+            0.5
+          ],
+          "steps": [
+            {
+              "stepKm": 0.003,
+              "hit": true,
+              "opacity": 0.9941878,
+              "transmittance": 0.0058122,
+              "contributingSegments": 115,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.6685194,
+                "standardDeviation": 0.0590205,
+                "coefficientOfVariation": 0.0882853,
+                "q10": 0.6075,
+                "median": 0.6525,
+                "q90": 0.7515
+              },
+              "density": {
+                "mean": 0.7699227,
+                "standardDeviation": 0.1873881,
+                "coefficientOfVariation": 0.2433855,
+                "q10": 0.4470371,
+                "median": 0.8534054,
+                "q90": 0.913386
+              },
+              "solarTau": {
+                "mean": 1.7123249,
+                "standardDeviation": 1.6121243,
+                "coefficientOfVariation": 0.9414828,
+                "q10": 0.3769621,
+                "median": 1.1951432,
+                "q90": 3.7407847
+              },
+              "skyTau": {
+                "mean": 1.2425276,
+                "standardDeviation": 1.2282909,
+                "coefficientOfVariation": 0.9885421,
+                "q10": 0.2234178,
+                "median": 0.8336821,
+                "q90": 2.4650366
+              },
+              "macroSourceLuminance": {
+                "mean": 0.6315753,
+                "standardDeviation": 0.3065193,
+                "coefficientOfVariation": 0.485325,
+                "q10": 0.2088067,
+                "median": 0.6273703,
+                "q90": 1.0752184
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0065173,
+                  0.0203722,
+                  0.0989923,
+                  0.1673658,
+                  0.4681242,
+                  0.2386284,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0268894,
+                  0.1245668,
+                  0.329056,
+                  0.5194877,
+                  0
+                ]
+              }
+            },
+            {
+              "stepKm": 0.006,
+              "hit": true,
+              "opacity": 0.9941823,
+              "transmittance": 0.0058177,
+              "contributingSegments": 57,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.6686207,
+                "standardDeviation": 0.0589907,
+                "coefficientOfVariation": 0.0882275,
+                "q10": 0.609,
+                "median": 0.651,
+                "q90": 0.753
+              },
+              "density": {
+                "mean": 0.77083,
+                "standardDeviation": 0.1856245,
+                "coefficientOfVariation": 0.2408112,
+                "q10": 0.4708623,
+                "median": 0.8503824,
+                "q90": 0.9134473
+              },
+              "solarTau": {
+                "mean": 1.7138783,
+                "standardDeviation": 1.6123108,
+                "coefficientOfVariation": 0.9407382,
+                "q10": 0.3992049,
+                "median": 1.1656601,
+                "q90": 3.7942444
+              },
+              "skyTau": {
+                "mean": 1.2437346,
+                "standardDeviation": 1.2284522,
+                "coefficientOfVariation": 0.9877125,
+                "q10": 0.2391415,
+                "median": 0.8080812,
+                "q90": 2.4852085
+              },
+              "macroSourceLuminance": {
+                "mean": 0.6309763,
+                "standardDeviation": 0.3060786,
+                "coefficientOfVariation": 0.4850873,
+                "q10": 0.2057623,
+                "median": 0.638737,
+                "q90": 1.0583699
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0,
+                  0.0135124,
+                  0.1112466,
+                  0.1676349,
+                  0.4538565,
+                  0.2537496,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0135124,
+                  0.1643661,
+                  0.2775022,
+                  0.5446194,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "up",
+          "uv": [
+            0.5,
+            0.35
+          ],
+          "steps": [
+            {
+              "stepKm": 0.003,
+              "hit": true,
+              "opacity": 0.9940276,
+              "transmittance": 0.0059724,
+              "contributingSegments": 132,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.6901112,
+                "standardDeviation": 0.073278,
+                "coefficientOfVariation": 0.1061828,
+                "q10": 0.6165,
+                "median": 0.6705,
+                "q90": 0.7965
+              },
+              "density": {
+                "mean": 0.6238622,
+                "standardDeviation": 0.1527436,
+                "coefficientOfVariation": 0.2448355,
+                "q10": 0.4366751,
+                "median": 0.6234553,
+                "q90": 0.840393
+              },
+              "solarTau": {
+                "mean": 3.3399183,
+                "standardDeviation": 1.8016464,
+                "coefficientOfVariation": 0.5394283,
+                "q10": 1.4219308,
+                "median": 2.9233105,
+                "q90": 6.1616612
+              },
+              "skyTau": {
+                "mean": 1.1769546,
+                "standardDeviation": 1.3118775,
+                "coefficientOfVariation": 1.1146373,
+                "q10": 0.271371,
+                "median": 0.6090991,
+                "q90": 2.7887556
+              },
+              "macroSourceLuminance": {
+                "mean": 0.3326355,
+                "standardDeviation": 0.1653502,
+                "coefficientOfVariation": 0.4970911,
+                "q10": 0.134558,
+                "median": 0.3001444,
+                "q90": 0.5689679
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0028579,
+                  0.0390801,
+                  0.0956565,
+                  0.6618678,
+                  0.2005378,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0289947,
+                  0.3090284,
+                  0.6619769,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "stepKm": 0.006,
+              "hit": true,
+              "opacity": 0.994273,
+              "transmittance": 0.005727,
+              "contributingSegments": 67,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.6901944,
+                "standardDeviation": 0.0734423,
+                "coefficientOfVariation": 0.1064081,
+                "q10": 0.615,
+                "median": 0.669,
+                "q90": 0.795
+              },
+              "density": {
+                "mean": 0.6238959,
+                "standardDeviation": 0.1527805,
+                "coefficientOfVariation": 0.2448813,
+                "q10": 0.4119146,
+                "median": 0.6267484,
+                "q90": 0.8404401
+              },
+              "solarTau": {
+                "mean": 3.3416127,
+                "standardDeviation": 1.80452,
+                "coefficientOfVariation": 0.5400147,
+                "q10": 1.3893674,
+                "median": 2.8791785,
+                "q90": 6.1241661
+              },
+              "skyTau": {
+                "mean": 1.1788705,
+                "standardDeviation": 1.3172558,
+                "coefficientOfVariation": 1.117388,
+                "q10": 0.2662513,
+                "median": 0.5941676,
+                "q90": 2.7565732
+              },
+              "macroSourceLuminance": {
+                "mean": 0.3326063,
+                "standardDeviation": 0.1654392,
+                "coefficientOfVariation": 0.4974023,
+                "q10": 0.1355059,
+                "median": 0.304647,
+                "q90": 0.5789986
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0.0022457,
+                  0,
+                  0.0395201,
+                  0.0725458,
+                  0.6848323,
+                  0.2008561,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0178887,
+                  0.3197892,
+                  0.662322,
+                  0,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "down",
+          "uv": [
+            0.5,
+            0.65
+          ],
+          "steps": [
+            {
+              "stepKm": 0.003,
+              "hit": true,
+              "opacity": 0.9940052,
+              "transmittance": 0.0059948,
+              "contributingSegments": 123,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.6395899,
+                "standardDeviation": 0.0642873,
+                "coefficientOfVariation": 0.1005134,
+                "q10": 0.5715,
+                "median": 0.6255,
+                "q90": 0.7275
+              },
+              "density": {
+                "mean": 0.6952559,
+                "standardDeviation": 0.1828311,
+                "coefficientOfVariation": 0.2629695,
+                "q10": 0.4359156,
+                "median": 0.7585415,
+                "q90": 0.8639054
+              },
+              "solarTau": {
+                "mean": 4.8646765,
+                "standardDeviation": 1.7316054,
+                "coefficientOfVariation": 0.3559549,
+                "q10": 2.9690926,
+                "median": 4.5281386,
+                "q90": 7.3203343
+              },
+              "skyTau": {
+                "mean": 1.6905009,
+                "standardDeviation": 1.2138236,
+                "coefficientOfVariation": 0.718026,
+                "q10": 0.4069694,
+                "median": 1.5161228,
+                "q90": 3.114875
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2002551,
+                "standardDeviation": 0.0676464,
+                "coefficientOfVariation": 0.3378012,
+                "q10": 0.1168138,
+                "median": 0.190017,
+                "q90": 0.3007617
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0029765,
+                  0.0287936,
+                  0.1193184,
+                  0.3396713,
+                  0.5092402,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0317701,
+                  0.3505734,
+                  0.3338324,
+                  0.283824,
+                  0
+                ]
+              }
+            },
+            {
+              "stepKm": 0.006,
+              "hit": true,
+              "opacity": 0.9940067,
+              "transmittance": 0.0059933,
+              "contributingSegments": 62,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.6395975,
+                "standardDeviation": 0.0642874,
+                "coefficientOfVariation": 0.1005123,
+                "q10": 0.573,
+                "median": 0.627,
+                "q90": 0.729
+              },
+              "density": {
+                "mean": 0.6953832,
+                "standardDeviation": 0.1827794,
+                "coefficientOfVariation": 0.262847,
+                "q10": 0.4549439,
+                "median": 0.7677851,
+                "q90": 0.8657777
+              },
+              "solarTau": {
+                "mean": 4.8648618,
+                "standardDeviation": 1.7316134,
+                "coefficientOfVariation": 0.355943,
+                "q10": 3.0135826,
+                "median": 4.5692341,
+                "q90": 7.3567787
+              },
+              "skyTau": {
+                "mean": 1.6905675,
+                "standardDeviation": 1.2138302,
+                "coefficientOfVariation": 0.7180016,
+                "q10": 0.4386047,
+                "median": 1.5430831,
+                "q90": 3.1508874
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2002483,
+                "standardDeviation": 0.0676497,
+                "coefficientOfVariation": 0.3378292,
+                "q10": 0.1160936,
+                "median": 0.1881824,
+                "q90": 0.2960397
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0.0024397,
+                  0,
+                  0.0161929,
+                  0.1555182,
+                  0.3165988,
+                  0.5092504,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0467174,
+                  0.3578957,
+                  0.3274613,
+                  0.2679256,
+                  0
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "approach": 0.95,
+      "origin": [
+        0.4296875,
+        2.9365234,
+        0.7120936
+      ],
+      "distanceFromTargetKm": 0.7120936,
+      "estimatedCentralClearanceMetres": 113.6858525,
+      "macroSourceAcrossFiveRays": {
+        "mean": 0.2803576,
+        "coefficientOfVariation": 0.1833436,
+        "relativeRange": 0.5247698
+      },
+      "rays": [
+        {
+          "name": "center",
+          "uv": [
+            0.5,
+            0.5
+          ],
+          "steps": [
+            {
+              "stepKm": 0.003,
+              "hit": true,
+              "opacity": 0.9942536,
+              "transmittance": 0.0057464,
+              "contributingSegments": 121,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.1982183,
+                "standardDeviation": 0.0625571,
+                "coefficientOfVariation": 0.315597,
+                "q10": 0.1365,
+                "median": 0.1815,
+                "q90": 0.2835
+              },
+              "density": {
+                "mean": 0.7350921,
+                "standardDeviation": 0.1621399,
+                "coefficientOfVariation": 0.2205709,
+                "q10": 0.5012244,
+                "median": 0.7946643,
+                "q90": 0.8491025
+              },
+              "solarTau": {
+                "mean": 3.8659697,
+                "standardDeviation": 1.7024458,
+                "coefficientOfVariation": 0.4403671,
+                "q10": 2.0382323,
+                "median": 3.4456278,
+                "q90": 6.2836543
+              },
+              "skyTau": {
+                "mean": 1.1944989,
+                "standardDeviation": 1.0415443,
+                "coefficientOfVariation": 0.8719509,
+                "q10": 0.4056389,
+                "median": 0.9007867,
+                "q90": 2.4216887
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2678658,
+                "standardDeviation": 0.1076385,
+                "coefficientOfVariation": 0.4018372,
+                "q10": 0.1372143,
+                "median": 0.252838,
+                "q90": 0.4203672
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0021223,
+                  0.0181769,
+                  0.0735887,
+                  0.2444712,
+                  0.6616408,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0091744,
+                  0.1629063,
+                  0.6879521,
+                  0.1399671,
+                  0
+                ]
+              }
+            },
+            {
+              "stepKm": 0.006,
+              "hit": true,
+              "opacity": 0.9940063,
+              "transmittance": 0.0059937,
+              "contributingSegments": 60,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.1980473,
+                "standardDeviation": 0.0624366,
+                "coefficientOfVariation": 0.3152612,
+                "q10": 0.135,
+                "median": 0.183,
+                "q90": 0.285
+              },
+              "density": {
+                "mean": 0.7341558,
+                "standardDeviation": 0.1640462,
+                "coefficientOfVariation": 0.2234488,
+                "q10": 0.4730216,
+                "median": 0.7976926,
+                "q90": 0.8492675
+              },
+              "solarTau": {
+                "mean": 3.8614235,
+                "standardDeviation": 1.70046,
+                "coefficientOfVariation": 0.4403713,
+                "q10": 1.9969569,
+                "median": 3.4945975,
+                "q90": 6.3123282
+              },
+              "skyTau": {
+                "mean": 1.1914619,
+                "standardDeviation": 1.0362905,
+                "coefficientOfVariation": 0.8697638,
+                "q10": 0.3852463,
+                "median": 0.9127958,
+                "q90": 2.4552214
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2682813,
+                "standardDeviation": 0.1080793,
+                "coefficientOfVariation": 0.4028581,
+                "q10": 0.1363665,
+                "median": 0.2494771,
+                "q90": 0.4284519
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0100406,
+                  0.0256136,
+                  0.0836105,
+                  0.2197968,
+                  0.6609384,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0100406,
+                  0.1631564,
+                  0.6658385,
+                  0.1609644,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "left",
+          "uv": [
+            0.35,
+            0.5
+          ],
+          "steps": [
+            {
+              "stepKm": 0.003,
+              "hit": true,
+              "opacity": 0.9941798,
+              "transmittance": 0.0058202,
+              "contributingSegments": 123,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.2040538,
+                "standardDeviation": 0.0638245,
+                "coefficientOfVariation": 0.3127828,
+                "q10": 0.1395,
+                "median": 0.1875,
+                "q90": 0.2925
+              },
+              "density": {
+                "mean": 0.72155,
+                "standardDeviation": 0.1638355,
+                "coefficientOfVariation": 0.2270605,
+                "q10": 0.462243,
+                "median": 0.8171059,
+                "q90": 0.8330155
+              },
+              "solarTau": {
+                "mean": 4.4913502,
+                "standardDeviation": 1.6788449,
+                "coefficientOfVariation": 0.3737951,
+                "q10": 2.7448862,
+                "median": 4.0722612,
+                "q90": 6.8032167
+              },
+              "skyTau": {
+                "mean": 1.2664526,
+                "standardDeviation": 1.1046703,
+                "coefficientOfVariation": 0.8722555,
+                "q10": 0.4066605,
+                "median": 0.8824958,
+                "q90": 2.7239981
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2224604,
+                "standardDeviation": 0.0716085,
+                "coefficientOfVariation": 0.3218932,
+                "q10": 0.1266751,
+                "median": 0.2202326,
+                "q90": 0.3231548
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0024456,
+                  0.0258651,
+                  0.0757346,
+                  0.2647438,
+                  0.631211,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0160098,
+                  0.1386014,
+                  0.8453887,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "stepKm": 0.006,
+              "hit": true,
+              "opacity": 0.9941695,
+              "transmittance": 0.0058305,
+              "contributingSegments": 61,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.2042359,
+                "standardDeviation": 0.0637604,
+                "coefficientOfVariation": 0.3121901,
+                "q10": 0.141,
+                "median": 0.189,
+                "q90": 0.291
+              },
+              "density": {
+                "mean": 0.7235032,
+                "standardDeviation": 0.1597434,
+                "coefficientOfVariation": 0.2207916,
+                "q10": 0.4877212,
+                "median": 0.8187019,
+                "q90": 0.8323713
+              },
+              "solarTau": {
+                "mean": 4.4961391,
+                "standardDeviation": 1.6770371,
+                "coefficientOfVariation": 0.3729949,
+                "q10": 2.7851923,
+                "median": 4.1131852,
+                "q90": 6.7712403
+              },
+              "skyTau": {
+                "mean": 1.2687812,
+                "standardDeviation": 1.1046248,
+                "coefficientOfVariation": 0.8706188,
+                "q10": 0.4232177,
+                "median": 0.8916993,
+                "q90": 2.6962116
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2220555,
+                "standardDeviation": 0.0711044,
+                "coefficientOfVariation": 0.3202101,
+                "q10": 0.1273832,
+                "median": 0.2182694,
+                "q90": 0.3185399
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0,
+                  0.0127078,
+                  0.1137865,
+                  0.266645,
+                  0.6068607,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0127078,
+                  0.167016,
+                  0.8202762,
+                  0,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "right",
+          "uv": [
+            0.65,
+            0.5
+          ],
+          "steps": [
+            {
+              "stepKm": 0.003,
+              "hit": true,
+              "opacity": 0.9942373,
+              "transmittance": 0.0057627,
+              "contributingSegments": 119,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.2027014,
+                "standardDeviation": 0.0618268,
+                "coefficientOfVariation": 0.3050143,
+                "q10": 0.1395,
+                "median": 0.1875,
+                "q90": 0.2895
+              },
+              "density": {
+                "mean": 0.7372317,
+                "standardDeviation": 0.1685729,
+                "coefficientOfVariation": 0.2286566,
+                "q10": 0.4745485,
+                "median": 0.8046113,
+                "q90": 0.8662195
+              },
+              "solarTau": {
+                "mean": 2.879414,
+                "standardDeviation": 1.595684,
+                "coefficientOfVariation": 0.5541697,
+                "q10": 1.2911299,
+                "median": 2.4229032,
+                "q90": 5.0520693
+              },
+              "skyTau": {
+                "mean": 1.0447052,
+                "standardDeviation": 1.0342356,
+                "coefficientOfVariation": 0.9899784,
+                "q10": 0.2985294,
+                "median": 0.7069117,
+                "q90": 2.2704952
+              },
+              "macroSourceLuminance": {
+                "mean": 0.3695836,
+                "standardDeviation": 0.1637803,
+                "coefficientOfVariation": 0.443148,
+                "q10": 0.1629233,
+                "median": 0.3528181,
+                "q90": 0.6074689
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0062686,
+                  0.020967,
+                  0.0790787,
+                  0.2418057,
+                  0.6518799,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.014101,
+                  0.1702685,
+                  0.5051794,
+                  0.3104511,
+                  0
+                ]
+              }
+            },
+            {
+              "stepKm": 0.006,
+              "hit": true,
+              "opacity": 0.9942369,
+              "transmittance": 0.0057631,
+              "contributingSegments": 59,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.2027356,
+                "standardDeviation": 0.0618028,
+                "coefficientOfVariation": 0.3048443,
+                "q10": 0.141,
+                "median": 0.189,
+                "q90": 0.291
+              },
+              "density": {
+                "mean": 0.7382863,
+                "standardDeviation": 0.1657394,
+                "coefficientOfVariation": 0.2244921,
+                "q10": 0.5036525,
+                "median": 0.8072183,
+                "q90": 0.8673415
+              },
+              "solarTau": {
+                "mean": 2.8800373,
+                "standardDeviation": 1.5955536,
+                "coefficientOfVariation": 0.5540045,
+                "q10": 1.3180385,
+                "median": 2.4651842,
+                "q90": 5.0863934
+              },
+              "skyTau": {
+                "mean": 1.0449869,
+                "standardDeviation": 1.0341818,
+                "coefficientOfVariation": 0.9896601,
+                "q10": 0.3119138,
+                "median": 0.7186134,
+                "q90": 2.2932186
+              },
+              "macroSourceLuminance": {
+                "mean": 0.3694089,
+                "standardDeviation": 0.1634428,
+                "coefficientOfVariation": 0.4424441,
+                "q10": 0.1617508,
+                "median": 0.347014,
+                "q90": 0.5982559
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0,
+                  0.012122,
+                  0.0701905,
+                  0.2658115,
+                  0.651876,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.012122,
+                  0.1722898,
+                  0.5271195,
+                  0.2884687,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "up",
+          "uv": [
+            0.5,
+            0.35
+          ],
+          "steps": [
+            {
+              "stepKm": 0.003,
+              "hit": true,
+              "opacity": 0.9942292,
+              "transmittance": 0.0057708,
+              "contributingSegments": 122,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.2045004,
+                "standardDeviation": 0.0635488,
+                "coefficientOfVariation": 0.3107513,
+                "q10": 0.1395,
+                "median": 0.1875,
+                "q90": 0.2925
+              },
+              "density": {
+                "mean": 0.7226944,
+                "standardDeviation": 0.1656041,
+                "coefficientOfVariation": 0.2291482,
+                "q10": 0.4504284,
+                "median": 0.8012697,
+                "q90": 0.8422831
+              },
+              "solarTau": {
+                "mean": 3.4764942,
+                "standardDeviation": 1.5871353,
+                "coefficientOfVariation": 0.4565333,
+                "q10": 1.7432531,
+                "median": 3.0686495,
+                "q90": 5.7043853
+              },
+              "skyTau": {
+                "mean": 1.0494434,
+                "standardDeviation": 0.9933151,
+                "coefficientOfVariation": 0.9465161,
+                "q10": 0.3531251,
+                "median": 0.7135264,
+                "q90": 2.2495079
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2989022,
+                "standardDeviation": 0.1213504,
+                "coefficientOfVariation": 0.405987,
+                "q10": 0.1490681,
+                "median": 0.2849136,
+                "q90": 0.4824562
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0068323,
+                  0.0186687,
+                  0.099017,
+                  0.2655074,
+                  0.6099746,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0145163,
+                  0.162458,
+                  0.7880041,
+                  0.0350216,
+                  0
+                ]
+              }
+            },
+            {
+              "stepKm": 0.006,
+              "hit": true,
+              "opacity": 0.9944745,
+              "transmittance": 0.0055255,
+              "contributingSegments": 62,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.2046514,
+                "standardDeviation": 0.0636803,
+                "coefficientOfVariation": 0.3111648,
+                "q10": 0.141,
+                "median": 0.189,
+                "q90": 0.291
+              },
+              "density": {
+                "mean": 0.7232863,
+                "standardDeviation": 0.1642327,
+                "coefficientOfVariation": 0.2270645,
+                "q10": 0.4751936,
+                "median": 0.8022875,
+                "q90": 0.8394755
+              },
+              "solarTau": {
+                "mean": 3.4799674,
+                "standardDeviation": 1.5890515,
+                "coefficientOfVariation": 0.4566283,
+                "q10": 1.7777524,
+                "median": 3.1134503,
+                "q90": 5.675693
+              },
+              "skyTau": {
+                "mean": 1.0520083,
+                "standardDeviation": 0.9984858,
+                "coefficientOfVariation": 0.9491235,
+                "q10": 0.3697852,
+                "median": 0.7238038,
+                "q90": 2.2187796
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2985642,
+                "standardDeviation": 0.1210707,
+                "coefficientOfVariation": 0.4055097,
+                "q10": 0.1500329,
+                "median": 0.2809998,
+                "q90": 0.4742161
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0.0009073,
+                  0,
+                  0.0382791,
+                  0.0844548,
+                  0.2658701,
+                  0.6104887,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0131468,
+                  0.1632114,
+                  0.7886005,
+                  0.0350414,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "down",
+          "uv": [
+            0.5,
+            0.65
+          ],
+          "steps": [
+            {
+              "stepKm": 0.003,
+              "hit": true,
+              "opacity": 0.994199,
+              "transmittance": 0.005801,
+              "contributingSegments": 122,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.1967422,
+                "standardDeviation": 0.0629237,
+                "coefficientOfVariation": 0.3198284,
+                "q10": 0.1335,
+                "median": 0.1815,
+                "q90": 0.2835
+              },
+              "density": {
+                "mean": 0.7249371,
+                "standardDeviation": 0.167261,
+                "coefficientOfVariation": 0.2307249,
+                "q10": 0.4826376,
+                "median": 0.8098288,
+                "q90": 0.854438
+              },
+              "solarTau": {
+                "mean": 4.2156145,
+                "standardDeviation": 1.7988384,
+                "coefficientOfVariation": 0.4267085,
+                "q10": 2.2744386,
+                "median": 3.8265919,
+                "q90": 6.8397251
+              },
+              "skyTau": {
+                "mean": 1.373136,
+                "standardDeviation": 1.1266356,
+                "coefficientOfVariation": 0.8204836,
+                "q10": 0.42703,
+                "median": 1.0999114,
+                "q90": 2.7341313
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2429759,
+                "standardDeviation": 0.0958729,
+                "coefficientOfVariation": 0.394578,
+                "q10": 0.1261144,
+                "median": 0.2268288,
+                "q90": 0.3807764
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0017971,
+                  0.0189045,
+                  0.0939346,
+                  0.2859851,
+                  0.5993788,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0090283,
+                  0.1825474,
+                  0.5200143,
+                  0.28841,
+                  0
+                ]
+              }
+            },
+            {
+              "stepKm": 0.006,
+              "hit": true,
+              "opacity": 0.9944389,
+              "transmittance": 0.0055611,
+              "contributingSegments": 61,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.1969032,
+                "standardDeviation": 0.0630409,
+                "coefficientOfVariation": 0.3201619,
+                "q10": 0.135,
+                "median": 0.183,
+                "q90": 0.285
+              },
+              "density": {
+                "mean": 0.7258558,
+                "standardDeviation": 0.1654634,
+                "coefficientOfVariation": 0.2279563,
+                "q10": 0.506139,
+                "median": 0.8103413,
+                "q90": 0.8547169
+              },
+              "solarTau": {
+                "mean": 4.2201171,
+                "standardDeviation": 1.8015151,
+                "coefficientOfVariation": 0.4268875,
+                "q10": 2.3217683,
+                "median": 3.8750171,
+                "q90": 6.8746452
+              },
+              "skyTau": {
+                "mean": 1.376214,
+                "standardDeviation": 1.1318558,
+                "coefficientOfVariation": 0.8224417,
+                "q10": 0.4509605,
+                "median": 1.1147051,
+                "q90": 2.7697104
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2426602,
+                "standardDeviation": 0.0955837,
+                "coefficientOfVariation": 0.3938996,
+                "q10": 0.125297,
+                "median": 0.224126,
+                "q90": 0.3732283
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0,
+                  0.0196351,
+                  0.0700993,
+                  0.3101952,
+                  0.6000704,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0196351,
+                  0.1709775,
+                  0.507178,
+                  0.3022093,
+                  0
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "approach": 1,
+      "origin": [
+        0.4296875,
+        2.9365234,
+        0.6045068
+      ],
+      "distanceFromTargetKm": 0.6045068,
+      "estimatedCentralClearanceMetres": 6.0989781,
+      "macroSourceAcrossFiveRays": {
+        "mean": 0.2716,
+        "coefficientOfVariation": 0.0588635,
+        "relativeRange": 0.1610133
+      },
+      "rays": [
+        {
+          "name": "center",
+          "uv": [
+            0.5,
+            0.5
+          ],
+          "steps": [
+            {
+              "stepKm": 0.003,
+              "hit": true,
+              "opacity": 0.9941167,
+              "transmittance": 0.0058833,
+              "contributingSegments": 121,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.0911842,
+                "standardDeviation": 0.0627035,
+                "coefficientOfVariation": 0.6876575,
+                "q10": 0.0285,
+                "median": 0.0735,
+                "q90": 0.1785
+              },
+              "density": {
+                "mean": 0.7325779,
+                "standardDeviation": 0.1611189,
+                "coefficientOfVariation": 0.2199341,
+                "q10": 0.4856896,
+                "median": 0.7907359,
+                "q90": 0.8453845
+              },
+              "solarTau": {
+                "mean": 3.8685989,
+                "standardDeviation": 1.7025167,
+                "coefficientOfVariation": 0.4400861,
+                "q10": 2.0175623,
+                "median": 3.4179922,
+                "q90": 6.3169263
+              },
+              "skyTau": {
+                "mean": 1.196597,
+                "standardDeviation": 1.0438179,
+                "coefficientOfVariation": 0.872322,
+                "q10": 0.3979287,
+                "median": 0.8914769,
+                "q90": 2.470356
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2676766,
+                "standardDeviation": 0.1075708,
+                "coefficientOfVariation": 0.4018687,
+                "q10": 0.1361066,
+                "median": 0.2548395,
+                "q90": 0.4243313
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0.0009611,
+                  0,
+                  0.0162089,
+                  0.0943639,
+                  0.2190666,
+                  0.6693995,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.01717,
+                  0.1476576,
+                  0.698318,
+                  0.1368544,
+                  0
+                ]
+              }
+            },
+            {
+              "stepKm": 0.006,
+              "hit": true,
+              "opacity": 0.9943807,
+              "transmittance": 0.0056193,
+              "contributingSegments": 61,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.0911505,
+                "standardDeviation": 0.0628684,
+                "coefficientOfVariation": 0.6897205,
+                "q10": 0.027,
+                "median": 0.075,
+                "q90": 0.177
+              },
+              "density": {
+                "mean": 0.7319193,
+                "standardDeviation": 0.1631847,
+                "coefficientOfVariation": 0.2229545,
+                "q10": 0.4574901,
+                "median": 0.7920341,
+                "q90": 0.8454825
+              },
+              "solarTau": {
+                "mean": 3.867261,
+                "standardDeviation": 1.7061003,
+                "coefficientOfVariation": 0.441165,
+                "q10": 1.9765096,
+                "median": 3.466872,
+                "q90": 6.2883488
+              },
+              "skyTau": {
+                "mean": 1.1969087,
+                "standardDeviation": 1.0488854,
+                "coefficientOfVariation": 0.8763287,
+                "q10": 0.3776802,
+                "median": 0.9034379,
+                "q90": 2.4369038
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2679808,
+                "standardDeviation": 0.1080474,
+                "coefficientOfVariation": 0.4031908,
+                "q10": 0.1369489,
+                "median": 0.2514273,
+                "q90": 0.432498
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.007615,
+                  0.024004,
+                  0.0807556,
+                  0.2186619,
+                  0.6689636,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.007615,
+                  0.1581239,
+                  0.6707999,
+                  0.1634612,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "left",
+          "uv": [
+            0.35,
+            0.5
+          ],
+          "steps": [
+            {
+              "stepKm": 0.003,
+              "hit": true,
+              "opacity": 0.9940865,
+              "transmittance": 0.0059135,
+              "contributingSegments": 122,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.0922292,
+                "standardDeviation": 0.0636024,
+                "coefficientOfVariation": 0.6896126,
+                "q10": 0.0285,
+                "median": 0.0765,
+                "q90": 0.1815
+              },
+              "density": {
+                "mean": 0.7228769,
+                "standardDeviation": 0.159142,
+                "coefficientOfVariation": 0.2201509,
+                "q10": 0.4642861,
+                "median": 0.7959238,
+                "q90": 0.8377629
+              },
+              "solarTau": {
+                "mean": 4.0950856,
+                "standardDeviation": 1.7915822,
+                "coefficientOfVariation": 0.4374957,
+                "q10": 2.1497803,
+                "median": 3.721307,
+                "q90": 6.6317294
+              },
+              "skyTau": {
+                "mean": 1.2166329,
+                "standardDeviation": 1.0661221,
+                "coefficientOfVariation": 0.8762891,
+                "q10": 0.3917757,
+                "median": 0.896488,
+                "q90": 2.6065383
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2542439,
+                "standardDeviation": 0.1016493,
+                "coefficientOfVariation": 0.3998102,
+                "q10": 0.1301792,
+                "median": 0.2369435,
+                "q90": 0.4025992
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0.0006896,
+                  0,
+                  0.0294367,
+                  0.0801359,
+                  0.2673687,
+                  0.6223691,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.016923,
+                  0.1450105,
+                  0.8380665,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "stepKm": 0.006,
+              "hit": true,
+              "opacity": 0.9940916,
+              "transmittance": 0.0059084,
+              "contributingSegments": 61,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.092189,
+                "standardDeviation": 0.0636214,
+                "coefficientOfVariation": 0.6901189,
+                "q10": 0.027,
+                "median": 0.075,
+                "q90": 0.183
+              },
+              "density": {
+                "mean": 0.7222214,
+                "standardDeviation": 0.1611875,
+                "coefficientOfVariation": 0.2231829,
+                "q10": 0.4394233,
+                "median": 0.7938592,
+                "q90": 0.8381309
+              },
+              "solarTau": {
+                "mean": 4.0937812,
+                "standardDeviation": 1.7923415,
+                "coefficientOfVariation": 0.4378205,
+                "q10": 2.103165,
+                "median": 3.6719719,
+                "q90": 6.6632328
+              },
+              "skyTau": {
+                "mean": 1.2161863,
+                "standardDeviation": 1.0661843,
+                "coefficientOfVariation": 0.876662,
+                "q10": 0.3726249,
+                "median": 0.8854611,
+                "q90": 2.6376936
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2544401,
+                "standardDeviation": 0.1020176,
+                "coefficientOfVariation": 0.4009492,
+                "q10": 0.129405,
+                "median": 0.2398936,
+                "q90": 0.410974
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0073645,
+                  0.0232758,
+                  0.07965,
+                  0.2675608,
+                  0.622149,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0073645,
+                  0.1548689,
+                  0.8377667,
+                  0,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "right",
+          "uv": [
+            0.65,
+            0.5
+          ],
+          "steps": [
+            {
+              "stepKm": 0.003,
+              "hit": true,
+              "opacity": 0.9941262,
+              "transmittance": 0.0058738,
+              "contributingSegments": 119,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.0905865,
+                "standardDeviation": 0.0620682,
+                "coefficientOfVariation": 0.6851815,
+                "q10": 0.0285,
+                "median": 0.0735,
+                "q90": 0.1785
+              },
+              "density": {
+                "mean": 0.737684,
+                "standardDeviation": 0.162661,
+                "coefficientOfVariation": 0.2205023,
+                "q10": 0.4933176,
+                "median": 0.7938829,
+                "q90": 0.8631784
+              },
+              "solarTau": {
+                "mean": 3.4217225,
+                "standardDeviation": 1.5517477,
+                "coefficientOfVariation": 0.453499,
+                "q10": 1.8539907,
+                "median": 2.9423912,
+                "q90": 5.7353897
+              },
+              "skyTau": {
+                "mean": 1.1020103,
+                "standardDeviation": 0.9896696,
+                "coefficientOfVariation": 0.8980585,
+                "q10": 0.3772473,
+                "median": 0.7926987,
+                "q90": 2.3538094
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2979751,
+                "standardDeviation": 0.1142151,
+                "coefficientOfVariation": 0.3833041,
+                "q10": 0.1470522,
+                "median": 0.2936144,
+                "q90": 0.4562411
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0.0011862,
+                  0,
+                  0.016149,
+                  0.095975,
+                  0.2212949,
+                  0.6653948,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0173352,
+                  0.1485766,
+                  0.5391946,
+                  0.2948936,
+                  0
+                ]
+              }
+            },
+            {
+              "stepKm": 0.006,
+              "hit": true,
+              "opacity": 0.9943957,
+              "transmittance": 0.0056043,
+              "contributingSegments": 60,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.0905025,
+                "standardDeviation": 0.062236,
+                "coefficientOfVariation": 0.6876719,
+                "q10": 0.027,
+                "median": 0.075,
+                "q90": 0.177
+              },
+              "density": {
+                "mean": 0.7372014,
+                "standardDeviation": 0.1641909,
+                "coefficientOfVariation": 0.2227219,
+                "q10": 0.4664495,
+                "median": 0.7928823,
+                "q90": 0.8627024
+              },
+              "solarTau": {
+                "mean": 3.4192762,
+                "standardDeviation": 1.5546347,
+                "coefficientOfVariation": 0.4546678,
+                "q10": 1.8224388,
+                "median": 2.9829127,
+                "q90": 5.7046117
+              },
+              "skyTau": {
+                "mean": 1.101718,
+                "standardDeviation": 0.9937083,
+                "coefficientOfVariation": 0.9019625,
+                "q10": 0.3595155,
+                "median": 0.8033072,
+                "q90": 2.3262425
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2983972,
+                "standardDeviation": 0.1146499,
+                "coefficientOfVariation": 0.3842189,
+                "q10": 0.1479896,
+                "median": 0.2897535,
+                "q90": 0.4633617
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0079689,
+                  0.0241073,
+                  0.0825168,
+                  0.2212318,
+                  0.6641752,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0079689,
+                  0.1591207,
+                  0.5388274,
+                  0.2940829,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "up",
+          "uv": [
+            0.5,
+            0.35
+          ],
+          "steps": [
+            {
+              "stepKm": 0.003,
+              "hit": true,
+              "opacity": 0.9941322,
+              "transmittance": 0.0058678,
+              "contributingSegments": 121,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.0922936,
+                "standardDeviation": 0.063023,
+                "coefficientOfVariation": 0.6828531,
+                "q10": 0.0285,
+                "median": 0.0765,
+                "q90": 0.1815
+              },
+              "density": {
+                "mean": 0.7277762,
+                "standardDeviation": 0.1627027,
+                "coefficientOfVariation": 0.2235614,
+                "q10": 0.4693866,
+                "median": 0.8053289,
+                "q90": 0.8414348
+              },
+              "solarTau": {
+                "mean": 3.6529409,
+                "standardDeviation": 1.5729914,
+                "coefficientOfVariation": 0.4306096,
+                "q10": 1.9418779,
+                "median": 3.2825978,
+                "q90": 5.9245657
+              },
+              "skyTau": {
+                "mean": 1.1028075,
+                "standardDeviation": 0.970319,
+                "coefficientOfVariation": 0.8798626,
+                "q10": 0.3801911,
+                "median": 0.8187928,
+                "q90": 2.30564
+              },
+              "macroSourceLuminance": {
+                "mean": 0.280293,
+                "standardDeviation": 0.1084026,
+                "coefficientOfVariation": 0.3867474,
+                "q10": 0.1443936,
+                "median": 0.2659246,
+                "q90": 0.4397432
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0.0009527,
+                  0.0052875,
+                  0.0221439,
+                  0.0776436,
+                  0.2938602,
+                  0.6001121,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0157041,
+                  0.1421611,
+                  0.7869175,
+                  0.0552173,
+                  0
+                ]
+              }
+            },
+            {
+              "stepKm": 0.006,
+              "hit": true,
+              "opacity": 0.9943896,
+              "transmittance": 0.0056104,
+              "contributingSegments": 61,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.092308,
+                "standardDeviation": 0.0632269,
+                "coefficientOfVariation": 0.6849553,
+                "q10": 0.027,
+                "median": 0.075,
+                "q90": 0.183
+              },
+              "density": {
+                "mean": 0.7265915,
+                "standardDeviation": 0.1640168,
+                "coefficientOfVariation": 0.2257346,
+                "q10": 0.4416527,
+                "median": 0.7941569,
+                "q90": 0.8413661
+              },
+              "solarTau": {
+                "mean": 3.6528381,
+                "standardDeviation": 1.57687,
+                "coefficientOfVariation": 0.4316835,
+                "q10": 1.9053967,
+                "median": 3.2380039,
+                "q90": 5.9510476
+              },
+              "skyTau": {
+                "mean": 1.1038822,
+                "standardDeviation": 0.9758901,
+                "coefficientOfVariation": 0.8840527,
+                "q10": 0.361491,
+                "median": 0.8086555,
+                "q90": 2.3367422
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2805305,
+                "standardDeviation": 0.1088681,
+                "coefficientOfVariation": 0.3880795,
+                "q10": 0.1435293,
+                "median": 0.269408,
+                "q90": 0.4474593
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0067828,
+                  0.0224662,
+                  0.0776748,
+                  0.2683911,
+                  0.6246852,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0067828,
+                  0.1521111,
+                  0.7875098,
+                  0.0535963,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "down",
+          "uv": [
+            0.5,
+            0.65
+          ],
+          "steps": [
+            {
+              "stepKm": 0.003,
+              "hit": true,
+              "opacity": 0.9940593,
+              "transmittance": 0.0059407,
+              "contributingSegments": 121,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.0906418,
+                "standardDeviation": 0.0626884,
+                "coefficientOfVariation": 0.6916054,
+                "q10": 0.0285,
+                "median": 0.0735,
+                "q90": 0.1785
+              },
+              "density": {
+                "mean": 0.7325268,
+                "standardDeviation": 0.1587425,
+                "coefficientOfVariation": 0.2167054,
+                "q10": 0.4974707,
+                "median": 0.7924078,
+                "q90": 0.8506814
+              },
+              "solarTau": {
+                "mean": 4.0414615,
+                "standardDeviation": 1.80796,
+                "coefficientOfVariation": 0.447353,
+                "q10": 2.0872916,
+                "median": 3.6193745,
+                "q90": 6.6764086
+              },
+              "skyTau": {
+                "mean": 1.2888541,
+                "standardDeviation": 1.1110319,
+                "coefficientOfVariation": 0.8620308,
+                "q10": 0.4127266,
+                "median": 0.9802309,
+                "q90": 2.6687059
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2578112,
+                "standardDeviation": 0.1064352,
+                "coefficientOfVariation": 0.4128415,
+                "q10": 0.1288536,
+                "median": 0.2404788,
+                "q90": 0.4111884
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0.0009127,
+                  0,
+                  0.0173051,
+                  0.0985576,
+                  0.2451254,
+                  0.6380992,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0182177,
+                  0.1524937,
+                  0.5821423,
+                  0.2471463,
+                  0
+                ]
+              }
+            },
+            {
+              "stepKm": 0.006,
+              "hit": true,
+              "opacity": 0.9943156,
+              "transmittance": 0.0056844,
+              "contributingSegments": 61,
+              "rawSaturatedOpacityFraction": 0,
+              "rawExactlyOneOpacityFraction": 0,
+              "distanceKm": {
+                "mean": 0.0906295,
+                "standardDeviation": 0.0628702,
+                "coefficientOfVariation": 0.6937054,
+                "q10": 0.027,
+                "median": 0.075,
+                "q90": 0.177
+              },
+              "density": {
+                "mean": 0.7315674,
+                "standardDeviation": 0.1609867,
+                "coefficientOfVariation": 0.2200572,
+                "q10": 0.471966,
+                "median": 0.7944546,
+                "q90": 0.8504491
+              },
+              "solarTau": {
+                "mean": 4.0407053,
+                "standardDeviation": 1.81269,
+                "coefficientOfVariation": 0.4486073,
+                "q10": 2.0420207,
+                "median": 3.6683789,
+                "q90": 6.642887
+              },
+              "skyTau": {
+                "mean": 1.2895556,
+                "standardDeviation": 1.1166269,
+                "coefficientOfVariation": 0.8659005,
+                "q10": 0.3911065,
+                "median": 0.9935516,
+                "q90": 2.6333876
+              },
+              "macroSourceLuminance": {
+                "mean": 0.2581037,
+                "standardDeviation": 0.1069598,
+                "coefficientOfVariation": 0.4144064,
+                "q10": 0.1296969,
+                "median": 0.2374287,
+                "q90": 0.4197142
+              },
+              "densityDistribution": {
+                "edges": [
+                  0,
+                  0.025,
+                  0.1,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0083272,
+                  0.0248167,
+                  0.0843008,
+                  0.2186474,
+                  0.663908,
+                  0,
+                  0
+                ]
+              },
+              "rawDistribution": {
+                "edges": [
+                  0,
+                  0.25,
+                  0.5,
+                  0.75,
+                  0.9,
+                  0.98,
+                  1.000001
+                ],
+                "opacityFractions": [
+                  0,
+                  0.0083272,
+                  0.163127,
+                  0.5989246,
+                  0.2296212,
+                  0
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

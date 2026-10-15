@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-15",
+  "rendererVersion": "observatory-v27-fixed-comparison",
+  "parent": "76f449a02a9dd11e95f28010da3492d816c77d83",
+  "purpose": "Liquid-extinction experiment baseline; existing material; fixed front radius or ordinary filtered-probe quarter view, per raw camera context.",
+  "sourceHashes": {
+    "src/cumulonimbus/volume.ts": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74",
+    "src/cumulonimbus/cloudShader.ts": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+    "src/cumulonimbus/GPUSceneEngine.ts": "f5fab919ccb0c5db238cb5e5a35866e78ba87fb50f4ec88abc1c85303f4ecbed"
+  },
+  "buildAssets": {
+    "dist/assets/index-Cia3ypEr.css": "99354a5ec1ade2941e4aba36f030b413c9afbad79336f11800929c7d805b4714",
+    "dist/assets/render.worker-BhDhPoQ4.js": "ac873c14a14dd317b116cf0ea049b85f2afe40ee16c158d244db5a2e86c84784",
+    "dist/assets/index-ReRR5BZb.js": "92cc146920f8c24f6decbc71c2a3d37ede8bb9e1e32f10bdb9eb40b44bc19584",
+    "dist/assets/volume.worker-BP-mq3wU.js": "8a681d4fa07bca14bc6d27917779d0a978241314d7f7c7a972b81b241849d59c",
+    "dist/assets/LabApp-BIVQGmZd.js": "61b740644d902e97f0e29d2e7924b0d480f6bdfdd7eae827ea06300cd5b247b9",
+    "dist/assets/three.core-DxR5k0T0.js": "e4d296a475f2cd168d934f17f032d4f56291682208332fc6a926b3937200a810",
+    "dist/assets/sky.worker-CHm7n211.js": "503ad9438c1738310a9cbe2a41e9af0524e7046bce79e58d6da7c1e74863caaa",
+    "dist/assets/CumulonimbusApp-DSe4PHQS.js": "44a38708959dbac9ddf4cb30cdb9de9c84aa76513b7bcda0e4bf58a3409ecaa2",
+    "dist/assets/CumulonimbusApp-BtOAAbpg.css": "48a275cea33834e49834428208e5c8bbc506c500afb961b4d2b6e3e0b126dbde"
+  },
+  "extinctionPerKm": 18,
+  "iceExtinctionPerKm": 6.5,
+  "macro": 256,
+  "detail": 128,
+  "steps": 384
+}

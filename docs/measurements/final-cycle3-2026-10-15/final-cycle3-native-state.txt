@@ -1,0 +1,53 @@
+- main:
+  - generic "Nube volumetrica ruotabile"
+  - heading "Cloudia." [level=1]
+  - paragraph:
+    - generic: Congesto largo
+    - generic: Sole
+  - paragraph: Trascina per esplorare · Scorri per avvicinarti
+  - status: WebGPU · convezione attiva
+  - generic "Controlli del cielo":
+    - navigation "Modalità di controllo":
+      - generic "Mani in arrivo":
+        - text: Mani
+        - generic: in arrivo
+    - status: "Scenario: Sole"
+    - navigation "Distanza dalla nube":
+      - button "Avvicinati alla nube":
+      - button "Allontanati dalla nube":
+      - button "Torna al panorama":
+    - navigation "Comandi del cielo":
+      - button "Riprendi":
+      - generic "Scenari atmosferici":
+        - button "Sole" [pressed]:
+          - generic: Sole
+        - button "Tramonto":
+          - generic: Tramonto
+        - button "Pioggia":
+          - generic: Pioggia
+        - button "Temporale":
+          - generic: Temporale
+      - generic "Regola il cielo":
+        - generic: Regola
+      - region "Regola il cielo":
+        - heading "Regola il cielo" [level=2]
+        - button "Chiudi regolazioni":
+        - tablist "Regolazioni del cielo":
+          - tab "Nube"
+          - tab "Atmosfera"
+          - tab "Misure" [active] [selected]
+        - tabpanel "Misure":
+          - text: Qualità
+          - combobox "Qualità":
+            - option "Massima · 100% / 384 passi" [selected]
+          - text: Risoluzione output
+          - combobox "Risoluzione output":
+            - option "Schermo · nitidezza nativa" [selected]
+          - paragraph: "WebGPU · 60.0 fps rAF · apple Output 2560×1440 · interno 2560×1440 384 passi nominali · mediana 16.70 ms · p95 17.30 ms GPU rendering 18.55 ms · flusso 0.000 ms Volume 256³ + dettaglio 128³ · nessun TAA Tempo della nube: 60.6 s · seme: 72 Forma: congestus · vento 55% · dispersione 0% Cielo: clear · velocità 1× · lampi: 0 · luce 0.00"
+          - button "Misura 30 secondi"
+          - button "Misura 90 secondi"
+          - button "Esporta JSON" [disabled]
+          - paragraph: Il test include 2 secondi di riscaldamento e si interrompe se cambi scena o nascondi la scheda.
+          - generic: FPS = frame inviati per secondo di tempo reale tra callback rAF. Non certifica la presentazione del compositore. Tempi GPU separati quando disponibili. Nessuna risoluzione adattiva nascosta.
+          - link "Apri il vecchio laboratorio":
+            - /url: "?legacy"

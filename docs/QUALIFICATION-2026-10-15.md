@@ -408,3 +408,84 @@ effettivo di questa finestra è CSS **1280×720**, canvas **2560×1440**. Le uni
 opzioni ordinarie sono Massima/384 e Schermo. I campioni a 1672×941 non misurano
 questo buffer nativo più grande. Stato:
 [preview finale](measurements/final-cycle2-preview-state-2026-10-15.json).
+
+
+## Terzo ciclo: confronti controllati e varianti non promosse
+
+Continuazione da `76f449a`. **Nessuna delle nuove varianti visive viene
+promossa.** Il materiale e lo shader attivi tornano byte per byte a quel
+checkpoint; il goal resta attivo e i gate fotografici precedenti restano aperti.
+Il rendering finale è `observatory-v31-comparison-camera`.
+
+### Risultati e prove conservate
+
+| Prova | Risultato utile | Decisione |
+| --- | --- | --- |
+| [Banda intermedia circa 26 m](EXPERIMENT-MESO-2026-10-15.md) | Tre coppie a origine identica; lieve schiarita, superficie ancora morbida; GPU osservata più lenta | Rimossa |
+| [Tratto solare locale da 128 m](EXPERIMENT-LOCAL-LIGHT-2026-10-15.md) | Audit CPU con coda corretta; CV della sorgente diminuisce al 95–100% | Nessuna cache GPU costruita |
+| [Estinzione liquida 60/km](EXPERIMENT-EXTINCTION-2026-10-15.md) | Fronte e quarto all'80% più contrastati ma ancora lisci | Ripristinati 18/km; nessun benchmark candidato |
+| [Rilievi dopo il carving](EXPERIMENT-SURFACE-BILLOWS-2026-10-15.md) | 96 rilievi raggiungono l'immagine, ma un lobo chiude il varco di cielo; sfocatura persiste anche con nuovo probe | Non promossi |
+| [Profilo centrato più stretto](EXPERIMENT-INTERFACE-2026-10-15.md) | Stessi 96 rilievi e stessa camera; restringere il profilo prima del filtro non produce dettaglio leggibile | Rimosso |
+
+I report separano dati CPU, immagini reali, timestamp GPU e cadenza rAF.
+Nessuna misura certifica la presentazione del compositore. I confronti singoli
+sequenziali non isolano stato termico e carico esterno; nessuna velocità
+istantanea o test numerico equivale a una nuova accettazione fotografica.
+Patch alternative, manifesti, immagini insufficienti e report grezzi restano
+nei documenti collegati. Le patch v29/v30 sono alternative cumulative contro
+`76f449a`, non due patch da applicare entrambe.
+
+La misura dei vecchi lobi figli ha individuato un limite concreto: il loro
+contributo alla massa era circa 0,3%, mentre l'erosione superava spesso il loro
+rilievo. Ridurre il solo raccordo perdeva massa e quasi tutto quel contributo;
+questa modifica non è stata applicata. La soluzione post-carving ha superato
+la cancellazione geometrica senza risolvere la risposta ottica.
+
+### Codice conservato e riproducibilità
+
+Solo in `profile=1`, `surface` può fissare il raggio vicino e `target=x,y,z`
+può fissare anche la mira. La seconda opzione richiede un raggio valido:
+la geometria potrebbe cambiare i support bounds e quindi il centro automatico.
+L'avviso distingue la camera diagnostica; il report include valori richiesti,
+origine effettiva, mira, sonda saltata e stima nulla quando inutilizzata.
+Questo non congela orientamento, viewport, zoom o meteo: devono ancora essere
+allineati. Attendere un frame e la fine delle transizioni prima della misura.
+La navigazione ordinaria ignora entrambi gli override.
+
+La sonda CLI della densità accetta anche il raggio fisso. Sono rimossi due
+import inutilizzati rimasti nella sua copia precedente: il primo build del
+ciclo li ha rilevati; il sorgente finale compila. Il nuovo audit locale resta
+un programma CPU esplicito, non una funzione produttiva del renderer.
+
+Verifica finale: **143 test / 26 file**, TypeScript, build applicazione e
+build hero superati, in quest'ordine. Rimane il warning noto sulla dimensione
+del bundle renderer. `node_modules` è ignorata da Git, senza percorsi tracciati,
+e l'esclusione Dropbox locale è stata verificata a `1` prima dei comandi.
+Nessuna dipendenza o lockfile modificato; `node_modules 2/` preservata.
+[Manifesto finale](measurements/final-cycle3-build-2026-10-15.json).
+
+### Continuazione mirata
+
+Le ipotesi non implementate sono raccolte in
+[opzioni della luce](LIGHTING-OPTIONS-2026-10-15.md) e
+[opzioni di ricostruzione](RECONSTRUCTION-OPTIONS-2026-10-15.md).
+La prossima sonda economica riguarda la fase dipendente dallo spessore con
+lunghezza fisica fissa, mantenendo densità e camera. La visibilità laterale
+del cielo aggiungerebbe informazione assente nel solo asse verticale, ma
+richiede verifiche prima di nuove risorse. La ricostruzione campo→profilo
+successiva all'interpolazione è un esperimento distinto: RG16F conserverebbe
+il materiale originale con +64 MiB GPU e CPU; non risolve automaticamente
+una sorgente uniforme e non è adottata. Non ripetere le varianti respinte
+come se fossero ancora ipotesi inesplorate.
+
+
+Preview conclusiva del ciclo: ordinaria main, seme 72, Sole, tempo nube 60,6 s
+in pausa, Panorama, audio spento e nessun pannello aperto. Viewport override
+rimosso, CSS **1280×720**, canvas/output e interno **2560×1440**, solo
+Massima/384 e Schermo nativo disponibili. Avviso diagnostico assente, console
+acquisita `[]`. Nessun benchmark sostenuto eseguito su questa preview finale:
+la lettura istantanea del pannello non è un risultato prestazionale nuovo.
+[Stato DOM e dimensioni](measurements/final-cycle3-2026-10-15/final-cycle3-preview-state.json),
+[immagine reale](measurements/final-cycle3-2026-10-15/final-cycle3-native-sun.jpg),
+[console](measurements/final-cycle3-2026-10-15/final-cycle3-console.json).
+Il tab resta disponibile per la continuazione; nessun push o deploy.

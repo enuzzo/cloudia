@@ -1,5 +1,21 @@
 import {describe,it,expect} from 'vitest';
-import {OrbitView,probeApproach} from './camera';
+import {OrbitView,probeApproach,comparisonSurfaceDistance,comparisonCameraTarget} from './camera';
+describe('explicit comparison camera',()=>{
+ it('only accepts a finite bounded radius in profiling mode',()=>{
+  expect(comparisonSurfaceDistance('?surface=.6045067691')).toBeNull();
+  expect(comparisonSurfaceDistance('?profile=1&surface=.6045067691')).toBe(.6045067691);
+  for(const value of ['', 'NaN','Infinity','0','-.1','16.01'])expect(comparisonSurfaceDistance(`?profile=1&surface=${value}`)).toBeNull();
+  expect(comparisonSurfaceDistance('?profile=1&surface=.01')).toBe(.01);
+  expect(comparisonSurfaceDistance('?profile=1&surface=16')).toBe(16);
+ });
+ it('pins three bounded target coordinates only with an explicit comparison radius',()=>{
+  const target='0.4296875,2.9365234375,0';
+  expect(comparisonCameraTarget(`?profile=1&surface=.6045&target=${target}`)).toEqual([.4296875,2.9365234375,0]);
+  expect(comparisonCameraTarget(`?profile=1&target=${target}`)).toBeNull();
+  expect(comparisonCameraTarget(`?surface=.6045&target=${target}`)).toBeNull();
+  for(const value of ['1,2','1,,3','1,NaN,3','1,2,Infinity','17,2,3'])expect(comparisonCameraTarget(`?profile=1&surface=.6&target=${value}`)).toBeNull();
+ });
+});
 describe('inspection orbit',()=>{
  it('rotates on both drag axes and clamps pitch away from singularities',()=>{
   const v=new OrbitView();v.drag(120,-90,1000,700);

@@ -1,7 +1,7 @@
 import {GPUSceneEngine,type Quality} from './GPUSceneEngine';
 import type {RenderEvent,RenderCommand,Viewport} from './renderProtocol';
 import './scene.css';
-import {OrbitPointerController} from './camera';
+import {OrbitPointerController,comparisonSurfaceDistance,comparisonCameraTarget} from './camera';
 import {installPanelDismissal,installInspectorTabs,refreshRangeOutputs} from './panels';
 import {sceneMarkup} from './sceneMarkup';
 import {icon} from './uiIcons';
@@ -157,7 +157,9 @@ export class CumulonimbusApp {
   };
   private showProbe(mode:string){
     const warning=this.root.querySelector<HTMLElement>('[data-testid="probe-warning"]')!;
-    warning.hidden=mode==='full';warning.textContent=`Sonda: ${mode} · immagine diagnostica`;
+    const surface=comparisonSurfaceDistance(location.search);
+    warning.hidden=mode==='full'&&surface===null;
+    warning.textContent=[mode!=='full'?`Sonda: ${mode}`:'',surface!==null?`Camera di confronto · raggio vicino ${surface.toFixed(4)} km`:'',comparisonCameraTarget(location.search)?'mira fissa':'','immagine diagnostica'].filter(Boolean).join(' · ');
   }
   private onInput=(event:Event)=>{const input=event.target as HTMLInputElement;if(input.type==='range'){refreshRangeOutputs(this.controls);this.send({type:'change',name:input.name,value:input.value});}};
   private onChange=(event:Event)=>{

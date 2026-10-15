@@ -5,6 +5,14 @@ let app:CumulonimbusApp|undefined;
 afterEach(()=>{app?.destroy();document.body.innerHTML='';history.replaceState(null,'','/');});
 function setup(){const root=document.createElement('main');document.body.append(root);app=new CumulonimbusApp(root);return root;}
 describe('observatory inspector',()=>{
+ it('labels a pinned comparison camera even with complete shading and ignores it in ordinary mode',()=>{
+  history.replaceState(null,'','/?profile=1&surface=.6045067691&target=.4296875,2.9365234375,0');const root=setup();
+  const warning=root.querySelector<HTMLElement>('[data-testid=probe-warning]')!;
+  expect(warning.hidden).toBe(false);expect(warning.textContent).toContain('Camera di confronto');
+  expect(warning.textContent).toContain('mira fissa');
+  app!.destroy();history.replaceState(null,'','/?surface=.6045067691');
+  const ordinary=setup();expect(ordinary.querySelector<HTMLElement>('[data-testid=probe-warning]')!.hidden).toBe(true);
+ });
  it('resets diagnostic slider readouts with the fixed reference state',()=>{
   history.replaceState(null,'','/?profile=1');const root=setup();
   for(const name of ['wind','dispersion','rain']){
