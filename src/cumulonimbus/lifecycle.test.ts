@@ -88,10 +88,15 @@ vi.mock('./terrainDem',async()=>{
  const actual=await vi.importActual<typeof import('./terrainDem')>('./terrainDem');
  return {...actual,loadTerrainDem:vi.fn(async()=>({side:3,spacingKm:64,minX:-64,minZ:-64,heights:new Uint16Array(9),coast:new Int16Array(9)}))};
 });
+vi.mock('./terrainCover',async()=>{
+ const actual=await vi.importActual<typeof import('./terrainCover')>('./terrainCover');
+ return {...actual,loadTerrainCover:vi.fn(async()=>{const fractions=new Uint8Array(48);for(let i=0;i<4;i++)fractions[i*12]=255;return {side:2,spacingKm:64,minX:-64,minZ:-64,fractions};})};
+});
 import { CumulonimbusApp } from './CumulonimbusApp';
 import { Data3DTexture,NearestFilter,LinearFilter,ClampToEdgeWrapping,NoColorSpace,RedFormat,UnsignedByteType } from 'three/webgpu';
 import * as cloudShader from './cloudShader';
 import {loadTerrainDem,type TerrainDem} from './terrainDem';
+import {loadTerrainCover,type TerrainCover} from './terrainCover';
 import type { CloudVolume } from './volume';
 import type {NarrowCloudMask} from './narrowCloud';
 import type {DensityR8} from './densityR8';
@@ -143,6 +148,32 @@ function terrainComponents(value:TerrainCameraFrame['origin']):number[]{
  return 'x' in value?[value.x,value.y,value.z]:Array.from(value);
 }
 describe('scene async lifecycle',()=>{
+  it('reports a missing measured cover before generating clouds instead of silently colouring every slope as forest',async()=>{
+    vi.mocked(loadTerrainCover).mockRejectedValueOnce(new Error('Copertura del suolo non disponibile (404)'));
+    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await starting;
+    expect(root.querySelector('[data-testid="scene-status"]')!.textContent).toContain('Copertura del suolo non disponibile (404)');
+    expect(control.workers).toHaveLength(0);expect(control.terrain).toHaveLength(0);expect(control.render).not.toHaveBeenCalled();
+    expect(control.renderer!.dispose).toHaveBeenCalledOnce();app.destroy();await flush();
+  });
+  it('aborts a pending cover request and cannot allocate resources if it resolves after teardown',async()=>{
+    let finish!:(value:TerrainCover)=>void;
+    vi.mocked(loadTerrainCover).mockImplementationOnce(()=>new Promise(resolve=>{finish=resolve;}));
+    const {app}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    const signal=vi.mocked(loadTerrainCover).mock.calls.at(-1)![0]!;
+    app.destroy();await flush();expect(signal.aborted).toBe(true);
+    const fractions=new Uint8Array(48);for(let i=0;i<4;i++)fractions[i*12]=255;
+    finish({side:2,spacingKm:64,minX:-64,minZ:-64,fractions});await starting;
+    expect(control.workers).toHaveLength(0);expect(control.terrain).toHaveLength(0);expect(control.render).not.toHaveBeenCalled();
+    expect(control.renderer!.dispose).toHaveBeenCalledOnce();
+  });
+  it('rejects cover with a geographic extent that cannot align with the measured terrain',async()=>{
+    const fractions=new Uint8Array(48);for(let i=0;i<4;i++)fractions[i*12]=255;
+    vi.mocked(loadTerrainCover).mockResolvedValueOnce({side:2,spacingKm:64,minX:-63,minZ:-64,fractions});
+    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await starting;
+    expect(root.querySelector('[data-testid="scene-status"]')!.textContent).toContain('Estensione della copertura del suolo incompatibile');
+    expect(control.workers).toHaveLength(0);expect(control.terrain).toHaveLength(0);expect(control.render).not.toHaveBeenCalled();
+    app.destroy();await flush();
+  });
   it('reports a missing measured landscape before starting cloud generation, without a silent terrain fallback',async()=>{
     vi.mocked(loadTerrainDem).mockRejectedValueOnce(new Error('Rilievo non disponibile (404)'));
     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await starting;
@@ -343,9 +374,10 @@ describe('scene async lifecycle',()=>{
       queuePrefix:{status:string;measuredSubmissions:number;confirmedPrefixId:number;samples:Array<{kind:string;prefixId:number}>}};
     expect(report.densitySamplingStart).toMatchObject({path:'r8unorm-extracted-r',format:'r8unorm',dimensions:[1,1,1],textureBytes:1,extraCpuPayloadBytes:1,extraGpuPayloadBytes:1,fallback:null});
     expect(report.densitySamplingEnd).toEqual(report.densitySamplingStart);
-    expect(report.rendererVersion).toBe('observatory-v53-measured-terrain');
+    expect(report.rendererVersion).toBe('observatory-v54-cover-fragment');
     expect(report).toHaveProperty('terrainSurfaceId','copernicus-glo90-liguria-apuane-v1');
     expect(report).toHaveProperty('terrainGeography',expect.objectContaining({originDegrees:[44,10],verticalExaggeration:1,measuredSquareHalfWidthKm:48}));
+    expect(report).toHaveProperty('terrainCover',expect.objectContaining({id:'esa-worldcover-2021-area-fractions-v1',year:2021,sourceClasses:12,materialGroups:8,gridSize:[2,2],sourceAssetBytes:80,retainedCpuPayloadBytes:32,totalGpuPayloadBytes:40}));
     expect(control.terrain[0].stats).toHaveBeenCalled();
     expect(report).toHaveProperty('terrainRaster',expect.objectContaining({width:1920,height:1080,targetPayloadBytes:1920*1080*20,perFrameCpuHeightSamples:0}));
     expect(report.stats.frames).toBe(2);expect(report.queuePrefix.measuredSubmissions).toBe(report.stats.frames);

@@ -157,7 +157,7 @@ fn tsFilteredNoise(p:vec2<f32>,frequency:f32,footprint:f32)->vec3<f32>{
 }
 // Mesh-friendly material. H/coast/normal are the actual geometry attributes.
 // Returns unfogged diffuse radiance; caller retains shared aerial transport.
-fn terrainSurfaceMaterial(point:vec3<f32>,hKm:f32,coastKm:f32,macroNormal:vec3<f32>,distanceKm:f32,pixelKm:f32,sun:vec3<f32>,solar:vec3<f32>,ambient:vec3<f32>,solarVisibility:f32)->vec3<f32>{
+fn terrainSurfaceMaterial(point:vec3<f32>,hKm:f32,coastKm:f32,macroNormal:vec3<f32>,distanceKm:f32,pixelKm:f32,sun:vec3<f32>,solar:vec3<f32>,ambient:vec3<f32>,solarVisibility:f32,coverA:vec4<f32>,coverB:vec4<f32>)->vec3<f32>{
  let p=point.xz+vec2<f32>(hKm*.37,-hKm*.21);let normal=normalize(macroNormal);
  let slope=length(normal.xz)/max(.12,normal.y);
  let broad=tsFilteredNoise(p,2.2,pixelKm);let grain=tsFilteredNoise(p+vec2<f32>(7.1,-3.2),12.0,pixelKm);
@@ -177,14 +177,23 @@ fn terrainSurfaceMaterial(point:vec3<f32>,hKm:f32,coastKm:f32,macroNormal:vec3<f
  let mineral=clamp(.55*broad.x+.30*grain.x+.15*fine.x,0.0,1.0);
  let rock=mix(vec3<f32>(.085,.087,.077),vec3<f32>(.185,.172,.145),mineral);
  let snow=mix(vec3<f32>(.37,.40,.41),vec3<f32>(.55,.57,.57),grain.x);
- let albedo=forest*biome.x+rock*biome.y+snow*biome.z;
- let rough=(.045*grain.yz+.025*fine.yz)*biome.y+.018*canopyField.yz*biome.x;
+ // WorldCover supplies class-area fractions, not canopy density or optical
+ // albedo. Palette/lighting remain authored. Unknown area retains the existing
+ // altitude/slope material; crops and built are never turned into forest.
+ let grass=mix(vec3<f32>(.063,.085,.037),vec3<f32>(.105,.120,.061),broad.x);
+ let crops=mix(vec3<f32>(.105,.100,.052),vec3<f32>(.170,.145,.085),vegetation);
+ let built=mix(vec3<f32>(.085,.082,.075),vec3<f32>(.145,.140,.125),grain.x);
+ let authored=forest*biome.x+rock*biome.y+snow*biome.z;
+ let albedo=authored*coverA.x+forest*coverA.y+grass*coverA.z+crops*coverA.w+built*coverB.x+rock*coverB.y+snow*coverB.z;
+ let rockCover=biome.y*coverA.x+coverB.y;let treeCover=biome.x*coverA.x+coverA.y;
+ let rough=(.045*grain.yz+.025*fine.yz)*rockCover+.018*canopyField.yz*treeCover;
  let n=normalize(normal-vec3<f32>(rough.x,0,rough.y));
  // Authored skylight/horizon proxy, not a baked visibility or cast-shadow solve.
  let valley=(1.0-smoothstep(.35,1.2,hKm))*(1.0-smoothstep(.15,.65,slope));
  let skyVisibility=clamp(.62+.38*max(0.0,n.y)-.12*valley,.45,1.0);
  let diffuse=max(0.0,dot(n,sun));
- let ground=albedo*(solar*(.90*diffuse)*clamp(solarVisibility,0.0,1.0)+ambient*(1.12*skyVisibility));
+ let inlandWater=vec3<f32>(.018,.055,.067)*(solar*.4+ambient*1.5);
+ let ground=albedo*(solar*(.90*diffuse)*clamp(solarVisibility,0.0,1.0)+ambient*(1.12*skyVisibility))+inlandWater*coverB.w;
  let shallows=exp(-max(0.0,-coastKm)*.55);
  let sea=mix(vec3<f32>(.016,.048,.075),vec3<f32>(.026,.11,.115),shallows)*(solar*.4+ambient*1.5);
  // The measured shoreline mask is in km. Filter its edge at the projected
@@ -195,6 +204,6 @@ fn terrainSurfaceMaterial(point:vec3<f32>,hKm:f32,coastKm:f32,macroNormal:vec3<f
 fn terrainSurfaceColour(point:vec3<f32>,distanceKm:f32,pixelKm:f32,sun:vec3<f32>,solar:vec3<f32>,ambient:vec3<f32>)->vec3<f32>{
  let field=terrainSurfaceSample(point.xz);let radial=normalize(point+vec3<f32>(0,6375,0));
  let normal=normalize(radial-vec3<f32>(field.y,0,field.z));
- return terrainSurfaceMaterial(point,field.x,field.w,normal,distanceKm,pixelKm,sun,solar,ambient,1.0);
+ return terrainSurfaceMaterial(point,field.x,field.w,normal,distanceKm,pixelKm,sun,solar,ambient,1.0,vec4<f32>(1.0,0.0,0.0,0.0),vec4<f32>(0.0));
 }
 `;

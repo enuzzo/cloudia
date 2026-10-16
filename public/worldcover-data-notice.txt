@@ -1,0 +1,11 @@
+© ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium
+
+Dataset: ESA WorldCover 10 m 2021 v200.
+Citation: Zanaga, D., et al. (2022), ESA WorldCover 10 m 2021 v200.
+DOI: https://doi.org/10.5281/zenodo.7254221
+Source: https://esa-worldcover.org/en/data-access
+License: Creative Commons Attribution 4.0 International (CC BY 4.0).
+https://creativecommons.org/licenses/by/4.0/
+
+Modification: local equirectangular crop and exact rectangular area aggregation to 125 m cells; 12 categorical area fractions quantized to sum255. Source 2021 classification is unchanged; output is a derived representation, not the original native-resolution map. No endorsement by ESA or the consortium is implied.
+Class10 tree cover includes plantations and orchards. These fractions are class-area coverage, not physical canopy density or certified natural forest. Cropland40, built-up50 and NoData0 are retained as distinct channels.
