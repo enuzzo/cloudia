@@ -17,6 +17,14 @@ function normalOracle(data:TerrainMeshData){
 }
 
 describe('static stitched terrain geometry',()=>{
+ it('can derive all normals from actual triangles while preserving every position, surface and index',()=>{
+  const sample=(x:number,z:number)=>({heightKm:1+.1*Math.sin(x*7)*Math.cos(z*5),slopeX:0,slopeZ:0,coastKm:7});
+  const options={cellsPerSide:8,levels:3,spacingKm:.032},analytic=buildTerrainMeshData(sample,options),geometry=buildTerrainMeshData(sample,{...options,normalMode:'geometry'});
+  expect(geometry.positions).toEqual(analytic.positions);expect(geometry.surface).toEqual(analytic.surface);expect(geometry.indices).toEqual(analytic.indices);
+  const oracle=normalOracle(geometry).area;
+  for(let i=0;i<geometry.stats.vertices;i++)expect(new Vector3().fromArray(geometry.normals,i*3).distanceTo(oracle[i])).toBeLessThan(1e-7);
+  expect(geometry.stats.normalMode).toBe('geometry');
+ });
  it.each([8,16])('forms one welded, upward-facing disk with %i cells per side',cells=>{
   const spacing=.032,data=buildTerrainMeshData(flatSampler,{cellsPerSide:cells,levels:3,spacingKm:spacing});
   const coordinateIndices=new Map<string,number>(),edges=new Map<string,{a:number;b:number;count:number;orientation:number}>();

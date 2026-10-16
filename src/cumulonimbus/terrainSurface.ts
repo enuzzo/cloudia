@@ -187,7 +187,10 @@ fn terrainSurfaceMaterial(point:vec3<f32>,hKm:f32,coastKm:f32,macroNormal:vec3<f
  let ground=albedo*(solar*(.90*diffuse)*clamp(solarVisibility,0.0,1.0)+ambient*(1.12*skyVisibility));
  let shallows=exp(-max(0.0,-coastKm)*.55);
  let sea=mix(vec3<f32>(.016,.048,.075),vec3<f32>(.026,.11,.115),shallows)*(solar*.4+ambient*1.5);
- return mix(sea,ground,smoothstep(-.15,.25,coastKm));
+ // The measured shoreline mask is in km. Filter its edge at the projected
+ // footprint rather than spreading a uniform 400m material band inland.
+ let coastBlendWidth=max(.016,pixelKm*1.5);
+ return mix(sea,ground,smoothstep(-coastBlendWidth,coastBlendWidth,coastKm));
 }
 fn terrainSurfaceColour(point:vec3<f32>,distanceKm:f32,pixelKm:f32,sun:vec3<f32>,solar:vec3<f32>,ambient:vec3<f32>)->vec3<f32>{
  let field=terrainSurfaceSample(point.xz);let radial=normalize(point+vec3<f32>(0,6375,0));

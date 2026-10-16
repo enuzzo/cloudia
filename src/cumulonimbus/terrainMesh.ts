@@ -19,16 +19,16 @@ export const TERRAIN_MESH_DEFAULTS=Object.freeze({cellsPerSide:128,levels:10,spa
 export const TERRAIN_NORMAL_ANALYTIC_WIDTH_KM=.256;
 export const TERRAIN_NORMAL_GEOMETRIC_WIDTH_KM=.512;
 export type TerrainSampler=(x:number,z:number)=>TerrainSurfaceSample;
-export interface TerrainMeshOptions {cellsPerSide?:number;levels?:number;spacingKm?:number}
+export interface TerrainMeshOptions {cellsPerSide?:number;levels?:number;spacingKm?:number;normalMode?:'analytic-blend'|'geometry'}
 export interface TerrainMeshData {
  positions:Float32Array;normals:Float32Array;surface:Float32Array;indices:Uint32Array;
  /** CPU-only cell -> first triangle index. Missing hole cells are 0xffffffff. */
  cellFirstIndex:Uint32Array;
  stats:{vertices:number;triangles:number;stitchedCells:number;levels:number;cellsPerSide:number;
   baseSpacingKm:number;outerExtentKm:number;geometryBytes:number;sampleCalls:number;minimumHeightKm:number;maximumHeightKm:number;
-  normalBlendStartRadiusKm:number;normalBlendEndRadiusKm:number};
+  normalBlendStartRadiusKm:number;normalBlendEndRadiusKm:number;normalMode:'analytic-blend'|'geometry'};
 }
-function blendTerrainMeshNormals(positions:Float32Array,normals:Float32Array,indices:Uint32Array,cells:number):void{
+function blendTerrainMeshNormals(positions:Float32Array,normals:Float32Array,indices:Uint32Array,cells:number,geometricOnly:boolean):void{
  const accumulated=new Float64Array(normals.length);
  for(let i=0;i<indices.length;i+=3){
   const a=indices[i]*3,b=indices[i+1]*3,c=indices[i+2]*3;
@@ -45,7 +45,7 @@ function blendTerrainMeshNormals(positions:Float32Array,normals:Float32Array,ind
   // A continuous world-space width avoids a discontinuous switch on ring ID.
   // Welded seam vertices receive one final normal shared by both levels.
   const width=2*Math.max(Math.abs(positions[i]),Math.abs(positions[i+2]))/cells;
-  const t=Math.max(0,Math.min(1,(width-TERRAIN_NORMAL_ANALYTIC_WIDTH_KM)/(TERRAIN_NORMAL_GEOMETRIC_WIDTH_KM-TERRAIN_NORMAL_ANALYTIC_WIDTH_KM))),weight=t*t*(3-2*t);
+  const t=Math.max(0,Math.min(1,(width-TERRAIN_NORMAL_ANALYTIC_WIDTH_KM)/(TERRAIN_NORMAL_GEOMETRIC_WIDTH_KM-TERRAIN_NORMAL_ANALYTIC_WIDTH_KM))),weight=geometricOnly?1:t*t*(3-2*t);
   if(weight===0)continue;
   const x=normals[i]*(1-weight)+accumulated[i]/length*weight,y=normals[i+1]*(1-weight)+accumulated[i+1]/length*weight,z=normals[i+2]*(1-weight)+accumulated[i+2]/length*weight;
   const mixedLength=Math.hypot(x,y,z);
@@ -71,6 +71,8 @@ export function terrainMeshSurfaceY(x:number,z:number,heightKm:number):number{
 export function buildTerrainMeshData(sample:TerrainSampler=terrainSurfaceSample,options:TerrainMeshOptions={}):TerrainMeshData{
  const cells=options.cellsPerSide??TERRAIN_MESH_DEFAULTS.cellsPerSide,levels=options.levels??TERRAIN_MESH_DEFAULTS.levels;
  const spacing=options.spacingKm??TERRAIN_MESH_DEFAULTS.spacingKm;
+ const normalMode=options.normalMode??'analytic-blend';
+ if(normalMode!=='analytic-blend'&&normalMode!=='geometry')throw new RangeError('Invalid terrain normal mode');
  if(!Number.isInteger(cells)||cells<4||cells%4!==0||cells>256||!Number.isInteger(levels)||levels<1||levels>12||!Number.isFinite(spacing)||spacing<=0)throw new RangeError('Invalid bounded terrain mesh grid');
  const extent=cells/2*spacing*2**(levels-1);
  if(Math.SQRT2*extent>=EARTH_RADIUS)throw new RangeError('Terrain mesh domain exceeds the spherical hemisphere');
@@ -113,10 +115,10 @@ export function buildTerrainMeshData(sample:TerrainSampler=terrainSurfaceSample,
   }
  }
  const data={positions:new Float32Array(positions),normals:new Float32Array(normals),surface:new Float32Array(surface),indices:new Uint32Array(indices)};
- blendTerrainMeshNormals(data.positions,data.normals,data.indices,cells);
+ blendTerrainMeshNormals(data.positions,data.normals,data.indices,cells,normalMode==='geometry');
  return {...data,cellFirstIndex,stats:{vertices:vertices.size,triangles:indices.length/3,stitchedCells,levels,cellsPerSide:cells,baseSpacingKm:spacing,outerExtentKm:extent,
   geometryBytes:data.positions.byteLength+data.normals.byteLength+data.surface.byteLength+data.indices.byteLength,sampleCalls:vertices.size,minimumHeightKm,maximumHeightKm,
-  normalBlendStartRadiusKm:cells*TERRAIN_NORMAL_ANALYTIC_WIDTH_KM/2,normalBlendEndRadiusKm:cells*TERRAIN_NORMAL_GEOMETRIC_WIDTH_KM/2}};
+  normalBlendStartRadiusKm:cells*TERRAIN_NORMAL_ANALYTIC_WIDTH_KM/2,normalBlendEndRadiusKm:cells*TERRAIN_NORMAL_GEOMETRIC_WIDTH_KM/2,normalMode}};
 }
 
 /** Height of the actual Float32 triangles, including the seam fans. Constant
@@ -248,7 +250,7 @@ export class TerrainMesh {
    shadow:this.shadow.stats(),width:this.target.width,height:this.target.height,colourFormat:'rgba32float',distanceComponent:'alpha; km from actual camera origin; -1 miss',
    colourDistanceBytes:pixels*16,depthBytes:pixels*4,targetPayloadBytes:pixels*20,
    cpuTriangleLookupBytes:this.data.cellFirstIndex.byteLength,
-   normalPolicy:'Shared vertex normal; analytic near, smooth width-based blend to incident-area-weighted mesh normal before coarse rings',
+   normalPolicy:this.geometryStats.normalMode==='geometry'?'Shared incident-area-weighted actual mesh normal at every vertex; no bilinear-source gradient seams':'Shared vertex normal; analytic near, smooth width-based blend to incident-area-weighted mesh normal before coarse rings',
    memoryScope:'Nominal retained geometry and target/depth payload only; CPU construction temporaries and driver residency/peak are unmeasured',
    perFrameCpuHeightSamples:0,nearKm:this.camera.near,farKm:this.camera.far,reversedDepthBuffer:this.reversedDepth,cache:'No cached geometry pass; terrain shading stays live each render'};
  }
