@@ -1,0 +1,82 @@
+{
+  "baselineCommit": "10493afa7f6d90389c39e17b2cad79397dfdac01",
+  "baselineSourceCount": 108,
+  "baselineVerifiedAgainstGitBlobHashes": true,
+  "candidateSourceCount": 109,
+  "baselineDistOriginalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/final-dist",
+  "candidateDistOriginalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/shared-aerial/trial-dist",
+  "baselineServedPort": 4196,
+  "candidateServedPort": 4197,
+  "snapshots": {
+    "src/cumulonimbus/GPUSceneEngine.ts": {
+      "baseline": {
+        "archived": "source-changes/baseline/src/cumulonimbus/GPUSceneEngine.ts.gz",
+        "path": "src/cumulonimbus/GPUSceneEngine.ts",
+        "bytes": 61272,
+        "sha256": "b829772a51d6e342adfd5e5e2fbb807037ae74d3ba8413ea7078e6962b4334a0"
+      },
+      "candidate": {
+        "archived": "source-changes/candidate/src/cumulonimbus/GPUSceneEngine.ts.gz",
+        "path": "src/cumulonimbus/GPUSceneEngine.ts",
+        "bytes": 61259,
+        "sha256": "8aa394d6c259d5cb0e011c19a418ce1082f4e4cfd25540f69a980857bd74daf5"
+      }
+    },
+    "src/cumulonimbus/cloudShader.test.ts": {
+      "baseline": {
+        "archived": "source-changes/baseline/src/cumulonimbus/cloudShader.test.ts.gz",
+        "path": "src/cumulonimbus/cloudShader.test.ts",
+        "bytes": 4098,
+        "sha256": "d5e2092b865918815279199abf32229c661c4e25ff82c787935ce7a295e253eb"
+      },
+      "candidate": {
+        "archived": "source-changes/candidate/src/cumulonimbus/cloudShader.test.ts.gz",
+        "path": "src/cumulonimbus/cloudShader.test.ts",
+        "bytes": 4417,
+        "sha256": "77db13f0a854d94267af71e459ba8534196f76b05a074245600e2d0eae07e288"
+      }
+    },
+    "src/cumulonimbus/cloudShader.ts": {
+      "baseline": {
+        "archived": "source-changes/baseline/src/cumulonimbus/cloudShader.ts.gz",
+        "path": "src/cumulonimbus/cloudShader.ts",
+        "bytes": 15570,
+        "sha256": "652c9514b7dfcee1456d15e9966087b3ff9c6a6ce9741970208cfca3750a248c"
+      },
+      "candidate": {
+        "archived": "source-changes/candidate/src/cumulonimbus/cloudShader.ts.gz",
+        "path": "src/cumulonimbus/cloudShader.ts",
+        "bytes": 15901,
+        "sha256": "a6e6bf07ed5ce8393d0424dfccfa8bfc7e7d07261c418b0ba51da2f83180da6c"
+      }
+    },
+    "src/cumulonimbus/lifecycle.test.ts": {
+      "baseline": {
+        "archived": "source-changes/baseline/src/cumulonimbus/lifecycle.test.ts.gz",
+        "path": "src/cumulonimbus/lifecycle.test.ts",
+        "bytes": 45532,
+        "sha256": "db19232ec09dfa3990bbe23b2fa6924fc8b3be94167165c170cd4b5ad03afeae"
+      },
+      "candidate": {
+        "archived": "source-changes/candidate/src/cumulonimbus/lifecycle.test.ts.gz",
+        "path": "src/cumulonimbus/lifecycle.test.ts",
+        "bytes": 45519,
+        "sha256": "1ee20f7609acdcab65c872f8d2901693615bf274ba3d7b03d54775a26b890297"
+      }
+    },
+    "src/cumulonimbus/sharedAerial.test.ts": {
+      "candidate": {
+        "archived": "source-changes/candidate/src/cumulonimbus/sharedAerial.test.ts.gz",
+        "path": "src/cumulonimbus/sharedAerial.test.ts",
+        "bytes": 4636,
+        "sha256": "4728e348b39619d5432aa1eb9dab179f3153195f4000382dadd9e13ecafd8d4e"
+      }
+    }
+  },
+  "runtimeChange": "Exactly two rainy-specialization substitutions; metadata-only engine label and lifecycle expectation; two test files changed/new.",
+  "labelBaseline": "observatory-v50-quality-checkpoint",
+  "labelCandidate": "observatory-v50-trial",
+  "templateWitnesses": "../gpu/candidate-template-witnesses.json",
+  "portableProposal": "Not executed, not promoted, omitted from curated archive.",
+  "validation": "validation.json.gz"
+}

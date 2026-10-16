@@ -1,0 +1,112 @@
+{
+  "baseCommit": "10493af",
+  "label": "observatory-v50-trial",
+  "outputDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/shared-aerial/trial-dist",
+  "sourceManifestSha256": "ff30be9860de254105c6e83cc3acf2f7019c5483f14a3b58d6f1c65e78642639",
+  "appBuildCommand": "node node_modules/vite/bin/vite.js build --outDir ../trial-dist",
+  "files": [
+    {
+      "path": "assets/CumulonimbusApp-CmRmdfXx.js",
+      "bytes": 822892,
+      "sha256": "3b0c63e8e8cbc8ccd4aeee2842cdaefeaf9f1b6fa51961d85675547b6cad20c6"
+    },
+    {
+      "path": "assets/CumulonimbusApp-CmRmdfXx.js.map",
+      "bytes": 3786728,
+      "sha256": "807da54370a72288cfdc5ede531074ac927a678757f49f3aa2e3cd06e9dbee90"
+    },
+    {
+      "path": "assets/CumulonimbusApp-fw8aK7_r.css",
+      "bytes": 13181,
+      "sha256": "bdf43d23ca041116c6b6eef5d8f95ab72115e3f0a0a8a728cb912e751dcaa9fb"
+    },
+    {
+      "path": "assets/LabApp-BIVQGmZd.js",
+      "bytes": 405933,
+      "sha256": "61b740644d902e97f0e29d2e7924b0d480f6bdfdd7eae827ea06300cd5b247b9"
+    },
+    {
+      "path": "assets/LabApp-BIVQGmZd.js.map",
+      "bytes": 1146986,
+      "sha256": "23085b2d5fd613e4afec898b96a0aa8d6095625389c708e31d16484ec65eb3ba"
+    },
+    {
+      "path": "assets/index-Cia3ypEr.css",
+      "bytes": 1245,
+      "sha256": "99354a5ec1ade2941e4aba36f030b413c9afbad79336f11800929c7d805b4714"
+    },
+    {
+      "path": "assets/index-KXPdiUNq.js",
+      "bytes": 2837,
+      "sha256": "8e0dd03ec97db1fd824db12ce2046df07f823346c68abaccb53a630129582f98"
+    },
+    {
+      "path": "assets/index-KXPdiUNq.js.map",
+      "bytes": 1573,
+      "sha256": "5f00164bdcaf570f9da936cb4dba4f0598d53912e9eec3260dc3002ebd29fa46"
+    },
+    {
+      "path": "assets/render.worker-CBQVZObY.js",
+      "bytes": 979333,
+      "sha256": "dc7a8eb6acae3f5df686dfbab724f15924300a8b65db941a0afe358ee8eda6f9"
+    },
+    {
+      "path": "assets/render.worker-CBQVZObY.js.map",
+      "bytes": 5571411,
+      "sha256": "ba8074261548ccbcd97d33a09914eb3b6f4cbab22ace130bfce7d74a7a8af5e6"
+    },
+    {
+      "path": "assets/sky.worker-CHm7n211.js",
+      "bytes": 2960,
+      "sha256": "503ad9438c1738310a9cbe2a41e9af0524e7046bce79e58d6da7c1e74863caaa"
+    },
+    {
+      "path": "assets/sky.worker-CHm7n211.js.map",
+      "bytes": 13323,
+      "sha256": "df7c7eaff6aefeb222e7b89eb86f6c9382a50f405fccd92e9886f2adaa6ac8be"
+    },
+    {
+      "path": "assets/three.core-DxR5k0T0.js",
+      "bytes": 195512,
+      "sha256": "e4d296a475f2cd168d934f17f032d4f56291682208332fc6a926b3937200a810"
+    },
+    {
+      "path": "assets/three.core-DxR5k0T0.js.map",
+      "bytes": 1858620,
+      "sha256": "1db6d177a84ab2823ca902a0261d4c3be1aba1fdbc870fba2593c66bb0c07798"
+    },
+    {
+      "path": "assets/volume.worker-AVJPJnWD.js",
+      "bytes": 15821,
+      "sha256": "87aceed863518008e2cf3015460be964efe98d83159a85ef9cf9133964c338b5"
+    },
+    {
+      "path": "assets/volume.worker-AVJPJnWD.js.map",
+      "bytes": 78380,
+      "sha256": "1929f2c77381f12a8b2e4441183de330b75f960e0d5a930bc7e44d769157f60d"
+    },
+    {
+      "path": "fonts/commissioner/OFL.txt",
+      "bytes": 4395,
+      "sha256": "4a7d88c77b4bc39ff84f2e058ba8f015636c50ce33588a86d9da97defe519933"
+    },
+    {
+      "path": "fonts/commissioner/SOURCE.md",
+      "bytes": 361,
+      "sha256": "4d62bb7d2afbda450c342cafc6987bab37990ecea6e19378e1a6b0f706183a33"
+    },
+    {
+      "path": "fonts/commissioner/latin-variable.woff2",
+      "bytes": 36696,
+      "sha256": "737ec8f28006b815be5333598aa32b203005f5788c8e61b09090b944eac8b79c"
+    },
+    {
+      "path": "index.html",
+      "bytes": 911,
+      "sha256": "0ec7afceaa6d712fb7fe42739cfc5e50e9f04656585134e85b99fdebc55c8cfb"
+    }
+  ],
+  "fileCount": 20,
+  "payloadBytes": 14939098,
+  "scope": "Static external appbuild; no hero build. Filename/SHA provenance, not driver/pixel/performance evidence."
+}

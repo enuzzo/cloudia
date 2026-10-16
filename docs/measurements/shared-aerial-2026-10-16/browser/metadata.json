@@ -1,0 +1,20 @@
+{
+  "scope": "Five original CSS JPEG captures; no native PNG/video or compositor presentation proof.",
+  "capturedBy": "root through browser UI",
+  "jpegDimensions": [
+    1280,
+    720
+  ],
+  "renderOutputAndInternal": [
+    2560,
+    1440
+  ],
+  "composition": "Cloud top intentionally cropped; cloud base, rain curtain and ground visible.",
+  "rawMetadata": "shared-aerial-{A1,B,A2,B2,A3}-metadata.txt",
+  "rootQualification": "qualified-comparison.json",
+  "visualDecision": "Five JPEG files and decoded RGB identical in this fixed pose; no general artistic acceptance.",
+  "capturedConsoles": [
+    "shared-aerial-B-console.json",
+    "shared-aerial-A3-console.json"
+  ]
+}

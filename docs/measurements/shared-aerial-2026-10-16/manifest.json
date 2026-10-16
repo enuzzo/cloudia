@@ -1,0 +1,214 @@
+{
+  "schema": 1,
+  "decision": "retired-not-promoted",
+  "baselineCommit": "10493afa7f6d90389c39e17b2cad79397dfdac01",
+  "scope": "Cycle15 only; CPU contracts and selected GPU segments pass, initial submission gain not reproduced. No product promotion, native pixel or compositor presentation acceptance.",
+  "document": {
+    "path": "EXPERIMENT-SHARED-AERIAL-2026-10-16.md",
+    "bytes": 7209,
+    "sha256": "979eb89062b0d84334eb3087a6c8c2c36f5ff5d91742349403a1167a328d0eb7"
+  },
+  "payloadBytes": 1307947,
+  "files": {
+    "README.md": {
+      "bytes": 1266,
+      "sha256": "c0afd998a3284d823c63ec48888b4e3581e6b3492efb5039d27d67e69a92b7bf"
+    },
+    "browser/metadata.json": {
+      "bytes": 678,
+      "sha256": "77eeffaaa3a7f5fa28b2829988fbbb8a082f9c2010f98ead03c27332364f6edd"
+    },
+    "browser/qualified-comparison.json": {
+      "bytes": 8505,
+      "sha256": "47cdd54ba3445e7562e712b90716bebfb4785568264a6e4db837ca1a9784d556"
+    },
+    "browser/shared-aerial-A1-metadata.txt": {
+      "bytes": 3944,
+      "sha256": "dc2b2c95023959009273f434a81f623b0e95d0bc6dc18191118f18ac4dc03f8e"
+    },
+    "browser/shared-aerial-A1.jpg": {
+      "bytes": 59495,
+      "sha256": "849b7f768670cf981a38800643ed640f5c1042032f98158054d91c9e7a76dee4"
+    },
+    "browser/shared-aerial-A2-metadata.txt": {
+      "bytes": 3944,
+      "sha256": "f18965a0a6819c6d47398e1d256502d3e9c8ddc16e80fabf1fa9ea9b1aa9620e"
+    },
+    "browser/shared-aerial-A2.jpg": {
+      "bytes": 59495,
+      "sha256": "849b7f768670cf981a38800643ed640f5c1042032f98158054d91c9e7a76dee4"
+    },
+    "browser/shared-aerial-A3-console.json": {
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "browser/shared-aerial-A3-metadata.txt": {
+      "bytes": 3943,
+      "sha256": "ec3c71fb475d5ab9a343f6fea0783150ca34a6e3b0421ec74f5a2630cd05c1b4"
+    },
+    "browser/shared-aerial-A3.jpg": {
+      "bytes": 59495,
+      "sha256": "849b7f768670cf981a38800643ed640f5c1042032f98158054d91c9e7a76dee4"
+    },
+    "browser/shared-aerial-B-console.json": {
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "browser/shared-aerial-B-metadata.txt": {
+      "bytes": 3943,
+      "sha256": "f6960512c8b93241c17b74c6d6427f8acbf1dde6e6ae0c6da79fe8c3517e5137"
+    },
+    "browser/shared-aerial-B.jpg": {
+      "bytes": 59495,
+      "sha256": "849b7f768670cf981a38800643ed640f5c1042032f98158054d91c9e7a76dee4"
+    },
+    "browser/shared-aerial-B2-metadata.txt": {
+      "bytes": 3944,
+      "sha256": "979a12ab4e145703b33ab78eb715de44259a5b9efaa87dd236386e4dd6a0017b"
+    },
+    "browser/shared-aerial-B2.jpg": {
+      "bytes": 59495,
+      "sha256": "849b7f768670cf981a38800643ed640f5c1042032f98158054d91c9e7a76dee4"
+    },
+    "gpu/README.md": {
+      "bytes": 5826,
+      "sha256": "164ace6ac3daada903051ece88692a74687df05dce667a917649455807c69082"
+    },
+    "gpu/app-original.tar.gz": {
+      "bytes": 33679,
+      "sha256": "7f0ff6b6c7679f0b570135cb6c243b0ff2862cb0293b2e7e4e6ad884219195d2"
+    },
+    "gpu/browser/shared-aerial-gpu-console.json": {
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "gpu/browser/shared-aerial-gpu-records.json": {
+      "bytes": 115266,
+      "sha256": "9102fd228029b8e26bc65de4fc2a96ef06443732f935ea5d58c5b328c6c60ee7"
+    },
+    "gpu/browser/shared-aerial-gpu-result.json": {
+      "bytes": 2689,
+      "sha256": "41b5cabb24a8b1bed0af1ee1413a8fc2ce5c652602076b94e0ee80bc603e32a5"
+    },
+    "gpu/browser/shared-aerial-gpu.jpg": {
+      "bytes": 72986,
+      "sha256": "dc90d29951e84cac6f69836eeda094d7885c84cb0aedff2c79d457025c29e099"
+    },
+    "gpu/candidate-template-witnesses.json": {
+      "bytes": 21094,
+      "sha256": "976c555e04515cdd13ba4b52071b52712b987f6ebf1f595c961807127885106b"
+    },
+    "gpu/manifest.json": {
+      "bytes": 2370,
+      "sha256": "db609fdc5a33e001c6724c399f3f3c27a5c6cbfd0723ae6c74ab3c24f9b11bc9"
+    },
+    "gpu/verify.py": {
+      "bytes": 6422,
+      "sha256": "105733016d113ef9815f85e126a105665719e3985939235ea541b7dfd9ab94a1"
+    },
+    "lossless-provenance.json": {
+      "bytes": 3199,
+      "sha256": "94be24552fcc0bbac8af280319eb7119f811917a4989cea970b499ded54c4925"
+    },
+    "measurements/raw-provenance.json": {
+      "bytes": 887,
+      "sha256": "0337fd9e04c7d1acaf384151fce8640ddddfd5e2a1dafe0e04a819cbdf28ca18"
+    },
+    "measurements/shared-aerial-A1.json.gz": {
+      "bytes": 102751,
+      "sha256": "73740bf45b8cffd8cb00535f80a39562bfa66980d904cf1db37b557100d864a0"
+    },
+    "measurements/shared-aerial-A2.json.gz": {
+      "bytes": 113350,
+      "sha256": "6ca25955f38e448a8be5cbf1786dfda5b94579f3686af0f55dd35c22a812a87c"
+    },
+    "measurements/shared-aerial-A3.json.gz": {
+      "bytes": 110183,
+      "sha256": "ce472401e017643dfdb69e8693bed426634e14076a1d968b5b8607d274ffd0f3"
+    },
+    "measurements/shared-aerial-B.json.gz": {
+      "bytes": 118280,
+      "sha256": "da34bcbe088581c17cb76cc02baf94d3c7703235ef2a79e0157c60743093115a"
+    },
+    "measurements/shared-aerial-B2.json.gz": {
+      "bytes": 109678,
+      "sha256": "c44984d803bb3fe1ab18fb3c67502f3d450f93041f401d074864f35922a92710"
+    },
+    "measurements/summary.json": {
+      "bytes": 19118,
+      "sha256": "f2767f3bd1643cbd9538a237dbfc10b162c3a01f752f12fc1e19854c8986e53d"
+    },
+    "source-changes/baseline/src/cumulonimbus/GPUSceneEngine.ts.gz": {
+      "bytes": 16681,
+      "sha256": "cbdbf4e336e48e9183d458a194af6bb6d1d2792950424ded7bd23a1a103db6ca"
+    },
+    "source-changes/baseline/src/cumulonimbus/cloudShader.test.ts.gz": {
+      "bytes": 1606,
+      "sha256": "39d4282b766fbab2b2c4b1feff698a31312cdbf09aa3038f612a8a68cd95a04e"
+    },
+    "source-changes/baseline/src/cumulonimbus/cloudShader.ts.gz": {
+      "bytes": 5526,
+      "sha256": "95e6002737d6ca01151c6b9ce16fc54ddb4161197d79577bfb38ab6b2e2a1dda"
+    },
+    "source-changes/baseline/src/cumulonimbus/lifecycle.test.ts.gz": {
+      "bytes": 8262,
+      "sha256": "668173038867e9b7aedc12e34235b8c82cc770f79369674571798f28f1175135"
+    },
+    "source-changes/baseline-build-provenance.json.gz": {
+      "bytes": 2307,
+      "sha256": "5b8698dbd505059f65064f50ffec69a7efbf555efdc646f70a794065a4453f51"
+    },
+    "source-changes/baseline-manifest.json": {
+      "bytes": 18286,
+      "sha256": "6f03d5aeb9f30c3e5a17c3f4fd840bde1d2e7aaa55b11bf7716abff763541081"
+    },
+    "source-changes/baseline-source-manifest.json": {
+      "bytes": 17843,
+      "sha256": "ef4ed45e8916c3829c99b5ce262f420295af2e61e38f279605e742bf1c060e73"
+    },
+    "source-changes/candidate/src/cumulonimbus/GPUSceneEngine.ts.gz": {
+      "bytes": 16670,
+      "sha256": "f548535500b607b73c38316ede871c524744b0b20c243f3d38b16ebdeb4a7a06"
+    },
+    "source-changes/candidate/src/cumulonimbus/cloudShader.test.ts.gz": {
+      "bytes": 1684,
+      "sha256": "3b40830f73203d0d6dc659641e089e8b57e94040ac70a3aa2a6c121aeb4cae6d"
+    },
+    "source-changes/candidate/src/cumulonimbus/cloudShader.ts.gz": {
+      "bytes": 5574,
+      "sha256": "8637bf8ad65be32437f1b2d965fd7c6afb9043d0a0a0f690a8457a7f820106c6"
+    },
+    "source-changes/candidate/src/cumulonimbus/lifecycle.test.ts.gz": {
+      "bytes": 8255,
+      "sha256": "b6397e916de234fbbe872f0aaeb1fd79a4b37c556f8fcc0e2248c8faef739afc"
+    },
+    "source-changes/candidate/src/cumulonimbus/sharedAerial.test.ts.gz": {
+      "bytes": 1873,
+      "sha256": "3be3bbb36b4aa48f5cc7d5754c52aa36d7289f0847052e26a7cc949a96d9689a"
+    },
+    "source-changes/candidate-dist-manifest.json": {
+      "bytes": 3864,
+      "sha256": "54d3d411632973e8e96daabf12c77c069accb83ee60dd095fcb64409af720389"
+    },
+    "source-changes/candidate-manifest.json": {
+      "bytes": 19542,
+      "sha256": "ff30be9860de254105c6e83cc3acf2f7019c5483f14a3b58d6f1c65e78642639"
+    },
+    "source-changes/provenance.json": {
+      "bytes": 3677,
+      "sha256": "01e4893560e7ba4113b37b96289d3f0bfafa2cce8ceb2e3a2f5f94eafbf9ea5b"
+    },
+    "source-changes/validation.json.gz": {
+      "bytes": 2026,
+      "sha256": "056318f1f8d5630fec5fc7f6c7647d8609bb4e04cd7734718bfb8bcef278f663"
+    },
+    "sources.json": {
+      "bytes": 509,
+      "sha256": "d1c989e3d0143f31ddb15cf6350e428dcbace24a2c3f4f382053fc2ad4157acf"
+    },
+    "verify.py": {
+      "bytes": 8336,
+      "sha256": "10825b8d04ffc1ad67a5461c1094e8f7382cb8bb1f6691faf7ff4e97882047aa"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "decision": "retired; do not promote",
+  "baselineCommit": "10493afa7f6d90389c39e17b2cad79397dfdac01",
+  "candidateVolumeSha256": "3db1246ae8741521be70d336a8ecdbee92bf33ea24f83246359faa909bad1b35",
+  "views": [
+    "seed74 front",
+    "seed74 side yaw about 88 degrees",
+    "seed77 front"
+  ],
+  "visualFindings": [
+    "The younger tower is lower and visually less competitive with the mature cell.",
+    "The U gap and upper hook remain prominent.",
+    "The lowered head reads wider and more squat, especially seed77.",
+    "Local height hierarchy gain does not justify the apparent loss of upward convective form."
+  ],
+  "decisionScope": "scoped visual rejection; not a claim of native framebuffer identity or all-seed regression",
+  "conditions": {
+    "urls": "baseline4196 / candidate4198; seed74 or77; profile1 surface1 target0,2.7,0",
+    "actions": "native output; Fissa stato di confronto; Sole; side uses16 ArrowLeft presses",
+    "canvasObserved": {
+      "width": 2560,
+      "height": 1440,
+      "clientWidth": 1280,
+      "clientHeight": 720
+    },
+    "capture": "CUA JPEG1280x720 CSS",
+    "numerics": "20 CPU volumes32/64; no native256 proof authorized after visual rejection",
+    "performance": "not measured"
+  },
+  "payloads": [
+    {
+      "path": "baseline-74-front-metadata.txt",
+      "bytes": 80,
+      "sha256": "e986aee3a5622d8259de8a599ab7e2fc39764752ae35e2eaff4f7be92355083a"
+    },
+    {
+      "path": "baseline-74-front.jpg",
+      "bytes": 55969,
+      "sha256": "bfeffac68a071d1c6920ccd5480a13f56eb9102140f9c9d277acf08aa77e2ec2"
+    },
+    {
+      "path": "baseline-74-side-metadata.txt",
+      "bytes": 81,
+      "sha256": "9a90b790d1f590819a641272af9031b1bf0e074b87f4fed5dde66504922e94b1"
+    },
+    {
+      "path": "baseline-74-side.jpg",
+      "bytes": 70737,
+      "sha256": "027739846a51d3f1e96e20c44703d4388ea81b9e6b49748a5047f2d8f8d6a80c"
+    },
+    {
+      "path": "baseline-77-front-metadata.txt",
+      "bytes": 80,
+      "sha256": "e986aee3a5622d8259de8a599ab7e2fc39764752ae35e2eaff4f7be92355083a"
+    },
+    {
+      "path": "baseline-77-front.jpg",
+      "bytes": 55466,
+      "sha256": "1ccd099a0bba3b224efc5fb48dc680e104b3856a309097d4b9d1bb149936046b"
+    },
+    {
+      "path": "baseline-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "candidate-74-front-metadata.txt",
+      "bytes": 80,
+      "sha256": "e986aee3a5622d8259de8a599ab7e2fc39764752ae35e2eaff4f7be92355083a"
+    },
+    {
+      "path": "candidate-74-front.jpg",
+      "bytes": 55713,
+      "sha256": "35e68960ba11e9671b7a9ae08c9a14d6b072e76c2c62ef056a305242c17e1b99"
+    },
+    {
+      "path": "candidate-74-side-metadata.txt",
+      "bytes": 81,
+      "sha256": "9a90b790d1f590819a641272af9031b1bf0e074b87f4fed5dde66504922e94b1"
+    },
+    {
+      "path": "candidate-74-side.jpg",
+      "bytes": 70601,
+      "sha256": "60a89f628a5f1cd47e9507c6cfa5cbcb65c6bb5cb670c682002a1e55598b3e32"
+    },
+    {
+      "path": "candidate-77-diagnostics.txt",
+      "bytes": 3937,
+      "sha256": "747722d089c9c8cd4a40d1446aad2790438e1294f721468d247f821c1126b9a2"
+    },
+    {
+      "path": "candidate-77-front-metadata.txt",
+      "bytes": 80,
+      "sha256": "e986aee3a5622d8259de8a599ab7e2fc39764752ae35e2eaff4f7be92355083a"
+    },
+    {
+      "path": "candidate-77-front.jpg",
+      "bytes": 55052,
+      "sha256": "a0b9452fccc846c11fa006ece54dc38f6d96fef604fa18d4b356cbcb62a446d8"
+    },
+    {
+      "path": "candidate-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ]
+}

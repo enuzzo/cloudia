@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "gpuExecuted": true,
+  "started": "2026-10-16T09:09:00.619Z",
+  "completed": "2026-10-16T09:09:00.681Z",
+  "baselineCommit": "10493afa7f6d90389c39e17b2cad79397dfdac01",
+  "scope": "216 finite segment tuples; final pre-film RGBA f32 bits only; not full shader or FPS equivalence",
+  "adapter": {
+    "vendor": "apple",
+    "architecture": "metal-3",
+    "device": "",
+    "description": ""
+  },
+  "tuples": 216,
+  "comparedChannels": 864,
+  "bitMismatches": 0,
+  "mismatchTuples": 0,
+  "nonFiniteLanes": 0,
+  "unwrittenLanes": 0,
+  "validationErrors": [],
+  "oldOutputSHA256": "02fda484196d60c13cb86cdcebcd6574e356e28478f7a6f514c1c98038248987",
+  "newOutputSHA256": "02fda484196d60c13cb86cdcebcd6574e356e28478f7a6f514c1c98038248987",
+  "frozenResources": {
+    "cases.json": "01263c01f8db0ebd0510a2c8a81d9c0357cc6b1b1473a7fb82a568bf6913c33b",
+    "old.wgsl": "95ffa4f5294b618ff64c7c9f99725f0611a20ed9c4cf8abc1d67684301b8a47e",
+    "new.wgsl": "d5bcda96ee64cbe22aea25c0934bd46ea477dbd07ea4ac05877c6a688b0b740e",
+    "provenance.json": "b7357ab31d867ee9ade428bb61e932a0b9177005964912d3906d5f9839766d55"
+  },
+  "ranges": {
+    "old": {
+      "min": [
+        0,
+        0,
+        0,
+        0.9215427041053772
+      ],
+      "max": [
+        0.10154049098491669,
+        0.08989802747964859,
+        0.07801146060228348,
+        1
+      ]
+    },
+    "new": {
+      "min": [
+        0,
+        0,
+        0,
+        0.9215427041053772
+      ],
+      "max": [
+        0.10154049098491669,
+        0.08989802747964859,
+        0.07801146060228348,
+        1
+      ]
+    }
+  },
+  "byScenario": {
+    "cloud-region-off": {
+      "tuples": 18,
+      "mismatchTuples": 0
+    },
+    "column-positive-rain-amount-zero": {
+      "tuples": 18,
+      "mismatchTuples": 0
+    },
+    "rain-only": {
+      "tuples": 18,
+      "mismatchTuples": 0
+    },
+    "rain-cloud-overlap": {
+      "tuples": 18,
+      "mismatchTuples": 0
+    },
+    "attachment-zero-cloud-positive": {
+      "tuples": 18,
+      "mismatchTuples": 0
+    },
+    "evaporation-zero-cloud-positive": {
+      "tuples": 18,
+      "mismatchTuples": 0
+    },
+    "attachment-zero-both-media-zero": {
+      "tuples": 18,
+      "mismatchTuples": 0
+    },
+    "evaporation-zero-both-media-zero": {
+      "tuples": 18,
+      "mismatchTuples": 0
+    },
+    "column-zero-cloud-positive": {
+      "tuples": 18,
+      "mismatchTuples": 0
+    },
+    "tiny-positive-rain-cloud": {
+      "tuples": 18,
+      "mismatchTuples": 0
+    },
+    "ice-cloud-rain": {
+      "tuples": 18,
+      "mismatchTuples": 0
+    },
+    "zero-segment-length-overlap": {
+      "tuples": 18,
+      "mismatchTuples": 0
+    }
+  },
+  "mismatchExamples": []
+}

@@ -1,0 +1,70 @@
+{
+  "gpu/app-original.tar.gz": {
+    "uncompressedBytes": 296960,
+    "uncompressedSha256": "89c671b9ba75bbb97c3a15d2b782f5bcc4cd59f4028de2762bc1a3122eff7071"
+  },
+  "source-changes/baseline-build-provenance.json.gz": {
+    "uncompressedBytes": 16712,
+    "uncompressedSha256": "1c73e83f44d92b97e63768a43d76fdbaa02434c74da68a28afe7f04c745b8c9f"
+  },
+  "source-changes/validation.json.gz": {
+    "uncompressedBytes": 5392,
+    "uncompressedSha256": "480aa1e3d4a3dd655cabc608d4b73517dd0ca88776c5b6e2cd6eac61fab0228c"
+  },
+  "measurements/shared-aerial-A1.json.gz": {
+    "uncompressedBytes": 1400519,
+    "uncompressedSha256": "1b6aa0c4ae1d2420a05cbfcd1b015eb75049d303bd8e05690171c58f11ba7a8c"
+  },
+  "measurements/shared-aerial-A2.json.gz": {
+    "uncompressedBytes": 1565393,
+    "uncompressedSha256": "f43be200b1dcc60af88383d1e403e739788d0fb7a38ff0f2de3a8808467606a8"
+  },
+  "measurements/shared-aerial-B.json.gz": {
+    "uncompressedBytes": 1634849,
+    "uncompressedSha256": "697c7677b615b67044d7193dac70dd3f1b78f60a747ee5bd79a7c713d3448e03"
+  },
+  "measurements/shared-aerial-A3.json.gz": {
+    "uncompressedBytes": 1528178,
+    "uncompressedSha256": "9251b49c33cb3e2647dcdaf212953b3ae427fcae3daa08fbfb6d96f8872c591a"
+  },
+  "measurements/shared-aerial-B2.json.gz": {
+    "uncompressedBytes": 1523811,
+    "uncompressedSha256": "635ae9ba04016c4f4048f8ee543eee22f9d07a236a860c28ca09c85d5b1b81a9"
+  },
+  "source-changes/baseline/src/cumulonimbus/GPUSceneEngine.ts.gz": {
+    "uncompressedBytes": 61272,
+    "uncompressedSha256": "b829772a51d6e342adfd5e5e2fbb807037ae74d3ba8413ea7078e6962b4334a0"
+  },
+  "source-changes/baseline/src/cumulonimbus/lifecycle.test.ts.gz": {
+    "uncompressedBytes": 45532,
+    "uncompressedSha256": "db19232ec09dfa3990bbe23b2fa6924fc8b3be94167165c170cd4b5ad03afeae"
+  },
+  "source-changes/baseline/src/cumulonimbus/cloudShader.ts.gz": {
+    "uncompressedBytes": 15570,
+    "uncompressedSha256": "652c9514b7dfcee1456d15e9966087b3ff9c6a6ce9741970208cfca3750a248c"
+  },
+  "source-changes/baseline/src/cumulonimbus/cloudShader.test.ts.gz": {
+    "uncompressedBytes": 4098,
+    "uncompressedSha256": "d5e2092b865918815279199abf32229c661c4e25ff82c787935ce7a295e253eb"
+  },
+  "source-changes/candidate/src/cumulonimbus/GPUSceneEngine.ts.gz": {
+    "uncompressedBytes": 61259,
+    "uncompressedSha256": "8aa394d6c259d5cb0e011c19a418ce1082f4e4cfd25540f69a980857bd74daf5"
+  },
+  "source-changes/candidate/src/cumulonimbus/lifecycle.test.ts.gz": {
+    "uncompressedBytes": 45519,
+    "uncompressedSha256": "1ee20f7609acdcab65c872f8d2901693615bf274ba3d7b03d54775a26b890297"
+  },
+  "source-changes/candidate/src/cumulonimbus/cloudShader.ts.gz": {
+    "uncompressedBytes": 15901,
+    "uncompressedSha256": "a6e6bf07ed5ce8393d0424dfccfa8bfc7e7d07261c418b0ba51da2f83180da6c"
+  },
+  "source-changes/candidate/src/cumulonimbus/sharedAerial.test.ts.gz": {
+    "uncompressedBytes": 4636,
+    "uncompressedSha256": "4728e348b39619d5432aa1eb9dab179f3153195f4000382dadd9e13ecafd8d4e"
+  },
+  "source-changes/candidate/src/cumulonimbus/cloudShader.test.ts.gz": {
+    "uncompressedBytes": 4417,
+    "uncompressedSha256": "77db13f0a854d94267af71e459ba8534196f76b05a074245600e2d0eae07e288"
+  }
+}

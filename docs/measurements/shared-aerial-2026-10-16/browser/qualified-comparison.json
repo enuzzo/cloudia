@@ -1,0 +1,306 @@
+{
+  "status": "candidate retired; gain not repeated",
+  "scope": "CSS JPEG and submission cadence; not native RGB bit identity or compositor presentation",
+  "runs": [
+    {
+      "run": "A1",
+      "fps": 17.745844875346254,
+      "frames": 533,
+      "renderer": "observatory-v50-quality-checkpoint",
+      "cameraMatches": true,
+      "prefixComplete": true,
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 533,
+          "expectedCalls": 1066,
+          "matchedFreshCalls": 1058,
+          "completeDraws": 529,
+          "partialDraws": 0,
+          "missingDraws": 4,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 533,
+          "expectedCalls": 533,
+          "matchedFreshCalls": 529,
+          "completeDraws": 529,
+          "partialDraws": 0,
+          "missingDraws": 4,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      },
+      "timestampDiagnostics": {
+        "batchCount": 234,
+        "freshBatchCount": 234,
+        "staleBatchCount": 0,
+        "staleObservedPassRows": 0,
+        "batchStatusCounts": {
+          "fresh": 234
+        },
+        "freshPassRows": 1704,
+        "invalidPassRows": 0,
+        "unmatchedPassRows": 9,
+        "ambiguousPassRows": 0,
+        "duplicateUidRows": 0,
+        "duplicateCallSlots": 0,
+        "outsideWindowPassRows": 108,
+        "duplicateLedgerIds": [],
+        "duplicateMeasuredIntervalIds": []
+      },
+      "jpegSize": [
+        1280,
+        720
+      ],
+      "jpegSha256": "849b7f768670cf981a38800643ed640f5c1042032f98158054d91c9e7a76dee4",
+      "rgbDifferenceVsA1": {
+        "bbox": null,
+        "max": 0,
+        "meanAbsoluteChannel255": 0.0
+      }
+    },
+    {
+      "run": "B",
+      "fps": 20.642377469177934,
+      "frames": 620,
+      "renderer": "observatory-v50-trial",
+      "cameraMatches": true,
+      "prefixComplete": true,
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 620,
+          "expectedCalls": 1240,
+          "matchedFreshCalls": 1236,
+          "completeDraws": 618,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 620,
+          "expectedCalls": 620,
+          "matchedFreshCalls": 618,
+          "completeDraws": 618,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      },
+      "timestampDiagnostics": {
+        "batchCount": 272,
+        "freshBatchCount": 272,
+        "staleBatchCount": 0,
+        "staleObservedPassRows": 0,
+        "batchStatusCounts": {
+          "fresh": 272
+        },
+        "freshPassRows": 2004,
+        "invalidPassRows": 0,
+        "unmatchedPassRows": 12,
+        "ambiguousPassRows": 0,
+        "duplicateUidRows": 0,
+        "duplicateCallSlots": 0,
+        "outsideWindowPassRows": 138,
+        "duplicateLedgerIds": [],
+        "duplicateMeasuredIntervalIds": []
+      },
+      "jpegSize": [
+        1280,
+        720
+      ],
+      "jpegSha256": "849b7f768670cf981a38800643ed640f5c1042032f98158054d91c9e7a76dee4",
+      "rgbDifferenceVsA1": {
+        "bbox": null,
+        "max": 0,
+        "meanAbsoluteChannel255": 0.0
+      }
+    },
+    {
+      "run": "A2",
+      "fps": 19.62123357263021,
+      "frames": 589,
+      "renderer": "observatory-v50-quality-checkpoint",
+      "cameraMatches": true,
+      "prefixComplete": true,
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 589,
+          "expectedCalls": 1178,
+          "matchedFreshCalls": 1174,
+          "completeDraws": 587,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 589,
+          "expectedCalls": 589,
+          "matchedFreshCalls": 587,
+          "completeDraws": 587,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      },
+      "timestampDiagnostics": {
+        "batchCount": 288,
+        "freshBatchCount": 288,
+        "staleBatchCount": 0,
+        "staleObservedPassRows": 0,
+        "batchStatusCounts": {
+          "fresh": 288
+        },
+        "freshPassRows": 1890,
+        "invalidPassRows": 0,
+        "unmatchedPassRows": 9,
+        "ambiguousPassRows": 0,
+        "duplicateUidRows": 0,
+        "duplicateCallSlots": 0,
+        "outsideWindowPassRows": 120,
+        "duplicateLedgerIds": [],
+        "duplicateMeasuredIntervalIds": []
+      },
+      "jpegSize": [
+        1280,
+        720
+      ],
+      "jpegSha256": "849b7f768670cf981a38800643ed640f5c1042032f98158054d91c9e7a76dee4",
+      "rgbDifferenceVsA1": {
+        "bbox": null,
+        "max": 0,
+        "meanAbsoluteChannel255": 0.0
+      }
+    },
+    {
+      "run": "B2",
+      "fps": 19.26596024812423,
+      "frames": 578,
+      "renderer": "observatory-v50-trial",
+      "cameraMatches": true,
+      "prefixComplete": true,
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 578,
+          "expectedCalls": 1156,
+          "matchedFreshCalls": 1150,
+          "completeDraws": 575,
+          "partialDraws": 0,
+          "missingDraws": 3,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 578,
+          "expectedCalls": 578,
+          "matchedFreshCalls": 575,
+          "completeDraws": 575,
+          "partialDraws": 0,
+          "missingDraws": 3,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      },
+      "timestampDiagnostics": {
+        "batchCount": 268,
+        "freshBatchCount": 268,
+        "staleBatchCount": 0,
+        "staleObservedPassRows": 0,
+        "batchStatusCounts": {
+          "fresh": 268
+        },
+        "freshPassRows": 1851,
+        "invalidPassRows": 0,
+        "unmatchedPassRows": 9,
+        "ambiguousPassRows": 0,
+        "duplicateUidRows": 0,
+        "duplicateCallSlots": 0,
+        "outsideWindowPassRows": 117,
+        "duplicateLedgerIds": [],
+        "duplicateMeasuredIntervalIds": []
+      },
+      "jpegSize": [
+        1280,
+        720
+      ],
+      "jpegSha256": "849b7f768670cf981a38800643ed640f5c1042032f98158054d91c9e7a76dee4",
+      "rgbDifferenceVsA1": {
+        "bbox": null,
+        "max": 0,
+        "meanAbsoluteChannel255": 0.0
+      }
+    },
+    {
+      "run": "A3",
+      "fps": 19.144204133816324,
+      "frames": 575,
+      "renderer": "observatory-v50-quality-checkpoint",
+      "cameraMatches": true,
+      "prefixComplete": true,
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 575,
+          "expectedCalls": 1150,
+          "matchedFreshCalls": 1146,
+          "completeDraws": 573,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 575,
+          "expectedCalls": 575,
+          "matchedFreshCalls": 573,
+          "completeDraws": 573,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      },
+      "timestampDiagnostics": {
+        "batchCount": 284,
+        "freshBatchCount": 284,
+        "staleBatchCount": 0,
+        "staleObservedPassRows": 0,
+        "batchStatusCounts": {
+          "fresh": 284
+        },
+        "freshPassRows": 1842,
+        "invalidPassRows": 0,
+        "unmatchedPassRows": 6,
+        "ambiguousPassRows": 0,
+        "duplicateUidRows": 0,
+        "duplicateCallSlots": 0,
+        "outsideWindowPassRows": 117,
+        "duplicateLedgerIds": [],
+        "duplicateMeasuredIntervalIds": []
+      },
+      "jpegSize": [
+        1280,
+        720
+      ],
+      "jpegSha256": "849b7f768670cf981a38800643ed640f5c1042032f98158054d91c9e7a76dee4",
+      "rgbDifferenceVsA1": {
+        "bbox": null,
+        "max": 0,
+        "meanAbsoluteChannel255": 0.0
+      }
+    }
+  ]
+}

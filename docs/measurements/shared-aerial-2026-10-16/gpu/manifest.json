@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "decision": "Candidate retired: repeated FPS did not reproduce an advantage; captured GPU segment witness PASS remains scoped",
+  "capturedOutputSHA256": "02fda484196d60c13cb86cdcebcd6574e356e28478f7a6f514c1c98038248987",
+  "sourcePackageManifestSHA256": "bbe864a0be342b94f7af94f9bba77e0f5ca50d8db227daac68164da64c87d276",
+  "copiedPayloadChanges": [
+    "README.md updated for retired verdict and verified extraction outside repository",
+    "verify.py reads original app tar without extraction and checks original 17 payloads plus captured f32 records",
+    "Original complete app stored in lossless app-original.tar.gz; all internal bytes and manifest remain unchanged",
+    "Raw GPU JSON, records, console and JPEG unchanged"
+  ],
+  "verificationStatus": "Post-FPS portable file/captured-output verifier; no new GPU execution",
+  "payloadBytes": 257964,
+  "files": {
+    "README.md": {
+      "bytes": 5826,
+      "sha256": "164ace6ac3daada903051ece88692a74687df05dce667a917649455807c69082"
+    },
+    "app-original.tar.gz": {
+      "bytes": 33679,
+      "sha256": "7f0ff6b6c7679f0b570135cb6c243b0ff2862cb0293b2e7e4e6ad884219195d2"
+    },
+    "browser/shared-aerial-gpu-console.json": {
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "browser/shared-aerial-gpu-records.json": {
+      "bytes": 115266,
+      "sha256": "9102fd228029b8e26bc65de4fc2a96ef06443732f935ea5d58c5b328c6c60ee7"
+    },
+    "browser/shared-aerial-gpu-result.json": {
+      "bytes": 2689,
+      "sha256": "41b5cabb24a8b1bed0af1ee1413a8fc2ce5c652602076b94e0ee80bc603e32a5"
+    },
+    "browser/shared-aerial-gpu.jpg": {
+      "bytes": 72986,
+      "sha256": "dc90d29951e84cac6f69836eeda094d7885c84cb0aedff2c79d457025c29e099"
+    },
+    "candidate-template-witnesses.json": {
+      "bytes": 21094,
+      "sha256": "976c555e04515cdd13ba4b52071b52712b987f6ebf1f595c961807127885106b"
+    },
+    "verify.py": {
+      "bytes": 6422,
+      "sha256": "105733016d113ef9815f85e126a105665719e3985939235ea541b7dfd9ab94a1"
+    }
+  },
+  "appArchive": {
+    "file": "app-original.tar.gz",
+    "sha256": "7f0ff6b6c7679f0b570135cb6c243b0ff2862cb0293b2e7e4e6ad884219195d2",
+    "originalAppManifestSHA256": "42ace1caa855700419cd549deeabf39ffbe8f53b9c380be8f7c356845c132f27",
+    "originalPayloads": 17,
+    "archivedFiles": 18
+  }
+}

@@ -1,0 +1,665 @@
+{
+  "decision": "retired-not-promoted",
+  "baselineCommit": "10493afa7f6d90389c39e17b2cad79397dfdac01",
+  "scope": "This cycle15 trial only; submission cadence, not compositor presentation or 60-FPS acceptance.",
+  "common": {
+    "backend": "WebGPU",
+    "adapter": {
+      "vendor": "apple",
+      "architecture": "metal-3",
+      "device": "",
+      "description": "",
+      "isFallbackAdapter": false
+    },
+    "threeRevision": "186",
+    "quality": "ultra",
+    "output": [
+      2560,
+      1440
+    ],
+    "internal": [
+      2560,
+      1440
+    ],
+    "nominalSteps": 384,
+    "cloudExtinctionPerKm": 18,
+    "iceExtinctionPerKm": 6.5,
+    "mediaIntegration": "co-located cloud/rain exponential segments",
+    "virgaReachVariation": "broad advected sheets, 0.7–1.3 of weak fall distance",
+    "precipitationMaxStepKm": 0.006,
+    "precipitationExtinctionPerKm": 0.85,
+    "precipitationSourceBounds": [
+      -3.828125,
+      -2.2421875,
+      3.359375,
+      2.1328125
+    ],
+    "navigationVersion": "filtered-field-terrain-clearance-v3",
+    "terrainCameraClearanceKm": 0.2,
+    "terrainHash": "u32-avalanche-24-v1",
+    "skyCalculation": "cached dedicated worker",
+    "skyPending": false,
+    "solarVisibility": "256-cubed day + RG8 low-sun endpoints",
+    "sunDirection": [
+      -0.668126592347077,
+      0.7126683651702156,
+      0.21380050955106467
+    ],
+    "sunsetAmount": 0,
+    "extraSunsetTextureBytes": 33554432,
+    "probeImplementation": "compile-time specialization",
+    "ablation": "full",
+    "ablationWarning": null,
+    "executionThread": "main",
+    "profiling": true,
+    "timingMode": "stages",
+    "automaticComputeReadback": false,
+    "maxFramesInFlight": null,
+    "flowMode": "full",
+    "simulationTimeStart": 60,
+    "motionModel": "16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light",
+    "supportBounds": {
+      "min": [
+        -5.68671875,
+        -0.1680859374999999,
+        -3.107109375
+      ],
+      "max": [
+        4.86640625,
+        5.1446484375,
+        3.052421875
+      ]
+    },
+    "camera": {
+      "comparisonSurfaceKm": 1,
+      "comparisonTargetKm": [
+        0,
+        0,
+        0
+      ],
+      "probeSkipped": true,
+      "approach": 0,
+      "origin": [
+        0,
+        5.636387732401439,
+        14.974349178846957
+      ],
+      "probeFlow": "16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively",
+      "probeFieldBytes": 32768,
+      "surfaceEstimateKm": null,
+      "probe": null,
+      "probeAgeMs": null,
+      "altitudeKm": 9.636387732401438,
+      "ground": 1,
+      "yaw": 0,
+      "pitch": 0.36,
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    "outputMode": "screen",
+    "emptyStepWorld": 0.0546875,
+    "volume": [
+      256,
+      256,
+      256
+    ],
+    "detailVolume": [
+      128,
+      128,
+      128
+    ],
+    "seed": 72,
+    "shape": {
+      "family": "congestus",
+      "towerHeight": 0.6631487672147341,
+      "towerWidth": 1.081098391311243,
+      "anvilSpread": 0.626813485659659,
+      "windLean": 0.002921091809403151
+    },
+    "sun": "left",
+    "orbit": false,
+    "paused": true,
+    "warmupMs": 2000,
+    "targetDurationMs": 30000,
+    "densitySamplingStart": {
+      "path": "r8unorm-extracted-r",
+      "format": "r8unorm",
+      "dimensions": [
+        256,
+        256,
+        256
+      ],
+      "textureBytes": 16777216,
+      "extraCpuPayloadBytes": 16777216,
+      "extraGpuPayloadBytes": 16777216,
+      "sampling": "same volumeSampler; linear/clamp-to-edge/mip0; NoColorSpace",
+      "reason": "rain with valid densityR8 payload",
+      "allocationAccounting": "nominal payload; GPU upload/residency not measured",
+      "fallback": null
+    },
+    "densitySamplingEnd": {
+      "path": "r8unorm-extracted-r",
+      "format": "r8unorm",
+      "dimensions": [
+        256,
+        256,
+        256
+      ],
+      "textureBytes": 16777216,
+      "extraCpuPayloadBytes": 16777216,
+      "extraGpuPayloadBytes": 16777216,
+      "sampling": "same volumeSampler; linear/clamp-to-edge/mip0; NoColorSpace",
+      "reason": "rain with valid densityR8 payload",
+      "allocationAccounting": "nominal payload; GPU upload/residency not measured",
+      "fallback": null
+    },
+    "narrowCloudSkip": {
+      "method": "point-nearest-after-flow-v3-weather-specialization-trial",
+      "specialization": "rain",
+      "boundInIntegrator": true,
+      "selection": "targetRain > 0.001 or actual rain > 0.001; dry uses original WGSL signature",
+      "resolution": [
+        128,
+        128,
+        128
+      ],
+      "extraMaskBytes": 2097152,
+      "unqualifiedPayload": "fully occupied compatibility mask"
+    },
+    "simulationTimeEnd": 60,
+    "narrowCloudSpecializationEnd": "rain",
+    "flashCountStart": 0,
+    "flashCountEnd": 0,
+    "emptyStepWorldEnd": 0.0546875,
+    "metricsSchemaVersion": 3,
+    "measurementVersion": "submission-queue-prefix-v2-pass-ledger",
+    "presentedCanvasFps": null
+  },
+  "commonWeatherExceptRain": {
+    "wind": 0.55,
+    "dispersion": 0,
+    "sky": "rain",
+    "atmosphereTransition": 1,
+    "speed": 1,
+    "autoLightning": false,
+    "distanceKm": 3,
+    "flashPreview": false
+  },
+  "rainTolerance": {
+    "target": 0.8,
+    "absolute": 1e-06
+  },
+  "runs": {
+    "A1": {
+      "rawReport": "measurements/shared-aerial-A1.json.gz",
+      "variant": "baseline",
+      "date": "2026-10-16T09:12:09.113Z",
+      "rendererVersion": "observatory-v50-quality-checkpoint",
+      "submissionFps": 17.745844875346254,
+      "stats": {
+        "frames": 533,
+        "durationMs": 30035.20000000001,
+        "fps": 17.745844875346254,
+        "medianMs": 50.09999999999127,
+        "p95Ms": 66.70000000001164,
+        "p99Ms": 67,
+        "maxMs": 67.69999999999709,
+        "over18Ms": 533,
+        "over33Ms": 533
+      },
+      "queuePrefix": {
+        "status": "completed",
+        "reason": null,
+        "windowStartedAtMs": 81521.39999997616,
+        "firstRafTimestamp": 81506.9,
+        "measuredSubmissions": 533,
+        "confirmedPrefixId": 533,
+        "unconfirmedMeasuredFrames": 0,
+        "maxUnconfirmedMeasuredFrames": 22,
+        "endDrainMs": 221.70000004768372,
+        "completionBoundedSubmissionFps": 17.617446891481816,
+        "periodicEveryMs": 1000,
+        "finishTimeoutMs": 5000
+      },
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 533,
+          "expectedCalls": 1066,
+          "matchedFreshCalls": 1058,
+          "completeDraws": 529,
+          "partialDraws": 0,
+          "missingDraws": 4,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 533,
+          "expectedCalls": 533,
+          "matchedFreshCalls": 529,
+          "completeDraws": 529,
+          "partialDraws": 0,
+          "missingDraws": 4,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      },
+      "timestampDiagnostics": {
+        "batchCount": 234,
+        "freshBatchCount": 234,
+        "staleBatchCount": 0,
+        "staleObservedPassRows": 0,
+        "batchStatusCounts": {
+          "fresh": 234
+        },
+        "freshPassRows": 1704,
+        "invalidPassRows": 0,
+        "unmatchedPassRows": 9,
+        "ambiguousPassRows": 0,
+        "duplicateUidRows": 0,
+        "duplicateCallSlots": 0,
+        "outsideWindowPassRows": 108,
+        "duplicateLedgerIds": [],
+        "duplicateMeasuredIntervalIds": []
+      },
+      "timestampStatistics": {
+        "render": {
+          "sampleCount": 529,
+          "meanMs": 110.28135440453688,
+          "p95Ms": 123.076608,
+          "maxMs": 135.9872
+        },
+        "compute": {
+          "sampleCount": 529,
+          "meanMs": 0.03196273724007559,
+          "p95Ms": 0.065536,
+          "maxMs": 0.917504
+        }
+      },
+      "timestampUnmatchedReasons": {
+        "no-ledger-range": 9
+      }
+    },
+    "B": {
+      "rawReport": "measurements/shared-aerial-B.json.gz",
+      "variant": "candidate",
+      "date": "2026-10-16T09:14:40.732Z",
+      "rendererVersion": "observatory-v50-trial",
+      "submissionFps": 20.642377469177934,
+      "stats": {
+        "frames": 620,
+        "durationMs": 30035.300000000003,
+        "fps": 20.642377469177934,
+        "medianMs": 50,
+        "p95Ms": 66.69999999999709,
+        "p99Ms": 67.30000000000291,
+        "maxMs": 83.60000000000582,
+        "over18Ms": 620,
+        "over33Ms": 556
+      },
+      "queuePrefix": {
+        "status": "completed",
+        "reason": null,
+        "windowStartedAtMs": 83550.89999997616,
+        "firstRafTimestamp": 83538.7,
+        "measuredSubmissions": 620,
+        "confirmedPrefixId": 620,
+        "unconfirmedMeasuredFrames": 0,
+        "maxUnconfirmedMeasuredFrames": 27,
+        "endDrainMs": 196.5,
+        "completionBoundedSubmissionFps": 20.507460415575228,
+        "periodicEveryMs": 1000,
+        "finishTimeoutMs": 5000
+      },
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 620,
+          "expectedCalls": 1240,
+          "matchedFreshCalls": 1236,
+          "completeDraws": 618,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 620,
+          "expectedCalls": 620,
+          "matchedFreshCalls": 618,
+          "completeDraws": 618,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      },
+      "timestampDiagnostics": {
+        "batchCount": 272,
+        "freshBatchCount": 272,
+        "staleBatchCount": 0,
+        "staleObservedPassRows": 0,
+        "batchStatusCounts": {
+          "fresh": 272
+        },
+        "freshPassRows": 2004,
+        "invalidPassRows": 0,
+        "unmatchedPassRows": 12,
+        "ambiguousPassRows": 0,
+        "duplicateUidRows": 0,
+        "duplicateCallSlots": 0,
+        "outsideWindowPassRows": 138,
+        "duplicateLedgerIds": [],
+        "duplicateMeasuredIntervalIds": []
+      },
+      "timestampStatistics": {
+        "render": {
+          "sampleCount": 618,
+          "meanMs": 94.91606451779927,
+          "p95Ms": 111.280128,
+          "maxMs": 134.938624
+        },
+        "compute": {
+          "sampleCount": 618,
+          "meanMs": 0.010498485436893188,
+          "p95Ms": 0.065536,
+          "maxMs": 0.32768
+        }
+      },
+      "timestampUnmatchedReasons": {
+        "no-ledger-range": 12
+      }
+    },
+    "A2": {
+      "rawReport": "measurements/shared-aerial-A2.json.gz",
+      "variant": "baseline",
+      "date": "2026-10-16T09:17:16.598Z",
+      "rendererVersion": "observatory-v50-quality-checkpoint",
+      "submissionFps": 19.62123357263021,
+      "stats": {
+        "frames": 589,
+        "durationMs": 30018.5,
+        "fps": 19.62123357263021,
+        "medianMs": 50,
+        "p95Ms": 66.69999999999709,
+        "p99Ms": 67.5,
+        "maxMs": 199.6999999999971,
+        "over18Ms": 583,
+        "over33Ms": 567
+      },
+      "queuePrefix": {
+        "status": "completed",
+        "reason": null,
+        "windowStartedAtMs": 63084.40000009537,
+        "firstRafTimestamp": 63074.7,
+        "measuredSubmissions": 589,
+        "confirmedPrefixId": 589,
+        "unconfirmedMeasuredFrames": 0,
+        "maxUnconfirmedMeasuredFrames": 25,
+        "endDrainMs": 184.10000002384186,
+        "completionBoundedSubmissionFps": 19.499824534701244,
+        "periodicEveryMs": 1000,
+        "finishTimeoutMs": 5000
+      },
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 589,
+          "expectedCalls": 1178,
+          "matchedFreshCalls": 1174,
+          "completeDraws": 587,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 589,
+          "expectedCalls": 589,
+          "matchedFreshCalls": 587,
+          "completeDraws": 587,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      },
+      "timestampDiagnostics": {
+        "batchCount": 288,
+        "freshBatchCount": 288,
+        "staleBatchCount": 0,
+        "staleObservedPassRows": 0,
+        "batchStatusCounts": {
+          "fresh": 288
+        },
+        "freshPassRows": 1890,
+        "invalidPassRows": 0,
+        "unmatchedPassRows": 9,
+        "ambiguousPassRows": 0,
+        "duplicateUidRows": 0,
+        "duplicateCallSlots": 0,
+        "outsideWindowPassRows": 120,
+        "duplicateLedgerIds": [],
+        "duplicateMeasuredIntervalIds": []
+      },
+      "timestampStatistics": {
+        "render": {
+          "sampleCount": 587,
+          "meanMs": 100.47986218739352,
+          "p95Ms": 112.525312,
+          "maxMs": 333.25056
+        },
+        "compute": {
+          "sampleCount": 587,
+          "meanMs": 0.009824817717206117,
+          "p95Ms": 0.065536,
+          "maxMs": 0.393216
+        }
+      },
+      "timestampUnmatchedReasons": {
+        "no-ledger-range": 9
+      }
+    },
+    "B2": {
+      "rawReport": "measurements/shared-aerial-B2.json.gz",
+      "variant": "candidate",
+      "date": "2026-10-16T09:21:25.482Z",
+      "rendererVersion": "observatory-v50-trial",
+      "submissionFps": 19.26596024812423,
+      "stats": {
+        "frames": 578,
+        "durationMs": 30001.100000000006,
+        "fps": 19.26596024812423,
+        "medianMs": 50,
+        "p95Ms": 66.69999999999709,
+        "p99Ms": 67,
+        "maxMs": 67.60000000000582,
+        "over18Ms": 578,
+        "over33Ms": 567
+      },
+      "queuePrefix": {
+        "status": "completed",
+        "reason": null,
+        "windowStartedAtMs": 92192.60000002384,
+        "firstRafTimestamp": 92184,
+        "measuredSubmissions": 578,
+        "confirmedPrefixId": 578,
+        "unconfirmedMeasuredFrames": 0,
+        "maxUnconfirmedMeasuredFrames": 23,
+        "endDrainMs": 213,
+        "completionBoundedSubmissionFps": 19.126153194545935,
+        "periodicEveryMs": 1000,
+        "finishTimeoutMs": 5000
+      },
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 578,
+          "expectedCalls": 1156,
+          "matchedFreshCalls": 1150,
+          "completeDraws": 575,
+          "partialDraws": 0,
+          "missingDraws": 3,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 578,
+          "expectedCalls": 578,
+          "matchedFreshCalls": 575,
+          "completeDraws": 575,
+          "partialDraws": 0,
+          "missingDraws": 3,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      },
+      "timestampDiagnostics": {
+        "batchCount": 268,
+        "freshBatchCount": 268,
+        "staleBatchCount": 0,
+        "staleObservedPassRows": 0,
+        "batchStatusCounts": {
+          "fresh": 268
+        },
+        "freshPassRows": 1851,
+        "invalidPassRows": 0,
+        "unmatchedPassRows": 9,
+        "ambiguousPassRows": 0,
+        "duplicateUidRows": 0,
+        "duplicateCallSlots": 0,
+        "outsideWindowPassRows": 117,
+        "duplicateLedgerIds": [],
+        "duplicateMeasuredIntervalIds": []
+      },
+      "timestampStatistics": {
+        "render": {
+          "sampleCount": 575,
+          "meanMs": 101.3470359373914,
+          "p95Ms": 112.328704,
+          "maxMs": 125.698048
+        },
+        "compute": {
+          "sampleCount": 575,
+          "meanMs": 0.008206246956521727,
+          "p95Ms": 0.065536,
+          "maxMs": 0.065536
+        }
+      },
+      "timestampUnmatchedReasons": {
+        "no-ledger-range": 9
+      }
+    },
+    "A3": {
+      "rawReport": "measurements/shared-aerial-A3.json.gz",
+      "variant": "baseline",
+      "date": "2026-10-16T09:23:38.000Z",
+      "rendererVersion": "observatory-v50-quality-checkpoint",
+      "submissionFps": 19.144204133816324,
+      "stats": {
+        "frames": 575,
+        "durationMs": 30035.199999999997,
+        "fps": 19.144204133816324,
+        "medianMs": 50,
+        "p95Ms": 66.69999999999709,
+        "p99Ms": 66.80000000000291,
+        "maxMs": 100.90000000000873,
+        "over18Ms": 575,
+        "over33Ms": 570
+      },
+      "queuePrefix": {
+        "status": "completed",
+        "reason": null,
+        "windowStartedAtMs": 53604.700000047684,
+        "firstRafTimestamp": 53593.2,
+        "measuredSubmissions": 575,
+        "confirmedPrefixId": 575,
+        "unconfirmedMeasuredFrames": 0,
+        "maxUnconfirmedMeasuredFrames": 23,
+        "endDrainMs": 198.80000007152557,
+        "completionBoundedSubmissionFps": 19.017443129591584,
+        "periodicEveryMs": 1000,
+        "finishTimeoutMs": 5000
+      },
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 575,
+          "expectedCalls": 1150,
+          "matchedFreshCalls": 1146,
+          "completeDraws": 573,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 575,
+          "expectedCalls": 575,
+          "matchedFreshCalls": 573,
+          "completeDraws": 573,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      },
+      "timestampDiagnostics": {
+        "batchCount": 284,
+        "freshBatchCount": 284,
+        "staleBatchCount": 0,
+        "staleObservedPassRows": 0,
+        "batchStatusCounts": {
+          "fresh": 284
+        },
+        "freshPassRows": 1842,
+        "invalidPassRows": 0,
+        "unmatchedPassRows": 6,
+        "ambiguousPassRows": 0,
+        "duplicateUidRows": 0,
+        "duplicateCallSlots": 0,
+        "outsideWindowPassRows": 117,
+        "duplicateLedgerIds": [],
+        "duplicateMeasuredIntervalIds": []
+      },
+      "timestampStatistics": {
+        "render": {
+          "sampleCount": 573,
+          "meanMs": 101.37092467713805,
+          "p95Ms": 112.525312,
+          "maxMs": 128.253952
+        },
+        "compute": {
+          "sampleCount": 573,
+          "meanMs": 0.006176167539267009,
+          "p95Ms": 0.065536,
+          "maxMs": 0.065536
+        }
+      },
+      "timestampUnmatchedReasons": {
+        "no-ledger-range": 6
+      }
+    }
+  },
+  "comparisonsPercent": {
+    "firstBlock": {
+      "A2vsA1": 10.568044015133783,
+      "BvsA1": 16.322314401923688,
+      "BvsA2": 5.204279806199974
+    },
+    "repeatBlock": {
+      "A3vsA2": -2.43118984873254,
+      "B2vsA2": -1.8106574349206705,
+      "B2vsA3": 0.6359946512105807
+    }
+  },
+  "repeatBWithinControls": true
+}

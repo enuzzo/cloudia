@@ -1,0 +1,11 @@
+{
+  "reference": {
+    "title": "WGSL 15.7.5 Reassociation and Fusion",
+    "url": "https://gpuweb.github.io/gpuweb/wgsl/",
+    "editorDraftDate": "2026-10-08",
+    "consultedDate": "2026-10-16",
+    "sourceRevision": "25a5dc4537074c9b3844dd95891f5cfd193f4407",
+    "claim": "Implementations may reassociate floating-point operations and may fuse when at least as accurate; observed bit identity on Apple/Metal is not a universal identity proof.",
+    "scope": "No source text or external code copied."
+  }
+}
