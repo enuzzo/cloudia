@@ -1,0 +1,134 @@
+[
+  {
+    "id": "L1-artifact",
+    "pixel": [
+      1067,
+      1248
+    ],
+    "cpuBaselineKm": 15.696154315411782,
+    "cpuClippedKm": 15.718109606469762,
+    "qLookupKm": 15.50604719760997,
+    "physicallyLit": false
+  },
+  {
+    "id": "L1-control",
+    "pixel": [
+      1069,
+      1248
+    ],
+    "cpuBaselineKm": 15.280342904313791,
+    "cpuClippedKm": 15.571982399091235,
+    "qLookupKm": 15.514424307352824,
+    "physicallyLit": false
+  },
+  {
+    "id": "L2-artifact",
+    "pixel": [
+      1011,
+      1235
+    ],
+    "cpuBaselineKm": 14.603874701222615,
+    "cpuClippedKm": 14.719211174686103,
+    "qLookupKm": 14.55703025311887,
+    "physicallyLit": false
+  },
+  {
+    "id": "L2-control",
+    "pixel": [
+      1011,
+      1235
+    ],
+    "cpuBaselineKm": 14.603874701222615,
+    "cpuClippedKm": 14.719211174686103,
+    "qLookupKm": 14.62369042096359,
+    "physicallyLit": false
+  },
+  {
+    "id": "L3-artifact",
+    "pixel": [
+      883,
+      1303
+    ],
+    "cpuBaselineKm": 18.80640944537438,
+    "cpuClippedKm": 18.850593004729017,
+    "qLookupKm": 18.709249409426626,
+    "physicallyLit": false
+  },
+  {
+    "id": "L3-control",
+    "pixel": [
+      882,
+      1303
+    ],
+    "cpuBaselineKm": 18.767551431994647,
+    "cpuClippedKm": 18.81803184329584,
+    "qLookupKm": 18.783166376834107,
+    "physicallyLit": false
+  },
+  {
+    "id": "C1-ocean",
+    "pixel": [
+      792,
+      1104
+    ],
+    "cpuBaselineKm": 4.892108997159529,
+    "cpuClippedKm": 4.892208716958345,
+    "qLookupKm": 4.969217800263517,
+    "physicallyLit": true
+  },
+  {
+    "id": "C2-coastal-lowland",
+    "pixel": [
+      796,
+      1171
+    ],
+    "cpuBaselineKm": 9.002180272333735,
+    "cpuClippedKm": 9.002180272333973,
+    "qLookupKm": 9.084590732009218,
+    "physicallyLit": true
+  },
+  {
+    "id": "C3-plain",
+    "pixel": [
+      614,
+      1234
+    ],
+    "cpuBaselineKm": 12.808981129294102,
+    "cpuClippedKm": 12.808981129294146,
+    "qLookupKm": 12.884028655524803,
+    "physicallyLit": true
+  },
+  {
+    "id": "C4-ridge-L1",
+    "pixel": [
+      1048,
+      1258
+    ],
+    "cpuBaselineKm": 16.044086694431268,
+    "cpuClippedKm": 16.079579360018663,
+    "qLookupKm": 16.32263826352736,
+    "physicallyLit": true
+  },
+  {
+    "id": "C5-ridge-L2",
+    "pixel": [
+      996,
+      1263
+    ],
+    "cpuBaselineKm": 15.870794695770332,
+    "cpuClippedKm": 15.93873281023448,
+    "qLookupKm": 16.0428199406176,
+    "physicallyLit": true
+  },
+  {
+    "id": "C6-ridge-L3",
+    "pixel": [
+      856,
+      1342
+    ],
+    "cpuBaselineKm": 20.589270311925713,
+    "cpuClippedKm": 20.604799937207073,
+    "qLookupKm": 20.751235009751746,
+    "physicallyLit": true
+  }
+]

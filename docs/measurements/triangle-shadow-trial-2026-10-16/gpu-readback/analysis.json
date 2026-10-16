@@ -1,0 +1,215 @@
+{
+  "status": "SAVED_READBACK_CONSISTENT",
+  "uniqueTexels": 11,
+  "recordCount": 12,
+  "mapStableDuringRead": true,
+  "CPUBlockedComparisonsLit": 3,
+  "CPUUnoccludedComparisonsShadowed": 0,
+  "rows": [
+    {
+      "id": "L1-artifact",
+      "pixel": [
+        1067,
+        1248
+      ],
+      "cpuBaselineKm": 15.696154315411782,
+      "cpuClippedKm": 15.718109606469762,
+      "qLookupKm": 15.50604719760997,
+      "physicallyLit": false,
+      "heightKm": 15.696006774902344,
+      "bits": 1098588888,
+      "returnedElements": 1,
+      "deltaGpuVsBaselineM": -0.1475405094382154,
+      "deltaGpuVsClippedM": -22.10283156741788,
+      "savedCpuLookupVsGpuHeightLit": false
+    },
+    {
+      "id": "L1-control",
+      "pixel": [
+        1069,
+        1248
+      ],
+      "cpuBaselineKm": 15.280342904313791,
+      "cpuClippedKm": 15.571982399091235,
+      "qLookupKm": 15.514424307352824,
+      "physicallyLit": false,
+      "heightKm": 15.282020568847656,
+      "bits": 1098154792,
+      "returnedElements": 1,
+      "deltaGpuVsBaselineM": 1.6776645338651974,
+      "deltaGpuVsClippedM": -289.9618302435787,
+      "savedCpuLookupVsGpuHeightLit": true
+    },
+    {
+      "id": "L2-artifact",
+      "pixel": [
+        1011,
+        1235
+      ],
+      "cpuBaselineKm": 14.603874701222615,
+      "cpuClippedKm": 14.719211174686103,
+      "qLookupKm": 14.55703025311887,
+      "physicallyLit": false,
+      "heightKm": 14.60390853881836,
+      "bits": 1097443740,
+      "returnedElements": 1,
+      "deltaGpuVsBaselineM": 0.03383759574404621,
+      "deltaGpuVsClippedM": -115.30263586774403,
+      "savedCpuLookupVsGpuHeightLit": false
+    },
+    {
+      "id": "L2-control",
+      "pixel": [
+        1011,
+        1235
+      ],
+      "cpuBaselineKm": 14.603874701222615,
+      "cpuClippedKm": 14.719211174686103,
+      "qLookupKm": 14.62369042096359,
+      "physicallyLit": false,
+      "heightKm": 14.60390853881836,
+      "bits": 1097443740,
+      "returnedElements": 1,
+      "deltaGpuVsBaselineM": 0.03383759574404621,
+      "deltaGpuVsClippedM": -115.30263586774403,
+      "savedCpuLookupVsGpuHeightLit": true
+    },
+    {
+      "id": "L3-artifact",
+      "pixel": [
+        883,
+        1303
+      ],
+      "cpuBaselineKm": 18.80640944537438,
+      "cpuClippedKm": 18.850593004729017,
+      "qLookupKm": 18.709249409426626,
+      "physicallyLit": false,
+      "heightKm": 18.80655288696289,
+      "bits": 1100379090,
+      "returnedElements": 1,
+      "deltaGpuVsBaselineM": 0.14344158850931876,
+      "deltaGpuVsClippedM": -44.040117766126485,
+      "savedCpuLookupVsGpuHeightLit": false
+    },
+    {
+      "id": "L3-control",
+      "pixel": [
+        882,
+        1303
+      ],
+      "cpuBaselineKm": 18.767551431994647,
+      "cpuClippedKm": 18.81803184329584,
+      "qLookupKm": 18.783166376834107,
+      "physicallyLit": false,
+      "heightKm": 18.76767921447754,
+      "bits": 1100358709,
+      "returnedElements": 1,
+      "deltaGpuVsBaselineM": 0.12778248289180283,
+      "deltaGpuVsClippedM": -50.35262881830249,
+      "savedCpuLookupVsGpuHeightLit": true
+    },
+    {
+      "id": "C1-ocean",
+      "pixel": [
+        792,
+        1104
+      ],
+      "cpuBaselineKm": 4.892108997159529,
+      "cpuClippedKm": 4.892208716958345,
+      "qLookupKm": 4.969217800263517,
+      "physicallyLit": true,
+      "heightKm": 4.9271440505981445,
+      "bits": 1084074794,
+      "returnedElements": 1,
+      "deltaGpuVsBaselineM": 35.035053438615904,
+      "deltaGpuVsClippedM": 34.93533363979928,
+      "savedCpuLookupVsGpuHeightLit": true
+    },
+    {
+      "id": "C2-coastal-lowland",
+      "pixel": [
+        796,
+        1171
+      ],
+      "cpuBaselineKm": 9.002180272333735,
+      "cpuClippedKm": 9.002180272333973,
+      "qLookupKm": 9.084590732009218,
+      "physicallyLit": true,
+      "heightKm": 9.002138137817383,
+      "bits": 1091569858,
+      "returnedElements": 1,
+      "deltaGpuVsBaselineM": -0.04213451635237675,
+      "deltaGpuVsClippedM": -0.042134516590408566,
+      "savedCpuLookupVsGpuHeightLit": true
+    },
+    {
+      "id": "C3-plain",
+      "pixel": [
+        614,
+        1234
+      ],
+      "cpuBaselineKm": 12.808981129294102,
+      "cpuClippedKm": 12.808981129294146,
+      "qLookupKm": 12.884028655524803,
+      "physicallyLit": true,
+      "heightKm": 12.80891227722168,
+      "bits": 1095561550,
+      "returnedElements": 1,
+      "deltaGpuVsBaselineM": -0.06885207242213198,
+      "deltaGpuVsClippedM": -0.0688520724665409,
+      "savedCpuLookupVsGpuHeightLit": true
+    },
+    {
+      "id": "C4-ridge-L1",
+      "pixel": [
+        1048,
+        1258
+      ],
+      "cpuBaselineKm": 16.044086694431268,
+      "cpuClippedKm": 16.079579360018663,
+      "qLookupKm": 16.32263826352736,
+      "physicallyLit": true,
+      "heightKm": 16.0441951751709,
+      "bits": 1098930819,
+      "returnedElements": 1,
+      "deltaGpuVsBaselineM": 0.10848073963032334,
+      "deltaGpuVsClippedM": -35.38418484776429,
+      "savedCpuLookupVsGpuHeightLit": true
+    },
+    {
+      "id": "C5-ridge-L2",
+      "pixel": [
+        996,
+        1263
+      ],
+      "cpuBaselineKm": 15.870794695770332,
+      "cpuClippedKm": 15.93873281023448,
+      "qLookupKm": 16.0428199406176,
+      "physicallyLit": true,
+      "heightKm": 15.870840072631836,
+      "bits": 1098772214,
+      "returnedElements": 1,
+      "deltaGpuVsBaselineM": 0.045376861503854116,
+      "deltaGpuVsClippedM": -67.89273760264436,
+      "savedCpuLookupVsGpuHeightLit": true
+    },
+    {
+      "id": "C6-ridge-L3",
+      "pixel": [
+        856,
+        1342
+      ],
+      "cpuBaselineKm": 20.589270311925713,
+      "cpuClippedKm": 20.604799937207073,
+      "qLookupKm": 20.751235009751746,
+      "physicallyLit": true,
+      "heightKm": 20.589420318603516,
+      "bits": 1101313826,
+      "returnedElements": 1,
+      "deltaGpuVsBaselineM": 0.1500066778028497,
+      "deltaGpuVsClippedM": -15.379618603557077,
+      "savedCpuLookupVsGpuHeightLit": true
+    }
+  ],
+  "scope": "GPU R32F heights compared with saved Float64 CPU lookup q. GPU receiver q, winner ID, clipping validity/reason and corner varyings were not read; this is not proof of branch or identical raster winner."
+}

@@ -1,0 +1,14 @@
+{
+  "launched": true,
+  "exitCode": 0,
+  "wallSeconds": 0.03227820806205273,
+  "cpuSeconds": 0.027119,
+  "peakRSSBytes": 20676608,
+  "wallKilled": false,
+  "error": null,
+  "CPUHardLimitSeconds": 1,
+  "wallLimitSeconds": 5,
+  "peakRSSGateBytes": 2147483648,
+  "RSSScope": "macOS terminal getrusage; no AS/RSS setrlimit or ps",
+  "pass": true
+}

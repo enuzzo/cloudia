@@ -1,0 +1,10 @@
+$ vitest run src/cumulonimbus/TerrainShadowCaster.test.ts
+
+ RUN  v4.1.6 /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/candidate-source
+
+
+ Test Files  1 passed (1)
+      Tests  8 passed (8)
+   Start at  22:15:35
+   Duration  373ms (transform 22ms, setup 0ms, import 59ms, tests 7ms, environment 178ms)
+

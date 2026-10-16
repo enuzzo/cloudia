@@ -1,0 +1,43 @@
+
+ RUN  v4.1.6 /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/candidate-source
+
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > affine caster/texel intersection, float64 > clips a covering affine triangle to the actual square, including the far corner 1ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > affine caster/texel intersection, float64 > keeps a triangle entirely inside the texel and its lowest original vertex 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > affine caster/texel intersection, float64 > interpolates q at an edge crossing and deduplicates exact boundary endpoints 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > affine caster/texel intersection, float64 > represents a genuine seven-vertex intersection without an eighth temporary slot 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > affine caster/texel intersection, float64 > uses floor of shadow fragment coordinates and supports a rectangular target 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > affine caster/texel intersection, float64 > does not depend on polygon winding 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > affine caster/texel intersection, float64 > leaves points on the same positive affine face lit, without blanket disabling occluders 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > affine caster/texel intersection, float64 > returns the caller baseline for empty, collinear and point-contact geometry 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > affine caster/texel intersection, float64 > rejects nonfinite inputs and invalid target addresses without a coverage epsilon 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > affine caster/texel intersection, float32 > clips a covering affine triangle to the actual square, including the far corner 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > affine caster/texel intersection, float32 > keeps a triangle entirely inside the texel and its lowest original vertex 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > affine caster/texel intersection, float32 > interpolates q at an edge crossing and deduplicates exact boundary endpoints 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > affine caster/texel intersection, float32 > represents a genuine seven-vertex intersection without an eighth temporary slot 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > affine caster/texel intersection, float32 > uses floor of shadow fragment coordinates and supports a rectangular target 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > affine caster/texel intersection, float32 > does not depend on polygon winding 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > affine caster/texel intersection, float32 > leaves points on the same positive affine face lit, without blanket disabling occluders 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > affine caster/texel intersection, float32 > returns the caller baseline for empty, collinear and point-contact geometry 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > affine caster/texel intersection, float32 > rejects nonfinite inputs and invalid target addresses without a coverage epsilon 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > explicit precision and integration contract > exposes projected grazing collapse in f32 instead of claiming Float64/GPU parity 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > explicit precision and integration contract > falls back after nonfinite f32 arithmetic even when every input was finite 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > explicit precision and integration contract > parses the actual entry/inputs with pinned Three186 and preserves helper code when renamed 1ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > twelve frozen lit/shadow CPU records; not native raster qualification > keeps the fixed clipping/visibility witness 'L1-artifact' 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > twelve frozen lit/shadow CPU records; not native raster qualification > keeps the fixed clipping/visibility witness 'L1-control' 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > twelve frozen lit/shadow CPU records; not native raster qualification > keeps the fixed clipping/visibility witness 'L2-artifact' 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > twelve frozen lit/shadow CPU records; not native raster qualification > keeps the fixed clipping/visibility witness 'L2-control' 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > twelve frozen lit/shadow CPU records; not native raster qualification > keeps the fixed clipping/visibility witness 'L3-artifact' 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > twelve frozen lit/shadow CPU records; not native raster qualification > keeps the fixed clipping/visibility witness 'L3-control' 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > twelve frozen lit/shadow CPU records; not native raster qualification > keeps the fixed clipping/visibility witness 'C1-ocean' 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > twelve frozen lit/shadow CPU records; not native raster qualification > keeps the fixed clipping/visibility witness 'C2-coastal-lowland' 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > twelve frozen lit/shadow CPU records; not native raster qualification > keeps the fixed clipping/visibility witness 'C3-plain' 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > twelve frozen lit/shadow CPU records; not native raster qualification > keeps the fixed clipping/visibility witness 'C4-ridge-L1' 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > twelve frozen lit/shadow CPU records; not native raster qualification > keeps the fixed clipping/visibility witness 'C5-ridge-L2' 0ms
+ ✓ src/cumulonimbus/terrainShadowClip.test.ts > twelve frozen lit/shadow CPU records; not native raster qualification > keeps the fixed clipping/visibility witness 'C6-ridge-L3' 0ms
+
+ Test Files  1 passed (1)
+      Tests  33 passed (33)
+   Start at  22:18:09
+   Duration  336ms (transform 23ms, setup 0ms, import 33ms, tests 6ms, environment 172ms)
+
+JSON report written to /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/clipping-validation/r2/test-results.json

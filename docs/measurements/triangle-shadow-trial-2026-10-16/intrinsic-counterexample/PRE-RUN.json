@@ -1,0 +1,13 @@
+{
+  "inputs": {
+    "intrinsic-counterexample/counterexample.ts": "e04da521fdf8859c44200826662a596dbacf9765a02ce03a536a73e37510618b",
+    "candidate-source/src/cumulonimbus/terrainShadowClip.ts": "360be4ca207e91a3e9286e879e4ce9bf6a3a033ebbbccc10426708a08f7cbdc7",
+    "select-scope-and-affine-counterexample.md": "d0f04803c57745c9f1af63906a4f44a3b977103b96eca5573254e7008c92d467"
+  },
+  "oneCase": true,
+  "search": false,
+  "CPUHardLimitSeconds": 1,
+  "wallSeconds": 10,
+  "peakRSSGateBytes": 536870912,
+  "RSSScope": "terminal macOS getrusage gate; no virtual-memory limit"
+}

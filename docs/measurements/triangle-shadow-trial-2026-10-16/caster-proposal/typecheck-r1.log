@@ -1,0 +1,4 @@
+$ tsc --noEmit
+src/cumulonimbus/TerrainShadow.ts(152,102): error TS2339: Property 'toVar' does not exist on type 'Node'.
+src/cumulonimbus/TerrainShadowCaster.test.ts(83,18): error TS2352: Conversion of type 'Node<"vec3">' to type 'NodeClass<NodeClassEventMap> & NodeElements & { __TypeScript_NODE_TYPE__: unknown; } & { isVaryingNode: boolean; interpolationType: string; interpolationSampling: string; }' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'NodeClass<NodeClassEventMap> & NodeElements & NodeExtensions<"vec3"> & NumOrBoolVec3Extensions<"float"> & ... 4 more ... & { ...; }' is missing the following properties from type '{ isVaryingNode: boolean; interpolationType: string; interpolationSampling: string; }': isVaryingNode, interpolationType, interpolationSampling

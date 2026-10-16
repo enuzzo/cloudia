@@ -1,0 +1,114 @@
+{
+  "previousGoalTurn": "progress: v58 adopted after native parity and full-quality Rain A/B/A; full goal remains active",
+  "baselineCommit": "908078042bda26471d57cb6a27d69dbec8655c3f",
+  "sourceFiles": 124,
+  "sourceManifestSHA256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+  "pixelsSelectedBeforeRun": [
+    {
+      "id": "L1-artifact",
+      "pixelCentre": [
+        71.5,
+        856.5
+      ],
+      "selectionIsArtifact": true
+    },
+    {
+      "id": "L1-control",
+      "pixelCentre": [
+        64.5,
+        856.5
+      ],
+      "selectionIsArtifact": false
+    },
+    {
+      "id": "L2-artifact",
+      "pixelCentre": [
+        431.5,
+        849.5
+      ],
+      "selectionIsArtifact": true
+    },
+    {
+      "id": "L2-control",
+      "pixelCentre": [
+        431.5,
+        844.5
+      ],
+      "selectionIsArtifact": false
+    },
+    {
+      "id": "L3-artifact",
+      "pixelCentre": [
+        903.5,
+        651.5
+      ],
+      "selectionIsArtifact": true
+    },
+    {
+      "id": "L3-control",
+      "pixelCentre": [
+        903.5,
+        646.5
+      ],
+      "selectionIsArtifact": false
+    },
+    {
+      "id": "C1-ocean",
+      "pixelCentre": [
+        2200.5,
+        1100.5
+      ],
+      "selectionIsArtifact": false
+    },
+    {
+      "id": "C2-coastal-lowland",
+      "pixelCentre": [
+        1800.5,
+        930.5
+      ],
+      "selectionIsArtifact": false
+    },
+    {
+      "id": "C3-plain",
+      "pixelCentre": [
+        2200.5,
+        700.5
+      ],
+      "selectionIsArtifact": false
+    },
+    {
+      "id": "C4-ridge-L1",
+      "pixelCentre": [
+        170.5,
+        805.5
+      ],
+      "selectionIsArtifact": false
+    },
+    {
+      "id": "C5-ridge-L2",
+      "pixelCentre": [
+        460.5,
+        800.5
+      ],
+      "selectionIsArtifact": false
+    },
+    {
+      "id": "C6-ridge-L3",
+      "pixelCentre": [
+        925.5,
+        610.5
+      ],
+      "selectionIsArtifact": false
+    }
+  ],
+  "selectionPolicy": "Six prior diagnostic pixels plus six visually selected candidate unoccluded controls, fixed before raycasts; no replacement/adaptive search. Names C1-C6 are intentions, not physical classifications.",
+  "runLimits": {
+    "maxPixels": 12,
+    "maxRays": 36,
+    "CPUSeconds": 20,
+    "wallSeconds": 40,
+    "peakRSSBytes": 2147483648
+  },
+  "trialGate": "Unoccluded physical control outcomes must be inspected before a GPU clipping trial; no source adoption solely from arithmetic.",
+  "invariants": "Full256/128/384 native output, no WGSL cloud/material/receiver change; static terrain geometry and exclusive shadow cache retained."
+}

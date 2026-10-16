@@ -1,0 +1,92 @@
+{
+  "files": [
+    {
+      "path": "API-SOURCES.json",
+      "bytes": 2675,
+      "sha256": "1d9c4ac063538d8a0233f9dd401c785e034c20fb2106ac6e751a5853a59739bb"
+    },
+    {
+      "path": "PRE-RUN-R1.json",
+      "bytes": 1275,
+      "sha256": "b8048d738870df35aa330337f019b3bdde0f567bf17b8707f7052ccebdbfc28b"
+    },
+    {
+      "path": "PRE-RUN-R2.json",
+      "bytes": 1457,
+      "sha256": "a6c83fe553f92850963c339b5054d7a85856c98ed93189d53bfec8eb8f617ffa"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5327,
+      "sha256": "d364c4c52fcc30f69904f407e9a83c0a3e4cbaf7ec79d3a09ad85d3c2aed7acd"
+    },
+    {
+      "path": "RESULT.json",
+      "bytes": 1682,
+      "sha256": "19af66b8eed166a44011fc9ad4b028d0c03ff516384ac69dd056ec4890dc1c06"
+    },
+    {
+      "path": "r1-source/TerrainShadowCaster.test.ts",
+      "bytes": 9765,
+      "sha256": "7a93e8c5158e99c26c6801410bbe7c2c88b849ba6b1863eb248641a7f263393e"
+    },
+    {
+      "path": "r1-source/TerrainShadowCaster.ts",
+      "bytes": 7802,
+      "sha256": "945045fb081de7628097e533e81a064c185464344fd781095e40fb60650cd4ef"
+    },
+    {
+      "path": "r2-source/TerrainShadowCaster.test.ts",
+      "bytes": 10493,
+      "sha256": "d4f10bffa7fbb865cd7d521f2aa070a60681fbf1f8c1639546be56e7eb7ab477"
+    },
+    {
+      "path": "r2-source/TerrainShadowCaster.ts",
+      "bytes": 8024,
+      "sha256": "1c7463b35b4700e3ce805d48f4c6c29b2ded528083bc9adab99485e82bdb8ae8"
+    },
+    {
+      "path": "targeted-r1.json",
+      "bytes": 213,
+      "sha256": "32e39893d530b98bb0df650c84c70ad5483f2b8eb0dd22024fb504cb754f7025"
+    },
+    {
+      "path": "targeted-r1.log",
+      "bytes": 316,
+      "sha256": "c40e7946f91dd2c7721e487bd443602c1bfc1761e43c786b4a4d859f3a95dcfa"
+    },
+    {
+      "path": "targeted-r2.json",
+      "bytes": 211,
+      "sha256": "a7ad969da4a30f64d8a1050d02f8ff5dcceb1941ce4647b01aae6d3494fbab8f"
+    },
+    {
+      "path": "targeted-r2.log",
+      "bytes": 316,
+      "sha256": "08d753a4e8926d7723306503b5bd4d32928e807afc763337487441e4109fe271"
+    },
+    {
+      "path": "typecheck-r1.json",
+      "bytes": 167,
+      "sha256": "64ace1b3a6efc3a522d981bf8cd5fc7da19d6fdf16bdd4eaff6c6f5e5217ae18"
+    },
+    {
+      "path": "typecheck-r1.log",
+      "bytes": 881,
+      "sha256": "6a9f55dcb5a4e51aebbd92630acfa4aecc21d11a1f59c7c8bd93a4381a0891b3"
+    },
+    {
+      "path": "typecheck-r2.json",
+      "bytes": 167,
+      "sha256": "7a1b8e8b57746ef13464edf1b52a894c4b0983f33655539155aeed298a328639"
+    },
+    {
+      "path": "typecheck-r2.log",
+      "bytes": 15,
+      "sha256": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92"
+    }
+  ],
+  "fileCount": 17,
+  "payloadBytes": 50786,
+  "scope": "Source proposal R1/R2, exact logs and static API provenance; manifest excludes itself"
+}

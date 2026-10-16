@@ -1,0 +1,22 @@
+{
+  "state": "R2 FROZEN BEFORE TARGETED TESTS/TYPECHECK",
+  "createdUTC": "2026-10-16T20:17:58.058381+00:00",
+  "change": "Test only: real pinned Three186 WGSLNodeFunction instead of source regex; runtime module unchanged",
+  "payloads": [
+    {
+      "path": "candidate-source/src/cumulonimbus/terrainShadowClip.ts",
+      "bytes": 9758,
+      "sha256": "360be4ca207e91a3e9286e879e4ce9bf6a3a033ebbbccc10426708a08f7cbdc7"
+    },
+    {
+      "path": "candidate-source/src/cumulonimbus/terrainShadowClip.test.ts",
+      "bytes": 12562,
+      "sha256": "6e55fc35a2ec45be0b4e7f79fe84aaee45ec88226c0b8507ca4970e60004a20c"
+    },
+    {
+      "path": "clipping-design-review.md",
+      "bytes": 5994,
+      "sha256": "b10988799b68cdb38164840abc8895184a755af37e9ffe814515a159f1cbe6d5"
+    }
+  ]
+}

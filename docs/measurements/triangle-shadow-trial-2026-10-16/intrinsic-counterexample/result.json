@@ -1,0 +1,94 @@
+{
+  "status": "SINGLE_PREDEFINED_COPLANAR_COUNTEREXAMPLE_CONFIRMED",
+  "radiusKm": 64,
+  "resolution": 2048,
+  "stepKm": 0.0625,
+  "receiverRadialOffsetKm": 0.03125,
+  "biasKm": 0.001,
+  "trianglesLightCoordinates": [
+    [
+      [
+        0.02,
+        -0.1,
+        0.54
+      ],
+      [
+        0.1,
+        0,
+        0.7
+      ],
+      [
+        0.02,
+        0.1,
+        0.54
+      ]
+    ],
+    [
+      [
+        0.02,
+        0.1,
+        0.54
+      ],
+      [
+        -0.1,
+        0,
+        0.3
+      ],
+      [
+        0.02,
+        -0.1,
+        0.54
+      ]
+    ]
+  ],
+  "texelCentre": [
+    0.03125,
+    -0.03125
+  ],
+  "receiver": [
+    -0.001,
+    -3.498,
+    -0.001
+  ],
+  "lookup": [
+    -0.0010000049046519958,
+    -3.466750000000001,
+    -0.0010000049046519958
+  ],
+  "lightLookup": [
+    0.0010000049046519958,
+    -0.0010000049046519958,
+    0.5332499999999989
+  ],
+  "addressedPixel": [
+    1024,
+    1024
+  ],
+  "receiverInsideB": true,
+  "texelCentreInsideA": true,
+  "normalDotSun": 0.4472135954999579,
+  "physicalSunRay": "Vertical ray from point on one affine graph; XZ fixed and Y strictly increases, so no later intersection with that graph.",
+  "cases": [
+    {
+      "precision": "float64",
+      "baselineMinimumKm": 0.499,
+      "clippedMinimumKm": 0.539,
+      "qLookupKm": 0.5332499999999989,
+      "baselineLit": true,
+      "clippedLit": false,
+      "falseShadowMarginM": 5.750000000001143,
+      "polygonVertices": 5
+    },
+    {
+      "precision": "float32",
+      "baselineMinimumKm": 0.499,
+      "clippedMinimumKm": 0.5390000343322754,
+      "qLookupKm": 0.5332499742507935,
+      "baselineLit": true,
+      "clippedLit": false,
+      "falseShadowMarginM": 5.750060081481934,
+      "polygonVertices": 5
+    }
+  ],
+  "scope": "Analytic topology plus existing CPU clipping function. Not a GPU/raster proof or explanation of the native speckle frequency. Float32 mode rounds clipping and lookup q, not the full GPU matrix/FMA path."
+}

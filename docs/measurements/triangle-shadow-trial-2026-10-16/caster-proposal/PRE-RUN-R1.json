@@ -1,0 +1,37 @@
+{
+  "scope": "Only two new files in candidate-source; tests/typecheck only; no GPU/build/full suite",
+  "createdUTC": "2026-10-16T20:14:23.949614+00:00",
+  "baseCommit": "908078042bda26471d57cb6a27d69dbec8655c3f",
+  "sourceManifestSHA256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+  "baselineFilesVerified": 124,
+  "files": {
+    "src/cumulonimbus/TerrainShadowCaster.ts": {
+      "bytes": 7802,
+      "sha256": "945045fb081de7628097e533e81a064c185464344fd781095e40fb60650cd4ef"
+    },
+    "src/cumulonimbus/TerrainShadowCaster.test.ts": {
+      "bytes": 9765,
+      "sha256": "7a93e8c5158e99c26c6801410bbe7c2c88b849ba6b1863eb248641a7f263393e"
+    }
+  },
+  "dependencies": {
+    "existingSymlink": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/candidate-source/node_modules",
+    "xattrIgnoreBefore": "1",
+    "gitCheckIgnore": "node_modules",
+    "gitTrackedPaths": []
+  },
+  "commands": [
+    [
+      "/Users/enuzzo/.bun/bin/bun",
+      "run",
+      "test",
+      "src/cumulonimbus/TerrainShadowCaster.test.ts"
+    ],
+    [
+      "/Users/enuzzo/.bun/bin/bun",
+      "run",
+      "typecheck"
+    ]
+  ],
+  "api": "constructor(sourceGeometry,{center,sun,scene?}); scene/bounds/geometry/mesh/material/cornersUVQ; stats(); dispose()"
+}

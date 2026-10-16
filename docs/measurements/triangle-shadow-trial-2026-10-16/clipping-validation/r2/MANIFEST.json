@@ -1,0 +1,50 @@
+{
+  "revision": "R2 final: actual pinned Three parser test",
+  "runtimeUnchangedFromR1": true,
+  "runtimeAndTestMatchR2PreTestFreeze": true,
+  "designNotePostTestChange": "Only description of regex test replaced by actual parser contract; R1 original note preserved",
+  "targetedTestsPassed": 33,
+  "targetedTestsFailed": 0,
+  "typecheckExitCode": 0,
+  "dependencyIgnoreAttribute": "1 before/after; symlink to existing ignored untracked repo node_modules",
+  "noGPU": true,
+  "noBuild": true,
+  "noFullSuite": true,
+  "payloads": [
+    {
+      "path": "terrainShadowClip.ts",
+      "bytes": 9758,
+      "sha256": "360be4ca207e91a3e9286e879e4ce9bf6a3a033ebbbccc10426708a08f7cbdc7"
+    },
+    {
+      "path": "terrainShadowClip.test.ts",
+      "bytes": 12562,
+      "sha256": "6e55fc35a2ec45be0b4e7f79fe84aaee45ec88226c0b8507ca4970e60004a20c"
+    },
+    {
+      "path": "clipping-design-review.md",
+      "bytes": 6205,
+      "sha256": "f34268ad0660f7912c8570cc562a3aded2d631c07ed70a2a3a4ca05a1e6368a8"
+    },
+    {
+      "path": "pre-test-manifest.json",
+      "bytes": 789,
+      "sha256": "d5219b5aa2827d456b70e0218a995e06e93be76a2607530bd70df319bceb086b"
+    },
+    {
+      "path": "targeted-tests.log",
+      "bytes": 6235,
+      "sha256": "0361fb1890080b8a7c45822839cdc24741944e61114e7a95db70bdb0395d10b0"
+    },
+    {
+      "path": "test-results.json",
+      "bytes": 13211,
+      "sha256": "7b4e0ffca2fcf27866d2f31d0faa2f79a1d769de093c82c627bc50d60ed7e64c"
+    },
+    {
+      "path": "typecheck.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

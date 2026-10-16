@@ -1,0 +1,50 @@
+{
+  "revision": "R1 pre real-parser-test revision",
+  "targetedTests": 33,
+  "targetedTestsPassed": 33,
+  "typecheckExitCode": 0,
+  "payloads": [
+    {
+      "path": "terrainShadowClip.ts",
+      "sourcePath": "candidate-source/src/cumulonimbus/terrainShadowClip.ts",
+      "bytes": 9758,
+      "sha256": "360be4ca207e91a3e9286e879e4ce9bf6a3a033ebbbccc10426708a08f7cbdc7"
+    },
+    {
+      "path": "terrainShadowClip.test.ts",
+      "sourcePath": "candidate-source/src/cumulonimbus/terrainShadowClip.test.ts",
+      "bytes": 11755,
+      "sha256": "ed976d75a4d45ee9b59554a1ae08f37654b9ec96f732fcc5c58a5a34d44b8710"
+    },
+    {
+      "path": "clipping-design-review.md",
+      "sourcePath": "clipping-design-review.md",
+      "bytes": 5994,
+      "sha256": "b10988799b68cdb38164840abc8895184a755af37e9ffe814515a159f1cbe6d5"
+    },
+    {
+      "path": "pre-test-manifest.json",
+      "sourcePath": "clipping-validation/pre-test-manifest.json",
+      "bytes": 796,
+      "sha256": "7068ff7f936e9f3a6ad4ff7768e554911f755c3af70b25dcd82fa3a6cd1561be"
+    },
+    {
+      "path": "targeted-tests.log",
+      "sourcePath": "clipping-validation/targeted-tests.log",
+      "bytes": 6237,
+      "sha256": "cd0c02381166a2407fe5d68eff08f0e276a7cb7803c87dc888f8e6d5a91d0065"
+    },
+    {
+      "path": "test-results.json",
+      "sourcePath": "clipping-validation/test-results.json",
+      "bytes": 13219,
+      "sha256": "5ebd0b98dedd38034d335e0001f7ea985a191dbf82372c83250b652af9d6cd3d"
+    },
+    {
+      "path": "typecheck.log",
+      "sourcePath": "clipping-validation/typecheck.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

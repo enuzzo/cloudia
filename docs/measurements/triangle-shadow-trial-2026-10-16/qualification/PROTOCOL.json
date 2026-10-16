@@ -1,0 +1,15 @@
+{
+  "sourceCount": 128,
+  "sourceManifestSHA256": "dfa3ec97b2c606f6fa1d1cd2f6d21dad44026095228026270fc02e150cb56921",
+  "expectedTests": 440,
+  "expectedTestFiles": 47,
+  "commands": [
+    "full-tests",
+    "app-build",
+    "hero-build"
+  ],
+  "candidateVersion": "experiment-v58-triangle-texel-shadow",
+  "positiveControlGate": "12fixed CPUrecords/36rays:6blocked+6unoccluded; clip classifies all12 correctly in offline reference and f32 diagnostic, not GPU bit/raster guarantee",
+  "geometryChange": "Shadow caster only929792 instances x3 vertices=2789376 potential vertex invocations; owned index+vec4position18,604,048B plus36dummy; colour geometry untouched",
+  "decisionGate": "No adoption without native visual improvement, sampled lit/shadow outcomes and actual cost/lifecycle qualification"
+}

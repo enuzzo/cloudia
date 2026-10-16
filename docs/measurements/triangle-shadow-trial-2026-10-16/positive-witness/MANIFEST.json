@@ -1,0 +1,135 @@
+{
+  "schema": "cloudia-external-evidence-v1",
+  "state": "FROZEN_CPU_WITNESS_AND_OFFLINE_CLIPPING_NO_ADOPTION",
+  "sourceManifestSHA256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+  "sourceFiles": 124,
+  "payloadFiles": 23,
+  "payloadBytes": 219508,
+  "originalImagesExternal": [
+    {
+      "path": "../baseline-native.png",
+      "sha256": "af8877ac93db6fcd50ab3ceece43ac1a40fc7d21c41151afb3a9620ca7586be5"
+    },
+    {
+      "path": "../unshadowed-native.png",
+      "sha256": "ba02c0cbcfac0931dc20668631ad6cee93830e74cb4c26261dad9f37358a54b1"
+    }
+  ],
+  "payload": [
+    {
+      "path": "PRE-RUN-FREEZE.json",
+      "bytes": 4887,
+      "sha256": "4f1079b944b697eb7cb66289fe3e3f10e9ffc3b6790ec8ebf479c4d34ac52e34"
+    },
+    {
+      "path": "witness.ts",
+      "bytes": 13227,
+      "sha256": "71bb80711c5a523494be66beb58ef6cfd51655423ac0ecd5eb40214f39d45be2"
+    },
+    {
+      "path": "run.py",
+      "bytes": 2471,
+      "sha256": "5a946617196677f5aa934b13c7af1b86d6cb0f0f65f9c0a317ccb038cf5361c1"
+    },
+    {
+      "path": "selected-pixels.json",
+      "bytes": 2842,
+      "sha256": "d89b771513bdbddb15b3ada83c845fd75377eab8286707295c1375eff25ecc79"
+    },
+    {
+      "path": "result.json",
+      "bytes": 74899,
+      "sha256": "f416a5fc3aa706186cc2f08811d7a35192153297f91486e31e6202409ed034cc"
+    },
+    {
+      "path": "stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run.json",
+      "bytes": 552,
+      "sha256": "4880f8e7a1ec2e9b43e6cb1fa79ee5fdd52e568ef5635a277e246304a0994ee2"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 11367,
+      "sha256": "905e78eecaa7ed153d3bbf9452cd67ee7254c71c288a474a624d14a252af459e"
+    },
+    {
+      "path": "POST-RUN-INPUT-VERIFICATION.json",
+      "bytes": 196,
+      "sha256": "bc2ec3a5c1cb89dd4044b685f5bdc0b6b4582c64e98960fbb16768c171bcb611"
+    },
+    {
+      "path": "witness-vs-cycle26.patch",
+      "bytes": 7216,
+      "sha256": "9b2f149d3e2301c678cbc4d67cea95becd6bb4953054ca2af922e96636bb93a5"
+    },
+    {
+      "path": "clipping-vs-cycle26.patch",
+      "bytes": 3921,
+      "sha256": "d4d133fa06e17ce7ea3f278f6b77685f8427f8ebc37ff24bd4c8b291e0dcdd07"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5750,
+      "sha256": "bd6454e146eae70c3e36c66df11b0a2a0568b077ce06dd7799941758e49ad829"
+    },
+    {
+      "path": "verify_archive.py",
+      "bytes": 2897,
+      "sha256": "d8a7947cfa475f267d398873100fa597da958976bee41b3c25d333d4e3643348"
+    },
+    {
+      "path": "clipping/PRE-RUN-FREEZE.json",
+      "bytes": 1216,
+      "sha256": "69fa9a6732b13c7233a767451a7f4b7da8e7ec5fb1248ba9df47765c4b31bfab"
+    },
+    {
+      "path": "clipping/PROTOCOL.json",
+      "bytes": 1023,
+      "sha256": "0dd1282f2b08104c9c0c151294d0a7b15babddae1902465ec6308c2a7b20aa2f"
+    },
+    {
+      "path": "clipping/analyse.py",
+      "bytes": 6539,
+      "sha256": "3e2b74f5b02a8aedd69236522340c1309869201fb01e472af7846ce3ab4e6e25"
+    },
+    {
+      "path": "clipping/run.py",
+      "bytes": 1803,
+      "sha256": "3d2942deb6386326c2acd9c9c8fe670f00cf8e76b12e304b11242484ed488784"
+    },
+    {
+      "path": "clipping/result.json",
+      "bytes": 52207,
+      "sha256": "9c685934f80950b0f82c315a80b54173c88b58be8f26410887f5f59b643b0a18"
+    },
+    {
+      "path": "clipping/run.json",
+      "bytes": 344,
+      "sha256": "df6ffc8a5926b4e165055f8780aab95e546da175174ec956638334873d9fc3ae"
+    },
+    {
+      "path": "clipping/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "inputs/root-protocol.json",
+      "bytes": 2625,
+      "sha256": "003f4622d2fe166b8215e4d1765c6c6e99f50e34fdbe5d34e841b80a3f0517d8"
+    },
+    {
+      "path": "inputs/source-manifest.json",
+      "bytes": 13042,
+      "sha256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2"
+    },
+    {
+      "path": "inputs/baseline-native.json",
+      "bytes": 10484,
+      "sha256": "e17a341939e2b8eaf162ad77baebf80f35ba1ed5504a02ff1955a8cb2ab39a4e"
+    }
+  ]
+}

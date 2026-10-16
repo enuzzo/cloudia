@@ -1,0 +1,52 @@
+{
+  "status": "TARGETED_8_PASS_TYPECHECK_PASS_NO_GPU_BUILD_FULL_SUITE",
+  "revision": "R2",
+  "baseCommit": "908078042bda26471d57cb6a27d69dbec8655c3f",
+  "baseSourceManifestSHA256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+  "files": {
+    "src/cumulonimbus/TerrainShadowCaster.ts": {
+      "bytes": 8024,
+      "sha256": "1c7463b35b4700e3ce805d48f4c6c29b2ded528083bc9adab99485e82bdb8ae8"
+    },
+    "src/cumulonimbus/TerrainShadowCaster.test.ts": {
+      "bytes": 10493,
+      "sha256": "d4f10bffa7fbb865cd7d521f2aa070a60681fbf1f8c1639546be56e7eb7ab477"
+    }
+  },
+  "tests": {
+    "passed": 8,
+    "files": 1,
+    "log": "targeted-r2.log",
+    "exitCode": 0
+  },
+  "typecheck": {
+    "command": [
+      "/Users/enuzzo/.bun/bin/bun",
+      "run",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "wallSeconds": 1.5212775829713792,
+    "log": "typecheck-r2.log"
+  },
+  "dependencyIgnoreBefore": "1",
+  "dependencyIgnoreAfter": "1",
+  "executionHandles": {
+    "typecheckR1Session": 22723,
+    "typecheckR2Session": 34493
+  },
+  "preservedR1": {
+    "source": "r1-source",
+    "targetedTests": 7,
+    "typecheckExit": 2,
+    "reason": "Own test introspection cast + root-owned TerrainShadow toVar typing; corrected separately before R2"
+  },
+  "mutationScope": "Only TerrainShadowCaster.ts and TerrainShadowCaster.test.ts were written by this agent in candidate-source; other source changes belong to root/Solar",
+  "scopeLimits": [
+    "No GPU shader generation/validation",
+    "No buffer residency/destroy readback",
+    "No whole terrain allocation",
+    "No performance or artistic acceptance"
+  ],
+  "createdUTC": "2026-10-16T20:16:53.842872+00:00"
+}

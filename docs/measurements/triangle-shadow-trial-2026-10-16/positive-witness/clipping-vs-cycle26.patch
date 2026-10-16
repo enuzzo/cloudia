@@ -1,0 +1,24 @@
+--- /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle26/caster-intersection-analysis/analyse.py
++++ /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/positive-witness/clipping/analyse.py
+@@ -74,6 +74,7 @@
+   variants[name]={'storedMinimumKm':stored,'deltaStoredVsBaselineM':(stored-old)*1000,'lookupMinusStoredM':(lookup-stored)*1000,
+    'rawVisibility':rawVisibility,'finalVisibility':rawVisibility+(1-rawVisibility)*fade,
+    'litDespiteSavedPhysicalBlocker':physical is not None and rawVisibility==1,
++   'shadowDespitePhysicallyUnoccluded':row['physicalSunRay']['physicallyUnoccluded'] and rawVisibility==0,
+    'blockerQMinusStoredM':(blockerQ-stored)*1000 if blockerQ is not None else None}
+  assert variants['fullTriangleClamp']['rawVisibility']<=variants['baselineAffineTexel']['rawVisibility']
+  assert variants['clippedTriangleTexel']['rawVisibility']<=variants['fullTriangleClamp']['rawVisibility']
+@@ -82,10 +83,10 @@
+   'addressedPixel':[i,j],'texelUVBounds':[u0,v0,u1,v1],'clippingStages':stages,'intersectionPolygonUVQ':poly,'polygonVertices':len(poly),'polygonAreaUV2':area(poly),'texelAreaCoverageFraction':area(poly)*N*N,
+   'wholeTexelAffineReconstructedKm':wholeTexelPlane,'wholeTexelCornerQKm':cornerQ,'centreBarycentric':baryCentre,
+   'lookup':{'qKm':lookup,'uv':[lu,lv],'casterPlaneQAtLookupKm':lookupPlaneQ,'barycentricInCasterTriangle':lookupBary,'insideCasterTriangle':min(lookupBary)>=0},
+-  'variants':variants,'physicalReference':{'blockerPresent':physical is not None,'blockerFace':physical['faceIndex'] if physical else None,'sameTriangleAsCaster':physical['faceIndex']==row['caster']['faceIndex'] if physical else None,
++  'variants':variants,'physicalReference':{'blockerPresent':physical is not None,'physicallyUnoccludedEntireMesh':row['physicalSunRay']['physicallyUnoccluded'],'farPastEntireMeshMaximumY':row['physicalSunRay']['farPastEntireMeshMaximumY'],'blockerFace':physical['faceIndex'] if physical else None,'sameTriangleAsCaster':physical['faceIndex']==row['caster']['faceIndex'] if physical else None,
+    'blockerQKm':blockerQ,'receiverQKm':receiverQ,'blockerQMinusReceiverQM':(blockerQ-receiverQ)*1000 if blockerQ is not None else None,'blockerQMinusLookupQM':(blockerQ-lookup)*1000 if blockerQ is not None else None,
+    'qualification':'Saved physical ray follows original receiver line; q gaps do not compare identical UV rays and are not a physical-error bound of a texture sample.'}})
+-counts={name:{'shadowed':sum(r['variants'][name]['rawVisibility']==0 for r in result),'litWithPhysicalBlocker':sum(r['variants'][name]['litDespiteSavedPhysicalBlocker'] for r in result)} for name in ['baselineAffineTexel','fullTriangleClamp','clippedTriangleTexel']}
+-out={'status':'OFFLINE_SIX_RECORD_ANALYSIS_COMPLETE_NO_GPU_PROPOSAL','inputSHA256':protocol['inputSHA256'],'rowCount':len(result),'CPUSeconds':time.process_time()-started,
++counts={name:{'shadowed':sum(r['variants'][name]['rawVisibility']==0 for r in result),'litWithPhysicalBlocker':sum(r['variants'][name]['litDespiteSavedPhysicalBlocker'] for r in result),'falseShadowPhysicallyUnoccluded':sum(r['variants'][name]['shadowDespitePhysicallyUnoccluded'] for r in result),'physicallyUnoccludedLit':sum(r['physicalReference']['physicallyUnoccludedEntireMesh'] and r['variants'][name]['rawVisibility']==1 for r in result)} for name in ['baselineAffineTexel','fullTriangleClamp','clippedTriangleTexel']}
++out={'status':'OFFLINE_TWELVE_RECORD_ANALYSIS_COMPLETE_NO_GPU_PROOF','inputSHA256':protocol['inputSHA256'],'rowCount':len(result),'CPUSeconds':time.process_time()-started,
+  'scope':'Float64 minimum of saved winning caster affine triangle restricted to its addressed texel; exact in real arithmetic with Float64 residual checks, not exact GPU raster visibility','biasKm':bias,'consistencyToleranceKm':EPS,'visibilityToleranceKm':0,'counts':counts,'rows':result}
+ print(json.dumps(out,indent=2))

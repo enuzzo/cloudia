@@ -1,0 +1,21 @@
+{
+  "trialR1SourceManifestSHA256": "dfa3ec97b2c606f6fa1d1cd2f6d21dad44026095228026270fc02e150cb56921",
+  "diagnosticSourceManifestSHA256": "4a5bea3762a06d9f3b1c9418d5995a879c11079aec57784c9b28a76e2dcef887",
+  "sourceCount": 128,
+  "changed": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/sceneMarkup.ts"
+  ],
+  "gate": "R1 nativeFAIL. No Rain/worker/FPS/lifecycle qualification continued; this is solely a purpose-built R32F diagnostic at same Sun state.",
+  "expectedRecords": 12,
+  "uniqueTexels": 11,
+  "shaderAndCasterUnchanged": true,
+  "shadowProbeURLRequired": true,
+  "overlapGuards": "Mutually exclusive with native capture/benchmark; physical readback busy through Promise settlement. Clear PNG does not cancel this separate read action. Destroy suppresses result emission.",
+  "stabilityRequired": "Same owner,target,Sun,cache epoch/submission count and valid key before/after; report false otherwise.",
+  "commands": [
+    "typecheck",
+    "app-build",
+    "hero-build"
+  ]
+}

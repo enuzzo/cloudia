@@ -1,0 +1,30 @@
+{
+  "state": "FROZEN_BEFORE_OFFLINE_CALCULATION",
+  "inputs": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/positive-witness/result.json",
+      "bytes": 74899,
+      "sha256": "f416a5fc3aa706186cc2f08811d7a35192153297f91486e31e6202409ed034cc"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/positive-witness/PRE-RUN-FREEZE.json",
+      "bytes": 4887,
+      "sha256": "4f1079b944b697eb7cb66289fe3e3f10e9ffc3b6790ec8ebf479c4d34ac52e34"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/positive-witness/clipping/analyse.py",
+      "bytes": 6539,
+      "sha256": "3e2b74f5b02a8aedd69236522340c1309869201fb01e472af7846ce3ab4e6e25"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/positive-witness/clipping/PROTOCOL.json",
+      "bytes": 1023,
+      "sha256": "0dd1282f2b08104c9c0c151294d0a7b15babddae1902465ec6308c2a7b20aa2f"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/positive-witness/clipping/run.py",
+      "bytes": 1803,
+      "sha256": "3d2942deb6386326c2acd9c9c8fe670f00cf8e76b12e304b11242484ed488784"
+    }
+  ]
+}

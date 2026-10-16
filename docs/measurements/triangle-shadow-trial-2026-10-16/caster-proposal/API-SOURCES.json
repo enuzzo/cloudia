@@ -1,0 +1,70 @@
+{
+  "threeVersion": "0.186.0",
+  "typesVersion": "0.186.0",
+  "files": {
+    "three/package.json": {
+      "bytes": 3672,
+      "sha256": "ab4ff6950aab522dfe6980f19914a5eb2cadb689a36c6c44f4d3869c5e46dc89"
+    },
+    "@types/three/package.json": {
+      "bytes": 1708,
+      "sha256": "b0253caeb8b99b6a64150e6279cc4bbf30e61610683bdf39f8db2667d6103626"
+    },
+    "three/src/core/InstancedBufferGeometry.js": {
+      "bytes": 870,
+      "sha256": "a511b56184a146a830eac7b4e3809e82b7c4d05595933bc53c2b0a1b3bedecba"
+    },
+    "three/src/renderers/common/StorageBufferAttribute.js": {
+      "bytes": 1472,
+      "sha256": "e7bd357166d3d64f410f6a59a0a17d5c037928074e93e64f396ba690bf26214e"
+    },
+    "three/src/nodes/accessors/StorageBufferNode.js": {
+      "bytes": 8838,
+      "sha256": "434b1ffce22864f4509c786c8fac41298613cf57194bc9bad7cbe4e7e80303e1"
+    },
+    "three/src/nodes/core/VaryingNode.js": {
+      "bytes": 4966,
+      "sha256": "78c01b45b8ba8d43441ef8cee5a425fefdbda0ac16bdaa6bc7b3ddddfd2ca9ff"
+    },
+    "three/src/nodes/core/IndexNode.js": {
+      "bytes": 6753,
+      "sha256": "2c3689efd3144c39b743d41141f6163e91d9f640369245cb71c6cbc4ebcd1814"
+    },
+    "three/src/materials/nodes/NodeMaterial.js": {
+      "bytes": 33440,
+      "sha256": "1c607113f49c25344ba08b0f00d47dc4564187c0dfebb70677373868ea57b876"
+    },
+    "three/src/renderers/common/RenderObject.js": {
+      "bytes": 21145,
+      "sha256": "fd39f216baf77dad588cbc57712a08bf047bd27475f448b47c157b50e43f0838"
+    },
+    "three/src/renderers/common/Geometries.js": {
+      "bytes": 9076,
+      "sha256": "1b21162c0a3d6e8558d35c20e83f51af60d3a951aa9940d265be7abd0fbcdbb7"
+    },
+    "three/src/renderers/common/Attributes.js": {
+      "bytes": 2910,
+      "sha256": "82e7eb71dca1a723f522725a9a824da6eaa04b4f1a8e5a7d21ace7868a9a840d"
+    },
+    "three/src/renderers/common/Bindings.js": {
+      "bytes": 10824,
+      "sha256": "13d5a3bcf5e488e503384bf63d5bf6319cbfafa185361d7114876ca3d75afca2"
+    },
+    "three/src/renderers/webgpu/utils/WebGPUAttributeUtils.js": {
+      "bytes": 15115,
+      "sha256": "48e28e508ce6e881c2e8d41f215e8a3493f7b06479be965d72d3e53f0cbf643c"
+    },
+    "three/src/renderers/webgpu/nodes/WGSLNodeBuilder.js": {
+      "bytes": 81550,
+      "sha256": "f742b3fe5d2a9396c0aadff8c9ba0489a2ce8dc833b199abc95a4b683dd74ed3"
+    },
+    "@types/three/src/nodes/accessors/StorageBufferNode.d.ts": {
+      "bytes": 2204,
+      "sha256": "389934dbe12e011b7e1767eba6675c321f4412793040cd11bbda2fe8b0cdf6c8"
+    },
+    "@types/three/src/nodes/core/VaryingNode.d.ts": {
+      "bytes": 1213,
+      "sha256": "9bdb6e828cb364d75e79cff4584e5e812f9b56b726e8bd51ca7c92dacee18814"
+    }
+  }
+}

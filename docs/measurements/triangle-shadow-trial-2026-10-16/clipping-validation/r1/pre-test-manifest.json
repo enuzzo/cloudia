@@ -1,0 +1,22 @@
+{
+  "state": "FROZEN BEFORE TARGETED CPU TESTS AND TYPECHECK; NO GPU/BUILD",
+  "createdUTC": "2026-10-16T20:16:41.851599+00:00",
+  "baselineSourceManifestSHA256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+  "payloads": [
+    {
+      "path": "candidate-source/src/cumulonimbus/terrainShadowClip.ts",
+      "bytes": 9758,
+      "sha256": "360be4ca207e91a3e9286e879e4ce9bf6a3a033ebbbccc10426708a08f7cbdc7"
+    },
+    {
+      "path": "candidate-source/src/cumulonimbus/terrainShadowClip.test.ts",
+      "bytes": 11755,
+      "sha256": "ed976d75a4d45ee9b59554a1ae08f37654b9ec96f732fcc5c58a5a34d44b8710"
+    },
+    {
+      "path": "clipping-design-review.md",
+      "bytes": 5994,
+      "sha256": "b10988799b68cdb38164840abc8895184a755af37e9ffe814515a159f1cbe6d5"
+    }
+  ]
+}

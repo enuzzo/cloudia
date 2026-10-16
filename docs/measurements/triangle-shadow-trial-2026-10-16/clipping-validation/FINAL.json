@@ -1,0 +1,14 @@
+{
+  "status": "FROZEN CPU-ONLY MODULE/TEST; ROOT INTEGRATION AND GPU QUALIFICATION PENDING",
+  "runtimeSHA256": "360be4ca207e91a3e9286e879e4ce9bf6a3a033ebbbccc10426708a08f7cbdc7",
+  "testSHA256": "6e55fc35a2ec45be0b4e7f79fe84aaee45ec88226c0b8507ca4970e60004a20c",
+  "designSHA256": "f34268ad0660f7912c8570cc562a3aded2d631c07ed70a2a3a4ca05a1e6368a8",
+  "r1ManifestSHA256": "97cee616ebb7a88f88eaedf36f652dc6731349c9b662cbf90d653b09307da0fc",
+  "r2ManifestSHA256": "100afb4aba3bf3d9017329fc24e940970bbe630e8a750647a863a2d7f13b0f71",
+  "targetedTestsPassed": 33,
+  "typecheckExitCode": 0,
+  "sourceEditsOnly": [
+    "candidate-source/src/cumulonimbus/terrainShadowClip.ts",
+    "candidate-source/src/cumulonimbus/terrainShadowClip.test.ts"
+  ]
+}

@@ -1,0 +1,275 @@
+{
+  "candidateSHA256": "576b35cc44d09b7fe271bbec942dc9f9cd4d0a5105a82dafd17b43ffb766bdc6",
+  "changedPixels": 76544,
+  "maxRGBDelta": 17,
+  "minRGBDelta": -57,
+  "sumAbsoluteRGBDelta": 2664205,
+  "fixedPixels": [
+    {
+      "id": "L1-artifact",
+      "pixel": [
+        71,
+        856
+      ],
+      "before": [
+        67,
+        77,
+        81
+      ],
+      "trial": [
+        67,
+        77,
+        81
+      ],
+      "delta": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "L1-control",
+      "pixel": [
+        64,
+        856
+      ],
+      "before": [
+        75,
+        84,
+        85
+      ],
+      "trial": [
+        75,
+        84,
+        85
+      ],
+      "delta": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "L2-artifact",
+      "pixel": [
+        431,
+        849
+      ],
+      "before": [
+        66,
+        75,
+        79
+      ],
+      "trial": [
+        66,
+        75,
+        79
+      ],
+      "delta": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "L2-control",
+      "pixel": [
+        431,
+        844
+      ],
+      "before": [
+        75,
+        83,
+        83
+      ],
+      "trial": [
+        75,
+        83,
+        83
+      ],
+      "delta": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "L3-artifact",
+      "pixel": [
+        903,
+        651
+      ],
+      "before": [
+        81,
+        91,
+        93
+      ],
+      "trial": [
+        81,
+        91,
+        93
+      ],
+      "delta": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "L3-control",
+      "pixel": [
+        903,
+        646
+      ],
+      "before": [
+        90,
+        99,
+        97
+      ],
+      "trial": [
+        90,
+        99,
+        97
+      ],
+      "delta": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "C1-ocean",
+      "pixel": [
+        2200,
+        1100
+      ],
+      "before": [
+        54,
+        74,
+        88
+      ],
+      "trial": [
+        54,
+        74,
+        88
+      ],
+      "delta": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "C2-coastal-lowland",
+      "pixel": [
+        1800,
+        930
+      ],
+      "before": [
+        94,
+        102,
+        102
+      ],
+      "trial": [
+        94,
+        102,
+        102
+      ],
+      "delta": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "C3-plain",
+      "pixel": [
+        2200,
+        700
+      ],
+      "before": [
+        79,
+        97,
+        104
+      ],
+      "trial": [
+        79,
+        97,
+        104
+      ],
+      "delta": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "C4-ridge-L1",
+      "pixel": [
+        170,
+        805
+      ],
+      "before": [
+        82,
+        90,
+        89
+      ],
+      "trial": [
+        82,
+        90,
+        89
+      ],
+      "delta": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "C5-ridge-L2",
+      "pixel": [
+        460,
+        800
+      ],
+      "before": [
+        82,
+        93,
+        89
+      ],
+      "trial": [
+        82,
+        93,
+        89
+      ],
+      "delta": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "C6-ridge-L3",
+      "pixel": [
+        925,
+        610
+      ],
+      "before": [
+        94,
+        105,
+        102
+      ],
+      "trial": [
+        94,
+        105,
+        102
+      ],
+      "delta": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "analysisAttemptR1": "numpy unavailable before image decode/computation; no output written; R2 uses existing Pillow only",
+  "scope": "RGB differences, not GPU visibility readback or physical classification of unprobed pixels"
+}

@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/Users/enuzzo/.bun/bin/bun",
+    "run",
+    "typecheck"
+  ],
+  "exitCode": 0,
+  "wallSeconds": 1.5212775829713792,
+  "log": "typecheck-r2.log"
+}

@@ -1,0 +1,8 @@
+{
+  "state": "PASS",
+  "sourceFilesVerified": 124,
+  "sourceMismatches": [],
+  "freezeInputChecks": 22,
+  "freezeInputMismatches": [],
+  "firstSixSharedFieldsExactlyPreservedExceptTiming": true
+}

@@ -1,0 +1,218 @@
+[
+  {
+    "id": "L1-artifact",
+    "pixelCentre": [
+      71.5,
+      856.5
+    ],
+    "selectionIsArtifact": true,
+    "baselineRGB": [
+      67,
+      77,
+      81
+    ],
+    "unshadowedRGB": [
+      73,
+      82,
+      83
+    ]
+  },
+  {
+    "id": "L1-control",
+    "pixelCentre": [
+      64.5,
+      856.5
+    ],
+    "selectionIsArtifact": false,
+    "baselineRGB": [
+      75,
+      84,
+      85
+    ],
+    "unshadowedRGB": [
+      75,
+      84,
+      85
+    ]
+  },
+  {
+    "id": "L2-artifact",
+    "pixelCentre": [
+      431.5,
+      849.5
+    ],
+    "selectionIsArtifact": true,
+    "baselineRGB": [
+      66,
+      75,
+      79
+    ],
+    "unshadowedRGB": [
+      75,
+      83,
+      83
+    ]
+  },
+  {
+    "id": "L2-control",
+    "pixelCentre": [
+      431.5,
+      844.5
+    ],
+    "selectionIsArtifact": false,
+    "baselineRGB": [
+      75,
+      83,
+      83
+    ],
+    "unshadowedRGB": [
+      75,
+      83,
+      83
+    ]
+  },
+  {
+    "id": "L3-artifact",
+    "pixelCentre": [
+      903.5,
+      651.5
+    ],
+    "selectionIsArtifact": true,
+    "baselineRGB": [
+      81,
+      91,
+      93
+    ],
+    "unshadowedRGB": [
+      88,
+      97,
+      96
+    ]
+  },
+  {
+    "id": "L3-control",
+    "pixelCentre": [
+      903.5,
+      646.5
+    ],
+    "selectionIsArtifact": false,
+    "baselineRGB": [
+      90,
+      99,
+      97
+    ],
+    "unshadowedRGB": [
+      90,
+      99,
+      97
+    ]
+  },
+  {
+    "id": "C1-ocean",
+    "pixelCentre": [
+      2200.5,
+      1100.5
+    ],
+    "selectionIsArtifact": false,
+    "baselineRGB": [
+      54,
+      74,
+      88
+    ],
+    "unshadowedRGB": [
+      54,
+      74,
+      88
+    ]
+  },
+  {
+    "id": "C2-coastal-lowland",
+    "pixelCentre": [
+      1800.5,
+      930.5
+    ],
+    "selectionIsArtifact": false,
+    "baselineRGB": [
+      94,
+      102,
+      102
+    ],
+    "unshadowedRGB": [
+      94,
+      102,
+      102
+    ]
+  },
+  {
+    "id": "C3-plain",
+    "pixelCentre": [
+      2200.5,
+      700.5
+    ],
+    "selectionIsArtifact": false,
+    "baselineRGB": [
+      79,
+      97,
+      104
+    ],
+    "unshadowedRGB": [
+      79,
+      97,
+      104
+    ]
+  },
+  {
+    "id": "C4-ridge-L1",
+    "pixelCentre": [
+      170.5,
+      805.5
+    ],
+    "selectionIsArtifact": false,
+    "baselineRGB": [
+      82,
+      90,
+      89
+    ],
+    "unshadowedRGB": [
+      82,
+      90,
+      89
+    ]
+  },
+  {
+    "id": "C5-ridge-L2",
+    "pixelCentre": [
+      460.5,
+      800.5
+    ],
+    "selectionIsArtifact": false,
+    "baselineRGB": [
+      82,
+      93,
+      89
+    ],
+    "unshadowedRGB": [
+      82,
+      93,
+      89
+    ]
+  },
+  {
+    "id": "C6-ridge-L3",
+    "pixelCentre": [
+      925.5,
+      610.5
+    ],
+    "selectionIsArtifact": false,
+    "baselineRGB": [
+      94,
+      105,
+      102
+    ],
+    "unshadowedRGB": [
+      94,
+      105,
+      102
+    ]
+  }
+]

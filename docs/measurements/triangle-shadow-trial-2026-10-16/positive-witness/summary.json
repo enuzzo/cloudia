@@ -1,0 +1,345 @@
+{
+  "status": "CPU_REFERENCE_AND_SAVED_RECORD_CLIPPING_ONLY",
+  "witnessSHA256": "f416a5fc3aa706186cc2f08811d7a35192153297f91486e31e6202409ed034cc",
+  "clippingSHA256": "9c685934f80950b0f82c315a80b54173c88b58be8f26410887f5f59b643b0a18",
+  "witnessRun": {
+    "phase": "kernel",
+    "launched": true,
+    "exitCode": 0,
+    "wallSeconds": 2.7710924999555573,
+    "cpuSeconds": 3.061125,
+    "peakRSSBytes": 877789184,
+    "wallKilled": false,
+    "error": null,
+    "CPUHardLimitSeconds": 20,
+    "wallLimitSeconds": 40,
+    "peakRSSGateBytes": 2147483648,
+    "RSSScope": "macOS terminal getrusage peak gate; no RSS setrlimit or virtual address-space limit; no ps",
+    "terminalObserved": true,
+    "budgetPASS": true,
+    "pass": true,
+    "resultStatus": "CPU_TWELVE_REFERENCE_COMPLETE_NO_GPU_PROOF",
+    "rows": 12,
+    "raycasts": 36
+  },
+  "clippingRun": {
+    "launched": true,
+    "exitCode": 0,
+    "wallSeconds": 0.03227820806205273,
+    "cpuSeconds": 0.027119,
+    "peakRSSBytes": 20676608,
+    "wallKilled": false,
+    "error": null,
+    "CPUHardLimitSeconds": 1,
+    "wallLimitSeconds": 5,
+    "peakRSSGateBytes": 2147483648,
+    "RSSScope": "macOS terminal getrusage; no AS/RSS setrlimit or ps",
+    "pass": true
+  },
+  "witnessCounts": {
+    "selected": 12,
+    "noReceiver": 0,
+    "artifactMismatch": 0,
+    "cpuShadow": 3,
+    "physicalBlocker": 6,
+    "physicallyUnoccluded": 6,
+    "candidateControlsPhysicallyUnoccluded": 6,
+    "falseShadowWholeMesh": 0
+  },
+  "clippingCounts": {
+    "baselineAffineTexel": {
+      "shadowed": 3,
+      "litWithPhysicalBlocker": 3,
+      "falseShadowPhysicallyUnoccluded": 0,
+      "physicallyUnoccludedLit": 6
+    },
+    "fullTriangleClamp": {
+      "shadowed": 4,
+      "litWithPhysicalBlocker": 2,
+      "falseShadowPhysicallyUnoccluded": 0,
+      "physicallyUnoccludedLit": 6
+    },
+    "clippedTriangleTexel": {
+      "shadowed": 6,
+      "litWithPhysicalBlocker": 0,
+      "falseShadowPhysicallyUnoccluded": 0,
+      "physicallyUnoccludedLit": 6
+    }
+  },
+  "oldSixRowsSharedExactComparison": [
+    {
+      "id": "L1-artifact",
+      "allSharedFieldsExceptElapsedMsEqual": true
+    },
+    {
+      "id": "L1-control",
+      "allSharedFieldsExceptElapsedMsEqual": true
+    },
+    {
+      "id": "L2-artifact",
+      "allSharedFieldsExceptElapsedMsEqual": true
+    },
+    {
+      "id": "L2-control",
+      "allSharedFieldsExceptElapsedMsEqual": true
+    },
+    {
+      "id": "L3-artifact",
+      "allSharedFieldsExceptElapsedMsEqual": true
+    },
+    {
+      "id": "L3-control",
+      "allSharedFieldsExceptElapsedMsEqual": true
+    }
+  ],
+  "rows": [
+    {
+      "id": "L1-artifact",
+      "pixelCentre": [
+        71.5,
+        856.5
+      ],
+      "physicalClassification": "BLOCKED",
+      "physicalBlockerFace": 389947,
+      "physicalFarPastEntireMeshMaximumY": true,
+      "physicalRayEndpointAboveMeshMaximumM": 13113.094046496173,
+      "receiverFace": 389949,
+      "casterFace": 389947,
+      "receiverRadialHeightKmDiagnostic": 1.2192647284437044,
+      "baselineVisibility": 0,
+      "fullTriangleClampVisibility": 0,
+      "clippedVisibility": 0,
+      "clippedMarginM": -212.0624088597918,
+      "lookupInsideWinningCasterTriangle": false,
+      "winningCasterCoversTexelFraction": 0.6196667517069727
+    },
+    {
+      "id": "L1-control",
+      "pixelCentre": [
+        64.5,
+        856.5
+      ],
+      "physicalClassification": "BLOCKED",
+      "physicalBlockerFace": 389947,
+      "physicalFarPastEntireMeshMaximumY": true,
+      "physicalRayEndpointAboveMeshMaximumM": 13123.191375905417,
+      "receiverFace": 389949,
+      "casterFace": 389948,
+      "receiverRadialHeightKmDiagnostic": 1.2293981589555187,
+      "baselineVisibility": 1,
+      "fullTriangleClampVisibility": 1,
+      "clippedVisibility": 0,
+      "clippedMarginM": -57.558091738410866,
+      "lookupInsideWinningCasterTriangle": false,
+      "winningCasterCoversTexelFraction": 0.221248360699974
+    },
+    {
+      "id": "L2-artifact",
+      "pixelCentre": [
+        431.5,
+        849.5
+      ],
+      "physicalClassification": "BLOCKED",
+      "physicalBlockerFace": 386019,
+      "physicalFarPastEntireMeshMaximumY": true,
+      "physicalRayEndpointAboveMeshMaximumM": 13009.073404184746,
+      "receiverFace": 386020,
+      "casterFace": 386018,
+      "receiverRadialHeightKmDiagnostic": 1.1107392361736856,
+      "baselineVisibility": 0,
+      "fullTriangleClampVisibility": 0,
+      "clippedVisibility": 0,
+      "clippedMarginM": -162.1809215672343,
+      "lookupInsideWinningCasterTriangle": false,
+      "winningCasterCoversTexelFraction": 0.5384446430252865
+    },
+    {
+      "id": "L2-control",
+      "pixelCentre": [
+        431.5,
+        844.5
+      ],
+      "physicalClassification": "BLOCKED",
+      "physicalBlockerFace": 386018,
+      "physicalFarPastEntireMeshMaximumY": true,
+      "physicalRayEndpointAboveMeshMaximumM": 13048.198009722575,
+      "receiverFace": 386019,
+      "casterFace": 386018,
+      "receiverRadialHeightKmDiagnostic": 1.1500362769020285,
+      "baselineVisibility": 1,
+      "fullTriangleClampVisibility": 0,
+      "clippedVisibility": 0,
+      "clippedMarginM": -95.52075372251423,
+      "lookupInsideWinningCasterTriangle": false,
+      "winningCasterCoversTexelFraction": 0.5384446430252865
+    },
+    {
+      "id": "L3-artifact",
+      "pixelCentre": [
+        903.5,
+        651.5
+      ],
+      "physicalClassification": "BLOCKED",
+      "physicalBlockerFace": 379929,
+      "physicalFarPastEntireMeshMaximumY": true,
+      "physicalRayEndpointAboveMeshMaximumM": 12984.008876249974,
+      "receiverFace": 379930,
+      "casterFace": 379929,
+      "receiverRadialHeightKmDiagnostic": 1.1127811116148223,
+      "baselineVisibility": 0,
+      "fullTriangleClampVisibility": 0,
+      "clippedVisibility": 0,
+      "clippedMarginM": -141.34359530239138,
+      "lookupInsideWinningCasterTriangle": false,
+      "winningCasterCoversTexelFraction": 0.17419015720952302
+    },
+    {
+      "id": "L3-control",
+      "pixelCentre": [
+        903.5,
+        646.5
+      ],
+      "physicalClassification": "BLOCKED",
+      "physicalBlockerFace": 379929,
+      "physicalFarPastEntireMeshMaximumY": true,
+      "physicalRayEndpointAboveMeshMaximumM": 13041.014808142883,
+      "receiverFace": 379930,
+      "casterFace": 379929,
+      "receiverRadialHeightKmDiagnostic": 1.1700069822936712,
+      "baselineVisibility": 1,
+      "fullTriangleClampVisibility": 1,
+      "clippedVisibility": 0,
+      "clippedMarginM": -34.86546646173494,
+      "lookupInsideWinningCasterTriangle": false,
+      "winningCasterCoversTexelFraction": 0.4981712915468961
+    },
+    {
+      "id": "C1-ocean",
+      "pixelCentre": [
+        2200.5,
+        1100.5
+      ],
+      "physicalClassification": "UNOCCLUDED_ENTIRE_MESH",
+      "physicalBlockerFace": null,
+      "physicalFarPastEntireMeshMaximumY": true,
+      "physicalRayEndpointAboveMeshMaximumM": 11908.228217800044,
+      "receiverFace": 249937,
+      "casterFace": 249939,
+      "receiverRadialHeightKmDiagnostic": -3.9236965676536784e-07,
+      "baselineVisibility": 1,
+      "fullTriangleClampVisibility": 1,
+      "clippedVisibility": 1,
+      "clippedMarginM": 77.00908330517197,
+      "lookupInsideWinningCasterTriangle": true,
+      "winningCasterCoversTexelFraction": 0.3282344173057936
+    },
+    {
+      "id": "C2-coastal-lowland",
+      "pixelCentre": [
+        1800.5,
+        930.5
+      ],
+      "physicalClassification": "UNOCCLUDED_ENTIRE_MESH",
+      "physicalBlockerFace": null,
+      "physicalFarPastEntireMeshMaximumY": true,
+      "physicalRayEndpointAboveMeshMaximumM": 11900.434515592906,
+      "receiverFace": 370841,
+      "casterFace": 370842,
+      "receiverRadialHeightKmDiagnostic": 0.0009283889176003868,
+      "baselineVisibility": 1,
+      "fullTriangleClampVisibility": 1,
+      "clippedVisibility": 1,
+      "clippedMarginM": 82.41045967524485,
+      "lookupInsideWinningCasterTriangle": false,
+      "winningCasterCoversTexelFraction": 0.6558623805758543
+    },
+    {
+      "id": "C3-plain",
+      "pixelCentre": [
+        2200.5,
+        700.5
+      ],
+      "physicalClassification": "UNOCCLUDED_ENTIRE_MESH",
+      "physicalBlockerFace": null,
+      "physicalFarPastEntireMeshMaximumY": true,
+      "physicalRayEndpointAboveMeshMaximumM": 11850.557075760478,
+      "receiverFace": 358458,
+      "casterFace": 358458,
+      "receiverRadialHeightKmDiagnostic": -1.2877271728939377e-06,
+      "baselineVisibility": 1,
+      "fullTriangleClampVisibility": 1,
+      "clippedVisibility": 1,
+      "clippedMarginM": 75.04752623065691,
+      "lookupInsideWinningCasterTriangle": true,
+      "winningCasterCoversTexelFraction": 0.9118974169832654
+    },
+    {
+      "id": "C4-ridge-L1",
+      "pixelCentre": [
+        170.5,
+        805.5
+      ],
+      "physicalClassification": "UNOCCLUDED_ENTIRE_MESH",
+      "physicalBlockerFace": null,
+      "physicalFarPastEntireMeshMaximumY": true,
+      "physicalRayEndpointAboveMeshMaximumM": 13231.583304935446,
+      "receiverFace": 388890,
+      "casterFace": 388891,
+      "receiverRadialHeightKmDiagnostic": 1.3408447915444413,
+      "baselineVisibility": 1,
+      "fullTriangleClampVisibility": 1,
+      "clippedVisibility": 1,
+      "clippedMarginM": 243.05890350869674,
+      "lookupInsideWinningCasterTriangle": true,
+      "winningCasterCoversTexelFraction": 0.6111434234771878
+    },
+    {
+      "id": "C5-ridge-L2",
+      "pixelCentre": [
+        460.5,
+        800.5
+      ],
+      "physicalClassification": "UNOCCLUDED_ENTIRE_MESH",
+      "physicalBlockerFace": null,
+      "physicalFarPastEntireMeshMaximumY": true,
+      "physicalRayEndpointAboveMeshMaximumM": 12830.063322625812,
+      "receiverFace": 385738,
+      "casterFace": 385738,
+      "receiverRadialHeightKmDiagnostic": 0.9394113175458187,
+      "baselineVisibility": 1,
+      "fullTriangleClampVisibility": 1,
+      "clippedVisibility": 1,
+      "clippedMarginM": 104.087130383121,
+      "lookupInsideWinningCasterTriangle": true,
+      "winningCasterCoversTexelFraction": 0.5339498406974599
+    },
+    {
+      "id": "C6-ridge-L3",
+      "pixelCentre": [
+        925.5,
+        610.5
+      ],
+      "physicalClassification": "UNOCCLUDED_ENTIRE_MESH",
+      "physicalBlockerFace": null,
+      "physicalFarPastEntireMeshMaximumY": true,
+      "physicalRayEndpointAboveMeshMaximumM": 12711.089486015153,
+      "receiverFace": 379379,
+      "casterFace": 379379,
+      "receiverRadialHeightKmDiagnostic": 0.855982501678227,
+      "baselineVisibility": 1,
+      "fullTriangleClampVisibility": 1,
+      "clippedVisibility": 1,
+      "clippedMarginM": 146.4350725446728,
+      "lookupInsideWinningCasterTriangle": true,
+      "winningCasterCoversTexelFraction": 0.9152523393277079
+    }
+  ],
+  "limits": [
+    "Fixed12 selected pixels; not prevalence estimate or GPU parity.",
+    "NoBlocker is classified whole-mesh only because endpoint20km exceeds whole-mesh maxY.",
+    "Physical ray follows original receiver while lookup ray is radially offset; q gaps compare different UV rays.",
+    "Caster winner remains max raw q at texel centre; clipping ignores other faces elsewhere in texel.",
+    "C1-C6 names are visual selection intentions; no landcover/material classification was inferred from their names.",
+    "No product change, bias/clipping adoption, new GPU draw, or art/FPS claim."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "phase": "kernel",
+  "launched": true,
+  "exitCode": 0,
+  "wallSeconds": 2.7710924999555573,
+  "cpuSeconds": 3.061125,
+  "peakRSSBytes": 877789184,
+  "wallKilled": false,
+  "error": null,
+  "CPUHardLimitSeconds": 20,
+  "wallLimitSeconds": 40,
+  "peakRSSGateBytes": 2147483648,
+  "RSSScope": "macOS terminal getrusage peak gate; no RSS setrlimit or virtual address-space limit; no ps",
+  "terminalObserved": true,
+  "budgetPASS": true,
+  "pass": true,
+  "resultStatus": "CPU_TWELVE_REFERENCE_COMPLETE_NO_GPU_PROOF",
+  "rows": 12,
+  "raycasts": 36
+}

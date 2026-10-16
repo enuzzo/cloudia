@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/Users/enuzzo/.bun/bin/bun",
+    "run",
+    "test",
+    "src/cumulonimbus/TerrainShadowCaster.test.ts"
+  ],
+  "exitCode": 0,
+  "wallSeconds": 0.67304929101374,
+  "log": "targeted-r2.log"
+}

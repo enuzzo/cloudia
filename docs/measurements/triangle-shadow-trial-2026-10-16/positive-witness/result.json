@@ -1,0 +1,2850 @@
+{
+  "status": "CPU_TWELVE_REFERENCE_COMPLETE_NO_GPU_PROOF",
+  "scope": "Twelve preselected native pixels, no adaptive replacement; actual frozen Float32 mesh, CPU Three rays and affine caster reference, not GPU bit/raster parity or unbiased frequency/art assessment",
+  "sourceManifestSHA256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+  "assetSHA256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d",
+  "meshStats": {
+    "vertices": 465409,
+    "triangles": 929792,
+    "stitchedCells": 4096,
+    "levels": 9,
+    "cellsPerSide": 256,
+    "baseSpacingKm": 0.032,
+    "outerExtentKm": 1048.576,
+    "geometryBytes": 26050592,
+    "sampleCalls": 465409,
+    "minimumHeightKm": 0,
+    "maximumHeightKm": 3.0260982513427734,
+    "normalBlendStartRadiusKm": 32.768,
+    "normalBlendEndRadiusKm": 65.536,
+    "normalMode": "geometry"
+  },
+  "bounds": {
+    "min": [
+      -1048.5760498046875,
+      -178.98373413085938,
+      -1048.5760498046875
+    ],
+    "max": [
+      1048.5760498046875,
+      -1.675218939781189,
+      1048.5760498046875
+    ]
+  },
+  "frame": {
+    "camera": {
+      "origin": [
+        15.459708213806152,
+        7.558173179626465,
+        2.780613899230957
+      ],
+      "forward": [
+        -0.9442591071128845,
+        -0.27743953466415405,
+        -0.17720633745193481
+      ],
+      "right": [
+        0.18444715440273285,
+        0,
+        -0.9828424453735352
+      ],
+      "up": [
+        -0.27267932891845703,
+        0.9607431292533875,
+        -0.05117293447256088
+      ],
+      "aspect": 1.3416485786437988,
+      "tanFov": 0.2867000102996826,
+      "inspection": 0,
+      "nearKm": 0.025,
+      "farKm": 1600,
+      "coordinateSystem": 2001,
+      "view": {
+        "enabled": true,
+        "fullWidth": 2474,
+        "fullHeight": 1844,
+        "offsetX": 0,
+        "offsetY": 147.52,
+        "width": 2474,
+        "height": 1844
+      },
+      "projectionMatrix": [
+        2.5997615513760235,
+        0,
+        0,
+        0,
+        0,
+        3.4879663902164393,
+        0,
+        0,
+        0,
+        -0.15999999999999992,
+        -1.0000156252441446,
+        -1,
+        0,
+        0,
+        -0.02500039063110361,
+        0
+      ]
+    },
+    "light": {
+      "center": [
+        0,
+        -4,
+        0
+      ],
+      "sun": [
+        -0.6681265923470772,
+        0.7126683651702157,
+        0.21380050955106472
+      ],
+      "right": [
+        0.3047757271037838,
+        0,
+        0.9524241471993242
+      ],
+      "up": [
+        0.6787625599331792,
+        0.7015011056909407,
+        -0.2172040191786174
+      ],
+      "distanceKm": 927.4244346416147,
+      "nearKm": 0.5,
+      "farKm": 1977.8974431000836,
+      "radiusKm": 64,
+      "resolution": 2048,
+      "constants": {
+        "resolution": 2048,
+        "radiusKm": 64,
+        "clearHeightKm": -1000000,
+        "baseBiasKm": 0.001,
+        "fadeStart": 0.85
+      }
+    }
+  },
+  "raycasts": 36,
+  "maxManualDirectionError": 9.741851193873829e-15,
+  "timings": {
+    "meshBuildMs": 1044.523291,
+    "totalMs": 2582.3945830000002
+  },
+  "counts": {
+    "selected": 12,
+    "noReceiver": 0,
+    "artifactMismatch": 0,
+    "cpuShadow": 3,
+    "physicalBlocker": 6,
+    "physicallyUnoccluded": 6,
+    "candidateControlsPhysicallyUnoccluded": 6,
+    "falseShadowWholeMesh": 0
+  },
+  "rows": [
+    {
+      "id": "L1-artifact",
+      "pixelCentre": [
+        71.5,
+        856.5
+      ],
+      "png": {
+        "baselineRGB": [
+          67,
+          77,
+          81
+        ],
+        "unshadowedRGB": [
+          73,
+          82,
+          83
+        ],
+        "offDifference": true,
+        "selectionIsArtifact": true
+      },
+      "cameraRay": {
+        "ndc": [
+          -0.9421988682295878,
+          0.07104121475054226
+        ],
+        "origin": [
+          15.459708213806152,
+          7.558173179626465,
+          2.780613899230957
+        ],
+        "direction": [
+          -0.9437926433523464,
+          -0.28379324107599224,
+          0.16946044574936844
+        ],
+        "manualDirectionError": 4.94298671315979e-15
+      },
+      "receiver": {
+        "faceIndex": 389949,
+        "indices": [
+          195386,
+          195517,
+          195387
+        ],
+        "vertices": [
+          [
+            -19.200000762939453,
+            -2.634042978286743,
+            8.960000038146973
+          ],
+          [
+            -18.944000244140625,
+            -2.80824613571167,
+            9.215999603271484
+          ],
+          [
+            -18.944000244140625,
+            -2.9350156784057617,
+            8.960000038146973
+          ]
+        ],
+        "point": [
+          -19.039336780206725,
+          -2.8154993233729826,
+          8.975007957916546
+        ],
+        "distanceKm": 36.553627787850154,
+        "geometricNormal": [
+          0.7253060323953087,
+          0.6169287796125452,
+          -0.3054996567211675
+        ],
+        "normalDotSun": -0.11024660531478837,
+        "normalDotCameraRay": -0.9113888234373198,
+        "clipDepthKm": 34.35641698239967,
+        "safelyInsidePlanarClip": true,
+        "hitCount": 1,
+        "elapsedMs": 42.85841699999992
+      },
+      "baselineLookup": {
+        "point": [
+          -19.039430151016745,
+          -2.7842494938593663,
+          8.975051972252373
+        ],
+        "radialOffsetKm": 0.03125,
+        "uv": [
+          0.5214476566626894,
+          0.6095298389482914
+        ],
+        "gridCoordinate": [
+          1067.924800845188,
+          1248.3171101661007
+        ],
+        "pixel": [
+          1067,
+          1248
+        ],
+        "texelCentreUV": [
+          0.521240234375,
+          0.609619140625
+        ],
+        "distanceToNearestPixelBoundaryTexels": 0.07519915481202588,
+        "distanceToCoverageEdgeUV": 0.3904701610517086,
+        "heightKm": 15.50604719760997
+      },
+      "caster": {
+        "faceIndex": 389947,
+        "indices": [
+          195385,
+          195516,
+          195386
+        ],
+        "vertices": [
+          [
+            -19.45599937438965,
+            -2.638504981994629,
+            8.960000038146973
+          ],
+          [
+            -19.200000762939453,
+            -2.58886456489563,
+            9.215999603271484
+          ],
+          [
+            -19.200000762939453,
+            -2.634042978286743,
+            8.960000038146973
+          ]
+        ],
+        "point": [
+          -19.210375836766048,
+          -2.6268332017410785,
+          9.00187830054358
+        ],
+        "distanceKm": 911.6862529912955,
+        "geometricNormal": [
+          -0.01716202590719024,
+          0.9846371920642705,
+          -0.173767272150281
+        ],
+        "origin": [
+          -628.3322053375156,
+          647.1031182657251,
+          203.92086374078346
+        ],
+        "direction": [
+          0.6681265923470772,
+          -0.7126683651702157,
+          -0.21380050955106472
+        ],
+        "normalDotSun": 0.6760346525123501,
+        "qCentreKm": 15.738181650319225,
+        "affineDqPerPixelKm": [
+          0.01578420520668162,
+          0.06627046460820618
+        ],
+        "storedMinimumKm": 15.696154315411782,
+        "lookupMinusStoredKm": -0.1901071178018121,
+        "sameFaceAsReceiver": false,
+        "sharedIndices": [
+          195386
+        ],
+        "hitCount": 2,
+        "elapsedMs": 45.46966700000007,
+        "selection": "first FrontSide hit / maximum RAW solar height at texel centre, then minimum of that winning plane (not max plane minimum)"
+      },
+      "shadow": {
+        "rawVisibility": 0,
+        "coverageFade": 0,
+        "finalVisibility": 0,
+        "cpuShadow": true,
+        "pngArtifactRequiresShadow": true,
+        "strictArtifactMismatch": false,
+        "controlCaveat": "Unchanged control RGB alone does not prove visibility=1; diffuse/rounding may hide a shadow."
+      },
+      "physicalSunRay": {
+        "origin": [
+          -19.039343461472647,
+          -2.815492196689331,
+          8.975010095921641
+        ],
+        "direction": [
+          -0.6681265923470772,
+          0.7126683651702157,
+          0.21380050955106472
+        ],
+        "startOffsetKm": 0.00001,
+        "farKm": 20,
+        "side": "DoubleSide",
+        "rawHitCount": 1,
+        "ignoredNearOrOwn": [],
+        "ignoredCount": 0,
+        "blocker": {
+          "faceIndex": 389947,
+          "indices": [
+            195385,
+            195516,
+            195386
+          ],
+          "vertices": [
+            [
+              -19.45599937438965,
+              -2.638504981994629,
+              8.960000038146973
+            ],
+            [
+              -19.200000762939453,
+              -2.58886456489563,
+              9.215999603271484
+            ],
+            [
+              -19.200000762939453,
+              -2.634042978286743,
+              8.960000038146973
+            ]
+          ],
+          "point": [
+            -19.221217875400757,
+            -2.6214928218326805,
+            9.033209908378637
+          ],
+          "distanceKm": 0.272215499295125,
+          "geometricNormal": [
+            -0.01716202590719024,
+            0.9846371920642705,
+            -0.173767272150281
+          ]
+        },
+        "blockerCount": 1,
+        "otherFirstHits": [],
+        "farPastEntireMeshMaximumY": true,
+        "physicallyUnoccluded": false,
+        "classification": "BLOCKED",
+        "elapsedMs": 46.010499999999865,
+        "scope": "Occlusion of this actual mesh from receiver+1cm toward Sun; no other objects, no GPU raster/float32 parity claim"
+      },
+      "interpretation": "CPU shadow and physical blocker both present"
+    },
+    {
+      "id": "L1-control",
+      "pixelCentre": [
+        64.5,
+        856.5
+      ],
+      "png": {
+        "baselineRGB": [
+          75,
+          84,
+          85
+        ],
+        "unshadowedRGB": [
+          75,
+          84,
+          85
+        ],
+        "offDifference": false,
+        "selectionIsArtifact": false
+      },
+      "cameraRay": {
+        "ndc": [
+          -0.9478577202910267,
+          0.07104121475054226
+        ],
+        "origin": [
+          15.459708213806152,
+          7.558173179626465,
+          2.780613899230957
+        ],
+        "direction": [
+          -0.9435107342448458,
+          -0.2835950847767791,
+          0.17135145828152015
+        ],
+        "manualDirectionError": 6.076950016055453e-15
+      },
+      "receiver": {
+        "faceIndex": 389949,
+        "indices": [
+          195386,
+          195517,
+          195387
+        ],
+        "vertices": [
+          [
+            -19.200000762939453,
+            -2.634042978286743,
+            8.960000038146973
+          ],
+          [
+            -18.944000244140625,
+            -2.80824613571167,
+            9.215999603271484
+          ],
+          [
+            -18.944000244140625,
+            -2.9350156784057617,
+            8.960000038146973
+          ]
+        ],
+        "point": [
+          -19.01953683069889,
+          -2.805401993963738,
+          9.042406907394701
+        ],
+        "distanceKm": 36.54356415149963,
+        "geometricNormal": [
+          0.7253060323953087,
+          0.6169287796125452,
+          -0.3054996567211675
+        ],
+        "normalDotSun": -0.11024660531478837,
+        "normalDotCameraRay": -0.911639808416644,
+        "clipDepthKm": 34.322975782140674,
+        "safelyInsidePlanarClip": true,
+        "hitCount": 1,
+        "elapsedMs": 45.38279199999988
+      },
+      "baselineLookup": {
+        "point": [
+          -19.01963010425965,
+          -2.7741521646268934,
+          9.042451252191192
+        ],
+        "radialOffsetKm": 0.03125,
+        "uv": [
+          0.5219963072514758,
+          0.6094838747017891
+        ],
+        "gridCoordinate": [
+          1069.0484372510225,
+          1248.222975389264
+        ],
+        "pixel": [
+          1069,
+          1248
+        ],
+        "texelCentreUV": [
+          0.522216796875,
+          0.609619140625
+        ],
+        "distanceToNearestPixelBoundaryTexels": 0.048437251022505734,
+        "distanceToCoverageEdgeUV": 0.3905161252982109,
+        "heightKm": 15.514424307352824
+      },
+      "caster": {
+        "faceIndex": 389948,
+        "indices": [
+          195386,
+          195516,
+          195517
+        ],
+        "vertices": [
+          [
+            -19.200000762939453,
+            -2.634042978286743,
+            8.960000038146973
+          ],
+          [
+            -19.200000762939453,
+            -2.58886456489563,
+            9.215999603271484
+          ],
+          [
+            -18.944000244140625,
+            -2.80824613571167,
+            9.215999603271484
+          ]
+        ],
+        "point": [
+          -19.15553768286054,
+          -2.644690468959766,
+          9.115574138777902
+        ],
+        "distanceKm": 911.7113099014819,
+        "geometricNormal": [
+          0.6449452830809379,
+          0.7525988917456756,
+          -0.13281750628147554
+        ],
+        "origin": [
+          -628.2941083716275,
+          647.1031182657251,
+          204.03991675918337
+        ],
+        "direction": [
+          0.6681265923470772,
+          -0.7126683651702157,
+          -0.21380050955106472
+        ],
+        "normalDotSun": 0.0770518770538375,
+        "qCentreKm": 15.713124740132919,
+        "affineDqPerPixelKm": [
+          -0.05683270651449999,
+          0.8067309651237586
+        ],
+        "storedMinimumKm": 15.280342904313791,
+        "lookupMinusStoredKm": 0.23408140303903302,
+        "sameFaceAsReceiver": false,
+        "sharedIndices": [
+          195386,
+          195517
+        ],
+        "hitCount": 2,
+        "elapsedMs": 44.30829199999994,
+        "selection": "first FrontSide hit / maximum RAW solar height at texel centre, then minimum of that winning plane (not max plane minimum)"
+      },
+      "shadow": {
+        "rawVisibility": 1,
+        "coverageFade": 0,
+        "finalVisibility": 1,
+        "cpuShadow": false,
+        "pngArtifactRequiresShadow": false,
+        "strictArtifactMismatch": false,
+        "controlCaveat": "Unchanged control RGB alone does not prove visibility=1; diffuse/rounding may hide a shadow."
+      },
+      "physicalSunRay": {
+        "origin": [
+          -19.019543511964812,
+          -2.805394867280086,
+          9.042409045399797
+        ],
+        "direction": [
+          -0.6681265923470772,
+          0.7126683651702157,
+          0.21380050955106472
+        ],
+        "startOffsetKm": 0.00001,
+        "farKm": 20,
+        "side": "DoubleSide",
+        "rawHitCount": 1,
+        "ignoredNearOrOwn": [],
+        "ignoredCount": 0,
+        "blocker": {
+          "faceIndex": 389947,
+          "indices": [
+            195385,
+            195516,
+            195386
+          ],
+          "vertices": [
+            [
+              -19.45599937438965,
+              -2.638504981994629,
+              8.960000038146973
+            ],
+            [
+              -19.200000762939453,
+              -2.58886456489563,
+              9.215999603271484
+            ],
+            [
+              -19.200000762939453,
+              -2.634042978286743,
+              8.960000038146973
+            ]
+          ],
+          "point": [
+            -19.2035025842872,
+            -2.6091718568028743,
+            9.10127594854296
+          ],
+          "distanceKm": 0.2753356540953607,
+          "geometricNormal": [
+            -0.01716202590719024,
+            0.9846371920642705,
+            -0.173767272150281
+          ]
+        },
+        "blockerCount": 1,
+        "otherFirstHits": [],
+        "farPastEntireMeshMaximumY": true,
+        "physicallyUnoccluded": false,
+        "classification": "BLOCKED",
+        "elapsedMs": 41.65204199999994,
+        "scope": "Occlusion of this actual mesh from receiver+1cm toward Sun; no other objects, no GPU raster/float32 parity claim"
+      },
+      "interpretation": "CPU lit but physical blocker present; diagnostic mismatch"
+    },
+    {
+      "id": "L2-artifact",
+      "pixelCentre": [
+        431.5,
+        849.5
+      ],
+      "png": {
+        "baselineRGB": [
+          66,
+          75,
+          79
+        ],
+        "unshadowedRGB": [
+          75,
+          83,
+          83
+        ],
+        "offDifference": true,
+        "selectionIsArtifact": true
+      },
+      "cameraRay": {
+        "ndc": [
+          -0.6511721907841552,
+          0.07863340563991328
+        ],
+        "origin": [
+          15.459708213806152,
+          7.558173179626465,
+          2.780613899230957
+        ],
+        "direction": [
+          -0.9543637408626944,
+          -0.29079183930927976,
+          0.06804378235878573
+        ],
+        "manualDirectionError": 9.741851193873829e-15
+      },
+      "receiver": {
+        "faceIndex": 386020,
+        "indices": [
+          193437,
+          193567,
+          193568
+        ],
+        "vertices": [
+          [
+            -18.944000244140625,
+            -3.0581376552581787,
+            5.119999885559082
+          ],
+          [
+            -18.944000244140625,
+            -2.729618549346924,
+            5.375999927520752
+          ],
+          [
+            -18.687999725341797,
+            -2.8158533573150635,
+            5.375999927520752
+          ]
+        ],
+        "point": [
+          -18.92753748580585,
+          -2.919519965684408,
+          5.232339758165413
+        ],
+        "distanceKm": 36.03159280603824,
+        "geometricNormal": [
+          0.20275231548913397,
+          0.6018996177513227,
+          -0.7724042650805383
+        ],
+        "normalDotSun": 0.1283501774875436,
+        "normalDotCameraRay": -0.42108426291038065,
+        "clipDepthKm": 34.94293340168767,
+        "safelyInsidePlanarClip": true,
+        "hitCount": 1,
+        "elapsedMs": 43.03708400000005
+      },
+      "baselineLookup": {
+        "point": [
+          -18.927630309921852,
+          -2.888270114081085,
+          5.232365418519436
+        ],
+        "radialOffsetKm": 0.03125,
+        "uv": [
+          0.49386522563680124,
+          0.6031560770089316
+        ],
+        "gridCoordinate": [
+          1011.4359821041689,
+          1235.263645714292
+        ],
+        "pixel": [
+          1011,
+          1235
+        ],
+        "texelCentreUV": [
+          0.493896484375,
+          0.603271484375
+        ],
+        "distanceToNearestPixelBoundaryTexels": 0.2636457142918971,
+        "distanceToCoverageEdgeUV": 0.3968439229910684,
+        "heightKm": 14.55703025311887
+      },
+      "caster": {
+        "faceIndex": 386018,
+        "indices": [
+          193436,
+          193566,
+          193567
+        ],
+        "vertices": [
+          [
+            -19.200000762939453,
+            -2.8532121181488037,
+            5.119999885559082
+          ],
+          [
+            -19.200000762939453,
+            -2.671112537384033,
+            5.375999927520752
+          ],
+          [
+            -18.944000244140625,
+            -2.729618549346924,
+            5.375999927520752
+          ]
+        ],
+        "point": [
+          -19.05127384750108,
+          -2.776140837828507,
+          5.276132334424915
+        ],
+        "distanceKm": 912.6955264761507,
+        "geometricNormal": [
+          0.18308212447448766,
+          0.8010991909342369,
+          -0.5698429801115561
+        ],
+        "origin": [
+          -628.8474258024331,
+          647.673087914099,
+          200.4109009600032
+        ],
+        "direction": [
+          0.6681265923470772,
+          -0.7126683651702157,
+          -0.21380050955106472
+        ],
+        "normalDotSun": 0.32676329528553427,
+        "qCentreKm": 14.728908165464128,
+        "affineDqPerPixelKm": [
+          0.093135695201468,
+          0.15493123328155886
+        ],
+        "storedMinimumKm": 14.603874701222615,
+        "lookupMinusStoredKm": -0.04684444810374622,
+        "sameFaceAsReceiver": false,
+        "sharedIndices": [
+          193567
+        ],
+        "hitCount": 2,
+        "elapsedMs": 42.10562499999992,
+        "selection": "first FrontSide hit / maximum RAW solar height at texel centre, then minimum of that winning plane (not max plane minimum)"
+      },
+      "shadow": {
+        "rawVisibility": 0,
+        "coverageFade": 0,
+        "finalVisibility": 0,
+        "cpuShadow": true,
+        "pngArtifactRequiresShadow": true,
+        "strictArtifactMismatch": false,
+        "controlCaveat": "Unchanged control RGB alone does not prove visibility=1; diffuse/rounding may hide a shadow."
+      },
+      "physicalSunRay": {
+        "origin": [
+          -18.927544167071773,
+          -2.9195128390007565,
+          5.232341896170508
+        ],
+        "direction": [
+          -0.6681265923470772,
+          0.7126683651702157,
+          0.21380050955106472
+        ],
+        "startOffsetKm": 0.00001,
+        "farKm": 20,
+        "side": "DoubleSide",
+        "rawHitCount": 2,
+        "ignoredNearOrOwn": [],
+        "ignoredCount": 0,
+        "blocker": {
+          "faceIndex": 386019,
+          "indices": [
+            193436,
+            193567,
+            193437
+          ],
+          "vertices": [
+            [
+              -19.200000762939453,
+              -2.8532121181488037,
+              5.119999885559082
+            ],
+            [
+              -18.944000244140625,
+              -2.729618549346924,
+              5.375999927520752
+            ],
+            [
+              -18.944000244140625,
+              -3.0581376552581787,
+              5.119999885559082
+            ]
+          ],
+          "point": [
+            -18.980369620709688,
+            -2.8631656884536487,
+            5.249246041334641
+          ],
+          "distanceKm": 0.07906503684031278,
+          "geometricNormal": [
+            0.4414859019061989,
+            0.5515204279788366,
+            -0.7077537820033963
+          ]
+        },
+        "blockerCount": 2,
+        "otherFirstHits": [
+          {
+            "faceIndex": 386018,
+            "indices": [
+              193436,
+              193566,
+              193567
+            ],
+            "vertices": [
+              [
+                -19.200000762939453,
+                -2.8532121181488037,
+                5.119999885559082
+              ],
+              [
+                -19.200000762939453,
+                -2.671112537384033,
+                5.375999927520752
+              ],
+              [
+                -18.944000244140625,
+                -2.729618549346924,
+                5.375999927520752
+              ]
+            ],
+            "point": [
+              -19.065046544604606,
+              -2.7728436362990676,
+              5.276342656981015
+            ],
+            "distanceKm": 0.20580288093278545,
+            "geometricNormal": [
+              0.18308212447448766,
+              0.8010991909342369,
+              -0.5698429801115561
+            ]
+          }
+        ],
+        "farPastEntireMeshMaximumY": true,
+        "physicallyUnoccluded": false,
+        "classification": "BLOCKED",
+        "elapsedMs": 44.09504199999992,
+        "scope": "Occlusion of this actual mesh from receiver+1cm toward Sun; no other objects, no GPU raster/float32 parity claim"
+      },
+      "interpretation": "CPU shadow and physical blocker both present"
+    },
+    {
+      "id": "L2-control",
+      "pixelCentre": [
+        431.5,
+        844.5
+      ],
+      "png": {
+        "baselineRGB": [
+          75,
+          83,
+          83
+        ],
+        "unshadowedRGB": [
+          75,
+          83,
+          83
+        ],
+        "offDifference": false,
+        "selectionIsArtifact": false
+      },
+      "cameraRay": {
+        "ndc": [
+          -0.6511721907841552,
+          0.08405639913232099
+        ],
+        "origin": [
+          15.459708213806152,
+          7.558173179626465,
+          2.780613899230957
+        ],
+        "direction": [
+          -0.9548063702088051,
+          -0.2893527756316943,
+          0.06796886524667453
+        ],
+        "manualDirectionError": 4.420745290636025e-15
+      },
+      "receiver": {
+        "faceIndex": 386019,
+        "indices": [
+          193436,
+          193567,
+          193437
+        ],
+        "vertices": [
+          [
+            -19.200000762939453,
+            -2.8532121181488037,
+            5.119999885559082
+          ],
+          [
+            -18.944000244140625,
+            -2.729618549346924,
+            5.375999927520752
+          ],
+          [
+            -18.944000244140625,
+            -3.0581376552581787,
+            5.119999885559082
+          ]
+        ],
+        "point": [
+          -18.985483182328537,
+          -2.8803953601465793,
+          5.232629978562097
+        ],
+        "distanceKm": 36.07557769917468,
+        "geometricNormal": [
+          0.4414859019061989,
+          0.5515204279788366,
+          -0.7077537820033963
+        ],
+        "normalDotSun": -0.05323542867322875,
+        "normalDotCameraRay": -0.6292227395874878,
+        "clipDepthKm": 34.98674301127782,
+        "safelyInsidePlanarClip": true,
+        "hitCount": 1,
+        "elapsedMs": 42.81774999999993
+      },
+      "baselineLookup": {
+        "point": [
+          -18.985576290046666,
+          -2.8491455093879896,
+          5.232655640181158
+        ],
+        "radialOffsetKm": 0.03125,
+        "uv": [
+          0.4937294122453433,
+          0.6032494258032035
+        ],
+        "gridCoordinate": [
+          1011.157836278463,
+          1235.4548240449608
+        ],
+        "pixel": [
+          1011,
+          1235
+        ],
+        "texelCentreUV": [
+          0.493896484375,
+          0.603271484375
+        ],
+        "distanceToNearestPixelBoundaryTexels": 0.15783627846303716,
+        "distanceToCoverageEdgeUV": 0.3967505741967965,
+        "heightKm": 14.62369042096359
+      },
+      "caster": {
+        "faceIndex": 386018,
+        "indices": [
+          193436,
+          193566,
+          193567
+        ],
+        "vertices": [
+          [
+            -19.200000762939453,
+            -2.8532121181488037,
+            5.119999885559082
+          ],
+          [
+            -19.200000762939453,
+            -2.671112537384033,
+            5.375999927520752
+          ],
+          [
+            -18.944000244140625,
+            -2.729618549346924,
+            5.375999927520752
+          ]
+        ],
+        "point": [
+          -19.05127384750108,
+          -2.776140837828507,
+          5.276132334424915
+        ],
+        "distanceKm": 912.6955264761507,
+        "geometricNormal": [
+          0.18308212447448766,
+          0.8010991909342369,
+          -0.5698429801115561
+        ],
+        "origin": [
+          -628.8474258024331,
+          647.673087914099,
+          200.4109009600032
+        ],
+        "direction": [
+          0.6681265923470772,
+          -0.7126683651702157,
+          -0.21380050955106472
+        ],
+        "normalDotSun": 0.32676329528553427,
+        "qCentreKm": 14.728908165464128,
+        "affineDqPerPixelKm": [
+          0.093135695201468,
+          0.15493123328155886
+        ],
+        "storedMinimumKm": 14.603874701222615,
+        "lookupMinusStoredKm": 0.019815719740973847,
+        "sameFaceAsReceiver": false,
+        "sharedIndices": [
+          193436,
+          193567
+        ],
+        "hitCount": 2,
+        "elapsedMs": 40.816417,
+        "selection": "first FrontSide hit / maximum RAW solar height at texel centre, then minimum of that winning plane (not max plane minimum)"
+      },
+      "shadow": {
+        "rawVisibility": 1,
+        "coverageFade": 0,
+        "finalVisibility": 1,
+        "cpuShadow": false,
+        "pngArtifactRequiresShadow": false,
+        "strictArtifactMismatch": false,
+        "controlCaveat": "Unchanged control RGB alone does not prove visibility=1; diffuse/rounding may hide a shadow."
+      },
+      "physicalSunRay": {
+        "origin": [
+          -18.98548986359446,
+          -2.8803882334629276,
+          5.232632116567193
+        ],
+        "direction": [
+          -0.6681265923470772,
+          0.7126683651702157,
+          0.21380050955106472
+        ],
+        "startOffsetKm": 0.00001,
+        "farKm": 20,
+        "side": "DoubleSide",
+        "rawHitCount": 1,
+        "ignoredNearOrOwn": [],
+        "ignoredCount": 0,
+        "blocker": {
+          "faceIndex": 386018,
+          "indices": [
+            193436,
+            193566,
+            193567
+          ],
+          "vertices": [
+            [
+              -19.200000762939453,
+              -2.8532121181488037,
+              5.119999885559082
+            ],
+            [
+              -19.200000762939453,
+              -2.671112537384033,
+              5.375999927520752
+            ],
+            [
+              -18.944000244140625,
+              -2.729618549346924,
+              5.375999927520752
+            ]
+          ],
+          "point": [
+            -19.080936250226827,
+            -2.7785787543884033,
+            5.26317496028955
+          ],
+          "distanceKm": 0.1428567396143766,
+          "geometricNormal": [
+            0.18308212447448766,
+            0.8010991909342369,
+            -0.5698429801115561
+          ]
+        },
+        "blockerCount": 1,
+        "otherFirstHits": [],
+        "farPastEntireMeshMaximumY": true,
+        "physicallyUnoccluded": false,
+        "classification": "BLOCKED",
+        "elapsedMs": 41.81166699999994,
+        "scope": "Occlusion of this actual mesh from receiver+1cm toward Sun; no other objects, no GPU raster/float32 parity claim"
+      },
+      "interpretation": "CPU lit but physical blocker present; diagnostic mismatch"
+    },
+    {
+      "id": "L3-artifact",
+      "pixelCentre": [
+        903.5,
+        651.5
+      ],
+      "png": {
+        "baselineRGB": [
+          81,
+          91,
+          93
+        ],
+        "unshadowedRGB": [
+          88,
+          97,
+          96
+        ],
+        "offDifference": true,
+        "selectionIsArtifact": true
+      },
+      "cameraRay": {
+        "ndc": [
+          -0.26960388035569927,
+          0.2933839479392625
+        ],
+        "origin": [
+          15.459708213806152,
+          7.558173179626465,
+          2.780613899230957
+        ],
+        "direction": [
+          -0.9679199702884201,
+          -0.23924263046953936,
+          -0.07677170626525988
+        ],
+        "manualDirectionError": 7.46316668423338e-15
+      },
+      "receiver": {
+        "faceIndex": 379930,
+        "indices": [
+          190415,
+          190545,
+          190546
+        ],
+        "vertices": [
+          [
+            -27.13599967956543,
+            -2.8958981037139893,
+            -0.7680000066757202
+          ],
+          [
+            -27.13599967956543,
+            -2.794459104537964,
+            -0.5120000243186951
+          ],
+          [
+            -26.8799991607666,
+            -3.088256597518921,
+            -0.5120000243186951
+          ]
+        ],
+        "point": [
+          -27.03200354794329,
+          -2.94458449361918,
+          -0.5896659939600677
+        ],
+        "distanceKm": 43.90002589685983,
+        "geometricNormal": [
+          0.7296234567280946,
+          0.6357575810297783,
+          -0.251916473370264
+        ],
+        "normalDotSun": -0.08825638829404356,
+        "normalDotCameraRay": -0.838977373087545,
+        "clipDepthKm": 43.63429915083192,
+        "safelyInsidePlanarClip": true,
+        "hitCount": 2,
+        "elapsedMs": 42.87370799999985
+      },
+      "baselineLookup": {
+        "point": [
+          -27.032136117805106,
+          -2.9133347749505414,
+          -0.589668885789347
+        ],
+        "radialOffsetKm": 0.03125,
+        "uv": [
+          0.4312472357332,
+          0.6363908328352925
+        ],
+        "gridCoordinate": [
+          883.1943387815936,
+          1303.328425646679
+        ],
+        "pixel": [
+          883,
+          1303
+        ],
+        "texelCentreUV": [
+          0.431396484375,
+          0.636474609375
+        ],
+        "distanceToNearestPixelBoundaryTexels": 0.19433878159361484,
+        "distanceToCoverageEdgeUV": 0.3636091671647075,
+        "heightKm": 18.709249409426626
+      },
+      "caster": {
+        "faceIndex": 379929,
+        "indices": [
+          190414,
+          190545,
+          190415
+        ],
+        "vertices": [
+          [
+            -27.392000198364258,
+            -2.865765333175659,
+            -0.7680000066757202
+          ],
+          [
+            -27.13599967956543,
+            -2.794459104537964,
+            -0.5120000243186951
+          ],
+          [
+            -27.13599967956543,
+            -2.8958981037139893,
+            -0.7680000066757202
+          ]
+        ],
+        "point": [
+          -27.145128562799073,
+          -2.801885317013216,
+          -0.5334531956600017
+        ],
+        "distanceKm": 908.5482465287716,
+        "geometricNormal": [
+          0.10877890526642667,
+          0.9241585053438992,
+          -0.3661942200111408
+        ],
+        "origin": [
+          -634.1703724989794,
+          644.6917082149125,
+          193.71462486391775
+        ],
+        "direction": [
+          0.6681265923470772,
+          -0.7126683651702157,
+          -0.21380050955106472
+        ],
+        "normalDotSun": 0.507647941033647,
+        "qCentreKm": 18.876188112843128,
+        "affineDqPerPixelKm": [
+          0.03885801337963868,
+          0.0986993215578541
+        ],
+        "storedMinimumKm": 18.80640944537438,
+        "lookupMinusStoredKm": -0.09716003594775557,
+        "sameFaceAsReceiver": false,
+        "sharedIndices": [
+          190545,
+          190415
+        ],
+        "hitCount": 2,
+        "elapsedMs": 41.47766700000011,
+        "selection": "first FrontSide hit / maximum RAW solar height at texel centre, then minimum of that winning plane (not max plane minimum)"
+      },
+      "shadow": {
+        "rawVisibility": 0,
+        "coverageFade": 0,
+        "finalVisibility": 0,
+        "cpuShadow": true,
+        "pngArtifactRequiresShadow": true,
+        "strictArtifactMismatch": false,
+        "controlCaveat": "Unchanged control RGB alone does not prove visibility=1; diffuse/rounding may hide a shadow."
+      },
+      "physicalSunRay": {
+        "origin": [
+          -27.032010229209213,
+          -2.9445773669355284,
+          -0.5896638559549722
+        ],
+        "direction": [
+          -0.6681265923470772,
+          0.7126683651702157,
+          0.21380050955106472
+        ],
+        "startOffsetKm": 0.00001,
+        "farKm": 20,
+        "side": "DoubleSide",
+        "rawHitCount": 1,
+        "ignoredNearOrOwn": [],
+        "ignoredCount": 0,
+        "blocker": {
+          "faceIndex": 379929,
+          "indices": [
+            190414,
+            190545,
+            190415
+          ],
+          "vertices": [
+            [
+              -27.392000198364258,
+              -2.865765333175659,
+              -0.7680000066757202
+            ],
+            [
+              -27.13599967956543,
+              -2.794459104537964,
+              -0.5120000243186951
+            ],
+            [
+              -27.13599967956543,
+              -2.8958981037139893,
+              -0.7680000066757202
+            ]
+          ],
+          "point": [
+            -27.162281510913154,
+            -2.80562133311799,
+            -0.5479770458097107
+          ],
+          "distanceKm": 0.19497993822743764,
+          "geometricNormal": [
+            0.10877890526642667,
+            0.9241585053438992,
+            -0.3661942200111408
+          ]
+        },
+        "blockerCount": 1,
+        "otherFirstHits": [],
+        "farPastEntireMeshMaximumY": true,
+        "physicallyUnoccluded": false,
+        "classification": "BLOCKED",
+        "elapsedMs": 41.362708999999995,
+        "scope": "Occlusion of this actual mesh from receiver+1cm toward Sun; no other objects, no GPU raster/float32 parity claim"
+      },
+      "interpretation": "CPU shadow and physical blocker both present"
+    },
+    {
+      "id": "L3-control",
+      "pixelCentre": [
+        903.5,
+        646.5
+      ],
+      "png": {
+        "baselineRGB": [
+          90,
+          99,
+          97
+        ],
+        "unshadowedRGB": [
+          90,
+          99,
+          97
+        ],
+        "offDifference": false,
+        "selectionIsArtifact": false
+      },
+      "cameraRay": {
+        "ndc": [
+          -0.26960388035569927,
+          0.2988069414316703
+        ],
+        "origin": [
+          15.459708213806152,
+          7.558173179626465,
+          2.780613899230957
+        ],
+        "direction": [
+          -0.9682833281959307,
+          -0.23774368704852816,
+          -0.07684618146910827
+        ],
+        "manualDirectionError": 7.181952963057708e-15
+      },
+      "receiver": {
+        "faceIndex": 379930,
+        "indices": [
+          190415,
+          190545,
+          190546
+        ],
+        "vertices": [
+          [
+            -27.13599967956543,
+            -2.8958981037139893,
+            -0.7680000066757202
+          ],
+          [
+            -27.13599967956543,
+            -2.794459104537964,
+            -0.5120000243186951
+          ],
+          [
+            -26.8799991607666,
+            -3.088256597518921,
+            -0.5120000243186951
+          ]
+        ],
+        "point": [
+          -27.083786367233593,
+          -2.887578561726272,
+          -0.5957791560908272
+        ],
+        "distanceKm": 43.93703097243778,
+        "geometricNormal": [
+          0.7296234567280946,
+          0.6357575810297783,
+          -0.251916473370264
+        ],
+        "normalDotSun": -0.08825638829404356,
+        "normalDotCameraRay": -0.8382707613659028,
+        "clipDepthKm": 43.66846314124597,
+        "safelyInsidePlanarClip": true,
+        "hitCount": 2,
+        "elapsedMs": 42.12391600000001
+      },
+      "baselineLookup": {
+        "point": [
+          -27.083919189854935,
+          -2.856328844133717,
+          -0.5957820778739258
+        ],
+        "radialOffsetKm": 0.03125,
+        "uv": [
+          0.43107844998950096,
+          0.6363426365630739
+        ],
+        "gridCoordinate": [
+          882.848665578498,
+          1303.2297196811753
+        ],
+        "pixel": [
+          882,
+          1303
+        ],
+        "texelCentreUV": [
+          0.430908203125,
+          0.636474609375
+        ],
+        "distanceToNearestPixelBoundaryTexels": 0.15133442150204246,
+        "distanceToCoverageEdgeUV": 0.3636573634369261,
+        "heightKm": 18.783166376834107
+      },
+      "caster": {
+        "faceIndex": 379929,
+        "indices": [
+          190414,
+          190545,
+          190415
+        ],
+        "vertices": [
+          [
+            -27.392000198364258,
+            -2.865765333175659,
+            -0.7680000066757202
+          ],
+          [
+            -27.13599967956543,
+            -2.794459104537964,
+            -0.5120000243186951
+          ],
+          [
+            -27.13599967956543,
+            -2.8958981037139893,
+            -0.7680000066757202
+          ]
+        ],
+        "point": [
+          -27.13821497367826,
+          -2.8295781938822984,
+          -0.6012875679206786
+        ],
+        "distanceKm": 908.5871045421515,
+        "geometricNormal": [
+          0.10877890526642667,
+          0.9241585053438992,
+          -0.3661942200111408
+        ],
+        "origin": [
+          -634.1894209819234,
+          644.6917082149125,
+          193.65509835471778
+        ],
+        "direction": [
+          0.6681265923470772,
+          -0.7126683651702157,
+          -0.21380050955106472
+        ],
+        "normalDotSun": 0.507647941033647,
+        "qCentreKm": 18.837330099463394,
+        "affineDqPerPixelKm": [
+          0.03885801337963868,
+          0.0986993215578541
+        ],
+        "storedMinimumKm": 18.767551431994647,
+        "lookupMinusStoredKm": 0.015614944839459355,
+        "sameFaceAsReceiver": false,
+        "sharedIndices": [
+          190545,
+          190415
+        ],
+        "hitCount": 2,
+        "elapsedMs": 40.7696669999998,
+        "selection": "first FrontSide hit / maximum RAW solar height at texel centre, then minimum of that winning plane (not max plane minimum)"
+      },
+      "shadow": {
+        "rawVisibility": 1,
+        "coverageFade": 0,
+        "finalVisibility": 1,
+        "cpuShadow": false,
+        "pngArtifactRequiresShadow": false,
+        "strictArtifactMismatch": false,
+        "controlCaveat": "Unchanged control RGB alone does not prove visibility=1; diffuse/rounding may hide a shadow."
+      },
+      "physicalSunRay": {
+        "origin": [
+          -27.083793048499516,
+          -2.8875714350426205,
+          -0.5957770180857317
+        ],
+        "direction": [
+          -0.6681265923470772,
+          0.7126683651702157,
+          0.21380050955106472
+        ],
+        "startOffsetKm": 0.00001,
+        "farKm": 20,
+        "side": "DoubleSide",
+        "rawHitCount": 1,
+        "ignoredNearOrOwn": [],
+        "ignoredCount": 0,
+        "blocker": {
+          "faceIndex": 379929,
+          "indices": [
+            190414,
+            190545,
+            190415
+          ],
+          "vertices": [
+            [
+              -27.392000198364258,
+              -2.865765333175659,
+              -0.7680000066757202
+            ],
+            [
+              -27.13599967956543,
+              -2.794459104537964,
+              -0.5120000243186951
+            ],
+            [
+              -27.13599967956543,
+              -2.8958981037139893,
+              -0.7680000066757202
+            ]
+          ],
+          "point": [
+            -27.149194992193014,
+            -2.817809361769557,
+            -0.5748483961038127
+          ],
+          "distanceKm": 0.09788855052714712,
+          "geometricNormal": [
+            0.10877890526642667,
+            0.9241585053438992,
+            -0.3661942200111408
+          ]
+        },
+        "blockerCount": 1,
+        "otherFirstHits": [],
+        "farPastEntireMeshMaximumY": true,
+        "physicallyUnoccluded": false,
+        "classification": "BLOCKED",
+        "elapsedMs": 41.065667000000076,
+        "scope": "Occlusion of this actual mesh from receiver+1cm toward Sun; no other objects, no GPU raster/float32 parity claim"
+      },
+      "interpretation": "CPU lit but physical blocker present; diagnostic mismatch"
+    },
+    {
+      "id": "C1-ocean",
+      "pixelCentre": [
+        2200.5,
+        1100.5
+      ],
+      "png": {
+        "baselineRGB": [
+          54,
+          74,
+          88
+        ],
+        "unshadowedRGB": [
+          54,
+          74,
+          88
+        ],
+        "offDifference": false,
+        "selectionIsArtifact": false
+      },
+      "cameraRay": {
+        "ndc": [
+          0.7789005658852062,
+          -0.19360086767895868
+        ],
+        "origin": [
+          15.459708213806152,
+          7.558173179626465,
+          2.780613899230957
+        ],
+        "direction": [
+          -0.8212541091660185,
+          -0.35738664350569305,
+          -0.4447656407836201
+        ],
+        "manualDirectionError": 4.917673954796276e-15
+      },
+      "receiver": {
+        "faceIndex": 249937,
+        "indices": [
+          125518,
+          125776,
+          125519
+        ],
+        "vertices": [
+          [
+            -11.263999938964844,
+            -4.020605564117432,
+            -11.64799976348877
+          ],
+          [
+            -11.13599967956543,
+            -4.020147800445557,
+            -11.520000457763672
+          ],
+          [
+            -11.13599967956543,
+            -4.02038049697876,
+            -11.64799976348877
+          ]
+        ],
+        "point": [
+          -11.147112034891176,
+          -4.020365152069111,
+          -11.628811058342357
+        ],
+        "distanceKm": 32.397792536729575,
+        "geometricNormal": [
+          -0.0017583278337843942,
+          0.9999968016731943,
+          -0.0018179457118566158
+        ],
+        "normalDotSun": 0.713452193688164,
+        "normalDotCameraRay": -0.35513290671821096,
+        "clipDepthKm": 30.889516615275884,
+        "safelyInsidePlanarClip": true,
+        "hitCount": 1,
+        "elapsedMs": 41.73545800000011
+      },
+      "baselineLookup": {
+        "point": [
+          -11.147166711904378,
+          -3.9891152519590407,
+          -11.628868098107795
+        ],
+        "radialOffsetKm": 0.03125,
+        "uv": [
+          0.3869296826484258,
+          0.5393188036029782
+        ],
+        "gridCoordinate": [
+          792.4319900639761,
+          1104.5249097788994
+        ],
+        "pixel": [
+          792,
+          1104
+        ],
+        "texelCentreUV": [
+          0.386962890625,
+          0.539306640625
+        ],
+        "distanceToNearestPixelBoundaryTexels": 0.431990063976059,
+        "distanceToCoverageEdgeUV": 0.3869296826484258,
+        "heightKm": 4.969217800263517
+      },
+      "caster": {
+        "faceIndex": 249939,
+        "indices": [
+          125519,
+          125777,
+          125520
+        ],
+        "vertices": [
+          [
+            -11.13599967956543,
+            -4.02038049697876,
+            -11.64799976348877
+          ],
+          [
+            -11.008000373840332,
+            -4.019925117492676,
+            -11.520000457763672
+          ],
+          [
+            -11.008000373840332,
+            -4.020157814025879,
+            -11.64799976348877
+          ]
+        ],
+        "point": [
+          -11.11453686115351,
+          -4.020319246053646,
+          -11.63484670071162
+        ],
+        "distanceKm": 922.5005340400835,
+        "geometricNormal": [
+          -0.0017397144981061265,
+          0.9999968342283083,
+          -0.001817945771040235
+        ],
+        "origin": [
+          -627.4616751077133,
+          653.4166282169435,
+          185.59623753818752
+        ],
+        "direction": [
+          0.6681265923470772,
+          -0.7126683651702157,
+          -0.21380050955106472
+        ],
+        "normalDotSun": 0.7134397808119715,
+        "qCentreKm": 4.923900601531262,
+        "affineDqPerPixelKm": [
+          0.00019813149113798268,
+          0.061385077252328064
+        ],
+        "storedMinimumKm": 4.892108997159529,
+        "lookupMinusStoredKm": 0.0771088031039886,
+        "sameFaceAsReceiver": false,
+        "sharedIndices": [
+          125519
+        ],
+        "hitCount": 1,
+        "elapsedMs": 41.358415999999806,
+        "selection": "first FrontSide hit / maximum RAW solar height at texel centre, then minimum of that winning plane (not max plane minimum)"
+      },
+      "shadow": {
+        "rawVisibility": 1,
+        "coverageFade": 0,
+        "finalVisibility": 1,
+        "cpuShadow": false,
+        "pngArtifactRequiresShadow": false,
+        "strictArtifactMismatch": false,
+        "controlCaveat": "Unchanged control RGB alone does not prove visibility=1; diffuse/rounding may hide a shadow."
+      },
+      "physicalSunRay": {
+        "origin": [
+          -11.147118716157099,
+          -4.020358025385459,
+          -11.628808920337262
+        ],
+        "direction": [
+          -0.6681265923470772,
+          0.7126683651702157,
+          0.21380050955106472
+        ],
+        "startOffsetKm": 0.00001,
+        "farKm": 20,
+        "side": "DoubleSide",
+        "rawHitCount": 0,
+        "ignoredNearOrOwn": [],
+        "ignoredCount": 0,
+        "blocker": null,
+        "blockerCount": 0,
+        "otherFirstHits": [],
+        "farPastEntireMeshMaximumY": true,
+        "physicallyUnoccluded": true,
+        "classification": "UNOCCLUDED_ENTIRE_MESH",
+        "elapsedMs": 41.77308300000004,
+        "scope": "Occlusion of this actual mesh from receiver+1cm toward Sun; no other objects, no GPU raster/float32 parity claim"
+      },
+      "interpretation": "CPU lit and no physical blocker"
+    },
+    {
+      "id": "C2-coastal-lowland",
+      "pixelCentre": [
+        1800.5,
+        930.5
+      ],
+      "png": {
+        "baselineRGB": [
+          94,
+          102,
+          102
+        ],
+        "unshadowedRGB": [
+          94,
+          102,
+          102
+        ],
+        "offDifference": false,
+        "selectionIsArtifact": false
+      },
+      "cameraRay": {
+        "ndc": [
+          0.4555375909458368,
+          -0.009219088937093334
+        ],
+        "origin": [
+          15.459708213806152,
+          7.558173179626465,
+          2.780613899230957
+        ],
+        "direction": [
+          -0.8842148482136906,
+          -0.31882330178515367,
+          -0.3413441144025381
+        ],
+        "manualDirectionError": 1.8056063274863413e-15
+      },
+      "receiver": {
+        "faceIndex": 370841,
+        "indices": [
+          185905,
+          186036,
+          185906
+        ],
+        "vertices": [
+          [
+            -16.895999908447266,
+            -4.026093006134033,
+            -9.727999687194824
+          ],
+          [
+            -16.639999389648438,
+            -4.027770042419434,
+            -9.472000122070312
+          ],
+          [
+            -16.639999389648438,
+            -4.02908182144165,
+            -9.727999687194824
+          ]
+        ],
+        "point": [
+          -16.673472652673944,
+          -4.028158854276249,
+          -9.624145179361728
+        ],
+        "distanceKm": 36.340919779164786,
+        "geometricNormal": [
+          0.011674087284516505,
+          0.999918728240738,
+          -0.005123729061765921
+        ],
+        "normalDotSun": 0.7037152213180345,
+        "normalDotCameraRay": -0.32737083701180897,
+        "clipDepthKm": 35.75475557278739,
+        "safelyInsidePlanarClip": true,
+        "hitCount": 1,
+        "elapsedMs": 41.82212500000014
+      },
+      "baselineLookup": {
+        "point": [
+          -16.673554436686572,
+          -3.9969089969502747,
+          -9.624192386157056
+        ],
+        "radialOffsetKm": 0.03125,
+        "uv": [
+          0.3886874382600505,
+          0.5720687725230622
+        ],
+        "gridCoordinate": [
+          796.0318735565834,
+          1171.5968461272314
+        ],
+        "pixel": [
+          796,
+          1171
+        ],
+        "texelCentreUV": [
+          0.388916015625,
+          0.572021484375
+        ],
+        "distanceToNearestPixelBoundaryTexels": 0.03187355658337765,
+        "distanceToCoverageEdgeUV": 0.3886874382600505,
+        "heightKm": 9.084590732009218
+      },
+      "caster": {
+        "faceIndex": 370842,
+        "indices": [
+          186037,
+          185906,
+          186036
+        ],
+        "vertices": [
+          [
+            -16.511999130249023,
+            -4.028620719909668,
+            -9.600000381469727
+          ],
+          [
+            -16.639999389648438,
+            -4.02908182144165,
+            -9.727999687194824
+          ],
+          [
+            -16.639999389648438,
+            -4.027770042419434,
+            -9.472000122070312
+          ]
+        ],
+        "point": [
+          -16.626942090544958,
+          -4.028488788590607,
+          -9.608388932338215
+        ],
+        "distanceKm": 918.3901139895961,
+        "geometricNormal": [
+          0.00152173717420781,
+          0.99998571399744,
+          -0.005124072306530366
+        ],
+        "origin": [
+          -630.2277993956575,
+          650.4790923368628,
+          186.74388540529782
+        ],
+        "direction": [
+          0.6681265923470772,
+          -0.7126683651702157,
+          -0.21380050955106472
+        ],
+        "normalDotSun": 0.7105459416453623,
+        "qCentreKm": 9.034320652018721,
+        "affineDqPerPixelKm": [
+          0.00038847784007971974,
+          0.061892281529892734
+        ],
+        "storedMinimumKm": 9.002180272333735,
+        "lookupMinusStoredKm": 0.08241045967548288,
+        "sameFaceAsReceiver": false,
+        "sharedIndices": [
+          185906,
+          186036
+        ],
+        "hitCount": 1,
+        "elapsedMs": 41.15166700000009,
+        "selection": "first FrontSide hit / maximum RAW solar height at texel centre, then minimum of that winning plane (not max plane minimum)"
+      },
+      "shadow": {
+        "rawVisibility": 1,
+        "coverageFade": 0,
+        "finalVisibility": 1,
+        "cpuShadow": false,
+        "pngArtifactRequiresShadow": false,
+        "strictArtifactMismatch": false,
+        "controlCaveat": "Unchanged control RGB alone does not prove visibility=1; diffuse/rounding may hide a shadow."
+      },
+      "physicalSunRay": {
+        "origin": [
+          -16.673479333939866,
+          -4.028151727592597,
+          -9.624143041356632
+        ],
+        "direction": [
+          -0.6681265923470772,
+          0.7126683651702157,
+          0.21380050955106472
+        ],
+        "startOffsetKm": 0.00001,
+        "farKm": 20,
+        "side": "DoubleSide",
+        "rawHitCount": 0,
+        "ignoredNearOrOwn": [],
+        "ignoredCount": 0,
+        "blocker": null,
+        "blockerCount": 0,
+        "otherFirstHits": [],
+        "farPastEntireMeshMaximumY": true,
+        "physicallyUnoccluded": true,
+        "classification": "UNOCCLUDED_ENTIRE_MESH",
+        "elapsedMs": 41.59495900000002,
+        "scope": "Occlusion of this actual mesh from receiver+1cm toward Sun; no other objects, no GPU raster/float32 parity claim"
+      },
+      "interpretation": "CPU lit and no physical blocker"
+    },
+    {
+      "id": "C3-plain",
+      "pixelCentre": [
+        2200.5,
+        700.5
+      ],
+      "png": {
+        "baselineRGB": [
+          79,
+          97,
+          104
+        ],
+        "unshadowedRGB": [
+          79,
+          97,
+          104
+        ],
+        "offDifference": false,
+        "selectionIsArtifact": false
+      },
+      "cameraRay": {
+        "ndc": [
+          0.7789005658852062,
+          0.2402386117136659
+        ],
+        "origin": [
+          15.459708213806152,
+          7.558173179626465,
+          2.780613899230957
+        ],
+        "direction": [
+          -0.8573989172445068,
+          -0.2445368722682176,
+          -0.45284524377454277
+        ],
+        "manualDirectionError": 4.474419175479002e-15
+      },
+      "receiver": {
+        "faceIndex": 358458,
+        "indices": [
+          179796,
+          180053,
+          180054
+        ],
+        "vertices": [
+          [
+            -25.3439998626709,
+            -4.0785746574401855,
+            -18.944000244140625
+          ],
+          [
+            -25.3439998626709,
+            -4.077818870544434,
+            -18.687999725341797
+          ],
+          [
+            -25.08799934387207,
+            -4.076805591583252,
+            -18.687999725341797
+          ]
+        ],
+        "point": [
+          -25.339347204992848,
+          -4.078036294108676,
+          -18.767883335024774
+        ],
+        "distanceKm": 47.58468269346348,
+        "geometricNormal": [
+          -0.003958064667004308,
+          0.9999878088959704,
+          -0.0029522505869185077
+        ],
+        "normalDotSun": 0.7146729725344866,
+        "normalDotCameraRay": -0.23980333809717883,
+        "clipDepthKm": 45.57175246010542,
+        "safelyInsidePlanarClip": true,
+        "hitCount": 1,
+        "elapsedMs": 42.5864160000001
+      },
+      "baselineLookup": {
+        "point": [
+          -25.33947149546535,
+          -4.046786676873383,
+          -18.76797539221428
+        ],
+        "radialOffsetKm": 0.03125,
+        "uv": [
+          0.30001618119497153,
+          0.6027798887354675
+        ],
+        "gridCoordinate": [
+          614.4331390873017,
+          1234.4932121302375
+        ],
+        "pixel": [
+          614,
+          1234
+        ],
+        "texelCentreUV": [
+          0.300048828125,
+          0.602783203125
+        ],
+        "distanceToNearestPixelBoundaryTexels": 0.43313908730169715,
+        "distanceToCoverageEdgeUV": 0.30001618119497153,
+        "heightKm": 12.884028655524803
+      },
+      "caster": {
+        "faceIndex": 358458,
+        "indices": [
+          179796,
+          180053,
+          180054
+        ],
+        "vertices": [
+          [
+            -25.3439998626709,
+            -4.0785746574401855,
+            -18.944000244140625
+          ],
+          [
+            -25.3439998626709,
+            -4.077818870544434,
+            -18.687999725341797
+          ],
+          [
+            -25.08799934387207,
+            -4.076805591583252,
+            -18.687999725341797
+          ]
+        ],
+        "point": [
+          -25.309564262586605,
+          -4.077933982649597,
+          -18.77315815833495
+        ],
+        "distanceKm": 914.5836935812042,
+        "geometricNormal": [
+          -0.003958064667004308,
+          0.9999878088959704,
+          -0.0029522505869185077
+        ],
+        "origin": [
+          -636.3672508711999,
+          647.7169317332047,
+          176.76530155642132
+        ],
+        "direction": [
+          0.6681265923470772,
+          -0.7126683651702157,
+          -0.21380050955106472
+        ],
+        "normalDotSun": 0.7146729725344866,
+        "qCentreKm": 12.840741060410522,
+        "affineDqPerPixelKm": [
+          0.00035139470593494986,
+          0.06116846752690587
+        ],
+        "storedMinimumKm": 12.808981129294102,
+        "lookupMinusStoredKm": 0.07504752623070132,
+        "sameFaceAsReceiver": true,
+        "sharedIndices": [
+          179796,
+          180053,
+          180054
+        ],
+        "hitCount": 1,
+        "elapsedMs": 41.04883299999983,
+        "selection": "first FrontSide hit / maximum RAW solar height at texel centre, then minimum of that winning plane (not max plane minimum)"
+      },
+      "shadow": {
+        "rawVisibility": 1,
+        "coverageFade": 0,
+        "finalVisibility": 1,
+        "cpuShadow": false,
+        "pngArtifactRequiresShadow": false,
+        "strictArtifactMismatch": false,
+        "controlCaveat": "Unchanged control RGB alone does not prove visibility=1; diffuse/rounding may hide a shadow."
+      },
+      "physicalSunRay": {
+        "origin": [
+          -25.33935388625877,
+          -4.078029167425024,
+          -18.76788119701968
+        ],
+        "direction": [
+          -0.6681265923470772,
+          0.7126683651702157,
+          0.21380050955106472
+        ],
+        "startOffsetKm": 0.00001,
+        "farKm": 20,
+        "side": "DoubleSide",
+        "rawHitCount": 0,
+        "ignoredNearOrOwn": [],
+        "ignoredCount": 0,
+        "blocker": null,
+        "blockerCount": 0,
+        "otherFirstHits": [],
+        "farPastEntireMeshMaximumY": true,
+        "physicallyUnoccluded": true,
+        "classification": "UNOCCLUDED_ENTIRE_MESH",
+        "elapsedMs": 41.4875420000003,
+        "scope": "Occlusion of this actual mesh from receiver+1cm toward Sun; no other objects, no GPU raster/float32 parity claim"
+      },
+      "interpretation": "CPU lit and no physical blocker"
+    },
+    {
+      "id": "C4-ridge-L1",
+      "pixelCentre": [
+        170.5,
+        805.5
+      ],
+      "png": {
+        "baselineRGB": [
+          82,
+          90,
+          89
+        ],
+        "unshadowedRGB": [
+          82,
+          90,
+          89
+        ],
+        "offDifference": false,
+        "selectionIsArtifact": false
+      },
+      "cameraRay": {
+        "ndc": [
+          -0.8621665319320938,
+          0.12635574837310193
+        ],
+        "origin": [
+          15.459708213806152,
+          7.558173179626465,
+          2.780613899230957
+        ],
+        "direction": [
+          -0.951781898713993,
+          -0.2721209285003649,
+          0.14163833362647857
+        ],
+        "manualDirectionError": 8.142418730178641e-15
+      },
+      "receiver": {
+        "faceIndex": 388890,
+        "indices": [
+          194861,
+          194991,
+          194992
+        ],
+        "vertices": [
+          [
+            -20.479999542236328,
+            -2.768054485321045,
+            7.935999870300293
+          ],
+          [
+            -20.479999542236328,
+            -2.6106913089752197,
+            8.192000389099121
+          ],
+          [
+            -20.224000930786133,
+            -2.759380578994751,
+            8.192000389099121
+          ]
+        ],
+        "point": [
+          -20.4092631069878,
+          -2.6970100649337088,
+          8.118413802378573
+        ],
+        "distanceKm": 37.686124698587534,
+        "geometricNormal": [
+          0.44348991249696396,
+          0.7635574629997051,
+          -0.46935775077321257
+        ],
+        "normalDotSun": 0.1475069186155628,
+        "normalDotCameraRay": -0.6963646864659155,
+        "clipDepthKm": 35.76890264754516,
+        "safelyInsidePlanarClip": true,
+        "hitCount": 1,
+        "elapsedMs": 42.20766700000013
+      },
+      "baselineLookup": {
+        "point": [
+          -20.409363194143783,
+          -2.6657602505741655,
+          8.118453615131454
+        ],
+        "radialOffsetKm": 0.03125,
+        "uv": [
+          0.5118119746386599,
+          0.6146914195586386
+        ],
+        "gridCoordinate": [
+          1048.1909240599755,
+          1258.8880272560918
+        ],
+        "pixel": [
+          1048,
+          1258
+        ],
+        "texelCentreUV": [
+          0.511962890625,
+          0.614501953125
+        ],
+        "distanceToNearestPixelBoundaryTexels": 0.11197274390815437,
+        "distanceToCoverageEdgeUV": 0.3853085804413614,
+        "heightKm": 16.32263826352736
+      },
+      "caster": {
+        "faceIndex": 388891,
+        "indices": [
+          194861,
+          194992,
+          194862
+        ],
+        "vertices": [
+          [
+            -20.479999542236328,
+            -2.768054485321045,
+            7.935999870300293
+          ],
+          [
+            -20.224000930786133,
+            -2.759380578994751,
+            8.192000389099121
+          ],
+          [
+            -20.224000930786133,
+            -2.8486526012420654,
+            7.935999870300293
+          ]
+        ],
+        "point": [
+          -20.26147050866541,
+          -2.7826613703922476,
+          8.091410144452738
+        ],
+        "distanceKm": 911.2897010518276,
+        "geometricNormal": [
+          0.28495608830237273,
+          0.9050876946201823,
+          -0.3156204885404839
+        ],
+        "origin": [
+          -629.1183531134095,
+          646.6646800746682,
+          202.9256125779709
+        ],
+        "direction": [
+          0.6681265923470772,
+          -0.7126683651702157,
+          -0.21380050955106472
+        ],
+        "normalDotSun": 0.3871608061399163,
+        "qCentreKm": 16.134733589787178,
+        "affineDqPerPixelKm": [
+          0.034507120852928785,
+          0.1447866698588883
+        ],
+        "storedMinimumKm": 16.044086694431268,
+        "lookupMinusStoredKm": 0.27855156909609136,
+        "sameFaceAsReceiver": false,
+        "sharedIndices": [
+          194861,
+          194992
+        ],
+        "hitCount": 1,
+        "elapsedMs": 40.79325000000017,
+        "selection": "first FrontSide hit / maximum RAW solar height at texel centre, then minimum of that winning plane (not max plane minimum)"
+      },
+      "shadow": {
+        "rawVisibility": 1,
+        "coverageFade": 0,
+        "finalVisibility": 1,
+        "cpuShadow": false,
+        "pngArtifactRequiresShadow": false,
+        "strictArtifactMismatch": false,
+        "controlCaveat": "Unchanged control RGB alone does not prove visibility=1; diffuse/rounding may hide a shadow."
+      },
+      "physicalSunRay": {
+        "origin": [
+          -20.409269788253724,
+          -2.697002938250057,
+          8.118415940383668
+        ],
+        "direction": [
+          -0.6681265923470772,
+          0.7126683651702157,
+          0.21380050955106472
+        ],
+        "startOffsetKm": 0.00001,
+        "farKm": 20,
+        "side": "DoubleSide",
+        "rawHitCount": 0,
+        "ignoredNearOrOwn": [],
+        "ignoredCount": 0,
+        "blocker": null,
+        "blockerCount": 0,
+        "otherFirstHits": [],
+        "farPastEntireMeshMaximumY": true,
+        "physicallyUnoccluded": true,
+        "classification": "UNOCCLUDED_ENTIRE_MESH",
+        "elapsedMs": 41.04408300000023,
+        "scope": "Occlusion of this actual mesh from receiver+1cm toward Sun; no other objects, no GPU raster/float32 parity claim"
+      },
+      "interpretation": "CPU lit and no physical blocker"
+    },
+    {
+      "id": "C5-ridge-L2",
+      "pixelCentre": [
+        460.5,
+        800.5
+      ],
+      "png": {
+        "baselineRGB": [
+          82,
+          93,
+          89
+        ],
+        "unshadowedRGB": [
+          82,
+          93,
+          89
+        ],
+        "offDifference": false,
+        "selectionIsArtifact": false
+      },
+      "cameraRay": {
+        "ndc": [
+          -0.627728375101051,
+          0.13177874186550975
+        ],
+        "origin": [
+          15.459708213806152,
+          7.558173179626465,
+          2.780613899230957
+        ],
+        "direction": [
+          -0.9589988799973262,
+          -0.27723698655672924,
+          0.05882857680428509
+        ],
+        "manualDirectionError": 3.5535809346852124e-15
+      },
+      "receiver": {
+        "faceIndex": 385738,
+        "indices": [
+          193297,
+          193427,
+          193428
+        ],
+        "vertices": [
+          [
+            -21.503999710083008,
+            -3.087895631790161,
+            4.863999843597412
+          ],
+          [
+            -21.503999710083008,
+            -3.0396053791046143,
+            5.119999885559082
+          ],
+          [
+            -21.24799919128418,
+            -3.1518714427948,
+            5.119999885559082
+          ]
+        ],
+        "point": [
+          -21.403217566628385,
+          -3.098530047243342,
+          5.041923589718813
+        ],
+        "distanceKm": 38.438966456913185,
+        "geometricNormal": [
+          0.3957549810979344,
+          0.902440836955688,
+          -0.1702308160436612
+        ],
+        "normalDotSun": 0.34233117379927813,
+        "normalDotCameraRay": -0.6397329984456904,
+        "clipDepthKm": 37.36402419711811,
+        "safelyInsidePlanarClip": true,
+        "hitCount": 1,
+        "elapsedMs": 41.976208999999926
+      },
+      "baselineLookup": {
+        "point": [
+          -21.403322534755947,
+          -3.067280233319758,
+          5.041948316901858
+        ],
+        "radialOffsetKm": 0.03125,
+        "uv": [
+          0.4865535948279787,
+          0.6169421991098626
+        ],
+        "gridCoordinate": [
+          996.4617622077004,
+          1263.4976237769986
+        ],
+        "pixel": [
+          996,
+          1263
+        ],
+        "texelCentreUV": [
+          0.486572265625,
+          0.616943359375
+        ],
+        "distanceToNearestPixelBoundaryTexels": 0.4617622077004171,
+        "distanceToCoverageEdgeUV": 0.3830578008901374,
+        "heightKm": 16.0428199406176
+      },
+      "caster": {
+        "faceIndex": 385738,
+        "indices": [
+          193297,
+          193427,
+          193428
+        ],
+        "vertices": [
+          [
+            -21.503999710083008,
+            -3.087895631790161,
+            4.863999843597412
+          ],
+          [
+            -21.503999710083008,
+            -3.0396053791046143,
+            5.119999885559082
+          ],
+          [
+            -21.24799919128418,
+            -3.1518714427948,
+            5.119999885559082
+          ]
+        ],
+        "point": [
+          -21.348209967965204,
+          -3.125501749938394,
+          5.026821536842931
+        ],
+        "distanceKm": 911.4631636187935,
+        "geometricNormal": [
+          0.3957549810979344,
+          0.902440836955688,
+          -0.1702308160436612
+        ],
+        "origin": [
+          -630.320987526476,
+          646.4454609791399,
+          199.89811035556642
+        ],
+        "direction": [
+          0.6681265923470772,
+          -0.7126683651702157,
+          -0.21380050955106472
+        ],
+        "normalDotSun": 0.34233117379927813,
+        "qCentreKm": 15.961271022821402,
+        "affineDqPerPixelKm": [
+          0.007579544103742644,
+          0.1713731099983985
+        ],
+        "storedMinimumKm": 15.870794695770332,
+        "lookupMinusStoredKm": 0.17202524484726922,
+        "sameFaceAsReceiver": true,
+        "sharedIndices": [
+          193297,
+          193427,
+          193428
+        ],
+        "hitCount": 1,
+        "elapsedMs": 41.04383400000006,
+        "selection": "first FrontSide hit / maximum RAW solar height at texel centre, then minimum of that winning plane (not max plane minimum)"
+      },
+      "shadow": {
+        "rawVisibility": 1,
+        "coverageFade": 0,
+        "finalVisibility": 1,
+        "cpuShadow": false,
+        "pngArtifactRequiresShadow": false,
+        "strictArtifactMismatch": false,
+        "controlCaveat": "Unchanged control RGB alone does not prove visibility=1; diffuse/rounding may hide a shadow."
+      },
+      "physicalSunRay": {
+        "origin": [
+          -21.403224247894308,
+          -3.0985229205596903,
+          5.041925727723909
+        ],
+        "direction": [
+          -0.6681265923470772,
+          0.7126683651702157,
+          0.21380050955106472
+        ],
+        "startOffsetKm": 0.00001,
+        "farKm": 20,
+        "side": "DoubleSide",
+        "rawHitCount": 0,
+        "ignoredNearOrOwn": [],
+        "ignoredCount": 0,
+        "blocker": null,
+        "blockerCount": 0,
+        "otherFirstHits": [],
+        "farPastEntireMeshMaximumY": true,
+        "physicallyUnoccluded": true,
+        "classification": "UNOCCLUDED_ENTIRE_MESH",
+        "elapsedMs": 41.74062499999991,
+        "scope": "Occlusion of this actual mesh from receiver+1cm toward Sun; no other objects, no GPU raster/float32 parity claim"
+      },
+      "interpretation": "CPU lit and no physical blocker"
+    },
+    {
+      "id": "C6-ridge-L3",
+      "pixelCentre": [
+        925.5,
+        610.5
+      ],
+      "png": {
+        "baselineRGB": [
+          94,
+          105,
+          102
+        ],
+        "unshadowedRGB": [
+          94,
+          105,
+          102
+        ],
+        "offDifference": false,
+        "selectionIsArtifact": false
+      },
+      "cameraRay": {
+        "ndc": [
+          -0.251818916734034,
+          0.3378524945770065
+        ],
+        "origin": [
+          15.459708213806152,
+          7.558173179626465,
+          2.780613899230957
+        ],
+        "direction": [
+          -0.9702335547101347,
+          -0.22709443058718884,
+          -0.08411283440008788
+        ],
+        "manualDirectionError": 4.644810785922912e-15
+      },
+      "receiver": {
+        "faceIndex": 379379,
+        "indices": [
+          190141,
+          190272,
+          190142
+        ],
+        "vertices": [
+          [
+            -30.719999313354492,
+            -3.2317004203796387,
+            -1.2799999713897705
+          ],
+          [
+            -30.464000701904297,
+            -3.1440911293029785,
+            -1.0240000486373901
+          ],
+          [
+            -30.464000701904297,
+            -3.265493631362915,
+            -1.2799999713897705
+          ]
+        ],
+        "point": [
+          -30.578071905575236,
+          -3.217503883854002,
+          -1.2105572538694802
+        ],
+        "distanceKm": 47.45020402137664,
+        "geometricNormal": [
+          0.1184337319988566,
+          0.8971882238588129,
+          -0.42547237524179116
+        ],
+        "normalDotSun": 0.46930272834148995,
+        "normalDotCameraRay": -0.2828671421810617,
+        "clipDepthKm": 47.16845084951106,
+        "safelyInsidePlanarClip": true,
+        "hitCount": 1,
+        "elapsedMs": 42.199457999999595
+      },
+      "baselineLookup": {
+        "point": [
+          -30.578221872044924,
+          -3.1862542442591266,
+          -1.2105631909016867
+        ],
+        "radialOffsetKm": 0.03125,
+        "uv": [
+          0.4181838326615723,
+          0.6556372610791943
+        ],
+        "gridCoordinate": [
+          856.4404892909,
+          1342.74511069019
+        ],
+        "pixel": [
+          856,
+          1342
+        ],
+        "texelCentreUV": [
+          0.418212890625,
+          0.655517578125
+        ],
+        "distanceToNearestPixelBoundaryTexels": 0.25488930981009617,
+        "distanceToCoverageEdgeUV": 0.3443627389208057,
+        "heightKm": 20.751235009751746
+      },
+      "caster": {
+        "faceIndex": 379379,
+        "indices": [
+          190141,
+          190272,
+          190142
+        ],
+        "vertices": [
+          [
+            -30.719999313354492,
+            -3.2317004203796387,
+            -1.2799999713897705
+          ],
+          [
+            -30.464000701904297,
+            -3.1440911293029785,
+            -1.0240000486373901
+          ],
+          [
+            -30.464000701904297,
+            -3.265493631362915,
+            -1.2799999713897705
+          ]
+        ],
+        "point": [
+          -30.51125626997964,
+          -3.234637005755417,
+          -1.228086970397129
+        ],
+        "distanceKm": 906.7561685878987,
+        "geometricNormal": [
+          0.1184337319988566,
+          0.8971882238588129,
+          -0.42547237524179116
+        ],
+        "origin": [
+          -636.3391652783041,
+          642.9817992697908,
+          192.63684391226676
+        ],
+        "direction": [
+          0.6681265923470772,
+          -0.7126683651702157,
+          -0.21380050955106472
+        ],
+        "normalDotSun": 0.46930272834148995,
+        "qCentreKm": 20.668266053716028,
+        "affineDqPerPixelKm": [
+          0.04915995783088191,
+          0.10683152574974379
+        ],
+        "storedMinimumKm": 20.589270311925713,
+        "lookupMinusStoredKm": 0.16196469782603273,
+        "sameFaceAsReceiver": true,
+        "sharedIndices": [
+          190141,
+          190272,
+          190142
+        ],
+        "hitCount": 1,
+        "elapsedMs": 40.95337500000005,
+        "selection": "first FrontSide hit / maximum RAW solar height at texel centre, then minimum of that winning plane (not max plane minimum)"
+      },
+      "shadow": {
+        "rawVisibility": 1,
+        "coverageFade": 0,
+        "finalVisibility": 1,
+        "cpuShadow": false,
+        "pngArtifactRequiresShadow": false,
+        "strictArtifactMismatch": false,
+        "controlCaveat": "Unchanged control RGB alone does not prove visibility=1; diffuse/rounding may hide a shadow."
+      },
+      "physicalSunRay": {
+        "origin": [
+          -30.57807858684116,
+          -3.2174967571703506,
+          -1.2105551158643848
+        ],
+        "direction": [
+          -0.6681265923470772,
+          0.7126683651702157,
+          0.21380050955106472
+        ],
+        "startOffsetKm": 0.00001,
+        "farKm": 20,
+        "side": "DoubleSide",
+        "rawHitCount": 0,
+        "ignoredNearOrOwn": [],
+        "ignoredCount": 0,
+        "blocker": null,
+        "blockerCount": 0,
+        "otherFirstHits": [],
+        "farPastEntireMeshMaximumY": true,
+        "physicallyUnoccluded": true,
+        "classification": "UNOCCLUDED_ENTIRE_MESH",
+        "elapsedMs": 41.428084000000126,
+        "scope": "Occlusion of this actual mesh from receiver+1cm toward Sun; no other objects, no GPU raster/float32 parity claim"
+      },
+      "interpretation": "CPU lit and no physical blocker"
+    }
+  ]
+}

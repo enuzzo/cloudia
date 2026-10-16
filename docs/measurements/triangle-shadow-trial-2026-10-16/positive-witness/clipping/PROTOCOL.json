@@ -1,0 +1,24 @@
+{
+  "state": "FROZEN_BEFORE_UNIQUE_OFFLINE_CALCULATION",
+  "input": "../result.json",
+  "inputSHA256": "f416a5fc3aa706186cc2f08811d7a35192153297f91486e31e6202409ed034cc",
+  "rowsExactly": [
+    "L1-artifact",
+    "L1-control",
+    "L2-artifact",
+    "L2-control",
+    "L3-artifact",
+    "L3-control",
+    "C1-ocean",
+    "C2-coastal-lowland",
+    "C3-plain",
+    "C4-ridge-L1",
+    "C5-ridge-L2",
+    "C6-ridge-L3"
+  ],
+  "consistencyToleranceKm": 1e-08,
+  "visibilityToleranceKm": 0,
+  "algorithm": "Project saved caster triangle into light UVQ; full-triangle lower bound and four-plane Sutherland-Hodgman clipping to addressed texel. Interpolate q affinely at crossings; minimum polygon vertex q minus fixed1m. No mesh/ray/GPU/source imports.",
+  "physicalCriterion": "Only saved physicalSunRay.physicallyUnoccluded (no blocker AND far covers whole mesh) can diagnose a false shadow. All12 rows retained; no new points.",
+  "bounds": "Tiny offline arithmetic only; kernel CPU1s/wall5s/RSS2GiB terminal gate; no retry."
+}

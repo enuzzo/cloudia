@@ -1,0 +1,65 @@
+--- /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle26/witness/witness.ts
++++ /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/positive-witness/witness.ts
+@@ -11,7 +11,9 @@
+ const protocol=JSON.parse(readFileSync(new URL('../PROTOCOL.json',import.meta.url),'utf8'));
+ const native=JSON.parse(readFileSync(new URL('../baseline-native.json',import.meta.url),'utf8'));
+ const m=native.metadata,W=native.png.width,H=native.png.height;
+-assert.equal(W,2474);assert.equal(H,1844);assert.equal(protocol.points.length,6);
++assert.equal(W,2474);assert.equal(H,1844);
++const points=JSON.parse(readFileSync(new URL('./selected-pixels.json',import.meta.url),'utf8'));
++assert.equal(points.length,12);assert.deepEqual(points.map((p:any)=>({id:p.id,pixelCentre:p.pixelCentre,selectionIsArtifact:p.selectionIsArtifact})),protocol.pixelsSelectedBeforeRun);
+ assert.equal(m.quality,'ultra');assert.equal(m.nominalSteps,384);
+ const raw=readFileSync(new URL('../source/src/cumulonimbus/assets/liguria-apuane-dem.bin',import.meta.url));
+ const assetSHA256=createHash('sha256').update(raw).digest('hex');
+@@ -52,7 +54,7 @@
+  const hits=raycaster.intersectObject(mesh,false);
+  return {hits,elapsedMs:performance.now()-t};
+ }
+-for(const point of protocol.points){
++for(const point of points){
+  const [px,py]=point.pixelCentre;
+  const ndc=new Vector2(px/W*2-1,1-py/H*2);
+  raycaster.near=TERRAIN_MESH_DEFAULTS.nearKm;raycaster.far=TERRAIN_MESH_DEFAULTS.farKm;
+@@ -63,7 +65,7 @@
+  assert(manualDirectionError<1e-10,'configureTerrainCamera off-axis direction mismatch');
+  const receiverStart=performance.now();raycasts++;
+  const receivers=raycaster.intersectObject(mesh,false),receiverMs=performance.now()-receiverStart;
+- assert(receivers.length>0,`${point.id}: no receiver`);
++ if(receivers.length===0){rows.push({id:point.id,pixelCentre:[px,py],status:'NO_RECEIVER',png:{baselineRGB:point.baselineRGB,unshadowedRGB:point.unshadowedRGB,selectionIsArtifact:point.selectionIsArtifact},cameraRay:{ndc:ndc.toArray(),origin:receiverRay.origin.toArray(),direction:receiverRay.direction.toArray(),manualDirectionError},interpretation:'No terrain-mesh receiver; retained without replacing this selected pixel.'});continue;}
+  const receiver=receivers[0],nr=receiver.face!.normal;
+  const receiverClipDepthKm=-receiver.point.clone().applyMatrix4(camera.matrixWorldInverse).z;
+  const receiverClipInterior=receiverClipDepthKm>camera.near+.0001&&receiverClipDepthKm<camera.far-1;
+@@ -101,9 +103,11 @@
+  }
+  const blocker=accepted[0]??null;
+  const physicalFarPastMeshMaximum=light.sun.y>0&&physicalStart.y+20*light.sun.y>geometry.boundingBox!.max.y;
+- const isArtifact=point.id.endsWith('-artifact'),hasOffDifference=point.unshadowedRGB.some((v:number,k:number)=>v!==point.baselineRGB[k]);
++ const isArtifact=point.selectionIsArtifact,hasOffDifference=point.unshadowedRGB.some((v:number,k:number)=>v!==point.baselineRGB[k]);
+  const cpuShadow=finalVisibility<1;
+  const strictArtifactMismatch=isArtifact&&hasOffDifference&&!cpuShadow;
++ const physicallyUnoccluded=blocker===null&&physicalFarPastMeshMaximum;
++ const physicalClassification=blocker?'BLOCKED':physicallyUnoccluded?'UNOCCLUDED_ENTIRE_MESH':'NO_BLOCKER_WITHIN_20KM_ONLY';
+  rows.push({id:point.id,pixelCentre:[px,py],png:{baselineRGB:point.baselineRGB,unshadowedRGB:point.unshadowedRGB,offDifference:hasOffDifference,selectionIsArtifact:isArtifact},
+   cameraRay:{ndc:ndc.toArray(),origin:receiverRay.origin.toArray(),direction:receiverRay.direction.toArray(),manualDirectionError},
+   receiver:{...hitRecord(receiver),normalDotSun:nr.dot(light.sun),normalDotCameraRay:nr.dot(receiverRay.direction),clipDepthKm:receiverClipDepthKm,safelyInsidePlanarClip:receiverClipInterior,hitCount:receivers.length,elapsedMs:receiverMs},
+@@ -118,16 +122,16 @@
+   physicalSunRay:{origin:physicalStart.toArray(),direction:light.sun.toArray(),startOffsetKm:.00001,farKm:20,side:'DoubleSide',
+    rawHitCount:physicalRun.hits.length,ignoredNearOrOwn:ignored.slice(0,maximumRowsToKeep),ignoredCount:ignored.length,
+    blocker:blocker?hitRecord(blocker):null,blockerCount:accepted.length,otherFirstHits:accepted.slice(1,maximumRowsToKeep).map(hitRecord),
+-   farPastEntireMeshMaximumY:physicalFarPastMeshMaximum,elapsedMs:physicalRun.elapsedMs,
++   farPastEntireMeshMaximumY:physicalFarPastMeshMaximum,physicallyUnoccluded,classification:physicalClassification,elapsedMs:physicalRun.elapsedMs,
+    scope:'Occlusion of this actual mesh from receiver+1cm toward Sun; no other objects, no GPU raster/float32 parity claim'},
+   interpretation:strictArtifactMismatch?'CPU/PNG ARTIFACT MISMATCH: no fix inferred':cpuShadow&&!blocker?'CPU SHADOW WITHOUT PHYSICAL BLOCKER IN THIS MESH; diagnostic candidate, not GPU proof':cpuShadow&&blocker?'CPU shadow and physical blocker both present':!cpuShadow&&blocker?'CPU lit but physical blocker present; diagnostic mismatch':'CPU lit and no physical blocker'});
+ }
+-const report={status:rows.some(r=>r.shadow.strictArtifactMismatch)?'CPU_PNG_MISMATCH_NO_FIX_INFERRED':'CPU_REFERENCE_COMPLETE_NO_GPU_PROOF',
+- scope:'Six preselected native pixels; actual frozen Float32 mesh, CPU Three rays and affine caster reference, not GPU bit/raster parity or unbiased frequency/art assessment',
++const report={status:rows.some(r=>r.shadow?.strictArtifactMismatch)?'CPU_PNG_MISMATCH_NO_FIX_INFERRED':'CPU_TWELVE_REFERENCE_COMPLETE_NO_GPU_PROOF',
++ scope:'Twelve preselected native pixels, no adaptive replacement; actual frozen Float32 mesh, CPU Three rays and affine caster reference, not GPU bit/raster parity or unbiased frequency/art assessment',
+  sourceManifestSHA256:protocol.sourceManifestSHA256,assetSHA256,meshStats:data.stats,bounds:{min:geometry.boundingBox!.min.toArray(),max:geometry.boundingBox!.max.toArray()},
+  frame:{camera:{...frame,nearKm:camera.near,farKm:camera.far,coordinateSystem:camera.coordinateSystem,view:camera.view,projectionMatrix:camera.projectionMatrix.toArray()},
+  light:{center:light.center.toArray(),sun:light.sun.toArray(),right:light.right.toArray(),up:light.up.toArray(),distanceKm:light.distanceKm,nearKm:light.nearKm,farKm:light.farKm,radiusKm:light.radiusKm,resolution:light.resolution,constants:TERRAIN_SHADOW_DEFAULTS}},
+  raycasts,maxManualDirectionError,timings:{meshBuildMs:meshMs,totalMs:performance.now()-started},
+- counts:{artifactMismatch:rows.filter(r=>r.shadow.strictArtifactMismatch).length,cpuShadow:rows.filter(r=>r.shadow.cpuShadow).length,physicalBlocker:rows.filter(r=>r.physicalSunRay.blocker).length},rows};
++ counts:{selected:points.length,noReceiver:rows.filter(r=>r.status==='NO_RECEIVER').length,artifactMismatch:rows.filter(r=>r.shadow?.strictArtifactMismatch).length,cpuShadow:rows.filter(r=>r.shadow?.cpuShadow).length,physicalBlocker:rows.filter(r=>r.physicalSunRay?.blocker).length,physicallyUnoccluded:rows.filter(r=>r.physicalSunRay?.physicallyUnoccluded).length,candidateControlsPhysicallyUnoccluded:rows.filter(r=>r.id.startsWith('C')&&r.physicalSunRay?.physicallyUnoccluded).length,falseShadowWholeMesh:rows.filter(r=>r.shadow?.cpuShadow&&r.physicalSunRay?.physicallyUnoccluded).length},rows};
+ material.dispose();geometry.dispose();
+ console.log(JSON.stringify(report,null,2));

@@ -1,0 +1,39 @@
+{
+  "baselineCommit": "908078042bda26471d57cb6a27d69dbec8655c3f",
+  "candidateVersion": "experiment-v58-triangle-texel-shadow",
+  "sourceManifestSHA256": "dfa3ec97b2c606f6fa1d1cd2f6d21dad44026095228026270fc02e150cb56921",
+  "port": 53764,
+  "seed": 74,
+  "surface": 0.7227685139973958,
+  "target": [
+    0.3515625,
+    3.119140625,
+    -0.0546875
+  ],
+  "time": 60,
+  "paused": true,
+  "wind": 0.55,
+  "dispersion": 0,
+  "approach": 0,
+  "leftArrows": 14,
+  "downArrows": 3,
+  "output": [
+    2474,
+    1844
+  ],
+  "quality": "ultra",
+  "nominalSteps": 384,
+  "volume": [
+    256,
+    256,
+    256
+  ],
+  "detailVolume": [
+    128,
+    128,
+    128
+  ],
+  "plannedFirstGate": "Settled native Sun main; compare original three shadow ROIs and all12fixed controls against physical witness. Capture full PNG with hash+metadata; no visual-pass claim from CPU or tests.",
+  "stopGate": "Shader errors, new visible artifacts or failed true-lit controls stop continuation to Rain/worker/performance and prevent adoption.",
+  "ifFirstGatePass": "Then native Rain/Sunset and worker, actual light-update cost and resource lifecycle qualification before adoption."
+}

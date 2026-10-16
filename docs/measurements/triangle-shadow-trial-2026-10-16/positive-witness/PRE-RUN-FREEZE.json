@@ -1,0 +1,110 @@
+{
+  "state": "FROZEN_BEFORE_UNIQUE_12_PIXEL_RUN",
+  "sourceManifestSHA256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+  "sourceFilesVerified": 124,
+  "sourceChangesVsCycle26": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/TerrainShadow.test.ts",
+    "src/cumulonimbus/TerrainShadow.ts",
+    "src/cumulonimbus/lifecycle.test.ts"
+  ],
+  "runtime": "Bun1.3.11 arm64",
+  "threeVersion": "0.186.0",
+  "algorithm": "Same cycle26 Float32 mesh/configured camera/FrontSide raw-q caster winner/physical DoubleSide ray. Exactly12 selected pixels, at most36 rays. No adaptive selection; retain all outcomes.",
+  "budget": {
+    "maxPixels": 12,
+    "maxRays": 36,
+    "CPUSeconds": 20,
+    "wallSeconds": 40,
+    "peakRSSBytes": 2147483648
+  },
+  "failurePolicy": "No retry. Kernel CPU20s, wall40s, terminal getrusage RSS2GiB; no RLIMIT_AS/RSS; no ps. Preserve errors and partial output.",
+  "physicalControlCriterion": "No accepted physical blocker AND Sun ray endpoint20km above whole mesh maximum Y. No blocker within20km alone is not sufficient.",
+  "inputs": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/PROTOCOL.json",
+      "bytes": 2625,
+      "sha256": "003f4622d2fe166b8215e4d1765c6c6e99f50e34fdbe5d34e841b80a3f0517d8"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/source-manifest.json",
+      "bytes": 13042,
+      "sha256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/baseline-native.json",
+      "bytes": 10484,
+      "sha256": "e17a341939e2b8eaf162ad77baebf80f35ba1ed5504a02ff1955a8cb2ab39a4e"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/baseline-native.png",
+      "bytes": 2817764,
+      "sha256": "af8877ac93db6fcd50ab3ceece43ac1a40fc7d21c41151afb3a9620ca7586be5"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/unshadowed-native.png",
+      "bytes": 2816591,
+      "sha256": "ba02c0cbcfac0931dc20668631ad6cee93830e74cb4c26261dad9f37358a54b1"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/positive-witness/selected-pixels.json",
+      "bytes": 2842,
+      "sha256": "d89b771513bdbddb15b3ada83c845fd75377eab8286707295c1375eff25ecc79"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/positive-witness/witness.ts",
+      "bytes": 13227,
+      "sha256": "71bb80711c5a523494be66beb58ef6cfd51655423ac0ecd5eb40214f39d45be2"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/positive-witness/run.py",
+      "bytes": 2471,
+      "sha256": "5a946617196677f5aa934b13c7af1b86d6cb0f0f65f9c0a317ccb038cf5361c1"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/package.json",
+      "bytes": 3672,
+      "sha256": "ab4ff6950aab522dfe6980f19914a5eb2cadb689a36c6c44f4d3869c5e46dc89"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/src/core/Raycaster.js",
+      "bytes": 8394,
+      "sha256": "2dd39d5742ee7aa5e54f4c83bd6b34d59f281f2c467e1dc0ce5122b89905f6d0"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/src/objects/Mesh.js",
+      "bytes": 12670,
+      "sha256": "21b8ace87b42eef8d791b539788bce8911b24912ba82bdfa7d9944b27a6d0c93"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/src/math/Ray.js",
+      "bytes": 17568,
+      "sha256": "4c88adbbefe35fefdeef8f971ce90220d44fa1699c39fc17d1c584a0c012b648"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/src/math/Matrix4.js",
+      "bytes": 33866,
+      "sha256": "d942c20d95e0864246aa6794934656f6a2871a6e863ce7b096581837810fb555"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/src/math/Triangle.js",
+      "bytes": 15103,
+      "sha256": "99044bc57c2ddc32c3cf616b333675b03d2ae71ea0e1e71f94fb3e28d103ab06"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/src/cameras/PerspectiveCamera.js",
+      "bytes": 10651,
+      "sha256": "1cc44938885f785649a978ecb6f57c444561381ddab24de19fc59b400009b111"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/src/cameras/Camera.js",
+      "bytes": 3459,
+      "sha256": "e64f3eea112454a52eb52fa4b567bb53853f2e9f8a562d263b55903e4464646d"
+    },
+    {
+      "path": "/Users/enuzzo/.bun/bin/bun",
+      "bytes": 61069216,
+      "sha256": "1d77af7bfd811aebb7d37bec496a5eed14fe227ded3ab7866d2f39786e8107b6"
+    }
+  ]
+}
