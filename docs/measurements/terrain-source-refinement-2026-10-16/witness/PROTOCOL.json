@@ -1,0 +1,73 @@
+{
+  "state": "PREPARED_UNEXECUTED_REQUIRES_ROOT_REVIEW_AND_FREEZE",
+  "revision": "R1_OFF_HISTORICAL_PARITY_THEN_ON_SOURCE_NODE_FIT",
+  "sourceRoot": "../refine-source",
+  "sourceManifest": "../refine-qualification-r1/source-manifest.json",
+  "sourceFiles": 126,
+  "sourceManifestSHA256": "83469d62c552db7bad9cbc175bf549f7b7c0bd8c0b113c137e484e1b4f315e00",
+  "historicalResult": "../geometry-preflight/run/result.json",
+  "historicalResultSHA256": "5ae2135e94ffca23757f07ae985b01033d5fedf985971e2439b04d6033c71a27",
+  "historicalErrorStreamSHA256": "6e5ff2fecacc6a7928dc927f341906f04b369cbbd976357d31f63d2faedf191a",
+  "decisionProtocol": "../refine-decision-protocol.json",
+  "execution": {
+    "authorization": "Preparation does not authorize execution. Root reviews REVIEW-FREEZE.json, freezes it as PRE-RUN-FREEZE.json with state ROOT_APPROVED_UNEXECUTED, and explicitly authorizes the separate OFF and ON commands.",
+    "commandsAfterApprovalOnly": [
+      "python3 run.py --execute-reviewed off",
+      "python3 run.py --execute-reviewed on"
+    ],
+    "order": "OFF must have complete historical parity plus terminal budget PASS before ON can launch.",
+    "attempts": "One exclusive run-off or run-on directory consumes the attempt even when preflight fails; no retry, directory replacement or extra model build.",
+    "perMode": {
+      "bunChildren": 1,
+      "candidateMeshBuilds": 1,
+      "childCPUHardSeconds": 20,
+      "combinedWrapperChildCPUTerminalGateSeconds": 20,
+      "wallWatchdogSecondsIncludingPreflightAndValidation": 40,
+      "terminalSumOfPeakRSSGateBytes": 2147483648,
+      "RSSScope": "macOS getrusage byte peaks, sum conservative, not simultaneous RSS and not an OS memory hard limit.",
+      "terminalObserved": true,
+      "resultJSONMaximumBytes": 4194304
+    }
+  },
+  "baseMeshOptions": {"cellsPerSide": 256, "levels": 9, "spacingKm": 0.032, "normalMode": "geometry"},
+  "off": {
+    "refinement": "absent",
+    "checks": ["All five historical buffer hashes", "Exact historical mesh stats and sampler count", "Exact saved aggregate/ring statistics and top8", "Historical full 591361-node Float64LE error digest"],
+    "rawStream": "New errors.f64le retained; authenticated reproduction only. The original historical stream was not retained."
+  },
+  "on": {
+    "sourceGrid": "Decoded DEM minX/minZ/spacingKm/side; engine-identical CDM1 metadata",
+    "domain": {"minXKm": -48, "maxXKm": 48, "minZKm": -48, "maxZKm": 48},
+    "maxErrorKmSelectionThresholdOnly": 0.005,
+    "limits": {"maxProbeCount": 600000, "maxVertices": 1000000, "maxTriangles": 2000000, "maxGeometryBytes": 67108864},
+    "identity": "Original positions and surface prefixes must match historical full-buffer hashes. Normals and indices may change; no old faceIndex identity claim.",
+    "topologyAccounting": "All cell first/count ranges contiguous, original holes empty, counts <=20, sum covers all index entries; all vertex indices in range and all attributes finite. This is not a full manifold proof.",
+    "pairedComparison": "Every ON error compared with its authenticated OFF Float64LE error, strict |on|<|off| improved / > worsened / equal; no epsilon. Sign flips, strict >5m crossings, compensated sums, RMS and top8 regressions/improvements reported globally, by material mask and original ring.",
+    "rawStream": "ON errors.f64le retained too, same layout; future offline comparison needs no model rerun.",
+    "numericalFitGate": "Within resources; global and landMask RMS strictly lower; global maxabs <= baseline+0.001m; landMask RMS rings2/3/4 strictly lower. No final <=5m or per-node monotonicity promise.",
+    "terminalVsDecision": "run.json status PASS means complete validated execution within budget. selectionFitGatePASS separately records the predeclared numerical fit decision; neither is art/adoption approval."
+  },
+  "measurement": {
+    "firstSourceIndex": 128,
+    "lastSourceIndex": 896,
+    "side": 769,
+    "nodes": 591361,
+    "queryCap": 600000,
+    "order": "increasing iz then ix, both inclusive",
+    "errorMetres": "1000*(terrainMeshSurfaceY(x,z,sampleTerrainDem.heightKm)-terrainMeshHeightAt(actualFloat32Mesh,x,z))",
+    "sign": "positive means mesh is below the DEM reference",
+    "stream": {"pathPerMode": "errors.f64le", "bytes": 4730888, "encoding": "Float64LE signed metres, one error per node, no header"},
+    "histogram": "Historical fixed 10002 bins: < -5000m, 10000 one-metre bins [-5000,5000), >=5000m",
+    "top8Ties": "earlier row-major order retained; exact extrema tie counts",
+    "masks": "coastKm>=0 or <0 are material masks, not independent land truth",
+    "rings": "Original grid ring membership unchanged; ring4 sampled only within the closed measured +/-48km square"
+  },
+  "limitsOfInference": [
+    "ON uses the same source nodes for selection and assessment: fit, not holdout.",
+    "Float32 attributes with JavaScript Float64 interpolation/arithmetic; no GPU or WGSL parity.",
+    "No new rays, pixels, ROI, source-node search, adaptive measurement, old-module rebuild, GPU, browser, app/volume bake, tests, build or install.",
+    "Selection threshold is not a continuous, areal or final-node maximum-error bound.",
+    "Geometry cap excludes CPU lookup arrays, temporary allocation and Maps; RSS has a separate terminal gate.",
+    "No shadow-cause, photographic acceptance, presentation cadence or 60FPS claim."
+  ]
+}

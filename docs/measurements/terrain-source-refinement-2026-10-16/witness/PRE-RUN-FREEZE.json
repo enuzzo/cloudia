@@ -1,0 +1,79 @@
+{
+  "state": "ROOT_APPROVED_UNEXECUTED",
+  "revision": "R1_OFF_HISTORICAL_PARITY_THEN_ON_SOURCE_NODE_FIT",
+  "sourceRoot": "../refine-source",
+  "sourceManifest": "../refine-qualification-r1/source-manifest.json",
+  "sourceManifestSHA256": "83469d62c552db7bad9cbc175bf549f7b7c0bd8c0b113c137e484e1b4f315e00",
+  "sourceFiles": 126,
+  "bun": "/Users/enuzzo/.bun/bin/bun",
+  "inputs": [
+    {
+      "path": "witness.ts",
+      "bytes": 23685,
+      "sha256": "0ae4817067a2a6e73ab56afc8d26bda41313f9bf595b718e74025e3a28e7e930"
+    },
+    {
+      "path": "run.py",
+      "bytes": 18191,
+      "sha256": "e53ff990ec65f89f029e941dad54ccd5dad6ca3290ea1c2dcb07180c7b8920a1"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "bytes": 5401,
+      "sha256": "5ec63f8ec7e3c35bd44a438071b6b53bc554171a21f39a3f1a16901d0c3fde96"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4823,
+      "sha256": "6e63ef510ca0e1caa0a25dbf77b67d357d30f3379a15b94321465a566d901364"
+    },
+    {
+      "path": "../refine-qualification-r1/source-manifest.json",
+      "bytes": 13275,
+      "sha256": "83469d62c552db7bad9cbc175bf549f7b7c0bd8c0b113c137e484e1b4f315e00"
+    },
+    {
+      "path": "../geometry-preflight/run/result.json",
+      "bytes": 2532734,
+      "sha256": "5ae2135e94ffca23757f07ae985b01033d5fedf985971e2439b04d6033c71a27"
+    },
+    {
+      "path": "../refine-decision-protocol.json",
+      "bytes": 1090,
+      "sha256": "a032e13f73ace31a0c44e940a36ad1a87652d566c845388d8ed7515c033c3ceb"
+    },
+    {
+      "path": "../refine-source/src/cumulonimbus/assets/liguria-apuane-dem.bin",
+      "bytes": 4202532,
+      "sha256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d"
+    },
+    {
+      "path": "../refine-source/node_modules/three/package.json",
+      "bytes": 3672,
+      "sha256": "ab4ff6950aab522dfe6980f19914a5eb2cadb689a36c6c44f4d3869c5e46dc89"
+    },
+    {
+      "path": "../refine-source/node_modules/three/build/three.webgpu.js",
+      "bytes": 2284823,
+      "sha256": "a78400fa1d359e81fcc12b84ed0a89a7fbecb4b8373e28ae8f9d2b11f6ea13bc"
+    },
+    {
+      "path": "../refine-source/node_modules/three/build/three.tsl.js",
+      "bytes": 36854,
+      "sha256": "6e6b92d8ce467818944f73815a96abadc6392fb34de577d479a23810b6aeeed0"
+    },
+    {
+      "path": "../refine-source/node_modules/three/build/three.core.js",
+      "bytes": 1458113,
+      "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6"
+    },
+    {
+      "path": "/Users/enuzzo/.bun/bin/bun",
+      "bytes": 61069216,
+      "sha256": "1d77af7bfd811aebb7d37bec496a5eed14fe227ded3ab7866d2f39786e8107b6"
+    }
+  ],
+  "approvalInstructions": "Root reviews this inventory and the programs, then copies it to PRE-RUN-FREEZE.json changing only state to ROOT_APPROVED_UNEXECUTED. This REVIEW file is not execution authorization and does not freeze sources anew. Root separately authorizes OFF, then ON only after full OFF parity and budget PASS.",
+  "selfDigestPolicy": "This inventory excludes itself. Root records the approved freeze digest separately.",
+  "preparationState": "No Bun, mesh build, DEM query, tests, typecheck, app build, GPU or browser invoked by this package. Existing source/dependency files were only read for hash inventory; no source or dependency mutation."
+}

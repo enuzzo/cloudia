@@ -1,0 +1,13 @@
+{
+  "phase": "source-copy-only",
+  "error": "Expected helper test in refine-proposal/src, but it is frozen separately in split-proposal.",
+  "baseFilesCopied": 124,
+  "overlaysCopied": [
+    "terrainMesh.ts",
+    "terrainMesh.test.ts",
+    "terrainSplitTriangle.ts"
+  ],
+  "engineIntegrationStarted": false,
+  "runtimeInvoked": false,
+  "recovery": "Preserve partial source; copy the exact Solar test from split-proposal; continue source integration only."
+}

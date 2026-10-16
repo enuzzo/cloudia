@@ -1,0 +1,60 @@
+{
+  "scope": "Pinned existing repository payloads, not duplicated",
+  "productAtCandidateQualification": "4047ace823ac0c8598e68c032d491a2a94b83a55",
+  "references": [
+    {
+      "path": "docs/measurements/terrain-geometry-error-2026-10-16/MANIFEST.json",
+      "bytes": 4057,
+      "sha256": "d1b16590f0dadce6cab84e67270e0629b3d1503c922b6eaefa8b4acdb6c9fdef",
+      "copied": false
+    },
+    {
+      "path": "docs/measurements/terrain-geometry-error-2026-10-16/preflight/run/result.json",
+      "bytes": 2532734,
+      "sha256": "5ae2135e94ffca23757f07ae985b01033d5fedf985971e2439b04d6033c71a27",
+      "copied": false
+    },
+    {
+      "path": "docs/measurements/triangle-shadow-trial-2026-10-16/MANIFEST.json",
+      "bytes": 24069,
+      "sha256": "fac1e021241a455faa47aeac69868d35da3af0c49f4ee0a05c86867656818248",
+      "copied": false
+    },
+    {
+      "path": "docs/measurements/terrain-shadow-cache-2026-10-16/MANIFEST.json",
+      "bytes": 14902,
+      "sha256": "8d1c2f22c1a6451590bf167f7fff34034dc66d7341cdd3d9ec33f415867f2190",
+      "copied": false
+    },
+    {
+      "path": "docs/measurements/terrain-shadow-cache-2026-10-16/browser/v58-main-sun-terrain-native-settled.png",
+      "bytes": 2817764,
+      "sha256": "af8877ac93db6fcd50ab3ceece43ac1a40fc7d21c41151afb3a9620ca7586be5",
+      "copied": false
+    },
+    {
+      "path": "docs/measurements/terrain-shadow-cache-2026-10-16/browser/v58-main-sun-terrain-native-settled.json",
+      "bytes": 10484,
+      "sha256": "e17a341939e2b8eaf162ad77baebf80f35ba1ed5504a02ff1955a8cb2ab39a4e",
+      "copied": false
+    },
+    {
+      "path": "docs/measurements/terrain-shadow-cache-2026-10-16/browser/v58-rain-B-native.png",
+      "bytes": 2508514,
+      "sha256": "9d4d3c19e24bf237691e3d18af0ae4e88b605cfc66c4637269062d72324e16de",
+      "copied": false
+    },
+    {
+      "path": "docs/measurements/terrain-shadow-cache-2026-10-16/browser/v58-rain-B-native.json",
+      "bytes": 10491,
+      "sha256": "28683897432ae647d3bd6977c6ff49425bd27a459b80e2a49e00b70de2cb2d3c",
+      "copied": false
+    },
+    {
+      "path": "src/cumulonimbus/assets/liguria-apuane-dem.bin",
+      "bytes": 4202532,
+      "sha256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d",
+      "copied": false
+    }
+  ]
+}

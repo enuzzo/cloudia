@@ -1,0 +1,20 @@
+{
+  "status": "FAIL",
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-payload/verify_saved.py",
+    "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-payload",
+    "--base-source",
+    "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/source",
+    "--runtime-source",
+    "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia"
+  ],
+  "terminalObserved": true,
+  "exitCode": 1,
+  "timedOut": false,
+  "wallSeconds": 0.1820073330309242,
+  "combinedCPUSeconds": 0.15287499999999998,
+  "conservativeSumOfPeakRSSBytes": 125009920,
+  "inputHashesUnchanged": true,
+  "scope": "One stdlib saved-evidence verification; no model, mesh, sampler, test, build or GPU replay."
+}

@@ -1,0 +1,17 @@
+{
+  "state": "FROZEN_BEFORE_UNIQUE_SAVED_STREAM_VERIFICATION",
+  "algorithm": "Read saved OFF/ON Float64LE arrays; classify original row-major nodes from integer coast codes; original ring membership. Independent math.fsum/heapq statistics and all18group/paired histograms, extrema, sums, RMS, counts and top8. No mesh, terrain sampler/query, TS or Bun.",
+  "nodesPerMode": 591361,
+  "bytesPerMode": 4730888,
+  "tolerance": {
+    "relative": 2e-12,
+    "absolute": 1e-08,
+    "countAndValueAndClassificationComparisons": "exact"
+  },
+  "limits": {
+    "verificationCPUSeconds": 20,
+    "wallSeconds": 40,
+    "terminalPeakRSSBytes": 2147483648
+  },
+  "failurePolicy": "Preserve any failure; no automatic retry or source/model run."
+}

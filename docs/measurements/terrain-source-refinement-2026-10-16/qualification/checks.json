@@ -1,0 +1,58 @@
+[
+  {
+    "name": "targeted-tests",
+    "command": [
+      "bun",
+      "run",
+      "test",
+      "--",
+      "src/cumulonimbus/terrainMesh.test.ts",
+      "src/cumulonimbus/terrainSplitTriangle.test.ts",
+      "--reporter=json",
+      "--outputFile=/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-qualification-r1/targeted-results.json"
+    ],
+    "exitCode": 0,
+    "timedOut": false,
+    "terminalObservedByPopen": true,
+    "elapsedSeconds": 1.317268208018504
+  },
+  {
+    "name": "full-tests",
+    "command": [
+      "bun",
+      "run",
+      "test",
+      "--",
+      "--reporter=json",
+      "--outputFile=/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-qualification-r1/test-results.json"
+    ],
+    "exitCode": 0,
+    "timedOut": false,
+    "terminalObservedByPopen": true,
+    "elapsedSeconds": 6.413590750074945
+  },
+  {
+    "name": "app-build",
+    "command": [
+      "bun",
+      "run",
+      "build"
+    ],
+    "exitCode": 0,
+    "timedOut": false,
+    "terminalObservedByPopen": true,
+    "elapsedSeconds": 4.4258449169574305
+  },
+  {
+    "name": "hero-build",
+    "command": [
+      "bun",
+      "run",
+      "build:hero"
+    ],
+    "exitCode": 0,
+    "timedOut": false,
+    "terminalObservedByPopen": true,
+    "elapsedSeconds": 2.1722864999901503
+  }
+]

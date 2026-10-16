@@ -1,0 +1,85 @@
+{
+  "state": "FROZEN_PREPARED_UNEXECUTED",
+  "baseSourceManifestSHA256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+  "baseSourceFilesVerified": 124,
+  "baseSourceRoot": "../../Cloudia-QA-2026-10-16-cycle27/source",
+  "files": [
+    {
+      "path": "src/cumulonimbus/terrainMesh.ts",
+      "bytes": 30453,
+      "sha256": "c7bc36a93960a688102546f70fadffcf67005073e86889b0afd2ab659ba78e5a"
+    },
+    {
+      "path": "src/cumulonimbus/terrainMesh.test.ts",
+      "bytes": 27863,
+      "sha256": "fc77a756c01abef42bfed1818fde57bdeaac93501eec0703fe8d8401c7549755"
+    },
+    {
+      "path": "src/cumulonimbus/terrainSplitTriangle.ts",
+      "bytes": 1249,
+      "sha256": "e8a14126eedcea99390b9bf9503b9df53fae6ad85e2f39aa184817d104443163"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7304,
+      "sha256": "726058254fe339b216e4609ac155a12127ef3c5bc623e2f2b7ca3313edcde36a"
+    },
+    {
+      "path": "STATIC-REVIEW.md",
+      "bytes": 1072,
+      "sha256": "beaac0b5e226c49981ee27b5f475acee3e64f7bb2770aa1f052468192c73a407"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "bytes": 2457,
+      "sha256": "c1266c979376b4eec4e0d00b449337a063c010e72326bb83eed32f62fcc793e1"
+    },
+    {
+      "path": "terrain-refinement.patch",
+      "bytes": 32225,
+      "sha256": "7161ebe0aa4ecfbff9ed2a2a1f6220227edda02aee24e0b4533c926901d74b21"
+    }
+  ],
+  "fileCount": 7,
+  "payloadBytes": 102623,
+  "inputs": [
+    {
+      "path": "../../Cloudia-QA-2026-10-16-cycle27/source-manifest.json",
+      "bytes": 13042,
+      "sha256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2"
+    },
+    {
+      "path": "../../Cloudia-QA-2026-10-16-cycle27/source/src/cumulonimbus/terrainMesh.ts",
+      "bytes": 18335,
+      "sha256": "f63dac6ea96144e7df44460f76f548068929ca6bc5c466fb49d4ee308e1697a7"
+    },
+    {
+      "path": "../../Cloudia-QA-2026-10-16-cycle27/source/src/cumulonimbus/terrainMesh.test.ts",
+      "bytes": 17915,
+      "sha256": "79742dcabb6a8de21144d49ec6de626b0f08c779b1fda81ea67f429b41cfd0dd"
+    },
+    {
+      "path": "../split-proposal/terrainSplitTriangle.ts",
+      "bytes": 1249,
+      "sha256": "e8a14126eedcea99390b9bf9503b9df53fae6ad85e2f39aa184817d104443163"
+    },
+    {
+      "path": "../split-proposal/terrainSplitTriangle.test.ts",
+      "bytes": 8040,
+      "sha256": "c013bbd7c291992461e5c133317a2a1df546979b2c2d164c3fdf9a097207d9a1"
+    },
+    {
+      "path": "../geometry-preflight/run/result.json",
+      "bytes": 2532734,
+      "sha256": "5ae2135e94ffca23757f07ae985b01033d5fedf985971e2439b04d6033c71a27"
+    },
+    {
+      "path": "../geometry-preflight/run/run.json",
+      "bytes": 1337,
+      "sha256": "d7ef1d4aedd493788aea814d8058a9ee891f3033761852340aeefcf2f6c00700"
+    }
+  ],
+  "selfPolicy": "Manifest excludes itself; its SHA and inclusive package size reported externally",
+  "dependencyPolicy": "No install, new dependency directory, cache, or node_modules symlink created",
+  "soleProductWriter": "root; this package is an external unapplied overlay only"
+}

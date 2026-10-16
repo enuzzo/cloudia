@@ -1,0 +1,12 @@
+{
+  "state": "APPROVED_UNEXECUTED",
+  "source": "../final-source",
+  "sourceManifestSHA256": "fb6c231918e7a825f5b1a407efcd98aaacf5cca352c60cbdcdb9b5271a913ff2",
+  "commands": [
+    "full435tests",
+    "APP build(typecheck)",
+    "hero build(typecheck)"
+  ],
+  "timeoutSecondsPerCommand": 45,
+  "scope": "Final tag-only adoption qualification; no numerical replay or GPU. Protected dependencies symlink. Candidate435 alreadypassed; this run confirms final version assertion."
+}

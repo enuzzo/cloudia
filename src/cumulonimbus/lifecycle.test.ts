@@ -322,6 +322,11 @@ describe('scene async lifecycle',()=>{
     try{
       expect(control.terrain).toHaveLength(1);const terrain=control.terrain[0];
       expect(terrain.configuration.sample).toEqual(expect.any(Function));expect(terrain.configuration.shade).toEqual(expect.any(Function));
+      // The mocked source uses a different lattice from the shipped DEM. The
+      // refinement adapter must pass the loaded metadata, not a 125m constant.
+      expect(terrain.configuration.refinement?.sourceGrid).toEqual({minXKm:-64,minZKm:-64,spacingKm:64,columns:3,rows:3});
+      expect(terrain.configuration.refinement?.maxErrorKm).toBe(.005);
+      expect(terrain.configuration.refinement?.domain).toEqual({minXKm:-48,maxXKm:48,minZKm:-48,maxZKm:48});
       expect(terrain.resize).toHaveBeenLastCalledWith(1920,1080);
       expect((inputs[0].terrainRaster as {value:unknown}).value).toBe(terrain.texture);
       expect(terrain.render).toHaveBeenCalledOnce();
@@ -492,7 +497,7 @@ describe('scene async lifecycle',()=>{
       queuePrefix:{status:string;measuredSubmissions:number;confirmedPrefixId:number;samples:Array<{kind:string;prefixId:number}>}};
     expect(report.densitySamplingStart).toMatchObject({path:'r8unorm-extracted-r',format:'r8unorm',dimensions:[1,1,1],textureBytes:1,extraCpuPayloadBytes:1,extraGpuPayloadBytes:1,fallback:null});
     expect(report.densitySamplingEnd).toEqual(report.densitySamplingStart);
-    expect(report.rendererVersion).toBe('observatory-v58-terrain-shadow-cache');
+    expect(report.rendererVersion).toBe('observatory-v59-terrain-source-refinement');
     expect(report).toHaveProperty('terrainSurfaceId','copernicus-glo90-liguria-apuane-v1');
     expect(report).toHaveProperty('terrainGeography',expect.objectContaining({originDegrees:[44,10],verticalExaggeration:1,measuredSquareHalfWidthKm:48}));
     expect(report).toHaveProperty('terrainCover',expect.objectContaining({id:'esa-worldcover-2021-area-fractions-v1',year:2021,sourceClasses:12,materialGroups:8,gridSize:[2,2],sourceAssetBytes:80,retainedCpuPayloadBytes:32,totalGpuPayloadBytes:40}));

@@ -1,0 +1,47 @@
+{
+  "state": "SAVED_STREAM_VERIFICATION_COMPLETE_NO_MODEL_REPLAY",
+  "payloadFiles": 8,
+  "payloadBytes": 28405,
+  "payload": [
+    {
+      "path": "verify.py",
+      "bytes": 11353,
+      "sha256": "b8074ad4c61ad9ac3716e2de13dc9cbb01167e1c89a1c7baa68d6e4772c9153f"
+    },
+    {
+      "path": "run.py",
+      "bytes": 1535,
+      "sha256": "9402cd0a3f776be6377ac15e9abc573799800c1918fd7998efc68ae8b82b06fa"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "bytes": 734,
+      "sha256": "a54c491421d1fe31780c05f7410d57ea82d1a820821ab8471c24f920d3a738bf"
+    },
+    {
+      "path": "PRE-RUN-FREEZE.json",
+      "bytes": 4211,
+      "sha256": "a2f70ee549443b98ec5d4c981139aae35431ca54c5da109600f114cf955c4d14"
+    },
+    {
+      "path": "result.json",
+      "bytes": 4760,
+      "sha256": "4d019fc41ffed2810a7e715644c9af6bf0dafdb9f659a45f924c6ba0c46ce656"
+    },
+    {
+      "path": "stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run.json",
+      "bytes": 609,
+      "sha256": "6c0ee6d7330cdb5234b749fcc0459aaa0476145c338caf7041043c9510bbe2ce"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5203,
+      "sha256": "f1e664d70f3b65aa9fbf42e74f90a0afde335f03cfebe35c0086ef9dcee6dcfb"
+    }
+  ]
+}

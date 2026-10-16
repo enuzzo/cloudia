@@ -1,0 +1,63 @@
+{
+  "state": "PREDECLARED_UNEXECUTED",
+  "sequence": [
+    "v58 Rain A1",
+    "refinement Rain B",
+    "v58 Rain A2"
+  ],
+  "sourceCandidateSHA256": "83469d62c552db7bad9cbc175bf549f7b7c0bd8c0b113c137e484e1b4f315e00",
+  "stable124SHA256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+  "quality": {
+    "output": [
+      2474,
+      1844
+    ],
+    "internal": [
+      2474,
+      1844
+    ],
+    "volume": [
+      256,
+      256,
+      256
+    ],
+    "detail": [
+      128,
+      128,
+      128
+    ],
+    "steps": 384,
+    "ablation": "full",
+    "flow": "full"
+  },
+  "pose": {
+    "seed": 74,
+    "surface": 0.7227685139973958,
+    "target": [
+      0.3515625,
+      3.119140625,
+      -0.0546875
+    ],
+    "yaw": 1.3852869846402587,
+    "pitch": 0.2811279826464208,
+    "simulationTime": 60,
+    "paused": true,
+    "weather": "rain",
+    "rain": 0.8,
+    "wind": 0.55,
+    "dispersion": 0
+  },
+  "measurement": {
+    "thread": "main",
+    "timing": "queue",
+    "warmupMs": 2000,
+    "targetDurationMs": 30000,
+    "concurrency": "No other browser render or CPU model/test/build during measurements",
+    "metric": "submitted frames per wall time; compositor presentation unavailable"
+  },
+  "decision": {
+    "maxBaselineDriftFraction": 0.15,
+    "minimumBOverBracketMean": 0.9,
+    "onDriftOrCostFailure": "No adoption on inconclusive performance evidence; preserve runs and investigate with a separately declared followup. No 60FPS claim from this local case."
+  }
+}

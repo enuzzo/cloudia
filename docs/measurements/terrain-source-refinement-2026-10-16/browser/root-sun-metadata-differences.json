@@ -1,0 +1,44 @@
+[
+  {
+    "path": "camera.origin.0",
+    "candidate": 15.45970789077028,
+    "baseline": 15.459707890770279,
+    "delta": 1.7763568394002505e-15
+  },
+  {
+    "path": "camera.right.2",
+    "candidate": -0.982842431409264,
+    "baseline": -0.9828424314092641,
+    "delta": 1.1102230246251565e-16
+  },
+  {
+    "path": "camera.up.1",
+    "candidate": 0.9607431026041496,
+    "baseline": 0.9607431026041495,
+    "delta": 1.1102230246251565e-16
+  },
+  {
+    "path": "camera.yaw",
+    "candidate": 1.385286984640259,
+    "baseline": 1.3852869846402587,
+    "delta": 2.220446049250313e-16
+  },
+  {
+    "path": "lighting.ambientColor.1",
+    "candidate": 0.10718098056640864,
+    "baseline": 0.10718098056640865,
+    "delta": -1.3877787807814457e-17
+  },
+  {
+    "path": "lighting.solarColor.0",
+    "candidate": 0.931342639141254,
+    "baseline": 0.9313426391412541,
+    "delta": -1.1102230246251565e-16
+  },
+  {
+    "path": "lighting.sunDirection.2",
+    "candidate": 0.2138005095510647,
+    "baseline": 0.21380050955106467,
+    "delta": 2.7755575615628914e-17
+  }
+]

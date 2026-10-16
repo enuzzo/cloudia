@@ -1,0 +1,12 @@
+{
+  "state": "BEFORE_NUMERICAL_OFF_ON_RUNS",
+  "candidateSourceManifestSHA256": "83469d62c552db7bad9cbc175bf549f7b7c0bd8c0b113c137e484e1b4f315e00",
+  "selectionThresholdKm": 0.005,
+  "numericalGate": {
+    "off": "Exact five buffer hashes, stats and full core error digest match saved v58 baseline.",
+    "on": "Within all declared resource limits; global and landMask RMS strictly lower; overall max absolute node error no more than baseline +0.001m; landMask RMS of rings2/3/4 strictly lower. Report all other groups and point regressions without hiding them.",
+    "meaning": "Selection/fit gate only; no holdout, continuous bound, native art, shadow cause or FPS proof."
+  },
+  "nativeGate": "Same settled Sun pose, native2474x1844,256/128/384. Root and independent review must see more credible relief with no new pattern or coastline failure before Rain/worker/FPS continuation. If FAIL, preserve v58 and stop that trial.",
+  "adoptionGate": "Requires qualified geometry/lookup/lifecycle, native evidence and actual cost review; no reduction of configured output or cloud quality."
+}

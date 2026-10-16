@@ -1,0 +1,21 @@
+{
+  "canvas": true,
+  "internal": true,
+  "volume": true,
+  "detailVolume": true,
+  "nominalSteps": true,
+  "quality": true,
+  "ablation": true,
+  "flowMode": true,
+  "paused": true,
+  "seed": true,
+  "family": true,
+  "terrain": true,
+  "origin": false,
+  "target": true,
+  "yaw": false,
+  "pitch": true,
+  "lighting": false,
+  "numericPoseAndLightingWithin1e-12": true,
+  "note": "Exact serialization equality false for seven Float64 values by at most 1.78e-15; within stated 1e-12 metadata tolerance. Full differences retained."
+}

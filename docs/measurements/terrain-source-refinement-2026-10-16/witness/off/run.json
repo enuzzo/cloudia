@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "mode": "off",
+  "scope": "Execution/parity/fit evidence only; not native art, GPU parity, continuous bound or FPS acceptance",
+  "launched": true,
+  "pid": 99696,
+  "terminalObserved": true,
+  "exitCode": 0,
+  "wallKilled": false,
+  "error": null,
+  "budgetPASS": true,
+  "budget": {
+    "combinedCPUSeconds": 2.018513,
+    "wrapperCPUSeconds": 0.102018,
+    "childCPUSeconds": 1.9164949999999998,
+    "wallSeconds": 1.6515198330162093,
+    "wrapperPeakRSSBytes": 40632320,
+    "childPeakRSSBytes": 869662720,
+    "conservativeSumOfPeakRSSBytes": 910295040,
+    "childCPUHardLimitSeconds": 20,
+    "combinedCPUTerminalGateSeconds": 20,
+    "totalWallLimitSeconds": 40,
+    "sumOfPeakRSSGateBytes": 2147483648,
+    "RSSScope": "Darwin getrusage terminal byte peaks; conservative sum, not simultaneous RSS. No OS memory reservation or hard RSS/AS limit."
+  },
+  "selectionFitGatePASS": true,
+  "preflight": {
+    "sourceFilesVerified": 126,
+    "inputFilesVerified": 13,
+    "sourceManifestSHA256": "83469d62c552db7bad9cbc175bf549f7b7c0bd8c0b113c137e484e1b4f315e00",
+    "historicalResultSHA256": "5ae2135e94ffca23757f07ae985b01033d5fedf985971e2439b04d6033c71a27",
+    "freezeSHA256": "b557333cf30cbce1887d4e11b4b47d423d18bb991c955ca3fd26f2c31509f387",
+    "decisionProtocolSHA256": "a032e13f73ace31a0c44e940a36ad1a87652d566c845388d8ed7515c033c3ceb",
+    "dependencyIgnoreValue": "1",
+    "threeVersion": "0.186.0",
+    "bunPath": "/Users/enuzzo/.bun/bin/bun",
+    "offDependency": null,
+    "preflightSeconds": 0.061748916981741786,
+    "sourceFilesReverifiedAfter": 126,
+    "dependencyIgnoreValueAfter": "1"
+  },
+  "validation": {
+    "offParity": "All five buffer hashes, exact mesh stats, aggregates/rings and complete node error digest match saved historical result",
+    "retainedStreamSHA256": "6e5ff2fecacc6a7928dc927f341906f04b369cbbd976357d31f63d2faedf191a",
+    "retainedStreamBytes": 4730888,
+    "resultSHA256": "fada06fe4d91b632da9488edb43c227dbd9475f9e1668c19f95a758f1f2873fb",
+    "resultBytes": 2530852
+  },
+  "resultSHA256": "fada06fe4d91b632da9488edb43c227dbd9475f9e1668c19f95a758f1f2873fb",
+  "resultBytes": 2530852
+}

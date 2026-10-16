@@ -1,0 +1,65 @@
+{
+  "state": "PREPARED_UNEXECUTED_REQUIRES_ROOT_REVIEW_AND_NEW_RUN_GATE",
+  "revision": "R1_SINGLE_ORIGINAL_FACE_PASS",
+  "baseCommit": "908078042bda26471d57cb6a27d69dbec8655c3f",
+  "baseSourceManifestSHA256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+  "baseFilesVerified": 124,
+  "overlayExisting": [
+    "src/cumulonimbus/terrainMesh.ts",
+    "src/cumulonimbus/terrainMesh.test.ts"
+  ],
+  "overlayAdded": [
+    "src/cumulonimbus/terrainSplitTriangle.ts"
+  ],
+  "virtualSourceFilesWithoutSolarTest": 125,
+  "newTestsPreparedNominal": 7,
+  "execution": {
+    "Bun": false,
+    "typecheck": false,
+    "tests": false,
+    "mesh": false,
+    "DEMprobes": false,
+    "GPU": false,
+    "appIntegration": false,
+    "build": false
+  },
+  "selectionForFutureActualScene": {
+    "sourceGrid": {
+      "minXKm": -64,
+      "minZKm": -64,
+      "spacingKm": 0.125,
+      "columns": 1025,
+      "rows": 1025
+    },
+    "domain": {
+      "minXKm": -48,
+      "maxXKm": 48,
+      "minZKm": -48,
+      "maxZKm": 48
+    },
+    "maxErrorKm": 0.005,
+    "sourceNodes": 591361,
+    "order": "increasing Z node index then X index",
+    "eligibility": "Original winning face maxXZspan >= sourceGrid.spacingKm",
+    "sampleField": "Same TerrainSampler for original vertices, probes and Float32 midpoint coordinates",
+    "thresholdMeaning": "Engineering selection only; no post-refinement error guarantee"
+  },
+  "structuralBounds": {
+    "passes": 1,
+    "maxTrianglesFactor": 4,
+    "maxNewMidpoints": "3*Toriginal loose bound; one ID per original undirected edge",
+    "maxAddedTriangles": "2*M on conforming original disk",
+    "maxAddedNominalGeometryBytes": "56*M",
+    "maxChildrenPerOriginalCell": 20,
+    "actualSceneChildTableBytes": 589824
+  },
+  "lookup": "Original bounded 3 levels x3x3 cells; optional child count, <=20triangles/cell; no full scan per node",
+  "runtimeLimits": "Caller must supply explicit probe/vertex/triangle/nominal geometry caps; root must approve CPU/wall/RSS gate before any execution",
+  "resourceCaveats": [
+    "Final payload budget is not construction peak RSS",
+    "Map built before final geometry budget check",
+    "Original and refined buffers and geometric normal accumulator can coexist"
+  ],
+  "offParity": "No extra buffers/stat keys/probes; independent baseline byte comparison still required before trial",
+  "acceptance": "No numerical, GPU, art or performance PASS; static source review only"
+}

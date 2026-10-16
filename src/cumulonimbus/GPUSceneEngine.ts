@@ -16,7 +16,7 @@ import { MOTION_FIELD_SIZE,fillMotionField,writeFilteredSourcePosition } from '.
 import { EXTINCTION, ICE_EXTINCTION, DETAIL_RESOLUTION, SUN_LEFT, VOLUME_RESOLUTION, cloudParameters, morphologyFamily, iceHeights, sampleCloudDensity, BOUNDS_MIN, BOUNDS_SIZE, type CloudVolume } from './volume';
 import { conservativeEmptyStep } from './emptyTraversal';
 import {clampCameraAboveLandscape,CAMERA_TERRAIN_CLEARANCE_KM,TERRAIN_HASH_ID} from './landscape';
-import {TerrainMesh,type TerrainSampler} from './terrainMesh';
+import {TerrainMesh,type TerrainSampler,type TerrainMeshRefinement} from './terrainMesh';
 import {terrainSurfaceSample,TERRAIN_SURFACE_WGSL} from './terrainSurface';
 import {loadTerrainDem,createDemTerrainSampler,TERRAIN_DEM_ID} from './terrainDem';
 import {loadTerrainCover,TERRAIN_COVER_ID} from './terrainCover';
@@ -30,7 +30,7 @@ import type {NarrowCloudVolume} from './narrowCloud';
 import {readDensityR8,type DensityR8Packet} from './densityR8';
 import {NativeFrameExporter,type NativeFrameExportEvent} from './nativeFrameExport';
 
-const RENDERER_VERSION='observatory-v58-terrain-shadow-cache';
+const RENDERER_VERSION='observatory-v59-terrain-source-refinement';
 
 export const QUALITY = {
   native: {label:'Alta · 100% / 128 passi', scale:1, steps:128},
@@ -47,6 +47,7 @@ export class GPUSceneEngine {
   private material: MeshBasicNodeMaterial | null = null;
   private terrainRaster:TerrainMesh|null=null;
   private terrainSample:TerrainSampler=terrainSurfaceSample;
+  private terrainRefinement:TerrainMeshRefinement|undefined;
   private terrainCover:TerrainCoverTextures|null=null;
   private readonly terrainRequest=new AbortController();
   private volume: Data3DTexture | null = null;
@@ -247,6 +248,11 @@ export class GPUSceneEngine {
       const [measuredTerrain,measuredCover]=await Promise.all([loadTerrainDem(this.terrainRequest.signal),loadTerrainCover(this.terrainRequest.signal)]);
       if(this.destroyed||this.deviceLost){await this.releaseGPU();return;}
       this.terrainSample=createDemTerrainSampler(measuredTerrain,terrainSurfaceSample);
+      this.terrainRefinement={
+        sourceGrid:{minXKm:measuredTerrain.minX,minZKm:measuredTerrain.minZ,spacingKm:measuredTerrain.spacingKm,columns:measuredTerrain.side,rows:measuredTerrain.side},
+        domain:{minXKm:-48,maxXKm:48,minZKm:-48,maxZKm:48},maxErrorKm:.005,
+        limits:{maxProbeCount:600000,maxVertices:1000000,maxTriangles:2000000,maxGeometryBytes:64*1024*1024},
+      };
       if(measuredCover.minX!==-64||measuredCover.minZ!==-64||measuredCover.side*measuredCover.spacingKm!==128)throw new Error('Estensione della copertura del suolo incompatibile con il terreno');
       this.terrainCover=createTerrainCoverTextures(measuredCover);
       const texture = await this.loadVolume();
@@ -321,8 +327,9 @@ export class GPUSceneEngine {
       return terrainSurfaceMaterial(point,height,coast,normal,distance,pixelKm,sun,solar,ambient,solarVisibility,coverA,coverB);
     }`,[wgsl(TERRAIN_SURFACE_WGSL)]);
     if(!this.terrainCover)throw new Error('Copertura del suolo non preparata');
+    if(!this.terrainRefinement)throw new Error('Rilievo per la geometria non preparato');
     const coverMapA=texture(this.terrainCover.coverA),coverMapB=texture(this.terrainCover.coverB);
-    this.terrainRaster=new TerrainMesh({cellsPerSide:256,levels:9,normalMode:'geometry',sample:this.terrainSample,shade:({positionWorld,normal,height,coast,distance,shadowVisibility})=>
+    this.terrainRaster=new TerrainMesh({cellsPerSide:256,levels:9,normalMode:'geometry',sample:this.terrainSample,refinement:this.terrainRefinement,shade:({positionWorld,normal,height,coast,distance,shadowVisibility})=>
       shade({point:positionWorld,normal,height,coast,distance,sun:this.sun,solar:this.solarColor,ambient:this.ambientColor,solarVisibility:shadowVisibility,coverMapA,coverSamplerA:coverMapA,coverMapB,coverSamplerB:coverMapB}) as Node<'vec3'>});
   }
   private renderTerrain(){
@@ -896,7 +903,7 @@ export class GPUSceneEngine {
       await this.queuePromise;
       await Promise.all(this.frameCompletions);
       this.releasingGPU=true;
-      this.terrainRaster?.dispose();this.terrainRaster=null;this.terrainSample=terrainSurfaceSample;this.terrainCover?.dispose();this.terrainCover=null;
+      this.terrainRaster?.dispose();this.terrainRaster=null;this.terrainSample=terrainSurfaceSample;this.terrainRefinement=undefined;this.terrainCover?.dispose();this.terrainCover=null;
       this.skyRequest++;this.skyCache.destroy();this.rainTexture.dispose();this.cameraVolume=null;this.material?.dispose(); this.volume?.dispose();this.detailVolume?.dispose();this.sunsetVolume?.dispose();this.narrowCloudVolume?.dispose();this.densityR8Volume?.dispose();this.currentFlow.dispose();this.skyTexture.dispose();this.skyFromTexture.dispose();this.interpolateFlow.dispose(); this.renderer?.dispose(); this.device?.destroy();
     })();
     return this.cleanup;

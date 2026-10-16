@@ -1,0 +1,16 @@
+{
+  "exitCode": 0,
+  "terminalObserved": true,
+  "wallKilled": false,
+  "wallSeconds": 6.0834569580620155,
+  "CPUSeconds": 6.040792000000001,
+  "peakRSSBytes": 109969408,
+  "CPUHardLimitSeconds": 20,
+  "wallLimitSeconds": 40,
+  "terminalPeakRSSGateBytes": 2147483648,
+  "scope": "Saved-stream Python verification only; no model/mesh/query/Bun/test/GPU",
+  "RSSScope": "Darwin terminal getrusage bytes; no AS/RSS limit",
+  "pass": true,
+  "stdoutSHA256": "4d019fc41ffed2810a7e715644c9af6bf0dafdb9f659a45f924c6ba0c46ce656",
+  "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

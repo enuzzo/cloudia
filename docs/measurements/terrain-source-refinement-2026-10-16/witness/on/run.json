@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "mode": "on",
+  "scope": "Execution/parity/fit evidence only; not native art, GPU parity, continuous bound or FPS acceptance",
+  "launched": true,
+  "pid": 99882,
+  "terminalObserved": true,
+  "exitCode": 0,
+  "wallKilled": false,
+  "error": null,
+  "budgetPASS": true,
+  "budget": {
+    "combinedCPUSeconds": 2.7904120000000003,
+    "wrapperCPUSeconds": 0.123139,
+    "childCPUSeconds": 2.6672730000000002,
+    "wallSeconds": 2.3148836670443416,
+    "wrapperPeakRSSBytes": 54165504,
+    "childPeakRSSBytes": 1135427584,
+    "conservativeSumOfPeakRSSBytes": 1189593088,
+    "childCPUHardLimitSeconds": 20,
+    "combinedCPUTerminalGateSeconds": 20,
+    "totalWallLimitSeconds": 40,
+    "sumOfPeakRSSGateBytes": 2147483648,
+    "RSSScope": "Darwin getrusage terminal byte peaks; conservative sum, not simultaneous RSS. No OS memory reservation or hard RSS/AS limit."
+  },
+  "selectionFitGatePASS": true,
+  "preflight": {
+    "sourceFilesVerified": 126,
+    "inputFilesVerified": 13,
+    "sourceManifestSHA256": "83469d62c552db7bad9cbc175bf549f7b7c0bd8c0b113c137e484e1b4f315e00",
+    "historicalResultSHA256": "5ae2135e94ffca23757f07ae985b01033d5fedf985971e2439b04d6033c71a27",
+    "freezeSHA256": "b557333cf30cbce1887d4e11b4b47d423d18bb991c955ca3fd26f2c31509f387",
+    "decisionProtocolSHA256": "a032e13f73ace31a0c44e940a36ad1a87652d566c845388d8ed7515c033c3ceb",
+    "dependencyIgnoreValue": "1",
+    "threeVersion": "0.186.0",
+    "bunPath": "/Users/enuzzo/.bun/bin/bun",
+    "offDependency": {
+      "runSHA256": "22ee788f9eefff41fa955b46816c2f74e84ffc936bb835734f348a4fbf88eaa4",
+      "resultSHA256": "fada06fe4d91b632da9488edb43c227dbd9475f9e1668c19f95a758f1f2873fb",
+      "streamSHA256": "6e5ff2fecacc6a7928dc927f341906f04b369cbbd976357d31f63d2faedf191a",
+      "bytes": 4730888
+    },
+    "preflightSeconds": 0.05973012500908226,
+    "sourceFilesReverifiedAfter": 126,
+    "dependencyIgnoreValueAfter": "1"
+  },
+  "validation": {
+    "predeclaredNumericalGate": {
+      "globalRMSStrictlyLower": true,
+      "landRMSStrictlyLower": true,
+      "globalMaxAbsNoMoreThanBaselinePlus1mm": true,
+      "landRing2RMSStrictlyLower": true,
+      "landRing3RMSStrictlyLower": true,
+      "landRing4RMSStrictlyLower": true
+    },
+    "retainedStreamSHA256": "58ca7139fc88f4f087854cb80a4901a8645536b23c7d504dc1c7bfecb7186093",
+    "retainedStreamBytes": 4730888,
+    "resultSHA256": "dcea70f1bdfd076c0b482fec87f31659e49a473d25f6f9458915c3bf5b4a2835",
+    "resultBytes": 2626762
+  },
+  "resultSHA256": "dcea70f1bdfd076c0b482fec87f31659e49a473d25f6f9458915c3bf5b4a2835",
+  "resultBytes": 2626762
+}

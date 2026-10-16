@@ -1,0 +1,18 @@
+{
+  "version": "observatory-v59-terrain-source-refinement",
+  "baseline124ManifestSHA256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+  "candidate126ManifestSHA256": "83469d62c552db7bad9cbc175bf549f7b7c0bd8c0b113c137e484e1b4f315e00",
+  "final126ManifestSHA256": "fb6c231918e7a825f5b1a407efcd98aaacf5cca352c60cbdcdb9b5271a913ff2",
+  "changedPaths": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/lifecycle.test.ts",
+    "src/cumulonimbus/terrainMesh.test.ts",
+    "src/cumulonimbus/terrainMesh.ts",
+    "src/cumulonimbus/terrainSplitTriangle.test.ts",
+    "src/cumulonimbus/terrainSplitTriangle.ts"
+  ],
+  "candidateToFinalOnlyChanges": "Renderer version literal in GPUSceneEngine and corresponding lifecycle expectation; numerical module/helper byte-identical.",
+  "repoMatchesFinalSource": true,
+  "decision": "Adopt after OFF historical parity, ON fit,435 tests/builds, native Sun/Rain/Sunset and worker parity, cost ABA PASS. Shadow/full artistic and global60FPS gates open.",
+  "preparationCorrection": "First attempt referenced absent cycle28/geometry-preflight/source-manifest.json, failed before any write/model. Correct immutable baseline is cycle27/source-manifest.json."
+}

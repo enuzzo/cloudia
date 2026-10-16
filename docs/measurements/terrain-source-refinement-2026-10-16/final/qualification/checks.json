@@ -1,0 +1,41 @@
+[
+  {
+    "name": "full-tests",
+    "command": [
+      "bun",
+      "run",
+      "test",
+      "--",
+      "--reporter=json",
+      "--outputFile=/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/final-qualification/test-results.json"
+    ],
+    "exitCode": 0,
+    "timedOut": false,
+    "terminalObservedByPopen": true,
+    "elapsedSeconds": 6.555741416988894
+  },
+  {
+    "name": "app-build",
+    "command": [
+      "bun",
+      "run",
+      "build"
+    ],
+    "exitCode": 0,
+    "timedOut": false,
+    "terminalObservedByPopen": true,
+    "elapsedSeconds": 4.373429166036658
+  },
+  {
+    "name": "hero-build",
+    "command": [
+      "bun",
+      "run",
+      "build:hero"
+    ],
+    "exitCode": 0,
+    "timedOut": false,
+    "terminalObservedByPopen": true,
+    "elapsedSeconds": 2.16753487510141
+  }
+]

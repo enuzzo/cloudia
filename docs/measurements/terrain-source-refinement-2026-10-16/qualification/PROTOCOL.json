@@ -1,0 +1,16 @@
+{
+  "sourceCount": 126,
+  "sourceManifestSHA256": "83469d62c552db7bad9cbc175bf549f7b7c0bd8c0b113c137e484e1b4f315e00",
+  "version": "experiment-v58-source-node-refinement",
+  "expectedTests": 435,
+  "expectedTestFiles": 46,
+  "commands": [
+    "targeted-tests",
+    "full-tests",
+    "app-build",
+    "hero-build"
+  ],
+  "timeoutSecondsPerCommand": 45,
+  "scope": "Qualification of external candidate only. No global DEM witness, GPU, native or FPS acceptance. Stops at first failure.",
+  "invariants": "v58 cloud shader, density, material, receiver, shadow cache; 256/128/384 full output retained."
+}

@@ -1,0 +1,185 @@
+{
+  "scope": "Saved metadata arithmetic and PNG identities only; no model/run/GPU/readback test",
+  "rain": {
+    "exactFields": {
+      "seed": true,
+      "family": true,
+      "quality": true,
+      "nominalSteps": true,
+      "output": true,
+      "internal": true,
+      "canvas": true,
+      "volume": true,
+      "detailVolume": true,
+      "paused": true,
+      "orbit": true,
+      "flowMode": true,
+      "ablation": true,
+      "densitySampling": true,
+      "narrowCloudSpecialization": true
+    },
+    "cameraExact": false,
+    "cameraNumericF32Compatible": true,
+    "lightingNumericF32Compatible": true,
+    "weatherNumericF32Compatible": true,
+    "clockFieldsExact": {
+      "simulationTime": true,
+      "forcingTime": true,
+      "precipitationUniformTime": true,
+      "flowUniformTime": true,
+      "flowFieldTime": true,
+      "flowFieldDispersion": true
+    },
+    "weatherTimeBaseline": 27.069300000000045,
+    "weatherTimeCandidate": 157.80980000000554,
+    "camera": {
+      "approach": 0,
+      "aspect": 1.341648590021692,
+      "comparisonSurfaceKm": 0.7227685139973958,
+      "comparisonTargetKm": [
+        0.3515625,
+        3.119140625,
+        -0.0546875
+      ],
+      "forward": [
+        -0.9442590869231424,
+        -0.27743952638107033,
+        -0.177206337258352
+      ],
+      "ground": 1,
+      "origin": [
+        15.45970789077028,
+        7.558173047097125,
+        2.780613896133632
+      ],
+      "pitch": 0.2811279826464208,
+      "probe": null,
+      "probeAgeMs": null,
+      "probeSkipped": true,
+      "right": [
+        0.18444716051358995,
+        0,
+        -0.982842431409264
+      ],
+      "surfaceEstimateKm": null,
+      "tanHalfVerticalFov": 0.2867,
+      "target": [
+        0.3515625,
+        3.119140625,
+        -0.0546875
+      ],
+      "terrainClearanceKm": 0.2,
+      "up": [
+        -0.27267933867740585,
+        0.9607431026041496,
+        -0.05117293285522365
+      ],
+      "yaw": 1.385286984640259
+    },
+    "weather": {
+      "atmosphereBlend": 1,
+      "atmosphereProgress": 1,
+      "dispersion": 0,
+      "haze": 2.6,
+      "overcast": 0.85,
+      "precipitationBounds": [
+        -3.359375,
+        -2.0234375,
+        2.265625,
+        2.1328125
+      ],
+      "precipitationExtinctionPerKm": 0.85,
+      "precipitationStepKm": 0.006,
+      "rain": 0.7999999999999268,
+      "skyIntent": "rain",
+      "skyPending": false,
+      "targetRain": 0.8,
+      "windStrength": 0.55
+    },
+    "quality": "ultra",
+    "nominalSteps": 384,
+    "output": [
+      2474,
+      1844
+    ],
+    "internal": [
+      2474,
+      1844
+    ],
+    "volume": [
+      256,
+      256,
+      256
+    ],
+    "detailVolume": [
+      128,
+      128,
+      128
+    ]
+  },
+  "sunset": {
+    "baselineAvailable": false,
+    "quality": "ultra",
+    "steps": 384,
+    "output": [
+      2474,
+      1844
+    ],
+    "volume": [
+      256,
+      256,
+      256
+    ],
+    "detailVolume": [
+      128,
+      128,
+      128
+    ],
+    "paused": true,
+    "simulationTime": 60,
+    "cameraSameAsRain": true,
+    "sunsetAmount": 1,
+    "sunDirection": [
+      -0.9519445346424992,
+      0.031731484488083314,
+      0.30462225108559976
+    ],
+    "weather": {
+      "atmosphereBlend": 1,
+      "atmosphereProgress": 1,
+      "dispersion": 0,
+      "haze": 1.6,
+      "overcast": 0,
+      "precipitationBounds": [
+        -3.359375,
+        -2.0234375,
+        2.265625,
+        2.1328125
+      ],
+      "precipitationExtinctionPerKm": 0.85,
+      "precipitationStepKm": 0.006,
+      "rain": 6.977058283793074e-10,
+      "skyIntent": "sunset",
+      "skyPending": false,
+      "targetRain": 0,
+      "windStrength": 0.55
+    }
+  },
+  "pngInputs": [
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/terrain-shadow-cache-2026-10-16/browser/v58-rain-B-native.png",
+      "bytes": 2508514,
+      "sha256": "9d4d3c19e24bf237691e3d18af0ae4e88b605cfc66c4637269062d72324e16de"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/refine-main-rain-native.png",
+      "bytes": 2585113,
+      "sha256": "0dd971b684b29c9d9855a405878d903da025eb729f17832dda813ac50051fa1b"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/refine-main-sunset-native.png",
+      "bytes": 1668288,
+      "sha256": "02bec7fddafd7889c7dcf3d20bd5c10d371f9fa8adddd6fb041643df2655ef8e"
+    }
+  ]
+}

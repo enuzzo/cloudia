@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "sourceFiles": 126,
+  "repoMatchesFinalManifest": true,
+  "candidateToFinalOnlyLiteralChanges": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/lifecycle.test.ts"
+  ],
+  "numericMeshSamplerHelperUntouched": true,
+  "finalTests": 435,
+  "testFiles": 46,
+  "builds": [
+    "APP",
+    "hero"
+  ],
+  "nativeSunByteIdenticalToCandidate": true,
+  "png": {
+    "byteLength": 2909134,
+    "height": 1844,
+    "mime": "image/png",
+    "sha256": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d",
+    "width": 2474
+  },
+  "ordinary": {
+    "url": "http://localhost:4196/?seed=74",
+    "versionFromServedSourceManifest": "observatory-v59-terrain-source-refinement",
+    "canvas": {
+      "cssHeight": 922,
+      "cssWidth": 1237,
+      "height": 1844,
+      "width": 2474
+    },
+    "pauseButtonCount": 1,
+    "profileExportCount": 0,
+    "console": []
+  },
+  "preview": {
+    "port": 4196,
+    "session": 4972,
+    "source": "final-source/dist"
+  },
+  "closedOwnedSessions": {
+    "42589": 0,
+    "63076": 130,
+    "86786": 130
+  },
+  "limits": "Final parity confirms this native Sun frame and label-only source change; no global art/FPS acceptance."
+}

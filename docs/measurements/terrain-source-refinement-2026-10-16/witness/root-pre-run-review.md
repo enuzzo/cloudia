@@ -1,0 +1,2 @@
+Root review before execution: accepted exact frozen candidate126 and the OFF historical five-buffer/statistics/node-stream parity gate. ON has one build with exact engine parameters and uses only authenticated OFF raw data. The predeclared RMS/max-error gates are fit evidence; native Sun acceptance remains required. No new source queries, mesh replay, GPU or parameter search authorized by this review. OFF is authorized first; ON requires separate terminal parity/budget confirmation.
+Approved freeze SHA256: b557333cf30cbce1887d4e11b4b47d423d18bb991c955ca3fd26f2c31509f387

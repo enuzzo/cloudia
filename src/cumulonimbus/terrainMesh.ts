@@ -7,6 +7,7 @@ import {attribute,positionWorld,normalWorld,uniform,varying,vec4} from 'three/ts
 import {EARTH_RADIUS,GROUND_LEVEL} from './landscape';
 import {terrainSurfaceSample,type TerrainSurfaceSample} from './terrainSurface';
 import {TerrainShadow,type TerrainShadowVector} from './TerrainShadow';
+import {appendTerrainSplitTriangle} from './terrainSplitTriangle';
 
 /** Static world-space triangulation; this is the rendered geometry, not an exact
  * intersection oracle for the underlying analytic height field. No skirts, no
@@ -19,14 +20,34 @@ export const TERRAIN_MESH_DEFAULTS=Object.freeze({cellsPerSide:128,levels:10,spa
 export const TERRAIN_NORMAL_ANALYTIC_WIDTH_KM=.256;
 export const TERRAIN_NORMAL_GEOMETRIC_WIDTH_KM=.512;
 export type TerrainSampler=(x:number,z:number)=>TerrainSurfaceSample;
-export interface TerrainMeshOptions {cellsPerSide?:number;levels?:number;spacingKm?:number;normalMode?:'analytic-blend'|'geometry'}
+export interface TerrainMeshRefinement {
+ /** Original source-node lattice; min values are node centres, not pixel edges. */
+ sourceGrid:{minXKm:number;minZKm:number;spacingKm:number;columns:number;rows:number};
+ /** Closed measured domain; only source nodes in this rectangle select faces. */
+ domain:{minXKm:number;maxXKm:number;minZKm:number;maxZKm:number};
+ maxErrorKm:number;
+ /** Fail explicitly on overflow; never truncate selection or subdivision. */
+ limits:{maxProbeCount:number;maxVertices:number;maxTriangles:number;maxGeometryBytes:number};
+}
+export interface TerrainMeshOptions {cellsPerSide?:number;levels?:number;spacingKm?:number;normalMode?:'analytic-blend'|'geometry';refinement?:TerrainMeshRefinement}
+export interface TerrainMeshRefinementStats {
+ originalVertices:number;originalTriangles:number;probeSampleCalls:number;vertexSampleCalls:number;totalSampleCalls:number;
+ nodesAboveThreshold:number;eligibleNodesAboveThreshold:number;markedRedFaces:number;greenFaces:number;
+ splitEdgeCount:number;addedVertices:number;addedTriangles:number;addedGeometryBytes:number;
+ sourceSpacingKm:number;maxErrorKm:number;selectedNodeColumns:number;selectedNodeRows:number;
+ sourceGrid:TerrainMeshRefinement['sourceGrid'];selectionDomain:TerrainMeshRefinement['domain'];
+ originalFacesBySplitEdgeCount:[number,number,number,number];maximumCellTriangles:number;cellTriangleCountBytes:number;
+ midpointVerticesOutsideDomain:number;boundsKm:{min:[number,number,number];max:[number,number,number]};
+}
 export interface TerrainMeshData {
  positions:Float32Array;normals:Float32Array;surface:Float32Array;indices:Uint32Array;
  /** CPU-only cell -> first triangle index. Missing hole cells are 0xffffffff. */
  cellFirstIndex:Uint32Array;
+ /** Present only when refinement is enabled; zero for original hole cells. */
+ cellTriangleCount?:Uint8Array;
  stats:{vertices:number;triangles:number;stitchedCells:number;levels:number;cellsPerSide:number;
   baseSpacingKm:number;outerExtentKm:number;geometryBytes:number;sampleCalls:number;minimumHeightKm:number;maximumHeightKm:number;
-  normalBlendStartRadiusKm:number;normalBlendEndRadiusKm:number;normalMode:'analytic-blend'|'geometry'};
+  normalBlendStartRadiusKm:number;normalBlendEndRadiusKm:number;normalMode:'analytic-blend'|'geometry';refinement?:TerrainMeshRefinementStats};
 }
 function blendTerrainMeshNormals(positions:Float32Array,normals:Float32Array,indices:Uint32Array,cells:number,geometricOnly:boolean):void{
  const accumulated=new Float64Array(normals.length);
@@ -68,11 +89,31 @@ export function terrainMeshSurfaceY(x:number,z:number,heightKm:number):number{
  return GROUND_LEVEL+heightKm-r2/(radius+radialY);
 }
 
+interface RefinementPlan extends TerrainMeshRefinement {firstX:number;lastX:number;firstZ:number;lastZ:number;probeCount:number}
+function refinementPlan(value:TerrainMeshRefinement,normalMode:string):RefinementPlan{
+ const grid={...value.sourceGrid},domain={...value.domain},limits={...value.limits},maxErrorKm=value.maxErrorKm;
+ if(normalMode!=='geometry'||![grid.minXKm,grid.minZKm,grid.spacingKm,domain.minXKm,domain.maxXKm,domain.minZKm,domain.maxZKm,maxErrorKm].every(Number.isFinite)
+  ||grid.spacingKm<=0||maxErrorKm<=0||![grid.columns,grid.rows].every(n=>Number.isSafeInteger(n)&&n>=2)
+  ||![limits.maxProbeCount,limits.maxVertices,limits.maxTriangles,limits.maxGeometryBytes].every(n=>Number.isSafeInteger(n)&&n>0)||Object.keys(limits).length!==4||limits.maxVertices>0xffffffff)
+  throw new RangeError('Invalid bounded terrain refinement configuration');
+ const maxX=grid.minXKm+(grid.columns-1)*grid.spacingKm,maxZ=grid.minZKm+(grid.rows-1)*grid.spacingKm;
+ if(!Number.isFinite(maxX)||!Number.isFinite(maxZ)||domain.minXKm>domain.maxXKm||domain.minZKm>domain.maxZKm
+  ||domain.minXKm<grid.minXKm||domain.minZKm<grid.minZKm||domain.maxXKm>maxX||domain.maxZKm>maxZ)
+  throw new RangeError('Terrain refinement domain is outside its source-node grid');
+ const firstX=Math.ceil((domain.minXKm-grid.minXKm)/grid.spacingKm),lastX=Math.floor((domain.maxXKm-grid.minXKm)/grid.spacingKm);
+ const firstZ=Math.ceil((domain.minZKm-grid.minZKm)/grid.spacingKm),lastZ=Math.floor((domain.maxZKm-grid.minZKm)/grid.spacingKm);
+ const probeCount=(lastX-firstX+1)*(lastZ-firstZ+1);
+ if(firstX>lastX||firstZ>lastZ||!Number.isSafeInteger(probeCount)||probeCount>limits.maxProbeCount)
+  throw new RangeError('Terrain refinement source-node probe budget exceeded or empty');
+ return {sourceGrid:grid,domain,limits,maxErrorKm,firstX,lastX,firstZ,lastZ,probeCount};
+}
+
 export function buildTerrainMeshData(sample:TerrainSampler=terrainSurfaceSample,options:TerrainMeshOptions={}):TerrainMeshData{
  const cells=options.cellsPerSide??TERRAIN_MESH_DEFAULTS.cellsPerSide,levels=options.levels??TERRAIN_MESH_DEFAULTS.levels;
  const spacing=options.spacingKm??TERRAIN_MESH_DEFAULTS.spacingKm;
  const normalMode=options.normalMode??'analytic-blend';
  if(normalMode!=='analytic-blend'&&normalMode!=='geometry')throw new RangeError('Invalid terrain normal mode');
+ const refinement=options.refinement===undefined?undefined:refinementPlan(options.refinement,normalMode);
  if(!Number.isInteger(cells)||cells<4||cells%4!==0||cells>256||!Number.isInteger(levels)||levels<1||levels>12||!Number.isFinite(spacing)||spacing<=0)throw new RangeError('Invalid bounded terrain mesh grid');
  const extent=cells/2*spacing*2**(levels-1);
  if(Math.SQRT2*extent>=EARTH_RADIUS)throw new RangeError('Terrain mesh domain exceeds the spherical hemisphere');
@@ -115,10 +156,12 @@ export function buildTerrainMeshData(sample:TerrainSampler=terrainSurfaceSample,
   }
  }
  const data={positions:new Float32Array(positions),normals:new Float32Array(normals),surface:new Float32Array(surface),indices:new Uint32Array(indices)};
- blendTerrainMeshNormals(data.positions,data.normals,data.indices,cells,normalMode==='geometry');
- return {...data,cellFirstIndex,stats:{vertices:vertices.size,triangles:indices.length/3,stitchedCells,levels,cellsPerSide:cells,baseSpacingKm:spacing,outerExtentKm:extent,
+ const baseline:TerrainMeshData={...data,cellFirstIndex,stats:{vertices:vertices.size,triangles:indices.length/3,stitchedCells,levels,cellsPerSide:cells,baseSpacingKm:spacing,outerExtentKm:extent,
   geometryBytes:data.positions.byteLength+data.normals.byteLength+data.surface.byteLength+data.indices.byteLength,sampleCalls:vertices.size,minimumHeightKm,maximumHeightKm,
   normalBlendStartRadiusKm:cells*TERRAIN_NORMAL_ANALYTIC_WIDTH_KM/2,normalBlendEndRadiusKm:cells*TERRAIN_NORMAL_GEOMETRIC_WIDTH_KM/2,normalMode}};
+ const result=refinement?refineTerrainMeshData(baseline,sample,refinement):baseline;
+ blendTerrainMeshNormals(result.positions,result.normals,result.indices,cells,normalMode==='geometry');
+ return result;
 }
 
 /** Height of the actual Float32 triangles, including the seam fans. Constant
@@ -126,29 +169,130 @@ export function buildTerrainMeshData(sample:TerrainSampler=terrainSurfaceSample,
  * Adjacent cells/levels cover Float32 rounding on shared edges; taking their
  * maximum is conservative at the tiny barycentric boundary tolerance.
  */
-export function terrainMeshHeightAt(data:TerrainMeshData,x:number,z:number):number|null{
+export interface TerrainMeshHit {faceIndex:number;y:number}
+export function terrainMeshHitAt(data:TerrainMeshData,x:number,z:number):TerrainMeshHit|null{
  if(!Number.isFinite(x)||!Number.isFinite(z))throw new RangeError('Nonfinite terrain mesh query');
  const {cellsPerSide:cells,levels,baseSpacingKm:spacing}=data.stats,half=cells/2,hole=cells/4;
  const maximum=Math.max(Math.abs(x),Math.abs(z));
  let selected=0;while(selected<levels&&maximum>Math.fround(half*spacing*2**selected))selected++;
  if(selected===levels)return null;
- let result=-Infinity;
+ let result=-Infinity,winningFace=-1;
  for(let level=Math.max(0,selected-1);level<=Math.min(levels-1,selected+1);level++){
   const step=spacing*2**level,cx=Math.floor(x/step),cz=Math.floor(z/step);
   for(let iz=cz-1;iz<=cz+1;iz++)for(let ix=cx-1;ix<=cx+1;ix++){
    if(ix< -half||ix>=half||iz< -half||iz>=half)continue;
-   const first=data.cellFirstIndex[(level*cells+iz+half)*cells+ix+half];if(first===0xffffffff)continue;
-   const triangles=stitchEdge(ix,iz,level,hole)<0?2:5;
+   const cell=(level*cells+iz+half)*cells+ix+half,first=data.cellFirstIndex[cell];if(first===0xffffffff)continue;
+   const triangles=data.cellTriangleCount?.[cell]??(stitchEdge(ix,iz,level,hole)<0?2:5);
    for(let triangle=0;triangle<triangles;triangle++){
     const i=first+triangle*3,a=data.indices[i]*3,b=data.indices[i+1]*3,c=data.indices[i+2]*3,p=data.positions;
     const den=(p[b+2]-p[c+2])*(p[a]-p[c])+(p[c]-p[b])*(p[a+2]-p[c+2]);
     const wa=((p[b+2]-p[c+2])*(x-p[c])+(p[c]-p[b])*(z-p[c+2]))/den;
     const wb=((p[c+2]-p[a+2])*(x-p[c])+(p[a]-p[c])*(z-p[c+2]))/den,wc=1-wa-wb;
-    if(Math.min(wa,wb,wc)>=-1e-7)result=Math.max(result,wa*p[a+1]+wb*p[b+1]+wc*p[c+1]);
+    if(Math.min(wa,wb,wc)>=-1e-7){
+     const height=wa*p[a+1]+wb*p[b+1]+wc*p[c+1];
+     if(height>result||winningFace<0||(Object.is(result,-0)&&Object.is(height,0)))winningFace=i/3;
+     result=Math.max(result,height);
+    }
    }
   }
  }
- return Number.isFinite(result)?result:null;
+ return Number.isFinite(result)?{faceIndex:winningFace,y:result}:null;
+}
+export function terrainMeshHeightAt(data:TerrainMeshData,x:number,z:number):number|null{return terrainMeshHitAt(data,x,z)?.y??null;}
+
+/** One source-node-selected red/green pass on ORIGINAL faces and edges only.
+ * Selection queries use the original Float32 mesh. Shared-edge midpoints are
+ * allocated once, including neighbours outside the measured selection domain.
+ */
+function refineTerrainMeshData(base:TerrainMeshData,sample:TerrainSampler,plan:RefinementPlan):TerrainMeshData{
+ const originalVertices=base.stats.vertices,originalTriangles=base.stats.triangles,{limits,sourceGrid:grid,domain}=plan;
+ const checkBudget=(vertices:number,triangles:number)=>{
+  const bytes=32*vertices+12*triangles;
+  if(vertices>limits.maxVertices||triangles>limits.maxTriangles||bytes>limits.maxGeometryBytes)
+   throw new RangeError('Terrain refinement geometry budget exceeded; no subdivision truncated');
+ };
+ checkBudget(originalVertices,originalTriangles);
+ if(!Number.isSafeInteger(originalVertices*originalVertices))throw new RangeError('Terrain refinement edge keys exceed exact integer range');
+ const red=new Uint8Array(originalTriangles);let nodesAboveThreshold=0,eligibleNodesAboveThreshold=0,markedRedFaces=0,probeSampleCalls=0;
+ for(let iz=plan.firstZ;iz<=plan.lastZ;iz++)for(let ix=plan.firstX;ix<=plan.lastX;ix++){
+  const x=grid.minXKm+ix*grid.spacingKm,z=grid.minZKm+iz*grid.spacingKm,value=sample(x,z);probeSampleCalls++;
+  if(![value.heightKm,value.slopeX,value.slopeZ,value.coastKm].every(Number.isFinite)||value.heightKm<0)throw new RangeError('Invalid terrain refinement probe sample');
+  const hit=terrainMeshHitAt(base,x,z);
+  if(!hit)throw new RangeError('Terrain refinement node has no original mesh hit');
+  if(Math.abs(terrainMeshSurfaceY(x,z,value.heightKm)-hit.y)<=plan.maxErrorKm)continue;
+  nodesAboveThreshold++;
+  const offset=hit.faceIndex*3,a=base.indices[offset]*3,b=base.indices[offset+1]*3,c=base.indices[offset+2]*3,p=base.positions;
+  const span=Math.max(Math.max(p[a],p[b],p[c])-Math.min(p[a],p[b],p[c]),Math.max(p[a+2],p[b+2],p[c+2])-Math.min(p[a+2],p[b+2],p[c+2]));
+  if(span<grid.spacingKm)continue;
+  eligibleNodesAboveThreshold++;
+  if(!red[hit.faceIndex]){red[hit.faceIndex]=1;markedRedFaces++;}
+ }
+ if(probeSampleCalls!==plan.probeCount)throw new RangeError('Terrain refinement source-node count changed');
+ // Keys encode unordered ORIGINAL endpoint IDs exactly, not rounded positions.
+ const key=(a:number,b:number)=>Math.min(a,b)*originalVertices+Math.max(a,b),midpoints=new Map<number,number>();
+ for(let face=0;face<originalTriangles;face++)if(red[face]){
+  const offset=face*3,a=base.indices[offset],b=base.indices[offset+1],c=base.indices[offset+2];
+  for(const edge of [key(a,b),key(b,c),key(c,a)])if(!midpoints.has(edge))midpoints.set(edge,originalVertices+midpoints.size);
+ }
+ const splitEdgeCount=midpoints.size,vertices=originalVertices+splitEdgeCount,childCounts=new Uint8Array(originalTriangles);
+ const originalFacesBySplitEdgeCount:[number,number,number,number]=[0,0,0,0];let triangles=0,greenFaces=0;
+ for(let face=0;face<originalTriangles;face++){
+  const offset=face*3,a=base.indices[offset],b=base.indices[offset+1],c=base.indices[offset+2];
+  const splits=Number(midpoints.has(key(a,b)))+Number(midpoints.has(key(b,c)))+Number(midpoints.has(key(c,a)));
+  childCounts[face]=splits+1;triangles+=splits+1;originalFacesBySplitEdgeCount[splits]++;
+  if(splits>0&&!red[face])greenFaces++;
+ }
+ if(triangles>4*originalTriangles||splitEdgeCount>3*originalTriangles||triangles-originalTriangles>2*splitEdgeCount)
+  throw new RangeError('Terrain refinement exceeded one-pass structural bound');
+ checkBudget(vertices,triangles);
+ const positions=new Float32Array(vertices*3),normals=new Float32Array(vertices*3),surface=new Float32Array(vertices*2),indices=new Uint32Array(triangles*3);
+ positions.set(base.positions);normals.set(base.normals);surface.set(base.surface);
+ let minimumHeightKm=base.stats.minimumHeightKm,maximumHeightKm=base.stats.maximumHeightKm,midpointVerticesOutsideDomain=0;
+ for(const [edge,index] of midpoints){
+  const a=Math.floor(edge/originalVertices),b=edge-a*originalVertices;
+  const x=Math.fround((base.positions[3*a]+base.positions[3*b])/2),z=Math.fround((base.positions[3*a+2]+base.positions[3*b+2])/2);
+  const value=sample(x,z),h=value.heightKm;
+  if(![h,value.slopeX,value.slopeZ,value.coastKm].every(Number.isFinite)||h<0)throw new RangeError('Invalid terrain refinement midpoint sample');
+  positions[index*3]=x;positions[index*3+1]=terrainMeshSurfaceY(x,z,h);positions[index*3+2]=z;
+  // Geometry-mode shared incident normals are recalculated after all children.
+  normals[index*3+1]=1;surface[index*2]=h;surface[index*2+1]=value.coastKm;
+  minimumHeightKm=Math.min(minimumHeightKm,h);maximumHeightKm=Math.max(maximumHeightKm,h);
+  if(x<domain.minXKm||x>domain.maxXKm||z<domain.minZKm||z>domain.maxZKm)midpointVerticesOutsideDomain++;
+ }
+ const cellFirstIndex=new Uint32Array(base.cellFirstIndex.length).fill(0xffffffff),cellTriangleCount=new Uint8Array(base.cellFirstIndex.length);
+ const {cellsPerSide:cells,levels}=base.stats,half=cells/2,hole=cells/4,cellOutput:number[]=[];
+ let originalCursor=0,childCursor=0,maximumCellTriangles=0;
+ for(let cell=0;cell<base.cellFirstIndex.length;cell++){
+  const first=base.cellFirstIndex[cell];if(first===0xffffffff)continue;
+  if(first!==originalCursor)throw new RangeError('Terrain refinement original cell order is not contiguous');
+  const level=Math.floor(cell/(cells*cells)),x=cell%cells-half,z=Math.floor(cell/cells)%cells-half;
+  const originalCount=stitchEdge(x,z,level,hole)<0?2:5;cellOutput.length=0;
+  for(let i=first;i<first+originalCount*3;i+=3){
+   const a=base.indices[i],b=base.indices[i+1],c=base.indices[i+2];
+   appendTerrainSplitTriangle(cellOutput,a,b,c,midpoints.get(key(a,b))??-1,midpoints.get(key(b,c))??-1,midpoints.get(key(c,a))??-1);
+  }
+  const count=cellOutput.length/3;
+  if(count<originalCount||count>20||!Number.isInteger(count))throw new RangeError('Terrain refinement child cell count is invalid');
+  let expected=0;for(let face=first/3;face<first/3+originalCount;face++)expected+=childCounts[face];
+  if(count!==expected)throw new RangeError('Terrain refinement split helper count mismatch');
+  cellFirstIndex[cell]=childCursor;cellTriangleCount[cell]=count;indices.set(cellOutput,childCursor);
+  childCursor+=cellOutput.length;originalCursor+=originalCount*3;maximumCellTriangles=Math.max(maximumCellTriangles,count);
+ }
+ if(originalCursor!==base.indices.length||childCursor!==indices.length||levels*cells*cells!==cellTriangleCount.length)throw new RangeError('Terrain refinement did not cover original cells exactly');
+ const min:[number,number,number]=[Infinity,Infinity,Infinity],max:[number,number,number]=[-Infinity,-Infinity,-Infinity];
+ for(let i=0;i<positions.length;i+=3)for(let axis=0;axis<3;axis++){
+  min[axis]=Math.min(min[axis],positions[i+axis]);max[axis]=Math.max(max[axis],positions[i+axis]);
+ }
+ const vertexSampleCalls=originalVertices+splitEdgeCount,totalSampleCalls=vertexSampleCalls+probeSampleCalls;
+ const geometryBytes=positions.byteLength+normals.byteLength+surface.byteLength+indices.byteLength;
+ const refinement:TerrainMeshRefinementStats={originalVertices,originalTriangles,probeSampleCalls,vertexSampleCalls,totalSampleCalls,
+  nodesAboveThreshold,eligibleNodesAboveThreshold,markedRedFaces,greenFaces,splitEdgeCount,addedVertices:splitEdgeCount,
+  addedTriangles:triangles-originalTriangles,addedGeometryBytes:geometryBytes-base.stats.geometryBytes,sourceSpacingKm:grid.spacingKm,maxErrorKm:plan.maxErrorKm,
+  sourceGrid:grid,selectionDomain:domain,
+  selectedNodeColumns:plan.lastX-plan.firstX+1,selectedNodeRows:plan.lastZ-plan.firstZ+1,originalFacesBySplitEdgeCount,maximumCellTriangles,
+  cellTriangleCountBytes:cellTriangleCount.byteLength,midpointVerticesOutsideDomain,boundsKm:{min,max}};
+ return {positions,normals,surface,indices,cellFirstIndex,cellTriangleCount,stats:{...base.stats,vertices,triangles,geometryBytes,
+  sampleCalls:totalSampleCalls,minimumHeightKm,maximumHeightKm,refinement}};
 }
 
 type TerrainVector=readonly number[]|{readonly x:number;readonly y:number;readonly z:number};
@@ -249,7 +393,7 @@ export class TerrainMesh {
   return {...this.geometryStats,geometryScope:'First visible triangle of this static stitched mesh; not exact analytic-height intersection',
    shadow:this.shadow.stats(),width:this.target.width,height:this.target.height,colourFormat:'rgba32float',distanceComponent:'alpha; km from actual camera origin; -1 miss',
    colourDistanceBytes:pixels*16,depthBytes:pixels*4,targetPayloadBytes:pixels*20,
-   cpuTriangleLookupBytes:this.data.cellFirstIndex.byteLength,
+   cpuTriangleLookupBytes:this.data.cellFirstIndex.byteLength+(this.data.cellTriangleCount?.byteLength??0),
    normalPolicy:this.geometryStats.normalMode==='geometry'?'Shared incident-area-weighted actual mesh normal at every vertex; no bilinear-source gradient seams':'Shared vertex normal; analytic near, smooth width-based blend to incident-area-weighted mesh normal before coarse rings',
    memoryScope:'Nominal retained geometry and target/depth payload only; CPU construction temporaries and driver residency/peak are unmeasured',
    perFrameCpuHeightSamples:0,nearKm:this.camera.near,farKm:this.camera.far,reversedDepthBuffer:this.reversedDepth,cache:'No cached geometry pass; terrain shading stays live each render'};

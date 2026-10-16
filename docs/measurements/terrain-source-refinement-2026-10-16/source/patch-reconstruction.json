@@ -1,0 +1,55 @@
+{
+  "status": "EXACT_IN_MEMORY_RECONSTRUCTION_PASS",
+  "scope": "Saved source bytes only; no source executed, no tests/build/model/GPU",
+  "baseFiles": 124,
+  "candidateFiles": 126,
+  "changedFiles": 6,
+  "modifiedExisting": 4,
+  "addedFiles": 2,
+  "removedFiles": 0,
+  "unchangedCommonFiles": 120,
+  "allBaseAndCandidateFilesSHA256Verified": true,
+  "all126ReconstructedFileHashesMatch": true,
+  "baseManifestSHA256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+  "candidateManifestSHA256": "83469d62c552db7bad9cbc175bf549f7b7c0bd8c0b113c137e484e1b4f315e00",
+  "patchRawBytes": 47414,
+  "patchRawSHA256": "628ee6121ddb0b1478274196aca94b1f707cccc91bde68cd3d7a14489b69928e",
+  "files": [
+    {
+      "path": "src/cumulonimbus/GPUSceneEngine.ts",
+      "beforeSHA256": "7fde13a8da2a4f1035915ef64ecc3b663d4213ec471596534faf4432bdb44ce0",
+      "afterSHA256": "6ea17c11d201e43032c4d2ff6cfedad581555bc1867e7a07858202ee0b7c2e5c",
+      "afterBytes": 75074
+    },
+    {
+      "path": "src/cumulonimbus/lifecycle.test.ts",
+      "beforeSHA256": "9f7e935f074cea8f625799b3102bd22a5c74465e576a5ada18b73a6a3a8800d1",
+      "afterSHA256": "786937e9db64cabff9bc1371c28a7aa1e92d974e33fa9f971a7c5401471f26d2",
+      "afterBytes": 69586
+    },
+    {
+      "path": "src/cumulonimbus/terrainMesh.test.ts",
+      "beforeSHA256": "79742dcabb6a8de21144d49ec6de626b0f08c779b1fda81ea67f429b41cfd0dd",
+      "afterSHA256": "fc77a756c01abef42bfed1818fde57bdeaac93501eec0703fe8d8401c7549755",
+      "afterBytes": 27863
+    },
+    {
+      "path": "src/cumulonimbus/terrainMesh.ts",
+      "beforeSHA256": "f63dac6ea96144e7df44460f76f548068929ca6bc5c466fb49d4ee308e1697a7",
+      "afterSHA256": "c7bc36a93960a688102546f70fadffcf67005073e86889b0afd2ab659ba78e5a",
+      "afterBytes": 30453
+    },
+    {
+      "path": "src/cumulonimbus/terrainSplitTriangle.test.ts",
+      "beforeSHA256": null,
+      "afterSHA256": "c013bbd7c291992461e5c133317a2a1df546979b2c2d164c3fdf9a097207d9a1",
+      "afterBytes": 8040
+    },
+    {
+      "path": "src/cumulonimbus/terrainSplitTriangle.ts",
+      "beforeSHA256": null,
+      "afterSHA256": "e8a14126eedcea99390b9bf9503b9df53fae6ad85e2f39aa184817d104443163",
+      "afterBytes": 1249
+    }
+  ]
+}

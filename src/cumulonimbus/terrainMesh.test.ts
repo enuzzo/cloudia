@@ -1,10 +1,42 @@
 import {describe,expect,it} from 'vitest';
 import {PerspectiveCamera,Triangle,Vector3,WebGPUCoordinateSystem} from 'three/webgpu';
 import {EARTH_RADIUS,GROUND_LEVEL} from './landscape';
-import {buildTerrainMeshData,configureTerrainCamera,terrainMeshHeightAt,terrainMeshSurfaceY,type TerrainCameraFrame,type TerrainMeshData,type TerrainMeshOptions} from './terrainMesh';
+import {buildTerrainMeshData,configureTerrainCamera,terrainMeshHeightAt,terrainMeshHitAt,terrainMeshSurfaceY,type TerrainCameraFrame,type TerrainMeshData,type TerrainMeshOptions,type TerrainMeshRefinement} from './terrainMesh';
 import type {TerrainSurfaceSample} from './terrainSurface';
 
 const flatSampler=():TerrainSurfaceSample=>({heightKm:1.25,slopeX:0,slopeZ:0,coastKm:7});
+
+const refinementOptions={cellsPerSide:8,levels:3,spacingKm:.125,normalMode:'geometry' as const};
+function isolatedPeak(sign=1){
+ const x0=sign*.875,z0=sign*.125;
+ const sample=(x:number,z:number):TerrainSurfaceSample=>({
+  heightKm:1+.2*Math.max(0,1-Math.abs(x-x0)/.125)*Math.max(0,1-Math.abs(z-z0)/.125),
+  slopeX:0,slopeZ:0,coastKm:2*x-3*z,
+ });
+ const refinement:TerrainMeshRefinement={
+  sourceGrid:{minXKm:sign>0?.75:-1,minZKm:sign>0?0:-.25,spacingKm:.125,columns:3,rows:3},
+  domain:{minXKm:x0,maxXKm:x0,minZKm:z0,maxZKm:z0},maxErrorKm:.005,
+  limits:{maxProbeCount:1,maxVertices:10000,maxTriangles:10000,maxGeometryBytes:1000000},
+ };
+ return {sample,refinement,x0,z0};
+}
+
+/** Independent all-face vertical plane oracle for tiny test meshes only. */
+function meshPlaneOracle(data:TerrainMeshData,x:number,z:number):number|null{
+ let maximum=-Infinity;
+ for(let offset=0;offset<data.indices.length;offset+=3){
+  const corners=Array.from(data.indices.subarray(offset,offset+3),index=>vertex(data,index));
+  let inside=true;
+  for(let i=0;i<3;i++){
+   const from=corners[i],to=corners[(i+1)%3];
+   if((to.z-from.z)*(x-from.x)-(to.x-from.x)*(z-from.z)<-1e-13){inside=false;break;}
+  }
+  if(!inside)continue;
+  const [a,b,c]=corners,normal=b.clone().sub(a).cross(c.clone().sub(a));
+  maximum=Math.max(maximum,a.y-(normal.x*(x-a.x)+normal.z*(z-a.z))/normal.y);
+ }
+ return Number.isFinite(maximum)?maximum:null;
+}
 const vertex=(data:TerrainMeshData,index:number)=>new Vector3().fromArray(data.positions,index*3);
 function normalOracle(data:TerrainMeshData){
  const area=Array.from({length:data.stats.vertices},()=>new Vector3()),unit=area.map(()=>new Vector3());
@@ -223,6 +255,126 @@ describe('static stitched terrain geometry',()=>{
   {heightKm:-1},{heightKm:NaN},{heightKm:Infinity},{slopeX:NaN},{slopeZ:Infinity},{coastKm:NaN},
  ])('rejects invalid terrain sample data %j',override=>{
   expect(()=>buildTerrainMeshData(()=>({...flatSampler(),...override}),{cellsPerSide:8,levels:3,spacingKm:.032})).toThrow(RangeError);
+ });
+});
+
+describe('one-pass source-node terrain refinement prototype',()=>{
+ it('keeps refinement off free of probes and optional lookup/stat payload',()=>{
+  let calls=0;
+  const data=buildTerrainMeshData(()=>{calls++;return flatSampler();},refinementOptions);
+  expect(calls).toBe(data.stats.vertices);expect(data.stats.sampleCalls).toBe(calls);
+  expect(Object.hasOwn(data,'cellTriangleCount')).toBe(false);
+  expect(Object.hasOwn(data.stats,'refinement')).toBe(false);
+  const explicitOff=buildTerrainMeshData(flatSampler,{...refinementOptions,refinement:undefined});
+  for(const name of ['positions','normals','surface','indices','cellFirstIndex'] as const){
+   const a=data[name],b=explicitOff[name];
+   expect(new Uint8Array(a.buffer,a.byteOffset,a.byteLength)).toEqual(new Uint8Array(b.buffer,b.byteOffset,b.byteLength));
+  }
+  expect(data.stats).toEqual(explicitOff.stats);
+ });
+
+ it.each([1,-1])('samples one original source node and restores its missed peak for sign %i',sign=>{
+  const fixture=isolatedPeak(sign),base=buildTerrainMeshData(fixture.sample,refinementOptions),calls:Array<[number,number]>=[];
+  const refined=buildTerrainMeshData((x,z)=>{calls.push([x,z]);return fixture.sample(x,z);},{...refinementOptions,refinement:fixture.refinement});
+  const stats=refined.stats.refinement!,{x0,z0}=fixture,target=terrainMeshSurfaceY(x0,z0,fixture.sample(x0,z0).heightKm);
+  expect(Math.abs(target-terrainMeshHeightAt(base,x0,z0)!)).toBeGreaterThan(.1);
+  expect(Math.abs(target-terrainMeshHeightAt(refined,x0,z0)!)).toBeLessThan(5e-7);
+  expect(stats.probeSampleCalls).toBe(1);expect(stats.markedRedFaces).toBe(1);
+  expect(stats.nodesAboveThreshold).toBe(1);expect(stats.eligibleNodesAboveThreshold).toBe(1);
+  expect(stats.splitEdgeCount).toBe(3);expect(stats.addedVertices).toBe(3);
+  expect(stats.greenFaces).toBeGreaterThan(0);expect(stats.midpointVerticesOutsideDomain).toBeGreaterThan(0);
+  expect(stats.vertexSampleCalls).toBe(refined.stats.vertices);
+  expect(stats.totalSampleCalls).toBe(calls.length);expect(refined.stats.sampleCalls).toBe(calls.length);
+  expect(calls.length).toBe(base.stats.vertices+1+3);
+  expect(calls[base.stats.vertices]).toEqual([x0,z0]);
+  expect(refined.positions.subarray(0,base.positions.length)).toEqual(base.positions);
+  expect(refined.surface.subarray(0,base.surface.length)).toEqual(base.surface);
+  const addedCoordinates=new Set<string>();
+  for(let index=base.stats.vertices;index<refined.stats.vertices;index++){
+   const point=vertex(refined,index),key=`${point.x},${point.z}`,sample=fixture.sample(point.x,point.z);
+   expect(addedCoordinates.has(key)).toBe(false);addedCoordinates.add(key);
+   expect(refined.surface[2*index]).toBe(Math.fround(sample.heightKm));
+   expect(refined.surface[2*index+1]).toBe(Math.fround(sample.coastKm));
+   expect(point.y).toBe(Math.fround(terrainMeshSurfaceY(point.x,point.z,sample.heightKm)));
+  }
+  expect(refined.stats.geometryBytes).toBe(32*refined.stats.vertices+12*refined.stats.triangles);
+  expect(stats.addedGeometryBytes).toBe(refined.stats.geometryBytes-base.stats.geometryBytes);
+  expect(refined.stats.triangles).toBeLessThanOrEqual(4*base.stats.triangles);
+ });
+
+ it('keeps shared green edges conforming and recomputes all incident-area normals',()=>{
+  const {sample,refinement}=isolatedPeak(),data=buildTerrainMeshData(sample,{...refinementOptions,refinement}),edges=new Map<string,{count:number;orientation:number;a:number;b:number}>();
+  const coordinates=new Set<string>();
+  for(let index=0;index<data.stats.vertices;index++){
+   const point=vertex(data,index),key=`${point.x},${point.z}`;
+   expect(coordinates.has(key)).toBe(false);coordinates.add(key);
+  }
+  for(let offset=0;offset<data.indices.length;offset+=3){
+   const ids=Array.from(data.indices.subarray(offset,offset+3));expect(new Set(ids).size).toBe(3);
+   const [a,b,c]=ids.map(index=>vertex(data,index));
+   expect(b.clone().sub(a).cross(c.clone().sub(a)).y).toBeGreaterThan(0);
+   for(let edge=0;edge<3;edge++){
+    const from=ids[edge],to=ids[(edge+1)%3],a=Math.min(from,to),b=Math.max(from,to),key=`${a},${b}`;
+    const record=edges.get(key)??{a,b,count:0,orientation:0};record.count++;record.orientation+=from===a?1:-1;edges.set(key,record);
+   }
+  }
+  const extent=Math.fround(data.stats.outerExtentKm);
+  for(const edge of edges.values()){
+   expect([1,2]).toContain(edge.count);
+   if(edge.count===2){expect(edge.orientation).toBe(0);continue;}
+   const a=vertex(data,edge.a),b=vertex(data,edge.b);
+   expect((a.x===b.x&&Math.abs(a.x)===extent)||(a.z===b.z&&Math.abs(a.z)===extent)).toBe(true);
+  }
+  expect(data.stats.vertices-edges.size+data.stats.triangles).toBe(1);
+  const oracle=normalOracle(data).area;
+  for(let index=0;index<data.stats.vertices;index++){
+   expect(new Vector3().fromArray(data.normals,index*3).distanceTo(oracle[index])).toBeLessThan(8e-8);
+  }
+ });
+
+ it('keeps every original cell contiguous and looks up its actual children without sampler calls',()=>{
+  const fixture=isolatedPeak();let calls=0;
+  const data=buildTerrainMeshData((x,z)=>{calls++;return fixture.sample(x,z);},{...refinementOptions,refinement:fixture.refinement}),before=calls;
+  expect(data.cellTriangleCount).toBeInstanceOf(Uint8Array);
+  let cursor=0,maximum=0;
+  for(let cell=0;cell<data.cellFirstIndex.length;cell++){
+   const count=data.cellTriangleCount![cell],first=data.cellFirstIndex[cell];
+   if(first===0xffffffff){expect(count).toBe(0);continue;}
+   expect(first).toBe(cursor);expect(count).toBeGreaterThan(0);expect(count).toBeLessThanOrEqual(20);
+   cursor+=count*3;maximum=Math.max(maximum,count);
+  }
+  expect(cursor).toBe(data.indices.length);expect(maximum).toBe(data.stats.refinement!.maximumCellTriangles);
+  expect(data.stats.refinement!.cellTriangleCountBytes).toBe(data.cellFirstIndex.length);
+  for(let offset=0;offset<data.indices.length;offset+=3){
+   const [a,b,c]=Array.from(data.indices.subarray(offset,offset+3),index=>vertex(data,index));
+   const x=.2*a.x+.35*b.x+.45*c.x,z=.2*a.z+.35*b.z+.45*c.z,expected=meshPlaneOracle(data,x,z),hit=terrainMeshHitAt(data,x,z);
+   expect(expected).not.toBeNull();expect(hit).not.toBeNull();expect(hit!.y).toBeCloseTo(expected!,9);
+   expect(hit!.faceIndex).toBe(offset/3);expect(terrainMeshHeightAt(data,x,z)).toBe(hit!.y);
+  }
+  expect(calls).toBe(before);
+ });
+
+ it('does not split a smaller-than-source face even when an original source node exceeds the error gate',()=>{
+  const sample=(x:number,z:number)=>({heightKm:1+.2*Math.max(0,1-Math.abs(x-.0625)/.0625)*Math.max(0,1-Math.abs(z-.0625)/.0625),slopeX:0,slopeZ:0,coastKm:1});
+  const refinement:TerrainMeshRefinement={sourceGrid:{minXKm:.0625,minZKm:.0625,spacingKm:.25,columns:2,rows:2},domain:{minXKm:.0625,maxXKm:.0625,minZKm:.0625,maxZKm:.0625},maxErrorKm:.005,limits:{maxProbeCount:1,maxVertices:10000,maxTriangles:10000,maxGeometryBytes:1000000}};
+  const base=buildTerrainMeshData(sample,refinementOptions),data=buildTerrainMeshData(sample,{...refinementOptions,refinement});
+  expect(data.stats.refinement!.nodesAboveThreshold).toBe(1);expect(data.stats.refinement!.eligibleNodesAboveThreshold).toBe(0);
+  expect(data.stats.refinement!.splitEdgeCount).toBe(0);
+  expect(data.positions).toEqual(base.positions);expect(data.indices).toEqual(base.indices);expect(data.normals).toEqual(base.normals);expect(data.surface).toEqual(base.surface);
+ });
+
+ it('rejects an invalid/over-budget plan before sampling and rejects geometry overflow before midpoint calls',()=>{
+  const fixture=isolatedPeak();let calls=0;
+  const sample=(x:number,z:number)=>{calls++;return fixture.sample(x,z);};
+  expect(()=>buildTerrainMeshData(sample,{...refinementOptions,normalMode:'analytic-blend',refinement:fixture.refinement})).toThrow(RangeError);
+  expect(calls).toBe(0);
+  expect(()=>buildTerrainMeshData(sample,{...refinementOptions,refinement:{...fixture.refinement,domain:{minXKm:.75,maxXKm:1,minZKm:0,maxZKm:.25}}})).toThrow(RangeError);
+  expect(calls).toBe(0);
+  expect(()=>buildTerrainMeshData(sample,{...refinementOptions,refinement:{...fixture.refinement,domain:{minXKm:-1,maxXKm:1,minZKm:0,maxZKm:.25}}})).toThrow(RangeError);
+  expect(calls).toBe(0);
+  const base=buildTerrainMeshData(fixture.sample,refinementOptions);
+  expect(()=>buildTerrainMeshData(sample,{...refinementOptions,refinement:{...fixture.refinement,limits:{...fixture.refinement.limits,maxVertices:base.stats.vertices+2}}})).toThrow('geometry budget exceeded');
+  expect(calls).toBe(base.stats.vertices+1);
  });
 });
 

@@ -1,0 +1,258 @@
+{
+  "state": "ROOT_SAVED_EVIDENCE_PASS",
+  "archiveManifestSHA256": "25e51c71de6949910be54dab93ed8bcdb309ca7ac48deb133139a84c9fe9a693",
+  "note": "Archive R2 is an immutable pre-execution freeze. This sidecar preserves the subsequent root execution and its launcher outside the archive inventory to avoid a circular self-hash. R1 failed validation is inside the archive; no model replay.",
+  "run": {
+    "status": "PASS",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-payload/verify_saved.py",
+      "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-payload",
+      "--base-source",
+      "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/source",
+      "--runtime-source",
+      "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia"
+    ],
+    "terminalObserved": true,
+    "exitCode": 0,
+    "timedOut": false,
+    "wallSeconds": 5.573711708071642,
+    "combinedCPUSeconds": 5.454463,
+    "conservativeSumOfPeakRSSBytes": 173948928,
+    "inputHashesUnchanged": true,
+    "scope": "One stdlib saved-evidence verification; no model, mesh, sampler, test, build or GPU replay."
+  },
+  "result": {
+    "status": "SAVED_EVIDENCE_PASS",
+    "checks": 11395,
+    "manifestSHA256": "25e51c71de6949910be54dab93ed8bcdb309ca7ac48deb133139a84c9fe9a693",
+    "payloadFiles": 124,
+    "storedPayloadBytes": 18106011,
+    "originalPayloadBytes": 34580867,
+    "referencesDeclared": 9,
+    "referencesReadAndVerified": 9,
+    "source": {
+      "baseFiles": 124,
+      "candidateFiles": 126,
+      "changedFiles": 6,
+      "unchangedFiles": 120,
+      "patchReconstructedNow": true,
+      "candidateManifestSHA256": "83469d62c552db7bad9cbc175bf549f7b7c0bd8c0b113c137e484e1b4f315e00"
+    },
+    "streams": {
+      "nodesPerMode": 591361,
+      "groupsRecomputedPerMode": 18,
+      "pairedGroupsRecomputed": 18,
+      "landSeaReclassifiedFromDEM": true,
+      "historicalResultComparedNow": true,
+      "fitGates": {
+        "globalRMSStrictlyLower": true,
+        "landRMSStrictlyLower": true,
+        "globalMaxAbsNoMoreThanBaselinePlus1mm": true,
+        "landRing2RMSStrictlyLower": true,
+        "landRing3RMSStrictlyLower": true,
+        "landRing4RMSStrictlyLower": true
+      },
+      "geometry": {
+        "off": {
+          "vertices": 465409,
+          "triangles": 929792,
+          "stitchedCells": 4096,
+          "levels": 9,
+          "cellsPerSide": 256,
+          "baseSpacingKm": 0.032,
+          "outerExtentKm": 1048.576,
+          "geometryBytes": 26050592,
+          "sampleCalls": 465409,
+          "minimumHeightKm": 0,
+          "maximumHeightKm": 3.0260982513427734,
+          "normalBlendStartRadiusKm": 32.768,
+          "normalBlendEndRadiusKm": 65.536,
+          "normalMode": "geometry"
+        },
+        "on": {
+          "vertices": 591788,
+          "triangles": 1182550,
+          "stitchedCells": 4096,
+          "levels": 9,
+          "cellsPerSide": 256,
+          "baseSpacingKm": 0.032,
+          "outerExtentKm": 1048.576,
+          "geometryBytes": 33127816,
+          "sampleCalls": 1183149,
+          "minimumHeightKm": 0,
+          "maximumHeightKm": 3.0260982513427734,
+          "normalBlendStartRadiusKm": 32.768,
+          "normalBlendEndRadiusKm": 65.536,
+          "normalMode": "geometry",
+          "refinement": {
+            "originalVertices": 465409,
+            "originalTriangles": 929792,
+            "probeSampleCalls": 591361,
+            "vertexSampleCalls": 591788,
+            "totalSampleCalls": 1183149,
+            "nodesAboveThreshold": 209659,
+            "eligibleNodesAboveThreshold": 209488,
+            "markedRedFaces": 69833,
+            "greenFaces": 21853,
+            "splitEdgeCount": 126379,
+            "addedVertices": 126379,
+            "addedTriangles": 252758,
+            "addedGeometryBytes": 7077224,
+            "sourceSpacingKm": 0.125,
+            "maxErrorKm": 0.005,
+            "sourceGrid": {
+              "minXKm": -64,
+              "minZKm": -64,
+              "spacingKm": 0.125,
+              "columns": 1025,
+              "rows": 1025
+            },
+            "selectionDomain": {
+              "minXKm": -48,
+              "maxXKm": 48,
+              "minZKm": -48,
+              "maxZKm": 48
+            },
+            "selectedNodeColumns": 769,
+            "selectedNodeRows": 769,
+            "originalFacesBySplitEdgeCount": [
+              838106,
+              7390,
+              7520,
+              76776
+            ],
+            "maximumCellTriangles": 20,
+            "cellTriangleCountBytes": 589824,
+            "midpointVerticesOutsideDomain": 405,
+            "boundsKm": {
+              "min": [
+                -1048.5760498046875,
+                -178.98373413085938,
+                -1048.5760498046875
+              ],
+              "max": [
+                1048.5760498046875,
+                -1.675218939781189,
+                1048.5760498046875
+              ]
+            }
+          }
+        }
+      }
+    },
+    "qualification": {
+      "targetedTests": 72,
+      "targetedFiles": 2,
+      "fullTests": 435,
+      "fullFiles": 46,
+      "savedCommands": 4,
+      "execution": "Not rerun; retained command/test records only"
+    },
+    "native": {
+      "refine-main-sun-native": {
+        "sha256": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d",
+        "bytes": 2909134,
+        "dimensions": [
+          2474,
+          1844
+        ],
+        "thread": "main"
+      },
+      "refine-main-rain-native": {
+        "sha256": "0dd971b684b29c9d9855a405878d903da025eb729f17832dda813ac50051fa1b",
+        "bytes": 2585113,
+        "dimensions": [
+          2474,
+          1844
+        ],
+        "thread": "main"
+      },
+      "refine-main-sunset-native": {
+        "sha256": "02bec7fddafd7889c7dcf3d20bd5c10d371f9fa8adddd6fb041643df2655ef8e",
+        "bytes": 1668288,
+        "dimensions": [
+          2474,
+          1844
+        ],
+        "thread": "main"
+      },
+      "refine-worker-sun-native": {
+        "sha256": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d",
+        "bytes": 2909134,
+        "dimensions": [
+          2474,
+          1844
+        ],
+        "thread": "worker"
+      },
+      "stable-main-sunset-native": {
+        "sha256": "0b259ab4c22958f0c8d83c7f20a5739db82272d284b80ade66e80d37070989c2",
+        "bytes": 1663003,
+        "dimensions": [
+          2474,
+          1844
+        ],
+        "thread": "main"
+      }
+    },
+    "cost": {
+      "submissionFps": {
+        "A1": 16.647023179315077,
+        "B": 16.689485624056843,
+        "A2": 16.480662689111444
+      },
+      "completionBoundedSubmissionFps": {
+        "A1": 16.518714051122522,
+        "B": 16.56521437237693,
+        "A2": 16.353472882994364
+      },
+      "baselineDriftFraction": 0.009993407734924414,
+      "BOverBracketMean": 1.0075853586841288,
+      "validatorR1PreservedFAIL": true,
+      "validatorR2SavedPASS": true,
+      "scope": "Single paused Rain A1/B/A2 submitted-rate gate; no presented FPS or speedup conclusion. Timestamp pass sums are not added."
+    },
+    "elapsedSeconds": 5.491507624974474,
+    "limits": [
+      "Only retained bytes and arithmetic are verified. No mesh, sampler, shader, model, ray, build, test, browser or GPU replay.",
+      "Buffer hashes, topology and run timings are authenticated saved declarations; missing arrays are not regenerated. Five Three/Bun dependency hashes are retained declarations, not reread dependency binaries.",
+      "Without --runtime-source, land/sea labels and historical OFF equality beyond pinned digests are not independently rederived.",
+      "With the pinned DEM, only integer node coast codes are decoded; no DEM height/interpolation queries are performed.",
+      "Selection-node fit is not holdout, continuous terrain accuracy, shadow-cause proof or artistic acceptance.",
+      "PNG headers, byte hashes and owner metadata are checked; image pixels are not rendered or artistically judged.",
+      "Recorded submitted-rate/queue evidence is not compositor presentation, global60FPS, causal speedup or hardware diagnosis.",
+      "The self-excluded MANIFEST is an inventory, not a digital signature or protection against coordinated replacement."
+    ]
+  },
+  "preRunFreeze": {
+    "state": "ROOT_APPROVED_UNEXECUTED",
+    "scope": "R2 only corrects empty-stderr assumption; exactly three structured progress records are authenticated against saved output. R1 failure preserved. No source/model/test/GPU replay.",
+    "inputs": [
+      {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-payload/MANIFEST.json",
+        "bytes": 58538,
+        "sha256": "25e51c71de6949910be54dab93ed8bcdb309ca7ac48deb133139a84c9fe9a693"
+      },
+      {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-payload/verify_saved.py",
+        "bytes": 45502,
+        "sha256": "b0cad655a8956ce445c6ef6ffc264d727c62083d8af074f05dbbdd8f82210dd0"
+      },
+      {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-verification-r2/run.py",
+        "bytes": 2204,
+        "sha256": "9ecda2ab1f63e46346711312750f3579057ac4f808b1aa6237108aac6c4c151a"
+      }
+    ]
+  },
+  "launcherSource": "from pathlib import Path\nimport hashlib,json,resource,subprocess,os,signal,time,sys\np=Path(__file__).resolve().parent\nassert sys.argv[1:]==['--execute-reviewed']\nf=json.loads((p/'PRE-RUN-FREEZE.json').read_text());assert f['state']=='ROOT_APPROVED_UNEXECUTED'\nfor row in f['inputs']:\n q=Path(row['path']);assert q.stat().st_size==row['bytes'] and hashlib.sha256(q.read_bytes()).hexdigest()==row['sha256']\nassert not (p/'run.json').exists()\nstart=time.monotonic();r0=resource.getrusage(resource.RUSAGE_SELF)\ndef limits():resource.setrlimit(resource.RLIMIT_CPU,(20,20))\ncmd=[sys.executable,str(p.parent/'archive-payload/verify_saved.py'),str(p.parent/'archive-payload'),'--base-source','/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/source','--runtime-source','/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia']\nwith (p/'stdout.json').open('x') as out,(p/'stderr.log').open('x') as err:\n child=subprocess.Popen(cmd,stdout=out,stderr=err,start_new_session=True,preexec_fn=limits)\n timeout=False\n try:code=child.wait(timeout=40)\n except subprocess.TimeoutExpired:\n  timeout=True;os.killpg(child.pid,signal.SIGKILL);code=child.wait()\na=resource.getrusage(resource.RUSAGE_SELF);b=resource.getrusage(resource.RUSAGE_CHILDREN);wall=time.monotonic()-start;cpu=a.ru_utime+a.ru_stime-r0.ru_utime-r0.ru_stime+b.ru_utime+b.ru_stime;rss=a.ru_maxrss+b.ru_maxrss\nunchanged=all(Path(x['path']).stat().st_size==x['bytes'] and hashlib.sha256(Path(x['path']).read_bytes()).hexdigest()==x['sha256'] for x in f['inputs'])\ntry:verified=json.loads((p/'stdout.json').read_text()).get('status')=='SAVED_EVIDENCE_PASS'\nexcept Exception:verified=False\nrecord={'status':'PASS' if code==0 and not timeout and wall<=40 and cpu<=20 and rss<=2*1024**3 and unchanged and verified else 'FAIL','command':cmd,'terminalObserved':True,'exitCode':code,'timedOut':timeout,'wallSeconds':wall,'combinedCPUSeconds':cpu,'conservativeSumOfPeakRSSBytes':rss,'inputHashesUnchanged':unchanged,'scope':'One stdlib saved-evidence verification; no model, mesh, sampler, test, build or GPU replay.'}\n(p/'run.json').write_text(json.dumps(record,indent=2)+'\\n');print(json.dumps(record));sys.exit(0 if record['status']=='PASS' else 1)\n",
+  "stderrText": "",
+  "rawEvidenceSHA256": {
+    "run.json": "3c56c37d4b94143a4bab4b13ce2cec44ec941231ce664416f0d461e2040e141f",
+    "stdout.json": "8a973e0aea7e58adc35143480ba11513991738266e0e6b5218f446da1154e84e",
+    "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PRE-RUN-FREEZE.json": "5040c0537c4c90af74f83cd6de998302613ff416ae2047ad74ab1b9431a5c28b",
+    "run.py": "9ecda2ab1f63e46346711312750f3579057ac4f808b1aa6237108aac6c4c151a"
+  }
+}

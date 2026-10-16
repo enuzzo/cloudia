@@ -1,0 +1,92 @@
+{
+  "state": "FROZEN_BEFORE_SAVED_STREAM_CHECK_ONLY",
+  "witnessDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness",
+  "candidateSourceDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-source",
+  "inputs": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-evidence-verification/verify.py",
+      "bytes": 11353,
+      "sha256": "b8074ad4c61ad9ac3716e2de13dc9cbb01167e1c89a1c7baa68d6e4772c9153f"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-evidence-verification/PROTOCOL.json",
+      "bytes": 734,
+      "sha256": "a54c491421d1fe31780c05f7410d57ea82d1a820821ab8471c24f920d3a738bf"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness-independent-review.md",
+      "bytes": 4556,
+      "sha256": "8e379f563f01ca28134e4f099b430114d455056fe0a4f00f02680de66321c641"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/PRE-RUN-FREEZE.json",
+      "bytes": 3284,
+      "sha256": "b557333cf30cbce1887d4e11b4b47d423d18bb991c955ca3fd26f2c31509f387"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/witness.ts",
+      "bytes": 23685,
+      "sha256": "0ae4817067a2a6e73ab56afc8d26bda41313f9bf595b718e74025e3a28e7e930"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/run.py",
+      "bytes": 18191,
+      "sha256": "e53ff990ec65f89f029e941dad54ccd5dad6ca3290ea1c2dcb07180c7b8920a1"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/geometry-preflight/run/result.json",
+      "bytes": 2532734,
+      "sha256": "5ae2135e94ffca23757f07ae985b01033d5fedf985971e2439b04d6033c71a27"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-decision-protocol.json",
+      "bytes": 1090,
+      "sha256": "a032e13f73ace31a0c44e940a36ad1a87652d566c845388d8ed7515c033c3ceb"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-qualification-r1/source-manifest.json",
+      "bytes": 13275,
+      "sha256": "83469d62c552db7bad9cbc175bf549f7b7c0bd8c0b113c137e484e1b4f315e00"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-source/src/cumulonimbus/assets/liguria-apuane-dem.bin",
+      "bytes": 4202532,
+      "sha256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/run-off/result.json",
+      "bytes": 2530852,
+      "sha256": "fada06fe4d91b632da9488edb43c227dbd9475f9e1668c19f95a758f1f2873fb"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/run-off/run.json",
+      "bytes": 2162,
+      "sha256": "22ee788f9eefff41fa955b46816c2f74e84ffc936bb835734f348a4fbf88eaa4"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/run-off/errors.f64le",
+      "bytes": 4730888,
+      "sha256": "6e5ff2fecacc6a7928dc927f341906f04b369cbbd976357d31f63d2faedf191a"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/run-on/result.json",
+      "bytes": 2626762,
+      "sha256": "dcea70f1bdfd076c0b482fec87f31659e49a473d25f6f9458915c3bf5b4a2835"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/run-on/run.json",
+      "bytes": 2615,
+      "sha256": "27ebb89307ad237a35a7e863d083df69f01a18e359ebacadaa05e5d760fec8aa"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/run-on/errors.f64le",
+      "bytes": 4730888,
+      "sha256": "58ca7139fc88f4f087854cb80a4901a8645536b23c7d504dc1c7bfecb7186093"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-evidence-verification/run.py",
+      "bytes": 1535,
+      "sha256": "9402cd0a3f776be6377ac15e9abc573799800c1918fd7998efc68ae8b82b06fa"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "state": "ROOT_APPROVED_UNEXECUTED",
+  "scope": "Read-only retained evidence verification with pinned base124 and current repository references. No model/mesh/GPU/test/build replay. Root reviewed program safety/header/entrypoint, bounded gzip and input handling.",
+  "inputs": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-payload/MANIFEST.json",
+      "bytes": 55616,
+      "sha256": "f84d3b0e0e2a327733c4ded89086de64dd7de585e7141244ad8cfe2a324a7bac"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-payload/verify_saved.py",
+      "bytes": 44729,
+      "sha256": "883ebf5fe05808f4ce0afafe08fec7388e1bcad9fe5dd517f6953d0e7a9fafb5"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-verification-r1/run.py",
+      "bytes": 2204,
+      "sha256": "9ecda2ab1f63e46346711312750f3579057ac4f808b1aa6237108aac6c4c151a"
+    }
+  ]
+}

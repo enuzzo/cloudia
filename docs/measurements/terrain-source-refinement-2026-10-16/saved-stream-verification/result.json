@@ -1,0 +1,171 @@
+{
+  "status": "SAVED_STREAM_EVIDENCE_PASS",
+  "checks": 2958,
+  "scope": "Independent Python Float64 math over retained errors and integer coast labels only; no mesh/query/model replay.",
+  "streamNodesPerMode": 591361,
+  "streamBytesPerMode": 4730888,
+  "groupsPerMode": 18,
+  "pairedGroups": 18,
+  "source126ManifestSHA256": "83469d62c552db7bad9cbc175bf549f7b7c0bd8c0b113c137e484e1b4f315e00",
+  "historicalOFFParity": true,
+  "fitGates": {
+    "globalRMSStrictlyLower": true,
+    "landRMSStrictlyLower": true,
+    "globalMaxAbsNoMoreThanBaselinePlus1mm": true,
+    "landRing2RMSStrictlyLower": true,
+    "landRing3RMSStrictlyLower": true,
+    "landRing4RMSStrictlyLower": true
+  },
+  "globalPairs": {
+    "improved": 225051,
+    "worsened": 55125,
+    "equalAbsoluteError": 311185,
+    "signFlips": 42775,
+    "offAbove5m": 209659,
+    "onAbove5m": 153094,
+    "enteredAbove5m": 12883,
+    "leftAbove5m": 69448
+  },
+  "landPairs": {
+    "improved": 224074,
+    "worsened": 55051,
+    "equalAbsoluteError": 55464,
+    "signFlips": 42584,
+    "offAbove5m": 209220,
+    "onAbove5m": 152900,
+    "enteredAbove5m": 12879,
+    "leftAbove5m": 69199
+  },
+  "seaPairs": {
+    "improved": 977,
+    "worsened": 74,
+    "equalAbsoluteError": 255721,
+    "signFlips": 191,
+    "offAbove5m": 439,
+    "onAbove5m": 194,
+    "enteredAbove5m": 4,
+    "leftAbove5m": 249
+  },
+  "landRMSByRing": {
+    "off": [
+      0.21331712767185024,
+      2.015449508146951,
+      8.055547217692,
+      16.1065207444597,
+      30.071097167037138
+    ],
+    "on": [
+      0.21331712767185024,
+      2.015449508146951,
+      4.334224804178353,
+      8.032407346243184,
+      14.0110651956901
+    ]
+  },
+  "globalRMS": {
+    "off": 18.57811473374497,
+    "on": 8.76091915769878
+  },
+  "landRMS": {
+    "off": 24.68442143715505,
+    "on": 11.641356606813309
+  },
+  "ONExtremaMetres": [
+    -96.06550239192968,
+    90.42770689763469
+  ],
+  "geometry": {
+    "off": {
+      "vertices": 465409,
+      "triangles": 929792,
+      "stitchedCells": 4096,
+      "levels": 9,
+      "cellsPerSide": 256,
+      "baseSpacingKm": 0.032,
+      "outerExtentKm": 1048.576,
+      "geometryBytes": 26050592,
+      "sampleCalls": 465409,
+      "minimumHeightKm": 0,
+      "maximumHeightKm": 3.0260982513427734,
+      "normalBlendStartRadiusKm": 32.768,
+      "normalBlendEndRadiusKm": 65.536,
+      "normalMode": "geometry"
+    },
+    "on": {
+      "vertices": 591788,
+      "triangles": 1182550,
+      "stitchedCells": 4096,
+      "levels": 9,
+      "cellsPerSide": 256,
+      "baseSpacingKm": 0.032,
+      "outerExtentKm": 1048.576,
+      "geometryBytes": 33127816,
+      "sampleCalls": 1183149,
+      "minimumHeightKm": 0,
+      "maximumHeightKm": 3.0260982513427734,
+      "normalBlendStartRadiusKm": 32.768,
+      "normalBlendEndRadiusKm": 65.536,
+      "normalMode": "geometry",
+      "refinement": {
+        "originalVertices": 465409,
+        "originalTriangles": 929792,
+        "probeSampleCalls": 591361,
+        "vertexSampleCalls": 591788,
+        "totalSampleCalls": 1183149,
+        "nodesAboveThreshold": 209659,
+        "eligibleNodesAboveThreshold": 209488,
+        "markedRedFaces": 69833,
+        "greenFaces": 21853,
+        "splitEdgeCount": 126379,
+        "addedVertices": 126379,
+        "addedTriangles": 252758,
+        "addedGeometryBytes": 7077224,
+        "sourceSpacingKm": 0.125,
+        "maxErrorKm": 0.005,
+        "sourceGrid": {
+          "minXKm": -64,
+          "minZKm": -64,
+          "spacingKm": 0.125,
+          "columns": 1025,
+          "rows": 1025
+        },
+        "selectionDomain": {
+          "minXKm": -48,
+          "maxXKm": 48,
+          "minZKm": -48,
+          "maxZKm": 48
+        },
+        "selectedNodeColumns": 769,
+        "selectedNodeRows": 769,
+        "originalFacesBySplitEdgeCount": [
+          838106,
+          7390,
+          7520,
+          76776
+        ],
+        "maximumCellTriangles": 20,
+        "cellTriangleCountBytes": 589824,
+        "midpointVerticesOutsideDomain": 405,
+        "boundsKm": {
+          "min": [
+            -1048.5760498046875,
+            -178.98373413085938,
+            -1048.5760498046875
+          ],
+          "max": [
+            1048.5760498046875,
+            -1.675218939781189,
+            1048.5760498046875
+          ]
+        }
+      }
+    }
+  },
+  "elapsedVerificationSeconds": 6.015237250016071,
+  "limits": [
+    "Selection-node fit, not holdout/continuous bound, native art, shadow or FPS proof.",
+    "OFF buffer hashes and ON topology remain saved run declarations; arrays not regenerated.",
+    "Coast codes classify original nodes directly; no height query/interpolation was performed.",
+    "Tiny fsum/Kahan rounding residuals use predeclared2e-12relative/1e-8absolute tolerance."
+  ]
+}

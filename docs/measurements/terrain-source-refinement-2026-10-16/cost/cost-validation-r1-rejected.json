@@ -1,0 +1,50 @@
+{
+  "status": "FAIL",
+  "checks": {
+    "A1-full-quality": true,
+    "A1-state": true,
+    "A1-measurement": true,
+    "A1-cache": false,
+    "A1-console": true,
+    "B-full-quality": true,
+    "B-state": true,
+    "B-measurement": true,
+    "B-cache": true,
+    "B-console": true,
+    "A2-full-quality": true,
+    "A2-state": true,
+    "A2-measurement": true,
+    "A2-cache": true,
+    "A2-console": true,
+    "baseline-drift-within15percent": true,
+    "B-over-bracket-mean-at-least0.9": true
+  },
+  "submissionFps": {
+    "A1": 16.647023179315077,
+    "B": 16.689485624056843,
+    "A2": 16.480662689111444
+  },
+  "bracketMean": 16.563842934213262,
+  "baselineDriftFraction": 0.009993407734924414,
+  "BOverBracketMean": 1.0075853586841288,
+  "rainResidualMaximum": 3.1709527659185e-07,
+  "limits": [
+    "Single paused Rain pose and current device/session; no global60FPS or compositor presentation claim.",
+    "B rain at start is 0.7999996829047235; <=3.18e-7 from0.8. This small transition residual is disclosed, not exact weather equality.",
+    "No speedup claim from sub1percent B difference. Prior sessions faster; this measures local relative cost only."
+  ],
+  "records": {
+    "A1": {
+      "bytes": 3263251,
+      "sha256": "f665c87fc08b8fdac9e6c41979a13b36e6b8f58077aaa1627e71b25da4287f01"
+    },
+    "B": {
+      "bytes": 3262252,
+      "sha256": "986bda407457eaac773382e460e09001f7b1b77c3d7b24d7ba1e5fc5c5105cdc"
+    },
+    "A2": {
+      "bytes": 3205060,
+      "sha256": "9750165b977c384749775cd836e672779692c0ea772516dc89fcf4167499b9e9"
+    }
+  }
+}

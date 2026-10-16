@@ -1,0 +1,1441 @@
+{
+  "schema": "cloudia-curated-evidence-v1",
+  "state": "R2_FROZEN_READY_FOR_ROOT_SAVED_EVIDENCE_REVIEW_NOT_EXECUTED",
+  "scope": "Immutable candidate evidence plus separately qualified v59 final overlay; no archive-verifier/model/test/build/GPU execution during curation",
+  "candidateSourceManifestSHA256": "83469d62c552db7bad9cbc175bf549f7b7c0bd8c0b113c137e484e1b4f315e00",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 5949,
+      "sha256": "5ae270ebaa5a1dac0e153d38e687d8189c2a2e62850ee6195bf85c76468281a1",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-payload/README.md",
+        "bytes": 5949,
+        "sha256": "5ae270ebaa5a1dac0e153d38e687d8189c2a2e62850ee6195bf85c76468281a1"
+      },
+      "encoding": "identity",
+      "generated": true,
+      "executionState": "CURATED_DOCUMENTATION"
+    },
+    {
+      "path": "REFERENCES.json",
+      "bytes": 2279,
+      "sha256": "f3af2ed9dcacd2697edd9e9e477467dd332f0cf7c8159bab993598692b6f1c70",
+      "origin": {
+        "path": "generated:pinned-reference-inventory",
+        "bytes": 2279,
+        "sha256": "f3af2ed9dcacd2697edd9e9e477467dd332f0cf7c8159bab993598692b6f1c70"
+      },
+      "encoding": "identity",
+      "generated": true
+    },
+    {
+      "path": "REPORT.md",
+      "bytes": 12875,
+      "sha256": "462e156f973d78dfaeaf7f053b6ecce82306526e7082807a8428edfa1d20c4c0",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-payload/REPORT.md",
+        "bytes": 12875,
+        "sha256": "462e156f973d78dfaeaf7f053b6ecce82306526e7082807a8428edfa1d20c4c0"
+      },
+      "encoding": "identity",
+      "generated": true,
+      "executionState": "CURATED_DOCUMENTATION"
+    },
+    {
+      "path": "browser/independent-sun-review.md",
+      "bytes": 3430,
+      "sha256": "4b8bdc348bf22b3e85818300b08331de37af1dceaa152f983a6a6e3f8d3e4ff0",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/independent-sun-review.md",
+        "bytes": 3430,
+        "sha256": "4b8bdc348bf22b3e85818300b08331de37af1dceaa152f983a6a6e3f8d3e4ff0"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/independent-weather-compatibility.json",
+      "bytes": 4437,
+      "sha256": "ec9cc21b86b2c83bf931ba64987ae836dc29b5e098b79c88fbccdfc3adff02aa",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/independent-weather-compatibility.json",
+        "bytes": 4437,
+        "sha256": "ec9cc21b86b2c83bf931ba64987ae836dc29b5e098b79c88fbccdfc3adff02aa"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/independent-weather-review.md",
+      "bytes": 4074,
+      "sha256": "82312786bf67f3d9752bed07a952ec4dd7d50bf361dc4570dbc0ddc34408660a",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/independent-weather-review.md",
+        "bytes": 4074,
+        "sha256": "82312786bf67f3d9752bed07a952ec4dd7d50bf361dc4570dbc0ddc34408660a"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/nativeSave28.js",
+      "bytes": 1775,
+      "sha256": "1f87f13b8edc0ceccc08eb6f2244c0bd3e5b5247bacef7c8a41503f15aa29bf1",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/nativeSave28.js",
+        "bytes": 1775,
+        "sha256": "1f87f13b8edc0ceccc08eb6f2244c0bd3e5b5247bacef7c8a41503f15aa29bf1"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/ordinary-v59-preview.jpg",
+      "bytes": 67870,
+      "sha256": "7765263dc4209935873816c7fa0cfeb85872d69a673a3033ae71919ad966bbc3",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/ordinary-v59-preview.jpg",
+        "bytes": 67870,
+        "sha256": "7765263dc4209935873816c7fa0cfeb85872d69a673a3033ae71919ad966bbc3"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/ordinary-v59-proof.json",
+      "bytes": 298,
+      "sha256": "e406d096d949399359a95b07b86925d4b404225e1d8ed888ce028b5fa4e16e97",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/ordinary-v59-proof.json",
+        "bytes": 298,
+        "sha256": "e406d096d949399359a95b07b86925d4b404225e1d8ed888ce028b5fa4e16e97"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/ordinary-v59-state.txt",
+      "bytes": 208,
+      "sha256": "6f55897c761f77e5b8024da933b84c3a041e4da24ac9f98c02a69fdf429460c5",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/ordinary-v59-state.txt",
+        "bytes": 208,
+        "sha256": "6f55897c761f77e5b8024da933b84c3a041e4da24ac9f98c02a69fdf429460c5"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/refine-main-rain-native-transfer.json",
+      "bytes": 4298,
+      "sha256": "cae50b8423ab69c9e6255549b9d3c5228a41507a731d799672bc525b45477d74",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/refine-main-rain-native-transfer.json",
+        "bytes": 4298,
+        "sha256": "cae50b8423ab69c9e6255549b9d3c5228a41507a731d799672bc525b45477d74"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/refine-main-rain-native.json",
+      "bytes": 11975,
+      "sha256": "23c96235b85440351be72b5c1b890c4424de7f6a38e0730981d71800de3308d2",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/refine-main-rain-native.json",
+        "bytes": 11975,
+        "sha256": "23c96235b85440351be72b5c1b890c4424de7f6a38e0730981d71800de3308d2"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/refine-main-rain-native.png",
+      "bytes": 2585113,
+      "sha256": "0dd971b684b29c9d9855a405878d903da025eb729f17832dda813ac50051fa1b",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/refine-main-rain-native.png",
+        "bytes": 2585113,
+        "sha256": "0dd971b684b29c9d9855a405878d903da025eb729f17832dda813ac50051fa1b"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/refine-main-sun-native-transfer.json",
+      "bytes": 4851,
+      "sha256": "6c7f210db78198c8758935a70f250dfeabd7b4bff2b6c41e0e48034db305a0f9",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/refine-main-sun-native-transfer.json",
+        "bytes": 4851,
+        "sha256": "6c7f210db78198c8758935a70f250dfeabd7b4bff2b6c41e0e48034db305a0f9"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/refine-main-sun-native.json",
+      "bytes": 11949,
+      "sha256": "6caff74a5dd02014d33adaeb34912c2df6258d127e976799b3f2e13ada5eda45",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/refine-main-sun-native.json",
+        "bytes": 11949,
+        "sha256": "6caff74a5dd02014d33adaeb34912c2df6258d127e976799b3f2e13ada5eda45"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/refine-main-sun-native.png",
+      "bytes": 2909134,
+      "sha256": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/refine-main-sun-native.png",
+        "bytes": 2909134,
+        "sha256": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/refine-main-sunset-native-transfer.json",
+      "bytes": 2797,
+      "sha256": "cabe24c8876338ee088e85d068bc082f134fbaf3c2284283f6d37c23742477dd",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/refine-main-sunset-native-transfer.json",
+        "bytes": 2797,
+        "sha256": "cabe24c8876338ee088e85d068bc082f134fbaf3c2284283f6d37c23742477dd"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/refine-main-sunset-native.json",
+      "bytes": 11986,
+      "sha256": "2898bb0dcc46152dde2d9c16ab3a819e9e407a28804c89178668cf39c729339f",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/refine-main-sunset-native.json",
+        "bytes": 11986,
+        "sha256": "2898bb0dcc46152dde2d9c16ab3a819e9e407a28804c89178668cf39c729339f"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/refine-main-sunset-native.png",
+      "bytes": 1668288,
+      "sha256": "02bec7fddafd7889c7dcf3d20bd5c10d371f9fa8adddd6fb041643df2655ef8e",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/refine-main-sunset-native.png",
+        "bytes": 1668288,
+        "sha256": "02bec7fddafd7889c7dcf3d20bd5c10d371f9fa8adddd6fb041643df2655ef8e"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/refine-worker-sun-native-transfer.json",
+      "bytes": 4851,
+      "sha256": "6c7f210db78198c8758935a70f250dfeabd7b4bff2b6c41e0e48034db305a0f9",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/refine-worker-sun-native-transfer.json",
+        "bytes": 4851,
+        "sha256": "6c7f210db78198c8758935a70f250dfeabd7b4bff2b6c41e0e48034db305a0f9"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/refine-worker-sun-native.json",
+      "bytes": 11953,
+      "sha256": "24f5b2c23166339c834d6cb6fbe8e0106f31e9d6ffa7127f68754db4e632afdb",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/refine-worker-sun-native.json",
+        "bytes": 11953,
+        "sha256": "24f5b2c23166339c834d6cb6fbe8e0106f31e9d6ffa7127f68754db4e632afdb"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/root-sun-metadata-check.json",
+      "bytes": 534,
+      "sha256": "cf25e55eed8b81cb36391a7e5160aca78ecf65f23f2f903ebb863f5ca7440cfc",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/root-sun-metadata-check.json",
+        "bytes": 534,
+        "sha256": "cf25e55eed8b81cb36391a7e5160aca78ecf65f23f2f903ebb863f5ca7440cfc"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/root-sun-metadata-differences.json",
+      "bytes": 1060,
+      "sha256": "31a9a831b8ae549b97f3309b5e0d8b3229aee63773c8f8224ef45e05d45d6181",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/root-sun-metadata-differences.json",
+        "bytes": 1060,
+        "sha256": "31a9a831b8ae549b97f3309b5e0d8b3229aee63773c8f8224ef45e05d45d6181"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/root-sun-review.md",
+      "bytes": 565,
+      "sha256": "6ad28519dd76c171c016adf41e5a103a051c163d4bd29f5924ed2ddaff324ff9",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/root-sun-review.md",
+        "bytes": 565,
+        "sha256": "6ad28519dd76c171c016adf41e5a103a051c163d4bd29f5924ed2ddaff324ff9"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/saveFinalNative28.js",
+      "bytes": 1519,
+      "sha256": "0cf14e21cf87bdf8b23b39061397bf86318382953a8c3cbca4cd68920fb04a44",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/saveFinalNative28.js",
+        "bytes": 1519,
+        "sha256": "0cf14e21cf87bdf8b23b39061397bf86318382953a8c3cbca4cd68920fb04a44"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/saveStableNative28.js",
+      "bytes": 1618,
+      "sha256": "02fa126391a442d9f49ecadf251cbb304d030717e1d0bac563b98ab11eb35735",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/saveStableNative28.js",
+        "bytes": 1618,
+        "sha256": "02fa126391a442d9f49ecadf251cbb304d030717e1d0bac563b98ab11eb35735"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/stable-main-sunset-native-transfer.json",
+      "bytes": 2797,
+      "sha256": "ca42c9798d38ace251014060d8e9463e1d809166344424151ffecb954449c2c3",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/stable-main-sunset-native-transfer.json",
+        "bytes": 2797,
+        "sha256": "ca42c9798d38ace251014060d8e9463e1d809166344424151ffecb954449c2c3"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/stable-main-sunset-native.json",
+      "bytes": 10494,
+      "sha256": "5ea7267acd143bfdd53e48fa7917e7e8b2f985541373bffd5eb1871965a9180c",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/stable-main-sunset-native.json",
+        "bytes": 10494,
+        "sha256": "5ea7267acd143bfdd53e48fa7917e7e8b2f985541373bffd5eb1871965a9180c"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/stable-main-sunset-native.png",
+      "bytes": 1663003,
+      "sha256": "0b259ab4c22958f0c8d83c7f20a5739db82272d284b80ade66e80d37070989c2",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/stable-main-sunset-native.png",
+        "bytes": 1663003,
+        "sha256": "0b259ab4c22958f0c8d83c7f20a5739db82272d284b80ade66e80d37070989c2"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/sunset-ab-review.md",
+      "bytes": 2361,
+      "sha256": "9125048e718d04fecf62319314fdb5323bc4f80cf507bad2d199bcc7ff925c69",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/sunset-ab-review.md",
+        "bytes": 2361,
+        "sha256": "9125048e718d04fecf62319314fdb5323bc4f80cf507bad2d199bcc7ff925c69"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/v59-main-sun-native-transfer.json",
+      "bytes": 4851,
+      "sha256": "25879b3119ae7200745c7eecf0739e3b144152fc87fc8dd732bed7cce0c0f3bb",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/v59-main-sun-native-transfer.json",
+        "bytes": 4851,
+        "sha256": "25879b3119ae7200745c7eecf0739e3b144152fc87fc8dd732bed7cce0c0f3bb"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "browser/v59-main-sun-native.json",
+      "bytes": 11953,
+      "sha256": "1dd31f0ec8e81d703e3cc2b1aaaa67b9ccad17bd5472dae83445a0d8db6baf59",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/v59-main-sun-native.json",
+        "bytes": 11953,
+        "sha256": "1dd31f0ec8e81d703e3cc2b1aaaa67b9ccad17bd5472dae83445a0d8db6baf59"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "cost/cost-A1-console.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/cost-A1-console.json",
+        "bytes": 3,
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "cost/cost-A1-report.json.gz",
+      "bytes": 149110,
+      "sha256": "bb6bf0add530233f75ac3b98e3a0fecdff61565d6a75224a4c00ff9e35cc0d60",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/cost-A1-report.json",
+        "bytes": 3263251,
+        "sha256": "f665c87fc08b8fdac9e6c41979a13b36e6b8f58077aaa1627e71b25da4287f01"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "cost/cost-A2-console.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/cost-A2-console.json",
+        "bytes": 3,
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "cost/cost-A2-report.json.gz",
+      "bytes": 146992,
+      "sha256": "e6c63f5cb8274641a5fc3aa052bd7c993b95251eecc61025b9ca9e6903d52835",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/cost-A2-report.json",
+        "bytes": 3205060,
+        "sha256": "9750165b977c384749775cd836e672779692c0ea772516dc89fcf4167499b9e9"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "cost/cost-B-console.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/cost-B-console.json",
+        "bytes": 3,
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "cost/cost-B-report.json.gz",
+      "bytes": 149645,
+      "sha256": "db578d6f0e18adaffaf901e5b07f5b298fbf7a4df6166e5325b2ca2bc3356d97",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/cost-B-report.json",
+        "bytes": 3262252,
+        "sha256": "986bda407457eaac773382e460e09001f7b1b77c3d7b24d7ba1e5fc5c5105cdc"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "cost/cost-validation-r1-rejected.json",
+      "bytes": 1567,
+      "sha256": "e8338258d9390c9ac96248442afb70eaa7704c95bd5402d3a50551dda091bd33",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/cost-validation-r1-rejected.json",
+        "bytes": 1567,
+        "sha256": "e8338258d9390c9ac96248442afb70eaa7704c95bd5402d3a50551dda091bd33"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "cost/cost-validation.json",
+      "bytes": 2005,
+      "sha256": "3777abec7bacb3784312018df38d23eccb1478052cbc8fdc44b586a32fb35eb8",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/cost-validation.json",
+        "bytes": 2005,
+        "sha256": "3777abec7bacb3784312018df38d23eccb1478052cbc8fdc44b586a32fb35eb8"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "cost/refinement-cost-protocol.json",
+      "bytes": 1499,
+      "sha256": "7c2d9b7268f9dc9303c5c4280e497a1350040c3d5dbce7da010d16e1aa7abe98",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/refinement-cost-protocol.json",
+        "bytes": 1499,
+        "sha256": "7c2d9b7268f9dc9303c5c4280e497a1350040c3d5dbce7da010d16e1aa7abe98"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "curate_archive.py",
+      "bytes": 13950,
+      "sha256": "58f3ccb58a439f48b514791f9064aa800572cdefb34a586cc613d7dc12afd45f",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-payload/curate_archive.py",
+        "bytes": 13950,
+        "sha256": "58f3ccb58a439f48b514791f9064aa800572cdefb34a586cc613d7dc12afd45f"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "curate_final_overlay.py",
+      "bytes": 7065,
+      "sha256": "7844eb3450fa67b4c0961399a724701218cda1ddfcc07d778b2873c21a4ada46",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-payload/curate_final_overlay.py",
+        "bytes": 7065,
+        "sha256": "7844eb3450fa67b4c0961399a724701218cda1ddfcc07d778b2873c21a4ada46"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "final/adoption-source-record.json",
+      "bytes": 1227,
+      "sha256": "5406a5e1fe34e9e9ee2c13e4124c65fa1967d7ab479ac80e085234f6af7e3e30",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/adoption-source-record.json",
+        "bytes": 1227,
+        "sha256": "5406a5e1fe34e9e9ee2c13e4124c65fa1967d7ab479ac80e085234f6af7e3e30"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "final/candidate-to-final.patch.gz",
+      "bytes": 794,
+      "sha256": "e8a63ea994a2feb19394947df9d68fcb6ddf6512d2216ff3c7c46f5daa40bcac",
+      "origin": {
+        "path": "generated:candidate-to-final-two-version-literals",
+        "bytes": 1664,
+        "sha256": "e8e3abb6d319de49998955bb53a6dcb8af007b0ff111c37e78ad5ccd47f95889"
+      },
+      "encoding": "gzip",
+      "generated": true
+    },
+    {
+      "path": "final/changed/src/cumulonimbus/GPUSceneEngine.ts.gz",
+      "bytes": 20371,
+      "sha256": "52da1442bf25a77136cb836a6aab5d380d55134a448982cad9719dea044c06fb",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/final-source/src/cumulonimbus/GPUSceneEngine.ts",
+        "bytes": 75078,
+        "sha256": "28fd54dc8decbaa6e491c1781d29d862050820092dcb2f392507942a0ce5a4c7"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "final/changed/src/cumulonimbus/lifecycle.test.ts.gz",
+      "bytes": 13263,
+      "sha256": "f6aee19f0765b732ec84e6b52c2b10dc1d83c6bd8d71dcf558d43281e870c717",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/final-source/src/cumulonimbus/lifecycle.test.ts",
+        "bytes": 69590,
+        "sha256": "ec622c8fec39a37851e8470491c0c083be3220cf8808c52ecaa7220a23ec8bd7"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "final/overlay-byte-check.json",
+      "bytes": 834,
+      "sha256": "0f20bc266f059be685ce8f9c32a8958c445cd026ce3d8688358cdc5830708ff5",
+      "origin": {
+        "path": "generated:final-overlay-source-byte-check",
+        "bytes": 834,
+        "sha256": "0f20bc266f059be685ce8f9c32a8958c445cd026ce3d8688358cdc5830708ff5"
+      },
+      "encoding": "identity",
+      "generated": true
+    },
+    {
+      "path": "final/qualification/PROTOCOL.json",
+      "bytes": 477,
+      "sha256": "41629ac27481ab2b5711853050a162527ea11365ad7ac00e21fe1eed4117497b",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/final-qualification/PROTOCOL.json",
+        "bytes": 477,
+        "sha256": "41629ac27481ab2b5711853050a162527ea11365ad7ac00e21fe1eed4117497b"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "final/qualification/app-build.log.gz",
+      "bytes": 700,
+      "sha256": "061f649289d262369ea92ce221b98e9a6a68b9d1175f893cdc2fb874f74fac13",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/final-qualification/app-build.log",
+        "bytes": 1460,
+        "sha256": "c2e5d8e9103687a8f8a4d3a3763a45f71212bd02910f9f210c8e4f057b06dd36"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "final/qualification/checks.json",
+      "bytes": 816,
+      "sha256": "1804c3e3d3ffd2ed68727535fb7e1969c9383a400c7e381873f04cc3a19b1a18",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/final-qualification/checks.json",
+        "bytes": 816,
+        "sha256": "1804c3e3d3ffd2ed68727535fb7e1969c9383a400c7e381873f04cc3a19b1a18"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "final/qualification/dist-manifest.json",
+      "bytes": 3083,
+      "sha256": "64256ff3115410d96d0bbbd38533f38081f7e96968418cc26ea732d62bff5092",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/final-qualification/dist-manifest.json",
+        "bytes": 3083,
+        "sha256": "64256ff3115410d96d0bbbd38533f38081f7e96968418cc26ea732d62bff5092"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "final/qualification/full-tests.log.gz",
+      "bytes": 166,
+      "sha256": "fe234d52a87e0c65df6ab6b571360f3703bd9f5f89fa16ec6a691159b56a91db",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/final-qualification/full-tests.log",
+        "bytes": 265,
+        "sha256": "fe0cb0330dd95afdc9447db4090d2dfca9738a09dff4ebe02db439b00b4bdccc"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "final/qualification/hero-build.log.gz",
+      "bytes": 246,
+      "sha256": "79503ce256250b9a9f378e233db12b68f8707dca0952187254b8e00606a37194",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/final-qualification/hero-build.log",
+        "bytes": 364,
+        "sha256": "7739a3c0e34ae3238b2fabfc7b501254785bb5d5e0a4d528adfa33b60f99e164"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "final/qualification/run.py",
+      "bytes": 1971,
+      "sha256": "870923ad290881dbd87660d7f7102902aba0eb73ee946cbcda1c2d1f09f463d4",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/final-qualification/run.py",
+        "bytes": 1971,
+        "sha256": "870923ad290881dbd87660d7f7102902aba0eb73ee946cbcda1c2d1f09f463d4"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "final/qualification/test-results.json.gz",
+      "bytes": 22060,
+      "sha256": "434be881bbbd2c4c5b7128899c7cd55f5ca66c152440f85e38f39f309f389804",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/final-qualification/test-results.json",
+        "bytes": 164487,
+        "sha256": "08a2671c9191fc6f90890104bd2d9f84745bf04d56539f31d592892f6278dd2f"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "final/root-final-adoption-verification.json",
+      "bytes": 1202,
+      "sha256": "aea7c90e592b365ba7a9b0e57c22b2023ad1e724a3930fbb645ab1c5cc87c3fc",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/final-adoption-verification.json",
+        "bytes": 1202,
+        "sha256": "aea7c90e592b365ba7a9b0e57c22b2023ad1e724a3930fbb645ab1c5cc87c3fc"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "final/source-manifest.json",
+      "bytes": 13275,
+      "sha256": "fb6c231918e7a825f5b1a407efcd98aaacf5cca352c60cbdcdb9b5271a913ff2",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/final-source-manifest.json",
+        "bytes": 13275,
+        "sha256": "fb6c231918e7a825f5b1a407efcd98aaacf5cca352c60cbdcdb9b5271a913ff2"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "proposal/MANIFEST.json",
+      "bytes": 3041,
+      "sha256": "76d63b933ddc251d7e8b620a1fd0ea8538a811a17c7036b12d065568462768cf",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-proposal/MANIFEST.json",
+        "bytes": 3041,
+        "sha256": "76d63b933ddc251d7e8b620a1fd0ea8538a811a17c7036b12d065568462768cf"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "proposal/PROTOCOL.json",
+      "bytes": 2457,
+      "sha256": "c1266c979376b4eec4e0d00b449337a063c010e72326bb83eed32f62fcc793e1",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-proposal/PROTOCOL.json",
+        "bytes": 2457,
+        "sha256": "c1266c979376b4eec4e0d00b449337a063c010e72326bb83eed32f62fcc793e1"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "proposal/README.md",
+      "bytes": 7304,
+      "sha256": "726058254fe339b216e4609ac155a12127ef3c5bc623e2f2b7ca3313edcde36a",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-proposal/README.md",
+        "bytes": 7304,
+        "sha256": "726058254fe339b216e4609ac155a12127ef3c5bc623e2f2b7ca3313edcde36a"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "proposal/STATIC-REVIEW.md",
+      "bytes": 1072,
+      "sha256": "beaac0b5e226c49981ee27b5f475acee3e64f7bb2770aa1f052468192c73a407",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-proposal/STATIC-REVIEW.md",
+        "bytes": 1072,
+        "sha256": "beaac0b5e226c49981ee27b5f475acee3e64f7bb2770aa1f052468192c73a407"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "proposal/static-review-solar.md",
+      "bytes": 1900,
+      "sha256": "d6218f93ac6d62c82dfded05cf1af62c3adfd389cf2fbb86467995f1ca9390fd",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-proposal/static-review-solar.md",
+        "bytes": 1900,
+        "sha256": "d6218f93ac6d62c82dfded05cf1af62c3adfd389cf2fbb86467995f1ca9390fd"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "protocols/refine-decision-protocol.json",
+      "bytes": 1090,
+      "sha256": "a032e13f73ace31a0c44e940a36ad1a87652d566c845388d8ed7515c033c3ceb",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-decision-protocol.json",
+        "bytes": 1090,
+        "sha256": "a032e13f73ace31a0c44e940a36ad1a87652d566c845388d8ed7515c033c3ceb"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "qualification/PROTOCOL.json",
+      "bytes": 601,
+      "sha256": "eab01fb64cd057c98b19f64712cfe07cfc9e6531b1526c28150d5c0fa61562c2",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-qualification-r1/PROTOCOL.json",
+        "bytes": 601,
+        "sha256": "eab01fb64cd057c98b19f64712cfe07cfc9e6531b1526c28150d5c0fa61562c2"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "qualification/app-build.log.gz",
+      "bytes": 702,
+      "sha256": "30967a958ee7cecda1a7bd84a40b07903572c2624658b6ea365fb0dddff7029f",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-qualification-r1/app-build.log",
+        "bytes": 1460,
+        "sha256": "c1806c7be7910aa0de6cf0e7c911d4a81f2ac1c6c9035775d8f6770b39e75530"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "qualification/checks.json",
+      "bytes": 1310,
+      "sha256": "c43b8d5ef9237d6550a5067f4e39bc2f1021f9331dce9158d83a76eb824d1b20",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-qualification-r1/checks.json",
+        "bytes": 1310,
+        "sha256": "c43b8d5ef9237d6550a5067f4e39bc2f1021f9331dce9158d83a76eb824d1b20"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "qualification/dist-manifest.json",
+      "bytes": 3083,
+      "sha256": "463ac3bb91d29f67d437447ac8718077a48addf6b04086483e5cce9404cd45b5",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-qualification-r1/dist-manifest.json",
+        "bytes": 3083,
+        "sha256": "463ac3bb91d29f67d437447ac8718077a48addf6b04086483e5cce9404cd45b5"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "qualification/full-tests.log.gz",
+      "bytes": 168,
+      "sha256": "a5508fa9b32c77859b1823eece2666e08ad3ae3290eb9f80ff7887f76d851a5c",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-qualification-r1/full-tests.log",
+        "bytes": 273,
+        "sha256": "474c7b53d2c7fac33c276991fa1893da317adfee76c49193d48e138eaf638777"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "qualification/hero-build.log.gz",
+      "bytes": 246,
+      "sha256": "b7ec5866d64c4138d1382b8aae97f4611641142b9bb2f1da513670cf097924cc",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-qualification-r1/hero-build.log",
+        "bytes": 364,
+        "sha256": "74469bd8024c1520e3764f8668c7ddebef490a86d107d794d801173bb44dee1e"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "qualification/run.py",
+      "bytes": 2171,
+      "sha256": "be1b9d142e42735d4dda88ecd5b032b485f046e38ebb5b1721b409eae7252cea",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-qualification-r1/run.py",
+        "bytes": 2171,
+        "sha256": "be1b9d142e42735d4dda88ecd5b032b485f046e38ebb5b1721b409eae7252cea"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "qualification/targeted-results.json.gz",
+      "bytes": 3059,
+      "sha256": "4a97d97e2d36f3771294d1e6a9e447148a17ab486b97bbcc3908421549ea307a",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-qualification-r1/targeted-results.json",
+        "bytes": 27804,
+        "sha256": "5845340f114dc583eaa6e08fcf8768f839c1b4e33df25f877050eb0ec0c64ecd"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "qualification/targeted-tests.log.gz",
+      "bytes": 211,
+      "sha256": "5fcb2472c4b2c655e94bf687365996bb50ae0a3a5da94f3e13a7b0ac503668a7",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-qualification-r1/targeted-tests.log",
+        "bytes": 364,
+        "sha256": "d0314edd8a796e869daf4f90d0c824ac350184e7ef42ce248ff1cd75aad9c6e0"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "qualification/test-results.json.gz",
+      "bytes": 22014,
+      "sha256": "a10a8d62e13572e82aa992a9d43d4c53cc3f325496ef02f550f3657d60795620",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-qualification-r1/test-results.json",
+        "bytes": 164576,
+        "sha256": "233ea5c2a53d732e0bd913ab28b4f6656ff6cc6d89d82603bc50a5a265de67c5"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "reviews/refine-witness-independent-review.md",
+      "bytes": 4556,
+      "sha256": "8e379f563f01ca28134e4f099b430114d455056fe0a4f00f02680de66321c641",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness-independent-review.md",
+        "bytes": 4556,
+        "sha256": "8e379f563f01ca28134e4f099b430114d455056fe0a4f00f02680de66321c641"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "saved-stream-verification/MANIFEST.json",
+      "bytes": 1294,
+      "sha256": "78e3d89e8c910cb1c688ef4f5f7dd19936b221e849639a59caff2a8fe9b9bb02",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-evidence-verification/MANIFEST.json",
+        "bytes": 1294,
+        "sha256": "78e3d89e8c910cb1c688ef4f5f7dd19936b221e849639a59caff2a8fe9b9bb02"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "saved-stream-verification/PRE-RUN-FREEZE.json",
+      "bytes": 4211,
+      "sha256": "a2f70ee549443b98ec5d4c981139aae35431ca54c5da109600f114cf955c4d14",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-evidence-verification/PRE-RUN-FREEZE.json",
+        "bytes": 4211,
+        "sha256": "a2f70ee549443b98ec5d4c981139aae35431ca54c5da109600f114cf955c4d14"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "saved-stream-verification/PROTOCOL.json",
+      "bytes": 734,
+      "sha256": "a54c491421d1fe31780c05f7410d57ea82d1a820821ab8471c24f920d3a738bf",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-evidence-verification/PROTOCOL.json",
+        "bytes": 734,
+        "sha256": "a54c491421d1fe31780c05f7410d57ea82d1a820821ab8471c24f920d3a738bf"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "saved-stream-verification/README.md",
+      "bytes": 5203,
+      "sha256": "f1e664d70f3b65aa9fbf42e74f90a0afde335f03cfebe35c0086ef9dcee6dcfb",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-evidence-verification/README.md",
+        "bytes": 5203,
+        "sha256": "f1e664d70f3b65aa9fbf42e74f90a0afde335f03cfebe35c0086ef9dcee6dcfb"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "saved-stream-verification/result.json",
+      "bytes": 4760,
+      "sha256": "4d019fc41ffed2810a7e715644c9af6bf0dafdb9f659a45f924c6ba0c46ce656",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-evidence-verification/result.json",
+        "bytes": 4760,
+        "sha256": "4d019fc41ffed2810a7e715644c9af6bf0dafdb9f659a45f924c6ba0c46ce656"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "saved-stream-verification/run.json",
+      "bytes": 609,
+      "sha256": "6c0ee6d7330cdb5234b749fcc0459aaa0476145c338caf7041043c9510bbe2ce",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-evidence-verification/run.json",
+        "bytes": 609,
+        "sha256": "6c0ee6d7330cdb5234b749fcc0459aaa0476145c338caf7041043c9510bbe2ce"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "saved-stream-verification/run.py",
+      "bytes": 1535,
+      "sha256": "9402cd0a3f776be6377ac15e9abc573799800c1918fd7998efc68ae8b82b06fa",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-evidence-verification/run.py",
+        "bytes": 1535,
+        "sha256": "9402cd0a3f776be6377ac15e9abc573799800c1918fd7998efc68ae8b82b06fa"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "saved-stream-verification/stderr.log.gz",
+      "bytes": 20,
+      "sha256": "ac73670af3abed54ac6fb4695131f4099be9fbe39d6076c5d0264a6bbdae9d83",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-evidence-verification/stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "saved-stream-verification/verify.py",
+      "bytes": 11353,
+      "sha256": "b8074ad4c61ad9ac3716e2de13dc9cbb01167e1c89a1c7baa68d6e4772c9153f",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-evidence-verification/verify.py",
+        "bytes": 11353,
+        "sha256": "b8074ad4c61ad9ac3716e2de13dc9cbb01167e1c89a1c7baa68d6e4772c9153f"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "source/assembly/assemble-engine.py",
+      "bytes": 2776,
+      "sha256": "95f11f60bb4c40f92f138797ac095b7f0021a315de62330eb319a4fa2d784fe1",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/assemble-engine.py",
+        "bytes": 2776,
+        "sha256": "95f11f60bb4c40f92f138797ac095b7f0021a315de62330eb319a4fa2d784fe1"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "source/assembly/assembly-r1-error.json",
+      "bytes": 459,
+      "sha256": "ffa28a765ba45985cb8f7090681fa10ca41303edc01e0539f5c011c0065d134c",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/assembly-r1-error.json",
+        "bytes": 459,
+        "sha256": "ffa28a765ba45985cb8f7090681fa10ca41303edc01e0539f5c011c0065d134c"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "source/base-manifest.json",
+      "bytes": 13042,
+      "sha256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle27/source-manifest.json",
+        "bytes": 13042,
+        "sha256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "source/candidate-manifest.json",
+      "bytes": 13275,
+      "sha256": "83469d62c552db7bad9cbc175bf549f7b7c0bd8c0b113c137e484e1b4f315e00",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-qualification-r1/source-manifest.json",
+        "bytes": 13275,
+        "sha256": "83469d62c552db7bad9cbc175bf549f7b7c0bd8c0b113c137e484e1b4f315e00"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "source/candidate-vs-v58.patch.gz",
+      "bytes": 13949,
+      "sha256": "c937f7949eab605a0272814e8fbcd1573ed9d77b5622c90a3adb103e2798a565",
+      "origin": {
+        "path": "generated:unified-diff-base124-to-candidate126",
+        "bytes": 47414,
+        "sha256": "628ee6121ddb0b1478274196aca94b1f707cccc91bde68cd3d7a14489b69928e"
+      },
+      "encoding": "gzip",
+      "generated": true
+    },
+    {
+      "path": "source/changed/src/cumulonimbus/GPUSceneEngine.ts.gz",
+      "bytes": 20371,
+      "sha256": "473df67168a613a81fa150639ef3221a31bc4037f70e14041988835f62084585",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-source/src/cumulonimbus/GPUSceneEngine.ts",
+        "bytes": 75074,
+        "sha256": "6ea17c11d201e43032c4d2ff6cfedad581555bc1867e7a07858202ee0b7c2e5c"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "source/changed/src/cumulonimbus/lifecycle.test.ts.gz",
+      "bytes": 13263,
+      "sha256": "fbdb5839614242bede843a482e94ecacba2f5460a093ecf17a21193e112ee123",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-source/src/cumulonimbus/lifecycle.test.ts",
+        "bytes": 69586,
+        "sha256": "786937e9db64cabff9bc1371c28a7aa1e92d974e33fa9f971a7c5401471f26d2"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "source/changed/src/cumulonimbus/terrainMesh.test.ts.gz",
+      "bytes": 7399,
+      "sha256": "70df3e46659e09c25f27de1a43e5cd80daeb49bcc042a44c66ec2a6e788db45c",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-source/src/cumulonimbus/terrainMesh.test.ts",
+        "bytes": 27863,
+        "sha256": "fc77a756c01abef42bfed1818fde57bdeaac93501eec0703fe8d8401c7549755"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "source/changed/src/cumulonimbus/terrainMesh.ts.gz",
+      "bytes": 9391,
+      "sha256": "db68887963344255a634d4729dfb068d80dfa224c8f41a17a52a9cf739aad7f9",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-source/src/cumulonimbus/terrainMesh.ts",
+        "bytes": 30453,
+        "sha256": "c7bc36a93960a688102546f70fadffcf67005073e86889b0afd2ab659ba78e5a"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "source/changed/src/cumulonimbus/terrainSplitTriangle.test.ts.gz",
+      "bytes": 2864,
+      "sha256": "851acf2991df1494c31f4188d78c5837078899deab934db00af164e1215049ae",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-source/src/cumulonimbus/terrainSplitTriangle.test.ts",
+        "bytes": 8040,
+        "sha256": "c013bbd7c291992461e5c133317a2a1df546979b2c2d164c3fdf9a097207d9a1"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "source/changed/src/cumulonimbus/terrainSplitTriangle.ts.gz",
+      "bytes": 630,
+      "sha256": "d3ed86eb5c3f175cc7ceadfc21576f57085684e66f9af46cc5448df846e0f625",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-source/src/cumulonimbus/terrainSplitTriangle.ts",
+        "bytes": 1249,
+        "sha256": "e8a14126eedcea99390b9bf9503b9df53fae6ad85e2f39aa184817d104443163"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "source/patch-reconstruction.json",
+      "bytes": 2226,
+      "sha256": "bb3e01ee1cf8854b2f80239ec3f8dc8808e5099e6e1296449d7ee59cce330b9e",
+      "origin": {
+        "path": "generated:source-byte-patch-check",
+        "bytes": 2226,
+        "sha256": "bb3e01ee1cf8854b2f80239ec3f8dc8808e5099e6e1296449d7ee59cce330b9e"
+      },
+      "encoding": "identity",
+      "generated": true
+    },
+    {
+      "path": "source/proposal-original.patch.gz",
+      "bytes": 9189,
+      "sha256": "e644ef730ce7a6a4ba397774a235d786b1eaf947a7104a3d56bcfd5c0d0b3a3f",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-proposal/terrain-refinement.patch",
+        "bytes": 32225,
+        "sha256": "7161ebe0aa4ecfbff9ed2a2a1f6220227edda02aee24e0b4533c926901d74b21"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "verification-r1/PRE-RUN-FREEZE.json",
+      "bytes": 965,
+      "sha256": "91c80ed57585605d7cbc6fdb25660997943e4f9852c24814092dbe31e0ee9f13",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-verification-r1/PRE-RUN-FREEZE.json",
+        "bytes": 965,
+        "sha256": "91c80ed57585605d7cbc6fdb25660997943e4f9852c24814092dbe31e0ee9f13"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "verification-r1/manifest-original.json.gz",
+      "bytes": 10330,
+      "sha256": "23ae3267a3d6154987cbed7d9438848e517162c183c68f7f9a82438ca112df6c",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-payload/MANIFEST.json [original R1 frozen bytes]",
+        "bytes": 55616,
+        "sha256": "f84d3b0e0e2a327733c4ded89086de64dd7de585e7141244ad8cfe2a324a7bac"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "verification-r1/run.json",
+      "bytes": 793,
+      "sha256": "642362386e0dd95629c27709cf221d2277573ac03e24a8b34150410927631f8f",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-verification-r1/run.json",
+        "bytes": 793,
+        "sha256": "642362386e0dd95629c27709cf221d2277573ac03e24a8b34150410927631f8f"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "verification-r1/run.py",
+      "bytes": 2204,
+      "sha256": "9ecda2ab1f63e46346711312750f3579057ac4f808b1aa6237108aac6c4c151a",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-verification-r1/run.py",
+        "bytes": 2204,
+        "sha256": "9ecda2ab1f63e46346711312750f3579057ac4f808b1aa6237108aac6c4c151a"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "verification-r1/stderr.log",
+      "bytes": 125,
+      "sha256": "b8ed70d421b3e113d1ab6d940a4902e0cd2f823e38af664599e7e49495909b64",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-verification-r1/stderr.log",
+        "bytes": 125,
+        "sha256": "b8ed70d421b3e113d1ab6d940a4902e0cd2f823e38af664599e7e49495909b64"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "verification-r1/stdout.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-verification-r1/stdout.json",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "verification-r1/verifier-rejected.py.gz",
+      "bytes": 14337,
+      "sha256": "d8e42aec8811e9d69b166957c970b451c700e72c69ceffd52b1af050ce4f314b",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-payload/verify_saved.py [rejected R1 frozen bytes]",
+        "bytes": 44729,
+        "sha256": "883ebf5fe05808f4ce0afafe08fec7388e1bcad9fe5dd517f6953d0e7a9fafb5"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "verifier-revisions/README.md",
+      "bytes": 701,
+      "sha256": "1580a2fb580a7b1d4bfad3dcb55525aeac0080051bb3d759112ba506f621bc90",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-payload/verifier-revisions/README.md",
+        "bytes": 701,
+        "sha256": "1580a2fb580a7b1d4bfad3dcb55525aeac0080051bb3d759112ba506f621bc90"
+      },
+      "encoding": "identity",
+      "generated": true,
+      "executionState": "CURATED_DOCUMENTATION"
+    },
+    {
+      "path": "verifier-revisions/r1/verify_saved.py.gz",
+      "bytes": 14360,
+      "sha256": "3e34f0bee2753e1076fc2c082b2614633583d387486e1af68a4d8893fcee0367",
+      "origin": {
+        "path": "generated:prepared-verifier-r1-before-final-overlay",
+        "bytes": 44729,
+        "sha256": "883ebf5fe05808f4ce0afafe08fec7388e1bcad9fe5dd517f6953d0e7a9fafb5"
+      },
+      "encoding": "gzip",
+      "generated": true,
+      "executionState": "PREPARED_UNEXECUTED"
+    },
+    {
+      "path": "verify_saved.py",
+      "bytes": 45502,
+      "sha256": "b0cad655a8956ce445c6ef6ffc264d727c62083d8af074f05dbbdd8f82210dd0",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/archive-payload/verify_saved.py",
+        "bytes": 45502,
+        "sha256": "b0cad655a8956ce445c6ef6ffc264d727c62083d8af074f05dbbdd8f82210dd0"
+      },
+      "encoding": "identity",
+      "generated": true,
+      "executionState": "PREPARED_UNEXECUTED"
+    },
+    {
+      "path": "witness/PRE-RUN-FREEZE.json",
+      "bytes": 3284,
+      "sha256": "b557333cf30cbce1887d4e11b4b47d423d18bb991c955ca3fd26f2c31509f387",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/PRE-RUN-FREEZE.json",
+        "bytes": 3284,
+        "sha256": "b557333cf30cbce1887d4e11b4b47d423d18bb991c955ca3fd26f2c31509f387"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "witness/PROTOCOL.json",
+      "bytes": 5401,
+      "sha256": "5ec63f8ec7e3c35bd44a438071b6b53bc554171a21f39a3f1a16901d0c3fde96",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/PROTOCOL.json",
+        "bytes": 5401,
+        "sha256": "5ec63f8ec7e3c35bd44a438071b6b53bc554171a21f39a3f1a16901d0c3fde96"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "witness/README.md",
+      "bytes": 4823,
+      "sha256": "6e63ef510ca0e1caa0a25dbf77b67d357d30f3379a15b94321465a566d901364",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/README.md",
+        "bytes": 4823,
+        "sha256": "6e63ef510ca0e1caa0a25dbf77b67d357d30f3379a15b94321465a566d901364"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "witness/REVIEW-FREEZE.json",
+      "bytes": 3291,
+      "sha256": "98e132c98884553cc413f13d66612aefd80cac1d9878b08cdf45114ca1f57cd5",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/REVIEW-FREEZE.json",
+        "bytes": 3291,
+        "sha256": "98e132c98884553cc413f13d66612aefd80cac1d9878b08cdf45114ca1f57cd5"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "witness/off/errors.f64le.gz",
+      "bytes": 4048305,
+      "sha256": "d29a0687abfbfbff79a2b4d8d5cf53d9517fad55522f210f6f1a4b64f312896b",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/run-off/errors.f64le",
+        "bytes": 4730888,
+        "sha256": "6e5ff2fecacc6a7928dc927f341906f04b369cbbd976357d31f63d2faedf191a"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "witness/off/result.json.gz",
+      "bytes": 42063,
+      "sha256": "758f66b55bcb2d4d0bb05817d3481c7358714afda2232f059f6d8a241845e47f",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/run-off/result.json",
+        "bytes": 2530852,
+        "sha256": "fada06fe4d91b632da9488edb43c227dbd9475f9e1668c19f95a758f1f2873fb"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "witness/off/run.json",
+      "bytes": 2162,
+      "sha256": "22ee788f9eefff41fa955b46816c2f74e84ffc936bb835734f348a4fbf88eaa4",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/run-off/run.json",
+        "bytes": 2162,
+        "sha256": "22ee788f9eefff41fa955b46816c2f74e84ffc936bb835734f348a4fbf88eaa4"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "witness/off/stderr.log.gz",
+      "bytes": 329,
+      "sha256": "1676f29f08ff9581e4b3aea027ba09c14053373c64bbb77af02d89fb0cb2b70f",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/run-off/stderr.log",
+        "bytes": 509,
+        "sha256": "dee761560b19c7ad861ba20216e0e093d97acd764947f42fbaad19b0697f3c3e"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "witness/off/stdout.log.gz",
+      "bytes": 182,
+      "sha256": "9d14da0f05d904e170cd56a8cfd27300b5877aa3f234180c3274d9c7f99bd265",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/run-off/stdout.log",
+        "bytes": 190,
+        "sha256": "07d2c127374af32b7b11f37e8a7c918e6736ec99000d7dfe9e2e926d07ddbbd7"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "witness/on/errors.f64le.gz",
+      "bytes": 4048160,
+      "sha256": "c97476cd159a415b31f8a2ce72fbabac6534376b258e027a12d2633f6165314b",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/run-on/errors.f64le",
+        "bytes": 4730888,
+        "sha256": "58ca7139fc88f4f087854cb80a4901a8645536b23c7d504dc1c7bfecb7186093"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "witness/on/result.json.gz",
+      "bytes": 51467,
+      "sha256": "8a426c7eed131d9c9f8d9390c4a6b1d050eaab961761770ce71a3e5263a6a663",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/run-on/result.json",
+        "bytes": 2626762,
+        "sha256": "dcea70f1bdfd076c0b482fec87f31659e49a473d25f6f9458915c3bf5b4a2835"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "witness/on/run.json",
+      "bytes": 2615,
+      "sha256": "27ebb89307ad237a35a7e863d083df69f01a18e359ebacadaa05e5d760fec8aa",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/run-on/run.json",
+        "bytes": 2615,
+        "sha256": "27ebb89307ad237a35a7e863d083df69f01a18e359ebacadaa05e5d760fec8aa"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "witness/on/stderr.log.gz",
+      "bytes": 458,
+      "sha256": "25aae7c5671c457d71d163b6fdb21f3b023f90c90c0590df0330eccc4b20b4ef",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/run-on/stderr.log",
+        "bytes": 793,
+        "sha256": "f2c13c3fe80903d2fdbf3abc74a6f2c77ac4ee245c49a5fbe200c00a23166b79"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "witness/on/stdout.log.gz",
+      "bytes": 182,
+      "sha256": "3c02f9dcd4cc0e64b1ef31e2726c74dc2c9db1cd3fc223cbd2c8c8264080c455",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/run-on/stdout.log",
+        "bytes": 189,
+        "sha256": "7d622742df1e342dc297be789d18d8c9e800f2c841fbe03b9f6a0939fe0d9597"
+      },
+      "encoding": "gzip"
+    },
+    {
+      "path": "witness/root-pre-run-review.md",
+      "bytes": 577,
+      "sha256": "335a7e0aac4224a24cac6d6a43d2efe0bc936d3008da14146092de594b602586",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/root-pre-run-review.md",
+        "bytes": 577,
+        "sha256": "335a7e0aac4224a24cac6d6a43d2efe0bc936d3008da14146092de594b602586"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "witness/run.py",
+      "bytes": 18191,
+      "sha256": "e53ff990ec65f89f029e941dad54ccd5dad6ca3290ea1c2dcb07180c7b8920a1",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/run.py",
+        "bytes": 18191,
+        "sha256": "e53ff990ec65f89f029e941dad54ccd5dad6ca3290ea1c2dcb07180c7b8920a1"
+      },
+      "encoding": "identity"
+    },
+    {
+      "path": "witness/witness.ts.gz",
+      "bytes": 8194,
+      "sha256": "9a6eae8f9226a1cf829cf47c37d92d46f99d4940558de5e9a9cc1b51b1490e3c",
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-witness/witness.ts",
+        "bytes": 23685,
+        "sha256": "0ae4817067a2a6e73ab56afc8d26bda41313f9bf595b718e74025e3a28e7e930"
+      },
+      "encoding": "gzip"
+    }
+  ],
+  "deduplicated": [
+    {
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/refine-qualification-r1/source-manifest.json",
+        "bytes": 13275,
+        "sha256": "83469d62c552db7bad9cbc175bf549f7b7c0bd8c0b113c137e484e1b4f315e00"
+      },
+      "storedPath": "source/candidate-manifest.json",
+      "logicalAlias": "qualification/source-manifest.json"
+    },
+    {
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/refine-worker-sun-native.png",
+        "bytes": 2909134,
+        "sha256": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d"
+      },
+      "storedPath": "browser/refine-main-sun-native.png",
+      "logicalAlias": "browser/refine-worker-sun-native.png",
+      "scope": "Observed single saved PNG only; not universal main/worker parity"
+    },
+    {
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/final-qualification/source-manifest.json",
+        "bytes": 13275,
+        "sha256": "fb6c231918e7a825f5b1a407efcd98aaacf5cca352c60cbdcdb9b5271a913ff2"
+      },
+      "storedPath": "final/source-manifest.json",
+      "logicalAlias": "final/qualification/source-manifest.json"
+    },
+    {
+      "origin": {
+        "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/browser/v59-main-sun-native.png",
+        "bytes": 2909134,
+        "sha256": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d"
+      },
+      "storedPath": "browser/refine-main-sun-native.png",
+      "logicalAlias": "browser/v59-main-sun-native.png",
+      "scope": "Actual final native Sun bitmap; single observed pose, not all-state/version equivalence"
+    }
+  ],
+  "selfPolicy": "Manifest excludes itself. Every physical file except this root manifest is listed exactly once; origin raw/stored bytes and SHA preserve compression and explicit dedup aliases.",
+  "finalSourceManifestSHA256": "fb6c231918e7a825f5b1a407efcd98aaacf5cca352c60cbdcdb9b5271a913ff2",
+  "fileCount": 124,
+  "storedPayloadBytes": 18106011,
+  "uncompressedPayloadBytesCountingStoredCopies": 34580867,
+  "verifierState": "R1 actual FAIL preserved; R2 structured-progress correction prepared, not executed",
+  "curationChecks": {
+    "sixFilePatchAppliedInMemory": true,
+    "allBase124Candidate126ByteHashesChecked": true,
+    "twoFinalLiteralByteChangesChecked": true,
+    "workerAndFinalNativeSunDedupByteExact": true,
+    "textTrailingWhitespaceIssues": [],
+    "independentSavedVerifierExecuted": false
+  }
+}

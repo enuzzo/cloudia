@@ -1,0 +1,21 @@
+{
+  "status": "EXACT_TWO_LITERAL_OVERLAY_PASS",
+  "candidateFiles": 126,
+  "finalFiles": 126,
+  "unchangedFileHashes": 124,
+  "changed": [
+    {
+      "path": "src/cumulonimbus/GPUSceneEngine.ts",
+      "candidateSHA256": "6ea17c11d201e43032c4d2ff6cfedad581555bc1867e7a07858202ee0b7c2e5c",
+      "finalSHA256": "28fd54dc8decbaa6e491c1781d29d862050820092dcb2f392507942a0ce5a4c7",
+      "onlyChange": "One renderer-version literal replacement"
+    },
+    {
+      "path": "src/cumulonimbus/lifecycle.test.ts",
+      "candidateSHA256": "786937e9db64cabff9bc1371c28a7aa1e92d974e33fa9f971a7c5401471f26d2",
+      "finalSHA256": "ec622c8fec39a37851e8470491c0c083be3220cf8808c52ecaa7220a23ec8bd7",
+      "onlyChange": "One renderer-version literal replacement"
+    }
+  ],
+  "scope": "Saved source byte comparison only; no runtime execution"
+}
