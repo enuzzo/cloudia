@@ -1,0 +1,63 @@
+{
+  "status": "FROZEN_METADATA_ONLY_FEASIBILITY",
+  "date": "2026-10-16",
+  "scope": "No imagery decoded/preprocessed, no product/backend/GPU/install/build/Git edits. Only4TIFFmetadata prefixes plusHEAD and smallS3listings. Prefix may contain incidental unused compressed data. No complete imageryblocks intentionally requested.",
+  "metadataRangeBytes": 196608,
+  "rangeBudgetBytes": 262144,
+  "listingXmlBytesKnown": 11625,
+  "within256KiBBudgetEvenIncludingObservedListings": true,
+  "report": "SENTINEL2-PALETTE-FEASIBILITY.md",
+  "plannedFutureRanges": "overview4-range-plan.json",
+  "futureRangeStatus": "NOT_AUTHORIZED_OR_DOWNLOADED",
+  "files": [
+    {
+      "path": "ESA_WorldCover_10m_2021_v200_N43E009_S2RGBNIR-metadata-prefix.bin",
+      "bytes": 49152,
+      "sha256": "810f2c8c2b298bb5bd10e6cbfe0699dc67eca8df571cbca3c1a1140af768ba2e"
+    },
+    {
+      "path": "ESA_WorldCover_10m_2021_v200_N43E010_S2RGBNIR-metadata-prefix.bin",
+      "bytes": 49152,
+      "sha256": "85bc0d6b3dd3793072fb590e56ccf4b57fe6da8114d3f24f0d6cd799e5a47d17"
+    },
+    {
+      "path": "ESA_WorldCover_10m_2021_v200_N44E009_S2RGBNIR-metadata-prefix.bin",
+      "bytes": 49152,
+      "sha256": "d37b1a5b7c59392e1ace9f76fe3376236a02306a72aa9c9ad90803bf797abe2e"
+    },
+    {
+      "path": "ESA_WorldCover_10m_2021_v200_N44E010_S2RGBNIR-metadata-prefix.bin",
+      "bytes": 49152,
+      "sha256": "d2dccfe345a1692fb19445125883b953d645be63a40356418c25a1142e161bef"
+    },
+    {
+      "path": "SENTINEL2-PALETTE-FEASIBILITY.md",
+      "bytes": 5346,
+      "sha256": "2cd77bb4cba1c04c8be49dd61200a55e44557a600d0a61cc23362f1ece0e8c88"
+    },
+    {
+      "path": "metadata-probe.json",
+      "bytes": 75226,
+      "sha256": "a5a1ea17f47b7467019e9d9a3de68bf776ff7013f4ba37bbce14f63078e2aebf"
+    },
+    {
+      "path": "overview4-range-plan.json",
+      "bytes": 6723,
+      "sha256": "ab097ef34fe964150d9b3d8e655cb817473e55329e40abf1598fb030c169b53f"
+    },
+    {
+      "path": "probe-sentinel2.py",
+      "bytes": 6601,
+      "sha256": "48b5345efcd1c5bdab7801a5e3b03fac0062f877d6ae9240cbf528ac42b8fec0"
+    },
+    {
+      "path": "roi-cost-summary.json",
+      "bytes": 1801,
+      "sha256": "fac72adde5b0fa7681acb51431a29f34a5298fcdb4e500259602671d97f82e22"
+    }
+  ],
+  "fileCount": 9,
+  "totalBytesExcludingThisManifest": 292305,
+  "initialListingBytesUpperBound": 16384,
+  "metadataBodyBytesUpperBoundIncludingListings": 224617
+}

@@ -1,5 +1,7 @@
 # Cloudia v53 — rilievi misurati per terreno e montagne
 
+Aggiornamento successivo: [v54 copertura reale del suolo](TERRAIN-COVER-2026-10-16.md). Questo documento conserva il checkpoint v53.
+
 16 ottobre 2026. Prodotto locale `13e03f5`. Goal attivo. Priorità del proprietario: eliminare l'aspetto di dune riflettenti e rendere il paesaggio credibile.
 
 ## Cambiamento adottato

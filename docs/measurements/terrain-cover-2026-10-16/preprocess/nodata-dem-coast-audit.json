@@ -1,0 +1,27 @@
+{
+  "status": "READ_ONLY_QUANTIZED_NODATA_DEM_CENTRE_COAST_CROSSCHECK",
+  "demAssetSha256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d",
+  "wcvAssetSha256": "e7fa38f2b0a8c3c469737410dc8d265e680071226e663b3cb12b23930ebda5fc",
+  "method": "DEM coast at each WCV1 cell centre is arithmetic average of4CDM1 nodes; sign classifies reference land/sea, no field correction. WCV1unknown is quantized class0fraction, not float64 prequantization histogram.",
+  "unknownAreaQuantizedKm2": 2134.043014705882,
+  "unknownAreaOriginalFloat64Km2": 2134.0426005816735,
+  "quantizationAreaDeltaKm2": 0.00041412420841879793,
+  "regions": {
+    "demLandCoastPositive": {
+      "cellCount": 614284,
+      "unknownPositiveCellCount": 0,
+      "unknownAreaKm2": 0.0
+    },
+    "demSeaCoastNegative": {
+      "cellCount": 433313,
+      "unknownPositiveCellCount": 137091,
+      "unknownAreaKm2": 2134.0430147058823
+    },
+    "demCoastExactlyZero": {
+      "cellCount": 979,
+      "unknownPositiveCellCount": 0,
+      "unknownAreaKm2": 0.0
+    }
+  },
+  "limits": "DEM sea is itself threshold/connectivity and raster-distance approximation; this is a cross-dataset comparison, not authoritative shoreline ground truth."
+}

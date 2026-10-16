@@ -1,0 +1,231 @@
+{
+  "fileCount": 45,
+  "payloadBytes": 2479910,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1973,
+      "sha256": "d7fe451a1fe6dcef348fa6bf50fa380ed4ddb18956fdb530c0cb765986407bc9"
+    },
+    {
+      "path": "benchmark/cover-r2-main-rain-native.json.gz",
+      "bytes": 132917,
+      "sha256": "144e8eab0b37fc92f73e5210780eb6f984f81bb103a59eecbc928188d78e4f0a"
+    },
+    {
+      "path": "benchmark/cover-r2-main-sun-native.json.gz",
+      "bytes": 416514,
+      "sha256": "5e832ca72d9757d517919108c444c6064dcf6cd9b1492b81b5640ee1de216629"
+    },
+    {
+      "path": "benchmark/rain-summary.json",
+      "bytes": 7617,
+      "sha256": "7335d1528264531c1d78d26c436406419f135ed20b652d2881eb737a2070de6e"
+    },
+    {
+      "path": "benchmark/sun-summary.json",
+      "bytes": 7603,
+      "sha256": "eb934c2cacc262eb07a3b9d26cfaf4531c5d913bb3506db201cbd8fabbb7597a"
+    },
+    {
+      "path": "browser/audit.json",
+      "bytes": 1966,
+      "sha256": "66c9c73bb0baf8290bf1caacebdade83d305781ee05c2d3272642b5ea91a1383"
+    },
+    {
+      "path": "browser/cover-baseline-v53-inland-sun.css.jpg",
+      "bytes": 54216,
+      "sha256": "a0f9d3d02820091f6d4b9741c1e1dd73b586a3828876b24832575d68715decc2"
+    },
+    {
+      "path": "browser/cover-r2-inland-rain.css.jpg",
+      "bytes": 55815,
+      "sha256": "2f4c26fe191427e3f47ec4eaae4d0a84dcef883d2ba62cf89cf1295c44eec0e1"
+    },
+    {
+      "path": "browser/cover-r2-inland-sun.css.jpg",
+      "bytes": 66773,
+      "sha256": "3eeca63cea9f7631de64fe1aee322582b11674aa14e2b603a16c21816baa818a"
+    },
+    {
+      "path": "browser/cover-r2-inland-sunset.css.jpg",
+      "bytes": 44660,
+      "sha256": "cd000850115755ed4dd51a1c49597b796bc0ae4af50430153fad0e51ce810ee6"
+    },
+    {
+      "path": "browser/cover-r2-main-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "browser/cover-r2-preview-sun.css.jpg",
+      "bytes": 66773,
+      "sha256": "3eeca63cea9f7631de64fe1aee322582b11674aa14e2b603a16c21816baa818a"
+    },
+    {
+      "path": "browser/cover-r2-worker-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "browser/cover-r2-worker-inland-sun.css.jpg",
+      "bytes": 66773,
+      "sha256": "3eeca63cea9f7631de64fe1aee322582b11674aa14e2b603a16c21816baa818a"
+    },
+    {
+      "path": "next/SENTINEL2-PALETTE-FEASIBILITY.md",
+      "bytes": 5346,
+      "sha256": "2cd77bb4cba1c04c8be49dd61200a55e44557a600d0a61cc23362f1ece0e8c88"
+    },
+    {
+      "path": "next/artifact-manifest.json",
+      "bytes": 2418,
+      "sha256": "23d2ef95293632c09e9784d761f0fbdee861eeaa088b9c2d1862ed23f5af85e8"
+    },
+    {
+      "path": "next/metadata-probe.json",
+      "bytes": 75226,
+      "sha256": "a5a1ea17f47b7467019e9d9a3de68bf776ff7013f4ba37bbce14f63078e2aebf"
+    },
+    {
+      "path": "next/overview4-range-plan.json",
+      "bytes": 6723,
+      "sha256": "ab097ef34fe964150d9b3d8e655cb817473e55329e40abf1598fb030c169b53f"
+    },
+    {
+      "path": "preprocess/NOTICE-WORLDCOVER.txt",
+      "bytes": 978,
+      "sha256": "4131f41e831f1f661406f3baba9d0ded259ed9d368a2e42621a240b0bf041e10"
+    },
+    {
+      "path": "preprocess/PROTOCOL.md",
+      "bytes": 4729,
+      "sha256": "490a61bc4d894942d633e44f4a52d735cbfd2ffb8e81192f6ec0bbe2303ea163"
+    },
+    {
+      "path": "preprocess/SOURCES.md",
+      "bytes": 1221,
+      "sha256": "71c281ff4d900d111631f34cd3f3f1544d9bf47dcf5d1c12a97dfb01f8063aee"
+    },
+    {
+      "path": "preprocess/audit-nodata-dem.py",
+      "bytes": 2248,
+      "sha256": "694f0ca6e639eada0af6a5cb0bf120304b59c79037d39155eea9f69e5b7c4fc3"
+    },
+    {
+      "path": "preprocess/cc-by-4.0-legalcode.txt.gz",
+      "bytes": 5921,
+      "sha256": "df12d586f3c01b0dad2f6987b26d79f47950757e444a9956f59d46967ec6166a"
+    },
+    {
+      "path": "preprocess/esa-worldcover-data-access.html.gz",
+      "bytes": 11793,
+      "sha256": "2b42f6deeaaa9f2ceeb9c8ff6c3f26eeb39e0562bc4d76ad2c0c441d79db2b84"
+    },
+    {
+      "path": "preprocess/independent-verification.json",
+      "bytes": 1118,
+      "sha256": "45a7e9cc21ab7eceb5763e34daf040ceeb0ff350be2b98cff602619a1707712e"
+    },
+    {
+      "path": "preprocess/nodata-dem-coast-audit.json",
+      "bytes": 1220,
+      "sha256": "ad26d8abdcdb25c8c78aa1aa9655c6b28ae9e79cd1eabf10750c6bdba44a2110"
+    },
+    {
+      "path": "preprocess/pre-run-freeze.json",
+      "bytes": 1290,
+      "sha256": "acb79919c7240d0ed25a0d2382c995a3763aaf7ad0f19d642a524204ed7c0b97"
+    },
+    {
+      "path": "preprocess/preprocess-worldcover.py",
+      "bytes": 18962,
+      "sha256": "0f390b35a6d6d5c9d7d276f9f628e1b366be80fd414166324d2544e6fe6f5113"
+    },
+    {
+      "path": "preprocess/primary-documents.json",
+      "bytes": 1798,
+      "sha256": "be8744742dcecd406d2af8e96e2a84255732450539936264728d071d2d38bbb5"
+    },
+    {
+      "path": "preprocess/ranges-manifest.json",
+      "bytes": 18226,
+      "sha256": "38c8f87a42045ff0e7f04d0d69e5bff1783e85d46b398d1ba54e2383d140aa03"
+    },
+    {
+      "path": "preprocess/result.json",
+      "bytes": 4053,
+      "sha256": "a97daaad463d0c055cb705b7c2099d458f4e3b7c305aacdb445ddf71c921710c"
+    },
+    {
+      "path": "preprocess/roi-plan.json",
+      "bytes": 37441,
+      "sha256": "8554aa76a439030314663407d5f6989315b83d9917b97cded98c649f8a860299"
+    },
+    {
+      "path": "preprocess/schema.json",
+      "bytes": 1490,
+      "sha256": "af0171a8619adddec6df10295e652d9d90ad44bac31ca4416a69ee94c87e8a3b"
+    },
+    {
+      "path": "preprocess/source-metadata.json",
+      "bytes": 63868,
+      "sha256": "fe20c840aaee88019a3463949683edc6d8c28c18feadedd4964209a88d302573"
+    },
+    {
+      "path": "preprocess/source-prefix-64k.bin",
+      "bytes": 65536,
+      "sha256": "65ff4780170766563fba8b2d2974f11d62602de4ede152cdee6e77d0fa7932f4"
+    },
+    {
+      "path": "preprocess/source-witness-pixels.csv.gz",
+      "bytes": 4195,
+      "sha256": "63b0052e91d9c8624492ca657584a866ff38b92c76cb3bee2612854421ec2935"
+    },
+    {
+      "path": "preprocess/source-witnesses.json",
+      "bytes": 6115,
+      "sha256": "a22c410ec4c71ace14f40bf5c8fdea6954ee1e6f8d92d0f86da89dd72d00a6ff"
+    },
+    {
+      "path": "preprocess/worldcover-class-fractions.png",
+      "bytes": 824715,
+      "sha256": "88cc5db00a494886d04bd2397536a282c0c78d67de39bc3a24eb5dbec779ae6d"
+    },
+    {
+      "path": "preprocess/worldcover-overview.png",
+      "bytes": 351430,
+      "sha256": "7ce747b6ce15f0664e4a40a15abe40d5b15fddf9a7bdf5426fb7af3510f4cc48"
+    },
+    {
+      "path": "source/cover-r2-build-app.log.gz",
+      "bytes": 809,
+      "sha256": "1cc08c543eac64e8c1b62cfaaa6fa8bc64459897ae72c2b176e67e56e96eff32"
+    },
+    {
+      "path": "source/cover-r2-build-hero.log.gz",
+      "bytes": 230,
+      "sha256": "d9907a79fd36dae6f945efd3d0b8497ce6852a52758cb0510dd3a0a39d951e76"
+    },
+    {
+      "path": "source/cover-r2-dist-manifest.json",
+      "bytes": 3083,
+      "sha256": "186e23b55a51b227bdca29757eacd5f9924a8356fe093a60b393ab9141bb4e5a"
+    },
+    {
+      "path": "source/cover-r2-full-tests.log.gz",
+      "bytes": 208,
+      "sha256": "b201b25af460a31bfa6472796446c241de319b448c977c839e8f2d854ae8dab5"
+    },
+    {
+      "path": "source/cover-r2-source-manifest.json",
+      "bytes": 12480,
+      "sha256": "1511fd8a9a5f3a03146d3ff3e1ee6ba7e057f814ca3edead9f5db2f4c9f04eb3"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 21436,
+      "sha256": "8f9f8604d2f0c40f7728acc09b7285208ee470cb27751c8384daac46d302c12f"
+    }
+  ]
+}

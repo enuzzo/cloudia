@@ -1,0 +1,216 @@
+{
+  "status": "PLAN_ONLY_NO_IMAGERY_DOWNLOAD_AUTHORIZED",
+  "metadataSha256": "a5a1ea17f47b7467019e9d9a3de68bf776ff7013f4ba37bbce14f63078e2aebf",
+  "rangeCount": 4,
+  "plannedBytesTotal": 71091595,
+  "rasterPrefixBytesAlreadyRead": 196608,
+  "target": "2048x2048 cells over world[-64,+64]km,62.5m/cell; same local equirectangular projection as DEM",
+  "bandsObserved": [
+    "B04Red",
+    "B03Green",
+    "B02Blue",
+    "B08NIR"
+  ],
+  "nativeInputScale": 0.0001,
+  "nativeInputOffset": 0,
+  "noData": 0,
+  "ranges": [
+    {
+      "url": "https://esa-worldcover-s2.s3.eu-central-1.amazonaws.com/rgbnir/2021/N43/ESA_WorldCover_10m_2021_v200_N43E009_S2RGBNIR.tif",
+      "key": "rgbnir/2021/N43/ESA_WorldCover_10m_2021_v200_N43E009_S2RGBNIR.tif",
+      "etag": "\"97e1665acc80090d6b734ce64f97fa03-3\"",
+      "ifMatch": "\"97e1665acc80090d6b734ce64f97fa03-3\"",
+      "sourceObjectBytes": 23406468,
+      "sourcePrefixSha256": "810f2c8c2b298bb5bd10e6cbfe0699dc67eca8df571cbca3c1a1140af768ba2e",
+      "overviewSide": 3000,
+      "levelDecimation": 4,
+      "rangeStart": 575063,
+      "rangeEndInclusive": 1176127,
+      "rangeHeader": "bytes=575063-1176127",
+      "expectedContentRange": "bytes 575063-1176127/23406468",
+      "plannedBytes": 601065,
+      "plannedRangeContentSha256": null,
+      "rangeContentStatus": "NOT_DOWNLOADED_NOT_AUTHORIZED",
+      "selectedBlocks": [
+        {
+          "tileId": 0,
+          "offset": 575063,
+          "bytes": 8488
+        },
+        {
+          "tileId": 1,
+          "offset": 583559,
+          "bytes": 8488
+        },
+        {
+          "tileId": 2,
+          "offset": 592055,
+          "bytes": 94255
+        },
+        {
+          "tileId": 3,
+          "offset": 686318,
+          "bytes": 8488
+        },
+        {
+          "tileId": 4,
+          "offset": 694814,
+          "bytes": 8488
+        },
+        {
+          "tileId": 5,
+          "offset": 703310,
+          "bytes": 472818
+        }
+      ]
+    },
+    {
+      "url": "https://esa-worldcover-s2.s3.eu-central-1.amazonaws.com/rgbnir/2021/N43/ESA_WorldCover_10m_2021_v200_N43E010_S2RGBNIR.tif",
+      "key": "rgbnir/2021/N43/ESA_WorldCover_10m_2021_v200_N43E010_S2RGBNIR.tif",
+      "etag": "\"b0afa4829889f94380830eacde6e5a37-48\"",
+      "ifMatch": "\"b0afa4829889f94380830eacde6e5a37-48\"",
+      "sourceObjectBytes": 401048807,
+      "sourcePrefixSha256": "85bc0d6b3dd3793072fb590e56ccf4b57fe6da8114d3f24f0d6cd799e5a47d17",
+      "overviewSide": 3000,
+      "levelDecimation": 4,
+      "rangeStart": 10349227,
+      "rangeEndInclusive": 32415282,
+      "rangeHeader": "bytes=10349227-32415282",
+      "expectedContentRange": "bytes 10349227-32415282/401048807",
+      "plannedBytes": 22066056,
+      "plannedRangeContentSha256": null,
+      "rangeContentStatus": "NOT_DOWNLOADED_NOT_AUTHORIZED",
+      "selectedBlocks": [
+        {
+          "tileId": 0,
+          "offset": 10349227,
+          "bytes": 2289784
+        },
+        {
+          "tileId": 1,
+          "offset": 12639019,
+          "bytes": 4847368
+        },
+        {
+          "tileId": 2,
+          "offset": 17486395,
+          "bytes": 4696541
+        },
+        {
+          "tileId": 3,
+          "offset": 22182944,
+          "bytes": 1106296
+        },
+        {
+          "tileId": 4,
+          "offset": 23289248,
+          "bytes": 4556999
+        },
+        {
+          "tileId": 5,
+          "offset": 27846255,
+          "bytes": 4569028
+        }
+      ]
+    },
+    {
+      "url": "https://esa-worldcover-s2.s3.eu-central-1.amazonaws.com/rgbnir/2021/N44/ESA_WorldCover_10m_2021_v200_N44E009_S2RGBNIR.tif",
+      "key": "rgbnir/2021/N44/ESA_WorldCover_10m_2021_v200_N44E009_S2RGBNIR.tif",
+      "etag": "\"fb0e1efcc383cb24d84fbd67c5a96bff-58\"",
+      "ifMatch": "\"fb0e1efcc383cb24d84fbd67c5a96bff-58\"",
+      "sourceObjectBytes": 483128687,
+      "sourcePrefixSha256": "d37b1a5b7c59392e1ace9f76fe3376236a02306a72aa9c9ad90803bf797abe2e",
+      "overviewSide": 3000,
+      "levelDecimation": 4,
+      "rangeStart": 27455232,
+      "rangeEndInclusive": 47684461,
+      "rangeHeader": "bytes=27455232-47684461",
+      "expectedContentRange": "bytes 27455232-47684461/483128687",
+      "plannedBytes": 20229230,
+      "plannedRangeContentSha256": null,
+      "rangeContentStatus": "NOT_DOWNLOADED_NOT_AUTHORIZED",
+      "selectedBlocks": [
+        {
+          "tileId": 3,
+          "offset": 27455232,
+          "bytes": 4656130
+        },
+        {
+          "tileId": 4,
+          "offset": 32111370,
+          "bytes": 4983259
+        },
+        {
+          "tileId": 5,
+          "offset": 37094637,
+          "bytes": 4626038
+        },
+        {
+          "tileId": 6,
+          "offset": 41720683,
+          "bytes": 364431
+        },
+        {
+          "tileId": 7,
+          "offset": 42085122,
+          "bytes": 2044694
+        },
+        {
+          "tileId": 8,
+          "offset": 44129824,
+          "bytes": 3554638
+        }
+      ]
+    },
+    {
+      "url": "https://esa-worldcover-s2.s3.eu-central-1.amazonaws.com/rgbnir/2021/N44/ESA_WorldCover_10m_2021_v200_N44E010_S2RGBNIR.tif",
+      "key": "rgbnir/2021/N44/ESA_WorldCover_10m_2021_v200_N44E010_S2RGBNIR.tif",
+      "etag": "\"f5942954e831bd7e956d73a509b4d094-71\"",
+      "ifMatch": "\"f5942954e831bd7e956d73a509b4d094-71\"",
+      "sourceObjectBytes": 588072835,
+      "sourcePrefixSha256": "d2dccfe345a1692fb19445125883b953d645be63a40356418c25a1142e161bef",
+      "overviewSide": 3000,
+      "levelDecimation": 4,
+      "rangeStart": 29517942,
+      "rangeEndInclusive": 57713185,
+      "rangeHeader": "bytes=29517942-57713185",
+      "expectedContentRange": "bytes 29517942-57713185/588072835",
+      "plannedBytes": 28195244,
+      "plannedRangeContentSha256": null,
+      "rangeContentStatus": "NOT_DOWNLOADED_NOT_AUTHORIZED",
+      "selectedBlocks": [
+        {
+          "tileId": 3,
+          "offset": 29517942,
+          "bytes": 5119542
+        },
+        {
+          "tileId": 4,
+          "offset": 34637492,
+          "bytes": 5038404
+        },
+        {
+          "tileId": 5,
+          "offset": 39675904,
+          "bytes": 4725761
+        },
+        {
+          "tileId": 6,
+          "offset": 44401673,
+          "bytes": 4353684
+        },
+        {
+          "tileId": 7,
+          "offset": 48755365,
+          "bytes": 4567674
+        },
+        {
+          "tileId": 8,
+          "offset": 53323047,
+          "bytes": 4390139
+        }
+      ]
+    }
+  ],
+  "gate": "Before any later pixel processing: require206, exactContentRange/length and IfMatchETag. Record eachactualRangeSHA; do not treat multipartETag as sourceSHA. Verify overview resampling/NoData and source seam/color coverage before any material trial."
+}

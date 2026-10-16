@@ -1,0 +1,20 @@
+{
+  "status": "PRE_RUN_NO_RANGE_DOWNLOAD_OR_WCV1_PREPROCESS_YET",
+  "date": "2026-10-16",
+  "sha256": {
+    "PROTOCOL.md": "490a61bc4d894942d633e44f4a52d735cbfd2ffb8e81192f6ec0bbe2303ea163",
+    "schema.json": "af0171a8619adddec6df10295e652d9d90ad44bac31ca4416a69ee94c87e8a3b",
+    "preprocess-worldcover.py": "0f390b35a6d6d5c9d7d276f9f628e1b366be80fd414166324d2544e6fe6f5113",
+    "source-metadata.json": "fe20c840aaee88019a3463949683edc6d8c28c18feadedd4964209a88d302573",
+    "source-prefix-64k.bin": "65ff4780170766563fba8b2d2974f11d62602de4ede152cdee6e77d0fa7932f4",
+    "NOTICE-WORLDCOVER.txt": "4131f41e831f1f661406f3baba9d0ded259ed9d368a2e42621a240b0bf041e10",
+    "SOURCES.md": "71c281ff4d900d111631f34cd3f3f1544d9bf47dcf5d1c12a97dfb01f8063aee",
+    "primary-documents.json": "be8744742dcecd406d2af8e96e2a84255732450539936264728d071d2d38bbb5",
+    "cc-by-4.0-legalcode.txt": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+    "esa-worldcover-data-access.html": "71dccb4c949d489a903865f97ff3bddab75dbefad7f1c277acd1ba94967ed0e8"
+  },
+  "plannedRasterDownloadBytes": 9114088,
+  "plannedRanges": 15,
+  "plannedPeakBudgetBytes": 268435456,
+  "declaredRun": "One original real-data preprocessing run only; small oracle preflight may stop before data if it fails."
+}

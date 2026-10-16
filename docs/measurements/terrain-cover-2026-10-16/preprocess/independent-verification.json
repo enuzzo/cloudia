@@ -1,0 +1,30 @@
+{
+  "status": "PASS_ARCHIVE_AND_PAYLOAD_PLUS_FIVE_ACTUAL_CELLS",
+  "scriptSha256": "44f988ccc6b72a410ed5cbb0bfd821cb566d8531680e5eabfd711bcf5273ba34",
+  "preRunFreezeSha256": "acb79919c7240d0ed25a0d2382c995a3763aaf7ad0f19d642a524204ed7c0b97",
+  "rangeCount": 15,
+  "rangeBytes": 9114088,
+  "allFrozenFilesAndRangeHashes": true,
+  "gzipIdentityAndMtimeZero": true,
+  "headerAndLength": true,
+  "all1048576CellSums255": true,
+  "quantizedAreaKm2": [
+    2134.0430147058823,
+    7065.580330882353,
+    134.12506127450982,
+    1294.2335171568627,
+    613.8664828431373,
+    396.5376225490196,
+    29.396936274509805,
+    0.0,
+    4700.791360294118,
+    15.425674019607843,
+    0.0,
+    0.0
+  ],
+  "fiveSourceWitnesses": 5,
+  "sourcePixelClassRecordsIndependentlyChecked": 1436,
+  "maxRecomputedCsvWeightError": 0.0,
+  "maxRecomputedWitnessHistogramError": 9.597878047884478e-13,
+  "scope": "No full-region source-area replay. Reconstructs quantized global statistics from payload and five exact-area cells from frozen compressed source blocks. Same DEFLATE format/library, separate code/address/overlap implementation."
+}

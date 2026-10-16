@@ -1,0 +1,324 @@
+{
+  "channelOrder": [
+    0,
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    95,
+    100
+  ],
+  "witnesses": [
+    {
+      "selectedBoundaryClass": 10,
+      "selection": "first row-major maximum f*(1-f), fixed class list before run",
+      "outputX": 619,
+      "outputZ": 983,
+      "worldCentreKm": [
+        13.4375,
+        58.9375
+      ],
+      "latitude": 44.530036939370305,
+      "longitude": 9.832004048964581,
+      "sourceCentrePixel": [
+        9984,
+        5639
+      ],
+      "sourceCentreClass": 30,
+      "sourcePixelCount": 300,
+      "independentFractions": [
+        0.0,
+        0.5000039144764049,
+        0.03213383555383255,
+        0.4678622499697603,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "accumulatedFractions": [
+        0.0,
+        0.500003914475603,
+        0.03213383555410292,
+        0.4678622499702941,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "quantizedBytes": [
+        0,
+        128,
+        8,
+        119,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "maxAbsAreaFractionError": 8.019140906867506e-13
+    },
+    {
+      "selectedBoundaryClass": 40,
+      "selection": "first row-major maximum f*(1-f), fixed class list before run",
+      "outputX": 230,
+      "outputZ": 936,
+      "worldCentreKm": [
+        -35.1875,
+        53.0625
+      ],
+      "latitude": 44.47720186800147,
+      "longitude": 10.439914978757866,
+      "sourceCentrePixel": [
+        17278,
+        6273
+      ],
+      "sourceCentreClass": 40,
+      "sourcePixelCount": 300,
+      "independentFractions": [
+        0.0,
+        0.005275772228614746,
+        0.0,
+        0.4947320932895762,
+        0.49999213448180757,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "accumulatedFractions": [
+        0.0,
+        0.005275772228719534,
+        0.0,
+        0.4947320932893713,
+        0.4999921344819078,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "quantizedBytes": [
+        0,
+        1,
+        0,
+        126,
+        128,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "maxAbsAreaFractionError": 2.0489165919457264e-13
+    },
+    {
+      "selectedBoundaryClass": 50,
+      "selection": "first row-major maximum f*(1-f), fixed class list before run",
+      "outputX": 131,
+      "outputZ": 522,
+      "worldCentreKm": [
+        -47.5625,
+        1.3125
+      ],
+      "latitude": 44.01180357977389,
+      "longitude": 10.59462752901374,
+      "sourceCentrePixel": [
+        19135,
+        11858
+      ],
+      "sourceCentreClass": 10,
+      "sourcePixelCount": 285,
+      "independentFractions": [
+        0.0,
+        0.44130650063022364,
+        0.0,
+        0.003344878580975183,
+        0.0,
+        0.500007142907352,
+        0.0,
+        0.0,
+        0.0553414778814512,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "accumulatedFractions": [
+        0.0,
+        0.44130650063108523,
+        0.0,
+        0.003344878580992107,
+        0.0,
+        0.5000071429063923,
+        0.0,
+        0.0,
+        0.05534147788152965,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "quantizedBytes": [
+        0,
+        113,
+        0,
+        1,
+        0,
+        127,
+        0,
+        0,
+        14,
+        0,
+        0,
+        0
+      ],
+      "maxAbsAreaFractionError": 9.597878047884478e-13
+    },
+    {
+      "selectedBoundaryClass": 60,
+      "selection": "first row-major maximum f*(1-f), fixed class list before run",
+      "outputX": 382,
+      "outputZ": 541,
+      "worldCentreKm": [
+        -16.1875,
+        3.6875
+      ],
+      "latitude": 44.033162438412354,
+      "longitude": 10.202376517758948,
+      "sourceCentrePixel": [
+        14428,
+        11602
+      ],
+      "sourceCentreClass": 30,
+      "sourcePixelCount": 266,
+      "independentFractions": [
+        0.0,
+        0.0,
+        0.0,
+        0.500381125438478,
+        0.0,
+        0.0,
+        0.4996188745615203,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "accumulatedFractions": [
+        0.0,
+        0.0,
+        0.0,
+        0.5003811254388469,
+        0.0,
+        0.0,
+        0.4996188745611524,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "quantizedBytes": [
+        0,
+        0,
+        0,
+        128,
+        0,
+        0,
+        127,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "maxAbsAreaFractionError": 3.689271110829395e-13
+    },
+    {
+      "selectedBoundaryClass": 80,
+      "selection": "first row-major maximum f*(1-f), fixed class list before run",
+      "outputX": 601,
+      "outputZ": 597,
+      "worldCentreKm": [
+        11.1875,
+        10.6875
+      ],
+      "latitude": 44.09611486387309,
+      "longitude": 9.860133603556557,
+      "sourceCentrePixel": [
+        10321,
+        10846
+      ],
+      "sourceCentreClass": 80,
+      "sourcePixelCount": 285,
+      "independentFractions": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.49602340062963446,
+        0.0,
+        0.0,
+        0.5000236366645493,
+        0.003952962705817942,
+        0.0,
+        0.0
+      ],
+      "accumulatedFractions": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.49602340062970873,
+        0.0,
+        0.0,
+        0.5000236366644646,
+        0.003952962705825969,
+        0.0,
+        0.0
+      ],
+      "quantizedBytes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        126,
+        0,
+        0,
+        128,
+        1,
+        0,
+        0
+      ],
+      "maxAbsAreaFractionError": 8.471001677889944e-14
+    }
+  ],
+  "scope": "Independent scalar rectangle overlap per actual source pixel at five selected mixed cells; same frozen raw DEFLATE decoder/bytes. Not a separate whole-COG software stack."
+}

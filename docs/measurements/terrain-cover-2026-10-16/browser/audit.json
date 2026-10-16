@@ -1,0 +1,60 @@
+{
+  "rendererVersion": "observatory-v54-cover-fragment",
+  "sourceManifestSha256": "1511fd8a9a5f3a03146d3ff3e1ee6ba7e057f814ca3edead9f5db2f4c9f04eb3",
+  "distManifestSha256": "186e23b55a51b227bdca29757eacd5f9924a8356fe093a60b393ab9141bb4e5a",
+  "main": {
+    "url": "http://127.0.0.1:53747/?seed=74&profile=1",
+    "scenarios": [
+      "Sole",
+      "Tramonto",
+      "Pioggia"
+    ],
+    "state": "seed74 cloudTime60s paused, full animated flow, comparison view",
+    "canvas": [
+      2474,
+      1844
+    ],
+    "cssViewport": [
+      1237,
+      922
+    ],
+    "warningErrors": []
+  },
+  "worker": {
+    "url": "http://127.0.0.1:53747/?seed=74&profile=1&worker=1",
+    "scenarios": [
+      "Sole"
+    ],
+    "canvas": [
+      2474,
+      1844
+    ],
+    "cssViewport": [
+      1237,
+      922
+    ],
+    "controls": "native-output, comparison-state, weather and keyboard orbit exercised",
+    "warningErrors": []
+  },
+  "visualJudgement": {
+    "measuredGeographyPreserved": true,
+    "urbanCroplandDistributionImproved": "Observed on CSS JPEG comparison; per-fragment R2 retains smaller distant classified patches than R1",
+    "overallPhotorealism": "OPEN: authored palette/grain, simplified vegetation,125m source, coarse geometry and shadow limits",
+    "nativeFramebufferCaptured": false,
+    "presentedFpsMeasured": false
+  },
+  "retiredR1": {
+    "reason": "Coarse-mesh vertex interpolation can lose/dilate classified patches",
+    "externalSource": "cover-r1-source",
+    "sunSubmissionFps": 59.996200240651426,
+    "rainSubmissionFps": 17.822283517552446,
+    "comparisonScope": "Separate single runs, not a causal speedup/regression series"
+  },
+  "preview": {
+    "url": "http://localhost:4196/?seed=74&profile=1",
+    "dist": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle20/cover-r2-dist",
+    "serverSession": 99736,
+    "state": "Sole native; animation resumed after visual checkpoint"
+  },
+  "cloudAnatomyOrFpsTrialsAdopted": false
+}

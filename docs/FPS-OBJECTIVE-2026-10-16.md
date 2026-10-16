@@ -8,7 +8,44 @@ output pieno configurato. Questo obiettivo si aggiunge ad anatomia delle tre
 famiglie, luce ravvicinata continua, pioggia/virga integrate nel paesaggio e UI.
 Nessuno di questi gate è sostituito dal contatore dei frame.
 
-## Stato corrente: v53 rilievi misurati, 60 FPS ancora aperti
+## Stato corrente: v54 copertura reale del suolo, 60 FPS ancora aperti
+
+[Il terreno v54](TERRAIN-COVER-2026-10-16.md) aggiunge la distribuzione ESA
+WorldCover a125m, con due texture core RGBA8 campionate per fragment e mip per
+la distanza:11.184.808 byte GPU nominali aggiuntivi. La prima prova per vertice
+è ritirata per perdita/dilatazione di piccole aree sui ring grossolani. R2:
+341/341 test in43 file, typecheck e app→hero PASS;119 sorgenti congelati.
+Nube256³/128³/384, griglia piena e modello della pioggia conservati.
+
+Main r2, seed74, tempo60s in pausa, vento55%, dispersione0%, posa
+1,3852869846402587/0,2811279826464208, native2474×1844. Sole:
+**58,9319583 invii/s**,1768 intervalli/30.000,7ms, mediana16,7ms,
+p95 18,4ms/p99 33,3ms, massimo34,1ms;11 intervalli oltre33,34ms.
+Coda1768/1768 completata;1758draw con timestamp completi/10senza dati.
+Presentazione non misurata. **Questa prova non certifica60FPS stabili.**
+
+Pioggia80% r2, stessa posa: **17,1989681 invii/s**,516 intervalli/
+30.001,8ms, mediana50,7ms, p95 67,2ms/p99 82,9ms, massimo84,4ms.
+516/516 intervalli oltre33,34ms; coda516/516 completata,511draw con timestamp
+completi/5senza dati. Pioggia effettiva all'avvio0,7999999999999998;
+il clock meteorologico continua anche con tempo della nube fermo. **60FPS non
+raggiunti.** La misura caratterizza l'immagine r2; nessun vantaggio attribuito
+rispetto a v53/R1 o ad altri viewport.
+
+Il trial R1 precedente aveva59,9962invii/s Sole e17,8223pioggia, ma è ritirato:
+non è il prodotto r2 e non è una serie A/B/A di vantaggio prestazionale.
+Non attribuire velocità o regressione causale a due singole finestre.
+
+Il nuovo certificato esplorativo C0/R0 rimane CPU/esterno: soltanto intervalli
+con flow esattamente zero e due supporti certificati vuoti possono evitare
+lookup conservando ogni addizione di t/ds e il budget8192.24/576 intervalli
+sintetizzati sugli array storici certificati,540step virtuali, zero falsi vuoti
+nel witness. Non è un percorso camera v53/54 o WGSL qualificata; nessun FPS
+previsto. R0 da sola non certifica nube vuota e non consente di saltare
+il passo da6m. Archivio esterno cycle19/joint-empty-interval-audit.
+
+## Riferimento precedente: v53 rilievi misurati
+
 
 [Il terreno v53](TERRAIN-MEASURED-2026-10-16.md) cambia la geografia centrale
 con un DSM reale a125m, mantenendo 256³/128³/384 e output pieno. Snapshot r2:
