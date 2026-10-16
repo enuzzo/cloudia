@@ -1,0 +1,16 @@
+{
+  "exitCode": 0,
+  "phase": "kernel",
+  "launched": true,
+  "CPUSeconds": 0.02747,
+  "wallSeconds": 0.03712679096497595,
+  "peakRSSBytes": 20267008,
+  "CPUHardSeconds": 1,
+  "wallBudgetSeconds": 5,
+  "RSSGateBytes": 2147483648,
+  "wallKilled": false,
+  "error": null,
+  "RSSScope": "Terminal getrusage; no RSS/AS setrlimit; no ps",
+  "budgetPASS": true,
+  "pass": true
+}

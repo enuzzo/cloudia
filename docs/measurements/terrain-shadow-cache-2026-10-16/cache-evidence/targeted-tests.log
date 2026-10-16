@@ -1,0 +1,47 @@
+
+ RUN  v4.1.6 /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle26/cache-source
+
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow world-space reference > fits every caster AABB corner for Sun 0 1ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow world-space reference > fits every caster AABB corner for Sun 1 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow world-space reference > fits every caster AABB corner for Sun -0.8 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow world-space reference > fits every caster AABB corner for Sun 0 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow world-space reference > keeps the low Sun casters that fixed 256/512km light depth would clip 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow world-space reference > projects relative to the ground datum with top-origin Y and physical light depth 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow world-space reference > compares nearer-to-Sun height, with an inclusive metre-scale bias and clear treated as lit 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow world-space reference > stores fixed caster-face footprint minima, including both slope signs 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow world-space reference > raises only the lookup point by half a real texel along the planet radial 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow world-space reference > moves UV as well as height and does not add a global solar-height bias at sunset 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow world-space reference > a vertical Sun cannot self-shadow a two-face valley at a crease 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow world-space reference > keeps every point on one affine face lit across its texel footprint 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow world-space reference > preserves a separate raised occluder and explicitly loses sub-margin contact shadows 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow world-space reference > uses only the addressed texel and fades to lit without an out-of-coverage lookup 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow world-space reference > rejects nonfinite inputs and empty bounds before using a light camera 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow target ownership > allocates unfiltered R32F+depth32 with explicit scope and releases only its owned resources once 1ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > draws cold once, restores caller state, and returns on an exact hit without mutating renderer state 1ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > requires a new draw after sun changes 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > requires a new draw after bounds changes 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > requires a new draw after renderer changes 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > requires a new draw after reverse changes 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > requires a new draw after resize-back changes 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > requires a new draw after colour-version changes 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > requires a new draw after depth-version changes 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > requires a new draw after target-dispose changes 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > requires a new draw after colour-dispose changes 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > requires a new draw after depth-dispose changes 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > requires a new draw after explicit changes 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > tracks new attachment identities, removes old listeners and commits first-bind versions after rendering 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > cannot reuse A after B cleared the target and its draw failed 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > does not commit after clear throws 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > does not commit after restore throws 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > keeps an explicit invalidation during draw instead of overwriting it with a cache commit 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > keeps an explicit invalidation during restore instead of overwriting it with a cache commit 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > does not commit if bounds changes during the draw without an explicit invalidation 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > does not commit if dimensions changes during the draw without an explicit invalidation 0ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts > terrain shadow exact-input cache > removes all dispose listeners and never revives a disposed owner 0ms
+
+ Test Files  1 passed (1)
+      Tests  37 passed (37)
+   Start at  21:42:57
+   Duration  558ms (transform 41ms, setup 0ms, import 80ms, tests 9ms, environment 335ms)
+
+JSON report written to /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle26/cache-evidence/test-results.json

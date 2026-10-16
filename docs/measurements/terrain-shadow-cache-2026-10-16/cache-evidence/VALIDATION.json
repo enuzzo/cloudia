@@ -1,0 +1,26 @@
+{
+  "status": "PASS_TARGETED_CPU_ONLY",
+  "tests": {
+    "total": 37,
+    "passed": 37,
+    "failed": 0
+  },
+  "typecheck": {
+    "exitCode": 0,
+    "logBytes": 0
+  },
+  "sourceCount": 124,
+  "frozenSourceManifestSHA256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+  "sourceStillMatchesFreeze": true,
+  "productModified": false,
+  "fullSuite": false,
+  "build": false,
+  "gpu": false,
+  "dependencyIgnoreAttributeBeforeAfter": "1",
+  "sourceHashes": {
+    "src/cumulonimbus/TerrainShadow.ts": "ed628cb7e81a77d8fe1d57ecabd7f43b8072cfee0c8959a6d2b5746965640692",
+    "src/cumulonimbus/TerrainShadow.test.ts": "050142581b22d097adbeb38017dd657ef1e1a0921dd97c7cfc08976865777388",
+    "src/cumulonimbus/GPUSceneEngine.ts": "7fde13a8da2a4f1035915ef64ecc3b663d4213ec471596534faf4432bdb44ce0",
+    "src/cumulonimbus/lifecycle.test.ts": "9f7e935f074cea8f625799b3102bd22a5c74465e576a5ada18b73a6a3a8800d1"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "state": "FROZEN BEFORE UNIQUE KERNEL RUN",
+  "sourceManifestSHA256": "8dce2ed7a5843104c3b606c4223435d69408d43739712b1f722c7a1fa8a348f2",
+  "sourceFilesVerified": 124,
+  "protocolSHA256": "2286d81a9e03c0bcfd54bb2e501ce47bfeb06a3f70af7486a2b716273a17fa46",
+  "runtime": "Bun1.3.11 arm64",
+  "threeVersion": "0.186.0",
+  "algorithm": "actual frozen Float32 mesh; six configured native rays + six FrontSide light-centre rays + six DoubleSide physical Sun rays; max RAW q winner then its own affine min; no bias variant",
+  "budget": {
+    "CPUHardSeconds": 20,
+    "wallSeconds": 40,
+    "terminalPeakRSSGateBytes": 2147483648
+  },
+  "failurePolicy": "No automatic retry; preserve launch/kernel errors and partial stdout. Observation timeouts resume the same session.",
+  "qualifiers": [
+    "No GPU/bit/raster equality proof",
+    "Control unchanged RGB does not prove lit",
+    "Physical far20km covers all mesh only if worldY endpoint exceeds bounds.max.y",
+    "Receiver near/far plane depth recorded and safely interior required"
+  ],
+  "inputs": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle26/PROTOCOL.json",
+      "bytes": 4115,
+      "sha256": "2286d81a9e03c0bcfd54bb2e501ce47bfeb06a3f70af7486a2b716273a17fa46"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle26/baseline-native.json",
+      "bytes": 6999,
+      "sha256": "f59d46a8b6a022f9b9a9e7e2faca1164e1d8acbfeb0aee05dbb10903f84fbbff"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle26/source-manifest.json",
+      "bytes": 13042,
+      "sha256": "8dce2ed7a5843104c3b606c4223435d69408d43739712b1f722c7a1fa8a348f2"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle26/witness/witness.ts",
+      "bytes": 11930,
+      "sha256": "2377e2c0d06214820bfcdbbca0c90979073ade586cc0189202d5a22a8f8412b0"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle26/witness/run.py",
+      "bytes": 1866,
+      "sha256": "32557f86749828720455c745b834f456e196cedd706feda519e18186e6fc593a"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/package.json",
+      "bytes": 3672,
+      "sha256": "ab4ff6950aab522dfe6980f19914a5eb2cadb689a36c6c44f4d3869c5e46dc89"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/src/core/Raycaster.js",
+      "bytes": 8394,
+      "sha256": "2dd39d5742ee7aa5e54f4c83bd6b34d59f281f2c467e1dc0ce5122b89905f6d0"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/src/objects/Mesh.js",
+      "bytes": 12670,
+      "sha256": "21b8ace87b42eef8d791b539788bce8911b24912ba82bdfa7d9944b27a6d0c93"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/src/math/Ray.js",
+      "bytes": 17568,
+      "sha256": "4c88adbbefe35fefdeef8f971ce90220d44fa1699c39fc17d1c584a0c012b648"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/src/math/Matrix4.js",
+      "bytes": 33866,
+      "sha256": "d942c20d95e0864246aa6794934656f6a2871a6e863ce7b096581837810fb555"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/src/math/Triangle.js",
+      "bytes": 15103,
+      "sha256": "99044bc57c2ddc32c3cf616b333675b03d2ae71ea0e1e71f94fb3e28d103ab06"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/src/cameras/PerspectiveCamera.js",
+      "bytes": 10651,
+      "sha256": "1cc44938885f785649a978ecb6f57c444561381ddab24de19fc59b400009b111"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/src/cameras/Camera.js",
+      "bytes": 3459,
+      "sha256": "e64f3eea112454a52eb52fa4b567bb53853f2e9f8a562d263b55903e4464646d"
+    },
+    {
+      "path": "/Users/enuzzo/.bun/bin/bun",
+      "bytes": 61069216,
+      "sha256": "1d77af7bfd811aebb7d37bec496a5eed14fe227ded3ab7866d2f39786e8107b6"
+    }
+  ]
+}

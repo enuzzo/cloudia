@@ -1,0 +1,269 @@
+--- a/src/cumulonimbus/GPUSceneEngine.ts
++++ b/src/cumulonimbus/GPUSceneEngine.ts
+@@ -30,7 +30,7 @@
+ import {readDensityR8,type DensityR8Packet} from './densityR8';
+ import {NativeFrameExporter,type NativeFrameExportEvent} from './nativeFrameExport';
+ 
+-const RENDERER_VERSION='observatory-v57-native-frame-export';
++const RENDERER_VERSION='observatory-v58-terrain-shadow-cache';
+ 
+ export const QUALITY = {
+   native: {label:'Alta · 100% / 128 passi', scale:1, steps:128},
+@@ -558,6 +558,7 @@
+       uniformScope:'CPU-side values submitted to Three uniforms at this draw; GPU float32 rounding is not read back.',
+       frame:{ownerDrawSerial:this.frameDrawSerial,rafTimestamp,localSnapshotTime:performance.now(),localTimeOrigin:performance.timeOrigin,date:new Date().toISOString(),counterScope:'Frame-loop draw calls in this engine owner, including regeneration draws; not GPU completion or presentation'},
+       ready:this.ready,regenerating:this.regenerating,seed:this.seed,family:morphologyFamily(this.seed),
++      terrainRaster:this.terrainRaster?.stats(),
+       quality:this.quality,nominalSteps:QUALITY[this.quality].steps,stepSizeKm:this.stepSize.value,emptyStepKm:this.emptyStep.value,
+       output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],outputMode:this.outputMode,
+       canvas:[this.host.canvas.width,this.host.canvas.height],viewport:{...this.viewport},
+@@ -770,7 +771,7 @@
+     const run=this.measurement,prefix=this.queuePrefix,batchRun=this.timestampBatch,generation=this.benchmarkGeneration;
+     if(!run?.result||this.benchmarkCompletion)return;
+     const stats=run.result,gpu=run.gpuSamplesMs,cpu=run.cpuSamplesMs;
+-    const legacy={...this.benchmarkContext,densitySamplingEnd:this.densitySamplingReport(),simulationTimeEnd:this.simulationTime,narrowCloudSpecializationEnd:this.integratorUsesNarrow?'rain':'dry',flashCountEnd:this.flashSerial,skippedFrames:this.skippedFrames-(this.benchmarkContext.skippedFramesAtStart as number),emptyStepWorldEnd:this.emptyStep.value,stats,
++    const legacy={...this.benchmarkContext,terrainRasterEnd:this.terrainRaster?.stats(),densitySamplingEnd:this.densitySamplingReport(),simulationTimeEnd:this.simulationTime,narrowCloudSpecializationEnd:this.integratorUsesNarrow?'rain':'dry',flashCountEnd:this.flashSerial,skippedFrames:this.skippedFrames-(this.benchmarkContext.skippedFramesAtStart as number),emptyStepWorldEnd:this.emptyStep.value,stats,
+       clockStateEnd:{forcingTime:this.forcingTime,weatherTime:this.weatherTime,precipitationUniformTime:this.precipitationTime.value},
+       gpu:summarizeSamples(gpu),cpu:summarizeSamples(cpu),gpuCompute:summarizeSamples(run.computeSamplesMs),queueCompletion:summarizeSamples(run.queueSamplesMs),
+       rafDispatch:summarizeSamples(run.dispatchSamplesMs),cpuCompute:summarizeSamples(run.cpuComputeSamplesMs),cpuRender:summarizeSamples(run.cpuRenderSamplesMs),
+--- a/src/cumulonimbus/TerrainShadow.test.ts
++++ b/src/cumulonimbus/TerrainShadow.test.ts
+@@ -1,5 +1,5 @@
+-import {describe,expect,it} from 'vitest';
+-import {Box3,FloatType,NearestFilter,NoColorSpace,RedFormat,Scene,Vector3} from 'three/webgpu';
++import {describe,expect,it,vi} from 'vitest';
++import {Box3,Color,DepthTexture,FloatType,NearestFilter,NoColorSpace,RedFormat,RenderTarget,Scene,Vector3,type WebGPURenderer} from 'three/webgpu';
+ import {TerrainShadow,TERRAIN_SHADOW_DEFAULTS,terrainShadowCasterMinimum,terrainShadowCompare,terrainShadowFrame,terrainShadowLookupPoint,terrainShadowProject,terrainShadowVisibility} from './TerrainShadow';
+ 
+ const bounds=new Box3(new Vector3(-1048.576,-180,-1048.576),new Vector3(1048.576,.5,1048.576));
+@@ -114,3 +114,111 @@
+   shadow.dispose();shadow.dispose();expect(events).toEqual(['target','material']);expect(scene.children).toHaveLength(0);
+  });
+ });
++
++function rendererFixture(scene:Scene){
++ const previousTarget=new RenderTarget(3,2),previousMRT={label:'caller MRT'},colour=new Color(.2,.3,.4);
++ let target:RenderTarget|null=previousTarget,mrt:unknown=previousMRT,alpha=.4,depth=.37;
++ const mutations:string[]=[];
++ const hooks:{draw?:(()=>void);restore?:(()=>void);clear?:(()=>void)}={};
++ const renderer={
++  reversedDepthBuffer:false,autoClear:true,
++  getRenderTarget:()=>target,getMRT:()=>mrt,getClearColor:(out:Color)=>out.copy(colour),getClearAlpha:()=>alpha,
++  getClearDepth:()=>renderer.reversedDepthBuffer?1-depth:depth,
++  setMRT:(value:unknown)=>{mutations.push('MRT');mrt=value;},
++  setRenderTarget:(value:RenderTarget|null)=>{mutations.push('target');target=value;if(value===previousTarget)hooks.restore?.();},
++  setClearColor:(value:Color,opacity:number)=>{mutations.push('colour');colour.copy(value);alpha=opacity;},
++  setClearDepth:(value:number)=>{mutations.push('depth');depth=value;},
++  clear:vi.fn(()=>{mutations.push('clear');hooks.clear?.();}),
++  render:vi.fn(()=>{mutations.push('draw');hooks.draw?.();}),
++ };
++ const snapshot=()=>({target,mrt,colour:colour.toArray(),alpha,depth,autoClear:renderer.autoClear,override:scene.overrideMaterial});
++ return {renderer,gpu:renderer as unknown as WebGPURenderer,hooks,mutations,snapshot};
++}
++function cacheFixture(){const scene=new Scene(),box=bounds.clone(),shadow=new TerrainShadow(scene,box),mock=rendererFixture(scene);return {scene,box,shadow,...mock};}
++
++describe('terrain shadow exact-input cache',()=>{
++ it('draws cold once, restores caller state, and returns on an exact hit without mutating renderer state',()=>{
++  const h=cacheFixture(),before=h.snapshot();
++  try{
++   h.shadow.render(h.gpu,[0,1,0]);expect(h.snapshot()).toEqual(before);expect(h.renderer.render).toHaveBeenCalledOnce();
++   h.mutations.length=0;h.shadow.render(h.gpu,new Vector3(0,1,0));
++   expect(h.mutations).toEqual([]);expect(h.snapshot()).toEqual(before);expect(h.renderer.clear).toHaveBeenCalledOnce();
++   expect(h.shadow.stats().cache).toMatchObject({requests:2,submissions:1,hits:1,valid:true});
++   expect(()=>h.shadow.render(h.gpu,[NaN,1,0])).toThrow('Nonfinite');
++   h.box.makeEmpty();expect(()=>h.shadow.render(h.gpu,[0,1,0])).toThrow('Invalid terrain shadow caster bounds');
++  }finally{h.shadow.dispose();}
++ });
++ it.each(['sun','bounds','renderer','reverse','resize-back','colour-version','depth-version','target-dispose','colour-dispose','depth-dispose','explicit'] as const)('requires a new draw after %s changes',kind=>{
++  const h=cacheFixture(),sun=[0,1,0];let gpu=h.gpu;
++  try{
++   h.shadow.render(gpu,sun);h.shadow.render(gpu,sun);
++   if(kind==='sun')sun[0]=.1; // same mutable input object, new value
++   if(kind==='bounds')h.box.max.x+=.25; // same Box3, new component
++   if(kind==='renderer')gpu=rendererFixture(h.scene).gpu;
++   if(kind==='reverse')h.renderer.reversedDepthBuffer=true;
++   if(kind==='resize-back'){h.shadow.target.setSize(1024,1024);h.shadow.target.setSize(2048,2048);}
++   if(kind==='colour-version')h.shadow.texture.needsUpdate=true;
++   if(kind==='depth-version')h.shadow.target.depthTexture!.needsUpdate=true;
++   if(kind==='target-dispose')h.shadow.target.dispose();
++   if(kind==='colour-dispose')h.shadow.texture.dispose();
++   if(kind==='depth-dispose')h.shadow.target.depthTexture!.dispose();
++   if(kind==='explicit')h.shadow.invalidate();
++   h.shadow.render(gpu,sun);h.shadow.render(gpu,sun);
++   expect(h.shadow.stats().cache).toMatchObject({requests:4,submissions:2,hits:2,valid:true});
++  }finally{h.shadow.dispose();}
++ });
++ it('tracks new attachment identities, removes old listeners and commits first-bind versions after rendering',()=>{
++  const h=cacheFixture();
++  try{
++   let first=true;h.hooks.draw=()=>{if(first){first=false;h.shadow.texture.needsUpdate=true;h.shadow.target.depthTexture!.needsUpdate=true;}};
++   h.shadow.render(h.gpu,[0,1,0]);h.shadow.render(h.gpu,[0,1,0]);expect(h.renderer.render).toHaveBeenCalledOnce();
++   const oldColour=h.shadow.texture,oldDepth=h.shadow.target.depthTexture!;
++   h.shadow.target.texture=oldColour.clone();h.shadow.target.depthTexture=new DepthTexture(2048,2048,FloatType);
++   h.shadow.render(h.gpu,[0,1,0]);h.shadow.render(h.gpu,[0,1,0]);expect(h.renderer.render).toHaveBeenCalledTimes(2);
++   const invalidation=vi.spyOn(h.shadow,'invalidate');oldColour.dispose();oldDepth.dispose();
++   expect(invalidation).not.toHaveBeenCalled();h.shadow.render(h.gpu,[0,1,0]);expect(h.renderer.render).toHaveBeenCalledTimes(2);
++   h.shadow.target.depthTexture.dispose();h.shadow.render(h.gpu,[0,1,0]);expect(h.renderer.render).toHaveBeenCalledTimes(3);
++  }finally{h.shadow.dispose();}
++ });
++ it('cannot reuse A after B cleared the target and its draw failed',()=>{
++  const h=cacheFixture(),before=h.snapshot();
++  try{
++   h.shadow.render(h.gpu,[0,1,0]);h.hooks.draw=()=>{throw new Error('draw B failed after clear');};
++   expect(()=>h.shadow.render(h.gpu,[1,1,0])).toThrow('draw B failed');expect(h.snapshot()).toEqual(before);expect(h.shadow.stats().cache.valid).toBe(false);
++   h.hooks.draw=undefined;h.shadow.render(h.gpu,[0,1,0]);h.shadow.render(h.gpu,[0,1,0]);
++   expect(h.renderer.clear).toHaveBeenCalledTimes(3);expect(h.renderer.render).toHaveBeenCalledTimes(3);
++   expect(h.shadow.stats().cache).toMatchObject({submissions:3,hits:1,valid:true});
++  }finally{h.shadow.dispose();}
++ });
++ it.each(['clear','restore'] as const)('does not commit after %s throws',stage=>{
++  const h=cacheFixture();
++  try{
++   h.hooks[stage]=()=>{throw new Error(stage+' failed');};expect(()=>h.shadow.render(h.gpu,[0,1,0])).toThrow(stage+' failed');
++   expect(h.shadow.stats().cache.valid).toBe(false);h.hooks[stage]=undefined;
++   h.shadow.render(h.gpu,[0,1,0]);const calls=h.renderer.render.mock.calls.length;h.shadow.render(h.gpu,[0,1,0]);
++   expect(h.renderer.render).toHaveBeenCalledTimes(calls);expect(h.shadow.stats().cache.valid).toBe(true);
++  }finally{h.shadow.dispose();}
++ });
++ it.each(['draw','restore'] as const)('keeps an explicit invalidation during %s instead of overwriting it with a cache commit',stage=>{
++  const h=cacheFixture();
++  try{
++   h.hooks[stage]=()=>h.shadow.invalidate();h.shadow.render(h.gpu,[0,1,0]);expect(h.shadow.stats().cache.valid).toBe(false);
++   h.hooks[stage]=undefined;h.shadow.render(h.gpu,[0,1,0]);h.shadow.render(h.gpu,[0,1,0]);
++   expect(h.renderer.render).toHaveBeenCalledTimes(2);expect(h.shadow.stats().cache).toMatchObject({hits:1,valid:true});
++  }finally{h.shadow.dispose();}
++ });
++ it.each(['bounds','dimensions'] as const)('does not commit if %s changes during the draw without an explicit invalidation',kind=>{
++  const h=cacheFixture();
++  try{
++   h.hooks.draw=()=>{if(kind==='bounds')h.box.max.x+=.1;else h.shadow.target.width=1024;};
++   h.shadow.render(h.gpu,[0,1,0]);expect(h.shadow.stats().cache.valid).toBe(false);
++   h.hooks.draw=undefined;h.shadow.render(h.gpu,[0,1,0]);h.shadow.render(h.gpu,[0,1,0]);expect(h.renderer.render).toHaveBeenCalledTimes(2);
++  }finally{h.shadow.dispose();}
++ });
++ it('removes all dispose listeners and never revives a disposed owner',()=>{
++  const h=cacheFixture();h.shadow.render(h.gpu,[0,1,0]);const invalidate=vi.spyOn(h.shadow,'invalidate'),targetDispose=vi.spyOn(h.shadow.target,'dispose'),materialDispose=vi.spyOn(h.shadow.material,'dispose');
++  h.shadow.dispose();h.shadow.dispose();expect(targetDispose).toHaveBeenCalledOnce();expect(materialDispose).toHaveBeenCalledOnce();
++  h.shadow.target.dispose();h.shadow.texture.dispose();h.shadow.target.depthTexture!.dispose();expect(invalidate).not.toHaveBeenCalled();
++  expect(()=>h.shadow.render(h.gpu,[0,1,0])).toThrow('Terrain shadow disposed');expect(h.shadow.stats().cache.valid).toBe(false);
++ });
++});
+--- a/src/cumulonimbus/TerrainShadow.ts
++++ b/src/cumulonimbus/TerrainShadow.ts
+@@ -100,6 +100,18 @@
+ const visibilityFunction=wgslFn(TERRAIN_SHADOW_WGSL);
+ const casterMinimumFunction=wgslFn(TERRAIN_SHADOW_CASTER_WGSL);
+ 
++interface TerrainShadowCacheKey {
++ renderer:WebGPURenderer;reversedDepth:boolean;sun:number[];bounds:number[];
++ width:number;height:number;colour:Texture;colourVersion:number;depth:Texture|null;depthVersion:number|null;epoch:number;
++}
++function sameShadowInputs(a:TerrainShadowCacheKey,b:TerrainShadowCacheKey):boolean{
++ return a.renderer===b.renderer&&a.reversedDepth===b.reversedDepth&&a.epoch===b.epoch&&a.width===b.width&&a.height===b.height&&
++  a.colour===b.colour&&a.depth===b.depth&&a.sun.every((value,i)=>Object.is(value,b.sun[i]))&&a.bounds.every((value,i)=>Object.is(value,b.bounds[i]));
++}
++function sameShadowCache(a:TerrainShadowCacheKey,b:TerrainShadowCacheKey):boolean{
++ return sameShadowInputs(a,b)&&a.colourVersion===b.colourVersion&&a.depthVersion===b.depthVersion;
++}
++
+ /** Live shadow pass of the exact shared terrain mesh. R32F stores relative
+  * world height along the Sun; depth32 selects the first light-visible triangle.
+  * Hardware reversed depth changes selection, never the height comparison sign.
+@@ -116,6 +128,10 @@
+  private disposed=false;
+  private frame:TerrainShadowFrame|null=null;
+  private reversedDepth:boolean|null=null;
++ private cacheKey:TerrainShadowCacheKey|null=null;
++ private requests=0;private submissions=0;private hits=0;private epoch=0;
++ private trackedColour:Texture|null=null;private trackedDepth:Texture|null=null;
++ private readonly onContentDisposed=()=>this.invalidate();
+  constructor(private readonly scene:Scene,private readonly bounds:Box3){
+   const resolution=TERRAIN_SHADOW_DEFAULTS.resolution;
+   const depthTexture=new DepthTexture(resolution,resolution,FloatType);depthTexture.format=DepthFormat;
+@@ -127,14 +143,39 @@
+   this.material.name='Cloudia terrain shadow relative solar height';this.material.blending=NoBlending;this.material.fog=false;
+   this.material.premultipliedAlpha=false;this.material.toneMapped=false;this.material.depthTest=true;this.material.depthWrite=true;
+   this.material.fragmentNode=casterMinimumFunction({point:positionWorld,center:this.center,sun:this.sun}) as Node<'float'>;
++  this.target.addEventListener('dispose',this.onContentDisposed);
++  this.trackedColour=this.target.texture;this.trackedDepth=this.target.depthTexture;
++  this.trackedColour.addEventListener('dispose',this.onContentDisposed);
++  this.trackedDepth?.addEventListener('dispose',this.onContentDisposed);
+  }
+  get texture():Texture{return this.target.texture;}
+  visibility(point:Node<'vec3'>):Node<'float'>{
+   return visibilityFunction({point,shadowMap:texture(this.target.texture),center:this.center,sun:this.sun,right:this.right,up:this.up,radius:this.radius}) as Node<'float'>;
+  }
++ /** Call after any caster/world-bounds mutation or external write/reset of the owned target. */
++ invalidate():void{if(this.disposed)return;this.epoch++;this.cacheKey=null;}
++ private trackAttachments():void{
++  const colour=this.target.texture,depth=this.target.depthTexture;
++  if(colour===this.trackedColour&&depth===this.trackedDepth)return;
++  this.trackedColour?.removeEventListener('dispose',this.onContentDisposed);this.trackedDepth?.removeEventListener('dispose',this.onContentDisposed);
++  this.trackedColour=colour;this.trackedDepth=depth;
++  colour.addEventListener('dispose',this.onContentDisposed);depth?.addEventListener('dispose',this.onContentDisposed);
++  this.invalidate();
++ }
++ private key(renderer:WebGPURenderer,frame:TerrainShadowFrame):TerrainShadowCacheKey{
++  return {renderer,reversedDepth:renderer.reversedDepthBuffer,sun:frame.sun.toArray(),bounds:[...this.bounds.min.toArray(),...this.bounds.max.toArray()],
++   width:this.target.width,height:this.target.height,colour:this.target.texture,colourVersion:this.target.texture.version,
++   depth:this.target.depthTexture,depthVersion:this.target.depthTexture?.version??null,epoch:this.epoch};
++ }
+  render(renderer:WebGPURenderer,sunVector:TerrainShadowVector):void{
+   if(this.disposed)throw new Error('Terrain shadow disposed');
+   const frame=terrainShadowFrame(sunVector,this.bounds);this.frame=frame;this.reversedDepth=renderer.reversedDepthBuffer;
++  this.requests++;
++  this.trackAttachments();
++  const requested=this.key(renderer,frame);
++  if(this.cacheKey&&sameShadowCache(this.cacheKey,requested)){this.hits++;return;}
++  // A failed new clear/draw must never leave the old key valid for overwritten pixels.
++  this.cacheKey=null;
+   this.sun.value.copy(frame.sun);this.right.value.copy(frame.right);this.up.value.copy(frame.up);
+   this.camera.near=frame.nearKm;this.camera.far=frame.farKm;this.camera.updateProjectionMatrix();
+   const origin=frame.center.clone().addScaledVector(frame.sun,frame.distanceKm);
+@@ -145,10 +186,16 @@
+   try{
+    this.scene.overrideMaterial=this.material;renderer.setMRT(null);renderer.setRenderTarget(this.target);renderer.autoClear=false;
+    renderer.setClearColor(new Color(TERRAIN_SHADOW_DEFAULTS.clearHeightKm,0,0),1);renderer.setClearDepth(1);renderer.clear(true,true,false);
+-   renderer.render(this.scene,this.camera);
++   this.submissions++;renderer.render(this.scene,this.camera);
+   }finally{
+    this.scene.overrideMaterial=previousOverride;renderer.autoClear=previousAutoClear;renderer.setClearColor(previousColour,previousAlpha);renderer.setClearDepth(previousDepth);
+    renderer.setRenderTarget(previousTarget);renderer.setMRT(previousMRT);
++  }
++  // Three may increment attachment versions at first bind. Commit only the final
++  // versions, and never erase an invalidate() or changed bounds/target during draw.
++  if(!this.disposed){
++   this.trackAttachments();const completed=this.key(renderer,frame);
++   if(sameShadowInputs(requested,completed))this.cacheKey=completed;
+   }
+  }
+  stats(){return {resolution:TERRAIN_SHADOW_DEFAULTS.resolution,radiusKm:TERRAIN_SHADOW_DEFAULTS.radiusKm,
+@@ -161,6 +208,14 @@
+   receiverPolicy:'Only shadow lookup point elevated along planet radial by half one light texel; geometry/radiance point unchanged; contact shadows below this scale may disappear',
+   biasLimit:'No guarantee for multiple non-coplanar faces inside one light texel; aliasing and contact-shadow loss require visual qualification',
+   depthFit:this.frame?{nearKm:this.frame.nearKm,farKm:this.frame.farKm,cameraDistanceKm:this.frame.distanceKm,minimumCasterHeightKm:this.frame.minimumCasterHeightKm,maximumCasterHeightKm:this.frame.maximumCasterHeightKm}:null,
+-  reversedDepthBuffer:this.reversedDepth,updates:'One live shadow draw before each terrain colour draw; shared geometry not owned by shadow'};}
+- dispose():void{if(this.disposed)return;this.disposed=true;this.target.dispose();this.material.dispose();}
+-}
++  reversedDepthBuffer:this.reversedDepth,updates:'Exact-input cached shadow map; terrain colour draw remains live; shared geometry not owned by shadow',
++  cache:{requests:this.requests,submissions:this.submissions,hits:this.hits,epoch:this.epoch,valid:this.cacheKey!==null,
++   scope:'Owner-local CPU calls: requests are validated render calls, submissions are renderer.render attempts (including throws), hits skip shadow clear/draw; no GPU completion or presentation claim',
++   ownership:'Static casters and exclusive target; call invalidate after caster mutations, external target writes or same-owner renderer/backend reset; disposed owner is terminal'}};}
++ dispose():void{
++  if(this.disposed)return;this.disposed=true;this.cacheKey=null;
++  this.target.removeEventListener('dispose',this.onContentDisposed);
++  this.trackedColour?.removeEventListener('dispose',this.onContentDisposed);this.trackedDepth?.removeEventListener('dispose',this.onContentDisposed);
++  this.trackedColour=null;this.trackedDepth=null;this.target.dispose();this.material.dispose();
++ }
++}
+--- a/src/cumulonimbus/lifecycle.test.ts
++++ b/src/cumulonimbus/lifecycle.test.ts
+@@ -492,7 +492,7 @@
+       queuePrefix:{status:string;measuredSubmissions:number;confirmedPrefixId:number;samples:Array<{kind:string;prefixId:number}>}};
+     expect(report.densitySamplingStart).toMatchObject({path:'r8unorm-extracted-r',format:'r8unorm',dimensions:[1,1,1],textureBytes:1,extraCpuPayloadBytes:1,extraGpuPayloadBytes:1,fallback:null});
+     expect(report.densitySamplingEnd).toEqual(report.densitySamplingStart);
+-    expect(report.rendererVersion).toBe('observatory-v57-native-frame-export');
++    expect(report.rendererVersion).toBe('observatory-v58-terrain-shadow-cache');
+     expect(report).toHaveProperty('terrainSurfaceId','copernicus-glo90-liguria-apuane-v1');
+     expect(report).toHaveProperty('terrainGeography',expect.objectContaining({originDegrees:[44,10],verticalExaggeration:1,measuredSquareHalfWidthKm:48}));
+     expect(report).toHaveProperty('terrainCover',expect.objectContaining({id:'esa-worldcover-2021-area-fractions-v1',year:2021,sourceClasses:12,materialGroups:8,gridSize:[2,2],sourceAssetBytes:80,retainedCpuPayloadBytes:32,totalGpuPayloadBytes:40}));

@@ -1,0 +1,195 @@
+{
+  "status": "PASS_LOCAL_COMPARABILITY_AND_PREFIX_COMPLETION",
+  "exactlyEqualFields": [
+    "backend",
+    "adapter",
+    "threeRevision",
+    "quality",
+    "output",
+    "internal",
+    "nominalSteps",
+    "terrainSurfaceId",
+    "terrainCover",
+    "terrainGeography",
+    "navigationVersion",
+    "sunDirection",
+    "sunsetAmount",
+    "executionThread",
+    "profiling",
+    "timingMode",
+    "automaticComputeReadback",
+    "maxFramesInFlight",
+    "flowMode",
+    "simulationTimeStart",
+    "supportBounds",
+    "camera",
+    "outputMode",
+    "emptyStepWorld",
+    "volume",
+    "detailVolume",
+    "seed",
+    "shape",
+    "sun",
+    "orbit",
+    "paused",
+    "densitySamplingStart",
+    "densitySamplingEnd",
+    "simulationTimeEnd",
+    "narrowCloudSpecializationEnd",
+    "emptyStepWorldEnd",
+    "devicePixelRatio"
+  ],
+  "runs": [
+    {
+      "name": "A1",
+      "rendererVersion": "observatory-v57-native-frame-export",
+      "stats": {
+        "frames": 586,
+        "durationMs": 30002,
+        "fps": 19.532031197920137,
+        "medianMs": 50,
+        "p95Ms": 67.30000000000291,
+        "p99Ms": 68.60000000000582,
+        "maxMs": 83.5,
+        "over18Ms": 586,
+        "over33Ms": 511
+      },
+      "queuePrefix": {
+        "status": "completed",
+        "measuredSubmissions": 586,
+        "confirmedPrefixId": 586,
+        "unconfirmedMeasuredFrames": 0,
+        "endDrainMs": 250.79999995231628,
+        "completionBoundedSubmissionFps": 19.36293946603225
+      },
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 586,
+          "expectedCalls": 2344,
+          "matchedFreshCalls": 2340,
+          "completeDraws": 585,
+          "partialDraws": 0,
+          "missingDraws": 1,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 586,
+          "expectedCalls": 586,
+          "matchedFreshCalls": 585,
+          "completeDraws": 585,
+          "partialDraws": 0,
+          "missingDraws": 1,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      }
+    },
+    {
+      "name": "B",
+      "rendererVersion": "observatory-v58-terrain-shadow-cache",
+      "stats": {
+        "frames": 702,
+        "durationMs": 30035.5,
+        "fps": 23.372342727772136,
+        "medianMs": 48.80000000000291,
+        "p95Ms": 51.19999999999709,
+        "p99Ms": 52,
+        "maxMs": 66.80000000000291,
+        "over18Ms": 702,
+        "over33Ms": 543
+      },
+      "queuePrefix": {
+        "status": "completed",
+        "measuredSubmissions": 702,
+        "confirmedPrefixId": 702,
+        "unconfirmedMeasuredFrames": 0,
+        "endDrainMs": 165.39999997615814,
+        "completionBoundedSubmissionFps": 23.24295510000403
+      },
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 702,
+          "expectedCalls": 2106,
+          "matchedFreshCalls": 2097,
+          "completeDraws": 699,
+          "partialDraws": 0,
+          "missingDraws": 3,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 702,
+          "expectedCalls": 702,
+          "matchedFreshCalls": 699,
+          "completeDraws": 699,
+          "partialDraws": 0,
+          "missingDraws": 3,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      }
+    },
+    {
+      "name": "A2",
+      "rendererVersion": "observatory-v57-native-frame-export",
+      "stats": {
+        "frames": 530,
+        "durationMs": 30036.300000000003,
+        "fps": 17.64531583450691,
+        "medianMs": 51.80000000000291,
+        "p95Ms": 68.19999999999709,
+        "p99Ms": 83.39999999999418,
+        "maxMs": 84,
+        "over18Ms": 530,
+        "over33Ms": 498
+      },
+      "queuePrefix": {
+        "status": "completed",
+        "measuredSubmissions": 530,
+        "confirmedPrefixId": 530,
+        "unconfirmedMeasuredFrames": 0,
+        "endDrainMs": 228.20000004768372,
+        "completionBoundedSubmissionFps": 17.508332975486184
+      },
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 530,
+          "expectedCalls": 2120,
+          "matchedFreshCalls": 2104,
+          "completeDraws": 526,
+          "partialDraws": 0,
+          "missingDraws": 4,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 530,
+          "expectedCalls": 530,
+          "matchedFreshCalls": 526,
+          "completeDraws": 526,
+          "partialDraws": 0,
+          "missingDraws": 4,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      }
+    }
+  ],
+  "relativeBvsA1": 0.19661608620924853,
+  "relativeBvsA2": 0.3245635808946836,
+  "relativeA2vsA1": -0.0965959630258083,
+  "cacheDeltaIncludingWarmup": {
+    "requests": 750,
+    "submissions": 0,
+    "hits": 750,
+    "epoch": 0
+  },
+  "scope": "One ordered local main Rain experiment at frozen t60 and full native quality, not moving-cloud/global/presented FPS qualification; cadence drift is material. Timestamp pass sums overlap and are not exclusive shadow cost."
+}

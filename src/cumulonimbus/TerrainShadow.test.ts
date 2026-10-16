@@ -1,5 +1,5 @@
-import {describe,expect,it} from 'vitest';
-import {Box3,FloatType,NearestFilter,NoColorSpace,RedFormat,Scene,Vector3} from 'three/webgpu';
+import {describe,expect,it,vi} from 'vitest';
+import {Box3,Color,DepthTexture,FloatType,NearestFilter,NoColorSpace,RedFormat,RenderTarget,Scene,Vector3,type WebGPURenderer} from 'three/webgpu';
 import {TerrainShadow,TERRAIN_SHADOW_DEFAULTS,terrainShadowCasterMinimum,terrainShadowCompare,terrainShadowFrame,terrainShadowLookupPoint,terrainShadowProject,terrainShadowVisibility} from './TerrainShadow';
 
 const bounds=new Box3(new Vector3(-1048.576,-180,-1048.576),new Vector3(1048.576,.5,1048.576));
@@ -112,5 +112,113 @@ describe('terrain shadow target ownership',()=>{
   expect(shadow.stats().targetPayloadBytes).toBe(33554432);expect(shadow.stats().resolution).toBe(2048);
   expect(shadow.material.fragmentNode).not.toBeNull();expect(shadow.stats().depthFit).toBeNull();
   shadow.dispose();shadow.dispose();expect(events).toEqual(['target','material']);expect(scene.children).toHaveLength(0);
+ });
+});
+
+function rendererFixture(scene:Scene){
+ const previousTarget=new RenderTarget(3,2),previousMRT={label:'caller MRT'},colour=new Color(.2,.3,.4);
+ let target:RenderTarget|null=previousTarget,mrt:unknown=previousMRT,alpha=.4,depth=.37;
+ const mutations:string[]=[];
+ const hooks:{draw?:(()=>void);restore?:(()=>void);clear?:(()=>void)}={};
+ const renderer={
+  reversedDepthBuffer:false,autoClear:true,
+  getRenderTarget:()=>target,getMRT:()=>mrt,getClearColor:(out:Color)=>out.copy(colour),getClearAlpha:()=>alpha,
+  getClearDepth:()=>renderer.reversedDepthBuffer?1-depth:depth,
+  setMRT:(value:unknown)=>{mutations.push('MRT');mrt=value;},
+  setRenderTarget:(value:RenderTarget|null)=>{mutations.push('target');target=value;if(value===previousTarget)hooks.restore?.();},
+  setClearColor:(value:Color,opacity:number)=>{mutations.push('colour');colour.copy(value);alpha=opacity;},
+  setClearDepth:(value:number)=>{mutations.push('depth');depth=value;},
+  clear:vi.fn(()=>{mutations.push('clear');hooks.clear?.();}),
+  render:vi.fn(()=>{mutations.push('draw');hooks.draw?.();}),
+ };
+ const snapshot=()=>({target,mrt,colour:colour.toArray(),alpha,depth,autoClear:renderer.autoClear,override:scene.overrideMaterial});
+ return {renderer,gpu:renderer as unknown as WebGPURenderer,hooks,mutations,snapshot};
+}
+function cacheFixture(){const scene=new Scene(),box=bounds.clone(),shadow=new TerrainShadow(scene,box),mock=rendererFixture(scene);return {scene,box,shadow,...mock};}
+
+describe('terrain shadow exact-input cache',()=>{
+ it('draws cold once, restores caller state, and returns on an exact hit without mutating renderer state',()=>{
+  const h=cacheFixture(),before=h.snapshot();
+  try{
+   h.shadow.render(h.gpu,[0,1,0]);expect(h.snapshot()).toEqual(before);expect(h.renderer.render).toHaveBeenCalledOnce();
+   h.mutations.length=0;h.shadow.render(h.gpu,new Vector3(0,1,0));
+   expect(h.mutations).toEqual([]);expect(h.snapshot()).toEqual(before);expect(h.renderer.clear).toHaveBeenCalledOnce();
+   expect(h.shadow.stats().cache).toMatchObject({requests:2,submissions:1,hits:1,valid:true});
+   expect(()=>h.shadow.render(h.gpu,[NaN,1,0])).toThrow('Nonfinite');
+   h.box.makeEmpty();expect(()=>h.shadow.render(h.gpu,[0,1,0])).toThrow('Invalid terrain shadow caster bounds');
+  }finally{h.shadow.dispose();}
+ });
+ it.each(['sun','bounds','renderer','reverse','resize-back','colour-version','depth-version','target-dispose','colour-dispose','depth-dispose','explicit'] as const)('requires a new draw after %s changes',kind=>{
+  const h=cacheFixture(),sun=[0,1,0];let gpu=h.gpu;
+  try{
+   h.shadow.render(gpu,sun);h.shadow.render(gpu,sun);
+   if(kind==='sun')sun[0]=.1; // same mutable input object, new value
+   if(kind==='bounds')h.box.max.x+=.25; // same Box3, new component
+   if(kind==='renderer')gpu=rendererFixture(h.scene).gpu;
+   if(kind==='reverse')h.renderer.reversedDepthBuffer=true;
+   if(kind==='resize-back'){h.shadow.target.setSize(1024,1024);h.shadow.target.setSize(2048,2048);}
+   if(kind==='colour-version')h.shadow.texture.needsUpdate=true;
+   if(kind==='depth-version')h.shadow.target.depthTexture!.needsUpdate=true;
+   if(kind==='target-dispose')h.shadow.target.dispose();
+   if(kind==='colour-dispose')h.shadow.texture.dispose();
+   if(kind==='depth-dispose')h.shadow.target.depthTexture!.dispose();
+   if(kind==='explicit')h.shadow.invalidate();
+   h.shadow.render(gpu,sun);h.shadow.render(gpu,sun);
+   expect(h.shadow.stats().cache).toMatchObject({requests:4,submissions:2,hits:2,valid:true});
+  }finally{h.shadow.dispose();}
+ });
+ it('tracks new attachment identities, removes old listeners and commits first-bind versions after rendering',()=>{
+  const h=cacheFixture();
+  try{
+   let first=true;h.hooks.draw=()=>{if(first){first=false;h.shadow.texture.needsUpdate=true;h.shadow.target.depthTexture!.needsUpdate=true;}};
+   h.shadow.render(h.gpu,[0,1,0]);h.shadow.render(h.gpu,[0,1,0]);expect(h.renderer.render).toHaveBeenCalledOnce();
+   const oldColour=h.shadow.texture,oldDepth=h.shadow.target.depthTexture!;
+   h.shadow.target.texture=oldColour.clone();h.shadow.target.depthTexture=new DepthTexture(2048,2048,FloatType);
+   h.shadow.render(h.gpu,[0,1,0]);h.shadow.render(h.gpu,[0,1,0]);expect(h.renderer.render).toHaveBeenCalledTimes(2);
+   const invalidation=vi.spyOn(h.shadow,'invalidate');oldColour.dispose();oldDepth.dispose();
+   expect(invalidation).not.toHaveBeenCalled();h.shadow.render(h.gpu,[0,1,0]);expect(h.renderer.render).toHaveBeenCalledTimes(2);
+   h.shadow.target.depthTexture.dispose();h.shadow.render(h.gpu,[0,1,0]);expect(h.renderer.render).toHaveBeenCalledTimes(3);
+  }finally{h.shadow.dispose();}
+ });
+ it('cannot reuse A after B cleared the target and its draw failed',()=>{
+  const h=cacheFixture(),before=h.snapshot();
+  try{
+   h.shadow.render(h.gpu,[0,1,0]);h.hooks.draw=()=>{throw new Error('draw B failed after clear');};
+   expect(()=>h.shadow.render(h.gpu,[1,1,0])).toThrow('draw B failed');expect(h.snapshot()).toEqual(before);expect(h.shadow.stats().cache.valid).toBe(false);
+   h.hooks.draw=undefined;h.shadow.render(h.gpu,[0,1,0]);h.shadow.render(h.gpu,[0,1,0]);
+   expect(h.renderer.clear).toHaveBeenCalledTimes(3);expect(h.renderer.render).toHaveBeenCalledTimes(3);
+   expect(h.shadow.stats().cache).toMatchObject({submissions:3,hits:1,valid:true});
+  }finally{h.shadow.dispose();}
+ });
+ it.each(['clear','restore'] as const)('does not commit after %s throws',stage=>{
+  const h=cacheFixture();
+  try{
+   h.hooks[stage]=()=>{throw new Error(stage+' failed');};expect(()=>h.shadow.render(h.gpu,[0,1,0])).toThrow(stage+' failed');
+   expect(h.shadow.stats().cache.valid).toBe(false);h.hooks[stage]=undefined;
+   h.shadow.render(h.gpu,[0,1,0]);const calls=h.renderer.render.mock.calls.length;h.shadow.render(h.gpu,[0,1,0]);
+   expect(h.renderer.render).toHaveBeenCalledTimes(calls);expect(h.shadow.stats().cache.valid).toBe(true);
+  }finally{h.shadow.dispose();}
+ });
+ it.each(['draw','restore'] as const)('keeps an explicit invalidation during %s instead of overwriting it with a cache commit',stage=>{
+  const h=cacheFixture();
+  try{
+   h.hooks[stage]=()=>h.shadow.invalidate();h.shadow.render(h.gpu,[0,1,0]);expect(h.shadow.stats().cache.valid).toBe(false);
+   h.hooks[stage]=undefined;h.shadow.render(h.gpu,[0,1,0]);h.shadow.render(h.gpu,[0,1,0]);
+   expect(h.renderer.render).toHaveBeenCalledTimes(2);expect(h.shadow.stats().cache).toMatchObject({hits:1,valid:true});
+  }finally{h.shadow.dispose();}
+ });
+ it.each(['bounds','dimensions'] as const)('does not commit if %s changes during the draw without an explicit invalidation',kind=>{
+  const h=cacheFixture();
+  try{
+   h.hooks.draw=()=>{if(kind==='bounds')h.box.max.x+=.1;else h.shadow.target.width=1024;};
+   h.shadow.render(h.gpu,[0,1,0]);expect(h.shadow.stats().cache.valid).toBe(false);
+   h.hooks.draw=undefined;h.shadow.render(h.gpu,[0,1,0]);h.shadow.render(h.gpu,[0,1,0]);expect(h.renderer.render).toHaveBeenCalledTimes(2);
+  }finally{h.shadow.dispose();}
+ });
+ it('removes all dispose listeners and never revives a disposed owner',()=>{
+  const h=cacheFixture();h.shadow.render(h.gpu,[0,1,0]);const invalidate=vi.spyOn(h.shadow,'invalidate'),targetDispose=vi.spyOn(h.shadow.target,'dispose'),materialDispose=vi.spyOn(h.shadow.material,'dispose');
+  h.shadow.dispose();h.shadow.dispose();expect(targetDispose).toHaveBeenCalledOnce();expect(materialDispose).toHaveBeenCalledOnce();
+  h.shadow.target.dispose();h.shadow.texture.dispose();h.shadow.target.depthTexture!.dispose();expect(invalidate).not.toHaveBeenCalled();
+  expect(()=>h.shadow.render(h.gpu,[0,1,0])).toThrow('Terrain shadow disposed');expect(h.shadow.stats().cache.valid).toBe(false);
  });
 });

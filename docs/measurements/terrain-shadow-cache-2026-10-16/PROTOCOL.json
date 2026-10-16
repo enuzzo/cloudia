@@ -1,0 +1,181 @@
+{
+  "classificationPreviousTurn": "progress: adopted/verified native export and causal native terrain evidence; rejected numerical plane bias prevents repeating ineffective action",
+  "baseHEAD": "689302540395bdd0c408e5d3f073192852a36ef1",
+  "runtime": "v57/99fc989",
+  "sourceFiles": 124,
+  "sourceManifestSHA256": "8dce2ed7a5843104c3b606c4223435d69408d43739712b1f722c7a1fa8a348f2",
+  "createdUTC": "2026-10-16T19:26:22.507454+00:00",
+  "baselineMetadataPath": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/native-frame-export-2026-10-16/browser/main74-sun-terrain-native.json",
+  "baselinePNG_SHA256": "af8877ac93db6fcd50ab3ceece43ac1a40fc7d21c41151afb3a9620ca7586be5",
+  "selection": "ROI fixed in cycle25; persistent A+normal dark relative to unshadowed, threshold5 RGB displaylevels; largest4-connected component centroid, nearest unchanged control>=5pixels within12pixel box. These are diagnostic selected witnesses, not unbiased frequency estimates.",
+  "points": [
+    {
+      "id": "L1-artifact",
+      "pixelTopOrigin": [
+        71,
+        856
+      ],
+      "pixelCentre": [
+        71.5,
+        856.5
+      ],
+      "baselineRGB": [
+        67,
+        77,
+        81
+      ],
+      "unshadowedRGB": [
+        73,
+        82,
+        83
+      ],
+      "normalClearanceRGB": [
+        67,
+        77,
+        81
+      ],
+      "largestPersistentComponentPixels": 148
+    },
+    {
+      "id": "L1-control",
+      "pixelTopOrigin": [
+        64,
+        856
+      ],
+      "pixelCentre": [
+        64.5,
+        856.5
+      ],
+      "baselineRGB": [
+        75,
+        84,
+        85
+      ],
+      "unshadowedRGB": [
+        75,
+        84,
+        85
+      ],
+      "normalClearanceRGB": [
+        75,
+        84,
+        85
+      ],
+      "largestPersistentComponentPixels": 148
+    },
+    {
+      "id": "L2-artifact",
+      "pixelTopOrigin": [
+        431,
+        849
+      ],
+      "pixelCentre": [
+        431.5,
+        849.5
+      ],
+      "baselineRGB": [
+        66,
+        75,
+        79
+      ],
+      "unshadowedRGB": [
+        75,
+        83,
+        83
+      ],
+      "normalClearanceRGB": [
+        66,
+        75,
+        79
+      ],
+      "largestPersistentComponentPixels": 16
+    },
+    {
+      "id": "L2-control",
+      "pixelTopOrigin": [
+        431,
+        844
+      ],
+      "pixelCentre": [
+        431.5,
+        844.5
+      ],
+      "baselineRGB": [
+        75,
+        83,
+        83
+      ],
+      "unshadowedRGB": [
+        75,
+        83,
+        83
+      ],
+      "normalClearanceRGB": [
+        75,
+        83,
+        83
+      ],
+      "largestPersistentComponentPixels": 16
+    },
+    {
+      "id": "L3-artifact",
+      "pixelTopOrigin": [
+        903,
+        651
+      ],
+      "pixelCentre": [
+        903.5,
+        651.5
+      ],
+      "baselineRGB": [
+        81,
+        91,
+        93
+      ],
+      "unshadowedRGB": [
+        88,
+        97,
+        96
+      ],
+      "normalClearanceRGB": [
+        81,
+        91,
+        93
+      ],
+      "largestPersistentComponentPixels": 90
+    },
+    {
+      "id": "L3-control",
+      "pixelTopOrigin": [
+        903,
+        646
+      ],
+      "pixelCentre": [
+        903.5,
+        646.5
+      ],
+      "baselineRGB": [
+        90,
+        99,
+        97
+      ],
+      "unshadowedRGB": [
+        90,
+        99,
+        97
+      ],
+      "normalClearanceRGB": [
+        90,
+        99,
+        97
+      ],
+      "largestPersistentComponentPixels": 90
+    }
+  ],
+  "cpuBudgetSeconds": 20,
+  "wallBudgetSeconds": 40,
+  "peakRSSGateBytes": 2147483648,
+  "task": "Actual Float32 stitched terrain mesh receiver, nearest shadow-map caster at addressed texel center, affine caster-minimum comparison and physical Sun-ray blocker. No coefficient changes.",
+  "limits": "CPU projection/raster reference is not f32 GPU bit parity; exact native pixel correspondence and frontface/tie rounding need separate qualification.",
+  "dependencyGuard": "node_modules ignored/untracked and xattr=1 verified before snapshot; existing dependency symlink outside Dropbox. node_modules2 untouched."
+}

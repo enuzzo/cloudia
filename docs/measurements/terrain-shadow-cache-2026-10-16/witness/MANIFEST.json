@@ -1,0 +1,51 @@
+{
+  "state": "EXTERNAL CPU WITNESS FROZEN; NO FIX OR ART/GPU CLAIM",
+  "payload": [
+    {
+      "path": "POST-RUN-INPUT-VERIFICATION.json",
+      "bytes": 110,
+      "sha256": "55b5766bf9e0b6fad0ec8e8199bb5563ac97ab9aefebd61753864718a563a766"
+    },
+    {
+      "path": "PRE-RUN-FREEZE.json",
+      "bytes": 4155,
+      "sha256": "1a96699964639876b691003795972d22aa34b7695345f520fc084ab60ff09fdf"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6820,
+      "sha256": "319ee0da584204231fd5575ffa453de8c538866f9bde33f0e192bd7ead98040d"
+    },
+    {
+      "path": "result.json",
+      "bytes": 41541,
+      "sha256": "b826b473c460ac244e89158acadc9459c5b86800305e2403cf5944a3245ec70a"
+    },
+    {
+      "path": "run.json",
+      "bytes": 536,
+      "sha256": "1d0dde858a7de1a65e7e9de6e94ec13ddf0e6c5dd3cae051f16c6d302837f0d1"
+    },
+    {
+      "path": "run.py",
+      "bytes": 1866,
+      "sha256": "32557f86749828720455c745b834f456e196cedd706feda519e18186e6fc593a"
+    },
+    {
+      "path": "stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 4326,
+      "sha256": "1da2d3319053a29a0f29124c5c8d1f3edcf2817cf501a2711a35939462d34349"
+    },
+    {
+      "path": "witness.ts",
+      "bytes": 11930,
+      "sha256": "2377e2c0d06214820bfcdbbca0c90979073ade586cc0189202d5a22a8f8412b0"
+    }
+  ],
+  "bytes": 71284
+}

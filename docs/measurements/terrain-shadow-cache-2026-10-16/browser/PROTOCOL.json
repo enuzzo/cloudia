@@ -1,0 +1,40 @@
+{
+  "candidateVersion": "observatory-v58-terrain-shadow-cache",
+  "sourceManifestSha256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+  "candidatePort": 53763,
+  "baselinePort": 4196,
+  "baselineVersion": "observatory-v57-native-frame-export",
+  "baselineSunTerrainPngSha256": "af8877ac93db6fcd50ab3ceece43ac1a40fc7d21c41151afb3a9620ca7586be5",
+  "seed": 74,
+  "surface": 0.7227685139973958,
+  "target": [
+    0.3515625,
+    3.119140625,
+    -0.0546875
+  ],
+  "time": 60,
+  "paused": true,
+  "output": [
+    2474,
+    1844
+  ],
+  "quality": "ultra",
+  "nominalSteps": 384,
+  "terrainPose": {
+    "approach": 0,
+    "leftArrowCount": 14,
+    "downArrowCount": 3
+  },
+  "plannedChecks": [
+    "main Sun native byte parity",
+    "camera orbit cache hit and Sun transition invalidation",
+    "worker Sun native parity",
+    "fresh main Rain A/B/A 30 second owner submission measurements"
+  ],
+  "performanceLimits": [
+    "CPU owner frame submissions are not presented compositor FPS",
+    "GPU timestamp intervals overlap; do not sum or invert",
+    "cache counter interval includes UI benchmark setup/warmup",
+    "A/B/A is one local ordered experiment, no universal claim"
+  ]
+}

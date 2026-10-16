@@ -30,7 +30,7 @@ import type {NarrowCloudVolume} from './narrowCloud';
 import {readDensityR8,type DensityR8Packet} from './densityR8';
 import {NativeFrameExporter,type NativeFrameExportEvent} from './nativeFrameExport';
 
-const RENDERER_VERSION='observatory-v57-native-frame-export';
+const RENDERER_VERSION='observatory-v58-terrain-shadow-cache';
 
 export const QUALITY = {
   native: {label:'Alta · 100% / 128 passi', scale:1, steps:128},
@@ -558,6 +558,7 @@ export class GPUSceneEngine {
       uniformScope:'CPU-side values submitted to Three uniforms at this draw; GPU float32 rounding is not read back.',
       frame:{ownerDrawSerial:this.frameDrawSerial,rafTimestamp,localSnapshotTime:performance.now(),localTimeOrigin:performance.timeOrigin,date:new Date().toISOString(),counterScope:'Frame-loop draw calls in this engine owner, including regeneration draws; not GPU completion or presentation'},
       ready:this.ready,regenerating:this.regenerating,seed:this.seed,family:morphologyFamily(this.seed),
+      terrainRaster:this.terrainRaster?.stats(),
       quality:this.quality,nominalSteps:QUALITY[this.quality].steps,stepSizeKm:this.stepSize.value,emptyStepKm:this.emptyStep.value,
       output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],outputMode:this.outputMode,
       canvas:[this.host.canvas.width,this.host.canvas.height],viewport:{...this.viewport},
@@ -770,7 +771,7 @@ export class GPUSceneEngine {
     const run=this.measurement,prefix=this.queuePrefix,batchRun=this.timestampBatch,generation=this.benchmarkGeneration;
     if(!run?.result||this.benchmarkCompletion)return;
     const stats=run.result,gpu=run.gpuSamplesMs,cpu=run.cpuSamplesMs;
-    const legacy={...this.benchmarkContext,densitySamplingEnd:this.densitySamplingReport(),simulationTimeEnd:this.simulationTime,narrowCloudSpecializationEnd:this.integratorUsesNarrow?'rain':'dry',flashCountEnd:this.flashSerial,skippedFrames:this.skippedFrames-(this.benchmarkContext.skippedFramesAtStart as number),emptyStepWorldEnd:this.emptyStep.value,stats,
+    const legacy={...this.benchmarkContext,terrainRasterEnd:this.terrainRaster?.stats(),densitySamplingEnd:this.densitySamplingReport(),simulationTimeEnd:this.simulationTime,narrowCloudSpecializationEnd:this.integratorUsesNarrow?'rain':'dry',flashCountEnd:this.flashSerial,skippedFrames:this.skippedFrames-(this.benchmarkContext.skippedFramesAtStart as number),emptyStepWorldEnd:this.emptyStep.value,stats,
       clockStateEnd:{forcingTime:this.forcingTime,weatherTime:this.weatherTime,precipitationUniformTime:this.precipitationTime.value},
       gpu:summarizeSamples(gpu),cpu:summarizeSamples(cpu),gpuCompute:summarizeSamples(run.computeSamplesMs),queueCompletion:summarizeSamples(run.queueSamplesMs),
       rafDispatch:summarizeSamples(run.dispatchSamplesMs),cpuCompute:summarizeSamples(run.cpuComputeSamplesMs),cpuRender:summarizeSamples(run.cpuRenderSamplesMs),

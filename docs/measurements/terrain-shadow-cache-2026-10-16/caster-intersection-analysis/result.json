@@ -1,0 +1,902 @@
+{
+  "status": "OFFLINE_SIX_RECORD_ANALYSIS_COMPLETE_NO_GPU_PROPOSAL",
+  "inputSHA256": "b826b473c460ac244e89158acadc9459c5b86800305e2403cf5944a3245ec70a",
+  "rowCount": 6,
+  "CPUSeconds": 0.0005800000000000007,
+  "scope": "Float64 minimum of saved winning caster affine triangle restricted to its addressed texel; exact in real arithmetic with Float64 residual checks, not exact GPU raster visibility",
+  "biasKm": 0.001,
+  "consistencyToleranceKm": 1e-08,
+  "visibilityToleranceKm": 0,
+  "counts": {
+    "baselineAffineTexel": {
+      "shadowed": 3,
+      "litWithPhysicalBlocker": 3
+    },
+    "fullTriangleClamp": {
+      "shadowed": 4,
+      "litWithPhysicalBlocker": 2
+    },
+    "clippedTriangleTexel": {
+      "shadowed": 6,
+      "litWithPhysicalBlocker": 0
+    }
+  },
+  "rows": [
+    {
+      "id": "L1-artifact",
+      "casterFace": 389947,
+      "receiverFace": 389949,
+      "triangleUVQ": [
+        [
+          0.520343781557638,
+          0.6109145445392318,
+          15.885017565120483
+        ],
+        [
+          0.5228581747641959,
+          0.6097193808995742,
+          15.804088077575464
+        ],
+        [
+          0.5209533297056248,
+          0.6095325728721852,
+          15.717158014094565
+        ]
+      ],
+      "triangleVertexQKm": [
+        15.885017565120483,
+        15.804088077575464,
+        15.717158014094565
+      ],
+      "minimumTriangleVertexQKm": 15.717158014094565,
+      "addressedPixel": [
+        1067,
+        1248
+      ],
+      "texelUVBounds": [
+        0.52099609375,
+        0.609375,
+        0.521484375,
+        0.60986328125
+      ],
+      "clippingStages": [
+        {
+          "plane": "u>=u0",
+          "vertices": 3
+        },
+        {
+          "plane": "u<=u1",
+          "vertices": 4
+        },
+        {
+          "plane": "v>=v0",
+          "vertices": 4
+        },
+        {
+          "plane": "v<=v1",
+          "vertices": 4
+        }
+      ],
+      "intersectionPolygonUVQ": [
+        [
+          0.52099609375,
+          0.60986328125,
+          15.763424780019934
+        ],
+        [
+          0.521484375,
+          0.60986328125,
+          15.779208985226617
+        ],
+        [
+          0.521484375,
+          0.6095846524486579,
+          15.741392951704608
+        ],
+        [
+          0.52099609375,
+          0.6095367667391546,
+          15.719109606469761
+        ]
+      ],
+      "polygonVertices": 4,
+      "polygonAreaUV2": 1.4774006645845716e-07,
+      "texelAreaCoverageFraction": 0.6196667517069727,
+      "wholeTexelAffineReconstructedKm": 15.696154315411734,
+      "wholeTexelCornerQKm": [
+        15.697154315411733,
+        15.712938520618412,
+        15.779208985226617,
+        15.763424780019935
+      ],
+      "centreBarycentric": [
+        0.04052785195916054,
+        0.16358724037771868,
+        0.7958849076631208
+      ],
+      "lookup": {
+        "qKm": 15.50604719760997,
+        "uv": [
+          0.5214476566626894,
+          0.6095298389482914
+        ],
+        "casterPlaneQAtLookupKm": 15.732766599766974,
+        "barycentricInCasterTriangle": [
+          -0.035521092435101424,
+          0.24814361610645663,
+          0.7873774763286449
+        ],
+        "insideCasterTriangle": false
+      },
+      "variants": {
+        "baselineAffineTexel": {
+          "storedMinimumKm": 15.696154315411782,
+          "deltaStoredVsBaselineM": 0.0,
+          "lookupMinusStoredM": -190.1071178018121,
+          "rawVisibility": 0,
+          "finalVisibility": 0,
+          "litDespiteSavedPhysicalBlocker": false,
+          "blockerQMinusStoredM": 59.7758227734424
+        },
+        "fullTriangleClamp": {
+          "storedMinimumKm": 15.716158014094566,
+          "deltaStoredVsBaselineM": 20.00369868278362,
+          "lookupMinusStoredM": -210.11081648459572,
+          "rawVisibility": 0,
+          "finalVisibility": 0,
+          "litDespiteSavedPhysicalBlocker": false,
+          "blockerQMinusStoredM": 39.77212409065878
+        },
+        "clippedTriangleTexel": {
+          "storedMinimumKm": 15.718109606469762,
+          "deltaStoredVsBaselineM": 21.955291057979665,
+          "lookupMinusStoredM": -212.0624088597918,
+          "rawVisibility": 0,
+          "finalVisibility": 0,
+          "litDespiteSavedPhysicalBlocker": false,
+          "blockerQMinusStoredM": 37.820531715462735
+        }
+      },
+      "physicalReference": {
+        "blockerPresent": true,
+        "blockerFace": 389947,
+        "sameTriangleAsCaster": true,
+        "blockerQKm": 15.755930138185224,
+        "receiverQKm": 15.483704638890101,
+        "blockerQMinusReceiverQM": 272.2254992951232,
+        "blockerQMinusLookupQM": 249.8829405752545,
+        "qualification": "Saved physical ray follows original receiver line; q gaps do not compare identical UV rays and are not a physical-error bound of a texture sample."
+      }
+    },
+    {
+      "id": "L1-control",
+      "casterFace": 389948,
+      "receiverFace": 389949,
+      "triangleUVQ": [
+        [
+          0.5209533297056248,
+          0.6095325728721852,
+          15.717158014094565
+        ],
+        [
+          0.5228581747641959,
+          0.6097193808995742,
+          15.804088077575464
+        ],
+        [
+          0.5234677274536949,
+          0.609564168766852,
+          15.476701017889377
+        ]
+      ],
+      "triangleVertexQKm": [
+        15.717158014094565,
+        15.804088077575464,
+        15.476701017889377
+      ],
+      "minimumTriangleVertexQKm": 15.476701017889377,
+      "addressedPixel": [
+        1069,
+        1248
+      ],
+      "texelUVBounds": [
+        0.52197265625,
+        0.609375,
+        0.5224609375,
+        0.60986328125
+      ],
+      "clippingStages": [
+        {
+          "plane": "u>=u0",
+          "vertices": 4
+        },
+        {
+          "plane": "u<=u1",
+          "vertices": 4
+        },
+        {
+          "plane": "v>=v0",
+          "vertices": 4
+        },
+        {
+          "plane": "v<=v1",
+          "vertices": 4
+        }
+      ],
+      "intersectionPolygonUVQ": [
+        [
+          0.5224609375,
+          0.6095515174552794,
+          15.572982399091234
+        ],
+        [
+          0.52197265625,
+          0.6095453817184197,
+          15.619677733100515
+        ],
+        [
+          0.52197265625,
+          0.6096325381581612,
+          15.763676296939455
+        ],
+        [
+          0.5224609375,
+          0.6096804238676645,
+          15.785959642174301
+        ]
+      ],
+      "polygonVertices": 4,
+      "polygonAreaUV2": 5.274971978663778e-08,
+      "texelAreaCoverageFraction": 0.221248360699974,
+      "wholeTexelAffineReconstructedKm": 15.280342904314974,
+      "wholeTexelCornerQKm": [
+        15.338175610829502,
+        15.281342904314974,
+        16.08807386943895,
+        16.144906575953474
+      ],
+      "centreBarycentric": [
+        0.3922876370686519,
+        0.43402880835649854,
+        0.17368355457484957
+      ],
+      "lookup": {
+        "qKm": 15.514424307352824,
+        "uv": [
+          0.5219963072514758,
+          0.6094838747017891
+        ],
+        "casterPlaneQAtLookupKm": 15.515303941737685,
+        "barycentricInCasterTriangle": [
+          0.6771897628665137,
+          -0.3794654941786544,
+          0.7022757313121407
+        ],
+        "insideCasterTriangle": false
+      },
+      "variants": {
+        "baselineAffineTexel": {
+          "storedMinimumKm": 15.280342904313791,
+          "deltaStoredVsBaselineM": 0.0,
+          "lookupMinusStoredM": 234.08140303903303,
+          "rawVisibility": 1,
+          "finalVisibility": 1,
+          "litDespiteSavedPhysicalBlocker": true,
+          "blockerQMinusStoredM": 487.0844928626621
+        },
+        "fullTriangleClamp": {
+          "storedMinimumKm": 15.475701017889378,
+          "deltaStoredVsBaselineM": 195.35811357558686,
+          "lookupMinusStoredM": 38.723289463446164,
+          "rawVisibility": 1,
+          "finalVisibility": 1,
+          "litDespiteSavedPhysicalBlocker": true,
+          "blockerQMinusStoredM": 291.72637928707525
+        },
+        "clippedTriangleTexel": {
+          "storedMinimumKm": 15.571982399091235,
+          "deltaStoredVsBaselineM": 291.6394947774439,
+          "lookupMinusStoredM": -57.558091738410866,
+          "rawVisibility": 0,
+          "finalVisibility": 0,
+          "litDespiteSavedPhysicalBlocker": false,
+          "blockerQMinusStoredM": 195.4449980852182
+        }
+      },
+      "physicalReference": {
+        "blockerPresent": true,
+        "blockerFace": 389947,
+        "sameTriangleAsCaster": false,
+        "blockerQKm": 15.767427397176453,
+        "receiverQKm": 15.492081743081094,
+        "blockerQMinusReceiverQM": 275.34565409535895,
+        "blockerQMinusLookupQM": 253.00308982362907,
+        "qualification": "Saved physical ray follows original receiver line; q gaps do not compare identical UV rays and are not a physical-error bound of a texture sample."
+      }
+    },
+    {
+      "id": "L2-artifact",
+      "casterFace": 386018,
+      "receiverFace": 386020,
+      "triangleUVQ": [
+        [
+          0.492380604154267,
+          0.6042176035531069,
+          14.739969112193851
+        ],
+        [
+          0.4942854527608946,
+          0.6036540190278853,
+          14.92447866213216
+        ],
+        [
+          0.49489500545039344,
+          0.6026171320325526,
+          14.711742523969791
+        ]
+      ],
+      "triangleVertexQKm": [
+        14.739969112193851,
+        14.92447866213216,
+        14.711742523969791
+      ],
+      "minimumTriangleVertexQKm": 14.711742523969791,
+      "addressedPixel": [
+        1011,
+        1235
+      ],
+      "texelUVBounds": [
+        0.49365234375,
+        0.60302734375,
+        0.494140625,
+        0.603515625
+      ],
+      "clippingStages": [
+        {
+          "plane": "u>=u0",
+          "vertices": 4
+        },
+        {
+          "plane": "u<=u1",
+          "vertices": 4
+        },
+        {
+          "plane": "v>=v0",
+          "vertices": 4
+        },
+        {
+          "plane": "v<=v1",
+          "vertices": 4
+        }
+      ],
+      "intersectionPolygonUVQ": [
+        [
+          0.494140625,
+          0.603515625,
+          14.852941629705757
+        ],
+        [
+          0.494140625,
+          0.6030973117192151,
+          14.720211174686103
+        ],
+        [
+          0.49365234375,
+          0.6034081134340605,
+          14.725692604322061
+        ],
+        [
+          0.49365234375,
+          0.603515625,
+          14.759805934504275
+        ]
+      ],
+      "polygonVertices": 4,
+      "polygonAreaUV2": 1.2837520671493685e-07,
+      "texelAreaCoverageFraction": 0.5384446430252865,
+      "wholeTexelAffineReconstructedKm": 14.60387470122273,
+      "wholeTexelCornerQKm": [
+        14.60487470122273,
+        14.698010396424197,
+        14.852941629705747,
+        14.759805934504282
+      ],
+      "centreBarycentric": [
+        0.39010772158677065,
+        0.02892894233839972,
+        0.5809633360748296
+      ],
+      "lookup": {
+        "qKm": 14.55703025311887,
+        "uv": [
+          0.49386522563680124,
+          0.6031560770089316
+        ],
+        "casterPlaneQAtLookupKm": 14.686327153254544,
+        "barycentricInCasterTriangle": [
+          0.4530888549084769,
+          -0.1795864284351234,
+          0.7264975735266466
+        ],
+        "insideCasterTriangle": false
+      },
+      "variants": {
+        "baselineAffineTexel": {
+          "storedMinimumKm": 14.603874701222615,
+          "deltaStoredVsBaselineM": 0.0,
+          "lookupMinusStoredM": -46.84444810374622,
+          "rawVisibility": 0,
+          "finalVisibility": 0,
+          "litDespiteSavedPhysicalBlocker": false,
+          "blockerQMinusStoredM": 9.892303625536059
+        },
+        "fullTriangleClamp": {
+          "storedMinimumKm": 14.710742523969792,
+          "deltaStoredVsBaselineM": 106.86782274717643,
+          "lookupMinusStoredM": -153.71227085092266,
+          "rawVisibility": 0,
+          "finalVisibility": 0,
+          "litDespiteSavedPhysicalBlocker": false,
+          "blockerQMinusStoredM": -96.97551912164037
+        },
+        "clippedTriangleTexel": {
+          "storedMinimumKm": 14.719211174686103,
+          "deltaStoredVsBaselineM": 115.33647346348808,
+          "lookupMinusStoredM": -162.1809215672343,
+          "rawVisibility": 0,
+          "finalVisibility": 0,
+          "litDespiteSavedPhysicalBlocker": false,
+          "blockerQMinusStoredM": -105.44416983795202
+        }
+      },
+      "physicalReference": {
+        "blockerPresent": true,
+        "blockerFace": 386019,
+        "sameTriangleAsCaster": false,
+        "blockerQKm": 14.613767004848151,
+        "receiverQKm": 14.53469196800784,
+        "blockerQMinusReceiverQM": 79.0750368403117,
+        "blockerQMinusLookupQM": 56.736751729282275,
+        "qualification": "Saved physical ray follows original receiver line; q gaps do not compare identical UV rays and are not a physical-error bound of a texture sample."
+      }
+    },
+    {
+      "id": "L2-control",
+      "casterFace": 386018,
+      "receiverFace": 386019,
+      "triangleUVQ": [
+        [
+          0.492380604154267,
+          0.6042176035531069,
+          14.739969112193851
+        ],
+        [
+          0.4942854527608946,
+          0.6036540190278853,
+          14.92447866213216
+        ],
+        [
+          0.49489500545039344,
+          0.6026171320325526,
+          14.711742523969791
+        ]
+      ],
+      "triangleVertexQKm": [
+        14.739969112193851,
+        14.92447866213216,
+        14.711742523969791
+      ],
+      "minimumTriangleVertexQKm": 14.711742523969791,
+      "addressedPixel": [
+        1011,
+        1235
+      ],
+      "texelUVBounds": [
+        0.49365234375,
+        0.60302734375,
+        0.494140625,
+        0.603515625
+      ],
+      "clippingStages": [
+        {
+          "plane": "u>=u0",
+          "vertices": 4
+        },
+        {
+          "plane": "u<=u1",
+          "vertices": 4
+        },
+        {
+          "plane": "v>=v0",
+          "vertices": 4
+        },
+        {
+          "plane": "v<=v1",
+          "vertices": 4
+        }
+      ],
+      "intersectionPolygonUVQ": [
+        [
+          0.494140625,
+          0.603515625,
+          14.852941629705757
+        ],
+        [
+          0.494140625,
+          0.6030973117192151,
+          14.720211174686103
+        ],
+        [
+          0.49365234375,
+          0.6034081134340605,
+          14.725692604322061
+        ],
+        [
+          0.49365234375,
+          0.603515625,
+          14.759805934504275
+        ]
+      ],
+      "polygonVertices": 4,
+      "polygonAreaUV2": 1.2837520671493685e-07,
+      "texelAreaCoverageFraction": 0.5384446430252865,
+      "wholeTexelAffineReconstructedKm": 14.60387470122273,
+      "wholeTexelCornerQKm": [
+        14.60487470122273,
+        14.698010396424197,
+        14.852941629705747,
+        14.759805934504282
+      ],
+      "centreBarycentric": [
+        0.39010772158677065,
+        0.02892894233839972,
+        0.5809633360748296
+      ],
+      "lookup": {
+        "qKm": 14.62369042096359,
+        "uv": [
+          0.4937294122453433,
+          0.6032494258032035
+        ],
+        "casterPlaneQAtLookupKm": 14.690041342957278,
+        "barycentricInCasterTriangle": [
+          0.5045250204587899,
+          -0.16895202349826863,
+          0.6644270030394788
+        ],
+        "insideCasterTriangle": false
+      },
+      "variants": {
+        "baselineAffineTexel": {
+          "storedMinimumKm": 14.603874701222615,
+          "deltaStoredVsBaselineM": 0.0,
+          "lookupMinusStoredM": 19.815719740973847,
+          "rawVisibility": 1,
+          "finalVisibility": 1,
+          "litDespiteSavedPhysicalBlocker": true,
+          "blockerQMinusStoredM": 140.34398509374668
+        },
+        "fullTriangleClamp": {
+          "storedMinimumKm": 14.710742523969792,
+          "deltaStoredVsBaselineM": 106.86782274717643,
+          "lookupMinusStoredM": -87.05210300620259,
+          "rawVisibility": 0,
+          "finalVisibility": 0,
+          "litDespiteSavedPhysicalBlocker": false,
+          "blockerQMinusStoredM": 33.47616234657025
+        },
+        "clippedTriangleTexel": {
+          "storedMinimumKm": 14.719211174686103,
+          "deltaStoredVsBaselineM": 115.33647346348808,
+          "lookupMinusStoredM": -95.52075372251423,
+          "rawVisibility": 0,
+          "finalVisibility": 0,
+          "litDespiteSavedPhysicalBlocker": false,
+          "blockerQMinusStoredM": 25.007511630258605
+        }
+      },
+      "physicalReference": {
+        "blockerPresent": true,
+        "blockerFace": 386018,
+        "sameTriangleAsCaster": true,
+        "blockerQKm": 14.744218686316362,
+        "receiverQKm": 14.601351946701987,
+        "blockerQMinusReceiverQM": 142.8667396143748,
+        "blockerQMinusLookupQM": 120.52826535277283,
+        "qualification": "Saved physical ray follows original receiver line; q gaps do not compare identical UV rays and are not a physical-error bound of a texture sample."
+      }
+    },
+    {
+      "id": "L3-artifact",
+      "casterFace": 379929,
+      "receiverFace": 379930,
+      "triangleUVQ": [
+        [
+          0.42906344899460425,
+          0.6377358173067378,
+          18.94545812306617
+        ],
+        [
+          0.4315778498472237,
+          0.6364219052704995,
+          18.879967988864703
+        ],
+        [
+          0.42967300168410316,
+          0.6365434314033476,
+          18.752942696484425
+        ]
+      ],
+      "triangleVertexQKm": [
+        18.94545812306617,
+        18.879967988864703,
+        18.752942696484425
+      ],
+      "minimumTriangleVertexQKm": 18.752942696484425,
+      "addressedPixel": [
+        883,
+        1303
+      ],
+      "texelUVBounds": [
+        0.43115234375,
+        0.63623046875,
+        0.431640625,
+        0.63671875
+      ],
+      "clippingStages": [
+        {
+          "plane": "u>=u0",
+          "vertices": 3
+        },
+        {
+          "plane": "u<=u1",
+          "vertices": 3
+        },
+        {
+          "plane": "v>=v0",
+          "vertices": 3
+        },
+        {
+          "plane": "v<=v1",
+          "vertices": 3
+        }
+      ],
+      "intersectionPolygonUVQ": [
+        [
+          0.43115234375,
+          0.6366442554904544,
+          18.89105072906569
+        ],
+        [
+          0.4315778498472237,
+          0.6364219052704995,
+          18.879967988864703
+        ],
+        [
+          0.43115234375,
+          0.6364490518491612,
+          18.85159300472902
+        ]
+      ],
+      "polygonVertices": 3,
+      "polygonAreaUV2": 4.153016977537227e-08,
+      "texelAreaCoverageFraction": 0.17419015720952302,
+      "wholeTexelAffineReconstructedKm": 18.806409445374182,
+      "wholeTexelCornerQKm": [
+        18.807409445374184,
+        18.846267458753825,
+        18.944966780311677,
+        18.906108766932036
+      ],
+      "centreBarycentric": [
+        0.03565962786470534,
+        0.916198543672517,
+        0.0481418284627777
+      ],
+      "lookup": {
+        "qKm": 18.709249409426626,
+        "uv": [
+          0.4312472357332,
+          0.6363908328352925
+        ],
+        "casterPlaneQAtLookupKm": 18.84737645285896,
+        "barycentricInCasterTriangle": [
+          -0.045223388511953,
+          0.8119639354705159,
+          0.23325945304143714
+        ],
+        "insideCasterTriangle": false
+      },
+      "variants": {
+        "baselineAffineTexel": {
+          "storedMinimumKm": 18.80640944537438,
+          "deltaStoredVsBaselineM": 0.0,
+          "lookupMinusStoredM": -97.16003594775557,
+          "rawVisibility": 0,
+          "finalVisibility": 0,
+          "litDespiteSavedPhysicalBlocker": false,
+          "blockerQMinusStoredM": 75.47126118862124
+        },
+        "fullTriangleClamp": {
+          "storedMinimumKm": 18.80640944537438,
+          "deltaStoredVsBaselineM": 0.0,
+          "lookupMinusStoredM": -97.16003594775557,
+          "rawVisibility": 0,
+          "finalVisibility": 0,
+          "litDespiteSavedPhysicalBlocker": false,
+          "blockerQMinusStoredM": 75.47126118862124
+        },
+        "clippedTriangleTexel": {
+          "storedMinimumKm": 18.850593004729017,
+          "deltaStoredVsBaselineM": 44.183559354635804,
+          "lookupMinusStoredM": -141.34359530239138,
+          "rawVisibility": 0,
+          "finalVisibility": 0,
+          "litDespiteSavedPhysicalBlocker": false,
+          "blockerQMinusStoredM": 31.287701833985437
+        }
+      },
+      "physicalReference": {
+        "blockerPresent": true,
+        "blockerFace": 379929,
+        "sameTriangleAsCaster": true,
+        "blockerQKm": 18.881880706563003,
+        "receiverQKm": 18.686890768335566,
+        "blockerQMinusReceiverQM": 194.9899382274367,
+        "blockerQMinusLookupQM": 172.63129713637682,
+        "qualification": "Saved physical ray follows original receiver line; q gaps do not compare identical UV rays and are not a physical-error bound of a texture sample."
+      }
+    },
+    {
+      "id": "L3-control",
+      "casterFace": 379929,
+      "receiverFace": 379930,
+      "triangleUVQ": [
+        [
+          0.42906344899460425,
+          0.6377358173067378,
+          18.94545812306617
+        ],
+        [
+          0.4315778498472237,
+          0.6364219052704995,
+          18.879967988864703
+        ],
+        [
+          0.42967300168410316,
+          0.6365434314033476,
+          18.752942696484425
+        ]
+      ],
+      "triangleVertexQKm": [
+        18.94545812306617,
+        18.879967988864703,
+        18.752942696484425
+      ],
+      "minimumTriangleVertexQKm": 18.752942696484425,
+      "addressedPixel": [
+        882,
+        1303
+      ],
+      "texelUVBounds": [
+        0.4306640625,
+        0.63623046875,
+        0.43115234375,
+        0.63671875
+      ],
+      "clippingStages": [
+        {
+          "plane": "u>=u0",
+          "vertices": 3
+        },
+        {
+          "plane": "u<=u1",
+          "vertices": 4
+        },
+        {
+          "plane": "v>=v0",
+          "vertices": 4
+        },
+        {
+          "plane": "v<=v1",
+          "vertices": 5
+        }
+      ],
+      "intersectionPolygonUVQ": [
+        [
+          0.4306640625,
+          0.63671875,
+          18.867250753552405
+        ],
+        [
+          0.4310097854560269,
+          0.63671875,
+          18.894763805202338
+        ],
+        [
+          0.43115234375,
+          0.6366442554904544,
+          18.89105072906569
+        ],
+        [
+          0.43115234375,
+          0.6364490518491612,
+          18.85159300472902
+        ],
+        [
+          0.4306640625,
+          0.6364802033777731,
+          18.819031843295843
+        ]
+      ],
+      "polygonVertices": 5,
+      "polygonAreaUV2": 1.187732914798012e-07,
+      "texelAreaCoverageFraction": 0.4981712915468961,
+      "wholeTexelAffineReconstructedKm": 18.767551431994548,
+      "wholeTexelCornerQKm": [
+        18.76855143199455,
+        18.807409445374184,
+        18.906108766932036,
+        18.8672507535524
+      ],
+      "centreBarycentric": [
+        0.008653475091402546,
+        0.6512205087675651,
+        0.34012601614103233
+      ],
+      "lookup": {
+        "qKm": 18.783166376834107,
+        "uv": [
+          0.43107844998950096,
+          0.6363426365630739
+        ],
+        "casterPlaneQAtLookupKm": 18.82420206707915,
+        "barycentricInCasterTriangle": [
+          -0.09634142125253244,
+          0.7069976279668173,
+          0.3893437932857151
+        ],
+        "insideCasterTriangle": false
+      },
+      "variants": {
+        "baselineAffineTexel": {
+          "storedMinimumKm": 18.767551431994647,
+          "deltaStoredVsBaselineM": 0.0,
+          "lookupMinusStoredM": 15.614944839459355,
+          "rawVisibility": 1,
+          "finalVisibility": 1,
+          "litDespiteSavedPhysicalBlocker": true,
+          "blockerQMinusStoredM": 91.15469257121944
+        },
+        "fullTriangleClamp": {
+          "storedMinimumKm": 18.767551431994647,
+          "deltaStoredVsBaselineM": 0.0,
+          "lookupMinusStoredM": 15.614944839459355,
+          "rawVisibility": 1,
+          "finalVisibility": 1,
+          "litDespiteSavedPhysicalBlocker": true,
+          "blockerQMinusStoredM": 91.15469257121944
+        },
+        "clippedTriangleTexel": {
+          "storedMinimumKm": 18.81803184329584,
+          "deltaStoredVsBaselineM": 50.480411301194295,
+          "lookupMinusStoredM": -34.86546646173494,
+          "rawVisibility": 0,
+          "finalVisibility": 0,
+          "litDespiteSavedPhysicalBlocker": false,
+          "blockerQMinusStoredM": 40.67428127002515
+        }
+      },
+      "physicalReference": {
+        "blockerPresent": true,
+        "blockerFace": 379929,
+        "sameTriangleAsCaster": true,
+        "blockerQKm": 18.858706124565867,
+        "receiverQKm": 18.76080757403872,
+        "blockerQMinusReceiverQM": 97.89855052714813,
+        "blockerQMinusLookupQM": 75.53974773176009,
+        "qualification": "Saved physical ray follows original receiver line; q gaps do not compare identical UV rays and are not a physical-error bound of a texture sample."
+      }
+    }
+  ]
+}

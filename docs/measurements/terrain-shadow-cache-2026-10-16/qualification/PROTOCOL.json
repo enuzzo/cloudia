@@ -1,0 +1,14 @@
+{
+  "sourceFiles": 124,
+  "sourceManifestSHA256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+  "sourceDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle26/cache-source",
+  "commands": [
+    "full-tests",
+    "app-build",
+    "hero-build"
+  ],
+  "priorTypecheck": "cache-evidence typecheck childPASS; root qualification records no new source change",
+  "expectedTests": 399,
+  "intent": "External v58 candidate; no product adoption until native parity/lifecycle/performance QA",
+  "noInstalls": true
+}

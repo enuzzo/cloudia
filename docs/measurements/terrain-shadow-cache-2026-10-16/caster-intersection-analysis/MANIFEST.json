@@ -1,0 +1,51 @@
+{
+  "state": "FROZEN SIX-RECORD OFFLINE ANALYSIS; NO GPU PROPOSAL OR ADOPTION",
+  "bytes": 41717,
+  "payload": [
+    {
+      "path": "POST-RUN-INPUT-VERIFICATION.json",
+      "bytes": 57,
+      "sha256": "458f80a935106b66cb6f58d4e2b074c5a68e6ed13840d0156c939d416d1de02b"
+    },
+    {
+      "path": "PRE-RUN-FREEZE.json",
+      "bytes": 1073,
+      "sha256": "c395915dd2515f75d6722d97cc1216b84eb5e680e1b705bd53b9a0c12f0fe212"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "bytes": 1989,
+      "sha256": "8469dd5eec5362cfa3b11e5898b337e7b527597b02e8bf51fd43bb6eee67733c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5495,
+      "sha256": "b2dbc98236534e490d11afe1655d0ab0db7671f3a7c5954609219234fea92a8c"
+    },
+    {
+      "path": "analyse.py",
+      "bytes": 6014,
+      "sha256": "2d69a155a22182449c89699cdb6a631bb15dd7f3c8093cf4469839370949356e"
+    },
+    {
+      "path": "result.json",
+      "bytes": 25071,
+      "sha256": "7beea3f74bc65b2a9cecae2a95348d83703e99df411b62ae766e0476067f292f"
+    },
+    {
+      "path": "run.json",
+      "bytes": 373,
+      "sha256": "82e8253fa5e0c46e695bd9f77b93d7bd9830c8c8bff87c44b945dd5fc50be59a"
+    },
+    {
+      "path": "run.py",
+      "bytes": 1645,
+      "sha256": "bab818672c3e6dfe4fa28a956f8fe0a85c3b69c069357593f8228f20349cade6"
+    },
+    {
+      "path": "stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

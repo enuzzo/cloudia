@@ -1,0 +1,34 @@
+{
+  "state": "FROZEN_BEFORE_TARGETED_TESTS",
+  "createdUTC": "2026-10-16T19:42:14.134369+00:00",
+  "candidateVersion": "observatory-v58-terrain-shadow-cache",
+  "sourceFiles": 124,
+  "sourceManifestSHA256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+  "changedPaths": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/TerrainShadow.test.ts",
+    "src/cumulonimbus/TerrainShadow.ts",
+    "src/cumulonimbus/lifecycle.test.ts"
+  ],
+  "unchangedWGSL": {
+    "TERRAIN_SHADOW_CASTER_WGSL": {
+      "byteIdentical": true,
+      "sha256": "9738e964431d4033019ba7c2fa6c7cdbcb8d0594d466a9cf7f1ff0b75d901504",
+      "bytes": 419
+    },
+    "TERRAIN_SHADOW_WGSL": {
+      "byteIdentical": true,
+      "sha256": "7eccd278c4a1532d165878a5e993bec580106563ab5a3f1d68e1c87ad461bbc1",
+      "bytes": 877
+    }
+  },
+  "scope": "External candidate only; shadow CPU exact-input cache + metadata counts; no geometry/shader/bias/material change, no root product writes",
+  "testsAllowed": [
+    "src/cumulonimbus/TerrainShadow.test.ts",
+    "tsc --noEmit"
+  ],
+  "gpu": false,
+  "build": false,
+  "fullSuite": false,
+  "counterSemantics": "Owner-local CPU render requests, renderer.render attempts including throws, exact-key hits; not GPU completion/presentation"
+}

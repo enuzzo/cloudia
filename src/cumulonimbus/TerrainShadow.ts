@@ -100,6 +100,18 @@ fn terrainMeshShadowVisibility(point:vec3<f32>, shadowMap:texture_2d<f32>, cente
 const visibilityFunction=wgslFn(TERRAIN_SHADOW_WGSL);
 const casterMinimumFunction=wgslFn(TERRAIN_SHADOW_CASTER_WGSL);
 
+interface TerrainShadowCacheKey {
+ renderer:WebGPURenderer;reversedDepth:boolean;sun:number[];bounds:number[];
+ width:number;height:number;colour:Texture;colourVersion:number;depth:Texture|null;depthVersion:number|null;epoch:number;
+}
+function sameShadowInputs(a:TerrainShadowCacheKey,b:TerrainShadowCacheKey):boolean{
+ return a.renderer===b.renderer&&a.reversedDepth===b.reversedDepth&&a.epoch===b.epoch&&a.width===b.width&&a.height===b.height&&
+  a.colour===b.colour&&a.depth===b.depth&&a.sun.every((value,i)=>Object.is(value,b.sun[i]))&&a.bounds.every((value,i)=>Object.is(value,b.bounds[i]));
+}
+function sameShadowCache(a:TerrainShadowCacheKey,b:TerrainShadowCacheKey):boolean{
+ return sameShadowInputs(a,b)&&a.colourVersion===b.colourVersion&&a.depthVersion===b.depthVersion;
+}
+
 /** Live shadow pass of the exact shared terrain mesh. R32F stores relative
  * world height along the Sun; depth32 selects the first light-visible triangle.
  * Hardware reversed depth changes selection, never the height comparison sign.
@@ -116,6 +128,10 @@ export class TerrainShadow {
  private disposed=false;
  private frame:TerrainShadowFrame|null=null;
  private reversedDepth:boolean|null=null;
+ private cacheKey:TerrainShadowCacheKey|null=null;
+ private requests=0;private submissions=0;private hits=0;private epoch=0;
+ private trackedColour:Texture|null=null;private trackedDepth:Texture|null=null;
+ private readonly onContentDisposed=()=>this.invalidate();
  constructor(private readonly scene:Scene,private readonly bounds:Box3){
   const resolution=TERRAIN_SHADOW_DEFAULTS.resolution;
   const depthTexture=new DepthTexture(resolution,resolution,FloatType);depthTexture.format=DepthFormat;
@@ -127,14 +143,39 @@ export class TerrainShadow {
   this.material.name='Cloudia terrain shadow relative solar height';this.material.blending=NoBlending;this.material.fog=false;
   this.material.premultipliedAlpha=false;this.material.toneMapped=false;this.material.depthTest=true;this.material.depthWrite=true;
   this.material.fragmentNode=casterMinimumFunction({point:positionWorld,center:this.center,sun:this.sun}) as Node<'float'>;
+  this.target.addEventListener('dispose',this.onContentDisposed);
+  this.trackedColour=this.target.texture;this.trackedDepth=this.target.depthTexture;
+  this.trackedColour.addEventListener('dispose',this.onContentDisposed);
+  this.trackedDepth?.addEventListener('dispose',this.onContentDisposed);
  }
  get texture():Texture{return this.target.texture;}
  visibility(point:Node<'vec3'>):Node<'float'>{
   return visibilityFunction({point,shadowMap:texture(this.target.texture),center:this.center,sun:this.sun,right:this.right,up:this.up,radius:this.radius}) as Node<'float'>;
  }
+ /** Call after any caster/world-bounds mutation or external write/reset of the owned target. */
+ invalidate():void{if(this.disposed)return;this.epoch++;this.cacheKey=null;}
+ private trackAttachments():void{
+  const colour=this.target.texture,depth=this.target.depthTexture;
+  if(colour===this.trackedColour&&depth===this.trackedDepth)return;
+  this.trackedColour?.removeEventListener('dispose',this.onContentDisposed);this.trackedDepth?.removeEventListener('dispose',this.onContentDisposed);
+  this.trackedColour=colour;this.trackedDepth=depth;
+  colour.addEventListener('dispose',this.onContentDisposed);depth?.addEventListener('dispose',this.onContentDisposed);
+  this.invalidate();
+ }
+ private key(renderer:WebGPURenderer,frame:TerrainShadowFrame):TerrainShadowCacheKey{
+  return {renderer,reversedDepth:renderer.reversedDepthBuffer,sun:frame.sun.toArray(),bounds:[...this.bounds.min.toArray(),...this.bounds.max.toArray()],
+   width:this.target.width,height:this.target.height,colour:this.target.texture,colourVersion:this.target.texture.version,
+   depth:this.target.depthTexture,depthVersion:this.target.depthTexture?.version??null,epoch:this.epoch};
+ }
  render(renderer:WebGPURenderer,sunVector:TerrainShadowVector):void{
   if(this.disposed)throw new Error('Terrain shadow disposed');
   const frame=terrainShadowFrame(sunVector,this.bounds);this.frame=frame;this.reversedDepth=renderer.reversedDepthBuffer;
+  this.requests++;
+  this.trackAttachments();
+  const requested=this.key(renderer,frame);
+  if(this.cacheKey&&sameShadowCache(this.cacheKey,requested)){this.hits++;return;}
+  // A failed new clear/draw must never leave the old key valid for overwritten pixels.
+  this.cacheKey=null;
   this.sun.value.copy(frame.sun);this.right.value.copy(frame.right);this.up.value.copy(frame.up);
   this.camera.near=frame.nearKm;this.camera.far=frame.farKm;this.camera.updateProjectionMatrix();
   const origin=frame.center.clone().addScaledVector(frame.sun,frame.distanceKm);
@@ -145,10 +186,16 @@ export class TerrainShadow {
   try{
    this.scene.overrideMaterial=this.material;renderer.setMRT(null);renderer.setRenderTarget(this.target);renderer.autoClear=false;
    renderer.setClearColor(new Color(TERRAIN_SHADOW_DEFAULTS.clearHeightKm,0,0),1);renderer.setClearDepth(1);renderer.clear(true,true,false);
-   renderer.render(this.scene,this.camera);
+   this.submissions++;renderer.render(this.scene,this.camera);
   }finally{
    this.scene.overrideMaterial=previousOverride;renderer.autoClear=previousAutoClear;renderer.setClearColor(previousColour,previousAlpha);renderer.setClearDepth(previousDepth);
    renderer.setRenderTarget(previousTarget);renderer.setMRT(previousMRT);
+  }
+  // Three may increment attachment versions at first bind. Commit only the final
+  // versions, and never erase an invalidate() or changed bounds/target during draw.
+  if(!this.disposed){
+   this.trackAttachments();const completed=this.key(renderer,frame);
+   if(sameShadowInputs(requested,completed))this.cacheKey=completed;
   }
  }
  stats(){return {resolution:TERRAIN_SHADOW_DEFAULTS.resolution,radiusKm:TERRAIN_SHADOW_DEFAULTS.radiusKm,
@@ -161,6 +208,14 @@ export class TerrainShadow {
   receiverPolicy:'Only shadow lookup point elevated along planet radial by half one light texel; geometry/radiance point unchanged; contact shadows below this scale may disappear',
   biasLimit:'No guarantee for multiple non-coplanar faces inside one light texel; aliasing and contact-shadow loss require visual qualification',
   depthFit:this.frame?{nearKm:this.frame.nearKm,farKm:this.frame.farKm,cameraDistanceKm:this.frame.distanceKm,minimumCasterHeightKm:this.frame.minimumCasterHeightKm,maximumCasterHeightKm:this.frame.maximumCasterHeightKm}:null,
-  reversedDepthBuffer:this.reversedDepth,updates:'One live shadow draw before each terrain colour draw; shared geometry not owned by shadow'};}
- dispose():void{if(this.disposed)return;this.disposed=true;this.target.dispose();this.material.dispose();}
+  reversedDepthBuffer:this.reversedDepth,updates:'Exact-input cached shadow map; terrain colour draw remains live; shared geometry not owned by shadow',
+  cache:{requests:this.requests,submissions:this.submissions,hits:this.hits,epoch:this.epoch,valid:this.cacheKey!==null,
+   scope:'Owner-local CPU calls: requests are validated render calls, submissions are renderer.render attempts (including throws), hits skip shadow clear/draw; no GPU completion or presentation claim',
+   ownership:'Static casters and exclusive target; call invalidate after caster mutations, external target writes or same-owner renderer/backend reset; disposed owner is terminal'}};}
+ dispose():void{
+  if(this.disposed)return;this.disposed=true;this.cacheKey=null;
+  this.target.removeEventListener('dispose',this.onContentDisposed);
+  this.trackedColour?.removeEventListener('dispose',this.onContentDisposed);this.trackedDepth?.removeEventListener('dispose',this.onContentDisposed);
+  this.trackedColour=null;this.trackedDepth=null;this.target.dispose();this.material.dispose();
+ }
 }
