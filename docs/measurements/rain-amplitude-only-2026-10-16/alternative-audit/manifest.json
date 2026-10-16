@@ -1,0 +1,86 @@
+{
+  "kind": "read-only-rain-next-feasibility-audit",
+  "dateUtc": "2026-10-16T11:00:16.644332+00:00",
+  "status": "PROPOSAL_NOT_EXECUTED",
+  "rootReportedProductCheckpoint": "10493afa7f6d90389c39e17b2cad79397dfdac01",
+  "rootReportedDocsHead": "e75adf9",
+  "newCpuRuns": [],
+  "newGpuRuns": [],
+  "newVolumeBakes": 0,
+  "productWrites": [],
+  "readSourceHashes": [
+    {
+      "path": "docs/RAIN-NEXT-2026-10-16.md",
+      "bytes": 13929,
+      "sha256": "59d3b9b177e9540423666aa2a27ee4b062ca238059ba3e1ccef959ad4c8c78d1"
+    },
+    {
+      "path": "docs/RAIN-CACHE-AUDIT-2026-10-16.md",
+      "bytes": 11136,
+      "sha256": "35e8d5569f04dc3a94647e05e3d5b3292ca0249d4bf58752dde5de8d80e2f8ae"
+    },
+    {
+      "path": "docs/RAIN-CACHE-GPU-FORMAT-2026-10-16.md",
+      "bytes": 11670,
+      "sha256": "f8a0179cedb1d9fd87a7252716e0918687d2c4211dc2f32ee833a8591a1ea7b5"
+    },
+    {
+      "path": "docs/RAIN-WORK-2026-10-16.md",
+      "bytes": 7212,
+      "sha256": "10342606931fa87ee35398f6e43e1748b7c67efe9b18959a6a4074362ebf8653"
+    },
+    {
+      "path": "docs/RAIN-EMPTY-RESEARCH-2026-10-16.md",
+      "bytes": 1801,
+      "sha256": "6d1627b429e7a1a58231f31223fa66dbe2c931c091a6824e7c7393320cc7cc27"
+    },
+    {
+      "path": "docs/EXPERIMENT-RAIN-EMPTY-2026-10-16.md",
+      "bytes": 4206,
+      "sha256": "1499ec743ce8755db2b41b975a9571d23ef80516a085f92545047fa6fc9d1ac9"
+    },
+    {
+      "path": "docs/HANDOFF-2026-10-15.md",
+      "bytes": 50269,
+      "sha256": "395ceda45c3cb60ae0f78e6e8ca04f3d3a5b0eb74774581c60e3566d0d0787dc"
+    },
+    {
+      "path": "src/cumulonimbus/cloudShader.ts",
+      "bytes": 15570,
+      "sha256": "652c9514b7dfcee1456d15e9966087b3ff9c6a6ce9741970208cfca3750a248c"
+    },
+    {
+      "path": "src/cumulonimbus/precipitation.ts",
+      "bytes": 5993,
+      "sha256": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72"
+    },
+    {
+      "path": "src/cumulonimbus/medium.ts",
+      "bytes": 1176,
+      "sha256": "ddfd487055e4fde6581ab351345e91fb3466b032dda954c803082a39a9a142d6"
+    },
+    {
+      "path": "src/cumulonimbus/aerial.ts",
+      "bytes": 621,
+      "sha256": "a066cfe3664d77e4c448045010fa13c40eefb35add6c163d143bd2bb01af10da"
+    },
+    {
+      "path": "src/cumulonimbus/emptyTraversal.ts",
+      "bytes": 1624,
+      "sha256": "281a4209f2afc13a63735d6526f954dc93d775972aa1d8ccd6cf46d1677c57d4"
+    }
+  ],
+  "historicalCacheManifest": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/data/manifest.json",
+    "sha256": "dd4ecf24d7a5c17e8d8c9e9dda2b189658a33cdec34e1be8ac1bdbbf475604f8",
+    "payloadsReadOrRehashed": false
+  },
+  "searchScope": "Repository docs/**/*.md; preintegr/pre.integr/Gauss/18-36 variants. Op2 found in RAIN-NEXT and handoff; no executed preintegration trial found in searched Markdown. Targeted amplitude-only/amplitude-cache searches found no executed trial in searched Markdown.",
+  "supersededTask": "A/s128/256 replay cancelled before any run or file creation; prior phase1+2 discovered and preserved.",
+  "output": {
+    "path": "AUDIT.md",
+    "sha256": "e4438dc93e241060c33aea78117a6ca51682cdf1798c61b3e54d36f40106d379"
+  },
+  "verdict": "Prefer one separately authorized A-only fixed-sequence CPU diagnostic over op2 hierarchy now: exact runtime mapping removes the demonstrated failure mode, but amplitude/optical errors and dynamic rebuild cost remain unqualified. No new run was performed for this audit.",
+  "revisedUtc": "2026-10-16T11:05:49.543729+00:00"
+}

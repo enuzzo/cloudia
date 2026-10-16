@@ -1,0 +1,48 @@
+{
+  "kind": "deterministic-gzip-lossless-curation",
+  "revision": "R2",
+  "createdAtUtc": "2026-10-16T11:19:47.220068+00:00",
+  "originalModelExecutionCount": 1,
+  "newModelExecutions": 0,
+  "R1IdentityRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/rain-amplitude-only-archive-R1-identity",
+  "R1FreezeManifestSha256": "b98fe5936176b5b42d3033c1fb94ad43d2d151e00c89b1663fa424f7389b3c9e",
+  "R1ArchiveManifestSha256": "92ff4a00e052c247bc343d5f3f2b1f41a42ffd0d2be35ce7b0e612974796f533",
+  "encoding": {
+    "format": "gzip",
+    "compressionLevel": 9,
+    "mtime": 0,
+    "originalFilenameHeader": false
+  },
+  "files": {
+    "result.json": {
+      "storedPath": "result.json.gz",
+      "compressedBytes": 86698,
+      "compressedSha256": "76800e0fd27529ab95ff0595660346303d5c73acf12c8920e769940f4e148ec9",
+      "originalBytes": 749581,
+      "originalSha256": "f1b09f4710f7af5df41ebdc0c0038f8ff812cc4aa9322255564ca2f1929f0518",
+      "gzipMtime": 0,
+      "R1OriginalRelativePath": "docs/measurements/rain-amplitude-only-2026-10-16/result.json",
+      "decompressedByteIdenticalToR1": true
+    },
+    "historical-replay.json": {
+      "storedPath": "historical-replay.json.gz",
+      "compressedBytes": 138536,
+      "compressedSha256": "eac5819a8d47a736f0ffa57a09802f7354759bd8a3a98ab23ed07f5d1a22a887",
+      "originalBytes": 1306830,
+      "originalSha256": "c7d45cdc20965f16183ff4b128db499efe85a27ad244ca3c1ccf082ab60bc96f",
+      "gzipMtime": 0,
+      "R1OriginalRelativePath": "docs/measurements/rain-amplitude-only-2026-10-16/historical-replay.json",
+      "decompressedByteIdenticalToR1": true
+    },
+    "inputs/baseline-control-replay.json": {
+      "storedPath": "inputs/baseline-control-replay.json.gz",
+      "compressedBytes": 138542,
+      "compressedSha256": "6fbb87d4ede095479afec49ce42104a22344ba498901d249ddbaf881c7ce865c",
+      "originalBytes": 1306861,
+      "originalSha256": "2acd349b164d2d9b666d40245f0c696b449decaa92a2e01307b9d08c0bf9cc02",
+      "gzipMtime": 0,
+      "R1OriginalRelativePath": "docs/measurements/rain-amplitude-only-2026-10-16/inputs/baseline-control-replay.json",
+      "decompressedByteIdenticalToR1": true
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2703,
+      "sha256": "c94ac24cb8a293c4baa5107d5c58c40490faeeb159681d7ea9fa7b37c06ff8d5"
+    },
+    {
+      "path": "original-preflight.tar.gz",
+      "bytes": 2786839,
+      "sha256": "f4c39be94a349fdbf976a255242f2e5913b2dd9ea822f994e9dccb12eeb6d791"
+    },
+    {
+      "path": "provenance.json",
+      "bytes": 688,
+      "sha256": "33d2f81c0336f09fce9e21e95f8c2feaf87c212bc0083614daa2c296ef32e2ea"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 17309,
+      "sha256": "3ecff9c7b4cf9fdcef0db8876e6e9779cb85b39bd399d382c159193f51860eb7"
+    }
+  ],
+  "payloadCount": 4,
+  "payloadBytes": 2807539,
+  "relatedDocument": {
+    "name": "EXPERIMENT-BODY-BULGE-ORIENTATION-2026-10-16.md",
+    "bytes": 4693,
+    "sha256": "abf78245dc75e804ae8ded0a3096305dffdf5cf8c1cb875d0695584072f457e6",
+    "optionalForStandalonePackage": true
+  }
+}

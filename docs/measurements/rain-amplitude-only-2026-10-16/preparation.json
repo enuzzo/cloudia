@@ -1,0 +1,154 @@
+{
+  "kind": "amplitude-only-historical-source-preparation",
+  "date": "2026-10-16T11:06:52.082174+00:00",
+  "historicalRef": "ab2e122",
+  "allTenBakeSourceHashesExact": true,
+  "sources": [
+    {
+      "name": "volume",
+      "gitObject": "ab2e122:src/cumulonimbus/volume.ts",
+      "originalSha256": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74",
+      "runtimeSha256": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74",
+      "bytes": 25749,
+      "matchesBakeManifest": true,
+      "transform": "none"
+    },
+    {
+      "name": "light",
+      "gitObject": "ab2e122:src/cumulonimbus/light.ts",
+      "originalSha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf",
+      "runtimeSha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf",
+      "bytes": 3041,
+      "matchesBakeManifest": true,
+      "transform": "none"
+    },
+    {
+      "name": "motion",
+      "gitObject": "ab2e122:src/cumulonimbus/motion.ts",
+      "originalSha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2",
+      "runtimeSha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2",
+      "bytes": 7238,
+      "matchesBakeManifest": true,
+      "transform": "none"
+    },
+    {
+      "name": "motionField",
+      "gitObject": "ab2e122:src/cumulonimbus/motionField.ts",
+      "originalSha256": "d8817eb9d90a70ee975eea89d2c2fca6d9c6783280bea810fdf76cff2b2d4d8a",
+      "runtimeSha256": "17ed48d23ff5f17e71f7d9d4e6ae67cd6112e1b8ef8d0ba9eb44bc1e5abd3ac6",
+      "bytes": 2639,
+      "matchesBakeManifest": true,
+      "transform": "absolute Three module path only"
+    },
+    {
+      "name": "precipitation",
+      "gitObject": "ab2e122:src/cumulonimbus/precipitation.ts",
+      "originalSha256": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72",
+      "runtimeSha256": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72",
+      "bytes": 5993,
+      "matchesBakeManifest": true,
+      "transform": "none"
+    },
+    {
+      "name": "emptyTraversal",
+      "gitObject": "ab2e122:src/cumulonimbus/emptyTraversal.ts",
+      "originalSha256": "281a4209f2afc13a63735d6526f954dc93d775972aa1d8ccd6cf46d1677c57d4",
+      "runtimeSha256": "281a4209f2afc13a63735d6526f954dc93d775972aa1d8ccd6cf46d1677c57d4",
+      "bytes": 1624,
+      "matchesBakeManifest": true,
+      "transform": "none"
+    },
+    {
+      "name": "medium",
+      "gitObject": "ab2e122:src/cumulonimbus/medium.ts",
+      "originalSha256": "ddfd487055e4fde6581ab351345e91fb3466b032dda954c803082a39a9a142d6",
+      "runtimeSha256": "ddfd487055e4fde6581ab351345e91fb3466b032dda954c803082a39a9a142d6",
+      "bytes": 1176,
+      "matchesBakeManifest": true,
+      "transform": "none"
+    },
+    {
+      "name": "landscape",
+      "gitObject": "ab2e122:src/cumulonimbus/landscape.ts",
+      "originalSha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+      "runtimeSha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+      "bytes": 6980,
+      "matchesBakeManifest": true,
+      "transform": "none"
+    },
+    {
+      "name": "cloudShader",
+      "gitObject": "ab2e122:src/cumulonimbus/cloudShader.ts",
+      "originalSha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+      "runtimeSha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+      "bytes": 13664,
+      "matchesBakeManifest": true,
+      "transform": "none"
+    },
+    {
+      "name": "GPUSceneEngine",
+      "gitObject": "ab2e122:src/cumulonimbus/GPUSceneEngine.ts",
+      "originalSha256": "9b065a853212191c8af8e3ab63f44a654f4d3918ea59e98af29b4a3c090a6fca",
+      "runtimeSha256": "9b065a853212191c8af8e3ab63f44a654f4d3918ea59e98af29b4a3c090a6fca",
+      "bytes": 53971,
+      "matchesBakeManifest": true,
+      "transform": "none"
+    },
+    {
+      "name": "sun",
+      "gitObject": "ab2e122:src/cumulonimbus/sun.ts",
+      "originalSha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc",
+      "runtimeSha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc",
+      "bytes": 397,
+      "matchesBakeManifest": null,
+      "transform": "none"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/package.json",
+      "sha256": "ab4ff6950aab522dfe6980f19914a5eb2cadb689a36c6c44f4d3869c5e46dc89",
+      "bytes": 3672
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/build/three.webgpu.js",
+      "sha256": "a78400fa1d359e81fcc12b84ed0a89a7fbecb4b8373e28ae8f9d2b11f6ea13bc",
+      "bytes": 2284823
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/build/three.core.js",
+      "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6",
+      "bytes": 1458113
+    }
+  ],
+  "controlInputs": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/data/manifest.json",
+      "sha256": "dd4ecf24d7a5c17e8d8c9e9dda2b189658a33cdec34e1be8ac1bdbbf475604f8",
+      "bytes": 3853
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/input-control.json",
+      "sha256": "cbb26949110019d364f57fdcbe730e2685c34a96ab8264ec4850a16e4cd5822b",
+      "bytes": 48089
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/work-32x18.json",
+      "sha256": "2acd349b164d2d9b666d40245f0c696b449decaa92a2e01307b9d08c0bf9cc02",
+      "bytes": 1306861
+    }
+  ],
+  "originalAuditInputs": [
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/rain-cache-audit-2026-10-16/phase2/replay.ts",
+      "sha256": "0f6fe2cd750e9de186884b31ff1890095e42e8b010f98276a9b25ef91204033d"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/rain-cache-audit-2026-10-16/phase2/audit-core.ts",
+      "sha256": "c96cedf92337d16b935f9f612b7643d0fbf2dbb1d2b0ae49f20509a9b342606a"
+    }
+  ],
+  "bakesPerformed": 0,
+  "gpuExecuted": false,
+  "pathTransformDescription": "Replay/oracle CPU imports point at external source-runtime. Replay source guards point at external source-original. motionField Three bare module import rewritten to verified existing local three.webgpu.js. All original guards retained; required source list strengthened to all ten. No other historical source edits."
+}

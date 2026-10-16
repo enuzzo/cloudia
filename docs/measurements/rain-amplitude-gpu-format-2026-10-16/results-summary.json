@@ -1,0 +1,429 @@
+{
+  "scope": "Small GPU format prerequisite, not Cloudia integration/field/quality/FPS proof",
+  "originalEvidenceDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle17/browser",
+  "gpuExecutor": "Root through CUA, explicit button once per revision",
+  "archiveAuthorGPUExecutions": 0,
+  "sourceOriginals": {
+    "uniqueFiles": 16,
+    "uniqueBytes": 40195,
+    "reconstructedFiles": 28
+  },
+  "runs": [
+    {
+      "revision": "R1",
+      "status": "FAIL",
+      "startedAt": "2026-10-16T11:21:55.702Z",
+      "finishedAt": "2026-10-16T11:21:55.871Z",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+      "adapter": {
+        "vendor": "apple",
+        "architecture": "metal-3",
+        "device": "",
+        "description": "",
+        "isFallbackAdapter": false
+      },
+      "sourceHashes": {
+        "index.html": "a9f88ef3b9ffbd24873a0755b8985eeb3f24340296d73a62a65be3f5e0e2ed11",
+        "app.js": "0dc08f2d17b9ba66ff2a804f8c4d7242535e685c535f2c4f91cd1ab093cd3a97",
+        "pack.wgsl": "b41e9f4c3291499949a63b2ce6481b9f78ccb8541087da058f023b142332e46c",
+        "direct-r16f.wgsl": "c76d00530ac4a1d8a35fc8bc85b509e8f51602a0ad3110538e9743668155ad8e",
+        "read-sample.wgsl": "f60ce45d3557ac84f2ae3a091c10e0d3405a5564acdfd5a6df8ba2aa9677814d"
+      },
+      "paths": {
+        "core": {
+          "status": "PASS",
+          "requestedFeatures": [
+            "timestamp-query"
+          ],
+          "deviceFeatures": [
+            "core-features-and-limits",
+            "timestamp-query"
+          ],
+          "scopedErrorCount": 0,
+          "uncapturedErrorCount": 0,
+          "destroyCalled": true,
+          "cases": [
+            {
+              "status": "PASS",
+              "dims": [
+                16,
+                2,
+                3
+              ],
+              "texelCount": 96,
+              "normalChecks": 78,
+              "subnormalChecks": 18,
+              "encodingFailureCount": 0,
+              "completeRecords": 108,
+              "expectedRecords": 108,
+              "nonfinite": 0,
+              "loadMismatches": 0,
+              "sampleMismatches": 0,
+              "cleanup": {
+                "allocatedBuffers": 9,
+                "destroyedBuffers": 9,
+                "allocatedTextures": 1,
+                "destroyedTextures": 1
+              }
+            },
+            {
+              "status": "PASS",
+              "dims": [
+                17,
+                2,
+                3
+              ],
+              "texelCount": 102,
+              "normalChecks": 83,
+              "subnormalChecks": 19,
+              "encodingFailureCount": 0,
+              "completeRecords": 114,
+              "expectedRecords": 114,
+              "nonfinite": 0,
+              "loadMismatches": 0,
+              "sampleMismatches": 0,
+              "cleanup": {
+                "allocatedBuffers": 9,
+                "destroyedBuffers": 9,
+                "allocatedTextures": 1,
+                "destroyedTextures": 1
+              }
+            }
+          ]
+        },
+        "tier1": {
+          "status": "FAIL",
+          "requestedFeatures": [
+            "texture-formats-tier1"
+          ],
+          "deviceFeatures": [
+            "core-features-and-limits",
+            "rg11b10ufloat-renderable",
+            "texture-formats-tier1"
+          ],
+          "scopedErrorCount": 1,
+          "uncapturedErrorCount": 0,
+          "destroyCalled": true,
+          "cases": [
+            {
+              "status": "ERROR",
+              "dims": [
+                16,
+                2,
+                3
+              ],
+              "error": {
+                "name": "Error",
+                "message": "Shader compilation failed: tier1-storage-producer"
+              }
+            },
+            {
+              "status": "ERROR",
+              "dims": [
+                17,
+                2,
+                3
+              ],
+              "error": {
+                "name": "Error",
+                "message": "Shader compilation failed: tier1-storage-producer"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "revision": "R2",
+      "status": "FAIL",
+      "startedAt": "2026-10-16T11:23:57.561Z",
+      "finishedAt": "2026-10-16T11:23:57.679Z",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+      "adapter": {
+        "vendor": "apple",
+        "architecture": "metal-3",
+        "device": "",
+        "description": "",
+        "isFallbackAdapter": false
+      },
+      "sourceHashes": {
+        "index.html": "a9f88ef3b9ffbd24873a0755b8985eeb3f24340296d73a62a65be3f5e0e2ed11",
+        "app.js": "0dc08f2d17b9ba66ff2a804f8c4d7242535e685c535f2c4f91cd1ab093cd3a97",
+        "pack.wgsl": "b41e9f4c3291499949a63b2ce6481b9f78ccb8541087da058f023b142332e46c",
+        "direct-r16f.wgsl": "bf2ff39737385151fb36b18f47239044698a139537c53dcdfb5ba15acf25effe",
+        "read-sample.wgsl": "f60ce45d3557ac84f2ae3a091c10e0d3405a5564acdfd5a6df8ba2aa9677814d"
+      },
+      "paths": {
+        "core": {
+          "status": "PASS",
+          "requestedFeatures": [
+            "timestamp-query"
+          ],
+          "deviceFeatures": [
+            "core-features-and-limits",
+            "timestamp-query"
+          ],
+          "scopedErrorCount": 0,
+          "uncapturedErrorCount": 0,
+          "destroyCalled": true,
+          "cases": [
+            {
+              "status": "PASS",
+              "dims": [
+                16,
+                2,
+                3
+              ],
+              "texelCount": 96,
+              "normalChecks": 78,
+              "subnormalChecks": 18,
+              "encodingFailureCount": 0,
+              "completeRecords": 108,
+              "expectedRecords": 108,
+              "nonfinite": 0,
+              "loadMismatches": 0,
+              "sampleMismatches": 0,
+              "cleanup": {
+                "allocatedBuffers": 9,
+                "destroyedBuffers": 9,
+                "allocatedTextures": 1,
+                "destroyedTextures": 1
+              }
+            },
+            {
+              "status": "PASS",
+              "dims": [
+                17,
+                2,
+                3
+              ],
+              "texelCount": 102,
+              "normalChecks": 83,
+              "subnormalChecks": 19,
+              "encodingFailureCount": 0,
+              "completeRecords": 114,
+              "expectedRecords": 114,
+              "nonfinite": 0,
+              "loadMismatches": 0,
+              "sampleMismatches": 0,
+              "cleanup": {
+                "allocatedBuffers": 9,
+                "destroyedBuffers": 9,
+                "allocatedTextures": 1,
+                "destroyedTextures": 1
+              }
+            }
+          ]
+        },
+        "tier1": {
+          "status": "FAIL",
+          "requestedFeatures": [
+            "texture-formats-tier1"
+          ],
+          "deviceFeatures": [
+            "core-features-and-limits",
+            "rg11b10ufloat-renderable",
+            "texture-formats-tier1"
+          ],
+          "scopedErrorCount": 0,
+          "uncapturedErrorCount": 0,
+          "destroyCalled": true,
+          "cases": [
+            {
+              "status": "FAIL",
+              "dims": [
+                16,
+                2,
+                3
+              ],
+              "texelCount": 96,
+              "normalChecks": 78,
+              "subnormalChecks": 18,
+              "encodingFailureCount": 6,
+              "completeRecords": 108,
+              "expectedRecords": 108,
+              "nonfinite": 0,
+              "loadMismatches": 0,
+              "sampleMismatches": 0,
+              "cleanup": {
+                "allocatedBuffers": 7,
+                "destroyedBuffers": 7,
+                "allocatedTextures": 1,
+                "destroyedTextures": 1
+              }
+            },
+            {
+              "status": "FAIL",
+              "dims": [
+                17,
+                2,
+                3
+              ],
+              "texelCount": 102,
+              "normalChecks": 83,
+              "subnormalChecks": 19,
+              "encodingFailureCount": 7,
+              "completeRecords": 114,
+              "expectedRecords": 114,
+              "nonfinite": 0,
+              "loadMismatches": 0,
+              "sampleMismatches": 0,
+              "cleanup": {
+                "allocatedBuffers": 7,
+                "destroyedBuffers": 7,
+                "allocatedTextures": 1,
+                "destroyedTextures": 1
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "revision": "R3",
+      "status": "PASS_BOTH_FORMAT_PATHS",
+      "startedAt": "2026-10-16T11:31:52.234Z",
+      "finishedAt": "2026-10-16T11:31:52.365Z",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+      "adapter": {
+        "vendor": "apple",
+        "architecture": "metal-3",
+        "device": "",
+        "description": "",
+        "isFallbackAdapter": false
+      },
+      "sourceHashes": {
+        "index.html": "a9f88ef3b9ffbd24873a0755b8985eeb3f24340296d73a62a65be3f5e0e2ed11",
+        "app.js": "0dc08f2d17b9ba66ff2a804f8c4d7242535e685c535f2c4f91cd1ab093cd3a97",
+        "pack.wgsl": "b41e9f4c3291499949a63b2ce6481b9f78ccb8541087da058f023b142332e46c",
+        "direct-r16f.wgsl": "263084c443416bdcd5f2eb42cbd67ba7e051bf1f88d070723f13182d31f96c85",
+        "read-sample.wgsl": "f60ce45d3557ac84f2ae3a091c10e0d3405a5564acdfd5a6df8ba2aa9677814d"
+      },
+      "paths": {
+        "core": {
+          "status": "PASS",
+          "requestedFeatures": [
+            "timestamp-query"
+          ],
+          "deviceFeatures": [
+            "core-features-and-limits",
+            "timestamp-query"
+          ],
+          "scopedErrorCount": 0,
+          "uncapturedErrorCount": 0,
+          "destroyCalled": true,
+          "cases": [
+            {
+              "status": "PASS",
+              "dims": [
+                16,
+                2,
+                3
+              ],
+              "texelCount": 96,
+              "normalChecks": 78,
+              "subnormalChecks": 18,
+              "encodingFailureCount": 0,
+              "completeRecords": 108,
+              "expectedRecords": 108,
+              "nonfinite": 0,
+              "loadMismatches": 0,
+              "sampleMismatches": 0,
+              "cleanup": {
+                "allocatedBuffers": 9,
+                "destroyedBuffers": 9,
+                "allocatedTextures": 1,
+                "destroyedTextures": 1
+              }
+            },
+            {
+              "status": "PASS",
+              "dims": [
+                17,
+                2,
+                3
+              ],
+              "texelCount": 102,
+              "normalChecks": 83,
+              "subnormalChecks": 19,
+              "encodingFailureCount": 0,
+              "completeRecords": 114,
+              "expectedRecords": 114,
+              "nonfinite": 0,
+              "loadMismatches": 0,
+              "sampleMismatches": 0,
+              "cleanup": {
+                "allocatedBuffers": 9,
+                "destroyedBuffers": 9,
+                "allocatedTextures": 1,
+                "destroyedTextures": 1
+              }
+            }
+          ]
+        },
+        "tier1": {
+          "status": "PASS",
+          "requestedFeatures": [
+            "texture-formats-tier1"
+          ],
+          "deviceFeatures": [
+            "core-features-and-limits",
+            "rg11b10ufloat-renderable",
+            "texture-formats-tier1"
+          ],
+          "scopedErrorCount": 0,
+          "uncapturedErrorCount": 0,
+          "destroyCalled": true,
+          "cases": [
+            {
+              "status": "PASS",
+              "dims": [
+                16,
+                2,
+                3
+              ],
+              "texelCount": 96,
+              "normalChecks": 78,
+              "subnormalChecks": 18,
+              "encodingFailureCount": 0,
+              "completeRecords": 108,
+              "expectedRecords": 108,
+              "nonfinite": 0,
+              "loadMismatches": 0,
+              "sampleMismatches": 0,
+              "cleanup": {
+                "allocatedBuffers": 7,
+                "destroyedBuffers": 7,
+                "allocatedTextures": 1,
+                "destroyedTextures": 1
+              }
+            },
+            {
+              "status": "PASS",
+              "dims": [
+                17,
+                2,
+                3
+              ],
+              "texelCount": 102,
+              "normalChecks": 83,
+              "subnormalChecks": 19,
+              "encodingFailureCount": 0,
+              "completeRecords": 114,
+              "expectedRecords": 114,
+              "nonfinite": 0,
+              "loadMismatches": 0,
+              "sampleMismatches": 0,
+              "cleanup": {
+                "allocatedBuffers": 7,
+                "destroyedBuffers": 7,
+                "allocatedTextures": 1,
+                "destroyedTextures": 1
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

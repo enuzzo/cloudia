@@ -1,0 +1,13 @@
+--- phase2/oracle-core.ts
++++ amplitude-only/oracle-core.ts
+@@ -1,8 +1,8 @@
+ /** CPU-only lazy A/s reconstruction audit. Never generates a CloudVolume. */
+ import {readFileSync,writeFileSync} from 'node:fs';
+ import {createHash} from 'node:crypto';
+-import {sampleDetail} from '/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/volume.ts';
+-import {precipitationSurvival,RAIN_EXTINCTION} from '/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/precipitation.ts';
++import {sampleDetail} from '/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/rain-amplitude-only/source-runtime/src/cumulonimbus/volume.ts';
++import {precipitationSurvival,RAIN_EXTINCTION} from '/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/rain-amplitude-only/source-runtime/src/cumulonimbus/precipitation.ts';
+ const f=Math.fround,add=(a:number,b:number)=>f(f(a)+f(b)),sub=(a:number,b:number)=>f(f(a)-f(b)),mul=(a:number,b:number)=>f(f(a)*f(b)),div=(a:number,b:number)=>f(f(a)/f(b));
+ const clamp=(x:number,a=0,b=1)=>Math.max(a,Math.min(b,x));
+ const smooth=(a:number,b:number,x:number)=>{const t=f(clamp(div(sub(x,a),sub(b,a))));return mul(mul(t,t),sub(3,mul(2,t)));};

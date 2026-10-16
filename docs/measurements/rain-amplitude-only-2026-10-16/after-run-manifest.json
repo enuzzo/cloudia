@@ -1,0 +1,301 @@
+{
+  "kind": "rain-amplitude-only-external-final-artifacts",
+  "dateUtc": "2026-10-16T11:10:31.893029+00:00",
+  "executionCount": 1,
+  "processExitCode": 0,
+  "bakesPerformed": 0,
+  "gpuExecuted": false,
+  "productWrites": [],
+  "additionalStateOrBoundaryProbes": 0,
+  "preRunAllFilesUnchanged": true,
+  "preRunFileChecks": {
+    "PROTOCOL-UV-ADDENDUM.md": true,
+    "PROTOCOL.md": true,
+    "audit-core.ts": true,
+    "inputs/audit-core.ts.phase2-original": true,
+    "inputs/replay.ts.phase2-original": true,
+    "oracle-core.ts": true,
+    "oracle-core.ts.transform.patch": true,
+    "preparation.json": true,
+    "prepare.py": true,
+    "replay.ts": true,
+    "replay.ts.transform.patch": true,
+    "source-original/src/cumulonimbus/GPUSceneEngine.ts": true,
+    "source-original/src/cumulonimbus/cloudShader.ts": true,
+    "source-original/src/cumulonimbus/emptyTraversal.ts": true,
+    "source-original/src/cumulonimbus/landscape.ts": true,
+    "source-original/src/cumulonimbus/light.ts": true,
+    "source-original/src/cumulonimbus/medium.ts": true,
+    "source-original/src/cumulonimbus/motion.ts": true,
+    "source-original/src/cumulonimbus/motionField.ts": true,
+    "source-original/src/cumulonimbus/precipitation.ts": true,
+    "source-original/src/cumulonimbus/sun.ts": true,
+    "source-original/src/cumulonimbus/volume.ts": true,
+    "source-runtime/src/cumulonimbus/GPUSceneEngine.ts": true,
+    "source-runtime/src/cumulonimbus/cloudShader.ts": true,
+    "source-runtime/src/cumulonimbus/emptyTraversal.ts": true,
+    "source-runtime/src/cumulonimbus/landscape.ts": true,
+    "source-runtime/src/cumulonimbus/light.ts": true,
+    "source-runtime/src/cumulonimbus/medium.ts": true,
+    "source-runtime/src/cumulonimbus/motion.ts": true,
+    "source-runtime/src/cumulonimbus/motionField.ts": true,
+    "source-runtime/src/cumulonimbus/precipitation.ts": true,
+    "source-runtime/src/cumulonimbus/sun.ts": true,
+    "source-runtime/src/cumulonimbus/volume.ts": true
+  },
+  "dependencyChecksAfterRun": {
+    "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/package.json": true,
+    "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/build/three.webgpu.js": true,
+    "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/build/three.core.js": true
+  },
+  "nodeModulesBeforeAndAfter": {
+    "fileProviderIgnore": "1",
+    "gitIgnored": true,
+    "gitTrackedPaths": []
+  },
+  "verifiedInputPayloadsDuringReplay": {
+    "macro-rgba8.bin": {
+      "bytes": 67108864,
+      "sha256": "72e3f360b81f3c8f812800cc309a174ce893d96c80e666c9bf98fca178187b9f"
+    },
+    "detail-rgba8.bin": {
+      "bytes": 8388608,
+      "sha256": "ed9ea464b562c974bdd4bd34c56e5d0f3a8638e4b149f275392c0521fc1993f5"
+    },
+    "rain-rg8.bin": {
+      "bytes": 8192,
+      "sha256": "c8f6dc2c8abb0717ec3051c0f958648ec541604f3718eb0f7621cb047d961fe2"
+    },
+    "flow-rgba16f.bin": {
+      "bytes": 32768,
+      "sha256": "e395feffaa19d8de459f4c1ef9380a42be2fb8d3f902f50f9787c0abbea1909f"
+    }
+  },
+  "sunsetPayloadReadOrRehashed": false,
+  "baselineChecks": {
+    "baselineSequenceExact": true,
+    "baselineAllCountsExact": true,
+    "baselineAllLookupCountsExact": true,
+    "expectedIterations": true,
+    "expectedRainRegion": true,
+    "expectedRainPositive": true,
+    "allOriginalReplayChecks": true,
+    "allTenHistoricalSourcesExact": true,
+    "independentFactorPointChecksPass": true,
+    "mappingCoordinatesExact": true,
+    "candidateUVGuardApplied": true
+  },
+  "baselineSequenceSha256": "a0c2dfd79e1900dce9a677fceecbd5bfcfc138a2e94cd430938f4c4c7bf3ca7a",
+  "frozenProtocolSha256": "d4aa97b964327d57246895a50aa3da4b5c1b42bd9651469a2b44c1643f4ab3b3",
+  "frozenUVAddendumSha256": "92028932c0574eff1a607b842b94146c2335247e26136f02100ee54dc6b5e0ad",
+  "frozenPreRunManifestSha256": "5e71f3bfdf0ea116d1ca673b6aaed6ebf9ec7f9e19eee422a9625db47ee18235",
+  "resultSha256": "f1b09f4710f7af5df41ebdc0c0038f8ff812cc4aa9322255564ca2f1929f0518",
+  "files": [
+    {
+      "path": "PROTOCOL-UV-ADDENDUM.md",
+      "bytes": 774,
+      "sha256": "92028932c0574eff1a607b842b94146c2335247e26136f02100ee54dc6b5e0ad"
+    },
+    {
+      "path": "PROTOCOL.md",
+      "bytes": 2888,
+      "sha256": "d4aa97b964327d57246895a50aa3da4b5c1b42bd9651469a2b44c1643f4ab3b3"
+    },
+    {
+      "path": "RESULTS.md",
+      "bytes": 5961,
+      "sha256": "dc4165a94cdf085e31ca260dc26129ada83508e905c368373459316adeab0c46"
+    },
+    {
+      "path": "audit-core.ts",
+      "bytes": 11931,
+      "sha256": "0032a80b8f5775dc701f5abc321ce004200bf0f571da69595a8abe5042ff4d25"
+    },
+    {
+      "path": "historical-replay.json",
+      "bytes": 1306830,
+      "sha256": "c7d45cdc20965f16183ff4b128db499efe85a27ad244ca3c1ccf082ab60bc96f"
+    },
+    {
+      "path": "inputs/audit-core.ts.phase2-original",
+      "bytes": 17812,
+      "sha256": "c96cedf92337d16b935f9f612b7643d0fbf2dbb1d2b0ae49f20509a9b342606a"
+    },
+    {
+      "path": "inputs/replay.ts.phase2-original",
+      "bytes": 25505,
+      "sha256": "0f6fe2cd750e9de186884b31ff1890095e42e8b010f98276a9b25ef91204033d"
+    },
+    {
+      "path": "motionField-path.transform.patch",
+      "bytes": 419,
+      "sha256": "9ae1d53fc0280924623972489f9f684d9e5e05623ef72971922ac07f6289e84d"
+    },
+    {
+      "path": "oracle-core.ts",
+      "bytes": 17884,
+      "sha256": "4ca87f871c7b6ee6b0848cad947310974f1ff3172e4cd7b89c817d16018b3a0c"
+    },
+    {
+      "path": "oracle-core.ts.transform.patch",
+      "bytes": 1213,
+      "sha256": "6798883434bec2222d69b7e1602a086d4f90b61cc38375171b4eda20120c6c72"
+    },
+    {
+      "path": "pre-run-manifest.json",
+      "bytes": 5875,
+      "sha256": "5e71f3bfdf0ea116d1ca673b6aaed6ebf9ec7f9e19eee422a9625db47ee18235"
+    },
+    {
+      "path": "preparation.json",
+      "bytes": 6555,
+      "sha256": "b6264056b3d9e60a7cc95b3b65be476b568ea6c41e55845e6035118b26d9f280"
+    },
+    {
+      "path": "prepare.py",
+      "bytes": 5393,
+      "sha256": "ca4e84b02c350e073023c28f6038a96bc2e418f2cc5bb2cd900844b84a5af902"
+    },
+    {
+      "path": "replay.ts",
+      "bytes": 26615,
+      "sha256": "c60f6444f642487bc90b0b77a58fc0206ee3ce83b25764ce0d2efb332f8a41f5"
+    },
+    {
+      "path": "replay.ts.transform.patch",
+      "bytes": 4247,
+      "sha256": "9a864ebc6e675c09e86ce6ec8feda7734d2e4f690316211d8443301b81798643"
+    },
+    {
+      "path": "result.json",
+      "bytes": 749581,
+      "sha256": "f1b09f4710f7af5df41ebdc0c0038f8ff812cc4aa9322255564ca2f1929f0518"
+    },
+    {
+      "path": "run.stderr.log",
+      "bytes": 5204,
+      "sha256": "5729b370945422c35474d27b86d1105baac30b9a413e46ec0895c4ffe2176a44"
+    },
+    {
+      "path": "run.stdout.log",
+      "bytes": 2877,
+      "sha256": "382bbd99cbd17dad4c2cfe9b53f0a6b06ab688b7ebbab96925402609a26292eb"
+    },
+    {
+      "path": "source-original/src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 53971,
+      "sha256": "9b065a853212191c8af8e3ab63f44a654f4d3918ea59e98af29b4a3c090a6fca"
+    },
+    {
+      "path": "source-original/src/cumulonimbus/cloudShader.ts",
+      "bytes": 13664,
+      "sha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd"
+    },
+    {
+      "path": "source-original/src/cumulonimbus/emptyTraversal.ts",
+      "bytes": 1624,
+      "sha256": "281a4209f2afc13a63735d6526f954dc93d775972aa1d8ccd6cf46d1677c57d4"
+    },
+    {
+      "path": "source-original/src/cumulonimbus/landscape.ts",
+      "bytes": 6980,
+      "sha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99"
+    },
+    {
+      "path": "source-original/src/cumulonimbus/light.ts",
+      "bytes": 3041,
+      "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+    },
+    {
+      "path": "source-original/src/cumulonimbus/medium.ts",
+      "bytes": 1176,
+      "sha256": "ddfd487055e4fde6581ab351345e91fb3466b032dda954c803082a39a9a142d6"
+    },
+    {
+      "path": "source-original/src/cumulonimbus/motion.ts",
+      "bytes": 7238,
+      "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+    },
+    {
+      "path": "source-original/src/cumulonimbus/motionField.ts",
+      "bytes": 2639,
+      "sha256": "d8817eb9d90a70ee975eea89d2c2fca6d9c6783280bea810fdf76cff2b2d4d8a"
+    },
+    {
+      "path": "source-original/src/cumulonimbus/precipitation.ts",
+      "bytes": 5993,
+      "sha256": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72"
+    },
+    {
+      "path": "source-original/src/cumulonimbus/sun.ts",
+      "bytes": 397,
+      "sha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc"
+    },
+    {
+      "path": "source-original/src/cumulonimbus/volume.ts",
+      "bytes": 25749,
+      "sha256": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74"
+    },
+    {
+      "path": "source-runtime/src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 53971,
+      "sha256": "9b065a853212191c8af8e3ab63f44a654f4d3918ea59e98af29b4a3c090a6fca"
+    },
+    {
+      "path": "source-runtime/src/cumulonimbus/cloudShader.ts",
+      "bytes": 13664,
+      "sha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd"
+    },
+    {
+      "path": "source-runtime/src/cumulonimbus/emptyTraversal.ts",
+      "bytes": 1624,
+      "sha256": "281a4209f2afc13a63735d6526f954dc93d775972aa1d8ccd6cf46d1677c57d4"
+    },
+    {
+      "path": "source-runtime/src/cumulonimbus/landscape.ts",
+      "bytes": 6980,
+      "sha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99"
+    },
+    {
+      "path": "source-runtime/src/cumulonimbus/light.ts",
+      "bytes": 3041,
+      "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+    },
+    {
+      "path": "source-runtime/src/cumulonimbus/medium.ts",
+      "bytes": 1176,
+      "sha256": "ddfd487055e4fde6581ab351345e91fb3466b032dda954c803082a39a9a142d6"
+    },
+    {
+      "path": "source-runtime/src/cumulonimbus/motion.ts",
+      "bytes": 7238,
+      "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+    },
+    {
+      "path": "source-runtime/src/cumulonimbus/motionField.ts",
+      "bytes": 2726,
+      "sha256": "17ed48d23ff5f17e71f7d9d4e6ae67cd6112e1b8ef8d0ba9eb44bc1e5abd3ac6"
+    },
+    {
+      "path": "source-runtime/src/cumulonimbus/precipitation.ts",
+      "bytes": 5993,
+      "sha256": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72"
+    },
+    {
+      "path": "source-runtime/src/cumulonimbus/sun.ts",
+      "bytes": 397,
+      "sha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc"
+    },
+    {
+      "path": "source-runtime/src/cumulonimbus/volume.ts",
+      "bytes": 25749,
+      "sha256": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74"
+    },
+    {
+      "path": "witness-index.json",
+      "bytes": 7528,
+      "sha256": "9d64d5bb146fe499af114ba65a913198db982fc75bec4a01f77939cd90db3f05"
+    }
+  ],
+  "verdict": "128\u00b3 fails tauMax; 256\u00b3 passes declared fixed-sequence CPU gates only. Mapping exact. No native sampler/sourceRGB/dynamics/full candidate cutoff/image/FPS qualification."
+}

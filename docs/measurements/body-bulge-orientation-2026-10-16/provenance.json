@@ -1,0 +1,13 @@
+{
+  "baseline": "10493afa7f6d90389c39e17b2cad79397dfdac01",
+  "sourceDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle17/body-bulge-orientation-preflight",
+  "sourceManifestSHA256": "bbe77a96bbb591f0e5e8b902d2b8c95c4596508b4e0416ac62c2b8b667ba763e",
+  "sourcePayloadFiles": 30,
+  "sourcePayloadBytes": 3374859,
+  "sourceManifestBytes": 5119,
+  "archiveMembers": 31,
+  "archiveBytes": 2786839,
+  "archiveSHA256": "f4c39be94a349fdbf976a255242f2e5913b2dd9ea822f994e9dccb12eeb6d791",
+  "frozenModelSHA256": "cc944b63af781d05316fbb323aea3d0919fad78e9d079fdab7712529915d0838",
+  "mode": "Every original payload and original manifest preserved byte-exact, no field rerun"
+}

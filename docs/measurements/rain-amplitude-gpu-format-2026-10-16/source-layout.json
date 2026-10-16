@@ -1,0 +1,160 @@
+{
+  "format": "sha256-deduplicated-original-files-v1",
+  "revisions": {
+    "R1": {
+      "originalDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle17/rain-amplitude-gpu-format",
+      "files": [
+        {
+          "path": "README.md",
+          "bytes": 5406,
+          "sha256": "1c9d73a9b5363cc04119eb9a33dc5078b8c5f1dbc48b05d2f07ef4f6c9e8639e"
+        },
+        {
+          "path": "app.js",
+          "bytes": 19004,
+          "sha256": "0dc08f2d17b9ba66ff2a804f8c4d7242535e685c535f2c4f91cd1ab093cd3a97"
+        },
+        {
+          "path": "direct-r16f.wgsl",
+          "bytes": 517,
+          "sha256": "c76d00530ac4a1d8a35fc8bc85b509e8f51602a0ad3110538e9743668155ad8e"
+        },
+        {
+          "path": "index.html",
+          "bytes": 1101,
+          "sha256": "a9f88ef3b9ffbd24873a0755b8985eeb3f24340296d73a62a65be3f5e0e2ed11"
+        },
+        {
+          "path": "manifest.json",
+          "bytes": 1543,
+          "sha256": "d09df5170adeee846b58e6e57c04ee256673d59b6ef27220b82d8d958f39abe6"
+        },
+        {
+          "path": "pack.wgsl",
+          "bytes": 640,
+          "sha256": "b41e9f4c3291499949a63b2ce6481b9f78ccb8541087da058f023b142332e46c"
+        },
+        {
+          "path": "read-sample.wgsl",
+          "bytes": 936,
+          "sha256": "f60ce45d3557ac84f2ae3a091c10e0d3405a5564acdfd5a6df8ba2aa9677814d"
+        }
+      ]
+    },
+    "R2": {
+      "originalDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle17/rain-amplitude-gpu-format-r2",
+      "files": [
+        {
+          "path": "README.md",
+          "bytes": 5406,
+          "sha256": "1c9d73a9b5363cc04119eb9a33dc5078b8c5f1dbc48b05d2f07ef4f6c9e8639e"
+        },
+        {
+          "path": "app.js",
+          "bytes": 19004,
+          "sha256": "0dc08f2d17b9ba66ff2a804f8c4d7242535e685c535f2c4f91cd1ab093cd3a97"
+        },
+        {
+          "path": "direct-r16f-r1-to-r2.patch",
+          "bytes": 758,
+          "sha256": "47177baa564805c4969483fd80cb3b3d87165131cbb6f89b86e1383c7ef499b7"
+        },
+        {
+          "path": "direct-r16f.wgsl",
+          "bytes": 535,
+          "sha256": "bf2ff39737385151fb36b18f47239044698a139537c53dcdfb5ba15acf25effe"
+        },
+        {
+          "path": "index.html",
+          "bytes": 1101,
+          "sha256": "a9f88ef3b9ffbd24873a0755b8985eeb3f24340296d73a62a65be3f5e0e2ed11"
+        },
+        {
+          "path": "manifest.json",
+          "bytes": 1810,
+          "sha256": "9f8a934344a3daec9d6f4fcf11be4341cd7df2fbfcbfcab26a93dcdf3548b40f"
+        },
+        {
+          "path": "pack.wgsl",
+          "bytes": 640,
+          "sha256": "b41e9f4c3291499949a63b2ce6481b9f78ccb8541087da058f023b142332e46c"
+        },
+        {
+          "path": "provenance.json",
+          "bytes": 1122,
+          "sha256": "9edf6dab9d951581ed06295a8365d807e1f3aaaf1423982a9c25001f80362096"
+        },
+        {
+          "path": "r1-manifest-original.json",
+          "bytes": 1543,
+          "sha256": "d09df5170adeee846b58e6e57c04ee256673d59b6ef27220b82d8d958f39abe6"
+        },
+        {
+          "path": "read-sample.wgsl",
+          "bytes": 936,
+          "sha256": "f60ce45d3557ac84f2ae3a091c10e0d3405a5564acdfd5a6df8ba2aa9677814d"
+        }
+      ]
+    },
+    "R3": {
+      "originalDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle17/rain-amplitude-gpu-format-r3",
+      "files": [
+        {
+          "path": "PROTOCOL-R3.md",
+          "bytes": 2127,
+          "sha256": "6eaa94b6bf6c8d53b82d4c2e1c5ce5b86e7c238c2e38a0db0710302fecff6678"
+        },
+        {
+          "path": "README.md",
+          "bytes": 5406,
+          "sha256": "1c9d73a9b5363cc04119eb9a33dc5078b8c5f1dbc48b05d2f07ef4f6c9e8639e"
+        },
+        {
+          "path": "app.js",
+          "bytes": 19004,
+          "sha256": "0dc08f2d17b9ba66ff2a804f8c4d7242535e685c535f2c4f91cd1ab093cd3a97"
+        },
+        {
+          "path": "direct-r16f-r2-to-r3.patch",
+          "bytes": 473,
+          "sha256": "aaf745a5fa5c985f48f64eff298e7601374e2eb7ed0ecc6d3a3d5a66f45d15c8"
+        },
+        {
+          "path": "direct-r16f.wgsl",
+          "bytes": 619,
+          "sha256": "263084c443416bdcd5f2eb42cbd67ba7e051bf1f88d070723f13182d31f96c85"
+        },
+        {
+          "path": "index.html",
+          "bytes": 1101,
+          "sha256": "a9f88ef3b9ffbd24873a0755b8985eeb3f24340296d73a62a65be3f5e0e2ed11"
+        },
+        {
+          "path": "manifest.json",
+          "bytes": 1858,
+          "sha256": "0957e8ec0adfbc2bf7406aa29c16e1f851a2e1e1e9fc3c4bc75c8da4c8ccd81d"
+        },
+        {
+          "path": "pack.wgsl",
+          "bytes": 640,
+          "sha256": "b41e9f4c3291499949a63b2ce6481b9f78ccb8541087da058f023b142332e46c"
+        },
+        {
+          "path": "provenance.json",
+          "bytes": 1746,
+          "sha256": "71e2e8f8baf8c645392dc557431cffabda6f60bdeabcc9fdd2f0a858c0ff28e5"
+        },
+        {
+          "path": "r2-manifest-original.json",
+          "bytes": 1810,
+          "sha256": "9f8a934344a3daec9d6f4fcf11be4341cd7df2fbfcbfcab26a93dcdf3548b40f"
+        },
+        {
+          "path": "read-sample.wgsl",
+          "bytes": 936,
+          "sha256": "f60ce45d3557ac84f2ae3a091c10e0d3405a5564acdfd5a6df8ba2aa9677814d"
+        }
+      ]
+    }
+  }
+}

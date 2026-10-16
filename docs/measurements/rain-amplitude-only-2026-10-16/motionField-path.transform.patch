@@ -1,0 +1,8 @@
+--- ab2e122/motionField.ts
++++ runtime/motionField.ts
+@@ -1,4 +1,4 @@
+-import {DataUtils} from 'three/webgpu';
++import {DataUtils} from '/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/build/three.webgpu.js';
+ import {writeDisplacement,motionState,referencePosition,MOTION_LOOP_SECONDS,type MotionState} from './motion';
+ export const MOTION_FIELD_SIZE=16;
+ export const MOTION_PHASES=64;

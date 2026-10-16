@@ -1,0 +1,11 @@
+{
+  "sourcePath": "src/cumulonimbus/GPUSceneEngine.ts",
+  "sha256": "b829772a51d6e342adfd5e5e2fbb807037ae74d3ba8413ea7078e6962b4334a0",
+  "lines": [
+    {
+      "line": 206,
+      "text": "      const device=await adapter.requestDevice({requiredFeatures:this.timingMode!=='off'&&adapter.features.has('timestamp-query')?['timestamp-query']:[]});"
+    }
+  ],
+  "meaning": "Externally supplied device, only optional timestamp-query; no texture-formats-tier1 requested. Core harness requests optional timestamp-query as the active timing policy variant. Tier1 harness uses a separate opt-in device."
+}

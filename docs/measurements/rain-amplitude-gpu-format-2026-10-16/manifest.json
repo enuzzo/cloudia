@@ -1,0 +1,88 @@
+{
+  "kind": "rain-amplitude-r16f-format-prerequisite-archive",
+  "scope": "R1/R2/R3 originals and actual CUA results; no product promotion",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3304,
+      "sha256": "ba2c410de45a8b97799c4512c6162ae3137065781b4a4d31d9785c39bfa0a3bd"
+    },
+    {
+      "path": "browser/rain-format-r1-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "browser/rain-format-r1.jpg",
+      "bytes": 110043,
+      "sha256": "cc9e17aef0690a793426abf4721f70b79e0979d2077c9110f15662af9e4eb856"
+    },
+    {
+      "path": "browser/rain-format-r1.json.gz",
+      "bytes": 4580,
+      "sha256": "4c534256bfd750c746f75017e2a3e053ab2eb1a3d21d4911f0602ee83e2784d4"
+    },
+    {
+      "path": "browser/rain-format-r2-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "browser/rain-format-r2.jpg",
+      "bytes": 110015,
+      "sha256": "05ddba1ae702cdec2e5b6873987e7eb61d3fffcfe79bb3442d460707872e5a11"
+    },
+    {
+      "path": "browser/rain-format-r2.json.gz",
+      "bytes": 5136,
+      "sha256": "307372e499e38056fa58e411df421dc02ac0ffd02449195feae017c81f5f5320"
+    },
+    {
+      "path": "browser/rain-format-r3-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "browser/rain-format-r3.jpg",
+      "bytes": 112841,
+      "sha256": "b3d2397baf33640544cbb8156783fd7ceb3304f749417118c8bd867348460330"
+    },
+    {
+      "path": "browser/rain-format-r3.json.gz",
+      "bytes": 4623,
+      "sha256": "ecedbb97eb63fee3c9312eab4f7b6b65540d3a555e1d1d8241ca06ee39d19ec6"
+    },
+    {
+      "path": "browser-originals.json",
+      "bytes": 3074,
+      "sha256": "d2658e3297669df482ed9a995078cd925c07c536b278083743ff50f4603100a9"
+    },
+    {
+      "path": "product-device-policy.json",
+      "bytes": 598,
+      "sha256": "f30fc19cac3ce845d07699b1fe899712cd1356dfe538d27674663560a5e73638"
+    },
+    {
+      "path": "results-summary.json",
+      "bytes": 13280,
+      "sha256": "e0eda83aa819364ede984b9c1b59786143df67c9d3e8403d18778467e9e7982e"
+    },
+    {
+      "path": "source-layout.json",
+      "bytes": 5275,
+      "sha256": "2d1f4a24d5df1e7b028a8295d393248493aceca8e515629c573924febc3c3aeb"
+    },
+    {
+      "path": "source-originals.tar.gz",
+      "bytes": 14464,
+      "sha256": "d91b09a4569074fc61a2b440bd072c03c39ad2326a9a20577bf76a398942701a"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 14566,
+      "sha256": "9dc28f4886c578a01b36c6521a452bbce8e47d9f020019a524ec22ed131fa5ed"
+    }
+  ],
+  "payloadCount": 16,
+  "payloadBytes": 401805
+}

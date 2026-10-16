@@ -39,11 +39,29 @@ Per evitare di ripetere prove concluse, questi percorsi restano fermati:
 - [Cache geometria terreno](EXPERIMENT-TERRAIN-GEOMETRY-CACHE-2026-10-16.md):
   il confronto corrente sopra non giustifica adozione o altre repliche.
 
-Il prossimo audit valuta la fattibilità della preintegrazione rain-only con
-errore ottico delimitato, già proposta in [RAIN-NEXT](RAIN-NEXT-2026-10-16.md).
-Prima di contatori o gerarchie serve verificare che il costo della certificazione
-non assorba il risparmio. La sorgente aerial v50 usa `k=.006+.004*haze`;
-la formula `.0035*haze` in quella proposta appartiene al modello storico.
+Il successivo audit di fattibilità preferisce una rappresentazione diversa:
+[A-only](RAIN-AMPLITUDE-ONLY-2026-10-16.md), che conserva il calcolo originale
+delle coordinate streak e interpola soltanto l'ampiezza. Un solo replay CPU
+storico, 576 raggi e nessun bake: mapping zero sui 206.466 punti controllati;
+128³ fallisce il massimo tau, 256³ supera i gate tau massimo .01/media .002
+con .00336424/.00018611. Il supporto A cambia e una continuazione oltre cutoff
+resta censurata nel 256³: nessuna prova di immagine o di un rendering completo.
+Il gate CPU ha giustificato la [microprova di formato GPU](RAIN-AMPLITUDE-GPU-FORMAT-2026-10-16.md):
+R3 passa i percorsi core e Tier1 opt-in sulle due piccole griglie, con
+pack/unpack esplicito prima dello store diretto. R2 resta FAIL del witness
+RNE più stretto della conversione WGSL. Nessun campo A completo, costo di
+rebuild, immagine o FPS è qualificato da queste prove.
+
+Prima di investire nella cache, trial esterno delle guardie esatte attached0
+prima di sheets ed evaporation0 prima di streak, formule positive invariate.
+I dati storici consentono 51.560 chiamate in meno/4,0721% del vecchio loop;
+nessuna nuova memoria o approssimazione di A. Il saldo di tempo dipende anche
+dai branch GPU e deve essere misurato. Nessun beneficio ancora attribuito.
+
+La preintegrazione rain-only di [RAIN-NEXT](RAIN-NEXT-2026-10-16.md) resta
+un'alternativa ineseguita: prima di gerarchie e contatori serve verificare che
+la certificazione non assorba il risparmio. La sorgente aerial v50 usa
+`k=.006+.004*haze`; `.0035*haze` in quella proposta è il modello storico.
 Nessuna di queste misure chiude il target 60 FPS sostenuti o i gate artistici.
 
 ## Istantanea v48: R8 selezionata soltanto con pioggia

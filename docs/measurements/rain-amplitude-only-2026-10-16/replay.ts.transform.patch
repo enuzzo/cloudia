@@ -1,0 +1,41 @@
+--- phase2/replay.ts
++++ amplitude-only/replay.ts
+@@ -1,22 +1,30 @@
+ /** Renderer-loop CPU work reference. Reads cached arrays; never generates a volume. */
+ import {readFileSync,writeFileSync} from 'node:fs';
+ import {createHash} from 'node:crypto';
+-import {sampleDetail,sampleCloudDensity,BOUNDS_MIN,BOUNDS_SIZE} from '/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/volume.ts';
+-import {referencePosition} from '/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/motion.ts';
+-import {sampleMotionField} from '/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/motionField.ts';
+-import {precipitationSurvival,RAIN_EXTINCTION,RAIN_SAMPLE_STEP} from '/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/precipitation.ts';
+-import {conservativeEmptyStep} from '/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/emptyTraversal.ts';
+-import {terrainHeight} from '/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/landscape.ts';
++import {sampleDetail,sampleCloudDensity,BOUNDS_MIN,BOUNDS_SIZE} from '/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/rain-amplitude-only/source-runtime/src/cumulonimbus/volume.ts';
++import {referencePosition} from '/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/rain-amplitude-only/source-runtime/src/cumulonimbus/motion.ts';
++import {sampleMotionField} from '/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/rain-amplitude-only/source-runtime/src/cumulonimbus/motionField.ts';
++import {precipitationSurvival,RAIN_EXTINCTION,RAIN_SAMPLE_STEP} from '/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/rain-amplitude-only/source-runtime/src/cumulonimbus/precipitation.ts';
++import {conservativeEmptyStep} from '/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/rain-amplitude-only/source-runtime/src/cumulonimbus/emptyTraversal.ts';
++import {terrainHeight} from '/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/rain-amplitude-only/source-runtime/src/cumulonimbus/landscape.ts';
+ import {RainCacheAudit} from './audit-core';
+ const auditBase=import.meta.dir;
+ const base='/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work';
+-const repo='/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia';
++const repo='/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/rain-amplitude-only/source-original';
+ const sha=(v:Uint8Array|string)=>createHash('sha256').update(v).digest('hex');
+ const manifest=JSON.parse(readFileSync(base+'/data/manifest.json','utf8'));
+ const pose=JSON.parse(readFileSync(base+'/input-control.json','utf8'));
++const preparation=JSON.parse(readFileSync(auditBase+'/preparation.json','utf8'));
++if(sha(readFileSync(auditBase+'/PROTOCOL.md'))!=='d4aa97b964327d57246895a50aa3da4b5c1b42bd9651469a2b44c1643f4ab3b3')throw new Error('Frozen protocol drift');
++for(const item of preparation.sources){
++ if(sha(readFileSync(auditBase+'/source-original/src/cumulonimbus/'+item.name+'.ts'))!==item.originalSha256||sha(readFileSync(auditBase+'/source-runtime/src/cumulonimbus/'+item.name+'.ts'))!==item.runtimeSha256)throw new Error('Historical/runtime source drift: '+item.name);
++}
++for(const item of preparation.dependencies)if(sha(readFileSync(item.path))!==item.sha256)throw new Error('Local dependency drift: '+item.path);
++for(const item of preparation.controlInputs)if(sha(readFileSync(item.path))!==item.sha256)throw new Error('Control input drift: '+item.path);
++
+ const width=Number(process.argv[2]??16),height=Number(process.argv[3]??9);
+ if(![16,32].includes(width)||height!==width*9/16)throw new Error('Allowed grids16x9 or32x18.');
+-const required=['volume','motion','motionField','precipitation','emptyTraversal','landscape'];
++const required=Object.keys(manifest.sourceHashesAfter); // Strengthened: all ten historical SHA must match.
+ const sourceHashes=Object.fromEntries(Object.keys(manifest.sourceHashesAfter).map(n=>[n,sha(readFileSync(repo+'/src/cumulonimbus/'+n+'.ts'))]));
+ const historicalShader=readFileSync(base+'/source-snapshots/cloudShader.ts','utf8');
+ const liveShader=readFileSync(repo+'/src/cumulonimbus/cloudShader.ts','utf8');

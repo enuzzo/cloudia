@@ -1,0 +1,67 @@
+{
+  "files": [
+    {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle17/browser/rain-format-r1.json",
+      "archivePath": "browser/rain-format-r1.json.gz",
+      "encoding": "gzip-lossless",
+      "originalBytes": 28439,
+      "originalSha256": "50fa0ad17ef97fecc971bdd96fabff6ff68e49ef46072a3f15193b0824607c16"
+    },
+    {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle17/browser/rain-format-r1-console.json",
+      "archivePath": "browser/rain-format-r1-console.json",
+      "encoding": "original-bytes",
+      "originalBytes": 2,
+      "originalSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle17/browser/rain-format-r1.jpg",
+      "archivePath": "browser/rain-format-r1.jpg",
+      "encoding": "original-bytes",
+      "originalBytes": 110043,
+      "originalSha256": "cc9e17aef0690a793426abf4721f70b79e0979d2077c9110f15662af9e4eb856"
+    },
+    {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle17/browser/rain-format-r2.json",
+      "archivePath": "browser/rain-format-r2.json.gz",
+      "encoding": "gzip-lossless",
+      "originalBytes": 50495,
+      "originalSha256": "fe99c2728dffc63fd108184621a386d41c9a155a6320283ad7bbf0575674f453"
+    },
+    {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle17/browser/rain-format-r2-console.json",
+      "archivePath": "browser/rain-format-r2-console.json",
+      "encoding": "original-bytes",
+      "originalBytes": 2,
+      "originalSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle17/browser/rain-format-r2.jpg",
+      "archivePath": "browser/rain-format-r2.jpg",
+      "encoding": "original-bytes",
+      "originalBytes": 110015,
+      "originalSha256": "05ddba1ae702cdec2e5b6873987e7eb61d3fffcfe79bb3442d460707872e5a11"
+    },
+    {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle17/browser/rain-format-r3.json",
+      "archivePath": "browser/rain-format-r3.json.gz",
+      "encoding": "gzip-lossless",
+      "originalBytes": 46507,
+      "originalSha256": "2d89e02a9d2b802d8f2a0c7ee38401ded9a7e076c17b2f8c9ce00a3d10b9a2f1"
+    },
+    {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle17/browser/rain-format-r3-console.json",
+      "archivePath": "browser/rain-format-r3-console.json",
+      "encoding": "original-bytes",
+      "originalBytes": 2,
+      "originalSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle17/browser/rain-format-r3.jpg",
+      "archivePath": "browser/rain-format-r3.jpg",
+      "encoding": "original-bytes",
+      "originalBytes": 112841,
+      "originalSha256": "b3d2397baf33640544cbb8156783fd7ceb3304f749417118c8bd867348460330"
+    }
+  ]
+}
