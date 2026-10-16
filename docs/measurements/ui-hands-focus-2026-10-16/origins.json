@@ -1,0 +1,181 @@
+{
+  "copiedOriginals": [
+    {
+      "path": "browser/before-focus.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/before-focus.json",
+      "bytes": 4387,
+      "sha256": "7356284209f0aee12ee7998f3ac1768d4b9ac9861da1bdaf0265b13765d80400",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "browser/after-tab-focus.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/after-tab-focus.json",
+      "bytes": 3339,
+      "sha256": "7c3af0ba3ed1a1fe4100bc1b8332a5dab44409ab3519c1b32e66b7d00fc0d99d",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "browser/after-full-tab-cycle.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/after-full-tab-cycle.json",
+      "bytes": 14617,
+      "sha256": "c524bd1f06051719db681ea87ec6649476b555a73087502b5e857b60b51892b8",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "browser/after-escape-focus.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/after-escape-focus.json",
+      "bytes": 4145,
+      "sha256": "b2260e41f0d11a19eb273a6f4b31bd759b2d7120dad389e323dab3916387e379",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "browser/after-close-button-focus.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/after-close-button-focus.json",
+      "bytes": 7390,
+      "sha256": "0dcb8d324377b30db916a3dc12c9c4bf0e0c896bab674cf5778444322ba471b6",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "browser/after-outside-focus.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/after-outside-focus.json",
+      "bytes": 8230,
+      "sha256": "8153edfd4082dc45f2204c7a9265f652e7647cdbbc8f26063cd4b72bc8d37bec",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "browser/after-restored-zoom-focus.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/after-restored-zoom-focus.json",
+      "bytes": 4990,
+      "sha256": "c76faeeb8a672205c0c6a8d020d0510481532f67aa17c0010260a1fcc994782c",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "browser/before-open-tab.css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/before-open-tab.css.jpg",
+      "bytes": 96290,
+      "sha256": "8a637465ccff29cf4ce92fa98ee29b0c95e6b9be3e6b0e875adab127832623b8",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "browser/before-settled.css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/before-settled.css.jpg",
+      "bytes": 97047,
+      "sha256": "c9afe9d9237dccc260447c14f8bd8581ccad0e3d4ac637be658267cbe0a31e85",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "browser/after-open-tab.css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/after-open-tab.css.jpg",
+      "bytes": 96604,
+      "sha256": "c5e0ef1d1b50bc3f7e5c81a4a89864808acff73c006ccda9b76a923f049ac592",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "browser/after-closed.css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/after-closed.css.jpg",
+      "bytes": 74616,
+      "sha256": "3ff41512e8dd59c1728a29f056b1e57c1ed1916605d4ae83219ef657626c6af1",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "source/before-source-119.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle20/cover-r2-source-manifest.json",
+      "bytes": 12480,
+      "sha256": "1511fd8a9a5f3a03146d3ff3e1ee6ba7e057f814ca3edead9f5db2f4c9f04eb3",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "source/after-source-119.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/fixed-source-manifest.json",
+      "bytes": 12480,
+      "sha256": "5d5d5701ea997e49132c738db884dbfe33441a96c2a645bbbbcf28447b9ba844",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "source/before-dist-30.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/base-dist-manifest.json",
+      "bytes": 3083,
+      "sha256": "186e23b55a51b227bdca29757eacd5f9924a8356fe093a60b393ab9141bb4e5a",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "source/after-dist-30.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/fixed-dist-manifest.json",
+      "bytes": 3083,
+      "sha256": "fc48a5e87f803f9645e295b43c18d2ab7a8bac46dc7c4ee26bb36bbd02d89dde",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "source/scene.before.css",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle20/cover-r2-source/src/cumulonimbus/scene.css",
+      "bytes": 13416,
+      "sha256": "6c45a2c39ad9d84555c7c5c98c37645ceedb99fbea31848f0f7d0bf63740ad46",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "source/scene.after.css",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/fixed-source/src/cumulonimbus/scene.css",
+      "bytes": 13435,
+      "sha256": "f4127d2557bfcc8408e74bed7b9fe92aa47c44d1d93cb1c03b8b7708256f5ff8",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "source/scene.patch",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/proposed-css.patch",
+      "bytes": 385,
+      "sha256": "e64eb1186e045c29c2f36bac6d2ce51b1b322cfb2b361a5c0b9f98809bf92579",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "qa/before-qa-mobile-r1.html",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/qa-host/qa-mobile.html",
+      "bytes": 3486,
+      "sha256": "46d27ec5457c9b0fb4601124235f93caac51377255a569106c3819bf439ff729",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "qa/before-qa-mobile-r2.html",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/qa-host/qa-mobile-r2.html",
+      "bytes": 3844,
+      "sha256": "8544b3fcf8fdb2b84c92bb5c97ad35a53520e82a574643425c018f02f2b572a8",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "qa/after-qa-mobile.html",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/fixed-qa-host/qa-mobile.html",
+      "bytes": 3833,
+      "sha256": "548d710e83b88963061fe2ba1de0e5c829da3c34171aaa9608d5f95f5d4dca36",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "qa/original-host-manifest-r1.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/MANIFEST.json",
+      "bytes": 7971,
+      "sha256": "9b18b641b6cf01cb6feb0c1f0302e020af2989264b9017e1bd2f2aab3cfed8dc",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "qa/original-host-manifest-r2.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/MANIFEST-R2.json",
+      "bytes": 7061,
+      "sha256": "f461b51cf551ea8c47d58ac966f53ac38e267ab8e88f00a6933959b4241c6d60",
+      "copy": "byte-identical original"
+    },
+    {
+      "path": "build/fixed-build-app.log.gz",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/fixed-build-app.log",
+      "uncompressedBytes": 1730,
+      "uncompressedSha256": "e6da5952bf16411b7f89655de98161f3ea26bdaa0daffbc7ef10a962f719bb8b",
+      "copy": "gzip lossless mtime0"
+    },
+    {
+      "path": "build/fixed-build-hero.log.gz",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/ui-hands-focus/fixed-build-hero.log",
+      "uncompressedBytes": 333,
+      "uncompressedSha256": "188d709d9661c26983da6569d056a099d9ddc11f4a7b1e0f72513779dc9f5606",
+      "copy": "gzip lossless mtime0"
+    }
+  ],
+  "excluded": "No entire dist/source trees, runtime binaries, dependencies or node_modules copied",
+  "sourceScope": "Source manifests119 before/after plus exact changed CSS; dist manifests30 before/after. QA DOM logs do not themselves embed served bundle hashes."
+}

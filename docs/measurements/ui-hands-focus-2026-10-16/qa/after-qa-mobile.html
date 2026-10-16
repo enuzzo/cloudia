@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cloudia · QA focus Mani 390×844</title>
+  <style>
+    html,body{margin:0;padding:0;background:#f3f3f0;color:#202a2d;font:14px/1.45 system-ui,sans-serif}
+    main{display:grid;grid-template-columns:390px minmax(0,1fr);align-items:start;gap:0}
+    iframe{display:block;width:390px;height:844px;margin:0;padding:0;border:0}
+    aside{min-width:0;height:844px;overflow:auto;padding:16px;box-sizing:border-box}
+    p{margin:0 0 12px}
+    pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.4 ui-monospace,monospace}
+  </style>
+</head>
+<body>
+  <main>
+    <iframe id="app" width="390" height="844" src="/index.html?seed=74&amp;profile=1" title="Cloudia originale · viewport CSS 390 per 844"></iframe>
+    <aside aria-label="Osservazioni DOM del focus">
+      <p><strong>QA Mani · correzione CSS v54</strong></p>
+      <p>Interagisci nell’iframe. Il log osserva soltanto focus e geometria DOM;
+        non invia comandi, non modifica CSS o stato del renderer e non misura FPS.</p>
+      <p>Sequenza suggerita: Mani → Tab → Chiudi guida → Tab → dock visibile.
+        Escape e chiusura esplicita restano gestiti dall’app originale.</p>
+      <p><button type="button" id="record-focus" style="min-height:44px;padding:10px 14px;font:inherit">Registra focus corrente</button></p>
+      <pre id="log" aria-label="Ultimi eventi focus">In attesa del caricamento dell’iframe…</pre>
+    </aside>
+  </main>
+  <script>
+    'use strict';
+    const frame = document.getElementById('app');
+    const log = document.getElementById('log');
+    const events = [];
+    function describe(element) {
+      if (!(element instanceof frame.contentWindow.Element)) return null;
+      const r = element.getBoundingClientRect();
+      return {
+        tag: element.tagName.toLowerCase(),
+        id: element.id || null,
+        class: typeof element.className === 'string' ? element.className : null,
+        ariaLabel: element.getAttribute('aria-label'),
+        title: element.getAttribute('title'),
+        text: (element.textContent || '').trim().slice(0, 80),
+        rect: {x:r.x,y:r.y,width:r.width,height:r.height}
+      };
+    }
+    function observe(type) {
+      const doc = frame.contentDocument;
+      const win = frame.contentWindow;
+      const active = doc.activeElement;
+      const r = active ? active.getBoundingClientRect() : null;
+      const inside = r && r.width > 0 && r.height > 0 &&
+        r.x+r.width/2 >= 0 && r.x+r.width/2 < win.innerWidth &&
+        r.y+r.height/2 >= 0 && r.y+r.height/2 < win.innerHeight;
+      const top = inside ? doc.elementFromPoint(r.x+r.width/2,r.y+r.height/2) : null;
+      events.push({
+        event:type,
+        viewportCSS:[win.innerWidth,win.innerHeight],
+        iframeCSS:[frame.clientWidth,frame.clientHeight],
+        active:describe(active),
+        elementAtActiveCenter:describe(top),
+        activeContainsCenterElement:!!(active && top && active.contains(top))
+      });
+      if (events.length > 24) events.shift();
+      log.textContent = JSON.stringify({
+        scope:'Passive same-origin DOM focus observer; original app and renderer untouched',
+        events
+      },null,2);
+    }
+    document.getElementById('record-focus').addEventListener('click', () => {
+      try { observe('manual-current-focus'); }
+      catch (error) { log.textContent = 'Observer unavailable: ' + String(error); }
+    });
+    frame.addEventListener('load', () => {
+      try {
+        frame.contentDocument.addEventListener('focusin', () => observe('focusin'));
+        observe('iframe-load');
+      } catch (error) {
+        log.textContent = 'Observer unavailable: ' + String(error);
+      }
+    });
+  </script>
+</body>
+</html>

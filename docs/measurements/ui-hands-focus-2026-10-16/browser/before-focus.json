@@ -1,0 +1,205 @@
+{
+  "scope": "Passive same-origin DOM focus observer; original app and renderer untouched",
+  "events": [
+    {
+      "event": "iframe-load",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "body",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Cloudia Lab\n        Un cielo da muovere.\n        Preparazione del cielo…",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "div",
+        "id": null,
+        "class": "cloudia-stage",
+        "ariaLabel": null,
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "summary",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Mani in arrivo",
+        "rect": {
+          "x": 279.875,
+          "y": 22,
+          "width": 94.125,
+          "height": 44
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "summary",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Mani in arrivo",
+        "rect": {
+          "x": 279.875,
+          "y": 22,
+          "width": 94.125,
+          "height": 44
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "button",
+        "id": null,
+        "class": "icon-button",
+        "ariaLabel": "Chiudi guida mani",
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 298,
+          "y": 131,
+          "width": 44,
+          "height": 44
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "path",
+        "id": null,
+        "class": null,
+        "ariaLabel": null,
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 315,
+          "y": 148,
+          "width": 10,
+          "height": 10
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "button",
+        "id": null,
+        "class": "",
+        "ariaLabel": "Avvicinati alla nube",
+        "title": "Avvicinati",
+        "text": "",
+        "rect": {
+          "x": 326,
+          "y": 612,
+          "width": 44,
+          "height": 44
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "section",
+        "id": null,
+        "class": "diagnostics hand-panel",
+        "ariaLabel": "Controllo con le mani in preparazione",
+        "title": null,
+        "text": "Il cielo, tra le dita.\n          Camera non collegataIl riconoscimento non è anc",
+        "rect": {
+          "x": 12,
+          "y": 116,
+          "width": 366,
+          "height": 632
+        }
+      },
+      "activeContainsCenterElement": false
+    },
+    {
+      "event": "manual-current-focus",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "body",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Cloudia.Cella inclinata  Cielo neutro\n      immagine diagnosticaTrascina per esp",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "div",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Sole / tramontoPizzica il sole, alzalo o abbassalo.",
+        "rect": {
+          "x": 33,
+          "y": 420.796875,
+          "width": 309,
+          "height": 55
+        }
+      },
+      "activeContainsCenterElement": true
+    }
+  ]
+}

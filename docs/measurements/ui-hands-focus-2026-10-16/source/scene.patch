@@ -1,0 +1,8 @@
+diff --git a/src/cumulonimbus/scene.css b/src/cumulonimbus/scene.css
+--- a/src/cumulonimbus/scene.css
++++ b/src/cumulonimbus/scene.css
+@@ -103,3 +103,3 @@
+ @media(max-width:640px){
+- .cloud-scene:has(.sky-inspector[open]) :is(.view-controls,.view-help){visibility:hidden}
++ .cloud-scene:has(.sky-inspector[open],.hands-guide[open]) :is(.view-controls,.view-help){visibility:hidden}
+ }

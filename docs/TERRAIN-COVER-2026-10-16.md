@@ -4,6 +4,8 @@
 
 ## Cambiamento
 
+Preferenza successiva del proprietario: a costo FPS equivalente mantenere la geografia reale, comprese le aree abitate. Queste sono pesi di materiale nella stessa mesh e nelle stesse due mappe; nessun edificio3D o pass aggiuntivo. Non è una nuova misura A/B delle palette. La preferenza aggiorna il precedente vincolo documentale di paesaggio senza elementi urbani.
+
 Il DSM risolve la forma dei rilievi, ma non distingue boschi, coltivi e città. Il terreno usa ora **ESA WorldCover 2021 v200**, nella stessa proiezione e nello stesso dominio del DEM. La classificazione nativa a10m viene aggregata in 1024² celle da125m attraverso overlap rettangolari: ogni cella conserva dodici frazioni distinte, inclusi NoData, coltivi e costruito. Non si interpolano gli ID numerici delle classi.
 
 WCV1: 32 byte di header, poi dodici frazioni uint8 per cella, somma255. **12.582.944 byte**, SHA256 `e7fa38f2b0a8c3c469737410dc8d265e680071226e663b3cb12b23930ebda5fc`. MinX/minZ sono bordi delle celle, diversamente dai nodi inclusivi del DEM. X cresce verso Ovest, Z verso Nord. Il materiale usa il dato puro entro ±48km e lo raccorda separabilmente alla distribuzione autoriale fra48 e64km.

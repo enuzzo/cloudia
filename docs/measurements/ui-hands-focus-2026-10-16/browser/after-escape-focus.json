@@ -1,0 +1,205 @@
+{
+  "scope": "Passive same-origin DOM focus observer; original app and renderer untouched",
+  "events": [
+    {
+      "event": "iframe-load",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "body",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Cloudia Lab\n        Un cielo da muovere.\n        Preparazione del cielo…",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "div",
+        "id": null,
+        "class": "cloudia-stage",
+        "ariaLabel": null,
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "summary",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Mani in arrivo",
+        "rect": {
+          "x": 279.875,
+          "y": 22,
+          "width": 94.125,
+          "height": 44
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "summary",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Mani in arrivo",
+        "rect": {
+          "x": 279.875,
+          "y": 22,
+          "width": 94.125,
+          "height": 44
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "button",
+        "id": null,
+        "class": "icon-button",
+        "ariaLabel": "Chiudi guida mani",
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 298,
+          "y": 131,
+          "width": 44,
+          "height": 44
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "path",
+        "id": null,
+        "class": null,
+        "ariaLabel": null,
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 315,
+          "y": 148,
+          "width": 10,
+          "height": 10
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "button",
+        "id": null,
+        "class": "icon-button pause-button",
+        "ariaLabel": "Pausa",
+        "title": "Pausa",
+        "text": "",
+        "rect": {
+          "x": 20,
+          "y": 772,
+          "width": 44,
+          "height": 48
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "svg",
+        "id": null,
+        "class": null,
+        "ariaLabel": null,
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 32,
+          "y": 786,
+          "width": 20,
+          "height": 20
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "summary",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Mani in arrivo",
+        "rect": {
+          "x": 279.875,
+          "y": 22,
+          "width": 94.125,
+          "height": 44
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "summary",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Mani in arrivo",
+        "rect": {
+          "x": 279.875,
+          "y": 22,
+          "width": 94.125,
+          "height": 44
+        }
+      },
+      "activeContainsCenterElement": true
+    }
+  ]
+}

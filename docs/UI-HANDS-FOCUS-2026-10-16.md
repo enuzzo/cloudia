@@ -1,0 +1,17 @@
+# Cloudia — focus della guida Mani su mobile
+
+A viewport CSS 390 × 844, aprire «Mani in arrivo» e premere Tab dal pulsante di chiusura portava il focus su «Avvicinati alla nube» coperto dal pannello. Il CSS mobile ora estende a `.hands-guide[open]` il selettore già usato dal pannello del cielo per nascondere zoom e aiuto durante l'apertura.
+
+La prova prima registra un `focusin` naturale sullo zoom con `activeContainsCenterElement=false`. Dopo la correzione, sette controlli consecutivi (chiusura, Pausa, Sole, Tramonto, Pioggia, Temporale, cielo) hanno il centro raggiungibile. Escape e chiusura esplicita riportano il focus a «Mani in arrivo»; il clic esterno raggiunge il canvas; dopo la chiusura lo zoom torna raggiungibile. Il pannello resta non modale.
+
+L'archivio [ui-hands-focus-2026-10-16](measurements/ui-hands-focus-2026-10-16/REPORT.md) conserva sette raw DOM, quattro JPEG CSS, wrapper QA, CSS prima/dopo e patch, manifest delle 119 sorgenti e dei 30 file dist, log di build app/hero e verificatore offline. I manifest delle sorgenti differiscono soltanto in `src/cumulonimbus/scene.css`. Non contiene copie intere del dist o dei sorgenti.
+
+Il PASS è circoscritto al flusso osservato a 390 × 844. Le immagini includono il parent QA e non attestano output GPU nativo, parità pixel, FPS o touch fisico; desktop, viewport bassi e reduced motion non sono stati nuovamente provati. Il log conserva anche snapshot BODY e canvas con esiti diversi: non si dichiara un PASS globale di ogni evento.
+
+È conservata un'osservazione storica console alle 15:55:05.403Z: errore MutationObserver «parameter 1 is not of type Node», senza URL. Precede l'mtime del wrapper fixed riferito da Root (16:00:39.277286Z); causa e origine restano non attribuite. Non si dichiara console generalmente priva di errori. I raw DOM non incorporano hash dei bundle serviti: l'associazione alla build deriva dalla provenienza dell'host e dai manifest congelati.
+
+Verifica dei payload e degli invarianti registrati, senza avviare app o GPU:
+
+```sh
+python3 docs/measurements/ui-hands-focus-2026-10-16/verify.py
+```

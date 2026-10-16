@@ -1,0 +1,319 @@
+{
+  "scope": "Scoped real browser UI focus evidence at CSS390x844, original v54cover R2 vs one-selector CSS fix; not rendering/FPS/native-touch acceptance",
+  "before": {
+    "file": "browser/before-focus.json",
+    "eventIndex": 3,
+    "event": {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "button",
+        "id": null,
+        "class": "",
+        "ariaLabel": "Avvicinati alla nube",
+        "title": "Avvicinati",
+        "text": "",
+        "rect": {
+          "x": 326,
+          "y": 612,
+          "width": 44,
+          "height": 44
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "section",
+        "id": null,
+        "class": "diagnostics hand-panel",
+        "ariaLabel": "Controllo con le mani in preparazione",
+        "title": null,
+        "text": "Il cielo, tra le dita.\n          Camera non collegataIl riconoscimento non \u00e8 anc",
+        "rect": {
+          "x": 12,
+          "y": 116,
+          "width": 366,
+          "height": 632
+        }
+      },
+      "activeContainsCenterElement": false
+    },
+    "meaning": "Natural focusin on zoom-in, center covered by hand-panel; selected evidence excludes later parent-button BODY snapshot"
+  },
+  "afterVisibleCycle": {
+    "file": "browser/after-full-tab-cycle.json",
+    "eventIndices": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "labels": [
+      "Chiudi guida mani",
+      "Pausa",
+      "Sole",
+      "Tramonto",
+      "Pioggia",
+      "Temporale",
+      "Regola il cielo"
+    ],
+    "centerAccessible": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "count": 7
+  },
+  "results": {
+    "after-tab-focus.json": {
+      "file": "browser/after-tab-focus.json",
+      "lastEventIndex": 3,
+      "lastEvent": {
+        "event": "focusin",
+        "viewportCSS": [
+          390,
+          844
+        ],
+        "iframeCSS": [
+          390,
+          844
+        ],
+        "active": {
+          "tag": "button",
+          "id": null,
+          "class": "icon-button pause-button",
+          "ariaLabel": "Pausa",
+          "title": "Pausa",
+          "text": "",
+          "rect": {
+            "x": 20,
+            "y": 772,
+            "width": 44,
+            "height": 48
+          }
+        },
+        "elementAtActiveCenter": {
+          "tag": "svg",
+          "id": null,
+          "class": null,
+          "ariaLabel": null,
+          "title": null,
+          "text": "",
+          "rect": {
+            "x": 32,
+            "y": 786,
+            "width": 20,
+            "height": 20
+          }
+        },
+        "activeContainsCenterElement": true
+      }
+    },
+    "after-escape-focus.json": {
+      "file": "browser/after-escape-focus.json",
+      "lastEventIndex": 4,
+      "lastEvent": {
+        "event": "focusin",
+        "viewportCSS": [
+          390,
+          844
+        ],
+        "iframeCSS": [
+          390,
+          844
+        ],
+        "active": {
+          "tag": "summary",
+          "id": null,
+          "class": "",
+          "ariaLabel": null,
+          "title": null,
+          "text": "Mani in arrivo",
+          "rect": {
+            "x": 279.875,
+            "y": 22,
+            "width": 94.125,
+            "height": 44
+          }
+        },
+        "elementAtActiveCenter": {
+          "tag": "summary",
+          "id": null,
+          "class": "",
+          "ariaLabel": null,
+          "title": null,
+          "text": "Mani in arrivo",
+          "rect": {
+            "x": 279.875,
+            "y": 22,
+            "width": 94.125,
+            "height": 44
+          }
+        },
+        "activeContainsCenterElement": true
+      }
+    },
+    "after-close-button-focus.json": {
+      "file": "browser/after-close-button-focus.json",
+      "lastEventIndex": 8,
+      "lastEvent": {
+        "event": "focusin",
+        "viewportCSS": [
+          390,
+          844
+        ],
+        "iframeCSS": [
+          390,
+          844
+        ],
+        "active": {
+          "tag": "summary",
+          "id": null,
+          "class": "",
+          "ariaLabel": null,
+          "title": null,
+          "text": "Mani in arrivo",
+          "rect": {
+            "x": 279.875,
+            "y": 22,
+            "width": 94.125,
+            "height": 44
+          }
+        },
+        "elementAtActiveCenter": {
+          "tag": "summary",
+          "id": null,
+          "class": "",
+          "ariaLabel": null,
+          "title": null,
+          "text": "Mani in arrivo",
+          "rect": {
+            "x": 279.875,
+            "y": 22,
+            "width": 94.125,
+            "height": 44
+          }
+        },
+        "activeContainsCenterElement": true
+      }
+    },
+    "after-outside-focus.json": {
+      "file": "browser/after-outside-focus.json",
+      "lastEventIndex": 9,
+      "lastEvent": {
+        "event": "focusin",
+        "viewportCSS": [
+          390,
+          844
+        ],
+        "iframeCSS": [
+          390,
+          844
+        ],
+        "active": {
+          "tag": "canvas",
+          "id": null,
+          "class": "",
+          "ariaLabel": "Nube volumetrica ruotabile",
+          "title": null,
+          "text": "",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844
+          }
+        },
+        "elementAtActiveCenter": {
+          "tag": "div",
+          "id": null,
+          "class": "",
+          "ariaLabel": null,
+          "title": null,
+          "text": "Sole / tramontoPizzica il sole, alzalo o abbassalo.",
+          "rect": {
+            "x": 33,
+            "y": 420.796875,
+            "width": 309,
+            "height": 55
+          }
+        },
+        "activeContainsCenterElement": false
+      }
+    },
+    "after-restored-zoom-focus.json": {
+      "file": "browser/after-restored-zoom-focus.json",
+      "lastEventIndex": 5,
+      "lastEvent": {
+        "event": "focusin",
+        "viewportCSS": [
+          390,
+          844
+        ],
+        "iframeCSS": [
+          390,
+          844
+        ],
+        "active": {
+          "tag": "button",
+          "id": null,
+          "class": "",
+          "ariaLabel": "Avvicinati alla nube",
+          "title": "Avvicinati",
+          "text": "",
+          "rect": {
+            "x": 326,
+            "y": 612,
+            "width": 44,
+            "height": 44
+          }
+        },
+        "elementAtActiveCenter": {
+          "tag": "path",
+          "id": null,
+          "class": null,
+          "ariaLabel": null,
+          "title": null,
+          "text": "",
+          "rect": {
+            "x": 341.3333435058594,
+            "y": 627.3333129882812,
+            "width": 13.33331298828125,
+            "height": 13.3333740234375
+          }
+        },
+        "activeContainsCenterElement": true
+      }
+    }
+  },
+  "actionProvenance": "Root native AX interaction and filenames identify Esc/close/outside actions; snapshots record resulting focus, not the physical key/click events themselves",
+  "sourceManifestCounts": {
+    "before": 119,
+    "after": 119,
+    "changedSourcePaths": [
+      "src/cumulonimbus/scene.css"
+    ],
+    "distBefore": 30,
+    "distAfter": 30
+  },
+  "limits": [
+    "CSS JPEGs including parent observer UI, no native pixel/radiance comparison",
+    "Parent-button snapshot can replace child activeElement with BODY; use natural focusin record for before failure",
+    "Canvas event has activeContainsCenterElement false; background remains nonmodal, do not describe all recorded events as uncovered",
+    "No physical touch or reduced-motion emulation, no new desktop/low-height browser matrix",
+    "Historical MutationObserver error precedes fixed host and is unattributed; no global clean-console claim",
+    "No tests/build/GPU/browser rerun during curation"
+  ]
+}

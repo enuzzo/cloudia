@@ -1,0 +1,725 @@
+{
+  "scope": "Passive same-origin DOM focus observer; original app and renderer untouched",
+  "events": [
+    {
+      "event": "iframe-load",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "body",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Cloudia Lab\n        Un cielo da muovere.\n        Preparazione del cielo…",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "div",
+        "id": null,
+        "class": "cloudia-stage",
+        "ariaLabel": null,
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "summary",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Mani in arrivo",
+        "rect": {
+          "x": 279.875,
+          "y": 22,
+          "width": 94.125,
+          "height": 44
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "summary",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Mani in arrivo",
+        "rect": {
+          "x": 279.875,
+          "y": 22,
+          "width": 94.125,
+          "height": 44
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "button",
+        "id": null,
+        "class": "icon-button",
+        "ariaLabel": "Chiudi guida mani",
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 298,
+          "y": 131,
+          "width": 44,
+          "height": 44
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "path",
+        "id": null,
+        "class": null,
+        "ariaLabel": null,
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 315,
+          "y": 148,
+          "width": 10,
+          "height": 10
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "button",
+        "id": null,
+        "class": "icon-button pause-button",
+        "ariaLabel": "Pausa",
+        "title": "Pausa",
+        "text": "",
+        "rect": {
+          "x": 20,
+          "y": 772,
+          "width": 44,
+          "height": 48
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "svg",
+        "id": null,
+        "class": null,
+        "ariaLabel": null,
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 32,
+          "y": 786,
+          "width": 20,
+          "height": 20
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "summary",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Mani in arrivo",
+        "rect": {
+          "x": 279.875,
+          "y": 22,
+          "width": 94.125,
+          "height": 44
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "summary",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Mani in arrivo",
+        "rect": {
+          "x": 279.875,
+          "y": 22,
+          "width": 94.125,
+          "height": 44
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "button",
+        "id": null,
+        "class": "",
+        "ariaLabel": "Avvicinati alla nube",
+        "title": "Avvicinati",
+        "text": "",
+        "rect": {
+          "x": 326,
+          "y": 612,
+          "width": 44,
+          "height": 44
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "path",
+        "id": null,
+        "class": null,
+        "ariaLabel": null,
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 341.3333435058594,
+          "y": 627.3333129882812,
+          "width": 13.33331298828125,
+          "height": 13.3333740234375
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "summary",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Mani in arrivo",
+        "rect": {
+          "x": 279.875,
+          "y": 22,
+          "width": 94.125,
+          "height": 44
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "summary",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Mani in arrivo",
+        "rect": {
+          "x": 279.875,
+          "y": 22,
+          "width": 94.125,
+          "height": 44
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "button",
+        "id": null,
+        "class": "icon-button",
+        "ariaLabel": "Chiudi guida mani",
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 298,
+          "y": 131,
+          "width": 44,
+          "height": 44
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "path",
+        "id": null,
+        "class": null,
+        "ariaLabel": null,
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 315,
+          "y": 148,
+          "width": 10,
+          "height": 10
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "summary",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Mani in arrivo",
+        "rect": {
+          "x": 279.875,
+          "y": 22,
+          "width": 94.125,
+          "height": 44
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "summary",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Mani in arrivo",
+        "rect": {
+          "x": 279.875,
+          "y": 22,
+          "width": 94.125,
+          "height": 44
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "canvas",
+        "id": null,
+        "class": "",
+        "ariaLabel": "Nube volumetrica ruotabile",
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "div",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Sole / tramontoPizzica il sole, alzalo o abbassalo.",
+        "rect": {
+          "x": 33,
+          "y": 420.796875,
+          "width": 309,
+          "height": 55
+        }
+      },
+      "activeContainsCenterElement": false
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "summary",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Mani in arrivo",
+        "rect": {
+          "x": 279.875,
+          "y": 22,
+          "width": 94.125,
+          "height": 44
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "summary",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Mani in arrivo",
+        "rect": {
+          "x": 279.875,
+          "y": 22,
+          "width": 94.125,
+          "height": 44
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "button",
+        "id": null,
+        "class": "icon-button",
+        "ariaLabel": "Chiudi guida mani",
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 298,
+          "y": 131,
+          "width": 44,
+          "height": 44
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "path",
+        "id": null,
+        "class": null,
+        "ariaLabel": null,
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 315,
+          "y": 148,
+          "width": 10,
+          "height": 10
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "button",
+        "id": null,
+        "class": "icon-button pause-button",
+        "ariaLabel": "Pausa",
+        "title": "Pausa",
+        "text": "",
+        "rect": {
+          "x": 20,
+          "y": 772,
+          "width": 44,
+          "height": 48
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "svg",
+        "id": null,
+        "class": null,
+        "ariaLabel": null,
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 32,
+          "y": 786,
+          "width": 20,
+          "height": 20
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "button",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Sole",
+        "rect": {
+          "x": 67,
+          "y": 772,
+          "width": 62.5,
+          "height": 48
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "path",
+        "id": null,
+        "class": null,
+        "ariaLabel": null,
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 90.33333587646484,
+          "y": 780.5833129882812,
+          "width": 15.833328247070312,
+          "height": 15.8333740234375
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "button",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Tramonto",
+        "rect": {
+          "x": 131.5,
+          "y": 772,
+          "width": 62.5,
+          "height": 48
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "path",
+        "id": null,
+        "class": null,
+        "ariaLabel": null,
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 154.8333282470703,
+          "y": 782.9608154296875,
+          "width": 15.833343505859375,
+          "height": 12.6641845703125
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "button",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Pioggia",
+        "rect": {
+          "x": 196,
+          "y": 772,
+          "width": 62.5,
+          "height": 48
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "svg",
+        "id": null,
+        "class": null,
+        "ariaLabel": null,
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 217.75,
+          "y": 779,
+          "width": 19,
+          "height": 19
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "button",
+        "id": null,
+        "class": "",
+        "ariaLabel": null,
+        "title": null,
+        "text": "Temporale",
+        "rect": {
+          "x": 260.5,
+          "y": 772,
+          "width": 62.5,
+          "height": 48
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "svg",
+        "id": null,
+        "class": null,
+        "ariaLabel": null,
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 282.25,
+          "y": 779,
+          "width": 19,
+          "height": 19
+        }
+      },
+      "activeContainsCenterElement": true
+    },
+    {
+      "event": "focusin",
+      "viewportCSS": [
+        390,
+        844
+      ],
+      "iframeCSS": [
+        390,
+        844
+      ],
+      "active": {
+        "tag": "summary",
+        "id": null,
+        "class": "",
+        "ariaLabel": "Regola il cielo",
+        "title": "Regola il cielo",
+        "text": "Regola",
+        "rect": {
+          "x": 326,
+          "y": 772,
+          "width": 44,
+          "height": 48
+        }
+      },
+      "elementAtActiveCenter": {
+        "tag": "path",
+        "id": null,
+        "class": null,
+        "ariaLabel": null,
+        "title": null,
+        "text": "",
+        "rect": {
+          "x": 340.5,
+          "y": 791,
+          "width": 15,
+          "height": 10
+        }
+      },
+      "activeContainsCenterElement": true
+    }
+  ]
+}
