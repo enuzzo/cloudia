@@ -1,0 +1,50 @@
+[
+  {
+    "name": "scanner",
+    "command": [
+      "bun",
+      "scripts/qa-layout.ts",
+      "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification/layout1024.json",
+      "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification/references/baseline-layout.mjs",
+      "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification/references/r3-layout.mjs"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 2.798029624973424,
+    "wallTimedOut": false,
+    "kernelCpuSeconds": 5,
+    "reusedFrom": "../anatomy-r5-v55-qualification",
+    "sourceFreezeSHA256": "1a19ff811c68f5502d43182a4b24cf214df92aa32c42d4549d8dc5f5509a62ab"
+  },
+  {
+    "name": "typecheck",
+    "command": [
+      "bun",
+      "run",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 1.3895790830720216,
+    "wallTimedOut": false,
+    "kernelCpuSeconds": null,
+    "reusedFrom": "../anatomy-r5-v55-qualification",
+    "sourceFreezeSHA256": "1a19ff811c68f5502d43182a4b24cf214df92aa32c42d4549d8dc5f5509a62ab"
+  },
+  {
+    "name": "nine-tests",
+    "command": [
+      "bun",
+      "run",
+      "test",
+      "--",
+      "src/cumulonimbus/volume.layout-regression.test.ts",
+      "--reporter=json",
+      "--outputFile=/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification/nine-test-results.json"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.7127632499905303,
+    "wallTimedOut": false,
+    "kernelCpuSeconds": null,
+    "reusedFrom": "../anatomy-r5-v55-qualification",
+    "sourceFreezeSHA256": "1a19ff811c68f5502d43182a4b24cf214df92aa32c42d4549d8dc5f5509a62ab"
+  }
+]

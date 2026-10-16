@@ -1,0 +1,168 @@
+{
+  "status": "PASS",
+  "scope": "9 named actual layout prefixes, no raster/full bake; not a new exhaustive 1024 run",
+  "runtime": {
+    "node": "v24.19.0",
+    "arch": "arm64"
+  },
+  "factories": {
+    "A": {
+      "sourceSHA256": "a53410c45b04143710cffd098b6a33deade3242c66ecf7eecc6405a214a93b00",
+      "emittedPrefixSHA256": "a82806b0dce5c7d01be4955c3d0dbeccb102781645fa8d729b2cd9448d68a7c1"
+    },
+    "R3": {
+      "sourceSHA256": "ebacc5ad2bca3515f34bfa4d2a4fe028ef4d20c09bcbe446104cfc794569a190",
+      "emittedPrefixSHA256": "78dce90344c2480df4a8a3add2c12e754a894ff8f40477f3dc1c7f9094f7dc88"
+    },
+    "R5": {
+      "sourceSHA256": "0ab43c0c2c0ac4ed53ef15cfda3effeb25f45fdabeee553836f9ce04d35f6423",
+      "emittedPrefixSHA256": "a08d307c55a656869dee1748ca6970c168d813110f2adfe5144bf32a2988b8ec"
+    }
+  },
+  "oracle": "A tuple values and archived R3 actual X/Z-changed tuple subset; exact deep equality includes signed zero, array length and optional blend",
+  "checks": [
+    "body91 all tuple values baseline A",
+    "only R3 X/Z changes inherited",
+    "all nonselected and outward/other-family tuples baseline A",
+    "RNG calls/initial seeds identical A",
+    "no alias lobe references",
+    "seed2 recenter survives when body roof already sufficient"
+  ],
+  "rows": [
+    {
+      "seed": 2,
+      "family": "sheared",
+      "lobes": 2009,
+      "recenteredLobes": 91,
+      "bodyGroup": 91,
+      "bodyExactA": true,
+      "rngExactA": true,
+      "tupleSHA256": {
+        "A": "57d512f75c78983bb1587258729590a2d5082b0ac9bc28e6267e6cb8eb3193eb",
+        "R3": "dd49b68fbbe7d306e5c41ce5f857dd1cfbdc7eddb8552fd84053e2e29eca55d9",
+        "R5": "dd49b68fbbe7d306e5c41ce5f857dd1cfbdc7eddb8552fd84053e2e29eca55d9"
+      },
+      "r3BodyChanged": false
+    },
+    {
+      "seed": 74,
+      "family": "sheared",
+      "lobes": 1918,
+      "recenteredLobes": 91,
+      "bodyGroup": 91,
+      "bodyExactA": true,
+      "rngExactA": true,
+      "tupleSHA256": {
+        "A": "488292025a402b0fb2f0ae1f5fc0bd11e9dae524603b16b9f350742ef71b5d94",
+        "R3": "eeb9e33e519418d1678cc3798e14d915ce3cae4846548885da95b986435a717b",
+        "R5": "764dba1b9d4d638f49f0f5b038bbce9daa987acb3a42d9fb434d25479f2cb91b"
+      },
+      "r3BodyChanged": true
+    },
+    {
+      "seed": 77,
+      "family": "sheared",
+      "lobes": 1827,
+      "recenteredLobes": 91,
+      "bodyGroup": 91,
+      "bodyExactA": true,
+      "rngExactA": true,
+      "tupleSHA256": {
+        "A": "da362731ae87124eed73fe34260cc5c9a84720dc28680a52b0737d8eead619d4",
+        "R3": "9f72cbf442b7a5c03bde35f2ed46b1767f0c4f0654b8c2e457026c513a1ed72f",
+        "R5": "b7852947e8b087157a0ae38610e9b0db8044ca8e27c9e289653dfb6c60694989"
+      },
+      "r3BodyChanged": true
+    },
+    {
+      "seed": 80,
+      "family": "sheared",
+      "lobes": 1918,
+      "recenteredLobes": 91,
+      "bodyGroup": 91,
+      "bodyExactA": true,
+      "rngExactA": true,
+      "tupleSHA256": {
+        "A": "af28570da7b14150a720ec53d2f3806eff7a9eab5ed94416313ae91a6ffbf926",
+        "R3": "fe091fdb7dc4fcec29104637b940d63cbb0bc10ef0633ca850d04d1f75c458ac",
+        "R5": "64ddc0780274a625aa984c175c7dd0bbe98a397d5cef6809235820f36eeaf682"
+      },
+      "r3BodyChanged": true
+    },
+    {
+      "seed": 104,
+      "family": "sheared",
+      "lobes": 1827,
+      "recenteredLobes": 0,
+      "bodyGroup": 91,
+      "bodyExactA": true,
+      "rngExactA": true,
+      "tupleSHA256": {
+        "A": "0ed1386d7c80bb2082ee8ca0a88cf6187f7b4a8842c06446c2f35c1f4cc65749",
+        "R3": "50d16d1e198bb61d08dfafeaeebd11e966fac51797d95df6bff84fa62126b471",
+        "R5": "0ed1386d7c80bb2082ee8ca0a88cf6187f7b4a8842c06446c2f35c1f4cc65749"
+      },
+      "r3BodyChanged": true
+    },
+    {
+      "seed": 119,
+      "family": "sheared",
+      "lobes": 1918,
+      "recenteredLobes": 0,
+      "bodyGroup": 91,
+      "bodyExactA": true,
+      "rngExactA": true,
+      "tupleSHA256": {
+        "A": "7d8639455d2d33937fa2013b093f97ddf46b526772c385bf4eaa4d20a054fea4",
+        "R3": "38599adf264dc54583b3089405a2ea2335818a3a94cbeadff31c8989acbd2bfe",
+        "R5": "7d8639455d2d33937fa2013b093f97ddf46b526772c385bf4eaa4d20a054fea4"
+      },
+      "r3BodyChanged": true
+    },
+    {
+      "seed": 617,
+      "family": "sheared",
+      "lobes": 1918,
+      "recenteredLobes": 0,
+      "bodyGroup": 91,
+      "bodyExactA": true,
+      "rngExactA": true,
+      "tupleSHA256": {
+        "A": "8575a4917c160cb247f10b5d34b2ff360ce6d7e9b474208a0cd80b586a19d2ee",
+        "R3": "e44af9a075adcb3e255d5f40c89df7ba226bae59ae02a27ee678036848f139e0",
+        "R5": "8575a4917c160cb247f10b5d34b2ff360ce6d7e9b474208a0cd80b586a19d2ee"
+      },
+      "r3BodyChanged": true
+    },
+    {
+      "seed": 72,
+      "family": "congestus",
+      "lobes": 2589,
+      "recenteredLobes": 0,
+      "bodyGroup": 0,
+      "bodyExactA": true,
+      "rngExactA": true,
+      "tupleSHA256": {
+        "A": "685c6c8bd1337b7585b46d34803ffe3f4882e282e78ff20eec3cca4bdfba8ce8",
+        "R3": "685c6c8bd1337b7585b46d34803ffe3f4882e282e78ff20eec3cca4bdfba8ce8",
+        "R5": "685c6c8bd1337b7585b46d34803ffe3f4882e282e78ff20eec3cca4bdfba8ce8"
+      },
+      "r3BodyChanged": false
+    },
+    {
+      "seed": 73,
+      "family": "multicell",
+      "lobes": 2179,
+      "recenteredLobes": 0,
+      "bodyGroup": 0,
+      "bodyExactA": true,
+      "rngExactA": true,
+      "tupleSHA256": {
+        "A": "c01555ecc1e67118a741c0350e2f04011e9773085702ef9acc3fee2539f03a31",
+        "R3": "c01555ecc1e67118a741c0350e2f04011e9773085702ef9acc3fee2539f03a31",
+        "R5": "c01555ecc1e67118a741c0350e2f04011e9773085702ef9acc3fee2539f03a31"
+      },
+      "r3BodyChanged": false
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "model": "R5 refined projected inward shoulder",
+  "adoption": "TRIAL NOT ADOPTED; root visual decision separate",
+  "frozenUtc": "2026-10-16T17:31:45.686545+00:00",
+  "version": "observatory-v56-inward-shoulder",
+  "sourceFiles": 122,
+  "existingChangedPaths": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/lifecycle.test.ts",
+    "src/cumulonimbus/volume.ts"
+  ],
+  "addedPaths": [
+    "scripts/qa-layout.ts",
+    "src/cumulonimbus/layoutPrefix.test-helper.ts",
+    "src/cumulonimbus/volume.layout-regression.test.ts"
+  ],
+  "baselineManifestSHA256": "30c5448e87fb60c3bd3fdc8ca133993c49e54503a9950f9da1815fd59883171f",
+  "rainSourceManifestSHA256": "5e684127a396920bca727ba89fd19bc5776084801ae2ca7e1e2d82313c4f8e05",
+  "rainArtifactManifestSHA256": "b78e8b56e4aa3338425f00dd3040bbb0b766fa0f10ca79c74a08a721254a5756",
+  "rainProtocolSHA256": "74544723a9ad1f0b71ff7aa712502a66f5778a192a2ccee132cd0bfced24cded",
+  "runtimeVolumeSHA256": "c349e8f7526a2dafa0348516079f3f67ab7288a17769f28193ebcef7e124d34d",
+  "runtimeMutation": "None: volume byte-exact Rain refined R2. Official metadata normalized in engine and expected lifecycle only.",
+  "contract": "Shared body91 always baseline; selected inward91 only X/Z changes; post signed component zero, perpendicular and child offsets conserved; every Y/radius/blend and every nonselected tuple exact; RNG/order/aliases preserved.",
+  "scanner": {
+    "executions": 1,
+    "kernelCpuSeconds": 5,
+    "softReserveAtCpuSeconds": 4.5,
+    "rangeInclusive": [
+      0,
+      1023
+    ],
+    "prefixModels": [
+      "baseline A",
+      "R3 reference (inward only)",
+      "R5 actual"
+    ],
+    "expectedWholeBaselineExact": 701,
+    "expectedInwardProjectedComponentMatchedR3": 323,
+    "expectedOutwardBaselineExact": 18,
+    "expectedOtherFamilyBaselineExact": 683,
+    "R3FullXZExactClaim": false,
+    "noAutomaticRestart": true
+  },
+  "checks": [
+    "one scanner1024",
+    "typecheck",
+    "9 actual-layout tests",
+    "seven actual-source mutants",
+    "fullsuite350 tests44files",
+    "APP build then hero build same dist"
+  ],
+  "references": {
+    "references/baseline-layout.mjs": "a08bb50ebc0fce70c1474e55f41c9bd57038981619e5d106cddb7d50c38d5a14",
+    "references/r3-body-lift.volume.ts": "ebacc5ad2bca3515f34bfa4d2a4fe028ef4d20c09bcbe446104cfc794569a190",
+    "references/r3-layout.mjs": "7b7ec18131bdc8bf04185f0b66c580b48e7f36ca07aacde940060935ff923e18",
+    "references/r4-body-lift.volume.ts": "52078334f68a827c5d4673483ffa5e53de394d894716985199613b5b3d8e81f1"
+  },
+  "standaloneFullBakes": 0,
+  "GPU": false,
+  "browser": false,
+  "dependencyXattrBefore": "1"
+}

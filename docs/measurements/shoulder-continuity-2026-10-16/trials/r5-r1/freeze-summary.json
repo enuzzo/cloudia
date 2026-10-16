@@ -1,0 +1,16 @@
+{
+  "status": "EXTERNAL R5 R1 FROZEN, NOT ADOPTED",
+  "sourceFiles": 119,
+  "sourceManifestSHA256": "f892755100cf21665dee22c6adb7f72707d30cdae3855fc3c9a5a09827e6a6bb",
+  "volumeSHA256": "0ab43c0c2c0ac4ed53ef15cfda3effeb25f45fdabeee553836f9ce04d35f6423",
+  "distManifestSHA256": "bf30fe9a6e37874f388b5a1025b15b4d0d976661b0f2184a3bb5c5c5311db884",
+  "heroDistManifestSHA256": "035bf1533aeb56e30880970a651754d33e49db0de92ca64028159d5847655d2e",
+  "nodeModulesIgnoredBeforeAndAfter": true,
+  "tests": 31,
+  "typecheck": "PASS",
+  "appBuild": "PASS",
+  "heroBuild": "PASS",
+  "namedPrefixes": 9,
+  "layout": "full X/Z recenter only; body always A",
+  "limitation": "superseded experimental alternative R2 will remove only inward component; R1 preserved unchanged; no browser/GPU/image/FPS acceptance"
+}

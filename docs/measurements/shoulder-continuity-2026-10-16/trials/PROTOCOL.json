@@ -1,0 +1,46 @@
+{
+  "status": "CURATION ONLY; no model, scanner, test, build, browser or GPU",
+  "frozenUTC": "2026-10-16T17:32:29.503084+00:00",
+  "groups": [
+    {
+      "group": "r3",
+      "externalRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r3-v55-evidence",
+      "manifest": "MANIFEST.json",
+      "schema": "evidence"
+    },
+    {
+      "group": "r4",
+      "externalRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r4-v55-qualification",
+      "manifest": "MANIFEST.json",
+      "schema": "evidence"
+    },
+    {
+      "group": "r5-r1",
+      "externalRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-recenter",
+      "manifest": "MANIFEST.json",
+      "schema": "dict"
+    },
+    {
+      "group": "r5-r2",
+      "externalRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-r2-inward",
+      "manifest": "MANIFEST.json",
+      "schema": "dict"
+    },
+    {
+      "group": "morphology617-r1",
+      "externalRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/morphology617-ab",
+      "manifest": "MANIFEST-R1.json",
+      "schema": "list"
+    },
+    {
+      "group": "morphology617-r2",
+      "externalRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/morphology617-ab-r2",
+      "manifest": "MANIFEST.json",
+      "schema": "list"
+    }
+  ],
+  "selection": "Every evidence payload row in the six listed manifests, the manifests themselves and two existing derived verification JSON; no source snapshot, dist, hero-dist, dependency symlink, raw volume or photograph",
+  "compression": "gzip level9 mtime0 only for JSON/log/patch/CSV >=8192bytes; all decompressed bytes unchanged; small scripts and original filenames preserved otherwise",
+  "originalRawByteCap": 3145728,
+  "offline": "original R4 verifier may read frozen source/dist to verify hashes; this is not another prefix/model/test execution; stdout/stderr and exit status retained separately"
+}

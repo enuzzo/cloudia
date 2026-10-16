@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-16T16:46:35.257820+00:00",
+  "baselineCommit": "ede11e0fda5f7f7a81e6e6cb1f76fbfbb08a4e3f",
+  "baselineSource": "../Cloudia-QA-2026-10-16-cycle21/v55-final/source",
+  "baselineManifestSha256": "30c5448e87fb60c3bd3fdc8ca133993c49e54503a9950f9da1815fd59883171f",
+  "candidateSource": "../anatomy-r3-v55-source",
+  "inputFiles": 119,
+  "changedPaths": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/lifecycle.test.ts",
+    "src/cumulonimbus/volume.ts"
+  ],
+  "r3VolumeSha256": "ebacc5ad2bca3515f34bfa4d2a4fe028ef4d20c09bcbe446104cfc794569a190",
+  "trialVersion": "observatory-v56-joint-r3-trial",
+  "qaScript": {
+    "path": "audit-scripts/qa-approach.ts",
+    "sha256": "7e80d5e44aa047467f87b891476e2158e3156a122d370557ed1f145f0786c986",
+    "importResolution": "../src symlink resolves only to candidate-source/src; imported module dependencies resolve candidate node_modules link",
+    "seed": 1571198069,
+    "time": 60,
+    "volume": 256,
+    "detail": 128,
+    "poses": 18,
+    "runtime": "Bun",
+    "wallBudgetSeconds": 1200,
+    "cpuBudgetSeconds": 1080,
+    "automaticRestarts": 0,
+    "limits": "CPU reference only; not GPU f32 readback, no camera-dependent micro erosion or extra dispersion, no artistic/FPS claim"
+  },
+  "checks": [
+    "typecheck",
+    "existing volume.test.ts + inclinedShoulder.test.ts (31 tests)",
+    "qa-approach copied exact script",
+    "APP build then hero build"
+  ],
+  "dependency": {
+    "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules",
+    "mode": "existing ignored directory symlink; no install/copy",
+    "fileProviderIgnore": "1",
+    "gitIgnored": true,
+    "trackedPaths": 0
+  },
+  "runtimeVersions": {
+    "bun": "1.3.11",
+    "node": "v26.11.0",
+    "architecture": "arm64"
+  },
+  "forbidden": [
+    "root product edits",
+    "new test helpers",
+    "GPU",
+    "browser",
+    "retune",
+    "adoption",
+    "new volumetric bakes beyond qa-approach"
+  ]
+}

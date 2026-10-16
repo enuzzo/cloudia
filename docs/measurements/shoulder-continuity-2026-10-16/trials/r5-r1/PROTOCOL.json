@@ -1,0 +1,37 @@
+{
+  "status": "EXTERNAL TRIAL ONLY, NOT ADOPTED",
+  "frozenUTC": "2026-10-16T17:21:58.894193+00:00",
+  "baseline": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/source",
+  "baselineManifestSHA256": "30c5448e87fb60c3bd3fdc8ca133993c49e54503a9950f9da1815fd59883171f",
+  "r3": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r3-v55-source",
+  "r3ManifestSHA256": "e65c9209938773d3e4d1e3e6f649e4fb11bad01c731a4ee38258ebefdf39e3e9",
+  "sourceFiles": 119,
+  "semantics": {
+    "sharedBodyAnd91Group": "all ordered lobe tuple values identical to baseline A",
+    "selectedShoulderAnd91Group": "only X/Z recenter when signed projection > 0, exactly R3 translation; Y and all radii/blend unchanged",
+    "outwardAndOtherFamilies": "all ordered lobe tuples identical to A",
+    "noNew": "no primitives, RNG, coefficients, noises or seed branches",
+    "expectedPartitionFromExisting1024AuditOnly": {
+      "inwardSameR3XZ": 323,
+      "outwardFullA": 18,
+      "otherFamilyFullA": 683
+    }
+  },
+  "checks": [
+    "all 119 pinned sources independently hash checked before copy",
+    "few named actual prefix traces only, no duplicate 1024 scan",
+    "raster suffix and imported geometry dependencies identical A/R3/R5",
+    "31 existing focused tests: volume.test.ts + inclinedShoulder.test.ts",
+    "typecheck",
+    "one app build followed by one separate hero build"
+  ],
+  "notRun": [
+    "full suite",
+    "full-resolution bake",
+    "GPU",
+    "browser",
+    "performance"
+  ],
+  "quality": "macro256/detail128/384 and output unchanged; quality acceptance remains root visual review",
+  "rendererVersion": "observatory-v56-shoulder-recenter-trial"
+}

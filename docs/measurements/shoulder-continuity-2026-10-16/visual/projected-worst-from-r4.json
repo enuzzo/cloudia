@@ -1,0 +1,25 @@
+{
+  "method": "Offline reduction of existing frozen R4 scanner rows, no layout execution or density bake",
+  "top5": [
+    {
+      "seed": 926,
+      "projection": 0.8073883217775043
+    },
+    {
+      "seed": 68,
+      "projection": 0.8054897809297287
+    },
+    {
+      "seed": 707,
+      "projection": 0.7957311155868735
+    },
+    {
+      "seed": 197,
+      "projection": 0.7935151522965145
+    },
+    {
+      "seed": 434,
+      "projection": 0.7910799867541032
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+$ vitest run src/cumulonimbus/volume.test.ts src/cumulonimbus/inclinedShoulder.test.ts "--reporter=json" "--outputFile=/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r3-v55-evidence/targeted-test-results.json"
+JSON report written to /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r3-v55-evidence/targeted-test-results.json

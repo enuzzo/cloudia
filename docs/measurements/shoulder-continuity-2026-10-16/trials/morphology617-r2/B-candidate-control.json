@@ -1,0 +1,29 @@
+{
+  "status": "PASS_ONE_BOUNDED_FULL_QUALITY_CPU_DIAGNOSTIC",
+  "case": "B-candidate",
+  "command": [
+    "/Users/enuzzo/.bun/bin/bun",
+    "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/morphology617-ab-r2/B-candidate/scripts/qa-morphology.ts",
+    "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/morphology617-ab-r2/B-candidate.json",
+    "256",
+    "617"
+  ],
+  "exitCode": 0,
+  "error": null,
+  "elapsedSeconds": 20.383241791976616,
+  "childCpuSeconds": 20.581946,
+  "cpuLimitSeconds": 180,
+  "wallLimitSeconds": 240.0,
+  "sampledPeakRssBytes": 1140965376,
+  "sampleCount": 365,
+  "lifetimeHighwaterRssBytes": 1141800960,
+  "rssLimitBytes": 2147483648,
+  "rssMonitor": "libproc PROC_PIDTASKINFO every50ms + child self-checks; final exact RUSAGE_CHILDREN highwater",
+  "ownedChildReaped": true,
+  "sourceManifestSha256": "e65c9209938773d3e4d1e3e6f649e4fb11bad01c731a4ee38258ebefdf39e3e9",
+  "scriptSha256": "4ade71b2c3d7fc70826797f06d55bfae2eeabae3462cbe12ba5b606173b15262",
+  "outputSha256": "6a47e2a9e2b61a87bf308587e9fbf0c2b7551c542f84042364efe420c8c9cb9f",
+  "noPs": true,
+  "noRestart": true,
+  "noVolumeDataMutation": true
+}

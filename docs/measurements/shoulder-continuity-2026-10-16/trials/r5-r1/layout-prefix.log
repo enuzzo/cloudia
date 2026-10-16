@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "seed": 2,
+      "recenteredLobes": 91,
+      "r3BodyChanged": false
+    },
+    {
+      "seed": 74,
+      "recenteredLobes": 91,
+      "r3BodyChanged": true
+    },
+    {
+      "seed": 77,
+      "recenteredLobes": 91,
+      "r3BodyChanged": true
+    },
+    {
+      "seed": 80,
+      "recenteredLobes": 91,
+      "r3BodyChanged": true
+    },
+    {
+      "seed": 104,
+      "recenteredLobes": 0,
+      "r3BodyChanged": true
+    },
+    {
+      "seed": 119,
+      "recenteredLobes": 0,
+      "r3BodyChanged": true
+    },
+    {
+      "seed": 617,
+      "recenteredLobes": 0,
+      "r3BodyChanged": true
+    },
+    {
+      "seed": 72,
+      "recenteredLobes": 0,
+      "r3BodyChanged": false
+    },
+    {
+      "seed": 73,
+      "recenteredLobes": 0,
+      "r3BodyChanged": false
+    }
+  ]
+}

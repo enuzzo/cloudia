@@ -1,0 +1,16 @@
+{
+  "createdAt": "2026-10-16T17:07:31.670834+00:00",
+  "candidate": "R3 volume ebacc5ad overlay v55; server53755",
+  "route": "?seed=SEED&profile=1; no surface or target override",
+  "seeds": [
+    74,
+    617
+  ],
+  "time": 60,
+  "paused": true,
+  "quality": "256 cubed +128 cubed,384 steps,1920x1080; full flow",
+  "views": "approach80/95/100 front Sole and max Tramonto; then short incremental orbit/pause-resume on617 and rain overview/near74",
+  "camera": "actual filtered-field surface probe, not fixed comparison radius",
+  "evidence": "CSS JPEG and visible live quality plus benchmark camera on one near pose when available",
+  "decision": "no new shelf, hole, cutoff, implausible swelling; preserve remaining photographic and 60FPS gates"
+}

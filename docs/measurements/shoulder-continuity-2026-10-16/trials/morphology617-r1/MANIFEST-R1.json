@@ -1,0 +1,93 @@
+{
+  "status": "R1_TERMINAL_INTERNAL_RSS_GUARD_FAILURE",
+  "files": [
+    {
+      "path": "A-baseline/scripts/qa-morphology.ts",
+      "bytes": 6219,
+      "sha256": "6e0969f3342c5da1e811db01667c8db32b995d96ac41ec86aae8bda3f5f04d5b"
+    },
+    {
+      "path": "A-baseline-control.json",
+      "bytes": 1123,
+      "sha256": "0ee969840456c5a94b428cd3e6a1a26fcf88c5bfff07891babaf0c00f8d79eaf"
+    },
+    {
+      "path": "A-baseline.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "A-wrapper.log",
+      "bytes": 1589,
+      "sha256": "b5a0d665c49f43061d567498447bb3ab061f4e439c2cf37ff9e61639206d3e6e"
+    },
+    {
+      "path": "B-candidate/scripts/qa-morphology.ts",
+      "bytes": 6219,
+      "sha256": "6e0969f3342c5da1e811db01667c8db32b995d96ac41ec86aae8bda3f5f04d5b"
+    },
+    {
+      "path": "FAILURE-A.json",
+      "bytes": 1943,
+      "sha256": "6c36df036b05f5345371f65015b55e7483bd494f4c68cb3d3e79675a6c48cc33"
+    },
+    {
+      "path": "PROTOCOL.md",
+      "bytes": 2291,
+      "sha256": "be17b055c0b1edd93819ca4aaf8f55ad72550d3957ce48d796b695d6612999c0"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1184,
+      "sha256": "cc7898285a666b1ff5cc4e4d962aa0591ed3f973a488b9e5d15ca62982fe943c"
+    },
+    {
+      "path": "TERMINAL-R1.json",
+      "bytes": 1174,
+      "sha256": "ef5d0053a3b484640a721b3a1d3f3340c7a0bc570a7a007cc36c40ac72248450"
+    },
+    {
+      "path": "diagnostic-extension.patch",
+      "bytes": 5156,
+      "sha256": "faa0018b156f03de0bf0cb382f8ee971f9657022ca62b690143b9a3f02f295f3"
+    },
+    {
+      "path": "input-manifest.json",
+      "bytes": 1636,
+      "sha256": "ce93c274aa73cdaa1f00b44ba8d31a72356f00127e63922616c9c4826d7a9384"
+    },
+    {
+      "path": "pre-run-freeze.json",
+      "bytes": 1075,
+      "sha256": "d69d679e3c03984b83ba8d2d63b874c78b40e8c64fad4054e0ad86dd1ab4b7a3"
+    },
+    {
+      "path": "qa-morphology.common.ts",
+      "bytes": 6219,
+      "sha256": "6e0969f3342c5da1e811db01667c8db32b995d96ac41ec86aae8bda3f5f04d5b"
+    },
+    {
+      "path": "qa-morphology.original.ts",
+      "bytes": 4439,
+      "sha256": "8bf22d63a6f7ce0a0f49708bab2bfceabe94456afc55365220e1d1a6610e570d"
+    },
+    {
+      "path": "run-one.py",
+      "bytes": 5486,
+      "sha256": "ec9fc41ea8792743e635cf4105a047eeadc2c370e5958d733a9822992193e0c4"
+    }
+  ],
+  "links": [
+    {
+      "path": "A-baseline/src",
+      "target": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/source/src"
+    },
+    {
+      "path": "B-candidate/src",
+      "target": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r3-v55-source/src"
+    }
+  ],
+  "payloadFiles": 15,
+  "payloadBytes": 45753,
+  "noHeavyOutputOrRawVolume": true
+}

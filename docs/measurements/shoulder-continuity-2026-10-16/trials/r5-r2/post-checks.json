@@ -1,0 +1,29 @@
+{
+  "source119UnchangedAfterBuild": true,
+  "nodeModulesIgnoreAfter": "1",
+  "compiledCSS": {
+    "R5R2": {
+      "CumulonimbusApp-cF_C7VpQ.css": "8fa5caae7a4a84b322de0f4b4885c00816ce60ebdb12222af3843261d4064182",
+      "index-Cia3ypEr.css": "99354a5ec1ade2941e4aba36f030b413c9afbad79336f11800929c7d805b4714"
+    },
+    "A": {
+      "CumulonimbusApp-cF_C7VpQ.css": "8fa5caae7a4a84b322de0f4b4885c00816ce60ebdb12222af3843261d4064182",
+      "index-Cia3ypEr.css": "99354a5ec1ade2941e4aba36f030b413c9afbad79336f11800929c7d805b4714"
+    },
+    "R3": {
+      "CumulonimbusApp-cF_C7VpQ.css": "8fa5caae7a4a84b322de0f4b4885c00816ce60ebdb12222af3843261d4064182",
+      "index-Cia3ypEr.css": "99354a5ec1ade2941e4aba36f030b413c9afbad79336f11800929c7d805b4714"
+    },
+    "R5R1": {
+      "CumulonimbusApp-cF_C7VpQ.css": "8fa5caae7a4a84b322de0f4b4885c00816ce60ebdb12222af3843261d4064182",
+      "index-Cia3ypEr.css": "99354a5ec1ade2941e4aba36f030b413c9afbad79336f11800929c7d805b4714"
+    }
+  },
+  "sourceDiffOnly": [
+    "src/cumulonimbus/volume.ts",
+    "src/cumulonimbus/GPUSceneEngine.ts"
+  ],
+  "runtime": {
+    "node": "v24.19.0 arm64"
+  }
+}

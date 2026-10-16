@@ -1,0 +1,16 @@
+{
+  "status": "PASS_INDEPENDENT_DECIMAL_JSON_REDUCTION_AND_HASHES",
+  "payloadFilesVerified": 37,
+  "sourceFilesVerified": 238,
+  "commonA_BScriptSha256": "4ade71b2c3d7fc70826797f06d55bfae2eeabae3462cbe12ba5b606173b15262",
+  "guardOnlyScriptDiff": true,
+  "integratedDensityDelta": "0.465540806449560",
+  "integratedDensityPercentDecimal": "3.1961377025153866764887973964904314418479894375968",
+  "sectionRowsVerified": 256,
+  "profileColumnsUnchanged": 256,
+  "supportBoundsUnchanged": true,
+  "sixOuterAndSecondLayersRZeroBoth": true,
+  "bothExit0AndReaped": true,
+  "r1FailureStillPreserved": true,
+  "limits": "Independent arithmetic/schema/hash verification over saved JSON. No raw macro-array replay, GPU, rendered-image, FPS or art acceptance."
+}

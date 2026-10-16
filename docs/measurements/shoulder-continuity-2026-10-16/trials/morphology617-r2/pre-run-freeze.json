@@ -1,0 +1,22 @@
+{
+  "status": "R2_FROZEN_BEFORE_ANY_NEW_BUN_GENERATION",
+  "frozenAtUtc": "2026-10-16T17:05:06.738054+00:00",
+  "sha256": {
+    "PROTOCOL.md": "09f726babf7057eaf4bd2ccd364ce15a1a453081f4b8242ef0606488852345e1",
+    "input-manifest.json": "9b03d786e5ac17ac161cbe51f09269e84ad0cb74eb9cccbda7c7c140126250fb",
+    "run-one.py": "5a5faf195aa4df1cc0566129ddb68914ebc0c054e664d0be976b9f86bd35c0d8",
+    "run-one.r1.py.frozen": "ec9fc41ea8792743e635cf4105a047eeadc2c370e5958d733a9822992193e0c4",
+    "validate-output.py": "123057feb8da7ea4aa51f2d6d4d87994b24ee8fd48e09ab1dcabeb9ac022e2f2",
+    "qa-morphology.original.ts": "8bf22d63a6f7ce0a0f49708bab2bfceabe94456afc55365220e1d1a6610e570d",
+    "qa-morphology.common.ts": "4ade71b2c3d7fc70826797f06d55bfae2eeabae3462cbe12ba5b606173b15262",
+    "qa-morphology.r1-common.ts.frozen": "6e0969f3342c5da1e811db01667c8db32b995d96ac41ec86aae8bda3f5f04d5b",
+    "guard-only-r1-to-r2.patch": "3e70ceb08156e21ec436b6da2c9735ce6d87831e4f328fb85aab13b0eb0b37c1",
+    "A-baseline/scripts/qa-morphology.ts": "4ade71b2c3d7fc70826797f06d55bfae2eeabae3462cbe12ba5b606173b15262",
+    "B-candidate/scripts/qa-morphology.ts": "4ade71b2c3d7fc70826797f06d55bfae2eeabae3462cbe12ba5b606173b15262"
+  },
+  "CPUSeconds": 180,
+  "wallSeconds": 240,
+  "rssBytes": 2147483648,
+  "oneRunPerSide": true,
+  "BRequiresAExit0AndValidatedJSON": true
+}

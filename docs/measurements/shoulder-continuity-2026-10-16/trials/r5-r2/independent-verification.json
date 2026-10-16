@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "payloadFiles": 31,
+  "sourceFiles": 119,
+  "checks": "31 focused + tsc + app/hero recorded PASS; all119source and both dist manifests rehashed; R1 archive preserved",
+  "scope": "archive/data verification only; no generator, new scanner, browser or GPU executed"
+}

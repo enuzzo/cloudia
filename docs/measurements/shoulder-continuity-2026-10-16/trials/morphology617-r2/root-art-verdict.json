@@ -1,0 +1,7 @@
+{
+  "reportedBy": "root",
+  "model": "anatomy R3",
+  "status": "NOT_ADOPTED",
+  "reason": "body-only617 appears pillow-like; near body fills the view",
+  "scope": "Root visual decision supplied after this CPU comparison; this agent did not run GPU/browser or independently inspect that new image. R4 is a distinct upcoming experiment, not run here."
+}

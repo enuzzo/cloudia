@@ -1,0 +1,11 @@
+--- R1/qa-morphology.common.ts
++++ R2/qa-morphology.common.ts
+@@ -8,7 +8,7 @@
+ const seeds=process.argv.slice(4).map(Number);
+ if(!seeds.length) seeds.push(72,73,74,1571198069);
+ if(!seeds.every(Number.isSafeInteger)) throw new Error('Seeds must be safe integers');
+-const RSS_CAP=1024**3;let sampledRssPeak=0;
++const RSS_CAP=2*1024**3;let sampledRssPeak=0;
+ function rssGuard(stage:string){const value=process.memoryUsage.rss();sampledRssPeak=Math.max(sampledRssPeak,value);if(value>RSS_CAP)throw new Error(`RSS limit exceeded at ${stage}: ${value}>${RSS_CAP}`);}
+ function boundaryLayers(data:Uint8Array,size:number){
+  const faces=[];

@@ -1,0 +1,10 @@
+--- a/scripts/qa-layout.ts
++++ b/scripts/qa-layout.ts
+@@ -59,6 +59,6 @@
+ const topFiveInwardRecenterKm=rows.filter(row=>row.mode==='inward-projected').sort((a,b)=>b.recenterKm!-a.recenterKm!||a.seed-b.seed).slice(0,5).map(({seed,recenterKm,recenterDeltaXZ,projection,r3FullAxisRecenterKm})=>({seed,recenterKm,recenterDeltaXZ,projection,r3FullAxisRecenterKm}));
+ const report={status:incomplete?'INCOMPLETE_CPU_BUDGET':'PASS_PROJECTED_SHOULDER_LAYOUT_CONTRACTS',rangeInclusive:[0,1023],checked:rows.length,sourceSHA256:sha(source),references:referenceInputs,counts,topFiveInwardRecenterKm,maxR3ProjectedDeltaDifferenceKm,
+  runtime:{node:process.version,bun:process.versions.bun??null,arch:process.arch},cpuUs:cpu(),rows,layoutEncoding:'Float64LE stream: lobe count, tuple lengths, every component; signed zero retained',
+- scope:'Three actual prefixes: baseline/R3/final. R3 evaluated only for inward projections. Unchanged-family/outward layouts, sheared bodies and all non-XZ/outside tuples are baseline-exact; component/perpendicular/relative-offset properties use1e-12km precision. No density/bake/GPU/artistic/FPS proof.'};
++ scope:'Actual final generator prefix and observed semantic properties. Optional baseline/R3 references qualify identity and inward projected-component comparisons only when supplied; see references/counts. Component/perpendicular/relative-offset properties use1e-12km precision. No density/bake/GPU/artistic/FPS proof.'};
+ writeFileSync(output,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({...report,rows:undefined}));
+ if(incomplete||report.cpuUs>5_000_000)process.exitCode=1;

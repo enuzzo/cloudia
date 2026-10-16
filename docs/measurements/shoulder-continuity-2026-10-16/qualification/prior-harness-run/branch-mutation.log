@@ -1,0 +1,19 @@
+START {"name": "branch-mutation", "pid": 88564, "command": ["bun", "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification/mutation-check.ts"], "kernelCpuSeconds": null, "wallLimitSeconds": 60}
+25 |  assert(error.includes(v.expected),v.name+' survived or failed for the wrong reason: '+error);
+26 |  return {name:v.name,seed:v.seed,sourceSHA256:sha(v.source),expected:v.expected,rejected:true,error:error.slice(0,6000)};
+27 | });
+28 | const marker='  // Rasterize lobes into their local bounds instead of testing every lobe at every voxel.';let anchorError='';
+29 | try{createLayoutPrefix(source.replace(marker,marker+' changed'));}catch(caught){anchorError=String(caught);}
+30 | assert(anchorError.includes('Extraction anchor changed'));
+     ^
+AssertionError: false == true
+ generatedMessage: true,
+     actual: false,
+   expected: true,
+   operator: "==",
+       code: "ERR_ASSERTION"
+
+      at /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification/mutation-check.ts:30:1
+
+Bun v1.3.11 (macOS arm64)
+COMPLETE {"name": "branch-mutation", "command": ["bun", "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification/mutation-check.ts"], "exitCode": 1, "durationSeconds": 0.43790041701868176, "wallTimedOut": false, "kernelCpuSeconds": null}

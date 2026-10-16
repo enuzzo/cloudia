@@ -1,0 +1,52 @@
+{
+  "status": "A_BASELINE_RSS_FAIL_NO_AB_DENSITY_CONCLUSION",
+  "A": {
+    "status": "FAIL_STOP_NO_RESTART",
+    "case": "A-baseline",
+    "command": [
+      "/Users/enuzzo/.bun/bin/bun",
+      "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/morphology617-ab/A-baseline/scripts/qa-morphology.ts",
+      "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/morphology617-ab/A-baseline.json",
+      "256",
+      "617"
+    ],
+    "exitCode": -15,
+    "error": "MemoryError: live RSS1096220672 exceeds1073741824",
+    "elapsedSeconds": 20.47402979200706,
+    "childCpuSeconds": 20.629973999999997,
+    "cpuLimitSeconds": 180,
+    "wallLimitSeconds": 240.0,
+    "sampledPeakRssBytes": 1096220672,
+    "sampleCount": 364,
+    "lifetimeHighwaterRssBytes": 1096548352,
+    "rssLimitBytes": 1073741824,
+    "rssMonitor": "libproc PROC_PIDTASKINFO every50ms + child self-checks; final exact RUSAGE_CHILDREN highwater",
+    "ownedChildReaped": true,
+    "sourceManifestSha256": "30c5448e87fb60c3bd3fdc8ca133993c49e54503a9950f9da1815fd59883171f",
+    "scriptSha256": "6e0969f3342c5da1e811db01667c8db32b995d96ac41ec86aae8bda3f5f04d5b",
+    "outputSha256": null,
+    "noPs": true,
+    "noRestart": true,
+    "noVolumeDataMutation": true
+  },
+  "B": "NOT_STARTED_PENDING_PARENT_STEERING",
+  "restartCount": 0,
+  "scope": "The declared1GiB budget failed in the immutable baseline; this is not evidence of a candidate regression. No final mass/centroid/connectivity/profile/boundary JSON exists.",
+  "residentHighwaterMiB": 1045.75,
+  "residentHighwaterOverCapBytes": 22806528,
+  "filesPreserved": [
+    "PROTOCOL.md",
+    "input-manifest.json",
+    "pre-run-freeze.json",
+    "qa-morphology.original.ts",
+    "qa-morphology.common.ts",
+    "diagnostic-extension.patch",
+    "run-one.py",
+    "A-baseline-control.json",
+    "A-baseline.log",
+    "A-wrapper.log"
+  ],
+  "noProductEdits": true,
+  "noGPU": true,
+  "ownedChildReaped": true
+}

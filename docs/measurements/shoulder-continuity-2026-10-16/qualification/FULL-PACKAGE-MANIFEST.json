@@ -1,0 +1,252 @@
+{
+  "status": "EXTERNAL_OFFICIAL_SOURCE_QUALIFIED_ROOT_VISUAL_ADOPTION_SEPARATE",
+  "source": {
+    "path": "../anatomy-r5-v55-source",
+    "fileCount": 122,
+    "payloadBytes": 17602721,
+    "freezeSHA256": "85bad74add34479c92228367e4cb25d6a3274761b2ae143cdceef25fe887e643",
+    "manifestSHA256": "e826b119ff2758fa51ed04cf8748d0d40ad1ff09516fc498826466ceae3974b7"
+  },
+  "dist": {
+    "path": "../anatomy-r5-v55-source/dist",
+    "fileCount": 30,
+    "payloadBytes": 39268581
+  },
+  "evidence": {
+    "files": [
+      {
+        "path": "PROTOCOL.json",
+        "bytes": 3340,
+        "sha256": "6eeb0d3aef13040f3d1654fe813694fd6e22dd008fb580aefdb50a2bde10aba2"
+      },
+      {
+        "path": "REPORT.md",
+        "bytes": 7762,
+        "sha256": "ef110b87480d4688262b6052f217cf335364aba78055da39b903b8228c946066"
+      },
+      {
+        "path": "UNAPPLIED-qa-layout-scope.patch",
+        "bytes": 1627,
+        "sha256": "a503fc7c28f5b2023b9c416ef51d72100e25e0f8f820c96ebb406fdbb8c66c33"
+      },
+      {
+        "path": "app-build.log",
+        "bytes": 1758,
+        "sha256": "bf7147297a8d3149e1bff1b21da8ac4755e07df614f4f8d9e2b4795c63ec4902"
+      },
+      {
+        "path": "baseline-source-manifest.json",
+        "bytes": 12480,
+        "sha256": "30c5448e87fb60c3bd3fdc8ca133993c49e54503a9950f9da1815fd59883171f"
+      },
+      {
+        "path": "branch-mutation.log",
+        "bytes": 2685,
+        "sha256": "ef205d15cf054aa29da499c91e6d2f0f0215abea012b5d601a635bb8e5c719f5"
+      },
+      {
+        "path": "candidate.patch",
+        "bytes": 32040,
+        "sha256": "53eedfbc122a05860c12cbe679d50f9fce90d9842eafd7dd254b943c22802f44"
+      },
+      {
+        "path": "checks.json",
+        "bytes": 2844,
+        "sha256": "1c00e3c8d1199a7b71edb3f780e68643acc0dff26164d9b1fa0595af48902728"
+      },
+      {
+        "path": "dist-manifest.json",
+        "bytes": 4295,
+        "sha256": "4b4e05993ba4848038503e6d8fcb77c52c8205b4948823fee08d7afa66325bd5"
+      },
+      {
+        "path": "full-test-results.json",
+        "bytes": 133243,
+        "sha256": "48fd7708aaf5a2d8ed161572bd0d263db135b071a4bd6da143f5704435111dc5"
+      },
+      {
+        "path": "full-tests.log",
+        "bytes": 941,
+        "sha256": "b3b8de0a96b541795ee19f4413407033f6393b244f8cb1d2497f164b4ae2e85b"
+      },
+      {
+        "path": "hero-build.log",
+        "bytes": 675,
+        "sha256": "d7e1fdf757f1e608388b490130e5f832821b228ad6b13fe99a729e120a1ea5ed"
+      },
+      {
+        "path": "inherited-checks.json",
+        "bytes": 1688,
+        "sha256": "7c87cb2616bc7337ab64a8fe45eb9cf9048ff03c29333516a7a3caf87491d631"
+      },
+      {
+        "path": "layout1024.json",
+        "bytes": 667078,
+        "sha256": "aada167539ecb3f2c5cd076b5795b82d4a2a3c49d54f1890f051613a9c5348f5"
+      },
+      {
+        "path": "mutation-check.ts",
+        "bytes": 3549,
+        "sha256": "8897e5839f1701d27f105ef5d2275972a0cf523e5530ae74ed6891df8d549ad3"
+      },
+      {
+        "path": "mutation-results.json",
+        "bytes": 3272,
+        "sha256": "e7c37a1e039ded41e50680926fb02f6dc1f133f54656b1debae71bd435324da0"
+      },
+      {
+        "path": "mutations/covered-inward-skipped.volume.ts",
+        "bytes": 29883,
+        "sha256": "7023ccce0a9963408d4c9a244c3f076b55ddf7e46112bd5e9715f6828b839ecc"
+      },
+      {
+        "path": "mutations/duplicate-alias.volume.ts",
+        "bytes": 29860,
+        "sha256": "66581200643c4ea69cd3c4ea110c553ea9f2afdae5a4183c78061da372bb2885"
+      },
+      {
+        "path": "mutations/extra-joint-rng.volume.ts",
+        "bytes": 29847,
+        "sha256": "e16645ec85f28749af9fd9858e1eca905614c2e649bbeaa03cec884f0a76debd"
+      },
+      {
+        "path": "mutations/full-axis-collapse.volume.ts",
+        "bytes": 29846,
+        "sha256": "a44e62e13330b93ab6afd6386aab1dd33aef4faf96b10e05f3a884ac588c2438"
+      },
+      {
+        "path": "mutations/no-joint.volume.ts",
+        "bytes": 29843,
+        "sha256": "5313d45749d44c53570b31552b026d69b32849780910fc6c62949dc1f35b87f1"
+      },
+      {
+        "path": "mutations/r3-forbidden-body-lift.volume.ts",
+        "bytes": 30231,
+        "sha256": "ebacc5ad2bca3515f34bfa4d2a4fe028ef4d20c09bcbe446104cfc794569a190"
+      },
+      {
+        "path": "mutations/r4-forbidden-body-lift.volume.ts",
+        "bytes": 30265,
+        "sha256": "52078334f68a827c5d4673483ffa5e53de394d894716985199613b5b3d8e81f1"
+      },
+      {
+        "path": "named-witnesses.json",
+        "bytes": 11455,
+        "sha256": "b6d24a62045ec001264be9de4fb3cb0bbc14e8a84398e237beef0a71b9bb3b41"
+      },
+      {
+        "path": "nine-test-results.json",
+        "bytes": 4393,
+        "sha256": "3a9b4e1fa19d808504829cff0cd01000b98a28fb40757bafa15b389c6a282cbc"
+      },
+      {
+        "path": "nine-tests.log",
+        "bytes": 1054,
+        "sha256": "ca759482114e1182bac883f12c6562f94603557e45ae55e63b05a44ce9b2c7c0"
+      },
+      {
+        "path": "post-checks.json",
+        "bytes": 617,
+        "sha256": "48bf249f667f176f4b332184402c8a63341edcf886bbfad8e971bf3880212659"
+      },
+      {
+        "path": "prior-harness-run/MANIFEST.json",
+        "bytes": 4316,
+        "sha256": "a129f60fa2002bb2d495c3128a31244e0fd37a2b45892dfd6b06e82f7c889501"
+      },
+      {
+        "path": "prior-harness-run/PROTOCOL.json",
+        "bytes": 2642,
+        "sha256": "40f709041f1acccb371b81a6788cdd619ce24f9b209012bcd9997cfdcd6548cd"
+      },
+      {
+        "path": "prior-harness-run/branch-mutation.log",
+        "bytes": 1342,
+        "sha256": "6ae01de7a9095af365ac0c16e9767497769e8f96333aff62f36466c6504ca54d"
+      },
+      {
+        "path": "prior-harness-run/checks.json",
+        "bytes": 1558,
+        "sha256": "5aa74d7d1b32566221c98ea07602e884bb1f973d7074e513ecb5a011642cb815"
+      },
+      {
+        "path": "prior-harness-run/mutation-check.ts",
+        "bytes": 3527,
+        "sha256": "1bd4d78b0db74d1a8be4dc2d6242ee4c68984a233e2bb3aaa34b7ffbd336af5a"
+      },
+      {
+        "path": "prior-harness-run/run-qualification.py",
+        "bytes": 3535,
+        "sha256": "f7c751db18a903f5a881c405e11b24bea2ba9f1d65ec6c3b95e218fdf74e3c80"
+      },
+      {
+        "path": "prior-harness-run/source-freeze.json",
+        "bytes": 13851,
+        "sha256": "1a19ff811c68f5502d43182a4b24cf214df92aa32c42d4549d8dc5f5509a62ab"
+      },
+      {
+        "path": "rain-source-manifest.json",
+        "bytes": 12480,
+        "sha256": "5e684127a396920bca727ba89fd19bc5776084801ae2ca7e1e2d82313c4f8e05"
+      },
+      {
+        "path": "references/baseline-layout.mjs",
+        "bytes": 20466,
+        "sha256": "a08bb50ebc0fce70c1474e55f41c9bd57038981619e5d106cddb7d50c38d5a14"
+      },
+      {
+        "path": "references/r3-body-lift.volume.ts",
+        "bytes": 30231,
+        "sha256": "ebacc5ad2bca3515f34bfa4d2a4fe028ef4d20c09bcbe446104cfc794569a190"
+      },
+      {
+        "path": "references/r3-layout.mjs",
+        "bytes": 23765,
+        "sha256": "7b7ec18131bdc8bf04185f0b66c580b48e7f36ca07aacde940060935ff923e18"
+      },
+      {
+        "path": "references/r4-body-lift.volume.ts",
+        "bytes": 30265,
+        "sha256": "52078334f68a827c5d4673483ffa5e53de394d894716985199613b5b3d8e81f1"
+      },
+      {
+        "path": "run-qualification.py",
+        "bytes": 3217,
+        "sha256": "61fd75e2fff573620c2005d244d016d3d62763da1ac59e34bdbb821b9a1cafe4"
+      },
+      {
+        "path": "scanner.log",
+        "bytes": 3395,
+        "sha256": "bbdf3a87f3cbbbcd2c655c3022ed47f9a1e4a2b39add156a9350e06952bc2644"
+      },
+      {
+        "path": "source-freeze.json",
+        "bytes": 13943,
+        "sha256": "85bad74add34479c92228367e4cb25d6a3274761b2ae143cdceef25fe887e643"
+      },
+      {
+        "path": "source-manifest.json",
+        "bytes": 12815,
+        "sha256": "e826b119ff2758fa51ed04cf8748d0d40ad1ff09516fc498826466ceae3974b7"
+      },
+      {
+        "path": "typecheck.log",
+        "bytes": 322,
+        "sha256": "77f9b9651a1bdb1f7abff3d9c744c9b1fedc8898623370c76f40a4196c822f01"
+      },
+      {
+        "path": "verify.py",
+        "bytes": 8569,
+        "sha256": "cba9363cd5a2999716e8a8570c5252c063f33362bc6c34b71a7ab1965b7ceeff"
+      }
+    ],
+    "fileCount": 45,
+    "payloadBytes": 1296810
+  },
+  "totalPayloadFiles": 197,
+  "totalPayloadBytes": 58168112,
+  "dependencyLinksAndTopManifestSelfExcluded": true,
+  "scannerExecutions": 1,
+  "originalHarnessFAILPreserved": true,
+  "minorScopePatchApplied": false
+}

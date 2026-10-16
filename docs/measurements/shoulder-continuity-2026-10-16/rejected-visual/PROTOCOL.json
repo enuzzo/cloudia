@@ -1,0 +1,42 @@
+{
+  "createdAt": "2026-10-16T16:46:51.596255+00:00",
+  "previousGoalTurn": "progress: committedUI4e03640/d5f613f andv55ede11e0 with measured native scene; goal remains active",
+  "baselineCommit": "ede11e0fda5f7f7a81e6e6cb1f76fbfbb08a4e3f",
+  "baselineSourceManifest": "30c5448e87fb60c3bd3fdc8ca133993c49e54503a9950f9da1815fd59883171f",
+  "candidate": "R3 volume SHAebacc5ad2bca3515f34bfa4d2a4fe028ef4d20c09bcbe446104cfc794569a190, overlay onto verifiedv55; no product edits before qualification",
+  "seeds": [
+    77,
+    80,
+    617
+  ],
+  "route": "?seed=SEED&profile=1&surface=1&target=0,2.7,0",
+  "fixedState": "Fissa stato di confronto then Sole; t60 paused,wind55,dispersion0,full flow",
+  "quality": {
+    "volume": 256,
+    "detail": 128,
+    "steps": 384,
+    "output": [
+      1920,
+      1080
+    ],
+    "canvasCss": [
+      1237,
+      922
+    ]
+  },
+  "keys": {
+    "pixelStep": 36,
+    "frontLeftKeys": 0,
+    "sideLeftKeys": 16,
+    "backLeftKeys": 32,
+    "pitchDownKeys": 0,
+    "yawStepRadians": 0.09894907033144704
+  },
+  "visualQuestions": [
+    "Does common core support the mature shoulder without a horizontal shelf or detached inward tooth?",
+    "Are younger summit/wrist and outer shoulders still distinct in77/80?",
+    "Does maximum body-only lift617 create swelling or new occlusion compared to baseline?",
+    "Do silhouettes remain credible front/side/back at full-quality output?"
+  ],
+  "limits": "CSS JPEGs not native framebuffer exports. No FPS gain, ray identity, general photo acceptance from these isolated views. Near/lowSun/rain are separate subsequent checks."
+}

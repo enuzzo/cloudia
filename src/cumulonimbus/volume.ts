@@ -165,6 +165,8 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
   // summits and outflow geometry change topology, rather than scaling one stack.
   const liquid:Lobe[]=[],iceCores:Lobe[]=[],summits:Lobe[]=[],foundations:Lobe[]=[];
   const capParents=new Map<Lobe,Lobe>();
+  const authoredShoulders:Array<{core:Lobe;top:Lobe;foundation:Lobe;ordinal:number}>=[];
+  let sharedBody:Lobe|null=null;
   const anatomy=random(seed^0x1b37c9a5);
   const turret=(x:number,z:number,height:number,width:number,lean:number) => {
     // Each updraft has its own emergence height, course and rate of expansion.
@@ -187,8 +189,9 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
     for(let j=0;j<shoulders;j++) {
       const angle=phase+j*(2.05+anatomy()*.65),level=.3+anatomy()*.38;
       const radius=girth*(.62+anatomy()*.24),bulge=girth*(.45+anatomy()*.2);
-      liquid.push([siteX+lean*level+Math.cos(angle)*radius,lower+(crest-lower)*level,
-        siteZ+depth*level+Math.sin(angle)*radius,bulge,bulge*(.88+anatomy()*.4),bulge*(.82+anatomy()*.3),.16]);
+      const lateral:Lobe=[siteX+lean*level+Math.cos(angle)*radius,lower+(crest-lower)*level,
+        siteZ+depth*level+Math.sin(angle)*radius,bulge,bulge*(.88+anatomy()*.4),bulge*(.82+anatomy()*.3),.16];
+      liquid.push(lateral);authoredShoulders.push({core:lateral,top,foundation,ordinal:j});
     }
   };
   if(shape.family==='congestus') {
@@ -229,9 +232,10 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
     // A shared replenished body occupies the lower/middle space between the
     // actual updraft sites. The younger summit remains separate above it.
     const [a,b]=summits,rise=Math.min(a[1],b[1])-.72;
-    liquid.push([(a[0]+b[0])*.5,.72+rise*.5,(a[2]+b[2])*.5,
+    sharedBody=[(a[0]+b[0])*.5,.72+rise*.5,(a[2]+b[2])*.5,
       Math.abs(a[0]-b[0])*.5+Math.min(a[3],b[3])*.68,rise*.29+.16,
-      Math.max(a[5],b[5])*.95+Math.abs(a[2]-b[2])*.35,.18]);
+      Math.max(a[5],b[5])*.95+Math.abs(a[2]-b[2])*.35,.18];
+    liquid.push(sharedBody);
     // The upper tower is advected into a narrow, long incus, with a short
     // upwind shoulder and a much longer fibrous downwind end.
     iceCores.push([-.25,5.85,-.2,1.45,.44,1.3,.045],[1.45,6.02,-.2,2.25,.36,1.05,.035]);
@@ -272,7 +276,15 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
     }
   }
   const lobes:Lobe[]=[...liquid,...iceCores];
+  // Retain actual descendants without changing the append schedule or RNG.
+  const trackedGroups=new Map<Lobe,Set<Lobe>>();
+  if(shape.family==='sheared') {
+    if(!sharedBody)throw new Error('The joint-body trial needs its shared body');
+    trackedGroups.set(sharedBody,new Set([sharedBody]));
+    for(const {core} of authoredShoulders)trackedGroups.set(core,new Set([core]));
+  }
   [...liquid,...iceCores].forEach((c,i) => {
+    const tracked=trackedGroups.get(c);
     const isIce=i>=liquid.length,count=isIce?10:18;
     for (let j=0; j<count; j++) {
       const theta=rng()*Math.PI*2, elevation=(rng()-.5)*1.8;
@@ -285,11 +297,13 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
       const radius=isIce?.68:.78,stretchX=isIce?(shearedIce?1.7:1.45):1,stretchY=isIce?(shearedIce?.16:.48):1;
       lobes.push([c[0]+Math.cos(theta)*c[3]*radius*Math.cos(elevation), c[1]+Math.sin(elevation)*c[4]*radius,
         c[2]+Math.sin(theta)*c[5]*radius*Math.cos(elevation), s*stretchX, s*stretchY, s*.85, isIce?.045:.2]);
+      tracked?.add(lobes.at(-1)!);
       if(!isIce) {
         const l=lobes.at(-1)!;
         for(let k=0;k<4;k++) {
           const a=rng()*Math.PI*2,e=(rng()-.5)*2,r=s*(.24+rng()*.22);
           lobes.push([l[0]+Math.cos(a)*s*.76*Math.cos(e),l[1]+Math.sin(e)*s*.76,l[2]+Math.sin(a)*s*.76*Math.cos(e),r,r*.9,r]);
+          tracked?.add(lobes.at(-1)!);
         }
       }
     }
@@ -330,6 +344,30 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
     const extent=Math.max(...lobes.map(c=>Math.abs(c[axis])+c[radius]));
     const scale=Math.min(1,limit/extent);
     for(const c of lobes) {c[axis]*=scale;c[radius]*=scale;}
+  }
+  if(shape.family==='sheared') {
+    // Remove only the inward component of the mature shoulder offset;
+    // perpendicular offsets, shared body and other groups stay unchanged.
+    const mature=summits.reduce((a,b)=>a[1]>b[1]?a:b),foot=foundations[summits.indexOf(mature)];
+    const others=foundations.filter(value=>value!==foot);
+    if(others.length!==1||!sharedBody)throw new Error('The joint-body trial needs two source cells');
+    const direction=[others[0][0]-foot[0],0,others[0][2]-foot[2]],length=Math.hypot(...direction);
+    if(!(length>0))throw new Error('The joint-body trial needs distinct source cells');
+    const inner=direction.map(value=>value/length);
+    const candidates=authoredShoulders.filter(value=>value.top===mature).map(value=>{
+      const t=(value.core[1]-foot[1])/(mature[1]-foot[1]);
+      const pivot=[foot[0],foot[1],foot[2]].map((coordinate,axis)=>coordinate+(mature[axis]!-coordinate)*t);
+      const offset=[value.core[0],value.core[1],value.core[2]].map((coordinate,axis)=>coordinate-pivot[axis]);
+      const projection=offset.reduce((sum,coordinate,axis)=>sum+coordinate*inner[axis],0);
+      return {...value,pivot,projection};
+    });
+    if(!candidates.length)throw new Error('The joint-body trial needs an authored mature shoulder');
+    const selected=candidates.reduce((a,b)=>a.projection>b.projection?a:b);
+    const bodyGroup=trackedGroups.get(sharedBody)!,innerGroup=trackedGroups.get(selected.core)!;
+    if(bodyGroup.size!==91||innerGroup.size!==91||new Set([...bodyGroup,...innerGroup]).size!==182)
+      throw new Error('The joint-body trial needs two distinct complete descendant groups');
+    const translation=[-inner[0]*selected.projection,0,-inner[2]*selected.projection];
+    if(selected.projection>0)for(const lobe of innerGroup){lobe[0]+=translation[0];lobe[2]+=translation[2];}
   }
   // Rasterize lobes into their local bounds instead of testing every lobe at every voxel.
   for (const [cx,cy,cz,rx,ry,rz,blend=.2] of lobes) {

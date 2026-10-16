@@ -1,0 +1,41 @@
+{
+  "bands": [
+    {
+      "worldYBandKm": [
+        -0.5,
+        0.9
+      ],
+      "A": 0.06802697976430272,
+      "B": 0.06802697976430272,
+      "delta": 0.0
+    },
+    {
+      "worldYBandKm": [
+        0.9,
+        2
+      ],
+      "A": 6.9642836451536,
+      "B": 6.933228194714143,
+      "delta": -0.031055450439456678
+    },
+    {
+      "worldYBandKm": [
+        2,
+        3.5
+      ],
+      "A": 4.82549929618847,
+      "B": 5.315394798914766,
+      "delta": 0.4898955027262959
+    },
+    {
+      "worldYBandKm": [
+        3.5,
+        8
+      ],
+      "A": 2.707920650641107,
+      "B": 2.714621404806756,
+      "delta": 0.00670075416564897
+    }
+  ],
+  "scope": "Read-only sums over saved sections using existing original lean-band boundaries0.9/2/3.5 plus domain edges. Descriptive, not a fitted or acceptance threshold."
+}

@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-16T17:33:08.778514+00:00",
+  "baselineVersion": "observatory-v55-s2-chromaticity",
+  "candidateVersion": "observatory-v56-inward-shoulder-trial",
+  "equalFields": {
+    "comparisonSurfaceKm": true,
+    "comparisonTargetKm": true,
+    "probeSkipped": true,
+    "approach": true,
+    "origin": true,
+    "surfaceEstimateKm": true,
+    "yaw": true,
+    "pitch": true,
+    "target": true
+  },
+  "baselineCamera": {
+    "comparisonSurfaceKm": null,
+    "comparisonTargetKm": null,
+    "probeSkipped": false,
+    "approach": 1,
+    "origin": [
+      0.52734375,
+      3.052734375,
+      0.25908496633069245
+    ],
+    "probeFlow": "16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively",
+    "probeFieldBytes": 32768,
+    "surfaceEstimateKm": 0.23174121633069247,
+    "probe": {
+      "distance": 0.23174121633069247,
+      "found": true,
+      "samples": 225,
+      "spacingKm": 0.012449824892241378,
+      "spanKm": 2.888359375,
+      "cpuMs": 0.20000004768371582,
+      "fieldFillMs": 0,
+      "boundaryMs": 0.20000004768371582
+    },
+    "probeAgeMs": 115.30000002383895,
+    "altitudeKm": 7.052734375,
+    "ground": 1,
+    "yaw": 0,
+    "pitch": 0,
+    "target": [
+      0.52734375,
+      3.052734375,
+      0.02734375
+    ]
+  },
+  "candidateCamera": {
+    "comparisonSurfaceKm": null,
+    "comparisonTargetKm": null,
+    "probeSkipped": false,
+    "approach": 1,
+    "origin": [
+      0.52734375,
+      3.052734375,
+      0.25908496633069245
+    ],
+    "probeFlow": "16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively",
+    "probeFieldBytes": 32768,
+    "surfaceEstimateKm": 0.23174121633069247,
+    "probe": {
+      "distance": 0.23174121633069247,
+      "found": true,
+      "samples": 225,
+      "spacingKm": 0.012449824892241378,
+      "spanKm": 2.888359375,
+      "cpuMs": 0.30000007152557373,
+      "fieldFillMs": 0,
+      "boundaryMs": 0.30000007152557373
+    },
+    "probeAgeMs": 105.79999995231628,
+    "altitudeKm": 7.052734375,
+    "ground": 1,
+    "yaw": 0,
+    "pitch": 0,
+    "target": [
+      0.52734375,
+      3.052734375,
+      0.02734375
+    ]
+  },
+  "scope": "Actual camera vectors/distance at t60/seed617/approach1, filtered-field probe enabled, 1920x1080. No native framebuffer identity or equal timing claimed."
+}

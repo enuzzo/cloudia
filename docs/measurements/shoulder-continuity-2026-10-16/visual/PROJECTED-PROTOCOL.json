@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-16T17:24:38.971614+00:00",
+  "candidate": "R5R2 external pending: translate inward component only, body and perpendicular offset unchanged",
+  "seeds": [
+    74,
+    77,
+    80,
+    617,
+    917,
+    926
+  ],
+  "specialControls": {
+    "917": "6.6998m inward vs941.805m fullaxis old shift; prove lateral form preserved",
+    "926": "maxpositive inward projection807.388m in saved1024R4rows, independent offline reduction"
+  },
+  "state": "same PROTOCOL.json t60paused/fullquality1920x1080",
+  "macro": "front/side/back fixedsurface1target0,2.7,0; compare originalv55 independently",
+  "near": "realprobe approach40/60/80 for74/77/80; max92640/80;617100 shouldpreserveA",
+  "sunsetRain": "74near40sunset and matchedrainpose; no jointphotos substitutedforfullphotorealPASS"
+}

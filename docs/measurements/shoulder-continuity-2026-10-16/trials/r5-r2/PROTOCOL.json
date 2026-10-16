@@ -1,0 +1,44 @@
+{
+  "status": "EXTERNAL R5 R2 TRIAL ONLY, NOT ADOPTED",
+  "frozenUTC": "2026-10-16T17:24:10.532344+00:00",
+  "baseline": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/source",
+  "r3": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r3-v55-source",
+  "baselineManifestSHA256": "30c5448e87fb60c3bd3fdc8ca133993c49e54503a9950f9da1815fd59883171f",
+  "r3ManifestSHA256": "e65c9209938773d3e4d1e3e6f649e4fb11bad01c731a4ee38258ebefdf39e3e9",
+  "parentR1ManifestSHA256": "659e968d949caa9320938fbc67ec6f9ece7a3dd82691bd7b128f9b20b6d06e13",
+  "parentR1SourceManifestSHA256": "f892755100cf21665dee22c6adb7f72707d30cdae3855fc3c9a5a09827e6a6bb",
+  "sourceFiles": 119,
+  "rendererVersion": "observatory-v56-inward-shoulder-trial",
+  "semantics": {
+    "translation": "if signed projection > 0, translate selected shoulder and 91-lobe group by -inner*projection in X/Z only",
+    "invariants": [
+      "shared body91 exact baseline A always",
+      "all Y, radii and blend values exact A",
+      "nonselected tuples exact A",
+      "inward projected offset becomes zero, perpendicular offset preserved",
+      "child relative offsets preserved",
+      "no new primitive/RNG/coefficient/noise/seed branch"
+    ],
+    "differenceFromR1": "no full pivot recenter: preserve authored offset perpendicular to source-cell inward axis",
+    "partitionFromPriorExistingScannerOnly": {
+      "inward": 323,
+      "outwardExactA": 18,
+      "otherFamilyExactA": 683
+    }
+  },
+  "checks": [
+    "7 named prefixes:74/77/80/617/323/917/2; no new 1024 scanner",
+    "typecheck",
+    "31 existing focused tests",
+    "one app then one separate hero build",
+    "source119/raster suffix/dependency identity"
+  ],
+  "notRun": [
+    "full suite",
+    "full-resolution bake",
+    "GPU",
+    "browser",
+    "performance"
+  ],
+  "quality": "256/128/384/full output unchanged; no promotion before root visual judgment"
+}

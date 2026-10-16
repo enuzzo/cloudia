@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-16T17:18:31.819669+00:00",
+  "baseline": "v55 ede11e0,4196",
+  "candidate": "external R5 translation-only pending source/build",
+  "seeds": [
+    74,
+    77,
+    80,
+    617
+  ],
+  "state": "t60 paused,wind55,disp0,fullflow",
+  "quality": "256/128/384 and1920x1080; native final separately",
+  "near": "no surface/target override; approach40/60/80; sunlight+40Tramonto on74",
+  "macro": "fixed surface1target0,2.7,0; front/16Left/32Left",
+  "decision": "remove inward tooth without body swelling; preserve younger towers/negative-space and baseline outward617; no globalnear/photoreal/FPS PASS"
+}

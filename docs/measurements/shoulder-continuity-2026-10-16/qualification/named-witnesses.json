@@ -1,0 +1,400 @@
+{
+  "2": {
+    "seed": 2,
+    "family": "sheared",
+    "lobes": 2009,
+    "mode": "inward-projected",
+    "projection": 0.522709427071171,
+    "oldRoof": 3.2633456232514453,
+    "attachmentY": 2.990151042751772,
+    "scale": 1,
+    "selectedCore": 6,
+    "inwardUnitXZ": [
+      0.8524184167352604,
+      0.5228602517026438
+    ],
+    "signedAfter": -8.326672684688674e-17,
+    "offsetBeforeXZ": [
+      0.6757337338613411,
+      -0.10193632487449175
+    ],
+    "perpendicularBeforeXZ": [
+      0.23016659162473846,
+      -0.37524030748026893
+    ],
+    "perpendicularAfterXZ": [
+      0.2301665916247385,
+      -0.3752403074802688
+    ],
+    "recenterDeltaXZ": [
+      -0.4455671422366026,
+      -0.27330398260577715
+    ],
+    "recenterKm": 0.522709427071171,
+    "bodyExact": true,
+    "outsideSelectedExact": true,
+    "allNonXZExact": true,
+    "layoutSHA256": "e2cdcb6f3ca10947c1ef17a90967f186a84c6613476845b546887ccdb20ba595",
+    "projectedDeltaKm": -0.522709427071171,
+    "r3ProjectedDeltaKm": -0.522709427071171,
+    "r3FullAxisRecenterKm": 0.6833791725002362,
+    "baselineSHA256": "ab92b32559e3344a221a7b73309f7255c2ecc03933579bd002d0b8b23d8fbe9b",
+    "baselineExact": false
+  },
+  "72": {
+    "seed": 72,
+    "family": "congestus",
+    "lobes": 2589,
+    "mode": "unmodified-family",
+    "projection": null,
+    "layoutSHA256": "49c90e9a82068942909e387d4399429e910d76e59e7b5003b591f87b14605f43",
+    "baselineSHA256": "49c90e9a82068942909e387d4399429e910d76e59e7b5003b591f87b14605f43",
+    "baselineExact": true
+  },
+  "73": {
+    "seed": 73,
+    "family": "multicell",
+    "lobes": 2179,
+    "mode": "unmodified-family",
+    "projection": null,
+    "layoutSHA256": "e1a1bd1703dbbb34f1eb5cec71620e68eaffdfbf5ca4f7495bc1f9a8cc5e512c",
+    "baselineSHA256": "e1a1bd1703dbbb34f1eb5cec71620e68eaffdfbf5ca4f7495bc1f9a8cc5e512c",
+    "baselineExact": true
+  },
+  "74": {
+    "seed": 74,
+    "family": "sheared",
+    "lobes": 1918,
+    "mode": "inward-projected",
+    "projection": 0.6210722799918347,
+    "oldRoof": 3.3957339692947617,
+    "attachmentY": 3.584486404103483,
+    "scale": 1,
+    "selectedCore": 5,
+    "inwardUnitXZ": [
+      0.9334797222855341,
+      0.3586301828927987
+    ],
+    "signedAfter": 2.7755575615628914e-17,
+    "offsetBeforeXZ": [
+      0.4848991015017522,
+      0.4696448024170362
+    ],
+    "perpendicularBeforeXZ": [
+      -0.09485927794426907,
+      0.24690953705391708
+    ],
+    "perpendicularAfterXZ": [
+      -0.09485927794426904,
+      0.24690953705391713
+    ],
+    "recenterDeltaXZ": [
+      -0.5797583794460213,
+      -0.2227352653631191
+    ],
+    "recenterKm": 0.6210722799918347,
+    "bodyExact": true,
+    "outsideSelectedExact": true,
+    "allNonXZExact": true,
+    "layoutSHA256": "69daae257162a9dad9c7a933d4a25c3d8ef3144a395bd91331a3b4f5d165545c",
+    "projectedDeltaKm": -0.6210722799918348,
+    "r3ProjectedDeltaKm": -0.6210722799918348,
+    "r3FullAxisRecenterKm": 0.6750506492660707,
+    "baselineSHA256": "f6ec7a262b932a01f0462534075c6d82f7c3156329846e8298ed690fa34fbeec",
+    "baselineExact": false
+  },
+  "77": {
+    "seed": 77,
+    "family": "sheared",
+    "lobes": 1827,
+    "mode": "inward-projected",
+    "projection": 0.6137912474239509,
+    "oldRoof": 3.103196462579894,
+    "attachmentY": 3.370142052422949,
+    "scale": 1,
+    "selectedCore": 6,
+    "inwardUnitXZ": [
+      0.9215382042905348,
+      0.38828770007943425
+    ],
+    "signedAfter": -8.326672684688674e-17,
+    "offsetBeforeXZ": [
+      0.7002906915210635,
+      -0.0812628855235222
+    ],
+    "perpendicularBeforeXZ": [
+      0.13465860756074843,
+      -0.31959047731465506
+    ],
+    "perpendicularAfterXZ": [
+      0.13465860756074852,
+      -0.319590477314655
+    ],
+    "recenterDeltaXZ": [
+      -0.5656320839603152,
+      -0.23832759179113283
+    ],
+    "recenterKm": 0.6137912474239511,
+    "bodyExact": true,
+    "outsideSelectedExact": true,
+    "allNonXZExact": true,
+    "layoutSHA256": "72cc4c22c64cf689f3aea1e1f817e0cbe484df39a33ff2556d3dea1d66981a68",
+    "projectedDeltaKm": -0.6137912474239511,
+    "r3ProjectedDeltaKm": -0.613791247423951,
+    "r3FullAxisRecenterKm": 0.7049898646042073,
+    "baselineSHA256": "1fe85b2bccc547387054fa2062400c9e79aa30043d1d8ff028342e4e7586c075",
+    "baselineExact": false
+  },
+  "80": {
+    "seed": 80,
+    "family": "sheared",
+    "lobes": 1918,
+    "mode": "inward-projected",
+    "projection": 0.3441820425061476,
+    "oldRoof": 3.278149879942327,
+    "attachmentY": 3.5717181833066807,
+    "scale": 1,
+    "selectedCore": 6,
+    "inwardUnitXZ": [
+      0.908840283561525,
+      0.4171442663825151
+    ],
+    "signedAfter": 1.1102230246251565e-16,
+    "offsetBeforeXZ": [
+      0.4985711476732717,
+      -0.2611554550792453
+    ],
+    "perpendicularBeforeXZ": [
+      0.1857646425651997,
+      -0.4047290207025079
+    ],
+    "perpendicularAfterXZ": [
+      0.18576464256519964,
+      -0.4047290207025079
+    ],
+    "recenterDeltaXZ": [
+      -0.31280650510807195,
+      -0.1435735656232625
+    ],
+    "recenterKm": 0.3441820425061475,
+    "bodyExact": true,
+    "outsideSelectedExact": true,
+    "allNonXZExact": true,
+    "layoutSHA256": "afdddf9ea7b81049efbbe6ce6f2450a6ce8bf91200a246076619ae2b269fc158",
+    "projectedDeltaKm": -0.3441820425061475,
+    "r3ProjectedDeltaKm": -0.3441820425061475,
+    "r3FullAxisRecenterKm": 0.5628280030434617,
+    "baselineSHA256": "ba5b6f73c1089ba2912793a9528d02d441bb063322a60581abce682c0b9d4ea8",
+    "baselineExact": false
+  },
+  "104": {
+    "seed": 104,
+    "family": "sheared",
+    "lobes": 1827,
+    "mode": "outward-unchanged",
+    "projection": -0.024966025793356217,
+    "oldRoof": 3.4499630311335174,
+    "attachmentY": 3.4693589141366123,
+    "scale": 1,
+    "recenterDeltaXZ": [
+      0,
+      0
+    ],
+    "recenterKm": 0,
+    "bodyExact": true,
+    "outsideSelectedExact": true,
+    "allNonXZExact": true,
+    "layoutSHA256": "fdd67400a3c1db66686680a1e6084a4f5a807ddf48ad6842cf0033aeb16c03f1",
+    "baselineSHA256": "fdd67400a3c1db66686680a1e6084a4f5a807ddf48ad6842cf0033aeb16c03f1",
+    "baselineExact": true
+  },
+  "119": {
+    "seed": 119,
+    "family": "sheared",
+    "lobes": 1918,
+    "mode": "outward-unchanged",
+    "projection": -0.19929548367902838,
+    "oldRoof": 3.1225632010321673,
+    "attachmentY": 3.2154280666162016,
+    "scale": 1,
+    "recenterDeltaXZ": [
+      0,
+      0
+    ],
+    "recenterKm": 0,
+    "bodyExact": true,
+    "outsideSelectedExact": true,
+    "allNonXZExact": true,
+    "layoutSHA256": "bf02c07f7fc1f0362c2b0e3de6f7351e7491ed70ecde4da3e9004216919f3628",
+    "baselineSHA256": "bf02c07f7fc1f0362c2b0e3de6f7351e7491ed70ecde4da3e9004216919f3628",
+    "baselineExact": true
+  },
+  "188": {
+    "seed": 188,
+    "family": "sheared",
+    "lobes": 1918,
+    "mode": "outward-unchanged",
+    "projection": -0.010731137929318901,
+    "oldRoof": 3.4602606057349794,
+    "attachmentY": 3.1205011233157887,
+    "scale": 1,
+    "recenterDeltaXZ": [
+      0,
+      0
+    ],
+    "recenterKm": 0,
+    "bodyExact": true,
+    "outsideSelectedExact": true,
+    "allNonXZExact": true,
+    "layoutSHA256": "28c24759b05f356a9ce3e79dfe92b1531910af40797ffe225dd158b6d15bb4cf",
+    "baselineSHA256": "28c24759b05f356a9ce3e79dfe92b1531910af40797ffe225dd158b6d15bb4cf",
+    "baselineExact": true
+  },
+  "617": {
+    "seed": 617,
+    "family": "sheared",
+    "lobes": 1918,
+    "mode": "outward-unchanged",
+    "projection": -0.22306698339763323,
+    "oldRoof": 3.183360119140728,
+    "attachmentY": 3.7551898551503466,
+    "scale": 1,
+    "recenterDeltaXZ": [
+      0,
+      0
+    ],
+    "recenterKm": 0,
+    "bodyExact": true,
+    "outsideSelectedExact": true,
+    "allNonXZExact": true,
+    "layoutSHA256": "9343d2b24368532bc284ff639733b0e933e361b7c9a061b0fd86bf739ce141ca",
+    "baselineSHA256": "9343d2b24368532bc284ff639733b0e933e361b7c9a061b0fd86bf739ce141ca",
+    "baselineExact": true
+  },
+  "323": {
+    "seed": 323,
+    "family": "sheared",
+    "lobes": 1918,
+    "mode": "inward-projected",
+    "projection": 0.500417858896295,
+    "oldRoof": 3.187126495959614,
+    "attachmentY": 3.063036012299123,
+    "scale": 1,
+    "selectedCore": 5,
+    "inwardUnitXZ": [
+      0.8821194875482201,
+      0.471025699604242
+    ],
+    "signedAfter": 1.1102230246251565e-16,
+    "offsetBeforeXZ": [
+      0.04857200886472418,
+      0.9714364709012917
+    ],
+    "perpendicularBeforeXZ": [
+      -0.39285633638485307,
+      0.7357267988202075
+    ],
+    "perpendicularAfterXZ": [
+      -0.392856336384853,
+      0.7357267988202076
+    ],
+    "recenterDeltaXZ": [
+      -0.4414283452495771,
+      -0.23570967208108418
+    ],
+    "recenterKm": 0.5004178588962949,
+    "bodyExact": true,
+    "outsideSelectedExact": true,
+    "allNonXZExact": true,
+    "layoutSHA256": "eb79b29f1e6085b08b2d0c98847c72db751ddd9f7c4c907f9b412239d16a1647",
+    "projectedDeltaKm": -0.5004178588962949,
+    "r3ProjectedDeltaKm": -0.5004178588962949,
+    "r3FullAxisRecenterKm": 0.9726500177568039,
+    "baselineSHA256": "fc63bd183b1044225e2a050248dd5e5682e4b71902c70458f7a3704fe6ad79b3",
+    "baselineExact": false
+  },
+  "917": {
+    "seed": 917,
+    "family": "sheared",
+    "lobes": 1918,
+    "mode": "inward-projected",
+    "projection": 0.006699794376602286,
+    "oldRoof": 3.2119775332740357,
+    "attachmentY": 3.530254594915755,
+    "scale": 1,
+    "selectedCore": 6,
+    "inwardUnitXZ": [
+      0.9041098349374211,
+      0.42730013616827833
+    ],
+    "signedAfter": -5.551115123125783e-17,
+    "offsetBeforeXZ": [
+      0.40848061304405003,
+      -0.8486108815911717
+    ],
+    "perpendicularBeforeXZ": [
+      0.4024232630561055,
+      -0.8514737046405934
+    ],
+    "perpendicularAfterXZ": [
+      0.4024232630561055,
+      -0.8514737046405934
+    ],
+    "recenterDeltaXZ": [
+      -0.006057349987944605,
+      -0.0028628230494216478
+    ],
+    "recenterKm": 0.006699794376602342,
+    "bodyExact": true,
+    "outsideSelectedExact": true,
+    "allNonXZExact": true,
+    "layoutSHA256": "69241a565f2de94b2cd8f529c6a5e7e02cf31f0c0ca9a5a88ae6586a55320fa6",
+    "projectedDeltaKm": -0.006699794376602342,
+    "r3ProjectedDeltaKm": -0.0066997943766023416,
+    "r3FullAxisRecenterKm": 0.9418050963908553,
+    "baselineSHA256": "a912a84539b3ba6bc2e2bc9ccb1fc2162e4c39d10a70c77e652114b309a85d94",
+    "baselineExact": false
+  },
+  "926": {
+    "seed": 926,
+    "family": "sheared",
+    "lobes": 1827,
+    "mode": "inward-projected",
+    "projection": 0.8073883217775043,
+    "oldRoof": 3.4229563291769036,
+    "attachmentY": 3.004524635357381,
+    "scale": 1,
+    "selectedCore": 5,
+    "inwardUnitXZ": [
+      0.9003503702057751,
+      0.43516572805119147
+    ],
+    "signedAfter": 1.734723475976807e-16,
+    "offsetBeforeXZ": [
+      0.7597307907102815,
+      0.2834883704129015
+    ],
+    "perpendicularBeforeXZ": [
+      0.032798416298086,
+      -0.06785935645343583
+    ],
+    "perpendicularAfterXZ": [
+      0.03279841629808584,
+      -0.06785935645343581
+    ],
+    "recenterDeltaXZ": [
+      -0.7269323744121954,
+      -0.35134772686633725
+    ],
+    "recenterKm": 0.8073883217775041,
+    "bodyExact": true,
+    "outsideSelectedExact": true,
+    "allNonXZExact": true,
+    "layoutSHA256": "619e4f540dafc4d94d68696addc865cc746d7dea858cd4f68ad0a7ffb56965b1",
+    "projectedDeltaKm": -0.807388321777504,
+    "r3ProjectedDeltaKm": -0.8073883217775042,
+    "r3FullAxisRecenterKm": 0.8108985944695131,
+    "baselineSHA256": "ab7caca63f3f80827ab3fefffe363ad28ab7317aeeb6f2043795151e276b0216",
+    "baselineExact": false
+  }
+}

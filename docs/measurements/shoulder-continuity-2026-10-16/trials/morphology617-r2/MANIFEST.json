@@ -1,0 +1,211 @@
+{
+  "status": "R2_AB_CPU_DIAGNOSTIC_FROZEN_MODEL_R3_NOT_ADOPTED",
+  "files": [
+    {
+      "path": "A-baseline/scripts/qa-morphology.ts",
+      "bytes": 6221,
+      "sha256": "4ade71b2c3d7fc70826797f06d55bfae2eeabae3462cbe12ba5b606173b15262"
+    },
+    {
+      "path": "A-baseline-control.json",
+      "bytes": 1157,
+      "sha256": "4ae7905cd1a2f7ec32d6026c7018f074d39a8529ee1fe98a8c6342850f6e472c"
+    },
+    {
+      "path": "A-baseline-source-manifest.json",
+      "bytes": 12480,
+      "sha256": "30c5448e87fb60c3bd3fdc8ca133993c49e54503a9950f9da1815fd59883171f"
+    },
+    {
+      "path": "A-baseline-validation.json",
+      "bytes": 666,
+      "sha256": "8d18b7108286e5f88fd12a8d9acb2d0c49f7348126ec47b325c1836849b4a533"
+    },
+    {
+      "path": "A-baseline.json",
+      "bytes": 95541,
+      "sha256": "7986faffc17273787a72feaec81c0fde060a8417a541d363a860baf8fe86e414"
+    },
+    {
+      "path": "A-baseline.log",
+      "bytes": 215,
+      "sha256": "3ffd339f85844ffeeee1a5b659c5c798fa42bf5349af9f98184e40175cd711c5"
+    },
+    {
+      "path": "A-wrapper.log",
+      "bytes": 1642,
+      "sha256": "69a8a21b94739ce58945351af68635aafa82cec35887b3861761af1a8b729914"
+    },
+    {
+      "path": "B-candidate/scripts/qa-morphology.ts",
+      "bytes": 6221,
+      "sha256": "4ade71b2c3d7fc70826797f06d55bfae2eeabae3462cbe12ba5b606173b15262"
+    },
+    {
+      "path": "B-candidate-control.json",
+      "bytes": 1161,
+      "sha256": "f815431c6fdf26d7429b58aa7916eb5c29f6d03391379b2c140d9ab9fe882fbc"
+    },
+    {
+      "path": "B-candidate-source-manifest.json",
+      "bytes": 12480,
+      "sha256": "e65c9209938773d3e4d1e3e6f649e4fb11bad01c731a4ee38258ebefdf39e3e9"
+    },
+    {
+      "path": "B-candidate-validation.json",
+      "bytes": 666,
+      "sha256": "ee1ff7c530c74e10c8c0ccb6e1b1ef60cd71791d665ca7df452b5131771c2160"
+    },
+    {
+      "path": "B-candidate.json",
+      "bytes": 95523,
+      "sha256": "6a47e2a9e2b61a87bf308587e9fbf0c2b7551c542f84042364efe420c8c9cb9f"
+    },
+    {
+      "path": "B-candidate.log",
+      "bytes": 212,
+      "sha256": "619a1c47c94847383db70f98128f9063d7eddd6f2e4fc4690f5e1885888d0bac"
+    },
+    {
+      "path": "B-wrapper.log",
+      "bytes": 1652,
+      "sha256": "cc8fbd1337c48cce02ab819bd10af5bcc278b41dcda2b741c05769ad11e11699"
+    },
+    {
+      "path": "PROTOCOL.md",
+      "bytes": 2167,
+      "sha256": "09f726babf7057eaf4bd2ccd364ce15a1a453081f4b8242ef0606488852345e1"
+    },
+    {
+      "path": "R1-evidence-reference.json",
+      "bytes": 429,
+      "sha256": "34fd3239e8fe25d054c4805b0a572aca19e38ceaa79fd252f7db495c94eacd35"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5972,
+      "sha256": "ee4fe9d8ade760a7b52c110b8b441f05d2260b7f86264fa00417872e81020c6c"
+    },
+    {
+      "path": "SUMMARY.md",
+      "bytes": 1670,
+      "sha256": "86b62ae1b5d6b91b79bd9e6ee9322e59933f4fc51e98ab91621fc9ffaa244565"
+    },
+    {
+      "path": "analyse-ab.py",
+      "bytes": 5618,
+      "sha256": "e061d7bd64a961ed84b835f8229f7317134071925827a10dfd5b99ca734d7bd7"
+    },
+    {
+      "path": "analysis.log",
+      "bytes": 10377,
+      "sha256": "4060c27ea0af75d912a15d6522e861352dcf9b09e891661dff2cfcca5da8e34c"
+    },
+    {
+      "path": "comparison.json",
+      "bytes": 10377,
+      "sha256": "4060c27ea0af75d912a15d6522e861352dcf9b09e891661dff2cfcca5da8e34c"
+    },
+    {
+      "path": "descriptive-bands.json",
+      "bytes": 838,
+      "sha256": "080e2bdb785a3f6c09874dc28348a2f7acfe9ddf1755d746e4596db6a60c9489"
+    },
+    {
+      "path": "guard-only-r1-to-r2.patch",
+      "bytes": 638,
+      "sha256": "3e70ceb08156e21ec436b6da2c9735ce6d87831e4f328fb85aab13b0eb0b37c1"
+    },
+    {
+      "path": "input-manifest.json",
+      "bytes": 2059,
+      "sha256": "9b03d786e5ac17ac161cbe51f09269e84ad0cb74eb9cccbda7c7c140126250fb"
+    },
+    {
+      "path": "pre-run-freeze.json",
+      "bytes": 1357,
+      "sha256": "aaebef03a5015c42ffbbaa7bb87ce4aef2e10aa4f4c15b18579b8b866abb0b78"
+    },
+    {
+      "path": "prior-approach-qa-monitor-error.txt",
+      "bytes": 537,
+      "sha256": "3359dca1713f5cab00df6fd914f4f71b2e15b629455e56c346f3bb83a73dd2ff"
+    },
+    {
+      "path": "prior-approach-qa-run-control.json",
+      "bytes": 988,
+      "sha256": "d5ba8ee45612f1225c88d0c08ea63bbe80ea2741e583921578a83de17b66b0b4"
+    },
+    {
+      "path": "qa-morphology.common.ts",
+      "bytes": 6221,
+      "sha256": "4ade71b2c3d7fc70826797f06d55bfae2eeabae3462cbe12ba5b606173b15262"
+    },
+    {
+      "path": "qa-morphology.original.ts",
+      "bytes": 4439,
+      "sha256": "8bf22d63a6f7ce0a0f49708bab2bfceabe94456afc55365220e1d1a6610e570d"
+    },
+    {
+      "path": "qa-morphology.r1-common.ts.frozen",
+      "bytes": 6219,
+      "sha256": "6e0969f3342c5da1e811db01667c8db32b995d96ac41ec86aae8bda3f5f04d5b"
+    },
+    {
+      "path": "root-art-verdict.json",
+      "bytes": 352,
+      "sha256": "983efa95159dbc23218dd4b9b014609e79d3d59e42eee52f33e47074ad0d284f"
+    },
+    {
+      "path": "run-one.py",
+      "bytes": 5862,
+      "sha256": "5a5faf195aa4df1cc0566129ddb68914ebc0c054e664d0be976b9f86bd35c0d8"
+    },
+    {
+      "path": "run-one.r1.py.frozen",
+      "bytes": 5486,
+      "sha256": "ec9fc41ea8792743e635cf4105a047eeadc2c370e5958d733a9822992193e0c4"
+    },
+    {
+      "path": "section-deltas.csv",
+      "bytes": 26154,
+      "sha256": "1590e5dd2fd20e7b9d293a36fdbda29a81d8089b9e3f939ec7cf181d69c857c2"
+    },
+    {
+      "path": "upper-profile-deltas.csv",
+      "bytes": 8365,
+      "sha256": "01e8c4569bc002392eadef514f8adef5f9d883f4141c65b02cf179e56658e71e"
+    },
+    {
+      "path": "validate-output.py",
+      "bytes": 3008,
+      "sha256": "123057feb8da7ea4aa51f2d6d4d87994b24ee8fd48e09ab1dcabeb9ac022e2f2"
+    },
+    {
+      "path": "verify-comparison.py",
+      "bytes": 5230,
+      "sha256": "ce1b550ef753ccd1ca2bebfdbbefec72b2ce3d24a045e175b5ee1cdee7582176"
+    }
+  ],
+  "links": [
+    {
+      "path": "A-baseline/src",
+      "target": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/source/src"
+    },
+    {
+      "path": "B-candidate/src",
+      "target": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r3-v55-source/src"
+    }
+  ],
+  "payloadFiles": 37,
+  "payloadBytes": 350200,
+  "excludedSelfAndDerivedVerificationReport": [
+    "MANIFEST.json",
+    "independent-verification.json"
+  ],
+  "r1TerminalManifestSha256": "1495fce6254ac9c599c107df4cf13d560e3d42f6069422eb8ac8c9364c9329ca",
+  "sameA_BRuntimeAndScript": true,
+  "noRawVolumeSourceCloneOrDistPayload": true,
+  "noFurtherRuns": true,
+  "rootVerdict": "R3 retired for visual body shape; R4 future separate, not executed here"
+}

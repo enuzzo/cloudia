@@ -1,0 +1,40 @@
+{
+  "protocolSHA256": "6bd3bd9153d0e7ecec285d6980484384e973a45f80dba1f73630a75a288da8cc",
+  "prepareScriptSHA256": "335165301d1cc2186ac284d37360fb3538ad72779259df6efc7bb03965db07b2",
+  "candidateManifestSHA256": "f892755100cf21665dee22c6adb7f72707d30cdae3855fc3c9a5a09827e6a6bb",
+  "changedVsR3": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/volume.ts"
+  ],
+  "volumeSHA256": "0ab43c0c2c0ac4ed53ef15cfda3effeb25f45fdabeee553836f9ce04d35f6423",
+  "rasterSuffixSHA256": {
+    "A": "8ceaaee105dc0bb5babf2898fc4e2ff61737101f2f5002fc4d209a66d1b50bff",
+    "R3": "8ceaaee105dc0bb5babf2898fc4e2ff61737101f2f5002fc4d209a66d1b50bff",
+    "R5": "8ceaaee105dc0bb5babf2898fc4e2ff61737101f2f5002fc4d209a66d1b50bff"
+  },
+  "dependencies": {
+    "light.ts": {
+      "A": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf",
+      "R3": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf",
+      "R5": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+    },
+    "sun.ts": {
+      "A": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc",
+      "R3": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc",
+      "R5": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc"
+    },
+    "motion.ts": {
+      "A": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2",
+      "R3": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2",
+      "R5": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+    },
+    "inclinedShoulder.ts": {
+      "A": "32a844aaacd1de2bde2760da5cc1686693337445e930611cca4a55e3513d8f66",
+      "R3": "32a844aaacd1de2bde2760da5cc1686693337445e930611cca4a55e3513d8f66",
+      "R5": "32a844aaacd1de2bde2760da5cc1686693337445e930611cca4a55e3513d8f66"
+    }
+  },
+  "baselineVolumeSHA256": "a53410c45b04143710cffd098b6a33deade3242c66ecf7eecc6405a214a93b00",
+  "r3VolumeSHA256": "ebacc5ad2bca3515f34bfa4d2a4fe028ef4d20c09bcbe446104cfc794569a190",
+  "sourceFiles": 119
+}

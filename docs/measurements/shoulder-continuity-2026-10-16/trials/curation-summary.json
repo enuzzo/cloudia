@@ -1,0 +1,71 @@
+{
+  "status": "CURATED_ARCHIVE, NOT PRODUCT OR ART ACCEPTANCE",
+  "copiedOriginalFiles": 165,
+  "copiedOriginalBytes": 1671451,
+  "storedCopiedBytes": 678141,
+  "gzipFiles": 33,
+  "groups": [
+    {
+      "group": "r3",
+      "externalRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r3-v55-evidence",
+      "originalManifest": "MANIFEST.json",
+      "originalManifestSHA256": "7b0bb7cec1707c0d29e864d9ff9c2342b4f030e5e66a174653ece53eaa9d7357",
+      "manifestSchema": "evidence",
+      "originalPayloadFiles": 23,
+      "selectedFiles": 24,
+      "selectedOriginalBytes": 129675
+    },
+    {
+      "group": "r4",
+      "externalRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r4-v55-qualification",
+      "originalManifest": "MANIFEST.json",
+      "originalManifestSHA256": "dc8a5ac849d972f864c90c534172a535915dc68f0f060dfa5c7ad2a4690201a2",
+      "manifestSchema": "evidence",
+      "originalPayloadFiles": 28,
+      "selectedFiles": 29,
+      "selectedOriginalBytes": 886916
+    },
+    {
+      "group": "r5-r1",
+      "externalRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-recenter",
+      "originalManifest": "MANIFEST.json",
+      "originalManifestSHA256": "659e968d949caa9320938fbc67ec6f9ece7a3dd82691bd7b128f9b20b6d06e13",
+      "manifestSchema": "dict",
+      "originalPayloadFiles": 23,
+      "selectedFiles": 24,
+      "selectedOriginalBytes": 112357
+    },
+    {
+      "group": "r5-r2",
+      "externalRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-r2-inward",
+      "originalManifest": "MANIFEST.json",
+      "originalManifestSHA256": "b78e8b56e4aa3338425f00dd3040bbb0b766fa0f10ca79c74a08a721254a5756",
+      "manifestSchema": "dict",
+      "originalPayloadFiles": 31,
+      "selectedFiles": 33,
+      "selectedOriginalBytes": 136389
+    },
+    {
+      "group": "morphology617-r1",
+      "externalRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/morphology617-ab",
+      "originalManifest": "MANIFEST-R1.json",
+      "originalManifestSHA256": "1495fce6254ac9c599c107df4cf13d560e3d42f6069422eb8ac8c9364c9329ca",
+      "manifestSchema": "list",
+      "originalPayloadFiles": 15,
+      "selectedFiles": 16,
+      "selectedOriginalBytes": 48536
+    },
+    {
+      "group": "morphology617-r2",
+      "externalRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/morphology617-ab-r2",
+      "originalManifest": "MANIFEST.json",
+      "originalManifestSHA256": "74050adc4bc0c044dfb968d50a07801ad1b076bdd8c05368a6f4ffd9dfc8a00c",
+      "manifestSchema": "list",
+      "originalPayloadFiles": 37,
+      "selectedFiles": 39,
+      "selectedOriginalBytes": 357578
+    }
+  ],
+  "r4OfflineVerifierExitCode": 0,
+  "noNewModelTestBuildExecution": true
+}

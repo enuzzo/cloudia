@@ -1,0 +1,143 @@
+{
+  "source": {
+    "path": "../anatomy-r3-v55-source",
+    "fileCount": 119,
+    "payloadBytes": 17586377,
+    "manifestSha256": "e65c9209938773d3e4d1e3e6f649e4fb11bad01c731a4ee38258ebefdf39e3e9",
+    "freezeSha256": "ba315751c3b768056bce1e5fbc27f2a7964a28920105cb9df8b2f2455fad93d4"
+  },
+  "dist": {
+    "path": "../anatomy-r3-v55-source/dist",
+    "fileCount": 30,
+    "payloadBytes": 39270270,
+    "manifestSha256": "d6f55c78fabb636e27fee1eb76f2a519f70b3bfc495b05f3fc4b6a184d5806a6"
+  },
+  "evidence": {
+    "files": [
+      {
+        "path": "PROTOCOL.json",
+        "bytes": 1973,
+        "sha256": "fe6a5420ec8ab4d4690b1c8309e3db6749221725c088ebb6c220a2b14a12ff47"
+      },
+      {
+        "path": "REPORT.md",
+        "bytes": 6086,
+        "sha256": "21d1e074129fa6e7b9bf17f80dce6e49724318da43deb7c37b19b67f0ee9a49a"
+      },
+      {
+        "path": "app-build.log",
+        "bytes": 1460,
+        "sha256": "cddaafe4557611ce84a45d47e3b30b33493026dd4a938b35a5d63d2c55688638"
+      },
+      {
+        "path": "audit-scripts/qa-approach.ts",
+        "bytes": 5346,
+        "sha256": "7e80d5e44aa047467f87b891476e2158e3156a122d370557ed1f145f0786c986"
+      },
+      {
+        "path": "baseline-source-manifest.json",
+        "bytes": 12480,
+        "sha256": "30c5448e87fb60c3bd3fdc8ca133993c49e54503a9950f9da1815fd59883171f"
+      },
+      {
+        "path": "candidate-source-manifest.json",
+        "bytes": 12480,
+        "sha256": "e65c9209938773d3e4d1e3e6f649e4fb11bad01c731a4ee38258ebefdf39e3e9"
+      },
+      {
+        "path": "candidate.patch",
+        "bytes": 15186,
+        "sha256": "67a646770d72221e40183dd412b3bab5aef8fb5ff5186975080085fb28221462"
+      },
+      {
+        "path": "checks.json",
+        "bytes": 1030,
+        "sha256": "1b84ff9dded6002da55835c092ed2f56e44e88128c3b09d881d2f22d54865ca5"
+      },
+      {
+        "path": "dist-manifest.json",
+        "bytes": 4295,
+        "sha256": "d6f55c78fabb636e27fee1eb76f2a519f70b3bfc495b05f3fc4b6a184d5806a6"
+      },
+      {
+        "path": "hero-build.log",
+        "bytes": 364,
+        "sha256": "cd42b626cd368ad4afe569f381c368aeea2fb81e95b59364fb461db994559fc8"
+      },
+      {
+        "path": "post-checks.json",
+        "bytes": 699,
+        "sha256": "ff5665be6cb27c910c36e9f457c44ee380f96923dd2804be7802999255f5c55a"
+      },
+      {
+        "path": "qa-approach-256.json",
+        "bytes": 24306,
+        "sha256": "7a8124164deb9a98877058c32ab442fc49fb4335e9dbcf42bcb0481cd44d72a6"
+      },
+      {
+        "path": "qa-approach-256.log",
+        "bytes": 392,
+        "sha256": "03183e20f630c66491783513beca3f5566d8b48b5ea89ed9b81bfb39f3e1d6b2"
+      },
+      {
+        "path": "qa-monitor-error.txt",
+        "bytes": 537,
+        "sha256": "3359dca1713f5cab00df6fd914f4f71b2e15b629455e56c346f3bb83a73dd2ff"
+      },
+      {
+        "path": "qa-run-control.json",
+        "bytes": 988,
+        "sha256": "d5ba8ee45612f1225c88d0c08ea63bbe80ea2741e583921578a83de17b66b0b4"
+      },
+      {
+        "path": "run-checks.py",
+        "bytes": 1204,
+        "sha256": "32abc28cf668f9fe76c68f932412a9395c5637f4ca01c528531684e470d3b632"
+      },
+      {
+        "path": "run-qa.initial.py",
+        "bytes": 2418,
+        "sha256": "f9d00f67ffb8fa1e072658bb7c891612646c027a4ee79c7f69f091166d15e900"
+      },
+      {
+        "path": "run-qa.py",
+        "bytes": 2287,
+        "sha256": "69b04e93b33ca3500c13e56f2664533f76557a7e19dd81497eda0be3d6a1320d"
+      },
+      {
+        "path": "source-freeze.json",
+        "bytes": 13044,
+        "sha256": "ba315751c3b768056bce1e5fbc27f2a7964a28920105cb9df8b2f2455fad93d4"
+      },
+      {
+        "path": "targeted-test-results.json",
+        "bytes": 11123,
+        "sha256": "162597746bbd6b72c2181c148423f943d0594caf9cd10fbafaa25dc017e5028a"
+      },
+      {
+        "path": "targeted-tests.log",
+        "bytes": 365,
+        "sha256": "4bd90b8196a05ec9a03fcc2b49e539298e0e2a6a27a3fb5ef92c49ba137fc319"
+      },
+      {
+        "path": "typecheck.log",
+        "bytes": 15,
+        "sha256": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92"
+      },
+      {
+        "path": "verify.py",
+        "bytes": 7001,
+        "sha256": "efa2db77237dc4e468506d82ca63091cd8d100444662e332091017dfa0524c3d"
+      }
+    ],
+    "fileCount": 23,
+    "payloadBytes": 125079
+  },
+  "dependencySymlinksExcluded": true,
+  "qaCommandStatus": "WRAPPERFAIL",
+  "qaChildExitCode": null,
+  "qaNumericalArtifact": "complete saved 18-pose CPU result; no command PASS assertion",
+  "totalPayloadFiles": 172,
+  "totalPayloadBytes": 56981726,
+  "manifestSelfExcluded": true
+}

@@ -1,0 +1,16 @@
+{
+  "status": "WRAPPERFAIL",
+  "pid": 68705,
+  "session": 76750,
+  "automaticRestarts": 0,
+  "resultSha256": "7a8124164deb9a98877058c32ab442fc49fb4335e9dbcf42bcb0481cd44d72a6",
+  "durationSecondsInResult": 21.662541167000004,
+  "poses": 18,
+  "volume": 256,
+  "detail": 128,
+  "monitorFailure": "Python wrapper exited at first 15s heartbeat because sandbox denied subprocess ps. Bun was not restarted. Frozen qa script completed and wrote final JSON after all 18 cases; PID no longer exists. stdout log lacks final summary/exit code.",
+  "validation": "Parsed complete JSON, 18 unique fixed poses, 5 timing samples per metric per pose, expected seed/time/resolutions, finite boundary errors. No test/GPU/artistic acceptance inferred.",
+  "childExitCode": null,
+  "numericalArtifactStatus": "complete and independently validated from saved raw",
+  "replayWrapperStatus": "run-qa.initial.py is exact executed wrapper; run-qa.py has elapsed-only heartbeat for future replay, not executed"
+}

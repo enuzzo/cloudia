@@ -1,0 +1,9 @@
+{
+  "frozenUTC": "2026-10-16T17:24:56.194745+00:00",
+  "node": "/Users/enuzzo/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+  "scripts": {
+    "check-layout.cjs": "0b4599fcc5cf5564d0c39e22ff31a567f33135ce9fa6ef067a27a387db694976",
+    "run-checks.py": "5ef4bd588c49edad8a6772c9f1464c589d5c17105d0e47d8020be0723f24e279"
+  },
+  "sourceManifestSHA256": "5e684127a396920bca727ba89fd19bc5776084801ae2ca7e1e2d82313c4f8e05"
+}

@@ -1,0 +1,9 @@
+{
+  "performance": "WebGPU · 34.8 fps rAF · apple\nOutput 1920×1080 · interno 1920×1080\n384 passi nominali · mediana 33.00 ms · p95 46.40 ms\nGPU rendering 72.55 ms · flusso 0.393 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 60.0 s · seme: 74\nForma: sheared · vento 55% · dispersione 0%\nCielo: rain · velocità 1× · lampi: 0 · luce 0.00",
+  "canvas": {
+    "cssHeight": 922,
+    "cssWidth": 1237,
+    "height": 1080,
+    "width": 1920
+  }
+}

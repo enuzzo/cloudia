@@ -1,0 +1,2730 @@
+[
+  {
+    "path": "trials/PROTOCOL.json",
+    "originalPath": "trials/PROTOCOL.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/PROTOCOL.json",
+    "originalBytes": 1998,
+    "originalSHA256": "7f333a1a837085f598fd1e3cb8b8fe413805200214b3fa681589789d37220633",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/README.md",
+    "originalPath": "trials/README.md",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/README.md",
+    "originalBytes": 4497,
+    "originalSHA256": "75495f9b46bc44bf238f66e15837fbf0bce372a8e8bcbf2713ada523b4279121",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/copy-record.json",
+    "originalPath": "trials/copy-record.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/copy-record.json",
+    "originalBytes": 96821,
+    "originalSHA256": "10af25ff42ee2f064e19f95a89c49c37ccbe8a9d566313cef31d654dc1eba987",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/curate.py",
+    "originalPath": "trials/curate.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/curate.py",
+    "originalBytes": 6127,
+    "originalSHA256": "c8bec2142046de3b428914da17c1738a9ec9cb15254a1d46c4eea2ecc1c4f91d",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/curation-summary.json",
+    "originalPath": "trials/curation-summary.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/curation-summary.json",
+    "originalBytes": 2804,
+    "originalSHA256": "b621a0d84034fc6b0af4f69b43902f332e6137f6c542d70e692561d057bee358",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r1/A-baseline/scripts/qa-morphology.ts",
+    "originalPath": "trials/morphology617-r1/A-baseline/scripts/qa-morphology.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r1/A-baseline/scripts/qa-morphology.ts",
+    "originalBytes": 6219,
+    "originalSHA256": "6e0969f3342c5da1e811db01667c8db32b995d96ac41ec86aae8bda3f5f04d5b",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r1/A-baseline-control.json",
+    "originalPath": "trials/morphology617-r1/A-baseline-control.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r1/A-baseline-control.json",
+    "originalBytes": 1123,
+    "originalSHA256": "0ee969840456c5a94b428cd3e6a1a26fcf88c5bfff07891babaf0c00f8d79eaf",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r1/A-baseline.log",
+    "originalPath": "trials/morphology617-r1/A-baseline.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r1/A-baseline.log",
+    "originalBytes": 0,
+    "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r1/A-wrapper.log",
+    "originalPath": "trials/morphology617-r1/A-wrapper.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r1/A-wrapper.log",
+    "originalBytes": 1589,
+    "originalSHA256": "b5a0d665c49f43061d567498447bb3ab061f4e439c2cf37ff9e61639206d3e6e",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r1/B-candidate/scripts/qa-morphology.ts",
+    "originalPath": "trials/morphology617-r1/B-candidate/scripts/qa-morphology.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r1/B-candidate/scripts/qa-morphology.ts",
+    "originalBytes": 6219,
+    "originalSHA256": "6e0969f3342c5da1e811db01667c8db32b995d96ac41ec86aae8bda3f5f04d5b",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r1/FAILURE-A.json",
+    "originalPath": "trials/morphology617-r1/FAILURE-A.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r1/FAILURE-A.json",
+    "originalBytes": 1943,
+    "originalSHA256": "6c36df036b05f5345371f65015b55e7483bd494f4c68cb3d3e79675a6c48cc33",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r1/MANIFEST-R1.json",
+    "originalPath": "trials/morphology617-r1/MANIFEST-R1.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r1/MANIFEST-R1.json",
+    "originalBytes": 2783,
+    "originalSHA256": "1495fce6254ac9c599c107df4cf13d560e3d42f6069422eb8ac8c9364c9329ca",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r1/PROTOCOL.md",
+    "originalPath": "trials/morphology617-r1/PROTOCOL.md",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r1/PROTOCOL.md",
+    "originalBytes": 2291,
+    "originalSHA256": "be17b055c0b1edd93819ca4aaf8f55ad72550d3957ce48d796b695d6612999c0",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r1/README.md",
+    "originalPath": "trials/morphology617-r1/README.md",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r1/README.md",
+    "originalBytes": 1184,
+    "originalSHA256": "cc7898285a666b1ff5cc4e4d962aa0591ed3f973a488b9e5d15ca62982fe943c",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r1/TERMINAL-R1.json",
+    "originalPath": "trials/morphology617-r1/TERMINAL-R1.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r1/TERMINAL-R1.json",
+    "originalBytes": 1174,
+    "originalSHA256": "ef5d0053a3b484640a721b3a1d3f3340c7a0bc570a7a007cc36c40ac72248450",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r1/diagnostic-extension.patch",
+    "originalPath": "trials/morphology617-r1/diagnostic-extension.patch",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r1/diagnostic-extension.patch",
+    "originalBytes": 5156,
+    "originalSHA256": "faa0018b156f03de0bf0cb382f8ee971f9657022ca62b690143b9a3f02f295f3",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r1/input-manifest.json",
+    "originalPath": "trials/morphology617-r1/input-manifest.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r1/input-manifest.json",
+    "originalBytes": 1636,
+    "originalSHA256": "ce93c274aa73cdaa1f00b44ba8d31a72356f00127e63922616c9c4826d7a9384",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r1/pre-run-freeze.json",
+    "originalPath": "trials/morphology617-r1/pre-run-freeze.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r1/pre-run-freeze.json",
+    "originalBytes": 1075,
+    "originalSHA256": "d69d679e3c03984b83ba8d2d63b874c78b40e8c64fad4054e0ad86dd1ab4b7a3",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r1/qa-morphology.common.ts",
+    "originalPath": "trials/morphology617-r1/qa-morphology.common.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r1/qa-morphology.common.ts",
+    "originalBytes": 6219,
+    "originalSHA256": "6e0969f3342c5da1e811db01667c8db32b995d96ac41ec86aae8bda3f5f04d5b",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r1/qa-morphology.original.ts",
+    "originalPath": "trials/morphology617-r1/qa-morphology.original.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r1/qa-morphology.original.ts",
+    "originalBytes": 4439,
+    "originalSHA256": "8bf22d63a6f7ce0a0f49708bab2bfceabe94456afc55365220e1d1a6610e570d",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r1/run-one.py",
+    "originalPath": "trials/morphology617-r1/run-one.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r1/run-one.py",
+    "originalBytes": 5486,
+    "originalSHA256": "ec9fc41ea8792743e635cf4105a047eeadc2c370e5958d733a9822992193e0c4",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/A-baseline/scripts/qa-morphology.ts",
+    "originalPath": "trials/morphology617-r2/A-baseline/scripts/qa-morphology.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/A-baseline/scripts/qa-morphology.ts",
+    "originalBytes": 6221,
+    "originalSHA256": "4ade71b2c3d7fc70826797f06d55bfae2eeabae3462cbe12ba5b606173b15262",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/A-baseline-control.json",
+    "originalPath": "trials/morphology617-r2/A-baseline-control.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/A-baseline-control.json",
+    "originalBytes": 1157,
+    "originalSHA256": "4ae7905cd1a2f7ec32d6026c7018f074d39a8529ee1fe98a8c6342850f6e472c",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/A-baseline-source-manifest.json.gz",
+    "originalPath": "trials/morphology617-r2/A-baseline-source-manifest.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/A-baseline-source-manifest.json.gz",
+    "originalBytes": 5796,
+    "originalSHA256": "0139fdcbf9c82a7f2782ac98cce5a9011fa65cca76071c154d44a1ba19afe086",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/A-baseline-validation.json",
+    "originalPath": "trials/morphology617-r2/A-baseline-validation.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/A-baseline-validation.json",
+    "originalBytes": 666,
+    "originalSHA256": "8d18b7108286e5f88fd12a8d9acb2d0c49f7348126ec47b325c1836849b4a533",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/A-baseline.json.gz",
+    "originalPath": "trials/morphology617-r2/A-baseline.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/A-baseline.json.gz",
+    "originalBytes": 12622,
+    "originalSHA256": "018ce20ea76fe189aacec8ed1d5fcd61f6ae68e4b0bdc149963a39f5199b3db4",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/A-baseline.log",
+    "originalPath": "trials/morphology617-r2/A-baseline.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/A-baseline.log",
+    "originalBytes": 215,
+    "originalSHA256": "3ffd339f85844ffeeee1a5b659c5c798fa42bf5349af9f98184e40175cd711c5",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/A-wrapper.log",
+    "originalPath": "trials/morphology617-r2/A-wrapper.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/A-wrapper.log",
+    "originalBytes": 1642,
+    "originalSHA256": "69a8a21b94739ce58945351af68635aafa82cec35887b3861761af1a8b729914",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/B-candidate/scripts/qa-morphology.ts",
+    "originalPath": "trials/morphology617-r2/B-candidate/scripts/qa-morphology.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/B-candidate/scripts/qa-morphology.ts",
+    "originalBytes": 6221,
+    "originalSHA256": "4ade71b2c3d7fc70826797f06d55bfae2eeabae3462cbe12ba5b606173b15262",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/B-candidate-control.json",
+    "originalPath": "trials/morphology617-r2/B-candidate-control.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/B-candidate-control.json",
+    "originalBytes": 1161,
+    "originalSHA256": "f815431c6fdf26d7429b58aa7916eb5c29f6d03391379b2c140d9ab9fe882fbc",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/B-candidate-source-manifest.json.gz",
+    "originalPath": "trials/morphology617-r2/B-candidate-source-manifest.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/B-candidate-source-manifest.json.gz",
+    "originalBytes": 5800,
+    "originalSHA256": "079374fa54c4c96061ff5e943b0f4fd96c07ee6a45ef12118e1e05384b90bd30",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/B-candidate-validation.json",
+    "originalPath": "trials/morphology617-r2/B-candidate-validation.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/B-candidate-validation.json",
+    "originalBytes": 666,
+    "originalSHA256": "ee1ff7c530c74e10c8c0ccb6e1b1ef60cd71791d665ca7df452b5131771c2160",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/B-candidate.json.gz",
+    "originalPath": "trials/morphology617-r2/B-candidate.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/B-candidate.json.gz",
+    "originalBytes": 12615,
+    "originalSHA256": "ee6cf4039e10610b025c0ac8c3e8e1308c6680f593a96a28dda6ebfca83ab79d",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/B-candidate.log",
+    "originalPath": "trials/morphology617-r2/B-candidate.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/B-candidate.log",
+    "originalBytes": 212,
+    "originalSHA256": "619a1c47c94847383db70f98128f9063d7eddd6f2e4fc4690f5e1885888d0bac",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/B-wrapper.log",
+    "originalPath": "trials/morphology617-r2/B-wrapper.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/B-wrapper.log",
+    "originalBytes": 1652,
+    "originalSHA256": "cc8fbd1337c48cce02ab819bd10af5bcc278b41dcda2b741c05769ad11e11699",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/MANIFEST.json",
+    "originalPath": "trials/morphology617-r2/MANIFEST.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/MANIFEST.json",
+    "originalBytes": 6624,
+    "originalSHA256": "74050adc4bc0c044dfb968d50a07801ad1b076bdd8c05368a6f4ffd9dfc8a00c",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/PROTOCOL.md",
+    "originalPath": "trials/morphology617-r2/PROTOCOL.md",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/PROTOCOL.md",
+    "originalBytes": 2167,
+    "originalSHA256": "09f726babf7057eaf4bd2ccd364ce15a1a453081f4b8242ef0606488852345e1",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/R1-evidence-reference.json",
+    "originalPath": "trials/morphology617-r2/R1-evidence-reference.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/R1-evidence-reference.json",
+    "originalBytes": 429,
+    "originalSHA256": "34fd3239e8fe25d054c4805b0a572aca19e38ceaa79fd252f7db495c94eacd35",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/README.md",
+    "originalPath": "trials/morphology617-r2/README.md",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/README.md",
+    "originalBytes": 5972,
+    "originalSHA256": "ee4fe9d8ade760a7b52c110b8b441f05d2260b7f86264fa00417872e81020c6c",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/SUMMARY.md",
+    "originalPath": "trials/morphology617-r2/SUMMARY.md",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/SUMMARY.md",
+    "originalBytes": 1670,
+    "originalSHA256": "86b62ae1b5d6b91b79bd9e6ee9322e59933f4fc51e98ab91621fc9ffaa244565",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/analyse-ab.py",
+    "originalPath": "trials/morphology617-r2/analyse-ab.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/analyse-ab.py",
+    "originalBytes": 5618,
+    "originalSHA256": "e061d7bd64a961ed84b835f8229f7317134071925827a10dfd5b99ca734d7bd7",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/analysis.log.gz",
+    "originalPath": "trials/morphology617-r2/analysis.log.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/analysis.log.gz",
+    "originalBytes": 2462,
+    "originalSHA256": "638d64ea4d9980f5d518113eb18e27c02c976c96c24f6ec33fd5b987483151b9",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/comparison.json.gz",
+    "originalPath": "trials/morphology617-r2/comparison.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/comparison.json.gz",
+    "originalBytes": 2462,
+    "originalSHA256": "638d64ea4d9980f5d518113eb18e27c02c976c96c24f6ec33fd5b987483151b9",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/descriptive-bands.json",
+    "originalPath": "trials/morphology617-r2/descriptive-bands.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/descriptive-bands.json",
+    "originalBytes": 838,
+    "originalSHA256": "080e2bdb785a3f6c09874dc28348a2f7acfe9ddf1755d746e4596db6a60c9489",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/guard-only-r1-to-r2.patch",
+    "originalPath": "trials/morphology617-r2/guard-only-r1-to-r2.patch",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/guard-only-r1-to-r2.patch",
+    "originalBytes": 638,
+    "originalSHA256": "3e70ceb08156e21ec436b6da2c9735ce6d87831e4f328fb85aab13b0eb0b37c1",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/independent-verification.json",
+    "originalPath": "trials/morphology617-r2/independent-verification.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/independent-verification.json",
+    "originalBytes": 754,
+    "originalSHA256": "eb51d15c805cbcbbf60dabbc0ce4203e35c089be8b94925c759c3f2c870179f0",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/input-manifest.json",
+    "originalPath": "trials/morphology617-r2/input-manifest.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/input-manifest.json",
+    "originalBytes": 2059,
+    "originalSHA256": "9b03d786e5ac17ac161cbe51f09269e84ad0cb74eb9cccbda7c7c140126250fb",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/pre-run-freeze.json",
+    "originalPath": "trials/morphology617-r2/pre-run-freeze.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/pre-run-freeze.json",
+    "originalBytes": 1357,
+    "originalSHA256": "aaebef03a5015c42ffbbaa7bb87ce4aef2e10aa4f4c15b18579b8b866abb0b78",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/prior-approach-qa-monitor-error.txt",
+    "originalPath": "trials/morphology617-r2/prior-approach-qa-monitor-error.txt",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/prior-approach-qa-monitor-error.txt",
+    "originalBytes": 537,
+    "originalSHA256": "3359dca1713f5cab00df6fd914f4f71b2e15b629455e56c346f3bb83a73dd2ff",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/prior-approach-qa-run-control.json",
+    "originalPath": "trials/morphology617-r2/prior-approach-qa-run-control.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/prior-approach-qa-run-control.json",
+    "originalBytes": 988,
+    "originalSHA256": "d5ba8ee45612f1225c88d0c08ea63bbe80ea2741e583921578a83de17b66b0b4",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/qa-morphology.common.ts",
+    "originalPath": "trials/morphology617-r2/qa-morphology.common.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/qa-morphology.common.ts",
+    "originalBytes": 6221,
+    "originalSHA256": "4ade71b2c3d7fc70826797f06d55bfae2eeabae3462cbe12ba5b606173b15262",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/qa-morphology.original.ts",
+    "originalPath": "trials/morphology617-r2/qa-morphology.original.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/qa-morphology.original.ts",
+    "originalBytes": 4439,
+    "originalSHA256": "8bf22d63a6f7ce0a0f49708bab2bfceabe94456afc55365220e1d1a6610e570d",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/qa-morphology.r1-common.ts.frozen",
+    "originalPath": "trials/morphology617-r2/qa-morphology.r1-common.ts.frozen",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/qa-morphology.r1-common.ts.frozen",
+    "originalBytes": 6219,
+    "originalSHA256": "6e0969f3342c5da1e811db01667c8db32b995d96ac41ec86aae8bda3f5f04d5b",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/root-art-verdict.json",
+    "originalPath": "trials/morphology617-r2/root-art-verdict.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/root-art-verdict.json",
+    "originalBytes": 352,
+    "originalSHA256": "983efa95159dbc23218dd4b9b014609e79d3d59e42eee52f33e47074ad0d284f",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/run-one.py",
+    "originalPath": "trials/morphology617-r2/run-one.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/run-one.py",
+    "originalBytes": 5862,
+    "originalSHA256": "5a5faf195aa4df1cc0566129ddb68914ebc0c054e664d0be976b9f86bd35c0d8",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/run-one.r1.py.frozen",
+    "originalPath": "trials/morphology617-r2/run-one.r1.py.frozen",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/run-one.r1.py.frozen",
+    "originalBytes": 5486,
+    "originalSHA256": "ec9fc41ea8792743e635cf4105a047eeadc2c370e5958d733a9822992193e0c4",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/section-deltas.csv.gz",
+    "originalPath": "trials/morphology617-r2/section-deltas.csv.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/section-deltas.csv.gz",
+    "originalBytes": 8485,
+    "originalSHA256": "7c29ab989296c2459f9142489e8d505f47bc4bcf71b02d6a45b9251be7302dd0",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/upper-profile-deltas.csv.gz",
+    "originalPath": "trials/morphology617-r2/upper-profile-deltas.csv.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/upper-profile-deltas.csv.gz",
+    "originalBytes": 1356,
+    "originalSHA256": "c0bc24742e44e2e3dbf4fcb42f71c6ae92e6f165b613868cee052e0c8430d498",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/validate-output.py",
+    "originalPath": "trials/morphology617-r2/validate-output.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/validate-output.py",
+    "originalBytes": 3008,
+    "originalSHA256": "123057feb8da7ea4aa51f2d6d4d87994b24ee8fd48e09ab1dcabeb9ac022e2f2",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/morphology617-r2/verify-comparison.py",
+    "originalPath": "trials/morphology617-r2/verify-comparison.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/morphology617-r2/verify-comparison.py",
+    "originalBytes": 5230,
+    "originalSHA256": "ce1b550ef753ccd1ca2bebfdbbefec72b2ce3d24a045e175b5ee1cdee7582176",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/MANIFEST.json",
+    "originalPath": "trials/r3/MANIFEST.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/MANIFEST.json",
+    "originalBytes": 4596,
+    "originalSHA256": "7b0bb7cec1707c0d29e864d9ff9c2342b4f030e5e66a174653ece53eaa9d7357",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/PROTOCOL.json",
+    "originalPath": "trials/r3/PROTOCOL.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/PROTOCOL.json",
+    "originalBytes": 1973,
+    "originalSHA256": "fe6a5420ec8ab4d4690b1c8309e3db6749221725c088ebb6c220a2b14a12ff47",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/REPORT.md",
+    "originalPath": "trials/r3/REPORT.md",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/REPORT.md",
+    "originalBytes": 6086,
+    "originalSHA256": "21d1e074129fa6e7b9bf17f80dce6e49724318da43deb7c37b19b67f0ee9a49a",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/app-build.log",
+    "originalPath": "trials/r3/app-build.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/app-build.log",
+    "originalBytes": 1460,
+    "originalSHA256": "cddaafe4557611ce84a45d47e3b30b33493026dd4a938b35a5d63d2c55688638",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/audit-scripts/qa-approach.ts",
+    "originalPath": "trials/r3/audit-scripts/qa-approach.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/audit-scripts/qa-approach.ts",
+    "originalBytes": 5346,
+    "originalSHA256": "7e80d5e44aa047467f87b891476e2158e3156a122d370557ed1f145f0786c986",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/baseline-source-manifest.json.gz",
+    "originalPath": "trials/r3/baseline-source-manifest.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/baseline-source-manifest.json.gz",
+    "originalBytes": 5796,
+    "originalSHA256": "0139fdcbf9c82a7f2782ac98cce5a9011fa65cca76071c154d44a1ba19afe086",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/candidate-source-manifest.json.gz",
+    "originalPath": "trials/r3/candidate-source-manifest.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/candidate-source-manifest.json.gz",
+    "originalBytes": 5800,
+    "originalSHA256": "079374fa54c4c96061ff5e943b0f4fd96c07ee6a45ef12118e1e05384b90bd30",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/candidate.patch.gz",
+    "originalPath": "trials/r3/candidate.patch.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/candidate.patch.gz",
+    "originalBytes": 4947,
+    "originalSHA256": "58b528d241ca813f551716ccebbbe43f91dd251e34b6460ae1488935093af047",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/checks.json",
+    "originalPath": "trials/r3/checks.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/checks.json",
+    "originalBytes": 1030,
+    "originalSHA256": "1b84ff9dded6002da55835c092ed2f56e44e88128c3b09d881d2f22d54865ca5",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/dist-manifest.json",
+    "originalPath": "trials/r3/dist-manifest.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/dist-manifest.json",
+    "originalBytes": 4295,
+    "originalSHA256": "d6f55c78fabb636e27fee1eb76f2a519f70b3bfc495b05f3fc4b6a184d5806a6",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/hero-build.log",
+    "originalPath": "trials/r3/hero-build.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/hero-build.log",
+    "originalBytes": 364,
+    "originalSHA256": "cd42b626cd368ad4afe569f381c368aeea2fb81e95b59364fb461db994559fc8",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/post-checks.json",
+    "originalPath": "trials/r3/post-checks.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/post-checks.json",
+    "originalBytes": 699,
+    "originalSHA256": "ff5665be6cb27c910c36e9f457c44ee380f96923dd2804be7802999255f5c55a",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/qa-approach-256.json.gz",
+    "originalPath": "trials/r3/qa-approach-256.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/qa-approach-256.json.gz",
+    "originalBytes": 4748,
+    "originalSHA256": "fe592f73496f44dd42c86177f28358c72c58fc7f5e47651ecc24f600a6c1e88a",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/qa-approach-256.log",
+    "originalPath": "trials/r3/qa-approach-256.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/qa-approach-256.log",
+    "originalBytes": 392,
+    "originalSHA256": "03183e20f630c66491783513beca3f5566d8b48b5ea89ed9b81bfb39f3e1d6b2",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/qa-monitor-error.txt",
+    "originalPath": "trials/r3/qa-monitor-error.txt",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/qa-monitor-error.txt",
+    "originalBytes": 537,
+    "originalSHA256": "3359dca1713f5cab00df6fd914f4f71b2e15b629455e56c346f3bb83a73dd2ff",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/qa-run-control.json",
+    "originalPath": "trials/r3/qa-run-control.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/qa-run-control.json",
+    "originalBytes": 988,
+    "originalSHA256": "d5ba8ee45612f1225c88d0c08ea63bbe80ea2741e583921578a83de17b66b0b4",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/run-checks.py",
+    "originalPath": "trials/r3/run-checks.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/run-checks.py",
+    "originalBytes": 1204,
+    "originalSHA256": "32abc28cf668f9fe76c68f932412a9395c5637f4ca01c528531684e470d3b632",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/run-qa.initial.py",
+    "originalPath": "trials/r3/run-qa.initial.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/run-qa.initial.py",
+    "originalBytes": 2418,
+    "originalSHA256": "f9d00f67ffb8fa1e072658bb7c891612646c027a4ee79c7f69f091166d15e900",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/run-qa.py",
+    "originalPath": "trials/r3/run-qa.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/run-qa.py",
+    "originalBytes": 2287,
+    "originalSHA256": "69b04e93b33ca3500c13e56f2664533f76557a7e19dd81497eda0be3d6a1320d",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/source-freeze.json.gz",
+    "originalPath": "trials/r3/source-freeze.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/source-freeze.json.gz",
+    "originalBytes": 6002,
+    "originalSHA256": "fea1a951fe5a5abd6b9e07af140d5b58b060b5a4afcbb71a485353e5f5cd7c59",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/targeted-test-results.json.gz",
+    "originalPath": "trials/r3/targeted-test-results.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/targeted-test-results.json.gz",
+    "originalBytes": 2189,
+    "originalSHA256": "567df82e9eeee0abf645c5440420b67ee20aba0ee3fe72962913277e0e2d7058",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/targeted-tests.log",
+    "originalPath": "trials/r3/targeted-tests.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/targeted-tests.log",
+    "originalBytes": 365,
+    "originalSHA256": "4bd90b8196a05ec9a03fcc2b49e539298e0e2a6a27a3fb5ef92c49ba137fc319",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/typecheck.log",
+    "originalPath": "trials/r3/typecheck.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/typecheck.log",
+    "originalBytes": 15,
+    "originalSHA256": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r3/verify.py",
+    "originalPath": "trials/r3/verify.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r3/verify.py",
+    "originalBytes": 7001,
+    "originalSHA256": "efa2db77237dc4e468506d82ca63091cd8d100444662e332091017dfa0524c3d",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/MANIFEST.json",
+    "originalPath": "trials/r4/MANIFEST.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/MANIFEST.json",
+    "originalBytes": 5117,
+    "originalSHA256": "dc8a5ac849d972f864c90c534172a535915dc68f0f060dfa5c7ad2a4690201a2",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/PROTOCOL.json",
+    "originalPath": "trials/r4/PROTOCOL.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/PROTOCOL.json",
+    "originalBytes": 2209,
+    "originalSHA256": "871f5b8c73ab960eace9ac9c265d0c7c0677d573334df1e8657e7dc6a187de61",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/REPORT.md",
+    "originalPath": "trials/r4/REPORT.md",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/REPORT.md",
+    "originalBytes": 5982,
+    "originalSHA256": "d39c07fe792030ae6f53367b478574e06fe2872b560a51391b40d9a8a0cbd655",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/app-build.log",
+    "originalPath": "trials/r4/app-build.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/app-build.log",
+    "originalBytes": 1758,
+    "originalSHA256": "b4d13a3f4fa56a8f4dd8fe3a52453d8c7d024c1e65b3890ae3fae038ab1abf93",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/baseline-source-manifest.json.gz",
+    "originalPath": "trials/r4/baseline-source-manifest.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/baseline-source-manifest.json.gz",
+    "originalBytes": 5796,
+    "originalSHA256": "0139fdcbf9c82a7f2782ac98cce5a9011fa65cca76071c154d44a1ba19afe086",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/branch-mutation.log",
+    "originalPath": "trials/r4/branch-mutation.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/branch-mutation.log",
+    "originalBytes": 847,
+    "originalSHA256": "2351752274f029404be2776552d27607b3da07f42824b4b77085ea9ef19c0430",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/candidate.patch.gz",
+    "originalPath": "trials/r4/candidate.patch.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/candidate.patch.gz",
+    "originalBytes": 10414,
+    "originalSHA256": "568ba16ca5a14d445f62717a47cd521898c869dfcf7bea75c61a141bc1637537",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/checks.json",
+    "originalPath": "trials/r4/checks.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/checks.json",
+    "originalBytes": 2382,
+    "originalSHA256": "e63a8f40a9b5432282c89e5d011207e11d44baecaa83f017b4276db23080c42a",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/dist-manifest.json",
+    "originalPath": "trials/r4/dist-manifest.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/dist-manifest.json",
+    "originalBytes": 4295,
+    "originalSHA256": "aea1bb52b835a05c126b51e76ad7fb4537cb1737c24f691ffcb768c03f938dbe",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/full-test-results.json.gz",
+    "originalPath": "trials/r4/full-test-results.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/full-test-results.json.gz",
+    "originalBytes": 18433,
+    "originalSHA256": "393a50ee707f1d665c7c167387794ccfcd023f6703b962fe7e4251b0db6dca95",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/full-tests.log",
+    "originalPath": "trials/r4/full-tests.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/full-tests.log",
+    "originalBytes": 897,
+    "originalSHA256": "d03320400d8571fc823ee0a20241b6156b4043f5728c0090b2df170a32dd378f",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/hero-build.log",
+    "originalPath": "trials/r4/hero-build.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/hero-build.log",
+    "originalBytes": 674,
+    "originalSHA256": "1008c42b25ebb772234766a09d9af52c9ab2637f62c6e140722741c36744d08c",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/layout1024.json.gz",
+    "originalPath": "trials/r4/layout1024.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/layout1024.json.gz",
+    "originalBytes": 94989,
+    "originalSHA256": "50595c324fa4b1931e4e81804f3fd6ddf4c1b7856769d8caa2c88dfcddf7b225",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/mutation-check.ts",
+    "originalPath": "trials/r4/mutation-check.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/mutation-check.ts",
+    "originalBytes": 1384,
+    "originalSHA256": "31c4c9a3e205144209a07f68fdc6be7dedc4f8e5e4373d1079fada744fe88db4",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/mutation-result.json",
+    "originalPath": "trials/r4/mutation-result.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/mutation-result.json",
+    "originalBytes": 373,
+    "originalSHA256": "2779e7bdd322a49efb9dfa8c61922dc048761a7de8c2cd6d44f3dcd34cd380b7",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/named-witnesses.json",
+    "originalPath": "trials/r4/named-witnesses.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/named-witnesses.json",
+    "originalBytes": 8027,
+    "originalSHA256": "da22d693eecd53c5b4652addc0e5209c736bdeeb70b24c2861add074b0e05bf9",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/post-checks.json",
+    "originalPath": "trials/r4/post-checks.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/post-checks.json",
+    "originalBytes": 525,
+    "originalSHA256": "982e233b1ebb678166a7785c97685d4f8de3efe4a530184ae9ab025ca55a0fa2",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/r3-to-r4.patch",
+    "originalPath": "trials/r4/r3-to-r4.patch",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/r3-to-r4.patch",
+    "originalBytes": 1650,
+    "originalSHA256": "03b1ef20f5281812b0f44e4e192d4f9e3b34c1dc7561e2d3cab46c82c60c6f5c",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/references/baseline-layout.mjs",
+    "originalPath": "trials/r4/references/baseline-layout.mjs",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/references/baseline-layout.mjs",
+    "originalBytes": 20466,
+    "originalSHA256": "a08bb50ebc0fce70c1474e55f41c9bd57038981619e5d106cddb7d50c38d5a14",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/references/r3-layout.mjs",
+    "originalPath": "trials/r4/references/r3-layout.mjs",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/references/r3-layout.mjs",
+    "originalBytes": 23765,
+    "originalSHA256": "7b7ec18131bdc8bf04185f0b66c580b48e7f36ca07aacde940060935ff923e18",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/run-qualification.py",
+    "originalPath": "trials/r4/run-qualification.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/run-qualification.py",
+    "originalBytes": 3415,
+    "originalSHA256": "44af2894e0e55436c0a57552ed84b47bff4cc70da2ccc42f389941e7ef2867d1",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/scanner.log",
+    "originalPath": "trials/r4/scanner.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/scanner.log",
+    "originalBytes": 3519,
+    "originalSHA256": "ab754814d5af4854d2ce550c6a6109537ecd41506a3933672f683982d06660b3",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/seven-test-results.json",
+    "originalPath": "trials/r4/seven-test-results.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/seven-test-results.json",
+    "originalBytes": 3326,
+    "originalSHA256": "0c6035d65323903504ab029dc4588d59db887a22c876aa2ce36e6caf5438b3df",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/seven-tests.log",
+    "originalPath": "trials/r4/seven-tests.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/seven-tests.log",
+    "originalBytes": 1060,
+    "originalSHA256": "a27c2e263519154a69b6c7045d3b07a7c085f19e9c03ec1a6e88e0cba64d90a0",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/source-freeze.json.gz",
+    "originalPath": "trials/r4/source-freeze.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/source-freeze.json.gz",
+    "originalBytes": 6302,
+    "originalSHA256": "4913af500d761ed8b116297708a89f82c5b81c20cbc3b0010a6e10035503ea35",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/source-manifest.json.gz",
+    "originalPath": "trials/r4/source-manifest.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/source-manifest.json.gz",
+    "originalBytes": 5967,
+    "originalSHA256": "0d60b14855a03f14d674cacbb8803af1187b106bddfc9e4d1cc6e88f9be3f744",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/typecheck.log",
+    "originalPath": "trials/r4/typecheck.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/typecheck.log",
+    "originalBytes": 322,
+    "originalSHA256": "d4c0efe862f7d07dfccea21f3f6f4aa5f183b7131de36e0baf65c2e1171f070f",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/verify.py",
+    "originalPath": "trials/r4/verify.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/verify.py",
+    "originalBytes": 5713,
+    "originalSHA256": "3703af4eea179868cba04703484bbfc02cd4402688e8a12932a924354565f21c",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4/wrong-recenter-requires-lift.volume.ts",
+    "originalPath": "trials/r4/wrong-recenter-requires-lift.volume.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4/wrong-recenter-requires-lift.volume.ts",
+    "originalBytes": 30282,
+    "originalSHA256": "30cefa04efb7d303c3e37c000c7759cce824b809b90e914167f5aed9cf3bbb63",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4-offline-verifier-control.json",
+    "originalPath": "trials/r4-offline-verifier-control.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4-offline-verifier-control.json",
+    "originalBytes": 466,
+    "originalSHA256": "dc591b9bed21ee39082cfc2506c4c592e3a2ed24f8131f950a117a64b511eeba",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4-offline-verifier.stderr.txt",
+    "originalPath": "trials/r4-offline-verifier.stderr.txt",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4-offline-verifier.stderr.txt",
+    "originalBytes": 0,
+    "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r4-offline-verifier.stdout.json",
+    "originalPath": "trials/r4-offline-verifier.stdout.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r4-offline-verifier.stdout.json",
+    "originalBytes": 575,
+    "originalSHA256": "4093cb723f77373da61c9eb9255da02d5a2e5b8fbc8436aaf421ff536f24d9a7",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/MANIFEST.json",
+    "originalPath": "trials/r5-r1/MANIFEST.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/MANIFEST.json",
+    "originalBytes": 3298,
+    "originalSHA256": "659e968d949caa9320938fbc67ec6f9ece7a3dd82691bd7b128f9b20b6d06e13",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/PROTOCOL.json",
+    "originalPath": "trials/r5-r1/PROTOCOL.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/PROTOCOL.json",
+    "originalBytes": 1691,
+    "originalSHA256": "6bd3bd9153d0e7ecec285d6980484384e973a45f80dba1f73630a75a288da8cc",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/app-build.log",
+    "originalPath": "trials/r5-r1/app-build.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/app-build.log",
+    "originalBytes": 1476,
+    "originalSHA256": "bd98a5ed5009a5a70e3a559880a4f7d288064caadcb4d29d7a740f1abb146fe7",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/baseline-source-manifest.json.gz",
+    "originalPath": "trials/r5-r1/baseline-source-manifest.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/baseline-source-manifest.json.gz",
+    "originalBytes": 5796,
+    "originalSHA256": "0139fdcbf9c82a7f2782ac98cce5a9011fa65cca76071c154d44a1ba19afe086",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/baseline-to-r5.patch.gz",
+    "originalPath": "trials/r5-r1/baseline-to-r5.patch.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/baseline-to-r5.patch.gz",
+    "originalBytes": 4814,
+    "originalSHA256": "7dbd59eb47c98b675efb518b685f36394402f036ed01a95fb679e355defd4fec",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/candidate-source-manifest.json.gz",
+    "originalPath": "trials/r5-r1/candidate-source-manifest.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/candidate-source-manifest.json.gz",
+    "originalBytes": 5794,
+    "originalSHA256": "8ab2767b21784ac6a1004ab934d1f188a972f8755997fb7a7f4fa09ef5e546f2",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/check-freeze.json",
+    "originalPath": "trials/r5-r1/check-freeze.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/check-freeze.json",
+    "originalBytes": 446,
+    "originalSHA256": "c9263fdb83d261171a78cad06f97ded0458df3a903c4f9ac8fc508ce97398e3e",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/check-layout.cjs",
+    "originalPath": "trials/r5-r1/check-layout.cjs",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/check-layout.cjs",
+    "originalBytes": 6927,
+    "originalSHA256": "8635d2d640616281ffb445131e579afe1b33e91d99e47213e40b50e9566cb9f8",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/checks.json",
+    "originalPath": "trials/r5-r1/checks.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/checks.json",
+    "originalBytes": 2117,
+    "originalSHA256": "66f98dcd7bd2e3b12abaf58b8f1114cdeef06c347e2f1b0fc2b1a5171e838bc8",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/dist-manifest.json",
+    "originalPath": "trials/r5-r1/dist-manifest.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/dist-manifest.json",
+    "originalBytes": 2709,
+    "originalSHA256": "bf30fe9a6e37874f388b5a1025b15b4d0d976661b0f2184a3bb5c5c5311db884",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/expected-report.json",
+    "originalPath": "trials/r5-r1/expected-report.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/expected-report.json",
+    "originalBytes": 5667,
+    "originalSHA256": "c164bfde31bd92f8e841495d10b70a38cc4138dd091603b2406b234a8b264ff3",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/finalize.py",
+    "originalPath": "trials/r5-r1/finalize.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/finalize.py",
+    "originalBytes": 2144,
+    "originalSHA256": "cfe3c8ff8325a5e136ce36d219617f7576cc7665f323232e638d42b132103641",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/freeze-summary.json",
+    "originalPath": "trials/r5-r1/freeze-summary.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/freeze-summary.json",
+    "originalBytes": 798,
+    "originalSHA256": "f04394df0bda48c3fa0ff27967a2ed0ad294dbe955a52f0c383a0f4b78b49f20",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/hero-build.log",
+    "originalPath": "trials/r5-r1/hero-build.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/hero-build.log",
+    "originalBytes": 331,
+    "originalSHA256": "6a1f61e29182e02a3dd85ac4e27a1cb022b83cce34535cf89ff96a525dc7420f",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/hero-dist-manifest.json",
+    "originalPath": "trials/r5-r1/hero-dist-manifest.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/hero-dist-manifest.json",
+    "originalBytes": 1091,
+    "originalSHA256": "035bf1533aeb56e30880970a651754d33e49db0de92ca64028159d5847655d2e",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/layout-prefix.log",
+    "originalPath": "trials/r5-r1/layout-prefix.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/layout-prefix.log",
+    "originalBytes": 832,
+    "originalSHA256": "62872546a18925793c6a6030fa6481a2c27aceb37a4e93e094dce578b049f531",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/prepare.py",
+    "originalPath": "trials/r5-r1/prepare.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/prepare.py",
+    "originalBytes": 5724,
+    "originalSHA256": "335165301d1cc2186ac284d37360fb3538ad72779259df6efc7bb03965db07b2",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/r3-source-manifest.json.gz",
+    "originalPath": "trials/r5-r1/r3-source-manifest.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/r3-source-manifest.json.gz",
+    "originalBytes": 5800,
+    "originalSHA256": "079374fa54c4c96061ff5e943b0f4fd96c07ee6a45ef12118e1e05384b90bd30",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/r3-to-r5.patch.gz",
+    "originalPath": "trials/r5-r1/r3-to-r5.patch.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/r3-to-r5.patch.gz",
+    "originalBytes": 2981,
+    "originalSHA256": "d15352d6dc49cdfbd55036bdb8823057df536bc0e562d99c2af7e93289e95571",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/run-checks.py",
+    "originalPath": "trials/r5-r1/run-checks.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/run-checks.py",
+    "originalBytes": 2052,
+    "originalSHA256": "5ef4bd588c49edad8a6772c9f1464c589d5c17105d0e47d8020be0723f24e279",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/source-freeze.json",
+    "originalPath": "trials/r5-r1/source-freeze.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/source-freeze.json",
+    "originalBytes": 2019,
+    "originalSHA256": "96a50c545a61c917f9cd3008eba978c16f929075701df43c6e466fc9500574dd",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/targeted-test-results.json.gz",
+    "originalPath": "trials/r5-r1/targeted-test-results.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/targeted-test-results.json.gz",
+    "originalBytes": 2201,
+    "originalSHA256": "a3710d89c45afe9046661a435d42a86aa35ff897bb208fc8df409dd43312f361",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/targeted-tests.log",
+    "originalPath": "trials/r5-r1/targeted-tests.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/targeted-tests.log",
+    "originalBytes": 130,
+    "originalSHA256": "9917fdb753d29a6c46906d7a8161cac09a98e0de769d50e16e7d88ce9ef25d79",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r1/typecheck.log",
+    "originalPath": "trials/r5-r1/typecheck.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r1/typecheck.log",
+    "originalBytes": 0,
+    "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/MANIFEST.json",
+    "originalPath": "trials/r5-r2/MANIFEST.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/MANIFEST.json",
+    "originalBytes": 4387,
+    "originalSHA256": "b78e8b56e4aa3338425f00dd3040bbb0b766fa0f10ca79c74a08a721254a5756",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/PROTOCOL.json",
+    "originalPath": "trials/r5-r2/PROTOCOL.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/PROTOCOL.json",
+    "originalBytes": 1929,
+    "originalSHA256": "74544723a9ad1f0b71ff7aa712502a66f5778a192a2ccee132cd0bfced24cded",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/REPORT.md",
+    "originalPath": "trials/r5-r2/REPORT.md",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/REPORT.md",
+    "originalBytes": 2217,
+    "originalSHA256": "1aa5bc653356fa0002d4695a420bdd212e10b1998003ebe0ea7db98183b5667b",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/app-build.log",
+    "originalPath": "trials/r5-r2/app-build.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/app-build.log",
+    "originalBytes": 1476,
+    "originalSHA256": "f91bfe424775466ba570d134ec85f6f0e293f0023e8562dd38acf9ba04b9b37d",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/baseline-source-manifest.json.gz",
+    "originalPath": "trials/r5-r2/baseline-source-manifest.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/baseline-source-manifest.json.gz",
+    "originalBytes": 5796,
+    "originalSHA256": "0139fdcbf9c82a7f2782ac98cce5a9011fa65cca76071c154d44a1ba19afe086",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/baseline-to-r5-r2.patch.gz",
+    "originalPath": "trials/r5-r2/baseline-to-r5-r2.patch.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/baseline-to-r5-r2.patch.gz",
+    "originalBytes": 4815,
+    "originalSHA256": "52a9e2fbcb86c76f21b397c290826cab1250f700eb8cc9a13749b968c783b1e4",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/candidate-source-manifest.json.gz",
+    "originalPath": "trials/r5-r2/candidate-source-manifest.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/candidate-source-manifest.json.gz",
+    "originalBytes": 5798,
+    "originalSHA256": "a2584249a09222fdca4c28e27a32eedab762684b5b192d08ceac39df31a3da13",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/check-926.cjs",
+    "originalPath": "trials/r5-r2/check-926.cjs",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/check-926.cjs",
+    "originalBytes": 5167,
+    "originalSHA256": "766c163b8eae0f8aa99d5fb879f29aeb2fc2fae395ec905402f4ee3f3313c8ca",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/check-freeze.json",
+    "originalPath": "trials/r5-r2/check-freeze.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/check-freeze.json",
+    "originalBytes": 446,
+    "originalSHA256": "aeadfd1e45fe31f9648d3daba169612e77cd1daf3b62a0e5fe5f27c91060ed9c",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/check-layout.cjs",
+    "originalPath": "trials/r5-r2/check-layout.cjs",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/check-layout.cjs",
+    "originalBytes": 5317,
+    "originalSHA256": "0b4599fcc5cf5564d0c39e22ff31a567f33135ce9fa6ef067a27a387db694976",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/checks.json",
+    "originalPath": "trials/r5-r2/checks.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/checks.json",
+    "originalBytes": 2121,
+    "originalSHA256": "43dee330e57c840710c9c78fde5b37f7bc12ecbe1e7fcf2f55ab5cd6c879481a",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/dist-manifest.json",
+    "originalPath": "trials/r5-r2/dist-manifest.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/dist-manifest.json",
+    "originalBytes": 2709,
+    "originalSHA256": "78ddd9640149210bfe104c8fded1e3d0b71991613908a71f943f7feafb6d269a",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/expected-926.json",
+    "originalPath": "trials/r5-r2/expected-926.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/expected-926.json",
+    "originalBytes": 1787,
+    "originalSHA256": "189e915b64e493c9ffcce3de4863b04ef436ee58de72c5cafeead8188acae8ac",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/expected-report.json",
+    "originalPath": "trials/r5-r2/expected-report.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/expected-report.json",
+    "originalBytes": 5948,
+    "originalSHA256": "a2f26c1db44a498f3417976154a7f690135f26e89fb0cb47f556c30409ddf858",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/finalize.py",
+    "originalPath": "trials/r5-r2/finalize.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/finalize.py",
+    "originalBytes": 5645,
+    "originalSHA256": "5c10ea8890fbee81714901a36993d800aadb6abad3f6b0938f2962fee1342c34",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/freeze-summary.json",
+    "originalPath": "trials/r5-r2/freeze-summary.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/freeze-summary.json",
+    "originalBytes": 906,
+    "originalSHA256": "7813bb5b7105e4c505391ffced992fdbd411d444217b5848e23f568972a49ee9",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/hero-build.log",
+    "originalPath": "trials/r5-r2/hero-build.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/hero-build.log",
+    "originalBytes": 331,
+    "originalSHA256": "1d242c1c8502a73f287168b41d0c694e835594530e381b2a058dfcd6f8f7900d",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/hero-dist-manifest.json",
+    "originalPath": "trials/r5-r2/hero-dist-manifest.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/hero-dist-manifest.json",
+    "originalBytes": 1091,
+    "originalSHA256": "035bf1533aeb56e30880970a651754d33e49db0de92ca64028159d5847655d2e",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/independent-verification.json",
+    "originalPath": "trials/r5-r2/independent-verification.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/independent-verification.json",
+    "originalBytes": 290,
+    "originalSHA256": "43d935d2cfcf117583f5de2d325a6f4a0fde401f8f7186b5a91caf980eca4042",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/layout-926.log",
+    "originalPath": "trials/r5-r2/layout-926.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/layout-926.log",
+    "originalBytes": 154,
+    "originalSHA256": "e609eedc7fdcf56f6c1b35d599df241ed7ff028c40fbcc2181ffd97298ee7113",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/layout-prefix.log",
+    "originalPath": "trials/r5-r2/layout-prefix.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/layout-prefix.log",
+    "originalBytes": 1022,
+    "originalSHA256": "13c92218707a48dc40111743d818eecacb7ac34b06a1bc72030fcd2ee42fd35f",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/post-checks.json",
+    "originalPath": "trials/r5-r2/post-checks.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/post-checks.json",
+    "originalBytes": 1133,
+    "originalSHA256": "d27d72ada318d85e4ea64adc479ede796b010c9aedd7dbab1b2b3d515f5106de",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/prepare.py",
+    "originalPath": "trials/r5-r2/prepare.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/prepare.py",
+    "originalBytes": 4782,
+    "originalSHA256": "9bd6c0a2b3baa581e3131ec14b297e4f99ab2fe5984b0cb46fd5d8acd30a0d41",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/r1-to-r2.patch.gz",
+    "originalPath": "trials/r5-r2/r1-to-r2.patch.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/r1-to-r2.patch.gz",
+    "originalBytes": 2856,
+    "originalSHA256": "2b73d93bc029469ecba53f31b12a98896ebe8f4af5b04e18c56f8a970d7707a0",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/r3-source-manifest.json.gz",
+    "originalPath": "trials/r5-r2/r3-source-manifest.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/r3-source-manifest.json.gz",
+    "originalBytes": 5800,
+    "originalSHA256": "079374fa54c4c96061ff5e943b0f4fd96c07ee6a45ef12118e1e05384b90bd30",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/r3-to-r5-r2.patch.gz",
+    "originalPath": "trials/r5-r2/r3-to-r5-r2.patch.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/r3-to-r5-r2.patch.gz",
+    "originalBytes": 3026,
+    "originalSHA256": "32b00cce3d3aad287d63f2873dd5808d1877db126dd71ce671a9f9a3c850f3d8",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/run-checks.py",
+    "originalPath": "trials/r5-r2/run-checks.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/run-checks.py",
+    "originalBytes": 2052,
+    "originalSHA256": "5ef4bd588c49edad8a6772c9f1464c589d5c17105d0e47d8020be0723f24e279",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/source-freeze.json",
+    "originalPath": "trials/r5-r2/source-freeze.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/source-freeze.json",
+    "originalBytes": 623,
+    "originalSHA256": "bf4a628a2730dcbaa25c2f2757901987d71beebd0bdebd21240e1d6225d5a459",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/supplement-926-freeze.json",
+    "originalPath": "trials/r5-r2/supplement-926-freeze.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/supplement-926-freeze.json",
+    "originalBytes": 566,
+    "originalSHA256": "78251754fb67e799a1856b31bc72dcfa6e303e4a41888df4236c285d78aba403",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/targeted-test-results.json.gz",
+    "originalPath": "trials/r5-r2/targeted-test-results.json.gz",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/targeted-test-results.json.gz",
+    "originalBytes": 2190,
+    "originalSHA256": "7285790cf3bbc50688221dd876335a05578238603127851e5f11e9c55d6102c4",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/targeted-tests.log",
+    "originalPath": "trials/r5-r2/targeted-tests.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/targeted-tests.log",
+    "originalBytes": 131,
+    "originalSHA256": "dbf54a36174e97f33fb41bdb7077278a6019b3e9298cc919a52bbf1aec4346b4",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/typecheck.log",
+    "originalPath": "trials/r5-r2/typecheck.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/typecheck.log",
+    "originalBytes": 0,
+    "originalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/r5-r2/verify.py",
+    "originalPath": "trials/r5-r2/verify.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/r5-r2/verify.py",
+    "originalBytes": 1950,
+    "originalSHA256": "3714735859842d1be23cec87aefeb59caae3ec9615daf46e8069f1c6d5878820",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/verify_curated.py",
+    "originalPath": "trials/verify_curated.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/verify_curated.py",
+    "originalBytes": 5096,
+    "originalSHA256": "1dd6a7d0cada35cfe7e3606759dc29cad5e7a9ba1b97e5e0a6e390b3fbac18ec",
+    "compression": "identity"
+  },
+  {
+    "path": "trials/MANIFEST.json",
+    "originalPath": "trials/MANIFEST.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/curated-trials/MANIFEST.json",
+    "originalBytes": 28613,
+    "originalSHA256": "d1e91242e53d61a14c1ba14e65204a25d43ce37b16d85ed43217288bd4803826",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/PROTOCOL.json",
+    "originalPath": "qualification/PROTOCOL.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/PROTOCOL.json",
+    "originalBytes": 3340,
+    "originalSHA256": "6eeb0d3aef13040f3d1654fe813694fd6e22dd008fb580aefdb50a2bde10aba2",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/REPORT.md",
+    "originalPath": "qualification/REPORT.md",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/REPORT.md",
+    "originalBytes": 7762,
+    "originalSHA256": "ef110b87480d4688262b6052f217cf335364aba78055da39b903b8228c946066",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/UNAPPLIED-qa-layout-scope.patch",
+    "originalPath": "qualification/UNAPPLIED-qa-layout-scope.patch",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/UNAPPLIED-qa-layout-scope.patch",
+    "originalBytes": 1627,
+    "originalSHA256": "a503fc7c28f5b2023b9c416ef51d72100e25e0f8f820c96ebb406fdbb8c66c33",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/app-build.log",
+    "originalPath": "qualification/app-build.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/app-build.log",
+    "originalBytes": 1758,
+    "originalSHA256": "bf7147297a8d3149e1bff1b21da8ac4755e07df614f4f8d9e2b4795c63ec4902",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/baseline-source-manifest.json",
+    "originalPath": "qualification/baseline-source-manifest.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/baseline-source-manifest.json",
+    "originalBytes": 12480,
+    "originalSHA256": "30c5448e87fb60c3bd3fdc8ca133993c49e54503a9950f9da1815fd59883171f",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/branch-mutation.log",
+    "originalPath": "qualification/branch-mutation.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/branch-mutation.log",
+    "originalBytes": 2685,
+    "originalSHA256": "ef205d15cf054aa29da499c91e6d2f0f0215abea012b5d601a635bb8e5c719f5",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/candidate.patch.gz",
+    "originalPath": "qualification/candidate.patch",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/candidate.patch",
+    "originalBytes": 32040,
+    "originalSHA256": "53eedfbc122a05860c12cbe679d50f9fce90d9842eafd7dd254b943c22802f44",
+    "compression": "gzip"
+  },
+  {
+    "path": "qualification/checks.json",
+    "originalPath": "qualification/checks.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/checks.json",
+    "originalBytes": 2844,
+    "originalSHA256": "1c00e3c8d1199a7b71edb3f780e68643acc0dff26164d9b1fa0595af48902728",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/dist-manifest.json",
+    "originalPath": "qualification/dist-manifest.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/dist-manifest.json",
+    "originalBytes": 4295,
+    "originalSHA256": "4b4e05993ba4848038503e6d8fcb77c52c8205b4948823fee08d7afa66325bd5",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/full-test-results.json.gz",
+    "originalPath": "qualification/full-test-results.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/full-test-results.json",
+    "originalBytes": 133243,
+    "originalSHA256": "48fd7708aaf5a2d8ed161572bd0d263db135b071a4bd6da143f5704435111dc5",
+    "compression": "gzip"
+  },
+  {
+    "path": "qualification/full-tests.log",
+    "originalPath": "qualification/full-tests.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/full-tests.log",
+    "originalBytes": 941,
+    "originalSHA256": "b3b8de0a96b541795ee19f4413407033f6393b244f8cb1d2497f164b4ae2e85b",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/hero-build.log",
+    "originalPath": "qualification/hero-build.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/hero-build.log",
+    "originalBytes": 675,
+    "originalSHA256": "d7e1fdf757f1e608388b490130e5f832821b228ad6b13fe99a729e120a1ea5ed",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/inherited-checks.json",
+    "originalPath": "qualification/inherited-checks.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/inherited-checks.json",
+    "originalBytes": 1688,
+    "originalSHA256": "7c87cb2616bc7337ab64a8fe45eb9cf9048ff03c29333516a7a3caf87491d631",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/layout1024.json.gz",
+    "originalPath": "qualification/layout1024.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/layout1024.json",
+    "originalBytes": 667078,
+    "originalSHA256": "aada167539ecb3f2c5cd076b5795b82d4a2a3c49d54f1890f051613a9c5348f5",
+    "compression": "gzip"
+  },
+  {
+    "path": "qualification/mutation-check.ts",
+    "originalPath": "qualification/mutation-check.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/mutation-check.ts",
+    "originalBytes": 3549,
+    "originalSHA256": "8897e5839f1701d27f105ef5d2275972a0cf523e5530ae74ed6891df8d549ad3",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/mutation-results.json",
+    "originalPath": "qualification/mutation-results.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/mutation-results.json",
+    "originalBytes": 3272,
+    "originalSHA256": "e7c37a1e039ded41e50680926fb02f6dc1f133f54656b1debae71bd435324da0",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/mutations/covered-inward-skipped.volume.ts",
+    "originalPath": "qualification/mutations/covered-inward-skipped.volume.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/mutations/covered-inward-skipped.volume.ts",
+    "originalBytes": 29883,
+    "originalSHA256": "7023ccce0a9963408d4c9a244c3f076b55ddf7e46112bd5e9715f6828b839ecc",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/mutations/duplicate-alias.volume.ts",
+    "originalPath": "qualification/mutations/duplicate-alias.volume.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/mutations/duplicate-alias.volume.ts",
+    "originalBytes": 29860,
+    "originalSHA256": "66581200643c4ea69cd3c4ea110c553ea9f2afdae5a4183c78061da372bb2885",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/mutations/extra-joint-rng.volume.ts",
+    "originalPath": "qualification/mutations/extra-joint-rng.volume.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/mutations/extra-joint-rng.volume.ts",
+    "originalBytes": 29847,
+    "originalSHA256": "e16645ec85f28749af9fd9858e1eca905614c2e649bbeaa03cec884f0a76debd",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/mutations/full-axis-collapse.volume.ts",
+    "originalPath": "qualification/mutations/full-axis-collapse.volume.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/mutations/full-axis-collapse.volume.ts",
+    "originalBytes": 29846,
+    "originalSHA256": "a44e62e13330b93ab6afd6386aab1dd33aef4faf96b10e05f3a884ac588c2438",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/mutations/no-joint.volume.ts",
+    "originalPath": "qualification/mutations/no-joint.volume.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/mutations/no-joint.volume.ts",
+    "originalBytes": 29843,
+    "originalSHA256": "5313d45749d44c53570b31552b026d69b32849780910fc6c62949dc1f35b87f1",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/mutations/r3-forbidden-body-lift.volume.ts",
+    "originalPath": "qualification/mutations/r3-forbidden-body-lift.volume.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/mutations/r3-forbidden-body-lift.volume.ts",
+    "originalBytes": 30231,
+    "originalSHA256": "ebacc5ad2bca3515f34bfa4d2a4fe028ef4d20c09bcbe446104cfc794569a190",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/mutations/r4-forbidden-body-lift.volume.ts",
+    "originalPath": "qualification/mutations/r4-forbidden-body-lift.volume.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/mutations/r4-forbidden-body-lift.volume.ts",
+    "originalBytes": 30265,
+    "originalSHA256": "52078334f68a827c5d4673483ffa5e53de394d894716985199613b5b3d8e81f1",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/named-witnesses.json",
+    "originalPath": "qualification/named-witnesses.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/named-witnesses.json",
+    "originalBytes": 11455,
+    "originalSHA256": "b6d24a62045ec001264be9de4fb3cb0bbc14e8a84398e237beef0a71b9bb3b41",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/nine-test-results.json",
+    "originalPath": "qualification/nine-test-results.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/nine-test-results.json",
+    "originalBytes": 4393,
+    "originalSHA256": "3a9b4e1fa19d808504829cff0cd01000b98a28fb40757bafa15b389c6a282cbc",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/nine-tests.log",
+    "originalPath": "qualification/nine-tests.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/nine-tests.log",
+    "originalBytes": 1054,
+    "originalSHA256": "ca759482114e1182bac883f12c6562f94603557e45ae55e63b05a44ce9b2c7c0",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/post-checks.json",
+    "originalPath": "qualification/post-checks.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/post-checks.json",
+    "originalBytes": 617,
+    "originalSHA256": "48bf249f667f176f4b332184402c8a63341edcf886bbfad8e971bf3880212659",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/prior-harness-run/MANIFEST.json",
+    "originalPath": "qualification/prior-harness-run/MANIFEST.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/prior-harness-run/MANIFEST.json",
+    "originalBytes": 4316,
+    "originalSHA256": "a129f60fa2002bb2d495c3128a31244e0fd37a2b45892dfd6b06e82f7c889501",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/prior-harness-run/PROTOCOL.json",
+    "originalPath": "qualification/prior-harness-run/PROTOCOL.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/prior-harness-run/PROTOCOL.json",
+    "originalBytes": 2642,
+    "originalSHA256": "40f709041f1acccb371b81a6788cdd619ce24f9b209012bcd9997cfdcd6548cd",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/prior-harness-run/branch-mutation.log",
+    "originalPath": "qualification/prior-harness-run/branch-mutation.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/prior-harness-run/branch-mutation.log",
+    "originalBytes": 1342,
+    "originalSHA256": "6ae01de7a9095af365ac0c16e9767497769e8f96333aff62f36466c6504ca54d",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/prior-harness-run/checks.json",
+    "originalPath": "qualification/prior-harness-run/checks.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/prior-harness-run/checks.json",
+    "originalBytes": 1558,
+    "originalSHA256": "5aa74d7d1b32566221c98ea07602e884bb1f973d7074e513ecb5a011642cb815",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/prior-harness-run/mutation-check.ts",
+    "originalPath": "qualification/prior-harness-run/mutation-check.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/prior-harness-run/mutation-check.ts",
+    "originalBytes": 3527,
+    "originalSHA256": "1bd4d78b0db74d1a8be4dc2d6242ee4c68984a233e2bb3aaa34b7ffbd336af5a",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/prior-harness-run/run-qualification.py",
+    "originalPath": "qualification/prior-harness-run/run-qualification.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/prior-harness-run/run-qualification.py",
+    "originalBytes": 3535,
+    "originalSHA256": "f7c751db18a903f5a881c405e11b24bea2ba9f1d65ec6c3b95e218fdf74e3c80",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/prior-harness-run/source-freeze.json",
+    "originalPath": "qualification/prior-harness-run/source-freeze.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/prior-harness-run/source-freeze.json",
+    "originalBytes": 13851,
+    "originalSHA256": "1a19ff811c68f5502d43182a4b24cf214df92aa32c42d4549d8dc5f5509a62ab",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/rain-source-manifest.json",
+    "originalPath": "qualification/rain-source-manifest.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/rain-source-manifest.json",
+    "originalBytes": 12480,
+    "originalSHA256": "5e684127a396920bca727ba89fd19bc5776084801ae2ca7e1e2d82313c4f8e05",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/references/baseline-layout.mjs",
+    "originalPath": "qualification/references/baseline-layout.mjs",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/references/baseline-layout.mjs",
+    "originalBytes": 20466,
+    "originalSHA256": "a08bb50ebc0fce70c1474e55f41c9bd57038981619e5d106cddb7d50c38d5a14",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/references/r3-body-lift.volume.ts",
+    "originalPath": "qualification/references/r3-body-lift.volume.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/references/r3-body-lift.volume.ts",
+    "originalBytes": 30231,
+    "originalSHA256": "ebacc5ad2bca3515f34bfa4d2a4fe028ef4d20c09bcbe446104cfc794569a190",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/references/r3-layout.mjs",
+    "originalPath": "qualification/references/r3-layout.mjs",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/references/r3-layout.mjs",
+    "originalBytes": 23765,
+    "originalSHA256": "7b7ec18131bdc8bf04185f0b66c580b48e7f36ca07aacde940060935ff923e18",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/references/r4-body-lift.volume.ts",
+    "originalPath": "qualification/references/r4-body-lift.volume.ts",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/references/r4-body-lift.volume.ts",
+    "originalBytes": 30265,
+    "originalSHA256": "52078334f68a827c5d4673483ffa5e53de394d894716985199613b5b3d8e81f1",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/run-qualification.py",
+    "originalPath": "qualification/run-qualification.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/run-qualification.py",
+    "originalBytes": 3217,
+    "originalSHA256": "61fd75e2fff573620c2005d244d016d3d62763da1ac59e34bdbb821b9a1cafe4",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/scanner.log",
+    "originalPath": "qualification/scanner.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/scanner.log",
+    "originalBytes": 3395,
+    "originalSHA256": "bbdf3a87f3cbbbcd2c655c3022ed47f9a1e4a2b39add156a9350e06952bc2644",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/source-freeze.json",
+    "originalPath": "qualification/source-freeze.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/source-freeze.json",
+    "originalBytes": 13943,
+    "originalSHA256": "85bad74add34479c92228367e4cb25d6a3274761b2ae143cdceef25fe887e643",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/source-manifest.json",
+    "originalPath": "qualification/source-manifest.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/source-manifest.json",
+    "originalBytes": 12815,
+    "originalSHA256": "e826b119ff2758fa51ed04cf8748d0d40ad1ff09516fc498826466ceae3974b7",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/typecheck.log",
+    "originalPath": "qualification/typecheck.log",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/typecheck.log",
+    "originalBytes": 322,
+    "originalSHA256": "77f9b9651a1bdb1f7abff3d9c744c9b1fedc8898623370c76f40a4196c822f01",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/verify.py",
+    "originalPath": "qualification/verify.py",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/verify.py",
+    "originalBytes": 8569,
+    "originalSHA256": "cba9363cd5a2999716e8a8570c5252c063f33362bc6c34b71a7ab1965b7ceeff",
+    "compression": "identity"
+  },
+  {
+    "path": "qualification/FULL-PACKAGE-MANIFEST.json",
+    "originalPath": "qualification/FULL-PACKAGE-MANIFEST.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/MANIFEST.json",
+    "originalBytes": 8421,
+    "originalSHA256": "3b2bfd91a802d93879db42ed2bc17f378dd9f939827a1d17b90c09ef368cb285",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/BASELINE-COPIES.json",
+    "originalPath": "visual/BASELINE-COPIES.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/BASELINE-COPIES.json",
+    "originalBytes": 4757,
+    "originalSHA256": "08a9dae89f3295b6d809ebd15f5d513704aa8caaa29646e38049bde1828f13f3",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/CAPTURE-NOTES.json",
+    "originalPath": "visual/CAPTURE-NOTES.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/CAPTURE-NOTES.json",
+    "originalBytes": 675,
+    "originalSHA256": "99fd94960b75ff3b35d68328d73828f9a9e93dd17c9a9e9f7be649a30855538a",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/PROJECTED-PROTOCOL.json",
+    "originalPath": "visual/PROJECTED-PROTOCOL.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/PROJECTED-PROTOCOL.json",
+    "originalBytes": 795,
+    "originalSHA256": "eaa336ea5d52d32a5632f79a37bdcce12eb27229ab49dd6a5d7f4c3efc2a9b6e",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/PROTOCOL.json",
+    "originalPath": "visual/PROTOCOL.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/PROTOCOL.json",
+    "originalBytes": 618,
+    "originalSHA256": "b50b4fa322eb9bf8dc33f15571805db237def6101b152dbce31543e14b6c45a4",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/REVIEW.md",
+    "originalPath": "visual/REVIEW.md",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/REVIEW.md",
+    "originalBytes": 14745,
+    "originalSHA256": "4a3881ad831993f3f7d81832645835e468cc471772d542caef6270653ddfbe4b",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a617-back-sun.css.jpg",
+    "originalPath": "visual/a617-back-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a617-back-sun.css.jpg",
+    "originalBytes": 69704,
+    "originalSHA256": "a8c81c0436c9c4c1600682afd4d810865d697533e3b0985e447d29829b46a57e",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a617-front-sun.css.jpg",
+    "originalPath": "visual/a617-front-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a617-front-sun.css.jpg",
+    "originalBytes": 51043,
+    "originalSHA256": "2370c32997e7f21d86443248dd640c7547184ef5e946c0896fd3bfc488ed4df0",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a617-near100-sun.css.jpg",
+    "originalPath": "visual/a617-near100-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a617-near100-sun.css.jpg",
+    "originalBytes": 33598,
+    "originalSHA256": "369467b2dbdc6ef1721dc8987a792a9a79259af6f70bcd2e6d976ce042068809",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a617-near100-ui.json",
+    "originalPath": "visual/a617-near100-ui.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a617-near100-ui.json",
+    "originalBytes": 483,
+    "originalSHA256": "b78511e3da83f38c4d329097b5d4f9c9638d0266dedd0f8d2284840ef29747b1",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a617-near80-sun.css.jpg",
+    "originalPath": "visual/a617-near80-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a617-near80-sun.css.jpg",
+    "originalBytes": 32884,
+    "originalSHA256": "3b6cb7dde15e3277a22c3318c97ad7ed134c57bf6621fa9140f445c12e52c33c",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a617-near95-sun.css.jpg",
+    "originalPath": "visual/a617-near95-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a617-near95-sun.css.jpg",
+    "originalBytes": 33817,
+    "originalSHA256": "2d528294d40fd3ad845617ad53bb9582d1c6a2850b6506b434601e16c2c2cb48",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a617-side-sun.css.jpg",
+    "originalPath": "visual/a617-side-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a617-side-sun.css.jpg",
+    "originalBytes": 63300,
+    "originalSHA256": "a2a2eab501d843f572c674ae552a1dc4e1e0ddb95a9cb931f9ed627a05fc38da",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a74-near100-sun.css.jpg",
+    "originalPath": "visual/a74-near100-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a74-near100-sun.css.jpg",
+    "originalBytes": 28264,
+    "originalSHA256": "c02d706bb80f3c9fe73cab94bebadd3f335b5becba644a2a67e56b2f0312048f",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a74-near40-sun.css.jpg",
+    "originalPath": "visual/a74-near40-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a74-near40-sun.css.jpg",
+    "originalBytes": 59690,
+    "originalSHA256": "e56545dc5409b6e3c9c12f29a28d24e1d125af1b39d8dcae0cfce47a94e7ace3",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a74-near40-sunset.css.jpg",
+    "originalPath": "visual/a74-near40-sunset.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a74-near40-sunset.css.jpg",
+    "originalBytes": 60560,
+    "originalSHA256": "0c971bd5ed6472f5754946fddf7a884dee4e726b0182d7660bc96f2595ccc540",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a74-near60-sun.css.jpg",
+    "originalPath": "visual/a74-near60-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a74-near60-sun.css.jpg",
+    "originalBytes": 46827,
+    "originalSHA256": "77af9d6cf162970b34761aa91d707302fc2173d16a36c7a18526047991e0a276",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a74-near80-sun.css.jpg",
+    "originalPath": "visual/a74-near80-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a74-near80-sun.css.jpg",
+    "originalBytes": 40029,
+    "originalSHA256": "f57fa0162b4d5bd5940906dcafb73b9bba07e54cf039d8d520aed99a87375c8e",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a74-rain-base.css.jpg",
+    "originalPath": "visual/a74-rain-base.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a74-rain-base.css.jpg",
+    "originalBytes": 64087,
+    "originalSHA256": "a782c0a4b8b0458dbcc5324aeed4b242e5fe60d289c60f59c5706cffe5f87acd",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a74-rain-ui.json",
+    "originalPath": "visual/a74-rain-ui.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a74-rain-ui.json",
+    "originalBytes": 481,
+    "originalSHA256": "ca659314dfc5ef6ebf4128efba5d41dd562ff58b4d7bf2fa621cc0c60e611ece",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a77-back-sun.css.jpg",
+    "originalPath": "visual/a77-back-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a77-back-sun.css.jpg",
+    "originalBytes": 70460,
+    "originalSHA256": "3b059ce76a843fb787ea4364f1f93481c2195ed3acc20391b15f536c3b5af47a",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a77-front-sun.css.jpg",
+    "originalPath": "visual/a77-front-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a77-front-sun.css.jpg",
+    "originalBytes": 52308,
+    "originalSHA256": "54f6a84297697715ca099bc1d6bbaf680dfb36263fadcd5fc77a7f00d8ad8618",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a77-near40-sun.css.jpg",
+    "originalPath": "visual/a77-near40-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a77-near40-sun.css.jpg",
+    "originalBytes": 47556,
+    "originalSHA256": "0bb5fc59fc6ce8157d81b2d8bd7d11b173bcd3b3d4e9e16f783d71aecd08d9da",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a77-near60-sun.css.jpg",
+    "originalPath": "visual/a77-near60-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a77-near60-sun.css.jpg",
+    "originalBytes": 38488,
+    "originalSHA256": "bc2336db7d1468afe61b3ed0f1589ec2e3588e9f26fb1083c2336001c4ffada5",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a77-near80-sun.css.jpg",
+    "originalPath": "visual/a77-near80-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a77-near80-sun.css.jpg",
+    "originalBytes": 38526,
+    "originalSHA256": "2df867c701a60ac9216c6ad0c517619b054a9585a133710d0b534acbcf5936a2",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a77-side-sun.css.jpg",
+    "originalPath": "visual/a77-side-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a77-side-sun.css.jpg",
+    "originalBytes": 63677,
+    "originalSHA256": "a27a3536a16522078541127929efb31fd74a4936a698b5908ab837173436e186",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a80-back-sun.css.jpg",
+    "originalPath": "visual/a80-back-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a80-back-sun.css.jpg",
+    "originalBytes": 70502,
+    "originalSHA256": "dbc8b6172dda7c277a986d8a211d0a5c6f1e85f1f8cc64dca1e8711e76b3447d",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a80-front-sun.css.jpg",
+    "originalPath": "visual/a80-front-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a80-front-sun.css.jpg",
+    "originalBytes": 51507,
+    "originalSHA256": "febebc6b829c619da8d1ecaf0a877687b8e59eaba1082a4be048019ed19ec2e4",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a80-near40-sun.css.jpg",
+    "originalPath": "visual/a80-near40-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a80-near40-sun.css.jpg",
+    "originalBytes": 55945,
+    "originalSHA256": "ddbe4dec85ca9dc51b3b926c01c136cc5dac5f5759fbc369bd40100c43f56a9a",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a80-near60-sun.css.jpg",
+    "originalPath": "visual/a80-near60-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a80-near60-sun.css.jpg",
+    "originalBytes": 42965,
+    "originalSHA256": "683fd4f053066491d0ca9652a1fbd926cad467116feec75368b3b7e6c3078bc2",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a80-near80-sun.css.jpg",
+    "originalPath": "visual/a80-near80-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a80-near80-sun.css.jpg",
+    "originalBytes": 36392,
+    "originalSHA256": "89fad1278230414fd710666bdedff06308b26677f5c5897f71224dee3dbfedc5",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a80-side-sun.css.jpg",
+    "originalPath": "visual/a80-side-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a80-side-sun.css.jpg",
+    "originalBytes": 63478,
+    "originalSHA256": "0c72bcfeccabb10ced376589645ce27ff582550ff09bc42e276f9a0b6f69ede6",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a917-back-sun.css.jpg",
+    "originalPath": "visual/a917-back-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a917-back-sun.css.jpg",
+    "originalBytes": 70153,
+    "originalSHA256": "100335b3ec609a44902991b8b86914f6080eed6d145b03864fb7f32876627e05",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a917-front-sun.css.jpg",
+    "originalPath": "visual/a917-front-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a917-front-sun.css.jpg",
+    "originalBytes": 51843,
+    "originalSHA256": "2e81cacf4912de10963e4876575f0a0eaf96b2944e5ffe3f721219a6facc2b16",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a917-side-sun.css.jpg",
+    "originalPath": "visual/a917-side-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a917-side-sun.css.jpg",
+    "originalBytes": 63542,
+    "originalSHA256": "0b587468baa7371c0222d422157f852253f7127c5acbbdb7968696c7782b3523",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a926-back-sun.css.jpg",
+    "originalPath": "visual/a926-back-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a926-back-sun.css.jpg",
+    "originalBytes": 70947,
+    "originalSHA256": "97b91a0127129c37d6e766a744923557df435a3eb03ed388813790fee74dafa0",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a926-front-sun.css.jpg",
+    "originalPath": "visual/a926-front-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a926-front-sun.css.jpg",
+    "originalBytes": 52497,
+    "originalSHA256": "ecc01209576bd3a1808f32da76afdf5459cd42d447e5b29fe6343398d15136ed",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a926-near40-sun.css.jpg",
+    "originalPath": "visual/a926-near40-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a926-near40-sun.css.jpg",
+    "originalBytes": 56786,
+    "originalSHA256": "947960b53b1e44deb78ef35e57ab9f9c476d6ffbc875a460166804834edc6e8e",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a926-near80-sun.css.jpg",
+    "originalPath": "visual/a926-near80-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a926-near80-sun.css.jpg",
+    "originalBytes": 38283,
+    "originalSHA256": "92ab85fe59b8e7856d0738b49bc045e0b14d46bb92273289a42c2e28ddf91955",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/a926-side-sun.css.jpg",
+    "originalPath": "visual/a926-side-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/a926-side-sun.css.jpg",
+    "originalBytes": 63711,
+    "originalSHA256": "d965ebd838ee7e24c13287d6b6e2f278ede8ab5cbb6c458b480b9512cebe4886",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b617-near100-sun.css.jpg",
+    "originalPath": "visual/b617-near100-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b617-near100-sun.css.jpg",
+    "originalBytes": 33598,
+    "originalSHA256": "369467b2dbdc6ef1721dc8987a792a9a79259af6f70bcd2e6d976ce042068809",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b617-near100.raw.json.gz",
+    "originalPath": "visual/b617-near100.raw.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b617-near100.raw.json",
+    "originalBytes": 3390509,
+    "originalSHA256": "7ba531c9ba93e93650400211fe5e75fa204ade0ddea8a4cb44233790b9109f2a",
+    "compression": "gzip"
+  },
+  {
+    "path": "visual/b617-near80-sun.css.jpg",
+    "originalPath": "visual/b617-near80-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b617-near80-sun.css.jpg",
+    "originalBytes": 33815,
+    "originalSHA256": "ab53f6304aa0044c964d40f7e9459ef396b4c0171e3b84a399d8f147016ce749",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b74-near-ui.json",
+    "originalPath": "visual/b74-near-ui.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b74-near-ui.json",
+    "originalBytes": 483,
+    "originalSHA256": "89d1f96b32f14f8ceb12ca0a2a198c942a12d7efb02f8d95aaf7fc197e4a93e5",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b74-near40-sun.css.jpg",
+    "originalPath": "visual/b74-near40-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b74-near40-sun.css.jpg",
+    "originalBytes": 58590,
+    "originalSHA256": "5001fcd2f484feb9d7167c5acef69fc3035fe24abe0a02143da12f511a6785f0",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b74-near40-sunset.css.jpg",
+    "originalPath": "visual/b74-near40-sunset.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b74-near40-sunset.css.jpg",
+    "originalBytes": 59092,
+    "originalSHA256": "9262d4573d489cb6cfabf27d1e8495a4def7d58a2efbd0db486dc0cd3d88c279",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b74-near60-sun.css.jpg",
+    "originalPath": "visual/b74-near60-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b74-near60-sun.css.jpg",
+    "originalBytes": 45025,
+    "originalSHA256": "10e0f808b59898510e827f8fe5602c117543774b5f3e47435a75c522ed7f8962",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b74-near80-sun.css.jpg",
+    "originalPath": "visual/b74-near80-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b74-near80-sun.css.jpg",
+    "originalBytes": 39252,
+    "originalSHA256": "69b395b78c80213561f1ea16d6cd653deea951ec1fb81b6ecf0c6f1bdfa95452",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b74-rain-base.css.jpg",
+    "originalPath": "visual/b74-rain-base.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b74-rain-base.css.jpg",
+    "originalBytes": 64153,
+    "originalSHA256": "bf9d58e3abb56190367d20e41a69646ceee200ab55b7a79d1d61c23ff6c69ce6",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b74-rain-ui.json",
+    "originalPath": "visual/b74-rain-ui.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b74-rain-ui.json",
+    "originalBytes": 481,
+    "originalSHA256": "0a30114394fbac6edb9b9766d8c5b4f16528edd068bb96a21782cde093ee0440",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b77-back-sun.css.jpg",
+    "originalPath": "visual/b77-back-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b77-back-sun.css.jpg",
+    "originalBytes": 70406,
+    "originalSHA256": "ae5ec12ee9b346db0c8e27a8fe278d1436f29a425b493bd55b957f9eadfd3d69",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b77-front-sun.css.jpg",
+    "originalPath": "visual/b77-front-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b77-front-sun.css.jpg",
+    "originalBytes": 52262,
+    "originalSHA256": "2d85b6bb316e8a8d5aa3e4ac10865dc8e3121f72c41a67baff0d898027495949",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b77-near40-sun.css.jpg",
+    "originalPath": "visual/b77-near40-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b77-near40-sun.css.jpg",
+    "originalBytes": 47389,
+    "originalSHA256": "acf1b5c4b78989130974263e30cbd413017f7aeaa5af5e2d29ba8df030e92793",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b77-near60-sun.css.jpg",
+    "originalPath": "visual/b77-near60-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b77-near60-sun.css.jpg",
+    "originalBytes": 38299,
+    "originalSHA256": "12839c5ef17405f990e5787aa8159c3b2ae75eb10c5ec6e3b8bd2b79bd295605",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b77-near80-sun.css.jpg",
+    "originalPath": "visual/b77-near80-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b77-near80-sun.css.jpg",
+    "originalBytes": 37847,
+    "originalSHA256": "3b9f3dc2f6fce2c04aa4f948ec594fbc78c1170e6cc84e63a08da245eef0091b",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b77-side-sun.css.jpg",
+    "originalPath": "visual/b77-side-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b77-side-sun.css.jpg",
+    "originalBytes": 63638,
+    "originalSHA256": "8f7ac317b6779efa2f620791b1c50dd18e643d368ca116e93f4f2dcb1f213924",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b80-near40-sun.css.jpg",
+    "originalPath": "visual/b80-near40-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b80-near40-sun.css.jpg",
+    "originalBytes": 56140,
+    "originalSHA256": "3a0a94fed7be9ec9e10a58b5be3a46cabb541d7e5aaa977fae02fd7a55a32318",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b80-near60-sun.css.jpg",
+    "originalPath": "visual/b80-near60-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b80-near60-sun.css.jpg",
+    "originalBytes": 43086,
+    "originalSHA256": "cd7c691c984cdf8682a53ab13cffdb50f59fe4c727ae8f1f9d7469926f4bf641",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b80-near80-sun.css.jpg",
+    "originalPath": "visual/b80-near80-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b80-near80-sun.css.jpg",
+    "originalBytes": 36541,
+    "originalSHA256": "51e00b6744f461bae0e677caf5324144b1b0b256e777dfe4ced81a87f8e85e9f",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b917-back-sun.css.jpg",
+    "originalPath": "visual/b917-back-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b917-back-sun.css.jpg",
+    "originalBytes": 70156,
+    "originalSHA256": "ee300b0a3e5aa06a8b0aa291b386c52e176ca583e191d1c68edcb7cd6558c7b2",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b917-front-sun.css.jpg",
+    "originalPath": "visual/b917-front-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b917-front-sun.css.jpg",
+    "originalBytes": 51842,
+    "originalSHA256": "52db2d8c9e0831134d8ea90a2adb8ae80d05e5732a541d53300f7a0c4215a714",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b917-side-sun.css.jpg",
+    "originalPath": "visual/b917-side-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b917-side-sun.css.jpg",
+    "originalBytes": 63512,
+    "originalSHA256": "2ef238ba172318a67a792b0afa1d2c0e46472f44e0860f288f98cc5f82f63233",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b926-back-sun.css.jpg",
+    "originalPath": "visual/b926-back-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b926-back-sun.css.jpg",
+    "originalBytes": 71039,
+    "originalSHA256": "54f400f773a5aac453074cd347c74f15413b469d3e557d4be26fc66514e9a939",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b926-front-sun.css.jpg",
+    "originalPath": "visual/b926-front-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b926-front-sun.css.jpg",
+    "originalBytes": 58993,
+    "originalSHA256": "a32c1259af87c39734da9785b39a3326bda289ed52e59b342ac197196cfec69d",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b926-near40-sun.css.jpg",
+    "originalPath": "visual/b926-near40-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b926-near40-sun.css.jpg",
+    "originalBytes": 57177,
+    "originalSHA256": "ef2a9a1e81bbab397c596c25c1e603bcf63c067e33558fcee358a89a3848a45b",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b926-near80-sun.css.jpg",
+    "originalPath": "visual/b926-near80-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b926-near80-sun.css.jpg",
+    "originalBytes": 38676,
+    "originalSHA256": "0687d57bbad0307a71917c26450f7b16749c588c38c7f95cb0e40e8ccedcbe52",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/b926-side-sun.css.jpg",
+    "originalPath": "visual/b926-side-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/b926-side-sun.css.jpg",
+    "originalBytes": 63702,
+    "originalSHA256": "7b36e381bffc72ea8287561c737b821aa36b3d985dd2ed90d5cff59783b91c97",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/camera617-preservation.json",
+    "originalPath": "visual/camera617-preservation.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/camera617-preservation.json",
+    "originalBytes": 2352,
+    "originalSHA256": "0ef8e55a7c67340cb503685fd80259b78ec666e4fc2bed505a3dbfce66f66335",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/early-sky-a917-back-sun.css.jpg",
+    "originalPath": "visual/early-sky-a917-back-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/early-sky-a917-back-sun.css.jpg",
+    "originalBytes": 66413,
+    "originalSHA256": "70b5da1399f417beaaf3d49eeb2744bce3a4379aa6c14e62d02497f13d1b56f6",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/early-sky-a917-front-sun.css.jpg",
+    "originalPath": "visual/early-sky-a917-front-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/early-sky-a917-front-sun.css.jpg",
+    "originalBytes": 48188,
+    "originalSHA256": "0371b55df0be59f00c31c5f93e7572abd47e60a7af062004af81b62bcb0e04e2",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/early-sky-a917-side-sun.css.jpg",
+    "originalPath": "visual/early-sky-a917-side-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/early-sky-a917-side-sun.css.jpg",
+    "originalBytes": 61315,
+    "originalSHA256": "9f50907bdf8f1efe93cfa072015d5f5864d257a257b3578fbdf9f98429ebe591",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/early-sky-b926-back-sun.css.jpg",
+    "originalPath": "visual/early-sky-b926-back-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/early-sky-b926-back-sun.css.jpg",
+    "originalBytes": 67350,
+    "originalSHA256": "80efc52669dfd8adbff990aa5b60e8f1e9577eb7b6df5e47929cbaa7558b46a3",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/early-sky-b926-front-sun.css.jpg",
+    "originalPath": "visual/early-sky-b926-front-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/early-sky-b926-front-sun.css.jpg",
+    "originalBytes": 48472,
+    "originalSHA256": "a23a93d279056efbe529bf8c2363cf9e1730b7f84fae69c0e3bcd6c8e4a2ba02",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/early-sky-b926-side-sun.css.jpg",
+    "originalPath": "visual/early-sky-b926-side-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/early-sky-b926-side-sun.css.jpg",
+    "originalBytes": 61373,
+    "originalSHA256": "5f768b385ba49f756651f808c5959f58d4e79e0ac5bbc4614ebde568ac501300",
+    "compression": "identity"
+  },
+  {
+    "path": "visual/projected-worst-from-r4.json",
+    "originalPath": "visual/projected-worst-from-r4.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/recenter-only-visual/projected-worst-from-r4.json",
+    "originalBytes": 478,
+    "originalSHA256": "1e3ed4927fd6b22559958b52091dcc101fc249cb8902c8b57ea0934905511367",
+    "compression": "identity"
+  },
+  {
+    "path": "browser/PROTOCOL.json",
+    "originalPath": "browser/PROTOCOL.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/v56-final/PROTOCOL.json",
+    "originalBytes": 971,
+    "originalSHA256": "aa2e019b3ffedd23b7d3be27345c7d9773ae26ff61ddfbfd86fcbe59a4f5500c",
+    "compression": "identity"
+  },
+  {
+    "path": "browser/console-main-worker.json",
+    "originalPath": "browser/console-main-worker.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/v56-final/console-main-worker.json",
+    "originalBytes": 2,
+    "originalSHA256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "compression": "identity"
+  },
+  {
+    "path": "browser/performance-summary.json",
+    "originalPath": "browser/performance-summary.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/v56-final/performance-summary.json",
+    "originalBytes": 7048,
+    "originalSHA256": "ca93411c68b58d1efaa62166ebd48dcd72042f85f20785e4e2b87b7e9dd66ae7",
+    "compression": "identity"
+  },
+  {
+    "path": "browser/rain-native-ui.json",
+    "originalPath": "browser/rain-native-ui.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/v56-final/rain-native-ui.json",
+    "originalBytes": 481,
+    "originalSHA256": "67d3aa21a4e1e1a60b7e3a2b7b0f4095ab459cdb93325efd2bc984ff64dbfff0",
+    "compression": "identity"
+  },
+  {
+    "path": "browser/rain-native.css.jpg",
+    "originalPath": "browser/rain-native.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/v56-final/rain-native.css.jpg",
+    "originalBytes": 60082,
+    "originalSHA256": "58f12960f5d38aec0a2f0d221e45f571b0712d19bc212ad89bf539ad13685e40",
+    "compression": "identity"
+  },
+  {
+    "path": "browser/rain-native.raw.json.gz",
+    "originalPath": "browser/rain-native.raw.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/v56-final/rain-native.raw.json",
+    "originalBytes": 2018415,
+    "originalSHA256": "fa899bd060806f67f4b74f46bb5addde948263ba8db3e541b1c59f1f9b1d0fad",
+    "compression": "gzip"
+  },
+  {
+    "path": "browser/sun-native-ui.json",
+    "originalPath": "browser/sun-native-ui.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/v56-final/sun-native-ui.json",
+    "originalBytes": 482,
+    "originalSHA256": "894ad5b70a19ff7c4a0cb620605f573ef6f01c8133d87c94d1b7378a0ad39703",
+    "compression": "identity"
+  },
+  {
+    "path": "browser/sun-native.raw.json.gz",
+    "originalPath": "browser/sun-native.raw.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/v56-final/sun-native.raw.json",
+    "originalBytes": 5859644,
+    "originalSHA256": "bb911e5f05440f0b6381c7860e92b85db280bc3ed3171db424de6c8de6cac5fe",
+    "compression": "gzip"
+  },
+  {
+    "path": "browser/worker-sun-native-ui.json",
+    "originalPath": "browser/worker-sun-native-ui.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/v56-final/worker-sun-native-ui.json",
+    "originalBytes": 489,
+    "originalSHA256": "9b7179b6c305526bd797a1f26daad1ddcd6261598e163e1abc45578f8ca90d77",
+    "compression": "identity"
+  },
+  {
+    "path": "browser/worker-sun-native.css.jpg",
+    "originalPath": "browser/worker-sun-native.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/v56-final/worker-sun-native.css.jpg",
+    "originalBytes": 50141,
+    "originalSHA256": "af42be509caa8daa97dd1de93aa6aca3480791f27013da0c7a6816263f1195dd",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/NEAR-ADDITION.json",
+    "originalPath": "rejected-visual/NEAR-ADDITION.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/NEAR-ADDITION.json",
+    "originalBytes": 635,
+    "originalSHA256": "a10014c29f10b95af0cd6994462c8b1fa93026fb9d6bed888d3a7ea95758b2d2",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/NEAR-PROTOCOL.json",
+    "originalPath": "rejected-visual/NEAR-PROTOCOL.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/NEAR-PROTOCOL.json",
+    "originalBytes": 750,
+    "originalSHA256": "63cb217fe170eb2c047cb04eee58ee8cd28ce181605d808d752d896b15b97da7",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/PROTOCOL.json",
+    "originalPath": "rejected-visual/PROTOCOL.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/PROTOCOL.json",
+    "originalBytes": 1605,
+    "originalSHA256": "3ce99dea3c4b2c4d0edc56f472d3a0139b2b728882f4f684b0b1b5b5013fab38",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/RAIN74.md",
+    "originalPath": "rejected-visual/RAIN74.md",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/RAIN74.md",
+    "originalBytes": 2305,
+    "originalSHA256": "f84ee0a314a24c7df51b1abc90f2a7fbf4c1740a414a07224ce52ab0950046c4",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/REVIEW-NEAR617.md",
+    "originalPath": "rejected-visual/REVIEW-NEAR617.md",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/REVIEW-NEAR617.md",
+    "originalBytes": 5653,
+    "originalSHA256": "b8782e2713cac8f1f8c6677ac2310015c6383c292d53235b577a8e6c30363431",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/REVIEW-NEAR74.md",
+    "originalPath": "rejected-visual/REVIEW-NEAR74.md",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/REVIEW-NEAR74.md",
+    "originalBytes": 4948,
+    "originalSHA256": "9d89551bb07a238af26bb1fe583ce9d3f3faee9a4f82ebc3a0d58846d4989ebf",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/REVIEW617.md",
+    "originalPath": "rejected-visual/REVIEW617.md",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/REVIEW617.md",
+    "originalBytes": 4621,
+    "originalSHA256": "82461fb164a2056c7dcc973779344889ddb986c50ed2dd4e59c494770fbbca89",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/REVIEW77.md",
+    "originalPath": "rejected-visual/REVIEW77.md",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/REVIEW77.md",
+    "originalBytes": 2780,
+    "originalSHA256": "ce45a56266041d6837df16ab65f081036bbeaa7085fb491383a76d47883b8296",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/REVIEW80.md",
+    "originalPath": "rejected-visual/REVIEW80.md",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/REVIEW80.md",
+    "originalBytes": 3156,
+    "originalSHA256": "64b72c245871426d57259565f18060da3debcb31053ecb1caef10b00324b6d86",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/a617-back-sun.css.jpg",
+    "originalPath": "rejected-visual/a617-back-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/a617-back-sun.css.jpg",
+    "originalBytes": 69704,
+    "originalSHA256": "a8c81c0436c9c4c1600682afd4d810865d697533e3b0985e447d29829b46a57e",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/a617-front-sun.css.jpg",
+    "originalPath": "rejected-visual/a617-front-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/a617-front-sun.css.jpg",
+    "originalBytes": 51043,
+    "originalSHA256": "2370c32997e7f21d86443248dd640c7547184ef5e946c0896fd3bfc488ed4df0",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/a617-near100-sun.css.jpg",
+    "originalPath": "rejected-visual/a617-near100-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/a617-near100-sun.css.jpg",
+    "originalBytes": 33598,
+    "originalSHA256": "369467b2dbdc6ef1721dc8987a792a9a79259af6f70bcd2e6d976ce042068809",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/a617-near100-sunset.css.jpg",
+    "originalPath": "rejected-visual/a617-near100-sunset.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/a617-near100-sunset.css.jpg",
+    "originalBytes": 30143,
+    "originalSHA256": "224708efa3a9da283595f228a4b79bc0f3468583006eab6276b9087ffb89a45e",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/a617-near100-ui.json",
+    "originalPath": "rejected-visual/a617-near100-ui.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/a617-near100-ui.json",
+    "originalBytes": 483,
+    "originalSHA256": "b78511e3da83f38c4d329097b5d4f9c9638d0266dedd0f8d2284840ef29747b1",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/a617-near100.raw.json.gz",
+    "originalPath": "rejected-visual/a617-near100.raw.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/a617-near100.raw.json",
+    "originalBytes": 3412894,
+    "originalSHA256": "0d9323168426c3e76894788e45929975fd76c55f53793aec43814d0ac712ef26",
+    "compression": "gzip"
+  },
+  {
+    "path": "rejected-visual/a617-near80-sun.css.jpg",
+    "originalPath": "rejected-visual/a617-near80-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/a617-near80-sun.css.jpg",
+    "originalBytes": 32884,
+    "originalSHA256": "3b6cb7dde15e3277a22c3318c97ad7ed134c57bf6621fa9140f445c12e52c33c",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/a617-near95-sun.css.jpg",
+    "originalPath": "rejected-visual/a617-near95-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/a617-near95-sun.css.jpg",
+    "originalBytes": 33817,
+    "originalSHA256": "2d528294d40fd3ad845617ad53bb9582d1c6a2850b6506b434601e16c2c2cb48",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/a617-side-sun.css.jpg",
+    "originalPath": "rejected-visual/a617-side-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/a617-side-sun.css.jpg",
+    "originalBytes": 63300,
+    "originalSHA256": "a2a2eab501d843f572c674ae552a1dc4e1e0ddb95a9cb931f9ed627a05fc38da",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/a617-ui.json",
+    "originalPath": "rejected-visual/a617-ui.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/a617-ui.json",
+    "originalBytes": 521,
+    "originalSHA256": "9052d003cc7b1f94aafc8436bf787eb5e8df33d0e261aedc0f6ef9a03316f223",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/b617-back-sun.css.jpg",
+    "originalPath": "rejected-visual/b617-back-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/b617-back-sun.css.jpg",
+    "originalBytes": 69375,
+    "originalSHA256": "500c57d4491d991bfd7eacfe5d4ca1f46ba515f596955db09155079d5ccbca4d",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/b617-front-sun.css.jpg",
+    "originalPath": "rejected-visual/b617-front-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/b617-front-sun.css.jpg",
+    "originalBytes": 51205,
+    "originalSHA256": "048d1a5ac9c6c06afa722ad0914109dbeee215c31ea74de8b29a9b664d753941",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/b617-near100-sun.css.jpg",
+    "originalPath": "rejected-visual/b617-near100-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/b617-near100-sun.css.jpg",
+    "originalBytes": 27170,
+    "originalSHA256": "d642f5addb8fc2085f52f21f477ebb890399f262b0b58754341905120993782f",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/b617-near100-sunset.css.jpg",
+    "originalPath": "rejected-visual/b617-near100-sunset.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/b617-near100-sunset.css.jpg",
+    "originalBytes": 28159,
+    "originalSHA256": "e915929565b5e8883d8b5c570abea119121f78baaefe21b8da5be2056c7fef0f",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/b617-near100-ui.json",
+    "originalPath": "rejected-visual/b617-near100-ui.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/b617-near100-ui.json",
+    "originalBytes": 483,
+    "originalSHA256": "c3c811e4a98e09f0bdc05308d7310864afd6ecf813e8a92b4f8dc91a12097ad2",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/b617-near100.raw.json.gz",
+    "originalPath": "rejected-visual/b617-near100.raw.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/b617-near100.raw.json",
+    "originalBytes": 4378580,
+    "originalSHA256": "81614b2b7f39733694231d22ffaf29dd3997bc7570ff8d3d15fc866eb163cafa",
+    "compression": "gzip"
+  },
+  {
+    "path": "rejected-visual/b617-near80-sun.css.jpg",
+    "originalPath": "rejected-visual/b617-near80-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/b617-near80-sun.css.jpg",
+    "originalBytes": 35127,
+    "originalSHA256": "06658655b632f873b7bb6b331c4ef2aa16b1e8429fb1667e6b6a5d70ce38574a",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/b617-near95-sun.css.jpg",
+    "originalPath": "rejected-visual/b617-near95-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/b617-near95-sun.css.jpg",
+    "originalBytes": 27993,
+    "originalSHA256": "764a6d26ebe290fb355b2c96288867e221d2105abc6687a54b79b9dddcba6207",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/b617-side-sun.css.jpg",
+    "originalPath": "rejected-visual/b617-side-sun.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/b617-side-sun.css.jpg",
+    "originalBytes": 63298,
+    "originalSHA256": "c90fab7327cc770373b5e3cb0e9462a165987dedc72541d770bf57ee3e70d333",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/b617-ui.json",
+    "originalPath": "rejected-visual/b617-ui.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/b617-ui.json",
+    "originalBytes": 483,
+    "originalSHA256": "d5dc2608d43db8aa3d9edeca061190d1692eff4dd9c8da4c569c219cd5bf7bc2",
+    "compression": "identity"
+  },
+  {
+    "path": "rejected-visual/near617-summary.json",
+    "originalPath": "rejected-visual/near617-summary.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-visual/near617-summary.json",
+    "originalBytes": 4372,
+    "originalSHA256": "da7180c2da796c06ad2be5b2380139c4584199e6778ee22bd6b5aaa3bcaf4d87",
+    "compression": "identity"
+  },
+  {
+    "path": "final-R5-review.md",
+    "originalPath": "final-R5-review.md",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/final-R5-review.md",
+    "originalBytes": 3331,
+    "originalSHA256": "13dedb84bcafc91b07b2385e8f3f1260a7c67885f806958459715ebbd7b869b3",
+    "compression": "identity"
+  },
+  {
+    "path": "final-R5-review-provenance.json",
+    "originalPath": "final-R5-review-provenance.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/final-R5-review-provenance.json",
+    "originalBytes": 6949,
+    "originalSHA256": "ee7abd9277ff19ae8226dbdc745a1b6edcfc6e679a006a31830b31955cf4fd1f",
+    "compression": "identity"
+  },
+  {
+    "path": "browser/preview-main-native-ui.json",
+    "originalPath": "browser/preview-main-native-ui.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/v56-final/preview-main-native-ui.json",
+    "originalBytes": 526,
+    "originalSHA256": "d1b2aa8dfba774cc78eabb895c2d9210412f8cf8931051769a716439bf5a5b23",
+    "compression": "identity"
+  },
+  {
+    "path": "browser/preview-main-native-later-ui.json",
+    "originalPath": "browser/preview-main-native-later-ui.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/v56-final/preview-main-native-later-ui.json",
+    "originalBytes": 382,
+    "originalSHA256": "f1525378fd433e4863f0d2631849fa324537f7a34f4038ff4c8b11a008d4d2ae",
+    "compression": "identity"
+  },
+  {
+    "path": "browser/preview-sun-animated.css.jpg",
+    "originalPath": "browser/preview-sun-animated.css.jpg",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/v56-final/preview-sun-animated.css.jpg",
+    "originalBytes": 61503,
+    "originalSHA256": "6b5cc2acfb838b4d0c6e32ba4ea4bd4afaea21c3139d5a68ef89f1dc17c1e292",
+    "compression": "identity"
+  },
+  {
+    "path": "browser/console-preview.json",
+    "originalPath": "browser/console-preview.json",
+    "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/v56-final/console-preview.json",
+    "originalBytes": 2,
+    "originalSHA256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "compression": "identity"
+  }
+]

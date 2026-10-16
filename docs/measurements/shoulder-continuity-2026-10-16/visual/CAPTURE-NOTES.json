@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-16T17:33:08.778919+00:00",
+  "earlyCapturesPreserved": [
+    "early-sky-b926-*-sun.css.jpg",
+    "early-sky-a917-*-sun.css.jpg (pending rename before recapture)"
+  ],
+  "reason": "Initial stills can precede dedicated sky-worker cache/atmospheric transition settling. Early sky images retained, not used to judge light or colour. Final926 recaptured with visually blue clear sky. Geometry comparisons remain qualitative CSS, not pixel/ray identity.",
+  "limits": "Weather selection and live sky mode alone are target-state evidence. Per-image cache readiness not exposed in live HUD; photographs and subsequent 30s report sanity are separate evidence."
+}

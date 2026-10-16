@@ -1,0 +1,152 @@
+{
+  "status": "PASS",
+  "scope": "7 named actual prefixes only, no raster/bake or new 1024 scan",
+  "runtime": {
+    "node": "v24.19.0",
+    "arch": "arm64"
+  },
+  "factories": {
+    "A": {
+      "sourceSHA256": "a53410c45b04143710cffd098b6a33deade3242c66ecf7eecc6405a214a93b00",
+      "emittedPrefixSHA256": "a82806b0dce5c7d01be4955c3d0dbeccb102781645fa8d729b2cd9448d68a7c1"
+    },
+    "R3": {
+      "sourceSHA256": "ebacc5ad2bca3515f34bfa4d2a4fe028ef4d20c09bcbe446104cfc794569a190",
+      "emittedPrefixSHA256": "51245c50920f5d6f0d82d318e4cdb51f801344a1e8d6df9f6dcc0a53e843cedc"
+    },
+    "R5": {
+      "sourceSHA256": "c349e8f7526a2dafa0348516079f3f67ab7288a17769f28193ebcef7e124d34d",
+      "emittedPrefixSHA256": "9b4f812a3911e801f3441c5bebdc0b891762de540ad4797b977200098b0ebdea"
+    }
+  },
+  "oracle": "geometric signed/perpendicular projection and child-relative offset invariants; exact baseline tuples elsewhere. Group identified by actual archived R3 changed X/Z IDs, no copied R5 translation expression.",
+  "toleranceKm": 1e-12,
+  "rows": [
+    {
+      "seed": 74,
+      "lobes": 1918,
+      "changedGroup": 91,
+      "body91ExactA": true,
+      "rngExactA": true,
+      "projectionBeforeKm": 0.6210722799918348,
+      "projectionAfterKm": -9.71445146547012e-17,
+      "perpendicularBeforeKm": -0.2645044462769724,
+      "perpendicularAfterKm": -0.2645044462769724,
+      "r3FullAxisDisplacementM": 675.0506492660706,
+      "r5InwardOnlyDisplacementM": 621.0722799918348,
+      "tupleSHA256": {
+        "A": "488292025a402b0fb2f0ae1f5fc0bd11e9dae524603b16b9f350742ef71b5d94",
+        "R3": "eeb9e33e519418d1678cc3798e14d915ce3cae4846548885da95b986435a717b",
+        "R5R2": "179916a24b22dc70f90f8e25e92965bf2d99c0dfca82c5401d34556bd6cb2e33"
+      }
+    },
+    {
+      "seed": 77,
+      "lobes": 1827,
+      "changedGroup": 91,
+      "body91ExactA": true,
+      "rngExactA": true,
+      "projectionBeforeKm": 0.6137912474239509,
+      "projectionAfterKm": 1.942890293094024e-16,
+      "perpendicularBeforeKm": 0.3468011155985642,
+      "perpendicularAfterKm": 0.3468011155985643,
+      "r3FullAxisDisplacementM": 704.9898646042072,
+      "r5InwardOnlyDisplacementM": 613.7912474239507,
+      "tupleSHA256": {
+        "A": "da362731ae87124eed73fe34260cc5c9a84720dc28680a52b0737d8eead619d4",
+        "R3": "9f72cbf442b7a5c03bde35f2ed46b1767f0c4f0654b8c2e457026c513a1ed72f",
+        "R5R2": "ba25d324e1cffdf72a2b2a7156ba591e724994f3757b67269ec0b89bef292fc0"
+      }
+    },
+    {
+      "seed": 80,
+      "lobes": 1918,
+      "changedGroup": 91,
+      "body91ExactA": true,
+      "rngExactA": true,
+      "projectionBeforeKm": 0.3441820425061475,
+      "projectionAfterKm": 5.551115123125783e-17,
+      "perpendicularBeforeKm": 0.4453246934835159,
+      "perpendicularAfterKm": 0.4453246934835159,
+      "r3FullAxisDisplacementM": 562.8280030434616,
+      "r5InwardOnlyDisplacementM": 344.18204250614747,
+      "tupleSHA256": {
+        "A": "af28570da7b14150a720ec53d2f3806eff7a9eab5ed94416313ae91a6ffbf926",
+        "R3": "fe091fdb7dc4fcec29104637b940d63cbb0bc10ef0633ca850d04d1f75c458ac",
+        "R5R2": "f35e426692779ad4878bac8fe992583039bb7c706b64a47909ac42ed63bb8979"
+      }
+    },
+    {
+      "seed": 617,
+      "lobes": 1918,
+      "changedGroup": 0,
+      "body91ExactA": true,
+      "rngExactA": true,
+      "projectionBeforeKm": null,
+      "projectionAfterKm": null,
+      "perpendicularBeforeKm": null,
+      "perpendicularAfterKm": null,
+      "r3FullAxisDisplacementM": 0,
+      "r5InwardOnlyDisplacementM": 0,
+      "tupleSHA256": {
+        "A": "8575a4917c160cb247f10b5d34b2ff360ce6d7e9b474208a0cd80b586a19d2ee",
+        "R3": "e44af9a075adcb3e255d5f40c89df7ba226bae59ae02a27ee678036848f139e0",
+        "R5R2": "8575a4917c160cb247f10b5d34b2ff360ce6d7e9b474208a0cd80b586a19d2ee"
+      }
+    },
+    {
+      "seed": 323,
+      "lobes": 1918,
+      "changedGroup": 91,
+      "body91ExactA": true,
+      "rngExactA": true,
+      "projectionBeforeKm": 0.5004178588962949,
+      "projectionAfterKm": 5.551115123125783e-17,
+      "perpendicularBeforeKm": -0.8340443774404087,
+      "perpendicularAfterKm": -0.8340443774404087,
+      "r3FullAxisDisplacementM": 972.650017756804,
+      "r5InwardOnlyDisplacementM": 500.4178588962949,
+      "tupleSHA256": {
+        "A": "432d97c23c3014d55d1b9db8b3865e9a67564c26ead4a4d872ac0d9d4630d372",
+        "R3": "a25e4fc562101bc1a6a87b28bc68ceca9dd06750b1cd8943fe883ad57030776a",
+        "R5R2": "96c162add318dd2bfaa5b1083b726a05f57787d0981f7d23ad01cd128f3626af"
+      }
+    },
+    {
+      "seed": 917,
+      "lobes": 1918,
+      "changedGroup": 91,
+      "body91ExactA": true,
+      "rngExactA": true,
+      "projectionBeforeKm": 0.0066997943766023416,
+      "projectionAfterKm": 0,
+      "perpendicularBeforeKm": 0.941781265657318,
+      "perpendicularAfterKm": 0.9417812656573179,
+      "r3FullAxisDisplacementM": 941.8050963908554,
+      "r5InwardOnlyDisplacementM": 6.699794376602341,
+      "tupleSHA256": {
+        "A": "8f197598a4003d74b52e7420e66863933c382da8953808844b3908604269f7a9",
+        "R3": "2e841841dadadbdfbb610a073295f7625ebf755ce8b46117f6d593ad310880ad",
+        "R5R2": "85b13c45d66462778e8001f8fa586c0590b33fcce77c4de434efe693d5c2d661"
+      }
+    },
+    {
+      "seed": 2,
+      "lobes": 2009,
+      "changedGroup": 91,
+      "body91ExactA": true,
+      "rngExactA": true,
+      "projectionBeforeKm": 0.5227094270711709,
+      "projectionAfterKm": 2.7755575615628914e-17,
+      "perpendicularBeforeKm": 0.44020671082803353,
+      "perpendicularAfterKm": 0.4402067108280335,
+      "r3FullAxisDisplacementM": 683.3791725002361,
+      "r5InwardOnlyDisplacementM": 522.7094270711708,
+      "tupleSHA256": {
+        "A": "57d512f75c78983bb1587258729590a2d5082b0ac9bc28e6267e6cb8eb3193eb",
+        "R3": "dd49b68fbbe7d306e5c41ce5f857dd1cfbdc7eddb8552fd84053e2e29eca55d9",
+        "R5R2": "1dfc8324e7f9303d8e53c41d330ac6a82e21b1352ce17d39b7e249e474d92c65"
+      }
+    }
+  ]
+}

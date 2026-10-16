@@ -1,0 +1,178 @@
+{
+  "date": "2026-10-16T17:17:10.696146+00:00",
+  "decision": "R3 not adopted; external R4 restricts both transforms to genuine inward protrusion, not yet promoted",
+  "A": {
+    "rendererVersion": "observatory-v55-s2-chromaticity",
+    "quality": "ultra",
+    "output": [
+      1920,
+      1080
+    ],
+    "internal": [
+      1920,
+      1080
+    ],
+    "nominalSteps": 384,
+    "volume": [
+      256,
+      256,
+      256
+    ],
+    "detailVolume": [
+      128,
+      128,
+      128
+    ],
+    "seed": 617,
+    "camera": {
+      "comparisonSurfaceKm": null,
+      "comparisonTargetKm": null,
+      "probeSkipped": false,
+      "approach": 1,
+      "origin": [
+        0.52734375,
+        3.052734375,
+        0.25908496633069245
+      ],
+      "probeFlow": "16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively",
+      "probeFieldBytes": 32768,
+      "surfaceEstimateKm": 0.23174121633069247,
+      "probe": {
+        "distance": 0.23174121633069247,
+        "found": true,
+        "samples": 225,
+        "spacingKm": 0.012449824892241378,
+        "spanKm": 2.888359375,
+        "cpuMs": 0.20000004768371582,
+        "fieldFillMs": 0,
+        "boundaryMs": 0.20000004768371582
+      },
+      "probeAgeMs": 115.30000002383895,
+      "altitudeKm": 7.052734375,
+      "ground": 1,
+      "yaw": 0,
+      "pitch": 0,
+      "target": [
+        0.52734375,
+        3.052734375,
+        0.02734375
+      ]
+    },
+    "weather": {
+      "wind": 0.55,
+      "dispersion": 0,
+      "sky": "clear",
+      "rain": 0,
+      "atmosphereTransition": 0.43770833333333337,
+      "speed": 1,
+      "autoLightning": false,
+      "distanceKm": 3,
+      "flashPreview": false
+    },
+    "paused": true,
+    "flowMode": "full",
+    "ablation": "full",
+    "stats": {
+      "frames": 1004,
+      "durationMs": 30019.000000000007,
+      "fps": 33.445484526466565,
+      "medianMs": 33.299999999995634,
+      "p95Ms": 34.69999999999709,
+      "p99Ms": 35.200000000004366,
+      "maxMs": 51.30000000000291,
+      "over18Ms": 808,
+      "over33Ms": 348
+    },
+    "simulationTimeStart": 60,
+    "simulationTimeEnd": 60
+  },
+  "B": {
+    "rendererVersion": "observatory-v56-joint-r3-trial",
+    "quality": "ultra",
+    "output": [
+      1920,
+      1080
+    ],
+    "internal": [
+      1920,
+      1080
+    ],
+    "nominalSteps": 384,
+    "volume": [
+      256,
+      256,
+      256
+    ],
+    "detailVolume": [
+      128,
+      128,
+      128
+    ],
+    "seed": 617,
+    "camera": {
+      "comparisonSurfaceKm": null,
+      "comparisonTargetKm": null,
+      "probeSkipped": false,
+      "approach": 1,
+      "origin": [
+        0.52734375,
+        3.052734375,
+        0.7225613088278932
+      ],
+      "probeFlow": "16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively",
+      "probeFieldBytes": 32768,
+      "surfaceEstimateKm": 0.6952175588278932,
+      "probe": {
+        "distance": 0.6952175588278932,
+        "found": true,
+        "samples": 188,
+        "spacingKm": 0.012449824892241378,
+        "spanKm": 2.888359375,
+        "cpuMs": 0.10000002384185791,
+        "fieldFillMs": 0,
+        "boundaryMs": 0.10000002384185791
+      },
+      "probeAgeMs": 32.099999928468606,
+      "altitudeKm": 7.052734375,
+      "ground": 1,
+      "yaw": 0,
+      "pitch": 0,
+      "target": [
+        0.52734375,
+        3.052734375,
+        0.02734375
+      ]
+    },
+    "weather": {
+      "wind": 0.55,
+      "dispersion": 0,
+      "sky": "clear",
+      "rain": 0,
+      "atmosphereTransition": 1,
+      "speed": 1,
+      "autoLightning": false,
+      "distanceKm": 3,
+      "flashPreview": false
+    },
+    "paused": true,
+    "flowMode": "full",
+    "ablation": "full",
+    "stats": {
+      "frames": 1301,
+      "durationMs": 30000.600000000006,
+      "fps": 43.365799350679644,
+      "medianMs": 17.10000000000582,
+      "p95Ms": 34.19999999999709,
+      "p99Ms": 35,
+      "maxMs": 51.60000000000582,
+      "over18Ms": 564,
+      "over33Ms": 208
+    },
+    "simulationTimeStart": 60,
+    "simulationTimeEnd": 60
+  },
+  "surfaceShiftMetres": 463.47634249720073,
+  "sameTarget": true,
+  "sameWorldOrigin": false,
+  "limits": "Single sequential 30s captures at different actual surface camera origins. No causal GPU speedup or compositor presentation inferred; quality close view remains insufficient."
+}

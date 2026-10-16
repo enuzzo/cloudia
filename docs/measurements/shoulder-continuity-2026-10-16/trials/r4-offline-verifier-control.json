@@ -1,0 +1,12 @@
+{
+  "kind": "original frozen R4 offline verification only",
+  "command": [
+    "python3",
+    "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r4-v55-qualification/verify.py"
+  ],
+  "exitCode": 0,
+  "elapsedSeconds": 0.08213816699571908,
+  "stdoutSHA256": "4093cb723f77373da61c9eb9255da02d5a2e5b8fbc8436aaf421ff536f24d9a7",
+  "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "noPrefixOrBakeExecution": true
+}

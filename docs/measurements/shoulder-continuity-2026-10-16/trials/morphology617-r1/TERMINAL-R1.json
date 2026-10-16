@@ -1,0 +1,26 @@
+{
+  "status": "R1_TERMINAL_INTERNAL_RSS_GUARD_FAILURE",
+  "baselineSourceManifestSha256": "30c5448e87fb60c3bd3fdc8ca133993c49e54503a9950f9da1815fd59883171f",
+  "candidateBStarted": false,
+  "baselineHighwaterRssBytes": 1096548352,
+  "internalGuardBytes": 1073741824,
+  "internalGuardNotProductRequirement": true,
+  "childExitCode": -15,
+  "ownedChildReaped": true,
+  "baselineOutputExists": false,
+  "ABDensityConclusion": "NOT_AVAILABLE",
+  "restarts": 0,
+  "newFullQualityAttempt": "Not authorized in this R1 archive; await separate parent message/protocol",
+  "qualityPreserved": {
+    "macro": 256,
+    "detail": 128,
+    "seed": 617
+  },
+  "noProductOrGPUChange": true,
+  "failureEvidenceSha256": {
+    "A-baseline-control.json": "0ee969840456c5a94b428cd3e6a1a26fcf88c5bfff07891babaf0c00f8d79eaf",
+    "A-wrapper.log": "b5a0d665c49f43061d567498447bb3ab061f4e439c2cf37ff9e61639206d3e6e",
+    "A-baseline.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "limits": "1GiB was an internal audit guard, not a product specification. Exceeding it in baseline is not evidence of an R3 candidate regression. No full final density output exists."
+}

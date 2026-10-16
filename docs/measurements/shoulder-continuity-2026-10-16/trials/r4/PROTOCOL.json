@@ -1,0 +1,60 @@
+{
+  "createdUtc": "2026-10-16T17:21:18.219919+00:00",
+  "model": "R4 inward-specific joint, external candidate only, R3 NOT ADOPTED",
+  "baseline": "v55 frozen source119, HEAD ede11e0",
+  "baselineManifestSHA256": "30c5448e87fb60c3bd3fdc8ca133993c49e54503a9950f9da1815fd59883171f",
+  "sourceFiles": 122,
+  "existingChangedPaths": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/lifecycle.test.ts",
+    "src/cumulonimbus/volume.ts"
+  ],
+  "addedPaths": [
+    "scripts/qa-layout.ts",
+    "src/cumulonimbus/layoutPrefix.test-helper.ts",
+    "src/cumulonimbus/volume.layout-regression.test.ts"
+  ],
+  "version": "observatory-v56-inward-joint",
+  "runtimeChange": "Only the body-lift guard gains selected.projection>0; recenter guard stays projection>0; comment explains R4. No coefficients, RNG, order, shader or field changes.",
+  "referencePrefixes": {
+    "references/baseline-layout.mjs": "a08bb50ebc0fce70c1474e55f41c9bd57038981619e5d106cddb7d50c38d5a14",
+    "references/r3-layout.mjs": "7b7ec18131bdc8bf04185f0b66c580b48e7f36ca07aacde940060935ff923e18"
+  },
+  "referenceSourceVolumeSHA256": {
+    "baseline": "a53410c45b04143710cffd098b6a33deade3242c66ecf7eecc6405a214a93b00",
+    "r3": "ebacc5ad2bca3515f34bfa4d2a4fe028ef4d20c09bcbe446104cfc794569a190"
+  },
+  "scanner": {
+    "executions": 1,
+    "rangeInclusive": [
+      0,
+      1023
+    ],
+    "kernelCpuSeconds": 5,
+    "softReserveAtCpuSeconds": 4.5,
+    "expectedInwardR3Exact": 323,
+    "expectedOutwardBaselineExact": 18,
+    "expectedOtherFamilyBaselineExact": 683,
+    "all1024BeforeJointBaselineExact": true,
+    "reportMetrics": [
+      "top5/max inward observed bodyYscale and seed",
+      "top5/max inward observed recenterXZ norm and seed",
+      "74/77/80 identity from same rows"
+    ],
+    "sameRuntimeReferences": true,
+    "noAutomaticRestart": true
+  },
+  "checks": [
+    "scanner1024 with exact saved A/R3 prefixes",
+    "typecheck",
+    "7 actual layout tests in1file",
+    "covered-inward seed2 actual-source mutation",
+    "fullsuite348 tests in44files",
+    "APP build",
+    "hero build"
+  ],
+  "no617FullBake": true,
+  "noOtherStandaloneFullVolumeBake": true,
+  "noGpuOrBrowser": true,
+  "adoption": false
+}

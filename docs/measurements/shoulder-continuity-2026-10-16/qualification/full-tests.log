@@ -1,0 +1,4 @@
+START {"name": "full-tests", "pid": 89241, "command": ["bun", "run", "test", "--", "--reporter=json", "--outputFile=/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/full-test-results.json"], "kernelCpuSeconds": null, "wallLimitSeconds": 600}
+$ vitest run "--reporter=json" "--outputFile=/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/full-test-results.json"
+JSON report written to /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/full-test-results.json
+COMPLETE {"name": "full-tests", "command": ["bun", "run", "test", "--", "--reporter=json", "--outputFile=/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/full-test-results.json"], "exitCode": 0, "durationSeconds": 5.089225457981229, "wallTimedOut": false, "kernelCpuSeconds": null}

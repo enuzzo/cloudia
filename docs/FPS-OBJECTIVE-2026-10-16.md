@@ -8,7 +8,25 @@ output pieno configurato. Questo obiettivo si aggiunge ad anatomia delle tre
 famiglie, luce ravvicinata continua, pioggia/virga integrate nel paesaggio e UI.
 Nessuno di questi gate è sostituito dal contatore dei frame.
 
-## Stato corrente: v55 cromaticità del terreno, 60 FPS ancora aperti
+## Stato corrente: v56 spalla inward, 60 FPS complessivi ancora aperti
+
+[v56](SHOULDER-CONTINUITY-2026-10-16.md) corregge la sola protrusione interna,
+con corpo comune e offset laterale conservati. Nessuna nuova risorsa/pass o
+espressione dello shader; cambia la densità e non si presume uguale lavoro GPU.
+350/350 test44file,122 sorgenti congelati, qualità256³/128³/384 conservata.
+Nuove misure native main nel pacchetto shoulder-continuity; singole finestre
+sequenziali, nessun vantaggio causale attribuito rispetto a v55 e nessuna
+presentazione del compositore misurata. Il traguardo complessivo resta aperto.
+
+Stessa posa e configurazione v55, main2474×1844: Sole59,9962002invii/s,
+1800intervalli/30.001,9ms, mediana16,7/p9518,3ms, massimo26,5ms,
+zero oltre33,34ms. Pioggia18,378436invii/s,552/30.035,2ms,
+mediana50,1/p9567,6ms, massimo83,5ms,513oltre33,34ms. Prefissi1800/1800
+e552/552 completati;1791/548 draw con timestamp completi e9/4 mancanti.
+Presentazione non misurata.30s di Sole vicino al limite rAF non chiudono
+pioggia, altre viste, continuità o60FPS sostenuti complessivi.
+
+## Riferimento precedente: v55 cromaticità del terreno
 
 [v55](TERRAIN-COLOUR-2026-10-16.md) cambia soltanto sei costanti RGB dei
 materiali, conservandone Y autoriale e contrasti relativi. Nessuna espressione,

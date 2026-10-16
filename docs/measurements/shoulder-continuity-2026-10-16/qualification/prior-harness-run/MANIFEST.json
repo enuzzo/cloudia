@@ -1,0 +1,138 @@
+{
+  "status": "FAIL_EXTERNAL_HARNESS_MARKER_TEST",
+  "source122Unchanged": true,
+  "files": [
+    {
+      "path": "PROTOCOL.json",
+      "bytes": 2642,
+      "sha256": "40f709041f1acccb371b81a6788cdd619ce24f9b209012bcd9997cfdcd6548cd"
+    },
+    {
+      "path": "baseline-source-manifest.json",
+      "bytes": 12480,
+      "sha256": "30c5448e87fb60c3bd3fdc8ca133993c49e54503a9950f9da1815fd59883171f"
+    },
+    {
+      "path": "branch-mutation.log",
+      "bytes": 1342,
+      "sha256": "6ae01de7a9095af365ac0c16e9767497769e8f96333aff62f36466c6504ca54d"
+    },
+    {
+      "path": "candidate.patch",
+      "bytes": 32040,
+      "sha256": "53eedfbc122a05860c12cbe679d50f9fce90d9842eafd7dd254b943c22802f44"
+    },
+    {
+      "path": "checks.json",
+      "bytes": 1558,
+      "sha256": "5aa74d7d1b32566221c98ea07602e884bb1f973d7074e513ecb5a011642cb815"
+    },
+    {
+      "path": "layout1024.json",
+      "bytes": 667078,
+      "sha256": "aada167539ecb3f2c5cd076b5795b82d4a2a3c49d54f1890f051613a9c5348f5"
+    },
+    {
+      "path": "mutation-check.ts",
+      "bytes": 3527,
+      "sha256": "1bd4d78b0db74d1a8be4dc2d6242ee4c68984a233e2bb3aaa34b7ffbd336af5a"
+    },
+    {
+      "path": "mutations/covered-inward-skipped.volume.ts",
+      "bytes": 29883,
+      "sha256": "7023ccce0a9963408d4c9a244c3f076b55ddf7e46112bd5e9715f6828b839ecc"
+    },
+    {
+      "path": "mutations/duplicate-alias.volume.ts",
+      "bytes": 29860,
+      "sha256": "66581200643c4ea69cd3c4ea110c553ea9f2afdae5a4183c78061da372bb2885"
+    },
+    {
+      "path": "mutations/extra-joint-rng.volume.ts",
+      "bytes": 29847,
+      "sha256": "e16645ec85f28749af9fd9858e1eca905614c2e649bbeaa03cec884f0a76debd"
+    },
+    {
+      "path": "mutations/full-axis-collapse.volume.ts",
+      "bytes": 29846,
+      "sha256": "a44e62e13330b93ab6afd6386aab1dd33aef4faf96b10e05f3a884ac588c2438"
+    },
+    {
+      "path": "mutations/no-joint.volume.ts",
+      "bytes": 29843,
+      "sha256": "5313d45749d44c53570b31552b026d69b32849780910fc6c62949dc1f35b87f1"
+    },
+    {
+      "path": "mutations/r3-forbidden-body-lift.volume.ts",
+      "bytes": 30231,
+      "sha256": "ebacc5ad2bca3515f34bfa4d2a4fe028ef4d20c09bcbe446104cfc794569a190"
+    },
+    {
+      "path": "mutations/r4-forbidden-body-lift.volume.ts",
+      "bytes": 30265,
+      "sha256": "52078334f68a827c5d4673483ffa5e53de394d894716985199613b5b3d8e81f1"
+    },
+    {
+      "path": "nine-test-results.json",
+      "bytes": 4393,
+      "sha256": "3a9b4e1fa19d808504829cff0cd01000b98a28fb40757bafa15b389c6a282cbc"
+    },
+    {
+      "path": "nine-tests.log",
+      "bytes": 1054,
+      "sha256": "ca759482114e1182bac883f12c6562f94603557e45ae55e63b05a44ce9b2c7c0"
+    },
+    {
+      "path": "rain-source-manifest.json",
+      "bytes": 12480,
+      "sha256": "5e684127a396920bca727ba89fd19bc5776084801ae2ca7e1e2d82313c4f8e05"
+    },
+    {
+      "path": "references/baseline-layout.mjs",
+      "bytes": 20466,
+      "sha256": "a08bb50ebc0fce70c1474e55f41c9bd57038981619e5d106cddb7d50c38d5a14"
+    },
+    {
+      "path": "references/r3-body-lift.volume.ts",
+      "bytes": 30231,
+      "sha256": "ebacc5ad2bca3515f34bfa4d2a4fe028ef4d20c09bcbe446104cfc794569a190"
+    },
+    {
+      "path": "references/r3-layout.mjs",
+      "bytes": 23765,
+      "sha256": "7b7ec18131bdc8bf04185f0b66c580b48e7f36ca07aacde940060935ff923e18"
+    },
+    {
+      "path": "references/r4-body-lift.volume.ts",
+      "bytes": 30265,
+      "sha256": "52078334f68a827c5d4673483ffa5e53de394d894716985199613b5b3d8e81f1"
+    },
+    {
+      "path": "run-qualification.py",
+      "bytes": 3535,
+      "sha256": "f7c751db18a903f5a881c405e11b24bea2ba9f1d65ec6c3b95e218fdf74e3c80"
+    },
+    {
+      "path": "scanner.log",
+      "bytes": 3395,
+      "sha256": "bbdf3a87f3cbbbcd2c655c3022ed47f9a1e4a2b39add156a9350e06952bc2644"
+    },
+    {
+      "path": "source-freeze.json",
+      "bytes": 13851,
+      "sha256": "1a19ff811c68f5502d43182a4b24cf214df92aa32c42d4549d8dc5f5509a62ab"
+    },
+    {
+      "path": "source-manifest.json",
+      "bytes": 12815,
+      "sha256": "e826b119ff2758fa51ed04cf8748d0d40ad1ff09516fc498826466ceae3974b7"
+    },
+    {
+      "path": "typecheck.log",
+      "bytes": 322,
+      "sha256": "77f9b9651a1bdb1f7abff3d9c744c9b1fedc8898623370c76f40a4196c822f01"
+    }
+  ],
+  "fileCount": 26,
+  "payloadBytes": 1087014
+}

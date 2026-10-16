@@ -1,0 +1,67 @@
+--- original/qa-morphology.ts
++++ common/qa-morphology.ts
+@@ -1,5 +1,6 @@
+ /** CPU macro-density diagnostics only. No rendered-image or visual acceptance. */
+ import {writeFileSync} from 'node:fs';
++import {createHash} from 'node:crypto';
+ import {generateVolume,voxelCenter,cloudParameters,iceHeights,BOUNDS_SIZE,VOLUME_RESOLUTION,DETAIL_RESOLUTION} from '../src/cumulonimbus/volume';
+ 
+ const output=process.argv[2],size=Number(process.argv[3]??64);
+@@ -7,10 +8,32 @@
+ const seeds=process.argv.slice(4).map(Number);
+ if(!seeds.length) seeds.push(72,73,74,1571198069);
+ if(!seeds.every(Number.isSafeInteger)) throw new Error('Seeds must be safe integers');
++const RSS_CAP=1024**3;let sampledRssPeak=0;
++function rssGuard(stage:string){const value=process.memoryUsage.rss();sampledRssPeak=Math.max(sampledRssPeak,value);if(value>RSS_CAP)throw new Error(`RSS limit exceeded at ${stage}: ${value}>${RSS_CAP}`);}
++function boundaryLayers(data:Uint8Array,size:number){
++ const faces=[];
++ for(let axis=0;axis<3;axis++)for(const side of ['min','max'] as const){
++  const layers=[];
++  for(const depth of [0,1]){
++   const layer=side==='min'?depth:size-1-depth;let nonzero=0,maximum=0,dense=0;
++   for(let a=0;a<size;a++)for(let b=0;b<size;b++){
++    const xyz=axis===0?[layer,a,b]:axis===1?[a,layer,b]:[a,b,layer];
++    const value=data[((xyz[2]*size+xyz[1])*size+xyz[0])*4];
++    if(value>0)nonzero++;if(value>.16*255)dense++;maximum=Math.max(maximum,value);
++   }
++   layers.push({depth,index:layer,texels:size*size,nonzeroR:nonzero,bulkR:dense,maxRByte:maximum,maxR:maximum/255});
++  }
++  faces.push({axis:['x','y','z'][axis],side,layers});
++ }
++ return {faces,maximumSecondLayerRByte:Math.max(...faces.map(f=>f.layers[1].maxRByte)),
++  scope:'Six faces, outer and second layer at indices0/1/(N-2)/(N-1). MacroR already has a forced zero boundary; diagnostic is not a universal no-clipping proof.'};
++}
++rssGuard('before generation');
+ const cases=[];
+ for(const seed of seeds) {
+-  const begin=performance.now(),volume=generateVolume(size,seed),generationMs=performance.now()-begin;
++  const begin=performance.now(),volume=generateVolume(size,seed,()=>rssGuard('generation progress')),generationMs=performance.now()-begin;
+   const {data}=volume,n=size**3,visited=new Uint8Array(n),queue=new Uint32Array(n);
++  rssGuard('diagnostic arrays');
+   const sections=Array.from({length:size},(_,y)=>({height:voxelCenter(y,1,size),mass:0,firstX:0,firstZ:0,occupied:0,dense:0}));
+   let mass=0,occupied=0,bulkMass=0,largestBulkMass=0,bulkComponents=0;
+   const first=[0,0,0],second=[0,0,0],denseThreshold=.16*255;
+@@ -34,6 +57,7 @@
+     }
+     largestBulkMass=Math.max(largestBulkMass,componentMass);
+   }
++  rssGuard('after moment/connectivity scan');
+   const centroid=first.map(v=>v/mass),cellVolume=BOUNDS_SIZE.reduce((a,b)=>a*b,1)/n;
+   const bandCentroidX=(minY:number,maxY:number)=>{
+     const band=sections.filter(s=>s.height>=minY&&s.height<=maxY);
+@@ -45,7 +69,8 @@
+     upperProfile[x].x=voxelCenter(x,0,size);
+     for(let y=0;y<size;y++) for(let z=0;z<size;z++) if(data[((z*size+y)*size+x)*4]>denseThreshold) upperProfile[x].height=sections[y].height;
+   }
+-  cases.push({seed,parameters:cloudParameters(seed),ice:iceHeights(seed),macroResolution:size,detailResolution:volume.detail.size,
++  const boundary=boundaryLayers(data,size);rssGuard('boundary read-only scan');
++  cases.push({supportBounds:volume.supportBounds,boundaryLayers:boundary,macroDataSha256:createHash('sha256').update(data).digest('hex'),rssSampledPeak:sampledRssPeak,seed,parameters:cloudParameters(seed),ice:iceHeights(seed),macroResolution:size,detailResolution:volume.detail.size,
+     generationMs,occupiedFraction:occupied/n,integratedDensity:mass*cellVolume,centroid,
+     spread:second.map((v,a)=>Math.sqrt(Math.max(0,v/mass-centroid[a]**2))),
+     lean:{lowerBand:[.9,2],upperBand:[3.5,null],lowerCentroidX,upperCentroidX,displacementX:upperCentroidX-lowerCentroidX},
+@@ -53,4 +78,4 @@
+     sections:sections.map(({firstX,firstZ,...s})=>({...s,mass:s.mass*cellVolume,centroidX:s.mass?firstX/s.mass:null,centroidZ:s.mass?firstZ/s.mass:null,area:s.occupied*BOUNDS_SIZE[0]*BOUNDS_SIZE[2]/size**2,denseArea:s.dense*BOUNDS_SIZE[0]*BOUNDS_SIZE[2]/size**2})),upperProfile});
+   console.log(JSON.stringify({seed,size,generationMs,bulkConnectedFraction:largestBulkMass/bulkMass,integratedDensity:mass*cellVolume,centroid}));
+ }
+-writeFileSync(output,JSON.stringify({date:new Date().toISOString(),method:'CPU macro-density moments, vertical sections and six-neighbor bulk connectivity. Diagnostic sampling only; no browser, GPU or visual claim.',configuredQuality:{macro:VOLUME_RESOLUTION,detail:DETAIL_RESOLUTION},cases},null,2)+'\n');
++writeFileSync(output,JSON.stringify({date:new Date().toISOString(),method:'CPU macro-density moments, vertical sections and six-neighbor bulk connectivity. Diagnostic sampling only; no browser, GPU or visual claim.',configuredQuality:{macro:VOLUME_RESOLUTION,detail:DETAIL_RESOLUTION},diagnosticExtension:'read-only supportBounds and six outer/second layers; self RSS guard, no generated value changes',rssCapBytes:RSS_CAP,cases},null,2)+'\n');

@@ -1,0 +1,24 @@
+--- R3/volume.ts
++++ R4/volume.ts
+@@ -346,9 +346,9 @@
+     for(const c of lobes) {c[axis]*=scale;c[radius]*=scale;}
+   }
+   if(shape.family==='sheared') {
+-    // Joint-body r3: keep the same shared-body roof rule for every layout.
+-    // Only an inward-facing mature shoulder recenters onto its feeding axis;
+-    // already outward-facing shoulders and descendants remain untouched.
++    // Joint-body r4: adjust the body and shoulder only for inward protrusion.
++    // Outward-facing layouts retain all original primitive geometry and RNG;
++    // an inward shoulder still recenters when its attachment is already covered.
+     const mature=summits.reduce((a,b)=>a[1]>b[1]?a:b),foot=foundations[summits.indexOf(mature)];
+     const others=foundations.filter(value=>value!==foot);
+     if(others.length!==1||!sharedBody)throw new Error('The joint-body trial needs two source cells');
+@@ -370,7 +370,7 @@
+     const bottom=sharedBody[1]-sharedBody[4],oldRoof=sharedBody[1]+sharedBody[4],newRoof=Math.max(oldRoof,selected.pivot[1]);
+     const scale=newRoof>oldRoof?(newRoof-bottom)/(2*sharedBody[4]):1;
+     const translation=[selected.pivot[0]-selected.core[0],0,selected.pivot[2]-selected.core[2]];
+-    if(newRoof>oldRoof)for(const lobe of bodyGroup){lobe[1]=bottom+(lobe[1]-bottom)*scale;lobe[4]*=scale;}
++    if(selected.projection>0&&newRoof>oldRoof)for(const lobe of bodyGroup){lobe[1]=bottom+(lobe[1]-bottom)*scale;lobe[4]*=scale;}
+     if(selected.projection>0)for(const lobe of innerGroup){lobe[0]+=translation[0];lobe[2]+=translation[2];}
+   }
+   // Rasterize lobes into their local bounds instead of testing every lobe at every voxel.

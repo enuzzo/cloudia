@@ -1,0 +1,8 @@
+{
+  "frozenUTC": "2026-10-16T17:25:23.970788+00:00",
+  "reason": "root requested max positive projection witness926, no new 1024 scan",
+  "sourceScriptSHA256": "0b4599fcc5cf5564d0c39e22ff31a567f33135ce9fa6ef067a27a387db694976",
+  "supplementSHA256": "766c163b8eae0f8aa99d5fb879f29aeb2fc2fae395ec905402f4ee3f3313c8ca",
+  "source119ManifestSHA256": "5e684127a396920bca727ba89fd19bc5776084801ae2ca7e1e2d82313c4f8e05",
+  "changes": "same checks, seed926 only; remove 617/917-specific assertions and assert926 projection .807-.808km; output separate expected-926.json"
+}

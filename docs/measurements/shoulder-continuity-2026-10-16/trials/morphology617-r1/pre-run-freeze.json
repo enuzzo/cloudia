@@ -1,0 +1,22 @@
+{
+  "status": "BEFORE_ANY_FULL_QUALITY_AB_RUN",
+  "frozenAtUtc": "2026-10-16T16:59:02.122088+00:00",
+  "sha256": {
+    "PROTOCOL.md": "be17b055c0b1edd93819ca4aaf8f55ad72550d3957ce48d796b695d6612999c0",
+    "input-manifest.json": "ce93c274aa73cdaa1f00b44ba8d31a72356f00127e63922616c9c4826d7a9384",
+    "run-one.py": "ec9fc41ea8792743e635cf4105a047eeadc2c370e5958d733a9822992193e0c4",
+    "qa-morphology.original.ts": "8bf22d63a6f7ce0a0f49708bab2bfceabe94456afc55365220e1d1a6610e570d",
+    "qa-morphology.common.ts": "6e0969f3342c5da1e811db01667c8db32b995d96ac41ec86aae8bda3f5f04d5b",
+    "diagnostic-extension.patch": "faa0018b156f03de0bf0cb382f8ee971f9657022ca62b690143b9a3f02f295f3",
+    "A-baseline/scripts/qa-morphology.ts": "6e0969f3342c5da1e811db01667c8db32b995d96ac41ec86aae8bda3f5f04d5b",
+    "B-candidate/scripts/qa-morphology.ts": "6e0969f3342c5da1e811db01667c8db32b995d96ac41ec86aae8bda3f5f04d5b"
+  },
+  "attemptsPerCase": 1,
+  "order": [
+    "A-baseline",
+    "B-candidate"
+  ],
+  "cpuLimitSeconds": 180,
+  "wallLimitSeconds": 240,
+  "rssLimitBytes": 1073741824
+}

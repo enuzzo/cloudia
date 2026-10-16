@@ -1,0 +1,51 @@
+[
+  {
+    "name": "typecheck",
+    "command": [
+      "bun",
+      "run",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 1.423999625025317,
+    "log": "typecheck.log"
+  },
+  {
+    "name": "targeted-tests",
+    "command": [
+      "bun",
+      "run",
+      "test",
+      "--",
+      "src/cumulonimbus/volume.test.ts",
+      "src/cumulonimbus/inclinedShoulder.test.ts",
+      "--reporter=json",
+      "--outputFile=/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r3-v55-evidence/targeted-test-results.json"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 2.1304733339929953,
+    "log": "targeted-tests.log"
+  },
+  {
+    "name": "app-build",
+    "command": [
+      "bun",
+      "run",
+      "build"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 4.126482040970586,
+    "log": "app-build.log"
+  },
+  {
+    "name": "hero-build",
+    "command": [
+      "bun",
+      "run",
+      "build:hero"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 2.004969874978997,
+    "log": "hero-build.log"
+  }
+]

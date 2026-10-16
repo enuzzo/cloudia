@@ -1,0 +1,28 @@
+{
+  "cases": {
+    "A-baseline": {
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/source",
+      "manifest": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/source-manifest.json",
+      "expected": "30c5448e87fb60c3bd3fdc8ca133993c49e54503a9950f9da1815fd59883171f",
+      "volumeSha256": "a53410c45b04143710cffd098b6a33deade3242c66ecf7eecc6405a214a93b00",
+      "filesVerified": 119,
+      "runDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/morphology617-ab/A-baseline"
+    },
+    "B-candidate": {
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r3-v55-source",
+      "manifest": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r3-v55-evidence/candidate-source-manifest.json",
+      "expected": "e65c9209938773d3e4d1e3e6f649e4fb11bad01c731a4ee38258ebefdf39e3e9",
+      "volumeSha256": "ebacc5ad2bca3515f34bfa4d2a4fe028ef4d20c09bcbe446104cfc794569a190",
+      "filesVerified": 119,
+      "runDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/morphology617-ab/B-candidate"
+    }
+  },
+  "originalScriptPath": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/scripts/qa-morphology.ts",
+  "originalScriptSha256": "8bf22d63a6f7ce0a0f49708bab2bfceabe94456afc55365220e1d1a6610e570d",
+  "commonScriptSha256": "6e0969f3342c5da1e811db01667c8db32b995d96ac41ec86aae8bda3f5f04d5b",
+  "sameBunBinary": "/Users/enuzzo/.bun/bin/bun",
+  "bunBinarySha256": "1d77af7bfd811aebb7d37bec496a5eed14fe227ded3ab7866d2f39786e8107b6",
+  "seed": 617,
+  "macro": 256,
+  "detail": 128
+}

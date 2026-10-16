@@ -1,0 +1,142 @@
+{
+  "kind": "INDEPENDENT_READ_ONLY_R5_REVIEW",
+  "reviewedUTC": "2026-10-16T17:38:12.585403+00:00",
+  "report": "final-R5-review.md",
+  "reportSHA256": "13dedb84bcafc91b07b2385e8f3f1260a7c67885f806958459715ebbd7b869b3",
+  "sourceRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-source",
+  "sourceManifestSHA256": "e826b119ff2758fa51ed04cf8748d0d40ad1ff09516fc498826466ceae3974b7",
+  "sourceFilesRehashed": 122,
+  "changedExisting": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/lifecycle.test.ts",
+    "src/cumulonimbus/volume.ts"
+  ],
+  "added": [
+    "scripts/qa-layout.ts",
+    "src/cumulonimbus/layoutPrefix.test-helper.ts",
+    "src/cumulonimbus/volume.layout-regression.test.ts"
+  ],
+  "rasterSuffixSHA256": {
+    "A": "8ceaaee105dc0bb5babf2898fc4e2ff61737101f2f5002fc4d209a66d1b50bff",
+    "R5": "8ceaaee105dc0bb5babf2898fc4e2ff61737101f2f5002fc4d209a66d1b50bff"
+  },
+  "inputFiles": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification/source-manifest.json",
+      "bytes": 12815,
+      "sha256": "e826b119ff2758fa51ed04cf8748d0d40ad1ff09516fc498826466ceae3974b7"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification/source-freeze.json",
+      "bytes": 13851,
+      "sha256": "1a19ff811c68f5502d43182a4b24cf214df92aa32c42d4549d8dc5f5509a62ab"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification/checks.json",
+      "bytes": 1558,
+      "sha256": "5aa74d7d1b32566221c98ea07602e884bb1f973d7074e513ecb5a011642cb815"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification/branch-mutation.log",
+      "bytes": 1342,
+      "sha256": "6ae01de7a9095af365ac0c16e9767497769e8f96333aff62f36466c6504ca54d"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification/mutation-check.ts",
+      "bytes": 3527,
+      "sha256": "1bd4d78b0db74d1a8be4dc2d6242ee4c68984a233e2bb3aaa34b7ffbd336af5a"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/PROTOCOL.json",
+      "bytes": 3340,
+      "sha256": "6eeb0d3aef13040f3d1654fe813694fd6e22dd008fb580aefdb50a2bde10aba2"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/source-freeze.json",
+      "bytes": 13943,
+      "sha256": "85bad74add34479c92228367e4cb25d6a3274761b2ae143cdceef25fe887e643"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/checks.json",
+      "bytes": 2844,
+      "sha256": "1c00e3c8d1199a7b71edb3f780e68643acc0dff26164d9b1fa0595af48902728"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/layout1024.json",
+      "bytes": 667078,
+      "sha256": "aada167539ecb3f2c5cd076b5795b82d4a2a3c49d54f1890f051613a9c5348f5"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/nine-test-results.json",
+      "bytes": 4393,
+      "sha256": "3a9b4e1fa19d808504829cff0cd01000b98a28fb40757bafa15b389c6a282cbc"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/mutation-check.ts",
+      "bytes": 3549,
+      "sha256": "8897e5839f1701d27f105ef5d2275972a0cf523e5530ae74ed6891df8d549ad3"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/mutation-results.json",
+      "bytes": 3272,
+      "sha256": "e7c37a1e039ded41e50680926fb02f6dc1f133f54656b1debae71bd435324da0"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/full-test-results.json",
+      "bytes": 133243,
+      "sha256": "48fd7708aaf5a2d8ed161572bd0d263db135b071a4bd6da143f5704435111dc5"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/full-tests.log",
+      "bytes": 941,
+      "sha256": "b3b8de0a96b541795ee19f4413407033f6393b244f8cb1d2497f164b4ae2e85b"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/app-build.log",
+      "bytes": 1758,
+      "sha256": "bf7147297a8d3149e1bff1b21da8ac4755e07df614f4f8d9e2b4795c63ec4902"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/hero-build.log",
+      "bytes": 675,
+      "sha256": "d7e1fdf757f1e608388b490130e5f832821b228ad6b13fe99a729e120a1ea5ed"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-qualification-harness-r2/post-checks.json",
+      "bytes": 617,
+      "sha256": "48bf249f667f176f4b332184402c8a63341edcf886bbfad8e971bf3880212659"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-source/src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 65673,
+      "sha256": "60b21f3a58c7eb40b9341fd51dd45d19fee855203ec610fc95c2081aff1ec1f5"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-source/src/cumulonimbus/lifecycle.test.ts",
+      "bytes": 57763,
+      "sha256": "299d34f7057814393c1157d5b42ba30a3663b58abb9d4b04e31a70b80ad0f30e"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-source/src/cumulonimbus/volume.ts",
+      "bytes": 29836,
+      "sha256": "c349e8f7526a2dafa0348516079f3f67ab7288a17769f28193ebcef7e124d34d"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-source/scripts/qa-layout.ts",
+      "bytes": 6082,
+      "sha256": "1b6e6df29a21ec9a1fee0c30aaff95450ac778c57b8a6c57b7fd4af9fb126595"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-source/src/cumulonimbus/layoutPrefix.test-helper.ts",
+      "bytes": 8370,
+      "sha256": "150917f08f0b0752f88fc08a44c70e9662acfa0baa5b368d2ea6c61fe2dceff6"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle22/anatomy-r5-v55-source/src/cumulonimbus/volume.layout-regression.test.ts",
+      "bytes": 2285,
+      "sha256": "830162fc4a54bef3c45240808db834fcb2a69f89be2dc584225cd38cda5b1046"
+    }
+  ],
+  "newPrefixModelScannerTestBuildGPUExecutions": 0,
+  "scope": "Source, byte hashes and saved JSON/log review only. Original harness R1 failure remains intact; corrected harness R2 results read, not rerun. Artifact manifest closure remains owned by Anatomy."
+}
