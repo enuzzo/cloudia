@@ -1,0 +1,193 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 9600,
+      "sha256": "4137bf1474ed0a7066eaad367df1247c8157da8c17f4faa559532837a4b9b39c"
+    },
+    "RESULTS.md": {
+      "bytes": 8354,
+      "sha256": "d8f25f5292287f9ada14f6b74a4175c312cb81547fa8291a3983f335ea33531b"
+    },
+    "all-unresolved.json": {
+      "bytes": 753421,
+      "sha256": "373feb50e0507b78894010ad89329bc0aaa299f769dde9fd61b975c47e23ce10"
+    },
+    "audit-cases.json.gz": {
+      "bytes": 360196,
+      "sha256": "96eb9597e544cc080b202721d8249f9b23809b47d73dc0f261e53fc5bf356a6e"
+    },
+    "bounds.ts": {
+      "bytes": 9316,
+      "sha256": "53ed370b2b1443d29274c155330bdef912836a5bf3700650ed9e4d8752e5bd2d"
+    },
+    "data.ts": {
+      "bytes": 4314,
+      "sha256": "4da0e13f07f84888f408a11407b52b63a15e4710b081ee67184663b38642425c"
+    },
+    "final-summary.json": {
+      "bytes": 153076,
+      "sha256": "1dd3bd1c512bcfe32a320c5e9b81647bc16b3bf389799cc68f872eff66e9bc77"
+    },
+    "gradient.ts": {
+      "bytes": 9528,
+      "sha256": "f3aaa08202d65169615a25d1d22d957d5867e85d5d8bad6bb18444c08158e141"
+    },
+    "landscape.source.ts": {
+      "bytes": 6980,
+      "sha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99"
+    },
+    "previous-gpu-attempt/README.md": {
+      "bytes": 9905,
+      "sha256": "613d4444eb947c5f38192a023b87e7245c295223d3970cc6101a901256801a64"
+    },
+    "previous-gpu-attempt/audit-compute.wgsl": {
+      "bytes": 2306,
+      "sha256": "5f50dcab1474663e3f725e26114f97788a2a9076832697518accfaf1d07eeb5f"
+    },
+    "previous-gpu-attempt/audit-rays.f32.bin": {
+      "bytes": 166336,
+      "sha256": "a1cbb8531f55c9e49cef374cce5386867cd4d42a54e2a4b5faef129a37761052"
+    },
+    "previous-gpu-attempt/audit-rectangles.f32.bin": {
+      "bytes": 4064,
+      "sha256": "e73096c57dc6bd06f7a57281c9f2dbeea67bc0faf59cf44ceb69af2e30863d5a"
+    },
+    "previous-gpu-attempt/audit.js": {
+      "bytes": 12798,
+      "sha256": "b7f3457778eeeb600f6d5cfb5c3832d3086e424df0d93962baa4941efe7f0930"
+    },
+    "previous-gpu-attempt/cloudShader.integration-draft.ts": {
+      "bytes": 13979,
+      "sha256": "27c1b9462a3319ee150d815072b9ae61cc828e7a1138b0e8cc41897523af9fb8"
+    },
+    "previous-gpu-attempt/data.ts": {
+      "bytes": 3455,
+      "sha256": "7059c777abe44f1e8538e63d248120d4616b6a35b3c4a28e04b299a9a05db31e"
+    },
+    "previous-gpu-attempt/entry.wgsl": {
+      "bytes": 4721,
+      "sha256": "882e63aa6d65591542307bc15ff3bc8fbc97f6fce1163ab7ea5b036150dbe374"
+    },
+    "previous-gpu-attempt/generate.ts": {
+      "bytes": 7184,
+      "sha256": "3aaa2d3c269cb4cc9c4cadaa8758a54242ded063ad962a1e7ee875d5bae9fa73"
+    },
+    "previous-gpu-attempt/generation.json": {
+      "bytes": 1098,
+      "sha256": "dcab3b4c5317975972bd9e8df539bde68103cb08c8c8a67b8974196ff9ae9b39"
+    },
+    "previous-gpu-attempt/helpers.wgsl": {
+      "bytes": 6384,
+      "sha256": "7615646d3460c9bee36533461ca378df03632d95c7a793f1e8dead1fbcb1621d"
+    },
+    "previous-gpu-attempt/index.html": {
+      "bytes": 1317,
+      "sha256": "5a089347ad894864c570397f4100e10694d6d842671fc2dd78efaf07d252e090"
+    },
+    "previous-gpu-attempt/make-audit-cases.ts": {
+      "bytes": 5176,
+      "sha256": "aacb4561d11c473a31c3602b72a0df0c68cb34e8c5399c131a24bd72a1a0ee4f"
+    },
+    "previous-gpu-attempt/manifest.json": {
+      "bytes": 4583,
+      "sha256": "eac55ddd10eb8fc8b75dc3e0d59452ce05b21d08b52fb4f8c2df045bd976bb12"
+    },
+    "previous-gpu-attempt/packed-trace.ts": {
+      "bytes": 8724,
+      "sha256": "dfec964911d2a014fb1f94e6dda6f91f7f07d976e1035334f27351d734852e8f"
+    },
+    "previous-gpu-attempt/pipeline-followup/README.md": {
+      "bytes": 1563,
+      "sha256": "d9992d772c1748349fb43b78e343f8a66e1ae4d8f55431b19f91b1af9536c7e6"
+    },
+    "previous-gpu-attempt/pipeline-followup/index.html": {
+      "bytes": 1774,
+      "sha256": "eafd68e9d6139b30e6283aed7ba25858f922c04194f7781f1758ae04e5b43d07"
+    },
+    "previous-gpu-attempt/pipeline-followup/single-audit.js": {
+      "bytes": 13499,
+      "sha256": "9daa8a46933e67625aa27a5c2fd591e86fe71942e6be85f5f3cc6b355037c5b1"
+    },
+    "previous-gpu-attempt/qualification.json": {
+      "bytes": 42563,
+      "sha256": "e27ee36b2bec2172463d076d64a43f4adaabef80f39dff9720c6b91232e38324"
+    },
+    "previous-gpu-attempt/qualify.ts": {
+      "bytes": 4041,
+      "sha256": "4150ca2a0fc88e5c3805e3fb3610ce7e054b0646fec2166fe9725c44694bae34"
+    },
+    "previous-gpu-attempt/root-attempt.json": {
+      "bytes": 777,
+      "sha256": "0d5e0dc00350595156d43b8cd9e2e56d6adde13d0fda2930a4720e056b13b392"
+    },
+    "previous-gpu-attempt/standalone-source.wgsl": {
+      "bytes": 14387,
+      "sha256": "74fdd5549acc39a166cd939ba8cc09fb4615e6d9cdcc7ae3ea1a922ce923b765"
+    },
+    "previous-gpu-attempt/terrain-16km-descriptor.json": {
+      "bytes": 943,
+      "sha256": "58d23a285d2b92556f40bd49ad7f15bc619b3a0fa570d8719ae2670e8e542f6e"
+    },
+    "previous-gpu-attempt/terrain-32km-coarse-1km-local.rgba32f.bin": {
+      "bytes": 221184,
+      "sha256": "181e758a63087555363baf2e3598830d03194ad43d6f0958eda9d048033deb61"
+    },
+    "previous-gpu-attempt/terrain-32km-descriptor.json": {
+      "bytes": 931,
+      "sha256": "4904f3d1763983f154566377ba05ab40a770ac8fea19f625e308d9d411b1f789"
+    },
+    "previous-gpu-attempt/terrainTrace.generated.ts": {
+      "bytes": 13125,
+      "sha256": "4143eb8ce273914714f7746fa95b7814564d71df4c1fc894ffb76bc47ac68d05"
+    },
+    "previous-gpu-attempt/tsconfig.adapter.json": {
+      "bytes": 547,
+      "sha256": "ff26e66e3b4f2386a4b91b3191c9bcf8521c8dc75f576a6580782d0a6c0df3a1"
+    },
+    "previous-gpu-attempt/verification.json": {
+      "bytes": 3239,
+      "sha256": "05514e3b087b1f00191e3d4de12f3d922087f48846a5a07e400c807791674786"
+    },
+    "provenance.json": {
+      "bytes": 3211,
+      "sha256": "29b857ccd2ac3856100863a6f0460847f1e548cffcb3aaab8b2ece84fc9de784"
+    },
+    "regressions.ts": {
+      "bytes": 1464,
+      "sha256": "32dd09823727a018358d927a70e994414c44456b73a5fcbfe05fc56d7384a6f7"
+    },
+    "replay.ts": {
+      "bytes": 4187,
+      "sha256": "fa3af808ae355d683325f8170971691582eef1485a8262a77feb68b5eaac7fd5"
+    },
+    "restore-fixture.py": {
+      "bytes": 472,
+      "sha256": "00d4587c7c40262e576a7d0e99e65c2502380cd9e9dcc32e3300276ff208fb6e"
+    },
+    "review-notes.md": {
+      "bytes": 18020,
+      "sha256": "9188548c3e3805dfdaf8e0ae90e96b98ee664472ec3d8d813cecf0a132f64cbb"
+    },
+    "run.ts": {
+      "bytes": 4298,
+      "sha256": "40cb53b4772135c6e2b840b0880111d0c112a77d3fa7fe976ca428c01e9a2d18"
+    },
+    "runtime-inclusion.wgsl": {
+      "bytes": 1930,
+      "sha256": "a02350493333105b6fb87d34278b6260bb6e381b27c154a7d72ae62d2c365501"
+    },
+    "terrain-gradient-250m-outer2km-descriptor.json": {
+      "bytes": 827,
+      "sha256": "081b545437d272c8f0e06be50a13dc89d0bab27c6cdc51a1f0e745ed7b1517c9"
+    },
+    "trace.ts": {
+      "bytes": 9052,
+      "sha256": "fc318525b71684d00f22958619cd61e3cbc302ccd5b4d00a89c64bbeaa1d4239"
+    },
+    "validate.ts": {
+      "bytes": 4157,
+      "sha256": "d55694581495348a1e79d608fb946eba00f05b99fffb10c795b3b963430d66df"
+    }
+  },
+  "reportSha256": "7a677d43bfbce77dc9b8cf97893880da6aaf61cfe2f11954bd999d67471fc6f6"
+}

@@ -1,0 +1,16 @@
+{
+  "differentPixelBounds": [
+    847,
+    624,
+    945,
+    688
+  ],
+  "sceneCrop": [
+    0,
+    160,
+    1190,
+    620
+  ],
+  "sceneCropEqual": true,
+  "scope": "decoded CSS JPEG, finite still and selected crop; native framebuffer and motion not compared"
+}

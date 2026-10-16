@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "scope": "Finite raw GPU audit, metadata equivalence and arithmetic of a preliminary B/A pair. Not promotion, compositor proof or controlled hardware benchmark.",
+  "gpu": {
+    "queries": 62544,
+    "positive": 41162,
+    "empty": 13668,
+    "violations": 0,
+    "payloadSha256": "780ad4f9aa7700014eb31e4a9338ff7692973e0496beb3196d08b3bc6d96ed35"
+  },
+  "pair": {
+    "A": {
+      "fps": 13.999160050396982,
+      "completedBounded": 13.877232747636933,
+      "reportSha256": "5a305e198e2a3b3312aacd9f7063d28fef4e7505b6875d3ec9050eb29fff8cc1"
+    },
+    "B": {
+      "fps": 15.515128915405917,
+      "completedBounded": 15.382431678590807,
+      "reportSha256": "4e43363a827f982a5230e7ed4f00e0f1e3679926f5447d91f8e3a1b3f7f26076"
+    },
+    "relativePercent": 10.828998736720251,
+    "matchedCamera": true,
+    "weatherResidualTolerance": 0.000001
+  },
+  "images": [
+    {
+      "path": "browser-trial-preview.jpg",
+      "bytes": 45045,
+      "sha256": "a6f7aef76160b0d779b102cde4fff5210984bf53bc7c161b15e54b9bf6377118"
+    },
+    {
+      "path": "preliminary-A-after-preview.jpg",
+      "bytes": 45045,
+      "sha256": "a6f7aef76160b0d779b102cde4fff5210984bf53bc7c161b15e54b9bf6377118"
+    }
+  ],
+  "confound": "External terrain tab30 unresponsive during pair; CPU renderer observed at100% before pair without proven tab attribution. Unknown background device state. Repeat after closure; only preliminary evidence."
+}

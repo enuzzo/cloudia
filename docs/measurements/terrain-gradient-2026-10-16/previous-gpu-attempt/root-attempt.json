@@ -1,0 +1,18 @@
+{
+  "dateUtc": "2026-10-15T23:44:31.380097+00:00",
+  "status": "incomplete-tab-unresponsive",
+  "lastVisiblePhase": "Creazione pipeline compute",
+  "numericResultRecovered": false,
+  "browserTab": 30,
+  "url": "http://127.0.0.1:4182/",
+  "attemptedRecovery": [
+    "read DOM audit-summary: timed out",
+    "native browser AX state: timed out",
+    "close own QA tab through documented browser API: timed out",
+    "native Codex app controls unavailable to computer-use tool"
+  ],
+  "userActionRequested": "Close only the external terrain audit tab via its X. Work continues on independent source/test tasks.",
+  "sourceFilesWereFrozen": true,
+  "cause": "Unknown. Compilation and large visible JSON/layout are hypotheses, not diagnosed causes.",
+  "productIntegrated": false
+}

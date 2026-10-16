@@ -1,0 +1,79 @@
+{
+  "kind": "external-post-flow-narrow-mask",
+  "date": "2026-10-15T23:35:07.423Z",
+  "status": "PASS",
+  "checks": {
+    "macroUnchanged": true,
+    "allRawPositiveSeedCubesCovered": true,
+    "allSignedCornerAndBoundaryCasesCovered": true,
+    "radius1CounterexampleWorks": true
+  },
+  "dimensions": [
+    128,
+    128,
+    128
+  ],
+  "format": "R8Unorm",
+  "bytes": 2097152,
+  "rawMacroPositiveVertices": 861511,
+  "positiveSeedCells": 114575,
+  "markedTexels": 171377,
+  "markedPercent": 8.171892166137695,
+  "guardKm": 0.001,
+  "radius": [
+    2,
+    2,
+    2
+  ],
+  "warpKm": [
+    0.08,
+    0.06,
+    0.08
+  ],
+  "macroVoxelKm": [
+    0.0390625,
+    0.033203125,
+    0.02734375
+  ],
+  "maskVoxelKm": [
+    0.078125,
+    0.06640625,
+    0.0546875
+  ],
+  "nearestCellSlackKm": [
+    0.05671875,
+    0.0562109375,
+    0.015703125
+  ],
+  "rawCornerAudit": {
+    "method": "Every raw R>0 vertex maps to a seed; every texel of each clipped radius2 seed cube is marked, verified via a 3D unmarked-prefix sum.",
+    "seedCubesWithUnmarked": 0,
+    "axisCases": 6144,
+    "axisFailures": [],
+    "r1Counterexample": {
+      "axis": 2,
+      "macroIndex": 129,
+      "seed": 64,
+      "endpointInsetNormalized": 0.0017,
+      "localNormalized": 0.5194941964285714,
+      "nearest": 66,
+      "fineR": 0,
+      "fineB": 1,
+      "warpZKm": -0.08,
+      "rawCornerR": 255,
+      "rawCornerWeight": 0.4352,
+      "erosion": 0.38,
+      "liquidDensity": 0.08903225806451609,
+      "aboveOriginalDensityGate": true,
+      "missedByRadius1": true,
+      "coveredByRadius2": true
+    }
+  },
+  "macroSha256": "72e3f360b81f3c8f812800cc309a174ce893d96c80e666c9bf98fca178187b9f",
+  "narrowSha256": "ad38c2b581882a0686e3d81031e0972fbd1cc0fb4bb9dab09c43451387e418ad",
+  "manifestSha256": "dd4ecf24d7a5c17e8d8c9e9dda2b189658a33cdec34e1be8ac1bdbbf475604f8",
+  "sourceVolumeSha256": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74",
+  "scriptSha256": "3dc9914bd2f7031dab320e44ea21f15de31b65512917d394c7a7876fd5c5c496",
+  "buildAndAuditMs": 253.439667,
+  "caveat": "CPU mask construction and integer support audit only. Existing macro linear sampler footprint/range semantics remain a precondition; no GPU compilation, pixel or performance validation."
+}

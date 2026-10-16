@@ -1,0 +1,230 @@
+{
+  "kind": "external-narrow-work-reference",
+  "date": "2026-10-15T23:31:42.991Z",
+  "status": "PASS",
+  "grid": [
+    32,
+    18
+  ],
+  "narrowChecks": {
+    "sameBaselineSequence": true,
+    "sameBaselineCounts": true,
+    "sameBaselineLookups": true,
+    "sameCandidateSequence": true,
+    "zeroGatesOnlyRawZero": true,
+    "zeroGatesOnlyDensityZero": true,
+    "identicalTransmittance": true,
+    "finiteLocal": true
+  },
+  "narrowCounts": {
+    "lookupsAdded": 115627,
+    "zero": 88956,
+    "positive": 26671,
+    "zeroInRain": 77466,
+    "zeroOutsideRain": 11490,
+    "rawPositiveAtNarrowZero": 0,
+    "densityPositiveAtNarrowZero": 0,
+    "maximumRawAtNarrowZero": 0,
+    "opacityMismatches": 0,
+    "nonfiniteLocal": 0
+  },
+  "baseline": {
+    "sequenceSha256": "a0c2dfd79e1900dce9a677fceecbd5bfcfc138a2e94cd430938f4c4c7bf3ca7a",
+    "lookups": {
+      "cloudMask3D": 246399,
+      "flow3D": 115627,
+      "fineRGB3D": 115627,
+      "macroDensity3D": 115627,
+      "iceBend3D": 163,
+      "iceDetailRGB3D": 163,
+      "micro3D": 0,
+      "macroLightGBA3D": 9420,
+      "sunsetRG3D": 0,
+      "rainGuessG2D": 206466,
+      "rainColumnRG2D": 206466,
+      "rainSheetsG3D": 125104,
+      "rainStreakR3D": 125104
+    },
+    "totalSemanticLoopTextureSampleCalls": 1266166,
+    "counts": {
+      "iterations": 246399,
+      "supportZero": 130772,
+      "supportPositive": 115627,
+      "rainRegion": 206466,
+      "rainOutsideUV": 0,
+      "rainRZero": 81362,
+      "rainRPositive": 125104,
+      "rainAttachedZero": 18028,
+      "rainEvaporationZero": 15504,
+      "rainPositive": 91572,
+      "cloudWarpedPass": 12447,
+      "cloudPositive": 9420,
+      "bothPositive": 5058,
+      "bothExtinctionZero": 150465,
+      "maskZeroRainExtinctionZero": 96871,
+      "maskZeroInRain": 104507,
+      "maskZeroRainExtinctionZeroInRain": 70606,
+      "maskZeroRainEvaporationZero": 14984,
+      "rainRPositiveOutsidePrism": 0,
+      "rainPositiveOutsidePrism": 0,
+      "maskZeroRainRZero": 55598,
+      "maskZeroRainOutsideUV": 0,
+      "maskZeroRainAttachedZero": 24,
+      "visitedOutsidePrism": 34107,
+      "maskZeroOutsidePrism": 29167,
+      "opacityChanged": 95533,
+      "stepNonPositive": 0,
+      "zeroMediumLengthKm": 2314.696005436592,
+      "rainRegionLengthKm": 1237.782130249776,
+      "outsidePrismLengthKm": 204.18467883393168
+    },
+    "stats": {
+      "seaMissRays": 576,
+      "seaHitRays": 0,
+      "terrainHeightCalls": 0,
+      "noBoxHitRays": 0,
+      "opacityExitRays": 126,
+      "farExitRays": 450,
+      "budgetExitRays": 0,
+      "nonPositiveStepExitRays": 0
+    }
+  },
+  "candidate": {
+    "sequenceSha256": "a0c2dfd79e1900dce9a677fceecbd5bfcfc138a2e94cd430938f4c4c7bf3ca7a",
+    "lookups": {
+      "cloudMask3D": 246399,
+      "flow3D": 115627,
+      "fineRGB3D": 26671,
+      "macroDensity3D": 26671,
+      "iceBend3D": 163,
+      "iceDetailRGB3D": 163,
+      "micro3D": 0,
+      "macroLightGBA3D": 9420,
+      "sunsetRG3D": 0,
+      "rainGuessG2D": 206466,
+      "rainColumnRG2D": 206466,
+      "rainSheetsG3D": 125104,
+      "rainStreakR3D": 125104,
+      "narrowR8Load3D": 115627
+    },
+    "totalSemanticLoopTextureSampleCalls": 1203881
+  },
+  "net": {
+    "semanticLookupsSaved": 62285,
+    "semanticLookupsSavedPercent": 4.919181213205851,
+    "gateLookupAdded": 115627,
+    "fineAndMacroLookupsAvoided": 177912,
+    "zeroRateOfBroadPositivePercent": 76.9335881757721,
+    "lowerBoundBreakEvenZeroPercent": 50,
+    "qualification": "Semantic source calls only. One R8 textureLoad added for each broad-positive point; two fine/macro calls avoided at each narrow-zero point. No claimed FPS or GPU cost benefit."
+  },
+  "baselineResultSha256": "2acd349b164d2d9b666d40245f0c696b449decaa92a2e01307b9d08c0bf9cc02",
+  "narrowSha256": "ad38c2b581882a0686e3d81031e0972fbd1cc0fb4bb9dab09c43451387e418ad",
+  "counterScriptSha256": "2b4b5b833115ba307b73f7c00fbcf50c6aeb940751d85c4f8f1f3a38f564c67d",
+  "changedDuringCount": [],
+  "changedSinceBake": [
+    "GPUSceneEngine"
+  ],
+  "parameters": {
+    "seed": 72,
+    "time": 60,
+    "rainTime": 0,
+    "rainTimeProvenance": "Reconstructed from root-confirmed UI sequence: Fissa stato di confronto resets forcingTime0, then Pioggia/35ArrowUp, no Riprendi. Missing from original benchmark JSON.",
+    "grid": [
+      32,
+      18
+    ],
+    "output": [
+      2560,
+      1440
+    ],
+    "camera": {
+      "comparisonSurfaceKm": 0.4,
+      "comparisonTargetKm": [
+        -0.28995623264629566,
+        2.4981598424383944,
+        -0.02734375
+      ],
+      "probeSkipped": true,
+      "approach": 0,
+      "origin": [
+        -0.28995623264629566,
+        -3.0278343591735393,
+        9.665778756295405
+      ],
+      "probeFlow": "16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively",
+      "probeFieldBytes": 32768,
+      "surfaceEstimateKm": null,
+      "probe": null,
+      "probeAgeMs": null,
+      "altitudeKm": 0.9721656408264607,
+      "ground": 1,
+      "yaw": 0,
+      "pitch": -0.92,
+      "target": [
+        -0.28995623264629566,
+        2.4981598424383944,
+        -0.02734375
+      ]
+    },
+    "originF32": [
+      -0.2899562418460846,
+      -3.027834415435791,
+      9.665779113769531
+    ],
+    "forwardF32": [
+      0,
+      0.4952648878097534,
+      -0.8687419891357422
+    ],
+    "rightF32": [
+      1,
+      0,
+      0
+    ],
+    "upF32": [
+      0,
+      0.8687419891357422,
+      0.4952648878097534
+    ],
+    "stepSizeF32": 0.01822916604578495,
+    "emptyStepF32": 0.0546875,
+    "reportedEmptyStep": 0.0546875,
+    "windF32": [
+      0.2642000615596771,
+      0.09009438008069992
+    ],
+    "driftF32": [
+      0.12137296795845032,
+      0.010131947696208954,
+      0
+    ],
+    "growthF32": [
+      1,
+      1,
+      1
+    ],
+    "rainAmountF32": 0.800000011920929,
+    "rainBounds": [
+      -3.828125,
+      -2.2421875,
+      3.359375,
+      2.1328125
+    ],
+    "iceRangeF32": [
+      3.6577489376068115,
+      4.188268184661865
+    ],
+    "cutoffF32": 0.006000000052154064,
+    "maximumIterations": 8192
+  },
+  "differencesFromWGSL": [
+    "Explicit f32 wrapper for camera ray, jitter, interval clipping, t/ds, rain coordinates and transmittance; no model of FMA/reassociation/allowed GPU transcendental error. Texture filters use ideal CPU bilinear/trilinear weights, then selected values rounded f32; Apple sampler precision differs as cycle9 audit showed.",
+    "Cloud reference uses shared referencePosition helper in JS number precision then rounds outputf32. Cloud material uses shared sampleCloudDensity helper and raw threshold; intermediate warp/erosion/pow operations are not rounded at every WGSL operation.",
+    "Flow is shared CPU analytic field packed half and sampled clamp, not actual GPU compute/readback. Half conversion/native trig may change thresholds.",
+    "Precipitation evaporation uses shared CPU precipitationSurvival then f32; other rain branches port shader formulas. Terrain retains original sea-gated six-pass algorithm, CPU terrainHeight; no solver correction.",
+    "Sky/lighting/aerial/tone/sourceRGB are omitted because they do not affect opacity termination. Their conditional loop lookup calls are counted semantically. No gust/dispersion/micro/flash in this fixed pose.",
+    "If a nonpositive step occurs, this diagnostic records an invalid result and stops that ray instead of spinning to8192 as WGSL would; positiveSteps must pass. Finite grid samples exact centres of selected output pixels, not every2560x1440 fragment. Counts cannot be multiplied into GPU time/FPS. Continuous prism/certificate counts are opportunity diagnostics, not an implemented optimizer or GPU proof."
+  ],
+  "countWallMs": 928.0377500000001
+}

@@ -1,0 +1,401 @@
+{
+  "kind": "exact-chebyshev-26-bfs",
+  "newBakes": 0,
+  "gpuExecuted": false,
+  "size": 128,
+  "inputSha256": "ad38c2b581882a0686e3d81031e0972fbd1cc0fb4bb9dab09c43451387e418ad",
+  "distanceSha256": "95942cc02aa7a1446e873e1a9a2211f0a8237e871e7c7cfa98bb9edbed789f8b",
+  "scriptSha256": "9d8d75fe9dc566bb06b03a6fa61a2d735340f83d25c87c8df37e58a52e802279",
+  "occupied": 171377,
+  "visited": 2097152,
+  "maxD": 59,
+  "histogram": [
+    171377,
+    29544,
+    30679,
+    32156,
+    33820,
+    35542,
+    37467,
+    39524,
+    41607,
+    43763,
+    45954,
+    48159,
+    50476,
+    51812,
+    53878,
+    56032,
+    58234,
+    57542,
+    55518,
+    54861,
+    54849,
+    53745,
+    54269,
+    54859,
+    52446,
+    51504,
+    48039,
+    42774,
+    38726,
+    37496,
+    35055,
+    32780,
+    31155,
+    29538,
+    28363,
+    26510,
+    25679,
+    25036,
+    24097,
+    23233,
+    22007,
+    21456,
+    21060,
+    20711,
+    20422,
+    20044,
+    19797,
+    19447,
+    19264,
+    19044,
+    17904,
+    17614,
+    17488,
+    17350,
+    17294,
+    3742,
+    2449,
+    1787,
+    159,
+    15
+  ],
+  "mappingErrors": 0,
+  "bruteErrors": 0,
+  "bruteCases": [
+    {
+      "index": 547180,
+      "distance": 12,
+      "brute": 12
+    },
+    {
+      "index": 114553,
+      "distance": 56,
+      "brute": 56
+    },
+    {
+      "index": 1779078,
+      "distance": 30,
+      "brute": 30
+    },
+    {
+      "index": 1346451,
+      "distance": 4,
+      "brute": 4
+    },
+    {
+      "index": 913824,
+      "distance": 28,
+      "brute": 28
+    },
+    {
+      "index": 481197,
+      "distance": 4,
+      "brute": 4
+    },
+    {
+      "index": 48570,
+      "distance": 53,
+      "brute": 53
+    },
+    {
+      "index": 1713095,
+      "distance": 14,
+      "brute": 14
+    },
+    {
+      "index": 1280468,
+      "distance": 1,
+      "brute": 1
+    },
+    {
+      "index": 847841,
+      "distance": 23,
+      "brute": 23
+    },
+    {
+      "index": 415214,
+      "distance": 16,
+      "brute": 16
+    },
+    {
+      "index": 2079739,
+      "distance": 47,
+      "brute": 47
+    },
+    {
+      "index": 1647112,
+      "distance": 24,
+      "brute": 24
+    },
+    {
+      "index": 1214485,
+      "distance": 4,
+      "brute": 4
+    },
+    {
+      "index": 781858,
+      "distance": 22,
+      "brute": 22
+    },
+    {
+      "index": 349231,
+      "distance": 6,
+      "brute": 6
+    },
+    {
+      "index": 2013756,
+      "distance": 43,
+      "brute": 43
+    },
+    {
+      "index": 1581129,
+      "distance": 6,
+      "brute": 6
+    },
+    {
+      "index": 1148502,
+      "distance": 6,
+      "brute": 6
+    },
+    {
+      "index": 715875,
+      "distance": 23,
+      "brute": 23
+    },
+    {
+      "index": 283248,
+      "distance": 21,
+      "brute": 21
+    },
+    {
+      "index": 1947773,
+      "distance": 47,
+      "brute": 47
+    },
+    {
+      "index": 1515146,
+      "distance": 19,
+      "brute": 19
+    },
+    {
+      "index": 1082519,
+      "distance": 9,
+      "brute": 9
+    },
+    {
+      "index": 649892,
+      "distance": 15,
+      "brute": 15
+    },
+    {
+      "index": 217265,
+      "distance": 12,
+      "brute": 12
+    },
+    {
+      "index": 1881790,
+      "distance": 36,
+      "brute": 36
+    },
+    {
+      "index": 1449163,
+      "distance": 1,
+      "brute": 1
+    },
+    {
+      "index": 1016536,
+      "distance": 12,
+      "brute": 12
+    },
+    {
+      "index": 583909,
+      "distance": 18,
+      "brute": 18
+    },
+    {
+      "index": 151282,
+      "distance": 26,
+      "brute": 26
+    },
+    {
+      "index": 1815807,
+      "distance": 42,
+      "brute": 42
+    },
+    {
+      "index": 1383180,
+      "distance": 13,
+      "brute": 13
+    },
+    {
+      "index": 950553,
+      "distance": 14,
+      "brute": 14
+    },
+    {
+      "index": 517926,
+      "distance": 12,
+      "brute": 12
+    },
+    {
+      "index": 85299,
+      "distance": 20,
+      "brute": 20
+    },
+    {
+      "index": 1749824,
+      "distance": 29,
+      "brute": 29
+    },
+    {
+      "index": 1317197,
+      "distance": 0,
+      "brute": 0
+    },
+    {
+      "index": 884570,
+      "distance": 53,
+      "brute": 53
+    },
+    {
+      "index": 451943,
+      "distance": 21,
+      "brute": 21
+    },
+    {
+      "index": 19316,
+      "distance": 31,
+      "brute": 31
+    },
+    {
+      "index": 1683841,
+      "distance": 33,
+      "brute": 33
+    },
+    {
+      "index": 1251214,
+      "distance": 8,
+      "brute": 8
+    },
+    {
+      "index": 818587,
+      "distance": 50,
+      "brute": 50
+    },
+    {
+      "index": 385960,
+      "distance": 14,
+      "brute": 14
+    },
+    {
+      "index": 2050485,
+      "distance": 24,
+      "brute": 24
+    },
+    {
+      "index": 1617858,
+      "distance": 22,
+      "brute": 22
+    },
+    {
+      "index": 1185231,
+      "distance": 0,
+      "brute": 0
+    },
+    {
+      "index": 752604,
+      "distance": 46,
+      "brute": 46
+    },
+    {
+      "index": 319977,
+      "distance": 21,
+      "brute": 21
+    },
+    {
+      "index": 1984502,
+      "distance": 28,
+      "brute": 28
+    },
+    {
+      "index": 1551875,
+      "distance": 28,
+      "brute": 28
+    },
+    {
+      "index": 1119248,
+      "distance": 4,
+      "brute": 4
+    },
+    {
+      "index": 686621,
+      "distance": 43,
+      "brute": 43
+    },
+    {
+      "index": 253994,
+      "distance": 19,
+      "brute": 19
+    },
+    {
+      "index": 1918519,
+      "distance": 16,
+      "brute": 16
+    },
+    {
+      "index": 1485892,
+      "distance": 15,
+      "brute": 15
+    },
+    {
+      "index": 1053265,
+      "distance": 0,
+      "brute": 0
+    },
+    {
+      "index": 620638,
+      "distance": 39,
+      "brute": 39
+    },
+    {
+      "index": 188011,
+      "distance": 26,
+      "brute": 26
+    },
+    {
+      "index": 1852536,
+      "distance": 25,
+      "brute": 25
+    },
+    {
+      "index": 1419909,
+      "distance": 25,
+      "brute": 25
+    },
+    {
+      "index": 987282,
+      "distance": 2,
+      "brute": 2
+    },
+    {
+      "index": 554655,
+      "distance": 38,
+      "brute": 38
+    }
+  ],
+  "wallMs": 131.771667,
+  "encoding": "D=0 occupied; D>=1 empty. Distinct from original binary255 occupied/0 empty. R8Unorm decoding must round(load.r*255). No new GPU resource.",
+  "geometry": "All cells with index distance <=D-1 are empty; (D-1)*min(cellSize) is a conservative L-infinity radius from any point in the queried nearest cell, with clamp projection handled separately."
+}

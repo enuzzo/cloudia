@@ -1,0 +1,66 @@
+{
+  "kind": "conditional-empty-cloud-certificate-research",
+  "date": "2026-10-16",
+  "newBakes": 0,
+  "gpuExecuted": false,
+  "frozenPackageModified": false,
+  "cpuExecutions": {
+    "bounds": "one lightweight analytic calculation",
+    "distance": "one BFS plus embedded64-cell brute qualification",
+    "counter": "one32x18 replay with3scenarios"
+  },
+  "files": {
+    "Metal-Shading-Language-Specification.pdf": {
+      "bytes": 14564497,
+      "sha256": "41538b30d2f1140a5b2a0c84ce0a9f7b67bf0c707e224cfea0bfe5a44aa26cf5",
+      "role": "primary-source-reference"
+    },
+    "Metal-Shading-Language-Specification.txt": {
+      "bytes": 861188,
+      "sha256": "6b5e4c211e45ca42b1412fa4cb54029f1e414b15ec0b8dc35d12beef268ff8ee",
+      "role": "primary-source-reference"
+    },
+    "RESEARCH.md": {
+      "bytes": 10676,
+      "sha256": "d439b3755355e19d57889dbb7bfa79855a6423135b10e9648741f611a4e032fd",
+      "role": "CPU-research-artifact"
+    },
+    "bounds.json": {
+      "bytes": 3042,
+      "sha256": "6230dfd2a47427bc33b9c23ca1a8db3b787eb9f688cc539ea34a0108fd3d5409",
+      "role": "CPU-research-artifact"
+    },
+    "bounds.py": {
+      "bytes": 2824,
+      "sha256": "3b8e137b3615b03124c3a7e80e9260d28ea72f5b6822a6ffcb79223e4e9d4662",
+      "role": "CPU-research-artifact"
+    },
+    "count-empty.ts": {
+      "bytes": 33479,
+      "sha256": "a63003247ffc4eb02dd9fd989a41c3436d3c04c21eb8b5f427fe7639f8fa4128",
+      "role": "CPU-research-artifact"
+    },
+    "distance-r8.bin": {
+      "bytes": 2097152,
+      "sha256": "95942cc02aa7a1446e873e1a9a2211f0a8237e871e7c7cfa98bb9edbed789f8b",
+      "role": "CPU-research-artifact"
+    },
+    "distance.json": {
+      "bytes": 6400,
+      "sha256": "28cc5d3cf4385878ff6f93bf6b4a585fb3531994a751fe81936c74505a4474d4",
+      "role": "CPU-research-artifact"
+    },
+    "distance.ts": {
+      "bytes": 2944,
+      "sha256": "9d8d75fe9dc566bb06b03a6fa61a2d735340f83d25c87c8df37e58a52e802279",
+      "role": "CPU-research-artifact"
+    },
+    "work-32x18.json": {
+      "bytes": 10570,
+      "sha256": "637ac8e76be4e74ad5debf0a4cd36e3a7ee677c42f4d58fc1e399a585fe99b30",
+      "role": "CPU-research-artifact"
+    }
+  },
+  "selfHashExcluded": true,
+  "scope": "Counts are conditional opportunities with unmeasured native sampler error hypotheses; no GPU continuous proof, pixel or FPS claim."
+}

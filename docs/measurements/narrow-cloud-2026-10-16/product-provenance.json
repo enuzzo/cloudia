@@ -1,0 +1,74 @@
+{
+  "base": "0d0ab21",
+  "dateUtc": "2026-10-15T23:53:50.117661+00:00",
+  "status": "trial-not-promoted",
+  "runtimeRenderer": "observatory-v44-post-flow-mask-trial",
+  "productSources": [
+    {
+      "path": "GPUSceneEngine.ts",
+      "sha256": "8441993cbbfb9019623e4726831c1053ab5290a0d1a40ce953eb4e36b08f19b1",
+      "bytes": 57750
+    },
+    {
+      "path": "cloudShader.ts",
+      "sha256": "b1dde880c8cc572dfebcf30825035c8c028925e75da52be05a64f214bbafbe93",
+      "bytes": 14129
+    },
+    {
+      "path": "volume.worker.ts",
+      "sha256": "19ce4dae52d881d453953b70bac07bf56cd1d9cc99cfa68237ecf58767069bb7",
+      "bytes": 665
+    },
+    {
+      "path": "lifecycle.test.ts",
+      "sha256": "dcfa678a1408a71befdce43cef95b7009b1627decc6b1aec7f2eea4135e20477",
+      "bytes": 33627
+    },
+    {
+      "path": "narrowCloud.ts",
+      "sha256": "6b3ebc7e3299d1ae995405e75ad04f90190789605136200d72d0cd4ea51e9759",
+      "bytes": 1417
+    },
+    {
+      "path": "narrowCloud.test.ts",
+      "sha256": "9f34e51790885c093c982326047e967c8d4ab5e178f10895d6419bbb63a491e6",
+      "bytes": 7339
+    }
+  ],
+  "compiledTrialAssets": [
+    {
+      "path": "trial-dist/index.html",
+      "sha256": "fd03c53a3b5b743f4699ef275a441f8ed04e81372a14189ec634adb5f9e6b8e5",
+      "bytes": 911
+    },
+    {
+      "path": "trial-dist/assets/CumulonimbusApp-BuhNu7uZ.js",
+      "sha256": "5cfb1583b718c05f0de2c64c23f2f186bd5e2b49b1f868d0a5a5e2956307bf25",
+      "bytes": 818409
+    },
+    {
+      "path": "trial-dist/assets/render.worker-B_9p_5dw.js",
+      "sha256": "00d76fb5c2c1b55261c039649b8c74a2d10e6284f2d9400954b754c61099d702",
+      "bytes": 975149
+    },
+    {
+      "path": "trial-dist/assets/volume.worker-BApztFKl.js",
+      "sha256": "0fc0f4eb5bae453fc1dcb603c1be9718e75b50d0bc24b7a970dc8c7cfd7c0cac",
+      "bytes": 13835
+    },
+    {
+      "path": "trial-dist/assets/CumulonimbusApp-C9XaZ0-O.css",
+      "sha256": "7fc93cd26d97bedfed056024477eed294b69e4f12866809faf8167e349de19eb",
+      "bytes": 13068
+    }
+  ],
+  "verification": {
+    "suite": "194/31 passed before correcting nullable test spread",
+    "testTypeCorrection": "lifecycle test only; tsc and19/19 lifecycle passed afterwards",
+    "appBuild": true,
+    "heroBuild": true,
+    "rawGpuAudit": "62,544 points, PASS finite device Apple metal-3",
+    "image": "A/B CSS JPEG byte-identical; no native framebuffer claim"
+  },
+  "performanceLimit": "The preliminary trial was measured while external terrain tab30 was unresponsive. A renderer process at100% CPU observed, without proven tab attribution. OS and unknown device state are not controlled; do not treat the earlier clean A as a causal pair. Repeat A now and qualify again after closing the frozen tab."
+}

@@ -1,0 +1,259 @@
+{
+  "kind": "narrow-cloud-raw-gpu-audit",
+  "status": "FAIL",
+  "gpuStatus": "completed",
+  "date": "2026-10-15T23:43:52.810Z",
+  "phases": [
+    {
+      "name": "HTTP e hash degli input",
+      "atMs": 0.2999999523162842
+    },
+    {
+      "name": "Caricamento query f32 congelate",
+      "atMs": 60.299999952316284
+    },
+    {
+      "name": "Richiesta adapter",
+      "atMs": 64.60000002384186
+    },
+    {
+      "name": "Richiesta device",
+      "atMs": 66.10000002384186
+    },
+    {
+      "name": "Compilazione modulo WGSL",
+      "atMs": 66.5
+    },
+    {
+      "name": "Creazione pipeline compute",
+      "atMs": 66.89999997615814
+    },
+    {
+      "name": "Upload e submit: real",
+      "atMs": 186.29999995231628
+    },
+    {
+      "name": "Readback: real",
+      "atMs": 192.19999992847443
+    },
+    {
+      "name": "Esito validation: real",
+      "atMs": 206.19999992847443
+    },
+    {
+      "name": "Classificazione risultati: real",
+      "atMs": 206.39999997615814
+    },
+    {
+      "name": "Upload e submit: sparse-fixture",
+      "atMs": 260.5
+    },
+    {
+      "name": "Readback: sparse-fixture",
+      "atMs": 263.2999999523163
+    },
+    {
+      "name": "Esito validation: sparse-fixture",
+      "atMs": 271.39999997615814
+    },
+    {
+      "name": "Classificazione risultati: sparse-fixture",
+      "atMs": 271.5
+    },
+    {
+      "name": "Coda finale completata",
+      "atMs": 275.5
+    }
+  ],
+  "phase": "Coda finale completata",
+  "input": {
+    "kind": "prepared-narrow-cloud-raw-gpu-audit",
+    "queryCounts": [
+      {
+        "name": "real",
+        "count": 49344,
+        "groups": {
+          "positive-macro-centres": 12288,
+          "near-macro-footprint-axis": 9216,
+          "near-macro-footprint-diagonal": 6144,
+          "f32-around-narrow-cell-boundaries": 13824,
+          "domain-clamp-faces-and-outside": 1728,
+          "halton-volume": 6144
+        }
+      },
+      {
+        "name": "sparse-fixture",
+        "count": 6912,
+        "groups": {
+          "positive-macro-centres": 288,
+          "near-macro-footprint-axis": 1728,
+          "near-macro-footprint-diagonal": 2304,
+          "f32-around-narrow-cell-boundaries": 2592
+        }
+      }
+    ],
+    "groups": [
+      "positive-macro-centres",
+      "near-macro-footprint-axis",
+      "near-macro-footprint-diagonal",
+      "f32-around-narrow-cell-boundaries",
+      "domain-clamp-faces-and-outside",
+      "halton-volume"
+    ],
+    "sourcePins": {
+      "before": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+      "after": "b1dde880c8cc572dfebcf30825035c8c028925e75da52be05a64f214bbafbe93",
+      "macro": "72e3f360b81f3c8f812800cc309a174ce893d96c80e666c9bf98fca178187b9f",
+      "narrow": "ad38c2b581882a0686e3d81031e0972fbd1cc0fb4bb9dab09c43451387e418ad"
+    },
+    "sha256": {
+      "inputs.json": "ca0d222a386295cf55e15243a085ec5e4a0361767bf3b3bbbffcbfc54dbbeda0",
+      "audit.wgsl": "febbb724a92455139e01fce8c3ee5d252171f57bc710d39b43b29e89c87d4905",
+      "audit.js": "0859af8ff275ee6fc1cc5f185a5e5eaf52197a68155f5c01d41d042f41cd0965",
+      "index.html": "9686b7d3d18b2eb877a2ec76929bfc50cc7a51ca29f92de2e99d878194f0eec2",
+      "cloudShader.before.ts": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+      "cloudShader.after.ts": "b1dde880c8cc572dfebcf30825035c8c028925e75da52be05a64f214bbafbe93",
+      "macro-rgba8.bin": "72e3f360b81f3c8f812800cc309a174ce893d96c80e666c9bf98fca178187b9f",
+      "narrow-r8.bin": "ad38c2b581882a0686e3d81031e0972fbd1cc0fb4bb9dab09c43451387e418ad"
+    },
+    "textureMemoryBytes": 69206016,
+    "newBakes": 0,
+    "scope": "Pure post-flow coord guard and original macro sampler/warp. No flow compute, ray sequence, material erosion, radiance, Three.js pipeline or FPS equivalence. Real original data plus sparse synthetic fixture reuses same GPU textures."
+  },
+  "adapter": {
+    "vendor": "apple",
+    "architecture": "metal-3",
+    "device": "",
+    "description": "",
+    "isFallbackAdapter": null
+  },
+  "compilationMessages": [],
+  "datasets": [
+    {
+      "name": "real",
+      "queryInputSha256": "ba64c392784a1f47a356466086474bb1fe0811ee067996118c37926e380b95f9",
+      "gpuOutputSha256": "e0c3413b09a667a94424fb59b84f8fca159a6dbcfd6887a908122b2cf86e663d",
+      "macroInputSha256": "72e3f360b81f3c8f812800cc309a174ce893d96c80e666c9bf98fca178187b9f",
+      "narrowInputSha256": "ad38c2b581882a0686e3d81031e0972fbd1cc0fb4bb9dab09c43451387e418ad",
+      "results": {
+        "queryCount": 49344,
+        "gpuPositiveMacro": 37964,
+        "gpuAboveOriginalRawGate": 36277,
+        "narrowZero": 7380,
+        "narrowPositive": 41964,
+        "narrowZeroMacroPositive": 0,
+        "narrowZeroMacroAboveGate": 0,
+        "nonFinite": 0,
+        "maskValueMismatches": 0,
+        "indexMismatches": 0,
+        "echoMismatches": 0,
+        "macroOutOfRange": 0,
+        "positiveCentreGateMisses": 0,
+        "maximumMacroAtNarrowZero": 0,
+        "groups": {
+          "0": {
+            "queries": 12288,
+            "narrowZero": 0,
+            "macroPositive": 12288,
+            "violations": 0
+          },
+          "1": {
+            "queries": 9216,
+            "narrowZero": 0,
+            "macroPositive": 9216,
+            "violations": 0
+          },
+          "2": {
+            "queries": 6144,
+            "narrowZero": 0,
+            "macroPositive": 6144,
+            "violations": 0
+          },
+          "3": {
+            "queries": 13824,
+            "narrowZero": 0,
+            "macroPositive": 9972,
+            "violations": 0
+          },
+          "4": {
+            "queries": 1728,
+            "narrowZero": 1728,
+            "macroPositive": 0,
+            "violations": 0
+          },
+          "5": {
+            "queries": 6144,
+            "narrowZero": 5652,
+            "macroPositive": 344,
+            "violations": 0
+          }
+        },
+        "firstViolations": [],
+        "passed": true
+      }
+    },
+    {
+      "name": "sparse-fixture",
+      "queryInputSha256": "ce5262a1707760cca061587f8e07a483371b2015ac7f43cb8f37ab763d84a063",
+      "gpuOutputSha256": "52249467d878dcca6ea49ba82a7599230814efde7e11ede5ccdb7889022a5b17",
+      "macroInputSha256": "3cac7e498e2de0ddda099cddf077bc4ebe5c0d689d408e46d0fd8fb81ce92f49",
+      "narrowInputSha256": "827938cf0122ddb2d02a7c17ead128f0eb3b1529dfe36228d17120773370ec7e",
+      "results": {
+        "queryCount": 6912,
+        "gpuPositiveMacro": 3198,
+        "gpuAboveOriginalRawGate": 2607,
+        "narrowZero": 0,
+        "narrowPositive": 6912,
+        "narrowZeroMacroPositive": 0,
+        "narrowZeroMacroAboveGate": 0,
+        "nonFinite": 0,
+        "maskValueMismatches": 0,
+        "indexMismatches": 0,
+        "echoMismatches": 0,
+        "macroOutOfRange": 0,
+        "positiveCentreGateMisses": 0,
+        "maximumMacroAtNarrowZero": 0,
+        "groups": {
+          "0": {
+            "queries": 288,
+            "narrowZero": 0,
+            "macroPositive": 288,
+            "violations": 0
+          },
+          "1": {
+            "queries": 1728,
+            "narrowZero": 0,
+            "macroPositive": 1056,
+            "violations": 0
+          },
+          "2": {
+            "queries": 2304,
+            "narrowZero": 0,
+            "macroPositive": 1752,
+            "violations": 0
+          },
+          "3": {
+            "queries": 2592,
+            "narrowZero": 0,
+            "macroPositive": 102,
+            "violations": 0
+          }
+        },
+        "firstViolations": [],
+        "passed": false
+      }
+    }
+  ],
+  "uncapturedErrors": [],
+  "wallMs": 275.7999999523163,
+  "qualification": "Finite raw WebGPU compute audit of pinned post-flow coord guard and original linear/clamp/mip0 macro lookup. No Three.js binding/pipeline proof, flow compute, whole-frame parity, source/radiance/material integration, lifecycle proof or FPS measurement. Sparse fixture is synthetic, not a cloud bake. Real queries use selected macro-positive corners and volume probes; no claim of replaying actual visited counter points.",
+  "cleanup": {
+    "texturesDestroyed": true,
+    "buffersDestroyed": true,
+    "deviceDestroyed": true
+  },
+  "integrity": {
+    "algorithm": "SHA-256",
+    "payloadWithoutIntegritySha256": "03bc8306d9061ded4e956c29943e22c7c356e595c53773fe5bd2539d66ec2766"
+  }
+}

@@ -1,0 +1,14 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {buildNarrowCloudMask} from '/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/narrowCloud.ts';
+const dir='/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/narrow-cloud';
+const cache='/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/data';
+const hash=(v:Uint8Array)=>createHash('sha256').update(v).digest('hex');
+const manifest=JSON.parse(readFileSync(cache+'/manifest.json','utf8'));
+const macro=readFileSync(cache+'/macro-rgba8.bin');
+if(hash(macro)!==manifest.files['macro-rgba8.bin'].sha256)throw Error('Cached macro source changed');
+const start=performance.now(),mask=buildNarrowCloudMask({size:256,data:macro});
+const frozen=readFileSync(dir+'/narrow-r8.bin');
+if(mask.size!==128||hash(mask.data)!==hash(frozen))throw Error('Product builder differs from frozen mask');
+const result={passed:true,scope:'Product CPU builder matches frozen mask bytes from existing cached macro; no new volume, GPU or browser',macroSha256:hash(macro),narrowSha256:hash(mask.data),size:mask.size,bytes:mask.data.byteLength,buildMs:performance.now()-start};
+writeFileSync(dir+'/product-builder-verification.json',JSON.stringify(result,null,2)+'\n');console.log(result);

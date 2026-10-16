@@ -1,0 +1,63 @@
+{
+  "externalRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/terrain-gradient",
+  "sourceTerrainSha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+  "fixture": {
+    "originalSha256": "cfad064c4dbe4b100294222c8c12a4fbcd98cf8f5316f0f1a3a10494543800a1",
+    "originalBytes": 4181268,
+    "compressedSha256": "96eb9597e544cc080b202721d8249f9b23809b47d73dc0f261e53fc5bf356a6e",
+    "restoredBy": "restore-fixture.py; exact bytes, not a resampled dataset"
+  },
+  "executedSourceHashes": {
+    "gradient.ts": "f3aaa08202d65169615a25d1d22d957d5867e85d5d8bad6bb18444c08158e141",
+    "data.ts": "e83bd5bb9fe98001fabbbe305d978d16feae024c9bccf8998af967407afa930c",
+    "trace.ts": "e0239266a199fda28a2718d428e5c383d1cfe41ea18d5f80940f001f1837344c",
+    "validate.ts": "9d417604ee1b4b1ff30275b53d39fd3303a8419627f332168c5faba8a86c14d8",
+    "regressions.ts": "32dd09823727a018358d927a70e994414c44456b73a5fcbfe05fc56d7384a6f7",
+    "run.ts": "fb51e44847496d531ab6f6c5c045b86efa6fc688704529fe188ef2d26f1addec",
+    "replay.ts": "16ac7f1e6da00ee67f82660fb8808652e3116bdcf56e73d85f458cdf50c5bfe5",
+    "runtime-inclusion.wgsl": "a02350493333105b6fb87d34278b6260bb6e381b27c154a7d72ae62d2c365501",
+    "README.md": "fa9a8561b10aad6148546459688d009d2aa762bd97aa23abfd5251c721f09f4b",
+    "review-notes.md": "9188548c3e3805dfdaf8e0ae90e96b98ee664472ec3d8d813cecf0a132f64cbb",
+    "RESULTS.md": "d8f25f5292287f9ada14f6b74a4175c312cb81547fa8291a3983f335ea33531b",
+    "terrain-gradient-250m-outer2km-descriptor.json": "081b545437d272c8f0e06be50a13dc89d0bab27c6cdc51a1f0e745ed7b1517c9"
+  },
+  "archiveImportRewrites": [
+    "absolute original landscape import -> ./landscape.source.ts",
+    "../terrain-bounds/bounds.ts -> ./bounds.ts",
+    "../terrain-gpu/audit-cases.json -> ./audit-cases.json"
+  ],
+  "excluded": [
+    {
+      "path": "terrain-gradient-250m-outer2km.rgba32f.bin",
+      "bytes": 5238768,
+      "sha256": "69b2b49c06eddb8c582b9f1b14cdb944f707488fd73a4f5f17d6e261f62b12c4",
+      "reason": "5 MiB derived metadata rebuilt by run.ts --candidate-only"
+    },
+    {
+      "path": "audit-cases.json",
+      "bytes": 4181268,
+      "sha256": "cfad064c4dbe4b100294222c8c12a4fbcd98cf8f5316f0f1a3a10494543800a1",
+      "reason": "exact fixture stored once compressed; restore-fixture.py reconstructs original JSON"
+    },
+    {
+      "path": "final-results.json",
+      "sha256": "ad611c093c51b1a2bab7d6623df639a96b7030fa3cd8fda8dd5667e7e5a1d1b8",
+      "reason": "large duplicated per-ray result objects; summary and every unresolved reason archived separately"
+    },
+    {
+      "path": "previous-gpu-attempt/terrain-16km-coarse-1km-local.rgba32f.bin",
+      "sha256": "916328860fb51937d634715cc71398f6d55bc898d61a8f7ff1d8a8ca7d5b6d2d",
+      "reason": "unused alternate derived pack; builder/descriptor preserved"
+    }
+  ],
+  "previousGPUAttempt": {
+    "numericResultRecovered": false,
+    "causeKnown": false,
+    "pipelineFollowupExecuted": false,
+    "tabObservedByRoot": 30,
+    "note": "No attribution to compiler, Metal or DOM was established; root-attempt.json is preserved verbatim."
+  },
+  "productSourceModified": false,
+  "staged": false,
+  "committed": false
+}

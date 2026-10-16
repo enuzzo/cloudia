@@ -1,0 +1,49 @@
+Qualità
+Alta · 100% / 128 passi
+Massima · 100% / 384 passi
+Fluida · 75% / 96 passi
+Risoluzione output
+Schermo · nitidezza nativa
+Finestra · 1 pixel per pixel CSS
+1280 × 720
+1920 × 1080
+Fissa stato di confronto
+Lavoro interno · confronto diagnostico
+Completo · qualità finale
+Densità e integrazione
+Densità + lettura luce
+Senza lettura flusso
+Senza dettaglio fine
+Senza shading del lampo
+Diagnostica GPU
+Readback rendering · compute automatico
+Rendering e flusso
+Rendering, flusso e coda
+Disattivata · sola cadenza
+Flusso di confronto
+Animato · completo
+Congelato · confronto diagnostico
+Coda dei frame
+Invio continuo
+Massimo 1 in attesa
+Massimo 2 in attesa
+
+WebGPU · 60.0 fps rAF · apple
+Output 2560×1440 · interno 2560×1440
+384 passi nominali · mediana 16.70 ms · p95 18.40 ms
+GPU rendering 25.69 ms · flusso 0.000 ms
+Volume 256³ + dettaglio 128³ · nessun TAA
+Tempo della nube: 131.9 s · seme: 72
+Forma: congestus · vento 55% · dispersione 0%
+Cielo: clear · velocità 1× · lampi: 0 · luce 0.00
+
+Misura 30 secondi
+Misura 90 secondi
+Esporta JSON
+
+Ultima misura completata · 15.5 fps invio · 30.1 s · 465 intervalli
+Mediana 66.60 ms · p95 83.40 · p99 84.60
+465 oltre 33,34 ms · completamento coda: completato
+
+FPS = frame inviati per secondo di tempo reale tra callback rAF. Non certifica la presentazione del compositore. Tempi GPU separati quando disponibili. Nessuna risoluzione adattiva nascosta.
+Apri il vecchio laboratorio

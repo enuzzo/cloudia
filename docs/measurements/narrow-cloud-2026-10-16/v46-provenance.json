@@ -1,0 +1,133 @@
+{
+  "dateUtc": "2026-10-16T00:23:40.871748+00:00",
+  "status": "trial-not-promoted",
+  "runtimeRenderer": "observatory-v46-compiled-rain-mask-trial",
+  "fromVersion": "v45, preserved in v45-source and trial-dist",
+  "productSources": [
+    {
+      "path": "cloudShader.ts",
+      "bytes": 15196,
+      "sha256": "b24ce50ad82609723b1f083a2195c07baf388309a3e3cfa102d9b8abef953e3d"
+    },
+    {
+      "path": "GPUSceneEngine.ts",
+      "bytes": 58626,
+      "sha256": "bd476094187f5f72a8bf5cb2d97ff98f4b41dc62f65a9515388546a9d7d01878"
+    },
+    {
+      "path": "cloudShader.test.ts",
+      "bytes": 2075,
+      "sha256": "966becce16ac35625ea05d80c9eeb5878e09dc7fd79926c35a00f192790b7379"
+    },
+    {
+      "path": "lifecycle.test.ts",
+      "bytes": 35865,
+      "sha256": "88e56daa4ec85391fe6a5cf2c4d9873d9241bbb81e45081a41b8f4f3b6a7476d"
+    },
+    {
+      "path": "narrowCloud.ts",
+      "bytes": 1417,
+      "sha256": "6b3ebc7e3299d1ae995405e75ad04f90190789605136200d72d0cd4ea51e9759"
+    },
+    {
+      "path": "narrowCloud.test.ts",
+      "bytes": 7339,
+      "sha256": "9f34e51790885c093c982326047e967c8d4ab5e178f10895d6419bbb63a491e6"
+    },
+    {
+      "path": "volume.worker.ts",
+      "bytes": 665,
+      "sha256": "19ce4dae52d881d453953b70bac07bf56cd1d9cc99cfa68237ecf58767069bb7"
+    }
+  ],
+  "dryTemplate": {
+    "byteIdenticalToOriginal": true,
+    "sourceRawBytes": 12170,
+    "rawTemplateSha256": "9f295d675d7f8be3a30988f95879e93edd79d9b5d83fad83ddee10234599b443",
+    "effectiveMode0WGSLsha256": "d38fe3918e5cf95e2f13a1f6ca9a111a20045b2497600b89118cb7a8200bcb8c",
+    "narrowBinding": false
+  },
+  "rainTemplate": {
+    "byteIdenticalToV45AfterInterpolationAndMode0": true,
+    "effectiveMode0WGSLsha256": "6d30dc1d1ab7bc99513c451f4fcbdee81c402fe90220d565bb3a6df52c5cb655"
+  },
+  "selection": "targetRain > .001 || actualRain > .001; change-only while ready; forced rebuild on volume install or diagnostic change",
+  "transitionMetadata": "narrowCloudSkip.specialization/boundInIntegrator at start; narrowCloudSpecializationEnd at statistics completion",
+  "verification": {
+    "typecheck": "PASS",
+    "suite": "198 tests /32 files PASS",
+    "appBuild": "PASS, external v46-dist",
+    "heroBuild": "PASS, separate external v46-hero",
+    "nodeModulesIgnoreBeforeAndAfter": "1",
+    "gpuV46": "pending root qualification",
+    "presentationFPS": "unmeasured"
+  },
+  "compiledAssets": [
+    {
+      "path": "v46-dist/assets/CumulonimbusApp-BtzNrOul.js",
+      "bytes": 819862,
+      "sha256": "0c7360897f1a9fc42bc23e3c9eb95fee3672eff7dc8e20021c7ded2511cb51e7"
+    },
+    {
+      "path": "v46-dist/assets/CumulonimbusApp-C9XaZ0-O.css",
+      "bytes": 13068,
+      "sha256": "7fc93cd26d97bedfed056024477eed294b69e4f12866809faf8167e349de19eb"
+    },
+    {
+      "path": "v46-dist/assets/LabApp-BIVQGmZd.js",
+      "bytes": 405933,
+      "sha256": "61b740644d902e97f0e29d2e7924b0d480f6bdfdd7eae827ea06300cd5b247b9"
+    },
+    {
+      "path": "v46-dist/assets/index-Cia3ypEr.css",
+      "bytes": 1245,
+      "sha256": "99354a5ec1ade2941e4aba36f030b413c9afbad79336f11800929c7d805b4714"
+    },
+    {
+      "path": "v46-dist/assets/index-k1bM5xPz.js",
+      "bytes": 2837,
+      "sha256": "d61e66c74ca0e00fe032133333175e9798f0d2d46250a3d6878dcea79bcf0369"
+    },
+    {
+      "path": "v46-dist/assets/render.worker-DPPVRw2Z.js",
+      "bytes": 976602,
+      "sha256": "862bf04177fa6bd30347315846e45bd27b89cb9c0ac45fe46d22d1805700087d"
+    },
+    {
+      "path": "v46-dist/assets/sky.worker-CHm7n211.js",
+      "bytes": 2960,
+      "sha256": "503ad9438c1738310a9cbe2a41e9af0524e7046bce79e58d6da7c1e74863caaa"
+    },
+    {
+      "path": "v46-dist/assets/three.core-DxR5k0T0.js",
+      "bytes": 195512,
+      "sha256": "e4d296a475f2cd168d934f17f032d4f56291682208332fc6a926b3937200a810"
+    },
+    {
+      "path": "v46-dist/assets/volume.worker-BApztFKl.js",
+      "bytes": 13835,
+      "sha256": "0fc0f4eb5bae453fc1dcb603c1be9718e75b50d0bc24b7a970dc8c7cfd7c0cac"
+    },
+    {
+      "path": "v46-dist/index.html",
+      "bytes": 911,
+      "sha256": "bc3ca7025af2652a051f18197f107a0eea332a98764d30f82a84ba1894059645"
+    },
+    {
+      "path": "v46-hero/cloudia-hero.iife.js",
+      "bytes": 526689,
+      "sha256": "d4363d2ccdbf676991be2c6ba05bc62da0ceef5debaa789f04766ab1248c30f5"
+    },
+    {
+      "path": "v46-hero/cloudia-hero.js",
+      "bytes": 838767,
+      "sha256": "bc11f99470a6298e20fa804bc2d93041d4cc1a015d812ae97b6ad5827b5fa702"
+    }
+  ],
+  "patch": {
+    "path": "v46-from-v45.patch",
+    "sha256": "1a3a37c458432ca6ffce502a3254e961f9d9e29df9f83206d90b4dcbe8902208"
+  },
+  "preservedFirstAppBuild": "v46-dist-before-readable, before multiline formatting; same runtime WGSL",
+  "limits": "Source/unit/build evidence does not prove GPU compilation, image equality, driver binding layout or performance; root owns native near/rain qualification. V44/v45 performance evidence is not relabelled v46."
+}

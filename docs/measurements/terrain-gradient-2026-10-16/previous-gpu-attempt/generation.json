@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "scope": "Three186 parser ABI only; no WGSL compiler, device, GPU or renderer execution",
+  "entryFunction": "traceTerrainBounds",
+  "returnType": "vec4",
+  "inputs": [
+    {
+      "name": "origin",
+      "type": "vec3"
+    },
+    {
+      "name": "ray",
+      "type": "vec3"
+    },
+    {
+      "name": "metadata",
+      "type": "texture"
+    },
+    {
+      "name": "recordCount",
+      "type": "float"
+    },
+    {
+      "name": "numericQualification",
+      "type": "float"
+    }
+  ],
+  "helpersSha256": "7615646d3460c9bee36533461ca378df03632d95c7a793f1e8dead1fbcb1621d",
+  "entrySha256": "882e63aa6d65591542307bc15ff3bc8fbc97f6fce1163ab7ea5b036150dbe374",
+  "generatedTypeScriptSha256": "4143eb8ce273914714f7746fa95b7814564d71df4c1fc894ffb76bc47ac68d05",
+  "reservedTokenScanPassed": true,
+  "offlineWgslCompilerAvailable": false,
+  "originalLandscapeIncludedUnmodified": true,
+  "originalCloudShaderSha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+  "draftCloudShaderSha256": "27c1b9462a3319ee150d815072b9ae61cc828e7a1138b0e8cc41897523af9fb8"
+}

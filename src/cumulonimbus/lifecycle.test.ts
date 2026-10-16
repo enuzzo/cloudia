@@ -57,8 +57,10 @@ vi.mock('three/webgpu',async(importOriginal)=>{
   },QuadMesh:class {render(renderer:MockRendererControl){control.render(renderer);renderer.recordRenderPasses();}}};
 });
 import { CumulonimbusApp } from './CumulonimbusApp';
-import { Data3DTexture } from 'three/webgpu';
+import { Data3DTexture,NearestFilter,NoColorSpace,RedFormat,UnsignedByteType } from 'three/webgpu';
+import * as cloudShader from './cloudShader';
 import type { CloudVolume } from './volume';
+import type {NarrowCloudMask} from './narrowCloud';
 import type {TimestampBatchMeasurementReport} from './timestampBatchMeasurement';
 async function flush() {for(let i=0;i<15;i++) await Promise.resolve();}
 const device={destroy:vi.fn(),queue:{onSubmittedWorkDone:vi.fn(()=>Promise.resolve())}};
@@ -76,6 +78,23 @@ afterEach(()=>{vi.restoreAllMocks();vi.unstubAllGlobals();document.body.innerHTM
 function createApp() {const root=document.createElement('main');document.body.append(root);return {app:new CumulonimbusApp(root),root};}
 function cloudVolume():CloudVolume {
   return {size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
+}
+function cloudWithNarrow(value=255):CloudVolume & {narrowMask:NarrowCloudMask}{
+  return {...cloudVolume(),narrowMask:{size:1,data:new Uint8Array([value])}};
+}
+function textureDisposals(contexts:readonly unknown[],data:Uint8Array){
+  return contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===data).length;
+}
+function expectNarrowTexture(value:unknown,data?:Uint8Array):Data3DTexture{
+  expect(value).toBeInstanceOf(Data3DTexture);
+  if(!(value instanceof Data3DTexture))throw new Error('Expected the bound narrow Data3DTexture.');
+  expect(value.format).toBe(RedFormat);expect(value.type).toBe(UnsignedByteType);
+  expect(value.colorSpace).toBe(NoColorSpace);
+  expect(value.minFilter).toBe(NearestFilter);expect(value.magFilter).toBe(NearestFilter);
+  expect(value.generateMipmaps).toBe(false);expect(value.unpackAlignment).toBe(1);
+  expect([value.image.width,value.image.height,value.image.depth]).toEqual([1,1,1]);
+  if(data)expect(value.image.data).toBe(data);
+  return value;
 }
 describe('scene async lifecycle',()=>{
   it('publishes fresh pass coverage for explicit draw ranges, excluding warmup and the interval anchor',async()=>{
@@ -202,57 +221,126 @@ describe('scene async lifecycle',()=>{
     expect(fences).toHaveLength(3);expect(raw.textContent).toBe(snapshot);
     app.destroy();await flush();
   });
-  it('disposes the previous macro texture at replacement and the current texture once at teardown',async()=>{
+  it('binds the narrow texture and disposes previous/current macro and R8 exactly once',async()=>{
     const dispose=vi.spyOn(Data3DTexture.prototype,'dispose');
     const disposed=(volume:CloudVolume)=>dispose.mock.contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.data).length;
-    const initial=cloudVolume(),replacement=cloudVolume();
-    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    const inputs:Record<string,unknown>[]=[],original=cloudShader.createCloudIntegrator;
+    vi.spyOn(cloudShader,'createCloudIntegrator').mockImplementation((mode,useNarrow)=>new Proxy(original(mode,useNarrow),{
+      apply(target,thisArg,args){inputs.push(args[0] as Record<string,unknown>);return Reflect.apply(target,thisArg,args);},
+    }));
+    const initial=cloudWithNarrow(0),replacement=cloudWithNarrow();
+    const narrowDisposed=(volume:typeof initial)=>textureDisposals(dispose.mock.contexts,volume.narrowMask.data);
+    const {app,root}=createApp();const starting=app.start();app.applyAtmosphereIntent({type:'rain',amount:.8});await flush();control.initResolve();await flush();
     control.workers[0].onmessage!({data:{volume:initial}});await starting;
+    expect(inputs).toHaveLength(1);
+    const firstNarrow=expectNarrowTexture((inputs[0].narrowCloud as {value:unknown}).value,initial.narrowMask.data);
+    expect(disposed(initial)).toBe(0);expect(narrowDisposed(initial)).toBe(0);
     root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
     expect(disposed(initial)).toBe(0);
     control.workers[1].onmessage!({data:{volume:replacement}});await flush();
     expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(0);
+    expect(inputs).toHaveLength(2);
+    const secondNarrow=expectNarrowTexture((inputs[1].narrowCloud as {value:unknown}).value,replacement.narrowMask.data);
+    expect(secondNarrow).not.toBe(firstNarrow);
+    expect(narrowDisposed(initial)).toBe(1);expect(narrowDisposed(replacement)).toBe(0);
     app.destroy();await flush();
     expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(1);
+    expect(narrowDisposed(initial)).toBe(1);expect(narrowDisposed(replacement)).toBe(1);
+  });
+  it('switches dry/rain bindings only on intent and residual-rain transitions, not on each frame',async()=>{
+    const variants:boolean[]=[],inputs:Record<string,unknown>[]=[],original=cloudShader.createCloudIntegrator;
+    vi.spyOn(cloudShader,'createCloudIntegrator').mockImplementation((mode,useNarrow)=>{
+      variants.push(useNarrow===true);
+      return new Proxy(original(mode,useNarrow),{
+        apply(target,thisArg,args){inputs.push(args[0] as Record<string,unknown>);return Reflect.apply(target,thisArg,args);},
+      });
+    });
+    const {app}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    control.workers[0].onmessage!({data:{volume:cloudWithNarrow()}});await starting;
+    const frame=vi.mocked(requestAnimationFrame).mock.calls[0][0];
+    try{
+      expect(variants).toEqual([false]);expect(inputs[0]).not.toHaveProperty('narrowCloud');
+      app.applyAtmosphereIntent({type:'rain',amount:.8});
+      expect(variants).toEqual([false,true]);expect(inputs[1]).toHaveProperty('narrowCloud');
+      frame(1000);frame(2000);
+      const weather=inputs[1].weather as {value:{z:number}};
+      expect(weather.value.z).toBeGreaterThan(.001);expect(variants).toHaveLength(2);
+      app.applyAtmosphereIntent({type:'scene',scene:'clear'});frame(3000);
+      expect(weather.value.z).toBeGreaterThan(.001);expect(variants).toHaveLength(2);
+      // Interrupt the drying transition: the rainy specialization remains installed.
+      app.applyAtmosphereIntent({type:'scene',scene:'storm'});await flush();frame(4000);
+      expect(variants).toHaveLength(2);
+      app.applyAtmosphereIntent({type:'rain',amount:0});
+      for(let time=5000;time<=13000;time+=1000)frame(time);
+      expect(weather.value.z).toBeLessThanOrEqual(.001);
+      expect(variants).toEqual([false,true,false]);expect(inputs[2]).not.toHaveProperty('narrowCloud');
+      frame(14000);frame(15000);expect(variants).toHaveLength(3);
+      app.applyAtmosphereIntent({type:'rain',amount:.6});
+      expect(variants).toEqual([false,true,false,true]);expect(inputs[3]).toHaveProperty('narrowCloud');
+    }finally{app.destroy();await flush();}
+  });
+  it('uses an occupied nearest R8 compatibility texture for a legacy packet without narrowMask',async()=>{
+    const dispose=vi.spyOn(Data3DTexture.prototype,'dispose'),volume=cloudVolume();
+    const {app}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    control.workers[0].onmessage!({data:{volume}});await starting;
+    expect(control.render).toHaveBeenCalledOnce();
+    app.destroy();await flush();
+    const narrow=dispose.mock.contexts.filter(texture=>texture instanceof Data3DTexture&&texture.format===RedFormat);
+    expect(narrow).toHaveLength(1);
+    const fallback=expectNarrowTexture(narrow[0]);
+    const fallbackData=fallback.image.data;
+    if(!(fallbackData instanceof Uint8Array))throw new Error('Expected an R8 compatibility payload.');
+    expect([...fallbackData]).toEqual([255]);
+    expect(Object.hasOwn(volume,'narrowMask')).toBe(false);
+    expect(textureDisposals(dispose.mock.contexts,volume.data)).toBe(1);
   });
   it('disposes an uninstalled initial macro texture if teardown wins before installation',async()=>{
-    const dispose=vi.spyOn(Data3DTexture.prototype,'dispose'),volume=cloudVolume();
+    const dispose=vi.spyOn(Data3DTexture.prototype,'dispose'),volume=cloudWithNarrow();
     const {app}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
     control.workers[0].onmessage!({data:{volume}});
     app.destroy();await starting;await flush();
     expect(dispose.mock.contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.data)).toHaveLength(1);
+    expect(textureDisposals(dispose.mock.contexts,volume.narrowMask.data)).toBe(1);
+    expectNarrowTexture(dispose.mock.contexts.find(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.narrowMask.data),volume.narrowMask.data);
     expect(control.render).not.toHaveBeenCalled();expect(device.destroy).toHaveBeenCalledOnce();
   });
   it('disposes an uninstalled replacement macro texture after teardown interrupts the GPU drain',async()=>{
     const dispose=vi.spyOn(Data3DTexture.prototype,'dispose');
     const disposed=(volume:CloudVolume)=>dispose.mock.contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.data).length;
-    const initial=cloudVolume(),replacement=cloudVolume();
+    const initial=cloudWithNarrow(),replacement=cloudWithNarrow(0);
+    const narrowDisposed=(volume:typeof initial)=>textureDisposals(dispose.mock.contexts,volume.narrowMask.data);
     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
     control.workers[0].onmessage!({data:{volume:initial}});await starting;
     root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
     let drained=()=>{};device.queue.onSubmittedWorkDone.mockImplementationOnce(()=>new Promise<void>(resolve=>{drained=resolve;}));
     control.workers[1].onmessage!({data:{volume:replacement}});await flush();
     expect(disposed(initial)).toBe(0);expect(disposed(replacement)).toBe(0);
+    expect(narrowDisposed(initial)).toBe(0);expect(narrowDisposed(replacement)).toBe(0);
     app.destroy();await flush();
     expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(0);
+    expect(narrowDisposed(initial)).toBe(1);expect(narrowDisposed(replacement)).toBe(0);
     drained();await flush();
     expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(1);
+    expect(narrowDisposed(initial)).toBe(1);expect(narrowDisposed(replacement)).toBe(1);
     expect(control.render).toHaveBeenCalledOnce();
   });
   it('disposes a rejected replacement macro texture while retaining the installed texture until teardown',async()=>{
     const dispose=vi.spyOn(Data3DTexture.prototype,'dispose');
     const disposed=(volume:CloudVolume)=>dispose.mock.contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.data).length;
-    const initial=cloudVolume(),replacement=cloudVolume();
+    const initial=cloudWithNarrow(),replacement=cloudWithNarrow(0);
+    const narrowDisposed=(volume:typeof initial)=>textureDisposals(dispose.mock.contexts,volume.narrowMask.data);
     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
     control.workers[0].onmessage!({data:{volume:initial}});await starting;
     root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
     device.queue.onSubmittedWorkDone.mockRejectedValueOnce(new Error('GPU drain rejected'));
     control.workers[1].onmessage!({data:{volume:replacement}});await flush();
     expect(disposed(initial)).toBe(0);expect(disposed(replacement)).toBe(1);
+    expect(narrowDisposed(initial)).toBe(0);expect(narrowDisposed(replacement)).toBe(1);
     expect(root.querySelector('[data-testid="scene-status"]')!.textContent).toContain('GPU drain rejected');
     expect(control.render).toHaveBeenCalledOnce();
     app.destroy();await flush();
     expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(1);
+    expect(narrowDisposed(initial)).toBe(1);expect(narrowDisposed(replacement)).toBe(1);
   });
   it('does not declare ready when GPU shader validation fails',async()=>{
     Object.assign(device,{pushErrorScope:vi.fn(),popErrorScope:vi.fn(async()=>({message:'invalid sampler'}))});

@@ -1,0 +1,21 @@
+{
+  "format": "3 RGBA32F per node",
+  "nodeCount": 109141,
+  "byteLength": 5238768,
+  "coarseKm": 32,
+  "fineKm": 0.25,
+  "outerFineKm": 2,
+  "sourceSha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+  "contract": {
+    "target": "CPU fround source versus ideal continuous field with exact f32 constants and coordinate-independent pre-rounded octave weights",
+    "inputRoundoffIncluded": true,
+    "octaveCoordinateRoundoffIncluded": true,
+    "noiseInterpolationAbsBudget": 0.0000019073486328125,
+    "noiseInterpolationBudget": "local per-cell composed frac/cubic/mix ledger; 32u fallback",
+    "sinHostAbsBudget": 1.1920928955078125e-7,
+    "powHostAbsBudget": 2.384185791015625e-7,
+    "hostBudgetsUniversallyProven": false,
+    "GPUQualified": false,
+    "gradientAppliesToCPUField": false
+  }
+}

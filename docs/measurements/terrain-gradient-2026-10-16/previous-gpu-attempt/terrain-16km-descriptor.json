@@ -1,0 +1,39 @@
+{
+  "version": "terrain-bounds-packed-v1",
+  "sourceSha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+  "binary": "terrain-16km-coarse-1km-local.rgba32f.bin",
+  "binarySha256": "916328860fb51937d634715cc71398f6d55bc898d61a8f7ff1d8a8ca7d5b6d2d",
+  "format": "rgba32float",
+  "width": 256,
+  "height": 86,
+  "nodeCount": 10901,
+  "nodeStrideBytes": 32,
+  "byteLength": 352256,
+  "coarseKm": 16,
+  "fineKm": 1,
+  "domainKm": {
+    "x0": -512,
+    "x1": 512,
+    "z0": -512,
+    "z1": 512
+  },
+  "refinedKm": {
+    "x0": -32,
+    "x1": 32,
+    "z0": -32,
+    "z1": 32
+  },
+  "heightGuardKm": 0.02,
+  "heightGuardUniversallyQualified": false,
+  "GPUQualified": false,
+  "preparationMs": 239.97416700000002,
+  "builderCounters": {
+    "rectQueries": 10901,
+    "noiseQueries": 65406,
+    "noiseCells": 314076,
+    "hashCalls": 1256304,
+    "globalNoiseFallbacks": 11577,
+    "coastUnknown": 4789,
+    "cacheHits": 0
+  }
+}

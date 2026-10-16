@@ -1,0 +1,86 @@
+{
+  "checkedAt": "2026-10-15T23:42:46.428068+00:00",
+  "HEAD": "0d0ab21ce28e71ff8086400ba867f03e2c669efe",
+  "productSourceSha256AtRead": {
+    "src/cumulonimbus/landscape.ts": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+    "src/cumulonimbus/cloudShader.ts": "b1dde880c8cc572dfebcf30825035c8c028925e75da52be05a64f214bbafbe93",
+    "src/cumulonimbus/GPUSceneEngine.ts": "8441993cbbfb9019623e4726831c1053ab5290a0d1a40ce953eb4e36b08f19b1",
+    "src/cumulonimbus/camera.ts": "a7f7b113ee4251454e4f31fd8fa470f131dae3a9bc41ec5cf1d2480871066a69"
+  },
+  "integrationDraftBaseSha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+  "draftBaseMatchesCurrentProductShader": false,
+  "concurrentProductChanges": "Root narrowCloud experiment; preserved. Only landscape field is pinned for this terrain audit.",
+  "productFilesWrittenByThisAgent": [],
+  "generatedVolumes": 0,
+  "GPUExecutionByThisAgent": false,
+  "adapterAndBuilderTypecheck": {
+    "passed": true,
+    "command": "node node_modules/typescript/bin/tsc --project [terrain-gpu]/tsconfig.adapter.json",
+    "scope": [
+      "terrainTrace.generated.ts",
+      "data.ts"
+    ]
+  },
+  "javascriptSyntaxChecks": {
+    "audit.js": true,
+    "pipeline-followup/single-audit.js": true
+  },
+  "Three186ParserABIPassed": true,
+  "offlineWgslCompilerAvailable": false,
+  "CPURecordPack14Passed": true,
+  "expandedRayCount": 5198,
+  "expandedCPUStatuses": {
+    "hit": 1900,
+    "miss": 1780,
+    "outer-envelope-miss": 859,
+    "unresolved-height-budget": 159,
+    "unresolved-contact": 500
+  },
+  "runtimeGPUResult": "Root started separate audit; no numeric result available at this checkpoint. Pipeline and DOM/publication causes not distinguished.",
+  "frozenOriginalAuditFiles": [
+    {
+      "path": "helpers.wgsl",
+      "sha256": "7615646d3460c9bee36533461ca378df03632d95c7a793f1e8dead1fbcb1621d"
+    },
+    {
+      "path": "entry.wgsl",
+      "sha256": "882e63aa6d65591542307bc15ff3bc8fbc97f6fce1163ab7ea5b036150dbe374"
+    },
+    {
+      "path": "standalone-source.wgsl",
+      "sha256": "74fdd5549acc39a166cd939ba8cc09fb4615e6d9cdcc7ae3ea1a922ce923b765"
+    },
+    {
+      "path": "audit-compute.wgsl",
+      "sha256": "5f50dcab1474663e3f725e26114f97788a2a9076832697518accfaf1d07eeb5f"
+    },
+    {
+      "path": "audit.js",
+      "sha256": "b7f3457778eeeb600f6d5cfb5c3832d3086e424df0d93962baa4941efe7f0930"
+    },
+    {
+      "path": "index.html",
+      "sha256": "5a089347ad894864c570397f4100e10694d6d842671fc2dd78efaf07d252e090"
+    },
+    {
+      "path": "audit-cases.json",
+      "sha256": "cfad064c4dbe4b100294222c8c12a4fbcd98cf8f5316f0f1a3a10494543800a1"
+    },
+    {
+      "path": "audit-rays.f32.bin",
+      "sha256": "a1cbb8531f55c9e49cef374cce5386867cd4d42a54e2a4b5faef129a37761052"
+    },
+    {
+      "path": "audit-rectangles.f32.bin",
+      "sha256": "e73096c57dc6bd06f7a57281c9f2dbeea67bc0faf59cf44ceb69af2e30863d5a"
+    },
+    {
+      "path": "terrain-32km-descriptor.json",
+      "sha256": "4904f3d1763983f154566377ba05ab40a770ac8fea19f625e308d9d411b1f789"
+    },
+    {
+      "path": "terrain-32km-coarse-1km-local.rgba32f.bin",
+      "sha256": "181e758a63087555363baf2e3598830d03194ad43d6f0958eda9d048033deb61"
+    }
+  ]
+}

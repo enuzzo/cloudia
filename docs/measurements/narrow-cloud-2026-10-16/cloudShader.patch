@@ -1,0 +1,39 @@
+--- a/src/cumulonimbus/cloudShader.ts
++++ b/src/cumulonimbus/cloudShader.ts
+@@ -24,7 +24,7 @@
+   inspection:f32, ground:f32, rainBounds:vec4<f32>, rainMap:texture_2d<f32>, rainSampler:sampler,
+   sunsetLight:texture_3d<f32>, sunsetSampler:sampler, sunsetAmount:f32,
+   skyLUT: texture_2d<f32>, skySampler: sampler, skyFrom:texture_2d<f32>, skyFromSampler:sampler, atmosphereBlend:f32, precipitationTime:f32, solarColor:vec3<f32>, ambientColor:vec3<f32>, weather:vec3<f32>, forcing:vec2<f32>, wind:vec2<f32>, flash:vec4<f32>, flashTop:vec3<f32>, flashBend:vec3<f32>, flashEnd:vec3<f32>, flashBranch:vec3<f32>,
+-  detail: texture_3d<f32>, detailSampler: sampler, flow: texture_3d<f32>, flowSampler: sampler, iceRange: vec2<f32>,
++  detail: texture_3d<f32>, detailSampler: sampler, narrowCloud: texture_3d<f32>, flow: texture_3d<f32>, flowSampler: sampler, iceRange: vec2<f32>,
+   origin: vec3<f32>, forward: vec3<f32>, right: vec3<f32>, up: vec3<f32>,
+   aspect: f32, tanFov: f32, stepSize: f32, emptyStep: f32, resolution: vec2<f32>,
+   drift: vec3<f32>, growth: vec3<f32>, supportMin:vec3<f32>, supportMax:vec3<f32>,
+@@ -75,6 +75,7 @@
+   var transmittance = 1.0;
+   var radiance = vec3<f32>(0.0);
+   let maskInset=vec3<f32>(0.5)/vec3<f32>(textureDimensions(detail,0));
++  let narrowDimensions=textureDimensions(narrowCloud,0);
+   let massFactor=pow(1.0-0.9*forcing.x,1.3);
+   let mu = dot(ray,sun);
+   // View ray points into the volume; sun points toward the light. HG is
+@@ -142,6 +143,10 @@
+     let local=reference-flowValue.rgb;
+     let coord=(local-vec3<f32>(-5.0,-0.5,-3.5))/vec3<f32>(10.0,8.5,7.0);
+     ice=smoothstep(iceRange.x,iceRange.y,local.y);
++    // Point certificate after flow: never changes broad support, ds, t or phase.
++    // Clamp before conversion; textureLoad avoids a second filtered-zero contract.
++    let narrowIndex=min(vec3<u32>(floor(clamp(coord,vec3<f32>(0.0),vec3<f32>(1.0))*vec3<f32>(narrowDimensions))),narrowDimensions-vec3<u32>(1u));
++    if(textureLoad(narrowCloud,vec3<i32>(narrowIndex),0).r>0.0){
+     var fine=vec4<f32>(.6);if(probeMode!=4.0){fine=textureSampleLevel(detail,detailSampler,local*0.3,0.0);}
+     let warp=(fine.gbr-vec3<f32>(0.5))*mix(vec3<f32>(0.16,0.12,0.16),vec3<f32>(0.08,0.02,0.1),ice);
+     let warped=textureSampleLevel(volume,volumeSampler,coord+warp/vec3<f32>(10.0,8.5,7.0),0.0).r;
+@@ -192,7 +197,7 @@
+ 
+     }
+     }}
+-    }}
++    }}}
+     if(density<=0.0&&rainExtinction<=0.0){t+=sampleStep;continue;}
+     let aerial=exp(-weather.x*0.0035*t);
+     // Co-located media share one exponential segment; neither is artificially in front.

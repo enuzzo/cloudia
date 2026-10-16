@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "scope": "Product CPU builder matches frozen mask bytes from existing cached macro; no new volume, GPU or browser",
+  "macroSha256": "72e3f360b81f3c8f812800cc309a174ce893d96c80e666c9bf98fca178187b9f",
+  "narrowSha256": "ad38c2b581882a0686e3d81031e0972fbd1cc0fb4bb9dab09c43451387e418ad",
+  "size": 128,
+  "bytes": 2097152,
+  "buildMs": 103.17879099999999
+}

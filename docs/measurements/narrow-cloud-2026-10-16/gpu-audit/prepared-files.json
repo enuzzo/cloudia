@@ -1,0 +1,94 @@
+{
+  "kind": "prepared-narrow-gpu-audit-files",
+  "gpuStatus": "not-run",
+  "newBakes": 0,
+  "javascriptSyntaxCheck": "node --check passed; no GPU execution",
+  "files": {
+    "README.md": {
+      "bytes": 4244,
+      "sha256": "0b8b9afb0c53f8fbb384bf2aba190bf9dc91b19c23297e26c7db18bd3bcc9f55",
+      "symlinkTarget": null
+    },
+    "audit.js": {
+      "bytes": 13495,
+      "sha256": "0859af8ff275ee6fc1cc5f185a5e5eaf52197a68155f5c01d41d042f41cd0965",
+      "symlinkTarget": null
+    },
+    "audit.wgsl": {
+      "bytes": 1456,
+      "sha256": "febbb724a92455139e01fce8c3ee5d252171f57bc710d39b43b29e89c87d4905",
+      "symlinkTarget": null
+    },
+    "cloudShader.after.ts": {
+      "bytes": 14129,
+      "sha256": "b1dde880c8cc572dfebcf30825035c8c028925e75da52be05a64f214bbafbe93",
+      "symlinkTarget": null
+    },
+    "cloudShader.before.ts": {
+      "bytes": 13664,
+      "sha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+      "symlinkTarget": null
+    },
+    "index.html": {
+      "bytes": 1028,
+      "sha256": "9686b7d3d18b2eb877a2ec76929bfc50cc7a51ca29f92de2e99d878194f0eec2",
+      "symlinkTarget": null
+    },
+    "inputs.json": {
+      "bytes": 13601,
+      "sha256": "bbc59c312c742e0f43b4e2d656bc5a3e4f9c389b1d22b83bdb97500f2012cf9a",
+      "symlinkTarget": null
+    },
+    "macro-rgba8.bin": {
+      "bytes": 67108864,
+      "sha256": "72e3f360b81f3c8f812800cc309a174ce893d96c80e666c9bf98fca178187b9f",
+      "symlinkTarget": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/data/macro-rgba8.bin"
+    },
+    "narrow-r8.bin": {
+      "bytes": 2097152,
+      "sha256": "ad38c2b581882a0686e3d81031e0972fbd1cc0fb4bb9dab09c43451387e418ad",
+      "symlinkTarget": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/narrow-cloud/narrow-r8.bin"
+    },
+    "prepare-audit.py": {
+      "bytes": 9003,
+      "sha256": "adf0aca95ea432337d40f444292b86710a40074641ce70704f43b560d0fa0c27",
+      "symlinkTarget": null
+    },
+    "real-queries-f32.bin": {
+      "bytes": 1579008,
+      "sha256": "ba64c392784a1f47a356466086474bb1fe0811ee067996118c37926e380b95f9",
+      "symlinkTarget": null
+    },
+    "sparse-fixture-queries-f32.bin": {
+      "bytes": 422400,
+      "sha256": "d5bcbd5e7a2e77f7585bc13199cd7afa58f8f0c004381fd1373e9e6150f1b253",
+      "symlinkTarget": null
+    },
+    "extend-sparse-empty.py": {
+      "bytes": 6690,
+      "sha256": "0bb912d2ca4e204a8d991e5c13cd5fafec2e020bb7fd1ebf05db1846ae25b20c",
+      "symlinkTarget": null
+    }
+  },
+  "coverageRevision": {
+    "reason": "Add genuinely empty/distant sparse probes plus Halton domain coverage; initial criterion narrowZero>0 remains unchanged.",
+    "previousInputsSha256": "ca0d222a386295cf55e15243a085ec5e4a0361767bf3b3bbbffcbfc54dbbeda0",
+    "previousSparseQueriesSha256": "ce5262a1707760cca061587f8e07a483371b2015ac7f43cb8f37ab763d84a063",
+    "previousQueryCount": 6912,
+    "appendedQueries": 6288,
+    "distantEmptyQueries": 144,
+    "haltonDomainQueries": 6144,
+    "unchanged": [
+      "audit.js",
+      "audit.wgsl",
+      "source snapshots",
+      "real query dataset",
+      "macro array",
+      "narrow R8 array",
+      "GPU pass/fail criteria"
+    ],
+    "newBakes": 0,
+    "gpuExecutedByRevision": false
+  },
+  "initialSnapshotManifestSha256": "852dbcd6872f7c47b71874e273e18afaa65ccfbe644f6c8585728e4ba19adfb1"
+}

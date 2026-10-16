@@ -1,0 +1,322 @@
+{
+  "kind": "conditional-cloud-empty-certificate-opportunity",
+  "newBakes": 0,
+  "gpuExecuted": false,
+  "status": "PASS-CPU-CONDITIONAL",
+  "grid": [
+    32,
+    18
+  ],
+  "parameters": {
+    "seed": 72,
+    "time": 60,
+    "rainTime": 0,
+    "rainTimeProvenance": "Reconstructed from root-confirmed UI sequence: Fissa stato di confronto resets forcingTime0, then Pioggia/35ArrowUp, no Riprendi. Missing from original benchmark JSON.",
+    "grid": [
+      32,
+      18
+    ],
+    "output": [
+      2560,
+      1440
+    ],
+    "camera": {
+      "comparisonSurfaceKm": 0.4,
+      "comparisonTargetKm": [
+        -0.28995623264629566,
+        2.4981598424383944,
+        -0.02734375
+      ],
+      "probeSkipped": true,
+      "approach": 0,
+      "origin": [
+        -0.28995623264629566,
+        -3.0278343591735393,
+        9.665778756295405
+      ],
+      "probeFlow": "16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively",
+      "probeFieldBytes": 32768,
+      "surfaceEstimateKm": null,
+      "probe": null,
+      "probeAgeMs": null,
+      "altitudeKm": 0.9721656408264607,
+      "ground": 1,
+      "yaw": 0,
+      "pitch": -0.92,
+      "target": [
+        -0.28995623264629566,
+        2.4981598424383944,
+        -0.02734375
+      ]
+    },
+    "originF32": [
+      -0.2899562418460846,
+      -3.027834415435791,
+      9.665779113769531
+    ],
+    "forwardF32": [
+      0,
+      0.4952648878097534,
+      -0.8687419891357422
+    ],
+    "rightF32": [
+      1,
+      0,
+      0
+    ],
+    "upF32": [
+      0,
+      0.8687419891357422,
+      0.4952648878097534
+    ],
+    "stepSizeF32": 0.01822916604578495,
+    "emptyStepF32": 0.0546875,
+    "reportedEmptyStep": 0.0546875,
+    "windF32": [
+      0.2642000615596771,
+      0.09009438008069992
+    ],
+    "driftF32": [
+      0.12137296795845032,
+      0.010131947696208954,
+      0
+    ],
+    "growthF32": [
+      1,
+      1,
+      1
+    ],
+    "rainAmountF32": 0.800000011920929,
+    "rainBounds": [
+      -3.828125,
+      -2.2421875,
+      3.359375,
+      2.1328125
+    ],
+    "iceRangeF32": [
+      3.6577489376068115,
+      4.188268184661865
+    ],
+    "cutoffF32": 0.006000000052154064,
+    "maximumIterations": 8192
+  },
+  "binaryNarrowBaseline": {
+    "semanticCalls": 1203881,
+    "narrowCounts": {
+      "lookupsAdded": 115627,
+      "zero": 88956,
+      "positive": 26671,
+      "zeroInRain": 77466,
+      "zeroOutsideRain": 11490,
+      "rawPositiveAtNarrowZero": 0,
+      "densityPositiveAtNarrowZero": 0,
+      "maximumRawAtNarrowZero": 0,
+      "opacityMismatches": 0,
+      "nonfiniteLocal": 0
+    },
+    "sequenceSha256": "a0c2dfd79e1900dce9a677fceecbd5bfcfc138a2e94cd430938f4c4c7bf3ca7a"
+  },
+  "originalBaseline": {
+    "semanticCalls": 1266166,
+    "sequenceSha256": "a0c2dfd79e1900dce9a677fceecbd5bfcfc138a2e94cd430938f4c4c7bf3ca7a"
+  },
+  "certificateScenarios": [
+    {
+      "eps": 0,
+      "until": 0,
+      "checks": {
+        "noOccupiedMaskAtCached": true,
+        "noRawAtCached": true,
+        "noDensityAtCached": true,
+        "originalSequence": true,
+        "loadPartition": true
+      },
+      "freshLoads": 55807,
+      "freshEmptyLoads": 29136,
+      "cached": 59820,
+      "cachedInRain": 57177,
+      "cachedOutsideRain": 2643,
+      "armed": 15453,
+      "maxH": 0.10382929291231342,
+      "totalH": 467.5490471251116,
+      "maskedPositiveAtCached": 0,
+      "rawPositiveAtCached": 0,
+      "densityPositiveAtCached": 0,
+      "freshDistanceHistogram": {
+        "1": 8171,
+        "2": 4491,
+        "3": 3464,
+        "4": 2592,
+        "5": 2480,
+        "6": 2055,
+        "7": 1746,
+        "8": 1341,
+        "9": 1065,
+        "10": 791,
+        "11": 532,
+        "12": 302,
+        "13": 106
+      },
+      "flowLoadsAvoided": 59820,
+      "distanceLoadsAvoided": 59820,
+      "lookupsSaved": 119640,
+      "certificateTotalCalls": 1084241,
+      "additionalSavedPercentOfBinaryNarrow": 9.937859306692273,
+      "combinedSavedPercentOfOriginal": 14.368179211888489,
+      "meanArmedH": 0.030256199257432965,
+      "sequenceSha256": "a0c2dfd79e1900dce9a677fceecbd5bfcfc138a2e94cd430938f4c4c7bf3ca7a",
+      "sameCpuSequence": true,
+      "assumptions": {
+        "samplerErrorPerLookupKm": 0,
+        "samplerEndpointDifferenceGuardKm": 0,
+        "localArithmeticGuardKm": 0.001,
+        "clockGuardKm": 0.000030517578125,
+        "iceGuardKm": 0.001,
+        "L": 6.310839471413678,
+        "unitRayAndConstantFrame": true
+      }
+    },
+    {
+      "eps": 0.001,
+      "until": 0,
+      "checks": {
+        "noOccupiedMaskAtCached": true,
+        "noRawAtCached": true,
+        "noDensityAtCached": true,
+        "originalSequence": true,
+        "loadPartition": true
+      },
+      "freshLoads": 55809,
+      "freshEmptyLoads": 29138,
+      "cached": 59818,
+      "cachedInRain": 57176,
+      "cachedOutsideRain": 2642,
+      "armed": 15454,
+      "maxH": 0.1035123778633632,
+      "totalH": 462.6978965452134,
+      "maskedPositiveAtCached": 0,
+      "rawPositiveAtCached": 0,
+      "densityPositiveAtCached": 0,
+      "freshDistanceHistogram": {
+        "1": 8172,
+        "2": 4493,
+        "3": 3463,
+        "4": 2591,
+        "5": 2479,
+        "6": 2057,
+        "7": 1746,
+        "8": 1341,
+        "9": 1065,
+        "10": 791,
+        "11": 532,
+        "12": 302,
+        "13": 106
+      },
+      "flowLoadsAvoided": 59818,
+      "distanceLoadsAvoided": 59818,
+      "lookupsSaved": 119636,
+      "certificateTotalCalls": 1084245,
+      "additionalSavedPercentOfBinaryNarrow": 9.937527047939124,
+      "combinedSavedPercentOfOriginal": 14.367863297545503,
+      "meanArmedH": 0.02994033237642121,
+      "sequenceSha256": "a0c2dfd79e1900dce9a677fceecbd5bfcfc138a2e94cd430938f4c4c7bf3ca7a",
+      "sameCpuSequence": true,
+      "assumptions": {
+        "samplerErrorPerLookupKm": 0.001,
+        "samplerEndpointDifferenceGuardKm": 0.002,
+        "localArithmeticGuardKm": 0.001,
+        "clockGuardKm": 0.000030517578125,
+        "iceGuardKm": 0.001,
+        "L": 6.310839471413678,
+        "unitRayAndConstantFrame": true
+      }
+    },
+    {
+      "eps": 0.002,
+      "until": 0,
+      "checks": {
+        "noOccupiedMaskAtCached": true,
+        "noRawAtCached": true,
+        "noDensityAtCached": true,
+        "originalSequence": true,
+        "loadPartition": true
+      },
+      "freshLoads": 55865,
+      "freshEmptyLoads": 29194,
+      "cached": 59762,
+      "cachedInRain": 57123,
+      "cachedOutsideRain": 2639,
+      "armed": 15518,
+      "maxH": 0.103195462814413,
+      "totalH": 461.04579858790396,
+      "maskedPositiveAtCached": 0,
+      "rawPositiveAtCached": 0,
+      "densityPositiveAtCached": 0,
+      "freshDistanceHistogram": {
+        "1": 8164,
+        "2": 4499,
+        "3": 3470,
+        "4": 2594,
+        "5": 2470,
+        "6": 2065,
+        "7": 1755,
+        "8": 1371,
+        "9": 1074,
+        "10": 792,
+        "11": 532,
+        "12": 302,
+        "13": 106
+      },
+      "flowLoadsAvoided": 59762,
+      "distanceLoadsAvoided": 59762,
+      "lookupsSaved": 119524,
+      "certificateTotalCalls": 1084357,
+      "additionalSavedPercentOfBinaryNarrow": 9.928223802850946,
+      "combinedSavedPercentOfOriginal": 14.359017695941922,
+      "meanArmedH": 0.029710387845592472,
+      "sequenceSha256": "a0c2dfd79e1900dce9a677fceecbd5bfcfc138a2e94cd430938f4c4c7bf3ca7a",
+      "sameCpuSequence": true,
+      "assumptions": {
+        "samplerErrorPerLookupKm": 0.002,
+        "samplerEndpointDifferenceGuardKm": 0.004,
+        "localArithmeticGuardKm": 0.001,
+        "clockGuardKm": 0.000030517578125,
+        "iceGuardKm": 0.001,
+        "L": 6.310839471413678,
+        "unitRayAndConstantFrame": true
+      }
+    }
+  ],
+  "qualification": "Conditional ideal-trilinear CPU opportunity, not a hardware sampler Lipschitz proof, implemented shader optimization, pixel parity or throughput. The explicit native-flow error hypotheses0/1/2m are unmeasured. Twice the assumed per-lookup additive error is subtracted. Frozen historical cloudShader before is used by the port; live shader contains narrow guard and is not claimed identical source.",
+  "sourceHashesBefore": {
+    "volume": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74",
+    "light": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf",
+    "motion": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2",
+    "motionField": "d8817eb9d90a70ee975eea89d2c2fca6d9c6783280bea810fdf76cff2b2d4d8a",
+    "precipitation": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72",
+    "emptyTraversal": "281a4209f2afc13a63735d6526f954dc93d775972aa1d8ccd6cf46d1677c57d4",
+    "medium": "ddfd487055e4fde6581ab351345e91fb3466b032dda954c803082a39a9a142d6",
+    "landscape": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+    "cloudShader": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+    "GPUSceneEngine": "8441993cbbfb9019623e4726831c1053ab5290a0d1a40ce953eb4e36b08f19b1"
+  },
+  "sourceHashesAfter": {
+    "volume": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74",
+    "light": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf",
+    "motion": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2",
+    "motionField": "d8817eb9d90a70ee975eea89d2c2fca6d9c6783280bea810fdf76cff2b2d4d8a",
+    "precipitation": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72",
+    "emptyTraversal": "281a4209f2afc13a63735d6526f954dc93d775972aa1d8ccd6cf46d1677c57d4",
+    "medium": "ddfd487055e4fde6581ab351345e91fb3466b032dda954c803082a39a9a142d6",
+    "landscape": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+    "cloudShader": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd",
+    "GPUSceneEngine": "8441993cbbfb9019623e4726831c1053ab5290a0d1a40ce953eb4e36b08f19b1"
+  },
+  "sourceChangesDuringCount": [],
+  "frozenCounterSha256": "2b4b5b833115ba307b73f7c00fbcf50c6aeb940751d85c4f8f1f3a38f564c67d",
+  "scriptSha256": "a63003247ffc4eb02dd9fd989a41c3436d3c04c21eb8b5f427fe7639f8fa4128",
+  "distanceSha256": "95942cc02aa7a1446e873e1a9a2211f0a8237e871e7c7cfa98bb9edbed789f8b",
+  "boundJsonSha256": "6230dfd2a47427bc33b9c23ca1a8db3b787eb9f688cc539ea34a0108fd3d5409",
+  "clockAndQuadrature": "Original broad support, ds/t/rain/jitter/cutoff unchanged. Cache skip is modeled only for baseline broad-positive points. Other arithmetic including decode/clock checks is unpriced. No certificate crosses frames.",
+  "countWallMs": 1185.904875
+}

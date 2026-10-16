@@ -1,0 +1,1555 @@
+{
+  "passed": true,
+  "scope": "CPU serialized metadata and traversal qualification; generated WGSL has not executed on GPU",
+  "sourceSha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+  "implementation": {
+    "data.ts": "7059c777abe44f1e8538e63d248120d4616b6a35b3c4a28e04b299a9a05db31e",
+    "packed-trace.ts": "dfec964911d2a014fb1f94e6dda6f91f7f07d976e1035334f27351d734852e8f",
+    "qualify.ts": "4150ca2a0fc88e5c3805e3fb3610ce7e054b0646fec2166fe9725c44694bae34"
+  },
+  "limits": {
+    "nodeVisits": 256,
+    "heightCalls": 16,
+    "stackCapacity": 48,
+    "hitToleranceKm": 0.001
+  },
+  "generatedVolumes": 0,
+  "GPU": false,
+  "productModified": false,
+  "packs": [
+    {
+      "descriptor": {
+        "version": "terrain-bounds-packed-v1",
+        "sourceSha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+        "binary": "terrain-32km-coarse-1km-local.rgba32f.bin",
+        "binarySha256": "181e758a63087555363baf2e3598830d03194ad43d6f0958eda9d048033deb61",
+        "format": "rgba32float",
+        "width": 256,
+        "height": 54,
+        "nodeCount": 6821,
+        "nodeStrideBytes": 32,
+        "byteLength": 221184,
+        "coarseKm": 32,
+        "fineKm": 1,
+        "domainKm": {
+          "x0": -512,
+          "x1": 512,
+          "z0": -512,
+          "z1": 512
+        },
+        "refinedKm": {
+          "x0": -32,
+          "x1": 32,
+          "z0": -32,
+          "z1": 32
+        },
+        "heightGuardKm": 0.02,
+        "heightGuardUniversallyQualified": false,
+        "GPUQualified": false,
+        "preparationMs": 142.044708,
+        "builderCounters": {
+          "rectQueries": 6821,
+          "noiseQueries": 40926,
+          "noiseCells": 204947,
+          "hashCalls": 819788,
+          "globalNoiseFallbacks": 3417,
+          "coastUnknown": 1205,
+          "cacheHits": 0
+        }
+      },
+      "summary": {
+        "statuses": {
+          "hit": 11,
+          "miss": 3
+        },
+        "heightCalls": 64,
+        "maxHeightCalls": 12,
+        "visits": 928,
+        "maxVisits": 188,
+        "maxStack": 17,
+        "dynamicQueries": 468,
+        "metadataLoads": 1486,
+        "metadataTexelLoads": 2972
+      },
+      "sampleChecks": 34105,
+      "traceCpuMs": 24.15870799999999,
+      "results": [
+        {
+          "name": "documented-six-pass-failure",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            16.4296875,
+            2.9365234375,
+            9.797174393178826e-16
+          ],
+          "ray": [
+            -0.9641481825534892,
+            -0.26536443258056197,
+            -5.903704928339342e-17
+          ],
+          "rayLength": 1,
+          "sea": 26.162488204960177,
+          "relief": 1,
+          "visits": 44,
+          "heightEvaluations": 4,
+          "discarded": 12,
+          "maxStack": 10,
+          "dynamicBounds": 22,
+          "tileLoads": 69,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 22,
+            "noiseQueries": 132,
+            "noiseCells": 137,
+            "hashCalls": 548,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            23.137378394516027,
+            23.138125175530174
+          ],
+          "enclosureKm": 0.0007467810141470466,
+          "witness": {
+            "t": 23.138125175530174,
+            "clearance": -0.00039889321487862617,
+            "upperClearance": -0.00039889221487862615
+          },
+          "certifiedPrefixEnd": 23.137378394516027,
+          "search": [
+            13.895023161333256,
+            26.162488204960177
+          ]
+        },
+        {
+          "name": "profile-reachable-level-ray",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            16,
+            -3,
+            9.797174393178826e-16
+          ],
+          "ray": [
+            -1,
+            0,
+            -6.123233995736766e-17
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 52,
+          "heightEvaluations": 4,
+          "discarded": 13,
+          "maxStack": 14,
+          "dynamicBounds": 17,
+          "tileLoads": 109,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 17,
+            "noiseQueries": 102,
+            "noiseCells": 108,
+            "hashCalls": 432,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            22.16552734375,
+            22.1660390625
+          ],
+          "enclosureKm": 0.0005117187500012221,
+          "witness": {
+            "t": 22.1660390625,
+            "clearance": -0.00006135748208180303,
+            "upperClearance": -0.00006135648208180303
+          },
+          "certifiedPrefixEnd": 22.16552734375,
+          "search": [
+            0,
+            185.3489371091534
+          ]
+        },
+        {
+          "name": "low-x-16-dy0",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            -16,
+            -3.4163984102497125,
+            0
+          ],
+          "ray": [
+            -0.9950371902099893,
+            0,
+            0.09950371902099893
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 188,
+          "heightEvaluations": 12,
+          "discarded": 80,
+          "maxStack": 14,
+          "dynamicBounds": 155,
+          "tileLoads": 109,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 155,
+            "noiseQueries": 930,
+            "noiseCells": 950,
+            "hashCalls": 3800,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            4.75124063635731,
+            4.752117957211545
+          ],
+          "enclosureKm": 0.0008773208542347533,
+          "witness": {
+            "t": 4.752117957211545,
+            "clearance": -0.0000018860810087062418,
+            "upperClearance": -0.0000018850810087062418
+          },
+          "certifiedPrefixEnd": 4.75124063635731,
+          "search": [
+            0,
+            168.42401648385822
+          ]
+        },
+        {
+          "name": "low-x-16-dy0.02",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            -16,
+            -3.4163984102497125,
+            0
+          ],
+          "ray": [
+            -0.9948402116491737,
+            0.019896804232983473,
+            0.09948402116491738
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 75,
+          "heightEvaluations": 7,
+          "discarded": 25,
+          "maxStack": 10,
+          "dynamicBounds": 42,
+          "tileLoads": 109,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 42,
+            "noiseQueries": 252,
+            "noiseCells": 292,
+            "hashCalls": 1168,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            5.495396096386311,
+            5.496150689513789
+          ],
+          "enclosureKm": 0.0007545931274783868,
+          "witness": {
+            "t": 5.496150689513789,
+            "clearance": -0.0000495140629936941,
+            "upperClearance": -0.000049513062993694095
+          },
+          "certifiedPrefixEnd": 5.495396096386311,
+          "search": [
+            0,
+            89.88175201806675
+          ]
+        },
+        {
+          "name": "low-x-16-dy0.05",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            -16,
+            -3.4163984102497125,
+            0
+          ],
+          "ray": [
+            -0.9938079899999066,
+            0.04969039949999533,
+            0.09938079899999067
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 78,
+          "heightEvaluations": 7,
+          "discarded": 26,
+          "maxStack": 10,
+          "dynamicBounds": 45,
+          "tileLoads": 109,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 45,
+            "noiseQueries": 270,
+            "noiseCells": 295,
+            "hashCalls": 1180,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            6.512247731199674,
+            6.513002069434568
+          ],
+          "enclosureKm": 0.0007543382348940142,
+          "witness": {
+            "t": 6.513002069434568,
+            "clearance": -0.00006550120815518312,
+            "upperClearance": -0.00006550020815518312
+          },
+          "certifiedPrefixEnd": 6.512247731199674,
+          "search": [
+            0,
+            47.34867220819723
+          ]
+        },
+        {
+          "name": "low-x-8-dy0",
+          "mode": "metadata",
+          "status": "miss",
+          "origin": [
+            -8,
+            -2.067419119580336,
+            0
+          ],
+          "ray": [
+            -0.9950371902099893,
+            0,
+            0.09950371902099893
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 74,
+          "heightEvaluations": 2,
+          "discarded": 30,
+          "maxStack": 10,
+          "dynamicBounds": 30,
+          "tileLoads": 137,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 30,
+            "noiseQueries": 180,
+            "noiseCells": 596,
+            "hashCalls": 2384,
+            "globalNoiseFallbacks": 14,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "search": [
+            0,
+            121.62653973221305
+          ],
+          "remaining": 0,
+          "earliestPending": null,
+          "knownNonpositive": null,
+          "lastDiscardedEnd": 121.62653973221305
+        },
+        {
+          "name": "low-x-8-dy0.02",
+          "mode": "metadata",
+          "status": "miss",
+          "origin": [
+            -8,
+            -2.067419119580336,
+            0
+          ],
+          "ray": [
+            -0.9948402116491737,
+            0.019896804232983473,
+            0.09948402116491738
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 49,
+          "heightEvaluations": 2,
+          "discarded": 17,
+          "maxStack": 8,
+          "dynamicBounds": 10,
+          "tileLoads": 121,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 10,
+            "noiseQueries": 60,
+            "noiseCells": 88,
+            "hashCalls": 352,
+            "globalNoiseFallbacks": 2,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "search": [
+            0,
+            52.027765792242974
+          ],
+          "remaining": 0,
+          "earliestPending": null,
+          "knownNonpositive": null,
+          "lastDiscardedEnd": 52.027765792242974
+        },
+        {
+          "name": "low-x-8-dy0.05",
+          "mode": "metadata",
+          "status": "miss",
+          "origin": [
+            -8,
+            -2.067419119580336,
+            0
+          ],
+          "ray": [
+            -0.9938079899999066,
+            0.04969039949999533,
+            0.09938079899999067
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 40,
+          "heightEvaluations": 2,
+          "discarded": 12,
+          "maxStack": 8,
+          "dynamicBounds": 8,
+          "tileLoads": 105,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 8,
+            "noiseQueries": 48,
+            "noiseCells": 55,
+            "hashCalls": 220,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "search": [
+            0,
+            24.818587483465762
+          ],
+          "remaining": 0,
+          "earliestPending": null,
+          "knownNonpositive": null,
+          "lastDiscardedEnd": 24.818587483465762
+        },
+        {
+          "name": "low-x0-dy0",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            0,
+            -3.8,
+            0
+          ],
+          "ray": [
+            -0.9950371902099893,
+            0,
+            0.09950371902099893
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 64,
+          "heightEvaluations": 5,
+          "discarded": 16,
+          "maxStack": 17,
+          "dynamicBounds": 29,
+          "tileLoads": 121,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 29,
+            "noiseQueries": 174,
+            "noiseCells": 189,
+            "hashCalls": 756,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            4.280030037471503,
+            4.280520754054566
+          ],
+          "enclosureKm": 0.0004907165830623228,
+          "witness": {
+            "t": 4.280520754054566,
+            "clearance": -0.000033161357350763865,
+            "upperClearance": -0.00003316035735076386
+          },
+          "certifiedPrefixEnd": 4.280030037471503,
+          "search": [
+            0,
+            197.1639482765548
+          ]
+        },
+        {
+          "name": "low-x0-dy0.02",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            0,
+            -3.8,
+            0
+          ],
+          "ray": [
+            -0.9948402116491737,
+            0.019896804232983473,
+            0.09948402116491738
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 60,
+          "heightEvaluations": 6,
+          "discarded": 15,
+          "maxStack": 13,
+          "dynamicBounds": 24,
+          "tileLoads": 121,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 24,
+            "noiseQueries": 144,
+            "noiseCells": 155,
+            "hashCalls": 620,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            4.7459235077039645,
+            4.746678100831443
+          ],
+          "enclosureKm": 0.0007545931274783868,
+          "witness": {
+            "t": 4.746678100831443,
+            "clearance": -0.0001107424659494427,
+            "upperClearance": -0.0001107414659494427
+          },
+          "certifiedPrefixEnd": 4.7459235077039645,
+          "search": [
+            0,
+            107.63350832842895
+          ]
+        },
+        {
+          "name": "low-x0-dy0.05",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            0,
+            -3.8,
+            0
+          ],
+          "ray": [
+            -0.9938079899999066,
+            0.04969039949999533,
+            0.09938079899999067
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 57,
+          "heightEvaluations": 3,
+          "discarded": 15,
+          "maxStack": 9,
+          "dynamicBounds": 21,
+          "tileLoads": 121,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 21,
+            "noiseQueries": 126,
+            "noiseCells": 145,
+            "hashCalls": 580,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            5.250283243849237,
+            5.25077456737945
+          ],
+          "enclosureKm": 0.0004913235302126395,
+          "witness": {
+            "t": 5.25077456737945,
+            "clearance": -0.00005817331748403376,
+            "upperClearance": -0.00005817231748403376
+          },
+          "certifiedPrefixEnd": 5.250283243849237,
+          "search": [
+            0,
+            56.375327460495384
+          ]
+        },
+        {
+          "name": "low-x8-dy0",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            8,
+            -3.8,
+            0
+          ],
+          "ray": [
+            -0.9950371902099893,
+            0,
+            0.09950371902099893
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 46,
+          "heightEvaluations": 4,
+          "discarded": 15,
+          "maxStack": 10,
+          "dynamicBounds": 20,
+          "tileLoads": 81,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 20,
+            "noiseQueries": 120,
+            "noiseCells": 128,
+            "hashCalls": 512,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            11.994094723214687,
+            11.995094723214686
+          ],
+          "enclosureKm": 0.0009999999999994458,
+          "witness": {
+            "t": 11.995094723214686,
+            "clearance": -0.000040296050428878516,
+            "upperClearance": -0.000040295050428878514
+          },
+          "certifiedPrefixEnd": 11.994094723214687,
+          "search": [
+            0,
+            205.1226388463701
+          ]
+        },
+        {
+          "name": "low-x8-dy0.02",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            8,
+            -3.8,
+            0
+          ],
+          "ray": [
+            -0.9948402116491737,
+            0.019896804232983473,
+            0.09948402116491738
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 52,
+          "heightEvaluations": 3,
+          "discarded": 16,
+          "maxStack": 12,
+          "dynamicBounds": 24,
+          "tileLoads": 89,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 24,
+            "noiseQueries": 144,
+            "noiseCells": 157,
+            "hashCalls": 628,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            13.036994695861491,
+            13.037485509606535
+          ],
+          "enclosureKm": 0.0004908137450438943,
+          "witness": {
+            "t": 13.037485509606535,
+            "clearance": -0.00006283693801378831,
+            "upperClearance": -0.00006283593801378831
+          },
+          "certifiedPrefixEnd": 13.036994695861491,
+          "search": [
+            0,
+            111.24635973486187
+          ]
+        },
+        {
+          "name": "low-x8-dy0.05",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            8,
+            -3.8,
+            0
+          ],
+          "ray": [
+            -0.9938079899999066,
+            0.04969039949999533,
+            0.09938079899999067
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 49,
+          "heightEvaluations": 3,
+          "discarded": 15,
+          "maxStack": 10,
+          "dynamicBounds": 21,
+          "tileLoads": 85,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 21,
+            "noiseQueries": 126,
+            "noiseCells": 131,
+            "hashCalls": 524,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            13.810121787208903,
+            13.810613110739116
+          ],
+          "enclosureKm": 0.0004913235302126395,
+          "witness": {
+            "t": 13.810613110739116,
+            "clearance": -0.00006691929957014509,
+            "upperClearance": -0.00006691829957014508
+          },
+          "certifiedPrefixEnd": 13.810121787208903,
+          "search": [
+            0,
+            57.513814816365425
+          ]
+        }
+      ]
+    },
+    {
+      "descriptor": {
+        "version": "terrain-bounds-packed-v1",
+        "sourceSha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+        "binary": "terrain-16km-coarse-1km-local.rgba32f.bin",
+        "binarySha256": "916328860fb51937d634715cc71398f6d55bc898d61a8f7ff1d8a8ca7d5b6d2d",
+        "format": "rgba32float",
+        "width": 256,
+        "height": 86,
+        "nodeCount": 10901,
+        "nodeStrideBytes": 32,
+        "byteLength": 352256,
+        "coarseKm": 16,
+        "fineKm": 1,
+        "domainKm": {
+          "x0": -512,
+          "x1": 512,
+          "z0": -512,
+          "z1": 512
+        },
+        "refinedKm": {
+          "x0": -32,
+          "x1": 32,
+          "z0": -32,
+          "z1": 32
+        },
+        "heightGuardKm": 0.02,
+        "heightGuardUniversallyQualified": false,
+        "GPUQualified": false,
+        "preparationMs": 239.97416700000002,
+        "builderCounters": {
+          "rectQueries": 10901,
+          "noiseQueries": 65406,
+          "noiseCells": 314076,
+          "hashCalls": 1256304,
+          "globalNoiseFallbacks": 11577,
+          "coastUnknown": 4789,
+          "cacheHits": 0
+        }
+      },
+      "summary": {
+        "statuses": {
+          "hit": 11,
+          "miss": 3
+        },
+        "heightCalls": 64,
+        "maxHeightCalls": 12,
+        "visits": 932,
+        "maxVisits": 188,
+        "maxStack": 17,
+        "dynamicQueries": 467,
+        "metadataLoads": 1502,
+        "metadataTexelLoads": 3004
+      },
+      "sampleChecks": 54505,
+      "traceCpuMs": 16.29841700000003,
+      "results": [
+        {
+          "name": "documented-six-pass-failure",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            16.4296875,
+            2.9365234375,
+            9.797174393178826e-16
+          ],
+          "ray": [
+            -0.9641481825534892,
+            -0.26536443258056197,
+            -5.903704928339342e-17
+          ],
+          "rayLength": 1,
+          "sea": 26.162488204960177,
+          "relief": 1,
+          "visits": 44,
+          "heightEvaluations": 4,
+          "discarded": 12,
+          "maxStack": 10,
+          "dynamicBounds": 22,
+          "tileLoads": 69,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 22,
+            "noiseQueries": 132,
+            "noiseCells": 137,
+            "hashCalls": 548,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            23.137378394516027,
+            23.138125175530174
+          ],
+          "enclosureKm": 0.0007467810141470466,
+          "witness": {
+            "t": 23.138125175530174,
+            "clearance": -0.00039889321487862617,
+            "upperClearance": -0.00039889221487862615
+          },
+          "certifiedPrefixEnd": 23.137378394516027,
+          "search": [
+            13.895023161333256,
+            26.162488204960177
+          ]
+        },
+        {
+          "name": "profile-reachable-level-ray",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            16,
+            -3,
+            9.797174393178826e-16
+          ],
+          "ray": [
+            -1,
+            0,
+            -6.123233995736766e-17
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 52,
+          "heightEvaluations": 4,
+          "discarded": 13,
+          "maxStack": 14,
+          "dynamicBounds": 17,
+          "tileLoads": 109,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 17,
+            "noiseQueries": 102,
+            "noiseCells": 108,
+            "hashCalls": 432,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            22.16552734375,
+            22.1660390625
+          ],
+          "enclosureKm": 0.0005117187500012221,
+          "witness": {
+            "t": 22.1660390625,
+            "clearance": -0.00006135748208180303,
+            "upperClearance": -0.00006135648208180303
+          },
+          "certifiedPrefixEnd": 22.16552734375,
+          "search": [
+            0,
+            185.3489371091534
+          ]
+        },
+        {
+          "name": "low-x-16-dy0",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            -16,
+            -3.4163984102497125,
+            0
+          ],
+          "ray": [
+            -0.9950371902099893,
+            0,
+            0.09950371902099893
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 188,
+          "heightEvaluations": 12,
+          "discarded": 80,
+          "maxStack": 14,
+          "dynamicBounds": 155,
+          "tileLoads": 109,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 155,
+            "noiseQueries": 930,
+            "noiseCells": 950,
+            "hashCalls": 3800,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            4.75124063635731,
+            4.752117957211545
+          ],
+          "enclosureKm": 0.0008773208542347533,
+          "witness": {
+            "t": 4.752117957211545,
+            "clearance": -0.0000018860810087062418,
+            "upperClearance": -0.0000018850810087062418
+          },
+          "certifiedPrefixEnd": 4.75124063635731,
+          "search": [
+            0,
+            168.42401648385822
+          ]
+        },
+        {
+          "name": "low-x-16-dy0.02",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            -16,
+            -3.4163984102497125,
+            0
+          ],
+          "ray": [
+            -0.9948402116491737,
+            0.019896804232983473,
+            0.09948402116491738
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 75,
+          "heightEvaluations": 7,
+          "discarded": 25,
+          "maxStack": 10,
+          "dynamicBounds": 42,
+          "tileLoads": 109,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 42,
+            "noiseQueries": 252,
+            "noiseCells": 292,
+            "hashCalls": 1168,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            5.495396096386311,
+            5.496150689513789
+          ],
+          "enclosureKm": 0.0007545931274783868,
+          "witness": {
+            "t": 5.496150689513789,
+            "clearance": -0.0000495140629936941,
+            "upperClearance": -0.000049513062993694095
+          },
+          "certifiedPrefixEnd": 5.495396096386311,
+          "search": [
+            0,
+            89.88175201806675
+          ]
+        },
+        {
+          "name": "low-x-16-dy0.05",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            -16,
+            -3.4163984102497125,
+            0
+          ],
+          "ray": [
+            -0.9938079899999066,
+            0.04969039949999533,
+            0.09938079899999067
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 78,
+          "heightEvaluations": 7,
+          "discarded": 26,
+          "maxStack": 10,
+          "dynamicBounds": 45,
+          "tileLoads": 109,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 45,
+            "noiseQueries": 270,
+            "noiseCells": 295,
+            "hashCalls": 1180,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            6.512247731199674,
+            6.513002069434568
+          ],
+          "enclosureKm": 0.0007543382348940142,
+          "witness": {
+            "t": 6.513002069434568,
+            "clearance": -0.00006550120815518312,
+            "upperClearance": -0.00006550020815518312
+          },
+          "certifiedPrefixEnd": 6.512247731199674,
+          "search": [
+            0,
+            47.34867220819723
+          ]
+        },
+        {
+          "name": "low-x-8-dy0",
+          "mode": "metadata",
+          "status": "miss",
+          "origin": [
+            -8,
+            -2.067419119580336,
+            0
+          ],
+          "ray": [
+            -0.9950371902099893,
+            0,
+            0.09950371902099893
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 76,
+          "heightEvaluations": 2,
+          "discarded": 31,
+          "maxStack": 10,
+          "dynamicBounds": 29,
+          "tileLoads": 149,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 29,
+            "noiseQueries": 174,
+            "noiseCells": 611,
+            "hashCalls": 2444,
+            "globalNoiseFallbacks": 10,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "search": [
+            0,
+            121.62653973221305
+          ],
+          "remaining": 0,
+          "earliestPending": null,
+          "knownNonpositive": null,
+          "lastDiscardedEnd": 121.62653973221305
+        },
+        {
+          "name": "low-x-8-dy0.02",
+          "mode": "metadata",
+          "status": "miss",
+          "origin": [
+            -8,
+            -2.067419119580336,
+            0
+          ],
+          "ray": [
+            -0.9948402116491737,
+            0.019896804232983473,
+            0.09948402116491738
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 51,
+          "heightEvaluations": 2,
+          "discarded": 18,
+          "maxStack": 8,
+          "dynamicBounds": 10,
+          "tileLoads": 125,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 10,
+            "noiseQueries": 60,
+            "noiseCells": 115,
+            "hashCalls": 460,
+            "globalNoiseFallbacks": 1,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "search": [
+            0,
+            52.027765792242974
+          ],
+          "remaining": 0,
+          "earliestPending": null,
+          "knownNonpositive": null,
+          "lastDiscardedEnd": 52.027765792242974
+        },
+        {
+          "name": "low-x-8-dy0.05",
+          "mode": "metadata",
+          "status": "miss",
+          "origin": [
+            -8,
+            -2.067419119580336,
+            0
+          ],
+          "ray": [
+            -0.9938079899999066,
+            0.04969039949999533,
+            0.09938079899999067
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 40,
+          "heightEvaluations": 2,
+          "discarded": 12,
+          "maxStack": 8,
+          "dynamicBounds": 8,
+          "tileLoads": 105,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 8,
+            "noiseQueries": 48,
+            "noiseCells": 55,
+            "hashCalls": 220,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "search": [
+            0,
+            24.818587483465762
+          ],
+          "remaining": 0,
+          "earliestPending": null,
+          "knownNonpositive": null,
+          "lastDiscardedEnd": 24.818587483465762
+        },
+        {
+          "name": "low-x0-dy0",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            0,
+            -3.8,
+            0
+          ],
+          "ray": [
+            -0.9950371902099893,
+            0,
+            0.09950371902099893
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 64,
+          "heightEvaluations": 5,
+          "discarded": 16,
+          "maxStack": 17,
+          "dynamicBounds": 29,
+          "tileLoads": 121,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 29,
+            "noiseQueries": 174,
+            "noiseCells": 189,
+            "hashCalls": 756,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            4.280030037471503,
+            4.280520754054566
+          ],
+          "enclosureKm": 0.0004907165830623228,
+          "witness": {
+            "t": 4.280520754054566,
+            "clearance": -0.000033161357350763865,
+            "upperClearance": -0.00003316035735076386
+          },
+          "certifiedPrefixEnd": 4.280030037471503,
+          "search": [
+            0,
+            197.1639482765548
+          ]
+        },
+        {
+          "name": "low-x0-dy0.02",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            0,
+            -3.8,
+            0
+          ],
+          "ray": [
+            -0.9948402116491737,
+            0.019896804232983473,
+            0.09948402116491738
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 60,
+          "heightEvaluations": 6,
+          "discarded": 15,
+          "maxStack": 13,
+          "dynamicBounds": 24,
+          "tileLoads": 121,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 24,
+            "noiseQueries": 144,
+            "noiseCells": 155,
+            "hashCalls": 620,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            4.7459235077039645,
+            4.746678100831443
+          ],
+          "enclosureKm": 0.0007545931274783868,
+          "witness": {
+            "t": 4.746678100831443,
+            "clearance": -0.0001107424659494427,
+            "upperClearance": -0.0001107414659494427
+          },
+          "certifiedPrefixEnd": 4.7459235077039645,
+          "search": [
+            0,
+            107.63350832842895
+          ]
+        },
+        {
+          "name": "low-x0-dy0.05",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            0,
+            -3.8,
+            0
+          ],
+          "ray": [
+            -0.9938079899999066,
+            0.04969039949999533,
+            0.09938079899999067
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 57,
+          "heightEvaluations": 3,
+          "discarded": 15,
+          "maxStack": 9,
+          "dynamicBounds": 21,
+          "tileLoads": 121,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 21,
+            "noiseQueries": 126,
+            "noiseCells": 145,
+            "hashCalls": 580,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            5.250283243849237,
+            5.25077456737945
+          ],
+          "enclosureKm": 0.0004913235302126395,
+          "witness": {
+            "t": 5.25077456737945,
+            "clearance": -0.00005817331748403376,
+            "upperClearance": -0.00005817231748403376
+          },
+          "certifiedPrefixEnd": 5.250283243849237,
+          "search": [
+            0,
+            56.375327460495384
+          ]
+        },
+        {
+          "name": "low-x8-dy0",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            8,
+            -3.8,
+            0
+          ],
+          "ray": [
+            -0.9950371902099893,
+            0,
+            0.09950371902099893
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 46,
+          "heightEvaluations": 4,
+          "discarded": 15,
+          "maxStack": 10,
+          "dynamicBounds": 20,
+          "tileLoads": 81,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 20,
+            "noiseQueries": 120,
+            "noiseCells": 128,
+            "hashCalls": 512,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            11.994094723214687,
+            11.995094723214686
+          ],
+          "enclosureKm": 0.0009999999999994458,
+          "witness": {
+            "t": 11.995094723214686,
+            "clearance": -0.000040296050428878516,
+            "upperClearance": -0.000040295050428878514
+          },
+          "certifiedPrefixEnd": 11.994094723214687,
+          "search": [
+            0,
+            205.1226388463701
+          ]
+        },
+        {
+          "name": "low-x8-dy0.02",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            8,
+            -3.8,
+            0
+          ],
+          "ray": [
+            -0.9948402116491737,
+            0.019896804232983473,
+            0.09948402116491738
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 52,
+          "heightEvaluations": 3,
+          "discarded": 16,
+          "maxStack": 12,
+          "dynamicBounds": 24,
+          "tileLoads": 89,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 24,
+            "noiseQueries": 144,
+            "noiseCells": 157,
+            "hashCalls": 628,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            13.036994695861491,
+            13.037485509606535
+          ],
+          "enclosureKm": 0.0004908137450438943,
+          "witness": {
+            "t": 13.037485509606535,
+            "clearance": -0.00006283693801378831,
+            "upperClearance": -0.00006283593801378831
+          },
+          "certifiedPrefixEnd": 13.036994695861491,
+          "search": [
+            0,
+            111.24635973486187
+          ]
+        },
+        {
+          "name": "low-x8-dy0.05",
+          "mode": "metadata",
+          "status": "hit",
+          "origin": [
+            8,
+            -3.8,
+            0
+          ],
+          "ray": [
+            -0.9938079899999066,
+            0.04969039949999533,
+            0.09938079899999067
+          ],
+          "rayLength": 1,
+          "sea": null,
+          "relief": 1,
+          "visits": 49,
+          "heightEvaluations": 3,
+          "discarded": 15,
+          "maxStack": 10,
+          "dynamicBounds": 21,
+          "tileLoads": 85,
+          "metadataMisses": 0,
+          "builderWork": {
+            "rectQueries": 21,
+            "noiseQueries": 126,
+            "noiseCells": 131,
+            "hashCalls": 524,
+            "globalNoiseFallbacks": 0,
+            "coastUnknown": 0,
+            "cacheHits": 0
+          },
+          "roundingQualified": false,
+          "pointFieldErrorKm": 0,
+          "radialErrorKm": 1e-9,
+          "interval": [
+            13.810121787208903,
+            13.810613110739116
+          ],
+          "enclosureKm": 0.0004913235302126395,
+          "witness": {
+            "t": 13.810613110739116,
+            "clearance": -0.00006691929957014509,
+            "upperClearance": -0.00006691829957014508
+          },
+          "certifiedPrefixEnd": 13.810121787208903,
+          "search": [
+            0,
+            57.513814816365425
+          ]
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "elapsedMs": 422.899791
+}

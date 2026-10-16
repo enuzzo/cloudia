@@ -1,0 +1,31 @@
+{
+  "baseline": "preliminary-A-after-preview.jpg",
+  "scope": "CSS JPEG decoded raster, crop [0,160,1190,620], finite still; no native framebuffer/motion proof",
+  "comparisons": [
+    {
+      "candidate": "browser-trial-preview.jpg",
+      "differentPixelBounds": null,
+      "sceneCropEqual": true
+    },
+    {
+      "candidate": "preliminary-rain-v45-preview.jpg",
+      "differentPixelBounds": [
+        847,
+        624,
+        945,
+        688
+      ],
+      "sceneCropEqual": true
+    },
+    {
+      "candidate": "preliminary-rain-v46-preview.jpg",
+      "differentPixelBounds": [
+        847,
+        624,
+        945,
+        688
+      ],
+      "sceneCropEqual": true
+    }
+  ]
+}

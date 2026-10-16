@@ -1,0 +1,68 @@
+{
+  "kind": "before-sparse-empty-coverage-revision",
+  "files": {
+    "index.html": {
+      "bytes": 1028,
+      "sha256": "9686b7d3d18b2eb877a2ec76929bfc50cc7a51ca29f92de2e99d878194f0eec2"
+    },
+    "cloudShader.before.ts": {
+      "bytes": 13664,
+      "sha256": "d80225521258edb4beed2e713afe3c6b97fad5eca79d7dcdc657f9f47c1deddd"
+    },
+    "result.json": {
+      "bytes": 8321,
+      "sha256": "96c441058935bda6139ddbd797b4312e0e52361e558a4822d701b38974739a4d"
+    },
+    "real-queries-f32.bin": {
+      "bytes": 1579008,
+      "sha256": "ba64c392784a1f47a356466086474bb1fe0811ee067996118c37926e380b95f9"
+    },
+    "audit.wgsl": {
+      "bytes": 1456,
+      "sha256": "febbb724a92455139e01fce8c3ee5d252171f57bc710d39b43b29e89c87d4905"
+    },
+    "audit.js": {
+      "bytes": 13495,
+      "sha256": "0859af8ff275ee6fc1cc5f185a5e5eaf52197a68155f5c01d41d042f41cd0965"
+    },
+    "README.md": {
+      "bytes": 3665,
+      "sha256": "09daaaae83756eabfd381ece7c1e9e917e985a24a42f51f1134cdcc887a68a9a"
+    },
+    "prepared-files.json": {
+      "bytes": 2347,
+      "sha256": "afd863a96775687b45310f404e8217e0503256af8442881349776e939944fde2"
+    },
+    "cloudShader.after.ts": {
+      "bytes": 14129,
+      "sha256": "b1dde880c8cc572dfebcf30825035c8c028925e75da52be05a64f214bbafbe93"
+    },
+    "inputs.json": {
+      "bytes": 12728,
+      "sha256": "ca0d222a386295cf55e15243a085ec5e4a0361767bf3b3bbbffcbfc54dbbeda0"
+    },
+    "sparse-fixture-queries-f32.bin": {
+      "bytes": 221184,
+      "sha256": "ce5262a1707760cca061587f8e07a483371b2015ac7f43cb8f37ab763d84a063"
+    },
+    "result.initial-sparse-no-zero.json": {
+      "bytes": 8321,
+      "sha256": "96c441058935bda6139ddbd797b4312e0e52361e558a4822d701b38974739a4d"
+    },
+    "prepare-audit.py": {
+      "bytes": 8392,
+      "sha256": "c86b3aa4b52753b91c995ba59bae0b366ac3e36493a44513e56a2032859d2cee"
+    }
+  },
+  "immutableCacheReferencesNotCopied": {
+    "macro-rgba8.bin": {
+      "target": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/data/macro-rgba8.bin",
+      "sha256": "72e3f360b81f3c8f812800cc309a174ce893d96c80e666c9bf98fca178187b9f"
+    },
+    "narrow-r8.bin": {
+      "target": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/narrow-cloud/narrow-r8.bin",
+      "sha256": "ad38c2b581882a0686e3d81031e0972fbd1cc0fb4bb9dab09c43451387e418ad"
+    }
+  },
+  "reason": "Initial sparse dataset had no narrow-zero queries; criterion unchanged. Preserve initial GPU output and inputs."
+}

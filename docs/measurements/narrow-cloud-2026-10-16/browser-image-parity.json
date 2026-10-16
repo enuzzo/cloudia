@@ -1,0 +1,12 @@
+{
+  "scope": "CSS JPEG screenshot comparison at matching static t60 rain fixture; not native framebuffer readback or motion parity",
+  "A": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/pass-ledger/main-rain-clocks-preview.jpg",
+    "sha256": "a6f7aef76160b0d779b102cde4fff5210984bf53bc7c161b15e54b9bf6377118"
+  },
+  "B": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/narrow-cloud/browser-trial-preview.jpg",
+    "sha256": "a6f7aef76160b0d779b102cde4fff5210984bf53bc7c161b15e54b9bf6377118"
+  },
+  "byteIdentical": true
+}

@@ -206,9 +206,44 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
   let mapped = cloudFilm(color);
   return vec4<f32>(mapped,1.0);
 }`;
-/** Compile the diagnostic choice, so production has no per-sample probe branches. */
-export function createCloudIntegrator(mode=0){
+/** Add only the verified point certificate to the rainy specialization.
+ * The dry template above retains the original signature, expressions and bindings.
+ */
+const rainIntegrationSource=integrationSource
+  .replace(
+    `detail: texture_3d<f32>, detailSampler: sampler, flow: texture_3d<f32>`,
+    `detail: texture_3d<f32>, detailSampler: sampler, narrowCloud: texture_3d<f32>, flow: texture_3d<f32>`,
+  )
+  .replace(
+    `  let maskInset=vec3<f32>(0.5)/vec3<f32>(textureDimensions(detail,0));`,
+    `  let maskInset=vec3<f32>(0.5)/vec3<f32>(textureDimensions(detail,0));
+  let narrowDimensions=textureDimensions(narrowCloud,0);`,
+  )
+  .replace(
+    `    ice=smoothstep(iceRange.x,iceRange.y,local.y);
+    var fine=`,
+    `    ice=smoothstep(iceRange.x,iceRange.y,local.y);
+    // Point certificate after flow: never changes broad support, ds, t or phase.
+    // The uniform rain gate avoids the lookup and index arithmetic in dry weather.
+    var narrowSupport=1.0;
+    if(hasRain){
+      // Clamp before conversion; textureLoad avoids a second filtered-zero contract.
+      let narrowIndex=min(vec3<u32>(floor(clamp(coord,vec3<f32>(0.0),vec3<f32>(1.0))*vec3<f32>(narrowDimensions))),narrowDimensions-vec3<u32>(1u));
+      narrowSupport=textureLoad(narrowCloud,vec3<i32>(narrowIndex),0).r;
+    }
+    if(narrowSupport>0.0){
+    var fine=`,
+  )
+  .replace(
+    `    }}
+    if(density<=0.0&&rainExtinction<=0.0)`,
+    `    }}}
+    if(density<=0.0&&rainExtinction<=0.0)`,
+  )
+;
+/** Compile both weather choice and diagnostic; no narrow binding exists in dry mode. */
+export function createCloudIntegrator(mode=0,useNarrow=false){
   const selected=Number.isInteger(mode)&&mode>=0&&mode<=5?mode:0;
-  return wgslFn(integrationSource.replaceAll('probeMode',`${selected}.0`),[film,motion,channel,landscape,media,precipitation]);
+  return wgslFn((useNarrow?rainIntegrationSource:integrationSource).replaceAll('probeMode',`${selected}.0`),[film,motion,channel,landscape,media,precipitation]);
 }
 

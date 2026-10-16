@@ -1,0 +1,28 @@
+{
+  "status": "PASS scoped validation; experimental performance remains preliminary",
+  "tests": "198/32 passed; exact current product source bytes in v46-provenance.json",
+  "typecheck": "PASS",
+  "builds": "App v46-dist and hero v46-hero PASS; baseline dist unchanged",
+  "reportVerification": "9 main fixed-state reports plus finite raw GPU62544 query audit passed",
+  "stagedSourceHashes": "7 product files match frozen v46 provenance",
+  "whitespace": {
+    "productAndAuthoredDocs": "PASS",
+    "wholeCheckpoint": "13 frozen payload paths deliberately preserve original blank EOF or patch context-space lines",
+    "excludedFrozenPaths": [
+      "docs/measurements/narrow-cloud-2026-10-16/cloudShader.after.ts",
+      "docs/measurements/narrow-cloud-2026-10-16/cloudShader.before.ts",
+      "docs/measurements/narrow-cloud-2026-10-16/cloudShader.patch",
+      "docs/measurements/narrow-cloud-2026-10-16/gpu-audit/cloudShader.after.ts",
+      "docs/measurements/narrow-cloud-2026-10-16/gpu-audit/cloudShader.before.ts",
+      "docs/measurements/narrow-cloud-2026-10-16/gpu-audit/input-snapshots/initial-sparse-no-zero/cloudShader.after.ts",
+      "docs/measurements/narrow-cloud-2026-10-16/gpu-audit/input-snapshots/initial-sparse-no-zero/cloudShader.before.ts",
+      "docs/measurements/narrow-cloud-2026-10-16/product-source/cloudShader.ts",
+      "docs/measurements/narrow-cloud-2026-10-16/product-source/cloudShader.ts.baseline",
+      "docs/measurements/narrow-cloud-2026-10-16/v45-source/cloudShader.ts",
+      "docs/measurements/narrow-cloud-2026-10-16/v46-from-v45.patch",
+      "docs/measurements/narrow-cloud-2026-10-16/v46-source/cloudShader.ts",
+      "docs/measurements/terrain-gradient-2026-10-16/previous-gpu-attempt/cloudShader.integration-draft.ts"
+    ],
+    "normalization": "None; original SHA inputs preserved"
+  }
+}

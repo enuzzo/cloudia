@@ -1,0 +1,238 @@
+{
+  "status": "PASS finite report consistency; not performance acceptance",
+  "reports": [
+    {
+      "file": "preliminary-B-30s.json",
+      "sha256": "4e43363a827f982a5230e7ed4f00e0f1e3679926f5447d91f8e3a1b3f7f26076",
+      "renderer": "observatory-v44-post-flow-mask-trial",
+      "submissionFps": 15.515128915405917,
+      "p95Ms": 83.30000000001746,
+      "p99Ms": 83.40000000002328,
+      "endDrainMs": 257.59999990463257,
+      "completeDraws": {
+        "measuredDraws": 466,
+        "expectedCalls": 932,
+        "matchedFreshCalls": 924,
+        "completeDraws": 462,
+        "partialDraws": 0,
+        "missingDraws": 4,
+        "notRequestedDraws": 0,
+        "invalidLedgerDraws": 0,
+        "conflictDraws": 0
+      },
+      "scope": "preliminary; unresponsive terrain tab, unknown background state"
+    },
+    {
+      "file": "preliminary-A-after-30s.json",
+      "sha256": "5a305e198e2a3b3312aacd9f7063d28fef4e7505b6875d3ec9050eb29fff8cc1",
+      "renderer": "observatory-v40-terrain-camera-focus",
+      "submissionFps": 13.999160050396982,
+      "p95Ms": 83.90000000000873,
+      "p99Ms": 100,
+      "endDrainMs": 263.10000002384186,
+      "completeDraws": {
+        "measuredDraws": 420,
+        "expectedCalls": 840,
+        "matchedFreshCalls": 832,
+        "completeDraws": 416,
+        "partialDraws": 0,
+        "missingDraws": 4,
+        "notRequestedDraws": 0,
+        "invalidLedgerDraws": 0,
+        "conflictDraws": 0
+      },
+      "scope": "preliminary; unresponsive terrain tab, unknown background state"
+    },
+    {
+      "file": "preliminary-near-A-30s.json",
+      "sha256": "d24282375f5a991f9efc152e5109a95c171f78c124fa7f59c6ea325be7e63328",
+      "renderer": "observatory-v40-terrain-camera-focus",
+      "submissionFps": 23.139516300873634,
+      "p95Ms": 50.59999999997672,
+      "p99Ms": 51.800000000046566,
+      "endDrainMs": 155.79999995231628,
+      "completeDraws": {
+        "measuredDraws": 695,
+        "expectedCalls": 1390,
+        "matchedFreshCalls": 1388,
+        "completeDraws": 694,
+        "partialDraws": 0,
+        "missingDraws": 1,
+        "notRequestedDraws": 0,
+        "invalidLedgerDraws": 0,
+        "conflictDraws": 0
+      },
+      "scope": "preliminary; unresponsive terrain tab, unknown background state"
+    },
+    {
+      "file": "preliminary-near-B-30s.json",
+      "sha256": "9b925b00db9e725d8f0a0cf0bb22027e61b39aa2d4826ee68198a5fe327c4976",
+      "renderer": "observatory-v44-post-flow-mask-trial",
+      "submissionFps": 20.475974856168772,
+      "p95Ms": 51.39999999999418,
+      "p99Ms": 66.60000000000582,
+      "endDrainMs": 192.39999997615814,
+      "completeDraws": {
+        "measuredDraws": 615,
+        "expectedCalls": 1230,
+        "matchedFreshCalls": 1220,
+        "completeDraws": 610,
+        "partialDraws": 0,
+        "missingDraws": 5,
+        "notRequestedDraws": 0,
+        "invalidLedgerDraws": 0,
+        "conflictDraws": 0
+      },
+      "scope": "preliminary; unresponsive terrain tab, unknown background state"
+    },
+    {
+      "file": "preliminary-near-v45-30s.json",
+      "sha256": "4124dc9c18e6997781b38382ced2d585f8b7882015240834d02cf4762698cf59",
+      "renderer": "observatory-v45-rain-post-flow-mask-trial",
+      "submissionFps": 22.35414834359425,
+      "p95Ms": 51.10000000000582,
+      "p99Ms": 51.79999999998836,
+      "endDrainMs": 185.39999997615814,
+      "completeDraws": {
+        "measuredDraws": 671,
+        "expectedCalls": 1342,
+        "matchedFreshCalls": 1338,
+        "completeDraws": 669,
+        "partialDraws": 0,
+        "missingDraws": 2,
+        "notRequestedDraws": 0,
+        "invalidLedgerDraws": 0,
+        "conflictDraws": 0
+      },
+      "scope": "preliminary; unresponsive terrain tab, unknown background state"
+    },
+    {
+      "file": "preliminary-near-A-after-30s.json",
+      "sha256": "be0670e0fa37551cedb6c142c7ddea901211f2ec140c90c35a9b171508f03a7b",
+      "renderer": "observatory-v40-terrain-camera-focus",
+      "submissionFps": 23.21893759202628,
+      "p95Ms": 50.90000000000873,
+      "p99Ms": 51.80000000000291,
+      "endDrainMs": 169.20000004768372,
+      "completeDraws": {
+        "measuredDraws": 697,
+        "expectedCalls": 1394,
+        "matchedFreshCalls": 1384,
+        "completeDraws": 692,
+        "partialDraws": 0,
+        "missingDraws": 5,
+        "notRequestedDraws": 0,
+        "invalidLedgerDraws": 0,
+        "conflictDraws": 0
+      },
+      "scope": "preliminary; unresponsive terrain tab, unknown background state"
+    },
+    {
+      "file": "preliminary-rain-v45-30s.json",
+      "sha256": "6f79ed07d4c1890be391d02db72729ab9b19950b2dcc18d352ba7beeb063e0ae",
+      "renderer": "observatory-v45-rain-post-flow-mask-trial",
+      "submissionFps": 15.372483254973595,
+      "p95Ms": 83.39999999999418,
+      "p99Ms": 84.5,
+      "endDrainMs": 248.79999995231628,
+      "completeDraws": {
+        "measuredDraws": 462,
+        "expectedCalls": 924,
+        "matchedFreshCalls": 918,
+        "completeDraws": 459,
+        "partialDraws": 0,
+        "missingDraws": 3,
+        "notRequestedDraws": 0,
+        "invalidLedgerDraws": 0,
+        "conflictDraws": 0
+      },
+      "scope": "preliminary; unresponsive terrain tab, unknown background state"
+    },
+    {
+      "file": "preliminary-near-v46-30s.json",
+      "sha256": "b6298cf2a511e8b35f420d3cc0a9b30fac640facbe3561b748385f2afb0f1603",
+      "renderer": "observatory-v46-compiled-rain-mask-trial",
+      "submissionFps": 23.272770858096035,
+      "p95Ms": 50.90000000000873,
+      "p99Ms": 51.80000000000291,
+      "endDrainMs": 165.69999992847443,
+      "completeDraws": {
+        "measuredDraws": 699,
+        "expectedCalls": 1398,
+        "matchedFreshCalls": 1396,
+        "completeDraws": 698,
+        "partialDraws": 0,
+        "missingDraws": 1,
+        "notRequestedDraws": 0,
+        "invalidLedgerDraws": 0,
+        "conflictDraws": 0
+      },
+      "scope": "preliminary; unresponsive terrain tab, unknown background state"
+    },
+    {
+      "file": "preliminary-rain-v46-30s.json",
+      "sha256": "cc69153864c943fb37739b67e0d16fa5595654e20877f6f3e7351ff466730785",
+      "renderer": "observatory-v46-compiled-rain-mask-trial",
+      "submissionFps": 15.472356057177839,
+      "p95Ms": 83.39999999999418,
+      "p99Ms": 84.59999999997672,
+      "endDrainMs": 243,
+      "completeDraws": {
+        "measuredDraws": 465,
+        "expectedCalls": 930,
+        "matchedFreshCalls": 924,
+        "completeDraws": 462,
+        "partialDraws": 0,
+        "missingDraws": 3,
+        "notRequestedDraws": 0,
+        "invalidLedgerDraws": 0,
+        "conflictDraws": 0
+      },
+      "scope": "preliminary; unresponsive terrain tab, unknown background state"
+    }
+  ],
+  "comparisons": [
+    {
+      "baseline": "preliminary-A-after-30s.json",
+      "candidate": "preliminary-B-30s.json",
+      "changePercent": 10.828998736720251,
+      "cameraAndQualityEqual": true,
+      "rainTolerance": 1e-06
+    },
+    {
+      "baseline": "preliminary-A-after-30s.json",
+      "candidate": "preliminary-rain-v45-30s.json",
+      "changePercent": 9.8100400283492,
+      "cameraAndQualityEqual": true,
+      "rainTolerance": 1e-06
+    },
+    {
+      "baseline": "preliminary-near-A-30s.json",
+      "candidate": "preliminary-near-B-30s.json",
+      "changePercent": -11.510791366906403,
+      "cameraAndQualityEqual": true,
+      "rainTolerance": 1e-06
+    },
+    {
+      "baseline": "preliminary-near-A-after-30s.json",
+      "candidate": "preliminary-near-v45-30s.json",
+      "changePercent": -3.724499646051893,
+      "cameraAndQualityEqual": true,
+      "rainTolerance": 1e-06
+    },
+    {
+      "baseline": "preliminary-near-A-after-30s.json",
+      "candidate": "preliminary-near-v46-30s.json",
+      "changePercent": 0.2318506859170011,
+      "cameraAndQualityEqual": true,
+      "rainTolerance": 1e-06
+    },
+    {
+      "baseline": "preliminary-A-after-30s.json",
+      "candidate": "preliminary-rain-v46-30s.json",
+      "changePercent": 10.523459989580441,
+      "cameraAndQualityEqual": true,
+      "rainTolerance": 1e-06
+    }
+  ]
+}

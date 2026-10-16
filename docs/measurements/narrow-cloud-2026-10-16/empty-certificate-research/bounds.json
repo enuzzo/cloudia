@@ -1,0 +1,140 @@
+{
+  "kind": "pessimistic-trilinear-flow-empty-certificate-bound",
+  "newBakes": 0,
+  "gpuExecuted": false,
+  "windF32": [
+    0.2642000615596771,
+    0.09009438008069992
+  ],
+  "growthF32": [
+    1,
+    1,
+    1
+  ],
+  "thermalCapsKm": [
+    0.42,
+    0.82,
+    0.34
+  ],
+  "halfULPKm": [
+    0.000244140625,
+    0.00048828125,
+    0.000244140625
+  ],
+  "endpointCapsWithGuardKm": [
+    0.42048828125,
+    0.8209765625,
+    0.34048828125
+  ],
+  "flowCellKm": [
+    0.625,
+    0.53125,
+    0.4375
+  ],
+  "componentPartialDerivativeBounds": [
+    [
+      1.3455625,
+      1.583014705882353,
+      1.9222321428571427
+    ],
+    [
+      2.627125,
+      3.0907352941176467,
+      3.7530357142857143
+    ],
+    [
+      1.0895625,
+      1.2818382352941178,
+      1.5565178571428573
+    ]
+  ],
+  "localWorldRowNormBounds": [
+    3.5137869538328994,
+    6.310839471413678,
+    3.1149897560030877
+  ],
+  "rowWitnesses": [
+    {
+      "shearSlope": 0.24193548387096772,
+      "gradientSigns": [
+        -1,
+        1,
+        -1
+      ],
+      "worldDerivativeRow": [
+        2.3455624999999998,
+        -1.7748405293115417,
+        1.9222321428571427
+      ]
+    },
+    {
+      "shearSlope": 0.24193548387096772,
+      "gradientSigns": [
+        1,
+        -1,
+        1
+      ],
+      "worldDerivativeRow": [
+        -2.627125,
+        4.340464490768678,
+        -3.7530357142857143
+      ]
+    },
+    {
+      "shearSlope": 0.24193548387096772,
+      "gradientSigns": [
+        -1,
+        1,
+        -1
+      ],
+      "worldDerivativeRow": [
+        1.0895625,
+        -1.4072068734580632,
+        2.5565178571428575
+      ]
+    }
+  ],
+  "LinfLoose": 11.140189081791704,
+  "selectedL_worldL2_to_localLinf": 6.310839471413678,
+  "minimumMaskCellKm": 0.0546875,
+  "radiusExamples": [
+    {
+      "D": 1,
+      "emptyLocalRadiusKm": 0.0,
+      "worldHWith1mGuardKm": 0,
+      "following6mPointsPossibleUpper": 0
+    },
+    {
+      "D": 2,
+      "emptyLocalRadiusKm": 0.0546875,
+      "worldHWith1mGuardKm": 0.008507188345257271,
+      "following6mPointsPossibleUpper": 1
+    },
+    {
+      "D": 3,
+      "emptyLocalRadiusKm": 0.109375,
+      "worldHWith1mGuardKm": 0.01717283421498965,
+      "following6mPointsPossibleUpper": 2
+    },
+    {
+      "D": 4,
+      "emptyLocalRadiusKm": 0.1640625,
+      "worldHWith1mGuardKm": 0.025838480084722025,
+      "following6mPointsPossibleUpper": 4
+    },
+    {
+      "D": 8,
+      "emptyLocalRadiusKm": 0.3828125,
+      "worldHWith1mGuardKm": 0.060501063563651536,
+      "following6mPointsPossibleUpper": 10
+    },
+    {
+      "D": 16,
+      "emptyLocalRadiusKm": 0.8203125,
+      "worldHWith1mGuardKm": 0.12982623052151054,
+      "following6mPointsPossibleUpper": 21
+    }
+  ],
+  "scope": "Analytic endpoint-bound ideal clamped trilinear sampler, constant frame, below iceStart. No claim of a numerical bound for native filtered flow or its GPU compute half endpoints. No real-point counter or BFS performed by this script.",
+  "scriptSha256": "3b8e137b3615b03124c3a7e80e9260d28ea72f5b6822a6ffcb79223e4e9d4662"
+}

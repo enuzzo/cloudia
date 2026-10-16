@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="it">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cloudia · audit narrow-cloud</title>
+<style>body{font:16px/1.5 system-ui,sans-serif;margin:24px;max-width:1120px;background:#f6f3eb;color:#202a2d}button{font:inherit;padding:10px 16px;min-height:44px;margin:0 8px 12px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:white;border:1px solid #bbb;padding:16px}button:focus-visible{outline:3px solid #416a29;outline-offset:3px}</style>
+<h1>Audit GPU della maschera cloud dopo il flow</h1>
+<p>Guard non filtrato R8 contro macro RGBA8 lineare warped, con dati congelati e fixture sparse. Nessun bake, renderer Three.js o misura FPS. La GPU parte soltanto dal pulsante.</p>
+<button id="run">Esegui audit</button><button id="download" disabled>Scarica JSON</button>
+<p id="status" role="status">Pronto: GPU non eseguita.</p>
+<pre id="audit-json" data-testid="narrow-audit-json"></pre>
+<script type="module" src="./audit.js"></script>
+</html>

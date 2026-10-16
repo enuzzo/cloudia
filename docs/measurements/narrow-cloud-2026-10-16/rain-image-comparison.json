@@ -1,0 +1,18 @@
+{
+  "scope": "CSS JPEG 1280x720; not native framebuffer/motion parity",
+  "images": [
+    {
+      "file": "browser-trial-preview.jpg",
+      "sha256": "a6f7aef76160b0d779b102cde4fff5210984bf53bc7c161b15e54b9bf6377118"
+    },
+    {
+      "file": "preliminary-A-after-preview.jpg",
+      "sha256": "a6f7aef76160b0d779b102cde4fff5210984bf53bc7c161b15e54b9bf6377118"
+    },
+    {
+      "file": "preliminary-rain-v45-preview.jpg",
+      "sha256": "2d992fd833c33c8fc56bd0daedc8bdc4ccefeb4c5e70b6f022f319ce36ecf17e"
+    }
+  ],
+  "byteIdentical": false
+}

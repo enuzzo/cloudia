@@ -1,0 +1,5140 @@
+{
+  "sourceSha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+  "datasetSha256": "cfad064c4dbe4b100294222c8c12a4fbcd98cf8f5316f0f1a3a10494543800a1",
+  "datasetCount": 5198,
+  "metadataSha256": "69b2b49c06eddb8c582b9f1b14cdb944f707488fd73a4f5f17d6e261f62b12c4",
+  "builderCodeHashes": {
+    "gradient": "f3aaa08202d65169615a25d1d22d957d5867e85d5d8bad6bb18444c08158e141",
+    "data": "e83bd5bb9fe98001fabbbe305d978d16feae024c9bccf8998af967407afa930c"
+  },
+  "tracerSha256": "e0239266a199fda28a2718d428e5c383d1cfe41ea18d5f80940f001f1837344c",
+  "contract": {
+    "target": "CPU fround source versus ideal continuous field with exact f32 constants and coordinate-independent pre-rounded octave weights",
+    "inputRoundoffIncluded": true,
+    "octaveCoordinateRoundoffIncluded": true,
+    "noiseInterpolationAbsBudget": 1.9073486328125e-06,
+    "noiseInterpolationBudget": "local per-cell composed frac/cubic/mix ledger; 32u fallback",
+    "sinHostAbsBudget": 1.1920928955078125e-07,
+    "powHostAbsBudget": 2.384185791015625e-07,
+    "hostBudgetsUniversallyProven": false,
+    "GPUQualified": false,
+    "gradientAppliesToCPUField": false
+  },
+  "preparationReused": true,
+  "summaries": [
+    {
+      "variant": "250m-outer2km",
+      "strategy": "midpoint",
+      "fineKm": 0.25,
+      "outerFineKm": 2,
+      "cap": 16,
+      "nodeCount": 109141,
+      "bytes": 5238768,
+      "MiB": 4.9960784912109375,
+      "preparationMs": 8627.871,
+      "traceMs": 86.79179199999999,
+      "counts": {
+        "hit": 1911,
+        "unresolved-height-budget": 666,
+        "miss": 1777,
+        "outer-envelope-miss": 844
+      },
+      "groups": {
+        "matrix14": {
+          "hit": 10,
+          "unresolved-height-budget": 1,
+          "miss": 3
+        },
+        "home-down": {
+          "outer-envelope-miss": 208,
+          "hit": 694,
+          "unresolved-height-budget": 394
+        },
+        "level-sea-miss": {
+          "miss": 478,
+          "unresolved-height-budget": 40,
+          "hit": 778
+        },
+        "low-clamped-up": {
+          "miss": 1296
+        },
+        "coastal-horizon": {
+          "outer-envelope-miss": 636,
+          "hit": 429,
+          "unresolved-height-budget": 231
+        }
+      },
+      "totalHeightCalls": 31226,
+      "medianHeightCalls": 2,
+      "maxHeightCalls": 16,
+      "totalVisits": 106949,
+      "maxVisits": 98,
+      "totalGradientQueries": 48982,
+      "metadataLoads": 250382,
+      "invalidWitnesses": [],
+      "comparisons": [
+        {
+          "name": "home-down-9-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 307.4278311381695
+          },
+          "current": {
+            "name": "home-down-9-4",
+            "status": "hit",
+            "sea": 307.4278311381695,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              307.42758113817473,
+              307.42808113816426
+            ],
+            "enclosureKm": 0.0004999999999613305,
+            "certifiedPrefixEnd": 307.42758113817473,
+            "witness": {
+              "t": 307.42808113816426,
+              "clearance": -1.858527866716031e-06,
+              "upperClearance": -1.857527866716031e-06
+            },
+            "search": [
+              307.42783113816955,
+              307.42808113816426
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 215
+          }
+        },
+        {
+          "name": "home-down-13-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 275.33073958257785
+          },
+          "current": {
+            "name": "home-down-13-4",
+            "status": "hit",
+            "sea": 275.33073958257785,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              275.3304895825839,
+              275.3309895825718
+            ],
+            "enclosureKm": 0.0004999999999919879,
+            "certifiedPrefixEnd": 275.3304895825839,
+            "witness": {
+              "t": 275.3309895825718,
+              "clearance": -3.4081031117239036e-06,
+              "upperClearance": -3.4071031117239035e-06
+            },
+            "search": [
+              275.3307395825779,
+              275.3309895825718
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 219
+          }
+        },
+        {
+          "name": "home-down-14-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 270.67308993995755
+          },
+          "current": {
+            "name": "home-down-14-4",
+            "status": "hit",
+            "sea": 270.67308993995755,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              270.6728399399552,
+              270.6733399399599
+            ],
+            "enclosureKm": 0.000500000000032745,
+            "certifiedPrefixEnd": 270.6728399399552,
+            "witness": {
+              "t": 270.6733399399599,
+              "clearance": -3.6510891732177697e-06,
+              "upperClearance": -3.6500891732177696e-06
+            },
+            "search": [
+              270.6730899399576,
+              270.6733399399599
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 220
+          }
+        },
+        {
+          "name": "home-down-24-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 252.92385143261887
+          },
+          "current": {
+            "name": "home-down-24-4",
+            "status": "hit",
+            "sea": 252.92385143261887,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              252.92360143262087,
+              252.92410143261688
+            ],
+            "enclosureKm": 0.0004999999999802946,
+            "certifiedPrefixEnd": 252.92360143262087,
+            "witness": {
+              "t": 252.92410143261688,
+              "clearance": -4.628232090908568e-06,
+              "upperClearance": -4.627232090908569e-06
+            },
+            "search": [
+              252.9238514326189,
+              252.92410143261688
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 230
+          }
+        },
+        {
+          "name": "home-down-35-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 280.9421457929665
+          },
+          "current": {
+            "name": "home-down-35-4",
+            "status": "hit",
+            "sea": 280.9421457929665,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              280.9418957929596,
+              280.94239579297346
+            ],
+            "enclosureKm": 0.0004999999999844022,
+            "certifiedPrefixEnd": 280.9418957929596,
+            "witness": {
+              "t": 280.94239579297346,
+              "clearance": -3.122037924185861e-06,
+              "upperClearance": -3.121037924185861e-06
+            },
+            "search": [
+              280.9421457929666,
+              280.94239579297346
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 241
+          }
+        },
+        {
+          "name": "home-down-38-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 307.53145489329785
+          },
+          "current": {
+            "name": "home-down-38-4",
+            "status": "hit",
+            "sea": 307.53145489329785,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              307.5312048933031,
+              307.5317048932926
+            ],
+            "enclosureKm": 0.0004999999999613305,
+            "certifiedPrefixEnd": 307.5312048933031,
+            "witness": {
+              "t": 307.5317048932926,
+              "clearance": -1.8538357835495844e-06,
+              "upperClearance": -1.8528357835495844e-06
+            },
+            "search": [
+              307.5314548932979,
+              307.5317048932926
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 244
+          }
+        },
+        {
+          "name": "home-down-39-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 325.740221721202
+          },
+          "current": {
+            "name": "home-down-39-4",
+            "status": "hit",
+            "sea": 325.740221721202,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              325.73997172120716,
+              325.7404717211968
+            ],
+            "enclosureKm": 0.0005000000000333232,
+            "certifiedPrefixEnd": 325.73997172120716,
+            "witness": {
+              "t": 325.7404717211968,
+              "clearance": -1.0556595952948555e-06,
+              "upperClearance": -1.0546595952948555e-06
+            },
+            "search": [
+              325.74022172120203,
+              325.7404717211968
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 245
+          }
+        },
+        {
+          "name": "coastal-horizon-6-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 269.64202950903245
+          },
+          "current": {
+            "name": "coastal-horizon-6-13",
+            "status": "hit",
+            "sea": 269.64202950903245,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              269.64177950903104,
+              269.64227950903387
+            ],
+            "enclosureKm": 0.0004999999999617321,
+            "certifiedPrefixEnd": 269.64177950903104,
+            "witness": {
+              "t": 269.64227950903387,
+              "clearance": -7.577873475383967e-07,
+              "upperClearance": -7.567873475383967e-07
+            },
+            "search": [
+              269.6420295090325,
+              269.64227950903387
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4532
+          }
+        },
+        {
+          "name": "coastal-horizon-9-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 234.032500415523
+          },
+          "current": {
+            "name": "coastal-horizon-9-13",
+            "status": "hit",
+            "sea": 234.032500415523,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              234.03225041552327,
+              234.03275041552274
+            ],
+            "enclosureKm": 0.0005000000000163011,
+            "certifiedPrefixEnd": 234.03225041552327,
+            "witness": {
+              "t": 234.03275041552274,
+              "clearance": -2.3767252059769817e-06,
+              "upperClearance": -2.3757252059769816e-06
+            },
+            "search": [
+              234.03250041552303,
+              234.03275041552274
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4535
+          }
+        },
+        {
+          "name": "coastal-horizon-11-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 222.83202056268564
+          },
+          "current": {
+            "name": "coastal-horizon-11-13",
+            "status": "hit",
+            "sea": 222.83202056268564,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              222.83177056268005,
+              222.83227056269124
+            ],
+            "enclosureKm": 0.0005000000000074177,
+            "certifiedPrefixEnd": 222.83177056268005,
+            "witness": {
+              "t": 222.83227056269124,
+              "clearance": -2.9467464628396556e-06,
+              "upperClearance": -2.9457464628396555e-06
+            },
+            "search": [
+              222.8320205626857,
+              222.83227056269124
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4537
+          }
+        },
+        {
+          "name": "coastal-horizon-16-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 206.74610176287402
+          },
+          "current": {
+            "name": "coastal-horizon-16-13",
+            "status": "hit",
+            "sea": 206.74610176287402,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              206.74585176287468,
+              206.74635176287336
+            ],
+            "enclosureKm": 0.0005000000000125341,
+            "certifiedPrefixEnd": 206.74585176287468,
+            "witness": {
+              "t": 206.74635176287336,
+              "clearance": -3.83179030905012e-06,
+              "upperClearance": -3.830790309050121e-06
+            },
+            "search": [
+              206.74610176287405,
+              206.74635176287336
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4542
+          }
+        },
+        {
+          "name": "coastal-horizon-31-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 206.74610176287402
+          },
+          "current": {
+            "name": "coastal-horizon-31-13",
+            "status": "hit",
+            "sea": 206.74610176287402,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              206.74585176287468,
+              206.74635176287336
+            ],
+            "enclosureKm": 0.0005000000000125341,
+            "certifiedPrefixEnd": 206.74585176287468,
+            "witness": {
+              "t": 206.74635176287336,
+              "clearance": -3.83179030905012e-06,
+              "upperClearance": -3.830790309050121e-06
+            },
+            "search": [
+              206.74610176287405,
+              206.74635176287336
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4557
+          }
+        },
+        {
+          "name": "coastal-horizon-36-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 222.83202056268564
+          },
+          "current": {
+            "name": "coastal-horizon-36-13",
+            "status": "hit",
+            "sea": 222.83202056268564,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              222.83177056268005,
+              222.83227056269124
+            ],
+            "enclosureKm": 0.0005000000000074177,
+            "certifiedPrefixEnd": 222.83177056268005,
+            "witness": {
+              "t": 222.83227056269124,
+              "clearance": -2.9467464628396556e-06,
+              "upperClearance": -2.9457464628396555e-06
+            },
+            "search": [
+              222.8320205626857,
+              222.83227056269124
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4562
+          }
+        },
+        {
+          "name": "coastal-horizon-38-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 234.032500415523
+          },
+          "current": {
+            "name": "coastal-horizon-38-13",
+            "status": "hit",
+            "sea": 234.032500415523,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              234.03225041552327,
+              234.03275041552274
+            ],
+            "enclosureKm": 0.0005000000000163011,
+            "certifiedPrefixEnd": 234.03225041552327,
+            "witness": {
+              "t": 234.03275041552274,
+              "clearance": -2.3767252059769817e-06,
+              "upperClearance": -2.3757252059769816e-06
+            },
+            "search": [
+              234.03250041552303,
+              234.03275041552274
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4564
+          }
+        },
+        {
+          "name": "coastal-horizon-41-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 269.64202950903245
+          },
+          "current": {
+            "name": "coastal-horizon-41-13",
+            "status": "hit",
+            "sea": 269.64202950903245,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              269.64177950903104,
+              269.64227950903387
+            ],
+            "enclosureKm": 0.0004999999999617321,
+            "certifiedPrefixEnd": 269.64177950903104,
+            "witness": {
+              "t": 269.64227950903387,
+              "clearance": -7.577873475383967e-07,
+              "upperClearance": -7.567873475383967e-07
+            },
+            "search": [
+              269.6420295090325,
+              269.64227950903387
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4567
+          }
+        }
+      ],
+      "verification": {
+        "rectangleCount": 345,
+        "samples": 3105,
+        "gradientSamples": 3105,
+        "metadataSamples": 10240,
+        "ledgerMaxRatio": 0.18543024531878854,
+        "failures": [],
+        "failureCount": 0,
+        "finiteQualified": true,
+        "universalHostCertificate": false
+      }
+    },
+    {
+      "variant": "250m-outer2km",
+      "strategy": "midpoint",
+      "fineKm": 0.25,
+      "outerFineKm": 2,
+      "cap": 32,
+      "nodeCount": 109141,
+      "bytes": 5238768,
+      "MiB": 4.9960784912109375,
+      "preparationMs": 8627.871,
+      "traceMs": 76.45775,
+      "counts": {
+        "hit": 2110,
+        "unresolved-height-budget": 465,
+        "miss": 1779,
+        "outer-envelope-miss": 844
+      },
+      "groups": {
+        "matrix14": {
+          "hit": 10,
+          "unresolved-height-budget": 1,
+          "miss": 3
+        },
+        "home-down": {
+          "outer-envelope-miss": 208,
+          "hit": 799,
+          "unresolved-height-budget": 289
+        },
+        "level-sea-miss": {
+          "miss": 480,
+          "hit": 808,
+          "unresolved-height-budget": 8
+        },
+        "low-clamped-up": {
+          "miss": 1296
+        },
+        "coastal-horizon": {
+          "outer-envelope-miss": 636,
+          "hit": 493,
+          "unresolved-height-budget": 167
+        }
+      },
+      "totalHeightCalls": 39801,
+      "medianHeightCalls": 2,
+      "maxHeightCalls": 32,
+      "totalVisits": 115840,
+      "maxVisits": 108,
+      "totalGradientQueries": 69760,
+      "metadataLoads": 251894,
+      "invalidWitnesses": [],
+      "comparisons": [
+        {
+          "name": "home-down-9-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 307.4278311381695
+          },
+          "current": {
+            "name": "home-down-9-4",
+            "status": "hit",
+            "sea": 307.4278311381695,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              307.42758113817473,
+              307.42808113816426
+            ],
+            "enclosureKm": 0.0004999999999613305,
+            "certifiedPrefixEnd": 307.42758113817473,
+            "witness": {
+              "t": 307.42808113816426,
+              "clearance": -1.858527866716031e-06,
+              "upperClearance": -1.857527866716031e-06
+            },
+            "search": [
+              307.42783113816955,
+              307.42808113816426
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 215
+          }
+        },
+        {
+          "name": "home-down-13-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 275.33073958257785
+          },
+          "current": {
+            "name": "home-down-13-4",
+            "status": "hit",
+            "sea": 275.33073958257785,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              275.3304895825839,
+              275.3309895825718
+            ],
+            "enclosureKm": 0.0004999999999919879,
+            "certifiedPrefixEnd": 275.3304895825839,
+            "witness": {
+              "t": 275.3309895825718,
+              "clearance": -3.4081031117239036e-06,
+              "upperClearance": -3.4071031117239035e-06
+            },
+            "search": [
+              275.3307395825779,
+              275.3309895825718
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 219
+          }
+        },
+        {
+          "name": "home-down-14-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 270.67308993995755
+          },
+          "current": {
+            "name": "home-down-14-4",
+            "status": "hit",
+            "sea": 270.67308993995755,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              270.6728399399552,
+              270.6733399399599
+            ],
+            "enclosureKm": 0.000500000000032745,
+            "certifiedPrefixEnd": 270.6728399399552,
+            "witness": {
+              "t": 270.6733399399599,
+              "clearance": -3.6510891732177697e-06,
+              "upperClearance": -3.6500891732177696e-06
+            },
+            "search": [
+              270.6730899399576,
+              270.6733399399599
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 220
+          }
+        },
+        {
+          "name": "home-down-24-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 252.92385143261887
+          },
+          "current": {
+            "name": "home-down-24-4",
+            "status": "hit",
+            "sea": 252.92385143261887,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              252.92360143262087,
+              252.92410143261688
+            ],
+            "enclosureKm": 0.0004999999999802946,
+            "certifiedPrefixEnd": 252.92360143262087,
+            "witness": {
+              "t": 252.92410143261688,
+              "clearance": -4.628232090908568e-06,
+              "upperClearance": -4.627232090908569e-06
+            },
+            "search": [
+              252.9238514326189,
+              252.92410143261688
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 230
+          }
+        },
+        {
+          "name": "home-down-35-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 280.9421457929665
+          },
+          "current": {
+            "name": "home-down-35-4",
+            "status": "hit",
+            "sea": 280.9421457929665,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              280.9418957929596,
+              280.94239579297346
+            ],
+            "enclosureKm": 0.0004999999999844022,
+            "certifiedPrefixEnd": 280.9418957929596,
+            "witness": {
+              "t": 280.94239579297346,
+              "clearance": -3.122037924185861e-06,
+              "upperClearance": -3.121037924185861e-06
+            },
+            "search": [
+              280.9421457929666,
+              280.94239579297346
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 241
+          }
+        },
+        {
+          "name": "home-down-38-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 307.53145489329785
+          },
+          "current": {
+            "name": "home-down-38-4",
+            "status": "hit",
+            "sea": 307.53145489329785,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              307.5312048933031,
+              307.5317048932926
+            ],
+            "enclosureKm": 0.0004999999999613305,
+            "certifiedPrefixEnd": 307.5312048933031,
+            "witness": {
+              "t": 307.5317048932926,
+              "clearance": -1.8538357835495844e-06,
+              "upperClearance": -1.8528357835495844e-06
+            },
+            "search": [
+              307.5314548932979,
+              307.5317048932926
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 244
+          }
+        },
+        {
+          "name": "home-down-39-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 325.740221721202
+          },
+          "current": {
+            "name": "home-down-39-4",
+            "status": "hit",
+            "sea": 325.740221721202,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              325.73997172120716,
+              325.7404717211968
+            ],
+            "enclosureKm": 0.0005000000000333232,
+            "certifiedPrefixEnd": 325.73997172120716,
+            "witness": {
+              "t": 325.7404717211968,
+              "clearance": -1.0556595952948555e-06,
+              "upperClearance": -1.0546595952948555e-06
+            },
+            "search": [
+              325.74022172120203,
+              325.7404717211968
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 245
+          }
+        },
+        {
+          "name": "coastal-horizon-6-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 269.64202950903245
+          },
+          "current": {
+            "name": "coastal-horizon-6-13",
+            "status": "hit",
+            "sea": 269.64202950903245,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              269.64177950903104,
+              269.64227950903387
+            ],
+            "enclosureKm": 0.0004999999999617321,
+            "certifiedPrefixEnd": 269.64177950903104,
+            "witness": {
+              "t": 269.64227950903387,
+              "clearance": -7.577873475383967e-07,
+              "upperClearance": -7.567873475383967e-07
+            },
+            "search": [
+              269.6420295090325,
+              269.64227950903387
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4532
+          }
+        },
+        {
+          "name": "coastal-horizon-9-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 234.032500415523
+          },
+          "current": {
+            "name": "coastal-horizon-9-13",
+            "status": "hit",
+            "sea": 234.032500415523,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              234.03225041552327,
+              234.03275041552274
+            ],
+            "enclosureKm": 0.0005000000000163011,
+            "certifiedPrefixEnd": 234.03225041552327,
+            "witness": {
+              "t": 234.03275041552274,
+              "clearance": -2.3767252059769817e-06,
+              "upperClearance": -2.3757252059769816e-06
+            },
+            "search": [
+              234.03250041552303,
+              234.03275041552274
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4535
+          }
+        },
+        {
+          "name": "coastal-horizon-11-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 222.83202056268564
+          },
+          "current": {
+            "name": "coastal-horizon-11-13",
+            "status": "hit",
+            "sea": 222.83202056268564,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              222.83177056268005,
+              222.83227056269124
+            ],
+            "enclosureKm": 0.0005000000000074177,
+            "certifiedPrefixEnd": 222.83177056268005,
+            "witness": {
+              "t": 222.83227056269124,
+              "clearance": -2.9467464628396556e-06,
+              "upperClearance": -2.9457464628396555e-06
+            },
+            "search": [
+              222.8320205626857,
+              222.83227056269124
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4537
+          }
+        },
+        {
+          "name": "coastal-horizon-16-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 206.74610176287402
+          },
+          "current": {
+            "name": "coastal-horizon-16-13",
+            "status": "hit",
+            "sea": 206.74610176287402,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              206.74585176287468,
+              206.74635176287336
+            ],
+            "enclosureKm": 0.0005000000000125341,
+            "certifiedPrefixEnd": 206.74585176287468,
+            "witness": {
+              "t": 206.74635176287336,
+              "clearance": -3.83179030905012e-06,
+              "upperClearance": -3.830790309050121e-06
+            },
+            "search": [
+              206.74610176287405,
+              206.74635176287336
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4542
+          }
+        },
+        {
+          "name": "coastal-horizon-31-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 206.74610176287402
+          },
+          "current": {
+            "name": "coastal-horizon-31-13",
+            "status": "hit",
+            "sea": 206.74610176287402,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              206.74585176287468,
+              206.74635176287336
+            ],
+            "enclosureKm": 0.0005000000000125341,
+            "certifiedPrefixEnd": 206.74585176287468,
+            "witness": {
+              "t": 206.74635176287336,
+              "clearance": -3.83179030905012e-06,
+              "upperClearance": -3.830790309050121e-06
+            },
+            "search": [
+              206.74610176287405,
+              206.74635176287336
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4557
+          }
+        },
+        {
+          "name": "coastal-horizon-36-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 222.83202056268564
+          },
+          "current": {
+            "name": "coastal-horizon-36-13",
+            "status": "hit",
+            "sea": 222.83202056268564,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              222.83177056268005,
+              222.83227056269124
+            ],
+            "enclosureKm": 0.0005000000000074177,
+            "certifiedPrefixEnd": 222.83177056268005,
+            "witness": {
+              "t": 222.83227056269124,
+              "clearance": -2.9467464628396556e-06,
+              "upperClearance": -2.9457464628396555e-06
+            },
+            "search": [
+              222.8320205626857,
+              222.83227056269124
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4562
+          }
+        },
+        {
+          "name": "coastal-horizon-38-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 234.032500415523
+          },
+          "current": {
+            "name": "coastal-horizon-38-13",
+            "status": "hit",
+            "sea": 234.032500415523,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              234.03225041552327,
+              234.03275041552274
+            ],
+            "enclosureKm": 0.0005000000000163011,
+            "certifiedPrefixEnd": 234.03225041552327,
+            "witness": {
+              "t": 234.03275041552274,
+              "clearance": -2.3767252059769817e-06,
+              "upperClearance": -2.3757252059769816e-06
+            },
+            "search": [
+              234.03250041552303,
+              234.03275041552274
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4564
+          }
+        },
+        {
+          "name": "coastal-horizon-41-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 269.64202950903245
+          },
+          "current": {
+            "name": "coastal-horizon-41-13",
+            "status": "hit",
+            "sea": 269.64202950903245,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              269.64177950903104,
+              269.64227950903387
+            ],
+            "enclosureKm": 0.0004999999999617321,
+            "certifiedPrefixEnd": 269.64177950903104,
+            "witness": {
+              "t": 269.64227950903387,
+              "clearance": -7.577873475383967e-07,
+              "upperClearance": -7.567873475383967e-07
+            },
+            "search": [
+              269.6420295090325,
+              269.64227950903387
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4567
+          }
+        }
+      ],
+      "verification": {
+        "rectangleCount": 345,
+        "samples": 3105,
+        "gradientSamples": 3105,
+        "metadataSamples": 10240,
+        "ledgerMaxRatio": 0.18543024531878854,
+        "failures": [],
+        "failureCount": 0,
+        "finiteQualified": true,
+        "universalHostCertificate": false
+      }
+    },
+    {
+      "variant": "250m-outer2km",
+      "strategy": "midpoint",
+      "fineKm": 0.25,
+      "outerFineKm": 2,
+      "cap": 64,
+      "nodeCount": 109141,
+      "bytes": 5238768,
+      "MiB": 4.9960784912109375,
+      "preparationMs": 8627.871,
+      "traceMs": 83.807875,
+      "counts": {
+        "hit": 2283,
+        "miss": 1779,
+        "outer-envelope-miss": 844,
+        "unresolved-height-budget": 291,
+        "unresolved-contact": 1
+      },
+      "groups": {
+        "matrix14": {
+          "hit": 11,
+          "miss": 3
+        },
+        "home-down": {
+          "outer-envelope-miss": 208,
+          "hit": 914,
+          "unresolved-height-budget": 174
+        },
+        "level-sea-miss": {
+          "miss": 480,
+          "hit": 811,
+          "unresolved-height-budget": 5
+        },
+        "low-clamped-up": {
+          "miss": 1296
+        },
+        "coastal-horizon": {
+          "outer-envelope-miss": 636,
+          "hit": 547,
+          "unresolved-height-budget": 112,
+          "unresolved-contact": 1
+        }
+      },
+      "totalHeightCalls": 52065,
+      "medianHeightCalls": 2,
+      "maxHeightCalls": 64,
+      "totalVisits": 127738,
+      "maxVisits": 147,
+      "totalGradientQueries": 99215,
+      "metadataLoads": 252462,
+      "invalidWitnesses": [],
+      "comparisons": [
+        {
+          "name": "home-down-9-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 307.4278311381695
+          },
+          "current": {
+            "name": "home-down-9-4",
+            "status": "hit",
+            "sea": 307.4278311381695,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              307.42758113817473,
+              307.42808113816426
+            ],
+            "enclosureKm": 0.0004999999999613305,
+            "certifiedPrefixEnd": 307.42758113817473,
+            "witness": {
+              "t": 307.42808113816426,
+              "clearance": -1.858527866716031e-06,
+              "upperClearance": -1.857527866716031e-06
+            },
+            "search": [
+              307.42783113816955,
+              307.42808113816426
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 215
+          }
+        },
+        {
+          "name": "home-down-13-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 275.33073958257785
+          },
+          "current": {
+            "name": "home-down-13-4",
+            "status": "hit",
+            "sea": 275.33073958257785,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              275.3304895825839,
+              275.3309895825718
+            ],
+            "enclosureKm": 0.0004999999999919879,
+            "certifiedPrefixEnd": 275.3304895825839,
+            "witness": {
+              "t": 275.3309895825718,
+              "clearance": -3.4081031117239036e-06,
+              "upperClearance": -3.4071031117239035e-06
+            },
+            "search": [
+              275.3307395825779,
+              275.3309895825718
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 219
+          }
+        },
+        {
+          "name": "home-down-14-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 270.67308993995755
+          },
+          "current": {
+            "name": "home-down-14-4",
+            "status": "hit",
+            "sea": 270.67308993995755,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              270.6728399399552,
+              270.6733399399599
+            ],
+            "enclosureKm": 0.000500000000032745,
+            "certifiedPrefixEnd": 270.6728399399552,
+            "witness": {
+              "t": 270.6733399399599,
+              "clearance": -3.6510891732177697e-06,
+              "upperClearance": -3.6500891732177696e-06
+            },
+            "search": [
+              270.6730899399576,
+              270.6733399399599
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 220
+          }
+        },
+        {
+          "name": "home-down-24-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 252.92385143261887
+          },
+          "current": {
+            "name": "home-down-24-4",
+            "status": "hit",
+            "sea": 252.92385143261887,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              252.92360143262087,
+              252.92410143261688
+            ],
+            "enclosureKm": 0.0004999999999802946,
+            "certifiedPrefixEnd": 252.92360143262087,
+            "witness": {
+              "t": 252.92410143261688,
+              "clearance": -4.628232090908568e-06,
+              "upperClearance": -4.627232090908569e-06
+            },
+            "search": [
+              252.9238514326189,
+              252.92410143261688
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 230
+          }
+        },
+        {
+          "name": "home-down-35-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 280.9421457929665
+          },
+          "current": {
+            "name": "home-down-35-4",
+            "status": "hit",
+            "sea": 280.9421457929665,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              280.9418957929596,
+              280.94239579297346
+            ],
+            "enclosureKm": 0.0004999999999844022,
+            "certifiedPrefixEnd": 280.9418957929596,
+            "witness": {
+              "t": 280.94239579297346,
+              "clearance": -3.122037924185861e-06,
+              "upperClearance": -3.121037924185861e-06
+            },
+            "search": [
+              280.9421457929666,
+              280.94239579297346
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 241
+          }
+        },
+        {
+          "name": "home-down-38-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 307.53145489329785
+          },
+          "current": {
+            "name": "home-down-38-4",
+            "status": "hit",
+            "sea": 307.53145489329785,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              307.5312048933031,
+              307.5317048932926
+            ],
+            "enclosureKm": 0.0004999999999613305,
+            "certifiedPrefixEnd": 307.5312048933031,
+            "witness": {
+              "t": 307.5317048932926,
+              "clearance": -1.8538357835495844e-06,
+              "upperClearance": -1.8528357835495844e-06
+            },
+            "search": [
+              307.5314548932979,
+              307.5317048932926
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 244
+          }
+        },
+        {
+          "name": "home-down-39-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 325.740221721202
+          },
+          "current": {
+            "name": "home-down-39-4",
+            "status": "hit",
+            "sea": 325.740221721202,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              325.73997172120716,
+              325.7404717211968
+            ],
+            "enclosureKm": 0.0005000000000333232,
+            "certifiedPrefixEnd": 325.73997172120716,
+            "witness": {
+              "t": 325.7404717211968,
+              "clearance": -1.0556595952948555e-06,
+              "upperClearance": -1.0546595952948555e-06
+            },
+            "search": [
+              325.74022172120203,
+              325.7404717211968
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 245
+          }
+        },
+        {
+          "name": "coastal-horizon-6-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 269.64202950903245
+          },
+          "current": {
+            "name": "coastal-horizon-6-13",
+            "status": "hit",
+            "sea": 269.64202950903245,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              269.64177950903104,
+              269.64227950903387
+            ],
+            "enclosureKm": 0.0004999999999617321,
+            "certifiedPrefixEnd": 269.64177950903104,
+            "witness": {
+              "t": 269.64227950903387,
+              "clearance": -7.577873475383967e-07,
+              "upperClearance": -7.567873475383967e-07
+            },
+            "search": [
+              269.6420295090325,
+              269.64227950903387
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4532
+          }
+        },
+        {
+          "name": "coastal-horizon-9-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 234.032500415523
+          },
+          "current": {
+            "name": "coastal-horizon-9-13",
+            "status": "hit",
+            "sea": 234.032500415523,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              234.03225041552327,
+              234.03275041552274
+            ],
+            "enclosureKm": 0.0005000000000163011,
+            "certifiedPrefixEnd": 234.03225041552327,
+            "witness": {
+              "t": 234.03275041552274,
+              "clearance": -2.3767252059769817e-06,
+              "upperClearance": -2.3757252059769816e-06
+            },
+            "search": [
+              234.03250041552303,
+              234.03275041552274
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4535
+          }
+        },
+        {
+          "name": "coastal-horizon-11-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 222.83202056268564
+          },
+          "current": {
+            "name": "coastal-horizon-11-13",
+            "status": "hit",
+            "sea": 222.83202056268564,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              222.83177056268005,
+              222.83227056269124
+            ],
+            "enclosureKm": 0.0005000000000074177,
+            "certifiedPrefixEnd": 222.83177056268005,
+            "witness": {
+              "t": 222.83227056269124,
+              "clearance": -2.9467464628396556e-06,
+              "upperClearance": -2.9457464628396555e-06
+            },
+            "search": [
+              222.8320205626857,
+              222.83227056269124
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4537
+          }
+        },
+        {
+          "name": "coastal-horizon-16-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 206.74610176287402
+          },
+          "current": {
+            "name": "coastal-horizon-16-13",
+            "status": "hit",
+            "sea": 206.74610176287402,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              206.74585176287468,
+              206.74635176287336
+            ],
+            "enclosureKm": 0.0005000000000125341,
+            "certifiedPrefixEnd": 206.74585176287468,
+            "witness": {
+              "t": 206.74635176287336,
+              "clearance": -3.83179030905012e-06,
+              "upperClearance": -3.830790309050121e-06
+            },
+            "search": [
+              206.74610176287405,
+              206.74635176287336
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4542
+          }
+        },
+        {
+          "name": "coastal-horizon-31-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 206.74610176287402
+          },
+          "current": {
+            "name": "coastal-horizon-31-13",
+            "status": "hit",
+            "sea": 206.74610176287402,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              206.74585176287468,
+              206.74635176287336
+            ],
+            "enclosureKm": 0.0005000000000125341,
+            "certifiedPrefixEnd": 206.74585176287468,
+            "witness": {
+              "t": 206.74635176287336,
+              "clearance": -3.83179030905012e-06,
+              "upperClearance": -3.830790309050121e-06
+            },
+            "search": [
+              206.74610176287405,
+              206.74635176287336
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4557
+          }
+        },
+        {
+          "name": "coastal-horizon-36-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 222.83202056268564
+          },
+          "current": {
+            "name": "coastal-horizon-36-13",
+            "status": "hit",
+            "sea": 222.83202056268564,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              222.83177056268005,
+              222.83227056269124
+            ],
+            "enclosureKm": 0.0005000000000074177,
+            "certifiedPrefixEnd": 222.83177056268005,
+            "witness": {
+              "t": 222.83227056269124,
+              "clearance": -2.9467464628396556e-06,
+              "upperClearance": -2.9457464628396555e-06
+            },
+            "search": [
+              222.8320205626857,
+              222.83227056269124
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4562
+          }
+        },
+        {
+          "name": "coastal-horizon-38-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 234.032500415523
+          },
+          "current": {
+            "name": "coastal-horizon-38-13",
+            "status": "hit",
+            "sea": 234.032500415523,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              234.03225041552327,
+              234.03275041552274
+            ],
+            "enclosureKm": 0.0005000000000163011,
+            "certifiedPrefixEnd": 234.03225041552327,
+            "witness": {
+              "t": 234.03275041552274,
+              "clearance": -2.3767252059769817e-06,
+              "upperClearance": -2.3757252059769816e-06
+            },
+            "search": [
+              234.03250041552303,
+              234.03275041552274
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4564
+          }
+        },
+        {
+          "name": "coastal-horizon-41-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 269.64202950903245
+          },
+          "current": {
+            "name": "coastal-horizon-41-13",
+            "status": "hit",
+            "sea": 269.64202950903245,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              269.64177950903104,
+              269.64227950903387
+            ],
+            "enclosureKm": 0.0004999999999617321,
+            "certifiedPrefixEnd": 269.64177950903104,
+            "witness": {
+              "t": 269.64227950903387,
+              "clearance": -7.577873475383967e-07,
+              "upperClearance": -7.567873475383967e-07
+            },
+            "search": [
+              269.6420295090325,
+              269.64227950903387
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4567
+          }
+        }
+      ],
+      "verification": {
+        "rectangleCount": 345,
+        "samples": 3105,
+        "gradientSamples": 3105,
+        "metadataSamples": 10240,
+        "ledgerMaxRatio": 0.18543024531878854,
+        "failures": [],
+        "failureCount": 0,
+        "finiteQualified": true,
+        "universalHostCertificate": false
+      }
+    },
+    {
+      "variant": "250m-outer2km",
+      "strategy": "front",
+      "fineKm": 0.25,
+      "outerFineKm": 2,
+      "cap": 16,
+      "nodeCount": 109141,
+      "bytes": 5238768,
+      "MiB": 4.9960784912109375,
+      "preparationMs": 8627.871,
+      "traceMs": 65.02479199999999,
+      "counts": {
+        "hit": 1671,
+        "unresolved-height-budget": 876,
+        "unresolved-contact": 31,
+        "miss": 1776,
+        "outer-envelope-miss": 844
+      },
+      "groups": {
+        "matrix14": {
+          "hit": 8,
+          "unresolved-height-budget": 2,
+          "unresolved-contact": 1,
+          "miss": 3
+        },
+        "home-down": {
+          "outer-envelope-miss": 208,
+          "hit": 566,
+          "unresolved-height-budget": 504,
+          "unresolved-contact": 18
+        },
+        "level-sea-miss": {
+          "miss": 477,
+          "unresolved-height-budget": 49,
+          "hit": 769,
+          "unresolved-contact": 1
+        },
+        "low-clamped-up": {
+          "miss": 1296
+        },
+        "coastal-horizon": {
+          "outer-envelope-miss": 636,
+          "hit": 328,
+          "unresolved-height-budget": 321,
+          "unresolved-contact": 11
+        }
+      },
+      "totalHeightCalls": 29088,
+      "medianHeightCalls": 2,
+      "maxHeightCalls": 16,
+      "totalVisits": 105556,
+      "maxVisits": 96,
+      "totalGradientQueries": 52904,
+      "metadataLoads": 250258,
+      "invalidWitnesses": [],
+      "comparisons": [
+        {
+          "name": "home-down-9-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 307.4278311381695
+          },
+          "current": {
+            "name": "home-down-9-4",
+            "status": "hit",
+            "sea": 307.4278311381695,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              307.42758113817473,
+              307.42808113816426
+            ],
+            "enclosureKm": 0.0004999999999613305,
+            "certifiedPrefixEnd": 307.42758113817473,
+            "witness": {
+              "t": 307.42808113816426,
+              "clearance": -1.858527866716031e-06,
+              "upperClearance": -1.857527866716031e-06
+            },
+            "search": [
+              307.42783113816955,
+              307.42808113816426
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 215
+          }
+        },
+        {
+          "name": "home-down-13-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 275.33073958257785
+          },
+          "current": {
+            "name": "home-down-13-4",
+            "status": "hit",
+            "sea": 275.33073958257785,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              275.3304895825839,
+              275.3309895825718
+            ],
+            "enclosureKm": 0.0004999999999919879,
+            "certifiedPrefixEnd": 275.3304895825839,
+            "witness": {
+              "t": 275.3309895825718,
+              "clearance": -3.4081031117239036e-06,
+              "upperClearance": -3.4071031117239035e-06
+            },
+            "search": [
+              275.3307395825779,
+              275.3309895825718
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 219
+          }
+        },
+        {
+          "name": "home-down-14-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 270.67308993995755
+          },
+          "current": {
+            "name": "home-down-14-4",
+            "status": "hit",
+            "sea": 270.67308993995755,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              270.6728399399552,
+              270.6733399399599
+            ],
+            "enclosureKm": 0.000500000000032745,
+            "certifiedPrefixEnd": 270.6728399399552,
+            "witness": {
+              "t": 270.6733399399599,
+              "clearance": -3.6510891732177697e-06,
+              "upperClearance": -3.6500891732177696e-06
+            },
+            "search": [
+              270.6730899399576,
+              270.6733399399599
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 220
+          }
+        },
+        {
+          "name": "home-down-24-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 252.92385143261887
+          },
+          "current": {
+            "name": "home-down-24-4",
+            "status": "hit",
+            "sea": 252.92385143261887,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              252.92360143262087,
+              252.92410143261688
+            ],
+            "enclosureKm": 0.0004999999999802946,
+            "certifiedPrefixEnd": 252.92360143262087,
+            "witness": {
+              "t": 252.92410143261688,
+              "clearance": -4.628232090908568e-06,
+              "upperClearance": -4.627232090908569e-06
+            },
+            "search": [
+              252.9238514326189,
+              252.92410143261688
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 230
+          }
+        },
+        {
+          "name": "home-down-35-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 280.9421457929665
+          },
+          "current": {
+            "name": "home-down-35-4",
+            "status": "hit",
+            "sea": 280.9421457929665,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              280.9418957929596,
+              280.94239579297346
+            ],
+            "enclosureKm": 0.0004999999999844022,
+            "certifiedPrefixEnd": 280.9418957929596,
+            "witness": {
+              "t": 280.94239579297346,
+              "clearance": -3.122037924185861e-06,
+              "upperClearance": -3.121037924185861e-06
+            },
+            "search": [
+              280.9421457929666,
+              280.94239579297346
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 241
+          }
+        },
+        {
+          "name": "home-down-38-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 307.53145489329785
+          },
+          "current": {
+            "name": "home-down-38-4",
+            "status": "hit",
+            "sea": 307.53145489329785,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              307.5312048933031,
+              307.5317048932926
+            ],
+            "enclosureKm": 0.0004999999999613305,
+            "certifiedPrefixEnd": 307.5312048933031,
+            "witness": {
+              "t": 307.5317048932926,
+              "clearance": -1.8538357835495844e-06,
+              "upperClearance": -1.8528357835495844e-06
+            },
+            "search": [
+              307.5314548932979,
+              307.5317048932926
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 244
+          }
+        },
+        {
+          "name": "home-down-39-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 325.740221721202
+          },
+          "current": {
+            "name": "home-down-39-4",
+            "status": "hit",
+            "sea": 325.740221721202,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              325.73997172120716,
+              325.7404717211968
+            ],
+            "enclosureKm": 0.0005000000000333232,
+            "certifiedPrefixEnd": 325.73997172120716,
+            "witness": {
+              "t": 325.7404717211968,
+              "clearance": -1.0556595952948555e-06,
+              "upperClearance": -1.0546595952948555e-06
+            },
+            "search": [
+              325.74022172120203,
+              325.7404717211968
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 245
+          }
+        },
+        {
+          "name": "coastal-horizon-6-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 269.64202950903245
+          },
+          "current": {
+            "name": "coastal-horizon-6-13",
+            "status": "hit",
+            "sea": 269.64202950903245,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              269.64177950903104,
+              269.64227950903387
+            ],
+            "enclosureKm": 0.0004999999999617321,
+            "certifiedPrefixEnd": 269.64177950903104,
+            "witness": {
+              "t": 269.64227950903387,
+              "clearance": -7.577873475383967e-07,
+              "upperClearance": -7.567873475383967e-07
+            },
+            "search": [
+              269.6420295090325,
+              269.64227950903387
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4532
+          }
+        },
+        {
+          "name": "coastal-horizon-9-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 234.032500415523
+          },
+          "current": {
+            "name": "coastal-horizon-9-13",
+            "status": "hit",
+            "sea": 234.032500415523,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              234.03225041552327,
+              234.03275041552274
+            ],
+            "enclosureKm": 0.0005000000000163011,
+            "certifiedPrefixEnd": 234.03225041552327,
+            "witness": {
+              "t": 234.03275041552274,
+              "clearance": -2.3767252059769817e-06,
+              "upperClearance": -2.3757252059769816e-06
+            },
+            "search": [
+              234.03250041552303,
+              234.03275041552274
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4535
+          }
+        },
+        {
+          "name": "coastal-horizon-11-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 222.83202056268564
+          },
+          "current": {
+            "name": "coastal-horizon-11-13",
+            "status": "hit",
+            "sea": 222.83202056268564,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              222.83177056268005,
+              222.83227056269124
+            ],
+            "enclosureKm": 0.0005000000000074177,
+            "certifiedPrefixEnd": 222.83177056268005,
+            "witness": {
+              "t": 222.83227056269124,
+              "clearance": -2.9467464628396556e-06,
+              "upperClearance": -2.9457464628396555e-06
+            },
+            "search": [
+              222.8320205626857,
+              222.83227056269124
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4537
+          }
+        },
+        {
+          "name": "coastal-horizon-16-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 206.74610176287402
+          },
+          "current": {
+            "name": "coastal-horizon-16-13",
+            "status": "hit",
+            "sea": 206.74610176287402,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              206.74585176287468,
+              206.74635176287336
+            ],
+            "enclosureKm": 0.0005000000000125341,
+            "certifiedPrefixEnd": 206.74585176287468,
+            "witness": {
+              "t": 206.74635176287336,
+              "clearance": -3.83179030905012e-06,
+              "upperClearance": -3.830790309050121e-06
+            },
+            "search": [
+              206.74610176287405,
+              206.74635176287336
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4542
+          }
+        },
+        {
+          "name": "coastal-horizon-31-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 206.74610176287402
+          },
+          "current": {
+            "name": "coastal-horizon-31-13",
+            "status": "hit",
+            "sea": 206.74610176287402,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              206.74585176287468,
+              206.74635176287336
+            ],
+            "enclosureKm": 0.0005000000000125341,
+            "certifiedPrefixEnd": 206.74585176287468,
+            "witness": {
+              "t": 206.74635176287336,
+              "clearance": -3.83179030905012e-06,
+              "upperClearance": -3.830790309050121e-06
+            },
+            "search": [
+              206.74610176287405,
+              206.74635176287336
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4557
+          }
+        },
+        {
+          "name": "coastal-horizon-36-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 222.83202056268564
+          },
+          "current": {
+            "name": "coastal-horizon-36-13",
+            "status": "hit",
+            "sea": 222.83202056268564,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              222.83177056268005,
+              222.83227056269124
+            ],
+            "enclosureKm": 0.0005000000000074177,
+            "certifiedPrefixEnd": 222.83177056268005,
+            "witness": {
+              "t": 222.83227056269124,
+              "clearance": -2.9467464628396556e-06,
+              "upperClearance": -2.9457464628396555e-06
+            },
+            "search": [
+              222.8320205626857,
+              222.83227056269124
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4562
+          }
+        },
+        {
+          "name": "coastal-horizon-38-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 234.032500415523
+          },
+          "current": {
+            "name": "coastal-horizon-38-13",
+            "status": "hit",
+            "sea": 234.032500415523,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              234.03225041552327,
+              234.03275041552274
+            ],
+            "enclosureKm": 0.0005000000000163011,
+            "certifiedPrefixEnd": 234.03225041552327,
+            "witness": {
+              "t": 234.03275041552274,
+              "clearance": -2.3767252059769817e-06,
+              "upperClearance": -2.3757252059769816e-06
+            },
+            "search": [
+              234.03250041552303,
+              234.03275041552274
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4564
+          }
+        },
+        {
+          "name": "coastal-horizon-41-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 269.64202950903245
+          },
+          "current": {
+            "name": "coastal-horizon-41-13",
+            "status": "hit",
+            "sea": 269.64202950903245,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              269.64177950903104,
+              269.64227950903387
+            ],
+            "enclosureKm": 0.0004999999999617321,
+            "certifiedPrefixEnd": 269.64177950903104,
+            "witness": {
+              "t": 269.64227950903387,
+              "clearance": -7.577873475383967e-07,
+              "upperClearance": -7.567873475383967e-07
+            },
+            "search": [
+              269.6420295090325,
+              269.64227950903387
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4567
+          }
+        }
+      ],
+      "verification": {
+        "rectangleCount": 345,
+        "samples": 3105,
+        "gradientSamples": 3105,
+        "metadataSamples": 10240,
+        "ledgerMaxRatio": 0.18543024531878854,
+        "failures": [],
+        "failureCount": 0,
+        "finiteQualified": true,
+        "universalHostCertificate": false
+      }
+    },
+    {
+      "variant": "250m-outer2km",
+      "strategy": "front",
+      "fineKm": 0.25,
+      "outerFineKm": 2,
+      "cap": 32,
+      "nodeCount": 109141,
+      "bytes": 5238768,
+      "MiB": 4.9960784912109375,
+      "preparationMs": 8627.871,
+      "traceMs": 82.09220899999997,
+      "counts": {
+        "hit": 1902,
+        "unresolved-height-budget": 531,
+        "unresolved-contact": 142,
+        "miss": 1779,
+        "outer-envelope-miss": 844
+      },
+      "groups": {
+        "matrix14": {
+          "hit": 9,
+          "unresolved-height-budget": 1,
+          "unresolved-contact": 1,
+          "miss": 3
+        },
+        "home-down": {
+          "outer-envelope-miss": 208,
+          "hit": 683,
+          "unresolved-height-budget": 328,
+          "unresolved-contact": 77
+        },
+        "level-sea-miss": {
+          "miss": 480,
+          "hit": 788,
+          "unresolved-contact": 16,
+          "unresolved-height-budget": 12
+        },
+        "low-clamped-up": {
+          "miss": 1296
+        },
+        "coastal-horizon": {
+          "outer-envelope-miss": 636,
+          "hit": 422,
+          "unresolved-height-budget": 190,
+          "unresolved-contact": 48
+        }
+      },
+      "totalHeightCalls": 39943,
+      "medianHeightCalls": 2,
+      "maxHeightCalls": 32,
+      "totalVisits": 120289,
+      "maxVisits": 114,
+      "totalGradientQueries": 91069,
+      "metadataLoads": 251950,
+      "invalidWitnesses": [],
+      "comparisons": [
+        {
+          "name": "home-down-9-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 307.4278311381695
+          },
+          "current": {
+            "name": "home-down-9-4",
+            "status": "hit",
+            "sea": 307.4278311381695,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              307.42758113817473,
+              307.42808113816426
+            ],
+            "enclosureKm": 0.0004999999999613305,
+            "certifiedPrefixEnd": 307.42758113817473,
+            "witness": {
+              "t": 307.42808113816426,
+              "clearance": -1.858527866716031e-06,
+              "upperClearance": -1.857527866716031e-06
+            },
+            "search": [
+              307.42783113816955,
+              307.42808113816426
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 215
+          }
+        },
+        {
+          "name": "home-down-13-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 275.33073958257785
+          },
+          "current": {
+            "name": "home-down-13-4",
+            "status": "hit",
+            "sea": 275.33073958257785,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              275.3304895825839,
+              275.3309895825718
+            ],
+            "enclosureKm": 0.0004999999999919879,
+            "certifiedPrefixEnd": 275.3304895825839,
+            "witness": {
+              "t": 275.3309895825718,
+              "clearance": -3.4081031117239036e-06,
+              "upperClearance": -3.4071031117239035e-06
+            },
+            "search": [
+              275.3307395825779,
+              275.3309895825718
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 219
+          }
+        },
+        {
+          "name": "home-down-14-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 270.67308993995755
+          },
+          "current": {
+            "name": "home-down-14-4",
+            "status": "hit",
+            "sea": 270.67308993995755,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              270.6728399399552,
+              270.6733399399599
+            ],
+            "enclosureKm": 0.000500000000032745,
+            "certifiedPrefixEnd": 270.6728399399552,
+            "witness": {
+              "t": 270.6733399399599,
+              "clearance": -3.6510891732177697e-06,
+              "upperClearance": -3.6500891732177696e-06
+            },
+            "search": [
+              270.6730899399576,
+              270.6733399399599
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 220
+          }
+        },
+        {
+          "name": "home-down-24-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 252.92385143261887
+          },
+          "current": {
+            "name": "home-down-24-4",
+            "status": "hit",
+            "sea": 252.92385143261887,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              252.92360143262087,
+              252.92410143261688
+            ],
+            "enclosureKm": 0.0004999999999802946,
+            "certifiedPrefixEnd": 252.92360143262087,
+            "witness": {
+              "t": 252.92410143261688,
+              "clearance": -4.628232090908568e-06,
+              "upperClearance": -4.627232090908569e-06
+            },
+            "search": [
+              252.9238514326189,
+              252.92410143261688
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 230
+          }
+        },
+        {
+          "name": "home-down-35-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 280.9421457929665
+          },
+          "current": {
+            "name": "home-down-35-4",
+            "status": "hit",
+            "sea": 280.9421457929665,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              280.9418957929596,
+              280.94239579297346
+            ],
+            "enclosureKm": 0.0004999999999844022,
+            "certifiedPrefixEnd": 280.9418957929596,
+            "witness": {
+              "t": 280.94239579297346,
+              "clearance": -3.122037924185861e-06,
+              "upperClearance": -3.121037924185861e-06
+            },
+            "search": [
+              280.9421457929666,
+              280.94239579297346
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 241
+          }
+        },
+        {
+          "name": "home-down-38-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 307.53145489329785
+          },
+          "current": {
+            "name": "home-down-38-4",
+            "status": "hit",
+            "sea": 307.53145489329785,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              307.5312048933031,
+              307.5317048932926
+            ],
+            "enclosureKm": 0.0004999999999613305,
+            "certifiedPrefixEnd": 307.5312048933031,
+            "witness": {
+              "t": 307.5317048932926,
+              "clearance": -1.8538357835495844e-06,
+              "upperClearance": -1.8528357835495844e-06
+            },
+            "search": [
+              307.5314548932979,
+              307.5317048932926
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 244
+          }
+        },
+        {
+          "name": "home-down-39-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 325.740221721202
+          },
+          "current": {
+            "name": "home-down-39-4",
+            "status": "hit",
+            "sea": 325.740221721202,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              325.73997172120716,
+              325.7404717211968
+            ],
+            "enclosureKm": 0.0005000000000333232,
+            "certifiedPrefixEnd": 325.73997172120716,
+            "witness": {
+              "t": 325.7404717211968,
+              "clearance": -1.0556595952948555e-06,
+              "upperClearance": -1.0546595952948555e-06
+            },
+            "search": [
+              325.74022172120203,
+              325.7404717211968
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 245
+          }
+        },
+        {
+          "name": "coastal-horizon-6-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 269.64202950903245
+          },
+          "current": {
+            "name": "coastal-horizon-6-13",
+            "status": "hit",
+            "sea": 269.64202950903245,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              269.64177950903104,
+              269.64227950903387
+            ],
+            "enclosureKm": 0.0004999999999617321,
+            "certifiedPrefixEnd": 269.64177950903104,
+            "witness": {
+              "t": 269.64227950903387,
+              "clearance": -7.577873475383967e-07,
+              "upperClearance": -7.567873475383967e-07
+            },
+            "search": [
+              269.6420295090325,
+              269.64227950903387
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4532
+          }
+        },
+        {
+          "name": "coastal-horizon-9-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 234.032500415523
+          },
+          "current": {
+            "name": "coastal-horizon-9-13",
+            "status": "hit",
+            "sea": 234.032500415523,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              234.03225041552327,
+              234.03275041552274
+            ],
+            "enclosureKm": 0.0005000000000163011,
+            "certifiedPrefixEnd": 234.03225041552327,
+            "witness": {
+              "t": 234.03275041552274,
+              "clearance": -2.3767252059769817e-06,
+              "upperClearance": -2.3757252059769816e-06
+            },
+            "search": [
+              234.03250041552303,
+              234.03275041552274
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4535
+          }
+        },
+        {
+          "name": "coastal-horizon-11-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 222.83202056268564
+          },
+          "current": {
+            "name": "coastal-horizon-11-13",
+            "status": "hit",
+            "sea": 222.83202056268564,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              222.83177056268005,
+              222.83227056269124
+            ],
+            "enclosureKm": 0.0005000000000074177,
+            "certifiedPrefixEnd": 222.83177056268005,
+            "witness": {
+              "t": 222.83227056269124,
+              "clearance": -2.9467464628396556e-06,
+              "upperClearance": -2.9457464628396555e-06
+            },
+            "search": [
+              222.8320205626857,
+              222.83227056269124
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4537
+          }
+        },
+        {
+          "name": "coastal-horizon-16-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 206.74610176287402
+          },
+          "current": {
+            "name": "coastal-horizon-16-13",
+            "status": "hit",
+            "sea": 206.74610176287402,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              206.74585176287468,
+              206.74635176287336
+            ],
+            "enclosureKm": 0.0005000000000125341,
+            "certifiedPrefixEnd": 206.74585176287468,
+            "witness": {
+              "t": 206.74635176287336,
+              "clearance": -3.83179030905012e-06,
+              "upperClearance": -3.830790309050121e-06
+            },
+            "search": [
+              206.74610176287405,
+              206.74635176287336
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4542
+          }
+        },
+        {
+          "name": "coastal-horizon-31-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 206.74610176287402
+          },
+          "current": {
+            "name": "coastal-horizon-31-13",
+            "status": "hit",
+            "sea": 206.74610176287402,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              206.74585176287468,
+              206.74635176287336
+            ],
+            "enclosureKm": 0.0005000000000125341,
+            "certifiedPrefixEnd": 206.74585176287468,
+            "witness": {
+              "t": 206.74635176287336,
+              "clearance": -3.83179030905012e-06,
+              "upperClearance": -3.830790309050121e-06
+            },
+            "search": [
+              206.74610176287405,
+              206.74635176287336
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4557
+          }
+        },
+        {
+          "name": "coastal-horizon-36-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 222.83202056268564
+          },
+          "current": {
+            "name": "coastal-horizon-36-13",
+            "status": "hit",
+            "sea": 222.83202056268564,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              222.83177056268005,
+              222.83227056269124
+            ],
+            "enclosureKm": 0.0005000000000074177,
+            "certifiedPrefixEnd": 222.83177056268005,
+            "witness": {
+              "t": 222.83227056269124,
+              "clearance": -2.9467464628396556e-06,
+              "upperClearance": -2.9457464628396555e-06
+            },
+            "search": [
+              222.8320205626857,
+              222.83227056269124
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4562
+          }
+        },
+        {
+          "name": "coastal-horizon-38-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 234.032500415523
+          },
+          "current": {
+            "name": "coastal-horizon-38-13",
+            "status": "hit",
+            "sea": 234.032500415523,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              234.03225041552327,
+              234.03275041552274
+            ],
+            "enclosureKm": 0.0005000000000163011,
+            "certifiedPrefixEnd": 234.03225041552327,
+            "witness": {
+              "t": 234.03275041552274,
+              "clearance": -2.3767252059769817e-06,
+              "upperClearance": -2.3757252059769816e-06
+            },
+            "search": [
+              234.03250041552303,
+              234.03275041552274
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4564
+          }
+        },
+        {
+          "name": "coastal-horizon-41-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 269.64202950903245
+          },
+          "current": {
+            "name": "coastal-horizon-41-13",
+            "status": "hit",
+            "sea": 269.64202950903245,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              269.64177950903104,
+              269.64227950903387
+            ],
+            "enclosureKm": 0.0004999999999617321,
+            "certifiedPrefixEnd": 269.64177950903104,
+            "witness": {
+              "t": 269.64227950903387,
+              "clearance": -7.577873475383967e-07,
+              "upperClearance": -7.567873475383967e-07
+            },
+            "search": [
+              269.6420295090325,
+              269.64227950903387
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4567
+          }
+        }
+      ],
+      "verification": {
+        "rectangleCount": 345,
+        "samples": 3105,
+        "gradientSamples": 3105,
+        "metadataSamples": 10240,
+        "ledgerMaxRatio": 0.18543024531878854,
+        "failures": [],
+        "failureCount": 0,
+        "finiteQualified": true,
+        "universalHostCertificate": false
+      }
+    },
+    {
+      "variant": "250m-outer2km",
+      "strategy": "front",
+      "fineKm": 0.25,
+      "outerFineKm": 2,
+      "cap": 64,
+      "nodeCount": 109141,
+      "bytes": 5238768,
+      "MiB": 4.9960784912109375,
+      "preparationMs": 8627.871,
+      "traceMs": 102.04541699999999,
+      "counts": {
+        "hit": 2029,
+        "unresolved-height-budget": 314,
+        "unresolved-contact": 231,
+        "miss": 1780,
+        "outer-envelope-miss": 844
+      },
+      "groups": {
+        "matrix14": {
+          "hit": 9,
+          "unresolved-height-budget": 1,
+          "unresolved-contact": 1,
+          "miss": 3
+        },
+        "home-down": {
+          "outer-envelope-miss": 208,
+          "hit": 767,
+          "unresolved-height-budget": 190,
+          "unresolved-contact": 131
+        },
+        "level-sea-miss": {
+          "miss": 481,
+          "hit": 793,
+          "unresolved-contact": 18,
+          "unresolved-height-budget": 4
+        },
+        "low-clamped-up": {
+          "miss": 1296
+        },
+        "coastal-horizon": {
+          "outer-envelope-miss": 636,
+          "hit": 460,
+          "unresolved-height-budget": 119,
+          "unresolved-contact": 81
+        }
+      },
+      "totalHeightCalls": 53393,
+      "medianHeightCalls": 2,
+      "maxHeightCalls": 64,
+      "totalVisits": 136801,
+      "maxVisits": 142,
+      "totalGradientQueries": 136629,
+      "metadataLoads": 252550,
+      "invalidWitnesses": [],
+      "comparisons": [
+        {
+          "name": "home-down-9-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 307.4278311381695
+          },
+          "current": {
+            "name": "home-down-9-4",
+            "status": "hit",
+            "sea": 307.4278311381695,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              307.42758113817473,
+              307.42808113816426
+            ],
+            "enclosureKm": 0.0004999999999613305,
+            "certifiedPrefixEnd": 307.42758113817473,
+            "witness": {
+              "t": 307.42808113816426,
+              "clearance": -1.858527866716031e-06,
+              "upperClearance": -1.857527866716031e-06
+            },
+            "search": [
+              307.42783113816955,
+              307.42808113816426
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 215
+          }
+        },
+        {
+          "name": "home-down-13-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 275.33073958257785
+          },
+          "current": {
+            "name": "home-down-13-4",
+            "status": "hit",
+            "sea": 275.33073958257785,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              275.3304895825839,
+              275.3309895825718
+            ],
+            "enclosureKm": 0.0004999999999919879,
+            "certifiedPrefixEnd": 275.3304895825839,
+            "witness": {
+              "t": 275.3309895825718,
+              "clearance": -3.4081031117239036e-06,
+              "upperClearance": -3.4071031117239035e-06
+            },
+            "search": [
+              275.3307395825779,
+              275.3309895825718
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 219
+          }
+        },
+        {
+          "name": "home-down-14-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 270.67308993995755
+          },
+          "current": {
+            "name": "home-down-14-4",
+            "status": "hit",
+            "sea": 270.67308993995755,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              270.6728399399552,
+              270.6733399399599
+            ],
+            "enclosureKm": 0.000500000000032745,
+            "certifiedPrefixEnd": 270.6728399399552,
+            "witness": {
+              "t": 270.6733399399599,
+              "clearance": -3.6510891732177697e-06,
+              "upperClearance": -3.6500891732177696e-06
+            },
+            "search": [
+              270.6730899399576,
+              270.6733399399599
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 220
+          }
+        },
+        {
+          "name": "home-down-24-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 252.92385143261887
+          },
+          "current": {
+            "name": "home-down-24-4",
+            "status": "hit",
+            "sea": 252.92385143261887,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              252.92360143262087,
+              252.92410143261688
+            ],
+            "enclosureKm": 0.0004999999999802946,
+            "certifiedPrefixEnd": 252.92360143262087,
+            "witness": {
+              "t": 252.92410143261688,
+              "clearance": -4.628232090908568e-06,
+              "upperClearance": -4.627232090908569e-06
+            },
+            "search": [
+              252.9238514326189,
+              252.92410143261688
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 230
+          }
+        },
+        {
+          "name": "home-down-35-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 280.9421457929665
+          },
+          "current": {
+            "name": "home-down-35-4",
+            "status": "hit",
+            "sea": 280.9421457929665,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              280.9418957929596,
+              280.94239579297346
+            ],
+            "enclosureKm": 0.0004999999999844022,
+            "certifiedPrefixEnd": 280.9418957929596,
+            "witness": {
+              "t": 280.94239579297346,
+              "clearance": -3.122037924185861e-06,
+              "upperClearance": -3.121037924185861e-06
+            },
+            "search": [
+              280.9421457929666,
+              280.94239579297346
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 241
+          }
+        },
+        {
+          "name": "home-down-38-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 307.53145489329785
+          },
+          "current": {
+            "name": "home-down-38-4",
+            "status": "hit",
+            "sea": 307.53145489329785,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              307.5312048933031,
+              307.5317048932926
+            ],
+            "enclosureKm": 0.0004999999999613305,
+            "certifiedPrefixEnd": 307.5312048933031,
+            "witness": {
+              "t": 307.5317048932926,
+              "clearance": -1.8538357835495844e-06,
+              "upperClearance": -1.8528357835495844e-06
+            },
+            "search": [
+              307.5314548932979,
+              307.5317048932926
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 244
+          }
+        },
+        {
+          "name": "home-down-39-4",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 325.740221721202
+          },
+          "current": {
+            "name": "home-down-39-4",
+            "status": "hit",
+            "sea": 325.740221721202,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              325.73997172120716,
+              325.7404717211968
+            ],
+            "enclosureKm": 0.0005000000000333232,
+            "certifiedPrefixEnd": 325.73997172120716,
+            "witness": {
+              "t": 325.7404717211968,
+              "clearance": -1.0556595952948555e-06,
+              "upperClearance": -1.0546595952948555e-06
+            },
+            "search": [
+              325.74022172120203,
+              325.7404717211968
+            ],
+            "seaOnly": true,
+            "group": "home-down",
+            "index": 245
+          }
+        },
+        {
+          "name": "coastal-horizon-6-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 269.64202950903245
+          },
+          "current": {
+            "name": "coastal-horizon-6-13",
+            "status": "hit",
+            "sea": 269.64202950903245,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              269.64177950903104,
+              269.64227950903387
+            ],
+            "enclosureKm": 0.0004999999999617321,
+            "certifiedPrefixEnd": 269.64177950903104,
+            "witness": {
+              "t": 269.64227950903387,
+              "clearance": -7.577873475383967e-07,
+              "upperClearance": -7.567873475383967e-07
+            },
+            "search": [
+              269.6420295090325,
+              269.64227950903387
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4532
+          }
+        },
+        {
+          "name": "coastal-horizon-9-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 234.032500415523
+          },
+          "current": {
+            "name": "coastal-horizon-9-13",
+            "status": "hit",
+            "sea": 234.032500415523,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              234.03225041552327,
+              234.03275041552274
+            ],
+            "enclosureKm": 0.0005000000000163011,
+            "certifiedPrefixEnd": 234.03225041552327,
+            "witness": {
+              "t": 234.03275041552274,
+              "clearance": -2.3767252059769817e-06,
+              "upperClearance": -2.3757252059769816e-06
+            },
+            "search": [
+              234.03250041552303,
+              234.03275041552274
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4535
+          }
+        },
+        {
+          "name": "coastal-horizon-11-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 222.83202056268564
+          },
+          "current": {
+            "name": "coastal-horizon-11-13",
+            "status": "hit",
+            "sea": 222.83202056268564,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              222.83177056268005,
+              222.83227056269124
+            ],
+            "enclosureKm": 0.0005000000000074177,
+            "certifiedPrefixEnd": 222.83177056268005,
+            "witness": {
+              "t": 222.83227056269124,
+              "clearance": -2.9467464628396556e-06,
+              "upperClearance": -2.9457464628396555e-06
+            },
+            "search": [
+              222.8320205626857,
+              222.83227056269124
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4537
+          }
+        },
+        {
+          "name": "coastal-horizon-16-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 206.74610176287402
+          },
+          "current": {
+            "name": "coastal-horizon-16-13",
+            "status": "hit",
+            "sea": 206.74610176287402,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              206.74585176287468,
+              206.74635176287336
+            ],
+            "enclosureKm": 0.0005000000000125341,
+            "certifiedPrefixEnd": 206.74585176287468,
+            "witness": {
+              "t": 206.74635176287336,
+              "clearance": -3.83179030905012e-06,
+              "upperClearance": -3.830790309050121e-06
+            },
+            "search": [
+              206.74610176287405,
+              206.74635176287336
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4542
+          }
+        },
+        {
+          "name": "coastal-horizon-31-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 206.74610176287402
+          },
+          "current": {
+            "name": "coastal-horizon-31-13",
+            "status": "hit",
+            "sea": 206.74610176287402,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              206.74585176287468,
+              206.74635176287336
+            ],
+            "enclosureKm": 0.0005000000000125341,
+            "certifiedPrefixEnd": 206.74585176287468,
+            "witness": {
+              "t": 206.74635176287336,
+              "clearance": -3.83179030905012e-06,
+              "upperClearance": -3.830790309050121e-06
+            },
+            "search": [
+              206.74610176287405,
+              206.74635176287336
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4557
+          }
+        },
+        {
+          "name": "coastal-horizon-36-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 222.83202056268564
+          },
+          "current": {
+            "name": "coastal-horizon-36-13",
+            "status": "hit",
+            "sea": 222.83202056268564,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              222.83177056268005,
+              222.83227056269124
+            ],
+            "enclosureKm": 0.0005000000000074177,
+            "certifiedPrefixEnd": 222.83177056268005,
+            "witness": {
+              "t": 222.83227056269124,
+              "clearance": -2.9467464628396556e-06,
+              "upperClearance": -2.9457464628396555e-06
+            },
+            "search": [
+              222.8320205626857,
+              222.83227056269124
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4562
+          }
+        },
+        {
+          "name": "coastal-horizon-38-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 234.032500415523
+          },
+          "current": {
+            "name": "coastal-horizon-38-13",
+            "status": "hit",
+            "sea": 234.032500415523,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              234.03225041552327,
+              234.03275041552274
+            ],
+            "enclosureKm": 0.0005000000000163011,
+            "certifiedPrefixEnd": 234.03225041552327,
+            "witness": {
+              "t": 234.03275041552274,
+              "clearance": -2.3767252059769817e-06,
+              "upperClearance": -2.3757252059769816e-06
+            },
+            "search": [
+              234.03250041552303,
+              234.03275041552274
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4564
+          }
+        },
+        {
+          "name": "coastal-horizon-41-13",
+          "kind": "old-sea-boundary-rounding-miss",
+          "old": {
+            "status": "outer-envelope-miss",
+            "interval": null,
+            "enclosureKm": null,
+            "visits": 0,
+            "heightCalls": 0,
+            "witness": null,
+            "relief": 0,
+            "sea": 269.64202950903245
+          },
+          "current": {
+            "name": "coastal-horizon-41-13",
+            "status": "hit",
+            "sea": 269.64202950903245,
+            "relief": 0,
+            "visits": 0,
+            "heightEvaluations": 2,
+            "discarded": 0,
+            "maxStack": 0,
+            "gradientQueries": 0,
+            "gradientAdvances": 0,
+            "metadataLoads": 0,
+            "errorScale": 1,
+            "roundingQualified": false,
+            "interval": [
+              269.64177950903104,
+              269.64227950903387
+            ],
+            "enclosureKm": 0.0004999999999617321,
+            "certifiedPrefixEnd": 269.64177950903104,
+            "witness": {
+              "t": 269.64227950903387,
+              "clearance": -7.577873475383967e-07,
+              "upperClearance": -7.567873475383967e-07
+            },
+            "search": [
+              269.6420295090325,
+              269.64227950903387
+            ],
+            "seaOnly": true,
+            "group": "coastal-horizon",
+            "index": 4567
+          }
+        }
+      ],
+      "verification": {
+        "rectangleCount": 345,
+        "samples": 3105,
+        "gradientSamples": 3105,
+        "metadataSamples": 10240,
+        "ledgerMaxRatio": 0.18543024531878854,
+        "failures": [],
+        "failureCount": 0,
+        "finiteQualified": true,
+        "universalHostCertificate": false
+      }
+    }
+  ],
+  "regressions": {
+    "rows": [
+      {
+        "name": "documented-six-pass-failure",
+        "scale": 0.5,
+        "status": "hit",
+        "physicalIntervalKm": [
+          23.13730060282915,
+          23.13793821560233
+        ],
+        "heightEvaluations": 10,
+        "seaOnly": false
+      },
+      {
+        "name": "documented-six-pass-failure",
+        "scale": 1,
+        "status": "hit",
+        "physicalIntervalKm": [
+          23.137300602011972,
+          23.137938215232854
+        ],
+        "heightEvaluations": 10,
+        "seaOnly": false
+      },
+      {
+        "name": "documented-six-pass-failure",
+        "scale": 2,
+        "status": "hit",
+        "physicalIntervalKm": [
+          23.137300600380076,
+          23.13793821449563
+        ],
+        "heightEvaluations": 10,
+        "seaOnly": false
+      },
+      {
+        "name": "profile-reachable-level-ray",
+        "scale": 0.5,
+        "status": "hit",
+        "physicalIntervalKm": [
+          22.165558637570918,
+          22.16609310322274
+        ],
+        "heightEvaluations": 11,
+        "seaOnly": false
+      },
+      {
+        "name": "profile-reachable-level-ray",
+        "scale": 1,
+        "status": "hit",
+        "physicalIntervalKm": [
+          22.16555863593078,
+          22.1660931020837
+        ],
+        "heightEvaluations": 11,
+        "seaOnly": false
+      },
+      {
+        "name": "profile-reachable-level-ray",
+        "scale": 2,
+        "status": "hit",
+        "physicalIntervalKm": [
+          22.165558632646693,
+          22.166093099802925
+        ],
+        "heightEvaluations": 11,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x-16-dy0",
+        "scale": 0.5,
+        "status": "hit",
+        "physicalIntervalKm": [
+          4.751117919697155,
+          4.75209935285553
+        ],
+        "heightEvaluations": 60,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x-16-dy0",
+        "scale": 1,
+        "status": "hit",
+        "physicalIntervalKm": [
+          4.751117919697155,
+          4.75209935285553
+        ],
+        "heightEvaluations": 60,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x-16-dy0",
+        "scale": 2,
+        "status": "hit",
+        "physicalIntervalKm": [
+          4.751117919697155,
+          4.75209935285553
+        ],
+        "heightEvaluations": 60,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x-16-dy0.02",
+        "scale": 0.5,
+        "status": "hit",
+        "physicalIntervalKm": [
+          5.495361936390807,
+          5.495998001804087
+        ],
+        "heightEvaluations": 13,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x-16-dy0.02",
+        "scale": 1,
+        "status": "hit",
+        "physicalIntervalKm": [
+          5.495361935096257,
+          5.495998001086223
+        ],
+        "heightEvaluations": 13,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x-16-dy0.02",
+        "scale": 2,
+        "status": "hit",
+        "physicalIntervalKm": [
+          5.495361932509718,
+          5.495997999647871
+        ],
+        "heightEvaluations": 13,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x-16-dy0.05",
+        "scale": 0.5,
+        "status": "hit",
+        "physicalIntervalKm": [
+          6.512445708455483,
+          6.513327234473408
+        ],
+        "heightEvaluations": 10,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x-16-dy0.05",
+        "scale": 1,
+        "status": "hit",
+        "physicalIntervalKm": [
+          6.512445707051136,
+          6.513327233728389
+        ],
+        "heightEvaluations": 10,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x-16-dy0.05",
+        "scale": 2,
+        "status": "hit",
+        "physicalIntervalKm": [
+          6.512445704245127,
+          6.51332723224095
+        ],
+        "heightEvaluations": 10,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x-8-dy0",
+        "scale": 0.5,
+        "status": "miss",
+        "heightEvaluations": 3,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x-8-dy0",
+        "scale": 1,
+        "status": "miss",
+        "heightEvaluations": 3,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x-8-dy0",
+        "scale": 2,
+        "status": "miss",
+        "heightEvaluations": 3,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x-8-dy0.02",
+        "scale": 0.5,
+        "status": "miss",
+        "heightEvaluations": 2,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x-8-dy0.02",
+        "scale": 1,
+        "status": "miss",
+        "heightEvaluations": 2,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x-8-dy0.02",
+        "scale": 2,
+        "status": "miss",
+        "heightEvaluations": 2,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x-8-dy0.05",
+        "scale": 0.5,
+        "status": "miss",
+        "heightEvaluations": 2,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x-8-dy0.05",
+        "scale": 1,
+        "status": "miss",
+        "heightEvaluations": 2,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x-8-dy0.05",
+        "scale": 2,
+        "status": "miss",
+        "heightEvaluations": 2,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x0-dy0",
+        "scale": 0.5,
+        "status": "hit",
+        "physicalIntervalKm": [
+          4.279921325059224,
+          4.280639952426512
+        ],
+        "heightEvaluations": 16,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x0-dy0",
+        "scale": 1,
+        "status": "hit",
+        "physicalIntervalKm": [
+          4.279921323490817,
+          4.280639951363243
+        ],
+        "heightEvaluations": 16,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x0-dy0",
+        "scale": 2,
+        "status": "hit",
+        "physicalIntervalKm": [
+          4.27992132036221,
+          4.280639949239778
+        ],
+        "heightEvaluations": 16,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x0-dy0.02",
+        "scale": 0.5,
+        "status": "hit",
+        "physicalIntervalKm": [
+          4.745872688082477,
+          4.746332228744578
+        ],
+        "heightEvaluations": 10,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x0-dy0.02",
+        "scale": 1,
+        "status": "hit",
+        "physicalIntervalKm": [
+          4.745872686303285,
+          4.746332227583636
+        ],
+        "heightEvaluations": 10,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x0-dy0.02",
+        "scale": 2,
+        "status": "hit",
+        "physicalIntervalKm": [
+          4.745872682753903,
+          4.746332225266034
+        ],
+        "heightEvaluations": 10,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x0-dy0.05",
+        "scale": 0.5,
+        "status": "hit",
+        "physicalIntervalKm": [
+          5.250111004550082,
+          5.250820971112334
+        ],
+        "heightEvaluations": 10,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x0-dy0.05",
+        "scale": 1,
+        "status": "hit",
+        "physicalIntervalKm": [
+          5.250111002630583,
+          5.25082096981897
+        ],
+        "heightEvaluations": 10,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x0-dy0.05",
+        "scale": 2,
+        "status": "hit",
+        "physicalIntervalKm": [
+          5.25011099880392,
+          5.250820967242648
+        ],
+        "heightEvaluations": 10,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x8-dy0",
+        "scale": 0.5,
+        "status": "hit",
+        "physicalIntervalKm": [
+          11.994301748092399,
+          11.995001752215021
+        ],
+        "heightEvaluations": 11,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x8-dy0",
+        "scale": 1,
+        "status": "hit",
+        "physicalIntervalKm": [
+          11.994301746442149,
+          11.995001751075346
+        ],
+        "heightEvaluations": 11,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x8-dy0",
+        "scale": 2,
+        "status": "hit",
+        "physicalIntervalKm": [
+          11.994301743125009,
+          11.995001748779377
+        ],
+        "heightEvaluations": 11,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x8-dy0.02",
+        "scale": 0.5,
+        "status": "hit",
+        "physicalIntervalKm": [
+          13.036979602760667,
+          13.03744817844212
+        ],
+        "heightEvaluations": 10,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x8-dy0.02",
+        "scale": 1,
+        "status": "hit",
+        "physicalIntervalKm": [
+          13.036979601469847,
+          13.037448177686711
+        ],
+        "heightEvaluations": 10,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x8-dy0.02",
+        "scale": 2,
+        "status": "hit",
+        "physicalIntervalKm": [
+          13.036979598874732,
+          13.037448176174228
+        ],
+        "heightEvaluations": 10,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x8-dy0.05",
+        "scale": 0.5,
+        "status": "hit",
+        "physicalIntervalKm": [
+          13.810041077615452,
+          13.810755931181726
+        ],
+        "heightEvaluations": 9,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x8-dy0.05",
+        "scale": 1,
+        "status": "hit",
+        "physicalIntervalKm": [
+          13.810041076316914,
+          13.810755930413448
+        ],
+        "heightEvaluations": 9,
+        "seaOnly": false
+      },
+      {
+        "name": "low-x8-dy0.05",
+        "scale": 2,
+        "status": "hit",
+        "physicalIntervalKm": [
+          13.810041073717944,
+          13.810755928875762
+        ],
+        "heightEvaluations": 9,
+        "seaOnly": false
+      },
+      {
+        "name": "far-sea-relief-zero",
+        "scale": 0.5,
+        "status": "hit",
+        "physicalIntervalKm": [
+          210.40816161598178,
+          210.40866161598177
+        ],
+        "heightEvaluations": 2,
+        "seaOnly": true
+      },
+      {
+        "name": "far-sea-relief-zero",
+        "scale": 1,
+        "status": "hit",
+        "physicalIntervalKm": [
+          210.40816161598178,
+          210.40866161598177
+        ],
+        "heightEvaluations": 2,
+        "seaOnly": true
+      },
+      {
+        "name": "far-sea-relief-zero",
+        "scale": 2,
+        "status": "hit",
+        "physicalIntervalKm": [
+          210.40816161598178,
+          210.40866161598177
+        ],
+        "heightEvaluations": 2,
+        "seaOnly": true
+      }
+    ],
+    "failureCount": 0,
+    "failures": []
+  },
+  "builderWork": {
+    "gradient": {
+      "noiseQueries": 1309692,
+      "cells": 3213310,
+      "arithmeticCells": 1606623,
+      "globalFallbacks": 13534,
+      "metadataQueries": 109141
+    },
+    "height": {
+      "rectQueries": 109141,
+      "noiseQueries": 654846,
+      "noiseCells": 1602047,
+      "hashCalls": 6408188,
+      "globalNoiseFallbacks": 6753,
+      "coastUnknown": 11445,
+      "cacheHits": 0
+    },
+    "centerEvaluations": 109141
+  }
+}
