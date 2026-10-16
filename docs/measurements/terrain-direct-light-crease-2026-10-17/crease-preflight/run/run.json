@@ -1,0 +1,8 @@
+{
+  "exitCode": 0,
+  "childCpuSeconds": 2.592691,
+  "totalWallSeconds": 2.1613961670082062,
+  "terminalChildPeakRssBytes": 962772992,
+  "scope": "One actual fixed45degree crease model. Terminal macOS peakRSS is an acceptance gate, not an OS memory cap. No retry or GPU.",
+  "gatePass": true
+}

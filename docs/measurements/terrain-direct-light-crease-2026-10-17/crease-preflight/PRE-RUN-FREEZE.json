@@ -1,0 +1,10 @@
+{
+  "sourceManifestSHA256": "29eaff2a03326ee82857e2bccffaf75baf393d1c517343b049fc259dffd7c62c",
+  "witnessSHA256": "0020285e1c0ae67f8ffc6190e63073e086159d7ce1897ca2fa73f4049bfb2b75",
+  "limits": {
+    "childCpuSeconds": 20,
+    "totalWallSeconds": 40,
+    "terminalChildPeakRssBytes": 2147483648
+  },
+  "scope": "One actual fixed45degree crease model. Terminal macOS peakRSS is an acceptance gate, not an OS memory cap. No retry or GPU."
+}

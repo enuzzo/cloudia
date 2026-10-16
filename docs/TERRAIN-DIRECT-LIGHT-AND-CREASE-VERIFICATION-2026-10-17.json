@@ -1,0 +1,10 @@
+{
+  "status": "PASS_SAVED_EVIDENCE_ONLY",
+  "scope": "Saved file hashes, recorded source/bit/corner/PNG/stop-rule invariants; no model, browser, GPU, FPS or artistic replay.",
+  "payloadFiles": 70,
+  "payloadBytes": 4247402,
+  "manifestSHA256": "9b3734e6e7e15efa8ab3a1ad6f739a615d30b85b238accfba1ca418df89813c7",
+  "productSourceFilesUnchanged": 126,
+  "candidateVisualVerdict": "FAIL_NO_USEFUL_VISUAL_IMPROVEMENT",
+  "elapsedSeconds": 0.01381749997381121
+}

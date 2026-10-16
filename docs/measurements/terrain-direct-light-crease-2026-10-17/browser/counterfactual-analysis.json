@@ -1,0 +1,198 @@
+{
+  "status": "PASS_SELECTED_COUNTERFACTUAL",
+  "scope": "At12fixed pixels, removing only direct cast-shadow attenuation does not change linear RGB even by one float32 bit. This does not isolate remaining normals/albedo/ambient/water subcauses or establish whole-patch/whole-terrain quality.",
+  "rows": [
+    {
+      "id": "L1-artifact",
+      "ordinaryMatchesPriorGpuBits": true,
+      "liveEqualsForcedLitBits": true,
+      "alphaIdentical": true,
+      "deltaRGB": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "L1-control",
+      "ordinaryMatchesPriorGpuBits": true,
+      "liveEqualsForcedLitBits": true,
+      "alphaIdentical": true,
+      "deltaRGB": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "L2-artifact",
+      "ordinaryMatchesPriorGpuBits": true,
+      "liveEqualsForcedLitBits": true,
+      "alphaIdentical": true,
+      "deltaRGB": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "L2-control",
+      "ordinaryMatchesPriorGpuBits": true,
+      "liveEqualsForcedLitBits": true,
+      "alphaIdentical": true,
+      "deltaRGB": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "L3-artifact",
+      "ordinaryMatchesPriorGpuBits": true,
+      "liveEqualsForcedLitBits": true,
+      "alphaIdentical": true,
+      "deltaRGB": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "L3-control",
+      "ordinaryMatchesPriorGpuBits": true,
+      "liveEqualsForcedLitBits": true,
+      "alphaIdentical": true,
+      "deltaRGB": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "C1-ocean",
+      "ordinaryMatchesPriorGpuBits": true,
+      "liveEqualsForcedLitBits": true,
+      "alphaIdentical": true,
+      "deltaRGB": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "C2-coastal-lowland",
+      "ordinaryMatchesPriorGpuBits": true,
+      "liveEqualsForcedLitBits": true,
+      "alphaIdentical": true,
+      "deltaRGB": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "C3-plain",
+      "ordinaryMatchesPriorGpuBits": true,
+      "liveEqualsForcedLitBits": true,
+      "alphaIdentical": true,
+      "deltaRGB": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "C4-ridge-L1",
+      "ordinaryMatchesPriorGpuBits": true,
+      "liveEqualsForcedLitBits": true,
+      "alphaIdentical": true,
+      "deltaRGB": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "C5-ridge-L2",
+      "ordinaryMatchesPriorGpuBits": true,
+      "liveEqualsForcedLitBits": true,
+      "alphaIdentical": true,
+      "deltaRGB": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "C6-ridge-L3",
+      "ordinaryMatchesPriorGpuBits": true,
+      "liveEqualsForcedLitBits": true,
+      "alphaIdentical": true,
+      "deltaRGB": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "ids": [
+        "L1-artifact",
+        "L1-control"
+      ],
+      "liveContrast": [
+        -0.0018275976181030273,
+        -0.001362876035273075,
+        -0.0015942342579364777
+      ],
+      "forcedLitContrast": [
+        -0.0018275976181030273,
+        -0.001362876035273075,
+        -0.0015942342579364777
+      ]
+    },
+    {
+      "ids": [
+        "L2-artifact",
+        "L2-control"
+      ],
+      "liveContrast": [
+        0.008866049349308014,
+        0.00816476158797741,
+        0.004704676568508148
+      ],
+      "forcedLitContrast": [
+        0.008866049349308014,
+        0.00816476158797741,
+        0.004704676568508148
+      ]
+    },
+    {
+      "ids": [
+        "L3-artifact",
+        "L3-control"
+      ],
+      "liveContrast": [
+        -0.0002622921019792557,
+        -0.00034269876778125763,
+        -0.0002980520948767662
+      ],
+      "forcedLitContrast": [
+        -0.0002622921019792557,
+        -0.00034269876778125763,
+        -0.0002980520948767662
+      ]
+    }
+  ],
+  "pngIdentity": {
+    "mime": "image/png",
+    "width": 2474,
+    "height": 1844,
+    "byteLength": 2909134,
+    "sha256": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d"
+  },
+  "cacheSubmissionsUnchanged": true,
+  "elapsedMs": 38.800000071525574,
+  "benchmark": false
+}

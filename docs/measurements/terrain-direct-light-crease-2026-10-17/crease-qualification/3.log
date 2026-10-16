@@ -1,0 +1,27 @@
+
+> cloudia@0.0.0 build
+> tsc && vite build
+
+vite v7.3.3 building client environment for production...
+transforming...
+✓ 63 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                     0.91 kB │ gzip:   0.46 kB
+dist/assets/sky.worker-CHm7n211.js                  2.96 kB
+dist/assets/volume.worker-hwcdNjE7.js              17.13 kB
+dist/assets/render.worker-Dv_a4xnq.js           1,037.57 kB
+dist/assets/liguria-apuane-dem-CFgFyJza.bin     4,202.53 kB
+dist/assets/liguria-apuane-cover-DuNIvzuH.bin  12,582.94 kB
+dist/assets/index-Cia3ypEr.css                      1.25 kB │ gzip:   0.65 kB
+dist/assets/CumulonimbusApp-osTNbneS.css           13.51 kB │ gzip:   3.42 kB
+dist/assets/index-DNbbq9Sv.js                       2.84 kB │ gzip:   1.37 kB │ map:     1.56 kB
+dist/assets/three.core-DxR5k0T0.js                195.51 kB │ gzip:  50.05 kB │ map: 1,858.62 kB
+dist/assets/LabApp-BIVQGmZd.js                    405.93 kB │ gzip: 100.80 kB │ map: 1,146.78 kB
+dist/assets/CumulonimbusApp-5odA8JPK.js           887.92 kB │ gzip: 257.87 kB │ map: 3,971.14 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 2.71s

@@ -1,0 +1,21 @@
+{
+  "scope": "One fixed45degree edge-connected normal trial; no angle sweep or terrain displacement. Native2474x1844, seed74,t60,Sun,full256/128/384, same fixed camera as90641 baseline.",
+  "sourceManifestSHA256": "29eaff2a03326ee82857e2bccffaf75baf393d1c517343b049fc259dffd7c62c",
+  "baselinePNG": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d",
+  "primaryROI": [
+    0,
+    560,
+    1000,
+    1000
+  ],
+  "secondaryROI": [
+    700,
+    540,
+    1030,
+    780
+  ],
+  "pass": "Visible incremental improvement in ridge/rock definition without triangular/diagonal faceting or new visual seams; not a global photorealism pass.",
+  "failStop": "On root or independent native FAIL/no useful change: no angle fitting, worker, rain/sunset or FPS expansion; retain v59.",
+  "preflight": "PASS all3547650 corners preserve position/surface bits; original base geometry hashes and input buffers unchanged; helper output594082vertices/1182550triangles,73408added geometry bytes.",
+  "qualifications": "90targeted and443full tests, APP->hero/typecheck passed; static independent core review no blocker."
+}

@@ -1,0 +1,26 @@
+{
+  "ownedDiagnosticServers": [
+    {
+      "port": 53773,
+      "session": 37499,
+      "finalExitCode": 0
+    },
+    {
+      "port": 53774,
+      "session": 49393,
+      "finalExitCode": 0
+    }
+  ],
+  "ordinaryPreview": {
+    "url": "http://localhost:4196/?seed=74",
+    "runtime": "v59",
+    "state": "Sun animated, native2474x1844,full256/128/384,observed console empty"
+  },
+  "unrelatedPreserved": [
+    "node_modules 2/",
+    "TCP4201"
+  ],
+  "productSourceUnchanged": 126,
+  "dependencyInstall": false,
+  "stopRule": "Crease native FAIL: no sweep, worker,rain,sunset,motion or FPS expansion."
+}

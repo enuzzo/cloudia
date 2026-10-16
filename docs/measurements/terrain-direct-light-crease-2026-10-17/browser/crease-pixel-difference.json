@@ -1,0 +1,13 @@
+{
+  "scope": "8bit native PNG pixel differences only, not linear target values, quality acceptance or FPS.",
+  "changedPixels": 78711,
+  "totalPixels": 4562056,
+  "changedFraction": 0.017253405043690828,
+  "maximumByteChannelDelta": 20,
+  "boundingBox": [
+    0,
+    28,
+    2474,
+    1389
+  ]
+}

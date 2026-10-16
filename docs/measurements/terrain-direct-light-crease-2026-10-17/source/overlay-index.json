@@ -1,0 +1,25 @@
+{
+  "counterfactual": {
+    "sourceFiles": 128,
+    "ancestor": "parent-fragment-manifest.json",
+    "changedOrAdded": [
+      "src/cumulonimbus/CumulonimbusApp.ts",
+      "src/cumulonimbus/GPUSceneEngine.ts",
+      "src/cumulonimbus/TerrainShadow.test.ts",
+      "src/cumulonimbus/lifecycle.test.ts",
+      "src/cumulonimbus/sceneMarkup.ts",
+      "src/cumulonimbus/terrainMesh.ts"
+    ]
+  },
+  "crease": {
+    "sourceFiles": 128,
+    "ancestor": "base-manifest.json",
+    "changedOrAdded": [
+      "src/cumulonimbus/GPUSceneEngine.ts",
+      "src/cumulonimbus/lifecycle.test.ts",
+      "src/cumulonimbus/terrainCreaseNormals.test.ts",
+      "src/cumulonimbus/terrainCreaseNormals.ts",
+      "src/cumulonimbus/terrainMesh.ts"
+    ]
+  }
+}

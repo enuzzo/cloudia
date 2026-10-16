@@ -1,0 +1,129 @@
+{
+  "scope": "One actual v59 base mesh build and fixed45degree crease pass. All triangle corners compared bitwise for position/surface; no new DEM fitting, renderer/GPU/FPS proof.",
+  "base": {
+    "stats": {
+      "vertices": 591788,
+      "triangles": 1182550,
+      "stitchedCells": 4096,
+      "levels": 9,
+      "cellsPerSide": 256,
+      "baseSpacingKm": 0.032,
+      "outerExtentKm": 1048.576,
+      "geometryBytes": 33127816,
+      "sampleCalls": 1183149,
+      "minimumHeightKm": 0,
+      "maximumHeightKm": 3.0260982513427734,
+      "normalBlendStartRadiusKm": 32.768,
+      "normalBlendEndRadiusKm": 65.536,
+      "normalMode": "geometry",
+      "refinement": {
+        "originalVertices": 465409,
+        "originalTriangles": 929792,
+        "probeSampleCalls": 591361,
+        "vertexSampleCalls": 591788,
+        "totalSampleCalls": 1183149,
+        "nodesAboveThreshold": 209659,
+        "eligibleNodesAboveThreshold": 209488,
+        "markedRedFaces": 69833,
+        "greenFaces": 21853,
+        "splitEdgeCount": 126379,
+        "addedVertices": 126379,
+        "addedTriangles": 252758,
+        "addedGeometryBytes": 7077224,
+        "sourceSpacingKm": 0.125,
+        "maxErrorKm": 0.005,
+        "sourceGrid": {
+          "minXKm": -64,
+          "minZKm": -64,
+          "spacingKm": 0.125,
+          "columns": 1025,
+          "rows": 1025
+        },
+        "selectionDomain": {
+          "minXKm": -48,
+          "maxXKm": 48,
+          "minZKm": -48,
+          "maxZKm": 48
+        },
+        "selectedNodeColumns": 769,
+        "selectedNodeRows": 769,
+        "originalFacesBySplitEdgeCount": [
+          838106,
+          7390,
+          7520,
+          76776
+        ],
+        "maximumCellTriangles": 20,
+        "cellTriangleCountBytes": 589824,
+        "midpointVerticesOutsideDomain": 405,
+        "boundsKm": {
+          "min": [
+            -1048.5760498046875,
+            -178.98373413085938,
+            -1048.5760498046875
+          ],
+          "max": [
+            1048.5760498046875,
+            -1.675218939781189,
+            1048.5760498046875
+          ]
+        }
+      }
+    },
+    "positionSHA256": "4c7e3f0b92c294850dad4014d3c260e0cb922ba5ade13a952722240a2e5ecc64",
+    "normalSHA256": "3cb820d4d203c89f61e8e26809ddbdcd2f8ce2645dce0842b758a1b0ea6dcbfd",
+    "surfaceSHA256": "7595b45c14d4d249df98d99145fcaa485b21d62e419764b99ce4fedc780c76f2",
+    "indexSHA256": "87e1b8d5b569577c291efefb1698ca66b657ecb3f9c73dcf6ddc73316a1030ae"
+  },
+  "output": {
+    "stats": {
+      "algorithm": "indexed-edge-connected-area-weighted-v1",
+      "angleDegrees": 45,
+      "inputVertices": 591788,
+      "outputVertices": 594082,
+      "addedVertices": 2294,
+      "triangles": 1182550,
+      "corners": 3547650,
+      "splitSourceVertices": 1965,
+      "singleGroupVertices": 589823,
+      "unusedVertices": 0,
+      "maximumIncidentFaces": 11,
+      "maximumGroups": 4,
+      "vertexPairTests": 8890523,
+      "edgeEndpointPairs": 3546626,
+      "smoothEdgeEndpointPairs": 3537592,
+      "sharpEdgeEndpointPairs": 9034,
+      "inputGeometryBytes": 33127816,
+      "outputGeometryBytes": 33201224,
+      "addedGeometryBytes": 73408,
+      "nominalScratchBytes": 56771628,
+      "nominalOutputCapacityBytes": 36590600,
+      "nominalOwnedPeakTypedArrayBytes": 112372852,
+      "limits": {
+        "maxVertices": 700000,
+        "maxTriangles": 1300000,
+        "maxIncidentFaces": 128
+      }
+    },
+    "vertices": 594082,
+    "geometryBytes": 33201224,
+    "positionSHA256": "f3132cf60dc96a1abc879d6a12d37312103b045e783645f79f627042c2224bbb",
+    "normalSHA256": "bb67b21b5214ddc33a50ad5686628791f0acc5d193b379a4651a4142e422d56a",
+    "surfaceSHA256": "64967828d03fbebfe8cb24ab159fa90506a007222437e570b56109e9b1b2f14a",
+    "indexSHA256": "a1ad048b0302e7f9e75b7aaafc1cdef1888293e3009d2b4f89bad5b2e530883d"
+  },
+  "invariants": {
+    "cornerPositionMismatch": 0,
+    "cornerSurfaceMismatch": 0,
+    "nonfiniteNormals": 0,
+    "maxNormalUnitError": 4.127128594433316e-8,
+    "triangleCornersCompared": 3547650,
+    "baseHistoricalHashesExact": true,
+    "inputArraysUnchanged": true
+  },
+  "elapsedMs": {
+    "build": 1568.723792,
+    "crease": 374.353167,
+    "total": 2026.881125
+  }
+}
