@@ -1,0 +1,32 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2272,
+      "sha256": "e3e31156d02279df0ab0a37437cb1ccececd1a85bc16908c89835732748c4efb"
+    },
+    {
+      "path": "original-minimal.tar.gz",
+      "bytes": 154740,
+      "sha256": "6d6a315afc7e8eedb5392f896f554fd0f47433118187f396d95b6be515d51f61"
+    },
+    {
+      "path": "provenance.json",
+      "bytes": 4721,
+      "sha256": "5d1bf2186d3f9e272b4507958d05cd5b98420cdd7a3a024e78255a83f870e98a"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 9701,
+      "sha256": "6bad403b40fc90126ae695063573f725fc87a09bc9d40606e5219faecb71cab2"
+    }
+  ],
+  "payloadCount": 4,
+  "payloadBytes": 171434,
+  "relatedDocument": {
+    "name": "EXPERIMENT-SADDLE-ATTRIBUTION-2026-10-16.md",
+    "bytes": 4834,
+    "sha256": "36ff04d747291ccb9b5e6e7582b8c3d84bb078906886a4367e968f03bb33e3d4",
+    "optionalWhenCopiedWithDependencies": true
+  }
+}

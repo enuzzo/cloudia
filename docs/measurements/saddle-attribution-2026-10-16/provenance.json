@@ -1,0 +1,113 @@
+{
+  "sourceDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle17/saddle-pixel-attribution",
+  "sourceManifestSHA256": "3ea6b4ca0d13caab33e962f71386007f9ee4748480df77f85e46851e8244b98a",
+  "sourceFileCount": 30,
+  "sourcePayloadBytes": 660571,
+  "minimalArchiveMembers": 15,
+  "minimalArchiveBytes": 154740,
+  "minimalArchiveSHA256": "6d6a315afc7e8eedb5392f896f554fd0f47433118187f396d95b6be515d51f61",
+  "dependency": {
+    "relativePath": "../body-bulge-orientation-2026-10-16/original-preflight.tar.gz",
+    "sha256": "f4c39be94a349fdbf976a255242f2e5913b2dd9ea822f994e9dccb12eeb6d791",
+    "bytes": 2786839,
+    "scope": "Required portable dependency inside docs/measurements; no external absolute path needed",
+    "members": [
+      {
+        "originalPath": "input/actual74-layout-and-old-stencils.json.gz",
+        "dependencyMember": "input/layout-and-stencils.json.gz",
+        "bytes": 126599,
+        "sha256": "9b5629e6a9dc063c951e93f0dbd1fedd1b3d99d6d6a914d41015be542523ead5"
+      },
+      {
+        "originalPath": "input/baseline-functions.mjs",
+        "dependencyMember": "input/layout-trace.mjs",
+        "bytes": 32838,
+        "sha256": "d61ac02c4affed756b17a868b976a67d18def02ad9b775e23d46b13b30c6aa48"
+      },
+      {
+        "originalPath": "input/frozen-source/GPUSceneEngine.ts",
+        "dependencyMember": "input/frozen-source/GPUSceneEngine.ts",
+        "bytes": 61272,
+        "sha256": "b829772a51d6e342adfd5e5e2fbb807037ae74d3ba8413ea7078e6962b4334a0"
+      },
+      {
+        "originalPath": "input/frozen-source/camera.ts",
+        "dependencyMember": "input/frozen-source/camera.ts",
+        "bytes": 7127,
+        "sha256": "a7f7b113ee4251454e4f31fd8fa470f131dae3a9bc41ec5cf1d2480871066a69"
+      },
+      {
+        "originalPath": "input/frozen-source/cloudShader.ts",
+        "dependencyMember": "input/frozen-source/cloudShader.ts",
+        "bytes": 15570,
+        "sha256": "652c9514b7dfcee1456d15e9966087b3ff9c6a6ce9741970208cfca3750a248c"
+      },
+      {
+        "originalPath": "input/frozen-source/emptyTraversal.ts",
+        "dependencyMember": "input/frozen-source/emptyTraversal.ts",
+        "bytes": 1624,
+        "sha256": "281a4209f2afc13a63735d6526f954dc93d775972aa1d8ccd6cf46d1677c57d4"
+      },
+      {
+        "originalPath": "input/frozen-source/inclinedShoulder.ts",
+        "dependencyMember": "input/frozen-source/inclinedShoulder.ts",
+        "bytes": 2009,
+        "sha256": "32a844aaacd1de2bde2760da5cc1686693337445e930611cca4a55e3513d8f66"
+      },
+      {
+        "originalPath": "input/frozen-source/light.ts",
+        "dependencyMember": "input/frozen-source/light.ts",
+        "bytes": 3041,
+        "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+      },
+      {
+        "originalPath": "input/frozen-source/motion.ts",
+        "dependencyMember": "input/frozen-source/motion.ts",
+        "bytes": 7238,
+        "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+      },
+      {
+        "originalPath": "input/frozen-source/motionField.ts",
+        "dependencyMember": "input/frozen-source/motionField.ts",
+        "bytes": 2639,
+        "sha256": "d8817eb9d90a70ee975eea89d2c2fca6d9c6783280bea810fdf76cff2b2d4d8a"
+      },
+      {
+        "originalPath": "input/frozen-source/sun.ts",
+        "dependencyMember": "input/frozen-source/sun.ts",
+        "bytes": 397,
+        "sha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc"
+      },
+      {
+        "originalPath": "input/frozen-source/volume.ts",
+        "dependencyMember": "input/frozen-source/volume.ts",
+        "bytes": 27243,
+        "sha256": "a53410c45b04143710cffd098b6a33deade3242c66ecf7eecc6405a214a93b00"
+      },
+      {
+        "originalPath": "input/original-audit-pixels.mjs",
+        "dependencyMember": "input/audit-pixels.mjs",
+        "bytes": 20527,
+        "sha256": "b4b319cec179d73055f1cbafcabff4251818971d2ebc2cb60b480eb6a88e24c2"
+      },
+      {
+        "originalPath": "input/previous-r1-manifest.json",
+        "dependencyMember": "evidence-manifest.json",
+        "bytes": 5119,
+        "sha256": "bbe77a96bbb591f0e5e8b902d2b8c95c4596508b4e0416ac62c2b8b667ba763e"
+      },
+      {
+        "originalPath": "input/previous-r1-results.json.gz",
+        "dependencyMember": "probe-results.json.gz",
+        "bytes": 47493,
+        "sha256": "8b114f01e29db0127c597ca4ead75d981d2c7cd3b4dd18f3f674e3dcb87a91a5"
+      },
+      {
+        "originalPath": "input/prior-native-support.json",
+        "dependencyMember": "input/prior-native-support.json",
+        "bytes": 833,
+        "sha256": "ffc2206ac8027093b9c3426feecbe75406cf69baf28a8a59ff72d793cfb9c23d"
+      }
+    ]
+  }
+}
