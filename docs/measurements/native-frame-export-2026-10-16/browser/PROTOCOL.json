@@ -1,0 +1,103 @@
+{
+  "sourceManifestSHA256": "8dce2ed7a5843104c3b606c4223435d69408d43739712b1f722c7a1fa8a348f2",
+  "seed": 74,
+  "simulationTime": 60,
+  "paused": true,
+  "wind": 0.55,
+  "dispersion": 0,
+  "quality": "ultra",
+  "volume": [
+    256,
+    256,
+    256
+  ],
+  "detail": [
+    128,
+    128,
+    128
+  ],
+  "nominalSteps": 384,
+  "flow": "full",
+  "comparisonSurfaceKm": 0.7227685139973958,
+  "comparisonTargetKm": [
+    0.3515625,
+    3.119140625,
+    -0.0546875
+  ],
+  "poses": [
+    {
+      "name": "main74-near60-sun-1280x720",
+      "thread": "main",
+      "output": [
+        1280,
+        720
+      ],
+      "approach": 0.6,
+      "yaw": 0,
+      "pitch": 0,
+      "weather": "clear"
+    },
+    {
+      "name": "main74-near60-sun-native",
+      "thread": "main",
+      "output": [
+        2474,
+        1844
+      ],
+      "approach": 0.6,
+      "yaw": 0,
+      "pitch": 0,
+      "weather": "clear"
+    },
+    {
+      "name": "main74-near95-sun-native",
+      "thread": "main",
+      "output": [
+        2474,
+        1844
+      ],
+      "approach": 0.95,
+      "yaw": 0,
+      "pitch": 0,
+      "weather": "clear"
+    },
+    {
+      "name": "main74-rain-terrain-native",
+      "thread": "main",
+      "output": [
+        2474,
+        1844
+      ],
+      "approach": 0,
+      "yawArrowLeftPresses": 14,
+      "pitchArrowDownPresses": 3,
+      "weather": "rain"
+    },
+    {
+      "name": "worker74-near60-sun-native",
+      "thread": "worker",
+      "output": [
+        2474,
+        1844
+      ],
+      "approach": 0.6,
+      "yaw": 0,
+      "pitch": 0,
+      "weather": "clear"
+    }
+  ],
+  "transport": "Only intentional visible metadata/part textareas, Next button/counter. Concatenate all parts before base64 decode; validate captureId stable, lengths, PNG SHA/IHDR before saving. Decode and visually inspect saved files separately. No hidden engine access.",
+  "guards": [
+    "clear empties data and enables new capture after true completion",
+    "ordinary controls absent",
+    "console warn/error checks",
+    "restore ordinary animated preview at native output"
+  ],
+  "scope": "Canvas bitmap only. No native/HDR float buffer or compositor claim. No art acceptance from hashes, no causal performance claim. First R1 truncated transfer rejected without PNG saved.",
+  "amendmentBeforeSixthCapture": {
+    "reason": "Independent native review identifies geometric dark patches on foreground left ridges. Capture same rain-terrain pose in settled Sun before attributing shadow/mesh cause.",
+    "capture": "main74-sun-terrain-native",
+    "fpsClaim": false,
+    "cameraDifferenceFromRain": "none planned; preset alone changes"
+  }
+}

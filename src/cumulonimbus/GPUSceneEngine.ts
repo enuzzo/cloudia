@@ -28,6 +28,9 @@ import {TimestampBatchMeasurement,type TimestampDrawCounters} from './timestampB
 import type {RenderHost,Viewport,RenderEvent} from './renderProtocol';
 import type {NarrowCloudVolume} from './narrowCloud';
 import {readDensityR8,type DensityR8Packet} from './densityR8';
+import {NativeFrameExporter,type NativeFrameExportEvent} from './nativeFrameExport';
+
+const RENDERER_VERSION='observatory-v57-native-frame-export';
 
 export const QUALITY = {
   native: {label:'Alta · 100% / 128 passi', scale:1, steps:128},
@@ -112,6 +115,9 @@ export class GPUSceneEngine {
   private benchmarkGeneration=0;
   private benchmarkContext: Record<string, unknown> = {};
   private report: Record<string, unknown> | null = null;
+  private readonly frameExporter:NativeFrameExporter|null;
+  private frameExportDisplayRequest:number|null=null;
+  private frameDrawSerial=0;
   private quality: Quality = 'ultra';
   private outputMode = 'screen';
   private outputWidth = 0;
@@ -196,6 +202,7 @@ export class GPUSceneEngine {
     this.diagnosticName=params.get('ablation')??'full';
     if(params.has('seed')&&Number.isInteger(requested)&&requested>=0&&requested<=0xffffffff) this.seed=requested;
     this.profiling=params.get('profile')==='1';this.comparisonSurface=comparisonSurfaceDistance(host.search);this.comparisonTarget=comparisonCameraTarget(host.search);this.timingMode=params.get('timing')??'stages';this.frozenFlow=params.get('flow')==='frozen';
+    this.frameExporter=this.profiling?new NativeFrameExporter(this.onFrameExport,()=>this.refreshFrameExportAvailability()):null;
     this.diagnostic.value=this.profiling?Math.max(0,['full','density','cache','no-flow','no-detail','no-flash'].indexOf(this.diagnosticName)):0;
     this.frameLimit=[1,2].includes(Number(params.get('inflight')))?Number(params.get('inflight')):0;
     this.viewport={...host.viewport};this.visible=host.visible;
@@ -222,7 +229,7 @@ export class GPUSceneEngine {
         if(this.destroyed || this.releasingGPU) return;
         originalDeviceLost(info);
         if(this.deviceLost) return;
-        this.deviceLost=true; this.ready=false; cancelAnimationFrame(this.raf);
+        this.deviceLost=true; this.ready=false; this.frameExporter?.dispose();cancelAnimationFrame(this.raf);
         this.worker?.terminate(); this.worker=null;
         this.rejectVolume?.(new Error('Connessione alla GPU persa')); this.rejectVolume=null;
         this.invalidate('Connessione alla GPU persa');
@@ -258,6 +265,7 @@ export class GPUSceneEngine {
       this.emit({type:'statusState',state:'loaded'});
       this.setButtonEnabled('benchmark',true); this.setButtonEnabled('sustained',true);
       this.setButtonEnabled('new-cloud',true);this.setButtonEnabled('family',true);this.emit({type:'ready'});
+      this.refreshFrameExportAvailability();
       this.previous=0;
       if(!!this.visible) this.raf=requestAnimationFrame(this.frame);
     } catch(error) {
@@ -347,6 +355,7 @@ export class GPUSceneEngine {
   private async newCloud(family?:number) {
     if(!this.ready) return;
     this.clearStorm();this.invalidate('Nuova nube'); this.ready=false;this.regenerating=true;
+    this.refreshFrameExportAvailability();
     this.setButtonEnabled('family',false);this.setButtonEnabled('new-cloud',false); this.setButtonEnabled('benchmark',false); this.setButtonEnabled('sustained',false);
     this.emit({type:'statusState',state:'loading'}); this.text('status','Formazione di una nuova nube…');
     this.seed=nextMorphologySeed(crypto.getRandomValues(new Uint32Array(1))[0],this.seed,family);
@@ -362,6 +371,7 @@ export class GPUSceneEngine {
       this.previous=0; this.intervals=[]; this.ready=true;
       this.text('status',`WebGPU · volume ${VOLUME_RESOLUTION}³ · movimento lento`); this.emit({type:'statusState',state:'loaded'});
       this.setButtonEnabled('family',true);this.setButtonEnabled('new-cloud',true); this.setButtonEnabled('benchmark',true); this.setButtonEnabled('sustained',true);
+      this.refreshFrameExportAvailability();
       if(!!this.visible) this.raf=requestAnimationFrame(this.frame);
     } catch(error) {
       if(this.destroyed || this.deviceLost) return;
@@ -489,6 +499,10 @@ export class GPUSceneEngine {
     const renderStart=performance.now();
     this.renderTerrain();
     this.quad.render(this.renderer);
+    if(this.frameExporter){
+      this.frameDrawSerial++;
+      if(this.frameExporter.waiting&&this.frameExportOwnerReady()&&!this.benchmarkActive())this.frameExporter.capture(this.host.canvas,this.frameExportMetadata(now));
+    }
     const drawId=timestampBatch?++this.timestampDrawSerial:0,countersAfter=timestampBatch?this.readTimestampCounters():null;
     const measured=this.measurement;
     let measuredIntervalId:number|null=null,completed=false;
@@ -536,6 +550,73 @@ export class GPUSceneEngine {
       this.frameCompletions.add(completion);
     }
   };
+  private frameExportMetadata(rafTimestamp:number):Record<string,unknown>{
+    const dimensions=(texture:Data3DTexture|null)=>texture?[texture.image.width,texture.image.height,texture.image.depth]:null;
+    return {
+      schemaVersion:1,rendererVersion:RENDERER_VERSION,threeRevision:'186',executionThread:this.host.thread,
+      scope:'Lossless PNG of the canvas bitmap at this submitted draw; excludes page UI, linear/HDR buffers and compositor presentation. Capture is not a performance sample.',
+      uniformScope:'CPU-side values submitted to Three uniforms at this draw; GPU float32 rounding is not read back.',
+      frame:{ownerDrawSerial:this.frameDrawSerial,rafTimestamp,localSnapshotTime:performance.now(),localTimeOrigin:performance.timeOrigin,date:new Date().toISOString(),counterScope:'Frame-loop draw calls in this engine owner, including regeneration draws; not GPU completion or presentation'},
+      ready:this.ready,regenerating:this.regenerating,seed:this.seed,family:morphologyFamily(this.seed),
+      quality:this.quality,nominalSteps:QUALITY[this.quality].steps,stepSizeKm:this.stepSize.value,emptyStepKm:this.emptyStep.value,
+      output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],outputMode:this.outputMode,
+      canvas:[this.host.canvas.width,this.host.canvas.height],viewport:{...this.viewport},
+      rendererOutputColorSpace:this.renderer?.outputColorSpace,rendererToneMapping:this.renderer?.toneMapping,
+      volume:dimensions(this.volume),detailVolume:dimensions(this.detailVolume),motionField:[MOTION_FIELD_SIZE,MOTION_FIELD_SIZE,MOTION_FIELD_SIZE],
+      ablation:this.diagnosticName,ablationCode:this.diagnostic.value,flowMode:this.frozenFlow?'frozen':'full',flowSampled:this.diagnostic.value!==3,flowComputeThisDraw:!this.frozenFlow,
+      densitySampling:this.densitySamplingReport(),narrowCloudSpecialization:this.integratorUsesNarrow?'rain':'dry',
+      camera:{origin:this.origin.value.toArray(),target:this.viewFocus.toArray(),forward:this.forward.value.toArray(),right:this.right.value.toArray(),up:this.up.value.toArray(),
+        yaw:this.view.yaw,pitch:this.view.pitch,approach:this.inspection.value,aspect:this.aspect.value,tanHalfVerticalFov:.2867,
+        comparisonSurfaceKm:this.comparisonSurface,comparisonTargetKm:this.comparisonTarget,probeSkipped:this.comparisonSurface!==null,
+        surfaceEstimateKm:this.comparisonSurface===null?this.approachSurface:null,probe:this.approachProbe,probeAgeMs:this.approachProbe?rafTimestamp-this.approachTime:null,
+        ground:this.ground.value,terrainClearanceKm:CAMERA_TERRAIN_CLEARANCE_KM},
+      clocks:{simulationTime:this.simulationTime,forcingTime:this.forcingTime,weatherTime:this.weatherTime,
+        precipitationUniformTime:this.precipitationTime.value,flowUniformTime:this.flowTime.value,
+        flowFieldTime:this.frozenFlow?this.frozenMotionState?.time??null:this.flowTime.value,
+        flowFieldDispersion:this.frozenFlow?this.frozenMotionState?.dispersion??null:this.forcing.value.x,
+        note:'Precipitation uniform is applied before this frame advances forcingTime. A frozen flow texture retains its installation time/dispersion even while flowUniformTime advances.'},
+      paused:this.paused,orbit:this.orbit,speed:this.speed,
+      material:{growth:this.growth.value.toArray(),drift:this.drift.value.toArray(),wind:this.wind.value.toArray(),forcing:this.forcing.value.toArray(),
+        iceRange:this.iceRange.value.toArray(),seedPhase:this.seedPhase.value,flowFamily:this.flowFamily.value,
+        supportMin:this.supportMin.value.toArray(),supportMax:this.supportMax.value.toArray(),extinctionPerKm:EXTINCTION,iceExtinctionPerKm:ICE_EXTINCTION},
+      weather:{skyIntent:this.skyMode,rain:this.weather.value.z,targetRain:this.weatherState.targetRain,haze:this.weather.value.x,overcast:this.weather.value.y,
+        skyPending:this.skyPending,atmosphereProgress:this.atmosphereProgress,atmosphereBlend:this.atmosphereBlend.value,windStrength:this.windStrength,dispersion:this.forcing.value.x,
+        precipitationBounds:this.rainBounds.value.toArray(),precipitationStepKm:RAIN_SAMPLE_STEP,precipitationExtinctionPerKm:RAIN_EXTINCTION},
+      skyTextures:{requestSerial:this.skyRequest,requestedSide:this.side,
+        from:{uuid:this.skyFromTexture.uuid,version:this.skyFromTexture.version,width:this.skyFromTexture.image.width,height:this.skyFromTexture.image.height,type:this.skyFromTexture.type,colorSpace:this.skyFromTexture.colorSpace},
+        to:{uuid:this.skyTexture.uuid,version:this.skyTexture.version,width:this.skyTexture.image.width,height:this.skyTexture.image.height,type:this.skyTexture.type,colorSpace:this.skyTexture.colorSpace},
+        scope:'Owner-local texture objects and upload revisions; not portable content hashes.'},
+      lighting:{sunDirection:this.sun.value.toArray(),lightSide:this.lightSide.value,sunsetAmount:this.sunsetAmount.value,
+        solarColor:this.solarColor.value.toArray(),ambientColor:this.ambientColor.value.toArray(),flash:this.flash.value.toArray(),
+        flashTop:this.flashTop.value.toArray(),flashBend:this.flashBend.value.toArray(),flashEnd:this.flashEnd.value.toArray(),flashBranch:this.flashBranch.value.toArray(),flashCount:this.flashSerial},
+      terrain:{surfaceId:TERRAIN_DEM_ID,coverId:TERRAIN_COVER_ID,hash:TERRAIN_HASH_ID,verticalExaggeration:1,originDegrees:[44,10],axisX:'west',axisZ:'north'},
+    };
+  }
+  private benchmarkActive(){return !!this.benchmarkCompletion||!!this.measurement&&!this.measurement.result&&!this.measurement.cancelReason;}
+  private frameExportBusy(){return !!this.frameExporter?.busy||this.frameExportDisplayRequest!==null;}
+  private frameExportOwnerReady(){return this.ready&&!!this.renderer&&!!this.quad&&!!this.device&&this.visible&&!this.destroyed&&!this.deviceLost&&!this.releasingGPU&&!this.regenerating;}
+  private refreshFrameExportAvailability(){
+    if(!this.profiling)return;
+    const enabled=this.frameExportOwnerReady()&&!this.frameExportBusy()&&!this.benchmarkActive();
+    this.setButtonEnabled('frame-capture',enabled);this.setButtonEnabled('benchmark',enabled);this.setButtonEnabled('sustained',enabled);
+  }
+  private onFrameExport=(event:NativeFrameExportEvent)=>{
+    if(this.destroyed||this.deviceLost||this.releasingGPU)return;
+    if(event.state==='ready')this.frameExportDisplayRequest=event.requestId;
+    this.emit({...event,busy:event.busy||this.frameExportDisplayRequest!==null});
+  };
+  exportFrame(requestId:number){
+    if(!this.frameExporter||this.destroyed||this.deviceLost)return;
+    const message=!this.visible?'Rendi visibile la scena prima di acquisire.':!this.frameExportOwnerReady()?'Attendi la preparazione della scena.':
+      this.benchmarkActive()?'Termina la misura prima di acquisire il PNG.':this.frameExportDisplayRequest!==null?'Attendi la preparazione dei dati del PNG.':null;
+    if(message){this.emit({type:'frameExport',requestId,state:'error',busy:this.frameExportBusy(),message});this.refreshFrameExportAvailability();return;}
+    this.frameExporter.request(requestId);
+  }
+  clearFrameExport(requestId:number){this.frameExporter?.clear(requestId);this.refreshFrameExportAvailability();}
+  finishFrameExportDisplay(requestId:number){
+    if(this.frameExportDisplayRequest!==requestId)return;
+    this.frameExportDisplayRequest=null;this.refreshFrameExportAvailability();
+  }
   private updateAtmosphere(){
     const request=++this.skyRequest;
     if(!this.quad){this.applySky(this.skyCache.prime(this.skyMode,this.side));return;}
@@ -664,7 +745,7 @@ export class GPUSceneEngine {
       fallback:usesR8||this.densityR8Volume?null:'missing or invalid densityR8 payload'};
   }
   private startBenchmark(duration: number) {
-    if(!this.ready || !this.visible || this.benchmarkCompletion) return;
+    if(!this.ready || !this.visible || this.benchmarkCompletion || this.frameExportBusy()) return;
     if(this.dirtySize) this.applySize();
     this.invalidate('Nuova misura');
     this.report=null; this.emit({type:'report',report:null}); this.setButtonEnabled('export',false);
@@ -675,13 +756,14 @@ export class GPUSceneEngine {
     this.benchmarkContext={date:new Date().toISOString(),backend:'WebGPU',adapter:this.adapterInfo,threeRevision:'186',quality:this.quality,
       output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],nominalSteps:QUALITY[this.quality].steps,
       cloudExtinctionPerKm:EXTINCTION,iceExtinctionPerKm:ICE_EXTINCTION,mediaIntegration:'co-located cloud/rain exponential segments',virgaReachVariation:'broad advected sheets, 0.7–1.3 of weak fall distance',precipitationMaxStepKm:RAIN_SAMPLE_STEP,precipitationExtinctionPerKm:RAIN_EXTINCTION,precipitationSourceBounds:this.rainBounds.value.toArray(),
-      rendererVersion:'observatory-v56-inward-shoulder',terrainSurfaceId:TERRAIN_DEM_ID,terrainCover:{id:TERRAIN_COVER_ID,year:2021,sourceClasses:12,materialGroups:8,scope:'Class-area fractions, not physical canopy density or measured albedo; two core RGBA8 textures sampled per terrain fragment with area mips; weights renormalized after filtering',...this.terrainCover?.stats},terrainGeography:{dataset:'Copernicus GLO-90 DSM',originDegrees:[44,10],axisX:'west',axisZ:'north',gridSpacingKm:.125,measuredSquareHalfWidthKm:48,authoredBlendOuterKm:64,verticalExaggeration:1},terrainRaster:this.terrainRaster?.stats(),navigationVersion:'filtered-field-triangulated-terrain-clearance-v4',terrainCameraClearanceKm:CAMERA_TERRAIN_CLEARANCE_KM,terrainHash:TERRAIN_HASH_ID,skyCalculation:'cached dedicated worker',skyPending:this.skyPending,solarVisibility:'256-cubed day + RG8 low-sun endpoints',sunDirection:this.sun.value.toArray(),sunsetAmount:this.sunsetAmount.value,extraSunsetTextureBytes:VOLUME_RESOLUTION**3*2,probeImplementation:'compile-time specialization',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{comparisonSurfaceKm:this.comparisonSurface,comparisonTargetKm:this.comparisonTarget,probeSkipped:this.comparisonSurface!==null,approach:this.view.approach,origin:this.origin.value.toArray(),probeFlow:'16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively',probeFieldBytes:this.approachField.byteLength,surfaceEstimateKm:this.comparisonSurface===null?this.approachSurface:null,probe:this.approachProbe,probeAgeMs:this.approachProbe?performance.now()-this.approachTime:null,altitudeKm:this.origin.value.y+4,ground:this.ground.value,yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
+      rendererVersion:RENDERER_VERSION,terrainSurfaceId:TERRAIN_DEM_ID,terrainCover:{id:TERRAIN_COVER_ID,year:2021,sourceClasses:12,materialGroups:8,scope:'Class-area fractions, not physical canopy density or measured albedo; two core RGBA8 textures sampled per terrain fragment with area mips; weights renormalized after filtering',...this.terrainCover?.stats},terrainGeography:{dataset:'Copernicus GLO-90 DSM',originDegrees:[44,10],axisX:'west',axisZ:'north',gridSpacingKm:.125,measuredSquareHalfWidthKm:48,authoredBlendOuterKm:64,verticalExaggeration:1},terrainRaster:this.terrainRaster?.stats(),navigationVersion:'filtered-field-triangulated-terrain-clearance-v4',terrainCameraClearanceKm:CAMERA_TERRAIN_CLEARANCE_KM,terrainHash:TERRAIN_HASH_ID,skyCalculation:'cached dedicated worker',skyPending:this.skyPending,solarVisibility:'256-cubed day + RG8 low-sun endpoints',sunDirection:this.sun.value.toArray(),sunsetAmount:this.sunsetAmount.value,extraSunsetTextureBytes:VOLUME_RESOLUTION**3*2,probeImplementation:'compile-time specialization',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{comparisonSurfaceKm:this.comparisonSurface,comparisonTargetKm:this.comparisonTarget,probeSkipped:this.comparisonSurface!==null,approach:this.view.approach,origin:this.origin.value.toArray(),probeFlow:'16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively',probeFieldBytes:this.approachField.byteLength,surfaceEstimateKm:this.comparisonSurface===null?this.approachSurface:null,probe:this.approachProbe,probeAgeMs:this.approachProbe?performance.now()-this.approachTime:null,altitudeKm:this.origin.value.y+4,ground:this.ground.value,yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
       densitySamplingStart:this.densitySamplingReport(),
       narrowCloudSkip:{method:'point-nearest-after-flow-v3-weather-specialization-trial',specialization:this.integratorUsesNarrow?'rain':'dry',boundInIntegrator:this.integratorUsesNarrow===true,selection:'targetRain > 0.001 or actual rain > 0.001; dry uses original WGSL signature',resolution:this.narrowCloudVolume?[this.narrowCloudVolume.image.width,this.narrowCloudVolume.image.height,this.narrowCloudVolume.image.depth]:null,extraMaskBytes:this.narrowCloudVolume?.image.data?.byteLength??0,unqualifiedPayload:'fully occupied compatibility mask'},
       clockStateStart:{forcingTime:this.forcingTime,weatherTime:this.weatherTime,precipitationUniformTime:this.precipitationTime.value},
       userAgent:navigator.userAgent,devicePixelRatio:this.viewport.dpr,
       method:'Visible requestAnimationFrame intervals, CPU compute/render submission and callback dispatch delay. GPU render and compute timestamps sampled separately; their last-frame samples are not necessarily paired. Optional queue completion latency includes GPU work, readback and JS delivery; not compositor presentation.',warmupMs:2000,targetDurationMs:duration};
     this.setButtonEnabled('benchmark',false); this.setButtonEnabled('sustained',false);
+    this.refreshFrameExportAvailability();
     this.text('result','Riscaldamento · 2 s…');
   }
   private finishBenchmark() {
@@ -715,10 +797,11 @@ export class GPUSceneEngine {
       this.timestampBatch?.close();this.timestampBatch=null;
       this.text('result',`Chiusura della misura fallita: ${error instanceof Error?error.message:String(error)}`);
       this.setButtonEnabled('benchmark',this.ready);this.setButtonEnabled('sustained',this.ready);
-    }).finally(()=>{if(this.benchmarkCompletion===completion)this.benchmarkCompletion=null;});
+    }).finally(()=>{if(this.benchmarkCompletion===completion)this.benchmarkCompletion=null;this.refreshFrameExportAvailability();});
     this.benchmarkCompletion=completion;
   }
   private invalidate(reason: string) {
+    this.frameExporter?.cancelPending(reason);
     const collecting=this.measurement&&!this.measurement.result&&!this.measurement.cancelReason;
     if(collecting||this.benchmarkCompletion){
       this.benchmarkGeneration++;this.measurement?.cancel(reason);this.measurement=null;
@@ -727,8 +810,12 @@ export class GPUSceneEngine {
       this.text('result',`Misura annullata: ${reason}.`);
       this.setButtonEnabled('benchmark',this.ready);this.setButtonEnabled('sustained',this.ready);
     }
+    this.refreshFrameExportAvailability();
   }
-  private setButtonEnabled(action:string,enabled:boolean){this.emit({type:'enabled',action,enabled});}
+  private setButtonEnabled(action:string,enabled:boolean){
+    if(this.profiling&&enabled&&['benchmark','sustained','frame-capture'].includes(action))enabled=!this.frameExportBusy();
+    this.emit({type:'enabled',action,enabled});
+  }
   action(action:string){
     if(this.destroyed) return;
     if(action==='probe-reference'&&this.profiling){
@@ -793,8 +880,10 @@ export class GPUSceneEngine {
     this.visible=visible;
     if(!visible){this.clearStorm();cancelAnimationFrame(this.raf);this.invalidate('Scheda nascosta');}
     else if((this.ready||this.regenerating)&&!this.destroyed&&!this.deviceLost){cancelAnimationFrame(this.raf);this.previous=0;this.intervals=[];this.raf=requestAnimationFrame(this.frame);}
+    this.refreshFrameExportAvailability();
   }
   private releaseGPU(): Promise<void> {
+    this.frameExporter?.dispose();this.frameExportDisplayRequest=null;
     this.terrainRequest.abort();
     this.cleanup ??= (async()=>{
       // Init can allocate Three's internal animation manager after teardown was requested.
@@ -812,7 +901,7 @@ export class GPUSceneEngine {
     return this.cleanup;
   }
   destroy():Promise<void>{
-    this.destroyed=true;this.ready=false;cancelAnimationFrame(this.raf);this.worker?.terminate();this.worker=null;
+    this.destroyed=true;this.ready=false;this.frameExporter?.dispose();cancelAnimationFrame(this.raf);this.worker?.terminate();this.worker=null;
     this.rejectVolume?.(new Error('Scena chiusa'));this.rejectVolume=null;
     this.invalidate('Scena chiusa');return this.releaseGPU();
   }

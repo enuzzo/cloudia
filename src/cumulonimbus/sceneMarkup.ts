@@ -58,6 +58,19 @@ export function sceneMarkup({profiling,quality,timingMode,frozenFlow,frameLimit}
           <div class="benchmark-controls"><button data-action="benchmark" disabled>Misura 30 secondi</button><button data-action="sustained" disabled>Misura 90 secondi</button><button data-action="export" disabled>Esporta JSON</button></div>
           <p data-testid="benchmark-result">Il test include 2 secondi di riscaldamento e si interrompe se cambi scena o nascondi la scheda.</p>
           <small>FPS = frame inviati per secondo di tempo reale tra callback rAF. Non certifica la presentazione del compositore. Tempi GPU separati quando disponibili. Nessuna risoluzione adattiva nascosta.</small>
+          ${profiling?`<section class="frame-export" aria-label="Acquisizione PNG del canvas">
+            <div class="benchmark-controls"><button data-action="frame-capture" disabled>Acquisisci PNG del canvas</button><button data-action="frame-clear">Svuota esportazione</button></div>
+            <p role="status" data-testid="frame-export-status" data-state="idle">PNG e metadati dello stesso disegno. Nessun download automatico.</p>
+            <small>Massimo 8.388.608 pixel e 32 MiB PNG. L'immagine mantiene le dimensioni del canvas e resta in memoria fino a Svuota. Durante l'acquisizione le misure sono indisponibili; la scena continua ad animarsi.</small>
+            <div data-testid="frame-export-data" hidden>
+              <a data-testid="frame-export-download" download>Scarica il PNG acquisito</a>
+              <label>Metadati del PNG<textarea data-testid="frame-export-json" readonly rows="3" spellcheck="false" wrap="off"></textarea></label>
+              <small>Per il trasferimento testuale, concatena le parti nell'ordine senza separatori. Il link scarica il PNG completo.</small>
+              <p data-testid="frame-export-part" aria-live="polite"></p>
+              <label>Parte testuale del PNG<textarea data-testid="frame-export-png" readonly rows="3" spellcheck="false" wrap="off"></textarea></label>
+              <div class="benchmark-controls"><button data-action="frame-part-previous" disabled>Parte precedente</button><button data-action="frame-part-next" disabled>Parte successiva</button></div>
+            </div>
+          </section>`:''}
           <a href="?legacy">Apri il vecchio laboratorio</a>
           </section></div></section></details>
       </nav></div><script type="application/json" data-testid="benchmark-json"></script>`;

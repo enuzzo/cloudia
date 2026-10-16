@@ -1,7 +1,8 @@
 import type {AtmosphereIntent} from './weatherState';
 import type {WeatherImpulse} from './weatherInteraction';
+import type {NativeFrameExportEvent} from './nativeFrameExport';
 export interface Viewport {width:number;height:number;dpr:number}
-export type RenderEvent=
+export type RenderEvent=NativeFrameExportEvent
  |{type:'text';field:'status'|'metrics'|'result'|'dynamics';text:string}
  |{type:'statusState';state:'loading'|'loaded'|'failed'}
  |{type:'enabled';action:string;enabled:boolean}
@@ -18,5 +19,6 @@ export type RenderCommand=
  |{type:'rotate';dx:number;dy:number;width:number;height:number}|{type:'impulse';impulse:WeatherImpulse}
  |{type:'zoom';delta:number}
  |{type:'atmosphere';intent:AtmosphereIntent}
+ |{type:'frameExport';requestId:number}|{type:'frameExportClear';requestId:number}|{type:'frameExportDone';requestId:number}
  |{type:'resize';viewport:Viewport}|{type:'visibility';visible:boolean}|{type:'stop'};
 export interface RenderHost {canvas:HTMLCanvasElement|OffscreenCanvas;search:string;viewport:Viewport;visible:boolean;thread:'main'|'worker';emit:(event:RenderEvent)=>void}

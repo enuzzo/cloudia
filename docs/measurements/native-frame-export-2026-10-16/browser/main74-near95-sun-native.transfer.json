@@ -1,0 +1,125 @@
+{
+  "status": "PASS_VISIBLE_PARTS_ROUNDTRIP",
+  "captureId": "main-5-28c99564f6c4",
+  "bytes": 1083466,
+  "sha256": "28c99564f6c44fb5f111a8c206666501c3a0b684b7e098cad4d4748f6937a73f",
+  "totalCharacters": 1444646,
+  "parts": 23,
+  "ledger": [
+    {
+      "part": 1,
+      "characters": 65536,
+      "label": "Parte 1 di 23 · caratteri 1–65536 di 1444646"
+    },
+    {
+      "part": 2,
+      "characters": 65536,
+      "label": "Parte 2 di 23 · caratteri 65537–131072 di 1444646"
+    },
+    {
+      "part": 3,
+      "characters": 65536,
+      "label": "Parte 3 di 23 · caratteri 131073–196608 di 1444646"
+    },
+    {
+      "part": 4,
+      "characters": 65536,
+      "label": "Parte 4 di 23 · caratteri 196609–262144 di 1444646"
+    },
+    {
+      "part": 5,
+      "characters": 65536,
+      "label": "Parte 5 di 23 · caratteri 262145–327680 di 1444646"
+    },
+    {
+      "part": 6,
+      "characters": 65536,
+      "label": "Parte 6 di 23 · caratteri 327681–393216 di 1444646"
+    },
+    {
+      "part": 7,
+      "characters": 65536,
+      "label": "Parte 7 di 23 · caratteri 393217–458752 di 1444646"
+    },
+    {
+      "part": 8,
+      "characters": 65536,
+      "label": "Parte 8 di 23 · caratteri 458753–524288 di 1444646"
+    },
+    {
+      "part": 9,
+      "characters": 65536,
+      "label": "Parte 9 di 23 · caratteri 524289–589824 di 1444646"
+    },
+    {
+      "part": 10,
+      "characters": 65536,
+      "label": "Parte 10 di 23 · caratteri 589825–655360 di 1444646"
+    },
+    {
+      "part": 11,
+      "characters": 65536,
+      "label": "Parte 11 di 23 · caratteri 655361–720896 di 1444646"
+    },
+    {
+      "part": 12,
+      "characters": 65536,
+      "label": "Parte 12 di 23 · caratteri 720897–786432 di 1444646"
+    },
+    {
+      "part": 13,
+      "characters": 65536,
+      "label": "Parte 13 di 23 · caratteri 786433–851968 di 1444646"
+    },
+    {
+      "part": 14,
+      "characters": 65536,
+      "label": "Parte 14 di 23 · caratteri 851969–917504 di 1444646"
+    },
+    {
+      "part": 15,
+      "characters": 65536,
+      "label": "Parte 15 di 23 · caratteri 917505–983040 di 1444646"
+    },
+    {
+      "part": 16,
+      "characters": 65536,
+      "label": "Parte 16 di 23 · caratteri 983041–1048576 di 1444646"
+    },
+    {
+      "part": 17,
+      "characters": 65536,
+      "label": "Parte 17 di 23 · caratteri 1048577–1114112 di 1444646"
+    },
+    {
+      "part": 18,
+      "characters": 65536,
+      "label": "Parte 18 di 23 · caratteri 1114113–1179648 di 1444646"
+    },
+    {
+      "part": 19,
+      "characters": 65536,
+      "label": "Parte 19 di 23 · caratteri 1179649–1245184 di 1444646"
+    },
+    {
+      "part": 20,
+      "characters": 65536,
+      "label": "Parte 20 di 23 · caratteri 1245185–1310720 di 1444646"
+    },
+    {
+      "part": 21,
+      "characters": 65536,
+      "label": "Parte 21 di 23 · caratteri 1310721–1376256 di 1444646"
+    },
+    {
+      "part": 22,
+      "characters": 65536,
+      "label": "Parte 22 di 23 · caratteri 1376257–1441792 di 1444646"
+    },
+    {
+      "part": 23,
+      "characters": 2854,
+      "label": "Parte 23 di 23 · caratteri 1441793–1444646 di 1444646"
+    }
+  ]
+}

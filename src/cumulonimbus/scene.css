@@ -54,6 +54,8 @@
 .diagnostics label output{float:right;color:var(--muted);font-variant-numeric:tabular-nums;pointer-events:none}
 .diagnostics select{display:block;width:100%;min-height:44px;margin-top:9px;padding:8px 10px;background:#ffffff04;color:var(--ink);border:1px solid #ffffff30;border-radius:8px;font:inherit;font-size:12px;text-overflow:ellipsis}
 .diagnostics select option{background:#202a2d;color:var(--ink)}
+.frame-export{margin-top:20px;padding-top:16px;border-top:1px solid #ffffff30}
+.frame-export textarea{display:block;width:100%;min-height:70px;max-height:180px;margin-top:8px;padding:8px;resize:vertical;background:#ffffff04;color:var(--ink);border:1px solid #ffffff30;border-radius:8px;font:10px/1.4 monospace}
 .diagnostics input[type=range]{display:block;width:100%;height:44px;margin:2px 0 -8px;appearance:none;background:transparent;cursor:pointer}
 .diagnostics input[type=range]::-webkit-slider-runnable-track{height:4px;background:linear-gradient(to right,var(--accent) var(--range-fill,0%),#566269 var(--range-fill,0%));border-radius:4px}
 .diagnostics input[type=range]::-webkit-slider-thumb{appearance:none;width:16px;height:16px;background:var(--ink);border-radius:50%;margin-top:-6px;box-shadow:0 1px 3px #0004}

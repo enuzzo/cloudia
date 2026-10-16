@@ -1,0 +1,37 @@
+{
+  "files": [
+    {
+      "path": "INPUT-MANIFEST.json",
+      "bytes": 4902,
+      "sha256": "fb22286d0747eacccc9bc8276e2431a6360141f59a6ee90157a1ce5f0d09d1c9"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "bytes": 927,
+      "sha256": "d6cb9938f2632909c7e8e823576c9a986dc468c7b67aef80ef2e53ef6c9fbac9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 721,
+      "sha256": "e070662628c87c3fd708082422b02ef4ab25812c6d94db286650d9117741ea73"
+    },
+    {
+      "path": "REPORT.md",
+      "bytes": 4761,
+      "sha256": "dc2037c48efb2ae1e89e9db0bae5cf53da72ba8501890d6db8e5412b4dcfeae1"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 9619,
+      "sha256": "5236fa6392ece59329d90c12a099eaedde8f22e9a6fc124c7564917a94a606dd"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 18202,
+      "sha256": "0ebdcc6645388f333c34a350295915f39761f4899ae4bd389de5f66227d511d0"
+    }
+  ],
+  "fileCount": 6,
+  "payloadBytes": 39132,
+  "scope": "Verifier,protocol,single result,report and hashes only; original PNGs/source/dist stay in sibling folders"
+}

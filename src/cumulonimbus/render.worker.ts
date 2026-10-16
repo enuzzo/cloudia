@@ -14,6 +14,9 @@ self.onmessage=(event:MessageEvent<RenderCommand>)=>{
   if(message.type==='rotate')engine?.rotate(message.dx,message.dy,message.width,message.height);
   if(message.type==='impulse')engine?.impulse(message.impulse);
   if(message.type==='atmosphere')engine?.atmosphere(message.intent);
+  if(message.type==='frameExport')engine?.exportFrame(message.requestId);
+  if(message.type==='frameExportClear')engine?.clearFrameExport(message.requestId);
+  if(message.type==='frameExportDone')engine?.finishFrameExportDisplay(message.requestId);
   if(message.type==='resize')engine?.resize(message.viewport);
   if(message.type==='visibility')engine?.visibility(message.visible);
   if(message.type==='stop'){const closing=engine;engine=null;void (closing?.destroy()??Promise.resolve()).finally(()=>{emit({type:'closed'});self.close();});}

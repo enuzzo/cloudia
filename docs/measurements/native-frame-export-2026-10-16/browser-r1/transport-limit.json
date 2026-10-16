@@ -1,0 +1,16 @@
+{
+  "status": "REJECTED_TRUNCATED_TEXT_NO_PNG_SAVED",
+  "expected": {
+    "mime": "image/png",
+    "width": 1280,
+    "height": 720,
+    "byteLength": 806716,
+    "sha256": "aee8f81aec6abd3800908b7829305b0d7a6fd8e809a00d6096519c2bd0bad747"
+  },
+  "observedCharacters": 200011,
+  "decodedPartialBytes": 149990,
+  "observedPartialSHA256": "c1481ef806e934cf3cd3dcb34093c4669f45a7e253eef8b33dc92160c732f8c1",
+  "tailMarker": "[Truncated]",
+  "metadataCharacters": 6591,
+  "sourceManifest": "d2f6239e16e31b68f65648f0f58812b6f66e892189d33126951081264811860d"
+}

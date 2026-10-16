@@ -1,0 +1,294 @@
+{
+  "schema": "cloudia-native-frame-v1",
+  "state": "ready",
+  "captureId": "worker-1-6251d0458628",
+  "requestId": 1,
+  "png": {
+    "mime": "image/png",
+    "width": 2474,
+    "height": 1844,
+    "byteLength": 3434897,
+    "sha256": "6251d0458628d4e01d560fda33d37630e9f08ecd5e61244698c607e92bc448dc"
+  },
+  "metadata": {
+    "schemaVersion": 1,
+    "rendererVersion": "observatory-v57-native-frame-export",
+    "threeRevision": "186",
+    "executionThread": "worker",
+    "scope": "Lossless PNG of the canvas bitmap at this submitted draw; excludes page UI, linear/HDR buffers and compositor presentation. Capture is not a performance sample.",
+    "uniformScope": "CPU-side values submitted to Three uniforms at this draw; GPU float32 rounding is not read back.",
+    "frame": {
+      "ownerDrawSerial": 1526,
+      "rafTimestamp": 33941.4,
+      "localSnapshotTime": 33942,
+      "localTimeOrigin": 1792176708174.9,
+      "date": "2026-10-16T18:52:22.116Z",
+      "counterScope": "Frame-loop draw calls in this engine owner, including regeneration draws; not GPU completion or presentation"
+    },
+    "ready": true,
+    "regenerating": false,
+    "seed": 74,
+    "family": "sheared",
+    "quality": "ultra",
+    "nominalSteps": 384,
+    "stepSizeKm": 0.018229166666666668,
+    "emptyStepKm": 0.0546875,
+    "output": [
+      2474,
+      1844
+    ],
+    "internal": [
+      2474,
+      1844
+    ],
+    "outputMode": "screen",
+    "canvas": [
+      2474,
+      1844
+    ],
+    "viewport": {
+      "width": 1237,
+      "height": 922,
+      "dpr": 2
+    },
+    "rendererOutputColorSpace": "srgb",
+    "rendererToneMapping": 0,
+    "volume": [
+      256,
+      256,
+      256
+    ],
+    "detailVolume": [
+      128,
+      128,
+      128
+    ],
+    "motionField": [
+      16,
+      16,
+      16
+    ],
+    "ablation": "full",
+    "ablationCode": 0,
+    "flowMode": "full",
+    "flowSampled": true,
+    "flowComputeThisDraw": true,
+    "densitySampling": {
+      "path": "macro-rgba8-r",
+      "format": "rgba8unorm",
+      "dimensions": [
+        256,
+        256,
+        256
+      ],
+      "textureBytes": 67108864,
+      "extraCpuPayloadBytes": 16777216,
+      "extraGpuPayloadBytes": 16777216,
+      "sampling": "same volumeSampler; linear/clamp-to-edge/mip0; NoColorSpace",
+      "reason": "dry weather; R8 retained but not bound",
+      "allocationAccounting": "nominal payload; GPU upload/residency not measured",
+      "fallback": null
+    },
+    "narrowCloudSpecialization": "dry",
+    "camera": {
+      "origin": [
+        0.3515625,
+        3.119140625,
+        2.4401802442338285
+      ],
+      "target": [
+        0.3515625,
+        3.119140625,
+        -0.0546875
+      ],
+      "forward": [
+        0,
+        0,
+        -1
+      ],
+      "right": [
+        1,
+        0,
+        0
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "yaw": 0,
+      "pitch": 0,
+      "approach": 0.6,
+      "aspect": 1.341648590021692,
+      "tanHalfVerticalFov": 0.2867,
+      "comparisonSurfaceKm": 0.7227685139973958,
+      "comparisonTargetKm": [
+        0.3515625,
+        3.119140625,
+        -0.0546875
+      ],
+      "probeSkipped": true,
+      "surfaceEstimateKm": null,
+      "probe": null,
+      "probeAgeMs": null,
+      "ground": 1,
+      "terrainClearanceKm": 0.2
+    },
+    "clocks": {
+      "simulationTime": 60,
+      "forcingTime": 0,
+      "weatherTime": 13.767199999999992,
+      "precipitationUniformTime": 0,
+      "flowUniformTime": 60,
+      "flowFieldTime": 60,
+      "flowFieldDispersion": 0,
+      "note": "Precipitation uniform is applied before this frame advances forcingTime. A frozen flow texture retains its installation time/dispersion even while flowUniformTime advances."
+    },
+    "paused": true,
+    "orbit": false,
+    "speed": 1,
+    "material": {
+      "growth": [
+        1,
+        1,
+        1
+      ],
+      "drift": [
+        0.121372967564859,
+        0.010131947708267265,
+        0
+      ],
+      "wind": [
+        0.26052456720014755,
+        0.09009438008941259
+      ],
+      "forcing": [
+        0,
+        0
+      ],
+      "iceRange": [
+        4.51146714868378,
+        5.196156475759857
+      ],
+      "seedPhase": 0.014788732394366197,
+      "flowFamily": 2,
+      "supportMin": [
+        -4.86640625,
+        -0.1680859374999999,
+        -3.052421875
+      ],
+      "supportMax": [
+        5.56953125,
+        6.4063671875,
+        2.943046875
+      ],
+      "extinctionPerKm": 18,
+      "iceExtinctionPerKm": 6.5
+    },
+    "weather": {
+      "skyIntent": "clear",
+      "rain": 0,
+      "targetRain": 0,
+      "haze": 1,
+      "overcast": 0,
+      "skyPending": false,
+      "atmosphereProgress": 1,
+      "atmosphereBlend": 1,
+      "windStrength": 0.55,
+      "dispersion": 0,
+      "precipitationBounds": [
+        -3.359375,
+        -2.0234375,
+        2.265625,
+        2.1328125
+      ],
+      "precipitationStepKm": 0.006,
+      "precipitationExtinctionPerKm": 0.85
+    },
+    "skyTextures": {
+      "requestSerial": 3,
+      "requestedSide": 0,
+      "from": {
+        "uuid": "ff372216-3ad8-4fda-857e-dcc454a5ead3",
+        "version": 3,
+        "width": 128,
+        "height": 128,
+        "type": 1016,
+        "colorSpace": ""
+      },
+      "to": {
+        "uuid": "9d50f59f-d18d-4fa8-b6dd-7f79d1d53cba",
+        "version": 3,
+        "width": 128,
+        "height": 128,
+        "type": 1016,
+        "colorSpace": ""
+      },
+      "scope": "Owner-local texture objects and upload revisions; not portable content hashes."
+    },
+    "lighting": {
+      "sunDirection": [
+        -0.668126592347077,
+        0.7126683651702156,
+        0.21380050955106467
+      ],
+      "lightSide": 0,
+      "sunsetAmount": 0,
+      "solarColor": [
+        0.9313426391412541,
+        0.8413836906464631,
+        0.7182507029227312
+      ],
+      "ambientColor": [
+        0.08283003529291262,
+        0.10718098056640865,
+        0.1600090087683047
+      ],
+      "flash": [
+        0,
+        3.5,
+        0.5,
+        0
+      ],
+      "flashTop": [
+        0,
+        0,
+        0
+      ],
+      "flashBend": [
+        0,
+        0,
+        0
+      ],
+      "flashEnd": [
+        0,
+        0,
+        0
+      ],
+      "flashBranch": [
+        0,
+        0,
+        0
+      ],
+      "flashCount": 0
+    },
+    "terrain": {
+      "surfaceId": "copernicus-glo90-liguria-apuane-v1",
+      "coverId": "esa-worldcover-2021-area-fractions-v1",
+      "hash": "u32-avalanche-24-v1",
+      "verticalExaggeration": 1,
+      "originDegrees": [
+        44,
+        10
+      ],
+      "axisX": "west",
+      "axisZ": "north"
+    }
+  },
+  "textExport": {
+    "format": "Consecutive text parts of the PNG data URL; concatenate in order without separators.",
+    "partCharacters": 65536,
+    "totalCharacters": 4579886,
+    "parts": 70
+  }
+}

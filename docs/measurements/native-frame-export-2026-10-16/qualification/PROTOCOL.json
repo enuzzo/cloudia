@@ -1,0 +1,28 @@
+{
+  "baseCommit": "9b8f266b06f711e4d26b0077c9c1b6e4a5aebe19",
+  "sourceFiles": 124,
+  "sourceManifestSHA256": "8dce2ed7a5843104c3b606c4223435d69408d43739712b1f722c7a1fa8a348f2",
+  "runtimeChange": "Native canvas PNG+same-draw metadata, profile-only; scalar-density trial remains rejected",
+  "noShaderOrVolumeChange": {
+    "cloudShader": true,
+    "volume": true
+  },
+  "commandsInOrder": [
+    "typecheck",
+    "full-tests",
+    "app-build",
+    "hero-build"
+  ],
+  "timeoutsSeconds": [
+    120,
+    600,
+    180,
+    180
+  ],
+  "nativeCaptureMaxPixels": 8388608,
+  "pngMaxBytes": 33554432,
+  "logicalDeadlineMs": 20000,
+  "DOMTextPartCharacters": 65536,
+  "retry": "none; preserve any failure",
+  "scope": "Qualification does not claim improved cloud art, compositor presentation or 60FPS overall"
+}

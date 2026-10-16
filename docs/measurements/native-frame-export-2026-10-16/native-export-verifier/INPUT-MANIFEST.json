@@ -1,0 +1,142 @@
+{
+  "scope": "All saved PNG/triple/qualification/aux inputs read by the single verification; source124 and dist30 bytes checked via their own manifests, not duplicated here",
+  "files": [
+    {
+      "path": "browser/main74-near60-sun-1280x720.png",
+      "bytes": 806716,
+      "sha256": "aee8f81aec6abd3800908b7829305b0d7a6fd8e809a00d6096519c2bd0bad747"
+    },
+    {
+      "path": "browser/main74-near60-sun-1280x720.json",
+      "bytes": 6805,
+      "sha256": "81b738eed4cc0374cf9b64255e8f81b6a6e333ed59dea965182cdd4c88f077a6"
+    },
+    {
+      "path": "browser/main74-near60-sun-1280x720.transfer.json",
+      "bytes": 2434,
+      "sha256": "1f6524a2db3d9166c8ee3ead9c44743b1d495a6acbede93be1bf43c5019a271a"
+    },
+    {
+      "path": "browser/main74-near60-sun-native.png",
+      "bytes": 3434897,
+      "sha256": "6251d0458628d4e01d560fda33d37630e9f08ecd5e61244698c607e92bc448dc"
+    },
+    {
+      "path": "browser/main74-near60-sun-native.json",
+      "bytes": 6814,
+      "sha256": "48781568553d0e3d7d7d1e52f95783a7dd1822259a12d4961eace24d68e1954c"
+    },
+    {
+      "path": "browser/main74-near60-sun-native.transfer.json",
+      "bytes": 9431,
+      "sha256": "eebab09bbc36df62ec604a6ba1e7f757663a6fdf6308272fd345c3037049fe78"
+    },
+    {
+      "path": "browser/main74-near95-sun-native.png",
+      "bytes": 1083466,
+      "sha256": "28c99564f6c44fb5f111a8c206666501c3a0b684b7e098cad4d4748f6937a73f"
+    },
+    {
+      "path": "browser/main74-near95-sun-native.json",
+      "bytes": 6815,
+      "sha256": "9686a7060437d590d7ef1eb3d06aae51e193088f082deaf3e69377ddcbfbe1dd"
+    },
+    {
+      "path": "browser/main74-near95-sun-native.transfer.json",
+      "bytes": 3226,
+      "sha256": "5aea4df8ec52d45c57805a5edb45989bf6e8d901713f314a2cea767d241b4e3c"
+    },
+    {
+      "path": "browser/main74-rain-terrain-native.png",
+      "bytes": 2508514,
+      "sha256": "a913ecef59dc60d16d7362c4206de7f07c7c3f71be07a18e49076815bf43c20c"
+    },
+    {
+      "path": "browser/main74-rain-terrain-native.json",
+      "bytes": 7024,
+      "sha256": "2718664c4f2b7abafa5a2480b4567ffaf8963058fab71059221b05e43395ddec"
+    },
+    {
+      "path": "browser/main74-rain-terrain-native.transfer.json",
+      "bytes": 7054,
+      "sha256": "08724869ae05db19b4a2c2d3999c4b1f2159f81715e2575a9d7b67c897efb0b3"
+    },
+    {
+      "path": "browser/worker74-near60-sun-native.png",
+      "bytes": 3434897,
+      "sha256": "6251d0458628d4e01d560fda33d37630e9f08ecd5e61244698c607e92bc448dc"
+    },
+    {
+      "path": "browser/worker74-near60-sun-native.json",
+      "bytes": 6803,
+      "sha256": "7cccc611400e5ea6e01a7e02dd804ff53c161a40bbf1d31ac956d591cf4cf9e8"
+    },
+    {
+      "path": "browser/worker74-near60-sun-native.transfer.json",
+      "bytes": 9433,
+      "sha256": "7f3ec9535d329e5a03dfe4856722bf96816d0ea57b4665086220007fe75d611b"
+    },
+    {
+      "path": "browser/main74-sun-terrain-native.png",
+      "bytes": 2817764,
+      "sha256": "af8877ac93db6fcd50ab3ceece43ac1a40fc7d21c41151afb3a9620ca7586be5"
+    },
+    {
+      "path": "browser/main74-sun-terrain-native.json",
+      "bytes": 6999,
+      "sha256": "f59d46a8b6a022f9b9a9e7e2faca1164e1d8acbfeb0aee05dbb10903f84fbbff"
+    },
+    {
+      "path": "browser/main74-sun-terrain-native.transfer.json",
+      "bytes": 7847,
+      "sha256": "cbb9c227e8a88c365bc9d3ef5e7ccdb760489b1169fb4e27c9a07a17d1c22a41"
+    },
+    {
+      "path": "browser/PROTOCOL.json",
+      "bytes": 2643,
+      "sha256": "6da5f3d39e7f9a019215e3d03e0c17e917ddfbe32a6b1e2c104024328b9b5fc4"
+    },
+    {
+      "path": "qualification/PROTOCOL.json",
+      "bytes": 803,
+      "sha256": "c0b9b518602c3f9621bf2c6e7e76140514ca834f3673657ca1d8a9f626c8bd42"
+    },
+    {
+      "path": "qualification/source-manifest.json",
+      "bytes": 13042,
+      "sha256": "8dce2ed7a5843104c3b606c4223435d69408d43739712b1f722c7a1fa8a348f2"
+    },
+    {
+      "path": "qualification/dist-manifest.json",
+      "bytes": 3083,
+      "sha256": "e976624d4f710cd21dde34352a918a08ac68f31d245932f4dfd0920dcf4e2983"
+    },
+    {
+      "path": "qualification/test-results.json",
+      "bytes": 143463,
+      "sha256": "ba6bc5423db83deb66b20454874609e24ff597e0f76f1aca52e0249ce917db13"
+    },
+    {
+      "path": "qualification/checks.json",
+      "bytes": 1050,
+      "sha256": "1244ed5eee098a79fc76953a38d314fac2c361a7f443f86b0e6797957010ec87"
+    },
+    {
+      "path": "browser/clear-after-main720.json",
+      "bytes": 136,
+      "sha256": "693225852110254225bd7e9772714f05cd6eb89923c644cf4e7151a77e5a908e"
+    },
+    {
+      "path": "browser/worker-clear-console.json",
+      "bytes": 150,
+      "sha256": "780fdda187be2970456c541fadd8c40f8ff4a931eada043f6866ec4886785538"
+    },
+    {
+      "path": "browser-r1/transport-limit.json",
+      "bytes": 554,
+      "sha256": "2dcbc4215c976057230a694746b17d4abd337f027c8ddd9ff3365ffb15f71603"
+    }
+  ],
+  "fileCount": 27,
+  "payloadBytes": 14331863
+}

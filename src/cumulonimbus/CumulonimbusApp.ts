@@ -8,6 +8,8 @@ import {icon} from './uiIcons';
 import type {WeatherImpulse} from './weatherInteraction';
 import {WEATHER_SCENES,type AtmosphereIntent,type WeatherScene} from './weatherState';
 import {ThunderAudio} from './ThunderAudio';
+import type {NativeFrameExportEvent} from './nativeFrameExport';
+const FRAME_PNG_PART_CHARACTERS=65_536;
 export class CumulonimbusApp {
   private readonly profiling=new URLSearchParams(location.search).get('profile')==='1';
   private readonly timingMode=new URLSearchParams(location.search).get('timing')??'stages';
@@ -31,6 +33,12 @@ export class CumulonimbusApp {
   private resolveReady:(()=>void)|null=null;
   private starting:Promise<void>|null=null;
   private report:Record<string,unknown>|null=null;
+  private frameExportRequest=0;
+  private frameConversionBusy=false;
+  private frameEngineAvailable=false;
+  private frameExportURL:string|null=null;
+  private framePNGDataURL='';
+  private framePNGPart=0;
   private destroyed=false;
   private failed=false;
   private audio=new ThunderAudio();
@@ -73,12 +81,76 @@ export class CumulonimbusApp {
   }
   private closeWorker(worker:Worker){if(this.renderWorker!==worker)return;if(this.workerStopTimer!==null)clearTimeout(this.workerStopTimer);this.workerStopTimer=null;worker.terminate();this.renderWorker=null;}
   private stopWorker(){const worker=this.renderWorker;if(!worker||this.workerStopTimer!==null)return;try{worker.postMessage({type:'stop'} satisfies RenderCommand);this.workerStopTimer=setTimeout(()=>this.closeWorker(worker),1000);}catch{this.closeWorker(worker);}}
-  private fail(text:string){this.pointer.destroy();this.audio.destroy();this.failed=true;this.status.textContent=text;this.status.classList.remove('loaded');this.status.classList.add('failed');this.resolveReady?.();this.resolveReady=null;for(const input of this.controls.querySelectorAll<HTMLButtonElement|HTMLSelectElement|HTMLInputElement>('button,select,input'))input.disabled=true;this.stopWorker();}
+  private fail(text:string){this.frameExportRequest++;this.clearFrameExportData();this.pointer.destroy();this.audio.destroy();this.failed=true;this.status.textContent=text;this.status.classList.remove('loaded');this.status.classList.add('failed');this.resolveReady?.();this.resolveReady=null;for(const input of this.controls.querySelectorAll<HTMLButtonElement|HTMLSelectElement|HTMLInputElement>('button,select,input'))input.disabled=true;this.stopWorker();}
+  private clearFrameExportData(){
+    if(this.frameExportURL){URL.revokeObjectURL(this.frameExportURL);this.frameExportURL=null;}
+    this.framePNGDataURL='';this.framePNGPart=0;
+    for(const id of ['frame-export-json','frame-export-png']){const field=this.root.querySelector<HTMLTextAreaElement>(`[data-testid="${id}"]`);if(field)field.value='';}
+    const data=this.root.querySelector<HTMLElement>('[data-testid="frame-export-data"]');if(data)data.hidden=true;
+    const link=this.root.querySelector<HTMLAnchorElement>('[data-testid="frame-export-download"]');if(link){link.removeAttribute('href');link.hidden=true;}
+    this.renderFramePNGPart();
+  }
+  private renderFramePNGPart(){
+    const field=this.root.querySelector<HTMLTextAreaElement>('[data-testid="frame-export-png"]');if(!field)return;
+    const count=Math.ceil(this.framePNGDataURL.length/FRAME_PNG_PART_CHARACTERS);
+    this.framePNGPart=Math.max(0,Math.min(this.framePNGPart,count-1));
+    const start=this.framePNGPart*FRAME_PNG_PART_CHARACTERS;
+    field.value=this.framePNGDataURL.slice(start,start+FRAME_PNG_PART_CHARACTERS);
+    this.root.querySelector<HTMLElement>('[data-testid="frame-export-part"]')!.textContent=count?`Parte ${this.framePNGPart+1} di ${count} · caratteri ${start+1}–${start+field.value.length} di ${this.framePNGDataURL.length}`:'';
+    this.root.querySelector<HTMLButtonElement>('[data-action="frame-part-previous"]')!.disabled=this.framePNGPart===0;
+    this.root.querySelector<HTMLButtonElement>('[data-action="frame-part-next"]')!.disabled=!count||this.framePNGPart===count-1;
+  }
+  private updateFrameCaptureButton(){
+    const button=this.root.querySelector<HTMLButtonElement>('[data-action="frame-capture"]');
+    if(button)button.disabled=this.destroyed||this.failed||!this.frameEngineAvailable||this.frameConversionBusy;
+  }
+  private async onFrameExport(event:NativeFrameExportEvent){
+    if(!this.profiling)return;
+    if(event.requestId!==this.frameExportRequest){if(event.state==='ready')this.send({type:'frameExportDone',requestId:event.requestId});return;}
+    const status=this.root.querySelector<HTMLElement>('[data-testid="frame-export-status"]')!;
+    if(event.state==='pending'){status.dataset.state='pending';status.textContent='Acquisizione del prossimo disegno della scena…';return;}
+    if(event.state==='error'){status.dataset.state='error';status.textContent=event.message;return;}
+    if(event.state==='cleared'){this.clearFrameExportData();status.dataset.state='cleared';status.textContent=event.busy?'Dati svuotati. Attendi la conclusione dell’acquisizione già avviata.':'Esportazione svuotata.';return;}
+    if(event.state!=='ready')return;
+    this.frameConversionBusy=true;this.updateFrameCaptureButton();status.dataset.state='encoding';status.textContent='Preparazione del PNG e dei metadati…';
+    try{
+      const bytes=new Uint8Array(await event.png.arrayBuffer());
+      if(this.destroyed||this.failed||event.requestId!==this.frameExportRequest)return;
+      const chunks:string[]=[];
+      for(let offset=0;offset<bytes.length;offset+=32768)chunks.push(String.fromCharCode(...bytes.subarray(offset,offset+32768)));
+      const dataURL=`data:image/png;base64,${btoa(chunks.join(''))}`;
+      const thread=event.metadata.executionThread==='worker'?'worker':'main',captureId=`${thread}-${event.requestId}-${event.info.sha256.slice(0,12)}`;
+      const metadata={schema:'cloudia-native-frame-v1',state:'ready',captureId,requestId:event.requestId,png:event.info,metadata:event.metadata,
+        textExport:{format:'Consecutive text parts of the PNG data URL; concatenate in order without separators.',partCharacters:FRAME_PNG_PART_CHARACTERS,totalCharacters:dataURL.length,parts:Math.ceil(dataURL.length/FRAME_PNG_PART_CHARACTERS)}};
+      this.framePNGDataURL=dataURL;this.framePNGPart=0;this.renderFramePNGPart();
+      this.root.querySelector<HTMLTextAreaElement>('[data-testid="frame-export-json"]')!.value=JSON.stringify(metadata,null,2);
+      if(typeof URL.createObjectURL==='function'){
+        this.frameExportURL=URL.createObjectURL(event.png);
+        const link=this.root.querySelector<HTMLAnchorElement>('[data-testid="frame-export-download"]')!;
+        link.href=this.frameExportURL;link.download=`cloudia-seed-${event.metadata.seed}-${captureId}.png`;link.hidden=false;
+      }
+      this.root.querySelector<HTMLElement>('[data-testid="frame-export-data"]')!.hidden=false;
+      status.dataset.state='ready';status.textContent=`PNG acquisito · ${event.info.width}×${event.info.height} · ${event.info.byteLength.toLocaleString('it-IT')} byte · ${thread}. Metadati e immagine pronti.`;
+    }catch(error){
+      if(!this.destroyed&&!this.failed&&event.requestId===this.frameExportRequest){this.clearFrameExportData();status.dataset.state='error';status.textContent=`Preparazione del PNG fallita: ${error instanceof Error?error.message:String(error)}`;}
+    }finally{
+      this.frameConversionBusy=false;
+      this.send({type:'frameExportDone',requestId:event.requestId});this.updateFrameCaptureButton();
+    }
+  }
   private onEvent=(event:RenderEvent)=>{
     if(this.destroyed||this.failed)return;
     if(event.type==='text'){({status:this.status,metrics:this.metrics,result:this.result,dynamics:this.dynamics})[event.field].textContent=event.text;}
     if(event.type==='statusState'){if(event.state==='failed'){this.fail(this.status.textContent||'Rendering fallito.');return;}this.status.classList.remove('loaded','failed');if(event.state!=='loading')this.status.classList.add(event.state);}
-    if(event.type==='enabled'){const input=this.controls.querySelector<HTMLButtonElement|HTMLSelectElement>(`[data-action="${event.action}"],[name="${event.action}"]`);if(input)input.disabled=!event.enabled;}
+    if(event.type==='enabled'){
+      const input=this.controls.querySelector<HTMLButtonElement|HTMLSelectElement>(`[data-action="${event.action}"],[name="${event.action}"]`);if(input)input.disabled=!event.enabled;
+      if(event.action==='frame-capture'){
+        this.frameEngineAvailable=event.enabled;this.updateFrameCaptureButton();
+        const status=this.root.querySelector<HTMLElement>('[data-testid="frame-export-status"]');
+        if(event.enabled&&!this.frameConversionBusy&&status?.dataset.state==='cleared')status.textContent='Esportazione svuotata.';
+      }
+    }
+    if(event.type==='frameExport')void this.onFrameExport(event);
     if(event.type==='layout')this.root.classList.toggle('fixed-output',event.fixed);
     if(event.type==='view'){this.root.querySelector<HTMLInputElement>('[name=zoom]')!.value=String(event.approach*100);this.root.querySelector('[data-testid=view-distance]')!.textContent=event.approach>.98?'Avvicinamento massimo · distanza stimata':`Avvicinamento ${Math.round(event.approach*100)}%`; }
     if(event.type==='state'){
@@ -118,6 +190,9 @@ export class CumulonimbusApp {
     if(command.type==='atmosphere')this.engine?.atmosphere(command.intent);
     if(command.type==='resize')this.engine?.resize(command.viewport);
     if(command.type==='visibility')this.engine?.visibility(command.visible);
+    if(command.type==='frameExport')this.engine?.exportFrame(command.requestId);
+    if(command.type==='frameExportClear')this.engine?.clearFrameExport(command.requestId);
+    if(command.type==='frameExportDone')this.engine?.finishFrameExportDisplay(command.requestId);
   }
   applyWeatherImpulse(impulse:WeatherImpulse){this.send({type:'impulse',impulse});}
   applyAtmosphereIntent(intent:AtmosphereIntent){
@@ -135,6 +210,12 @@ export class CumulonimbusApp {
     const button=(event.target as HTMLElement).closest<HTMLButtonElement>('button');if(!button||button.disabled)return;
     if(button.dataset.scene){this.applyAtmosphereIntent({type:'scene',scene:button.dataset.scene as WeatherScene});return;}
     const action=button.dataset.action;if(!action)return;
+    if(action==='frame-capture'&&this.profiling){
+      this.clearFrameExportData();this.frameEngineAvailable=false;this.updateFrameCaptureButton();
+      this.send({type:'frameExport',requestId:++this.frameExportRequest});return;
+    }
+    if(action==='frame-clear'&&this.profiling){this.clearFrameExportData();this.send({type:'frameExportClear',requestId:++this.frameExportRequest});return;}
+    if((action==='frame-part-next'||action==='frame-part-previous')&&this.profiling){this.framePNGPart+=action==='frame-part-next'?1:-1;this.renderFramePNGPart();return;}
     if(action==='zoom-in'||action==='zoom-out'){this.send({type:'zoom',delta:action==='zoom-in'?.12:-.12});return;}
     if(action==='probe-reference'){
       this.root.querySelector<HTMLInputElement>('[name=wind]')!.value='55';
@@ -173,8 +254,8 @@ export class CumulonimbusApp {
   private onResize=()=>this.send({type:'resize',viewport:this.viewport()});
   private onVisibility=()=>{if(document.hidden){this.audio.cancel();this.pointer.cancel();}this.send({type:'visibility',visible:!document.hidden});};
   destroy(){
-    if(this.destroyed)return;this.destroyed=true;this.pointer.destroy();this.audio.destroy();this.events.abort();this.resolveReady?.();this.resolveReady=null;
-    for(const action of ['new-cloud','benchmark','sustained'])this.controls.querySelector<HTMLButtonElement>(`[data-action="${action}"]`)!.disabled=true;
+    if(this.destroyed)return;this.frameExportRequest++;this.clearFrameExportData();this.destroyed=true;this.pointer.destroy();this.audio.destroy();this.events.abort();this.resolveReady?.();this.resolveReady=null;
+    for(const action of ['new-cloud','benchmark','sustained','frame-capture','frame-clear','frame-part-next','frame-part-previous']){const button=this.controls.querySelector<HTMLButtonElement>(`[data-action="${action}"]`);if(button)button.disabled=true;}
     this.stopWorker();
     void this.engine?.destroy();this.canvas.remove();
   }

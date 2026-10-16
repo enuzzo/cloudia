@@ -1,0 +1,2 @@
+$ vitest run src/cumulonimbus/nativeFrameExport.test.ts src/cumulonimbus/lifecycle.test.ts src/cumulonimbus/inspector.test.ts "--reporter=json" "--outputFile=/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle24/root-targeted-r2.json"
+JSON report written to /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle24/root-targeted-r2.json

@@ -1,0 +1,360 @@
+{
+  "status": "PASS_VISIBLE_PARTS_ROUNDTRIP",
+  "captureId": "worker-1-6251d0458628",
+  "bytes": 3434897,
+  "sha256": "6251d0458628d4e01d560fda33d37630e9f08ecd5e61244698c607e92bc448dc",
+  "totalCharacters": 4579886,
+  "parts": 70,
+  "ledger": [
+    {
+      "part": 1,
+      "characters": 65536,
+      "label": "Parte 1 di 70 · caratteri 1–65536 di 4579886"
+    },
+    {
+      "part": 2,
+      "characters": 65536,
+      "label": "Parte 2 di 70 · caratteri 65537–131072 di 4579886"
+    },
+    {
+      "part": 3,
+      "characters": 65536,
+      "label": "Parte 3 di 70 · caratteri 131073–196608 di 4579886"
+    },
+    {
+      "part": 4,
+      "characters": 65536,
+      "label": "Parte 4 di 70 · caratteri 196609–262144 di 4579886"
+    },
+    {
+      "part": 5,
+      "characters": 65536,
+      "label": "Parte 5 di 70 · caratteri 262145–327680 di 4579886"
+    },
+    {
+      "part": 6,
+      "characters": 65536,
+      "label": "Parte 6 di 70 · caratteri 327681–393216 di 4579886"
+    },
+    {
+      "part": 7,
+      "characters": 65536,
+      "label": "Parte 7 di 70 · caratteri 393217–458752 di 4579886"
+    },
+    {
+      "part": 8,
+      "characters": 65536,
+      "label": "Parte 8 di 70 · caratteri 458753–524288 di 4579886"
+    },
+    {
+      "part": 9,
+      "characters": 65536,
+      "label": "Parte 9 di 70 · caratteri 524289–589824 di 4579886"
+    },
+    {
+      "part": 10,
+      "characters": 65536,
+      "label": "Parte 10 di 70 · caratteri 589825–655360 di 4579886"
+    },
+    {
+      "part": 11,
+      "characters": 65536,
+      "label": "Parte 11 di 70 · caratteri 655361–720896 di 4579886"
+    },
+    {
+      "part": 12,
+      "characters": 65536,
+      "label": "Parte 12 di 70 · caratteri 720897–786432 di 4579886"
+    },
+    {
+      "part": 13,
+      "characters": 65536,
+      "label": "Parte 13 di 70 · caratteri 786433–851968 di 4579886"
+    },
+    {
+      "part": 14,
+      "characters": 65536,
+      "label": "Parte 14 di 70 · caratteri 851969–917504 di 4579886"
+    },
+    {
+      "part": 15,
+      "characters": 65536,
+      "label": "Parte 15 di 70 · caratteri 917505–983040 di 4579886"
+    },
+    {
+      "part": 16,
+      "characters": 65536,
+      "label": "Parte 16 di 70 · caratteri 983041–1048576 di 4579886"
+    },
+    {
+      "part": 17,
+      "characters": 65536,
+      "label": "Parte 17 di 70 · caratteri 1048577–1114112 di 4579886"
+    },
+    {
+      "part": 18,
+      "characters": 65536,
+      "label": "Parte 18 di 70 · caratteri 1114113–1179648 di 4579886"
+    },
+    {
+      "part": 19,
+      "characters": 65536,
+      "label": "Parte 19 di 70 · caratteri 1179649–1245184 di 4579886"
+    },
+    {
+      "part": 20,
+      "characters": 65536,
+      "label": "Parte 20 di 70 · caratteri 1245185–1310720 di 4579886"
+    },
+    {
+      "part": 21,
+      "characters": 65536,
+      "label": "Parte 21 di 70 · caratteri 1310721–1376256 di 4579886"
+    },
+    {
+      "part": 22,
+      "characters": 65536,
+      "label": "Parte 22 di 70 · caratteri 1376257–1441792 di 4579886"
+    },
+    {
+      "part": 23,
+      "characters": 65536,
+      "label": "Parte 23 di 70 · caratteri 1441793–1507328 di 4579886"
+    },
+    {
+      "part": 24,
+      "characters": 65536,
+      "label": "Parte 24 di 70 · caratteri 1507329–1572864 di 4579886"
+    },
+    {
+      "part": 25,
+      "characters": 65536,
+      "label": "Parte 25 di 70 · caratteri 1572865–1638400 di 4579886"
+    },
+    {
+      "part": 26,
+      "characters": 65536,
+      "label": "Parte 26 di 70 · caratteri 1638401–1703936 di 4579886"
+    },
+    {
+      "part": 27,
+      "characters": 65536,
+      "label": "Parte 27 di 70 · caratteri 1703937–1769472 di 4579886"
+    },
+    {
+      "part": 28,
+      "characters": 65536,
+      "label": "Parte 28 di 70 · caratteri 1769473–1835008 di 4579886"
+    },
+    {
+      "part": 29,
+      "characters": 65536,
+      "label": "Parte 29 di 70 · caratteri 1835009–1900544 di 4579886"
+    },
+    {
+      "part": 30,
+      "characters": 65536,
+      "label": "Parte 30 di 70 · caratteri 1900545–1966080 di 4579886"
+    },
+    {
+      "part": 31,
+      "characters": 65536,
+      "label": "Parte 31 di 70 · caratteri 1966081–2031616 di 4579886"
+    },
+    {
+      "part": 32,
+      "characters": 65536,
+      "label": "Parte 32 di 70 · caratteri 2031617–2097152 di 4579886"
+    },
+    {
+      "part": 33,
+      "characters": 65536,
+      "label": "Parte 33 di 70 · caratteri 2097153–2162688 di 4579886"
+    },
+    {
+      "part": 34,
+      "characters": 65536,
+      "label": "Parte 34 di 70 · caratteri 2162689–2228224 di 4579886"
+    },
+    {
+      "part": 35,
+      "characters": 65536,
+      "label": "Parte 35 di 70 · caratteri 2228225–2293760 di 4579886"
+    },
+    {
+      "part": 36,
+      "characters": 65536,
+      "label": "Parte 36 di 70 · caratteri 2293761–2359296 di 4579886"
+    },
+    {
+      "part": 37,
+      "characters": 65536,
+      "label": "Parte 37 di 70 · caratteri 2359297–2424832 di 4579886"
+    },
+    {
+      "part": 38,
+      "characters": 65536,
+      "label": "Parte 38 di 70 · caratteri 2424833–2490368 di 4579886"
+    },
+    {
+      "part": 39,
+      "characters": 65536,
+      "label": "Parte 39 di 70 · caratteri 2490369–2555904 di 4579886"
+    },
+    {
+      "part": 40,
+      "characters": 65536,
+      "label": "Parte 40 di 70 · caratteri 2555905–2621440 di 4579886"
+    },
+    {
+      "part": 41,
+      "characters": 65536,
+      "label": "Parte 41 di 70 · caratteri 2621441–2686976 di 4579886"
+    },
+    {
+      "part": 42,
+      "characters": 65536,
+      "label": "Parte 42 di 70 · caratteri 2686977–2752512 di 4579886"
+    },
+    {
+      "part": 43,
+      "characters": 65536,
+      "label": "Parte 43 di 70 · caratteri 2752513–2818048 di 4579886"
+    },
+    {
+      "part": 44,
+      "characters": 65536,
+      "label": "Parte 44 di 70 · caratteri 2818049–2883584 di 4579886"
+    },
+    {
+      "part": 45,
+      "characters": 65536,
+      "label": "Parte 45 di 70 · caratteri 2883585–2949120 di 4579886"
+    },
+    {
+      "part": 46,
+      "characters": 65536,
+      "label": "Parte 46 di 70 · caratteri 2949121–3014656 di 4579886"
+    },
+    {
+      "part": 47,
+      "characters": 65536,
+      "label": "Parte 47 di 70 · caratteri 3014657–3080192 di 4579886"
+    },
+    {
+      "part": 48,
+      "characters": 65536,
+      "label": "Parte 48 di 70 · caratteri 3080193–3145728 di 4579886"
+    },
+    {
+      "part": 49,
+      "characters": 65536,
+      "label": "Parte 49 di 70 · caratteri 3145729–3211264 di 4579886"
+    },
+    {
+      "part": 50,
+      "characters": 65536,
+      "label": "Parte 50 di 70 · caratteri 3211265–3276800 di 4579886"
+    },
+    {
+      "part": 51,
+      "characters": 65536,
+      "label": "Parte 51 di 70 · caratteri 3276801–3342336 di 4579886"
+    },
+    {
+      "part": 52,
+      "characters": 65536,
+      "label": "Parte 52 di 70 · caratteri 3342337–3407872 di 4579886"
+    },
+    {
+      "part": 53,
+      "characters": 65536,
+      "label": "Parte 53 di 70 · caratteri 3407873–3473408 di 4579886"
+    },
+    {
+      "part": 54,
+      "characters": 65536,
+      "label": "Parte 54 di 70 · caratteri 3473409–3538944 di 4579886"
+    },
+    {
+      "part": 55,
+      "characters": 65536,
+      "label": "Parte 55 di 70 · caratteri 3538945–3604480 di 4579886"
+    },
+    {
+      "part": 56,
+      "characters": 65536,
+      "label": "Parte 56 di 70 · caratteri 3604481–3670016 di 4579886"
+    },
+    {
+      "part": 57,
+      "characters": 65536,
+      "label": "Parte 57 di 70 · caratteri 3670017–3735552 di 4579886"
+    },
+    {
+      "part": 58,
+      "characters": 65536,
+      "label": "Parte 58 di 70 · caratteri 3735553–3801088 di 4579886"
+    },
+    {
+      "part": 59,
+      "characters": 65536,
+      "label": "Parte 59 di 70 · caratteri 3801089–3866624 di 4579886"
+    },
+    {
+      "part": 60,
+      "characters": 65536,
+      "label": "Parte 60 di 70 · caratteri 3866625–3932160 di 4579886"
+    },
+    {
+      "part": 61,
+      "characters": 65536,
+      "label": "Parte 61 di 70 · caratteri 3932161–3997696 di 4579886"
+    },
+    {
+      "part": 62,
+      "characters": 65536,
+      "label": "Parte 62 di 70 · caratteri 3997697–4063232 di 4579886"
+    },
+    {
+      "part": 63,
+      "characters": 65536,
+      "label": "Parte 63 di 70 · caratteri 4063233–4128768 di 4579886"
+    },
+    {
+      "part": 64,
+      "characters": 65536,
+      "label": "Parte 64 di 70 · caratteri 4128769–4194304 di 4579886"
+    },
+    {
+      "part": 65,
+      "characters": 65536,
+      "label": "Parte 65 di 70 · caratteri 4194305–4259840 di 4579886"
+    },
+    {
+      "part": 66,
+      "characters": 65536,
+      "label": "Parte 66 di 70 · caratteri 4259841–4325376 di 4579886"
+    },
+    {
+      "part": 67,
+      "characters": 65536,
+      "label": "Parte 67 di 70 · caratteri 4325377–4390912 di 4579886"
+    },
+    {
+      "part": 68,
+      "characters": 65536,
+      "label": "Parte 68 di 70 · caratteri 4390913–4456448 di 4579886"
+    },
+    {
+      "part": 69,
+      "characters": 65536,
+      "label": "Parte 69 di 70 · caratteri 4456449–4521984 di 4579886"
+    },
+    {
+      "part": 70,
+      "characters": 57902,
+      "label": "Parte 70 di 70 · caratteri 4521985–4579886 di 4579886"
+    }
+  ]
+}

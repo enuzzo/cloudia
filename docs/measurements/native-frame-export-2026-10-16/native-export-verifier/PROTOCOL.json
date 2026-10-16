@@ -1,0 +1,24 @@
+{
+  "status": "FROZEN_BEFORE_READONLY_FILE_VERIFICATION",
+  "verifierSHA256": "0ebdcc6645388f333c34a350295915f39761f4899ae4bd389de5f66227d511d0",
+  "inputs": {
+    "browserProtocolSHA256": "6da5f3d39e7f9a019215e3d03e0c17e917ddfbe32a6b1e2c104024328b9b5fc4",
+    "sourceManifestSHA256": "8dce2ed7a5843104c3b606c4223435d69408d43739712b1f722c7a1fa8a348f2",
+    "distManifestSHA256": "e976624d4f710cd21dde34352a918a08ac68f31d245932f4dfd0920dcf4e2983"
+  },
+  "scope": "Saved PNG+metadata+transfer triples only, Pillow fulldecode, source124/dist30 hashes opt-in, saved378/45 qualification not re-executed; six captures includes pre-capture amendment",
+  "command": [
+    "python3",
+    "verify.py",
+    "--root",
+    "..",
+    "--require-worker",
+    "--runtime-source",
+    "../native-export-source",
+    "--dist",
+    "../native-export-source/dist",
+    "--output",
+    "verification.json"
+  ],
+  "noTestsBuildGPUOrBrowser": true
+}

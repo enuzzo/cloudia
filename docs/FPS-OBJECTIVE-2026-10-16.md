@@ -8,7 +8,18 @@ output pieno configurato. Questo obiettivo si aggiunge ad anatomia delle tre
 famiglie, luce ravvicinata continua, pioggia/virga integrate nel paesaggio e UI.
 Nessuno di questi gate è sostituito dal contatore dei frame.
 
-## Stato corrente: v56 spalla inward, 60 FPS complessivi ancora aperti
+## Stato corrente: v57 PNG native, 60 FPS complessivi ancora aperti
+
+[v57](NATIVE-FRAME-EXPORT-2026-10-16.md) acquisisce intenzionalmente il bitmap
+canvas più i metadati dello stesso draw main/worker nel profilo diagnostico.
+124sorgenti,378/378test45file, typecheck e app→hero PASS. Main/workernear60
+a2474×1844 producono PNG identiche; qualità256³/128³/384 conservata.
+La cattura e la preparazione dei dati escludono i benchmark e sono fuori
+dal percorso ordinario. Nessuna nuova misura o vantaggio FPS attribuito;
+PNG non prova presentazione del compositore. I riferimenti v56 sotto restano
+le ultime finestre native30s; il vicino e la pioggia restano artisticamente aperti.
+
+## Riferimento precedente: v56 spalla inward
 
 [v56](SHOULDER-CONTINUITY-2026-10-16.md) corregge la sola protrusione interna,
 con corpo comune e offset laterale conservati. Nessuna nuova risorsa/pass o
@@ -32,7 +43,8 @@ misurano59,963–59,998invii/s, tutte con prefisso completato. Camera, qualità 
 vettori Sole/Tramonto A/B verificati uguali; prove sequenziali, non uno speedup
 causale né una nuova misura a2474×1844 o di pioggia. Il riferimento nativo v56
 qui sopra e il gate60FPS complessivo restano invariati. Le immagini sono JPEG
-CSS1237×922; export PNG dello stesso draw è soltanto il prossimo piano.
+CSS1237×922; l'export PNG dello stesso draw era allora soltanto un piano,
+ora implementato e verificato in v57 senza modificare il trial scartato.
 
 ## Riferimento precedente: v55 cromaticità del terreno
 

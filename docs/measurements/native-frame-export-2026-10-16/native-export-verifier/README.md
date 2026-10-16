@@ -1,0 +1,3 @@
+Verifica esterna e sola lettura degli input. Dipendenze: Python3+Pillow (qui12.1.1 già disponibile, nessuna installazione). Layout atteso sotto --root: browser/PROTOCOL.json,triplette .png/.json/.transfer.json e qualification/{PROTOCOL,source-manifest,dist-manifest,test-results,checks}.json. Eventuale browser-r1/transport-limit.json viene conservato come rifiuto storico.
+
+Usare --require-worker per imporre tutto il set dichiarato; senza, può essere rimandata soltanto una tripletta worker non ancora completa. --runtime-source e --dist fanno hash-check sui124/30file; nessun test o build eseguito. --output rifiuta sovrascritture. verification.json è l’unico esito salvato del run; REPORT.md ne descrive limiti.

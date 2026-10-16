@@ -1,3 +1,6 @@
+import {Blob as NodeBlob} from 'node:buffer';
+import {webcrypto,createHash} from 'node:crypto';
+import {setImmediate as nativeTestImmediate} from 'node:timers';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type {Texture} from 'three/webgpu';
 import type {TerrainCameraFrame,TerrainMeshConfiguration} from './terrainMesh';
@@ -29,7 +32,7 @@ vi.mock('three/webgpu',async(importOriginal)=>{
     info={frame:41,render:{frameCalls:0,timestamp:0},compute:{frameCalls:0,timestamp:0}};
     domElement=document.createElement('canvas');initialized=false;
     dispose=vi.fn();onDeviceLost=control.originalLost;
-    constructor() {control.renderer=this;}
+    constructor(options?:{canvas?:HTMLCanvasElement}) {if(options?.canvas)this.domElement=options.canvas;control.renderer=this;}
     async init() {await new Promise<void>(resolve=>{control.initResolve=resolve;});this.initialized=true;}
     hasFeature(name:string) {return control.timestamps&&name==='timestamp-query';}
     private recordPass(kind:MockTimestampKind,context:string,duration:number){
@@ -61,7 +64,7 @@ vi.mock('three/webgpu',async(importOriginal)=>{
       }
       this.info[kind].timestamp=duration;return duration;
     }
-    setPixelRatio() {} setSize() {}
+    setPixelRatio() {} setSize(width:number,height:number) {this.domElement.width=width;this.domElement.height=height;}
   },QuadMesh:class {render(renderer:MockRendererControl){control.render(renderer);renderer.recordRenderPasses();}}};
 });
 // These tests exercise Engine ownership, not terrain construction/rasterization.
@@ -147,6 +150,121 @@ type DensitySamplingSnapshot={path:string;format:string;dimensions:number[];text
 function terrainComponents(value:TerrainCameraFrame['origin']):number[]{
  return 'x' in value?[value.x,value.y,value.z]:Array.from(value);
 }
+const nativePNGBytes=Uint8Array.from(Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+/l8sAAAAASUVORK5CYII=','base64'));
+const nativePNG=()=>new NodeBlob([nativePNGBytes],{type:'image/png'}) as unknown as Blob;
+type NativeTestDTO={schema:string;requestId:number;png:{width:number;height:number;sha256:string};metadata:{
+ seed:number;quality:string;nominalSteps:number;stepSizeKm:number;output:number[];internal:number[];canvas:number[];
+ frame:{ownerDrawSerial:number;rafTimestamp:number};camera:{origin:number[]};
+ flowMode:string;flowComputeThisDraw:boolean;clocks:{simulationTime:number;forcingTime:number;precipitationUniformTime:number;flowUniformTime:number;flowFieldTime:number};
+}};
+function nativeButton(root:HTMLElement,action:string){return root.querySelector<HTMLButtonElement>(`[data-action="${action}"]`)!;}
+function nativeSelect(root:HTMLElement,name:string,value:string){const select=root.querySelector<HTMLSelectElement>(`select[name="${name}"]`)!;select.value=value;select.dispatchEvent(new Event('change',{bubbles:true}));}
+function nativeStatus(root:HTMLElement){return root.querySelector<HTMLElement>('[data-testid="frame-export-status"]')!;}
+function nativeData(root:HTMLElement):NativeTestDTO{return JSON.parse(root.querySelector<HTMLTextAreaElement>('[data-testid="frame-export-json"]')!.value) as NativeTestDTO;}
+async function settleNative(){await flush();await new Promise<void>(resolve=>nativeTestImmediate(resolve));await flush();}
+async function startNativeFixture(search='/?profile=1&timing=off&flow=frozen&seed=74'){
+ history.replaceState(null,'',search);vi.spyOn(document,'hidden','get').mockReturnValue(false);
+ const clock={value:1000};vi.spyOn(performance,'now').mockImplementation(()=>clock.value);
+ const {app,root}=createApp();Object.defineProperties(root,{clientWidth:{configurable:true,value:1},clientHeight:{configurable:true,value:1}});
+ const starting=app.start();await flush();control.initResolve();await flush();control.workers[0].onmessage!({data:{volume:cloudVolume()}});await starting;
+ const canvas=root.querySelector<HTMLCanvasElement>('canvas')!,frame=vi.mocked(requestAnimationFrame).mock.calls[0][0];
+ nativeSelect(root,'output','window');
+ return {app,root,canvas,clock,draw:(time:number)=>{clock.value=time;frame(time);}};
+}
+
+describe('native PNG export engine/App lifecycle regression',()=>{
+ beforeEach(()=>{vi.stubGlobal('Blob',NodeBlob);vi.stubGlobal('crypto',webcrypto);});
+ it('acquires only after the next quad draw and keeps that draw DTO while later frames continue',async()=>{
+  const bindings:Record<string,unknown>[]=[],original=cloudShader.createCloudIntegrator;
+  vi.spyOn(cloudShader,'createCloudIntegrator').mockImplementation((mode,narrow,r8)=>new Proxy(original(mode,narrow,r8),{
+   apply(target,thisArg,args){bindings.push(args[0] as Record<string,unknown>);return Reflect.apply(target,thisArg,args);},
+  }));
+  const {app,root,canvas,draw}=await startNativeFixture();
+  let callback!:(blob:Blob|null)=>void,drawOrigin:number[]=[];
+  const encoder=vi.fn((done:(blob:Blob|null)=>void)=>{callback=done;drawOrigin=(bindings.at(-1)!.origin as {value:{toArray:()=>number[]}}).value.toArray();});
+  Object.defineProperty(canvas,'toBlob',{configurable:true,value:encoder});
+  try{
+   const renderCount=control.render.mock.calls.length;nativeButton(root,'frame-capture').click();
+   expect(nativeStatus(root).dataset.state).toBe('pending');expect(encoder).not.toHaveBeenCalled();
+   expect(nativeButton(root,'benchmark').disabled).toBe(true);
+   draw(1000);expect(control.render).toHaveBeenCalledTimes(renderCount+1);expect(encoder).toHaveBeenCalledOnce();
+   expect(control.render.mock.invocationCallOrder.at(-1)!).toBeLessThan(encoder.mock.invocationCallOrder[0]);
+   expect([canvas.width,canvas.height]).toEqual([1,1]);
+   nativeButton(root,'zoom-in').click();draw(2000); // mutate live camera/time before PNG callback
+   callback(nativePNG());await vi.waitFor(()=>expect(nativeStatus(root).dataset.state).toBe('ready'));
+   const result=nativeData(root);expect(result.schema).toBe('cloudia-native-frame-v1');
+   expect(result.metadata.frame).toMatchObject({ownerDrawSerial:1,rafTimestamp:1000});
+   expect(result.metadata.camera.origin).toEqual(drawOrigin);
+   expect(result.metadata.camera.origin).not.toEqual((bindings.at(-1)!.origin as {value:{toArray:()=>number[]}}).value.toArray());
+   expect(result.metadata.clocks.simulationTime).toBe(60);
+   expect(result.png).toMatchObject({width:1,height:1,sha256:createHash('sha256').update(nativePNGBytes).digest('hex')});
+   expect(root.querySelector<HTMLTextAreaElement>('[data-testid="frame-export-png"]')!.value).toBe(`data:image/png;base64,${Buffer.from(nativePNGBytes).toString('base64')}`);
+   expect(encoder).toHaveBeenCalledOnce();
+  }finally{app.destroy();await settleNative();}
+ });
+ it('captures applied native128/ultra384 at identical dimensions with the actual pre-forcing precipitation and frozen-field clocks',async()=>{
+  const {app,root,canvas,draw}=await startNativeFixture();
+  const encoder=vi.fn((done:(blob:Blob|null)=>void)=>done(nativePNG()));Object.defineProperty(canvas,'toBlob',{configurable:true,value:encoder});
+  try{
+   draw(1000);const initialCompute=control.compute.mock.calls.length;
+   nativeSelect(root,'quality','native');nativeButton(root,'frame-capture').click();expect(encoder).not.toHaveBeenCalled();
+   draw(2000);await vi.waitFor(()=>expect(nativeStatus(root).dataset.state).toBe('ready'));const native=nativeData(root).metadata;
+   expect(native).toMatchObject({quality:'native',nominalSteps:128,output:[1,1],internal:[1,1],canvas:[1,1],flowMode:'frozen',flowComputeThisDraw:false});
+   expect(native.stepSizeKm).toBe(7/128);expect(native.clocks).toMatchObject({forcingTime:0,precipitationUniformTime:0,flowFieldTime:60});
+   expect(native.clocks.flowUniformTime).toBe(60);expect(native.clocks.simulationTime).toBe(60);
+   draw(2500); // first ordinary interval after applySize reset its interval anchor
+   nativeSelect(root,'quality','ultra');nativeButton(root,'frame-capture').click();draw(3000);
+   await vi.waitFor(()=>expect(nativeStatus(root).dataset.state).toBe('ready'));const ultra=nativeData(root).metadata;
+   expect(ultra).toMatchObject({quality:'ultra',nominalSteps:384,output:[1,1],internal:[1,1],canvas:[1,1],flowMode:'frozen',flowComputeThisDraw:false});
+   expect(ultra.stepSizeKm).toBe(7/384);expect(ultra.clocks).toMatchObject({forcingTime:.5,precipitationUniformTime:.5,flowFieldTime:60});
+   expect(ultra.clocks.flowUniformTime).toBeCloseTo(60.05,10);expect(control.compute).toHaveBeenCalledTimes(initialCompute);
+   expect(ultra.frame.rafTimestamp).toBe(3000);expect(encoder).toHaveBeenCalledTimes(2);
+   nativeButton(root,'frame-capture').click();draw(4000);await vi.waitFor(()=>expect(nativeStatus(root).dataset.state).toBe('ready'));
+   const advanced=nativeData(root).metadata;
+   expect(advanced.clocks).toMatchObject({forcingTime:1.5,precipitationUniformTime:.5,flowFieldTime:60});
+   expect(advanced.clocks.flowUniformTime).toBeCloseTo(60.1,10);expect(encoder).toHaveBeenCalledTimes(3);
+  }finally{app.destroy();await settleNative();}
+ });
+ it('clears UI during the App Blob read but retains the engine display slot until that old conversion finally ACKs',async()=>{
+  const {app,root,canvas,draw}=await startNativeFixture();
+  let release!:(buffer:ArrayBuffer)=>void;
+  class AppReadHeldBlob extends NodeBlob {
+   reads=0;
+   override arrayBuffer():Promise<ArrayBuffer>{this.reads++;return this.reads===2?new Promise(resolve=>{release=resolve;}):super.arrayBuffer();}
+  }
+  const blob=new AppReadHeldBlob([nativePNGBytes],{type:'image/png'}),encoder=vi.fn((done:(blob:Blob|null)=>void)=>done(blob as unknown as Blob));
+  Object.defineProperty(canvas,'toBlob',{configurable:true,value:encoder});
+  try{
+   nativeButton(root,'frame-capture').click();draw(1000);await vi.waitFor(()=>expect(blob.reads).toBe(2));
+   expect(nativeStatus(root).dataset.state).toBe('encoding');nativeButton(root,'frame-clear').click();
+   expect(nativeStatus(root).dataset.state).toBe('cleared');expect(nativeButton(root,'benchmark').disabled).toBe(true);expect(nativeButton(root,'frame-capture').disabled).toBe(true);
+   expect(root.querySelector<HTMLTextAreaElement>('[data-testid="frame-export-json"]')!.value).toBe('');
+   draw(2000);nativeButton(root,'benchmark').click();expect(root.querySelector('[data-testid="benchmark-result"]')!.textContent).not.toContain('Riscaldamento');expect(encoder).toHaveBeenCalledOnce();
+   release(nativePNGBytes.slice().buffer);await vi.waitFor(()=>expect(nativeButton(root,'benchmark').disabled).toBe(false));
+   expect(nativeButton(root,'frame-capture').disabled).toBe(false);expect(nativeStatus(root).dataset.state).toBe('cleared');
+   expect(root.querySelector<HTMLTextAreaElement>('[data-testid="frame-export-json"]')!.value).toBe('');
+   expect(root.querySelector<HTMLTextAreaElement>('[data-testid="frame-export-png"]')!.value).toBe('');
+   expect(root.querySelector<HTMLElement>('[data-testid="frame-export-data"]')!.hidden).toBe(true);
+  }finally{release?.(nativePNGBytes.slice().buffer);app.destroy();await settleNative();}
+ });
+ it('rejects a stale capture command while collecting/closing a benchmark and exposes no PNG controls in ordinary mode',async()=>{
+  const {app,root,canvas,draw,clock}=await startNativeFixture();
+  const fences:Array<()=>void>=[];device.queue.onSubmittedWorkDone.mockImplementation(()=>new Promise<void>(resolve=>fences.push(resolve)));
+  const encoder=vi.fn((done:(blob:Blob|null)=>void)=>done(nativePNG()));Object.defineProperty(canvas,'toBlob',{configurable:true,value:encoder});
+  try{
+   nativeButton(root,'benchmark').click();expect(nativeButton(root,'frame-capture').disabled).toBe(true);
+   const staleCapture=()=>{const capture=nativeButton(root,'frame-capture');capture.disabled=false;capture.click();}; // public UI command from a deliberately stale enabled control
+   staleCapture();expect(nativeStatus(root).textContent).toContain('Termina la misura');expect(nativeButton(root,'frame-capture').disabled).toBe(true);
+   draw(3000);draw(3050);draw(33000);expect(fences).toHaveLength(3);
+   expect(root.querySelector('[data-testid="benchmark-result"]')!.textContent).toContain('prefisso GPU finale');
+   staleCapture();expect(nativeStatus(root).textContent).toContain('Termina la misura');expect(encoder).not.toHaveBeenCalled();
+   clock.value=33100;fences.forEach(resolve=>resolve());await vi.waitFor(()=>expect(nativeButton(root,'frame-capture').disabled).toBe(false));
+  }finally{app.destroy();fences.forEach(resolve=>resolve());await settleNative();}
+  history.replaceState(null,'','/');const ordinary=createApp();
+  try{expect(ordinary.root.querySelector('[data-action="frame-capture"]')).toBeNull();expect(ordinary.root.querySelector('[data-action="frame-clear"]')).toBeNull();expect(ordinary.root.querySelector('[data-testid="frame-export-json"]')).toBeNull();}
+  finally{ordinary.app.destroy();await settleNative();}
+ });
+});
 describe('scene async lifecycle',()=>{
   it('reports a missing measured cover before generating clouds instead of silently colouring every slope as forest',async()=>{
     vi.mocked(loadTerrainCover).mockRejectedValueOnce(new Error('Copertura del suolo non disponibile (404)'));
@@ -374,7 +492,7 @@ describe('scene async lifecycle',()=>{
       queuePrefix:{status:string;measuredSubmissions:number;confirmedPrefixId:number;samples:Array<{kind:string;prefixId:number}>}};
     expect(report.densitySamplingStart).toMatchObject({path:'r8unorm-extracted-r',format:'r8unorm',dimensions:[1,1,1],textureBytes:1,extraCpuPayloadBytes:1,extraGpuPayloadBytes:1,fallback:null});
     expect(report.densitySamplingEnd).toEqual(report.densitySamplingStart);
-    expect(report.rendererVersion).toBe('observatory-v56-inward-shoulder');
+    expect(report.rendererVersion).toBe('observatory-v57-native-frame-export');
     expect(report).toHaveProperty('terrainSurfaceId','copernicus-glo90-liguria-apuane-v1');
     expect(report).toHaveProperty('terrainGeography',expect.objectContaining({originDegrees:[44,10],verticalExaggeration:1,measuredSquareHalfWidthKm:48}));
     expect(report).toHaveProperty('terrainCover',expect.objectContaining({id:'esa-worldcover-2021-area-fractions-v1',year:2021,sourceClasses:12,materialGroups:8,gridSize:[2,2],sourceAssetBytes:80,retainedCpuPayloadBytes:32,totalGpuPayloadBytes:40}));

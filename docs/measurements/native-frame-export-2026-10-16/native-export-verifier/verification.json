@@ -1,0 +1,332 @@
+{
+  "status": "PASS_COMPLETE_NATIVE_PNG_SET",
+  "pillowVersion": "12.1.1",
+  "qualification": {
+    "sourceFiles": 124,
+    "sourceManifestSHA256": "8dce2ed7a5843104c3b606c4223435d69408d43739712b1f722c7a1fa8a348f2",
+    "runtimeSourceHashesVerified": true,
+    "distFiles": 30,
+    "distManifestSHA256": "e976624d4f710cd21dde34352a918a08ac68f31d245932f4dfd0920dcf4e2983",
+    "distHashesVerified": true,
+    "savedTestsPassed": 378,
+    "savedTestFiles": 45,
+    "savedCommandsExitZero": true,
+    "testsWereRerun": false
+  },
+  "browserProtocolSHA256": "6da5f3d39e7f9a019215e3d03e0c17e917ddfbe32a6b1e2c104024328b9b5fc4",
+  "expectedPNGCount": 6,
+  "protocolAmendmentIncluded": true,
+  "verifiedPNGCount": 6,
+  "uniquePNGHashes": 5,
+  "uniqueDecodedRGBAHashes": 5,
+  "png": [
+    {
+      "name": "main74-near60-sun-1280x720",
+      "thread": "main",
+      "size": [
+        1280,
+        720
+      ],
+      "bytes": 806716,
+      "sha256": "aee8f81aec6abd3800908b7829305b0d7a6fd8e809a00d6096519c2bd0bad747",
+      "decodedRGBAsha256": "488998b7e4112350990e2bcec59bdf88687476fe9881fecbbe20a0bba6988c03",
+      "pillowMode": "RGBA",
+      "fullyDecoded": true,
+      "captureId": "main-1-aee8f81aec6a",
+      "parts": 17,
+      "totalCharacters": 1075646,
+      "quality": "ultra",
+      "nominalSteps": 384,
+      "volume": [
+        256,
+        256,
+        256
+      ],
+      "detail": [
+        128,
+        128,
+        128
+      ],
+      "approach": 0.6,
+      "densityPath": "macro-rgba8-r",
+      "cameraFiniteAndOrthonormal": true,
+      "metadataSHA256": "81b738eed4cc0374cf9b64255e8f81b6a6e333ed59dea965182cdd4c88f077a6",
+      "transferSHA256": "1f6524a2db3d9166c8ee3ead9c44743b1d495a6acbede93be1bf43c5019a271a"
+    },
+    {
+      "name": "main74-near60-sun-native",
+      "thread": "main",
+      "size": [
+        2474,
+        1844
+      ],
+      "bytes": 3434897,
+      "sha256": "6251d0458628d4e01d560fda33d37630e9f08ecd5e61244698c607e92bc448dc",
+      "decodedRGBAsha256": "f9722fda04119a627ef6bd095fb7728e9d4965291cb3eeb18c04f82c4994a31d",
+      "pillowMode": "RGBA",
+      "fullyDecoded": true,
+      "captureId": "main-3-6251d0458628",
+      "parts": 70,
+      "totalCharacters": 4579886,
+      "quality": "ultra",
+      "nominalSteps": 384,
+      "volume": [
+        256,
+        256,
+        256
+      ],
+      "detail": [
+        128,
+        128,
+        128
+      ],
+      "approach": 0.6,
+      "densityPath": "macro-rgba8-r",
+      "cameraFiniteAndOrthonormal": true,
+      "metadataSHA256": "48781568553d0e3d7d7d1e52f95783a7dd1822259a12d4961eace24d68e1954c",
+      "transferSHA256": "eebab09bbc36df62ec604a6ba1e7f757663a6fdf6308272fd345c3037049fe78"
+    },
+    {
+      "name": "main74-near95-sun-native",
+      "thread": "main",
+      "size": [
+        2474,
+        1844
+      ],
+      "bytes": 1083466,
+      "sha256": "28c99564f6c44fb5f111a8c206666501c3a0b684b7e098cad4d4748f6937a73f",
+      "decodedRGBAsha256": "20125855b6661965c7c7ad074ff7b794bcd77c1daef8415c6d825132c9103d5a",
+      "pillowMode": "RGBA",
+      "fullyDecoded": true,
+      "captureId": "main-5-28c99564f6c4",
+      "parts": 23,
+      "totalCharacters": 1444646,
+      "quality": "ultra",
+      "nominalSteps": 384,
+      "volume": [
+        256,
+        256,
+        256
+      ],
+      "detail": [
+        128,
+        128,
+        128
+      ],
+      "approach": 0.95,
+      "densityPath": "macro-rgba8-r",
+      "cameraFiniteAndOrthonormal": true,
+      "metadataSHA256": "9686a7060437d590d7ef1eb3d06aae51e193088f082deaf3e69377ddcbfbe1dd",
+      "transferSHA256": "5aea4df8ec52d45c57805a5edb45989bf6e8d901713f314a2cea767d241b4e3c"
+    },
+    {
+      "name": "main74-rain-terrain-native",
+      "thread": "main",
+      "size": [
+        2474,
+        1844
+      ],
+      "bytes": 2508514,
+      "sha256": "a913ecef59dc60d16d7362c4206de7f07c7c3f71be07a18e49076815bf43c20c",
+      "decodedRGBAsha256": "74402616bf7ac49eaf0a144e2d038cc8b6ae557c72123409ec44728d254c01a5",
+      "pillowMode": "RGBA",
+      "fullyDecoded": true,
+      "captureId": "main-7-a913ecef59dc",
+      "parts": 52,
+      "totalCharacters": 3344710,
+      "quality": "ultra",
+      "nominalSteps": 384,
+      "volume": [
+        256,
+        256,
+        256
+      ],
+      "detail": [
+        128,
+        128,
+        128
+      ],
+      "approach": 0,
+      "densityPath": "r8unorm-extracted-r",
+      "cameraFiniteAndOrthonormal": true,
+      "metadataSHA256": "2718664c4f2b7abafa5a2480b4567ffaf8963058fab71059221b05e43395ddec",
+      "transferSHA256": "08724869ae05db19b4a2c2d3999c4b1f2159f81715e2575a9d7b67c897efb0b3"
+    },
+    {
+      "name": "worker74-near60-sun-native",
+      "thread": "worker",
+      "size": [
+        2474,
+        1844
+      ],
+      "bytes": 3434897,
+      "sha256": "6251d0458628d4e01d560fda33d37630e9f08ecd5e61244698c607e92bc448dc",
+      "decodedRGBAsha256": "f9722fda04119a627ef6bd095fb7728e9d4965291cb3eeb18c04f82c4994a31d",
+      "pillowMode": "RGBA",
+      "fullyDecoded": true,
+      "captureId": "worker-1-6251d0458628",
+      "parts": 70,
+      "totalCharacters": 4579886,
+      "quality": "ultra",
+      "nominalSteps": 384,
+      "volume": [
+        256,
+        256,
+        256
+      ],
+      "detail": [
+        128,
+        128,
+        128
+      ],
+      "approach": 0.6,
+      "densityPath": "macro-rgba8-r",
+      "cameraFiniteAndOrthonormal": true,
+      "metadataSHA256": "7cccc611400e5ea6e01a7e02dd804ff53c161a40bbf1d31ac956d591cf4cf9e8",
+      "transferSHA256": "7f3ec9535d329e5a03dfe4856722bf96816d0ea57b4665086220007fe75d611b"
+    },
+    {
+      "name": "main74-sun-terrain-native",
+      "thread": "main",
+      "size": [
+        2474,
+        1844
+      ],
+      "bytes": 2817764,
+      "sha256": "af8877ac93db6fcd50ab3ceece43ac1a40fc7d21c41151afb3a9620ca7586be5",
+      "decodedRGBAsha256": "5e5d4093dcac4f8b42011136723eb5d8a8cf3c9f389eae04303a1825b838f93d",
+      "pillowMode": "RGBA",
+      "fullyDecoded": true,
+      "captureId": "main-1-af8877ac93db",
+      "parts": 58,
+      "totalCharacters": 3757042,
+      "quality": "ultra",
+      "nominalSteps": 384,
+      "volume": [
+        256,
+        256,
+        256
+      ],
+      "detail": [
+        128,
+        128,
+        128
+      ],
+      "approach": 0,
+      "densityPath": "macro-rgba8-r",
+      "cameraFiniteAndOrthonormal": true,
+      "metadataSHA256": "f59d46a8b6a022f9b9a9e7e2faca1164e1d8acbfeb0aee05dbb10903f84fbbff",
+      "transferSHA256": "cbb9c227e8a88c365bc9d3ef5e7ccdb760489b1169fb4e27c9a07a17d1c22a41"
+    }
+  ],
+  "missingExpectedTriplets": [],
+  "mainWorker": {
+    "status": "PASS_SAME_EFFECTIVE_POSE",
+    "comparedFields": [
+      "rendererVersion",
+      "threeRevision",
+      "seed",
+      "family",
+      "quality",
+      "nominalSteps",
+      "stepSizeKm",
+      "emptyStepKm",
+      "output",
+      "internal",
+      "canvas",
+      "volume",
+      "detailVolume",
+      "motionField",
+      "ablation",
+      "ablationCode",
+      "flowMode",
+      "flowSampled",
+      "flowComputeThisDraw",
+      "densitySampling",
+      "narrowCloudSpecialization",
+      "camera",
+      "paused",
+      "orbit",
+      "speed",
+      "material",
+      "weather",
+      "lighting",
+      "terrain"
+    ],
+    "comparedAppliedClocks": [
+      "simulationTime",
+      "forcingTime",
+      "precipitationUniformTime",
+      "flowUniformTime",
+      "flowFieldTime",
+      "flowFieldDispersion"
+    ],
+    "excludedOwnerLocalFields": [
+      "captureId",
+      "requestId",
+      "frame timestamps/counter/timeOrigin",
+      "clocks.weatherTime",
+      "skyTextures owner UUID/version/serial"
+    ],
+    "pngSHA256Equal": true,
+    "decodedRGBAEqual": true,
+    "bitEqualityScope": "Only these two exported canvas PNG/decoded bitmaps; no float buffer/compositor/global renderer claim"
+  },
+  "sunRainTerrain": {
+    "status": "PASS_SAME_CAMERA_QUALITY",
+    "comparedFields": [
+      "camera",
+      "quality",
+      "nominalSteps",
+      "stepSizeKm",
+      "output",
+      "internal",
+      "canvas",
+      "volume",
+      "detailVolume",
+      "motionField",
+      "seed",
+      "paused",
+      "orbit",
+      "flowMode",
+      "material"
+    ],
+    "sunSkyIntent": "clear",
+    "rainSkyIntent": "rain",
+    "pngHashesDiffer": true,
+    "scope": "Weather/light/aerial paths differ intentionally; no causal or artistic acceptance from this comparison."
+  },
+  "twoNativeMainPoses": {
+    "fileAndPixelHashesDiffer": true,
+    "cameraOriginDiffers": true
+  },
+  "auxiliarySavedEvidence": {
+    "clear-after-main720.json": {
+      "sha256": "693225852110254225bd7e9772714f05cd6eb89923c644cf4e7151a77e5a908e",
+      "savedEvidence": {
+        "status": "Esportazione svuotata.",
+        "jsonCharacters": 0,
+        "pngCharacters": 0,
+        "downloadHref": null,
+        "captureEnabled": true
+      }
+    },
+    "worker-clear-console.json": {
+      "sha256": "780fdda187be2970456c541fadd8c40f8ff4a931eada043f6866ec4886785538",
+      "savedEvidence": {
+        "status": "Esportazione svuotata.",
+        "captureEnabled": true,
+        "jsonCharacters": 0,
+        "pngCharacters": 0,
+        "downloadHref": null,
+        "logs": []
+      }
+    }
+  },
+  "historicalR1": {
+    "status": "REJECTED_TRUNCATED_TEXT_NO_PNG_SAVED",
+    "expectedBytes": 806716,
+    "partialBytes": 149990
+  },
+  "scope": "File bytes/full Pillow decode/PNG dimensions, saved metadata and transfer ledger arithmetic only. Raw UI part strings are not archived, so visible-UI provenance is the collector record, not independently replayed here. No tests/build/model/GPU/browser were run; no FPS, compositor, HDR/float or artistic acceptance."
+}
