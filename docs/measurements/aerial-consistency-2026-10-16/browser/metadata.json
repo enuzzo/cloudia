@@ -1,0 +1,62 @@
+{
+  "scope": "Six paired sparse CSS JPEG screenshots1280x720. Full configured render2560x1440/384 reported by root and rain measurements; screenshots are not nativePNG or video. Cloud-top crop intentional to show curtain and ground.",
+  "seed": 72,
+  "camera": {
+    "comparisonSurfaceKm": 1,
+    "comparisonTargetKm": [
+      0,
+      0,
+      0
+    ],
+    "probeSkipped": true,
+    "approach": 0,
+    "origin": [
+      0,
+      5.636387732401439,
+      14.974349178846957
+    ],
+    "probeFlow": "16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively",
+    "probeFieldBytes": 32768,
+    "surfaceEstimateKm": null,
+    "probe": null,
+    "probeAgeMs": null,
+    "altitudeKm": 9.636387732401438,
+    "ground": 1,
+    "yaw": 0,
+    "pitch": 0.36,
+    "target": [
+      0,
+      0,
+      0
+    ]
+  },
+  "simulationTime": 60,
+  "wind": 0.55,
+  "dispersion": 0,
+  "paused": true,
+  "pairs": {
+    "rain": {
+      "baseline": "aerial-baseline72-rain-ground.jpg",
+      "candidate": "aerial-candidate72-rain-ground.jpg",
+      "targetIntensityPercent": 80,
+      "actualIntensityScope": "Measured at rain benchmark starts, within1e-6 of.8; no individual screenshot export."
+    },
+    "weak": {
+      "baseline": "aerial-baseline72-weak-ground.jpg",
+      "candidate": "aerial-candidate72-weak-ground.jpg",
+      "targetIntensityPercent": 20,
+      "settingSource": "Root UI slider filled20; settled about30s for both",
+      "actualIntensity": null,
+      "actualIntensityScope": "No weakJSON exported; target is not an actual measured intensity."
+    },
+    "sun": {
+      "baseline": "aerial-baseline72-sun-ground.jpg",
+      "candidate": "aerial-candidate72-sun-ground.jpg",
+      "sceneButton": "Sole",
+      "settleAboutSeconds": 20,
+      "actualIntensity": null,
+      "actualIntensityScope": "No separate Sun benchmark/export."
+    }
+  },
+  "visualReview": "Paired rain images nearly equivalent; candidate slightly weaker, curtain remains visible. Weak virga barely visible in both; no specific new loss evident. Sun pair shows no evident global washout. No general photographic/temporal acceptance."
+}

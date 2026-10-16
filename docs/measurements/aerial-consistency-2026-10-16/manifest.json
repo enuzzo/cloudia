@@ -1,0 +1,172 @@
+{
+  "baseCommit": "08c33cb",
+  "promotedScope": "Shared coefficient in an authored homogeneous medium only; no general artistic/physical/FPS acceptance.",
+  "measurementScope": "Aerial-only original anatomy frozen-trial/v49; finalcombinedv50 has different geometry and was not measured by this A/B/A.",
+  "payloadCount": 30,
+  "payloadBytes": 752229,
+  "selfExcluded": true,
+  "files": {
+    "browser/aerial-baseline72-rain-ground.jpg": {
+      "bytes": 59707,
+      "sha256": "71db9c745bb0979db82c9631da469c1b1cbbdb8a3fe44580334ac8aec4b30a99",
+      "imageSize": [
+        1280,
+        720
+      ]
+    },
+    "browser/aerial-baseline72-sun-ground.jpg": {
+      "bytes": 57136,
+      "sha256": "00858ce2be2782d56c1377454cc47f6a3045036354b713ae52e225c79a34185b",
+      "imageSize": [
+        1280,
+        720
+      ]
+    },
+    "browser/aerial-baseline72-weak-ground.jpg": {
+      "bytes": 54281,
+      "sha256": "9d7a571ddd39f526535ecd3e5546c2d50fcd130cdb121f5f1b4d6a6d1e4e2a85",
+      "imageSize": [
+        1280,
+        720
+      ]
+    },
+    "browser/aerial-candidate-console.json": {
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "browser/aerial-candidate72-rain-ground.jpg": {
+      "bytes": 59495,
+      "sha256": "849b7f768670cf981a38800643ed640f5c1042032f98158054d91c9e7a76dee4",
+      "imageSize": [
+        1280,
+        720
+      ]
+    },
+    "browser/aerial-candidate72-sun-ground.jpg": {
+      "bytes": 56864,
+      "sha256": "a985215015876dea22c3de75500cc2c0cf07bc0bef331b6ed7676e001959e4ef",
+      "imageSize": [
+        1280,
+        720
+      ]
+    },
+    "browser/aerial-candidate72-weak-ground.jpg": {
+      "bytes": 54097,
+      "sha256": "34cd10b0cd9c60b314003ed1fa9f875ae292aba3be89b9ebea5417f5e164e8d9",
+      "imageSize": [
+        1280,
+        720
+      ]
+    },
+    "browser/metadata.json": {
+      "bytes": 2152,
+      "sha256": "eb9214dae1f346dae2e998a06846429a8ea2d4440acc477b1b136a8ffb93ea5e"
+    },
+    "build-provenance.json": {
+      "bytes": 2816,
+      "sha256": "1b6333f497b280cf5ba99e5b706314737a42a7a3ce0b4320b9781ac05d08cbac"
+    },
+    "measurements/aerial-baseline-A1.json.gz": {
+      "bytes": 114675,
+      "sha256": "1ea07fc4978f331a2350c2e98b73506cc0f21660730069d520a9826b3728f322",
+      "encoding": "gzip",
+      "uncompressedBytes": 1601979,
+      "uncompressedSha256": "77e68bbcb805915b715c5587f6ec49d1487cba9456da3584e3c28bf210455363"
+    },
+    "measurements/aerial-baseline-A2.json.gz": {
+      "bytes": 112772,
+      "sha256": "f7f5f7cf71685c04610d86b07658a8420dbc01c678c8764ae6bb193e619d2fb3",
+      "encoding": "gzip",
+      "uncompressedBytes": 1548094,
+      "uncompressedSha256": "6ad6d06a6fc4022e891b7c8966b854fbc3b8c1c79c11c9171b1281fcce43a6eb"
+    },
+    "measurements/aerial-candidate-B.json.gz": {
+      "bytes": 113083,
+      "sha256": "3924097e7aa84f012ed486db0cdedaed864e4da055131cc9d9672867871d6bb8",
+      "encoding": "gzip",
+      "uncompressedBytes": 1548007,
+      "uncompressedSha256": "ed784ac4d3733aa4b62f46aa295fcb0fb18696286c62f6510375a323d481672d"
+    },
+    "measurements/raw-provenance.json": {
+      "bytes": 972,
+      "sha256": "66e66954a5e18d7f26479d19fe777c4c3b1882fe16138de926df6a2f1ae7b3ef"
+    },
+    "measurements/summary.json": {
+      "bytes": 9963,
+      "sha256": "f5b8a51051599fcf62c771a4da53e3f03cfd736773be6fbf0cc491c0ece793fe"
+    },
+    "source-evidence/REPORT.md": {
+      "bytes": 3992,
+      "sha256": "7dd802acf66f03fa6355a53ac367843b7021f7e04e45587a9ee94b6b63b16748"
+    },
+    "source-evidence/before/cloudShader.ts.gz": {
+      "bytes": 5526,
+      "sha256": "b9c0165d92d514e642d180976ff3299bf267b8c02bf13f941c04eadadfe235a8",
+      "encoding": "gzip",
+      "uncompressedBytes": 15553,
+      "uncompressedSha256": "2e2e8b0ec236a1ae77363419bc766fb464d816b5ff2ce980af5f2bd72873cc44"
+    },
+    "source-evidence/before/landscape.ts": {
+      "bytes": 6980,
+      "sha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99"
+    },
+    "source-evidence/candidate/aerial.test.ts": {
+      "bytes": 1321,
+      "sha256": "4a637a2346461ebe82f1225c3d44fd7aff58142225efe7bc58b32e21eb5a2198"
+    },
+    "source-evidence/candidate/aerial.ts": {
+      "bytes": 621,
+      "sha256": "a066cfe3664d77e4c448045010fa13c40eefb35add6c163d143bd2bb01af10da"
+    },
+    "source-evidence/candidate/cloudShader.test.ts": {
+      "bytes": 4098,
+      "sha256": "d5e2092b865918815279199abf32229c661c4e25ff82c787935ce7a295e253eb"
+    },
+    "source-evidence/candidate/cloudShader.ts.gz": {
+      "bytes": 5526,
+      "sha256": "95e6002737d6ca01151c6b9ce16fc54ddb4161197d79577bfb38ab6b2e2a1dda",
+      "encoding": "gzip",
+      "uncompressedBytes": 15570,
+      "uncompressedSha256": "652c9514b7dfcee1456d15e9966087b3ff9c6a6ce9741970208cfca3750a248c"
+    },
+    "source-evidence/candidate/landscape.ts": {
+      "bytes": 7036,
+      "sha256": "037a5bfcc60e0c342a85d32c5b50f25982e9366806b4f95ef4b28c5842b605c8"
+    },
+    "source-evidence/candidate-tracked.patch.gz": {
+      "bytes": 2373,
+      "sha256": "13912c5a84d9b2178812780783558dcd4c38e6dc5fb82a6f0e4f932198947a63",
+      "encoding": "gzip",
+      "uncompressedBytes": 5993,
+      "uncompressedSha256": "7d856736e3fa65d100e9f0a62b5597242ce5be26656738204299cc5a8e942c01"
+    },
+    "source-evidence/focused-test-tool-result.json": {
+      "bytes": 781,
+      "sha256": "ea2109661e097e0ce7c825df1fbce5a3b650fa0969a9337c488aff85e827efdb"
+    },
+    "source-evidence/manifest.json": {
+      "bytes": 2785,
+      "sha256": "e8217dadb140540834bac8960058a6caed54e6e3c6fd2f09a774f0dc6be1dabb"
+    },
+    "source-evidence/provenance.json": {
+      "bytes": 2762,
+      "sha256": "594528d95e611184a69b0dcd6697666d3e3e490b45cbe6a3a816d240b2b0c55b"
+    },
+    "source-evidence/scalar-witnesses-selected.json": {
+      "bytes": 2582,
+      "sha256": "26ea23b8ded5795b0e149cc4d1afe13eb178a6a42bb039efc04ce893d6bef937"
+    },
+    "source-evidence/template-contract-evidence.json": {
+      "bytes": 1696,
+      "sha256": "4e353a3f3d59b729b8c18044217df71dbf5108f04141c4b0a7fe2eaf1bbac767"
+    },
+    "source-evidence/withdrawn-growth-hypothesis.json": {
+      "bytes": 1479,
+      "sha256": "8abdc4357c4a18fbd14d45d6304cba272952e689192403caa27c973be491af3e"
+    },
+    "verify.py": {
+      "bytes": 4656,
+      "sha256": "b8ac5491364e580485379183066356e89c95c524fca49864f46f00d2c07ff5e3"
+    }
+  }
+}

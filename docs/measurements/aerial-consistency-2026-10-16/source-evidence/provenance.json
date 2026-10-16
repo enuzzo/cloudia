@@ -1,0 +1,66 @@
+{
+  "baseCommit": "08c33cb",
+  "candidateManifestOriginal": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/rain-landscape/candidate-manifest.json",
+    "sha256": "4657206e663829dc79c65a2d654a27306aa9477c47d4fab5f1f431d5350709eb"
+  },
+  "candidateFiveFinalSources": {
+    "src/cumulonimbus/aerial.ts": {
+      "bytes": 621,
+      "sha256": "a066cfe3664d77e4c448045010fa13c40eefb35add6c163d143bd2bb01af10da"
+    },
+    "src/cumulonimbus/aerial.test.ts": {
+      "bytes": 1321,
+      "sha256": "4a637a2346461ebe82f1225c3d44fd7aff58142225efe7bc58b32e21eb5a2198"
+    },
+    "src/cumulonimbus/cloudShader.ts": {
+      "bytes": 15570,
+      "sha256": "652c9514b7dfcee1456d15e9966087b3ff9c6a6ce9741970208cfca3750a248c"
+    },
+    "src/cumulonimbus/cloudShader.test.ts": {
+      "bytes": 4098,
+      "sha256": "d5e2092b865918815279199abf32229c661c4e25ff82c787935ce7a295e253eb"
+    },
+    "src/cumulonimbus/landscape.ts": {
+      "bytes": 7036,
+      "sha256": "037a5bfcc60e0c342a85d32c5b50f25982e9366806b4f95ef4b28c5842b605c8"
+    }
+  },
+  "trackedPatchOriginal": {
+    "path": "candidate-tracked.patch.gz",
+    "scope": "Tracked changes only; new aerial helper/test preserved in full candidate-source files.",
+    "rawBytes": 5993,
+    "rawSha256": "7d856736e3fa65d100e9f0a62b5597242ce5be26656738204299cc5a8e942c01"
+  },
+  "runtimeChanges": "Only2aerial expressions in cloudShader, sharedCPU/WGSL helper and landscape helper wiring; no engine/volume/UI/worker/lock/rain-source/rain-step/quality edits.",
+  "browserStatus": "Root reports aerial-only candidate built and served on4195 for A/B. No visual verdict or screenshots are included here.",
+  "openGates": [
+    "Artist quality and temporal acceptance",
+    "Root browser A/B with actual ground and precipitation visible",
+    "Driver/integration validation provenance",
+    "Sustained60FPS; no new performance measurement"
+  ],
+  "archivedSnapshotFiles": {
+    "src/cumulonimbus/aerial.ts": {
+      "path": "candidate/aerial.ts",
+      "encoding": "plain"
+    },
+    "src/cumulonimbus/aerial.test.ts": {
+      "path": "candidate/aerial.test.ts",
+      "encoding": "plain"
+    },
+    "src/cumulonimbus/cloudShader.ts": {
+      "path": "candidate/cloudShader.ts.gz",
+      "encoding": "gzip"
+    },
+    "src/cumulonimbus/cloudShader.test.ts": {
+      "path": "candidate/cloudShader.test.ts",
+      "encoding": "plain"
+    },
+    "src/cumulonimbus/landscape.ts": {
+      "path": "candidate/landscape.ts",
+      "encoding": "plain"
+    }
+  },
+  "packagingAdaptation": "Only the two historical cloudShader.ts snapshots are losslessly gzip-compressed in this durable archive, preserving their original blank final line and original source SHA. External curated originals remain unchanged."
+}

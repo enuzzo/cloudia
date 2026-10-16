@@ -1,0 +1,57 @@
+{
+  "git": "08c33cb55d4cb308377d3526c362f4d30d02e7f8",
+  "files": {
+    "src/cumulonimbus/volume.ts": {
+      "bytes": 25749,
+      "sha256": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74"
+    },
+    "src/cumulonimbus/motion.ts": {
+      "bytes": 7238,
+      "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+    },
+    "src/cumulonimbus/motionField.ts": {
+      "bytes": 2639,
+      "sha256": "d8817eb9d90a70ee975eea89d2c2fca6d9c6783280bea810fdf76cff2b2d4d8a"
+    },
+    "src/cumulonimbus/camera.ts": {
+      "bytes": 7127,
+      "sha256": "a7f7b113ee4251454e4f31fd8fa470f131dae3a9bc41ec5cf1d2480871066a69"
+    },
+    "src/cumulonimbus/cloudShader.ts": {
+      "bytes": 15553,
+      "sha256": "2e2e8b0ec236a1ae77363419bc766fb464d816b5ff2ce980af5f2bd72873cc44"
+    },
+    "src/cumulonimbus/GPUSceneEngine.ts": {
+      "bytes": 61272,
+      "sha256": "8ad9a31302c14f45723c8ca319ca7ce27bd99de9c8c0a234acf4052be2d35d49"
+    },
+    "src/cumulonimbus/sun.ts": {
+      "bytes": 397,
+      "sha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc"
+    },
+    "src/cumulonimbus/atmosphere.ts": {
+      "bytes": 4074,
+      "sha256": "8065352c5304b4c95ab18ef9805dcebbc62696ae341a87ecdff0dd67c1f2cf1f"
+    },
+    "src/cumulonimbus/skyModel.ts": {
+      "bytes": 644,
+      "sha256": "9809736594d784f8a5db4cc88d2dd867820c26f11542739b2901d48a57a1259b"
+    },
+    "src/cumulonimbus/weatherState.ts": {
+      "bytes": 1080,
+      "sha256": "11fb5e122b12e6760b37f72abb405f8d8dd7fd65ceef2bc4c666ee81d3e0e0b9"
+    },
+    "src/cumulonimbus/medium.ts": {
+      "bytes": 1176,
+      "sha256": "ddfd487055e4fde6581ab351345e91fb3466b032dda954c803082a39a9a142d6"
+    },
+    "src/cumulonimbus/emptyTraversal.ts": {
+      "bytes": 1624,
+      "sha256": "281a4209f2afc13a63735d6526f954dc93d775972aa1d8ccd6cf46d1677c57d4"
+    },
+    "src/cumulonimbus/light.ts": {
+      "bytes": 3041,
+      "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "finding": {
+    "hypothesis": "Rain incorrectly inverts height/width during formation.",
+    "verdict": "FALSIFIED: uniform growth components are reciprocals. Current shader formulas reconstruct the intended source/world scale.",
+    "uniformInverseVerified": true,
+    "material": {
+      "x": 3,
+      "y": 1.5,
+      "z": 2
+    },
+    "height": 0.68,
+    "width": 0.88,
+    "growth": {
+      "x": 1.4705882352941175,
+      "y": 1.1363636363636365
+    },
+    "world": {
+      "x": 2.6399999999999997,
+      "y": 1.2504,
+      "z": 1.7599999999999998
+    },
+    "recovered": {
+      "x": 3,
+      "y": 1.5,
+      "z": 2
+    }
+  },
+  "status": "FALSIFIED AND WITHDRAWN. No product transform change was made.",
+  "authoritativeBinding": "GPUSceneEngine.updateEvolution: growth.value.set(1/evolution.height,1/evolution.width,1/evolution.anvil)",
+  "authoritativeWGSL": "cloudReference: y=.72+(local.y-.72)*growth.x; inverse reconstructs base with division by growth.x, as existing rain code does.",
+  "originalSourceHashes": {
+    "src/cumulonimbus/GPUSceneEngine.ts": "8ad9a31302c14f45723c8ca319ca7ce27bd99de9c8c0a234acf4052be2d35d49",
+    "src/cumulonimbus/motion.ts": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+  },
+  "completeSourcesRemainExternal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/rain-landscape/source",
+  "scope": "Previously recorded source inspection and algebraic witness, not another evaluation or a new bug."
+}

@@ -1,3 +1,4 @@
+import {AERIAL_WGSL} from './aerial';
 /** World units are kilometres for the distant landscape: cloud datum is 4 km above sea level. */
 export const EARTH_RADIUS=6371;
 export const GROUND_LEVEL=-4;
@@ -67,6 +68,7 @@ export function groundIntersection(origin:readonly number[],ray:readonly number[
  if(d<0)return null;const t=-b-Math.sqrt(d);return t>0?t:null;
 }
 export const LANDSCAPE_WGSL=`
+${AERIAL_WGSL}
 // ${TERRAIN_HASH_ID}: match the CPU lattice without transcendental hash drift.
 fn terrainHash(i:vec2<i32>)->f32{
  var h=(bitcast<u32>(i.x)*0x${HASH_X.toString(16)}u)^(bitcast<u32>(i.y)*0x${HASH_Z.toString(16)}u)^0x${HASH_SEED.toString(16)}u;
@@ -133,6 +135,6 @@ fn landscapeColor(point:vec3<f32>,distance:f32,sun:vec3<f32>,solar:vec3<f32>,amb
  let shallows=exp(-max(0.0,-coast)*.55);
  let sea=mix(vec3<f32>(.016,.048,.075),vec3<f32>(.026,.11,.115),shallows)*(solar*.4+ambient*1.5);
  let surface=mix(sea,ground,land);
- let transmission=exp(-distance*(.006+.004*haze));
+ let transmission=aerialTransmittance(distance,haze);
  return mix(sky,surface,transmission);
 }`;

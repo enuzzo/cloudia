@@ -1,0 +1,70 @@
+{
+  "baseCommit": "08c33cb",
+  "candidate": "Aerial-only homogeneous medium consistency trial, pending browser/physical/art/performance qualification",
+  "scope": "Curated5source final snapshot and prior evidence; no new tests/probes/bakes/GPU/browser runs for archive preparation.",
+  "payloadCount": 14,
+  "payloadBytes": 46773,
+  "files": {
+    "REPORT.md": {
+      "bytes": 3992,
+      "sha256": "7dd802acf66f03fa6355a53ac367843b7021f7e04e45587a9ee94b6b63b16748"
+    },
+    "before/cloudShader.ts.gz": {
+      "bytes": 5526,
+      "sha256": "b9c0165d92d514e642d180976ff3299bf267b8c02bf13f941c04eadadfe235a8",
+      "uncompressedBytes": 15553,
+      "uncompressedSha256": "2e2e8b0ec236a1ae77363419bc766fb464d816b5ff2ce980af5f2bd72873cc44"
+    },
+    "before/landscape.ts": {
+      "bytes": 6980,
+      "sha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99"
+    },
+    "candidate/aerial.test.ts": {
+      "bytes": 1321,
+      "sha256": "4a637a2346461ebe82f1225c3d44fd7aff58142225efe7bc58b32e21eb5a2198"
+    },
+    "candidate/aerial.ts": {
+      "bytes": 621,
+      "sha256": "a066cfe3664d77e4c448045010fa13c40eefb35add6c163d143bd2bb01af10da"
+    },
+    "candidate/cloudShader.test.ts": {
+      "bytes": 4098,
+      "sha256": "d5e2092b865918815279199abf32229c661c4e25ff82c787935ce7a295e253eb"
+    },
+    "candidate/cloudShader.ts.gz": {
+      "bytes": 5526,
+      "sha256": "95e6002737d6ca01151c6b9ce16fc54ddb4161197d79577bfb38ab6b2e2a1dda",
+      "uncompressedBytes": 15570,
+      "uncompressedSha256": "652c9514b7dfcee1456d15e9966087b3ff9c6a6ce9741970208cfca3750a248c"
+    },
+    "candidate/landscape.ts": {
+      "bytes": 7036,
+      "sha256": "037a5bfcc60e0c342a85d32c5b50f25982e9366806b4f95ef4b28c5842b605c8"
+    },
+    "candidate-tracked.patch.gz": {
+      "bytes": 2373,
+      "sha256": "13912c5a84d9b2178812780783558dcd4c38e6dc5fb82a6f0e4f932198947a63"
+    },
+    "focused-test-tool-result.json": {
+      "bytes": 781,
+      "sha256": "ea2109661e097e0ce7c825df1fbce5a3b650fa0969a9337c488aff85e827efdb"
+    },
+    "provenance.json": {
+      "bytes": 2762,
+      "sha256": "594528d95e611184a69b0dcd6697666d3e3e490b45cbe6a3a816d240b2b0c55b"
+    },
+    "scalar-witnesses-selected.json": {
+      "bytes": 2582,
+      "sha256": "26ea23b8ded5795b0e149cc4d1afe13eb178a6a42bb039efc04ce893d6bef937"
+    },
+    "template-contract-evidence.json": {
+      "bytes": 1696,
+      "sha256": "4e353a3f3d59b729b8c18044217df71dbf5108f04141c4b0a7fe2eaf1bbac767"
+    },
+    "withdrawn-growth-hypothesis.json": {
+      "bytes": 1479,
+      "sha256": "8abdc4357c4a18fbd14d45d6304cba272952e689192403caa27c973be491af3e"
+    }
+  },
+  "packagingAdaptation": "Historical2shader snapshots stored gzip lossless; all sourceSha fields still identify the original uncompressed source."
+}

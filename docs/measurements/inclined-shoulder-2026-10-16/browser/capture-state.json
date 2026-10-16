@@ -1,0 +1,97 @@
+{
+  "classification": "Rendered browser views for local shoulder qualification; no FPS benchmark or general artistic PASS",
+  "baselineCommit": "08c33cb",
+  "runtimeCandidate": "14.1",
+  "testRevision": 2,
+  "declaredByRoot": {
+    "fixedQueryTarget": [
+      0,
+      2.7,
+      0
+    ],
+    "cloudTimeSeconds": 60,
+    "configuredOutput": [
+      2560,
+      1440
+    ],
+    "returnedJPEGSize": [
+      1280,
+      720
+    ],
+    "poses74": [
+      "front",
+      "quarter",
+      "side",
+      "rear"
+    ],
+    "additionalSeedsFront": [
+      77,
+      80
+    ],
+    "lowSun74": [
+      "front left",
+      "front right",
+      "rear supplemental"
+    ]
+  },
+  "observedFromAvailableDOM": {
+    "macroResolution": 256,
+    "detailResolution": 128,
+    "nominalSteps": 384,
+    "outputMode": "native",
+    "integrator": "full quality",
+    "pausedAtCloudTime60": true
+  },
+  "limits": [
+    "Camera target and named poses are declared by the root; full camera matrices are not archived for every screenshot.",
+    "The1km banner value is the configured near orbit radius from the target, not cloud-surface clearance.",
+    "Instantaneous rAF/GPU counters in DOM snapshots are state observations, not an FPS qualification.",
+    "Low-sun captures do not have a complete paired baseline.",
+    "JPEG output is1280x720, not a lossless native framebuffer export."
+  ],
+  "images": [
+    "baseline74-front0.jpg",
+    "baseline74-quarter0.jpg",
+    "baseline74-side0.jpg",
+    "baseline74-rear0.jpg",
+    "shoulder1-74-front0.jpg",
+    "shoulder1-74-quarter0.jpg",
+    "shoulder1-74-side0.jpg",
+    "shoulder1-74-rear0.jpg",
+    "baseline77-front.jpg",
+    "baseline80-front.jpg",
+    "shoulder1-77-front.jpg",
+    "shoulder1-80-front.jpg",
+    "shoulder1-74-front-sunset.jpg",
+    "shoulder1-74-front-sunset-right.jpg",
+    "shoulder1-74-rear-sunset.jpg"
+  ],
+  "compressedDOMSnapshots": [
+    {
+      "path": "browser/baseline80-metadata.txt.gz",
+      "rawBytes": 3937,
+      "rawSha256": "473f6715effcec27aef8161681f8e61143e5859fe4e1973d9ca9cc7e4761922a",
+      "gzipBytes": 1401,
+      "gzipSha256": "142ab592c9e89cfa8ae014f5689fea935106fcece5e402fdceea34ada64b2f46"
+    },
+    {
+      "path": "browser/shoulder1-77-metadata.txt.gz",
+      "rawBytes": 3937,
+      "rawSha256": "71dd3f983feda7fafe49d48fc536a3ed1e485afa79f19a4922a651ace2a9b949",
+      "gzipBytes": 1403,
+      "gzipSha256": "018c9f1c064d743ef646046e11cc5187802c4c33fc4e301eca040371cbce4ea4"
+    },
+    {
+      "path": "browser/shoulder1-80-metadata.txt.gz",
+      "rawBytes": 3937,
+      "rawSha256": "ffe2ab3a65370ede9ea78810d59d41e14334f67f0637db7cd433d1fd4dfb5f94",
+      "gzipBytes": 1402,
+      "gzipSha256": "29a0e0e2af9dc674d2669994d5f0d6bcea4b11598c0b9c71412a640444b52340"
+    }
+  ],
+  "rootVerdict": {
+    "promote": "Local upper-body-to-incus connection improvement only",
+    "globalPhotographicIncus": "Open; hooked/U-shaped profile persists",
+    "basis": "Front74/77/80; quarter/side/rear74; lowSun74 two light sides"
+  }
+}

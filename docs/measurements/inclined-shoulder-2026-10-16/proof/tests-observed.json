@@ -1,0 +1,12 @@
+{
+  "classification": "Recorded result from actual tool execution; this is a transcription, not a raw runner log.",
+  "command": "npm test -- src/cumulonimbus/volume.test.ts src/cumulonimbus/inclinedShoulder.test.ts --maxWorkers=1",
+  "exitCode": 0,
+  "passed": 31,
+  "total": 31,
+  "filesPassed": 2,
+  "reportedDurationSeconds": 2.42,
+  "testStartTimeAsPrinted": "10:30:04",
+  "runtimeSnapshot": "candidate-1-r2",
+  "newIntegrationRegression": "Baseline74 section at64cubed is occupied after fine erosion; presence only, no artistic threshold."
+}

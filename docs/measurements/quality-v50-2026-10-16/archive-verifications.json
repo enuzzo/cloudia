@@ -1,0 +1,26 @@
+{
+  "scope": "Observed root executions from /private/tmp after all FPS measurements; no volume regenerated",
+  "inclinedShoulder": {
+    "integrity": "PASS",
+    "payloads": 49,
+    "bytes": 1636917,
+    "skippedSamplesRecorded": 140692504,
+    "missedRecorded": 0
+  },
+  "nearLight": {
+    "integrity": "PASS",
+    "payloads": 42,
+    "gzipOriginals": 24,
+    "preclampReplay": {
+      "originalBytesMatched": 196,
+      "counterfactualRecordsMatched": 52,
+      "decision": "negative; not promoted"
+    },
+    "jpegReplay": {
+      "valid": 9,
+      "excluded": 4,
+      "rmse255": 0.3503173476757166,
+      "correlation": 0.9985398808608538
+    }
+  }
+}

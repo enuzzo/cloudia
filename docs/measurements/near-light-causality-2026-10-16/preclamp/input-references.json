@@ -1,0 +1,46 @@
+{
+  "frozenGit": "08c33cb55d4cb308377d3526c362f4d30d02e7f8",
+  "externalMaterialCache": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/data",
+  "originalMaterialInputs": {
+    "macro-rgba8.bin": {
+      "bytes": 67108864,
+      "sha256": "72e3f360b81f3c8f812800cc309a174ce893d96c80e666c9bf98fca178187b9f"
+    },
+    "detail-rgba8.bin": {
+      "bytes": 8388608,
+      "sha256": "ed9ea464b562c974bdd4bd34c56e5d0f3a8638e4b149f275392c0521fc1993f5"
+    },
+    "flow-rgba16f.bin": {
+      "bytes": 32768,
+      "sha256": "e395feffaa19d8de459f4c1ef9380a42be2fb8d3f902f50f9787c0abbea1909f"
+    }
+  },
+  "compressedPayloadOriginals": {
+    "input/carving-causality.json.gz": {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/carving-causality.json",
+      "uncompressedBytes": 1445139,
+      "uncompressedSha256": "766a6d2e57342c0bc860b4f1701633a181c3c9c421b28974d2b92bd5086e6837"
+    },
+    "expected/interior-coefficient-scalar.json.gz": {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/interior-coefficient-scalar.json",
+      "uncompressedBytes": 94130,
+      "uncompressedSha256": "850ebbea4259cede24c7bb35a08af9b90909921908ad4a0d9a29e606e9688f29"
+    },
+    "audit-code/geometry-scalar.ts.gz": {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/geometry-scalar.ts",
+      "uncompressedBytes": 24557,
+      "uncompressedSha256": "a20e9df62e40939b435094921f2359fdff177bdba13f7816e0cea4d02286fac9"
+    },
+    "audit-code/probe-carving.ts.gz": {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/probe-carving.ts",
+      "uncompressedBytes": 13783,
+      "uncompressedSha256": "3117cd5bfe061af4bd1660010e8d57b9298bad4766e5ef2339e5ff0d6fb6a7e5"
+    },
+    "sources/baseline-volume.ts.gz": {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/source-snapshots/volume.ts",
+      "uncompressedBytes": 25749,
+      "uncompressedSha256": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74"
+    }
+  },
+  "decision": "Negative scalar intervention; not promoted; no new candidate/bake/product edit"
+}

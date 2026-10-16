@@ -1,0 +1,20 @@
+{
+  "baseline": "08c33cb",
+  "files": [
+    {
+      "path": "src/cumulonimbus/light.ts",
+      "bytes": 3041,
+      "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+    },
+    {
+      "path": "src/cumulonimbus/sun.ts",
+      "bytes": 397,
+      "sha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc"
+    },
+    {
+      "path": "src/cumulonimbus/motion.ts",
+      "bytes": 7238,
+      "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+    }
+  ]
+}

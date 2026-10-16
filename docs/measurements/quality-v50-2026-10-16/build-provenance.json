@@ -1,0 +1,609 @@
+{
+  "sourceCount": 108,
+  "sourceMatchesWorktree": true,
+  "sourcemapChecks": [
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/weatherState.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/sun.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/solarTransition.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/camera.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/motion.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/volume.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/aerial.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/landscape.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/precipitation.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/weatherInteraction.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/medium.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/cloudShader.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/atmosphere.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/skyModel.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/skyCache.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/storm.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/motionField.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/emptyTraversal.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/performance.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/queuePrefixMeasurement.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/three186TimestampBatch.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/timestampBatchMeasurement.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/densityR8.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/GPUSceneEngine.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/panels.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/uiIcons.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/sceneMarkup.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/ThunderAudio.ts",
+      "match": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "source": "src/cumulonimbus/CumulonimbusApp.ts",
+      "match": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/core/defaultPreset.ts",
+      "match": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/core/easing.ts",
+      "match": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/core/stateMachine.ts",
+      "match": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/input/inputController.ts",
+      "match": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/core/renderQuality.ts",
+      "match": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/render/cloudFragment.ts",
+      "match": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/render/cloudVertex.ts",
+      "match": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/render/CloudEngine.ts",
+      "match": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/weather/WeatherLayer.ts",
+      "match": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/core/presetStore.ts",
+      "match": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/lab/LabUI.ts",
+      "match": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/lab/LabApp.ts",
+      "match": true
+    },
+    {
+      "map": "assets/index-5k1wnsOO.js.map",
+      "source": "src/main.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/weatherState.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/sun.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/solarTransition.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/camera.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/motion.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/volume.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/aerial.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/landscape.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/precipitation.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/weatherInteraction.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/medium.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/cloudShader.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/atmosphere.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/skyModel.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/skyCache.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/storm.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/motionField.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/emptyTraversal.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/performance.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/queuePrefixMeasurement.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/three186TimestampBatch.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/timestampBatchMeasurement.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/densityR8.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/GPUSceneEngine.ts",
+      "match": true
+    },
+    {
+      "map": "assets/render.worker-BhyARV_8.js.map",
+      "source": "src/cumulonimbus/render.worker.ts",
+      "match": true
+    },
+    {
+      "map": "assets/sky.worker-CHm7n211.js.map",
+      "source": "src/cumulonimbus/atmosphere.ts",
+      "match": true
+    },
+    {
+      "map": "assets/sky.worker-CHm7n211.js.map",
+      "source": "src/cumulonimbus/weatherState.ts",
+      "match": true
+    },
+    {
+      "map": "assets/sky.worker-CHm7n211.js.map",
+      "source": "src/cumulonimbus/sun.ts",
+      "match": true
+    },
+    {
+      "map": "assets/sky.worker-CHm7n211.js.map",
+      "source": "src/cumulonimbus/skyModel.ts",
+      "match": true
+    },
+    {
+      "map": "assets/sky.worker-CHm7n211.js.map",
+      "source": "src/cumulonimbus/sky.worker.ts",
+      "match": true
+    },
+    {
+      "map": "assets/volume.worker-AVJPJnWD.js.map",
+      "source": "src/cumulonimbus/light.ts",
+      "match": true
+    },
+    {
+      "map": "assets/volume.worker-AVJPJnWD.js.map",
+      "source": "src/cumulonimbus/sun.ts",
+      "match": true
+    },
+    {
+      "map": "assets/volume.worker-AVJPJnWD.js.map",
+      "source": "src/cumulonimbus/motion.ts",
+      "match": true
+    },
+    {
+      "map": "assets/volume.worker-AVJPJnWD.js.map",
+      "source": "src/cumulonimbus/inclinedShoulder.ts",
+      "match": true
+    },
+    {
+      "map": "assets/volume.worker-AVJPJnWD.js.map",
+      "source": "src/cumulonimbus/volume.ts",
+      "match": true
+    },
+    {
+      "map": "assets/volume.worker-AVJPJnWD.js.map",
+      "source": "src/cumulonimbus/narrowCloud.ts",
+      "match": true
+    },
+    {
+      "map": "assets/volume.worker-AVJPJnWD.js.map",
+      "source": "src/cumulonimbus/densityR8.ts",
+      "match": true
+    },
+    {
+      "map": "assets/volume.worker-AVJPJnWD.js.map",
+      "source": "src/cumulonimbus/volume.worker.ts",
+      "match": true
+    },
+    {
+      "map": "cloudia-hero.iife.js.map",
+      "source": "src/core/defaultPreset.ts",
+      "match": true
+    },
+    {
+      "map": "cloudia-hero.iife.js.map",
+      "source": "src/core/renderQuality.ts",
+      "match": true
+    },
+    {
+      "map": "cloudia-hero.iife.js.map",
+      "source": "src/render/cloudFragment.ts",
+      "match": true
+    },
+    {
+      "map": "cloudia-hero.iife.js.map",
+      "source": "src/render/cloudVertex.ts",
+      "match": true
+    },
+    {
+      "map": "cloudia-hero.iife.js.map",
+      "source": "src/render/CloudEngine.ts",
+      "match": true
+    },
+    {
+      "map": "cloudia-hero.iife.js.map",
+      "source": "src/core/easing.ts",
+      "match": true
+    },
+    {
+      "map": "cloudia-hero.iife.js.map",
+      "source": "src/weather/WeatherLayer.ts",
+      "match": true
+    },
+    {
+      "map": "cloudia-hero.iife.js.map",
+      "source": "src/embed/CloudiaHero.ts",
+      "match": true
+    },
+    {
+      "map": "cloudia-hero.js.map",
+      "source": "src/core/defaultPreset.ts",
+      "match": true
+    },
+    {
+      "map": "cloudia-hero.js.map",
+      "source": "src/core/renderQuality.ts",
+      "match": true
+    },
+    {
+      "map": "cloudia-hero.js.map",
+      "source": "src/render/cloudFragment.ts",
+      "match": true
+    },
+    {
+      "map": "cloudia-hero.js.map",
+      "source": "src/render/cloudVertex.ts",
+      "match": true
+    },
+    {
+      "map": "cloudia-hero.js.map",
+      "source": "src/render/CloudEngine.ts",
+      "match": true
+    },
+    {
+      "map": "cloudia-hero.js.map",
+      "source": "src/core/easing.ts",
+      "match": true
+    },
+    {
+      "map": "cloudia-hero.js.map",
+      "source": "src/weather/WeatherLayer.ts",
+      "match": true
+    },
+    {
+      "map": "cloudia-hero.js.map",
+      "source": "src/embed/CloudiaHero.ts",
+      "match": true
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/CumulonimbusApp-B5u8w3kK.js",
+      "bytes": 822623,
+      "sha256": "cd659d9c5ee31b8a66109647be78580265bf328182de9ddcd3ad3b90807162f4"
+    },
+    {
+      "path": "assets/CumulonimbusApp-B5u8w3kK.js.map",
+      "bytes": 3786202,
+      "sha256": "99304d9f2cf6f07d699f5dade436668c3995d08742e86a1ab0e9a70a1eda5756"
+    },
+    {
+      "path": "assets/CumulonimbusApp-fw8aK7_r.css",
+      "bytes": 13181,
+      "sha256": "bdf43d23ca041116c6b6eef5d8f95ab72115e3f0a0a8a728cb912e751dcaa9fb"
+    },
+    {
+      "path": "assets/LabApp-BIVQGmZd.js",
+      "bytes": 405933,
+      "sha256": "61b740644d902e97f0e29d2e7924b0d480f6bdfdd7eae827ea06300cd5b247b9"
+    },
+    {
+      "path": "assets/LabApp-BIVQGmZd.js.map",
+      "bytes": 1146932,
+      "sha256": "04fe5d544f01d907e801c1c0439b91f4180a28001793ac46c2e7a35bface6b2e"
+    },
+    {
+      "path": "assets/index-5k1wnsOO.js",
+      "bytes": 2837,
+      "sha256": "7c39f7b95fa9aef3a139c2129fe22685a2a42e901e0ff23fb06825478f17453b"
+    },
+    {
+      "path": "assets/index-5k1wnsOO.js.map",
+      "bytes": 1569,
+      "sha256": "7311efd1b1f03b9a2c97f3fb69d99525b4d5455f0622a418bc4ca9940fd17d48"
+    },
+    {
+      "path": "assets/index-Cia3ypEr.css",
+      "bytes": 1245,
+      "sha256": "99354a5ec1ade2941e4aba36f030b413c9afbad79336f11800929c7d805b4714"
+    },
+    {
+      "path": "assets/render.worker-BhyARV_8.js",
+      "bytes": 979064,
+      "sha256": "9ee2a0f62d88d556bfce78e4ad9356001c5a158923197e558b32954e7621ba9f"
+    },
+    {
+      "path": "assets/render.worker-BhyARV_8.js.map",
+      "bytes": 5570998,
+      "sha256": "37a7b668073cc4aaacebfb11541ef19587075ebc807e8b04872c1a24d12ee5cb"
+    },
+    {
+      "path": "assets/sky.worker-CHm7n211.js",
+      "bytes": 2960,
+      "sha256": "503ad9438c1738310a9cbe2a41e9af0524e7046bce79e58d6da7c1e74863caaa"
+    },
+    {
+      "path": "assets/sky.worker-CHm7n211.js.map",
+      "bytes": 13323,
+      "sha256": "df7c7eaff6aefeb222e7b89eb86f6c9382a50f405fccd92e9886f2adaa6ac8be"
+    },
+    {
+      "path": "assets/three.core-DxR5k0T0.js",
+      "bytes": 195512,
+      "sha256": "e4d296a475f2cd168d934f17f032d4f56291682208332fc6a926b3937200a810"
+    },
+    {
+      "path": "assets/three.core-DxR5k0T0.js.map",
+      "bytes": 1858617,
+      "sha256": "f69fe4d9751737dc47e263bd686fd2ce8f9b2ce280b023c7b268328cde7e7f31"
+    },
+    {
+      "path": "assets/volume.worker-AVJPJnWD.js",
+      "bytes": 15821,
+      "sha256": "87aceed863518008e2cf3015460be964efe98d83159a85ef9cf9133964c338b5"
+    },
+    {
+      "path": "assets/volume.worker-AVJPJnWD.js.map",
+      "bytes": 78380,
+      "sha256": "1929f2c77381f12a8b2e4441183de330b75f960e0d5a930bc7e44d769157f60d"
+    },
+    {
+      "path": "cloudia-hero.iife.js",
+      "bytes": 526689,
+      "sha256": "d4363d2ccdbf676991be2c6ba05bc62da0ceef5debaa789f04766ab1248c30f5"
+    },
+    {
+      "path": "cloudia-hero.iife.js.map",
+      "bytes": 2860331,
+      "sha256": "e0082054f4738d544366b0cd1b230283ccc9a7eea42c73500785f9f8115f4cd2"
+    },
+    {
+      "path": "cloudia-hero.js",
+      "bytes": 838767,
+      "sha256": "bc11f99470a6298e20fa804bc2d93041d4cc1a015d812ae97b6ad5827b5fa702"
+    },
+    {
+      "path": "cloudia-hero.js.map",
+      "bytes": 2925987,
+      "sha256": "ffcc395f57cb448a12f817c6dac75520d91262881f2d9812beb34675aec503b2"
+    },
+    {
+      "path": "fonts/commissioner/OFL.txt",
+      "bytes": 4395,
+      "sha256": "4a7d88c77b4bc39ff84f2e058ba8f015636c50ce33588a86d9da97defe519933"
+    },
+    {
+      "path": "fonts/commissioner/SOURCE.md",
+      "bytes": 361,
+      "sha256": "4d62bb7d2afbda450c342cafc6987bab37990ecea6e19378e1a6b0f706183a33"
+    },
+    {
+      "path": "fonts/commissioner/latin-variable.woff2",
+      "bytes": 36696,
+      "sha256": "737ec8f28006b815be5333598aa32b203005f5788c8e61b09090b944eac8b79c"
+    },
+    {
+      "path": "index.html",
+      "bytes": 911,
+      "sha256": "dd6eafe37f299d7285abdbe36dc6b0438bb11ea70a87996792d12bf1f08987a4"
+    }
+  ],
+  "discrepancies": []
+}

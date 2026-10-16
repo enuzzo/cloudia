@@ -1,0 +1,148 @@
+{
+  "frozenSourceGit": "08c33cb55d4cb308377d3526c362f4d30d02e7f8",
+  "externalEvidence": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light",
+  "copiedFiles": {
+    "preclamp/PRECLAMP-CAUSALITY.md": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/preclamp-archive/PRECLAMP-CAUSALITY.md",
+    "preclamp/README.md": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/preclamp-archive/README.md",
+    "preclamp/audit-code/counterfactual-coefficient.py": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/preclamp-archive/audit-code/counterfactual-coefficient.py",
+    "preclamp/audit-code/geometry-scalar.ts.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/preclamp-archive/audit-code/geometry-scalar.ts.gz",
+    "preclamp/audit-code/probe-carving.ts.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/preclamp-archive/audit-code/probe-carving.ts.gz",
+    "preclamp/expected/interior-coefficient-scalar.json.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/preclamp-archive/expected/interior-coefficient-scalar.json.gz",
+    "preclamp/input/carving-causality.json.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/preclamp-archive/input/carving-causality.json.gz",
+    "preclamp/input-references.json": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/preclamp-archive/input-references.json",
+    "preclamp/manifest.json": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/preclamp-archive/manifest.json",
+    "preclamp/replay.py": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/preclamp-archive/replay.py",
+    "preclamp/sources/baseline-volume.ts.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/preclamp-archive/sources/baseline-volume.ts.gz",
+    "preclamp/sources/snapshot-manifest.json": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/preclamp-archive/sources/snapshot-manifest.json",
+    "preclamp/verify.py": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/preclamp-archive/verify.py",
+    "model/near-light.json.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/near-light.json",
+    "model/derived-summary.json.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/derived-summary.json",
+    "model/near-light-summary.json.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/near-light-summary.json",
+    "audit-code/probe-light.ts.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/probe-light.ts",
+    "audit-code/motionField-runtime.ts.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/motionField-runtime.ts",
+    "audit-code/compare-jpeg.py.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/compare-jpeg.py",
+    "sources/GPUSceneEngine.ts.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/source-snapshots/GPUSceneEngine.ts",
+    "sources/atmosphere.ts.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/source-snapshots/atmosphere.ts",
+    "sources/camera.ts.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/source-snapshots/camera.ts",
+    "sources/cloudShader.ts.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/source-snapshots/cloudShader.ts",
+    "sources/emptyTraversal.ts.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/source-snapshots/emptyTraversal.ts",
+    "sources/light.ts.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/source-snapshots/light.ts",
+    "sources/medium.ts.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/source-snapshots/medium.ts",
+    "sources/motion.ts.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/source-snapshots/motion.ts",
+    "sources/motionField.ts.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/source-snapshots/motionField.ts",
+    "sources/skyModel.ts.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/source-snapshots/skyModel.ts",
+    "sources/sun.ts.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/source-snapshots/sun.ts",
+    "sources/volume.ts.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/source-snapshots/volume.ts",
+    "sources/weatherState.ts.gz": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/source-snapshots/weatherState.ts",
+    "sources/snapshot-manifest.json": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/snapshot-manifest.json",
+    "jpeg-comparison.json": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/jpeg-comparison.json",
+    "reports/JPEG-COMPARISON.md": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/JPEG-COMPARISON.md",
+    "reports/INITIAL-DIAGNOSIS.md": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/REPORT.md",
+    "reports/PRECLAMP-CAUSALITY.md": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/PRECLAMP-CAUSALITY.md",
+    "browser/solar-day-left-near.jpg": "docs/measurements/solar-continuity-2026-10-16/browser/solar-day-left-near.jpg"
+  },
+  "losslessGzipOriginals": {
+    "preclamp/input/carving-causality.json.gz": {
+      "bytes": 1445139,
+      "sha256": "766a6d2e57342c0bc860b4f1701633a181c3c9c421b28974d2b92bd5086e6837"
+    },
+    "preclamp/expected/interior-coefficient-scalar.json.gz": {
+      "bytes": 94130,
+      "sha256": "850ebbea4259cede24c7bb35a08af9b90909921908ad4a0d9a29e606e9688f29"
+    },
+    "preclamp/audit-code/geometry-scalar.ts.gz": {
+      "bytes": 24557,
+      "sha256": "a20e9df62e40939b435094921f2359fdff177bdba13f7816e0cea4d02286fac9"
+    },
+    "preclamp/audit-code/probe-carving.ts.gz": {
+      "bytes": 13783,
+      "sha256": "3117cd5bfe061af4bd1660010e8d57b9298bad4766e5ef2339e5ff0d6fb6a7e5"
+    },
+    "preclamp/sources/baseline-volume.ts.gz": {
+      "bytes": 25749,
+      "sha256": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74"
+    },
+    "model/near-light.json.gz": {
+      "bytes": 388205,
+      "sha256": "08b91ec4879dcffe1fd7d448dbe9818cd56a1f8c9142e3b97a2412911e3bce85"
+    },
+    "model/derived-summary.json.gz": {
+      "bytes": 2953,
+      "sha256": "73ba2ada9e24b907e16b48cbb821e57b2cb08be8d8253508af8fd5e254fde3c2"
+    },
+    "model/near-light-summary.json.gz": {
+      "bytes": 3334,
+      "sha256": "172c36cf2e42e758a51bd361007c0e16c1bba3a5ce87d91dd89cb0e456413ae0"
+    },
+    "audit-code/probe-light.ts.gz": {
+      "bytes": 11211,
+      "sha256": "f1875424897e54f80a9c3d4d699558a1a3d9b7b8a8cebe25d2a259621e3396dc"
+    },
+    "audit-code/motionField-runtime.ts.gz": {
+      "bytes": 2743,
+      "sha256": "b427a6c0ca1d6a9514f29f4edae589ae73ebe62da5658d772614f26ae0ae0926"
+    },
+    "audit-code/compare-jpeg.py.gz": {
+      "bytes": 4426,
+      "sha256": "40682c21bfbcf0c34e8e420bffa68a6b8d4278e556836518a975f2de8c9f43b9"
+    },
+    "sources/GPUSceneEngine.ts.gz": {
+      "bytes": 61272,
+      "sha256": "8ad9a31302c14f45723c8ca319ca7ce27bd99de9c8c0a234acf4052be2d35d49"
+    },
+    "sources/atmosphere.ts.gz": {
+      "bytes": 4074,
+      "sha256": "8065352c5304b4c95ab18ef9805dcebbc62696ae341a87ecdff0dd67c1f2cf1f"
+    },
+    "sources/camera.ts.gz": {
+      "bytes": 7127,
+      "sha256": "a7f7b113ee4251454e4f31fd8fa470f131dae3a9bc41ec5cf1d2480871066a69"
+    },
+    "sources/cloudShader.ts.gz": {
+      "bytes": 15553,
+      "sha256": "2e2e8b0ec236a1ae77363419bc766fb464d816b5ff2ce980af5f2bd72873cc44"
+    },
+    "sources/emptyTraversal.ts.gz": {
+      "bytes": 1624,
+      "sha256": "281a4209f2afc13a63735d6526f954dc93d775972aa1d8ccd6cf46d1677c57d4"
+    },
+    "sources/light.ts.gz": {
+      "bytes": 3041,
+      "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+    },
+    "sources/medium.ts.gz": {
+      "bytes": 1176,
+      "sha256": "ddfd487055e4fde6581ab351345e91fb3466b032dda954c803082a39a9a142d6"
+    },
+    "sources/motion.ts.gz": {
+      "bytes": 7238,
+      "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+    },
+    "sources/motionField.ts.gz": {
+      "bytes": 2639,
+      "sha256": "d8817eb9d90a70ee975eea89d2c2fca6d9c6783280bea810fdf76cff2b2d4d8a"
+    },
+    "sources/skyModel.ts.gz": {
+      "bytes": 644,
+      "sha256": "9809736594d784f8a5db4cc88d2dd867820c26f11542739b2901d48a57a1259b"
+    },
+    "sources/sun.ts.gz": {
+      "bytes": 397,
+      "sha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc"
+    },
+    "sources/volume.ts.gz": {
+      "bytes": 25749,
+      "sha256": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74"
+    },
+    "sources/weatherState.ts.gz": {
+      "bytes": 1080,
+      "sha256": "11fb5e122b12e6760b37f72abb405f8d8dd7fd65ceef2bc4c666ee81d3e0e0b9"
+    }
+  },
+  "excluded": [
+    "Macro256-cubed and detail128-cubed texture caches",
+    "GPU readbacks, generated cloud/light binaries",
+    "Build output and dependencies"
+  ],
+  "transferVerification": "File bytes/SHA256 checked; no replay, image analysis, bake, build, test or GPU run during root FPS measurements"
+}

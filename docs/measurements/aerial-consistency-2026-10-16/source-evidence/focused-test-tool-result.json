@@ -1,0 +1,11 @@
+{
+  "command": "npm test -- src/cumulonimbus/aerial.test.ts src/cumulonimbus/cloudShader.test.ts src/cumulonimbus/landscape.test.ts src/cumulonimbus/environment.test.ts",
+  "revision": 2,
+  "completion": {
+    "chunk_id": "140409",
+    "wall_time_seconds": 0.737168667,
+    "exit_code": 0,
+    "original_token_count": 106,
+    "output": "\n> cloudia@0.0.0 test\n> vitest run src/cumulonimbus/aerial.test.ts src/cumulonimbus/cloudShader.test.ts src/cumulonimbus/landscape.test.ts src/cumulonimbus/environment.test.ts\n\n\n RUN  v4.1.6 /Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia\n\n\n Test Files  4 passed (4)\n      Tests  27 passed (27)\n   Start at  10:30:35\n   Duration  504ms (transform 154ms, setup 0ms, import 232ms, tests 88ms, environment 874ms)\n\n"
+  }
+}

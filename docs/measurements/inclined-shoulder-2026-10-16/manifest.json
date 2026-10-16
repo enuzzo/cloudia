@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "08c33cb",
+  "runtimeCandidate": "14.1",
+  "testRevision": 2,
+  "classification": "CPU evidence plus browser images; local connection improvement promoted by root; no general photographic PASS",
+  "macroResolution": 256,
+  "detailResolution": 128,
+  "nominalSteps": 384,
+  "payloadBytes": 1636917,
+  "files": [
+    {
+      "path": "PROPOSTA-DOC.md",
+      "bytes": 2106,
+      "sha256": "f2e31474684c8ff844f4a00084596d5a691fa91971ce6d7b8f4accca32902cd1"
+    },
+    {
+      "path": "README-it.md",
+      "bytes": 3738,
+      "sha256": "c782e994a8b3c9c5950b626a7e6b17c54a91b35a25cdbcb512f2c3a41af508c0"
+    },
+    {
+      "path": "VISUAL-VERDICT.md",
+      "bytes": 1251,
+      "sha256": "ad6e6df5f7e848dd8fe4811454d3eaecef1fcf6ba2512b5e94625ff39590ef8b"
+    },
+    {
+      "path": "baseline/volume.test.ts",
+      "bytes": 17229,
+      "sha256": "0934cc1bfb8f27df253ddd3abecc38957ab9a37a0b8fa248a4acc8ff3a328b79"
+    },
+    {
+      "path": "baseline/volume.ts",
+      "bytes": 25749,
+      "sha256": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74"
+    },
+    {
+      "path": "browser/baseline74-front0.jpg",
+      "bytes": 56618,
+      "sha256": "e89e6f6859b4ee4f20284015691985766be8c066a9e2029c52b20c48c286e3b5"
+    },
+    {
+      "path": "browser/baseline74-quarter0.jpg",
+      "bytes": 72300,
+      "sha256": "3df03154576a7f7c188d56c020ace00cf1b34088ac6ea0d13005c1ad9a8f2ce2"
+    },
+    {
+      "path": "browser/baseline74-rear0.jpg",
+      "bytes": 70197,
+      "sha256": "715b1ee9ed91206ac12fb9a4b3bf3c6269c62a24d8cb16954311fffecb968450"
+    },
+    {
+      "path": "browser/baseline74-side0.jpg",
+      "bytes": 71482,
+      "sha256": "f1dffd0e06c90aa445314a1dd2cc3172243d852498b38c763e274a34eb5b06d4"
+    },
+    {
+      "path": "browser/baseline77-front.jpg",
+      "bytes": 56104,
+      "sha256": "c8a934f0a5837fd62c47e02eacc31636dc7753fc74560c2864397ee6ad7b1ad7"
+    },
+    {
+      "path": "browser/baseline80-front.jpg",
+      "bytes": 55261,
+      "sha256": "56f4e3c5fdd95d381b5128a9646eca31ed0e9301d4570d395333cc3edb89297b"
+    },
+    {
+      "path": "browser/baseline80-metadata.txt.gz",
+      "bytes": 1401,
+      "sha256": "142ab592c9e89cfa8ae014f5689fea935106fcece5e402fdceea34ada64b2f46"
+    },
+    {
+      "path": "browser/capture-state.json",
+      "bytes": 3006,
+      "sha256": "f2d7e73e01f73e6c37dcb201ce4fb3ef9591378f4e026ebf145d9aa782cf0376"
+    },
+    {
+      "path": "browser/shoulder1-74-front-sunset-right.jpg",
+      "bytes": 49520,
+      "sha256": "674d9f982d774b8debae6e9b51ebdb454a6a8ac1c09453ae066dcd9f2d113f85"
+    },
+    {
+      "path": "browser/shoulder1-74-front-sunset.jpg",
+      "bytes": 55025,
+      "sha256": "2b1201f2b487bd1c72f783007e2553c0d097cd99d8da3aeeb2dda6c9f8a08f80"
+    },
+    {
+      "path": "browser/shoulder1-74-front0.jpg",
+      "bytes": 56781,
+      "sha256": "5e184c57a3dccbed860c7d78e05b17f7c871a080b945ea18b1d7960907b642e0"
+    },
+    {
+      "path": "browser/shoulder1-74-quarter0.jpg",
+      "bytes": 72408,
+      "sha256": "61d1eb01cc66fce54d745a1761eef3fbe56494dc6c3e56fb5c53b1078423ede2"
+    },
+    {
+      "path": "browser/shoulder1-74-rear-sunset.jpg",
+      "bytes": 50229,
+      "sha256": "cd13e0d1a5ae2949db2bdd03e63487e22c71dd2db7f59a3195b42f769e531929"
+    },
+    {
+      "path": "browser/shoulder1-74-rear0.jpg",
+      "bytes": 70138,
+      "sha256": "5cea0339d2399f26feffdf4adb23135b5634c47d9016ea6f86dcaf2796585f71"
+    },
+    {
+      "path": "browser/shoulder1-74-side0.jpg",
+      "bytes": 71366,
+      "sha256": "161303f87714186394cd3fbbd3ce9c1b0f2b02f8f4b587ee960b06c70b6804a6"
+    },
+    {
+      "path": "browser/shoulder1-77-front.jpg",
+      "bytes": 56277,
+      "sha256": "98419d68317cc25d9a970e61c065d7816733719fbb0d4bc54469d0b3cac6cc80"
+    },
+    {
+      "path": "browser/shoulder1-77-metadata.txt.gz",
+      "bytes": 1403,
+      "sha256": "018c9f1c064d743ef646046e11cc5187802c4c33fc4e301eca040371cbce4ea4"
+    },
+    {
+      "path": "browser/shoulder1-80-front.jpg",
+      "bytes": 55351,
+      "sha256": "3df3690c14c4fcaa40b08b7c5278156f00d41f34d1b514d70f41aab3616a896d"
+    },
+    {
+      "path": "browser/shoulder1-80-metadata.txt.gz",
+      "bytes": 1402,
+      "sha256": "29a0e0e2af9dc674d2669994d5f0d6bcea4b11598c0b9c71412a640444b52340"
+    },
+    {
+      "path": "browser/shoulder1-numeric-image-difference.json",
+      "bytes": 1136,
+      "sha256": "a0940d5a4ab2b576784a5b0a1af020087a2d8f51c5d735de2977b936b1369483"
+    },
+    {
+      "path": "candidate/inclinedShoulder.test.ts",
+      "bytes": 3884,
+      "sha256": "3d17c32d99eab907fde72e876147ae92720e7894f80bb367d7f519628813a106"
+    },
+    {
+      "path": "candidate/inclinedShoulder.ts",
+      "bytes": 2009,
+      "sha256": "32a844aaacd1de2bde2760da5cc1686693337445e930611cca4a55e3513d8f66"
+    },
+    {
+      "path": "candidate/volume.patch",
+      "bytes": 2371,
+      "sha256": "a7a6c804592f9a2136575e021a42f9561f2837f8b97b1b334c59a3c3cc322ec4"
+    },
+    {
+      "path": "candidate/volume.ts",
+      "bytes": 27243,
+      "sha256": "a53410c45b04143710cffd098b6a33deade3242c66ecf7eecc6405a214a93b00"
+    },
+    {
+      "path": "dependency-manifests/package.json",
+      "bytes": 778,
+      "sha256": "51a4c94b1b976f94f359d4012b517751bbd441c660a6feb10b47dbdc601e802b"
+    },
+    {
+      "path": "original-replay/HANDOFF-CANDIDATE-1.md",
+      "bytes": 6026,
+      "sha256": "e4f847c7aeb966a7fc97cd42a99c7d30ba33c700172030089a24a60f266e63b0"
+    },
+    {
+      "path": "original-replay/probe-cycle14.mjs",
+      "bytes": 7607,
+      "sha256": "899c2b45189afb54f51d5986fc34190494df47673059b8045dd9e1667b847a63"
+    },
+    {
+      "path": "proof/NUMERICAL-256-SUMMARY.json",
+      "bytes": 720,
+      "sha256": "fe72da0b57576b95616498dc11f0e0ca347f30bae633ee459a4289bea29b3d4c"
+    },
+    {
+      "path": "proof/baseline-sections.json",
+      "bytes": 252554,
+      "sha256": "4c94ee9729cd81605b8381de4eecb91ab5e06d49f66ce0cd3d996f68324f6eab"
+    },
+    {
+      "path": "proof/comparison-256.json",
+      "bytes": 76910,
+      "sha256": "a7945f56f610bac3aa107e82137236674e93597cb33fc12f30658b99133e868f"
+    },
+    {
+      "path": "proof/comparison-32-64.json",
+      "bytes": 148106,
+      "sha256": "bd9e9cb56c30ca9af799bcaeaf6f66cd601a1e896573075db5c40dbb681c8847"
+    },
+    {
+      "path": "proof/runtime-versions.json",
+      "bytes": 112,
+      "sha256": "24f6c2a6defa17f6eba617051463bf5c4cfa7e3c8cf427efcdaaf0cb7c32556f"
+    },
+    {
+      "path": "proof/tests-observed.json",
+      "bytes": 548,
+      "sha256": "0d5450dfe95f837f1cc6372f8a40a37360ff7c411959be566e8215c4502ce98e"
+    },
+    {
+      "path": "qualified-bundles/baseline-instrumented.ts",
+      "bytes": 26167,
+      "sha256": "b0b17557f739b5cc02758d728ed15ecfc60abd793eae0c229dace3ac449fae81"
+    },
+    {
+      "path": "qualified-bundles/baseline.mjs",
+      "bytes": 28057,
+      "sha256": "8e30d57669ed82bef6f9068d71322cfd276dffa3998b4481152b5559e4b444d2"
+    },
+    {
+      "path": "qualified-bundles/candidate-instrumented.ts",
+      "bytes": 27724,
+      "sha256": "3e2ce27fcc6d4964be44090d8a9dfb4d7fa343f184e6d195b8771124cc288335"
+    },
+    {
+      "path": "qualified-bundles/candidate.mjs",
+      "bytes": 31106,
+      "sha256": "2b7d47b0f6c2921f3c8c9fd743ed39e4301c2f7ad55b89c570c2bcd85e41ddbd"
+    },
+    {
+      "path": "replay-numeric.mjs",
+      "bytes": 2149,
+      "sha256": "d9730e830e13fd2b6f2527522e5c05dbd33d306018660443b7019e0bbe5a5c3c"
+    },
+    {
+      "path": "replay-tests.mjs",
+      "bytes": 1992,
+      "sha256": "0baa2ef953b11777c1dd4344c12c6dae9663237333bec2efa03f781408a9772d"
+    },
+    {
+      "path": "shared-source/light.ts",
+      "bytes": 3041,
+      "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+    },
+    {
+      "path": "shared-source/motion.ts",
+      "bytes": 7238,
+      "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+    },
+    {
+      "path": "shared-source/original-manifest.json",
+      "bytes": 523,
+      "sha256": "cdc04aefe912cea3a7677f60232fb831698b45554eca9f71465d906cabe766f7"
+    },
+    {
+      "path": "shared-source/sun.ts",
+      "bytes": 397,
+      "sha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc"
+    },
+    {
+      "path": "verify-package.mjs",
+      "bytes": 2177,
+      "sha256": "81b9eae932cc24272081f99d976aafdd8d2519085ce5954fa247849fe0f9e92b"
+    }
+  ]
+}

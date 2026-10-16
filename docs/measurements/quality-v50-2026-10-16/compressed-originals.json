@@ -1,0 +1,52 @@
+[
+  {
+    "path": "final-tests.log.gz",
+    "originalBytes": 301,
+    "originalSha256": "1b964b7347b801a87923c651822dc1c78a45e0ec5f6f40f9fb696b11ae9b427c"
+  },
+  {
+    "path": "final-typecheck.log.gz",
+    "originalBytes": 43,
+    "originalSha256": "0e16a3edbb514aa8bffdbf94899f6caaad53fcb431e899221770792223f367c1"
+  },
+  {
+    "path": "final-build-app.log.gz",
+    "originalBytes": 1564,
+    "originalSha256": "d48d26897d0e4e0d30d5cfec2edcd630c35863aec9ff76ae7c80efc708bce8e7"
+  },
+  {
+    "path": "final-build-hero.log.gz",
+    "originalBytes": 434,
+    "originalSha256": "1395e41befde0220f0685bdcddd3c716fdd1ffd4c062d98562d7801cd42721a0"
+  },
+  {
+    "path": "browser/v50-worker-rain-30.json.gz",
+    "originalBytes": 2014347,
+    "originalSha256": "fcfa851930f6280cc6abd3f0788eb648431fc009a73dceae18b464b1fa11b852"
+  },
+  {
+    "path": "browser/v50-main-rain-motion-90.json.gz",
+    "originalBytes": 5541642,
+    "originalSha256": "c775688c74cca385d2410577e8896fb2b7c05ffab01c4c8b7c2177a7bd01f74e"
+  },
+  {
+    "path": "browser/v50-worker-rain-metadata.txt.gz",
+    "originalBytes": 3949,
+    "originalSha256": "918e7542acc7533659e4a18abae26d55f7ca91f0441e8603d6d9ac3b2bec5387"
+  },
+  {
+    "path": "browser/v50-main-rain-after-metadata.txt.gz",
+    "originalBytes": 3995,
+    "originalSha256": "aee51b91db8cccb06c3bec6bbb9169ac33603aca0330f5f56cb9bdb68a8af43e"
+  },
+  {
+    "path": "browser/v50-main-rain-mid-metadata.txt.gz",
+    "originalBytes": 3904,
+    "originalSha256": "f1840478ac380ba2eeac38e1ae8152f7f8370d4b71d9292d830346f8c4042606"
+  },
+  {
+    "path": "browser/v50-preview-native-metadata.txt.gz",
+    "originalBytes": 2461,
+    "originalSha256": "8936346a5fbfeb574faa41f2711fbdb05f83a56400714f60abe555b2bfd31a7a"
+  }
+]

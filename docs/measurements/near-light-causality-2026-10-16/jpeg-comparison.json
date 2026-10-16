@@ -1,0 +1,588 @@
+{
+  "imagePath": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/solar-continuity-2026-10-16/browser/solar-day-left-near.jpg",
+  "imageBytes": 28862,
+  "imageSHA256": "01526746efc42e11e6b93159f2924308a92df21ea95cd40712a3df4e50b2349b",
+  "dimensions": [
+    1280,
+    720
+  ],
+  "encoding": "JPEG",
+  "embeddedICC": false,
+  "mode": "RGB",
+  "decoder": "Pillow 12.1.1",
+  "method": "Read-only JPEG numeric decode; 7x7 mean/median around13 specified CSS UVs. Four UI patches excluded using explicit rectangles. CPU Float64 radiance/film/sRGB is approximate, not native f32. No image conversion, editing or product writes.",
+  "overlayRectangles": [
+    {
+      "name": "brand",
+      "xyxy": [
+        18,
+        17,
+        224,
+        119
+      ]
+    },
+    {
+      "name": "diagnostic",
+      "xyxy": [
+        31,
+        125,
+        451,
+        157
+      ]
+    },
+    {
+      "name": "hands",
+      "xyxy": [
+        1139,
+        27,
+        1249,
+        73
+      ]
+    },
+    {
+      "name": "dock",
+      "xyxy": [
+        328,
+        628,
+        953,
+        694
+      ]
+    },
+    {
+      "name": "zoom",
+      "xyxy": [
+        1195,
+        551,
+        1249,
+        694
+      ]
+    },
+    {
+      "name": "help",
+      "xyxy": [
+        15,
+        688,
+        233,
+        712
+      ]
+    }
+  ],
+  "samples": [
+    {
+      "uv": [
+        0.05,
+        0.05
+      ],
+      "pixel": [
+        64,
+        36
+      ],
+      "patchRadius": 3,
+      "excluded": true,
+      "overlays": [
+        "brand"
+      ],
+      "predictedRGB255": [
+        236.7243016159968,
+        235.67338524307726,
+        234.40459548964856
+      ]
+    },
+    {
+      "uv": [
+        0.5,
+        0.05
+      ],
+      "pixel": [
+        640,
+        36
+      ],
+      "patchRadius": 3,
+      "excluded": false,
+      "overlays": [],
+      "predictedRGB255": [
+        225.38174342603122,
+        224.32415156630003,
+        223.3597933744411
+      ],
+      "observedMeanRGB": [
+        224.71428571428572,
+        223.71428571428572,
+        221.71428571428572
+      ],
+      "observedMedianRGB": [
+        225,
+        224,
+        222
+      ],
+      "observedMinRGB": [
+        224,
+        223,
+        221
+      ],
+      "observedMaxRGB": [
+        225,
+        224,
+        222
+      ],
+      "differenceMeanRGB": [
+        -0.6674577117454987,
+        -0.609865852014309,
+        -1.6455076601553742
+      ],
+      "observedLuminance255": 223.7824857142857,
+      "predictedLuminance255": 224.47936893422664
+    },
+    {
+      "uv": [
+        0.95,
+        0.05
+      ],
+      "pixel": [
+        1216,
+        36
+      ],
+      "patchRadius": 3,
+      "excluded": true,
+      "overlays": [
+        "hands"
+      ],
+      "predictedRGB255": [
+        211.14444278310626,
+        209.91035012341794,
+        208.77768612924257
+      ]
+    },
+    {
+      "uv": [
+        0.05,
+        0.5
+      ],
+      "pixel": [
+        64,
+        360
+      ],
+      "patchRadius": 3,
+      "excluded": false,
+      "overlays": [],
+      "predictedRGB255": [
+        232.1630049870345,
+        231.08706808695996,
+        229.87624671911473
+      ],
+      "observedMeanRGB": [
+        232,
+        231,
+        229
+      ],
+      "observedMedianRGB": [
+        232,
+        231,
+        229
+      ],
+      "observedMinRGB": [
+        232,
+        231,
+        229
+      ],
+      "observedMaxRGB": [
+        232,
+        231,
+        229
+      ],
+      "differenceMeanRGB": [
+        -0.16300498703449762,
+        -0.0870680869599596,
+        -0.8762467191147323
+      ],
+      "observedLuminance255": 231.0682,
+      "predictedLuminance255": 231.2283909691574
+    },
+    {
+      "uv": [
+        0.5,
+        0.5
+      ],
+      "pixel": [
+        640,
+        360
+      ],
+      "patchRadius": 3,
+      "excluded": false,
+      "overlays": [],
+      "predictedRGB255": [
+        219.4334831472399,
+        218.44233052248958,
+        217.66107388017667
+      ],
+      "observedMeanRGB": [
+        219.18367346938774,
+        218.18367346938774,
+        216.18367346938774
+      ],
+      "observedMedianRGB": [
+        219,
+        218,
+        216
+      ],
+      "observedMinRGB": [
+        219,
+        218,
+        216
+      ],
+      "observedMaxRGB": [
+        220,
+        219,
+        217
+      ],
+      "differenceMeanRGB": [
+        -0.2498096778521699,
+        -0.2586570531018424,
+        -1.4774004107889311
+      ],
+      "observedLuminance255": 218.25187346938773,
+      "predictedLuminance255": 218.59664284093648
+    },
+    {
+      "uv": [
+        0.95,
+        0.5
+      ],
+      "pixel": [
+        1216,
+        360
+      ],
+      "patchRadius": 3,
+      "excluded": false,
+      "overlays": [],
+      "predictedRGB255": [
+        209.63526555613777,
+        208.4264137625003,
+        207.26351447943387
+      ],
+      "observedMeanRGB": [
+        209,
+        208,
+        206
+      ],
+      "observedMedianRGB": [
+        209,
+        208,
+        206
+      ],
+      "observedMinRGB": [
+        209,
+        208,
+        206
+      ],
+      "observedMaxRGB": [
+        209,
+        208,
+        206
+      ],
+      "differenceMeanRGB": [
+        -0.6352655561377674,
+        -0.42641376250028884,
+        -1.2635144794338657
+      ],
+      "observedLuminance255": 208.0682,
+      "predictedLuminance255": 208.5994543255902
+    },
+    {
+      "uv": [
+        0.05,
+        0.95
+      ],
+      "pixel": [
+        64,
+        684
+      ],
+      "patchRadius": 3,
+      "excluded": false,
+      "overlays": [],
+      "predictedRGB255": [
+        224.94093600971533,
+        223.87241709693805,
+        222.90967784018883
+      ],
+      "observedMeanRGB": [
+        224.85714285714286,
+        224,
+        222.28571428571428
+      ],
+      "observedMedianRGB": [
+        225,
+        224,
+        222
+      ],
+      "observedMinRGB": [
+        224,
+        224,
+        222
+      ],
+      "observedMaxRGB": [
+        225,
+        224,
+        224
+      ],
+      "differenceMeanRGB": [
+        -0.08379315257246844,
+        0.12758290306194908,
+        -0.6239635544745568
+      ],
+      "observedLuminance255": 224.05845714285712,
+      "predictedLuminance255": 224.03007444345718
+    },
+    {
+      "uv": [
+        0.5,
+        0.95
+      ],
+      "pixel": [
+        640,
+        684
+      ],
+      "patchRadius": 3,
+      "excluded": true,
+      "overlays": [
+        "dock"
+      ],
+      "predictedRGB255": [
+        215.1452261540402,
+        214.18336484616694,
+        213.6059468423472
+      ]
+    },
+    {
+      "uv": [
+        0.95,
+        0.95
+      ],
+      "pixel": [
+        1216,
+        684
+      ],
+      "patchRadius": 3,
+      "excluded": true,
+      "overlays": [
+        "zoom"
+      ],
+      "predictedRGB255": [
+        211.18353747864523,
+        209.93558955864418,
+        208.83592095917325
+      ]
+    },
+    {
+      "uv": [
+        0.35,
+        0.5
+      ],
+      "pixel": [
+        448,
+        360
+      ],
+      "patchRadius": 3,
+      "excluded": false,
+      "overlays": [],
+      "predictedRGB255": [
+        223.64122772280413,
+        222.59276951310122,
+        221.6263012555375
+      ],
+      "observedMeanRGB": [
+        224,
+        223,
+        221
+      ],
+      "observedMedianRGB": [
+        224,
+        223,
+        221
+      ],
+      "observedMinRGB": [
+        224,
+        223,
+        221
+      ],
+      "observedMaxRGB": [
+        224,
+        223,
+        221
+      ],
+      "differenceMeanRGB": [
+        0.35877227719586813,
+        0.40723048689878283,
+        -0.6263012555374985
+      ],
+      "observedLuminance255": 223.0682,
+      "predictedLuminance255": 222.74589272028794
+    },
+    {
+      "uv": [
+        0.65,
+        0.5
+      ],
+      "pixel": [
+        832,
+        360
+      ],
+      "patchRadius": 3,
+      "excluded": false,
+      "overlays": [],
+      "predictedRGB255": [
+        215.60396180098317,
+        214.63985796395625,
+        213.95640394339426
+      ],
+      "observedMeanRGB": [
+        216,
+        215,
+        213
+      ],
+      "observedMedianRGB": [
+        216,
+        215,
+        213
+      ],
+      "observedMinRGB": [
+        216,
+        215,
+        213
+      ],
+      "observedMaxRGB": [
+        216,
+        215,
+        213
+      ],
+      "differenceMeanRGB": [
+        0.3960381990168287,
+        0.3601420360437544,
+        -0.9564039433942639
+      ],
+      "observedLuminance255": 215.06820000000002,
+      "predictedLuminance255": 214.79548105942357
+    },
+    {
+      "uv": [
+        0.5,
+        0.35
+      ],
+      "pixel": [
+        640,
+        252
+      ],
+      "patchRadius": 3,
+      "excluded": false,
+      "overlays": [],
+      "predictedRGB255": [
+        220.86974516406357,
+        219.89364762806773,
+        219.12422557538923
+      ],
+      "observedMeanRGB": [
+        221,
+        220,
+        218
+      ],
+      "observedMedianRGB": [
+        221,
+        220,
+        218
+      ],
+      "observedMinRGB": [
+        221,
+        220,
+        218
+      ],
+      "observedMaxRGB": [
+        221,
+        220,
+        218
+      ],
+      "differenceMeanRGB": [
+        0.13025483593642662,
+        0.10635237193227454,
+        -1.1242255753892323
+      ],
+      "observedLuminance255": 220.0682,
+      "predictedLuminance255": 220.04561369201704
+    },
+    {
+      "uv": [
+        0.5,
+        0.65
+      ],
+      "pixel": [
+        640,
+        468
+      ],
+      "patchRadius": 3,
+      "excluded": false,
+      "overlays": [],
+      "predictedRGB255": [
+        217.73945435352644,
+        216.75860184404044,
+        216.06876568802798
+      ],
+      "observedMeanRGB": [
+        217.42857142857142,
+        217,
+        216.14285714285714
+      ],
+      "observedMedianRGB": [
+        217,
+        217,
+        217
+      ],
+      "observedMinRGB": [
+        217,
+        217,
+        215
+      ],
+      "observedMaxRGB": [
+        218,
+        217,
+        217
+      ],
+      "differenceMeanRGB": [
+        -0.310882924955024,
+        0.24139815595955838,
+        0.07409145482915847
+      ],
+      "observedLuminance255": 217.02922857142858,
+      "predictedLuminance255": 216.91732491709305
+    }
+  ],
+  "summary": {
+    "usableSamples": 9,
+    "excludedSamples": 4,
+    "observedLuminance255": {
+      "n": 9,
+      "min": 208.0682,
+      "max": 231.0682,
+      "mean": 220.05144943310657,
+      "standardDeviation": 6.157650477337811
+    },
+    "predictedLuminance255": {
+      "n": 9,
+      "min": 208.5994543255902,
+      "max": 231.2283909691574,
+      "mean": 220.15980487802105,
+      "standardDeviation": 6.130315697269015
+    },
+    "biasObservedMinusCPU255": -0.10835544491448622,
+    "rmseLuminance255": 0.3503173476757166,
+    "maxAbsoluteLuminanceError255": 0.6968832199409292,
+    "correlation": 0.9985398808608538,
+    "linearFitObservedFromCPU": {
+      "slope": 1.0029923217107455,
+      "intercept": -0.7671444088844623
+    },
+    "perChannelBiasObservedMinusCPU255": [
+      -0.1361276331275892,
+      -0.015477644520008957,
+      -0.9466080159399218
+    ]
+  }
+}

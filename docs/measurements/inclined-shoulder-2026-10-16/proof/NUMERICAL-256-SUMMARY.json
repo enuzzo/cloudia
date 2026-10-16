@@ -1,0 +1,23 @@
+{
+  "classification": "CPU numerical evidence, not native GPU or artistic acceptance",
+  "baseline": "08c33cb",
+  "runtimeCandidate": "candidate-1",
+  "finalTests": "candidate-1-r2",
+  "focusedTests": {
+    "passed": 31,
+    "total": 31
+  },
+  "fullVolumeResolution": 256,
+  "detailResolution": 128,
+  "falseEmptyBakeInputSamples": 0,
+  "totalSkippedReevaluated": 140692504,
+  "candidateSkippedReevaluated": 70343143,
+  "modifiedShearedCandidateSkippedReevaluated": 42846825,
+  "unmodifiedFamilies256": [
+    "72 density/RGBA/sunset/detail SHA256 equal",
+    "73 density/RGBA/sunset/detail SHA256 equal"
+  ],
+  "allSixFaceMarginsUnchanged": true,
+  "largeBinaryArchiveWritten": false,
+  "proof": "comparison-256.json"
+}

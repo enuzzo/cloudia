@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "frozenGit": "08c33cb",
+  "decision": "Negative scalar intervention; not promoted",
+  "totalBytes": 320763,
+  "files": {
+    "PRECLAMP-CAUSALITY.md": {
+      "bytes": 6667,
+      "sha256": "66926004972b97517df234d64932d835eb42a2cca8151d186373239a7fa281f2"
+    },
+    "README.md": {
+      "bytes": 2840,
+      "sha256": "7255759a3829f498d4fd970d6db86a45e1fd2866ca6db51b6a62505fa0f90ea3"
+    },
+    "audit-code/counterfactual-coefficient.py": {
+      "bytes": 4925,
+      "sha256": "27abb1638f0c1bbd1aa05e47b07053b7fca0bb82d4177fa48824e8d79053badc"
+    },
+    "audit-code/geometry-scalar.ts.gz": {
+      "bytes": 9005,
+      "sha256": "237bf4e73ac1e0a087a1001336950a8581b2dcd6ed6a650b174a04ab02fca9ce"
+    },
+    "audit-code/probe-carving.ts.gz": {
+      "bytes": 5274,
+      "sha256": "2bf81ad8da5c72eabf50e50f841551e4f245f9c1ed18dd26a646fecf19b84714"
+    },
+    "expected/interior-coefficient-scalar.json.gz": {
+      "bytes": 14171,
+      "sha256": "1fe4524a76ee1d412603eb3c6a4883001aacec5761149eaf5b775176b8ca49cf"
+    },
+    "input/carving-causality.json.gz": {
+      "bytes": 257899,
+      "sha256": "2871775e12ea7fc68d8b4089011efd7e6ede2c1bd1a5459d49be318986f59c17"
+    },
+    "input-references.json": {
+      "bytes": 2250,
+      "sha256": "7ac4e4e977064921438b9ea9d964d9ad628abfc48c83808c1f8b2bbb34ea1364"
+    },
+    "replay.py": {
+      "bytes": 5125,
+      "sha256": "a4304418fca9c5ec75d5546ed51c288e36cf07a353dca6cce63f3422e4323ad3"
+    },
+    "sources/baseline-volume.ts.gz": {
+      "bytes": 9343,
+      "sha256": "757a730519a0c26cf397861a1f9c56fd94e2fff51a4c87e48a2165f8efbe97ec"
+    },
+    "sources/snapshot-manifest.json": {
+      "bytes": 2019,
+      "sha256": "2f600a6069c5500e7a4d1d1998126d979d2c21db57306a8cffa259ac94c8fab2"
+    },
+    "verify.py": {
+      "bytes": 1245,
+      "sha256": "df544bd97be342e57fb20460da681c53fdbdb7e50085c7820155cc37ae337969"
+    }
+  }
+}

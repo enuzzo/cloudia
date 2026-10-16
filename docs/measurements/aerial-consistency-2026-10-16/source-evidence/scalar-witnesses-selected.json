@@ -1,0 +1,79 @@
+{
+  "scope": "Selected previously recorded scalar Float64 witnesses; no new evaluation. Not pixel RGB or altitude-dependent transport.",
+  "beforeOriginal": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/rain-landscape/aerial-witnesses.json",
+    "sha256": "73facf71ac898556149288df2b087318530a1ad5788b3fe27b1764994a9d74a3"
+  },
+  "candidateOriginal": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/rain-landscape/aerial-candidate-witnesses.json",
+    "sha256": "cb6a769d8f0ab1e910247bf7dcf80301aff55d09b27dc68a3c4cf62e3bdfadb5"
+  },
+  "witnesses": [
+    {
+      "before": {
+        "scene": "clear",
+        "haze": 1,
+        "distanceKm": 16,
+        "volumeCoefficientPerKm": 0.0035,
+        "surfaceCoefficientPerKm": 0.01,
+        "volumeContrast": 0.9455391358903963,
+        "surfaceContrast": 0.8521437889662113,
+        "difference": 0.09339534692418494,
+        "ratio": 1.1096004549155825
+      },
+      "candidate": {
+        "scene": "clear",
+        "haze": 1,
+        "distanceKm": 16,
+        "beforeVolumeContrast": 0.9455391358903963,
+        "landscapeContrast": 0.8521437889662113,
+        "candidateVolumeContrast": 0.8521437889662113,
+        "remainingDifference": 0
+      }
+    },
+    {
+      "before": {
+        "scene": "rain",
+        "haze": 2.6,
+        "distanceKm": 16,
+        "volumeCoefficientPerKm": 0.0091,
+        "surfaceCoefficientPerKm": 0.0164,
+        "volumeContrast": 0.8645034354077514,
+        "surfaceContrast": 0.7692032808507674,
+        "difference": 0.09530015455698404,
+        "ratio": 1.1238946282854885
+      },
+      "candidate": {
+        "scene": "rain",
+        "haze": 2.6,
+        "distanceKm": 16,
+        "beforeVolumeContrast": 0.8645034354077514,
+        "landscapeContrast": 0.7692032808507674,
+        "candidateVolumeContrast": 0.7692032808507674,
+        "remainingDifference": 0
+      }
+    },
+    {
+      "before": {
+        "scene": "haze",
+        "haze": 2.4,
+        "distanceKm": 60,
+        "volumeCoefficientPerKm": 0.0084,
+        "surfaceCoefficientPerKm": 0.0156,
+        "volumeContrast": 0.6041093828558647,
+        "surfaceContrast": 0.392193475893505,
+        "difference": 0.21191590696235968,
+        "ratio": 1.5403351151611269
+      },
+      "candidate": {
+        "scene": "haze",
+        "haze": 2.4,
+        "distanceKm": 60,
+        "beforeVolumeContrast": 0.6041093828558647,
+        "landscapeContrast": 0.392193475893505,
+        "candidateVolumeContrast": 0.392193475893505,
+        "remainingDifference": 0
+      }
+    }
+  ]
+}

@@ -129,7 +129,7 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
         rainExtinction=weather.z*rainDensity*${RAIN_EXTINCTION};
         let forwardRain=.08+.2*pow(max(0.0,dot(ray,sun)),8.0);
         let rainLight=sky*.25+ambientColor*.28+solarColor*forwardRain*(1.0-weather.y*.7);
-        rainSource=mix(sky,rainLight,exp(-weather.x*.0035*t));
+        rainSource=mix(sky,rainLight,aerialTransmittance(t,weather.x));
         }
       }
     }
@@ -194,7 +194,7 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
     }}
     }}
     if(density<=0.0&&rainExtinction<=0.0){t+=sampleStep;continue;}
-    let aerial=exp(-weather.x*0.0035*t);
+    let aerial=aerialTransmittance(t,weather.x);
     // Co-located media share one exponential segment; neither is artificially in front.
     let cell=cloudMediaSegment(density*mix(extinction,iceExtinction,ice),mix(sky,source,aerial),rainExtinction,rainSource,sampleStep);
     radiance += transmittance * cell.rgb;

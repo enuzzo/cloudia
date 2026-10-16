@@ -1,0 +1,29 @@
+{
+  "scope": "Existing passing CPU test over actual Three wgslFn FunctionNodes. Not driver WGSL binary/pixel equivalence or a new test run.",
+  "assertionSource": "candidate/cloudShader.test.ts",
+  "assertionSourceSha256": "d5e2092b865918815279199abf32229c661c4e25ff82c787935ce7a295e253eb",
+  "candidateTemplateSource": "candidate/cloudShader.ts.gz",
+  "candidateTemplateSourceSha256": "652c9514b7dfcee1456d15e9966087b3ff9c6a6ce9741970208cfca3750a248c",
+  "testResult": "27/27 across4files, final testrevision2,10:30:35,504ms; actual tool result preserved alongside.",
+  "inverseEditsAssertedInPassingTest": [
+    {
+      "candidate": "rainSource=mix(sky,rainLight,aerialTransmittance(t,weather.x));",
+      "baseline": "rainSource=mix(sky,rainLight,exp(-weather.x*.0035*t));"
+    },
+    {
+      "candidate": "let aerial=aerialTransmittance(t,weather.x);",
+      "baseline": "let aerial=exp(-weather.x*0.0035*t);"
+    }
+  ],
+  "recoveredBaselineHashesAssertedInPassingTest": {
+    "dryDefault": "d38fe3918e5cf95e2f13a1f6ca9a111a20045b2497600b89118cb7a8200bcb8c",
+    "rainPointCertificate": "6d30dc1d1ab7bc99513c451f4fcbdee81c402fe90220d565bb3a6df52c5cb655"
+  },
+  "additionalPassingContracts": [
+    "Single aerial WGSL function definition via the standalone LANDSCAPE_WGSL include.",
+    "Every diagnostic/weather/R8 variant retains existing3-argument factory behavior.",
+    "R8 still changes only the warped-density texture lookup."
+  ],
+  "historicalTestRevision1PreservedExternal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/rain-landscape/test-revision1",
+  "candidateTemplateCompression": "gzip lossless; candidateTemplateSourceSha256 identifies uncompressed source."
+}

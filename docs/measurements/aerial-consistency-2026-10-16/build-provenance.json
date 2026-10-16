@@ -1,0 +1,36 @@
+{
+  "measurementSource": {
+    "base": "08c33cb",
+    "candidate": "homogeneous aerial consistency only; original anatomy",
+    "rendererVersionInAllRawReports": "observatory-v49-quality-checkpoint",
+    "externalManifestPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/rain-landscape/frozen-trial/source-manifest.json",
+    "externalManifestSha256": "ef73dbc5f1dfca6a5a49469ebb46cc8b5d72309606710a6e3a8be1cf11c57e59",
+    "selectedSourceHashes": {
+      "src/cumulonimbus/GPUSceneEngine.ts": "8ad9a31302c14f45723c8ca319ca7ce27bd99de9c8c0a234acf4052be2d35d49",
+      "src/cumulonimbus/volume.ts": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74",
+      "src/cumulonimbus/aerial.ts": "a066cfe3664d77e4c448045010fa13c40eefb35add6c163d143bd2bb01af10da",
+      "src/cumulonimbus/cloudShader.ts": "652c9514b7dfcee1456d15e9966087b3ff9c6a6ce9741970208cfca3750a248c",
+      "src/cumulonimbus/landscape.ts": "037a5bfcc60e0c342a85d32c5b50f25982e9366806b4f95ef4b28c5842b605c8",
+      "src/cumulonimbus/aerial.test.ts": "4a637a2346461ebe82f1225c3d44fd7aff58142225efe7bc58b32e21eb5a2198",
+      "src/cumulonimbus/inclinedShoulder.ts": null
+    }
+  },
+  "finalCheckpointReference": {
+    "rendererVersion": "observatory-v50-quality-checkpoint",
+    "externalManifestPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/final-source/source-manifest.json",
+    "externalManifestSha256": "ef4ed45e8916c3829c99b5ce262f420295af2e61e38f279605e742bf1c060e73",
+    "selectedSourceHashes": {
+      "src/cumulonimbus/GPUSceneEngine.ts": "b829772a51d6e342adfd5e5e2fbb807037ae74d3ba8413ea7078e6962b4334a0",
+      "src/cumulonimbus/volume.ts": "a53410c45b04143710cffd098b6a33deade3242c66ecf7eecc6405a214a93b00",
+      "src/cumulonimbus/aerial.ts": "a066cfe3664d77e4c448045010fa13c40eefb35add6c163d143bd2bb01af10da",
+      "src/cumulonimbus/cloudShader.ts": "652c9514b7dfcee1456d15e9966087b3ff9c6a6ce9741970208cfca3750a248c",
+      "src/cumulonimbus/landscape.ts": "037a5bfcc60e0c342a85d32c5b50f25982e9366806b4f95ef4b28c5842b605c8",
+      "src/cumulonimbus/aerial.test.ts": "4a637a2346461ebe82f1225c3d44fd7aff58142225efe7bc58b32e21eb5a2198",
+      "src/cumulonimbus/inclinedShoulder.ts": "32a844aaacd1de2bde2760da5cc1686693337445e930611cca4a55e3513d8f66"
+    },
+    "scope": "Source metadata reference only, not finalbuild or browser acceptance. Finalgeometry includes inclinedShoulder and a different volume.ts; A/B/A here did not measure that geometry."
+  },
+  "candidateAddressReportedByRoot": "http://localhost:4195/",
+  "baselineAddress": "Not recorded in raw exports; baseline is08c33cb/original-anatomy with previous aerial coefficients.",
+  "compiledBinaryScope": "Function-template tests are CPU contracts; this archive does not include driver binaries or complete build outputs."
+}

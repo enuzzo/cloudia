@@ -2,6 +2,7 @@ import { bakeOpticalDepth } from './light';
 import {SUN_LEFT,SUN_RIGHT,solarDirection} from './sun';
 export {SUN_LEFT,SUN_RIGHT} from './sun';
 import { THERMAL_DISPLACEMENT } from './motion';
+import { prepareInclinedShoulder } from './inclinedShoulder';
 /** World bounds and extinction are shared by the bake and ray integrator. */
 export const BOUNDS_MIN = [-5, -0.5, -3.5] as const;
 export const BOUNDS_SIZE = [10, 8.5, 7] as const;
@@ -339,6 +340,26 @@ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (
       const px=voxelCenter(x,0,size), py=voxelCenter(y,1,size), pz=voxelCenter(z,2,size);
       const sd=(1-Math.sqrt(((px-cx)/rx)**2+((py-cy)/ry)**2+((pz-cz)/rz)**2))*Math.min(rx,ry,rz);
       const idx=(z*size+y)*size+x; const old=field[idx],h=clamp(.5+.5*(old-sd)/blend);
+      field[idx]=sd+(old-sd)*h+blend*h*(1-h);
+    }
+  }
+  if(shape.family==='sheared') {
+    const mature=summits.reduce((a,b)=>a[1]>b[1]?a:b),foot=foundations[summits.indexOf(mature)];
+    const cap=iceCores.reduce((a,b)=>Math.hypot(a[0]-mature[0],a[2]-mature[2])<Math.hypot(b[0]-mature[0],b[2]-mature[2])?a:b);
+    // Feed the outflow from the upper body, substantially below the summit.
+    // The existing short head-to-cap collars cannot occupy the hollow beneath
+    // the incus. This separate inclined mass preserves every original billow
+    // and RNG draw, and uses the already contracted anatomy without mutation.
+    const shoulder=prepareInclinedShoulder(
+      [foot[0]+(mature[0]-foot[0])*.68,foot[1]+(mature[1]-foot[1])*.68,foot[2]+(mature[2]-foot[2])*.68],
+      [cap[0]+cap[3]*.28,cap[1]-cap[4]*.1,cap[2]],
+      Math.max(mature[3]*.95,foot[3]*.62),Math.max(mature[5]*.95,cap[5]*.68),
+    );
+    const start=shoulder.min.map((v,i)=>Math.max(1,Math.floor((v-.35-BOUNDS_MIN[i])/BOUNDS_SIZE[i]*size-.5)));
+    const end=shoulder.max.map((v,i)=>Math.min(size-2,Math.ceil((v+.35-BOUNDS_MIN[i])/BOUNDS_SIZE[i]*size-.5)));
+    for(let z=start[2];z<=end[2];z++) for(let y=start[1];y<=end[1];y++) for(let x=start[0];x<=end[0];x++) {
+      const sd=shoulder.sample(voxelCenter(x,0,size),voxelCenter(y,1,size),voxelCenter(z,2,size));
+      const idx=(z*size+y)*size+x,old=field[idx],blend=.16,h=clamp(.5+.5*(old-sd)/blend);
       field[idx]=sd+(old-sd)*h+blend*h*(1-h);
     }
   }

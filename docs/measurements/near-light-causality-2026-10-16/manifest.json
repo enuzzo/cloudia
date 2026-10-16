@@ -1,0 +1,176 @@
+{
+  "schema": 1,
+  "frozenSourceGit": "08c33cb",
+  "decision": "Near photographic gate open; coefficient .6->.5 negative and not promoted",
+  "payloadBytes": 538070,
+  "files": {
+    "README.md": {
+      "bytes": 3010,
+      "sha256": "9530bf8eb6b627fff07255d576a92179cc91beff875141b069d215d764cb044a"
+    },
+    "audit-code/compare-jpeg.py.gz": {
+      "bytes": 1817,
+      "sha256": "5ac35f9a135082bbae4c2a040a79fb88fbfd768592f263b8887f1199590b959f"
+    },
+    "audit-code/motionField-runtime.ts.gz": {
+      "bytes": 1228,
+      "sha256": "a45edf5a3003ea9fafabfa36911ef2bb3810e6eb7f9c60307136bdfe1869ebb6"
+    },
+    "audit-code/probe-light.ts.gz": {
+      "bytes": 4565,
+      "sha256": "0035d12cadf0ecf601ea1d709fbb3440d7987b444659dd57aeda20f5162f7b3a"
+    },
+    "browser/solar-day-left-near.jpg": {
+      "bytes": 28862,
+      "sha256": "01526746efc42e11e6b93159f2924308a92df21ea95cd40712a3df4e50b2349b"
+    },
+    "jpeg-comparison.json": {
+      "bytes": 11045,
+      "sha256": "8494a8d674b2dbb9096ebe2ee7d6e7b2219686624ff533cfe1915d533a111a1b"
+    },
+    "model/derived-summary.json.gz": {
+      "bytes": 799,
+      "sha256": "41bf9d5b69c76f1a38957dad7545b8012db03410a29f1cae278427e6d515874d"
+    },
+    "model/near-light-summary.json.gz": {
+      "bytes": 1192,
+      "sha256": "df693df515753c2545fea89c1833b1b21a278cd2c16e7fa513ab6cd8d198e2ca"
+    },
+    "model/near-light.json.gz": {
+      "bytes": 83862,
+      "sha256": "416c536ca5492d4adc48edc12abfc1e30dc8376e71ecc790dc2a30bf5cbe09cb"
+    },
+    "preclamp/PRECLAMP-CAUSALITY.md": {
+      "bytes": 6667,
+      "sha256": "66926004972b97517df234d64932d835eb42a2cca8151d186373239a7fa281f2"
+    },
+    "preclamp/README.md": {
+      "bytes": 2840,
+      "sha256": "7255759a3829f498d4fd970d6db86a45e1fd2866ca6db51b6a62505fa0f90ea3"
+    },
+    "preclamp/audit-code/counterfactual-coefficient.py": {
+      "bytes": 4925,
+      "sha256": "27abb1638f0c1bbd1aa05e47b07053b7fca0bb82d4177fa48824e8d79053badc"
+    },
+    "preclamp/audit-code/geometry-scalar.ts.gz": {
+      "bytes": 9005,
+      "sha256": "237bf4e73ac1e0a087a1001336950a8581b2dcd6ed6a650b174a04ab02fca9ce"
+    },
+    "preclamp/audit-code/probe-carving.ts.gz": {
+      "bytes": 5274,
+      "sha256": "2bf81ad8da5c72eabf50e50f841551e4f245f9c1ed18dd26a646fecf19b84714"
+    },
+    "preclamp/expected/interior-coefficient-scalar.json.gz": {
+      "bytes": 14171,
+      "sha256": "1fe4524a76ee1d412603eb3c6a4883001aacec5761149eaf5b775176b8ca49cf"
+    },
+    "preclamp/input/carving-causality.json.gz": {
+      "bytes": 257899,
+      "sha256": "2871775e12ea7fc68d8b4089011efd7e6ede2c1bd1a5459d49be318986f59c17"
+    },
+    "preclamp/input-references.json": {
+      "bytes": 2250,
+      "sha256": "7ac4e4e977064921438b9ea9d964d9ad628abfc48c83808c1f8b2bbb34ea1364"
+    },
+    "preclamp/manifest.json": {
+      "bytes": 1905,
+      "sha256": "1e3c2c12c356a1d12722128f493044ca50c9143bec2433fdb7511b7d02a7438e"
+    },
+    "preclamp/replay.py": {
+      "bytes": 5125,
+      "sha256": "a4304418fca9c5ec75d5546ed51c288e36cf07a353dca6cce63f3422e4323ad3"
+    },
+    "preclamp/sources/baseline-volume.ts.gz": {
+      "bytes": 9343,
+      "sha256": "757a730519a0c26cf397861a1f9c56fd94e2fff51a4c87e48a2165f8efbe97ec"
+    },
+    "preclamp/sources/snapshot-manifest.json": {
+      "bytes": 2019,
+      "sha256": "2f600a6069c5500e7a4d1d1998126d979d2c21db57306a8cffa259ac94c8fab2"
+    },
+    "preclamp/verify.py": {
+      "bytes": 1245,
+      "sha256": "df544bd97be342e57fb20460da681c53fdbdb7e50085c7820155cc37ae337969"
+    },
+    "provenance.json": {
+      "bytes": 9467,
+      "sha256": "806a927c73f07530e990059cd1bd27c8d82991b59e7f5e80e4f9b10bf769767c"
+    },
+    "replay-jpeg.py": {
+      "bytes": 4580,
+      "sha256": "da40c7209a262fdc97ea249263072d9b6c3525f966d5fa8069f2c617cd3159da"
+    },
+    "reports/INITIAL-DIAGNOSIS.md": {
+      "bytes": 8504,
+      "sha256": "0500fb3274c875b2a2b0e8b06c9e6b6163beb0d0a0f8d05c1e83f1838f736341"
+    },
+    "reports/JPEG-COMPARISON.md": {
+      "bytes": 2569,
+      "sha256": "c4d1f29219f2f0390595975c7d75019c1c18f64dde99a7c0d47935a724f12c3a"
+    },
+    "reports/PRECLAMP-CAUSALITY.md": {
+      "bytes": 6667,
+      "sha256": "66926004972b97517df234d64932d835eb42a2cca8151d186373239a7fa281f2"
+    },
+    "sources/GPUSceneEngine.ts.gz": {
+      "bytes": 16681,
+      "sha256": "b37dbed23d8873f903c1d0098b8c5f6cdcb163891bd5e9e93008b315f12523c1"
+    },
+    "sources/atmosphere.ts.gz": {
+      "bytes": 1758,
+      "sha256": "1c6640cf0fe680aee4466d67c917ad4c3b2f8b7bf2496a69bd1b72e9f6746ac0"
+    },
+    "sources/camera.ts.gz": {
+      "bytes": 2586,
+      "sha256": "2ce8a66af298af762b95f24a85618a19ad7a6aa894e440398282c76ddf3974a6"
+    },
+    "sources/cloudShader.ts.gz": {
+      "bytes": 5526,
+      "sha256": "b9c0165d92d514e642d180976ff3299bf267b8c02bf13f941c04eadadfe235a8"
+    },
+    "sources/emptyTraversal.ts.gz": {
+      "bytes": 854,
+      "sha256": "d603adfa146f1562a7151319d94bceb36b7c859fd6a8a99f3cd2484f68ecec8d"
+    },
+    "sources/light.ts.gz": {
+      "bytes": 1275,
+      "sha256": "4a74218a951f552d7c2b3e8cb339f2d2e45c66c2b90e3d78fba1cc3c6111cc3e"
+    },
+    "sources/medium.ts.gz": {
+      "bytes": 509,
+      "sha256": "f9dddc92dd55bb01093481b75c3aea68d59b4d6aee553a12f7982468a8fa3dd3"
+    },
+    "sources/motion.ts.gz": {
+      "bytes": 2853,
+      "sha256": "3f051cd26ff2c3e16ab57ab254510ed8e9972bea22a940d6f10cd8df7943ce16"
+    },
+    "sources/motionField.ts.gz": {
+      "bytes": 1157,
+      "sha256": "c08e909fcc0cdd54a33cb77a9aa7b0ed2f17a615753e586d6aa31bd27008c7e5"
+    },
+    "sources/skyModel.ts.gz": {
+      "bytes": 350,
+      "sha256": "e8772b5b07856935c5c76957321a9a1137d55d911303bfd1229e88aa77cbb3d7"
+    },
+    "sources/snapshot-manifest.json": {
+      "bytes": 2019,
+      "sha256": "2f600a6069c5500e7a4d1d1998126d979d2c21db57306a8cffa259ac94c8fab2"
+    },
+    "sources/sun.ts.gz": {
+      "bytes": 271,
+      "sha256": "5db17e9e5fdac4bdc8a4b69b2b1ed40527bb09fd28a05dbdc4140bb8b20d0d67"
+    },
+    "sources/volume.ts.gz": {
+      "bytes": 9343,
+      "sha256": "757a730519a0c26cf397861a1f9c56fd94e2fff51a4c87e48a2165f8efbe97ec"
+    },
+    "sources/weatherState.ts.gz": {
+      "bytes": 511,
+      "sha256": "8585fbd1769708773626c9690e31f50b41d67dca45218cad6edab5e9fa6a5384"
+    },
+    "verify.py": {
+      "bytes": 1542,
+      "sha256": "6466c17c2cc70c1bc5480fafaaeca2abc341681477418f9d27bc57b8871b68f0"
+    }
+  }
+}

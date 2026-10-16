@@ -1,0 +1,65 @@
+{
+  "scope": "JPEG-CSS difference in fixed cloud region; not lossless framebuffer, timestamp synchronization or art verdict; JPEG blocks included",
+  "results": [
+    {
+      "pose": "front0",
+      "cssSize": [
+        1280,
+        720
+      ],
+      "changedPixelsGt3": 6185,
+      "maxChannelDifference": 130,
+      "changedBounds": [
+        640,
+        97,
+        766,
+        265
+      ]
+    },
+    {
+      "pose": "quarter0",
+      "cssSize": [
+        1280,
+        720
+      ],
+      "changedPixelsGt3": 6186,
+      "maxChannelDifference": 117,
+      "changedBounds": [
+        624,
+        124,
+        783,
+        414
+      ]
+    },
+    {
+      "pose": "side0",
+      "cssSize": [
+        1280,
+        720
+      ],
+      "changedPixelsGt3": 11369,
+      "maxChannelDifference": 132,
+      "changedBounds": [
+        592,
+        81,
+        735,
+        403
+      ]
+    },
+    {
+      "pose": "rear0",
+      "cssSize": [
+        1280,
+        720
+      ],
+      "changedPixelsGt3": 14767,
+      "maxChannelDifference": 118,
+      "changedBounds": [
+        480,
+        112,
+        632,
+        399
+      ]
+    }
+  ]
+}

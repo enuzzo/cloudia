@@ -1,0 +1,20 @@
+{
+  "measurements/aerial-baseline-A1.json.gz": {
+    "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/browser/aerial-baseline-A1.json",
+    "compressedBytes": 114675,
+    "uncompressedBytes": 1601979,
+    "uncompressedSha256": "77e68bbcb805915b715c5587f6ec49d1487cba9456da3584e3c28bf210455363"
+  },
+  "measurements/aerial-candidate-B.json.gz": {
+    "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/browser/aerial-candidate-B.json",
+    "compressedBytes": 113083,
+    "uncompressedBytes": 1548007,
+    "uncompressedSha256": "ed784ac4d3733aa4b62f46aa295fcb0fb18696286c62f6510375a323d481672d"
+  },
+  "measurements/aerial-baseline-A2.json.gz": {
+    "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/browser/aerial-baseline-A2.json",
+    "compressedBytes": 112772,
+    "uncompressedBytes": 1548094,
+    "uncompressedSha256": "6ad6d06a6fc4022e891b7c8966b854fbc3b8c1c79c11c9171b1281fcce43a6eb"
+  }
+}
