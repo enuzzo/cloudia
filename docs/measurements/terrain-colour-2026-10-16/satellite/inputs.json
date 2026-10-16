@@ -1,0 +1,13 @@
+{
+  "sourcePlanSha256": "ab097ef34fe964150d9b3d8e655cb817473e55329e40abf1598fb030c169b53f",
+  "sourceMetadataSha256": "a5a1ea17f47b7467019e9d9a3de68bf776ff7013f4ba37bbce14f63078e2aebf",
+  "worldcover": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle20/worldcover/worldcover-cells-wcv1.bin",
+    "sha256": "e7fa38f2b0a8c3c469737410dc8d265e680071226e663b3cb12b23930ebda5fc",
+    "semantics": "12UNORM8area fractions,1024x1024cells,classes0/10/.../100"
+  },
+  "worldcoverWitnesses": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle20/worldcover/source-witnesses.json",
+    "sha256": "a22c410ec4c71ace14f40bf5c8fdea6954ee1e6f8d92d0f86da89dd72d00a6ff"
+  }
+}

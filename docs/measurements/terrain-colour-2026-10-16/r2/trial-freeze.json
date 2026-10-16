@@ -1,0 +1,74 @@
+{
+  "status": "R2_FROZEN_READY_FOR_ROOT_GPU_NOT_ADOPTED",
+  "frozenAtUtc": "2026-10-16T16:25:53.231395+00:00",
+  "rendererVersion": "observatory-v55-s2-palette-r2-trial",
+  "suggestedPort": 53754,
+  "serverStarted": false,
+  "sourceDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/candidate-source",
+  "appDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/candidate-dist",
+  "heroDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/candidate-hero",
+  "checks": {
+    "base119HashesVerified": true,
+    "postBuild119HashesMatch": true,
+    "typecheckExit": 0,
+    "terrainSurfaceTests": {
+      "passed": 7,
+      "files": 1
+    },
+    "appBuildExit": 0,
+    "heroBuildExit": 0,
+    "independentDecimalFormula": "PASS18binary32components",
+    "pairwiseLogContrasts": 14,
+    "nodeModulesIgnoreBeforeAfter": "1",
+    "nodeModulesGitIgnored": true,
+    "nodeModulesTrackedPaths": 0,
+    "cssByteIdenticalToV54Dist": [
+      "assets/CumulonimbusApp-fw8aK7_r.css",
+      "assets/index-Cia3ypEr.css"
+    ]
+  },
+  "changedFiles": {
+    "src/cumulonimbus/GPUSceneEngine.ts": {
+      "before": "ae9e2e2e171bbfc23e9b570a91b454af771288087ba096e432eb2c40de76c202",
+      "after": "c680f1f7feaf90a05e0838d6f3ce5e1875bd81179d24ec76e5262ed9d8438013"
+    },
+    "src/cumulonimbus/terrainSurface.ts": {
+      "before": "c9745e3c727434a32c71e9d1e6ddd52eefb4db73880be10000d1b2c1cc811d87",
+      "after": "0ff8de3514feb3714ba4e931c246d0bd339634661aa37a7d87e79f61c1ddff3f"
+    }
+  },
+  "compiledTrialMetadataBundles": [
+    "assets/CumulonimbusApp-Bxt2A7TL.js",
+    "assets/render.worker-DPiag5nn.js"
+  ],
+  "payloadSha256": {
+    "PROTOCOL.md": "c0d0eb351ff8b54d7f8597f4f9ce53c1de528d94262e085d5292d936fd41ec3d",
+    "protocol-freeze.json": "0edde28342c97d1d594d0d8a8632e67287ae553eadd27702d4a20ee247cab957",
+    "derive-candidate.py": "6851fd2e16eca0fa472ba6ee636aecd9e738d56dca1fea1f8f97f871dba048c5",
+    "derivation-freeze.json": "5505ed14a40750754fc9bf7d60fef057493fce3cb0f8d43d19b7955200ef1189",
+    "comparison.json": "41fb0d71b41756f892b6133065ff4bbe48d641d113c65f97f533e00a54c99744",
+    "verify-candidate.py": "522ac51f09f7d7dccc893924a796544b50bd31a4fcb7d77d1de3aaa21283c836",
+    "verification.json": "d7405464481061450287617d5d56477da0ce272ed20ea1d5fe57132dce8b6141",
+    "trial-source-manifest.json": "b16bd9f1388c0e30c4d53d63096b61ddefe7eb2d41215e2c34bc616dc4c4fae5",
+    "trial-source.patch": "b816783cc1e5576ed30f30de5e5cc0bbc16b53155569b5845280ab0e1b87e145",
+    "terrainSurface.before.ts": "c9745e3c727434a32c71e9d1e6ddd52eefb4db73880be10000d1b2c1cc811d87",
+    "terrainSurface.after.ts": "0ff8de3514feb3714ba4e931c246d0bd339634661aa37a7d87e79f61c1ddff3f",
+    "REPORT.md": "cc3f2d32930815742b7664bee13e19b2443e603a82bc78476d340c92549a673a",
+    "NOTICE-S2-PALETTE-PROPOSED.txt": "88280ca2887e9ecf8f4b157eb1aa628c175a5e02a5a825fef8a5810cfc1a9d76",
+    "app-dist-manifest.json": "96069b20effc7952dcfbc03b45ad2174d56de56f889c0d5a1ad8f004e602d88c",
+    "hero-dist-manifest.json": "8375fc40ac258b84e7ae7671724234307fabc34cb4a9524e58d549e8609fd988",
+    "typecheck.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "terrainSurface-test.log": "01ab24dd452b93435c8a13bdaaac5e410d0e556d6f4125e71d7e6202cf7cf662",
+    "app-build.log": "17d3b08ccd8c90174061a0929b67cd1424cece47d9d8a1df4d2aa04bd8ffc1d8",
+    "hero-build.log": "26fbe0a706181b33d0a3b7317ff99eda0b1c544f6edf3faacbd1194a75287eff",
+    "derivation.log": "24809d94a21ea9e3de91f4e553affe71bf01f99a6d41344b9723ade18ec899f2"
+  },
+  "r1Review": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/terrain-palette/R1-REJECTED-REVIEW.json",
+    "sha256": "e4e03596f27f7e9682faddba3473c16ddd59f3038c919fbf7090573e6446a8b6"
+  },
+  "noRootProductWrites": true,
+  "noNewDependenciesOrLockfileChanges": true,
+  "gpuRunsByThisAgent": 0,
+  "quality": "Full quality unchanged source; no extra runtime expressions/lookup/pass; GPU correctness/art/FPS pending root."
+}

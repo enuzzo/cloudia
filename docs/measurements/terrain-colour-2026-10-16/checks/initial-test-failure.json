@@ -1,0 +1,6 @@
+{
+  "sourceRun": "../approved-v55",
+  "failure": "Stale v54 rendererVersion expectation; assertion aborts before app.destroy, three later RAF expectations fail in the same suite. Only expected version updated; no thresholds or runtime lifecycle changed.",
+  "previousPassed": 337,
+  "previousFailed": 4
+}

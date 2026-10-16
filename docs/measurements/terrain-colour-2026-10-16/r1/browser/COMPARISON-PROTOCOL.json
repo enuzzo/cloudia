@@ -1,0 +1,57 @@
+{
+  "recordedAt": "2026-10-16T16:15:43.386982+00:00",
+  "scope": "Baseline already captured; candidate not rendered. These are CSS JPEG screenshots, not native framebuffer exports.",
+  "baselineProduct": "5d98655",
+  "baselineDist": "cycle20/cover-r2-dist",
+  "route": "?seed=74&profile=1&surface=1&target=0,2.7,0",
+  "quality": {
+    "volume": 256,
+    "detail": 128,
+    "steps": 384,
+    "output": [
+      1920,
+      1080
+    ],
+    "cssCanvas": [
+      1237,
+      922
+    ]
+  },
+  "fixedState": "Fissa stato di confronto: t60 paused, wind55, dispersion0, full flow; then choose Sole or Tramonto. Weather clock not frozen.",
+  "views": {
+    "coastSunHigh": {
+      "leftKeys": 14,
+      "downKeys": 8
+    },
+    "inlandSunHigh": {
+      "leftKeys": 30,
+      "downKeys": 8
+    },
+    "mountainsSunAndSunset": {
+      "leftKeys": 30,
+      "downKeys": 3
+    }
+  },
+  "keyPixels": 36,
+  "yawRadiansPerLeft": 0.09894907033144704,
+  "pitchRadiansPerDown": 0.09370932754880693,
+  "evaluation": "Same geography/mesh/cloud/camera/lighting. Compare vegetation colour, keep detail/shadow structure; inspect both clear and sunset. No global photorealism or FPS gain inferred from colour constants.",
+  "baselineFiles": {
+    "a-v54-coast-sun.css.jpg": {
+      "bytes": 63807,
+      "sha256": "14552b5a3f8c609037bd793cdf70c902e9d03d1c5c128dbe4a0d187923257502"
+    },
+    "a-v54-inland-sun.css.jpg": {
+      "bytes": 70959,
+      "sha256": "7972a5905acd61b616feb1faff0b5bf4c4ebc8fc0e2d9d0375ff0875cb84114d"
+    },
+    "a-v54-mountains-sun.css.jpg": {
+      "bytes": 77023,
+      "sha256": "eb11184dea4f5362fe06dee93778d2e0b7bfe805b75027da0803652f2ed76e9c"
+    },
+    "a-v54-mountains-sunset.css.jpg": {
+      "bytes": 48828,
+      "sha256": "dbc85c8781bbd7d992f29c3eb497ec56faa8f93ef2388b17b2515b6eb33352f1"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "status": "PASS_OFFLINE_HASH_GZIP_FULL_F32_SCAN_AND_FIVE_ACTUAL_SCALAR_WITNESSES",
+  "payloadFilesVerified": 44,
+  "r1FrozenFilesVerified": 19,
+  "sourceRangeBytesVerified": 71091595,
+  "sourceBlocksReferenced": 24,
+  "gzipOriginalByteComparisons": 2,
+  "float32CellsScanned": 4194304,
+  "rgbMaximum": 0.7341446876525879,
+  "validityCountsMatch": true,
+  "actualWitnesses": 5,
+  "actualSourcePixelsDecodedScalar": 50,
+  "maximumAreaWeightDifference": 0.0,
+  "maximumIndependentMeanDifference": 0.0,
+  "actualOutputWitnessRGBf32BitsMatch": true,
+  "r1WitnessFilesByteIdentical": true,
+  "unchangedOperationBodies": [
+    "decode_predictor2",
+    "segments",
+    "valid_native",
+    "accumulate",
+    "brute",
+    "synthetic_oracle",
+    "diagnostics"
+  ],
+  "limits": [
+    "The 50 recorded source pixels are independently decoded with scalar Predictor2; full 24-block geographic aggregation is not independently replayed.",
+    "All output F32 values and gzip originals are verified, but full output is not compared to R1 because R1 failed before writing it.",
+    "No physical albedo, cloud classification, renderer, GPU or FPS qualification is implied."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "status": "FOUR_LOCAL_R1_RANGES_SHA_PASS_NO_NETWORK",
+  "totalBytes": 71091595,
+  "ranges": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference/ranges/range-00-575063-1176127.bin",
+      "bytes": 601065,
+      "sha256": "e42e471ccdc9d33f40987fa614c2f78ba26217049c285437e2adb520c8d55083",
+      "etag": "\"97e1665acc80090d6b734ce64f97fa03-3\"",
+      "contentRange": "bytes 575063-1176127/23406468"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference/ranges/range-01-10349227-32415282.bin",
+      "bytes": 22066056,
+      "sha256": "f3033651cfbf1666f7b46f44a4d00b79ea6f675fc429ee8a40cd7b32b8add11c",
+      "etag": "\"b0afa4829889f94380830eacde6e5a37-48\"",
+      "contentRange": "bytes 10349227-32415282/401048807"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference/ranges/range-02-27455232-47684461.bin",
+      "bytes": 20229230,
+      "sha256": "50f27ed83fb8fc4d419745d390c7cd664b1fb42777efda55df374db6e026418a",
+      "etag": "\"fb0e1efcc383cb24d84fbd67c5a96bff-58\"",
+      "contentRange": "bytes 27455232-47684461/483128687"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference/ranges/range-03-29517942-57713185.bin",
+      "bytes": 28195244,
+      "sha256": "9d1856f921194663dd3b408a3aa95053ee861552aa1cde8640a71c040089595c",
+      "etag": "\"f5942954e831bd7e956d73a509b4d094-71\"",
+      "contentRange": "bytes 29517942-57713185/588072835"
+    }
+  ]
+}

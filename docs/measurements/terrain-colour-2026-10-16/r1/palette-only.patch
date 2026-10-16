@@ -1,0 +1,22 @@
+--- a/src/cumulonimbus/terrainSurface.ts
++++ b/src/cumulonimbus/terrainSurface.ts
+@@ -171,8 +171,8 @@
+  let lowSlopeMoisture=(1.0-smoothstep(.30,1.25,hKm))*(1.0-smoothstep(.10,.60,slope));
+  let stand=.65*vegetation+.35*broad.x+.12*lowSlopeMoisture-.08*smoothstep(.8,1.6,hKm);
+  let denseCover=smoothstep(.24,.74,stand);
+- let denseForest=mix(vec3<f32>(.019,.042,.027),vec3<f32>(.039,.075,.035),canopy);
+- let openForest=mix(vec3<f32>(.054,.062,.032),vec3<f32>(.075,.083,.039),broad.x);
++ let denseForest=mix(vec3<f32>(0.0300878752,0.0390308537,0.023762472),vec3<f32>(0.053832002,0.0698324144,0.0425148457),canopy);
++ let openForest=mix(vec3<f32>(0.0485495552,0.0629798695,0.0383429341),vec3<f32>(0.0652434006,0.0846356079,0.0515272133),broad.x);
+  let forest=mix(openForest,denseForest,denseCover)*(1.0-.12*lowSlopeMoisture);
+  let mineral=clamp(.55*broad.x+.30*grain.x+.15*fine.x,0.0,1.0);
+  let rock=mix(vec3<f32>(.085,.087,.077),vec3<f32>(.185,.172,.145),mineral);
+@@ -180,7 +180,7 @@
+  // WorldCover supplies class-area fractions, not canopy density or optical
+  // albedo. Palette/lighting remain authored. Unknown area retains the existing
+  // altitude/slope material; crops and built are never turned into forest.
+- let grass=mix(vec3<f32>(.063,.085,.037),vec3<f32>(.105,.120,.061),broad.x);
++ let grass=mix(vec3<f32>(0.0795190483,0.078539595,0.0523536094),vec3<f32>(0.116449267,0.115014933,0.076667659),broad.x);
+  let crops=mix(vec3<f32>(.105,.100,.052),vec3<f32>(.170,.145,.085),vegetation);
+  let built=mix(vec3<f32>(.085,.082,.075),vec3<f32>(.145,.140,.125),grain.x);
+  let authored=forest*biome.x+rock*biome.y+snow*biome.z;

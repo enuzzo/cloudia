@@ -1,0 +1,39 @@
+{
+  "decision": "REJECT_R1_NOT_ADOPTED",
+  "atUtc": "2026-10-16T16:23:49.894588+00:00",
+  "scope": "CSS JPEG comparison only, original fixed 1920x1080 output at1237x922CSS; no compositor/native radiometric certificate.",
+  "rootReview": "Vegetation becomes less green, but forest hue variance is flattened. Same geography/cloud and luminance controls; no global photographic improvement demonstrated. Keep product colours unchanged.",
+  "independentSolarReview": "Mild worsening: forest regions become more uniform grey-green, especially the right massif and terrain left of the cloud; loss of chromatic separation without more credible texture. S2 reference has more varied greens/browns/light areas.",
+  "clearAndSunset": "Both rendered; sunset remains dark in the same existing lighting, no new shader/console errors observed since candidate navigation.",
+  "files": {
+    "a-v54-coast-sun.css.jpg": {
+      "bytes": 63807,
+      "sha256": "14552b5a3f8c609037bd793cdf70c902e9d03d1c5c128dbe4a0d187923257502"
+    },
+    "a-v54-inland-sun.css.jpg": {
+      "bytes": 70959,
+      "sha256": "7972a5905acd61b616feb1faff0b5bf4c4ebc8fc0e2d9d0375ff0875cb84114d"
+    },
+    "a-v54-mountains-sun.css.jpg": {
+      "bytes": 77023,
+      "sha256": "eb11184dea4f5362fe06dee93778d2e0b7bfe805b75027da0803652f2ed76e9c"
+    },
+    "a-v54-mountains-sunset.css.jpg": {
+      "bytes": 48828,
+      "sha256": "dbc85c8781bbd7d992f29c3eb497ec56faa8f93ef2388b17b2515b6eb33352f1"
+    },
+    "b-v55-coast-sun.css.jpg": {
+      "bytes": 63296,
+      "sha256": "4e6801bc06ebe47c48524d016bc500c92cf8f232ea0f4c71a0a30ca386661dee"
+    },
+    "b-v55-mountains-sun.css.jpg": {
+      "bytes": 76446,
+      "sha256": "91f0d7aca86810ae687a3631b9b9713044074cc569a839d36710cdd25ff37009"
+    },
+    "b-v55-mountains-sunset.css.jpg": {
+      "bytes": 48809,
+      "sha256": "8a5b9257349b275f8bec898489df0ec456b6ba27626a785ff7af88ab02ab6817"
+    }
+  },
+  "nextFrozenRule": "R2 uses one diagonal correction per class derived from the arithmetic endpoint centroid and target chromaticity; rescales each endpoint to original intrinsic Y. Preserves pairwise channel-ratio contrasts instead of assigning a single hue. No image fitting/sweep."
+}

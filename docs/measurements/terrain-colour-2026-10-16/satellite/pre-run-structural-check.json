@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "unchangedFunctions": {
+    "decode_predictor2": {
+      "identicalSource": true,
+      "sha256": "8154a4c89b6fc6ea231756d544969975f7497ec21c20a031082feb1eee27990f"
+    },
+    "segments": {
+      "identicalSource": true,
+      "sha256": "3bf290f2eaccb397cbf3bc2c7f30e2b155b61169a7abf8742766ac775257c20d"
+    },
+    "valid_native": {
+      "identicalSource": true,
+      "sha256": "2ddba9e42aa0b5cbe0e8c81c0574bfffe5e604f1de4bc5aaaa048d2df5a9a745"
+    },
+    "accumulate": {
+      "identicalSource": true,
+      "sha256": "3c284bd7b94a9082342245160cd2aecb53bd8966db7a333e4bd7e908a667169c"
+    },
+    "brute": {
+      "identicalSource": true,
+      "sha256": "6c6038ba973feaf5ec304abe99a0a07e6353ce5a32ed36bcb5d0892079ccf402"
+    },
+    "synthetic_oracle": {
+      "identicalSource": true,
+      "sha256": "10e0b2d239970cd4ab57cebc9d6d4751b97a5a8eeb0c9039a9942bbe30041807"
+    },
+    "diagnostics": {
+      "identicalSource": true,
+      "sha256": "f567585f883706de925859bad323dcfd1d8b8c10c20eb36f9ef4d582c29c77ae"
+    }
+  },
+  "r1ScriptSha256": "69dabd239bbbffde8d9221a569b6f76b6aa9fab37f4b3e23129ccce17a51db3f",
+  "r2ScriptSha256": "308fb96e48c7c6aa05b6ca63d5322fbd42042937aab4eca6153e0d2c5fb5ce5e",
+  "networkImportAbsent": true,
+  "networkFunctionAbsent": true
+}

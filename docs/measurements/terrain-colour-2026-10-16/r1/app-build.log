@@ -1,0 +1,23 @@
+vite v7.3.3 building client environment for production...
+transforming...
+✓ 60 modules transformed.
+rendering chunks...
+computing gzip size...
+../candidate-dist/index.html                                     0.91 kB │ gzip:   0.46 kB
+../candidate-dist/assets/sky.worker-CHm7n211.js                  2.96 kB
+../candidate-dist/assets/volume.worker-AVJPJnWD.js              15.82 kB
+../candidate-dist/assets/render.worker-BrVrSp4b.js           1,010.26 kB
+../candidate-dist/assets/liguria-apuane-dem-CFgFyJza.bin     4,202.53 kB
+../candidate-dist/assets/liguria-apuane-cover-DuNIvzuH.bin  12,582.94 kB
+../candidate-dist/assets/index-Cia3ypEr.css                      1.25 kB │ gzip:   0.65 kB
+../candidate-dist/assets/CumulonimbusApp-fw8aK7_r.css           13.18 kB │ gzip:   3.34 kB
+../candidate-dist/assets/index-DjWv0Gn9.js                       2.84 kB │ gzip:   1.36 kB │ map:     1.57 kB
+../candidate-dist/assets/three.core-DxR5k0T0.js                195.51 kB │ gzip:  50.32 kB │ map: 1,858.62 kB
+../candidate-dist/assets/LabApp-BIVQGmZd.js                    405.93 kB │ gzip: 101.37 kB │ map: 1,146.99 kB
+../candidate-dist/assets/CumulonimbusApp-C6k0hYDj.js           853.94 kB │ gzip: 248.65 kB │ map: 3,877.74 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 2.89s

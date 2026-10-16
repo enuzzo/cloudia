@@ -1,0 +1,298 @@
+{
+  "status": "UNAPPLIED_COLOUR_ONLY_PROPOSAL_NOT_GPU_QUALIFIED",
+  "YWeights": [
+    0.2126,
+    0.7152,
+    0.0722
+  ],
+  "inputs": {
+    "terrainSurface": {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/terrainSurface.ts",
+      "bytes": 13421,
+      "sha256": "c9745e3c727434a32c71e9d1e6ddd52eefb4db73880be10000d1b2c1cc811d87"
+    },
+    "terrainMesh": {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/TerrainMesh.ts",
+      "sha256": "f63dac6ea96144e7df44460f76f548068929ca6bc5c466fb49d4ee308e1697a7"
+    },
+    "palette": {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/palette-and-diagnostics.json",
+      "sha256": "deb51505ffbf1c598b5bb346cb79e7042fb9cc2eeec079f55a66dd91320127a7"
+    },
+    "s2Result": {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/result.json",
+      "sha256": "56a0284339f93a06a691ce590d37128cc968e59940a0dac4557aef429eca507c"
+    }
+  },
+  "classChromaticities": {
+    "10": {
+      "n": 80090,
+      "priorY": 1.0,
+      "targetChromaticityY1": [
+        0.8351433171623126,
+        1.08337186101725,
+        0.6595703015478548
+      ],
+      "targetY": 1.0,
+      "componentP10": [
+        0.7084816501512842,
+        1.032465651048031,
+        0.5924196515362015
+      ],
+      "componentP90": [
+        1.010158121640729,
+        1.1194500990928153,
+        0.7416103620898041
+      ]
+    },
+    "30": {
+      "n": 2628,
+      "priorY": 1.0,
+      "targetChromaticityY1": [
+        1.0346337316865943,
+        1.021889893739464,
+        0.6811802858859474
+      ],
+      "targetY": 1.0,
+      "componentP10": [
+        0.8710579982305836,
+        0.9804819338517445,
+        0.620113400872388
+      ],
+      "componentP90": [
+        1.166748681194322,
+        1.072924605856995,
+        0.7862476364491149
+      ]
+    }
+  },
+  "endpoints": [
+    {
+      "name": "denseForestLo",
+      "classCode": 10,
+      "oldLiteral": [
+        0.019,
+        0.042,
+        0.027
+      ],
+      "oldY": 0.0360272,
+      "oldChromaticityY1": [
+        0.5273793134076475,
+        1.1657858506905894,
+        0.7494337611582359
+      ],
+      "proposedIdeal": [
+        0.03008787531607007,
+        0.039030854711240674,
+        0.023762471167924876
+      ],
+      "proposedLiteral": "0.0300878752,0.0390308537,0.023762472",
+      "binary32RGB": [
+        0.030087875202298164,
+        0.039030853658914566,
+        0.023762471973896027
+      ],
+      "literalY": 0.03602719931216,
+      "binary32YBefore": 0.03602719951570034,
+      "binary32YAfter": 0.036027199281379575,
+      "binary32YDelta": -2.343207641808398e-10,
+      "binary32YRelativeDelta": -6.503996073264725e-09,
+      "positiveColouredLightRelativeRange": [
+        -0.1199084682400039,
+        0.5835724299883134
+      ]
+    },
+    {
+      "name": "denseForestHi",
+      "classCode": 10,
+      "oldLiteral": [
+        0.039,
+        0.075,
+        0.035
+      ],
+      "oldY": 0.0644584,
+      "oldChromaticityY1": [
+        0.6050413910366996,
+        1.1635411366090378,
+        0.5429858637508843
+      ],
+      "proposedIdeal": [
+        0.05383200199497521,
+        0.06983241676619431,
+        0.04251484632529224
+      ],
+      "proposedLiteral": "0.053832002,0.0698324144,0.0425148457",
+      "binary32RGB": [
+        0.053832001984119415,
+        0.06983241438865662,
+        0.04251484572887421
+      ],
+      "literalY": 0.06445839826362,
+      "binary32YBefore": 0.06445840231329202,
+      "binary32YAfter": 0.06445839825421572,
+      "binary32YDelta": -4.059076297302511e-09,
+      "binary32YRelativeDelta": -6.297202772066669e-08,
+      "positiveColouredLightRelativeRange": [
+        -0.0689011784831215,
+        0.3803077147035199
+      ]
+    },
+    {
+      "name": "openForestLo",
+      "classCode": 10,
+      "oldLiteral": [
+        0.054,
+        0.062,
+        0.032
+      ],
+      "oldY": 0.058133199999999996,
+      "oldChromaticityY1": [
+        0.9289012130761768,
+        1.0665162076059809,
+        0.5504599781192159
+      ],
+      "proposedIdeal": [
+        0.04854955348526015,
+        0.062979873070888,
+        0.038342932253941746
+      ],
+      "proposedLiteral": "0.0485495552,0.0629798695,0.0383429341",
+      "binary32RGB": [
+        0.048549555242061615,
+        0.06297986954450607,
+        0.03834293410181999
+      ],
+      "literalY": 0.05813319794393999,
+      "binary32YBefore": 0.05813319968283176,
+      "binary32YAfter": 0.05813319798484445,
+      "binary32YDelta": -1.6979873132538792e-09,
+      "binary32YRelativeDelta": -2.92085645124973e-08,
+      "positiveColouredLightRelativeRange": [
+        -0.1009341855049648,
+        0.1982166337696385
+      ]
+    },
+    {
+      "name": "openForestHi",
+      "classCode": 10,
+      "oldLiteral": [
+        0.075,
+        0.083,
+        0.039
+      ],
+      "oldY": 0.0781224,
+      "oldChromaticityY1": [
+        0.9600319498632914,
+        1.0624353578487093,
+        0.4992166139289116
+      ],
+      "proposedIdeal": [
+        0.06524340028068104,
+        0.08463560987513401,
+        0.05152721492564213
+      ],
+      "proposedLiteral": "0.0652434006,0.0846356079,0.0515272133",
+      "binary32RGB": [
+        0.06524340063333511,
+        0.08463560789823532,
+        0.05152721330523491
+      ],
+      "literalY": 0.0781223985379,
+      "binary32YBefore": 0.0781223984323442,
+      "binary32YAfter": 0.0781223985441029,
+      "binary32YDelta": 1.1175869951696171e-10,
+      "binary32YRelativeDelta": 1.4305589915259364e-09,
+      "positiveColouredLightRelativeRange": [
+        -0.13008802612272796,
+        0.32121057031041134
+      ]
+    },
+    {
+      "name": "grassLo",
+      "classCode": 30,
+      "oldLiteral": [
+        0.063,
+        0.085,
+        0.037
+      ],
+      "oldY": 0.0768572,
+      "oldChromaticityY1": [
+        0.8197019927866225,
+        1.105947133124808,
+        0.4814122814778576
+      ],
+      "proposedIdeal": [
+        0.07951905164298292,
+        0.07853959594111273,
+        0.05235360946839344
+      ],
+      "proposedLiteral": "0.0795190483,0.078539595,0.0523536094",
+      "binary32RGB": [
+        0.07951904833316803,
+        0.07853959500789642,
+        0.05235360935330391
+      ],
+      "literalY": 0.07685719861126,
+      "binary32YBefore": 0.07685720088928938,
+      "binary32YAfter": 0.07685719862058758,
+      "binary32YDelta": -2.268701795871131e-09,
+      "binary32YRelativeDelta": -2.9518402565026164e-08,
+      "positiveColouredLightRelativeRange": [
+        -0.07600477433199626,
+        0.41496239671884494
+      ]
+    },
+    {
+      "name": "grassHi",
+      "classCode": 30,
+      "oldLiteral": [
+        0.105,
+        0.12,
+        0.061
+      ],
+      "oldY": 0.11255119999999998,
+      "oldChromaticityY1": [
+        0.9329087561927374,
+        1.0661814356488426,
+        0.5419755631214951
+      ],
+      "proposedIdeal": [
+        0.1164492680618042,
+        0.11501493380824913,
+        0.07666765859280643
+      ],
+      "proposedLiteral": "0.116449267,0.115014933,0.076667659",
+      "binary32RGB": [
+        0.1164492666721344,
+        0.1150149330496788,
+        0.0766676589846611
+      ],
+      "literalY": 0.11255119922559999,
+      "binary32YBefore": 0.11255119743421672,
+      "binary32YAfter": 0.11255119919031858,
+      "binary32YDelta": 1.75610186115005e-09,
+      "binary32YRelativeDelta": 1.5602693717909543e-08,
+      "positiveColouredLightRelativeRange": [
+        -0.041542203162808766,
+        0.25684685447788747
+      ]
+    }
+  ],
+  "changedSourceLines": [
+    174,
+    175,
+    183
+  ],
+  "materialAlgebraWitnesses": 54,
+  "maximumRealArithmeticYError": 2.7755575615628914e-17,
+  "maxBinary32EndpointYAbsDelta": 4.059076297302511e-09,
+  "maxBinary32EndpointYRelativeDelta": 6.297202772066669e-08,
+  "sourceUnchanged": true,
+  "noNewRuntimeExpressions": true,
+  "limits": [
+    "Y is intrinsic authored diffuse RGB, not physical albedo or final radiance under coloured illumination.",
+    "All four forest endpoints share measured class10 median chromaticity; all original scalar luminance/stand/canopy controls are retained, but authored intraclass hue spread is reduced.",
+    "No bare/shrub update because accepted sample counts are10/28, below frozen256 threshold.",
+    "No GPU compilation, image comparison, FPS claim or product edit."
+  ]
+}

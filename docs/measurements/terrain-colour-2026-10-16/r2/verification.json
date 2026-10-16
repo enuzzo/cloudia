@@ -1,0 +1,26 @@
+{
+  "status": "PASS_DECIMAL_FORMULA_Y_LOG_CONTRAST_AND_119_SOURCE_HASHES",
+  "classes": [
+    {
+      "code": 10,
+      "endpoints": 4,
+      "DecimalPrecision": 50,
+      "allCandidateF32ComponentsMatchIndependentDecimalFormula": true
+    },
+    {
+      "code": 30,
+      "endpoints": 2,
+      "DecimalPrecision": 50,
+      "allCandidateF32ComponentsMatchIndependentDecimalFormula": true
+    }
+  ],
+  "changedFiles": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/terrainSurface.ts"
+  ],
+  "pairwiseIndependentLogContrasts": 14,
+  "maxF32IntrinsicYAbsDelta": 4.038214679313867e-09,
+  "maxF32LogContrastDelta": 1.743500899764605e-07,
+  "noAddedRuntimeExpressionsTexturesReadsPasses": true,
+  "limits": "Not GPU image, coloured-light radiance, hue-distribution or FPS qualification."
+}

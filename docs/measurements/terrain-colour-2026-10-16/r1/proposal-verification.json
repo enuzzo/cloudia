@@ -1,0 +1,14 @@
+{
+  "status": "PASS_SIX_COLOURS_REDERIVED_AND_119_SOURCE_HASHES_VERIFIED",
+  "changedFiles": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/terrainSurface.ts"
+  ],
+  "classSampleCounts": {
+    "10": 80090,
+    "30": 2628
+  },
+  "sourceFiles": 119,
+  "maxF32EndpointYAbsDelta": 4.059076297302511e-09,
+  "limits": "CPU derivation/structural proof only; not WGSL/GPU colour, image, luminance or performance parity."
+}

@@ -1,0 +1,131 @@
+{
+  "status": "PASS",
+  "witnesses": [
+    {
+      "name": "class10quarter",
+      "x": 1239,
+      "z": 1967,
+      "worldCentreKm": [
+        13.46875,
+        58.96875
+      ],
+      "latitude": 44.53031797698397,
+      "longitude": 9.831613360706358,
+      "sourcePixels": 8,
+      "validity": 0.9999999999999999,
+      "independentConditionalMeanRGB": [
+        0.04834322044377585,
+        0.05889284796827455,
+        0.03578355186506167
+      ],
+      "productionConditionalMeanRGB": [
+        0.04834322044376218,
+        0.05889284796826007,
+        0.03578355186504986
+      ],
+      "maxWeightedSumAbsError": 1.4474532683550478e-14,
+      "partialValidityActuallyObserved": false
+    },
+    {
+      "name": "class40quarter",
+      "x": 461,
+      "z": 1873,
+      "worldCentreKm": [
+        -35.15625,
+        53.09375
+      ],
+      "latitude": 44.47748290561514,
+      "longitude": 10.439524290499644,
+      "sourcePixels": 9,
+      "validity": 1.0,
+      "independentConditionalMeanRGB": [
+        0.061232035682825696,
+        0.07300600657414263,
+        0.04576039075947939
+      ],
+      "productionConditionalMeanRGB": [
+        0.06123203568279584,
+        0.0730060065741082,
+        0.04576039075945475
+      ],
+      "maxWeightedSumAbsError": 3.443079155118767e-14,
+      "partialValidityActuallyObserved": false
+    },
+    {
+      "name": "class50quarter",
+      "x": 263,
+      "z": 1045,
+      "worldCentreKm": [
+        -47.53125,
+        1.34375
+      ],
+      "latitude": 44.01208461738755,
+      "longitude": 10.594236840755519,
+      "sourcePixels": 9,
+      "validity": 1.0,
+      "independentConditionalMeanRGB": [
+        0.10333797235378152,
+        0.0805670122131842,
+        0.06276513265631434
+      ],
+      "productionConditionalMeanRGB": [
+        0.10333797235389791,
+        0.0805670122132738,
+        0.06276513265641924
+      ],
+      "maxWeightedSumAbsError": 1.1639300634413985e-13,
+      "partialValidityActuallyObserved": false
+    },
+    {
+      "name": "class60quarter",
+      "x": 765,
+      "z": 1083,
+      "worldCentreKm": [
+        -16.15625,
+        3.71875
+      ],
+      "latitude": 44.033443476026015,
+      "longitude": 10.201985829500725,
+      "sourcePixels": 12,
+      "validity": 1.0,
+      "independentConditionalMeanRGB": [
+        0.1996940337063955,
+        0.1881181024112331,
+        0.1709498959757952
+      ],
+      "productionConditionalMeanRGB": [
+        0.199694033706052,
+        0.1881181024108999,
+        0.17094989597546456
+      ],
+      "maxWeightedSumAbsError": 3.4350300381902343e-13,
+      "partialValidityActuallyObserved": false
+    },
+    {
+      "name": "maximumPartialValidity",
+      "x": 1811,
+      "z": 1426,
+      "worldCentreKm": [
+        49.21875,
+        25.15625
+      ],
+      "latitude": 44.22623527899952,
+      "longitude": 9.384665993300498,
+      "sourcePixels": 12,
+      "validity": 0.4991382308597482,
+      "independentConditionalMeanRGB": [
+        0.01179045223981077,
+        0.02457439813671006,
+        0.039639451321692595
+      ],
+      "productionConditionalMeanRGB": [
+        0.011790452239810248,
+        0.02457439813671121,
+        0.03963945132168977
+      ],
+      "maxWeightedSumAbsError": 1.5049073098793997e-13,
+      "partialValidityActuallyObserved": true
+    }
+  ],
+  "scope": "Fiveactualcells,independentscalaroverlaps;samefrozenDEFLATEdecoder,notaseparateGeoTIFFstack"
+}

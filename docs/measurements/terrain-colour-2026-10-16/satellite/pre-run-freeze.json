@@ -1,0 +1,28 @@
+{
+  "status": "R2_FROZEN_BEFORE_SINGLE_LOCAL_ATTEMPT",
+  "frozenAtUtc": "2026-10-16T16:04:33.996807+00:00",
+  "sha256": {
+    "preprocess-sentinel2.py": "308fb96e48c7c6aa05b6ca63d5322fbd42042937aab4eca6153e0d2c5fb5ce5e",
+    "preprocess-sentinel2.r1.py.frozen": "69dabd239bbbffde8d9221a569b6f76b6aa9fab37f4b3e23129ccce17a51db3f",
+    "analyse-sentinel2.py": "197edfd1c40dca54939534d6bbb8b1f1cc967c87505759b141959b24abf50d7d",
+    "PROTOCOL.md": "ded51b69cb62b9a93fdb939e84a9d8ef8dbcbcdcbf1112cd34b1654387c0b513",
+    "PROTOCOL-R1.md": "799220694b63008ba8a0b84491df4b8c20b929ff75ea9f02bcd0a22999c4b655",
+    "inputs.json": "5deace0bbd4fe844524323eb375053da1c14b27b69a83e6ffbd005507f5eb912",
+    "r2-inputs.json": "bb9798a5e4cff4c440b24652f6d0e20b1a69af364159af692b5205d04da64a45",
+    "overview4-range-plan.json": "ab097ef34fe964150d9b3d8e655cb817473e55329e40abf1598fb030c169b53f",
+    "metadata-probe.json": "a5a1ea17f47b7467019e9d9a3de68bf776ff7013f4ba37bbce14f63078e2aebf",
+    "r1-to-r2-memory.patch": "51461103e5b4f9d6c9534eabf352dbbeef268c796677d85c5f9922449abcfbb0",
+    "pre-run-structural-check.json": "90f5db4deefd001cc92e8554b763abc7ced27a84c7ecbfde6476615540946185",
+    "NOTICE-SENTINEL2.txt": "30354b8fda6143a621f1e64a11aacfb4c60e4e09a59c02e59e74ae2ae8850f42",
+    "SOURCE-LINKS.md": "ec16a974fad7c3d1e0d975b5bc837763f2b41d3bbab0aff9c92fe7affd63e360",
+    "primary-documents.json": "be8744742dcecd406d2af8e96e2a84255732450539936264728d071d2d38bbb5",
+    "cc-by-4.0-legalcode.txt": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+    "esa-worldcover-data-access.html": "71dccb4c949d489a903865f97ff3bddab75dbefad7f1c277acd1ba94967ed0e8"
+  },
+  "attemptsAuthorized": 1,
+  "rssCapBytes": 402653184,
+  "networkAllowed": false,
+  "originalR1Preserved": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference",
+  "sourceRangeBytes": 71091595,
+  "postAnalysisInSeparateSerialProcess": true
+}

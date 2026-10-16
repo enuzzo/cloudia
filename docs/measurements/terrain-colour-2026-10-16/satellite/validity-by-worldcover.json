@@ -1,0 +1,98 @@
+{
+  "status": "READ_ONLY_CROSS_TAB",
+  "classFractionSource": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle20/worldcover/worldcover-cells-wcv1.bin",
+    "sha256": "e7fa38f2b0a8c3c469737410dc8d265e680071226e663b3cb12b23930ebda5fc",
+    "semantics": "12UNORM8area fractions,1024x1024cells,classes0/10/.../100"
+  },
+  "validitySha256": "e89361dccb2b50a515f08ee7fee8500bdd3a535bdce4f5ea6159a736120f12c7",
+  "classes": [
+    {
+      "code": 0,
+      "projectedClassAreaKm2": 2134.0430147058823,
+      "validAreaKm2": 0.0,
+      "invalidAreaKm2": 2134.0430147058823,
+      "invalidFractionWithinClass": 1.0
+    },
+    {
+      "code": 10,
+      "projectedClassAreaKm2": 7065.5803308820705,
+      "validAreaKm2": 7065.541992966082,
+      "invalidAreaKm2": 0.038337915988752976,
+      "invalidFractionWithinClass": 5.426010913949492e-06
+    },
+    {
+      "code": 20,
+      "projectedClassAreaKm2": 134.1250612745073,
+      "validAreaKm2": 134.12486583518648,
+      "invalidAreaKm2": 0.00019543932079721024,
+      "invalidFractionWithinClass": 1.457142453021617e-06
+    },
+    {
+      "code": 30,
+      "projectedClassAreaKm2": 1294.2335171568595,
+      "validAreaKm2": 1294.2071065829534,
+      "invalidAreaKm2": 0.02641057390595176,
+      "invalidFractionWithinClass": 2.0406343643432958e-05
+    },
+    {
+      "code": 40,
+      "projectedClassAreaKm2": 613.866482843131,
+      "validAreaKm2": 613.8662283633007,
+      "invalidAreaKm2": 0.00025447983039068243,
+      "invalidFractionWithinClass": 4.1455241083053695e-07
+    },
+    {
+      "code": 50,
+      "projectedClassAreaKm2": 396.53762254900994,
+      "validAreaKm2": 396.50950064275696,
+      "invalidAreaKm2": 0.02812190625300704,
+      "invalidFractionWithinClass": 7.091863332471391e-05
+    },
+    {
+      "code": 60,
+      "projectedClassAreaKm2": 29.396936274509898,
+      "validAreaKm2": 29.387241571438434,
+      "invalidAreaKm2": 0.009694703071459919,
+      "invalidFractionWithinClass": 0.0003297861716244969
+    },
+    {
+      "code": 70,
+      "projectedClassAreaKm2": 0.0,
+      "validAreaKm2": 0.0,
+      "invalidAreaKm2": 0.0,
+      "invalidFractionWithinClass": null
+    },
+    {
+      "code": 80,
+      "projectedClassAreaKm2": 4700.7913602941335,
+      "validAreaKm2": 1406.34087516992,
+      "invalidAreaKm2": 3294.4504851241963,
+      "invalidFractionWithinClass": 0.7008289099897552
+    },
+    {
+      "code": 90,
+      "projectedClassAreaKm2": 15.425674019607856,
+      "validAreaKm2": 15.425674019607856,
+      "invalidAreaKm2": 0.0,
+      "invalidFractionWithinClass": 0.0
+    },
+    {
+      "code": 95,
+      "projectedClassAreaKm2": 0.0,
+      "validAreaKm2": 0.0,
+      "invalidAreaKm2": 0.0,
+      "invalidFractionWithinClass": null
+    },
+    {
+      "code": 100,
+      "projectedClassAreaKm2": 0.0,
+      "validAreaKm2": 0.0,
+      "invalidAreaKm2": 0.0,
+      "invalidFractionWithinClass": null
+    }
+  ],
+  "nonWaterNonUnknownInvalidKm2": 0.10301501837035959,
+  "waterAndUnknownInvalidKm2": 5428.493499830079,
+  "scope": "Projected class-fraction weighted area, not a coast/ground-truth intersection. WCV2021 and annual S2 composite differ by source/processing; invalid means the frozen four-band DN gate, not missing satellite observation or certified cloud. No modification to either field."
+}

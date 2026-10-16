@@ -1,0 +1,42 @@
+ESA WorldCover Sentinel-2 2021 — derived authored terrain colours
+
+© ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium
+
+Source: ESA WorldCover Sentinel-2 annual median L2A RGBNIR composite, 2021 v200.
+Recorded source band order: B04 (red), B03 (green), B02 (blue), B08 (near infrared).
+Official data access and composite description:
+https://esa-worldcover.org/en/data-access
+AWS registry of the annual composites:
+https://registry.opendata.aws/esa-worldcover-vito-composites/
+Dataset citation: Zanaga, D., et al. (2022), ESA WorldCover 10 m 2021 v200.
+https://doi.org/10.5281/zenodo.7254221
+
+License: Creative Commons Attribution 4.0 International (CC BY 4.0).
+https://creativecommons.org/licenses/by/4.0/
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+Changes and derivation: partial overview4 source crop and exact projected-area,
+valid-aware averaging to a 2048x2048 reference grid of 62.5m cells around 44N 10E;
+local equirectangular axes X west / Z north. A source pixel was admitted only
+when all four DN values were in 1..10000 inclusive (scale 0.0001). For the colour
+reference, samples were selected on a 250m lattice, valid area>=0.99, WorldCover
+class 10 (tree cover) or 30 (grassland) fraction>=0.95, combined NoData/cropland/built/
+water fraction<=0.01, proxy Y in [0.02,0.60], excluding the prefixed grey/bright
+heuristic(minRGB>=0.25 and range<=0.12). This is not an official cloud mask.
+
+For each admitted class, the component median of RGB/Y was renormalized to Y1
+using Y=0.2126R+0.7152G+0.0722B. These two chromaticities guide only the authored
+terrain tree/grass RGB constants: every original endpoint retains its own
+authored Y, rather than transferring measured source brightness. No satellite
+optical texture is distributed or sampled by this colour-only trial. No palette
+for sparse bare/shrub samples is inferred. WorldCover tree cover may include
+plantations/orchards and is not a certification of natural forest.
+
+Annual composite reflectance contains illumination, shadows and mixed dates;
+no physical albedo/BRDF recovery, radiometric calibration of the renderer,
+image repair, official endorsement or accuracy guarantee is claimed. The
+scientific reference visualization uses a separate fixed gain 3 and sRGB OETF;
+this display transform is not used for the authored colour derivation.
+
+This text is a proposed additional section for the existing combined terrain
+notice; it does not replace the separate Copernicus DEM credit and disclaimer.

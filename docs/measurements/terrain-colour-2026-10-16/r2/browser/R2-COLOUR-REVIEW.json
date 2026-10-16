@@ -1,0 +1,36 @@
+{
+  "decision": "ACCEPT_R2_COLOUR_GUIDE_WITHOUT_GLOBAL_PHOTOREALISM_PASS",
+  "atUtc": "2026-10-16T16:30:58.100980+00:00",
+  "rootReview": "R2 restores the hue variation lost in R1; a restrained correction relative to v54. No new obvious colour artefact in mountains clear/sunset or higher coast view. Data-guided authored palette, not calibrated physical albedo. Fine terrain/vegetation/rock structure remains simplified.",
+  "independentSolarReview": "No obvious colour regression relative to A in this pose; marked recovery relative to the flattening of B. Darker greens and warmer openings distinguish the right massif and terrain left of the cloud. A-to-C modest, no photographic improvement claim.",
+  "quality": [
+    256,
+    128,
+    384
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "cssCanvas": [
+    1237,
+    922
+  ],
+  "baselineAndCandidateViews": "Same route/keys/fixed t60 as COMPARISON-PROTOCOL.json; clear and sunset settle before captures. Weather clock is not frozen.",
+  "files": {
+    "c-v55-r2-coast-sun.css.jpg": {
+      "bytes": 63650,
+      "sha256": "8708d0447539f5231f9d7be7ca0532cd64179787ada0c103c9edda3424278215"
+    },
+    "c-v55-r2-mountains-sun.css.jpg": {
+      "bytes": 77172,
+      "sha256": "f2bd2c549b024a51e3c24d9b657c767a3079970fd865bd843839f99c09fdd6d3"
+    },
+    "c-v55-r2-mountains-sunset.css.jpg": {
+      "bytes": 48860,
+      "sha256": "da4f189bc1ce2b809fff2e44345e8b24bfe4db840a224997893b60e686cee5a9"
+    }
+  },
+  "costScope": "Six RGB constants and comment only in material; no new runtime expressions, texture reads, passes, mesh or cloud changes. No speedup inferred from this comparison.",
+  "unqualified": "Not full photographic acceptance, framebuffer radiometry, native-detail proof, physical touch or compositor presentation."
+}

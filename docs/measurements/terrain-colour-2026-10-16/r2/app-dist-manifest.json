@@ -1,0 +1,136 @@
+{
+  "files": [
+    {
+      "path": "COP-DEM-GLO90-F-license.pdf",
+      "bytes": 123425,
+      "sha256": "22359cb69199c6b5cc4e64a453cbeb283a7a844c0458f7fef0a1dddac4a0a3e7"
+    },
+    {
+      "path": "COP-DEM-GLO90-F-license.txt",
+      "bytes": 9203,
+      "sha256": "2c3123016f56f3342ac1107671480a6c0baa40596ffadad9f5aa500082ea8670"
+    },
+    {
+      "path": "assets/CumulonimbusApp-Bxt2A7TL.js",
+      "bytes": 853965,
+      "sha256": "5dde123c859cee39b0b57521c4d6de618d4e71f010d2aeabcf47a09c7ad9ade7"
+    },
+    {
+      "path": "assets/CumulonimbusApp-Bxt2A7TL.js.map",
+      "bytes": 3877756,
+      "sha256": "118b2776a69c89507c2036ef663e629076bafe11ee369773859c1fb259d4277a"
+    },
+    {
+      "path": "assets/CumulonimbusApp-fw8aK7_r.css",
+      "bytes": 13181,
+      "sha256": "bdf43d23ca041116c6b6eef5d8f95ab72115e3f0a0a8a728cb912e751dcaa9fb"
+    },
+    {
+      "path": "assets/LabApp-BIVQGmZd.js",
+      "bytes": 405933,
+      "sha256": "61b740644d902e97f0e29d2e7924b0d480f6bdfdd7eae827ea06300cd5b247b9"
+    },
+    {
+      "path": "assets/LabApp-BIVQGmZd.js.map",
+      "bytes": 1146986,
+      "sha256": "23085b2d5fd613e4afec898b96a0aa8d6095625389c708e31d16484ec65eb3ba"
+    },
+    {
+      "path": "assets/index-Cia3ypEr.css",
+      "bytes": 1245,
+      "sha256": "99354a5ec1ade2941e4aba36f030b413c9afbad79336f11800929c7d805b4714"
+    },
+    {
+      "path": "assets/index-WSjdUdBP.js",
+      "bytes": 2837,
+      "sha256": "6138308043f4019a3dd8e1cf5cc188f966694130d88d27ecc168c3c4caed463a"
+    },
+    {
+      "path": "assets/index-WSjdUdBP.js.map",
+      "bytes": 1573,
+      "sha256": "391d4aeba9bb6c5d6bd4b2576d18d44e0a5358771b1911e307227cf471caa30b"
+    },
+    {
+      "path": "assets/liguria-apuane-cover-DuNIvzuH.bin",
+      "bytes": 12582944,
+      "sha256": "e7fa38f2b0a8c3c469737410dc8d265e680071226e663b3cb12b23930ebda5fc"
+    },
+    {
+      "path": "assets/liguria-apuane-dem-CFgFyJza.bin",
+      "bytes": 4202532,
+      "sha256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d"
+    },
+    {
+      "path": "assets/render.worker-DPiag5nn.js",
+      "bytes": 1010280,
+      "sha256": "2a38869c719f05b93d1ebeac8ae501af4ef639116036c92c915f8011ab88fde4"
+    },
+    {
+      "path": "assets/render.worker-DPiag5nn.js.map",
+      "bytes": 5661989,
+      "sha256": "2c4a1db2767e2b708ed5080fee4172aebf23610b65163971f6869c775e6e6665"
+    },
+    {
+      "path": "assets/sky.worker-CHm7n211.js",
+      "bytes": 2960,
+      "sha256": "503ad9438c1738310a9cbe2a41e9af0524e7046bce79e58d6da7c1e74863caaa"
+    },
+    {
+      "path": "assets/sky.worker-CHm7n211.js.map",
+      "bytes": 13323,
+      "sha256": "df7c7eaff6aefeb222e7b89eb86f6c9382a50f405fccd92e9886f2adaa6ac8be"
+    },
+    {
+      "path": "assets/three.core-DxR5k0T0.js",
+      "bytes": 195512,
+      "sha256": "e4d296a475f2cd168d934f17f032d4f56291682208332fc6a926b3937200a810"
+    },
+    {
+      "path": "assets/three.core-DxR5k0T0.js.map",
+      "bytes": 1858620,
+      "sha256": "1db6d177a84ab2823ca902a0261d4c3be1aba1fdbc870fba2593c66bb0c07798"
+    },
+    {
+      "path": "assets/volume.worker-AVJPJnWD.js",
+      "bytes": 15821,
+      "sha256": "87aceed863518008e2cf3015460be964efe98d83159a85ef9cf9133964c338b5"
+    },
+    {
+      "path": "assets/volume.worker-AVJPJnWD.js.map",
+      "bytes": 78380,
+      "sha256": "1929f2c77381f12a8b2e4441183de330b75f960e0d5a930bc7e44d769157f60d"
+    },
+    {
+      "path": "fonts/commissioner/OFL.txt",
+      "bytes": 4395,
+      "sha256": "4a7d88c77b4bc39ff84f2e058ba8f015636c50ce33588a86d9da97defe519933"
+    },
+    {
+      "path": "fonts/commissioner/SOURCE.md",
+      "bytes": 361,
+      "sha256": "4d62bb7d2afbda450c342cafc6987bab37990ecea6e19378e1a6b0f706183a33"
+    },
+    {
+      "path": "fonts/commissioner/latin-variable.woff2",
+      "bytes": 36696,
+      "sha256": "737ec8f28006b815be5333598aa32b203005f5788c8e61b09090b944eac8b79c"
+    },
+    {
+      "path": "index.html",
+      "bytes": 911,
+      "sha256": "96353fcd0dcc32083ab4e6c54946b67ba660727291394551bdb9d38b822012d8"
+    },
+    {
+      "path": "terrain-data-notice.txt",
+      "bytes": 1719,
+      "sha256": "47f5865d49b981b6e961550b4fc422686c74ee60754bae019e6f2abd3c1cab6d"
+    },
+    {
+      "path": "worldcover-data-notice.txt",
+      "bytes": 978,
+      "sha256": "4131f41e831f1f661406f3baba9d0ded259ed9d368a2e42621a240b0bf041e10"
+    }
+  ],
+  "fileCount": 26,
+  "bytes": 32103525
+}

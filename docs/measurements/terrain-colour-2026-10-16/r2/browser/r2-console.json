@@ -1,0 +1,11 @@
+{
+  "since": "2026-10-16T16:26:24.916Z",
+  "newEntries": [],
+  "allReturned": [
+    {
+      "level": "error",
+      "message": "Uncaught TypeError: Failed to execute 'observe' on 'MutationObserver': parameter 1 is not of type 'Node'.",
+      "timestamp": "2026-10-16T15:55:05.403Z"
+    }
+  ]
+}

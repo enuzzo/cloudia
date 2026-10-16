@@ -1,0 +1,26 @@
+{
+  "r1Root": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference",
+  "r1FrozenSha256": {
+    "preprocess-sentinel2.py": "69dabd239bbbffde8d9221a569b6f76b6aa9fab37f4b3e23129ccce17a51db3f",
+    "PROTOCOL.md": "799220694b63008ba8a0b84491df4b8c20b929ff75ea9f02bcd0a22999c4b655",
+    "pre-run-freeze.json": "d7e0eabf4f2a244b1213df1af1a3f74e96323e134a0e8add606950d584525142",
+    "inputs.json": "5deace0bbd4fe844524323eb375053da1c14b27b69a83e6ffbd005507f5eb912",
+    "ranges-manifest.json": "81b1a8b6662e192301c8d474a642a159341397b6c6bd06fb9df4b40888eb1049",
+    "source-witnesses.json": "da40f40e95ea0db9476d2ff18b74246cefbc9235640345bc777faed33a2f6201",
+    "source-witness-pixels.csv": "56ec907971236298f57a5cce946b1d2c4afebb304e91e46f1b505c8ffa2f430d",
+    "failure.json": "77099ed9eeceaa966ffa1e9af42950fc657b61a2940cc88f951d41f46f63648d",
+    "ESA_WorldCover_10m_2021_v200_N43E009_S2RGBNIR-metadata-prefix.bin": "810f2c8c2b298bb5bd10e6cbfe0699dc67eca8df571cbca3c1a1140af768ba2e",
+    "ESA_WorldCover_10m_2021_v200_N43E010_S2RGBNIR-metadata-prefix.bin": "85bc0d6b3dd3793072fb590e56ccf4b57fe6da8114d3f24f0d6cd799e5a47d17",
+    "ESA_WorldCover_10m_2021_v200_N44E009_S2RGBNIR-metadata-prefix.bin": "d37b1a5b7c59392e1ace9f76fe3376236a02306a72aa9c9ad90803bf797abe2e",
+    "ESA_WorldCover_10m_2021_v200_N44E010_S2RGBNIR-metadata-prefix.bin": "d2dccfe345a1692fb19445125883b953d645be63a40356418c25a1142e161bef",
+    "NOTICE-SENTINEL2.txt": "30354b8fda6143a621f1e64a11aacfb4c60e4e09a59c02e59e74ae2ae8850f42",
+    "SOURCE-LINKS.md": "ec16a974fad7c3d1e0d975b5bc837763f2b41d3bbab0aff9c92fe7affd63e360",
+    "cc-by-4.0-legalcode.txt": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+    "esa-worldcover-data-access.html": "71dccb4c949d489a903865f97ff3bddab75dbefad7f1c277acd1ba94967ed0e8",
+    "metadata-probe.json": "a5a1ea17f47b7467019e9d9a3de68bf776ff7013f4ba37bbce14f63078e2aebf",
+    "overview4-range-plan.json": "ab097ef34fe964150d9b3d8e655cb817473e55329e40abf1598fb030c169b53f",
+    "primary-documents.json": "be8744742dcecd406d2af8e96e2a84255732450539936264728d071d2d38bbb5"
+  },
+  "networkAllowed": false,
+  "sourceRangeTotalBytes": 71091595
+}

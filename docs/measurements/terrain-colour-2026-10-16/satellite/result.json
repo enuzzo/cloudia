@@ -1,0 +1,134 @@
+{
+  "status": "R2_CPU_REFERENCE_PREPROCESS_AND_DIAGNOSTICS_PASS_NOT_ALBEDO_NOT_GPU_ADOPTION",
+  "scriptSha256": "308fb96e48c7c6aa05b6ca63d5322fbd42042937aab4eca6153e0d2c5fb5ce5e",
+  "protocolSha256": "ded51b69cb62b9a93fdb939e84a9d8ef8dbcbcdcbf1112cd34b1654387c0b513",
+  "inputsSha256": "5deace0bbd4fe844524323eb375053da1c14b27b69a83e6ffbd005507f5eb912",
+  "r2InputsSha256": "bb9798a5e4cff4c440b24652f6d0e20b1a69af364159af692b5205d04da64a45",
+  "localRangeVerificationSha256": "bee5ea6e2aa68e07e5781e1b639b93c778972cdf1f862abad924e3aff47ed094",
+  "syntheticOracle": {
+    "status": "PASS",
+    "predictor2Samples": 24,
+    "uint16OverflowAndRowReset": true,
+    "scalarDecoderMatches": true,
+    "rectangleCells": 16,
+    "sourcePixels": 63,
+    "singleMaxAbsError": 1.1102230246251565e-16,
+    "partitionedMaxAbsError": 1.1102230246251565e-16,
+    "validAwareCases": "allzero,onechannelzero,NIR>10000; exclusionsaffectvalidareaandRGBonly,geometrycoverageunchanged",
+    "scope": "Synthetic scalar predictor and rectangle oracle, not a second full external GeoTIFF stack"
+  },
+  "r2MemoryOracle": {
+    "status": "PASS",
+    "cells": 483,
+    "rowsPerStripe": 32,
+    "float32BitIdentityAgainstWholeArray": true,
+    "partialValidityFirstTiePreserved": true,
+    "scope": "Small memory-orchestration oracle; full output R1 never existed"
+  },
+  "r1WitnessByteIdentity": {
+    "source-witnesses.json": true,
+    "source-witness-pixels.csv": true
+  },
+  "rgb": {
+    "path": "rgb-linear.f32",
+    "bytes": 50331648,
+    "sha256": "44205c43c1f243766716060b16e7f74948fba3a9366b6f38473d045c066a074e",
+    "gzipPath": "rgb-linear.f32.gz",
+    "gzipBytes": 29610975,
+    "gzipSha256": "c1057acaba8cc100590727a904515e3dc6dfaecb88dccddd020d27872215e945",
+    "gzipMtime": 0
+  },
+  "validity": {
+    "path": "valid-area.f32",
+    "bytes": 16777216,
+    "sha256": "e89361dccb2b50a515f08ee7fee8500bdd3a535bdce4f5ea6159a736120f12c7",
+    "gzipPath": "valid-area.f32.gz",
+    "gzipBytes": 27419,
+    "gzipSha256": "d88a5781898c8614fc4217b36cb7db3e17344ae08a3091abaaa9336fe023f0bb",
+    "gzipMtime": 0
+  },
+  "dimensions": [
+    2048,
+    2048
+  ],
+  "spacingKm": 0.0625,
+  "domainKm": [
+    -64,
+    -64,
+    64,
+    64
+  ],
+  "encoding": "raw little-endian Float32, row-major Z south to north / X east to west, RGB interleaved; RGB conditional mean of valid source area; separate valid-area fraction; zero color when validity is zero",
+  "sourceBandOrder": [
+    "B04Red",
+    "B03Green",
+    "B02Blue",
+    "B08NIR"
+  ],
+  "sourceDNScale": 0.0001,
+  "sourceDNOffset": 0,
+  "rawSourceStats": {
+    "contributingNativePixels": 16586108,
+    "allChannelsZero": 5494913,
+    "anyChannelZero": 5495492,
+    "anyChannelAbove10000": 13,
+    "validPixels": 11090603,
+    "minimumDN": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "maximumDN": [
+      16479,
+      15259,
+      13532,
+      15759
+    ]
+  },
+  "geometryCoverageMaxAbsError": 3.3306690738754696e-16,
+  "float32RGBMaxRoundingAbsError": 2.950366084775169e-08,
+  "actualWitnessMaxWeightedSumError": 3.4350300381902343e-13,
+  "actualPartialValidityWitnessObserved": true,
+  "peakRssBytes": 349995008,
+  "peakBudgetBytes": 402653184,
+  "elapsedSeconds": 3.408770375070162,
+  "pythonVersion": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "numpyVersion": "2.3.5",
+  "operationOrder": "Same 24 blocks and float64 accumulation as R1; only validation/argmax and F32 serialization striped, analysis separate after exit",
+  "r1Status": "FAIL_RSS_488144896_BYTES_NO_FULL_OUTPUT_EXISTED",
+  "limits": [
+    "L2A annual median observed surface reflectance, not view/sun independent albedo.",
+    "Overview resampling metadata unknown; source pixel mean DN/NoData behavior needs qualification before original native optical sampling.",
+    "Zero DN or out-of-range invalidity is conservative and can exclude very dark valid surfaces; separate coverage preserved.",
+    "No height, product, backend, GPU, build or FPS change; photoreal goal not declared achieved.",
+    "Cloud/snow/dark thresholds are prefixed diagnostics, not SCL or truth; no automatic radiometric repair.",
+    "WorldCover class10 includes orchards/plantations; mask does not certify wild forest.",
+    "Full RGB preserves observed crop/built areas; only palette statistics exclude them.",
+    "R1 had no complete RGB/validity output, so full-field byte equality to R1 is not claimed. Small conversion oracle plus five actual witnesses qualify memory refactor."
+  ],
+  "analysisScriptSha256": "197edfd1c40dca54939534d6bbb8b1f1cc967c87505759b141959b24abf50d7d",
+  "validityStats": {
+    "mean": 0.6686647634980195,
+    "zeroCells": 1388039,
+    "partialCells": 3562,
+    "cellsUnder99percent": 1391597,
+    "validAreaProjectedKm2": 10955.403485151552
+  },
+  "paletteSampleCounts": {
+    "10": 80090,
+    "20": 28,
+    "30": 2628,
+    "60": 10
+  },
+  "heuristicDiagnostics": {
+    "cloudSnowSuspectCells": 2333,
+    "darkCells": 36823,
+    "brightCells": 18,
+    "visualGain3ClippedChannels": 3061
+  },
+  "visualizationProtocol": "ONE fixed global gain3, clip0..1, standard piecewise sRGB OETF; not asset data encoding; no retuning",
+  "analysisPeakRssBytes": 156418048,
+  "analysisElapsedSeconds": 0.21467162494082004,
+  "processSeparation": "Accumulation/serialization exited before this analysis; peak is max of separate processes, not sum"
+}

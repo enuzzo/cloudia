@@ -1,0 +1,226 @@
+{
+  "status": "PASS_RECORDED_ARITHMETIC_QUALITY_AND_COMPLETED_PREFIX",
+  "scope": "Raw arithmetic independently checked by root; not compositor presentation, no causal comparison to earlier v54 with different target.",
+  "runs": {
+    "sun": {
+      "rawFile": "sun-native.raw.json",
+      "rawBytes": 5825453,
+      "rawSha256": "a2287f9865d5cdd35d5806deb073ff78352758a0497910206a3a5561ec3c5110",
+      "rendererVersion": "observatory-v55-s2-chromaticity",
+      "stats": {
+        "frames": 1779,
+        "durationMs": 30001.800000000003,
+        "fps": 59.29644221346719,
+        "medianMs": 16.69999999999709,
+        "p95Ms": 17.69999999999709,
+        "p99Ms": 32.80000000000291,
+        "maxMs": 34.30000000000291,
+        "over18Ms": 21,
+        "over33Ms": 11
+      },
+      "queue": {
+        "status": "completed",
+        "measuredSubmissions": 1779,
+        "confirmedPrefixId": 1779,
+        "unconfirmedMeasuredFrames": 0,
+        "endDrainMs": 66
+      },
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 1779,
+          "expectedCalls": 7116,
+          "matchedFreshCalls": 7092,
+          "completeDraws": 1773,
+          "partialDraws": 0,
+          "missingDraws": 6,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 1779,
+          "expectedCalls": 1779,
+          "matchedFreshCalls": 1773,
+          "completeDraws": 1773,
+          "partialDraws": 0,
+          "missingDraws": 6,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      },
+      "camera": {
+        "comparisonSurfaceKm": 1,
+        "comparisonTargetKm": [
+          0,
+          2.7,
+          0
+        ],
+        "probeSkipped": true,
+        "approach": 0,
+        "origin": [
+          15.108145390770279,
+          7.1390324220971255,
+          2.835301396133632
+        ],
+        "probeFlow": "16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively",
+        "probeFieldBytes": 32768,
+        "surfaceEstimateKm": null,
+        "probe": null,
+        "probeAgeMs": null,
+        "altitudeKm": 11.139032422097126,
+        "ground": 1,
+        "yaw": 1.3852869846402587,
+        "pitch": 0.2811279826464208,
+        "target": [
+          0,
+          2.7,
+          0
+        ]
+      },
+      "weather": {
+        "wind": 0.55,
+        "dispersion": 0,
+        "sky": "clear",
+        "rain": 0,
+        "atmosphereTransition": 1,
+        "speed": 1,
+        "autoLightning": false,
+        "distanceKm": 3,
+        "flashPreview": false
+      },
+      "quality": "ultra",
+      "output": [
+        2474,
+        1844
+      ],
+      "internal": [
+        2474,
+        1844
+      ],
+      "volume": [
+        256,
+        256,
+        256
+      ],
+      "detailVolume": [
+        128,
+        128,
+        128
+      ],
+      "nominalSteps": 384,
+      "presentedCanvasFps": null,
+      "densityPath": "macro-rgba8-r"
+    },
+    "rain": {
+      "rawFile": "rain-native.raw.json",
+      "rawBytes": 1720052,
+      "rawSha256": "83c070faf1f74344597d88e9efb3c104c0ff59aeef50651714ecda69c59c154e",
+      "rendererVersion": "observatory-v55-s2-chromaticity",
+      "stats": {
+        "frames": 471,
+        "durationMs": 30035.5,
+        "fps": 15.681443625043698,
+        "medianMs": 66.60000000000582,
+        "p95Ms": 83.30000000000291,
+        "p99Ms": 167.09999999999127,
+        "maxMs": 250.3000000000029,
+        "over18Ms": 456,
+        "over33Ms": 455
+      },
+      "queue": {
+        "status": "completed",
+        "measuredSubmissions": 471,
+        "confirmedPrefixId": 471,
+        "unconfirmedMeasuredFrames": 0,
+        "endDrainMs": 250.70000004768372
+      },
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 471,
+          "expectedCalls": 1884,
+          "matchedFreshCalls": 1876,
+          "completeDraws": 469,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 471,
+          "expectedCalls": 471,
+          "matchedFreshCalls": 469,
+          "completeDraws": 469,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      },
+      "camera": {
+        "comparisonSurfaceKm": 1,
+        "comparisonTargetKm": [
+          0,
+          2.7,
+          0
+        ],
+        "probeSkipped": true,
+        "approach": 0,
+        "origin": [
+          15.108145390770279,
+          7.1390324220971255,
+          2.835301396133632
+        ],
+        "probeFlow": "16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively",
+        "probeFieldBytes": 32768,
+        "surfaceEstimateKm": null,
+        "probe": null,
+        "probeAgeMs": null,
+        "altitudeKm": 11.139032422097126,
+        "ground": 1,
+        "yaw": 1.3852869846402587,
+        "pitch": 0.2811279826464208,
+        "target": [
+          0,
+          2.7,
+          0
+        ]
+      },
+      "weather": {
+        "wind": 0.55,
+        "dispersion": 0,
+        "sky": "rain",
+        "rain": 0.7999915702509183,
+        "atmosphereTransition": 1,
+        "speed": 1,
+        "autoLightning": false,
+        "distanceKm": 3,
+        "flashPreview": false
+      },
+      "quality": "ultra",
+      "output": [
+        2474,
+        1844
+      ],
+      "internal": [
+        2474,
+        1844
+      ],
+      "volume": [
+        256,
+        256,
+        256
+      ],
+      "detailVolume": [
+        128,
+        128,
+        128
+      ],
+      "nominalSteps": 384,
+      "presentedCanvasFps": null,
+      "densityPath": "r8unorm-extracted-r"
+    }
+  }
+}

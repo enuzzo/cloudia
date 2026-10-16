@@ -1,0 +1,18 @@
+{
+  "status": "FIXED_GAIN3_SRGB_VISUALIZATION_ONLY",
+  "scriptSha256": "a476749ce405848f88069dd26dc37bf1f6ede970d749ef07b58e44b6e13036a0",
+  "sourceRgbSha256": "44205c43c1f243766716060b16e7f74948fba3a9366b6f38473d045c066a074e",
+  "sourceValiditySha256": "e89361dccb2b50a515f08ee7fee8500bdd3a535bdce4f5ea6159a736120f12c7",
+  "figureDownsample": "PIL Lanczos2048\u21921024 display only; full2048PNG also retained",
+  "northUp": true,
+  "westRight": true,
+  "assetLinearEncodingUnchanged": true,
+  "peakRssBytes": 262488064,
+  "clippedChannelsAtGain3": 3061,
+  "invalidCellDisplayRGB": [
+    208,
+    203,
+    212
+  ],
+  "limits": "No exposure retuning; visualization is not an albedo or renderer photograph."
+}

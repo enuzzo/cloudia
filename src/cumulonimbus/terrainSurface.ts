@@ -171,8 +171,9 @@ fn terrainSurfaceMaterial(point:vec3<f32>,hKm:f32,coastKm:f32,macroNormal:vec3<f
  let lowSlopeMoisture=(1.0-smoothstep(.30,1.25,hKm))*(1.0-smoothstep(.10,.60,slope));
  let stand=.65*vegetation+.35*broad.x+.12*lowSlopeMoisture-.08*smoothstep(.8,1.6,hKm);
  let denseCover=smoothstep(.24,.74,stand);
- let denseForest=mix(vec3<f32>(.019,.042,.027),vec3<f32>(.039,.075,.035),canopy);
- let openForest=mix(vec3<f32>(.054,.062,.032),vec3<f32>(.075,.083,.039),broad.x);
+ // S2 class-wise chromaticity correction retains endpoint authored Y and relative hue contrasts.
+ let denseForest=mix(vec3<f32>(0.0201232843,0.0411861688,0.0317540467),vec3<f32>(0.0413725972,0.0736658648,0.04122933),canopy);
+ let openForest=mix(vec3<f32>(0.0569707081,0.0605628639,0.0374884829),vec3<f32>(0.0791420341,0.0810925364,0.0456983559),broad.x);
  let forest=mix(openForest,denseForest,denseCover)*(1.0-.12*lowSlopeMoisture);
  let mineral=clamp(.55*broad.x+.30*grain.x+.15*fine.x,0.0,1.0);
  let rock=mix(vec3<f32>(.085,.087,.077),vec3<f32>(.185,.172,.145),mineral);
@@ -180,7 +181,7 @@ fn terrainSurfaceMaterial(point:vec3<f32>,hKm:f32,coastKm:f32,macroNormal:vec3<f
  // WorldCover supplies class-area fractions, not canopy density or optical
  // albedo. Palette/lighting remain authored. Unknown area retains the existing
  // altitude/slope material; crops and built are never turned into forest.
- let grass=mix(vec3<f32>(.063,.085,.037),vec3<f32>(.105,.120,.061),broad.x);
+ let grass=mix(vec3<f32>(0.0737941414,0.0805885121,0.0489149615),vec3<f32>(0.122134335,0.112980276,0.0800823793),broad.x);
  let crops=mix(vec3<f32>(.105,.100,.052),vec3<f32>(.170,.145,.085),vegetation);
  let built=mix(vec3<f32>(.085,.082,.075),vec3<f32>(.145,.140,.125),grain.x);
  let authored=forest*biome.x+rock*biome.y+snow*biome.z;

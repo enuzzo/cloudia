@@ -8,7 +8,32 @@ output pieno configurato. Questo obiettivo si aggiunge ad anatomia delle tre
 famiglie, luce ravvicinata continua, pioggia/virga integrate nel paesaggio e UI.
 Nessuno di questi gate è sostituito dal contatore dei frame.
 
-## Stato corrente: v54 copertura reale del suolo, 60 FPS ancora aperti
+## Stato corrente: v55 cromaticità del terreno, 60 FPS ancora aperti
+
+[v55](TERRAIN-COLOUR-2026-10-16.md) cambia soltanto sei costanti RGB dei
+materiali, conservandone Y autoriale e contrasti relativi. Nessuna espressione,
+lettura, pass o risorsa GPU aggiunta. La palette R1 uniforme è scartata;
+R2 conserva la varietà cromatica. Non è una nuova ottimizzazione del renderer.
+341/341 test43file, tsc e app→hero PASS;256³/128³/384 e output pieno conservati.
+
+Main v55, seme74, t60 in pausa, vento55%, dispersione0%, flusso completo,
+output/interno2474×1844, yaw1,3852869846402587/pitch0,2811279826464208,
+mira[0,2.7,0]. Sole: **59,2964422 invii/s**,1779 intervalli/30.001,8ms;
+mediana16,7/p9517,7/p9932,8ms, massimo34,3ms,11 oltre33,34ms.
+Coda1779/1779 completata; timestamp completi/mancanti1773/6.
+
+Pioggia: **15,6814436 invii/s**,471 intervalli/30.035,5ms;
+mediana66,6/p9583,3/p99167,1ms, massimo250,3ms,455 oltre33,34ms.
+Coda471/471 completata; timestamp completi/mancanti469/2. Pioggia effettiva
+all'avvio0,79999157; clock meteorologico non congelato con quello della nube.
+Presentazione del compositore non misurata. La mira differisce da v54:
+**nessuno speedup o regressione causale attribuiti;60FPS stabili non raggiunti**.
+
+Archivio curato con raw e verifica dell'aritmetica/coda in
+docs/measurements/terrain-colour-2026-10-16. Worker Sole è un controllo
+funzionale a pari canvas, non una misura prestazionale di30s.
+
+## Riferimento precedente: v54 copertura reale del suolo
 
 [Il terreno v54](TERRAIN-COVER-2026-10-16.md) aggiunge la distribuzione ESA
 WorldCover a125m, con due texture core RGBA8 campionate per fragment e mip per

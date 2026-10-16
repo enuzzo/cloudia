@@ -1,0 +1,272 @@
+{
+  "status": "FOUR_FROZEN_RANGES_DOWNLOADED",
+  "totalBytes": 71091595,
+  "ranges": [
+    {
+      "url": "https://esa-worldcover-s2.s3.eu-central-1.amazonaws.com/rgbnir/2021/N43/ESA_WorldCover_10m_2021_v200_N43E009_S2RGBNIR.tif",
+      "key": "rgbnir/2021/N43/ESA_WorldCover_10m_2021_v200_N43E009_S2RGBNIR.tif",
+      "etag": "\"97e1665acc80090d6b734ce64f97fa03-3\"",
+      "ifMatch": "\"97e1665acc80090d6b734ce64f97fa03-3\"",
+      "sourceObjectBytes": 23406468,
+      "sourcePrefixSha256": "810f2c8c2b298bb5bd10e6cbfe0699dc67eca8df571cbca3c1a1140af768ba2e",
+      "overviewSide": 3000,
+      "levelDecimation": 4,
+      "rangeStart": 575063,
+      "rangeEndInclusive": 1176127,
+      "rangeHeader": "bytes=575063-1176127",
+      "expectedContentRange": "bytes 575063-1176127/23406468",
+      "plannedBytes": 601065,
+      "plannedRangeContentSha256": null,
+      "rangeContentStatus": "NOT_DOWNLOADED_NOT_AUTHORIZED",
+      "selectedBlocks": [
+        {
+          "tileId": 0,
+          "offset": 575063,
+          "bytes": 8488
+        },
+        {
+          "tileId": 1,
+          "offset": 583559,
+          "bytes": 8488
+        },
+        {
+          "tileId": 2,
+          "offset": 592055,
+          "bytes": 94255
+        },
+        {
+          "tileId": 3,
+          "offset": 686318,
+          "bytes": 8488
+        },
+        {
+          "tileId": 4,
+          "offset": 694814,
+          "bytes": 8488
+        },
+        {
+          "tileId": 5,
+          "offset": 703310,
+          "bytes": 472818
+        }
+      ],
+      "path": "ranges/range-00-575063-1176127.bin",
+      "bytes": 601065,
+      "sha256": "e42e471ccdc9d33f40987fa614c2f78ba26217049c285437e2adb520c8d55083",
+      "httpStatus": 206,
+      "headers": {
+        "x-amz-id-2": "8zLqp0fvxGyzTB74jBFI5H8Ri+XZWzq+7J2nmGH5wEhiiRqY2POtqqAozUr8lmtXVYqFrm0n6BWYhxbYBJWP1Z5jMBvMNLK4",
+        "x-amz-request-id": "PT864YKF2W793PW0",
+        "Server": "AmazonS3",
+        "Date": "Fri, 16 Oct 2026 15:54:41 GMT",
+        "Last-Modified": "Sat, 10 Dec 2022 18:00:14 GMT",
+        "ETag": "\"97e1665acc80090d6b734ce64f97fa03-3\"",
+        "Accept-Ranges": "bytes",
+        "Content-Range": "bytes 575063-1176127/23406468",
+        "Content-Type": "binary/octet-stream",
+        "Content-Length": "601065",
+        "Connection": "close"
+      }
+    },
+    {
+      "url": "https://esa-worldcover-s2.s3.eu-central-1.amazonaws.com/rgbnir/2021/N43/ESA_WorldCover_10m_2021_v200_N43E010_S2RGBNIR.tif",
+      "key": "rgbnir/2021/N43/ESA_WorldCover_10m_2021_v200_N43E010_S2RGBNIR.tif",
+      "etag": "\"b0afa4829889f94380830eacde6e5a37-48\"",
+      "ifMatch": "\"b0afa4829889f94380830eacde6e5a37-48\"",
+      "sourceObjectBytes": 401048807,
+      "sourcePrefixSha256": "85bc0d6b3dd3793072fb590e56ccf4b57fe6da8114d3f24f0d6cd799e5a47d17",
+      "overviewSide": 3000,
+      "levelDecimation": 4,
+      "rangeStart": 10349227,
+      "rangeEndInclusive": 32415282,
+      "rangeHeader": "bytes=10349227-32415282",
+      "expectedContentRange": "bytes 10349227-32415282/401048807",
+      "plannedBytes": 22066056,
+      "plannedRangeContentSha256": null,
+      "rangeContentStatus": "NOT_DOWNLOADED_NOT_AUTHORIZED",
+      "selectedBlocks": [
+        {
+          "tileId": 0,
+          "offset": 10349227,
+          "bytes": 2289784
+        },
+        {
+          "tileId": 1,
+          "offset": 12639019,
+          "bytes": 4847368
+        },
+        {
+          "tileId": 2,
+          "offset": 17486395,
+          "bytes": 4696541
+        },
+        {
+          "tileId": 3,
+          "offset": 22182944,
+          "bytes": 1106296
+        },
+        {
+          "tileId": 4,
+          "offset": 23289248,
+          "bytes": 4556999
+        },
+        {
+          "tileId": 5,
+          "offset": 27846255,
+          "bytes": 4569028
+        }
+      ],
+      "path": "ranges/range-01-10349227-32415282.bin",
+      "bytes": 22066056,
+      "sha256": "f3033651cfbf1666f7b46f44a4d00b79ea6f675fc429ee8a40cd7b32b8add11c",
+      "httpStatus": 206,
+      "headers": {
+        "x-amz-id-2": "omK3AM0tjyavDndfaglYi38gxlIqfAxq7/2TAqLeQ35LgK+mFbh6/9Y6sAZ75phANHfzRMcxHvPEW1jyYIyFH3A9rNWPlSbu",
+        "x-amz-request-id": "AABB8EF531J27AH5",
+        "Server": "AmazonS3",
+        "Date": "Fri, 16 Oct 2026 15:54:42 GMT",
+        "Last-Modified": "Sat, 10 Dec 2022 18:12:59 GMT",
+        "ETag": "\"b0afa4829889f94380830eacde6e5a37-48\"",
+        "Accept-Ranges": "bytes",
+        "Content-Range": "bytes 10349227-32415282/401048807",
+        "Content-Type": "binary/octet-stream",
+        "Content-Length": "22066056",
+        "Connection": "close"
+      }
+    },
+    {
+      "url": "https://esa-worldcover-s2.s3.eu-central-1.amazonaws.com/rgbnir/2021/N44/ESA_WorldCover_10m_2021_v200_N44E009_S2RGBNIR.tif",
+      "key": "rgbnir/2021/N44/ESA_WorldCover_10m_2021_v200_N44E009_S2RGBNIR.tif",
+      "etag": "\"fb0e1efcc383cb24d84fbd67c5a96bff-58\"",
+      "ifMatch": "\"fb0e1efcc383cb24d84fbd67c5a96bff-58\"",
+      "sourceObjectBytes": 483128687,
+      "sourcePrefixSha256": "d37b1a5b7c59392e1ace9f76fe3376236a02306a72aa9c9ad90803bf797abe2e",
+      "overviewSide": 3000,
+      "levelDecimation": 4,
+      "rangeStart": 27455232,
+      "rangeEndInclusive": 47684461,
+      "rangeHeader": "bytes=27455232-47684461",
+      "expectedContentRange": "bytes 27455232-47684461/483128687",
+      "plannedBytes": 20229230,
+      "plannedRangeContentSha256": null,
+      "rangeContentStatus": "NOT_DOWNLOADED_NOT_AUTHORIZED",
+      "selectedBlocks": [
+        {
+          "tileId": 3,
+          "offset": 27455232,
+          "bytes": 4656130
+        },
+        {
+          "tileId": 4,
+          "offset": 32111370,
+          "bytes": 4983259
+        },
+        {
+          "tileId": 5,
+          "offset": 37094637,
+          "bytes": 4626038
+        },
+        {
+          "tileId": 6,
+          "offset": 41720683,
+          "bytes": 364431
+        },
+        {
+          "tileId": 7,
+          "offset": 42085122,
+          "bytes": 2044694
+        },
+        {
+          "tileId": 8,
+          "offset": 44129824,
+          "bytes": 3554638
+        }
+      ],
+      "path": "ranges/range-02-27455232-47684461.bin",
+      "bytes": 20229230,
+      "sha256": "50f27ed83fb8fc4d419745d390c7cd664b1fb42777efda55df374db6e026418a",
+      "httpStatus": 206,
+      "headers": {
+        "x-amz-id-2": "6gDLI9RdTopTODk38CdgxU7+P+4zhL3gF1EdbAuzbvEKl9zaMQsk+/Nw2NCPr+kC64aec9BvRCdIvL+JLbXrA3IhCQX33qDH",
+        "x-amz-request-id": "HD6HKCFA92W8GXFP",
+        "Server": "AmazonS3",
+        "Date": "Fri, 16 Oct 2026 15:54:46 GMT",
+        "Last-Modified": "Sat, 10 Dec 2022 18:18:04 GMT",
+        "ETag": "\"fb0e1efcc383cb24d84fbd67c5a96bff-58\"",
+        "Accept-Ranges": "bytes",
+        "Content-Range": "bytes 27455232-47684461/483128687",
+        "Content-Type": "binary/octet-stream",
+        "Content-Length": "20229230",
+        "Connection": "close"
+      }
+    },
+    {
+      "url": "https://esa-worldcover-s2.s3.eu-central-1.amazonaws.com/rgbnir/2021/N44/ESA_WorldCover_10m_2021_v200_N44E010_S2RGBNIR.tif",
+      "key": "rgbnir/2021/N44/ESA_WorldCover_10m_2021_v200_N44E010_S2RGBNIR.tif",
+      "etag": "\"f5942954e831bd7e956d73a509b4d094-71\"",
+      "ifMatch": "\"f5942954e831bd7e956d73a509b4d094-71\"",
+      "sourceObjectBytes": 588072835,
+      "sourcePrefixSha256": "d2dccfe345a1692fb19445125883b953d645be63a40356418c25a1142e161bef",
+      "overviewSide": 3000,
+      "levelDecimation": 4,
+      "rangeStart": 29517942,
+      "rangeEndInclusive": 57713185,
+      "rangeHeader": "bytes=29517942-57713185",
+      "expectedContentRange": "bytes 29517942-57713185/588072835",
+      "plannedBytes": 28195244,
+      "plannedRangeContentSha256": null,
+      "rangeContentStatus": "NOT_DOWNLOADED_NOT_AUTHORIZED",
+      "selectedBlocks": [
+        {
+          "tileId": 3,
+          "offset": 29517942,
+          "bytes": 5119542
+        },
+        {
+          "tileId": 4,
+          "offset": 34637492,
+          "bytes": 5038404
+        },
+        {
+          "tileId": 5,
+          "offset": 39675904,
+          "bytes": 4725761
+        },
+        {
+          "tileId": 6,
+          "offset": 44401673,
+          "bytes": 4353684
+        },
+        {
+          "tileId": 7,
+          "offset": 48755365,
+          "bytes": 4567674
+        },
+        {
+          "tileId": 8,
+          "offset": 53323047,
+          "bytes": 4390139
+        }
+      ],
+      "path": "ranges/range-03-29517942-57713185.bin",
+      "bytes": 28195244,
+      "sha256": "9d1856f921194663dd3b408a3aa95053ee861552aa1cde8640a71c040089595c",
+      "httpStatus": 206,
+      "headers": {
+        "x-amz-id-2": "F7qIer7Btk1sGRoKbCXo9NPqg0zk9n/ybs2XmYOKLV2DtXtEu0km4iSZTAcjq8GJadYvcHB1wkhM67fWX8JgEKFEOFy8OvGR",
+        "x-amz-request-id": "HR64RKGEPX6FTZNE",
+        "Server": "AmazonS3",
+        "Date": "Fri, 16 Oct 2026 15:54:47 GMT",
+        "Last-Modified": "Sat, 10 Dec 2022 18:24:26 GMT",
+        "ETag": "\"f5942954e831bd7e956d73a509b4d094-71\"",
+        "Accept-Ranges": "bytes",
+        "Content-Range": "bytes 29517942-57713185/588072835",
+        "Content-Type": "binary/octet-stream",
+        "Content-Length": "28195244",
+        "Connection": "close"
+      }
+    }
+  ],
+  "sourceWholeObjectSha256": "NOT_COMPUTED_PARTIAL_RANGES_ONLY",
+  "etagIsSha256": false
+}

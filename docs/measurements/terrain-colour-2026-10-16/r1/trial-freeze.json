@@ -1,0 +1,83 @@
+{
+  "status": "V55_COLOUR_ONLY_EXTERNAL_TRIAL_FROZEN_READY_FOR_ROOT_GPU_NOT_ADOPTED",
+  "frozenAtUtc": "2026-10-16T16:17:31.093934+00:00",
+  "rendererVersion": "observatory-v55-s2-palette-trial",
+  "sourceDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/candidate-source",
+  "appDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/candidate-dist",
+  "heroDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/candidate-hero",
+  "suggestedPort": 53753,
+  "serverStarted": false,
+  "baseFiles": 119,
+  "runtimeSourceDiff": {
+    "src/cumulonimbus/GPUSceneEngine.ts": {
+      "before": "ae9e2e2e171bbfc23e9b570a91b454af771288087ba096e432eb2c40de76c202",
+      "after": "bc1cda1b842239b60e4b419fda27f24dd97b2e75c5a4987f32a375f010c6f026"
+    },
+    "src/cumulonimbus/terrainSurface.ts": {
+      "before": "c9745e3c727434a32c71e9d1e6ddd52eefb4db73880be10000d1b2c1cc811d87",
+      "after": "2f485f494b272df0f3badeaed05cd9e12157b5e9a3a202d5db9f90939463bc3b"
+    }
+  },
+  "checks": {
+    "typecheck": {
+      "exitCode": 0,
+      "log": "typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "terrainSurfaceTests": {
+      "exitCode": 0,
+      "passedTests": 7,
+      "log": "terrainSurface-test.log",
+      "sha256": "10f953eb446b4bcec04fa427bdd1e7129106d1e775a746a6c7c64598c61baf34"
+    },
+    "appBuild": {
+      "exitCode": 0,
+      "log": "app-build.log",
+      "sha256": "43ae8e22e1a6d2af490142b0a3f2824a6dca91dd83458ff39027d1d34209b796"
+    },
+    "heroBuild": {
+      "exitCode": 0,
+      "log": "hero-build.log",
+      "sha256": "298c8725c7e9d8a147378a8cf56f68a78c06dfc9255a6deab7e53d8ddb2f6036"
+    },
+    "proposalReproduction": {
+      "status": "PASS",
+      "path": "proposal-verification.json",
+      "sha256": "de74d6ace61ac50b887b9a5837e08b2964ce374b9b3d8a5f416d5fbece4b6363"
+    },
+    "nodeModulesIgnoreBeforeAfter": "1",
+    "nodeModulesGitIgnored": true,
+    "nodeModulesTrackedPaths": 0,
+    "nodeArchitecture": "arm64",
+    "nodeVersion": "v24.19.0",
+    "source119AfterBuildHashMatch": true,
+    "cssFilesByteIdenticalToV54Dist": [
+      "assets/CumulonimbusApp-fw8aK7_r.css",
+      "assets/index-Cia3ypEr.css"
+    ]
+  },
+  "compiledTrialMetadataBundles": [
+    "assets/CumulonimbusApp-C6k0hYDj.js",
+    "assets/render.worker-BrVrSp4b.js"
+  ],
+  "hashes": {
+    "trial-source-manifest.json": "c1f6ba9a97a483a9c9980da5b373cc416a7ab39db209f064b27139c1d55c87b5",
+    "trial-source.patch": "9d1bb778dde2c819999525796d98e7019107ba073ae339cdf63c28fb8536d8f2",
+    "palette-only.patch": "7964d573af28e1996587895232251cc952693b8fbfa69a76eab093a36dfbef5e",
+    "app-dist-manifest.json": "d082a374b3e65285b5df6d543ed003e2307b6fe82f86ba832e2de5872aa13f60",
+    "hero-dist-manifest.json": "8375fc40ac258b84e7ae7671724234307fabc34cb4a9524e58d549e8609fd988",
+    "REPORT.md": "1a13b64599b7aef156d23b70ee1cec1d4b3ad32a2224baf962157e15563bacbc",
+    "comparison.json": "700ca9ac7088bce4447d40bd5902911badc81ae891d184249051f4e8d8404006",
+    "NOTICE-S2-PALETTE-PROPOSED.txt": "9abe396c1c843d785ae18339e600e65b231cf84fdfb2cd69184d55d1ce5ea0ad",
+    "verify-proposal.py": "b603718fdcadd0d4bb1dc9aea925bd8c133952ff22728eb011d6af4293c31c26"
+  },
+  "limits": [
+    "No GPU compile, native colour, CSS photo, worker render or FPS qualification yet.",
+    "Intrinsic authored Y preserved up to declared f32 rounding, not final radiance under coloured illumination.",
+    "Class median collapses forest hue variation intentionally; root visual judgement can reject it."
+  ],
+  "noRootProductEdits": true,
+  "noDependenciesInstalled": true,
+  "noLockfileChanges": true,
+  "noNewTextureReadPassOrRuntimeExpressions": true
+}

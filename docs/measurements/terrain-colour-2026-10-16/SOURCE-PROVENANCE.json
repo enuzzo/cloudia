@@ -1,0 +1,988 @@
+{
+  "status": "FINAL_CURATED_R1_REJECTED_R2_APPROVED_COLOUR_CHECKPOINT",
+  "scope": "Small external evidence curation; original bytes/hashes preserved, no product or repository mutations. This is not a self-contained full-data replay.",
+  "sourceSelection": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/curation-selection.json",
+    "sha256": "b69876e259035354eee7158b5d3c3bb8c4e45f62c23e34192be8195fd919b606",
+    "originalSelectedFiles": 34,
+    "satelliteSelectionCopied": 33,
+    "omittedSelectedFile": "sentinel2-scientific-view.pdf",
+    "renamedFile": {
+      "original": "verify-offline.py",
+      "curated": "reference-verifier.py",
+      "bytesUnchanged": true
+    },
+    "fullArchiveManifestSha256": "42c3bdf0b7cb9a5562952c170c1ada2a892372761b891c4916a66b28aa659bda"
+  },
+  "excluded": [
+    "Duplicate scientific PDF",
+    "Full RGB/validity float buffers and gzip volumes",
+    "S2 standalone large RGB PNG and Range bodies",
+    "Entire source119/dist/candidate trees",
+    "Dependencies and runtime texture assets"
+  ],
+  "copies": [
+    {
+      "path": "satellite/README.md",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/README.md",
+      "originalBytes": 5755,
+      "originalSha256": "9babdc9e4f4f5de3e480195f89fdf5e4ae325e6fce7ab7c1e736375ebce87cc2",
+      "storedBytes": 5755,
+      "storedSha256": "9babdc9e4f4f5de3e480195f89fdf5e4ae325e6fce7ab7c1e736375ebce87cc2",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/PROTOCOL.md",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/PROTOCOL.md",
+      "originalBytes": 4222,
+      "originalSha256": "ded51b69cb62b9a93fdb939e84a9d8ef8dbcbcdcbf1112cd34b1654387c0b513",
+      "storedBytes": 4222,
+      "storedSha256": "ded51b69cb62b9a93fdb939e84a9d8ef8dbcbcdcbf1112cd34b1654387c0b513",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/PROTOCOL-R1.md",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/PROTOCOL-R1.md",
+      "originalBytes": 5255,
+      "originalSha256": "799220694b63008ba8a0b84491df4b8c20b929ff75ea9f02bcd0a22999c4b655",
+      "storedBytes": 5255,
+      "storedSha256": "799220694b63008ba8a0b84491df4b8c20b929ff75ea9f02bcd0a22999c4b655",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/pre-run-freeze.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/pre-run-freeze.json",
+      "originalBytes": 1943,
+      "originalSha256": "8bf7125afede3a9b8b125661c127c4f490a2b45bf6ff93919b8749088f8f782f",
+      "storedBytes": 1943,
+      "storedSha256": "8bf7125afede3a9b8b125661c127c4f490a2b45bf6ff93919b8749088f8f782f",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/pre-run-structural-check.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/pre-run-structural-check.json",
+      "originalBytes": 1289,
+      "originalSha256": "90f5db4deefd001cc92e8554b763abc7ced27a84c7ecbfde6476615540946185",
+      "storedBytes": 1289,
+      "storedSha256": "90f5db4deefd001cc92e8554b763abc7ced27a84c7ecbfde6476615540946185",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/preprocess-sentinel2.py",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/preprocess-sentinel2.py",
+      "originalBytes": 24357,
+      "originalSha256": "308fb96e48c7c6aa05b6ca63d5322fbd42042937aab4eca6153e0d2c5fb5ce5e",
+      "storedBytes": 24357,
+      "storedSha256": "308fb96e48c7c6aa05b6ca63d5322fbd42042937aab4eca6153e0d2c5fb5ce5e",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/preprocess-sentinel2.r1.py.frozen",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/preprocess-sentinel2.r1.py.frozen",
+      "originalBytes": 22687,
+      "originalSha256": "69dabd239bbbffde8d9221a569b6f76b6aa9fab37f4b3e23129ccce17a51db3f",
+      "storedBytes": 22687,
+      "storedSha256": "69dabd239bbbffde8d9221a569b6f76b6aa9fab37f4b3e23129ccce17a51db3f",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/r1-to-r2-memory.patch.gz",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/r1-to-r2-memory.patch",
+      "originalBytes": 18134,
+      "originalSha256": "51461103e5b4f9d6c9534eabf352dbbeef268c796677d85c5f9922449abcfbb0",
+      "storedBytes": 6699,
+      "storedSha256": "c6e4a67bb8858e4e99ea26942217a5981db5c38667fd827b08167545c04e31f2",
+      "storage": "gzip-lossless-mtime0"
+    },
+    {
+      "path": "satellite/analyse-sentinel2.py",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/analyse-sentinel2.py",
+      "originalBytes": 3464,
+      "originalSha256": "197edfd1c40dca54939534d6bbb8b1f1cc967c87505759b141959b24abf50d7d",
+      "storedBytes": 3464,
+      "storedSha256": "197edfd1c40dca54939534d6bbb8b1f1cc967c87505759b141959b24abf50d7d",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/inputs.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/inputs.json",
+      "originalBytes": 702,
+      "originalSha256": "5deace0bbd4fe844524323eb375053da1c14b27b69a83e6ffbd005507f5eb912",
+      "storedBytes": 702,
+      "storedSha256": "5deace0bbd4fe844524323eb375053da1c14b27b69a83e6ffbd005507f5eb912",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/r2-inputs.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/r2-inputs.json",
+      "originalBytes": 2189,
+      "originalSha256": "bb9798a5e4cff4c440b24652f6d0e20b1a69af364159af692b5205d04da64a45",
+      "storedBytes": 2189,
+      "storedSha256": "bb9798a5e4cff4c440b24652f6d0e20b1a69af364159af692b5205d04da64a45",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/result.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/result.json",
+      "originalBytes": 5356,
+      "originalSha256": "56a0284339f93a06a691ce590d37128cc968e59940a0dac4557aef429eca507c",
+      "storedBytes": 5356,
+      "storedSha256": "56a0284339f93a06a691ce590d37128cc968e59940a0dac4557aef429eca507c",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/preprocess-result.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/preprocess-result.json",
+      "originalBytes": 4000,
+      "originalSha256": "69d8bd00d7b8d16d8947f2a2aa9be7a4a557e0bea1127d3951118092d4b69f21",
+      "storedBytes": 4000,
+      "storedSha256": "69d8bd00d7b8d16d8947f2a2aa9be7a4a557e0bea1127d3951118092d4b69f21",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/palette-and-diagnostics.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/palette-and-diagnostics.json",
+      "originalBytes": 4757,
+      "originalSha256": "deb51505ffbf1c598b5bb346cb79e7042fb9cc2eeec079f55a66dd91320127a7",
+      "storedBytes": 4757,
+      "storedSha256": "deb51505ffbf1c598b5bb346cb79e7042fb9cc2eeec079f55a66dd91320127a7",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/source-witnesses.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/source-witnesses.json",
+      "originalBytes": 3409,
+      "originalSha256": "da40f40e95ea0db9476d2ff18b74246cefbc9235640345bc777faed33a2f6201",
+      "storedBytes": 3409,
+      "storedSha256": "da40f40e95ea0db9476d2ff18b74246cefbc9235640345bc777faed33a2f6201",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/source-witness-pixels.csv.gz",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/source-witness-pixels.csv",
+      "originalBytes": 3386,
+      "originalSha256": "56ec907971236298f57a5cce946b1d2c4afebb304e91e46f1b505c8ffa2f430d",
+      "storedBytes": 1139,
+      "storedSha256": "9abb39769aea153aa11df188bb5c402010984ada49763c29dd432bf63b1e8e93",
+      "storage": "gzip-lossless-mtime0"
+    },
+    {
+      "path": "satellite/validity-by-worldcover.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/validity-by-worldcover.json",
+      "originalBytes": 3304,
+      "originalSha256": "6c30e253b415aa3d9b928b84efdf7b582dcc4caf13a4820bf77e86dc8891293e",
+      "storedBytes": 3304,
+      "storedSha256": "6c30e253b415aa3d9b928b84efdf7b582dcc4caf13a4820bf77e86dc8891293e",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/validity-cover-audit.py",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/validity-cover-audit.py",
+      "originalBytes": 1935,
+      "originalSha256": "e4c8c21ad4568c06531b25dfcee2175d5de0756bd65b4b7c9bb8a12432a79506",
+      "storedBytes": 1935,
+      "storedSha256": "e4c8c21ad4568c06531b25dfcee2175d5de0756bd65b4b7c9bb8a12432a79506",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/sentinel2-scientific-view.png",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/sentinel2-scientific-view.png",
+      "originalBytes": 1536665,
+      "originalSha256": "295a0a80b8b56d46ffa03ca72ede6bf4344d27082c2a1bf27064b21761a8a8b8",
+      "storedBytes": 1536665,
+      "storedSha256": "295a0a80b8b56d46ffa03ca72ede6bf4344d27082c2a1bf27064b21761a8a8b8",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/create-figures.py",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/create-figures.py",
+      "originalBytes": 4564,
+      "originalSha256": "a476749ce405848f88069dd26dc37bf1f6ede970d749ef07b58e44b6e13036a0",
+      "storedBytes": 4564,
+      "storedSha256": "a476749ce405848f88069dd26dc37bf1f6ede970d749ef07b58e44b6e13036a0",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/figure-record.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/figure-record.json",
+      "originalBytes": 709,
+      "originalSha256": "b4a9ad204d0e84fca1d2acb58bb927875ff568b03c2d4f7132bc95fbd3936dc3",
+      "storedBytes": 709,
+      "storedSha256": "b4a9ad204d0e84fca1d2acb58bb927875ff568b03c2d4f7132bc95fbd3936dc3",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/reference-verifier.py",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/verify-offline.py",
+      "originalBytes": 7873,
+      "originalSha256": "2d1addb0719a4035c93babf4ccc9f74bba9a70d4a40cb52843ab3c0d5fef1165",
+      "storedBytes": 7873,
+      "storedSha256": "2d1addb0719a4035c93babf4ccc9f74bba9a70d4a40cb52843ab3c0d5fef1165",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/independent-verification.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/independent-verification.json",
+      "originalBytes": 1166,
+      "originalSha256": "063c003f4ba3355e50758701bccc64670c03f9725e85e24d14bf1e52c668bbe5",
+      "storedBytes": 1166,
+      "storedSha256": "063c003f4ba3355e50758701bccc64670c03f9725e85e24d14bf1e52c668bbe5",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/artifact-manifest.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/artifact-manifest.json",
+      "originalBytes": 7409,
+      "originalSha256": "42c3bdf0b7cb9a5562952c170c1ada2a892372761b891c4916a66b28aa659bda",
+      "storedBytes": 7409,
+      "storedSha256": "42c3bdf0b7cb9a5562952c170c1ada2a892372761b891c4916a66b28aa659bda",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/local-range-verification.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/local-range-verification.json",
+      "originalBytes": 1581,
+      "originalSha256": "bee5ea6e2aa68e07e5781e1b639b93c778972cdf1f862abad924e3aff47ed094",
+      "storedBytes": 1581,
+      "storedSha256": "bee5ea6e2aa68e07e5781e1b639b93c778972cdf1f862abad924e3aff47ed094",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/ranges-manifest-r1.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/ranges-manifest-r1.json",
+      "originalBytes": 9283,
+      "originalSha256": "81b1a8b6662e192301c8d474a642a159341397b6c6bd06fb9df4b40888eb1049",
+      "storedBytes": 9283,
+      "storedSha256": "81b1a8b6662e192301c8d474a642a159341397b6c6bd06fb9df4b40888eb1049",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/overview4-range-plan.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/overview4-range-plan.json",
+      "originalBytes": 6723,
+      "originalSha256": "ab097ef34fe964150d9b3d8e655cb817473e55329e40abf1598fb030c169b53f",
+      "storedBytes": 6723,
+      "storedSha256": "ab097ef34fe964150d9b3d8e655cb817473e55329e40abf1598fb030c169b53f",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/metadata-probe.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/metadata-probe.json",
+      "originalBytes": 75226,
+      "originalSha256": "a5a1ea17f47b7467019e9d9a3de68bf776ff7013f4ba37bbce14f63078e2aebf",
+      "storedBytes": 75226,
+      "storedSha256": "a5a1ea17f47b7467019e9d9a3de68bf776ff7013f4ba37bbce14f63078e2aebf",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/NOTICE-SENTINEL2.txt",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/NOTICE-SENTINEL2.txt",
+      "originalBytes": 856,
+      "originalSha256": "30354b8fda6143a621f1e64a11aacfb4c60e4e09a59c02e59e74ae2ae8850f42",
+      "storedBytes": 856,
+      "storedSha256": "30354b8fda6143a621f1e64a11aacfb4c60e4e09a59c02e59e74ae2ae8850f42",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/SOURCE-LINKS.md",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/SOURCE-LINKS.md",
+      "originalBytes": 857,
+      "originalSha256": "ec16a974fad7c3d1e0d975b5bc837763f2b41d3bbab0aff9c92fe7affd63e360",
+      "storedBytes": 857,
+      "storedSha256": "ec16a974fad7c3d1e0d975b5bc837763f2b41d3bbab0aff9c92fe7affd63e360",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/primary-documents.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/primary-documents.json",
+      "originalBytes": 1798,
+      "originalSha256": "be8744742dcecd406d2af8e96e2a84255732450539936264728d071d2d38bbb5",
+      "storedBytes": 1798,
+      "storedSha256": "be8744742dcecd406d2af8e96e2a84255732450539936264728d071d2d38bbb5",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "satellite/cc-by-4.0-legalcode.txt.gz",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/cc-by-4.0-legalcode.txt",
+      "originalBytes": 18657,
+      "originalSha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+      "storedBytes": 5932,
+      "storedSha256": "5892bd050745fd2dd79c323c7c8095bc857a6a77a8303eab566aa5ffe8ba4b9e",
+      "storage": "gzip-lossless-mtime0"
+    },
+    {
+      "path": "satellite/esa-worldcover-data-access.html.gz",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/esa-worldcover-data-access.html",
+      "originalBytes": 49887,
+      "originalSha256": "71dccb4c949d489a903865f97ff3bddab75dbefad7f1c277acd1ba94967ed0e8",
+      "storedBytes": 11825,
+      "storedSha256": "c5266492463d770e27153595d5df5eabacf6cae92cdc41d0990e9942774a5b20",
+      "storage": "gzip-lossless-mtime0"
+    },
+    {
+      "path": "satellite/curation-selection.original.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/curation-selection.json",
+      "originalBytes": 10435,
+      "originalSha256": "b69876e259035354eee7158b5d3c3bb8c4e45f62c23e34192be8195fd919b606",
+      "storedBytes": 10435,
+      "storedSha256": "b69876e259035354eee7158b5d3c3bb8c4e45f62c23e34192be8195fd919b606",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/trial-freeze.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/trial-freeze.json",
+      "originalBytes": 3813,
+      "originalSha256": "6d62faa1dc9ad750db1e3fd244796c3a0cb9469e4be056c444d20da520f92bcc",
+      "storedBytes": 3813,
+      "storedSha256": "6d62faa1dc9ad750db1e3fd244796c3a0cb9469e4be056c444d20da520f92bcc",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/trial-source-manifest.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/trial-source-manifest.json",
+      "originalBytes": 26845,
+      "originalSha256": "c1f6ba9a97a483a9c9980da5b373cc416a7ab39db209f064b27139c1d55c87b5",
+      "storedBytes": 26845,
+      "storedSha256": "c1f6ba9a97a483a9c9980da5b373cc416a7ab39db209f064b27139c1d55c87b5",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/app-dist-manifest.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/app-dist-manifest.json",
+      "originalBytes": 4384,
+      "originalSha256": "d082a374b3e65285b5df6d543ed003e2307b6fe82f86ba832e2de5872aa13f60",
+      "storedBytes": 4384,
+      "storedSha256": "d082a374b3e65285b5df6d543ed003e2307b6fe82f86ba832e2de5872aa13f60",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/hero-dist-manifest.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/hero-dist-manifest.json",
+      "originalBytes": 1829,
+      "originalSha256": "8375fc40ac258b84e7ae7671724234307fabc34cb4a9524e58d549e8609fd988",
+      "storedBytes": 1829,
+      "storedSha256": "8375fc40ac258b84e7ae7671724234307fabc34cb4a9524e58d549e8609fd988",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/comparison.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/comparison.json",
+      "originalBytes": 8407,
+      "originalSha256": "700ca9ac7088bce4447d40bd5902911badc81ae891d184249051f4e8d8404006",
+      "storedBytes": 8407,
+      "storedSha256": "700ca9ac7088bce4447d40bd5902911badc81ae891d184249051f4e8d8404006",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/verify-proposal.py",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/verify-proposal.py",
+      "originalBytes": 2287,
+      "originalSha256": "b603718fdcadd0d4bb1dc9aea925bd8c133952ff22728eb011d6af4293c31c26",
+      "storedBytes": 2287,
+      "storedSha256": "b603718fdcadd0d4bb1dc9aea925bd8c133952ff22728eb011d6af4293c31c26",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/proposal-verification.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/proposal-verification.json",
+      "originalBytes": 434,
+      "originalSha256": "de74d6ace61ac50b887b9a5837e08b2964ce374b9b3d8a5f416d5fbece4b6363",
+      "storedBytes": 434,
+      "storedSha256": "de74d6ace61ac50b887b9a5837e08b2964ce374b9b3d8a5f416d5fbece4b6363",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/terrainSurface.before.ts",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/terrainSurface.before.ts",
+      "originalBytes": 13421,
+      "originalSha256": "c9745e3c727434a32c71e9d1e6ddd52eefb4db73880be10000d1b2c1cc811d87",
+      "storedBytes": 13421,
+      "storedSha256": "c9745e3c727434a32c71e9d1e6ddd52eefb4db73880be10000d1b2c1cc811d87",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/terrainSurface.after.ts",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/terrainSurface.after.ts",
+      "originalBytes": 13559,
+      "originalSha256": "d7e1accb8f90ef3cb924ef2625b5d0e5fd344cf30fe566fb39a3d485804b2e12",
+      "storedBytes": 13559,
+      "storedSha256": "d7e1accb8f90ef3cb924ef2625b5d0e5fd344cf30fe566fb39a3d485804b2e12",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/palette-only.patch",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/palette-only.patch",
+      "originalBytes": 1639,
+      "originalSha256": "7964d573af28e1996587895232251cc952693b8fbfa69a76eab093a36dfbef5e",
+      "storedBytes": 1639,
+      "storedSha256": "7964d573af28e1996587895232251cc952693b8fbfa69a76eab093a36dfbef5e",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/trial-source.patch",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/trial-source.patch",
+      "originalBytes": 9491,
+      "originalSha256": "9d1bb778dde2c819999525796d98e7019107ba073ae339cdf63c28fb8536d8f2",
+      "storedBytes": 9491,
+      "storedSha256": "9d1bb778dde2c819999525796d98e7019107ba073ae339cdf63c28fb8536d8f2",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/REPORT.md",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/REPORT.md",
+      "originalBytes": 5517,
+      "originalSha256": "1a13b64599b7aef156d23b70ee1cec1d4b3ad32a2224baf962157e15563bacbc",
+      "storedBytes": 5517,
+      "storedSha256": "1a13b64599b7aef156d23b70ee1cec1d4b3ad32a2224baf962157e15563bacbc",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/NOTICE-S2-PALETTE-PROPOSED.txt",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/NOTICE-S2-PALETTE-PROPOSED.txt",
+      "originalBytes": 2554,
+      "originalSha256": "9abe396c1c843d785ae18339e600e65b231cf84fdfb2cd69184d55d1ce5ea0ad",
+      "storedBytes": 2554,
+      "storedSha256": "9abe396c1c843d785ae18339e600e65b231cf84fdfb2cd69184d55d1ce5ea0ad",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/app-build.log",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/app-build.log",
+      "originalBytes": 1596,
+      "originalSha256": "43ae8e22e1a6d2af490142b0a3f2824a6dca91dd83458ff39027d1d34209b796",
+      "storedBytes": 1596,
+      "storedSha256": "43ae8e22e1a6d2af490142b0a3f2824a6dca91dd83458ff39027d1d34209b796",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/hero-build.log",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/hero-build.log",
+      "originalBytes": 341,
+      "originalSha256": "298c8725c7e9d8a147378a8cf56f68a78c06dfc9255a6deab7e53d8ddb2f6036",
+      "storedBytes": 341,
+      "storedSha256": "298c8725c7e9d8a147378a8cf56f68a78c06dfc9255a6deab7e53d8ddb2f6036",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/terrainSurface-test.log.gz",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/terrainSurface-test.log",
+      "originalBytes": 286,
+      "originalSha256": "10f953eb446b4bcec04fa427bdd1e7129106d1e775a746a6c7c64598c61baf34",
+      "storedBytes": 233,
+      "storedSha256": "29dd3c13dfcd32e8f523513aa47bb75de4543d3caea85c1166cfc12c8ebd8e41",
+      "storage": "gzip-lossless-mtime0"
+    },
+    {
+      "path": "r1/typecheck.log",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-proposal/typecheck.log",
+      "originalBytes": 0,
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "storedBytes": 0,
+      "storedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/browser/a-v54-coast-sun.css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/terrain-palette/a-v54-coast-sun.css.jpg",
+      "originalBytes": 63807,
+      "originalSha256": "14552b5a3f8c609037bd793cdf70c902e9d03d1c5c128dbe4a0d187923257502",
+      "storedBytes": 63807,
+      "storedSha256": "14552b5a3f8c609037bd793cdf70c902e9d03d1c5c128dbe4a0d187923257502",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/browser/a-v54-inland-sun.css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/terrain-palette/a-v54-inland-sun.css.jpg",
+      "originalBytes": 70959,
+      "originalSha256": "7972a5905acd61b616feb1faff0b5bf4c4ebc8fc0e2d9d0375ff0875cb84114d",
+      "storedBytes": 70959,
+      "storedSha256": "7972a5905acd61b616feb1faff0b5bf4c4ebc8fc0e2d9d0375ff0875cb84114d",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/browser/a-v54-mountains-sun.css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/terrain-palette/a-v54-mountains-sun.css.jpg",
+      "originalBytes": 77023,
+      "originalSha256": "eb11184dea4f5362fe06dee93778d2e0b7bfe805b75027da0803652f2ed76e9c",
+      "storedBytes": 77023,
+      "storedSha256": "eb11184dea4f5362fe06dee93778d2e0b7bfe805b75027da0803652f2ed76e9c",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/browser/a-v54-mountains-sunset.css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/terrain-palette/a-v54-mountains-sunset.css.jpg",
+      "originalBytes": 48828,
+      "originalSha256": "dbc85c8781bbd7d992f29c3eb497ec56faa8f93ef2388b17b2515b6eb33352f1",
+      "storedBytes": 48828,
+      "storedSha256": "dbc85c8781bbd7d992f29c3eb497ec56faa8f93ef2388b17b2515b6eb33352f1",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/browser/b-v55-coast-sun.css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/terrain-palette/b-v55-coast-sun.css.jpg",
+      "originalBytes": 63296,
+      "originalSha256": "4e6801bc06ebe47c48524d016bc500c92cf8f232ea0f4c71a0a30ca386661dee",
+      "storedBytes": 63296,
+      "storedSha256": "4e6801bc06ebe47c48524d016bc500c92cf8f232ea0f4c71a0a30ca386661dee",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/browser/b-v55-mountains-sun.css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/terrain-palette/b-v55-mountains-sun.css.jpg",
+      "originalBytes": 76446,
+      "originalSha256": "91f0d7aca86810ae687a3631b9b9713044074cc569a839d36710cdd25ff37009",
+      "storedBytes": 76446,
+      "storedSha256": "91f0d7aca86810ae687a3631b9b9713044074cc569a839d36710cdd25ff37009",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/browser/b-v55-mountains-sunset.css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/terrain-palette/b-v55-mountains-sunset.css.jpg",
+      "originalBytes": 48809,
+      "originalSha256": "8a5b9257349b275f8bec898489df0ec456b6ba27626a785ff7af88ab02ab6817",
+      "storedBytes": 48809,
+      "storedSha256": "8a5b9257349b275f8bec898489df0ec456b6ba27626a785ff7af88ab02ab6817",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/browser/COMPARISON-PROTOCOL.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/terrain-palette/COMPARISON-PROTOCOL.json",
+      "originalBytes": 1814,
+      "originalSha256": "a922d238ed6bb3001693cf953e6bda9da16752c5d2dcc39ce464e9faeb166fd6",
+      "storedBytes": 1814,
+      "storedSha256": "a922d238ed6bb3001693cf953e6bda9da16752c5d2dcc39ce464e9faeb166fd6",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/browser/R1-REJECTED-REVIEW.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/terrain-palette/R1-REJECTED-REVIEW.json",
+      "originalBytes": 2201,
+      "originalSha256": "e4e03596f27f7e9682faddba3473c16ddd59f3038c919fbf7090573e6446a8b6",
+      "storedBytes": 2201,
+      "storedSha256": "e4e03596f27f7e9682faddba3473c16ddd59f3038c919fbf7090573e6446a8b6",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r1/browser/r1-console.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/terrain-palette/r1-console.json",
+      "originalBytes": 293,
+      "originalSha256": "f512cf2d6021ecf2e0ff2df90f54ef60e5906e5b16c30ff8e105c9261bf7a260",
+      "storedBytes": 293,
+      "storedSha256": "f512cf2d6021ecf2e0ff2df90f54ef60e5906e5b16c30ff8e105c9261bf7a260",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/NOTICE-S2-PALETTE-PROPOSED.txt",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/NOTICE-S2-PALETTE-PROPOSED.txt",
+      "originalBytes": 3003,
+      "originalSha256": "88280ca2887e9ecf8f4b157eb1aa628c175a5e02a5a825fef8a5810cfc1a9d76",
+      "storedBytes": 3003,
+      "storedSha256": "88280ca2887e9ecf8f4b157eb1aa628c175a5e02a5a825fef8a5810cfc1a9d76",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/PROTOCOL.md",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/PROTOCOL.md",
+      "originalBytes": 2494,
+      "originalSha256": "c0d0eb351ff8b54d7f8597f4f9ce53c1de528d94262e085d5292d936fd41ec3d",
+      "storedBytes": 2494,
+      "storedSha256": "c0d0eb351ff8b54d7f8597f4f9ce53c1de528d94262e085d5292d936fd41ec3d",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/REPORT.md",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/REPORT.md",
+      "originalBytes": 4543,
+      "originalSha256": "cc3f2d32930815742b7664bee13e19b2443e603a82bc78476d340c92549a673a",
+      "storedBytes": 4543,
+      "storedSha256": "cc3f2d32930815742b7664bee13e19b2443e603a82bc78476d340c92549a673a",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/app-build.log",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/app-build.log",
+      "originalBytes": 1596,
+      "originalSha256": "17d3b08ccd8c90174061a0929b67cd1424cece47d9d8a1df4d2aa04bd8ffc1d8",
+      "storedBytes": 1596,
+      "storedSha256": "17d3b08ccd8c90174061a0929b67cd1424cece47d9d8a1df4d2aa04bd8ffc1d8",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/app-dist-manifest.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/app-dist-manifest.json",
+      "originalBytes": 4384,
+      "originalSha256": "96069b20effc7952dcfbc03b45ad2174d56de56f889c0d5a1ad8f004e602d88c",
+      "storedBytes": 4384,
+      "storedSha256": "96069b20effc7952dcfbc03b45ad2174d56de56f889c0d5a1ad8f004e602d88c",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/comparison.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/comparison.json",
+      "originalBytes": 13293,
+      "originalSha256": "41fb0d71b41756f892b6133065ff4bbe48d641d113c65f97f533e00a54c99744",
+      "storedBytes": 13293,
+      "storedSha256": "41fb0d71b41756f892b6133065ff4bbe48d641d113c65f97f533e00a54c99744",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/derivation-freeze.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/derivation-freeze.json",
+      "originalBytes": 278,
+      "originalSha256": "5505ed14a40750754fc9bf7d60fef057493fce3cb0f8d43d19b7955200ef1189",
+      "storedBytes": 278,
+      "storedSha256": "5505ed14a40750754fc9bf7d60fef057493fce3cb0f8d43d19b7955200ef1189",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/derivation.log",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/derivation.log",
+      "originalBytes": 9570,
+      "originalSha256": "24809d94a21ea9e3de91f4e553affe71bf01f99a6d41344b9723ade18ec899f2",
+      "storedBytes": 9570,
+      "storedSha256": "24809d94a21ea9e3de91f4e553affe71bf01f99a6d41344b9723ade18ec899f2",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/derive-candidate.py",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/derive-candidate.py",
+      "originalBytes": 7349,
+      "originalSha256": "6851fd2e16eca0fa472ba6ee636aecd9e738d56dca1fea1f8f97f871dba048c5",
+      "storedBytes": 7349,
+      "storedSha256": "6851fd2e16eca0fa472ba6ee636aecd9e738d56dca1fea1f8f97f871dba048c5",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/hero-build.log",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/hero-build.log",
+      "originalBytes": 341,
+      "originalSha256": "26fbe0a706181b33d0a3b7317ff99eda0b1c544f6edf3faacbd1194a75287eff",
+      "storedBytes": 341,
+      "storedSha256": "26fbe0a706181b33d0a3b7317ff99eda0b1c544f6edf3faacbd1194a75287eff",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/hero-dist-manifest.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/hero-dist-manifest.json",
+      "originalBytes": 1829,
+      "originalSha256": "8375fc40ac258b84e7ae7671724234307fabc34cb4a9524e58d549e8609fd988",
+      "storedBytes": 1829,
+      "storedSha256": "8375fc40ac258b84e7ae7671724234307fabc34cb4a9524e58d549e8609fd988",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/protocol-freeze.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/protocol-freeze.json",
+      "originalBytes": 282,
+      "originalSha256": "0edde28342c97d1d594d0d8a8632e67287ae553eadd27702d4a20ee247cab957",
+      "storedBytes": 282,
+      "storedSha256": "0edde28342c97d1d594d0d8a8632e67287ae553eadd27702d4a20ee247cab957",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/terrainSurface-test.log.gz",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/terrainSurface-test.log",
+      "originalBytes": 280,
+      "originalSha256": "01ab24dd452b93435c8a13bdaaac5e410d0e556d6f4125e71d7e6202cf7cf662",
+      "storedBytes": 230,
+      "storedSha256": "d3a78e1aefe643181f695f2d33d3c93512ae79520fd2630c8e759b1e78fdd304",
+      "storage": "gzip-lossless-mtime0"
+    },
+    {
+      "path": "r2/terrainSurface.after.ts",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/terrainSurface.after.ts",
+      "originalBytes": 13659,
+      "originalSha256": "0ff8de3514feb3714ba4e931c246d0bd339634661aa37a7d87e79f61c1ddff3f",
+      "storedBytes": 13659,
+      "storedSha256": "0ff8de3514feb3714ba4e931c246d0bd339634661aa37a7d87e79f61c1ddff3f",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/terrainSurface.before.ts",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/terrainSurface.before.ts",
+      "originalBytes": 13421,
+      "originalSha256": "c9745e3c727434a32c71e9d1e6ddd52eefb4db73880be10000d1b2c1cc811d87",
+      "storedBytes": 13421,
+      "storedSha256": "c9745e3c727434a32c71e9d1e6ddd52eefb4db73880be10000d1b2c1cc811d87",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/trial-freeze.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/trial-freeze.json",
+      "originalBytes": 4086,
+      "originalSha256": "d5ddf12c2b4e24a714163f6ae246bbc475aeae479499817791882ddde5bf3e68",
+      "storedBytes": 4086,
+      "storedSha256": "d5ddf12c2b4e24a714163f6ae246bbc475aeae479499817791882ddde5bf3e68",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/trial-source-manifest.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/trial-source-manifest.json",
+      "originalBytes": 26634,
+      "originalSha256": "b16bd9f1388c0e30c4d53d63096b61ddefe7eb2d41215e2c34bc616dc4c4fae5",
+      "storedBytes": 26634,
+      "storedSha256": "b16bd9f1388c0e30c4d53d63096b61ddefe7eb2d41215e2c34bc616dc4c4fae5",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/trial-source.patch",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/trial-source.patch",
+      "originalBytes": 9512,
+      "originalSha256": "b816783cc1e5576ed30f30de5e5cc0bbc16b53155569b5845280ab0e1b87e145",
+      "storedBytes": 9512,
+      "storedSha256": "b816783cc1e5576ed30f30de5e5cc0bbc16b53155569b5845280ab0e1b87e145",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/typecheck.log",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/typecheck.log",
+      "originalBytes": 0,
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "storedBytes": 0,
+      "storedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/verification.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/verification.json",
+      "originalBytes": 804,
+      "originalSha256": "d7405464481061450287617d5d56477da0ce272ed20ea1d5fe57132dce8b6141",
+      "storedBytes": 804,
+      "storedSha256": "d7405464481061450287617d5d56477da0ce272ed20ea1d5fe57132dce8b6141",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/verify-candidate.py",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-palette-r2/verify-candidate.py",
+      "originalBytes": 3637,
+      "originalSha256": "522ac51f09f7d7dccc893924a796544b50bd31a4fcb7d77d1de3aaa21283c836",
+      "storedBytes": 3637,
+      "storedSha256": "522ac51f09f7d7dccc893924a796544b50bd31a4fcb7d77d1de3aaa21283c836",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "checks/approved-source-119.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/source-manifest.json",
+      "originalBytes": 12480,
+      "originalSha256": "30c5448e87fb60c3bd3fdc8ca133993c49e54503a9950f9da1815fd59883171f",
+      "storedBytes": 12480,
+      "storedSha256": "30c5448e87fb60c3bd3fdc8ca133993c49e54503a9950f9da1815fd59883171f",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "checks/approved-dist-30.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/dist-manifest.json",
+      "originalBytes": 3083,
+      "originalSha256": "79d07ae7119d9085a61083fdc32f9125218d0d59ad1c39c16eb9fae6a4ee2f86",
+      "storedBytes": 3083,
+      "storedSha256": "79d07ae7119d9085a61083fdc32f9125218d0d59ad1c39c16eb9fae6a4ee2f86",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "checks/test-results.json.gz",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/test-results.json",
+      "originalBytes": 129121,
+      "originalSha256": "086640ad5aa45d0f8125879f57e317478171ba2db190fdf25f0425b1a828fe03",
+      "storedBytes": 18384,
+      "storedSha256": "3a913505f1ca125333120b55bbe563e0a7f083c7b60af2f3511f01bcdcd3bf57",
+      "storage": "gzip-lossless-mtime0"
+    },
+    {
+      "path": "checks/tests.log.gz",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/tests.log",
+      "originalBytes": 245,
+      "originalSha256": "dcbda1716cbb163d19b4e16be3926537c087a7d9f1fd951cdf0a972e80323f4e",
+      "storedBytes": 158,
+      "storedSha256": "c313a4a1cfdd665602232406eff89ed8d8d25cf82674ec1c7737b7c84cf1f07e",
+      "storage": "gzip-lossless-mtime0"
+    },
+    {
+      "path": "checks/typecheck.log.gz",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/typecheck.log",
+      "originalBytes": 15,
+      "originalSha256": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92",
+      "storedBytes": 35,
+      "storedSha256": "0c0915114424d63381ed7b0658c57fc5a58cc79bdac39737176361b6203ae9de",
+      "storage": "gzip-lossless-mtime0"
+    },
+    {
+      "path": "checks/app-build.log.gz",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/app-build.log",
+      "originalBytes": 1753,
+      "originalSha256": "f9eead4c9714fd514f77bd78ed33090576da5aeeccb3007246c7840b7cde4ca0",
+      "storedBytes": 833,
+      "storedSha256": "bc3790f419810e3958b8b452798a686fdf8c29be318aae129d6305d855ecbdd3",
+      "storage": "gzip-lossless-mtime0"
+    },
+    {
+      "path": "checks/hero-build.log.gz",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/hero-build.log",
+      "originalBytes": 456,
+      "originalSha256": "3b76c839cf94ff57d395f0443559b049f9f3d4ce5d6f98a73c2cb2fb46620539",
+      "storedBytes": 312,
+      "storedSha256": "dd0431cbfa14b31e3680a71941c3086b19cfce94e68bfd4e40295553b43ff91c",
+      "storage": "gzip-lossless-mtime0"
+    },
+    {
+      "path": "checks/sun-native.raw.json.gz",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/sun-native.raw.json",
+      "originalBytes": 5825453,
+      "originalSha256": "a2287f9865d5cdd35d5806deb073ff78352758a0497910206a3a5561ec3c5110",
+      "storedBytes": 424767,
+      "storedSha256": "e44e18330585ebbe7ac39babc8f033c3948a558eb234282abdfc76d5a04fc5f3",
+      "storage": "gzip-lossless-mtime0"
+    },
+    {
+      "path": "checks/rain-native.raw.json.gz",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/rain-native.raw.json",
+      "originalBytes": 1720052,
+      "originalSha256": "83c070faf1f74344597d88e9efb3c104c0ff59aeef50651714ecda69c59c154e",
+      "storedBytes": 130533,
+      "storedSha256": "94139e1cd9305b1ab283a0bf1a24b4be02cc10710e7c8e90fa00063a7c75425b",
+      "storage": "gzip-lossless-mtime0"
+    },
+    {
+      "path": "checks/initial-test-failure.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/initial-test-failure.json",
+      "originalBytes": 305,
+      "originalSha256": "c17574c5fbd93cbd512e5176c5fc9c0853656d7b8ac821056744c4704393e830",
+      "storedBytes": 305,
+      "storedSha256": "c17574c5fbd93cbd512e5176c5fc9c0853656d7b8ac821056744c4704393e830",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "checks/initial-test-results.json.gz",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/approved-v55/test-results.json",
+      "originalBytes": 130908,
+      "originalSha256": "cbe6cb10777a42334758ecab51cca019f02ad63c0fa71b6ea9dfece8628456cd",
+      "storedBytes": 18666,
+      "storedSha256": "e1028a8173ec6b196a565d639a939519d9cc9baa093a5d7ac6952a6ab041ed9f",
+      "storage": "gzip-lossless-mtime0"
+    },
+    {
+      "path": "checks/initial-tests.log.gz",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/approved-v55/tests.log",
+      "originalBytes": 291,
+      "originalSha256": "f556d078c3679bc4391bd394d2e634b90f6d97ef1adb7b52bbc7d4044f107bae",
+      "storedBytes": 187,
+      "storedSha256": "090b2c7ee9b88efb837d4ae5f5977ca359ee7b4998417b3d9de08f709df33682",
+      "storage": "gzip-lossless-mtime0"
+    },
+    {
+      "path": "r2/browser/c-v55-r2-coast-sun.css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/terrain-palette/c-v55-r2-coast-sun.css.jpg",
+      "originalBytes": 63650,
+      "originalSha256": "8708d0447539f5231f9d7be7ca0532cd64179787ada0c103c9edda3424278215",
+      "storedBytes": 63650,
+      "storedSha256": "8708d0447539f5231f9d7be7ca0532cd64179787ada0c103c9edda3424278215",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/browser/c-v55-r2-mountains-sun.css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/terrain-palette/c-v55-r2-mountains-sun.css.jpg",
+      "originalBytes": 77172,
+      "originalSha256": "f2bd2c549b024a51e3c24d9b657c767a3079970fd865bd843839f99c09fdd6d3",
+      "storedBytes": 77172,
+      "storedSha256": "f2bd2c549b024a51e3c24d9b657c767a3079970fd865bd843839f99c09fdd6d3",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/browser/c-v55-r2-mountains-sunset.css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/terrain-palette/c-v55-r2-mountains-sunset.css.jpg",
+      "originalBytes": 48860,
+      "originalSha256": "da4f189bc1ce2b809fff2e44345e8b24bfe4db840a224997893b60e686cee5a9",
+      "storedBytes": 48860,
+      "storedSha256": "da4f189bc1ce2b809fff2e44345e8b24bfe4db840a224997893b60e686cee5a9",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/browser/R2-COLOUR-REVIEW.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/terrain-palette/R2-COLOUR-REVIEW.json",
+      "originalBytes": 1785,
+      "originalSha256": "6c628db006ea57b608ca2d39c06c47f558ad150f634fdc9b96339493fb37cb02",
+      "storedBytes": 1785,
+      "storedSha256": "6c628db006ea57b608ca2d39c06c47f558ad150f634fdc9b96339493fb37cb02",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "r2/browser/r2-console.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/terrain-palette/r2-console.json",
+      "originalBytes": 293,
+      "originalSha256": "77117a38647731c44f0372993ac9160a20a3afee0c9c9b2cadd1cb51d5324da8",
+      "storedBytes": 293,
+      "storedSha256": "77117a38647731c44f0372993ac9160a20a3afee0c9c9b2cadd1cb51d5324da8",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "checks/worker-functional.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/worker-functional.json",
+      "originalBytes": 799,
+      "originalSha256": "ce23ce7e3c5524ee3f58e87a82784313e0f62d196ce3f25bb49642244346a372",
+      "storedBytes": 799,
+      "storedSha256": "ce23ce7e3c5524ee3f58e87a82784313e0f62d196ce3f25bb49642244346a372",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "checks/worker-sun-native.css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/worker-sun-native.css.jpg",
+      "originalBytes": 70853,
+      "originalSha256": "fce468d7aea3f97a244d9bb0376b8d1570298aeb2acfa2de28100d957e3e40a7",
+      "storedBytes": 70853,
+      "storedSha256": "fce468d7aea3f97a244d9bb0376b8d1570298aeb2acfa2de28100d957e3e40a7",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "checks/preview-functional.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/preview-functional.json",
+      "originalBytes": 725,
+      "originalSha256": "0d19104ea557d79a3b6c3d8410255846c76278b207e598f3cc878fa75ee99d47",
+      "storedBytes": 725,
+      "storedSha256": "0d19104ea557d79a3b6c3d8410255846c76278b207e598f3cc878fa75ee99d47",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "checks/preview-sun-animated.css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/preview-sun-animated.css.jpg",
+      "originalBytes": 61251,
+      "originalSha256": "80aecc2f194376cfbf26a8144b6b63bec9ed97954bed598a7eee6b25ab0ecae3",
+      "storedBytes": 61251,
+      "storedSha256": "80aecc2f194376cfbf26a8144b6b63bec9ed97954bed598a7eee6b25ab0ecae3",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "checks/main-console.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/main-console.json",
+      "originalBytes": 293,
+      "originalSha256": "07c9ec775911f0e78b3a21b6a947952001629743e07c0f14ad7f1ae68d49a42c",
+      "storedBytes": 293,
+      "storedSha256": "07c9ec775911f0e78b3a21b6a947952001629743e07c0f14ad7f1ae68d49a42c",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "checks/main-rain-native.css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/main-rain-native.css.jpg",
+      "originalBytes": 60038,
+      "originalSha256": "a39ee6b3280b6c481fc248828a0d1ea24f1850a1537a9f8fb2e68882ef6eb3ac",
+      "storedBytes": 60038,
+      "storedSha256": "a39ee6b3280b6c481fc248828a0d1ea24f1850a1537a9f8fb2e68882ef6eb3ac",
+      "storage": "byte-identical"
+    },
+    {
+      "path": "checks/performance-summary.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/performance-summary.json",
+      "originalBytes": 5914,
+      "originalSha256": "fa2c33e20a96f97d1e8b85d059498c849594a32622a83011edb6a6b581261252",
+      "storedBytes": 5914,
+      "storedSha256": "fa2c33e20a96f97d1e8b85d059498c849594a32622a83011edb6a6b581261252",
+      "storage": "byte-identical"
+    }
+  ],
+  "finalManifest": "MANIFEST.json enumerates all stored payloads; raw original hashes are separate for lossless gzip storage",
+  "rootPerformanceVerificationReference": {
+    "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/v55-final/performance-verification.json",
+    "originalBytes": 17918990,
+    "originalSha256": "d7f43be676f3b96206929174989ad396f7d0edeea17b158429c8099275ec3d35",
+    "copied": false,
+    "reason": "Large derived verification repeats raw timestamp payloads; both complete original raw reports are preserved losslessly and arithmetic is recomputed by curated verify.py"
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "palette": [
+    {
+      "classCode": 10,
+      "latticeCandidates": 82056,
+      "acceptedSamples": 80090,
+      "status": "PASS_SAMPLE_COUNT",
+      "excludedNotFullyValid": 0,
+      "excludedForbiddenClass": 1939,
+      "excludedDark": 27,
+      "excludedBright": 0,
+      "excludedCloudSnowSuspect": 0,
+      "linearRGBmedian": [
+        0.03848470747470856,
+        0.04906962811946869,
+        0.029798056930303574
+      ],
+      "luminanceMedian": 0.04563711920138448,
+      "chromaticityY1median": [
+        0.8351433171623126,
+        1.08337186101725,
+        0.6595703015478548
+      ],
+      "chromaticityP10": [
+        0.7084816501512842,
+        1.032465651048031,
+        0.5924196515362015
+      ],
+      "chromaticityP90": [
+        1.010158121640729,
+        1.1194500990928153,
+        0.7416103620898041
+      ]
+    },
+    {
+      "classCode": 20,
+      "latticeCandidates": 28,
+      "acceptedSamples": 28,
+      "status": "LOW_N_NO_PALETTE_RECOMMENDATION",
+      "excludedNotFullyValid": 0,
+      "excludedForbiddenClass": 0,
+      "excludedDark": 0,
+      "excludedBright": 0,
+      "excludedCloudSnowSuspect": 0,
+      "linearRGBmedian": [
+        0.06834224611520767,
+        0.06849537789821625,
+        0.05100355111062527
+      ],
+      "luminanceMedian": 0.06719991218708456,
+      "chromaticityY1median": [
+        1.0357114506603802,
+        1.0153642411738388,
+        0.7426487576464518
+      ],
+      "chromaticityP10": [
+        0.9846272179306831,
+        1.0032927124118485,
+        0.6515884197011839
+      ],
+      "chromaticityP90": [
+        1.075421655911594,
+        1.0360629070871465,
+        0.7853357919526505
+      ]
+    },
+    {
+      "classCode": 30,
+      "latticeCandidates": 2944,
+      "acceptedSamples": 2628,
+      "status": "PASS_SAMPLE_COUNT",
+      "excludedNotFullyValid": 0,
+      "excludedForbiddenClass": 309,
+      "excludedDark": 0,
+      "excludedBright": 0,
+      "excludedCloudSnowSuspect": 7,
+      "linearRGBmedian": [
+        0.0889243334531784,
+        0.08623934537172318,
+        0.05790826864540577
+      ],
+      "luminanceMedian": 0.08458326622322201,
+      "chromaticityY1median": [
+        1.0346337316865943,
+        1.021889893739464,
+        0.6811802858859474
+      ],
+      "chromaticityP10": [
+        0.8710579982305836,
+        0.9804819338517445,
+        0.620113400872388
+      ],
+      "chromaticityP90": [
+        1.166748681194322,
+        1.072924605856995,
+        0.7862476364491149
+      ]
+    },
+    {
+      "classCode": 60,
+      "latticeCandidates": 23,
+      "acceptedSamples": 10,
+      "status": "LOW_N_NO_PALETTE_RECOMMENDATION",
+      "excludedNotFullyValid": 0,
+      "excludedForbiddenClass": 7,
+      "excludedDark": 0,
+      "excludedBright": 0,
+      "excludedCloudSnowSuspect": 7,
+      "linearRGBmedian": [
+        0.2532196119427681,
+        0.23109469562768936,
+        0.20245438814163208
+      ],
+      "luminanceMedian": 0.2338797239154577,
+      "chromaticityY1median": [
+        1.0596920263560095,
+        0.9932197105769079,
+        0.891395265818666
+      ],
+      "chromaticityP10": [
+        1.0514608114054664,
+        0.9840536185922786,
+        0.7925416091232533
+      ],
+      "chromaticityP90": [
+        1.1223930468784467,
+        0.9944275637159408,
+        0.9194081556300115
+      ]
+    }
+  ],
+  "globalHeuristics": {
+    "cloudSnowSuspectCells": 2333,
+    "darkCells": 36823,
+    "brightCells": 18,
+    "visualGain3ClippedChannels": 3061
+  },
+  "seams": {
+    "x0_lon10": {
+      "boundary": {
+        "count": 1227,
+        "median": 0.005887795239686966,
+        "p95": 0.032617099583148956,
+        "max": 0.12129168212413788
+      },
+      "nearbyParallelControls": {
+        "count": 17178,
+        "median": 0.005408346652984619,
+        "p95": 0.030350331030786035,
+        "max": 0.15103919804096222
+      },
+      "scope": "Adjacentcellsnotidenticalground;diagnosticnotproofseamcausedcalibration"
+    },
+    "z0_lat44": {
+      "boundary": {
+        "count": 1323,
+        "median": 0.0044469572603702545,
+        "p95": 0.03180307894945145,
+        "max": 0.18079586327075958
+      },
+      "nearbyParallelControls": {
+        "count": 18522,
+        "median": 0.004072880372405052,
+        "p95": 0.02665752358734612,
+        "max": 0.221017524600029
+      },
+      "scope": "Adjacentcellsnotidenticalground;diagnosticnotproofseamcausedcalibration"
+    }
+  },
+  "maskProtocol": "latticex,z=2mod4;valid>=.99;class>=.95;sum0/40/50/80<=.01;Yin[.02,.60];excludegraybrightcloudheuristicminRGB>=.25andspread<=.12;lowN<256",
+  "limits": "Heuristicsnotcloudclassifier;noSCL/QAoracquisitionangleavailablehere.Tree10includesorchards;coarse125mclassescancontaminate37mRGBfootprints.Palettechromaticityisnotalbedo."
+}
