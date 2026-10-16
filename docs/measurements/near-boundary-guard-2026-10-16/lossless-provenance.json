@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "originalPackages": {
+    "provenance": {
+      "file": "provenance-original.tar.gz",
+      "manifestSHA256": "9a8b921030f7f44cf92fc51ac056742acf9937da11890509457a9c982ae0b806",
+      "manifestBytes": 2523,
+      "originalPayloads": 17,
+      "archivedFiles": 18,
+      "originalDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/near-provenance-diff"
+    },
+    "guard": {
+      "file": "guard-original.tar.gz",
+      "manifestSHA256": "7312a600dbcffcdab9da9d7f3b3a62632f6b715991b6345c3a4e344800f7be2b",
+      "manifestBytes": 1040,
+      "originalPayloads": 7,
+      "archivedFiles": 8,
+      "originalDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/near-boundary-guard"
+    }
+  },
+  "losslessGzipOriginals": {
+    "inputs/near-interior-stencils.json.gz": {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/near-interior-stencils.json",
+      "bytes": 1827573,
+      "sha256": "4e9df3ae24002951d3286bbb3dd7d13539bd2f00e2b2df28e9a63f9225c71a87"
+    },
+    "inputs/near-interior-next.json.gz": {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/near-interior-next.json",
+      "bytes": 364619,
+      "sha256": "b526b685fcec465d21b0c3bef81aadbcd076b3c5958d26d2de98a53e7d7023e7"
+    },
+    "inputs/near-interior-next.py.gz": {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/near-interior-next.py",
+      "bytes": 9312,
+      "sha256": "ea7eaab7ec9448a8811e8d8c575617d301e66437574566680a1a172bb3965ff8"
+    },
+    "inputs/near-interior-next.md.gz": {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/near-interior-next.md",
+      "bytes": 6039,
+      "sha256": "ae0034876bd763553001c5632db04395a29ff223b9f2a283947fb9c541655594"
+    },
+    "inputs/near-interior-stencils.ts.gz": {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/near-interior-stencils.ts",
+      "bytes": 14956,
+      "sha256": "bc62d77c57d90abd63b7fc7cc947f82e077a471f19743844ef7e6f1703e44ce6"
+    },
+    "inputs/root-boundary-guard.md.gz": {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/near-interior-boundary-guard-root.md",
+      "bytes": 3088,
+      "sha256": "bdb49f40cbdc1168c06f516b6cbcfdf42a12d9e1272d383978eb84ac846774a9"
+    },
+    "inputs/jpeg-comparison.json.gz": {
+      "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle14/near-light/jpeg-comparison.json",
+      "bytes": 11045,
+      "sha256": "8494a8d674b2dbb9096ebe2ee7d6e7b2219686624ff533cfe1915d533a111a1b"
+    }
+  }
+}

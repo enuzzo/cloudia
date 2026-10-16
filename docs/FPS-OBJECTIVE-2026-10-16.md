@@ -8,7 +8,45 @@ output pieno configurato. Questo obiettivo si aggiunge ad anatomia delle tre
 famiglie, luce ravvicinata continua, pioggia/virga integrate nel paesaggio e UI.
 Nessuno di questi gate è sostituito dal contatore dei frame.
 
-## Stato corrente: R8 selezionata soltanto con pioggia
+## Stato corrente: v50 preservata, cache terreno ritirata
+
+Il prodotto resta quello di `10493af`: 256³/128³/384 e output pieno, R8
+selezionata nella pioggia, continuità solare v49 e modifiche di qualità v50.
+La qualifica integrata v50 conserva 255 test/37 file, typecheck e app→hero;
+le successive prove qui sotto restano trial esterni.
+
+Il [confronto cache terreno](EXPERIMENT-TERRAIN-GEOMETRY-CACHE-2026-10-16.md)
+usa sei finestre da 30 s a **2112×1844 nativi**, stessa camera, seed 72,
+tempo 60 s in pausa, vento 55%, dispersione 0%, flusso e lavoro completi.
+
+|Scenario|A1 v50|B cache|A2 v50|Esito|
+|---|---:|---:|---:|---|
+|Pioggia 80%|13,5165|13,9503|13,6503|+2,1975% sul controllo migliore; sotto gate 5%|
+|Sole dry|59,9978|59,9964|59,9944|Cadenza vicina al limite rAF, nessun beneficio osservato|
+
+Valori in invii/s, **presentazione non misurata**. Prefissi coda completi;
+timestamp con copertura parziale esplicita. La cache richiede circa 59,43 MiB
+e il render post-film Float32 non è bit-identico: trial ritirato. Le condizioni
+e la griglia differiscono dai cicli precedenti; non sommare percentuali.
+
+Per evitare di ripetere prove concluse, questi percorsi restano fermati:
+
+- [Cache pioggia A/s](RAIN-CACHE-AUDIT-2026-10-16.md), phase1 e phase2:
+  128³/256³ falliscono il massimo mapping 1,5 m. Il 256³ supera p99/tau;
+  le code tenui non provano danno fotografico e non cambiano i gate iniziali.
+- [Riuso aerial](EXPERIMENT-SHARED-AERIAL-2026-10-16.md): la replica non
+  riproduce il vantaggio, con deriva dei controlli; nessuno speedup attribuito.
+- [Cache geometria terreno](EXPERIMENT-TERRAIN-GEOMETRY-CACHE-2026-10-16.md):
+  il confronto corrente sopra non giustifica adozione o altre repliche.
+
+Il prossimo audit valuta la fattibilità della preintegrazione rain-only con
+errore ottico delimitato, già proposta in [RAIN-NEXT](RAIN-NEXT-2026-10-16.md).
+Prima di contatori o gerarchie serve verificare che il costo della certificazione
+non assorba il risparmio. La sorgente aerial v50 usa `k=.006+.004*haze`;
+la formula `.0035*haze` in quella proposta appartiene al modello storico.
+Nessuna di queste misure chiude il target 60 FPS sostenuti o i gate artistici.
+
+## Istantanea v48: R8 selezionata soltanto con pioggia
 
 La [candidata v48](EXPERIMENT-DENSITY-R8-2026-10-16.md) conserva lo shader
 asciutto v46 e usa una copia byte-esatta R8 nel lookup densità con pioggia.
@@ -24,7 +62,7 @@ intervalli oltre 33,34 ms. **Obiettivo 60 ancora aperto**, insieme a
 presentazione, altre pose/seed e continuità artistica. I confronti storici
 sotto rimangono riferiti ai rispettivi build e sessioni.
 
-## Stato corrente dopo il confronto pioggia A/B/A
+## Istantanea v46 dopo il confronto pioggia A/B/A
 
 Il [checkpoint locale 6a7df91](FPS-RAIN-ABA-2026-10-16.md) documenta un vantaggio
 della maschera v46 in una scena pioggia statica a qualità piena: 17,3227 invii/s
@@ -75,10 +113,12 @@ non è un miglioramento FPS misurato. **Obiettivo60 sostenuti ancora aperto.**
 - Il contatore attuale registra i callback rAF che arrivano all'invio del
   rendering. Con limite ai frame in volo scarta i callback rifiutati. Non conta
   le presentazioni del compositor e, senza limite, non dimostra coda stabile.
-- La durata GPU attuale deriva dai timestamp Three: somma i pass di rendering
-  campionati per frame e tiene l'ultimo frame del batch risolto. La media di
-  queste somme è diagnostica; non è reciprocamente convertibile in FPS e non
-  va confusa con latenza totale o throughput della GPU. I campioni sono sparsi.
+- I timestamp Three restano diagnostici. Lo schema 3 associa i pass freschi ai
+  draw solo tramite il ledger verificato e dichiara copertura completa/mancante;
+  le vecchie medie sparse dell'ultimo frame del batch restano campi separati.
+  Le somme non sono convertibili in FPS o costo GPU esclusivo. I raw attuali
+  non conservano begin/end assoluti: non dimostrano una timeline fisica o
+  assenza di sovrapposizioni fra gli intervalli.
 - Il completamento della coda è distinto dalla presentazione. Per una futura
   accettazione servono frequenza e distribuzione degli intervalli, completamento
   del lavoro inviato senza accumulo crescente e osservazione del movimento.

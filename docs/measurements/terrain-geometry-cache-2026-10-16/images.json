@@ -1,0 +1,77 @@
+{
+  "scope": "Original browser JPEG snapshots at CSS resolution, not native PNG or continuous video. UI overlays differ in rain. Native render grid is documented by raw JSON.",
+  "images": [
+    {
+      "path": "browser/terrain-fps-A1.jpg",
+      "dimensions": [
+        1056,
+        922
+      ],
+      "bytes": 76274,
+      "sha256": "c2417943c1c937bf30044f8f647b2811331fa1f924c90628ee2f4d5e8b37c0bd"
+    },
+    {
+      "path": "browser/terrain-fps-A2.jpg",
+      "dimensions": [
+        1056,
+        922
+      ],
+      "bytes": 68168,
+      "sha256": "0c4bea9ee0d542c05d2ee9d7ba0659f0833d5d07174805d28f6d454e7f39a3a0"
+    },
+    {
+      "path": "browser/terrain-fps-B.jpg",
+      "dimensions": [
+        1056,
+        922
+      ],
+      "bytes": 82998,
+      "sha256": "099023efddf79438914fad14a2bae8ac236589dc46ce816e57824dd79165b8e8"
+    },
+    {
+      "path": "browser/terrain-sun-fps-A1.jpg",
+      "dimensions": [
+        1056,
+        922
+      ],
+      "bytes": 57664,
+      "sha256": "9ce2b9f577e3677bf61b73c2824a34841b8295dd93e5b11b0a1dbb1b3e09fbe2"
+    },
+    {
+      "path": "browser/terrain-sun-fps-A2.jpg",
+      "dimensions": [
+        1056,
+        922
+      ],
+      "bytes": 57664,
+      "sha256": "9ce2b9f577e3677bf61b73c2824a34841b8295dd93e5b11b0a1dbb1b3e09fbe2"
+    },
+    {
+      "path": "browser/terrain-sun-fps-B.jpg",
+      "dimensions": [
+        1056,
+        922
+      ],
+      "bytes": 57664,
+      "sha256": "9ce2b9f577e3677bf61b73c2824a34841b8295dd93e5b11b0a1dbb1b3e09fbe2"
+    },
+    {
+      "path": "browser/terrain-witness-r1-main.jpg",
+      "dimensions": [
+        1056,
+        922
+      ],
+      "bytes": 83849,
+      "sha256": "17b09a12efd1d71fb44ff04bde5be9344620c42e73809fee6624bc893e99a2e8"
+    },
+    {
+      "path": "browser/terrain-witness-r2-main.jpg",
+      "dimensions": [
+        1056,
+        922
+      ],
+      "bytes": 83842,
+      "sha256": "95cc069a3ac5628497e60e6b3c412ebb9fdd51a7e06e9561186447954fd510d5"
+    }
+  ]
+}

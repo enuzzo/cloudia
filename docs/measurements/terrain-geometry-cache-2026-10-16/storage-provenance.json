@@ -1,0 +1,682 @@
+{
+  "status": "retired-not-promoted",
+  "baseCommit": "10493afa7f6d90389c39e17b2cad79397dfdac01",
+  "scope": "Curated changed originals only; full R1 external snapshot/dist not duplicated. Full manifests preserved for provenance. R1/R2 historical notes retain their original pending statuses.",
+  "originals": [
+    {
+      "path": "browser/terrain-fps-A1-metadata.txt.gz",
+      "bytes": 1413,
+      "sha256": "61a234df3489c09c9a1457dcbd5a3188075a46c97c61c2101af90186a9309d7e",
+      "encoding": "gzip",
+      "originalBytes": 3997,
+      "originalSha256": "b7452f39a5ac5be5ad7ad842a5b3458d2a5413860b7c63d74508ef6cb6832107",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-fps-A1-metadata.txt"
+    },
+    {
+      "path": "browser/terrain-fps-A1.jpg",
+      "bytes": 76274,
+      "sha256": "c2417943c1c937bf30044f8f647b2811331fa1f924c90628ee2f4d5e8b37c0bd",
+      "encoding": "identity",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-fps-A1.jpg"
+    },
+    {
+      "path": "browser/terrain-fps-A1.json.gz",
+      "bytes": 81287,
+      "sha256": "5a4ebdc7cc76f5ac252e5947b4955c04780ac2f7e71614c257ade39d0ef3af79",
+      "encoding": "gzip",
+      "originalBytes": 1098838,
+      "originalSha256": "51adf385488d33d1b6ecc7bf5a847968b153f23be2cbf43131883ce3172162fa",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-fps-A1.json"
+    },
+    {
+      "path": "browser/terrain-fps-A2-before.txt.gz",
+      "bytes": 1402,
+      "sha256": "f4e4daf6becebade8e995512aa2e7127c98c5fd6d2a5889b4288df91ddd4d21b",
+      "encoding": "gzip",
+      "originalBytes": 3944,
+      "originalSha256": "3cbbb4cb3ca60358e65996cb20002a7a88b94f9b28bf35a8ed2a24163ae5f25f",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-fps-A2-before.txt"
+    },
+    {
+      "path": "browser/terrain-fps-A2-console.json.gz",
+      "bytes": 22,
+      "sha256": "64406e753d82e11c6bd63d1d04bb6aa083eefa0a46949bbfce994d556b989f0f",
+      "encoding": "gzip",
+      "originalBytes": 2,
+      "originalSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-fps-A2-console.json"
+    },
+    {
+      "path": "browser/terrain-fps-A2-metadata.txt.gz",
+      "bytes": 1403,
+      "sha256": "7b38c14cfb5927636c783974854b4b7b737ae08faa1ef1c183a672c90560ea68",
+      "encoding": "gzip",
+      "originalBytes": 3997,
+      "originalSha256": "29725cd8769e88e3db9a6a382080cfdd3793c2307969f5cb246c7a4cd0cc242c",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-fps-A2-metadata.txt"
+    },
+    {
+      "path": "browser/terrain-fps-A2.jpg",
+      "bytes": 68168,
+      "sha256": "0c4bea9ee0d542c05d2ee9d7ba0659f0833d5d07174805d28f6d454e7f39a3a0",
+      "encoding": "identity",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-fps-A2.jpg"
+    },
+    {
+      "path": "browser/terrain-fps-A2.json.gz",
+      "bytes": 80659,
+      "sha256": "63836562baca355d3b3f725b4bbacadce9dc595d0a904d79c1c7686219d854b2",
+      "encoding": "gzip",
+      "originalBytes": 1095607,
+      "originalSha256": "05d1aa79784e9a709dc3dcb6bf8a968fb350e3bfd300262f155efaf31866d459",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-fps-A2.json"
+    },
+    {
+      "path": "browser/terrain-fps-B-before.txt.gz",
+      "bytes": 1474,
+      "sha256": "daaf81f3764e5fbe5001d396817267bc049d554096f1bc0b7092e7619c3ea2b1",
+      "encoding": "gzip",
+      "originalBytes": 4130,
+      "originalSha256": "b1b7aaa8cb9cb1171b6ec6c7d57e91e2caac5f63d61c258943700a25f1819ae5",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-fps-B-before.txt"
+    },
+    {
+      "path": "browser/terrain-fps-B-console.json.gz",
+      "bytes": 22,
+      "sha256": "64406e753d82e11c6bd63d1d04bb6aa083eefa0a46949bbfce994d556b989f0f",
+      "encoding": "gzip",
+      "originalBytes": 2,
+      "originalSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-fps-B-console.json"
+    },
+    {
+      "path": "browser/terrain-fps-B-metadata.txt.gz",
+      "bytes": 1475,
+      "sha256": "a1d69b2d0ae6d38172634b7caba775b103b0594ac5c7bbe7a8086ce99f396084",
+      "encoding": "gzip",
+      "originalBytes": 4183,
+      "originalSha256": "c3edaf3d20737d21080baaa6b5dee1add89f4816b3d482e5d5eee35a56900911",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-fps-B-metadata.txt"
+    },
+    {
+      "path": "browser/terrain-fps-B.jpg",
+      "bytes": 82998,
+      "sha256": "099023efddf79438914fad14a2bae8ac236589dc46ce816e57824dd79165b8e8",
+      "encoding": "identity",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-fps-B.jpg"
+    },
+    {
+      "path": "browser/terrain-fps-B.json.gz",
+      "bytes": 83264,
+      "sha256": "4ac3fb0b26a36a652795da7b852d7ab475a89222cdba726d1af82b8774e525b7",
+      "encoding": "gzip",
+      "originalBytes": 1116177,
+      "originalSha256": "6ba04f6f3cbe69e4c591776a02a05336dc7f9a5f18c2b7a8536d6d2eed2ea3fb",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-fps-B.json"
+    },
+    {
+      "path": "browser/terrain-fps-protocol.json.gz",
+      "bytes": 803,
+      "sha256": "b63372798db8153ac47b5e06d1194ed1a8a3721184c1c62887a4f914db3e7f14",
+      "encoding": "gzip",
+      "originalBytes": 1340,
+      "originalSha256": "98203c7c8b6cda08fc75a4b8d63ec8e7487c7342e47c022c4bebdd5da20969d3",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-fps-protocol.json"
+    },
+    {
+      "path": "browser/terrain-sun-fps-A1-before.txt.gz",
+      "bytes": 1413,
+      "sha256": "a5c3f1782c42fbea55f8f5ce4181d78614ccb6e2667b5a503c89b3447ac1e919",
+      "encoding": "gzip",
+      "originalBytes": 4000,
+      "originalSha256": "7ffc0a846c0cd6b280dc894d934290e661a05fa3110f8bba1449c79426c0fa21",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-sun-fps-A1-before.txt"
+    },
+    {
+      "path": "browser/terrain-sun-fps-A1-console.json.gz",
+      "bytes": 22,
+      "sha256": "64406e753d82e11c6bd63d1d04bb6aa083eefa0a46949bbfce994d556b989f0f",
+      "encoding": "gzip",
+      "originalBytes": 2,
+      "originalSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-sun-fps-A1-console.json"
+    },
+    {
+      "path": "browser/terrain-sun-fps-A1-metadata.txt.gz",
+      "bytes": 1401,
+      "sha256": "10a731e2e207d3e7eae0a659590c5266a25f042c8f6aa96ac2ca268d15a85203",
+      "encoding": "gzip",
+      "originalBytes": 3990,
+      "originalSha256": "0a2e9dd49d12ed31cf5d397a857d2c6e530271885220fba780be9967e85faf8d",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-sun-fps-A1-metadata.txt"
+    },
+    {
+      "path": "browser/terrain-sun-fps-A1.jpg",
+      "bytes": 57664,
+      "sha256": "9ce2b9f577e3677bf61b73c2824a34841b8295dd93e5b11b0a1dbb1b3e09fbe2",
+      "encoding": "identity",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-sun-fps-A1.jpg"
+    },
+    {
+      "path": "browser/terrain-sun-fps-A1.json.gz",
+      "bytes": 287268,
+      "sha256": "4838dbf4abdeab766329f706fe8d9b1dfb05522626a3c2a6b022ed40a164966d",
+      "encoding": "gzip",
+      "originalBytes": 4240602,
+      "originalSha256": "53b33b4a94a4def53b8a23658050cbccadfb5ff321e9a547b4ec52bbf41d6371",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-sun-fps-A1.json"
+    },
+    {
+      "path": "browser/terrain-sun-fps-A2-before.txt.gz",
+      "bytes": 1396,
+      "sha256": "98c539be0e9cb97ad7de387d6f052f99b7b1275806975f34c2d34080ec96eec7",
+      "encoding": "gzip",
+      "originalBytes": 3938,
+      "originalSha256": "b0cd46c654953a4b4ace1f53a66d59673e28c5fcd7ff123ff2830f666baedbaf",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-sun-fps-A2-before.txt"
+    },
+    {
+      "path": "browser/terrain-sun-fps-A2-console.json.gz",
+      "bytes": 22,
+      "sha256": "64406e753d82e11c6bd63d1d04bb6aa083eefa0a46949bbfce994d556b989f0f",
+      "encoding": "gzip",
+      "originalBytes": 2,
+      "originalSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-sun-fps-A2-console.json"
+    },
+    {
+      "path": "browser/terrain-sun-fps-A2-metadata.txt.gz",
+      "bytes": 1396,
+      "sha256": "0387213ae654548897bc01d13fd51d0e6f6ff43a4c0a3512c14d7c5023aaf4d5",
+      "encoding": "gzip",
+      "originalBytes": 3990,
+      "originalSha256": "b8d74d3ad79a6a99292a0c3919f352c64daa551f459e8f4c5ced685ebd2acfeb",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-sun-fps-A2-metadata.txt"
+    },
+    {
+      "path": "browser/terrain-sun-fps-A2.jpg",
+      "bytes": 57664,
+      "sha256": "9ce2b9f577e3677bf61b73c2824a34841b8295dd93e5b11b0a1dbb1b3e09fbe2",
+      "encoding": "identity",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-sun-fps-A2.jpg"
+    },
+    {
+      "path": "browser/terrain-sun-fps-A2.json.gz",
+      "bytes": 286375,
+      "sha256": "9932dc44843c6270bce8932a366dae4132f7f81360a6354071f6b5f530f99233",
+      "encoding": "gzip",
+      "originalBytes": 4227621,
+      "originalSha256": "465790613a9ad9b74192ff4e2eb6e2af87adc6f5acb4f0b1fd232181feb41cfd",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-sun-fps-A2.json"
+    },
+    {
+      "path": "browser/terrain-sun-fps-B-before.txt.gz",
+      "bytes": 6533,
+      "sha256": "52b87af712c5e1fa520b779fecc7c123225d1bb4a1ff74cd70257a8f8cba1369",
+      "encoding": "gzip",
+      "originalBytes": 36663,
+      "originalSha256": "74382fbbacd113847c86d1c1d0552215002a1a344125c8d8c80864118dd05b87",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-sun-fps-B-before.txt"
+    },
+    {
+      "path": "browser/terrain-sun-fps-B-console.json.gz",
+      "bytes": 22,
+      "sha256": "64406e753d82e11c6bd63d1d04bb6aa083eefa0a46949bbfce994d556b989f0f",
+      "encoding": "gzip",
+      "originalBytes": 2,
+      "originalSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-sun-fps-B-console.json"
+    },
+    {
+      "path": "browser/terrain-sun-fps-B-metadata.txt.gz",
+      "bytes": 6534,
+      "sha256": "49b414f4b299b90636e2acb3d600227f6686b4a5befbdbe1f5d97e4a925c96f6",
+      "encoding": "gzip",
+      "originalBytes": 36715,
+      "originalSha256": "ca6fea3dd4167187e5b1e3cdae1f9df8511634e6c41f0dda38409b8bd00e736d",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-sun-fps-B-metadata.txt"
+    },
+    {
+      "path": "browser/terrain-sun-fps-B.jpg",
+      "bytes": 57664,
+      "sha256": "9ce2b9f577e3677bf61b73c2824a34841b8295dd93e5b11b0a1dbb1b3e09fbe2",
+      "encoding": "identity",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-sun-fps-B.jpg"
+    },
+    {
+      "path": "browser/terrain-sun-fps-B.json.gz",
+      "bytes": 295180,
+      "sha256": "92472446c52c802b81474792f4ae249c771866349f457211632d6cce278b7e1a",
+      "encoding": "gzip",
+      "originalBytes": 4241550,
+      "originalSha256": "0c69fb17865ec8eb46d7efa73f0a8805e09ccd48aeab8eea0d9f003735e5d9f5",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-sun-fps-B.json"
+    },
+    {
+      "path": "browser/terrain-sun-fps-protocol.json.gz",
+      "bytes": 468,
+      "sha256": "93a72dfd934e50444d093c7c164f6f3383b06c7809144e5a0cda43c3a209f400",
+      "encoding": "gzip",
+      "originalBytes": 699,
+      "originalSha256": "491b06e2b7ef15be572fa5965011865f6023d7d820c33e7cda4d06489177fa80",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-sun-fps-protocol.json"
+    },
+    {
+      "path": "browser/terrain-witness-r1-console.json.gz",
+      "bytes": 22,
+      "sha256": "64406e753d82e11c6bd63d1d04bb6aa083eefa0a46949bbfce994d556b989f0f",
+      "encoding": "gzip",
+      "originalBytes": 2,
+      "originalSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-witness-r1-console.json"
+    },
+    {
+      "path": "browser/terrain-witness-r1-main.jpg",
+      "bytes": 83849,
+      "sha256": "17b09a12efd1d71fb44ff04bde5be9344620c42e73809fee6624bc893e99a2e8",
+      "encoding": "identity",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-witness-r1-main.jpg"
+    },
+    {
+      "path": "browser/terrain-witness-r1-main.json.gz",
+      "bytes": 3011,
+      "sha256": "7eb67bf8f7f0c42be4dbca43a34113728c869b7b1a020c8418f2366c17e8be43",
+      "encoding": "gzip",
+      "originalBytes": 14306,
+      "originalSha256": "f927b7230936ce7ea49f3b9158fc42f67551fe4e62a687bbade89c43784da7e0",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-witness-r1-main.json"
+    },
+    {
+      "path": "browser/terrain-witness-r1-state.txt.gz",
+      "bytes": 4469,
+      "sha256": "efddd0b78f3b7325c1ad77698b59471722746584844ccb25dfdcde984cb220d6",
+      "encoding": "gzip",
+      "originalBytes": 20108,
+      "originalSha256": "1f22deb4f2cf336c20efd2864bd8df38a78e25d3c0eb83790d090e1fe7c91c51",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-witness-r1-state.txt"
+    },
+    {
+      "path": "browser/terrain-witness-r2-console.json.gz",
+      "bytes": 22,
+      "sha256": "64406e753d82e11c6bd63d1d04bb6aa083eefa0a46949bbfce994d556b989f0f",
+      "encoding": "gzip",
+      "originalBytes": 2,
+      "originalSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-witness-r2-console.json"
+    },
+    {
+      "path": "browser/terrain-witness-r2-main.jpg",
+      "bytes": 83842,
+      "sha256": "95cc069a3ac5628497e60e6b3c412ebb9fdd51a7e06e9561186447954fd510d5",
+      "encoding": "identity",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-witness-r2-main.jpg"
+    },
+    {
+      "path": "browser/terrain-witness-r2-main.json.gz",
+      "bytes": 4942,
+      "sha256": "7a4062702f7b4e69e9c884dc64a4ffe792cb2ce056ff04e5dc90e2d237c0fecb",
+      "encoding": "gzip",
+      "originalBytes": 28520,
+      "originalSha256": "97dfae3a1f72cb90545cc3f7a8f80bb01f717ba375a4c21cd39ec3951aa284be",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-witness-r2-main.json"
+    },
+    {
+      "path": "browser/terrain-witness-r2-state.txt.gz",
+      "bytes": 6434,
+      "sha256": "646f735e510b8208841ab8bbffc7ab16bdba745d77a71bdc3cff578389827604",
+      "encoding": "gzip",
+      "originalBytes": 36110,
+      "originalSha256": "3a38ebb452b23d736a361d217c9c01340ed18badbc5d4317a6f555938832b96b",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-witness-r2-state.txt"
+    },
+    {
+      "path": "browser/terrain-witness-r2-sun-main.json.gz",
+      "bytes": 5046,
+      "sha256": "36d0564caa6e8750bcc5ea45fec8175bf6ff547aef4aa4441c5196f5e8e7f099",
+      "encoding": "gzip",
+      "originalBytes": 29001,
+      "originalSha256": "2660df55c0ccf3f343e9626a1b49efa53513e613572365085536b23e999d7bc5",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-witness-r2-sun-main.json"
+    },
+    {
+      "path": "source/baseline-manifest.json.gz",
+      "bytes": 6017,
+      "sha256": "70558c0081701d9f9c3304fc60e9615441c5256fa08f89c7b7d66b2b528fb884",
+      "encoding": "gzip",
+      "originalBytes": 18022,
+      "originalSha256": "0e9c3894703b86e9ad7233c4bb565ff73a482812f7d99ad94b64d003d1f78654",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/baseline-manifest.json"
+    },
+    {
+      "path": "source/r1-source-manifest.json.gz",
+      "bytes": 6487,
+      "sha256": "79554a56a3ec0d3fede29bcd1156bf5809f8a8dde0e40c188c0b0cb6915f0b18",
+      "encoding": "gzip",
+      "originalBytes": 19994,
+      "originalSha256": "8c1082ed07f14449ee8f7719ea2d4a64f8fb3bd81fe433b9b7c48705710a5525",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/candidate-manifest.json"
+    },
+    {
+      "path": "source/r1-dist-manifest.json.gz",
+      "bytes": 1361,
+      "sha256": "9e540ea5df0008f1dec6a60dc89a1b6225eb200f683508414702b1fc9ecdd9c8",
+      "encoding": "gzip",
+      "originalBytes": 3520,
+      "originalSha256": "352d677de7f77dcb0a7e287c63b2601556ac9a0ddd134c25d2eeefdc2c938b04",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/dist-manifest.json"
+    },
+    {
+      "path": "source/r1-validation.json.gz",
+      "bytes": 2596,
+      "sha256": "32920450db368d3992a59fcee755b4e3b527a6647fc07746c671929816598a2c",
+      "encoding": "gzip",
+      "originalBytes": 8140,
+      "originalSha256": "66e943642c65acab15c630239a20a163147dcfcb7be87d0cf1aee992d3c3d836",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/validation.json"
+    },
+    {
+      "path": "source/r1-template-witnesses.json.gz",
+      "bytes": 3284,
+      "sha256": "9fcbae7a42f08862cd9d882588226d4b0ffe0268c1c89d512b9854788d37ab4c",
+      "encoding": "gzip",
+      "originalBytes": 48677,
+      "originalSha256": "1f836fd1a7d6f0a7cb264155022b940924e1178a6b2bbf9f8253080d25ae56ef",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/emitted-template-witnesses.json"
+    },
+    {
+      "path": "source/external-r1-full-freeze-manifest.json.gz",
+      "bytes": 8190,
+      "sha256": "6225faa45447e61eadf4a327b915f28551124a18e2a19b55d13519e3165f713f",
+      "encoding": "gzip",
+      "originalBytes": 27792,
+      "originalSha256": "68322bf09621573054d4c0fb7c7fe0c9137d93015432fe08362b4a5f129e4be0",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/r1-immutable-manifest.json"
+    },
+    {
+      "path": "source/historical-r1-README.md.gz",
+      "bytes": 2692,
+      "sha256": "945e94a3879c8d92c86f87f33f44faf9dc5b588b21bc358943ef26ef6da8990e",
+      "encoding": "gzip",
+      "originalBytes": 5218,
+      "originalSha256": "a5fd4ceafa9c6e7ef0dca877c6b127215e737f9a1e354ea29b9e946d59f505d2",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/README.md"
+    },
+    {
+      "path": "source/r1-analysis-r2-instrumentation.md.gz",
+      "bytes": 1718,
+      "sha256": "6e75e449cddcf407aeb740dc25c5f03dab99ff63b7860aaa4a20cd097efb6627",
+      "encoding": "gzip",
+      "originalBytes": 3141,
+      "originalSha256": "0c01de74fb4ef2d513d2c5b3d19ca5f182f8f2fe58056d9d7ce686bc9f6f9d35",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/r1-analysis-r2-instrumentation.md"
+    },
+    {
+      "path": "source/r2-source-manifest.json.gz",
+      "bytes": 6538,
+      "sha256": "cb8fb37513802697f92b506e15e396995943d2af86f24103d97a9dd588ddf8f3",
+      "encoding": "gzip",
+      "originalBytes": 19682,
+      "originalSha256": "b31ef176af4c95e18c33c1f57404f7166db36579e29c5241761d2fd22c83a5cd",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/r2-evidence/candidate-manifest.json"
+    },
+    {
+      "path": "source/r2-dist-manifest.json.gz",
+      "bytes": 1383,
+      "sha256": "53800fbb595a32fc06ac00cac0ff3050ff5a09acc4282ffa897bb94a969b6e8e",
+      "encoding": "gzip",
+      "originalBytes": 3556,
+      "originalSha256": "8fa3742fa7ecdb5b98bc443b2c3f8dfd1afc87ab48495c4fa35f487a467ed70a",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/r2-evidence/dist-manifest.json"
+    },
+    {
+      "path": "source/r2-validation.json.gz",
+      "bytes": 2035,
+      "sha256": "c3d546d01d8cb566769289896c0137a64a8e859679bc2b367cada78337daa05d",
+      "encoding": "gzip",
+      "originalBytes": 5474,
+      "originalSha256": "25c6362abacb5a378fd3dcbca7ccdfdc0247dbc1a851da2cc11b0af87038a98f",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/r2-evidence/validation.json"
+    },
+    {
+      "path": "source/r2-template-witnesses.json.gz",
+      "bytes": 3284,
+      "sha256": "9fcbae7a42f08862cd9d882588226d4b0ffe0268c1c89d512b9854788d37ab4c",
+      "encoding": "gzip",
+      "originalBytes": 48677,
+      "originalSha256": "1f836fd1a7d6f0a7cb264155022b940924e1178a6b2bbf9f8253080d25ae56ef",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/r2-evidence/emitted-template-witnesses.json"
+    },
+    {
+      "path": "source/historical-r2-README.md.gz",
+      "bytes": 1636,
+      "sha256": "345b3ac32da96eb40722648a4d38fe068c013104e3c24b0ab91312296d48d548",
+      "encoding": "gzip",
+      "originalBytes": 3068,
+      "originalSha256": "bd474d02b0ab89bc9997c7435a29c58f82eb0a6fd0a75639c131e18298bc1e48",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/r2-evidence/README.md"
+    },
+    {
+      "path": "source/emitted/baseline-n0-r0.wgsl.gz",
+      "bytes": 4383,
+      "sha256": "88ae175c5d5313f3f5f53b9ee0ce10bcaff25ba58c87697766dd08a0778b6972",
+      "encoding": "gzip",
+      "originalBytes": 12053,
+      "originalSha256": "59523937da9df384aa57345fb99c758cee70bc83c5ada8d3084038dfa416f546",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/emitted/baseline-n0-r0.wgsl.gz"
+    },
+    {
+      "path": "source/emitted/baseline-n0-r1.wgsl.gz",
+      "bytes": 4397,
+      "sha256": "e0f7a5fad8bd680eea7ca4e2b3ee6438dda5ada12880a935f5a4f52262a4e917",
+      "encoding": "gzip",
+      "originalBytes": 12084,
+      "originalSha256": "5984e40474bbd934f6f3351beb6e9afb1bd444468378ebb9296b0a4b00e057f6",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/emitted/baseline-n0-r1.wgsl.gz"
+    },
+    {
+      "path": "source/emitted/baseline-n1-r0.wgsl.gz",
+      "bytes": 4613,
+      "sha256": "44b849dd8a9099934c22dbb945784d8e93cd40ce89b88d6df7b991c00b3b914f",
+      "encoding": "gzip",
+      "originalBytes": 12691,
+      "originalSha256": "4fa1570cd47a9ff68d07c7b9c8dc5e37d87034f98feedce014a996de84bd8e4a",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/emitted/baseline-n1-r0.wgsl.gz"
+    },
+    {
+      "path": "source/emitted/baseline-n1-r1.wgsl.gz",
+      "bytes": 4626,
+      "sha256": "5cdf3e266f265e017253f2e2c4632fc851a196dc150837cdeb6b26eed8ca448d",
+      "encoding": "gzip",
+      "originalBytes": 12722,
+      "originalSha256": "5463766c265a3162bc410adef41bf0e483387ebf1b06f9ad49ac7059e8dd7988",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/emitted/baseline-n1-r1.wgsl.gz"
+    },
+    {
+      "path": "source/emitted/cached-n0-r0.wgsl.gz",
+      "bytes": 4414,
+      "sha256": "3a635c03cce844f0c5259459586758e2b75b03eb8fa7487c23ceac48c6559f64",
+      "encoding": "gzip",
+      "originalBytes": 12105,
+      "originalSha256": "17ab388a076642e389807df8e32533df839fd189c3ba4c7a8dd58e3fbd79da52",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/emitted/cached-n0-r0.wgsl.gz"
+    },
+    {
+      "path": "source/emitted/cached-n0-r1.wgsl.gz",
+      "bytes": 4428,
+      "sha256": "e7b4314a4faed7d0d5aee392bf5314de63512e71fd29e5e4bee59cfbb77e5849",
+      "encoding": "gzip",
+      "originalBytes": 12136,
+      "originalSha256": "2367c166926bfe4fd2eed8a257558528619954faaecd9bf0a842e833e405cd47",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/emitted/cached-n0-r1.wgsl.gz"
+    },
+    {
+      "path": "source/emitted/cached-n1-r0.wgsl.gz",
+      "bytes": 4641,
+      "sha256": "86e5f5f7759020bb2ec0a53b297f50052aed5c93686b30ad64e47443d3eab407",
+      "encoding": "gzip",
+      "originalBytes": 12743,
+      "originalSha256": "9bd0f48b1e587ebacd030f1350cd781dd36df411d90c1b8d7f703c51d317f7fb",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/emitted/cached-n1-r0.wgsl.gz"
+    },
+    {
+      "path": "source/emitted/cached-n1-r1.wgsl.gz",
+      "bytes": 4655,
+      "sha256": "bbdbb321c845e063e52ea57940bbe7e495f87fa70a8f5699cb90b000b403b6f4",
+      "encoding": "gzip",
+      "originalBytes": 12774,
+      "originalSha256": "1f52acf1c57226323fe1c1a444b51a9374ead3da293f749a6dd6ebdb59b1623f",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/emitted/cached-n1-r1.wgsl.gz"
+    },
+    {
+      "path": "source/emitted/direct-n0-r0.wgsl.gz",
+      "bytes": 4383,
+      "sha256": "88ae175c5d5313f3f5f53b9ee0ce10bcaff25ba58c87697766dd08a0778b6972",
+      "encoding": "gzip",
+      "originalBytes": 12053,
+      "originalSha256": "59523937da9df384aa57345fb99c758cee70bc83c5ada8d3084038dfa416f546",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/emitted/direct-n0-r0.wgsl.gz"
+    },
+    {
+      "path": "source/emitted/direct-n0-r1.wgsl.gz",
+      "bytes": 4397,
+      "sha256": "e0f7a5fad8bd680eea7ca4e2b3ee6438dda5ada12880a935f5a4f52262a4e917",
+      "encoding": "gzip",
+      "originalBytes": 12084,
+      "originalSha256": "5984e40474bbd934f6f3351beb6e9afb1bd444468378ebb9296b0a4b00e057f6",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/emitted/direct-n0-r1.wgsl.gz"
+    },
+    {
+      "path": "source/emitted/direct-n1-r0.wgsl.gz",
+      "bytes": 4613,
+      "sha256": "44b849dd8a9099934c22dbb945784d8e93cd40ce89b88d6df7b991c00b3b914f",
+      "encoding": "gzip",
+      "originalBytes": 12691,
+      "originalSha256": "4fa1570cd47a9ff68d07c7b9c8dc5e37d87034f98feedce014a996de84bd8e4a",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/emitted/direct-n1-r0.wgsl.gz"
+    },
+    {
+      "path": "source/emitted/direct-n1-r1.wgsl.gz",
+      "bytes": 4626,
+      "sha256": "5cdf3e266f265e017253f2e2c4632fc851a196dc150837cdeb6b26eed8ca448d",
+      "encoding": "gzip",
+      "originalBytes": 12722,
+      "originalSha256": "5463766c265a3162bc410adef41bf0e483387ebf1b06f9ad49ac7059e8dd7988",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/terrain-geometry-cache/emitted/direct-n1-r1.wgsl.gz"
+    },
+    {
+      "path": "source/changed-source-originals.tar.gz",
+      "bytes": 75091,
+      "sha256": "15c236effd80dca7dc614df7fed89f4e330f7dd2da5bc5da4efcb2c4ce1aad22",
+      "encoding": "tar.gz",
+      "members": [
+        {
+          "path": "baseline/src/cumulonimbus/CumulonimbusApp.ts",
+          "bytes": 15915,
+          "sha256": "7156df28a6a0f2691b0316b2d66042a442cbcf1e18619b3b811c4e91d49aecae"
+        },
+        {
+          "path": "baseline/src/cumulonimbus/GPUSceneEngine.ts",
+          "bytes": 61272,
+          "sha256": "b829772a51d6e342adfd5e5e2fbb807037ae74d3ba8413ea7078e6962b4334a0"
+        },
+        {
+          "path": "baseline/src/cumulonimbus/cloudShader.ts",
+          "bytes": 15570,
+          "sha256": "652c9514b7dfcee1456d15e9966087b3ff9c6a6ce9741970208cfca3750a248c"
+        },
+        {
+          "path": "r1/src/cumulonimbus/CumulonimbusApp.ts",
+          "bytes": 16891,
+          "sha256": "d49de8ae66f290af0f9e497aa89a063e6f1ba20c0932c8f3d70241408d85fc90"
+        },
+        {
+          "path": "r1/src/cumulonimbus/GPUSceneEngine.ts",
+          "bytes": 73906,
+          "sha256": "16075f173d4d7827fc30fac0777a8ac54672e9ee5f5a0680d325fc9282bec4ea"
+        },
+        {
+          "path": "r1/src/cumulonimbus/cloudShader.ts",
+          "bytes": 17104,
+          "sha256": "2f4de874b36cff8a8d5dc8b584678c22ecb0f579644e75e67127ff2846f5b6dd"
+        },
+        {
+          "path": "r1/src/cumulonimbus/terrainCacheEngine.test.ts",
+          "bytes": 10789,
+          "sha256": "8aab784067823fd8bad7d490c09c0031b417e3cc72fb02641020aaf0a44e7442"
+        },
+        {
+          "path": "r1/src/cumulonimbus/terrainCacheState.test.ts",
+          "bytes": 7787,
+          "sha256": "972c21634af6c33dd6265a36c24fcb2855f4284c94e958b98827985e9ade6498"
+        },
+        {
+          "path": "r1/src/cumulonimbus/terrainCacheState.ts",
+          "bytes": 4438,
+          "sha256": "a25079b65d5c7a06fbbad8f98c8b6d092cce8e13cdda687424d6359918cbf24a"
+        },
+        {
+          "path": "r1/src/cumulonimbus/terrainCacheUI.test.ts",
+          "bytes": 2024,
+          "sha256": "4ab072e511cee658c17e52b3d9374c8db9fa53a1d33cbbf25c6ed5be532caa27"
+        },
+        {
+          "path": "r1/src/cumulonimbus/terrainCacheWitness.test.ts",
+          "bytes": 7649,
+          "sha256": "d2eab3f18ac803bcb3f427370b7e136e0858ce6404aa07dfbb1aa83a56fec1db"
+        },
+        {
+          "path": "r1/src/cumulonimbus/terrainCacheWitness.ts",
+          "bytes": 6852,
+          "sha256": "2c287455fc874e8829eccea14e7ae851b53711053c6dc52435d7a2671c7d42ca"
+        },
+        {
+          "path": "r1/src/cumulonimbus/terrainGeometry.test.ts",
+          "bytes": 10621,
+          "sha256": "03df0629c937335879853b7ecc33a77f40f0f6a242e8b6bfed5a1769ae69b3d3"
+        },
+        {
+          "path": "r1/src/cumulonimbus/terrainGeometry.ts",
+          "bytes": 1933,
+          "sha256": "c45a609c61696166ccaff23b638e220893711ebdf97301aefaa094eccd082b65"
+        },
+        {
+          "path": "r2/src/cumulonimbus/terrainCacheWitness.test.ts",
+          "bytes": 16908,
+          "sha256": "440c2985d73b0d442f6752013888db44b04a5d68c05ecbe5c42ca0b3005e803f"
+        },
+        {
+          "path": "r2/src/cumulonimbus/terrainCacheWitness.ts",
+          "bytes": 17892,
+          "sha256": "ec52f2d0900d5e550731c0d5a3f345e3a39124f36e4180b12a5716922bf20ab9"
+        }
+      ]
+    },
+    {
+      "path": "source/prior-readonly-terrain-cache-audit.md.gz",
+      "bytes": 7283,
+      "sha256": "a2747b84f6c59225e579a37680066625e13347fd2eb6abe7bee1ab63805f6d89",
+      "encoding": "gzip",
+      "originalBytes": 15939,
+      "originalSha256": "2098ae9474ed8647f1d48119c8a8154fc6a9a1df25c5ebe4898207ebaa6b1ffc",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/terrain-cache-audit.md"
+    },
+    {
+      "path": "browser/terrain-six-run-root-qualification.json.gz",
+      "bytes": 1630,
+      "sha256": "055e7fdca574aee62dc6c47622a9bdf8c2af728b9128e6e1098f1f12bd7e2322",
+      "encoding": "gzip",
+      "originalBytes": 13668,
+      "originalSha256": "e5c7821d20d06716e5e92fd2d91574a76b92ebc5d72a47dc65d1a2325326dd40",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-six-run-root-qualification.json"
+    },
+    {
+      "path": "browser/terrain-jpeg-comparison-root.json.gz",
+      "bytes": 424,
+      "sha256": "74a6d6e41f866e12b36ddbbaf5d42e74f7c4783b0d8a1e9c228d73aa0515ea2d",
+      "encoding": "gzip",
+      "originalBytes": 1877,
+      "originalSha256": "172dbd0d3b9c607f66da37cec36faf8d0514601b6f4fb922bf2d0ad9de739768",
+      "externalOriginal": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle16/browser/terrain-jpeg-comparison-root.json"
+    }
+  ]
+}

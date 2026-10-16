@@ -1,0 +1,12 @@
+{
+  "command": "python3 docs/measurements/terrain-geometry-cache-2026-10-16/reconstruct-source.py --repo /Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia --output /private/tmp/cloudia-terrain-cache-archive-replay-20261016",
+  "exitCode": 0,
+  "result": {
+    "status": "PASS",
+    "baselineFiles": 108,
+    "candidateFiles": 116,
+    "output": "/private/tmp/cloudia-terrain-cache-archive-replay-20261016",
+    "buildOrGPUExecuted": false
+  },
+  "scope": "Source reconstruction and SHA validation only. No dependency install, test, app build, server or GPU execution."
+}

@@ -1,0 +1,1127 @@
+{
+  "status": "retired-not-promoted",
+  "baselineCommit": "10493afa7f6d90389c39e17b2cad79397dfdac01",
+  "sourceScope": "External R1 cache prototype; R2 changes witness metrics/test only. Product not modified.",
+  "grid": [
+    2112,
+    1844
+  ],
+  "pixels": 3894528,
+  "cacheBytes": 62312448,
+  "cacheMiB": 59.42578125,
+  "camera": {
+    "comparisonSurfaceKm": 1,
+    "comparisonTargetKm": [
+      0,
+      0,
+      0
+    ],
+    "probeSkipped": true,
+    "approach": 0,
+    "origin": [
+      0,
+      4.439032422097125,
+      15.371889641666392
+    ],
+    "probeFlow": "16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively",
+    "probeFieldBytes": 32768,
+    "surfaceEstimateKm": null,
+    "probe": null,
+    "probeAgeMs": null,
+    "altitudeKm": 8.439032422097124,
+    "ground": 1,
+    "yaw": 0,
+    "pitch": 0.2811279826464208,
+    "target": [
+      0,
+      0,
+      0
+    ]
+  },
+  "benchmarkGate": {
+    "minimumGainOverFasterControlPercent": 5,
+    "maximumControlDriftPercent": 3,
+    "purpose": "Provisional justification for replication, fixed before the A/B/A windows; no product promotion implied."
+  },
+  "benchmarks": [
+    {
+      "condition": "rain",
+      "runs": [
+        {
+          "raw": "browser/terrain-fps-A1.json.gz",
+          "rendererVersion": "observatory-v50-quality-checkpoint",
+          "submissionFps": 13.51651300467446,
+          "stats": {
+            "frames": 408,
+            "durationMs": 30185.300000000003,
+            "fps": 13.51651300467446,
+            "medianMs": 66.80000000000291,
+            "p95Ms": 83.40000000000873,
+            "p99Ms": 84.20000000000437,
+            "maxMs": 233.40000000000873,
+            "over18Ms": 403,
+            "over33Ms": 403
+          },
+          "queuePrefix": {
+            "status": "completed",
+            "measuredSubmissions": 408,
+            "confirmedPrefixId": 408,
+            "unconfirmedMeasuredFrames": 0,
+            "maxUnconfirmedMeasuredFrames": 18,
+            "endDrainMs": 436.60000002384186,
+            "completionBoundedSubmissionFps": 13.326669998303032
+          },
+          "timestampCoverage": {
+            "render": {
+              "measuredDraws": 408,
+              "expectedCalls": 816,
+              "matchedFreshCalls": 812,
+              "completeDraws": 406,
+              "partialDraws": 0,
+              "missingDraws": 2,
+              "notRequestedDraws": 0,
+              "invalidLedgerDraws": 0,
+              "conflictDraws": 0
+            },
+            "compute": {
+              "measuredDraws": 408,
+              "expectedCalls": 408,
+              "matchedFreshCalls": 406,
+              "completeDraws": 406,
+              "partialDraws": 0,
+              "missingDraws": 2,
+              "notRequestedDraws": 0,
+              "invalidLedgerDraws": 0,
+              "conflictDraws": 0
+            }
+          },
+          "timestampStatistics": {
+            "render": {
+              "sampleCount": 406,
+              "meanMs": 147.33881000985215,
+              "p95Ms": 163.18464,
+              "maxMs": 460.455936
+            },
+            "compute": {
+              "sampleCount": 406,
+              "meanMs": 0.01178356650246304,
+              "p95Ms": 0.065536,
+              "maxMs": 0.196608
+            }
+          },
+          "rainAtStart": 0.7999999999999996,
+          "specializationStart": "rain",
+          "specializationEnd": "rain",
+          "densitySamplingStart": "r8unorm-extracted-r",
+          "densitySamplingEnd": "r8unorm-extracted-r",
+          "run": "A1"
+        },
+        {
+          "raw": "browser/terrain-fps-B.json.gz",
+          "rendererVersion": "observatory-v50-terrain-geometry-cache-trial",
+          "submissionFps": 13.950298316641808,
+          "stats": {
+            "frames": 419,
+            "durationMs": 30035.199999999997,
+            "fps": 13.950298316641808,
+            "medianMs": 66.70000000000073,
+            "p95Ms": 83.40000000000146,
+            "p99Ms": 84.09999999999854,
+            "maxMs": 84.30000000000291,
+            "over18Ms": 419,
+            "over33Ms": 419
+          },
+          "queuePrefix": {
+            "status": "completed",
+            "measuredSubmissions": 419,
+            "confirmedPrefixId": 419,
+            "unconfirmedMeasuredFrames": 0,
+            "maxUnconfirmedMeasuredFrames": 18,
+            "endDrainMs": 283.7000000476837,
+            "completionBoundedSubmissionFps": 13.814203902913862
+          },
+          "timestampCoverage": {
+            "render": {
+              "measuredDraws": 419,
+              "expectedCalls": 838,
+              "matchedFreshCalls": 830,
+              "completeDraws": 415,
+              "partialDraws": 0,
+              "missingDraws": 4,
+              "notRequestedDraws": 0,
+              "invalidLedgerDraws": 0,
+              "conflictDraws": 0
+            },
+            "compute": {
+              "measuredDraws": 419,
+              "expectedCalls": 419,
+              "matchedFreshCalls": 415,
+              "completeDraws": 415,
+              "partialDraws": 0,
+              "missingDraws": 4,
+              "notRequestedDraws": 0,
+              "invalidLedgerDraws": 0,
+              "conflictDraws": 0
+            }
+          },
+          "timestampStatistics": {
+            "render": {
+              "sampleCount": 415,
+              "meanMs": 139.92188668915674,
+              "p95Ms": 153.288704,
+              "maxMs": 165.80608
+            },
+            "compute": {
+              "sampleCount": 415,
+              "meanMs": 0.008369657831325294,
+              "p95Ms": 0.065536,
+              "maxMs": 0.196608
+            }
+          },
+          "rainAtStart": 0.7999999496437731,
+          "specializationStart": "rain",
+          "specializationEnd": "rain",
+          "densitySamplingStart": "r8unorm-extracted-r",
+          "densitySamplingEnd": "r8unorm-extracted-r",
+          "cacheStart": {
+            "enabled": true,
+            "format": "rgba32float",
+            "record": "distance, slope.x, slope.z, height",
+            "bytes": 62312448,
+            "prepasses": 1,
+            "cachedFrames": 214,
+            "directFrames": 1,
+            "allocations": 1,
+            "disposals": 0,
+            "state": {
+              "key": "terrain-rgba32f:1:1:2112x1844:00000000:408e0c8e:4175f343:00000000:be8e0c8e:bf75f343:3f800000:80000000:00000000:00000000:3f75f343:be8e0c8e:3f929a61:3e92ca58:00000000",
+              "generation": 3,
+              "phase": "valid",
+              "builds": 1,
+              "hits": 213,
+              "direct": 1,
+              "invalidations": 2,
+              "failures": 0
+            },
+            "counterScope": "engine lifetime, includes warmup; prepasses count QuadMesh render invocations; actual GPU calls remain in benchmark ledger; witness excluded",
+            "key": "exact uploaded f32 origin/basis/aspect/tanFov/inspection + raster dimensions + ground + geometry version"
+          },
+          "cacheEnd": {
+            "enabled": true,
+            "format": "rgba32float",
+            "record": "distance, slope.x, slope.z, height",
+            "bytes": 62312448,
+            "prepasses": 1,
+            "cachedFrames": 665,
+            "directFrames": 1,
+            "allocations": 1,
+            "disposals": 0,
+            "state": {
+              "key": "terrain-rgba32f:1:1:2112x1844:00000000:408e0c8e:4175f343:00000000:be8e0c8e:bf75f343:3f800000:80000000:00000000:00000000:3f75f343:be8e0c8e:3f929a61:3e92ca58:00000000",
+              "generation": 3,
+              "phase": "valid",
+              "builds": 1,
+              "hits": 664,
+              "direct": 1,
+              "invalidations": 2,
+              "failures": 0
+            },
+            "counterScope": "engine lifetime, includes warmup; prepasses count QuadMesh render invocations; actual GPU calls remain in benchmark ledger; witness excluded",
+            "key": "exact uploaded f32 origin/basis/aspect/tanFov/inspection + raster dimensions + ground + geometry version"
+          },
+          "run": "B"
+        },
+        {
+          "raw": "browser/terrain-fps-A2.json.gz",
+          "rendererVersion": "observatory-v50-quality-checkpoint",
+          "submissionFps": 13.650331769648988,
+          "stats": {
+            "frames": 410,
+            "durationMs": 30035.899999999998,
+            "fps": 13.650331769648988,
+            "medianMs": 66.70000000000437,
+            "p95Ms": 83.40000000000146,
+            "p99Ms": 83.80000000000291,
+            "maxMs": 84.30000000000291,
+            "over18Ms": 410,
+            "over33Ms": 410
+          },
+          "queuePrefix": {
+            "status": "completed",
+            "measuredSubmissions": 410,
+            "confirmedPrefixId": 410,
+            "unconfirmedMeasuredFrames": 0,
+            "maxUnconfirmedMeasuredFrames": 18,
+            "endDrainMs": 280.6999999284744,
+            "completionBoundedSubmissionFps": 13.523676328980489
+          },
+          "timestampCoverage": {
+            "render": {
+              "measuredDraws": 410,
+              "expectedCalls": 820,
+              "matchedFreshCalls": 816,
+              "completeDraws": 408,
+              "partialDraws": 0,
+              "missingDraws": 2,
+              "notRequestedDraws": 0,
+              "invalidLedgerDraws": 0,
+              "conflictDraws": 0
+            },
+            "compute": {
+              "measuredDraws": 410,
+              "expectedCalls": 410,
+              "matchedFreshCalls": 408,
+              "completeDraws": 408,
+              "partialDraws": 0,
+              "missingDraws": 2,
+              "notRequestedDraws": 0,
+              "invalidLedgerDraws": 0,
+              "conflictDraws": 0
+            }
+          },
+          "timestampStatistics": {
+            "render": {
+              "sampleCount": 408,
+              "meanMs": 142.99119937254898,
+              "p95Ms": 156.89318400000002,
+              "maxMs": 171.44217600000002
+            },
+            "compute": {
+              "sampleCount": 408,
+              "meanMs": 0.007870745098039209,
+              "p95Ms": 0.065536,
+              "maxMs": 0.065536
+            }
+          },
+          "rainAtStart": 0.7999999999999238,
+          "specializationStart": "rain",
+          "specializationEnd": "rain",
+          "densitySamplingStart": "r8unorm-extracted-r",
+          "densitySamplingEnd": "r8unorm-extracted-r",
+          "run": "A2"
+        }
+      ],
+      "gainOverFasterControlPercent": 2.1975037094686956,
+      "controlDriftPercent": 0.9900391094082472,
+      "gatePassed": false,
+      "interpretation": "Gate below5%; trial retired."
+    },
+    {
+      "condition": "sun",
+      "runs": [
+        {
+          "raw": "browser/terrain-sun-fps-A1.json.gz",
+          "rendererVersion": "observatory-v50-quality-checkpoint",
+          "submissionFps": 59.99780008066376,
+          "stats": {
+            "frames": 1800,
+            "durationMs": 30001.099999999977,
+            "fps": 59.99780008066376,
+            "medianMs": 16.699999999953434,
+            "p95Ms": 17.599999999976717,
+            "p99Ms": 17.70000000001164,
+            "maxMs": 17.79999999998836,
+            "over18Ms": 0,
+            "over33Ms": 0
+          },
+          "queuePrefix": {
+            "status": "completed",
+            "measuredSubmissions": 1800,
+            "confirmedPrefixId": 1800,
+            "unconfirmedMeasuredFrames": 0,
+            "maxUnconfirmedMeasuredFrames": 61,
+            "endDrainMs": 11.099999904632568,
+            "completionBoundedSubmissionFps": 59.97301214453496
+          },
+          "timestampCoverage": {
+            "render": {
+              "measuredDraws": 1800,
+              "expectedCalls": 3600,
+              "matchedFreshCalls": 3588,
+              "completeDraws": 1794,
+              "partialDraws": 0,
+              "missingDraws": 6,
+              "notRequestedDraws": 0,
+              "invalidLedgerDraws": 0,
+              "conflictDraws": 0
+            },
+            "compute": {
+              "measuredDraws": 1800,
+              "expectedCalls": 1800,
+              "matchedFreshCalls": 1794,
+              "completeDraws": 1794,
+              "partialDraws": 0,
+              "missingDraws": 6,
+              "notRequestedDraws": 0,
+              "invalidLedgerDraws": 0,
+              "conflictDraws": 0
+            }
+          },
+          "timestampStatistics": {
+            "render": {
+              "sampleCount": 1794,
+              "meanMs": 23.526766448160576,
+              "p95Ms": 25.886719999999997,
+              "maxMs": 29.687807999999997
+            },
+            "compute": {
+              "sampleCount": 1794,
+              "meanMs": 0.009388379041248587,
+              "p95Ms": 0.065536,
+              "maxMs": 0.196608
+            }
+          },
+          "rainAtStart": 1.1406599593932152e-06,
+          "specializationStart": "dry",
+          "specializationEnd": "dry",
+          "densitySamplingStart": "macro-rgba8-r",
+          "densitySamplingEnd": "macro-rgba8-r",
+          "run": "A1"
+        },
+        {
+          "raw": "browser/terrain-sun-fps-B.json.gz",
+          "rendererVersion": "observatory-v50-terrain-geometry-cache-trial",
+          "submissionFps": 59.99640021598704,
+          "stats": {
+            "frames": 1800,
+            "durationMs": 30001.800000000003,
+            "fps": 59.99640021598704,
+            "medianMs": 16.69999999999709,
+            "p95Ms": 17.60000000000582,
+            "p99Ms": 17.700000000004366,
+            "maxMs": 17.80000000000291,
+            "over18Ms": 0,
+            "over33Ms": 0
+          },
+          "queuePrefix": {
+            "status": "completed",
+            "measuredSubmissions": 1800,
+            "confirmedPrefixId": 1800,
+            "unconfirmedMeasuredFrames": 0,
+            "maxUnconfirmedMeasuredFrames": 61,
+            "endDrainMs": 12.599999904632568,
+            "completionBoundedSubmissionFps": 59.96821684511975
+          },
+          "timestampCoverage": {
+            "render": {
+              "measuredDraws": 1800,
+              "expectedCalls": 3600,
+              "matchedFreshCalls": 3576,
+              "completeDraws": 1788,
+              "partialDraws": 0,
+              "missingDraws": 12,
+              "notRequestedDraws": 0,
+              "invalidLedgerDraws": 0,
+              "conflictDraws": 0
+            },
+            "compute": {
+              "measuredDraws": 1800,
+              "expectedCalls": 1800,
+              "matchedFreshCalls": 1788,
+              "completeDraws": 1788,
+              "partialDraws": 0,
+              "missingDraws": 12,
+              "notRequestedDraws": 0,
+              "invalidLedgerDraws": 0,
+              "conflictDraws": 0
+            }
+          },
+          "timestampStatistics": {
+            "render": {
+              "sampleCount": 1788,
+              "meanMs": 23.03084585234895,
+              "p95Ms": 27.787264,
+              "maxMs": 33.161216
+            },
+            "compute": {
+              "sampleCount": 1788,
+              "meanMs": 0.01084936017897092,
+              "p95Ms": 0.065536,
+              "maxMs": 0.196608
+            }
+          },
+          "rainAtStart": 0,
+          "specializationStart": "dry",
+          "specializationEnd": "dry",
+          "densitySamplingStart": "macro-rgba8-r",
+          "densitySamplingEnd": "macro-rgba8-r",
+          "cacheStart": {
+            "enabled": true,
+            "format": "rgba32float",
+            "record": "distance, slope.x, slope.z, height",
+            "bytes": 62312448,
+            "prepasses": 4,
+            "cachedFrames": 2372,
+            "directFrames": 5,
+            "allocations": 2,
+            "disposals": 1,
+            "state": {
+              "key": "terrain-rgba32f:1:1:2112x1844:00000000:408e0c8e:4175f343:00000000:be8e0c8e:bf75f343:3f800000:80000000:00000000:00000000:3f75f343:be8e0c8e:3f929a61:3e92ca58:00000000",
+              "generation": 9,
+              "phase": "valid",
+              "builds": 4,
+              "hits": 2368,
+              "direct": 5,
+              "invalidations": 6,
+              "failures": 0
+            },
+            "counterScope": "engine lifetime, includes warmup; prepasses count QuadMesh render invocations; actual GPU calls remain in benchmark ledger; witness excluded",
+            "key": "exact uploaded f32 origin/basis/aspect/tanFov/inspection + raster dimensions + ground + geometry version"
+          },
+          "cacheEnd": {
+            "enabled": true,
+            "format": "rgba32float",
+            "record": "distance, slope.x, slope.z, height",
+            "bytes": 62312448,
+            "prepasses": 4,
+            "cachedFrames": 4293,
+            "directFrames": 5,
+            "allocations": 2,
+            "disposals": 1,
+            "state": {
+              "key": "terrain-rgba32f:1:1:2112x1844:00000000:408e0c8e:4175f343:00000000:be8e0c8e:bf75f343:3f800000:80000000:00000000:00000000:3f75f343:be8e0c8e:3f929a61:3e92ca58:00000000",
+              "generation": 9,
+              "phase": "valid",
+              "builds": 4,
+              "hits": 4289,
+              "direct": 5,
+              "invalidations": 6,
+              "failures": 0
+            },
+            "counterScope": "engine lifetime, includes warmup; prepasses count QuadMesh render invocations; actual GPU calls remain in benchmark ledger; witness excluded",
+            "key": "exact uploaded f32 origin/basis/aspect/tanFov/inspection + raster dimensions + ground + geometry version"
+          },
+          "run": "B"
+        },
+        {
+          "raw": "browser/terrain-sun-fps-A2.json.gz",
+          "rendererVersion": "observatory-v50-quality-checkpoint",
+          "submissionFps": 59.99440052261788,
+          "stats": {
+            "frames": 1800,
+            "durationMs": 30002.800000000003,
+            "fps": 59.99440052261788,
+            "medianMs": 16.69999999999709,
+            "p95Ms": 17.599999999998545,
+            "p99Ms": 17.700000000000728,
+            "maxMs": 17.80000000000291,
+            "over18Ms": 0,
+            "over33Ms": 0
+          },
+          "queuePrefix": {
+            "status": "completed",
+            "measuredSubmissions": 1800,
+            "confirmedPrefixId": 1800,
+            "unconfirmedMeasuredFrames": 0,
+            "maxUnconfirmedMeasuredFrames": 61,
+            "endDrainMs": 9.299999952316284,
+            "completionBoundedSubmissionFps": 59.97421108927927
+          },
+          "timestampCoverage": {
+            "render": {
+              "measuredDraws": 1800,
+              "expectedCalls": 3600,
+              "matchedFreshCalls": 3592,
+              "completeDraws": 1796,
+              "partialDraws": 0,
+              "missingDraws": 4,
+              "notRequestedDraws": 0,
+              "invalidLedgerDraws": 0,
+              "conflictDraws": 0
+            },
+            "compute": {
+              "measuredDraws": 1800,
+              "expectedCalls": 1800,
+              "matchedFreshCalls": 1796,
+              "completeDraws": 1796,
+              "partialDraws": 0,
+              "missingDraws": 4,
+              "notRequestedDraws": 0,
+              "invalidLedgerDraws": 0,
+              "conflictDraws": 0
+            }
+          },
+          "timestampStatistics": {
+            "render": {
+              "sampleCount": 1796,
+              "meanMs": 23.96417254342983,
+              "p95Ms": 27.656192,
+              "maxMs": 32.309248
+            },
+            "compute": {
+              "sampleCount": 1796,
+              "meanMs": 0.010217193763919805,
+              "p95Ms": 0.065536,
+              "maxMs": 0.262144
+            }
+          },
+          "rainAtStart": 0,
+          "specializationStart": "dry",
+          "specializationEnd": "dry",
+          "densitySamplingStart": "macro-rgba8-r",
+          "densitySamplingEnd": "macro-rgba8-r",
+          "run": "A2"
+        }
+      ],
+      "gainOverFasterControlPercent": -0.0023331933418191397,
+      "controlDriftPercent": 0.0056664588966137686,
+      "gatePassed": false,
+      "interpretation": "All runs near60 rAF submissions/s; no cadence benefit observed; presented FPS unmeasured."
+    }
+  ],
+  "witnesses": [
+    {
+      "raw": "browser/terrain-witness-r1-main.json.gz",
+      "status": "FAIL",
+      "geometry": {
+        "referenceSHA256": "6e8c172a12ebce2da08dc9141a76b976f25085460cf390f0044506a3aba88b66",
+        "candidateSHA256": "6e8c172a12ebce2da08dc9141a76b976f25085460cf390f0044506a3aba88b66",
+        "channelCount": 15578112,
+        "referenceCounts": {
+          "hitPixels": 3857434,
+          "missPixels": 37094,
+          "tZeroPixels": 0,
+          "invalidDistancePixels": 0
+        },
+        "bitEqual": true
+      },
+      "render": {
+        "referenceSHA256": "9e06a04290877943537ab7dd4cb62379f35fff118d5a93e1fb056e2fe4190aa5",
+        "candidateSHA256": "f981b2751ea12718c32adfcff80940e8907835581fbbd87a51a6281798a07877",
+        "mismatchedChannels": 95690,
+        "mismatchedPixels": 69186,
+        "numericRGB": null,
+        "quantization": null
+      }
+    },
+    {
+      "raw": "browser/terrain-witness-r2-main.json.gz",
+      "status": "FAIL",
+      "geometry": {
+        "referenceSHA256": "6e8c172a12ebce2da08dc9141a76b976f25085460cf390f0044506a3aba88b66",
+        "candidateSHA256": "6e8c172a12ebce2da08dc9141a76b976f25085460cf390f0044506a3aba88b66",
+        "channelCount": 15578112,
+        "referenceCounts": {
+          "hitPixels": 3857434,
+          "missPixels": 37094,
+          "tZeroPixels": 0,
+          "invalidDistancePixels": 0
+        },
+        "bitEqual": true
+      },
+      "render": {
+        "referenceSHA256": "9e06a04290877943537ab7dd4cb62379f35fff118d5a93e1fb056e2fe4190aa5",
+        "candidateSHA256": "f981b2751ea12718c32adfcff80940e8907835581fbbd87a51a6281798a07877",
+        "mismatchedChannels": 95690,
+        "mismatchedPixels": 69186,
+        "numericRGB": {
+          "comparedChannels": 11683584,
+          "finitePairs": 11683584,
+          "nonFinitePairs": 0,
+          "bitMismatches": 95690,
+          "signedZeroBitMismatches": 0,
+          "maxAbsoluteError": 1.7881393432617188e-07,
+          "rmse": 1.3100165468129177e-09,
+          "maxUlpDistance": 14,
+          "maxAbsoluteAt": {
+            "index": 2637520,
+            "pixelIndex": 659380,
+            "x": 436,
+            "y": 312,
+            "channel": 0,
+            "reference": {
+              "uintHex": "0x3f278130",
+              "float": 0.6543149948120117
+            },
+            "candidate": {
+              "uintHex": "0x3f278133",
+              "float": 0.654315173625946
+            },
+            "absoluteError": 1.7881393432617188e-07,
+            "ulpDistance": 3
+          },
+          "maxUlpAt": {
+            "index": 14255704,
+            "pixelIndex": 3563926,
+            "x": 982,
+            "y": 1687,
+            "channel": 0,
+            "reference": {
+              "uintHex": "0x3ccf0898",
+              "float": 0.025272652506828308
+            },
+            "candidate": {
+              "uintHex": "0x3ccf08a6",
+              "float": 0.025272678583860397
+            },
+            "absoluteError": 2.60770320892334e-08,
+            "ulpDistance": 14
+          },
+          "ulpHistogram": [
+            {
+              "min": 0,
+              "max": 0,
+              "count": 11587894
+            },
+            {
+              "min": 1,
+              "max": 1,
+              "count": 32783
+            },
+            {
+              "min": 2,
+              "max": 2,
+              "count": 32604
+            },
+            {
+              "min": 3,
+              "max": 4,
+              "count": 21737
+            },
+            {
+              "min": 5,
+              "max": 8,
+              "count": 7179
+            },
+            {
+              "min": 9,
+              "max": 16,
+              "count": 1387
+            },
+            {
+              "min": 17,
+              "max": 32,
+              "count": 0
+            },
+            {
+              "min": 33,
+              "max": 64,
+              "count": 0
+            },
+            {
+              "min": 65,
+              "max": 128,
+              "count": 0
+            },
+            {
+              "min": 129,
+              "max": 256,
+              "count": 0
+            },
+            {
+              "min": 257,
+              "max": 1024,
+              "count": 0
+            },
+            {
+              "min": 1025,
+              "max": 4096,
+              "count": 0
+            },
+            {
+              "min": 4097,
+              "max": 65536,
+              "count": 0
+            },
+            {
+              "min": 65537,
+              "max": null,
+              "count": 0
+            }
+          ]
+        },
+        "quantization": {
+          "scope": "Derived RGB8 comparison only; not renderer/compositor output or a presentation proof.",
+          "rules": "Clamp RGB to [0,1]. Linear8: Math.round(255*x). Derived IEC sRGB8: Math.round(255*(x<=0.0031308 ? 12.92*x : 1.055*x^(1/2.4)-0.055)). Alpha excluded. Zero-count delta bins omitted.",
+          "invalidPolicy": "Any RGB NaN, infinity or witness sentinel excludes all three channels of that pixel from both derived comparisons; invalidChannels counts the offending RGB pairs, excludedChannels counts all omitted RGB channels. Raw bit/invalid-data FAIL is unchanged.",
+          "rgbChannels": 11683584,
+          "alphaChannelsExcluded": 3894528,
+          "eligiblePixels": 3894528,
+          "excludedPixels": 0,
+          "invalidChannels": 0,
+          "excludedChannels": 0,
+          "clippedReferenceChannels": 0,
+          "clippedCandidateChannels": 0,
+          "linear8": {
+            "comparedChannels": 11683584,
+            "mismatchedChannels": 0,
+            "mismatchedPixels": 0,
+            "maxDelta": 0,
+            "maxDeltaAt": null,
+            "deltaHistogram": [
+              {
+                "delta": 0,
+                "count": 11683584
+              }
+            ],
+            "perChannel": [
+              {
+                "channel": 0,
+                "comparedChannels": 3894528,
+                "mismatchedChannels": 0,
+                "mismatchedPixels": 0,
+                "maxDelta": 0,
+                "maxDeltaAt": null
+              },
+              {
+                "channel": 1,
+                "comparedChannels": 3894528,
+                "mismatchedChannels": 0,
+                "mismatchedPixels": 0,
+                "maxDelta": 0,
+                "maxDeltaAt": null
+              },
+              {
+                "channel": 2,
+                "comparedChannels": 3894528,
+                "mismatchedChannels": 0,
+                "mismatchedPixels": 0,
+                "maxDelta": 0,
+                "maxDeltaAt": null
+              }
+            ]
+          },
+          "srgb8": {
+            "comparedChannels": 11683584,
+            "mismatchedChannels": 0,
+            "mismatchedPixels": 0,
+            "maxDelta": 0,
+            "maxDeltaAt": null,
+            "deltaHistogram": [
+              {
+                "delta": 0,
+                "count": 11683584
+              }
+            ],
+            "perChannel": [
+              {
+                "channel": 0,
+                "comparedChannels": 3894528,
+                "mismatchedChannels": 0,
+                "mismatchedPixels": 0,
+                "maxDelta": 0,
+                "maxDeltaAt": null
+              },
+              {
+                "channel": 1,
+                "comparedChannels": 3894528,
+                "mismatchedChannels": 0,
+                "mismatchedPixels": 0,
+                "maxDelta": 0,
+                "maxDeltaAt": null
+              },
+              {
+                "channel": 2,
+                "comparedChannels": 3894528,
+                "mismatchedChannels": 0,
+                "mismatchedPixels": 0,
+                "maxDelta": 0,
+                "maxDeltaAt": null
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "raw": "browser/terrain-witness-r2-sun-main.json.gz",
+      "status": "FAIL",
+      "geometry": {
+        "referenceSHA256": "6e8c172a12ebce2da08dc9141a76b976f25085460cf390f0044506a3aba88b66",
+        "candidateSHA256": "6e8c172a12ebce2da08dc9141a76b976f25085460cf390f0044506a3aba88b66",
+        "channelCount": 15578112,
+        "referenceCounts": {
+          "hitPixels": 3857434,
+          "missPixels": 37094,
+          "tZeroPixels": 0,
+          "invalidDistancePixels": 0
+        },
+        "bitEqual": true
+      },
+      "render": {
+        "referenceSHA256": "4b7bbbf873a2e5de117730e243dc52d83851096c42400121b58af36631d47cc0",
+        "candidateSHA256": "30a815a2ac15f66f9def74ff2261f09af49fe22db2c2550b7f0a75de9841a0b7",
+        "mismatchedChannels": 165543,
+        "mismatchedPixels": 114092,
+        "numericRGB": {
+          "comparedChannels": 11683584,
+          "finitePairs": 11683584,
+          "nonFinitePairs": 0,
+          "bitMismatches": 165543,
+          "signedZeroBitMismatches": 0,
+          "maxAbsoluteError": 1.7881393432617188e-07,
+          "rmse": 2.3115971317729144e-09,
+          "maxUlpDistance": 18,
+          "maxAbsoluteAt": {
+            "index": 2586868,
+            "pixelIndex": 646717,
+            "x": 445,
+            "y": 306,
+            "channel": 0,
+            "reference": {
+              "uintHex": "0x3f4726a4",
+              "float": 0.7779333591461182
+            },
+            "candidate": {
+              "uintHex": "0x3f4726a7",
+              "float": 0.7779335379600525
+            },
+            "absoluteError": 1.7881393432617188e-07,
+            "ulpDistance": 3
+          },
+          "maxUlpAt": {
+            "index": 13300692,
+            "pixelIndex": 3325173,
+            "x": 885,
+            "y": 1574,
+            "channel": 0,
+            "reference": {
+              "uintHex": "0x3cec844f",
+              "float": 0.028871683403849602
+            },
+            "candidate": {
+              "uintHex": "0x3cec843d",
+              "float": 0.028871649876236916
+            },
+            "absoluteError": 3.3527612686157227e-08,
+            "ulpDistance": 18
+          },
+          "ulpHistogram": [
+            {
+              "min": 0,
+              "max": 0,
+              "count": 11518041
+            },
+            {
+              "min": 1,
+              "max": 1,
+              "count": 55820
+            },
+            {
+              "min": 2,
+              "max": 2,
+              "count": 54217
+            },
+            {
+              "min": 3,
+              "max": 4,
+              "count": 38548
+            },
+            {
+              "min": 5,
+              "max": 8,
+              "count": 13806
+            },
+            {
+              "min": 9,
+              "max": 16,
+              "count": 3142
+            },
+            {
+              "min": 17,
+              "max": 32,
+              "count": 10
+            },
+            {
+              "min": 33,
+              "max": 64,
+              "count": 0
+            },
+            {
+              "min": 65,
+              "max": 128,
+              "count": 0
+            },
+            {
+              "min": 129,
+              "max": 256,
+              "count": 0
+            },
+            {
+              "min": 257,
+              "max": 1024,
+              "count": 0
+            },
+            {
+              "min": 1025,
+              "max": 4096,
+              "count": 0
+            },
+            {
+              "min": 4097,
+              "max": 65536,
+              "count": 0
+            },
+            {
+              "min": 65537,
+              "max": null,
+              "count": 0
+            }
+          ]
+        },
+        "quantization": {
+          "scope": "Derived RGB8 comparison only; not renderer/compositor output or a presentation proof.",
+          "rules": "Clamp RGB to [0,1]. Linear8: Math.round(255*x). Derived IEC sRGB8: Math.round(255*(x<=0.0031308 ? 12.92*x : 1.055*x^(1/2.4)-0.055)). Alpha excluded. Zero-count delta bins omitted.",
+          "invalidPolicy": "Any RGB NaN, infinity or witness sentinel excludes all three channels of that pixel from both derived comparisons; invalidChannels counts the offending RGB pairs, excludedChannels counts all omitted RGB channels. Raw bit/invalid-data FAIL is unchanged.",
+          "rgbChannels": 11683584,
+          "alphaChannelsExcluded": 3894528,
+          "eligiblePixels": 3894528,
+          "excludedPixels": 0,
+          "invalidChannels": 0,
+          "excludedChannels": 0,
+          "clippedReferenceChannels": 0,
+          "clippedCandidateChannels": 0,
+          "linear8": {
+            "comparedChannels": 11683584,
+            "mismatchedChannels": 2,
+            "mismatchedPixels": 2,
+            "maxDelta": 1,
+            "maxDeltaAt": {
+              "pixelIndex": 1941741,
+              "x": 813,
+              "y": 919,
+              "channel": 2,
+              "reference": 26,
+              "candidate": 27,
+              "delta": 1
+            },
+            "deltaHistogram": [
+              {
+                "delta": 0,
+                "count": 11683582
+              },
+              {
+                "delta": 1,
+                "count": 2
+              }
+            ],
+            "perChannel": [
+              {
+                "channel": 0,
+                "comparedChannels": 3894528,
+                "mismatchedChannels": 1,
+                "mismatchedPixels": 1,
+                "maxDelta": 1,
+                "maxDeltaAt": {
+                  "pixelIndex": 2251401,
+                  "x": 9,
+                  "y": 1066,
+                  "channel": 0,
+                  "reference": 15,
+                  "candidate": 14,
+                  "delta": 1
+                }
+              },
+              {
+                "channel": 1,
+                "comparedChannels": 3894528,
+                "mismatchedChannels": 0,
+                "mismatchedPixels": 0,
+                "maxDelta": 0,
+                "maxDeltaAt": null
+              },
+              {
+                "channel": 2,
+                "comparedChannels": 3894528,
+                "mismatchedChannels": 1,
+                "mismatchedPixels": 1,
+                "maxDelta": 1,
+                "maxDeltaAt": {
+                  "pixelIndex": 1941741,
+                  "x": 813,
+                  "y": 919,
+                  "channel": 2,
+                  "reference": 26,
+                  "candidate": 27,
+                  "delta": 1
+                }
+              }
+            ]
+          },
+          "srgb8": {
+            "comparedChannels": 11683584,
+            "mismatchedChannels": 1,
+            "mismatchedPixels": 1,
+            "maxDelta": 1,
+            "maxDeltaAt": {
+              "pixelIndex": 2497089,
+              "x": 705,
+              "y": 1182,
+              "channel": 2,
+              "reference": 71,
+              "candidate": 70,
+              "delta": 1
+            },
+            "deltaHistogram": [
+              {
+                "delta": 0,
+                "count": 11683583
+              },
+              {
+                "delta": 1,
+                "count": 1
+              }
+            ],
+            "perChannel": [
+              {
+                "channel": 0,
+                "comparedChannels": 3894528,
+                "mismatchedChannels": 0,
+                "mismatchedPixels": 0,
+                "maxDelta": 0,
+                "maxDeltaAt": null
+              },
+              {
+                "channel": 1,
+                "comparedChannels": 3894528,
+                "mismatchedChannels": 0,
+                "mismatchedPixels": 0,
+                "maxDelta": 0,
+                "maxDeltaAt": null
+              },
+              {
+                "channel": 2,
+                "comparedChannels": 3894528,
+                "mismatchedChannels": 1,
+                "mismatchedPixels": 1,
+                "maxDelta": 1,
+                "maxDeltaAt": {
+                  "pixelIndex": 2497089,
+                  "x": 705,
+                  "y": 1182,
+                  "channel": 2,
+                  "reference": 71,
+                  "candidate": 70,
+                  "delta": 1
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "cpuValidation": {
+    "R1": {
+      "testFiles": 8,
+      "testsPassed": 115,
+      "typecheck": "PASS",
+      "appBuild": "PASS"
+    },
+    "R2": {
+      "testFiles": 8,
+      "testsPassed": 127,
+      "typecheck": "PASS",
+      "appBuild": "PASS"
+    }
+  },
+  "limits": [
+    "Geometry comparison is fresh prepass versus stored prepass through textureLoad, not inline monolithic solver geometry.",
+    "Render comparison is post-film linear Float32, not compositor presentation.",
+    "Complete GPU raw buffers were not exported: stored JSON gives GPU witness results and hashes; offline verifier checks integrity and internal consistency, not recomputation of full-buffer metrics.",
+    "t=0 absent; real worker GPU, odd-width GPU addressing, moving-camera correctness and full GPU lifecycle unqualified.",
+    "CPU controller/host tests and17x2 row-padding test are not GPU proofs.",
+    "All benchmark windows main thread, fixed camera, stationary cloud t60; no whole-product artistic acceptance or stable60FPS claim.",
+    "Timing pass sums are not additive standalone terrain costs or elapsed frame times."
+  ]
+}

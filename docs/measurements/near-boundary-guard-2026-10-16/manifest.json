@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "decision": "not promoted; no app trial",
+  "scope": "Sampled-neighborhood forcing0 guard and resolved cross-runtime provenance; no whole-GPU or visual qualification",
+  "payloadBytes": 2239755,
+  "files": {
+    "README.md": {
+      "bytes": 3509,
+      "sha256": "5a96a2bab841f7eef2b83ba64dc4baba7ef1bdfcbdfedc1dc73db9c274165a2c"
+    },
+    "guard-original.tar.gz": {
+      "bytes": 108019,
+      "sha256": "c13a902a814ebe01cc7c1e495fe9ff83a4fd4a822155625c286c9641c4171a3d"
+    },
+    "inputs/jpeg-comparison.json.gz": {
+      "bytes": 2440,
+      "sha256": "8965b1c5e03591b2ce7774817adde023c880438290e275a4996807f82e04bd75"
+    },
+    "inputs/near-interior-next.json.gz": {
+      "bytes": 57899,
+      "sha256": "2eb4b3f6b0392f39b036f5e51af158dae1eee16525811016025bb20e184ff12b"
+    },
+    "inputs/near-interior-next.md.gz": {
+      "bytes": 2979,
+      "sha256": "a6d24d8cd8e28083b41ec0f1115466073672f6cbcf505d094d973540199b401f"
+    },
+    "inputs/near-interior-next.py.gz": {
+      "bytes": 3469,
+      "sha256": "43e1df69b11c8595eb75dd4d9057c61065dd599c3aba907b20c1c4759946c7dd"
+    },
+    "inputs/near-interior-stencils.json.gz": {
+      "bytes": 219709,
+      "sha256": "16fdfa41c5cc0ac54a34f0c9023d491e543bfeb7917b127cefe2c730a57a95f5"
+    },
+    "inputs/near-interior-stencils.ts.gz": {
+      "bytes": 5477,
+      "sha256": "febe808790fe0c5ca267e233c7be920f101eb66223fae23fd620e38eb9fa43ee"
+    },
+    "inputs/root-boundary-guard.md.gz": {
+      "bytes": 1623,
+      "sha256": "22e7a913cd3e806423225d7d1260861a740330566042bf800eff2f0b49d2b52f"
+    },
+    "lossless-provenance.json": {
+      "bytes": 2653,
+      "sha256": "2ee428ce450f8ea6b0fd771511804393c462728a75750f35ab04f593c2ebabb2"
+    },
+    "provenance-original.tar.gz": {
+      "bytes": 1818221,
+      "sha256": "27802ce56bf86239e81fe18bcc5bbf8da33bc8246a77b7e6aa0f442fc160a707"
+    },
+    "verify.py": {
+      "bytes": 13757,
+      "sha256": "2eca9b032f60244b6b45f60453852943cc1f022e6ab359bed5cf6accdb702b37"
+    }
+  }
+}
