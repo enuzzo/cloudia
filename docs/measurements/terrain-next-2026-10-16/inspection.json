@@ -1,0 +1,6491 @@
+{
+  "sourceSha": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+  "datasetSha": "cfad064c4dbe4b100294222c8c12a4fbcd98cf8f5316f0f1a3a10494543800a1",
+  "count": 292,
+  "groups": {
+    "home-down": 174,
+    "level-sea-miss": 5,
+    "coastal-horizon": 113
+  },
+  "classes": {
+    "inland": 288,
+    "coast-transition": 4
+  },
+  "seaHits": 701,
+  "landHits": 1582,
+  "frontClearanceM": {
+    "min": 0.06368720460159238,
+    "p25": 0.366701147868298,
+    "median": 1.208239800171651,
+    "p75": 9.849409625103833,
+    "max": 689.4956446403739
+  },
+  "knownWitnesses": 291,
+  "knownWitnessGapM": {
+    "min": 1.0000000000022298,
+    "p25": 4.290950742316587,
+    "median": 18.508809860445766,
+    "p75": 212.9803813954424,
+    "max": 34036.31668077312
+  },
+  "xKm": {
+    "min": -133.7411187220983,
+    "p25": -77.49999999999999,
+    "median": -53.490234375,
+    "p75": -39.26904296875,
+    "max": -2.843883184250945
+  },
+  "zKm": {
+    "min": -74.10617334170917,
+    "p25": -18.90717076156559,
+    "median": -3.103684449393716,
+    "p75": 16.232280766024097,
+    "max": 70.7931833191394
+  },
+  "rows": [
+    {
+      "name": "home-down-1-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 165.2881466006915,
+      "xyz": [
+        -133.5182143390332,
+        -5.752817639300279,
+        70.7931833191394
+      ],
+      "coast": 147.17591857910156,
+      "h": 0.624535858631134,
+      "clearanceM": 0.08829853572790008,
+      "knownGapM": 2.209236332513492,
+      "metadata": {
+        "index": 54682,
+        "sizeKm": 32,
+        "heightWidthM": 1919.151820242405,
+        "affineWidthM": 145603.9819031721,
+        "errorM": 0.32256319536827505
+      }
+    },
+    {
+      "name": "home-down-2-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 162.36530812944395,
+      "xyz": [
+        -132.0661448530099,
+        -5.641362892928388,
+        66.9857009099705
+      ],
+      "coast": 146.58726501464844,
+      "h": 0.9622528553009033,
+      "clearanceM": 0.19455009930793854,
+      "knownGapM": 11.396959492960592,
+      "metadata": {
+        "index": 54682,
+        "sizeKm": 32,
+        "heightWidthM": 1919.151820242405,
+        "affineWidthM": 145603.9819031721,
+        "errorM": 0.32256319536827505
+      }
+    },
+    {
+      "name": "home-down-3-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 159.95234203097374,
+      "xyz": [
+        -131.0121365210145,
+        -5.560461935511922,
+        63.412096953911245
+      ],
+      "coast": 147.2025146484375,
+      "h": 0.9886242747306824,
+      "clearanceM": 0.7709075384702557,
+      "knownGapM": 27.967979322785027,
+      "metadata": {
+        "index": 54676,
+        "sizeKm": 32,
+        "heightWidthM": 2165.034592151642,
+        "affineWidthM": 174637.7905640984,
+        "errorM": 0.3232666349504143
+      }
+    },
+    {
+      "name": "home-down-4-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 157.83205877743137,
+      "xyz": [
+        -130.16523143529838,
+        -5.4954557810283635,
+        59.96840548232102
+      ],
+      "coast": 148.1284942626953,
+      "h": 0.9200613498687744,
+      "clearanceM": 3.217965206905524,
+      "knownGapM": 2422.3741653715806,
+      "metadata": {
+        "index": 54676,
+        "sizeKm": 32,
+        "heightWidthM": 2165.034592151642,
+        "affineWidthM": 174637.7905640984,
+        "errorM": 0.3232666349504143
+      }
+    },
+    {
+      "name": "home-down-5-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 155.2992671980089,
+      "xyz": [
+        -128.87481309087934,
+        -5.39640851474355,
+        56.3870893723459
+      ],
+      "coast": 148.17921447753906,
+      "h": 1.0860159397125244,
+      "clearanceM": 0.3629339353155847,
+      "knownGapM": 12.125125820515443,
+      "metadata": {
+        "index": 54676,
+        "sizeKm": 32,
+        "heightWidthM": 2165.034592151642,
+        "affineWidthM": 174637.7905640984,
+        "errorM": 0.3232666349504143
+      }
+    },
+    {
+      "name": "home-down-6-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 153.48641929773362,
+      "xyz": [
+        -128.19072825932804,
+        -5.3439009842078615,
+        53.08461351738381
+      ],
+      "coast": 147.6289825439453,
+      "h": 1.0137264728546143,
+      "clearanceM": 0.21397945511195116,
+      "knownGapM": 4.559730765392764,
+      "metadata": {
+        "index": 54676,
+        "sizeKm": 32,
+        "heightWidthM": 2165.034592151642,
+        "affineWidthM": 174637.7905640984,
+        "errorM": 0.3232666349504143
+      }
+    },
+    {
+      "name": "home-down-10-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 146.37669005969082,
+      "xyz": [
+        -124.98500751739098,
+        -5.097842944060693,
+        40.029962261890454
+      ],
+      "coast": 138.25204467773438,
+      "h": 1.0412589311599731,
+      "clearanceM": 2.2932203485385716,
+      "knownGapM": 182.47927207140734,
+      "metadata": {
+        "index": 55426,
+        "sizeKm": 2,
+        "heightWidthM": 1224.0774035453796,
+        "affineWidthM": 4613.955700478982,
+        "errorM": 0.1371562684653327
+      }
+    },
+    {
+      "name": "home-down-11-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 147.63480704877938,
+      "xyz": [
+        -126.95398335803216,
+        -5.248973719290053,
+        37.582994905063565
+      ],
+      "coast": 139.2321014404297,
+      "h": 0.48947808146476746,
+      "clearanceM": 0.17708062410304315,
+      "knownGapM": 7.21256635063218,
+      "metadata": {
+        "index": 55393,
+        "sizeKm": 2,
+        "heightWidthM": 641.9216990470886,
+        "affineWidthM": 3694.8345802666154,
+        "errorM": 0.11218841973459348
+      }
+    },
+    {
+      "name": "home-down-12-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 146.93453031574813,
+      "xyz": [
+        -126.99023437500003,
+        -5.251756232082654,
+        34.582982145272965
+      ],
+      "coast": 138.7821807861328,
+      "h": 0.39186057448387146,
+      "clearanceM": 0.0827065827879725,
+      "knownGapM": 1.007791819178198,
+      "metadata": {
+        "index": 55387,
+        "sizeKm": 2,
+        "heightWidthM": 679.5672029256821,
+        "affineWidthM": 3808.5647904954385,
+        "errorM": 0.11740833724616095
+      }
+    },
+    {
+      "name": "home-down-14-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 144.88908907544337,
+      "xyz": [
+        -126.26171875,
+        -5.1958379301349655,
+        28.41750420624606
+      ],
+      "coast": 138.69338989257812,
+      "h": 0.3901142477989197,
+      "clearanceM": 0.2961377291808287,
+      "knownGapM": 19.977469609181863,
+      "metadata": {
+        "index": 54921,
+        "sizeKm": 2,
+        "heightWidthM": 815.9494698047638,
+        "affineWidthM": 3987.007740244735,
+        "errorM": 0.1144416892202571
+      }
+    },
+    {
+      "name": "home-down-15-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 135.51618810453394,
+      "xyz": [
+        -117.6103515625,
+        -4.531793266148586,
+        23.868924415045893
+      ],
+      "coast": 131.0637969970703,
+      "h": 1.8916460275650024,
+      "clearanceM": 0.25471149211098165,
+      "knownGapM": 2.9850805942129974,
+      "metadata": {
+        "index": 54904,
+        "sizeKm": 2,
+        "heightWidthM": 1157.0649147033691,
+        "affineWidthM": 5320.284393703332,
+        "errorM": 0.1196034936583601
+      }
+    },
+    {
+      "name": "home-down-18-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 141.21046967668167,
+      "xyz": [
+        -124.46875,
+        -5.058216452438433,
+        16.232280766024097
+      ],
+      "coast": 135.88214111328125,
+      "h": 0.515498697757721,
+      "clearanceM": 0.15916098542020918,
+      "knownGapM": 1.9719861473682307,
+      "metadata": {
+        "index": 54874,
+        "sizeKm": 2,
+        "heightWidthM": 652.9108881950378,
+        "affineWidthM": 4040.455697395373,
+        "errorM": 0.11110266495961696
+      }
+    },
+    {
+      "name": "home-down-19-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 139.1219089807206,
+      "xyz": [
+        -122.70312499999997,
+        -4.922694894389968,
+        13.108041191636286
+      ],
+      "coast": 132.11607360839844,
+      "h": 0.7623388767242432,
+      "clearanceM": 3.4491818665030594,
+      "knownGapM": 299.0843034723259,
+      "metadata": {
+        "index": 54757,
+        "sizeKm": 2,
+        "heightWidthM": 716.0100638866425,
+        "affineWidthM": 4479.913349437993,
+        "errorM": 0.11172778613399714
+      }
+    },
+    {
+      "name": "home-down-20-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 135.15260892924502,
+      "xyz": [
+        -119,
+        -4.63845751248855,
+        9.915104395276714
+      ],
+      "coast": 126.63304138183594,
+      "h": 1.2099334001541138,
+      "clearanceM": 46.79020457734156,
+      "knownGapM": 8437.794736408257,
+      "metadata": {
+        "index": 54765,
+        "sizeKm": 2,
+        "heightWidthM": 2011.2122297286987,
+        "affineWidthM": 7128.658372617792,
+        "errorM": 0.13815324928145856
+      }
+    },
+    {
+      "name": "home-down-21-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 132.77639170585343,
+      "xyz": [
+        -116.81250000000003,
+        -4.4705531070274205,
+        6.958809006682186
+      ],
+      "coast": 123.06509399414062,
+      "h": 1.6614874601364136,
+      "clearanceM": 1.247015018010389,
+      "knownGapM": 31.385393605202815,
+      "metadata": {
+        "index": 54736,
+        "sizeKm": 2,
+        "heightWidthM": 1928.5969734191895,
+        "affineWidthM": 5199.9754041899,
+        "errorM": 0.13367162318900228
+      }
+    },
+    {
+      "name": "home-down-23-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 139.77753706369487,
+      "xyz": [
+        -123.96875000000003,
+        -5.019838684237621,
+        1.4455196777308652
+      ],
+      "coast": 123.84162902832031,
+      "h": 0.5068656206130981,
+      "clearanceM": 0.42678475794635795,
+      "knownGapM": 15.671829706588365,
+      "metadata": {
+        "index": 54709,
+        "sizeKm": 2,
+        "heightWidthM": 499.66633319854736,
+        "affineWidthM": 3135.898122738581,
+        "errorM": 0.0793212529970333
+      }
+    },
+    {
+      "name": "home-down-25-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 140.01206890642925,
+      "xyz": [
+        -124.140625,
+        -5.033031847715254,
+        -4.4513832752324145
+      ],
+      "coast": 121.12193298339844,
+      "h": 0.4853670597076416,
+      "clearanceM": 0.5647782136503632,
+      "knownGapM": 15.678788497890952,
+      "metadata": {
+        "index": 3964,
+        "sizeKm": 2,
+        "heightWidthM": 731.236606836319,
+        "affineWidthM": 3842.436237464426,
+        "errorM": 0.09803059947444126
+      }
+    },
+    {
+      "name": "home-down-26-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 137.70291761531877,
+      "xyz": [
+        -121.71777343749994,
+        -4.847062340832286,
+        -7.2727102277443185
+      ],
+      "coast": 118.30074310302734,
+      "h": 0.8811807632446289,
+      "clearanceM": 0.12467882366584693,
+      "knownGapM": 32.36618715537073,
+      "metadata": {
+        "index": 3966,
+        "sizeKm": 2,
+        "heightWidthM": 965.7302796840668,
+        "affineWidthM": 3979.70574174542,
+        "errorM": 0.09931394015438855
+      }
+    },
+    {
+      "name": "home-down-31-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 136.2059956522089,
+      "xyz": [
+        -118.75,
+        -4.619267990604129,
+        -21.29295663251892
+      ],
+      "coast": 111.17497253417969,
+      "h": 1.4774043560028076,
+      "clearanceM": 39.34966996250727,
+      "knownGapM": 9344.772826531851,
+      "metadata": {
+        "index": 3815,
+        "sizeKm": 2,
+        "heightWidthM": 1231.777846813202,
+        "affineWidthM": 5160.625172778964,
+        "errorM": 0.14096824452280998
+      }
+    },
+    {
+      "name": "home-down-36-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 141.58308354554455,
+      "xyz": [
+        -121.11909143087257,
+        -4.801110644262579,
+        -36.09599061196042
+      ],
+      "coast": 109.26746368408203,
+      "h": 1.7475972175598145,
+      "clearanceM": 0.20565662441834887,
+      "knownGapM": 6.300994511324088,
+      "metadata": {
+        "index": 3288,
+        "sizeKm": 2,
+        "heightWidthM": 1034.5373153686523,
+        "affineWidthM": 5701.301351306029,
+        "errorM": 0.1654364459682256
+      }
+    },
+    {
+      "name": "home-down-37-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 146.5919408756787,
+      "xyz": [
+        -125.1914343310707,
+        -5.11368744443074,
+        -40.14355509580543
+      ],
+      "coast": 111.61686706542969,
+      "h": 1.0048987865447998,
+      "clearanceM": 0.10698477988047017,
+      "knownGapM": 1.6695622909920922,
+      "metadata": {
+        "index": 3252,
+        "sizeKm": 2,
+        "heightWidthM": 1127.0278692245483,
+        "affineWidthM": 4187.454128579702,
+        "errorM": 0.1399726461386308
+      }
+    },
+    {
+      "name": "home-down-38-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 149.76173409133486,
+      "xyz": [
+        -127.412109375,
+        -5.2841371561525605,
+        -43.79575169802315
+      ],
+      "coast": 114.3589096069336,
+      "h": 0.6276862621307373,
+      "clearanceM": 0.30919417273217453,
+      "knownGapM": 10.24148426141434,
+      "metadata": {
+        "index": 3249,
+        "sizeKm": 2,
+        "heightWidthM": 1172.8702187538147,
+        "affineWidthM": 5429.289288818836,
+        "errorM": 0.16285665333271027
+      }
+    },
+    {
+      "name": "home-down-40-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 152.2094457929238,
+      "xyz": [
+        -127.95212551238177,
+        -5.325586940158249,
+        -50.021115989950964
+      ],
+      "coast": 116.69165802001953,
+      "h": 0.841435432434082,
+      "clearanceM": 0.3493064952015956,
+      "knownGapM": 22.054483615653943,
+      "metadata": {
+        "index": 3121,
+        "sizeKm": 2,
+        "heightWidthM": 669.8456406593323,
+        "affineWidthM": 3528.754996485077,
+        "errorM": 0.11869947775267065
+      }
+    },
+    {
+      "name": "home-down-41-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 153.45495565144014,
+      "xyz": [
+        -128.16129498323073,
+        -5.341641803183283,
+        -53.128413436286664
+      ],
+      "coast": 117.4627685546875,
+      "h": 1.0206959247589111,
+      "clearanceM": 1.2207670128289994,
+      "knownGapM": 22.641201494935046,
+      "metadata": {
+        "index": 322,
+        "sizeKm": 32,
+        "heightWidthM": 2837.0899111032486,
+        "affineWidthM": 208081.324213068,
+        "errorM": 0.39353800821118057
+      }
+    },
+    {
+      "name": "home-down-42-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 154.45174887462713,
+      "xyz": [
+        -128.08750729727825,
+        -5.335978058815483,
+        -56.133905066914764
+      ],
+      "coast": 117.50285339355469,
+      "h": 1.3817377090454102,
+      "clearanceM": 0.2560118659679089,
+      "knownGapM": 35.45153247312476,
+      "metadata": {
+        "index": 322,
+        "sizeKm": 32,
+        "heightWidthM": 2837.0899111032486,
+        "affineWidthM": 208081.324213068,
+        "errorM": 0.39353800821118057
+      }
+    },
+    {
+      "name": "home-down-43-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 155.95987948600236,
+      "xyz": [
+        -128.43866479678735,
+        -5.362931406094084,
+        -59.31143275209547
+      ],
+      "coast": 117.9517822265625,
+      "h": 1.6855502128601074,
+      "clearanceM": 0.35557103960709435,
+      "knownGapM": 9.921747974990172,
+      "metadata": {
+        "index": 322,
+        "sizeKm": 32,
+        "heightWidthM": 2837.0899111032486,
+        "affineWidthM": 208081.324213068,
+        "errorM": 0.39353800821118057
+      }
+    },
+    {
+      "name": "home-down-44-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 157.59139205343752,
+      "xyz": [
+        -128.85117572521293,
+        -5.394595179930045,
+        -62.530397126267076
+      ],
+      "coast": 118.51974487304688,
+      "h": 2.0976927280426025,
+      "clearanceM": 0.1036196848887283,
+      "knownGapM": 2.5462551683722245,
+      "metadata": {
+        "index": 322,
+        "sizeKm": 32,
+        "heightWidthM": 2837.0899111032486,
+        "affineWidthM": 208081.324213068,
+        "errorM": 0.39353800821118057
+      }
+    },
+    {
+      "name": "home-down-45-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 161.76264754279094,
+      "xyz": [
+        -131.51881934106234,
+        -5.599352365555514,
+        -66.79165226507935
+      ],
+      "coast": 121.00215148925781,
+      "h": 1.2435245513916016,
+      "clearanceM": 5.712893048944998,
+      "knownGapM": 898.4595378703018,
+      "metadata": {
+        "index": 316,
+        "sizeKm": 32,
+        "heightWidthM": 2822.0952451229095,
+        "affineWidthM": 218890.8866760321,
+        "errorM": 0.4678695695474744
+      }
+    },
+    {
+      "name": "home-down-46-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 164.45840932131512,
+      "xyz": [
+        -132.77069783679596,
+        -5.695441250120577,
+        -70.49235572224434
+      ],
+      "coast": 122.18536376953125,
+      "h": 1.2127256393432617,
+      "clearanceM": 1.208239800171651,
+      "knownGapM": 591.0708797706066,
+      "metadata": {
+        "index": 316,
+        "sizeKm": 32,
+        "heightWidthM": 2822.0952451229095,
+        "affineWidthM": 218890.8866760321,
+        "errorM": 0.4678695695474744
+      }
+    },
+    {
+      "name": "home-down-47-5",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 166.91052172002986,
+      "xyz": [
+        -133.7411187220983,
+        -5.769927057486594,
+        -74.10617334170917
+      ],
+      "coast": 123.12482452392578,
+      "h": 1.4175597429275513,
+      "clearanceM": 0.19528944447728958,
+      "knownGapM": 212.9803813954424,
+      "metadata": {
+        "index": 316,
+        "sizeKm": 32,
+        "heightWidthM": 2822.0952451229095,
+        "affineWidthM": 218890.8866760321,
+        "errorM": 0.4678695695474744
+      }
+    },
+    {
+      "name": "home-down-0-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 110.09358741227133,
+      "xyz": [
+        -82.75,
+        -3.9295046618325866,
+        48.92812506341717
+      ],
+      "coast": 99.29423522949219,
+      "h": 1.0767818689346313,
+      "clearanceM": 18.09980034772063,
+      "knownGapM": 280.4471712473195,
+      "metadata": {
+        "index": 55917,
+        "sizeKm": 2,
+        "heightWidthM": 748.3236789703369,
+        "affineWidthM": 3829.6898198896088,
+        "errorM": 0.11078001989517361
+      }
+    },
+    {
+      "name": "home-down-1-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 108.02993732741729,
+      "xyz": [
+        -81.71338589236112,
+        -3.8280374280263185,
+        46.349822519370235
+      ],
+      "coast": 98.23011779785156,
+      "h": 1.1548904180526733,
+      "clearanceM": 8.577825895851209,
+      "knownGapM": 35.429078031947284,
+      "metadata": {
+        "index": 55800,
+        "sizeKm": 2,
+        "heightWidthM": 797.4834442138672,
+        "affineWidthM": 3984.411549550714,
+        "errorM": 0.1160085157607682
+      }
+    },
+    {
+      "name": "home-down-2-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 103.74119316838802,
+      "xyz": [
+        -78.6143049081839,
+        -3.5246893404648834,
+        42.87427526388158
+      ],
+      "coast": 94.56868743896484,
+      "h": 1.3657970428466797,
+      "clearanceM": 67.94886137287514,
+      "knownGapM": 15016.609241127006,
+      "metadata": {
+        "index": 55851,
+        "sizeKm": 2,
+        "heightWidthM": 1158.1048369407654,
+        "affineWidthM": 4839.05708041857,
+        "errorM": 0.12129358219681308
+      }
+    },
+    {
+      "name": "home-down-3-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 105.63978097346089,
+      "xyz": [
+        -81.08722557683225,
+        -3.766746732055859,
+        41.95493698334645
+      ],
+      "coast": 97.83174896240234,
+      "h": 1.1385756731033325,
+      "clearanceM": 4.2861244260781195,
+      "knownGapM": 31.900644385290068,
+      "metadata": {
+        "index": 55790,
+        "sizeKm": 2,
+        "heightWidthM": 1209.802806377411,
+        "affineWidthM": 4225.575882970588,
+        "errorM": 0.1146989015978761
+      }
+    },
+    {
+      "name": "home-down-4-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 105.7528824805136,
+      "xyz": [
+        -81.92473425291718,
+        -3.8487251781715894,
+        40.25368288670065
+      ],
+      "coast": 98.96430969238281,
+      "h": 1.0130319595336914,
+      "clearanceM": 3.7097576800187992,
+      "knownGapM": 35.053326653066705,
+      "metadata": {
+        "index": 55790,
+        "sizeKm": 2,
+        "heightWidthM": 1209.802806377411,
+        "affineWidthM": 4225.575882970588,
+        "errorM": 0.1146989015978761
+      }
+    },
+    {
+      "name": "home-down-5-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 105.40175227779653,
+      "xyz": [
+        -82.3125,
+        -3.8866809002670557,
+        38.34025972949182
+      ],
+      "coast": 99.38287353515625,
+      "h": 0.9422963261604309,
+      "clearanceM": 1.3326108723016317,
+      "knownGapM": 8.428053058043297,
+      "metadata": {
+        "index": 55759,
+        "sizeKm": 2,
+        "heightWidthM": 1304.7346472740173,
+        "affineWidthM": 4745.079563988838,
+        "errorM": 0.12872788647655398
+      }
+    },
+    {
+      "name": "home-down-7-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 103.76417618301426,
+      "xyz": [
+        -82.12500000000001,
+        -3.8683274547223103,
+        34.12674216965057
+      ],
+      "coast": 98.3541488647461,
+      "h": 0.8178507685661316,
+      "clearanceM": 72.56250983107005,
+      "knownGapM": 931.063117820214,
+      "metadata": {
+        "index": 55751,
+        "sizeKm": 2,
+        "heightWidthM": 1427.5636970996857,
+        "affineWidthM": 5904.046457901131,
+        "errorM": 0.12479272845666856
+      }
+    },
+    {
+      "name": "home-down-8-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 101.7577565554524,
+      "xyz": [
+        -80.85416127662141,
+        -3.7439337407618645,
+        31.638674668551833
+      ],
+      "coast": 95.98336029052734,
+      "h": 0.9645199179649353,
+      "clearanceM": 35.02595792486862,
+      "knownGapM": 10842.399637469414,
+      "metadata": {
+        "index": 55288,
+        "sizeKm": 2,
+        "heightWidthM": 915.9570634365082,
+        "affineWidthM": 4787.495005672099,
+        "errorM": 0.10552717867540196
+      }
+    },
+    {
+      "name": "home-down-10-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 100.84422890054572,
+      "xyz": [
+        -81.125,
+        -3.770444033306637,
+        27.63034918489346
+      ],
+      "coast": 94.75,
+      "h": 0.877748966217041,
+      "clearanceM": 49.0377838598186,
+      "knownGapM": 391.8163209580714,
+      "metadata": {
+        "index": 55280,
+        "sizeKm": 2,
+        "heightWidthM": 1038.223922252655,
+        "affineWidthM": 4330.0851684762165,
+        "errorM": 0.11107578757219017
+      }
+    },
+    {
+      "name": "home-down-11-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 96.40461421914381,
+      "xyz": [
+        -77.37499999999999,
+        -3.403382001589124,
+        24.586628975636145
+      ],
+      "coast": 89.73749542236328,
+      "h": 1.1937072277069092,
+      "clearanceM": 74.27799376165933,
+      "knownGapM": 13848.51349650942,
+      "metadata": {
+        "index": 55338,
+        "sizeKm": 2,
+        "heightWidthM": 1257.4316263198853,
+        "affineWidthM": 4993.495844508288,
+        "errorM": 0.10750261571956798
+      }
+    },
+    {
+      "name": "home-down-12-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 88.55648984933913,
+      "xyz": [
+        -70.25292968750001,
+        -2.7062505548691256,
+        20.878964677405254
+      ],
+      "coast": 81.40657043457031,
+      "h": 1.9517312049865723,
+      "clearanceM": 0.4077630503764862,
+      "knownGapM": 5.048859664961362,
+      "metadata": {
+        "index": 55325,
+        "sizeKm": 2,
+        "heightWidthM": 1188.5271072387695,
+        "affineWidthM": 6049.65469110175,
+        "errorM": 0.12090024392819032
+      }
+    },
+    {
+      "name": "home-down-13-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 90.46976487420642,
+      "xyz": [
+        -72.51171875,
+        -2.9273477073044045,
+        19.564464193596468
+      ],
+      "coast": 83.35182189941406,
+      "h": 1.7055772542953491,
+      "clearanceM": 4.910719418308451,
+      "knownGapM": 20.10160158816065,
+      "metadata": {
+        "index": 55304,
+        "sizeKm": 2,
+        "heightWidthM": 1346.5971946716309,
+        "affineWidthM": 5791.949044039939,
+        "errorM": 0.12552995758596808
+      }
+    },
+    {
+      "name": "home-down-14-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 96.2209960140429,
+      "xyz": [
+        -78.5,
+        -3.5135008022099417,
+        18.90613595080652
+      ],
+      "coast": 88.6874008178711,
+      "h": 0.987707793712616,
+      "clearanceM": 117.37535842468638,
+      "knownGapM": 12179.567253623514,
+      "metadata": {
+        "index": 55299,
+        "sizeKm": 2,
+        "heightWidthM": 920.3981757164001,
+        "affineWidthM": 3938.7462295708247,
+        "errorM": 0.10314975224900991
+      }
+    },
+    {
+      "name": "home-down-15-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 97.32387444341202,
+      "xyz": [
+        -79.94499234590533,
+        -3.6549417050561157,
+        17.173853844234234
+      ],
+      "coast": 89.24020385742188,
+      "h": 0.9687386751174927,
+      "clearanceM": 0.6544154199682461,
+      "knownGapM": 8.302221055393884,
+      "metadata": {
+        "index": 55297,
+        "sizeKm": 2,
+        "heightWidthM": 758.0507397651672,
+        "affineWidthM": 3419.968726375373,
+        "errorM": 0.09074860281543806
+      }
+    },
+    {
+      "name": "home-down-16-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 96.08392491395973,
+      "xyz": [
+        -79.05761718750001,
+        -3.5680823758854974,
+        15.008913951397487
+      ],
+      "coast": 87.37061309814453,
+      "h": 1.041841745376587,
+      "clearanceM": 0.4434912971064131,
+      "knownGapM": 4.967348886338883,
+      "metadata": {
+        "index": 55179,
+        "sizeKm": 2,
+        "heightWidthM": 772.8761434555054,
+        "affineWidthM": 3404.37124541495,
+        "errorM": 0.09178710752166808
+      }
+    },
+    {
+      "name": "home-down-17-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 96.50871925323045,
+      "xyz": [
+        -79.765625,
+        -3.637383929977913,
+        13.101764458568436
+      ],
+      "coast": 86.83610534667969,
+      "h": 0.9655130505561829,
+      "clearanceM": 0.6653778278248312,
+      "knownGapM": 3.961749916236962,
+      "metadata": {
+        "index": 55177,
+        "sizeKm": 2,
+        "heightWidthM": 874.5038509368896,
+        "affineWidthM": 3446.554666152224,
+        "errorM": 0.09215011959895492
+      }
+    },
+    {
+      "name": "home-down-19-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 96.67487046000916,
+      "xyz": [
+        -80.39208984374999,
+        -3.698704490945472,
+        9.121878995942318
+      ],
+      "coast": 84.66449737548828,
+      "h": 0.8929510116577148,
+      "clearanceM": 0.41974000322420046,
+      "knownGapM": 2.464133992353238,
+      "metadata": {
+        "index": 55110,
+        "sizeKm": 2,
+        "heightWidthM": 1304.302453994751,
+        "affineWidthM": 4645.998551219236,
+        "errorM": 0.10387941438239068
+      }
+    },
+    {
+      "name": "home-down-20-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 96.70637118431532,
+      "xyz": [
+        -80.59326171875,
+        -3.7183962204469196,
+        7.103664265747046
+      ],
+      "coast": 83.4076156616211,
+      "h": 0.869227945804596,
+      "clearanceM": 0.3965546362956207,
+      "knownGapM": 31.977017698565874,
+      "metadata": {
+        "index": 55080,
+        "sizeKm": 2,
+        "heightWidthM": 1082.7253460884094,
+        "affineWidthM": 4742.382201628061,
+        "errorM": 0.10158943041460589
+      }
+    },
+    {
+      "name": "home-down-22-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 97.97783467340452,
+      "xyz": [
+        -82.07177734375001,
+        -3.8631181098748133,
+        3.0758785707164025
+      ],
+      "coast": 82.0245361328125,
+      "h": 0.726007878780365,
+      "clearanceM": 0.30408291438432933,
+      "knownGapM": 2.454305431228098,
+      "metadata": {
+        "index": 55071,
+        "sizeKm": 2,
+        "heightWidthM": 1259.4466805458069,
+        "affineWidthM": 4995.036695763702,
+        "errorM": 0.1083697788999416
+      }
+    },
+    {
+      "name": "home-down-23-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 97.84337146411356,
+      "xyz": [
+        -81.9814453125,
+        -3.8542763249014715,
+        1.0061049899339707
+      ],
+      "coast": 80.7636489868164,
+      "h": 0.7332919836044312,
+      "clearanceM": 0.23622586796623324,
+      "knownGapM": 2.943853126289694,
+      "metadata": {
+        "index": 55070,
+        "sizeKm": 2,
+        "heightWidthM": 769.1774070262909,
+        "affineWidthM": 4142.66721525928,
+        "errorM": 0.09108612721320242
+      }
+    },
+    {
+      "name": "home-down-27-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 96.69505623932895,
+      "xyz": [
+        -80.58203124999999,
+        -3.717296945323218,
+        -7.157517415720182
+      ],
+      "coast": 77.18791961669922,
+      "h": 0.8702578544616699,
+      "clearanceM": 0.4790887784265063,
+      "knownGapM": 1.9678164737605237,
+      "metadata": {
+        "index": 4326,
+        "sizeKm": 2,
+        "heightWidthM": 1501.598834991455,
+        "affineWidthM": 4271.131862216862,
+        "errorM": 0.10369445226388052
+      }
+    },
+    {
+      "name": "home-down-28-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 92.99887543808916,
+      "xyz": [
+        -76.75000000000001,
+        -3.3422048028056413,
+        -8.828673634969375
+      ],
+      "coast": 73.42765045166016,
+      "h": 1.1416329145431519,
+      "clearanceM": 84.72727748393982,
+      "knownGapM": 13428.700755373544,
+      "metadata": {
+        "index": 4356,
+        "sizeKm": 2,
+        "heightWidthM": 1301.9015192985535,
+        "affineWidthM": 5021.530452329898,
+        "errorM": 0.10643972927937284
+      }
+    },
+    {
+      "name": "home-down-30-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 90.7200516860705,
+      "xyz": [
+        -74.05805052522065,
+        -3.0787078458221764,
+        -12.368957901443338
+      ],
+      "coast": 70.3973159790039,
+      "h": 1.4744163751602173,
+      "clearanceM": 27.92452557972225,
+      "knownGapM": 955.3326727197586,
+      "metadata": {
+        "index": 4351,
+        "sizeKm": 2,
+        "heightWidthM": 885.5952024459839,
+        "affineWidthM": 3913.2785193796735,
+        "errorM": 0.08639675070298836
+      }
+    },
+    {
+      "name": "home-down-31-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 91.62225202577733,
+      "xyz": [
+        -74.67187499999999,
+        -3.138791539082815,
+        -14.365390347030932
+      ],
+      "coast": 70.67143249511719,
+      "h": 1.4565086364746094,
+      "clearanceM": 1.3641318315436024,
+      "knownGapM": 7.947758218156423,
+      "metadata": {
+        "index": 4349,
+        "sizeKm": 2,
+        "heightWidthM": 924.355149269104,
+        "affineWidthM": 4377.453920256812,
+        "errorM": 0.11190697841811925
+      }
+    },
+    {
+      "name": "home-down-32-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 89.84738159438861,
+      "xyz": [
+        -72.62120167757297,
+        -2.9380650314499093,
+        -15.907132475717527
+      ],
+      "coast": 68.285888671875,
+      "h": 1.6646171808242798,
+      "clearanceM": 2.254696493944941,
+      "knownGapM": 90.5934026167796,
+      "metadata": {
+        "index": 4350,
+        "sizeKm": 2,
+        "heightWidthM": 933.1525564193726,
+        "affineWidthM": 4147.401470749173,
+        "errorM": 0.08987357432488352
+      }
+    },
+    {
+      "name": "home-down-33-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 91.64135499818154,
+      "xyz": [
+        -74.03125,
+        -3.076084896597438,
+        -18.05968395108509
+      ],
+      "coast": 69.01219177246094,
+      "h": 1.544834017753601,
+      "clearanceM": 2.0700312789965203,
+      "knownGapM": 32.02546149728147,
+      "metadata": {
+        "index": 4229,
+        "sizeKm": 2,
+        "heightWidthM": 1380.0357580184937,
+        "affineWidthM": 6165.286271600053,
+        "errorM": 0.11541665298864245
+      }
+    },
+    {
+      "name": "home-down-34-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 92.29280949596344,
+      "xyz": [
+        -74.28303736059038,
+        -3.1007301722699303,
+        -20.013943701199587
+      ],
+      "coast": 68.4538803100586,
+      "h": 1.5324283838272095,
+      "clearanceM": 6.709521494724147,
+      "knownGapM": 21.462769854174798,
+      "metadata": {
+        "index": 4223,
+        "sizeKm": 2,
+        "heightWidthM": 1517.857551574707,
+        "affineWidthM": 5091.831771307625,
+        "errorM": 0.1291254593525082
+      }
+    },
+    {
+      "name": "home-down-35-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 96.4296816247763,
+      "xyz": [
+        -77.8671875,
+        -3.4515590848183333,
+        -22.792345716923723
+      ],
+      "coast": 70.59564208984375,
+      "h": 1.2048434019088745,
+      "clearanceM": 6.458049701490998,
+      "knownGapM": 13153.482526364498,
+      "metadata": {
+        "index": 4218,
+        "sizeKm": 2,
+        "heightWidthM": 1392.3291265964508,
+        "affineWidthM": 5393.368279823335,
+        "errorM": 0.11504587746458128
+      }
+    },
+    {
+      "name": "home-down-37-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 101.20441420607645,
+      "xyz": [
+        -81.4697265625,
+        -3.8041869984522876,
+        -27.783821659389666
+      ],
+      "coast": 71.0798110961914,
+      "h": 0.9009057283401489,
+      "clearanceM": 0.43102188722032864,
+      "knownGapM": 1.000000000005624,
+      "metadata": {
+        "index": 4126,
+        "sizeKm": 2,
+        "heightWidthM": 1460.6096744537354,
+        "affineWidthM": 5843.360023049172,
+        "errorM": 0.13025510997977108
+      }
+    },
+    {
+      "name": "home-down-39-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 103.13029294161018,
+      "xyz": [
+        -82.15234375,
+        -3.8710040975612916,
+        -32.12048206540726
+      ],
+      "coast": 69.3683853149414,
+      "h": 0.8775343894958496,
+      "clearanceM": 0.3116154430550244,
+      "knownGapM": 4.129981881866617,
+      "metadata": {
+        "index": 3655,
+        "sizeKm": 2,
+        "heightWidthM": 1518.828272819519,
+        "affineWidthM": 4076.873061741935,
+        "errorM": 0.11955144145758823
+      }
+    },
+    {
+      "name": "home-down-41-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 105.71915340630214,
+      "xyz": [
+        -83.29687500000001,
+        -3.9830344942974776,
+        -36.686688024789106
+      ],
+      "coast": 68.81846618652344,
+      "h": 0.8128897547721863,
+      "clearanceM": 1.4854267150602452,
+      "knownGapM": 16.738225945904006,
+      "metadata": {
+        "index": 3647,
+        "sizeKm": 2,
+        "heightWidthM": 1293.4405207633972,
+        "affineWidthM": 4186.3108956604265,
+        "errorM": 0.12953787518199533
+      }
+    },
+    {
+      "name": "home-down-42-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 106.80475970995649,
+      "xyz": [
+        -83.61303710937503,
+        -4.013981739005207,
+        -38.90566011303117
+      ],
+      "coast": 68.65296936035156,
+      "h": 0.8109234571456909,
+      "clearanceM": 0.28221141227924296,
+      "knownGapM": 4.4774031870806175,
+      "metadata": {
+        "index": 3645,
+        "sizeKm": 2,
+        "heightWidthM": 1454.76496219635,
+        "affineWidthM": 4613.815100223292,
+        "errorM": 0.1374858693452552
+      }
+    },
+    {
+      "name": "home-down-43-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 107.1251268401949,
+      "xyz": [
+        -83.1875,
+        -3.9723288328534583,
+        -40.831055067324556
+      ],
+      "coast": 67.93756103515625,
+      "h": 0.8103783130645752,
+      "clearanceM": 60.532473593298604,
+      "knownGapM": 9369.733549037617,
+      "metadata": {
+        "index": 3615,
+        "sizeKm": 2,
+        "heightWidthM": 1494.9551820755005,
+        "affineWidthM": 6433.636213710997,
+        "errorM": 0.15089545922819525
+      }
+    },
+    {
+      "name": "home-down-44-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 107.59625062605085,
+      "xyz": [
+        -82.8740234375,
+        -3.941644362995868,
+        -42.78714463195353
+      ],
+      "coast": 67.2973861694336,
+      "h": 0.9535114765167236,
+      "clearanceM": 1.5388301063049559,
+      "knownGapM": 137.93911570190838,
+      "metadata": {
+        "index": 3613,
+        "sizeKm": 2,
+        "heightWidthM": 1149.0482687950134,
+        "affineWidthM": 6014.474791765679,
+        "errorM": 0.1504228712292388
+      }
+    },
+    {
+      "name": "home-down-45-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 109.47774530992069,
+      "xyz": [
+        -83.8125,
+        -4.0335057238791965,
+        -45.301283410221465
+      ],
+      "coast": 67.68899536132812,
+      "h": 0.8645226955413818,
+      "clearanceM": 22.74864491086315,
+      "knownGapM": 9285.881449258091,
+      "metadata": {
+        "index": 3607,
+        "sizeKm": 2,
+        "heightWidthM": 1169.774055480957,
+        "affineWidthM": 6110.859180858824,
+        "errorM": 0.16049180703703314
+      }
+    },
+    {
+      "name": "home-down-46-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 111.14180771676513,
+      "xyz": [
+        -84.51054204421679,
+        -4.101832242092339,
+        -47.74043350526573
+      ],
+      "coast": 68.01681518554688,
+      "h": 0.8468652367591858,
+      "clearanceM": 9.938027025630847,
+      "knownGapM": 8836.826091095345,
+      "metadata": {
+        "index": 3602,
+        "sizeKm": 2,
+        "heightWidthM": 1411.840796470642,
+        "affineWidthM": 4871.585975168273,
+        "errorM": 0.1432771678082645
+      }
+    },
+    {
+      "name": "home-down-47-6",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 111.13157060698707,
+      "xyz": [
+        -83.67529296875001,
+        -4.020075371443063,
+        -49.44437399594157
+      ],
+      "coast": 67.02953338623047,
+      "h": 0.9981178641319275,
+      "clearanceM": 0.516899592591491,
+      "knownGapM": 4.929735432078874,
+      "metadata": {
+        "index": 3487,
+        "sizeKm": 2,
+        "heightWidthM": 1016.6854858398438,
+        "affineWidthM": 3532.834161800565,
+        "errorM": 0.10949112038360909
+      }
+    },
+    {
+      "name": "home-down-0-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 81.34676374935484,
+      "xyz": [
+        -56.93078899754512,
+        -2.943141182684119,
+        36.20157378705486
+      ],
+      "coast": 68.02510070800781,
+      "h": 1.4099057912826538,
+      "clearanceM": 24.09376786328954,
+      "knownGapM": 168.1102859853348,
+      "metadata": {
+        "index": 78266,
+        "sizeKm": 2,
+        "heightWidthM": 1084.984004497528,
+        "affineWidthM": 6275.577375956345,
+        "errorM": 0.14417113561648875
+      }
+    },
+    {
+      "name": "home-down-1-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 82.69603503058207,
+      "xyz": [
+        -58.745343031121166,
+        -3.1594166960083925,
+        35.53022180184332
+      ],
+      "coast": 70.07388305664062,
+      "h": 1.2222404479980469,
+      "clearanceM": 0.9189384173480253,
+      "knownGapM": 2.8182989513522183,
+      "metadata": {
+        "index": 78259,
+        "sizeKm": 2,
+        "heightWidthM": 1567.159354686737,
+        "affineWidthM": 6905.676262220368,
+        "errorM": 0.1478534541092813
+      }
+    },
+    {
+      "name": "home-down-2-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 82.65483334627719,
+      "xyz": [
+        -59.311024242486596,
+        -3.2268398811765824,
+        34.209141180154724
+      ],
+      "coast": 70.56866455078125,
+      "h": 1.134953498840332,
+      "clearanceM": 14.377996166089257,
+      "knownGapM": 128.7039344757292,
+      "metadata": {
+        "index": 78259,
+        "sizeKm": 2,
+        "heightWidthM": 1567.159354686737,
+        "affineWidthM": 6905.676262220368,
+        "errorM": 0.1478534541092813
+      }
+    },
+    {
+      "name": "home-down-3-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 81.90675573545549,
+      "xyz": [
+        -59.21875,
+        -3.215841698987779,
+        32.57642232999326
+      ],
+      "coast": 70.22456359863281,
+      "h": 1.1196633577346802,
+      "clearanceM": 28.37451048718531,
+      "knownGapM": 308.75645433435244,
+      "metadata": {
+        "index": 78257,
+        "sizeKm": 2,
+        "heightWidthM": 1082.4550986289978,
+        "affineWidthM": 4873.610609967727,
+        "errorM": 0.12463187158573419
+      }
+    },
+    {
+      "name": "home-down-4-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 78.70244747275079,
+      "xyz": [
+        -56.84670734753628,
+        -2.9331193538062,
+        30
+      ],
+      "coast": 67.08655548095703,
+      "h": 1.3304104804992676,
+      "clearanceM": 64.57796222392665,
+      "knownGapM": 14150.031216798765,
+      "metadata": {
+        "index": 56292,
+        "sizeKm": 2,
+        "heightWidthM": 1328.641951084137,
+        "affineWidthM": 4596.483572036959,
+        "errorM": 0.12191725545562804
+      }
+    },
+    {
+      "name": "home-down-9-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 77.73925267669037,
+      "xyz": [
+        -58.404264888475154,
+        -3.1187640051941248,
+        22.7821074573857
+      ],
+      "coast": 67.74207305908203,
+      "h": 1.1893115043640137,
+      "clearanceM": 0.3096698255831143,
+      "knownGapM": 2.09120272035183,
+      "metadata": {
+        "index": 56251,
+        "sizeKm": 2,
+        "heightWidthM": 936.3020658493042,
+        "affineWidthM": 3691.7399228259455,
+        "errorM": 0.09979458263842389
+      }
+    },
+    {
+      "name": "home-down-13-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 74.6444298405271,
+      "xyz": [
+        -56.96324700471298,
+        -2.947009441333531,
+        16.167310275525647
+      ],
+      "coast": 63.898887634277344,
+      "h": 1.3274579048156738,
+      "clearanceM": 0.6494605377156404,
+      "knownGapM": 5.392775128817773,
+      "metadata": {
+        "index": 56242,
+        "sizeKm": 2,
+        "heightWidthM": 802.197277545929,
+        "affineWidthM": 3258.0855639535002,
+        "errorM": 0.0867583294166252
+      }
+    },
+    {
+      "name": "home-down-14-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 74.23541194929777,
+      "xyz": [
+        -56.875976562500014,
+        -2.936607868893006,
+        14.607289909399327
+      ],
+      "coast": 63.07600402832031,
+      "h": 1.3335952758789062,
+      "clearanceM": 0.366701147868298,
+      "knownGapM": 3.0094828344894555,
+      "metadata": {
+        "index": 56124,
+        "sizeKm": 2,
+        "heightWidthM": 843.7486290931702,
+        "affineWidthM": 3390.3429708152544,
+        "errorM": 0.08881591929821298
+      }
+    },
+    {
+      "name": "home-down-18-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 76.66048097862215,
+      "xyz": [
+        -60.21992647975165,
+        -3.3351715311938435,
+        8.837387507840413
+      ],
+      "coast": 63.64862823486328,
+      "h": 0.9552825689315796,
+      "clearanceM": 0.24343010136362864,
+      "knownGapM": 2.76765809466912,
+      "metadata": {
+        "index": 56110,
+        "sizeKm": 2,
+        "heightWidthM": 935.2440237998962,
+        "affineWidthM": 3273.028679948766,
+        "errorM": 0.08323993824888021
+      }
+    },
+    {
+      "name": "home-down-19-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 78.30744755261622,
+      "xyz": [
+        -62.015625,
+        -3.5491997856788196,
+        7.397869962904106
+      ],
+      "coast": 64.77310943603516,
+      "h": 0.7565745115280151,
+      "clearanceM": 0.32337588618247537,
+      "knownGapM": 1.9758518274549013,
+      "metadata": {
+        "index": 56079,
+        "sizeKm": 2,
+        "heightWidthM": 846.0935354232788,
+        "affineWidthM": 3388.6682027659845,
+        "errorM": 0.0783859213697724
+      }
+    },
+    {
+      "name": "home-down-20-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 79.30850968191349,
+      "xyz": [
+        -63.14477500409504,
+        -3.683783046096517,
+        5.8320660028792926
+      ],
+      "coast": 65.04391479492188,
+      "h": 0.6315085291862488,
+      "clearanceM": 0.27713011877494864,
+      "knownGapM": 1.7261874507352006,
+      "metadata": {
+        "index": 56077,
+        "sizeKm": 2,
+        "heightWidthM": 715.3196632862091,
+        "affineWidthM": 3371.4345465414226,
+        "errorM": 0.07987942080944777
+      }
+    },
+    {
+      "name": "home-down-21-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 79.48236211543072,
+      "xyz": [
+        -63.42235775061597,
+        -3.716867642711941,
+        4.1727418817831605
+      ],
+      "coast": 64.33087921142578,
+      "h": 0.5997647643089294,
+      "clearanceM": 0.3921741317753913,
+      "knownGapM": 3.4525547676833384,
+      "metadata": {
+        "index": 56077,
+        "sizeKm": 2,
+        "heightWidthM": 715.3196632862091,
+        "affineWidthM": 3371.4345465414226,
+        "errorM": 0.07987942080944777
+      }
+    },
+    {
+      "name": "home-down-22-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 79.11070715590276,
+      "xyz": [
+        -63.1240234375,
+        -3.6813093075842396,
+        2.4831684686638202
+      ],
+      "coast": 63.03751754760742,
+      "h": 0.6312706470489502,
+      "clearanceM": 0.5977856444587815,
+      "knownGapM": 126.93215687673973,
+      "metadata": {
+        "index": 56071,
+        "sizeKm": 2,
+        "heightWidthM": 597.3399579524994,
+        "affineWidthM": 3639.494552335236,
+        "errorM": 0.07894985901657492
+      }
+    },
+    {
+      "name": "home-down-24-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 79.80900698075587,
+      "xyz": [
+        -63.852539062500014,
+        -3.7681410853077377,
+        -0.871945841980751
+      ],
+      "coast": 62.14426803588867,
+      "h": 0.5513379573822021,
+      "clearanceM": 0.5379268477554433,
+      "knownGapM": 6.884707927653589,
+      "metadata": {
+        "index": 5335,
+        "sizeKm": 2,
+        "heightWidthM": 609.5222234725952,
+        "affineWidthM": 3068.3595089940354,
+        "errorM": 0.06507706712000072
+      }
+    },
+    {
+      "name": "home-down-25-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 80.18913848017084,
+      "xyz": [
+        -64.1943359375,
+        -3.8088793028066483,
+        -2.572079086038177
+      ],
+      "coast": 61.9216194152832,
+      "h": 0.5147885680198669,
+      "clearanceM": 0.24514319648005767,
+      "knownGapM": 8.85573187512402,
+      "metadata": {
+        "index": 4418,
+        "sizeKm": 2,
+        "heightWidthM": 651.4977812767029,
+        "affineWidthM": 2990.3151980252005,
+        "errorM": 0.0662354432279244
+      }
+    },
+    {
+      "name": "home-down-26-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 80.27960429249174,
+      "xyz": [
+        -64.212890625,
+        -3.8110908487809354,
+        -4.269558041825531
+      ],
+      "coast": 61.53485870361328,
+      "h": 0.5134614109992981,
+      "clearanceM": 0.4592000041157007,
+      "knownGapM": 5.909103762704668,
+      "metadata": {
+        "index": 4412,
+        "sizeKm": 2,
+        "heightWidthM": 836.073487997055,
+        "affineWidthM": 2993.1631814688444,
+        "errorM": 0.06725220009684563
+      }
+    },
+    {
+      "name": "home-down-27-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 79.20767421149152,
+      "xyz": [
+        -63.044921875,
+        -3.6718816026348335,
+        -5.879303654922291
+      ],
+      "coast": 60.07501220703125,
+      "h": 0.6424997448921204,
+      "clearanceM": 0.24139075685525313,
+      "knownGapM": 1.972339563597747,
+      "metadata": {
+        "index": 5327,
+        "sizeKm": 2,
+        "heightWidthM": 717.8316414356232,
+        "affineWidthM": 2686.2140223383904,
+        "errorM": 0.06443075835704803
+      }
+    },
+    {
+      "name": "home-down-28-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 77.6899938737018,
+      "xyz": [
+        -61.405273437500014,
+        -3.4764522981851407,
+        -7.394009704459062
+      ],
+      "coast": 58.25646209716797,
+      "h": 0.8234128952026367,
+      "clearanceM": 0.3133156978947227,
+      "knownGapM": 32.60155515297745,
+      "metadata": {
+        "index": 5326,
+        "sizeKm": 2,
+        "heightWidthM": 833.0745697021484,
+        "affineWidthM": 2703.861886955565,
+        "errorM": 0.06265806587180123
+      }
+    },
+    {
+      "name": "home-down-31-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 75.28251594978553,
+      "xyz": [
+        -58.4377775662272,
+        -3.12275841349671,
+        -11.830693350744788
+      ],
+      "coast": 55.08642578125,
+      "h": 1.1557121276855469,
+      "clearanceM": 0.47875464952085167,
+      "knownGapM": 6.707134066252079,
+      "metadata": {
+        "index": 5297,
+        "sizeKm": 2,
+        "heightWidthM": 1030.6074023246765,
+        "affineWidthM": 3672.7765999967232,
+        "errorM": 0.08409228757955134
+      }
+    },
+    {
+      "name": "home-down-32-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 76.72010793824509,
+      "xyz": [
+        -59.5859375,
+        -3.2596070329422258,
+        -13.612509885107551
+      ],
+      "coast": 56.06700134277344,
+      "h": 1.0320547819137573,
+      "clearanceM": 1.4840297835689853,
+      "knownGapM": 7.9941244024098,
+      "metadata": {
+        "index": 5291,
+        "sizeKm": 2,
+        "heightWidthM": 757.7398419380188,
+        "affineWidthM": 3511.521298729349,
+        "errorM": 0.08704241190571338
+      }
+    },
+    {
+      "name": "home-down-33-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 77.68528249475551,
+      "xyz": [
+        -60.234375,
+        -3.336893649929104,
+        -15.34207859398774
+      ],
+      "coast": 56.43297576904297,
+      "h": 0.9530839323997498,
+      "clearanceM": 13.198160582760465,
+      "knownGapM": 272.85977699424114,
+      "metadata": {
+        "index": 5286,
+        "sizeKm": 2,
+        "heightWidthM": 744.2372441291809,
+        "affineWidthM": 3849.4639204000123,
+        "errorM": 0.09546692308504134
+      }
+    },
+    {
+      "name": "home-down-34-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 75.91045383872523,
+      "xyz": [
+        -58.1904296875,
+        -3.0932767111176496,
+        -16.496670925051127
+      ],
+      "coast": 54.19839096069336,
+      "h": 1.19344961643219,
+      "clearanceM": 0.32933857437456027,
+      "knownGapM": 1.0000000000063591,
+      "metadata": {
+        "index": 5171,
+        "sizeKm": 2,
+        "heightWidthM": 895.2749967575073,
+        "affineWidthM": 4334.553341032006,
+        "errorM": 0.10425844811834395
+      }
+    },
+    {
+      "name": "home-down-35-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 75.12757308485129,
+      "xyz": [
+        -57.09195514823202,
+        -2.962350432489444,
+        -17.795897684511807
+      ],
+      "coast": 52.73454666137695,
+      "h": 1.31736421585083,
+      "clearanceM": 0.8946929820012883,
+      "knownGapM": 21.428124789629692,
+      "metadata": {
+        "index": 5172,
+        "sizeKm": 2,
+        "heightWidthM": 885.8122229576111,
+        "affineWidthM": 4849.479348689783,
+        "errorM": 0.10157407086808234
+      }
+    },
+    {
+      "name": "home-down-38-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 73.92361582660169,
+      "xyz": [
+        -54.78220344512451,
+        -2.687052354557979,
+        -21.717250074195732
+      ],
+      "coast": 48.87793731689453,
+      "h": 1.5824604034423828,
+      "clearanceM": 2.967152224300662,
+      "knownGapM": 13.96622187631903,
+      "metadata": {
+        "index": 5179,
+        "sizeKm": 2,
+        "heightWidthM": 1171.1119413375854,
+        "affineWidthM": 5302.088804019149,
+        "errorM": 0.12506717757787555
+      }
+    },
+    {
+      "name": "home-down-39-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 73.35652013764994,
+      "xyz": [
+        -53.820083896358085,
+        -2.5723775604662134,
+        -22.895215379040113
+      ],
+      "coast": 47.4066047668457,
+      "h": 1.6945608854293823,
+      "clearanceM": 1.4616428870795062,
+      "knownGapM": 8.522716412172477,
+      "metadata": {
+        "index": 5178,
+        "sizeKm": 2,
+        "heightWidthM": 1313.663899898529,
+        "affineWidthM": 4979.313484625891,
+        "errorM": 0.11575018288567662
+      }
+    },
+    {
+      "name": "home-down-40-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 73.46559002312459,
+      "xyz": [
+        -53.47870809757866,
+        -2.5316890021801015,
+        -24.250491835040787
+      ],
+      "coast": 46.479679107666016,
+      "h": 1.7386884689331055,
+      "clearanceM": 0.41893448054763915,
+      "knownGapM": 21.539983001401968,
+      "metadata": {
+        "index": 5148,
+        "sizeKm": 2,
+        "heightWidthM": 1119.5660829544067,
+        "affineWidthM": 4617.061725322856,
+        "errorM": 0.11123494914500043
+      }
+    },
+    {
+      "name": "home-down-41-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 75.12864877261991,
+      "xyz": [
+        -54.56443621837947,
+        -2.6610969078553257,
+        -26.123582267585615
+      ],
+      "coast": 46.79793167114258,
+      "h": 1.597968339920044,
+      "clearanceM": 29.132434247840067,
+      "knownGapM": 592.9697902519489,
+      "metadata": {
+        "index": 5145,
+        "sizeKm": 2,
+        "heightWidthM": 1286.6982221603394,
+        "affineWidthM": 4937.201766006183,
+        "errorM": 0.12139177124481648
+      }
+    },
+    {
+      "name": "home-down-42-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 77.02609827760985,
+      "xyz": [
+        -55.827960566826945,
+        -2.8116954218537913,
+        -28.113074893750536
+      ],
+      "coast": 47.23918151855469,
+      "h": 1.4007951021194458,
+      "clearanceM": 96.28097196854446,
+      "knownGapM": 15051.27815026446,
+      "metadata": {
+        "index": 5139,
+        "sizeKm": 2,
+        "heightWidthM": 1172.4092364311218,
+        "affineWidthM": 5473.862390907016,
+        "errorM": 0.12069473450537771
+      }
+    },
+    {
+      "name": "home-down-43-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 77.40545496944536,
+      "xyz": [
+        -55.65625,
+        -2.791229354225445,
+        -29.55984596725848
+      ],
+      "coast": 46.51837921142578,
+      "h": 1.4728684425354004,
+      "clearanceM": 51.867071275278896,
+      "knownGapM": 15450.15201975204,
+      "metadata": {
+        "index": 5139,
+        "sizeKm": 2,
+        "heightWidthM": 1172.4092364311218,
+        "affineWidthM": 5473.862390907016,
+        "errorM": 0.12069473450537771
+      }
+    },
+    {
+      "name": "home-down-44-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 75.90239197344938,
+      "xyz": [
+        -53.74930205951203,
+        -2.563941023878126,
+        -30.241015511181246
+      ],
+      "coast": 44.37566375732422,
+      "h": 1.7212873697280884,
+      "clearanceM": 21.55803423898761,
+      "knownGapM": 17769.186522595937,
+      "metadata": {
+        "index": 5138,
+        "sizeKm": 2,
+        "heightWidthM": 1135.2965831756592,
+        "affineWidthM": 6293.792748707347,
+        "errorM": 0.14541155542246997
+      }
+    },
+    {
+      "name": "home-down-45-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 75.39533032517414,
+      "xyz": [
+        -52.75,
+        -2.4448347848971554,
+        -31.25686761423417
+      ],
+      "coast": 43.01873779296875,
+      "h": 1.7245807647705078,
+      "clearanceM": 138.19605804198187,
+      "knownGapM": 19129.59190760093,
+      "metadata": {
+        "index": 5138,
+        "sizeKm": 2,
+        "heightWidthM": 1135.2965831756592,
+        "affineWidthM": 6293.792748707347,
+        "errorM": 0.14541155542246997
+      }
+    },
+    {
+      "name": "home-down-46-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 73.47259901257725,
+      "xyz": [
+        -50.47659319370426,
+        -2.1738686592136682,
+        -31.619024713759327
+      ],
+      "coast": 40.60052490234375,
+      "h": 2.045732259750366,
+      "clearanceM": 80.06084172739403,
+      "knownGapM": 21942.684319254808,
+      "metadata": {
+        "index": 5141,
+        "sizeKm": 2,
+        "heightWidthM": 1328.1491994857788,
+        "affineWidthM": 6098.032130976208,
+        "errorM": 0.13721341383643448
+      }
+    },
+    {
+      "name": "home-down-47-7",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 74.22772921699188,
+      "xyz": [
+        -50.6015625,
+        -2.1887639127071212,
+        -33.08569981504463
+      ],
+      "coast": 40.305973052978516,
+      "h": 2.1245434284210205,
+      "clearanceM": 3.6279397818437253,
+      "knownGapM": 26.362205987711317,
+      "metadata": {
+        "index": 4679,
+        "sizeKm": 2,
+        "heightWidthM": 1222.8795289993286,
+        "affineWidthM": 5959.526557591744,
+        "errorM": 0.1438902982044965
+      }
+    },
+    {
+      "name": "home-down-0-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 75.32654677894203,
+      "xyz": [
+        -51.374999999999986,
+        -3.715582204928447,
+        33.560704577538935
+      ],
+      "coast": 62.45940399169922,
+      "h": 0.5780496597290039,
+      "clearanceM": 1.883445954263152,
+      "knownGapM": 8.814181981632617,
+      "metadata": {
+        "index": 78277,
+        "sizeKm": 2,
+        "heightWidthM": 713.6952579021454,
+        "affineWidthM": 4263.421614305116,
+        "errorM": 0.11419240036047995
+      }
+    },
+    {
+      "name": "home-down-1-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 74.11823662412688,
+      "xyz": [
+        -50.854861861626574,
+        -3.6424096387216647,
+        31.880892921828682
+      ],
+      "coast": 61.91313934326172,
+      "h": 0.6396788954734802,
+      "clearanceM": 0.624241759396682,
+      "knownGapM": 2.1073777126021978,
+      "metadata": {
+        "index": 56311,
+        "sizeKm": 2,
+        "heightWidthM": 757.9239308834076,
+        "affineWidthM": 4632.401533483062,
+        "errorM": 0.11177548731211573
+      }
+    },
+    {
+      "name": "home-down-2-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 72.84759663968714,
+      "xyz": [
+        -50.249999999999986,
+        -3.5573200058441667,
+        30.18435880806377
+      ],
+      "coast": 61.34613037109375,
+      "h": 0.6598387360572815,
+      "clearanceM": 52.48861110248981,
+      "knownGapM": 832.3396512474441,
+      "metadata": {
+        "index": 56311,
+        "sizeKm": 2,
+        "heightWidthM": 757.9239308834076,
+        "affineWidthM": 4632.401533483062,
+        "errorM": 0.11177548731211573
+      }
+    },
+    {
+      "name": "home-down-3-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 72.93420661704246,
+      "xyz": [
+        -50.847656250000014,
+        -3.6413971812360764,
+        29.041443147418203
+      ],
+      "coast": 61.568084716796875,
+      "h": 0.6261814832687378,
+      "clearanceM": 1.5018704025351326,
+      "knownGapM": 12.903285984342196,
+      "metadata": {
+        "index": 56309,
+        "sizeKm": 2,
+        "heightWidthM": 844.5428013801575,
+        "affineWidthM": 4148.837272252422,
+        "errorM": 0.10201432451140136
+      }
+    },
+    {
+      "name": "home-down-4-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 73.96433062243148,
+      "xyz": [
+        -52.296875000000014,
+        -3.8452679816283055,
+        28.22841700511722
+      ],
+      "coast": 62.46467208862305,
+      "h": 0.42512059211730957,
+      "clearanceM": 6.777025675546611,
+      "knownGapM": 85.36911611842793,
+      "metadata": {
+        "index": 56306,
+        "sizeKm": 2,
+        "heightWidthM": 858.5561513900757,
+        "affineWidthM": 3945.407942868769,
+        "errorM": 0.10610022582113743
+      }
+    },
+    {
+      "name": "home-down-5-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 73.05759666993522,
+      "xyz": [
+        -51.960016425149675,
+        -3.797880904960042,
+        26.645997589668003
+      ],
+      "coast": 62.00741195678711,
+      "h": 0.46940934658050537,
+      "clearanceM": 0.3029612144018756,
+      "knownGapM": 15.047175051617124,
+      "metadata": {
+        "index": 56303,
+        "sizeKm": 2,
+        "heightWidthM": 554.073765873909,
+        "affineWidthM": 3219.916305708466,
+        "errorM": 0.08555297245038673
+      }
+    },
+    {
+      "name": "home-down-7-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 72.10023874809028,
+      "xyz": [
+        -52.00247150957222,
+        -3.803853058901174,
+        23.777388678297427
+      ],
+      "coast": 61.562286376953125,
+      "h": 0.45061978697776794,
+      "clearanceM": 2.115975295964745,
+      "knownGapM": 18.508809860445766,
+      "metadata": {
+        "index": 56268,
+        "sizeKm": 2,
+        "heightWidthM": 627.0803213119507,
+        "affineWidthM": 3335.1630734687205,
+        "errorM": 0.08570073259761557
+      }
+    },
+    {
+      "name": "home-down-8-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 71.06604763800874,
+      "xyz": [
+        -51.46547803831869,
+        -3.7283093330778208,
+        22.156494970623495
+      ],
+      "coast": 60.82614517211914,
+      "h": 0.5033999681472778,
+      "clearanceM": 14.673614696221193,
+      "knownGapM": 4200.961927428277,
+      "metadata": {
+        "index": 56271,
+        "sizeKm": 2,
+        "heightWidthM": 505.56427240371704,
+        "affineWidthM": 3621.121653501177,
+        "errorM": 0.09274695912608877
+      }
+    },
+    {
+      "name": "home-down-10-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 70.22863037297506,
+      "xyz": [
+        -51.468750000000014,
+        -3.7287708079579485,
+        19.295011203726393
+      ],
+      "coast": 60.007301330566406,
+      "h": 0.5065212845802307,
+      "clearanceM": 1.809214109016466,
+      "knownGapM": 8.206136909248144,
+      "metadata": {
+        "index": 56263,
+        "sizeKm": 2,
+        "heightWidthM": 540.8991277217865,
+        "affineWidthM": 3117.0223629742395,
+        "errorM": 0.08416861965088174
+      }
+    },
+    {
+      "name": "home-down-11-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 69.25232163178896,
+      "xyz": [
+        -50.89818631013455,
+        -3.648505661415669,
+        17.711048668233968
+      ],
+      "coast": 59.03193283081055,
+      "h": 0.5791833996772766,
+      "clearanceM": 0.22605800495512085,
+      "knownGapM": 2.0516823941694824,
+      "metadata": {
+        "index": 56261,
+        "sizeKm": 2,
+        "heightWidthM": 557.514876127243,
+        "affineWidthM": 3101.016914151842,
+        "errorM": 0.07885081140557304
+      }
+    },
+    {
+      "name": "home-down-12-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 68.48860972820452,
+      "xyz": [
+        -50.500000000000014,
+        -3.5924890783160137,
+        16.193949308514526
+      ],
+      "coast": 58.114261627197266,
+      "h": 0.5215447545051575,
+      "clearanceM": 106.67448612002772,
+      "knownGapM": 4957.513670809991,
+      "metadata": {
+        "index": 56261,
+        "sizeKm": 2,
+        "heightWidthM": 557.514876127243,
+        "affineWidthM": 3101.016914151842,
+        "errorM": 0.07885081140557304
+      }
+    },
+    {
+      "name": "home-down-15-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 67.50657120044599,
+      "xyz": [
+        -50.3977701514834,
+        -3.5781077148658884,
+        11.943705308765844
+      ],
+      "coast": 55.80001449584961,
+      "h": 0.6271170377731323,
+      "clearanceM": 5.288933481097047,
+      "knownGapM": 136.0518657239333,
+      "metadata": {
+        "index": 56135,
+        "sizeKm": 2,
+        "heightWidthM": 734.1883480548859,
+        "affineWidthM": 3138.018764962908,
+        "errorM": 0.07937299960758537
+      }
+    },
+    {
+      "name": "home-down-16-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 66.882348635412,
+      "xyz": [
+        -50.017578125,
+        -3.524623713237471,
+        10.4743055426872
+      ],
+      "coast": 54.650691986083984,
+      "h": 0.6799950003623962,
+      "clearanceM": 0.31240887165040476,
+      "knownGapM": 1.997128995769037,
+      "metadata": {
+        "index": 56135,
+        "sizeKm": 2,
+        "heightWidthM": 734.1883480548859,
+        "affineWidthM": 3138.018764962908,
+        "errorM": 0.07937299960758537
+      }
+    },
+    {
+      "name": "home-down-17-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 66.48370440231167,
+      "xyz": [
+        -49.828125000000014,
+        -3.4979722144024112,
+        9.04772357306398
+      ],
+      "coast": 53.62501525878906,
+      "h": 0.7027035355567932,
+      "clearanceM": 0.5847083994012792,
+      "knownGapM": 7.963968815429504,
+      "metadata": {
+        "index": 56134,
+        "sizeKm": 2,
+        "heightWidthM": 655.7295918464661,
+        "affineWidthM": 2568.89796332689,
+        "errorM": 0.06562490307260305
+      }
+    },
+    {
+      "name": "home-down-18-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 66.97276959525988,
+      "xyz": [
+        -50.482421875,
+        -3.5900169784991114,
+        7.728596515003604
+      ],
+      "coast": 53.32549285888672,
+      "h": 0.6143211722373962,
+      "clearanceM": 0.33901151437021326,
+      "knownGapM": 17.87145303778518,
+      "metadata": {
+        "index": 56103,
+        "sizeKm": 2,
+        "heightWidthM": 525.1881778240204,
+        "affineWidthM": 2646.6475136985537,
+        "errorM": 0.06137807940831408
+      }
+    },
+    {
+      "name": "home-down-21-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 68.15017985156189,
+      "xyz": [
+        -52,
+        -3.8035045624842283,
+        3.5793015399863064
+      ],
+      "coast": 52.24940872192383,
+      "h": 0.4092961847782135,
+      "clearanceM": 0.4061397239638609,
+      "knownGapM": 63.203978553944,
+      "metadata": {
+        "index": 56095,
+        "sizeKm": 2,
+        "heightWidthM": 423.5701411962509,
+        "affineWidthM": 2241.71157075034,
+        "errorM": 0.05329001214704476
+      }
+    },
+    {
+      "name": "home-down-29-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 63.01746955856095,
+      "xyz": [
+        -46.59204101562499,
+        -3.0427301582233888,
+        -7.325231122758056
+      ],
+      "coast": 43.26123046875,
+      "h": 1.1315417289733887,
+      "clearanceM": 0.2778418102025171,
+      "knownGapM": 1.737502378678691,
+      "metadata": {
+        "index": 5409,
+        "sizeKm": 2,
+        "heightWidthM": 1078.4552097320557,
+        "affineWidthM": 3969.093791267369,
+        "errorM": 0.08053869532886893
+      }
+    },
+    {
+      "name": "home-down-30-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 61.696363729382064,
+      "xyz": [
+        -45.13183593749999,
+        -2.8373127264272036,
+        -8.448936070492252
+      ],
+      "coast": 41.54267120361328,
+      "h": 1.3269225358963013,
+      "clearanceM": 1.1905023338840692,
+      "knownGapM": 8.959464917356415,
+      "metadata": {
+        "index": 5380,
+        "sizeKm": 2,
+        "heightWidthM": 1232.4727177619934,
+        "affineWidthM": 5481.716348731425,
+        "errorM": 0.09848525223787874
+      }
+    },
+    {
+      "name": "home-down-33-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 59.95978304973198,
+      "xyz": [
+        -42.81544522327985,
+        -2.511450392195343,
+        -11.864743562815972
+      ],
+      "coast": 38.27242660522461,
+      "h": 1.639529824256897,
+      "clearanceM": 3.897308008163236,
+      "knownGapM": 17.872491377704485,
+      "metadata": {
+        "index": 5381,
+        "sizeKm": 2,
+        "heightWidthM": 1163.4515523910522,
+        "affineWidthM": 5782.183442614041,
+        "errorM": 0.1126314455177635
+      }
+    },
+    {
+      "name": "home-down-34-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 62.995504713794645,
+      "xyz": [
+        -45.5,
+        -2.889105560917937,
+        -13.714210080911059
+      ],
+      "coast": 40.95558547973633,
+      "h": 1.0076584815979004,
+      "clearanceM": 280.4376882049837,
+      "knownGapM": 10077.148554227615,
+      "metadata": {
+        "index": 5372,
+        "sizeKm": 2,
+        "heightWidthM": 1086.5457653999329,
+        "affineWidthM": 4698.132553428877,
+        "errorM": 0.09595819574315101
+      }
+    },
+    {
+      "name": "home-down-35-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 64.8506358651237,
+      "xyz": [
+        -47.00000000000001,
+        -3.100119876443234,
+        -15.386995136907519
+      ],
+      "coast": 42.36285400390625,
+      "h": 0.9726919531822205,
+      "clearanceM": 119.10289236402605,
+      "knownGapM": 519.7105513335234,
+      "metadata": {
+        "index": 5369,
+        "sizeKm": 2,
+        "heightWidthM": 852.6052832603455,
+        "affineWidthM": 4622.519379976438,
+        "errorM": 0.09745511488290504
+      }
+    },
+    {
+      "name": "home-down-36-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 66.25723783853019,
+      "xyz": [
+        -48.031249999999986,
+        -3.245193864735919,
+        -16.998570961372085
+      ],
+      "coast": 43.16101837158203,
+      "h": 0.9452088475227356,
+      "clearanceM": 13.301838114784914,
+      "knownGapM": 97.94047412916146,
+      "metadata": {
+        "index": 5192,
+        "sizeKm": 2,
+        "heightWidthM": 895.0227499008179,
+        "affineWidthM": 4017.3370235424954,
+        "errorM": 0.10076148464577273
+      }
+    },
+    {
+      "name": "home-down-37-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 68.62022749692032,
+      "xyz": [
+        -49.9375,
+        -3.513359259959726,
+        -18.90717076156559
+      ],
+      "coast": 44.744178771972656,
+      "h": 0.6986196637153625,
+      "clearanceM": 11.766734999582695,
+      "knownGapM": 5673.897782087703,
+      "metadata": {
+        "index": 5190,
+        "sizeKm": 2,
+        "heightWidthM": 561.8306398391724,
+        "affineWidthM": 3312.466348288581,
+        "errorM": 0.08580711437389255
+      }
+    },
+    {
+      "name": "home-down-39-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 67.72752573106641,
+      "xyz": [
+        -48.32470703125001,
+        -3.286475367838783,
+        -21.169035988436598
+      ],
+      "coast": 41.95726013183594,
+      "h": 0.9316068887710571,
+      "clearanceM": 0.33290584178757854,
+      "knownGapM": 3.6331728098911173,
+      "metadata": {
+        "index": 5184,
+        "sizeKm": 2,
+        "heightWidthM": 590.7114744186401,
+        "affineWidthM": 2693.2998720149044,
+        "errorM": 0.0699267620802857
+      }
+    },
+    {
+      "name": "home-down-40-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 67.54107822639895,
+      "xyz": [
+        -47.74093008978192,
+        -3.2043525011553786,
+        -22.326816303975672
+      ],
+      "coast": 40.82957077026367,
+      "h": 0.991904079914093,
+      "clearanceM": 21.70675122852117,
+      "knownGapM": 8261.770883462454,
+      "metadata": {
+        "index": 5241,
+        "sizeKm": 2,
+        "heightWidthM": 646.9371914863586,
+        "affineWidthM": 3041.890362423146,
+        "errorM": 0.08303908543894067
+      }
+    },
+    {
+      "name": "home-down-41-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 67.53779095559382,
+      "xyz": [
+        -47.3125,
+        -3.1440822196068314,
+        -23.517797690965107
+      ],
+      "coast": 39.894859313964844,
+      "h": 1.0278469324111938,
+      "clearanceM": 47.12095815102657,
+      "knownGapM": 8830.036759839457,
+      "metadata": {
+        "index": 5241,
+        "sizeKm": 2,
+        "heightWidthM": 646.9371914863586,
+        "affineWidthM": 3041.890362423146,
+        "errorM": 0.08303908543894067
+      }
+    },
+    {
+      "name": "home-down-42-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 64.37230393616348,
+      "xyz": [
+        -43.953124999999986,
+        -2.671495976884332,
+        -23.529683191405894
+      ],
+      "coast": 35.943233489990234,
+      "h": 1.5191271305084229,
+      "clearanceM": 4.3986302116536535,
+      "knownGapM": 16.948861746978768,
+      "metadata": {
+        "index": 5245,
+        "sizeKm": 2,
+        "heightWidthM": 1083.1195712089539,
+        "affineWidthM": 3998.184174357448,
+        "errorM": 0.09346754814032465
+      }
+    },
+    {
+      "name": "home-down-43-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 63.24181288262369,
+      "xyz": [
+        -42.48423141752252,
+        -2.464855545772471,
+        -24.186901735499706
+      ],
+      "coast": 34.054447174072266,
+      "h": 1.721739411354065,
+      "clearanceM": 0.9191890467263875,
+      "knownGapM": 5.23819654907553,
+      "metadata": {
+        "index": 5215,
+        "sizeKm": 2,
+        "heightWidthM": 957.9935073852539,
+        "affineWidthM": 4162.950723432004,
+        "errorM": 0.09862310253083706
+      }
+    },
+    {
+      "name": "home-down-44-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 64.23305623565636,
+      "xyz": [
+        -42.945281105187625,
+        -2.52971531942187,
+        -25.62818470091634
+      ],
+      "coast": 34.211055755615234,
+      "h": 1.6647636890411377,
+      "clearanceM": 1.7606284864086774,
+      "knownGapM": 7.7098555643715425,
+      "metadata": {
+        "index": 5215,
+        "sizeKm": 2,
+        "heightWidthM": 957.9935073852539,
+        "affineWidthM": 4162.950723432004,
+        "errorM": 0.09862310253083706
+      }
+    },
+    {
+      "name": "home-down-45-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 65.1831357799999,
+      "xyz": [
+        -43.34374999999999,
+        -2.5857700464253917,
+        -27.06040456225439
+      ],
+      "coast": 34.30663299560547,
+      "h": 1.6115522384643555,
+      "clearanceM": 7.537607871199725,
+      "knownGapM": 173.40409400989483,
+      "metadata": {
+        "index": 5213,
+        "sizeKm": 2,
+        "heightWidthM": 1016.3030624389648,
+        "affineWidthM": 3620.9189346118364,
+        "errorM": 0.08623427856946364
+      }
+    },
+    {
+      "name": "home-down-46-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 66.93827480265443,
+      "xyz": [
+        -44.4375,
+        -2.739635000912582,
+        -28.84457432765967
+      ],
+      "coast": 35.06912612915039,
+      "h": 1.446398377418518,
+      "clearanceM": 34.19086039502872,
+      "knownGapM": 629.3440667463001,
+      "metadata": {
+        "index": 5204,
+        "sizeKm": 2,
+        "heightWidthM": 887.2426748275757,
+        "affineWidthM": 3496.479372261092,
+        "errorM": 0.10482472134754062
+      }
+    },
+    {
+      "name": "home-down-47-8",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 68.62101545040392,
+      "xyz": [
+        -45.431514497784825,
+        -2.879470927651754,
+        -30.625400899717842
+      ],
+      "coast": 35.68883514404297,
+      "h": 1.3250664472579956,
+      "clearanceM": 31.010759593300463,
+      "knownGapM": 11760.270583878022,
+      "metadata": {
+        "index": 5202,
+        "sizeKm": 2,
+        "heightWidthM": 426.2228012084961,
+        "affineWidthM": 2995.0146621558815,
+        "errorM": 0.0928030931390822
+      }
+    },
+    {
+      "name": "home-down-0-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 59.24121844095801,
+      "xyz": [
+        -36.93846705938622,
+        -2.81872867643564,
+        26.410551947463176
+      ],
+      "coast": 53.359336853027344,
+      "h": 1.3424170017242432,
+      "clearanceM": 0.646755095658591,
+      "knownGapM": 4.143928440653449,
+      "metadata": {
+        "index": 56384,
+        "sizeKm": 2,
+        "heightWidthM": 1644.165575504303,
+        "affineWidthM": 5609.664414514555,
+        "errorM": 0.10886147356359288
+      }
+    },
+    {
+      "name": "home-down-11-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 56.37173297911772,
+      "xyz": [
+        -38.39208984375001,
+        -3.0547210526888975,
+        14.426003411121187
+      ],
+      "coast": 50.04417419433594,
+      "h": 1.076958417892456,
+      "clearanceM": 0.3088502871833043,
+      "knownGapM": 2.558908848349491,
+      "metadata": {
+        "index": 56223,
+        "sizeKm": 2,
+        "heightWidthM": 1605.704128742218,
+        "affineWidthM": 5071.8809258250985,
+        "errorM": 0.09773401689017192
+      }
+    },
+    {
+      "name": "home-down-13-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 54.98442047914436,
+      "xyz": [
+        -37.583598473100004,
+        -2.9234643491385324,
+        11.930962366686842
+      ],
+      "coast": 47.227622985839844,
+      "h": 1.1973400115966797,
+      "clearanceM": 1.201381276587199,
+      "knownGapM": 3.3515090171795374,
+      "metadata": {
+        "index": 56216,
+        "sizeKm": 2,
+        "heightWidthM": 1829.2889595031738,
+        "affineWidthM": 8166.47139476845,
+        "errorM": 0.12935024278704077
+      }
+    },
+    {
+      "name": "home-down-14-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 54.07221527238608,
+      "xyz": [
+        -36.92968750000001,
+        -2.817302792863307,
+        10.658522891533268
+      ],
+      "coast": 45.411468505859375,
+      "h": 1.2978368997573853,
+      "clearanceM": 0.7854589830458281,
+      "knownGapM": 2.0185051091001647,
+      "metadata": {
+        "index": 56216,
+        "sizeKm": 2,
+        "heightWidthM": 1829.2889595031738,
+        "affineWidthM": 8166.47139476845,
+        "errorM": 0.12935024278704077
+      }
+    },
+    {
+      "name": "home-down-15-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 53.06902601348731,
+      "xyz": [
+        -36.16015625,
+        -2.6923712375891427,
+        9.39307155561271
+      ],
+      "coast": 43.405784606933594,
+      "h": 1.4163331985473633,
+      "clearanceM": 0.8143426348397043,
+      "knownGapM": 2.0106284062679025,
+      "metadata": {
+        "index": 56214,
+        "sizeKm": 2,
+        "heightWidthM": 1485.5912327766418,
+        "affineWidthM": 7930.285140522756,
+        "errorM": 0.12687957496382296
+      }
+    },
+    {
+      "name": "home-down-16-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 52.488358196065036,
+      "xyz": [
+        -35.77492955260803,
+        -2.6298308609910137,
+        8.22267374078068
+      ],
+      "coast": 41.860477447509766,
+      "h": 1.4751923084259033,
+      "clearanceM": 0.7025444265309488,
+      "knownGapM": 2.413453920827949,
+      "metadata": {
+        "index": 56217,
+        "sizeKm": 2,
+        "heightWidthM": 1755.2653551101685,
+        "affineWidthM": 7190.121332532726,
+        "errorM": 0.1286366896238178
+      }
+    },
+    {
+      "name": "home-down-17-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 53.953617747881324,
+      "xyz": [
+        -37.36572265625,
+        -2.888092507483849,
+        7.3449708935285285
+      ],
+      "coast": 42.54332733154297,
+      "h": 1.2247363328933716,
+      "clearanceM": 0.9586213400325505,
+      "knownGapM": 9.48779983530174,
+      "metadata": {
+        "index": 56184,
+        "sizeKm": 2,
+        "heightWidthM": 1712.5999629497528,
+        "affineWidthM": 6203.617180144647,
+        "errorM": 0.11097509559476748
+      }
+    },
+    {
+      "name": "home-down-19-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 56.12911497446225,
+      "xyz": [
+        -39.76171874999999,
+        -3.277077524452226,
+        5.308365100939728
+      ],
+      "coast": 42.818695068359375,
+      "h": 0.8487880825996399,
+      "clearanceM": 0.40770180294202873,
+      "knownGapM": 1.9876981609755162,
+      "metadata": {
+        "index": 56181,
+        "sizeKm": 2,
+        "heightWidthM": 1029.1499495506287,
+        "affineWidthM": 4941.667851759121,
+        "errorM": 0.09180529741570354
+      }
+    },
+    {
+      "name": "home-down-20-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 57.45146645097465,
+      "xyz": [
+        -41.162109375,
+        -3.504428059782292,
+        4.228024682935034
+      ],
+      "coast": 43.14874267578125,
+      "h": 0.6290577054023743,
+      "clearanceM": 0.8765182356000878,
+      "knownGapM": 9.920734545910143,
+      "metadata": {
+        "index": 56166,
+        "sizeKm": 2,
+        "heightWidthM": 863.2673174142838,
+        "affineWidthM": 4253.5722618340515,
+        "errorM": 0.08011770842131227
+      }
+    },
+    {
+      "name": "home-down-21-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 57.76952870931733,
+      "xyz": [
+        -41.5517578125,
+        -3.567686175877684,
+        3.0331474033505663
+      ],
+      "coast": 42.58267593383789,
+      "h": 0.5681810975074768,
+      "clearanceM": 0.34464265718270326,
+      "knownGapM": 2.972218937164747,
+      "metadata": {
+        "index": 56160,
+        "sizeKm": 2,
+        "heightWidthM": 726.8220484256744,
+        "affineWidthM": 4121.813463338185,
+        "errorM": 0.08232572872657329
+      }
+    },
+    {
+      "name": "home-down-27-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 57.0397559634914,
+      "xyz": [
+        -40.75683593749999,
+        -3.4386327635617615,
+        -4.252217229191086
+      ],
+      "coast": 38.27751922607422,
+      "h": 0.6927119493484497,
+      "clearanceM": 0.4270433691999642,
+      "knownGapM": 8.92866109132126,
+      "metadata": {
+        "index": 5416,
+        "sizeKm": 2,
+        "heightWidthM": 780.3821861743927,
+        "affineWidthM": 4411.359823978273,
+        "errorM": 0.09245605178875849
+      }
+    },
+    {
+      "name": "home-down-28-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 55.92289128562243,
+      "xyz": [
+        -39.55908203125,
+        -3.2441798764958456,
+        -5.343448700854777
+      ],
+      "coast": 36.72475814819336,
+      "h": 0.8801612854003906,
+      "clearanceM": 0.6995509756961837,
+      "knownGapM": 3.4784717817018245,
+      "metadata": {
+        "index": 5431,
+        "sizeKm": 2,
+        "heightWidthM": 811.3200068473816,
+        "affineWidthM": 4480.485058651539,
+        "errorM": 0.09595772280590609
+      }
+    },
+    {
+      "name": "home-down-29-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 55.84184174593312,
+      "xyz": [
+        -39.35742187499999,
+        -3.2114405198342855,
+        -6.500959816736111
+      ],
+      "coast": 36.13068389892578,
+      "h": 0.91274094581604,
+      "clearanceM": 0.6856363052065717,
+      "knownGapM": 17.92915486615356,
+      "metadata": {
+        "index": 5429,
+        "sizeKm": 2,
+        "heightWidthM": 939.5070672035217,
+        "affineWidthM": 4691.6101437818725,
+        "errorM": 0.0983293357421644
+      }
+    },
+    {
+      "name": "home-down-30-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 55.9001147694115,
+      "xyz": [
+        -39.26904296875,
+        -3.197092581906592,
+        -7.665631077000252
+      ],
+      "coast": 35.65975570678711,
+      "h": 0.9279986619949341,
+      "clearanceM": 0.5249968471616739,
+      "knownGapM": 4.494220974618857,
+      "metadata": {
+        "index": 5429,
+        "sizeKm": 2,
+        "heightWidthM": 939.5070672035217,
+        "affineWidthM": 4691.6101437818725,
+        "errorM": 0.0983293357421644
+      }
+    },
+    {
+      "name": "home-down-31-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 55.40646392570575,
+      "xyz": [
+        -38.61952055823843,
+        -3.0916442810604146,
+        -8.736023392482121
+      ],
+      "coast": 34.649757385253906,
+      "h": 1.0153393745422363,
+      "clearanceM": 16.038385120737075,
+      "knownGapM": 390.3124235117268,
+      "metadata": {
+        "index": 5399,
+        "sizeKm": 2,
+        "heightWidthM": 1109.6166968345642,
+        "affineWidthM": 4272.329513099976,
+        "errorM": 0.09851253707893193
+      }
+    },
+    {
+      "name": "home-down-32-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 55.003445736215696,
+      "xyz": [
+        -38.039252073397385,
+        -2.9974385137886976,
+        -9.79114273027895
+      ],
+      "coast": 33.7114143371582,
+      "h": 1.1233476400375366,
+      "clearanceM": 0.2775544007818098,
+      "knownGapM": 2.376924876122976,
+      "metadata": {
+        "index": 5399,
+        "sizeKm": 2,
+        "heightWidthM": 1109.6166968345642,
+        "affineWidthM": 4272.329513099976,
+        "errorM": 0.09851253707893193
+      }
+    },
+    {
+      "name": "home-down-33-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 54.78676607738572,
+      "xyz": [
+        -37.62109375,
+        -2.9295511481689402,
+        -10.854421447384457
+      ],
+      "coast": 32.93553161621094,
+      "h": 1.1900056600570679,
+      "clearanceM": 0.7455879531335086,
+      "knownGapM": 4.037010218200329,
+      "metadata": {
+        "index": 5398,
+        "sizeKm": 2,
+        "heightWidthM": 1222.2102880477905,
+        "affineWidthM": 4113.0925110774115,
+        "errorM": 0.09562799823470414
+      }
+    },
+    {
+      "name": "home-down-34-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 53.34074470061524,
+      "xyz": [
+        -36,
+        -2.666370442332301,
+        -11.628174459199549
+      ],
+      "coast": 31.04267692565918,
+      "h": 1.4402016401290894,
+      "clearanceM": 5.726010638682055,
+      "knownGapM": 53.42680772455647,
+      "metadata": {
+        "index": 5401,
+        "sizeKm": 2,
+        "heightWidthM": 1053.762137889862,
+        "affineWidthM": 3978.3897616434842,
+        "errorM": 0.08126144530251622
+      }
+    },
+    {
+      "name": "home-down-37-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 54.432072589004,
+      "xyz": [
+        -36.259765625,
+        -2.7085423266788666,
+        -15.01808972102097
+      ],
+      "coast": 30.163856506347656,
+      "h": 1.4118156433105469,
+      "clearanceM": 0.5011452403778094,
+      "knownGapM": 2.0582931234178083,
+      "metadata": {
+        "index": 5390,
+        "sizeKm": 2,
+        "heightWidthM": 1371.292233467102,
+        "affineWidthM": 5227.818862826098,
+        "errorM": 0.11265680950600654
+      }
+    },
+    {
+      "name": "home-down-40-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 56.02163126906355,
+      "xyz": [
+        -36.79968261718751,
+        -2.796196888542557,
+        -18.540890466683106
+      ],
+      "coast": 29.424217224121094,
+      "h": 1.3367043733596802,
+      "clearanceM": 0.33078478827519575,
+      "knownGapM": 5.3722444557015345,
+      "metadata": {
+        "index": 5270,
+        "sizeKm": 2,
+        "heightWidthM": 741.0385608673096,
+        "affineWidthM": 3962.0769924658816,
+        "errorM": 0.09464489266974851
+      }
+    },
+    {
+      "name": "home-down-43-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 56.398015987195805,
+      "xyz": [
+        -36.047884786859875,
+        -2.6741445730142104,
+        -21.591819203344667
+      ],
+      "coast": 27.69867515563965,
+      "h": 1.460069179534912,
+      "clearanceM": 4.325730598793598,
+      "knownGapM": 87.50193612827353,
+      "metadata": {
+        "index": 5264,
+        "sizeKm": 2,
+        "heightWidthM": 721.5461730957031,
+        "affineWidthM": 4386.753444821807,
+        "errorM": 0.10687235771911219
+      }
+    },
+    {
+      "name": "home-down-44-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 56.981056632022636,
+      "xyz": [
+        -36.1845703125,
+        -2.696334701928487,
+        -22.75792965945464
+      ],
+      "coast": 27.540557861328125,
+      "h": 1.4464253187179565,
+      "clearanceM": 0.6124574556451989,
+      "knownGapM": 3.2367327038472897,
+      "metadata": {
+        "index": 5262,
+        "sizeKm": 2,
+        "heightWidthM": 991.5261268615723,
+        "affineWidthM": 4929.77528629126,
+        "errorM": 0.11951937631238252
+      }
+    },
+    {
+      "name": "home-down-46-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 56.657722628902725,
+      "xyz": [
+        -35.076749697701864,
+        -2.5164821756679636,
+        -24.439670947043677
+      ],
+      "coast": 26.06193733215332,
+      "h": 1.626395344734192,
+      "clearanceM": 0.5246018690741039,
+      "knownGapM": 2.00869495205948,
+      "metadata": {
+        "index": 5235,
+        "sizeKm": 2,
+        "heightWidthM": 1226.500153541565,
+        "affineWidthM": 5122.776472009718,
+        "errorM": 0.1271574292331934
+      }
+    },
+    {
+      "name": "home-down-47-9",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 56.48731419064474,
+      "xyz": [
+        -34.505859375,
+        -2.423799893178769,
+        -25.236239854837557
+      ],
+      "coast": 25.33148193359375,
+      "h": 1.717550277709961,
+      "clearanceM": 2.03780249285046,
+      "knownGapM": 11.055459885136315,
+      "metadata": {
+        "index": 5235,
+        "sizeKm": 2,
+        "heightWidthM": 1226.500153541565,
+        "affineWidthM": 5122.776472009718,
+        "errorM": 0.1271574292331934
+      }
+    },
+    {
+      "name": "home-down-0-10",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 57.00928665349731,
+      "xyz": [
+        -34.77609747949195,
+        -3.564171770775344,
+        25.426798325361013
+      ],
+      "coast": 50.97392654418945,
+      "h": 0.5810732841491699,
+      "clearanceM": 0.39541512614960084,
+      "knownGapM": 1.0574891287392991,
+      "metadata": {
+        "index": 56385,
+        "sizeKm": 2,
+        "heightWidthM": 1167.6564514636993,
+        "affineWidthM": 4342.141959175933,
+        "errorM": 0.10386931535322219
+      }
+    },
+    {
+      "name": "home-down-1-10",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 56.83138729753454,
+      "xyz": [
+        -35.04001528961279,
+        -3.6127863413735497,
+        24.471853258607776
+      ],
+      "coast": 51.02857208251953,
+      "h": 0.529975175857544,
+      "clearanceM": 0.5866786523256451,
+      "knownGapM": 10.626889113436091,
+      "metadata": {
+        "index": 56385,
+        "sizeKm": 2,
+        "heightWidthM": 1167.6564514636993,
+        "affineWidthM": 4342.141959175933,
+        "errorM": 0.10386931535322219
+      }
+    },
+    {
+      "name": "home-down-6-10",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 55.39086458256419,
+      "xyz": [
+        -35.671875,
+        -3.729178271181812,
+        19.266329972931807
+      ],
+      "coast": 50.161617279052734,
+      "h": 0.3996330201625824,
+      "clearanceM": 0.17847728031483712,
+      "knownGapM": 4.237327089365329,
+      "metadata": {
+        "index": 56347,
+        "sizeKm": 2,
+        "heightWidthM": 534.9076241254807,
+        "affineWidthM": 2654.802995035425,
+        "errorM": 0.07215567165985703
+      }
+    },
+    {
+      "name": "home-down-11-10",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 53.64023800922643,
+      "xyz": [
+        -35.59619140625,
+        -3.7152369526106135,
+        13.733425417594761
+      ],
+      "coast": 46.8939094543457,
+      "h": 0.39857256412506104,
+      "clearanceM": 0.42825635136978235,
+      "knownGapM": 5.650559042416631,
+      "metadata": {
+        "index": 56225,
+        "sizeKm": 2,
+        "heightWidthM": 731.1920523643494,
+        "affineWidthM": 4001.0813275293913,
+        "errorM": 0.08518495451426134
+      }
+    },
+    {
+      "name": "home-down-13-10",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 52.36058402230792,
+      "xyz": [
+        -34.869101571101886,
+        -3.581303804372304,
+        11.366868768693324
+      ],
+      "coast": 44.06949996948242,
+      "h": 0.5238693356513977,
+      "clearanceM": 0.3801811917583109,
+      "knownGapM": 2.0754319657595888,
+      "metadata": {
+        "index": 56219,
+        "sizeKm": 2,
+        "heightWidthM": 1352.8987169265747,
+        "affineWidthM": 5471.037126291776,
+        "errorM": 0.11449473822722211
+      }
+    },
+    {
+      "name": "home-down-14-10",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 51.452190202535384,
+      "xyz": [
+        -34.210656609390085,
+        -3.460014801101149,
+        10.146649212471889
+      ],
+      "coast": 42.280914306640625,
+      "h": 0.6383601427078247,
+      "clearanceM": 1.5470165371880285,
+      "knownGapM": 8.395319636798906,
+      "metadata": {
+        "index": 56219,
+        "sizeKm": 2,
+        "heightWidthM": 1352.8987169265747,
+        "affineWidthM": 5471.037126291776,
+        "errorM": 0.11449473822722211
+      }
+    },
+    {
+      "name": "home-down-21-10",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 50.03822176230584,
+      "xyz": [
+        -33.75,
+        -3.375159856870651,
+        2.625157868906869
+      ],
+      "coast": 35.113555908203125,
+      "h": 0.6495574116706848,
+      "clearanceM": 65.20844867827691,
+      "knownGapM": 4076.1017917998074,
+      "metadata": {
+        "index": 56180,
+        "sizeKm": 2,
+        "heightWidthM": 1130.599170923233,
+        "affineWidthM": 4700.441299122758,
+        "errorM": 0.08933202479965985
+      }
+    },
+    {
+      "name": "home-down-22-10",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 51.018493734348155,
+      "xyz": [
+        -34.75781250000001,
+        -3.560803425439831,
+        1.596796596782576
+      ],
+      "coast": 35.19682312011719,
+      "h": 0.5284676551818848,
+      "clearanceM": 5.734633607062278,
+      "knownGapM": 55.63577075775004,
+      "metadata": {
+        "index": 56177,
+        "sizeKm": 2,
+        "heightWidthM": 770.6655114889145,
+        "affineWidthM": 3736.959477333585,
+        "errorM": 0.08628270734334365
+      }
+    },
+    {
+      "name": "home-down-26-10",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 49.82641659219157,
+      "xyz": [
+        -33.5419921875,
+        -3.3368438171214567,
+        -2.6686176806151125
+      ],
+      "coast": 32.18293380737305,
+      "h": 0.751717209815979,
+      "clearanceM": 0.28381930405885214,
+      "knownGapM": 4.971952342357603,
+      "metadata": {
+        "index": 5442,
+        "sizeKm": 2,
+        "heightWidthM": 684.0881705284119,
+        "affineWidthM": 3903.5796552198008,
+        "errorM": 0.0834174279589206
+      }
+    },
+    {
+      "name": "home-down-29-10",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 50.13151036804187,
+      "xyz": [
+        -33.578125,
+        -3.3434999969141135,
+        -5.8424374295340415
+      ],
+      "coast": 30.907651901245117,
+      "h": 0.7471644282341003,
+      "clearanceM": 0.490539373458887,
+      "knownGapM": 3.9989641055003156,
+      "metadata": {
+        "index": 5436,
+        "sizeKm": 2,
+        "heightWidthM": 588.1385207176208,
+        "affineWidthM": 3555.6626463658176,
+        "errorM": 0.0852084340294823
+      }
+    },
+    {
+      "name": "home-down-36-10",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 50.83473551161693,
+      "xyz": [
+        -32.92944335937499,
+        -3.224009145858018,
+        -13.068394405867156
+      ],
+      "coast": 27.61299705505371,
+      "h": 0.8741745948791504,
+      "clearanceM": 0.3069684225920355,
+      "knownGapM": 1.0000000000022298,
+      "metadata": {
+        "index": 5396,
+        "sizeKm": 2,
+        "heightWidthM": 792.256236076355,
+        "affineWidthM": 4498.2050647668075,
+        "errorM": 0.1083013994502835
+      }
+    },
+    {
+      "name": "home-down-37-10",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 51.274666552156596,
+      "xyz": [
+        -33.08291504906263,
+        -3.252279865191925,
+        -14.156413174228573
+      ],
+      "coast": 27.35162353515625,
+      "h": 0.8471054434776306,
+      "clearanceM": 2.2251939963098266,
+      "knownGapM": 201.22206776970205,
+      "metadata": {
+        "index": 5394,
+        "sizeKm": 2,
+        "heightWidthM": 567.950963973999,
+        "affineWidthM": 4115.026593906805,
+        "errorM": 0.10442751226946712
+      }
+    },
+    {
+      "name": "home-down-38-10",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 51.74804488213234,
+      "xyz": [
+        -33.24755859375,
+        -3.282607357878554,
+        -15.254555088669948
+      ],
+      "coast": 27.10317611694336,
+      "h": 0.8218520283699036,
+      "clearanceM": 0.5429620541690383,
+      "knownGapM": 268.5795045885307,
+      "metadata": {
+        "index": 5394,
+        "sizeKm": 2,
+        "heightWidthM": 567.950963973999,
+        "affineWidthM": 4115.026593906805,
+        "errorM": 0.10442751226946712
+      }
+    },
+    {
+      "name": "home-down-39-10",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 52.10034594887009,
+      "xyz": [
+        -33.27895871524114,
+        -3.2883914526603526,
+        -16.31521548295258
+      ],
+      "coast": 26.73858642578125,
+      "h": 0.8171570897102356,
+      "clearanceM": 2.2453923120338004,
+      "knownGapM": 20.861093617728066,
+      "metadata": {
+        "index": 5276,
+        "sizeKm": 2,
+        "heightWidthM": 565.7892227172852,
+        "affineWidthM": 4133.3936409209855,
+        "errorM": 0.10217617091257125
+      }
+    },
+    {
+      "name": "home-down-40-10",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 51.92316438517065,
+      "xyz": [
+        -32.80078125,
+        -3.200309561290693,
+        -17.195696364930704
+      ],
+      "coast": 25.929031372070312,
+      "h": 0.9043373465538025,
+      "clearanceM": 2.981368848850252,
+      "knownGapM": 79.96516158694357,
+      "metadata": {
+        "index": 5276,
+        "sizeKm": 2,
+        "heightWidthM": 565.7892227172852,
+        "affineWidthM": 4133.3936409209855,
+        "errorM": 0.10217617091257125
+      }
+    },
+    {
+      "name": "home-down-8-17",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 28.165126562814816,
+      "xyz": [
+        -9.9384765625,
+        -3.0014491292391483,
+        8.711832311144411
+      ],
+      "coast": 17.87588119506836,
+      "h": 1.011867642402649,
+      "clearanceM": 0.3892225877279998,
+      "knownGapM": 33.66242089497445,
+      "metadata": {
+        "index": 65041,
+        "sizeKm": 0.25,
+        "heightWidthM": 258.3770155906677,
+        "affineWidthM": 222.76419124682434,
+        "errorM": 0.05753967707278207
+      }
+    },
+    {
+      "name": "home-down-18-17",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 24.23886189994831,
+      "xyz": [
+        -7.386981416415242,
+        -2.1272665438949048,
+        2.7612850105283844
+      ],
+      "coast": 10.30872631072998,
+      "h": 1.8774765729904175,
+      "clearanceM": 0.13632823629450286,
+      "knownGapM": 4.26477031745685,
+      "metadata": {
+        "index": 63427,
+        "sizeKm": 0.25,
+        "heightWidthM": 246.6217279434204,
+        "affineWidthM": 144.52249463647604,
+        "errorM": 0.045745051465928555
+      }
+    },
+    {
+      "name": "home-down-42-17",
+      "group": "home-down",
+      "status": "unresolved-height-budget",
+      "frontKm": 28.22630850047425,
+      "xyz": [
+        -9.490087214786538,
+        -2.8478232808065265,
+        -10.273327330964651
+      ],
+      "coast": 7.614727020263672,
+      "h": 1.1673846244812012,
+      "clearanceM": 0.14034509877092205,
+      "knownGapM": 1.8068488285542528,
+      "metadata": {
+        "index": 23005,
+        "sizeKm": 0.25,
+        "heightWidthM": 311.60587072372437,
+        "affineWidthM": 203.19461045437492,
+        "errorM": 0.057240053138229996
+      }
+    },
+    {
+      "name": "level-sea-miss-5-10",
+      "group": "level-sea-miss",
+      "status": "unresolved-height-budget",
+      "frontKm": 20.440488452338595,
+      "xyz": [
+        -3.0222119202613733,
+        -2.660660636453302,
+        7.473544940115122
+      ],
+      "coast": 7.941343307495117,
+      "h": 1.344342827796936,
+      "clearanceM": 0.09573161878506653,
+      "knownGapM": 24.243892561476514,
+      "metadata": {
+        "index": 64480,
+        "sizeKm": 0.25,
+        "heightWidthM": 170.0425148010254,
+        "affineWidthM": 138.74431992007885,
+        "errorM": 0.04191327388980426
+      }
+    },
+    {
+      "name": "level-sea-miss-41-10",
+      "group": "level-sea-miss",
+      "status": "unresolved-height-budget",
+      "frontKm": 35.41760261550753,
+      "xyz": [
+        -17.1943359375,
+        -2.4078425319398375,
+        -12.336613159260152
+      ],
+      "coast": 13.643959999084473,
+      "h": 1.6271179914474487,
+      "clearanceM": 0.17713856050249888,
+      "knownGapM": 9.377730233563994,
+      "metadata": {
+        "index": 18398,
+        "sizeKm": 0.25,
+        "heightWidthM": 233.10184478759766,
+        "affineWidthM": 180.4539094446227,
+        "errorM": 0.05572751979343593
+      }
+    },
+    {
+      "name": "level-sea-miss-45-10",
+      "group": "level-sea-miss",
+      "status": "unresolved-height-budget",
+      "frontKm": 40.25286949842433,
+      "xyz": [
+        -20.611700393442476,
+        -2.3468797638181544,
+        -16.716766448571075
+      ],
+      "coast": 13.989339828491211,
+      "h": 1.7082058191299438,
+      "clearanceM": 0.17314577871729853,
+      "knownGapM": 3.9615938405786206,
+      "metadata": {
+        "index": 10556,
+        "sizeKm": 0.25,
+        "heightWidthM": 196.68114185333252,
+        "affineWidthM": 273.90162386291195,
+        "errorM": 0.054638181609334424
+      }
+    },
+    {
+      "name": "level-sea-miss-46-10",
+      "group": "level-sea-miss",
+      "status": "unresolved-height-budget",
+      "frontKm": 74.23118369480191,
+      "xyz": [
+        -50.96895692208034,
+        -1.8053333480817444,
+        -32
+      ],
+      "coast": 40.98471450805664,
+      "h": 1.9805341958999634,
+      "clearanceM": 498.2720456473544,
+      "knownGapM": null,
+      "metadata": {
+        "index": 5141,
+        "sizeKm": 2,
+        "heightWidthM": 1328.1491994857788,
+        "affineWidthM": 6098.032130976208,
+        "errorM": 0.13721341383643448
+      }
+    },
+    {
+      "name": "level-sea-miss-47-10",
+      "group": "level-sea-miss",
+      "status": "unresolved-height-budget",
+      "frontKm": 57.44024969512975,
+      "xyz": [
+        -35.388671875,
+        -2.083271777145037,
+        -25.646563260309637
+      ],
+      "coast": 26.148540496826172,
+      "h": 2.063201427459717,
+      "clearanceM": 3.386108468475868,
+      "knownGapM": 19.648141088702662,
+      "metadata": {
+        "index": 5235,
+        "sizeKm": 2,
+        "heightWidthM": 1226.500153541565,
+        "affineWidthM": 5122.776472009718,
+        "errorM": 0.1271574292331934
+      }
+    },
+    {
+      "name": "coastal-horizon-0-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 97.16193640585064,
+      "xyz": [
+        -70.78027343749999,
+        -3.323740877480679,
+        43.30946387206712
+      ],
+      "coast": 85.68690490722656,
+      "h": 1.8005788326263428,
+      "clearanceM": 0.6929479448087861,
+      "knownGapM": 36.08187695490511,
+      "metadata": {
+        "index": 55871,
+        "sizeKm": 2,
+        "heightWidthM": 1067.644715309143,
+        "affineWidthM": 5321.232998103369,
+        "errorM": 0.13717108231503516
+      }
+    },
+    {
+      "name": "coastal-horizon-1-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 95.28002168609379,
+      "xyz": [
+        -69.8125,
+        -3.258794094043296,
+        41.004073060538005
+      ],
+      "coast": 84.77177429199219,
+      "h": 1.7878355979919434,
+      "clearanceM": 6.6783747911982605,
+      "knownGapM": 69.39550143777664,
+      "metadata": {
+        "index": 55870,
+        "sizeKm": 2,
+        "heightWidthM": 1445.2228546142578,
+        "affineWidthM": 5440.392397285905,
+        "errorM": 0.13536772166844457
+      }
+    },
+    {
+      "name": "coastal-horizon-3-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 90.62027953248034,
+      "xyz": [
+        -66.93077491699995,
+        -3.065404453237144,
+        36.1046811537685
+      ],
+      "coast": 80.83455657958984,
+      "h": 1.8688122034072876,
+      "clearanceM": 4.371131331628586,
+      "knownGapM": 95.03453412364887,
+      "metadata": {
+        "index": 55841,
+        "sizeKm": 2,
+        "heightWidthM": 1909.477710723877,
+        "affineWidthM": 8121.02475319989,
+        "errorM": 0.15801825793460011
+      }
+    },
+    {
+      "name": "coastal-horizon-4-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 85.35059755342249,
+      "xyz": [
+        -62.705078125,
+        -2.7818218296256267,
+        32.5935221484746
+      ],
+      "coast": 74.70437622070312,
+      "h": 2.1196417808532715,
+      "clearanceM": 0.36486944221203466,
+      "knownGapM": 1.059019262215851,
+      "metadata": {
+        "index": 78253,
+        "sizeKm": 2,
+        "heightWidthM": 1418.117880821228,
+        "affineWidthM": 6556.528286833782,
+        "errorM": 0.14348742843139917
+      }
+    },
+    {
+      "name": "coastal-horizon-6-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 85.28111740403267,
+      "xyz": [
+        -63.78125,
+        -2.8540426118891276,
+        29.650554357505364
+      ],
+      "coast": 75.65132141113281,
+      "h": 1.9247041940689087,
+      "clearanceM": 8.020958676905776,
+      "knownGapM": 100.2128289937502,
+      "metadata": {
+        "index": 56285,
+        "sizeKm": 2,
+        "heightWidthM": 1212.3459577560425,
+        "affineWidthM": 5666.792982199695,
+        "errorM": 0.1512153394287452
+      }
+    },
+    {
+      "name": "coastal-horizon-7-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 81.23968811817213,
+      "xyz": [
+        -60.515624999999986,
+        -2.63488976929,
+        26.811923604610367
+      ],
+      "coast": 71.0392837524414,
+      "h": 2.0951411724090576,
+      "clearanceM": 16.63857440013139,
+      "knownGapM": 34036.31668077312,
+      "metadata": {
+        "index": 56280,
+        "sizeKm": 2,
+        "heightWidthM": 1072.0305442810059,
+        "affineWidthM": 5354.582202795427,
+        "errorM": 0.1328618236584589
+      }
+    },
+    {
+      "name": "coastal-horizon-8-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 81.64926945887447,
+      "xyz": [
+        -61.3984375,
+        -2.694134843569058,
+        25.477558302313152
+      ],
+      "coast": 71.90153503417969,
+      "h": 2.0034098625183105,
+      "clearanceM": 7.342391053538178,
+      "knownGapM": 32608.873459690436,
+      "metadata": {
+        "index": 56278,
+        "sizeKm": 2,
+        "heightWidthM": 1110.8962297439575,
+        "affineWidthM": 4946.174627461005,
+        "errorM": 0.11941937555093318
+      }
+    },
+    {
+      "name": "coastal-horizon-9-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 82.19476755994657,
+      "xyz": [
+        -62.393554687499986,
+        -2.7609160991681643,
+        24.140278224016182
+      ],
+      "coast": 72.86576080322266,
+      "h": 1.9066327810287476,
+      "clearanceM": 0.9573121064425649,
+      "knownGapM": 5.119574387356438,
+      "metadata": {
+        "index": 56277,
+        "sizeKm": 2,
+        "heightWidthM": 950.8118629455566,
+        "affineWidthM": 5027.339975291397,
+        "errorM": 0.13176606444176286
+      }
+    },
+    {
+      "name": "coastal-horizon-11-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 83.65757752426865,
+      "xyz": [
+        -64.6875,
+        -2.9148604642228033,
+        21.419542119517022
+      ],
+      "coast": 75.00218200683594,
+      "h": 1.693463921546936,
+      "clearanceM": 1.6884846207902982,
+      "knownGapM": 16.20015042447159,
+      "metadata": {
+        "index": 55330,
+        "sizeKm": 2,
+        "heightWidthM": 823.4996795654297,
+        "affineWidthM": 4135.986268200213,
+        "errorM": 0.1115202103392221
+      }
+    },
+    {
+      "name": "coastal-horizon-12-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 84.63359511726352,
+      "xyz": [
+        -66.04296875,
+        -3.0058251023525226,
+        20.037020603807303
+      ],
+      "coast": 76.21733856201172,
+      "h": 1.5822978019714355,
+      "clearanceM": 0.741362354477193,
+      "knownGapM": 4.029595428041251,
+      "metadata": {
+        "index": 55329,
+        "sizeKm": 2,
+        "heightWidthM": 774.7523784637451,
+        "affineWidthM": 4014.0207146760076,
+        "errorM": 0.10382471373304725
+      }
+    },
+    {
+      "name": "coastal-horizon-13-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 84.10264611774524,
+      "xyz": [
+        -65.91104269191408,
+        -2.9969710684105513,
+        18.265252166115296
+      ],
+      "coast": 75.42327117919922,
+      "h": 1.570381760597229,
+      "clearanceM": 0.3961602875526271,
+      "knownGapM": 4.166269211008135,
+      "metadata": {
+        "index": 55324,
+        "sizeKm": 2,
+        "heightWidthM": 780.9559106826782,
+        "affineWidthM": 4287.351339444285,
+        "errorM": 0.10513499000808224
+      }
+    },
+    {
+      "name": "coastal-horizon-15-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 82.1831218396205,
+      "xyz": [
+        -64.70019531250001,
+        -2.9157120334816007,
+        14.567580278691427
+      ],
+      "coast": 72.22062683105469,
+      "h": 1.6125717163085938,
+      "clearanceM": 0.9833672506638358,
+      "knownGapM": 18.895644254696933,
+      "metadata": {
+        "index": 55204,
+        "sizeKm": 2,
+        "heightWidthM": 1104.6829223632812,
+        "affineWidthM": 4962.87930602557,
+        "errorM": 0.09876637341221794
+      }
+    },
+    {
+      "name": "coastal-horizon-16-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 80.55186210149576,
+      "xyz": [
+        -63.375,
+        -2.8267797989272507,
+        12.642673326502786
+      ],
+      "coast": 69.54637908935547,
+      "h": 1.6728187799453735,
+      "clearanceM": 9.849409625103833,
+      "knownGapM": 126.85332525307288,
+      "metadata": {
+        "index": 56117,
+        "sizeKm": 2,
+        "heightWidthM": 1060.490608215332,
+        "affineWidthM": 5605.3687509847805,
+        "errorM": 0.11072002234868705
+      }
+    },
+    {
+      "name": "coastal-horizon-17-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 87.15428293042761,
+      "xyz": [
+        -70.14544756111653,
+        -3.281137808505913,
+        11.89158048724855
+      ],
+      "coast": 76.85545349121094,
+      "h": 1.2317085266113281,
+      "clearanceM": 12.326885896702944,
+      "knownGapM": 88.29052634846819,
+      "metadata": {
+        "index": 55191,
+        "sizeKm": 2,
+        "heightWidthM": 946.6386437416077,
+        "affineWidthM": 3970.943249150878,
+        "errorM": 0.0963302663876675
+      }
+    },
+    {
+      "name": "coastal-horizon-18-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 88.70421183433169,
+      "xyz": [
+        -71.91015624999999,
+        -3.399565724482019,
+        10.268232227040368
+      ],
+      "coast": 77.58914947509766,
+      "h": 1.125733733177185,
+      "clearanceM": 1.2092836769805881,
+      "knownGapM": 27.59073435536769,
+      "metadata": {
+        "index": 55191,
+        "sizeKm": 2,
+        "heightWidthM": 946.6386437416077,
+        "affineWidthM": 3970.943249150878,
+        "errorM": 0.0963302663876675
+      }
+    },
+    {
+      "name": "coastal-horizon-19-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 94.13535073041669,
+      "xyz": [
+        -77.49999999999999,
+        -3.774695141875161,
+        8.935483375041056
+      ],
+      "coast": 81.9674072265625,
+      "h": 0.7695527076721191,
+      "clearanceM": 7.703596846310945,
+      "knownGapM": 125.8494022490205,
+      "metadata": {
+        "index": 55170,
+        "sizeKm": 2,
+        "heightWidthM": 562.6692175865173,
+        "affineWidthM": 2456.322246493073,
+        "errorM": 0.06496749847428873
+      }
+    },
+    {
+      "name": "coastal-horizon-20-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 95.28672953502627,
+      "xyz": [
+        -78.81249999999997,
+        -3.8627757754256704,
+        7.04737800311695
+      ],
+      "coast": 81.79096984863281,
+      "h": 0.6795188188552856,
+      "clearanceM": 12.931855598203423,
+      "knownGapM": 188.43782807512818,
+      "metadata": {
+        "index": 55139,
+        "sizeKm": 2,
+        "heightWidthM": 784.4367921352386,
+        "affineWidthM": 4166.689928882988,
+        "errorM": 0.09296747884945944
+      }
+    },
+    {
+      "name": "coastal-horizon-21-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 97.16630659520035,
+      "xyz": [
+        -80.8125,
+        -3.996993683767549,
+        5.140026808917929
+      ],
+      "coast": 82.24140930175781,
+      "h": 0.5537176728248596,
+      "clearanceM": 14.859526872503249,
+      "knownGapM": 62.72840908731516,
+      "metadata": {
+        "index": 55078,
+        "sizeKm": 2,
+        "heightWidthM": 989.1650378704071,
+        "affineWidthM": 4891.907966404688,
+        "errorM": 0.1059264614013955
+      }
+    },
+    {
+      "name": "coastal-horizon-22-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 94.4470247201098,
+      "xyz": [
+        -78.18749999999999,
+        -3.820832334694967,
+        3.000394993147872
+      ],
+      "coast": 78.50727844238281,
+      "h": 0.7138230800628662,
+      "clearanceM": 10.614023310229094,
+      "knownGapM": 12282.20270069206,
+      "metadata": {
+        "index": 55131,
+        "sizeKm": 2,
+        "heightWidthM": 658.718079328537,
+        "affineWidthM": 4289.404097973602,
+        "errorM": 0.09152387065114453
+      }
+    },
+    {
+      "name": "coastal-horizon-23-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 95.88510597495315,
+      "xyz": [
+        -79.66455078125001,
+        -3.919955852511081,
+        1.015815753102406
+      ],
+      "coast": 78.70138549804688,
+      "h": 0.635257363319397,
+      "clearanceM": 0.1967963495462799,
+      "knownGapM": 1.468220991397176,
+      "metadata": {
+        "index": 55129,
+        "sizeKm": 2,
+        "heightWidthM": 648.5913991928101,
+        "affineWidthM": 3858.90159959672,
+        "errorM": 0.08217482536565512
+      }
+    },
+    {
+      "name": "coastal-horizon-24-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 96.74498559939947,
+      "xyz": [
+        -80.52245250813651,
+        -3.9775288110147846,
+        -1.0249253980196504
+      ],
+      "coast": 78.5212631225586,
+      "h": 0.5837584137916565,
+      "clearanceM": 0.2692880918115925,
+      "knownGapM": 8.817774746074074,
+      "metadata": {
+        "index": 4336,
+        "sizeKm": 2,
+        "heightWidthM": 872.5490570068359,
+        "affineWidthM": 4150.191375345457,
+        "errorM": 0.0888279901118949
+      }
+    },
+    {
+      "name": "coastal-horizon-25-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 97.6983905734914,
+      "xyz": [
+        -81.42993164062503,
+        -4.038428796615082,
+        -3.103684449393716
+      ],
+      "coast": 78.66071319580078,
+      "h": 0.530666708946228,
+      "clearanceM": 0.22251295101810564,
+      "knownGapM": 1.71369331633856,
+      "metadata": {
+        "index": 4334,
+        "sizeKm": 2,
+        "heightWidthM": 997.3660409450531,
+        "affineWidthM": 3606.4614448987413,
+        "errorM": 0.08521462586941198
+      }
+    },
+    {
+      "name": "coastal-horizon-26-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 97.31035078155222,
+      "xyz": [
+        -80.95601968578251,
+        -4.006625151729075,
+        -5.147646641403707
+      ],
+      "coast": 77.80335998535156,
+      "h": 0.5607625246047974,
+      "clearanceM": 0.6607872078906452,
+      "knownGapM": 4.935786592784912,
+      "metadata": {
+        "index": 4328,
+        "sizeKm": 2,
+        "heightWidthM": 1097.4934995174408,
+        "affineWidthM": 3830.3766885073856,
+        "errorM": 0.0904361077118665
+      }
+    },
+    {
+      "name": "coastal-horizon-27-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 93.33953862165397,
+      "xyz": [
+        -76.875,
+        -3.7327520120517796,
+        -6.903364345835062
+      ],
+      "coast": 73.77849578857422,
+      "h": 0.6934871673583984,
+      "clearanceM": 106.46230501958942,
+      "knownGapM": 13705.085283034843,
+      "metadata": {
+        "index": 4386,
+        "sizeKm": 2,
+        "heightWidthM": 1008.3284229040146,
+        "affineWidthM": 4035.0188985466957,
+        "errorM": 0.09524263441562653
+      }
+    },
+    {
+      "name": "coastal-horizon-28-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 89.85647115176138,
+      "xyz": [
+        -73.24999999999999,
+        -3.489481726335381,
+        -8.529325039811912
+      ],
+      "coast": 70.06906127929688,
+      "h": 0.904680073261261,
+      "clearanceM": 119.99225622034638,
+      "knownGapM": 17440.502401368776,
+      "metadata": {
+        "index": 4360,
+        "sizeKm": 2,
+        "heightWidthM": 1092.1202898025513,
+        "affineWidthM": 4552.447344380198,
+        "errorM": 0.10449327965034172
+      }
+    },
+    {
+      "name": "coastal-horizon-29-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 82.3938166711784,
+      "xyz": [
+        -65.65625,
+        -2.9798721130669694,
+        -9.537752787116275
+      ],
+      "coast": 62.37053680419922,
+      "h": 1.5117017030715942,
+      "clearanceM": 4.825399273875375,
+      "knownGapM": 94.59680350410764,
+      "metadata": {
+        "index": 4380,
+        "sizeKm": 2,
+        "heightWidthM": 1044.1576838493347,
+        "affineWidthM": 3594.756073842291,
+        "errorM": 0.08875307685229927
+      }
+    },
+    {
+      "name": "coastal-horizon-30-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 77.90173451570779,
+      "xyz": [
+        -61,
+        -2.6673956530220826,
+        -10.629136227640146
+      ],
+      "coast": 57.67607498168945,
+      "h": 1.821338415145874,
+      "clearanceM": 1.3307472167445322,
+      "knownGapM": 30089.38322621287,
+      "metadata": {
+        "index": 5294,
+        "sizeKm": 2,
+        "heightWidthM": 904.2007923126221,
+        "affineWidthM": 4045.426922966726,
+        "errorM": 0.08139459532685578
+      }
+    },
+    {
+      "name": "coastal-horizon-31-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 81.69354203679254,
+      "xyz": [
+        -64.5,
+        -2.902277465368739,
+        -12.821860822468963
+      ],
+      "coast": 60.92811965942383,
+      "h": 1.5923118591308594,
+      "clearanceM": 17.760545773792824,
+      "knownGapM": 26739.442088343745,
+      "metadata": {
+        "index": 4372,
+        "sizeKm": 2,
+        "heightWidthM": 855.3494215011597,
+        "affineWidthM": 4243.797912902664,
+        "errorM": 0.0967419910011813
+      }
+    },
+    {
+      "name": "coastal-horizon-32-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 86.99156592755403,
+      "xyz": [
+        -69.421875,
+        -3.2325793892893318,
+        -15.419913381871268
+      ],
+      "coast": 65.2527084350586,
+      "h": 1.313965916633606,
+      "clearanceM": 0.3359442132058188,
+      "knownGapM": 1.9890151847012008,
+      "metadata": {
+        "index": 4366,
+        "sizeKm": 2,
+        "heightWidthM": 698.3831524848938,
+        "affineWidthM": 3469.9891534401104,
+        "errorM": 0.08703090134076774
+      }
+    },
+    {
+      "name": "coastal-horizon-33-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 85.01511134933429,
+      "xyz": [
+        -67.15624999999999,
+        -3.0805359050907315,
+        -16.77692739840638
+      ],
+      "coast": 62.70502853393555,
+      "h": 1.468456745147705,
+      "clearanceM": 4.018259308897099,
+      "knownGapM": 95.84567517444813,
+      "metadata": {
+        "index": 4251,
+        "sizeKm": 2,
+        "heightWidthM": 889.8847103118896,
+        "affineWidthM": 4791.956951288739,
+        "errorM": 0.10360530723119155
+      }
+    },
+    {
+      "name": "coastal-horizon-34-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 83.86580973651674,
+      "xyz": [
+        -65.68037795270187,
+        -2.9814913802478573,
+        -18.213816492864392
+      ],
+      "coast": 60.80561065673828,
+      "h": 1.503631353378296,
+      "clearanceM": 71.56582590149219,
+      "knownGapM": 26272.89182866458,
+      "metadata": {
+        "index": 4250,
+        "sizeKm": 2,
+        "heightWidthM": 887.8520727157593,
+        "affineWidthM": 4254.298097512219,
+        "errorM": 0.1008079998428002
+      }
+    },
+    {
+      "name": "coastal-horizon-35-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 82.18763062475392,
+      "xyz": [
+        -63.671874999999986,
+        -2.8467032703700434,
+        -19.457938020056837
+      ],
+      "coast": 58.39530944824219,
+      "h": 1.7351512908935547,
+      "clearanceM": 1.85453487184839,
+      "knownGapM": 16.118381712193425,
+      "metadata": {
+        "index": 5165,
+        "sizeKm": 2,
+        "heightWidthM": 783.2248210906982,
+        "affineWidthM": 3617.5950214383192,
+        "errorM": 0.09040646546054631
+      }
+    },
+    {
+      "name": "coastal-horizon-36-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 81.37335629442319,
+      "xyz": [
+        -62.484374999999986,
+        -2.767010865954906,
+        -20.83469404847676
+      ],
+      "coast": 56.68333053588867,
+      "h": 1.8393617868423462,
+      "clearanceM": 0.8760147098350046,
+      "knownGapM": 8.100075212235796,
+      "metadata": {
+        "index": 5159,
+        "sizeKm": 2,
+        "heightWidthM": 888.5238170623779,
+        "affineWidthM": 4172.224563546479,
+        "errorM": 0.09287451393902302
+      }
+    },
+    {
+      "name": "coastal-horizon-37-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 79.41177525186083,
+      "xyz": [
+        -60.17807207866653,
+        -2.6122370226736287,
+        -21.84025269127644
+      ],
+      "coast": 54.05973434448242,
+      "h": 2.0227279663085938,
+      "clearanceM": 0.5627806045194195,
+      "knownGapM": 2.994050174207051,
+      "metadata": {
+        "index": 5160,
+        "sizeKm": 2,
+        "heightWidthM": 853.2236814498901,
+        "affineWidthM": 4164.9291849462315,
+        "errorM": 0.09324491838924587
+      }
+    },
+    {
+      "name": "coastal-horizon-38-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 82.96167981036578,
+      "xyz": [
+        -63.125000000000014,
+        -2.8100026909872504,
+        -24.365517319497823
+      ],
+      "coast": 55.68647384643555,
+      "h": 1.8108755350112915,
+      "clearanceM": 39.75422535708506,
+      "knownGapM": 30343.770139125834,
+      "metadata": {
+        "index": 5127,
+        "sizeKm": 2,
+        "heightWidthM": 1044.3788766860962,
+        "affineWidthM": 5263.932914240286,
+        "errorM": 0.1342521863989532
+      }
+    },
+    {
+      "name": "coastal-horizon-39-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 102.71259783903726,
+      "xyz": [
+        -81.36516489362533,
+        -4.034082752301378,
+        -32.05008712471325
+      ],
+      "coast": 68.76161193847656,
+      "h": 0.6882688999176025,
+      "clearanceM": 0.8530596804331436,
+      "knownGapM": 8.121189573183344,
+      "metadata": {
+        "index": 3656,
+        "sizeKm": 2,
+        "heightWidthM": 949.9754458665848,
+        "affineWidthM": 3965.883260942064,
+        "errorM": 0.10481625213287771
+      }
+    },
+    {
+      "name": "coastal-horizon-40-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 104.01828444297092,
+      "xyz": [
+        -81.96965288695364,
+        -4.074648881324707,
+        -34.329652914358306
+      ],
+      "coast": 68.35628509521484,
+      "h": 0.6329030394554138,
+      "clearanceM": 33.94651688640538,
+      "knownGapM": 11257.719866010459,
+      "metadata": {
+        "index": 3654,
+        "sizeKm": 2,
+        "heightWidthM": 1305.8193624019623,
+        "affineWidthM": 5662.590934662148,
+        "errorM": 0.1400892506353557
+      }
+    },
+    {
+      "name": "coastal-horizon-41-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 105.49070456793386,
+      "xyz": [
+        -82.6875,
+        -4.122822784310952,
+        -36.67702728593887
+      ],
+      "coast": 68.3397216796875,
+      "h": 0.577674150466919,
+      "clearanceM": 61.27638845807015,
+      "knownGapM": 334.04276331250065,
+      "metadata": {
+        "index": 3647,
+        "sizeKm": 2,
+        "heightWidthM": 1293.4405207633972,
+        "affineWidthM": 4186.3108956604265,
+        "errorM": 0.12953787518199533
+      }
+    },
+    {
+      "name": "coastal-horizon-42-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 103.36868531400074,
+      "xyz": [
+        -80.02251154260632,
+        -3.9439783013669816,
+        -37.725822002492414
+      ],
+      "coast": 66.03443908691406,
+      "h": 0.8546339869499207,
+      "clearanceM": 6.332285621472922,
+      "knownGapM": 169.63647145011873,
+      "metadata": {
+        "index": 3648,
+        "sizeKm": 2,
+        "heightWidthM": 1253.664344549179,
+        "affineWidthM": 5931.097173132002,
+        "errorM": 0.1509247813373804
+      }
+    },
+    {
+      "name": "coastal-horizon-43-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 105.41376322392469,
+      "xyz": [
+        -81.20609706096378,
+        -4.023407353892465,
+        -40.255205292997665
+      ],
+      "coast": 66.4356918334961,
+      "h": 0.8170822262763977,
+      "clearanceM": 0.7724996076603485,
+      "knownGapM": 96.32336118511321,
+      "metadata": {
+        "index": 3616,
+        "sizeKm": 2,
+        "heightWidthM": 1067.8719282150269,
+        "affineWidthM": 5884.8655804176815,
+        "errorM": 0.14708896924275905
+      }
+    },
+    {
+      "name": "coastal-horizon-44-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 106.66934623480554,
+      "xyz": [
+        -81.61801209155979,
+        -4.051050798141724,
+        -42.49890592434348
+      ],
+      "coast": 66.28590393066406,
+      "h": 0.8089359998703003,
+      "clearanceM": 14.379841675577488,
+      "knownGapM": 13341.324174316793,
+      "metadata": {
+        "index": 3614,
+        "sizeKm": 2,
+        "heightWidthM": 1019.4449722766876,
+        "affineWidthM": 5942.915914289188,
+        "errorM": 0.15333241026382893
+      }
+    },
+    {
+      "name": "coastal-horizon-45-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 107.06072683330711,
+      "xyz": [
+        -81.20815269166914,
+        -4.023545370664895,
+        -44.38488063199966
+      ],
+      "coast": 65.52613067626953,
+      "h": 0.8968949913978577,
+      "clearanceM": 2.54492305940357,
+      "knownGapM": 28.1324300868056,
+      "metadata": {
+        "index": 3608,
+        "sizeKm": 2,
+        "heightWidthM": 879.9181282520294,
+        "affineWidthM": 5531.212051399052,
+        "errorM": 0.14500808902084827
+      }
+    },
+    {
+      "name": "coastal-horizon-46-14",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 110.33884521550556,
+      "xyz": [
+        -83.375,
+        -4.168960385672864,
+        -47.48468766660993
+      ],
+      "coast": 66.96824645996094,
+      "h": 0.7796880006790161,
+      "clearanceM": 8.872101377126572,
+      "knownGapM": 34.69775071890253,
+      "metadata": {
+        "index": 3605,
+        "sizeKm": 2,
+        "heightWidthM": 866.3185834884644,
+        "affineWidthM": 4845.260751724709,
+        "errorM": 0.14168334018904716
+      }
+    },
+    {
+      "name": "coastal-horizon-0-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 76.57403412119507,
+      "xyz": [
+        -52.302291856769756,
+        -3.534239295484304,
+        34.08764922173855
+      ],
+      "coast": 63.179725646972656,
+      "h": 0.757925808429718,
+      "clearanceM": 13.68320212168328,
+      "knownGapM": 328.15671703911954,
+      "metadata": {
+        "index": 78276,
+        "sizeKm": 2,
+        "heightWidthM": 893.2471871376038,
+        "affineWidthM": 4224.075765669113,
+        "errorM": 0.103526130260434
+      }
+    },
+    {
+      "name": "coastal-horizon-1-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 75.191371333928,
+      "xyz": [
+        -51.629467501828046,
+        -3.4747978685718843,
+        32.315615842002
+      ],
+      "coast": 62.469520568847656,
+      "h": 0.7963859438896179,
+      "clearanceM": 19.940845333621837,
+      "knownGapM": 11819.603635059186,
+      "metadata": {
+        "index": 78277,
+        "sizeKm": 2,
+        "heightWidthM": 713.6952579021454,
+        "affineWidthM": 4263.421614305116,
+        "errorM": 0.11419240036047995
+      }
+    },
+    {
+      "name": "coastal-horizon-2-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 74.08933304830563,
+      "xyz": [
+        -51.179687500000014,
+        -3.435061761941399,
+        30.673995497278288
+      ],
+      "coast": 61.97439193725586,
+      "h": 0.8409643769264221,
+      "clearanceM": 3.353918752509344,
+      "knownGapM": 8.616040669382038,
+      "metadata": {
+        "index": 56311,
+        "sizeKm": 2,
+        "heightWidthM": 757.9239308834076,
+        "affineWidthM": 4632.401533483062,
+        "errorM": 0.11177548731211573
+      }
+    },
+    {
+      "name": "coastal-horizon-3-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 75.40196975016369,
+      "xyz": [
+        -52.9086030860463,
+        -3.5878048385865675,
+        30
+      ],
+      "coast": 63.15061950683594,
+      "h": 0.6265475749969482,
+      "clearanceM": 75.94712232639722,
+      "knownGapM": 298.5602403656036,
+      "metadata": {
+        "index": 56308,
+        "sizeKm": 2,
+        "heightWidthM": 937.8516674041748,
+        "affineWidthM": 4585.961764794774,
+        "errorM": 0.10667883907444775
+      }
+    },
+    {
+      "name": "coastal-horizon-4-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 75.94606495511259,
+      "xyz": [
+        -53.93470144961138,
+        -3.678456164342667,
+        28.961512103306557
+      ],
+      "coast": 63.92069625854492,
+      "h": 0.5978907346725464,
+      "clearanceM": 17.754935439370456,
+      "knownGapM": 8653.562775882545,
+      "metadata": {
+        "index": 56306,
+        "sizeKm": 2,
+        "heightWidthM": 858.5561513900757,
+        "affineWidthM": 3945.407942868769,
+        "errorM": 0.10610022582113743
+      }
+    },
+    {
+      "name": "coastal-horizon-5-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 75.36104991244973,
+      "xyz": [
+        -53.905810241745556,
+        -3.6759038408101485,
+        27.464957902181748
+      ],
+      "coast": 63.7123908996582,
+      "h": 0.6077166199684143,
+      "clearanceM": 3.610084534557245,
+      "knownGapM": 34.162732388445626,
+      "metadata": {
+        "index": 56300,
+        "sizeKm": 2,
+        "heightWidthM": 561.6798400878906,
+        "affineWidthM": 3155.2957710518967,
+        "errorM": 0.08457444346277043
+      }
+    },
+    {
+      "name": "coastal-horizon-6-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 74.23820392384846,
+      "xyz": [
+        -53.35039111597243,
+        -3.6268346696191456,
+        25.773945074118874
+      ],
+      "coast": 62.9814567565918,
+      "h": 0.6474136114120483,
+      "clearanceM": 1.2405729185047676,
+      "knownGapM": 12.28526898801089,
+      "metadata": {
+        "index": 56298,
+        "sizeKm": 2,
+        "heightWidthM": 601.4824211597443,
+        "affineWidthM": 3080.81397114438,
+        "errorM": 0.08293166320072487
+      }
+    },
+    {
+      "name": "coastal-horizon-7-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 73.57539135453837,
+      "xyz": [
+        -53.19575383379788,
+        -3.6131731415000345,
+        24.246960843471214
+      ],
+      "coast": 62.59492492675781,
+      "h": 0.6546696424484253,
+      "clearanceM": 0.3587471246646601,
+      "knownGapM": 1.1751942542961868,
+      "metadata": {
+        "index": 56298,
+        "sizeKm": 2,
+        "heightWidthM": 601.4824211597443,
+        "affineWidthM": 3080.81397114438,
+        "errorM": 0.08293166320072487
+      }
+    },
+    {
+      "name": "coastal-horizon-8-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 73.16055765218886,
+      "xyz": [
+        -53.249023437500014,
+        -3.6178796560207624,
+        22.794982979719222
+      ],
+      "coast": 62.3500862121582,
+      "h": 0.6446386575698853,
+      "clearanceM": 0.768392717873212,
+      "knownGapM": 265.15297880891126,
+      "metadata": {
+        "index": 56268,
+        "sizeKm": 2,
+        "heightWidthM": 627.0803213119507,
+        "affineWidthM": 3335.1630734687205,
+        "errorM": 0.08570073259761557
+      }
+    },
+    {
+      "name": "coastal-horizon-9-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 71.98667464212011,
+      "xyz": [
+        -52.554687500000014,
+        -3.556537435510494,
+        21.110527454180943
+      ],
+      "coast": 61.367523193359375,
+      "h": 0.691806972026825,
+      "clearanceM": 3.3714089504428557,
+      "knownGapM": 73.83248586704416,
+      "metadata": {
+        "index": 56266,
+        "sizeKm": 2,
+        "heightWidthM": 645.1537609100342,
+        "affineWidthM": 3335.0091429019812,
+        "errorM": 0.08436668576905504
+      }
+    },
+    {
+      "name": "coastal-horizon-10-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 71.45334706964472,
+      "xyz": [
+        -52.439832330801124,
+        -3.5463906706156676,
+        19.62170020692431
+      ],
+      "coast": 60.834224700927734,
+      "h": 0.6765357255935669,
+      "clearanceM": 23.083918315023766,
+      "knownGapM": 114.79970984336323,
+      "metadata": {
+        "index": 56260,
+        "sizeKm": 2,
+        "heightWidthM": 633.3382427692413,
+        "affineWidthM": 3307.2625010099728,
+        "errorM": 0.08629781223135069
+      }
+    },
+    {
+      "name": "coastal-horizon-11-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 63.48368633637763,
+      "xyz": [
+        -45.13603103826426,
+        -2.901128511731276,
+        16.229351757871164
+      ],
+      "coast": 55.276065826416016,
+      "h": 0.5898988246917725,
+      "clearanceM": 689.4956446403739,
+      "knownGapM": 16769.045428789366,
+      "metadata": {
+        "index": 56322,
+        "sizeKm": 2,
+        "heightWidthM": 929.3766021728516,
+        "affineWidthM": 4541.008480358869,
+        "errorM": 0.09232957381755114
+      }
+    },
+    {
+      "name": "coastal-horizon-14-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 70.07525091791317,
+      "xyz": [
+        -52.43505505000479,
+        -3.545968090528592,
+        13.806899044220081
+      ],
+      "coast": 58.3438835144043,
+      "h": 0.661645770072937,
+      "clearanceM": 23.10366588517354,
+      "knownGapM": 267.2892622017549,
+      "metadata": {
+        "index": 56138,
+        "sizeKm": 2,
+        "heightWidthM": 798.6973822116852,
+        "affineWidthM": 3179.409619420767,
+        "errorM": 0.08070375770330429
+      }
+    },
+    {
+      "name": "coastal-horizon-15-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 69.67843643653686,
+      "xyz": [
+        -52.3125,
+        -3.5351414391738984,
+        12.331417907484504
+      ],
+      "coast": 57.47215270996094,
+      "h": 0.6619240045547485,
+      "clearanceM": 29.617917370160285,
+      "knownGapM": 191.2491384008976,
+      "metadata": {
+        "index": 56138,
+        "sizeKm": 2,
+        "heightWidthM": 798.6973822116852,
+        "affineWidthM": 3179.409619420767,
+        "errorM": 0.08070375770330429
+      }
+    },
+    {
+      "name": "coastal-horizon-16-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 54.03871046229152,
+      "xyz": [
+        -37.16406249999999,
+        -2.196836189454184,
+        8.467853859866736
+      ],
+      "coast": 43.464744567871094,
+      "h": 1.9104913473129272,
+      "clearanceM": 6.6614771449167165,
+      "knownGapM": 87.35133409940494,
+      "metadata": {
+        "index": 56214,
+        "sizeKm": 2,
+        "heightWidthM": 1485.5912327766418,
+        "affineWidthM": 7930.285140522756,
+        "errorM": 0.12687957496382296
+      }
+    },
+    {
+      "name": "coastal-horizon-17-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 67.72760349874511,
+      "xyz": [
+        -50.83593749999997,
+        -3.404692537228457,
+        9.226081774038235
+      ],
+      "coast": 54.51967239379883,
+      "h": 0.8045876026153564,
+      "clearanceM": 0.19402778343646787,
+      "knownGapM": 3.958363840170468,
+      "metadata": {
+        "index": 56133,
+        "sizeKm": 2,
+        "heightWidthM": 589.6230340003967,
+        "affineWidthM": 2845.2030787593685,
+        "errorM": 0.0680478842696175
+      }
+    },
+    {
+      "name": "coastal-horizon-18-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 68.26346309509816,
+      "xyz": [
+        -51.542968749999986,
+        -3.467156182485268,
+        7.889269042615865
+      ],
+      "coast": 54.30876541137695,
+      "h": 0.7459880709648132,
+      "clearanceM": 0.2167020174965728,
+      "knownGapM": 1.9739593223146041,
+      "metadata": {
+        "index": 56103,
+        "sizeKm": 2,
+        "heightWidthM": 525.1881778240204,
+        "affineWidthM": 2646.6475136985537,
+        "errorM": 0.06137807940831408
+      }
+    },
+    {
+      "name": "coastal-horizon-19-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 70.68087169176462,
+      "xyz": [
+        -54.08977538689588,
+        -3.6921562428747956,
+        6.698246064923651
+      ],
+      "coast": 55.96443557739258,
+      "h": 0.5345073342323303,
+      "clearanceM": 6.453078940467094,
+      "knownGapM": 161.57585877274605,
+      "metadata": {
+        "index": 56099,
+        "sizeKm": 2,
+        "heightWidthM": 632.2921812534332,
+        "affineWidthM": 2074.5771940419218,
+        "errorM": 0.052581624913727865
+      }
+    },
+    {
+      "name": "coastal-horizon-20-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 73.00323775198899,
+      "xyz": [
+        -56.521484375,
+        -3.906988342451074,
+        5.390494874139162
+      ],
+      "coast": 57.702388763427734,
+      "h": 0.3456314504146576,
+      "clearanceM": 0.37224633979349164,
+      "knownGapM": 9.83049704072364,
+      "metadata": {
+        "index": 56082,
+        "sizeKm": 2,
+        "heightWidthM": 433.3547353744507,
+        "affineWidthM": 1814.2846440750873,
+        "errorM": 0.04780082599609159
+      }
+    },
+    {
+      "name": "coastal-horizon-21-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 73.31851341507398,
+      "xyz": [
+        -56.93212890625,
+        -3.94326704705065,
+        3.872155698324305
+      ],
+      "coast": 57.293495178222656,
+      "h": 0.3121297359466553,
+      "clearanceM": 0.14917462794983294,
+      "knownGapM": 1.4726043338756947,
+      "metadata": {
+        "index": 56076,
+        "sizeKm": 2,
+        "heightWidthM": 336.2062871456146,
+        "affineWidthM": 1764.2952321912162,
+        "errorM": 0.046256158384494483
+      }
+    },
+    {
+      "name": "coastal-horizon-25-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 72.50514077226887,
+      "xyz": [
+        -56.1875,
+        -3.8774823041247224,
+        -2.299572795564621
+      ],
+      "coast": 53.70698928833008,
+      "h": 0.36780840158462524,
+      "clearanceM": 2.8807580656575738,
+      "knownGapM": 31.38750692761036,
+      "metadata": {
+        "index": 5338,
+        "sizeKm": 2,
+        "heightWidthM": 540.9334897994995,
+        "affineWidthM": 2635.4521036846563,
+        "errorM": 0.06300510722212493
+      }
+    },
+    {
+      "name": "coastal-horizon-26-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 69.85838419428694,
+      "xyz": [
+        -53.490234375,
+        -3.6391891880163385,
+        -3.689416599355415
+      ],
+      "coast": 50.6796875,
+      "h": 0.5860919952392578,
+      "clearanceM": 0.31945042701408966,
+      "knownGapM": 9.817362225837964,
+      "metadata": {
+        "index": 5354,
+        "sizeKm": 2,
+        "heightWidthM": 700.4619091749191,
+        "affineWidthM": 3354.0847002586816,
+        "errorM": 0.06368009053403512
+      }
+    },
+    {
+      "name": "coastal-horizon-27-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 70.59083375743752,
+      "xyz": [
+        -54.125,
+        -3.695268359251389,
+        -5.212365084729536
+      ],
+      "coast": 51.0818977355957,
+      "h": 0.518101692199707,
+      "clearanceM": 18.657034266652772,
+      "knownGapM": 377.49108636395835,
+      "metadata": {
+        "index": 5347,
+        "sizeKm": 2,
+        "heightWidthM": 801.8582761287689,
+        "affineWidthM": 3511.9588827656116,
+        "errorM": 0.06945072527742013
+      }
+    },
+    {
+      "name": "coastal-horizon-29-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 63.364095927148554,
+      "xyz": [
+        -46.69531249999999,
+        -3.0388847798790453,
+        -7.323044828753955
+      ],
+      "coast": 43.3675422668457,
+      "h": 1.1352399587631226,
+      "clearanceM": 1.1783135478253826,
+      "knownGapM": 7.895837289251311,
+      "metadata": {
+        "index": 5409,
+        "sizeKm": 2,
+        "heightWidthM": 1078.4552097320557,
+        "affineWidthM": 3969.093791267369,
+        "errorM": 0.08053869532886893
+      }
+    },
+    {
+      "name": "coastal-horizon-31-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 58.483702112734974,
+      "xyz": [
+        -41.537109375,
+        -2.5831777114302286,
+        -9.164383058700004
+      ],
+      "coast": 37.56733703613281,
+      "h": 1.5582691431045532,
+      "clearanceM": 0.5163337646081345,
+      "knownGapM": 1.9852575931708776,
+      "metadata": {
+        "index": 5384,
+        "sizeKm": 2,
+        "heightWidthM": 1223.4488129615784,
+        "affineWidthM": 5165.3510266623925,
+        "errorM": 0.1081211885320954
+      }
+    },
+    {
+      "name": "coastal-horizon-32-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 58.11483613073062,
+      "xyz": [
+        -40.975585937499986,
+        -2.533569547485742,
+        -10.284937027910109
+      ],
+      "coast": 36.65768051147461,
+      "h": 1.6053715944290161,
+      "clearanceM": 1.095606946364569,
+      "knownGapM": 8.964803362547848,
+      "metadata": {
+        "index": 5382,
+        "sizeKm": 2,
+        "heightWidthM": 1115.8314943313599,
+        "affineWidthM": 6104.518065229058,
+        "errorM": 0.11813873425126076
+      }
+    },
+    {
+      "name": "coastal-horizon-33-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 57.51815691941023,
+      "xyz": [
+        -40.17187499999999,
+        -2.4625643405562947,
+        -11.332779767370045
+      ],
+      "coast": 35.48613357543945,
+      "h": 1.6723827123641968,
+      "clearanceM": 1.748319231410278,
+      "knownGapM": 7.999743790774097,
+      "metadata": {
+        "index": 5382,
+        "sizeKm": 2,
+        "heightWidthM": 1115.8314943313599,
+        "affineWidthM": 6104.518065229058,
+        "errorM": 0.11813873425126076
+      }
+    },
+    {
+      "name": "coastal-horizon-34-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 56.71157073226705,
+      "xyz": [
+        -39.1474609375,
+        -2.37206145894684,
+        -12.297271023308774
+      ],
+      "coast": 34.083091735839844,
+      "h": 1.7589622735977173,
+      "clearanceM": 1.082608561773668,
+      "knownGapM": 9.038340751724373,
+      "metadata": {
+        "index": 5391,
+        "sizeKm": 2,
+        "heightWidthM": 1120.0605630874634,
+        "affineWidthM": 5462.361204496119,
+        "errorM": 0.11250075476709753
+      }
+    },
+    {
+      "name": "coastal-horizon-35-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 55.45548559971495,
+      "xyz": [
+        -37.6748046875,
+        -2.2419581149514354,
+        -13.10877900691796
+      ],
+      "coast": 32.255794525146484,
+      "h": 1.8824427127838135,
+      "clearanceM": 0.4442863055373891,
+      "knownGapM": 5.0448015811402005,
+      "metadata": {
+        "index": 5392,
+        "sizeKm": 2,
+        "heightWidthM": 1215.2924537658691,
+        "affineWidthM": 5074.87603201298,
+        "errorM": 0.10960343934129924
+      }
+    },
+    {
+      "name": "coastal-horizon-36-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 56.01348246100344,
+      "xyz": [
+        -37.94207866493871,
+        -2.2655710406994,
+        -14.319623867243163
+      ],
+      "coast": 32.1351318359375,
+      "h": 1.8617680072784424,
+      "clearanceM": 1.6978928297248785,
+      "knownGapM": 8.957846931022578,
+      "metadata": {
+        "index": 5390,
+        "sizeKm": 2,
+        "heightWidthM": 1371.292233467102,
+        "affineWidthM": 5227.818862826098,
+        "errorM": 0.11265680950600654
+      }
+    },
+    {
+      "name": "coastal-horizon-37-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 66.81802185536904,
+      "xyz": [
+        -48,
+        -3.1541489033608956,
+        -18.348800259669723
+      ],
+      "coast": 42.64731979370117,
+      "h": 0.7522755861282349,
+      "clearanceM": 300.7867014439398,
+      "knownGapM": 13943.747073135757,
+      "metadata": {
+        "index": 5249,
+        "sizeKm": 2,
+        "heightWidthM": 627.2342801094055,
+        "affineWidthM": 3630.088236735901,
+        "errorM": 0.09033749665832147
+      }
+    },
+    {
+      "name": "coastal-horizon-38-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 70.15726969110096,
+      "xyz": [
+        -50.812499999999986,
+        -3.4026220112234453,
+        -20.57404339466158
+      ],
+      "coast": 45.098785400390625,
+      "h": 0.8065839409828186,
+      "clearanceM": 26.617627566338342,
+      "knownGapM": 11151.288808634927,
+      "metadata": {
+        "index": 5183,
+        "sizeKm": 2,
+        "heightWidthM": 785.591185092926,
+        "affineWidthM": 3363.709987490438,
+        "errorM": 0.08714231080375612
+      }
+    },
+    {
+      "name": "coastal-horizon-39-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 68.80358856466796,
+      "xyz": [
+        -49.125,
+        -3.253538357951694,
+        -21.437461394586386
+      ],
+      "coast": 42.8001823425293,
+      "h": 0.968686580657959,
+      "clearanceM": 3.206155844964087,
+      "knownGapM": 33.01515689449186,
+      "metadata": {
+        "index": 5184,
+        "sizeKm": 2,
+        "heightWidthM": 590.7114744186401,
+        "affineWidthM": 2693.2998720149044,
+        "errorM": 0.0699267620802857
+      }
+    },
+    {
+      "name": "coastal-horizon-40-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 68.38305957117193,
+      "xyz": [
+        -48.3125,
+        -3.181756840268566,
+        -22.5358144517255
+      ],
+      "coast": 41.42572784423828,
+      "h": 0.992819607257843,
+      "clearanceM": 48.429823918013426,
+      "knownGapM": 731.0142511468654,
+      "metadata": {
+        "index": 5182,
+        "sizeKm": 2,
+        "heightWidthM": 678.3962845802307,
+        "affineWidthM": 3126.458191254642,
+        "errorM": 0.08403345418628305
+      }
+    },
+    {
+      "name": "coastal-horizon-41-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 65.29927757410684,
+      "xyz": [
+        -45.00000000000001,
+        -2.8891104121068283,
+        -22.67053760219022
+      ],
+      "coast": 37.44797134399414,
+      "h": 1.23159921169281,
+      "clearanceM": 78.51113916694885,
+      "knownGapM": 17873.53094377063,
+      "metadata": {
+        "index": 5242,
+        "sizeKm": 2,
+        "heightWidthM": 838.8786315917969,
+        "affineWidthM": 3167.2665278601926,
+        "errorM": 0.08777778566582128
+      }
+    },
+    {
+      "name": "coastal-horizon-42-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 61.71744132008028,
+      "xyz": [
+        -41.249835910458216,
+        -2.55779820393254,
+        -22.492612956634915
+      ],
+      "coast": 33.0873908996582,
+      "h": 1.6044583320617676,
+      "clearanceM": 10.945239047032373,
+      "knownGapM": 269.68614830047835,
+      "metadata": {
+        "index": 5246,
+        "sizeKm": 2,
+        "heightWidthM": 1099.4162559509277,
+        "affineWidthM": 4452.68700653105,
+        "errorM": 0.10416938312118873
+      }
+    },
+    {
+      "name": "coastal-horizon-43-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 61.47044616655582,
+      "xyz": [
+        -40.60487219677985,
+        -2.5008181104198703,
+        -23.441333947987708
+      ],
+      "coast": 32.102901458740234,
+      "h": 1.6703312397003174,
+      "clearanceM": 1.3278815158628277,
+      "knownGapM": 6.216388855598974,
+      "metadata": {
+        "index": 5246,
+        "sizeKm": 2,
+        "heightWidthM": 1099.4162559509277,
+        "affineWidthM": 4452.68700653105,
+        "errorM": 0.10416938312118873
+      }
+    },
+    {
+      "name": "coastal-horizon-44-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 60.64999206728216,
+      "xyz": [
+        -39.42701662017431,
+        -2.3967595460811655,
+        -24.130666188790315
+      ],
+      "coast": 30.632305145263672,
+      "h": 1.7704812288284302,
+      "clearanceM": 0.41053670520341257,
+      "knownGapM": 1.8660015022841343,
+      "metadata": {
+        "index": 5231,
+        "sizeKm": 2,
+        "heightWidthM": 829.5993804931641,
+        "affineWidthM": 4164.2534561106,
+        "errorM": 0.1028882252285257
+      }
+    },
+    {
+      "name": "coastal-horizon-46-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 59.36260208117295,
+      "xyz": [
+        -37.392578125,
+        -2.217024601298019,
+        -25.512755123422213
+      ],
+      "coast": 28.195724487304688,
+      "h": 1.941748023033142,
+      "clearanceM": 1.9954211493313778,
+      "knownGapM": 6.514533522694732,
+      "metadata": {
+        "index": 5232,
+        "sizeKm": 2,
+        "heightWidthM": 1186.1647367477417,
+        "affineWidthM": 5158.196341479197,
+        "errorM": 0.12290762970224023
+      }
+    },
+    {
+      "name": "coastal-horizon-47-15",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 58.672750348389144,
+      "xyz": [
+        -36.334755042320886,
+        -2.123570114721085,
+        -26.11872491378823
+      ],
+      "coast": 27.016542434692383,
+      "h": 1.9961824417114258,
+      "clearanceM": 37.34899388382473,
+      "knownGapM": 29213.438713093154,
+      "metadata": {
+        "index": 5230,
+        "sizeKm": 2,
+        "heightWidthM": 1024.7327089309692,
+        "affineWidthM": 5156.597648106981,
+        "errorM": 0.1238371041836217
+      }
+    },
+    {
+      "name": "coastal-horizon-15-16",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 52.028530280919234,
+      "xyz": [
+        -34.90586103262215,
+        -3.0784227301138953,
+        9.189262303308315
+      ],
+      "coast": 41.99565124511719,
+      "h": 1.0202288627624512,
+      "clearanceM": 3.582184530387167,
+      "knownGapM": 32.336728207451905,
+      "metadata": {
+        "index": 56217,
+        "sizeKm": 2,
+        "heightWidthM": 1755.2653551101685,
+        "affineWidthM": 7190.121332532726,
+        "errorM": 0.1286366896238178
+      }
+    },
+    {
+      "name": "coastal-horizon-16-16",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 50.36787915051015,
+      "xyz": [
+        -33.45214843750001,
+        -2.919120513541272,
+        7.876628649039409
+      ],
+      "coast": 39.42591094970703,
+      "h": 1.1728861331939697,
+      "clearanceM": 0.6694309422528022,
+      "knownGapM": 16.90898172304209,
+      "metadata": {
+        "index": 56188,
+        "sizeKm": 2,
+        "heightWidthM": 1017.6457762718201,
+        "affineWidthM": 5389.495907758828,
+        "errorM": 0.1013126311590895
+      }
+    },
+    {
+      "name": "coastal-horizon-21-16",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 56.79140627692639,
+      "xyz": [
+        -40.375,
+        -3.677747827169984,
+        2.99309486766463
+      ],
+      "coast": 41.481693267822266,
+      "h": 0.44931644201278687,
+      "clearanceM": 1.565443098115793,
+      "knownGapM": 7.870205949138195,
+      "metadata": {
+        "index": 56160,
+        "sizeKm": 2,
+        "heightWidthM": 726.8220484256744,
+        "affineWidthM": 4121.813463338185,
+        "errorM": 0.08232572872657329
+      }
+    },
+    {
+      "name": "coastal-horizon-25-16",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 57.59602808202639,
+      "xyz": [
+        -41.224609375,
+        -3.7708507490965415,
+        -1.8229217593274019
+      ],
+      "coast": 39.63981246948242,
+      "h": 0.3624418377876282,
+      "clearanceM": 0.3373269855728722,
+      "knownGapM": 1.9658018627908038,
+      "metadata": {
+        "index": 5424,
+        "sizeKm": 2,
+        "heightWidthM": 520.4471945762634,
+        "affineWidthM": 2931.0989851364866,
+        "errorM": 0.06930218660272658
+      }
+    },
+    {
+      "name": "coastal-horizon-26-16",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 56.79140627692639,
+      "xyz": [
+        -40.375,
+        -3.677747827169984,
+        -2.9930948676646283
+      ],
+      "coast": 38.372032165527344,
+      "h": 0.4401455223560333,
+      "clearanceM": 10.736362754869333,
+      "knownGapM": 62.96164759307003,
+      "metadata": {
+        "index": 5422,
+        "sizeKm": 2,
+        "heightWidthM": 710.4694843292236,
+        "affineWidthM": 3585.647901170887,
+        "errorM": 0.07717814878560603
+      }
+    },
+    {
+      "name": "coastal-horizon-27-16",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 54.59743403726374,
+      "xyz": [
+        -38.12500000000001,
+        -3.431185786410052,
+        -4.0230911326161864
+      ],
+      "coast": 35.7942008972168,
+      "h": 0.6216691732406616,
+      "clearanceM": 62.47672935023729,
+      "knownGapM": 6698.7300540335655,
+      "metadata": {
+        "index": 5431,
+        "sizeKm": 2,
+        "heightWidthM": 811.3200068473816,
+        "affineWidthM": 4480.485058651539,
+        "errorM": 0.09595772280590609
+      }
+    },
+    {
+      "name": "coastal-horizon-28-16",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 53.99941888731858,
+      "xyz": [
+        -37.43749999999999,
+        -3.355847686058903,
+        -5.1068439169388915
+      ],
+      "coast": 34.70750045776367,
+      "h": 0.7277060151100159,
+      "clearanceM": 28.47654378365405,
+      "knownGapM": 7415.633242639092,
+      "metadata": {
+        "index": 5432,
+        "sizeKm": 2,
+        "heightWidthM": 762.4668478965759,
+        "affineWidthM": 4109.495355631225,
+        "errorM": 0.08665371569804847
+      }
+    },
+    {
+      "name": "coastal-horizon-29-16",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 53.67546327171509,
+      "xyz": [
+        -37.00000000000001,
+        -3.3079050105251167,
+        -6.190596506550007
+      ],
+      "coast": 33.87820816040039,
+      "h": 0.7767506241798401,
+      "clearanceM": 25.779024433177256,
+      "knownGapM": 253.18614259934907,
+      "metadata": {
+        "index": 5430,
+        "sizeKm": 2,
+        "heightWidthM": 879.4776201248169,
+        "affineWidthM": 4122.971077566035,
+        "errorM": 0.09550646063871682
+      }
+    },
+    {
+      "name": "coastal-horizon-30-16",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 53.563038593369924,
+      "xyz": [
+        -36.75,
+        -3.2805090752318966,
+        -7.281649217587621
+      ],
+      "coast": 33.244590759277344,
+      "h": 0.8256531953811646,
+      "clearanceM": 3.9785466597095365,
+      "knownGapM": 126.92663388666195,
+      "metadata": {
+        "index": 5430,
+        "sizeKm": 2,
+        "heightWidthM": 879.4776201248169,
+        "affineWidthM": 4122.971077566035,
+        "errorM": 0.09550646063871682
+      }
+    },
+    {
+      "name": "coastal-horizon-31-16",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 52.62426286640083,
+      "xyz": [
+        -35.66750918589978,
+        -3.1618866471849953,
+        -8.229486401233059
+      ],
+      "coast": 31.85334014892578,
+      "h": 0.9287288784980774,
+      "clearanceM": 14.525610944474465,
+      "knownGapM": 9323.977231325147,
+      "metadata": {
+        "index": 5403,
+        "sizeKm": 2,
+        "heightWidthM": 971.1518287658691,
+        "affineWidthM": 3650.237031688448,
+        "errorM": 0.08638399594929069
+      }
+    },
+    {
+      "name": "coastal-horizon-35-16",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 51.70123212723388,
+      "xyz": [
+        -33.94286433564849,
+        -2.972894558955061,
+        -12.197342206785526
+      ],
+      "coast": 28.877779006958008,
+      "h": 1.1288660764694214,
+      "clearanceM": 0.3169887640979141,
+      "knownGapM": 1.421283838194087,
+      "metadata": {
+        "index": 5396,
+        "sizeKm": 2,
+        "heightWidthM": 792.256236076355,
+        "affineWidthM": 4498.2050647668075,
+        "errorM": 0.1083013994502835
+      }
+    },
+    {
+      "name": "coastal-horizon-36-16",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 52.27208798151636,
+      "xyz": [
+        -34.24121093750001,
+        -3.0055883552735514,
+        -13.337180681101154
+      ],
+      "coast": 28.7591495513916,
+      "h": 1.0999412536621094,
+      "clearanceM": 0.42855742685787845,
+      "knownGapM": 9.14433865226757,
+      "metadata": {
+        "index": 5395,
+        "sizeKm": 2,
+        "heightWidthM": 1260.175347328186,
+        "affineWidthM": 4537.107626325451,
+        "errorM": 0.09075793786905706
+      }
+    },
+    {
+      "name": "coastal-horizon-37-16",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 53.16149283214047,
+      "xyz": [
+        -34.82153320312501,
+        -3.069181676265127,
+        -14.570532497374234
+      ],
+      "coast": 28.892757415771484,
+      "h": 1.0423190593719482,
+      "clearanceM": 0.30423621137742884,
+      "knownGapM": 2.8091967114599434,
+      "metadata": {
+        "index": 5393,
+        "sizeKm": 2,
+        "heightWidthM": 969.1768288612366,
+        "affineWidthM": 3607.5108938093763,
+        "errorM": 0.0898165671969764
+      }
+    },
+    {
+      "name": "coastal-horizon-39-16",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 54.31287116169853,
+      "xyz": [
+        -35.31249999999999,
+        -3.1229834759564152,
+        -16.89074554602807
+      ],
+      "coast": 28.552356719970703,
+      "h": 0.9949222803115845,
+      "clearanceM": 2.330045579583384,
+      "knownGapM": 33.077265736639745,
+      "metadata": {
+        "index": 5275,
+        "sizeKm": 2,
+        "heightWidthM": 736.3118529319763,
+        "affineWidthM": 3853.4559727995656,
+        "errorM": 0.09371641499456018
+      }
+    },
+    {
+      "name": "coastal-horizon-40-16",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 54.458436264746716,
+      "xyz": [
+        -35.1218069054568,
+        -3.1020867215472885,
+        -17.913649136089234
+      ],
+      "coast": 27.979206085205078,
+      "h": 1.0168564319610596,
+      "clearanceM": 3.0319070547193405,
+      "knownGapM": 34.77110657416155,
+      "metadata": {
+        "index": 5275,
+        "sizeKm": 2,
+        "heightWidthM": 736.3118529319763,
+        "affineWidthM": 3853.4559727995656,
+        "errorM": 0.09371641499456018
+      }
+    },
+    {
+      "name": "coastal-horizon-43-16",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 53.5745860722311,
+      "xyz": [
+        -33.24630573950414,
+        -2.896563368321848,
+        -20.393989194824353
+      ],
+      "coast": 25.233741760253906,
+      "h": 1.2224762439727783,
+      "clearanceM": 0.3257909538660897,
+      "knownGapM": 8.401319853685983,
+      "metadata": {
+        "index": 5268,
+        "sizeKm": 2,
+        "heightWidthM": 689.6190047264099,
+        "affineWidthM": 4071.556693612365,
+        "errorM": 0.10615743667585775
+      }
+    },
+    {
+      "name": "coastal-horizon-44-16",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 53.589346000438006,
+      "xyz": [
+        -32.88867187499999,
+        -2.857372728845351,
+        -21.284135239340223
+      ],
+      "coast": 24.6110897064209,
+      "h": 1.2622171640396118,
+      "clearanceM": 0.8299360024466296,
+      "knownGapM": 19.26827219952197,
+      "metadata": {
+        "index": 5268,
+        "sizeKm": 2,
+        "heightWidthM": 689.6190047264099,
+        "affineWidthM": 4071.556693612365,
+        "errorM": 0.10615743667585775
+      }
+    },
+    {
+      "name": "coastal-horizon-45-16",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 53.556056220725594,
+      "xyz": [
+        -32.47766865246804,
+        -2.812333575285675,
+        -22.13472323035698
+      ],
+      "coast": 23.96558380126953,
+      "h": 1.3084882497787476,
+      "clearanceM": 0.3869593356284895,
+      "knownGapM": 3.431258042809817,
+      "metadata": {
+        "index": 5266,
+        "sizeKm": 2,
+        "heightWidthM": 713.1348848342896,
+        "affineWidthM": 4113.677216315409,
+        "errorM": 0.10699350241338834
+      }
+    },
+    {
+      "name": "coastal-horizon-47-16",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 53.23508246222272,
+      "xyz": [
+        -31.4052734375,
+        -2.6948174150558124,
+        -23.65856770022055
+      ],
+      "coast": 22.505443572998047,
+      "h": 1.426332712173462,
+      "clearanceM": 0.15639103548892308,
+      "knownGapM": 36.189722303980695,
+      "metadata": {
+        "index": 8203,
+        "sizeKm": 0.25,
+        "heightWidthM": 146.15440368652344,
+        "affineWidthM": 97.25354617694393,
+        "errorM": 0.045142965973354876
+      }
+    },
+    {
+      "name": "coastal-horizon-1-17",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 54.0381614257217,
+      "xyz": [
+        -32.42163085937501,
+        -3.834524765938294,
+        23.137469412639764
+      ],
+      "coast": 47.926300048828125,
+      "h": 0.28972068428993225,
+      "clearanceM": 0.25995957275881665,
+      "knownGapM": 17.709837278617762,
+      "metadata": {
+        "index": 56356,
+        "sizeKm": 2,
+        "heightWidthM": 665.1070863008499,
+        "affineWidthM": 3126.05260903365,
+        "errorM": 0.07961465598782524
+      }
+    },
+    {
+      "name": "coastal-horizon-2-17",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 53.92141593503644,
+      "xyz": [
+        -32.70661653235355,
+        -3.87180657523223,
+        22.239260510090606
+      ],
+      "coast": 47.99150848388672,
+      "h": 0.250709593296051,
+      "clearanceM": 0.2479914837749675,
+      "knownGapM": 1.47361260917789,
+      "metadata": {
+        "index": 56356,
+        "sizeKm": 2,
+        "heightWidthM": 665.1070863008499,
+        "affineWidthM": 3126.05260903365,
+        "errorM": 0.07961465598782524
+      }
+    },
+    {
+      "name": "coastal-horizon-3-17",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 53.37804025125904,
+      "xyz": [
+        -32.5927734375,
+        -3.8569136115321463,
+        21.155313865435115
+      ],
+      "coast": 47.553218841552734,
+      "h": 0.261394202709198,
+      "clearanceM": 0.18129555792256724,
+      "knownGapM": 35.4001358679642,
+      "metadata": {
+        "index": 56354,
+        "sizeKm": 2,
+        "heightWidthM": 370.64796686172485,
+        "affineWidthM": 2460.027816152433,
+        "errorM": 0.0661021113046445
+      }
+    },
+    {
+      "name": "coastal-horizon-4-17",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 52.71087586967485,
+      "xyz": [
+        -32.348204562431945,
+        -3.8249189127030876,
+        20.02206597417171
+      ],
+      "coast": 46.92920684814453,
+      "h": 0.2882985770702362,
+      "clearanceM": 0.36254416409065016,
+      "knownGapM": 3.630734409329223,
+      "metadata": {
+        "index": 56354,
+        "sizeKm": 2,
+        "heightWidthM": 370.64796686172485,
+        "affineWidthM": 2460.027816152433,
+        "errorM": 0.0661021113046445
+      }
+    },
+    {
+      "name": "coastal-horizon-6-17",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 51.66584122160424,
+      "xyz": [
+        -32.06933275952062,
+        -3.788437126263693,
+        17.864878313345187
+      ],
+      "coast": 45.84172058105469,
+      "h": 0.31669166684150696,
+      "clearanceM": 0.6269790274018305,
+      "knownGapM": 41.804002976130825,
+      "metadata": {
+        "index": 56346,
+        "sizeKm": 2,
+        "heightWidthM": 277.2197872400284,
+        "affineWidthM": 2364.398557052482,
+        "errorM": 0.0624254607828334
+      }
+    },
+    {
+      "name": "coastal-horizon-10-17",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 50.09496910175004,
+      "xyz": [
+        -31.778647802940505,
+        -3.7504097880587715,
+        13.698138717150774
+      ],
+      "coast": 43.02637481689453,
+      "h": 0.3434584438800812,
+      "clearanceM": 0.1096142987080384,
+      "knownGapM": 4.290950742316587,
+      "metadata": {
+        "index": 59877,
+        "sizeKm": 0.25,
+        "heightWidthM": 156.40416741371155,
+        "affineWidthM": 191.2695385835832,
+        "errorM": 0.0414408823417034
+      }
+    },
+    {
+      "name": "coastal-horizon-11-17",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 50.160264861637245,
+      "xyz": [
+        -32.09814453125,
+        -3.7922060989971396,
+        12.768276486820778
+      ],
+      "coast": 42.618438720703125,
+      "h": 0.30122652649879456,
+      "clearanceM": 0.2161013471777551,
+      "knownGapM": 1.5276462811929834,
+      "metadata": {
+        "index": 56226,
+        "sizeKm": 2,
+        "heightWidthM": 463.9481455087662,
+        "affineWidthM": 3450.4378503770567,
+        "errorM": 0.07943973469082266
+      }
+    },
+    {
+      "name": "coastal-horizon-38-17",
+      "group": "coastal-horizon",
+      "status": "unresolved-contact",
+      "frontKm": 35.49298044409745,
+      "xyz": [
+        -17.6590576171875,
+        -1.903283129467738,
+        -10.36487040008086
+      ],
+      "coast": 15.788493156433105,
+      "h": 2.1295254230499268,
+      "clearanceM": 0.08532866377208848,
+      "knownGapM": 17809.309125348736,
+      "metadata": {
+        "index": 18906,
+        "sizeKm": 0.25,
+        "heightWidthM": 292.8118705749512,
+        "affineWidthM": 255.2008156926604,
+        "errorM": 0.04372916373540647
+      }
+    },
+    {
+      "name": "coastal-horizon-41-18",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 35.144330036387174,
+      "xyz": [
+        -16.61321254651598,
+        -2.4590730252520263,
+        -12.120639901053123
+      ],
+      "coast": 13.260393142700195,
+      "h": 1.5739891529083252,
+      "clearanceM": 0.11984817137999926,
+      "knownGapM": 4.283450390379102,
+      "metadata": {
+        "index": 18416,
+        "sizeKm": 0.25,
+        "heightWidthM": 276.2796878814697,
+        "affineWidthM": 198.38097399042454,
+        "errorM": 0.059899608459090814
+      }
+    },
+    {
+      "name": "coastal-horizon-0-20",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 31.569673499279915,
+      "xyz": [
+        -11.828857421875,
+        -2.9135826658520605,
+        13.88855816983552
+      ],
+      "coast": 22.873151779174805,
+      "h": 1.1124430894851685,
+      "clearanceM": 0.08917877948988462,
+      "knownGapM": 3.600460967886008,
+      "metadata": {
+        "index": 65679,
+        "sizeKm": 0.25,
+        "heightWidthM": 137.0300054550171,
+        "affineWidthM": 126.70021566736978,
+        "errorM": 0.0303249507851433
+      }
+    },
+    {
+      "name": "coastal-horizon-3-24",
+      "group": "coastal-horizon",
+      "status": "unresolved-height-budget",
+      "frontKm": 21.216291002672264,
+      "xyz": [
+        -2.843883184250945,
+        -2.766477137464782,
+        8.203858646495044
+      ],
+      "coast": 8.418230056762695,
+      "h": 1.2393747568130493,
+      "clearanceM": 0.06368720460159238,
+      "knownGapM": 1.5382957450608454,
+      "metadata": {
+        "index": 66333,
+        "sizeKm": 0.25,
+        "heightWidthM": 209.2733383178711,
+        "affineWidthM": 153.5968238968053,
+        "errorM": 0.02914430842793081
+      }
+    }
+  ],
+  "metadata": {
+    "rayCount": 292,
+    "byLeafSizeKm": {
+      "2": 267,
+      "32": 13,
+      "0.25": 12
+    },
+    "uniqueLeaves": 239,
+    "uniqueLeavesBySize": {
+      "2": 223,
+      "32": 4,
+      "0.25": 12
+    },
+    "affineWidthM": {
+      "min": 97.25354617694393,
+      "median": 4186.3108956604265,
+      "max": 218890.8866760321
+    },
+    "extraNodesIfOnlyTheseLeavesRefinedTo250m": 106108
+  }
+}

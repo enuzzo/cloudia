@@ -1,0 +1,20 @@
+{
+  "status": "proposal only; no new tracing/build/GPU",
+  "files": [
+    {
+      "path": "PROPOSAL.md",
+      "bytes": 13526,
+      "sha256": "4a96a54c845baf0ca445c1549ae8cdaa3d50374cc09b9c52fec5a7984d72ccbb"
+    },
+    {
+      "path": "inspection.json",
+      "bytes": 177673,
+      "sha256": "4bc85edb1607897e2623a73b287d6dc114438f999ef3c8d820bd460f68dcfad9"
+    },
+    {
+      "path": "review-notes.md",
+      "bytes": 5624,
+      "sha256": "21ee097feef65a037335bdd581f0722e15f5b9295d53778c7286a90f1a716454"
+    }
+  ]
+}

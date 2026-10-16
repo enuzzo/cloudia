@@ -1,0 +1,20 @@
+{
+  "stagedPathsBeforeProof": 100,
+  "indexBytesMatchWorkingTree": true,
+  "archivePayloadHashesVerified": 92,
+  "whitespaceExceptions": [
+    "docs/measurements/rain-cache-audit-2026-10-16/phase2/source-snapshots/cloudShader.historical.ts:214: new blank line at EOF.",
+    "docs/measurements/rain-cache-audit-2026-10-16/phase2/source-snapshots/cloudShader.ts:249: new blank line at EOF.",
+    "docs/measurements/rain-cache-audit-2026-10-16/source-snapshots/cloudShader.historical.ts:214: new blank line at EOF.",
+    "docs/measurements/rain-cache-audit-2026-10-16/source-snapshots/cloudShader.ts:249: new blank line at EOF."
+  ],
+  "reason": "Frozen raw source snapshots preserve original blank EOF and hash identity. Product and authored documentation plus all other staged files pass diff --cached --check. No configuration override.",
+  "nodeModules2": "untouched and excluded",
+  "tests": {
+    "passed": 212,
+    "files": 32
+  },
+  "typecheck": "pass",
+  "buildAppHero": "pass",
+  "browser": "scoped desktop/mobile/low PASS; native touch and reduced-motion emulation open"
+}

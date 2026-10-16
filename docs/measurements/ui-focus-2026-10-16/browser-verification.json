@@ -1,0 +1,35 @@
+{
+  "status": "PASS-scoped-browser-focus-and-responsive-controls",
+  "viewports": [
+    [
+      1672,
+      941
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      1280,
+      432
+    ]
+  ],
+  "mobileZoomHiddenWhilePanelOpen": true,
+  "mobileZoomVisibleAfterClose": true,
+  "reverseTabDockControlsUnoccluded": true,
+  "canvasCenterOccludedByNonModalPanel": true,
+  "lowRicominciaFocusScrolledIntoView": true,
+  "horizontalOverflow": false,
+  "nativeTouchTested": false,
+  "reducedMotionBrowserEmulationTested": false,
+  "consoleWarningError": [],
+  "viewportOverrideReset": true,
+  "previewAnimated": true,
+  "rendererSourceChanged": false,
+  "tests": {
+    "passed": 212,
+    "files": 32
+  },
+  "sourcemapChecks": 66,
+  "limitations": "Candidate geometry in metrics can include descendants of closed or scrolled elements; the browser focus trail and screenshots establish the scoped visible-control result."
+}

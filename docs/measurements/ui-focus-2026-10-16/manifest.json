@@ -1,0 +1,165 @@
+{
+  "externalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle11/ui",
+  "payloads": [
+    {
+      "path": "FOCUS-PROPOSAL.md",
+      "bytes": 3457,
+      "sha256": "5db867522836d6a350378dd06c2ce633d92d70bf3f09f52ff2f2d2322b0bca48"
+    },
+    {
+      "path": "REVIEW.md",
+      "bytes": 4837,
+      "sha256": "ba08b0146c1a9b43f8eca9ad3ebafcf7e9786bffaecf870a98edd7c188ba1266"
+    },
+    {
+      "path": "VALIDATION.md",
+      "bytes": 1963,
+      "sha256": "3666cf2c93515acc9ee70d45b1dbfb1dcea217dbb41641debf74c331ad1cdb7d"
+    },
+    {
+      "path": "browser-after-divider.json",
+      "bytes": 86,
+      "sha256": "92b1451dd174e8eaf714113e431a27f08860322dddad252f700557758ac31443"
+    },
+    {
+      "path": "browser-before.jpg",
+      "bytes": 45035,
+      "sha256": "fa344b32cd0387a94531c195633bbb45cb5aaa2401af2de24a40bab5ff4c9e81"
+    },
+    {
+      "path": "browser-before.json",
+      "bytes": 129,
+      "sha256": "ed69e4b536a4fac26ee4b8af3ad688e90a5644a0b2f9dabc18ac998593befd8a"
+    },
+    {
+      "path": "browser-functional.json",
+      "bytes": 318,
+      "sha256": "a6a7070d33e9a2576761a3f4fdea1c425d272be52b876088c380253d86a6a7ed"
+    },
+    {
+      "path": "browser-verification.json",
+      "bytes": 912,
+      "sha256": "b75707ae9ce2d2663c8a2fff500a56cfa42d8c3597378a45e9b80ad2cbff9d42"
+    },
+    {
+      "path": "build-app-final.log",
+      "bytes": 2111,
+      "sha256": "f3ac1ce50445a224a7accf125baf70a67debadc764739dbfc952622302a1dd37"
+    },
+    {
+      "path": "build-hero-final.log",
+      "bytes": 456,
+      "sha256": "f4ff111fee9a8099cc7e908c8db546965aedb4485a031a3e081230185a0f3961"
+    },
+    {
+      "path": "build-provenance.json",
+      "bytes": 25033,
+      "sha256": "c7c48aa9a6ccbb0619b66d04cc5c568ebf52af36ccf9a350e883c82ec111b060"
+    },
+    {
+      "path": "final-browser-state.json",
+      "bytes": 174,
+      "sha256": "5ded6c6f27e7ba78f06e93d523479b0af66115767b21ec391d5845ebac3dae41"
+    },
+    {
+      "path": "final-desktop-1672x941.jpg",
+      "bytes": 90996,
+      "sha256": "a1ae1136901d57941a0b54f4f8073cc03c7a084793a25e43a8904fc0386b85af"
+    },
+    {
+      "path": "final-desktop-metrics.json",
+      "bytes": 2260,
+      "sha256": "6de8a6a7003551a014428426be916cacdb852184890236cc8ca1814a141a0b44"
+    },
+    {
+      "path": "final-low-1280x432.jpg",
+      "bytes": 43991,
+      "sha256": "0b034f853bf47f94febb5e9b7a2f5fb9160b212692a67d1f795b7c0bc3f52793"
+    },
+    {
+      "path": "final-low-focus.json",
+      "bytes": 154,
+      "sha256": "713cd127231d1d49a4568adb63e8700872b190d552cc82ea91e83d1f0f0ae805"
+    },
+    {
+      "path": "final-low-metrics.json",
+      "bytes": 323,
+      "sha256": "11207884852f3f2da12c099937de39b0072b4f74e3b776c41f2993fa1e69a3f7"
+    },
+    {
+      "path": "final-mobile-390x844.jpg",
+      "bytes": 30592,
+      "sha256": "ef15cd62c8374969bef2306fe47e12d418af1cc88ebe4c419b3d915c3c8c674a"
+    },
+    {
+      "path": "final-mobile-closed.json",
+      "bytes": 153,
+      "sha256": "f7a5dfb93403e85e23e3488468c57a1b3447f64e1994ace0b5c327dbcb68e97c"
+    },
+    {
+      "path": "final-mobile-metrics.json",
+      "bytes": 2906,
+      "sha256": "4a67af536870764cebfb812aed6f41ba42ec9f5e5e048a3d44fd3d6c274e1e5d"
+    },
+    {
+      "path": "final-mobile-reverse-tab.json",
+      "bytes": 1207,
+      "sha256": "a494ad3a94470a76baffb5cc0cce89ce46cf9a8ab9bb6926dc8ad7b5c6f96c2d"
+    },
+    {
+      "path": "final-preview-1280x720.jpg",
+      "bytes": 52927,
+      "sha256": "ebcdcefdb7961fc8e16e9d6d280600fc22425541b8fac326b2d34558b85372dc"
+    },
+    {
+      "path": "frozen-source/src/cumulonimbus/inspector.test.ts",
+      "bytes": 11774,
+      "sha256": "09486c439cc9a8af1763dd7e70e7000e532437860d5f3b38883f3fba92dd5a1e"
+    },
+    {
+      "path": "frozen-source/src/cumulonimbus/panels.ts",
+      "bytes": 4341,
+      "sha256": "e6e6da9ec0ebaff930a4ed91e07c20c64878b3fb94f0ffda3498a724af0e58e8"
+    },
+    {
+      "path": "frozen-source/src/cumulonimbus/scene.css",
+      "bytes": 13416,
+      "sha256": "6c45a2c39ad9d84555c7c5c98c37645ceedb99fbea31848f0f7d0bf63740ad46"
+    },
+    {
+      "path": "mobile-before-390x844.jpg",
+      "bytes": 31089,
+      "sha256": "f6ad101c15fc3429be2a71a63b32176849352b75c0eeef03a30617f1c13ea40d"
+    },
+    {
+      "path": "mobile-before-focus-trail.json",
+      "bytes": 678,
+      "sha256": "4e713cd02c140da74537ac7144f2b2d7ed3170f65a8283f69c3635aae5c05d0c"
+    },
+    {
+      "path": "mobile-occlusion.patch",
+      "bytes": 3065,
+      "sha256": "3e3bbbfd8c580c8af3b9b5a0cff2fb107a45a4a0d9c83f13564db82356ff1420"
+    },
+    {
+      "path": "test-suite-final.log",
+      "bytes": 178,
+      "sha256": "32a1982e35ce8843b80a307b5be556ca1b2b6e18e88ff392fa0fb3ce22ef291a"
+    },
+    {
+      "path": "typecheck-final.log",
+      "bytes": 26,
+      "sha256": "1e880a52a6d385d6b25718b6c79cdae1bc92d4928a49400c5f45ca04a8d8779b"
+    },
+    {
+      "path": "ui-final.patch",
+      "bytes": 8746,
+      "sha256": "db49c5c58eeed569bf87557188dd720b357488b691cefadbb1e5e214cbc30240"
+    },
+    {
+      "path": "checkpoint-validation.json",
+      "bytes": 1081,
+      "sha256": "d2b05f0a091b9b4fb818a3b97be35aafc0f235caf9e8d6354be75191fc1cc49a"
+    }
+  ]
+}

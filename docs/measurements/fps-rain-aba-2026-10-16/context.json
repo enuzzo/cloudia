@@ -1,0 +1,17 @@
+{
+  "dateUtc": "2026-10-16T00:36:53.563782+00:00",
+  "currentCommit": "adba2c5",
+  "baselineCommit": "0d0ab21",
+  "candidateRenderer": "observatory-v46-compiled-rain-mask-trial",
+  "browserInventory": [
+    "31 Cloudia \u00b7 Un cielo da muovere"
+  ],
+  "hungTab30": "not present at start of cycle11; closure cause not attributed",
+  "oldObservedRendererPid44683": "not present in ps query; no process killed",
+  "cpuWindow": "agents confirmed no replay, tests, build, bake or GPU work during timed windows",
+  "baselineApp": {
+    "path": "dist/assets/CumulonimbusApp-aFiSFYxJ.js",
+    "sha256": "778ed99dadbe6dbac51011d743c9ed0641bb9e4dfa245e4ac46c45be038d2ea9"
+  },
+  "scope": "A/B/A without the previously observed frozen tab; not isolated hardware benchmark or compositor measurement"
+}

@@ -1,0 +1,1 @@
+Phase2: root-authorized second metric collection only. Same model/inputs/rays/gates; no bake/GPU. Adds A>=.01/.1 mapping distributions, opacity-weighted RMS A/sigma and per-ray maximum pointwise T error. Phase1 frozen in ../phase1 and original root payloads. Run replay.ts32 18 only after root CPU coordination.

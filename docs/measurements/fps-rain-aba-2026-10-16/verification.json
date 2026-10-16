@@ -1,0 +1,215 @@
+{
+  "status": "PASS finite A/B/A consistency; performance conclusion scoped to this state/device",
+  "context": {
+    "dateUtc": "2026-10-16T00:36:53.563782+00:00",
+    "currentCommit": "adba2c5",
+    "baselineCommit": "0d0ab21",
+    "candidateRenderer": "observatory-v46-compiled-rain-mask-trial",
+    "browserInventory": [
+      "31 Cloudia \u00b7 Un cielo da muovere"
+    ],
+    "hungTab30": "not present at start of cycle11; closure cause not attributed",
+    "oldObservedRendererPid44683": "not present in ps query; no process killed",
+    "cpuWindow": "agents confirmed no replay, tests, build, bake or GPU work during timed windows",
+    "baselineApp": {
+      "path": "dist/assets/CumulonimbusApp-aFiSFYxJ.js",
+      "sha256": "778ed99dadbe6dbac51011d743c9ed0641bb9e4dfa245e4ac46c45be038d2ea9"
+    },
+    "scope": "A/B/A without the previously observed frozen tab; not isolated hardware benchmark or compositor measurement"
+  },
+  "reports": [
+    {
+      "name": "A1",
+      "reportSha256": "41150433219f99cd62e8975975a551ef2cfc0db61158dad316c90ed46b84ec96",
+      "submissionFps": 14.983069131880978,
+      "stats": {
+        "frames": 450,
+        "durationMs": 30033.899999999994,
+        "fps": 14.983069131880978,
+        "medianMs": 66.69999999999709,
+        "p95Ms": 83.40000000000146,
+        "p99Ms": 85,
+        "maxMs": 100.10000000000582,
+        "over18Ms": 450,
+        "over33Ms": 450
+      },
+      "prefixStatus": "completed",
+      "drainMs": 250.60000002384186,
+      "completionBoundedRate": 14.85820321401784,
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 450,
+          "expectedCalls": 900,
+          "matchedFreshCalls": 896,
+          "completeDraws": 448,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 450,
+          "expectedCalls": 450,
+          "matchedFreshCalls": 448,
+          "completeDraws": 448,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      },
+      "renderPassSumMs": {
+        "sampleCount": 448,
+        "meanMs": 130.42951314285713,
+        "p95Ms": 164.036608,
+        "maxMs": 175.898624
+      }
+    },
+    {
+      "name": "B",
+      "reportSha256": "51d5367938004d88c81ad87a06048b00436b154ab888671e94baee16929a0937",
+      "submissionFps": 17.322708738640305,
+      "stats": {
+        "frames": 520,
+        "durationMs": 30018.399999999994,
+        "fps": 17.322708738640305,
+        "medianMs": 51.5,
+        "p95Ms": 66.80000000000291,
+        "p99Ms": 68.19999999999709,
+        "maxMs": 68.5,
+        "over18Ms": 520,
+        "over33Ms": 520
+      },
+      "prefixStatus": "completed",
+      "drainMs": 243.70000004768372,
+      "completionBoundedRate": 17.182698344513103,
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 520,
+          "expectedCalls": 1040,
+          "matchedFreshCalls": 1036,
+          "completeDraws": 518,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 520,
+          "expectedCalls": 520,
+          "matchedFreshCalls": 518,
+          "completeDraws": 518,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      },
+      "renderPassSumMs": {
+        "sampleCount": 518,
+        "meanMs": 113.04808179150571,
+        "p95Ms": 121.962496,
+        "maxMs": 131.137536
+      }
+    },
+    {
+      "name": "A2",
+      "reportSha256": "18b33975b2457107499de516bee24e5f9da57e7fdfb9eb765fd2772eaf317fd9",
+      "submissionFps": 15.723637090460883,
+      "stats": {
+        "frames": 472,
+        "durationMs": 30018.5,
+        "fps": 15.723637090460883,
+        "medianMs": 66.60000000000582,
+        "p95Ms": 67.89999999999418,
+        "p99Ms": 68.70000000001164,
+        "maxMs": 83.39999999999418,
+        "over18Ms": 472,
+        "over33Ms": 472
+      },
+      "prefixStatus": "completed",
+      "drainMs": 247.10000002384186,
+      "completionBoundedRate": 15.59479953083442,
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 472,
+          "expectedCalls": 944,
+          "matchedFreshCalls": 942,
+          "completeDraws": 471,
+          "partialDraws": 0,
+          "missingDraws": 1,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 472,
+          "expectedCalls": 472,
+          "matchedFreshCalls": 471,
+          "completeDraws": 471,
+          "partialDraws": 0,
+          "missingDraws": 1,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      },
+      "renderPassSumMs": {
+        "sampleCount": 471,
+        "meanMs": 124.88643125265394,
+        "p95Ms": 134.152192,
+        "maxMs": 138.412032
+      }
+    }
+  ],
+  "matchedFields": [
+    "camera",
+    "quality",
+    "output",
+    "internal",
+    "nominalSteps",
+    "volume",
+    "detailVolume",
+    "seed",
+    "shape",
+    "supportBounds",
+    "sun",
+    "sunDirection",
+    "paused",
+    "flowMode",
+    "ablation",
+    "terrainHash",
+    "precipitationSourceBounds"
+  ],
+  "images": [
+    {
+      "name": "A1",
+      "sha256": "2d992fd833c33c8fc56bd0daedc8bdc4ccefeb4c5e70b6f022f319ce36ecf17e",
+      "differenceBoundsVsA1": null,
+      "scope": "CSS JPEG; scene equal, only possible Regola hover; no native framebuffer/motion proof"
+    },
+    {
+      "name": "B",
+      "sha256": "2d992fd833c33c8fc56bd0daedc8bdc4ccefeb4c5e70b6f022f319ce36ecf17e",
+      "differenceBoundsVsA1": null,
+      "scope": "CSS JPEG; scene equal, only possible Regola hover; no native framebuffer/motion proof"
+    },
+    {
+      "name": "A2",
+      "sha256": "2d992fd833c33c8fc56bd0daedc8bdc4ccefeb4c5e70b6f022f319ce36ecf17e",
+      "differenceBoundsVsA1": null,
+      "scope": "CSS JPEG; scene equal, only possible Regola hover; no native framebuffer/motion proof"
+    }
+  ],
+  "candidateVsA1Percent": 15.615222663433093,
+  "candidateVsA2Percent": 10.169858531964815,
+  "candidateVsMeanControlsPercent": 12.826876404194042,
+  "controlsDriftPercent": 4.942698669154,
+  "candidateExceedsBothControls": true,
+  "presentationMeasured": false,
+  "global60Target": "OPEN"
+}

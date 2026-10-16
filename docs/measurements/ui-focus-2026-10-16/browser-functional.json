@@ -1,0 +1,19 @@
+[
+  {
+    "activeTag": "BUTTON",
+    "activeText": "Sole",
+    "case": "weather button",
+    "panelOpen": false
+  },
+  {
+    "activeTag": "CANVAS",
+    "case": "canvas",
+    "panelOpen": false
+  },
+  {
+    "activeIsInspectorSummary": true,
+    "activeTag": "SUMMARY",
+    "case": "Escape",
+    "panelOpen": false
+  }
+]

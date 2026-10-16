@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Temporale",
+    "occluded": false,
+    "rect": {
+      "height": 48,
+      "width": 62.5,
+      "x": 260.5,
+      "y": 772
+    },
+    "tag": "BUTTON"
+  },
+  {
+    "name": "Pioggia",
+    "occluded": false,
+    "rect": {
+      "height": 48,
+      "width": 62.5,
+      "x": 196,
+      "y": 772
+    },
+    "tag": "BUTTON"
+  },
+  {
+    "name": "Tramonto",
+    "occluded": false,
+    "rect": {
+      "height": 48,
+      "width": 62.5,
+      "x": 131.5,
+      "y": 772
+    },
+    "tag": "BUTTON"
+  },
+  {
+    "name": "Sole",
+    "occluded": false,
+    "rect": {
+      "height": 48,
+      "width": 62.5,
+      "x": 67,
+      "y": 772
+    },
+    "tag": "BUTTON"
+  },
+  {
+    "name": "Riprendi",
+    "occluded": false,
+    "rect": {
+      "height": 48,
+      "width": 44,
+      "x": 20,
+      "y": 772
+    },
+    "tag": "BUTTON"
+  },
+  {
+    "name": "Mani in arrivo",
+    "occluded": false,
+    "rect": {
+      "height": 44,
+      "width": 94.125,
+      "x": 279.875,
+      "y": 22
+    },
+    "tag": "SUMMARY"
+  },
+  {
+    "name": "Nube volumetrica ruotabile",
+    "occluded": true,
+    "rect": {
+      "height": 844,
+      "width": 390,
+      "x": 0,
+      "y": 0
+    },
+    "tag": "CANVAS"
+  }
+]

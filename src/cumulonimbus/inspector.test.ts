@@ -1,6 +1,6 @@
 import {afterEach,describe,expect,it} from 'vitest';
 import {CumulonimbusApp} from './CumulonimbusApp';
-import {refreshRangeOutputs} from './panels';
+import {installPanelDismissal,refreshRangeOutputs} from './panels';
 let app:CumulonimbusApp|undefined;
 afterEach(()=>{app?.destroy();document.body.innerHTML='';history.replaceState(null,'','/');});
 function setup(){const root=document.createElement('main');document.body.append(root);app=new CumulonimbusApp(root);return root;}
@@ -112,5 +112,69 @@ describe('observatory inspector',()=>{
   for(const action of ['pause','orbit','light','reset','new-cloud','center','gust','disperse','condense','mature','lightning','storm-auto','audio','flash-preview','benchmark','sustained','export'])expect(root.querySelectorAll(`[data-action="${action}"]`),action).toHaveLength(1);
   expect(root.querySelectorAll('[name=quality] option')).toHaveLength(1);
   expect(root.querySelector<HTMLSelectElement>('[name=quality]')!.value).toBe('ultra');
+ });
+});
+
+
+describe('outside dismissal focus destination',()=>{
+ function fixture(outside:string){
+  const root=document.createElement('main');
+  root.innerHTML=`<details open><summary>Regola</summary><input aria-label="Vento"></details><nav>${outside}</nav>`;
+  document.body.append(root);
+  const events=new AbortController();installPanelDismissal(root,events.signal);
+  const panel=root.querySelector('details')!,summary=panel.querySelector('summary')!,input=panel.querySelector('input')!;
+  input.focus();
+  return {root,panel,summary,input,events};
+ }
+ it.each([
+  '<span data-outside class="dock-divider"></span>',
+  '<nav data-outside class="dock-padding"></nav>',
+  '<button data-outside disabled>Misura</button>',
+  '<fieldset disabled><button data-outside>Misura</button></fieldset>',
+ ])('restores the disclosure trigger when the clicked surface cannot receive focus: %s',outside=>{
+  const {root,panel,summary,events}=fixture(outside);
+  try{
+   const down=new Event('pointerdown',{bubbles:true,cancelable:true});
+   root.querySelector('[data-outside]')!.dispatchEvent(down);
+   expect(panel.open).toBe(false);expect(document.activeElement).toBe(summary);
+   expect(down.defaultPrevented).toBe(true);
+  }finally{events.abort();}
+ });
+ it.each([
+  '<button data-outside>Sole</button>',
+  '<button><svg data-outside aria-hidden="true"><path d="M0 0h1"/></svg></button>',
+  '<a data-outside href="?legacy">Laboratorio</a>',
+  '<input data-outside aria-label="Altro controllo">',
+  '<select data-outside><option>Schermo</option></select>',
+  '<details><summary data-outside>Mani</summary></details>',
+  '<canvas data-outside tabindex="0"></canvas>',
+  '<div data-outside tabindex="-1">Destinazione programmatica</div>',
+ ])('leaves pointer focus to the actual interactive target without an intermediate jump: %s',outside=>{
+  const {root,panel,summary,input,events}=fixture(outside);
+  const originalFocus=summary.focus;let summaryFocusCalls=0;
+  summary.focus=()=>{summaryFocusCalls++;};
+  try{
+   const down=new Event('pointerdown',{bubbles:true,cancelable:true});
+   root.querySelector('[data-outside]')!.dispatchEvent(down);
+   expect(panel.open).toBe(false);expect(summaryFocusCalls).toBe(0);
+   expect(down.defaultPrevented).toBe(false);
+   // dispatchEvent does not run native pointer focus; this asserts no competing focus call.
+   expect(document.activeElement).toBe(input);
+  }finally{summary.focus=originalFocus;events.abort();}
+ });
+ it('does not move focus that already belongs to another part of the interface',()=>{
+  const {root,panel,events}=fixture('<input data-other aria-label="Altro"><span data-outside></span>');
+  const other=root.querySelector<HTMLInputElement>('[data-other]')!;other.focus();
+  try{
+   const down=new Event('pointerdown',{bubbles:true,cancelable:true});
+   root.querySelector('[data-outside]')!.dispatchEvent(down);
+   expect(panel.open).toBe(false);expect(document.activeElement).toBe(other);
+   expect(down.defaultPrevented).toBe(false);
+  }finally{events.abort();}
+ });
+ it('does not dismiss or change focus after its listener is aborted',()=>{
+  const {root,panel,input,events}=fixture('<span data-outside></span>');events.abort();
+  root.querySelector('[data-outside]')!.dispatchEvent(new Event('pointerdown',{bubbles:true}));
+  expect(panel.open).toBe(true);expect(document.activeElement).toBe(input);
  });
 });

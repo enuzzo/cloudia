@@ -1,0 +1,118 @@
+--- a/src/cumulonimbus/panels.ts
++++ b/src/cumulonimbus/panels.ts
+@@ -1,3 +1,10 @@
++/** Native pointer focus will follow this event; include SVG descendants and negative tabindex. */
++function hasPointerFocusTarget(target:EventTarget|null){
++  if(!(target instanceof Element))return false;
++  const control=target.closest('button,input,select,textarea,a[href],summary,[tabindex]');
++  return !!control&&!control.matches(':disabled,input[type="hidden"]')&&!control.closest('[inert]');
++}
++
+ /** Light-dismiss disclosures without trapping pointer input or keyboard focus. */
+ export function installPanelDismissal(root:HTMLElement,signal:AbortSignal){
+   const panels=()=>Array.from(root.querySelectorAll<HTMLDetailsElement>('details'));
+@@ -16,7 +23,13 @@
+     const panel=button?.closest('details');if(panel)close(panel,true);
+   },{signal});
+   document.addEventListener('pointerdown',event=>{
+-    for(const panel of panels())if(panel.open&&!panel.contains(event.target as Node))close(panel);
++    const pointerFocus=hasPointerFocusTarget(event.target);
++    for(const panel of panels())if(panel.open&&!panel.contains(event.target as Node)){
++      const restoreFocus=!pointerFocus&&panel.contains(document.activeElement);
++      // Cancel compatible mousedown focus only when restoring from hidden content.
++      if(restoreFocus)event.preventDefault();
++      close(panel,restoreFocus);
++    }
+   },{capture:true,signal});
+   document.addEventListener('keydown',event=>{
+     // Let a nested control consume Escape first (for example its own picker).
+--- a/src/cumulonimbus/inspector.test.ts
++++ b/src/cumulonimbus/inspector.test.ts
+@@ -1,6 +1,6 @@
+ import {afterEach,describe,expect,it} from 'vitest';
+ import {CumulonimbusApp} from './CumulonimbusApp';
+-import {refreshRangeOutputs} from './panels';
++import {installPanelDismissal,refreshRangeOutputs} from './panels';
+ let app:CumulonimbusApp|undefined;
+ afterEach(()=>{app?.destroy();document.body.innerHTML='';history.replaceState(null,'','/');});
+ function setup(){const root=document.createElement('main');document.body.append(root);app=new CumulonimbusApp(root);return root;}
+@@ -114,3 +114,67 @@
+   expect(root.querySelector<HTMLSelectElement>('[name=quality]')!.value).toBe('ultra');
+  });
+ });
++
++
++describe('outside dismissal focus destination',()=>{
++ function fixture(outside:string){
++  const root=document.createElement('main');
++  root.innerHTML=`<details open><summary>Regola</summary><input aria-label="Vento"></details><nav>${outside}</nav>`;
++  document.body.append(root);
++  const events=new AbortController();installPanelDismissal(root,events.signal);
++  const panel=root.querySelector('details')!,summary=panel.querySelector('summary')!,input=panel.querySelector('input')!;
++  input.focus();
++  return {root,panel,summary,input,events};
++ }
++ it.each([
++  '<span data-outside class="dock-divider"></span>',
++  '<nav data-outside class="dock-padding"></nav>',
++  '<button data-outside disabled>Misura</button>',
++  '<fieldset disabled><button data-outside>Misura</button></fieldset>',
++ ])('restores the disclosure trigger when the clicked surface cannot receive focus: %s',outside=>{
++  const {root,panel,summary,events}=fixture(outside);
++  try{
++   const down=new Event('pointerdown',{bubbles:true,cancelable:true});
++   root.querySelector('[data-outside]')!.dispatchEvent(down);
++   expect(panel.open).toBe(false);expect(document.activeElement).toBe(summary);
++   expect(down.defaultPrevented).toBe(true);
++  }finally{events.abort();}
++ });
++ it.each([
++  '<button data-outside>Sole</button>',
++  '<button><svg data-outside aria-hidden="true"><path d="M0 0h1"/></svg></button>',
++  '<a data-outside href="?legacy">Laboratorio</a>',
++  '<input data-outside aria-label="Altro controllo">',
++  '<select data-outside><option>Schermo</option></select>',
++  '<details><summary data-outside>Mani</summary></details>',
++  '<canvas data-outside tabindex="0"></canvas>',
++  '<div data-outside tabindex="-1">Destinazione programmatica</div>',
++ ])('leaves pointer focus to the actual interactive target without an intermediate jump: %s',outside=>{
++  const {root,panel,summary,input,events}=fixture(outside);
++  const originalFocus=summary.focus;let summaryFocusCalls=0;
++  summary.focus=()=>{summaryFocusCalls++;};
++  try{
++   const down=new Event('pointerdown',{bubbles:true,cancelable:true});
++   root.querySelector('[data-outside]')!.dispatchEvent(down);
++   expect(panel.open).toBe(false);expect(summaryFocusCalls).toBe(0);
++   expect(down.defaultPrevented).toBe(false);
++   // dispatchEvent does not run native pointer focus; this asserts no competing focus call.
++   expect(document.activeElement).toBe(input);
++  }finally{summary.focus=originalFocus;events.abort();}
++ });
++ it('does not move focus that already belongs to another part of the interface',()=>{
++  const {root,panel,events}=fixture('<input data-other aria-label="Altro"><span data-outside></span>');
++  const other=root.querySelector<HTMLInputElement>('[data-other]')!;other.focus();
++  try{
++   const down=new Event('pointerdown',{bubbles:true,cancelable:true});
++   root.querySelector('[data-outside]')!.dispatchEvent(down);
++   expect(panel.open).toBe(false);expect(document.activeElement).toBe(other);
++   expect(down.defaultPrevented).toBe(false);
++  }finally{events.abort();}
++ });
++ it('does not dismiss or change focus after its listener is aborted',()=>{
++  const {root,panel,input,events}=fixture('<span data-outside></span>');events.abort();
++  root.querySelector('[data-outside]')!.dispatchEvent(new Event('pointerdown',{bubbles:true}));
++  expect(panel.open).toBe(true);expect(document.activeElement).toBe(input);
++ });
++});
+--- a/src/cumulonimbus/scene.css
++++ b/src/cumulonimbus/scene.css
+@@ -100,6 +100,9 @@
+ }
+ @media(max-width:900px){.view-help{bottom:calc(var(--dock-bottom) + 80px)}.scene-dock{gap:6px}.weather-presets button{padding-inline:10px}.view-controls{bottom:calc(var(--dock-bottom) + 80px);right:max(20px,env(safe-area-inset-right))}.diagnostics{right:max(20px,env(safe-area-inset-right));bottom:calc(var(--dock-bottom) + 227px)}}
+ @media(max-width:640px){.cloud-scene{--dock-bottom:max(16px,env(safe-area-inset-bottom))}.scene-heading{left:max(20px,env(safe-area-inset-left));top:max(22px,env(safe-area-inset-top))}.scene-heading h1{font-size:44px}.scene-heading p{font-size:10px;gap:6px}.input-switch{right:max(16px,env(safe-area-inset-right));top:max(22px,env(safe-area-inset-top))}.input-switch summary{padding:7px 12px;gap:7px}.input-switch summary span{font-size:9px}.scene-dock{left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));width:auto;gap:3px;padding:7px;border-radius:14px}.dock-divider{display:none}.weather-presets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));flex:1;gap:2px;min-width:0}.weather-presets button{flex-direction:column;gap:4px;font-size:9px;min-width:0;padding:6px 1px;min-height:48px}.weather-presets .control-icon{width:19px;height:19px}.sky-inspector>summary{width:44px;height:48px;padding:10px}.sky-inspector>summary>span{display:none}.scene-controls .pause-button{min-width:44px;width:44px;padding:8px;min-height:48px}.view-controls{bottom:calc(var(--dock-bottom) + 80px);right:max(16px,env(safe-area-inset-right))}.view-help{bottom:calc(var(--dock-bottom) + 75px);left:max(20px,env(safe-area-inset-left));font-size:9px}.view-help span{display:none}.diagnostics{top:116px;bottom:calc(var(--dock-bottom) + 80px);left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));width:auto;border-radius:16px}.hand-panel{max-height:none}.panel-heading{padding-top:10px}.panel-heading h2{font-size:17px}.inspector-body{padding:16px 20px}.probe-warning{top:108px;left:20px;font-size:10px}}
++@media(max-width:640px){
++ .cloud-scene:has(.sky-inspector[open]) :is(.view-controls,.view-help){visibility:hidden}
++}
+ @media(max-height:580px) and (min-width:641px){.cloud-scene{--dock-bottom:max(14px,env(safe-area-inset-bottom))}.scene-heading{top:max(18px,env(safe-area-inset-top));left:max(24px,env(safe-area-inset-left))}.scene-heading h1{font-size:40px}.input-switch{top:max(18px,env(safe-area-inset-top));right:max(20px,env(safe-area-inset-right))}.view-help{display:none}.diagnostics{top:76px;bottom:calc(var(--dock-bottom) + 76px);width:320px;right:max(20px,env(safe-area-inset-right))}.view-controls{bottom:calc(var(--dock-bottom) + 86px);right:calc(max(20px,env(safe-area-inset-right)) + 340px)}.hand-panel{max-height:calc(100dvh - 152px - var(--dock-bottom))}}
+ @media(prefers-reduced-motion:reduce){.scene-controls button,.scene-controls summary{transition:none}.diagnostics{animation:none}}
+ /* Progressive enhancement: native disclosure semantics remain the fallback. */

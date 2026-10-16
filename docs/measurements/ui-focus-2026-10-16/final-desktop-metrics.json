@@ -1,0 +1,140 @@
+{
+  "controls": [
+    {
+      "height": 48,
+      "name": "Mani in arrivo",
+      "width": 116.1640625
+    },
+    {
+      "height": 44,
+      "name": "Avvicinati alla nube",
+      "width": 44
+    },
+    {
+      "height": 44,
+      "name": "Allontanati dalla nube",
+      "width": 44
+    },
+    {
+      "height": 44,
+      "name": "Torna al panorama",
+      "width": 44
+    },
+    {
+      "height": 48,
+      "name": "Riprendi",
+      "width": 48
+    },
+    {
+      "height": 48,
+      "name": "Sole",
+      "width": 100.5703125
+    },
+    {
+      "height": 48,
+      "name": "Tramonto",
+      "width": 138.8828125
+    },
+    {
+      "height": 48,
+      "name": "Pioggia",
+      "width": 121.4375
+    },
+    {
+      "height": 48,
+      "name": "Temporale",
+      "width": 143.828125
+    },
+    {
+      "height": 48,
+      "name": "Regola il cielo",
+      "width": 101.21875
+    },
+    {
+      "height": 44,
+      "name": "Chiudi regolazioni",
+      "width": 44
+    },
+    {
+      "height": 44,
+      "name": "Nube",
+      "width": 124.6640625
+    },
+    {
+      "height": 44,
+      "name": "Atmosfera",
+      "width": 124.6640625
+    },
+    {
+      "height": 44,
+      "name": "Misure",
+      "width": 124.6640625
+    },
+    {
+      "height": 44,
+      "name": "family",
+      "width": 371
+    },
+    {
+      "height": 44,
+      "name": "wind",
+      "width": 371
+    },
+    {
+      "height": 44,
+      "name": "zoom",
+      "width": 371
+    },
+    {
+      "height": 44,
+      "name": "dispersion",
+      "width": 371
+    },
+    {
+      "height": 44,
+      "name": "Raffica",
+      "width": 118.328125
+    },
+    {
+      "height": 44,
+      "name": "Disperdi",
+      "width": 118.3359375
+    },
+    {
+      "height": 44,
+      "name": "Ricondensa",
+      "width": 118.3359375
+    },
+    {
+      "height": 44,
+      "name": "Nuova forma",
+      "width": 371
+    },
+    {
+      "height": 44,
+      "name": "Orbita",
+      "width": 181.5
+    },
+    {
+      "height": 44,
+      "name": "Luce da destra",
+      "width": 181.5
+    },
+    {
+      "height": 44,
+      "name": "Ricomincia",
+      "width": 181.5
+    }
+  ],
+  "documentWidth": 1672,
+  "panel": {
+    "height": 640,
+    "width": 432,
+    "x": 1208,
+    "y": 126
+  },
+  "viewport": [
+    1672,
+    941
+  ]
+}

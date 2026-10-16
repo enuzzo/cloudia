@@ -1,0 +1,38 @@
+[
+  {
+    "coveredByOther": false,
+    "label": "Temporale",
+    "tag": "BUTTON",
+    "topClass": "control-icon"
+  },
+  {
+    "coveredByOther": false,
+    "label": "Pioggia",
+    "tag": "BUTTON",
+    "topClass": "control-icon"
+  },
+  {
+    "coveredByOther": false,
+    "label": "Tramonto",
+    "tag": "BUTTON",
+    "topClass": null
+  },
+  {
+    "coveredByOther": false,
+    "label": "Sole",
+    "tag": "BUTTON",
+    "topClass": null
+  },
+  {
+    "coveredByOther": false,
+    "label": "Riprendi",
+    "tag": "BUTTON",
+    "topClass": "control-icon"
+  },
+  {
+    "coveredByOther": true,
+    "label": "Torna al panorama",
+    "tag": "BUTTON",
+    "topClass": "inspector-body"
+  }
+]

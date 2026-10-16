@@ -1,0 +1,18 @@
+{
+  "kind": "phase1-phase2-exact-common-metric-comparison",
+  "status": "passed",
+  "checks": {
+    "sameBaselineSequence": true,
+    "sameParameters": true,
+    "sameChecks": true,
+    "sameOriginalPointKinds": true,
+    "sameFactorizationRoundoff": true,
+    "sameExistingMetrics": true,
+    "sameExistingPerRayValues": true,
+    "sameGates": true,
+    "sameCacheNodesAndWitnesses": true
+  },
+  "phase1ResultSha256": "fa2db1f5edd2482f8f6e6f60442cad107423a83987b94549f1a9ed7cd92e8d3a",
+  "phase2ResultSha256": "7356ce4ebb638db1db74593bce03d96cf2ca93cc9a3d8ef99765163741897136",
+  "explanation": "Phase2 adds metrics only. Every previously emitted metric and per-ray numeric field, all parameters, gates, lazy nodes and witnesses are identical. Runtime/source instrumentation hashes differ as expected. No change to cache/model/replay trajectory."
+}

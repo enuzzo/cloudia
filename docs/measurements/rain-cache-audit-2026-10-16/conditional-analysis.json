@@ -1,0 +1,57 @@
+{
+  "kind": "conditional-analysis-availability",
+  "derivedFromResultSha256": "fa2db1f5edd2482f8f6e6f60442cad107423a83987b94549f1a9ed7cd92e8d3a",
+  "additionalReplayPerformed": false,
+  "requestedConditions": [
+    {
+      "minimumOriginalA": 0.01,
+      "mappingMax": null,
+      "mappingP99": null,
+      "conditionedTError": null
+    },
+    {
+      "minimumOriginalA": 0.1,
+      "mappingMax": null,
+      "mappingP99": null,
+      "conditionedTError": null
+    }
+  ],
+  "status": "unavailable-from-saved-aggregates",
+  "reason": "Per-point A, mapping displacement and optical weight were not serialized together. Saved data comprise aggregate distributions, opacity-weighted means, per-ray total tau/T and selected worst witnesses. A witness subset cannot establish a conditional maximum/p99 over the full replay. No new replay authorized for this request.",
+  "availableGlobalValues": [
+    {
+      "size": 128,
+      "opacityWeightedMeanMappingM": 0.037165513656029596,
+      "globalFixedPathTError": {
+        "n": 576,
+        "mean": 0.00017938066836601743,
+        "rms": 0.0005140945222652442,
+        "p50": 0,
+        "p95": 0.0012225508689880371,
+        "p99": 0.0019515752792358398,
+        "max": 0.005103886127471924,
+        "opacityWeightedMean": null,
+        "opacityWeight": 0
+      },
+      "worstMappingA": 0.00010669024777598679,
+      "worstMappingRainOpacityWeight": 3.795706343149422e-07
+    },
+    {
+      "size": 256,
+      "opacityWeightedMeanMappingM": 0.01569520068048541,
+      "globalFixedPathTError": {
+        "n": 576,
+        "mean": 5.618379186166244e-05,
+        "rms": 0.00015696128525744774,
+        "p50": 0,
+        "p95": 0.00036528706550598145,
+        "p99": 0.0005170106887817383,
+        "max": 0.001450955867767334,
+        "opacityWeightedMean": null,
+        "opacityWeight": 0
+      },
+      "worstMappingA": 0.0001034615925163962,
+      "worstMappingRainOpacityWeight": 3.4145616807039316e-07
+    }
+  ]
+}

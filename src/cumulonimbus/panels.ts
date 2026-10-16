@@ -1,3 +1,10 @@
+/** Native pointer focus will follow this event; include SVG descendants and negative tabindex. */
+function hasPointerFocusTarget(target:EventTarget|null){
+  if(!(target instanceof Element))return false;
+  const control=target.closest('button,input,select,textarea,a[href],summary,[tabindex]');
+  return !!control&&!control.matches(':disabled,input[type="hidden"]')&&!control.closest('[inert]');
+}
+
 /** Light-dismiss disclosures without trapping pointer input or keyboard focus. */
 export function installPanelDismissal(root:HTMLElement,signal:AbortSignal){
   const panels=()=>Array.from(root.querySelectorAll<HTMLDetailsElement>('details'));
@@ -16,7 +23,13 @@ export function installPanelDismissal(root:HTMLElement,signal:AbortSignal){
     const panel=button?.closest('details');if(panel)close(panel,true);
   },{signal});
   document.addEventListener('pointerdown',event=>{
-    for(const panel of panels())if(panel.open&&!panel.contains(event.target as Node))close(panel);
+    const pointerFocus=hasPointerFocusTarget(event.target);
+    for(const panel of panels())if(panel.open&&!panel.contains(event.target as Node)){
+      const restoreFocus=!pointerFocus&&panel.contains(document.activeElement);
+      // Cancel compatible mousedown focus only when restoring from hidden content.
+      if(restoreFocus)event.preventDefault();
+      close(panel,restoreFocus);
+    }
   },{capture:true,signal});
   document.addEventListener('keydown',event=>{
     // Let a nested control consume Escape first (for example its own picker).

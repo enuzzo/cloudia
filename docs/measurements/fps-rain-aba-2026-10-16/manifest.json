@@ -1,0 +1,72 @@
+{
+  "status": "finite A/B/A verified",
+  "baseline": "0d0ab21",
+  "candidate": "adba2c5 compiled v46",
+  "files": [
+    {
+      "path": "A1-30s.json",
+      "bytes": 1212384,
+      "sha256": "41150433219f99cd62e8975975a551ef2cfc0db61158dad316c90ed46b84ec96"
+    },
+    {
+      "path": "A1-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "A1-preview.jpg",
+      "bytes": 45154,
+      "sha256": "2d992fd833c33c8fc56bd0daedc8bdc4ccefeb4c5e70b6f022f319ce36ecf17e"
+    },
+    {
+      "path": "A2-30s.json",
+      "bytes": 1266909,
+      "sha256": "18b33975b2457107499de516bee24e5f9da57e7fdfb9eb765fd2772eaf317fd9"
+    },
+    {
+      "path": "A2-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "A2-preview.jpg",
+      "bytes": 45154,
+      "sha256": "2d992fd833c33c8fc56bd0daedc8bdc4ccefeb4c5e70b6f022f319ce36ecf17e"
+    },
+    {
+      "path": "B-30s.json",
+      "bytes": 1393550,
+      "sha256": "51d5367938004d88c81ad87a06048b00436b154ab888671e94baee16929a0937"
+    },
+    {
+      "path": "B-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "B-preview.jpg",
+      "bytes": 45154,
+      "sha256": "2d992fd833c33c8fc56bd0daedc8bdc4ccefeb4c5e70b6f022f319ce36ecf17e"
+    },
+    {
+      "path": "context.json",
+      "bytes": 792,
+      "sha256": "18747c91835e2f655504c291dbd9fe19800bcb992027f6acab91b982f49df1c0"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 6629,
+      "sha256": "9d71c3e4d35b855213f3d9b688334b1dc9f5e4984cd55d8b87045d86538eabcd"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 4069,
+      "sha256": "407b502e141ffae20f835bac0e29cbf10bc05f64e1c6d715ae8354403ecef594"
+    }
+  ],
+  "buildProvenanceReferences": [
+    "../fps-pass-ledger-2026-10-16/final-build-provenance.json",
+    "../narrow-cloud-2026-10-16/v46-provenance.json"
+  ],
+  "sourceExclusion": "No duplicated volume cache or compiled assets; exact shaders remain in narrow-cloud archive."
+}
