@@ -1,0 +1,26 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2459,
+      "sha256": "542fda032ee2c4acde33ee2ac837637eacfe0337a09b2d8643701b8553d0fa72"
+    },
+    {
+      "path": "original-audit.tar.gz",
+      "bytes": 529955,
+      "sha256": "1722aa68fe6699a42f951f28db7fbee190818019f3ccc0d709657a571de5f3d0"
+    },
+    {
+      "path": "provenance.json",
+      "bytes": 475,
+      "sha256": "0fecbd3e79b8ff184159fa3e3a766b0113e0d5db7d07f310e61b01da9bdf8c50"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 2028,
+      "sha256": "da82f3a38b78742d0cce9e3ff1ab13720317d3869a8625ec53e1bb4bd098d11f"
+    }
+  ],
+  "payloadCount": 4,
+  "payloadBytes": 534917
+}
