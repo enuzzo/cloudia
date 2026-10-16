@@ -1,0 +1,48 @@
+{
+  "sourceUrl": "https://dataspace.copernicus.eu/sites/default/files/media/files/2025-06/copernicus_contributing_mission_data_access_v2_cop_dem_licenses.pdf",
+  "headers": {
+    "Date": "Fri, 16 Oct 2026 14:41:59 GMT",
+    "X-Content-Type-Options": "nosniff",
+    "Last-Modified": "Wed, 04 Jun 2025 09:02:52 GMT",
+    "ETag": "\"7a0ca-636bb431b8d6e\"",
+    "Accept-Ranges": "bytes",
+    "Content-Length": "499914",
+    "Cache-Control": "max-age=31536000",
+    "Expires": "Sat, 16 Oct 2027 14:41:59 GMT",
+    "Connection": "close",
+    "Content-Type": "application/pdf",
+    "Set-Cookie": "TS01fa12b5=0194f86d6027e860b03abfa3b98694302514beabcf7519071af49304308fb76d1a0cd02c87ba062b560d4983a78c38bf2777caef8334d349d9f67378b73b1b6dcc20bf6bac; Path=/"
+  },
+  "extractedZeroBasedPages": [
+    18,
+    19,
+    20
+  ],
+  "pdfViewerPages": [
+    19,
+    20,
+    21
+  ],
+  "files": [
+    {
+      "path": "copernicus-dem-license-source.pdf",
+      "bytes": 499914,
+      "sha256": "bb4a01dcd7f61acefa81c9ccd76af975e12096158169acf0d7b5c44c26c8701f"
+    },
+    {
+      "path": "COP-DEM-GLO90-F-license.pdf",
+      "bytes": 123425,
+      "sha256": "22359cb69199c6b5cc4e64a453cbeb283a7a844c0458f7fef0a1dddac4a0a3e7"
+    },
+    {
+      "path": "COP-DEM-GLO90-F-license.txt",
+      "bytes": 9203,
+      "sha256": "2c3123016f56f3342ac1107671480a6c0baa40596ffadad9f5aa500082ea8670"
+    },
+    {
+      "path": "NOTICE-COPERNICUS-DEM.txt",
+      "bytes": 713,
+      "sha256": "d097f4a1fd59caba078f09e9f813fec76c4216849ebfa3b2173a6365d5bd3927"
+    }
+  ]
+}

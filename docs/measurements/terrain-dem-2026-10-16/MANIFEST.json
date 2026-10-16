@@ -1,0 +1,207 @@
+{
+  "scope": "Curated R2 measured-terrain evidence, frozen after receipt of completed benchmark and Worker console; no runtime asset/build duplication",
+  "fileCount": 40,
+  "payloadBytes": 1794523,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 7396,
+      "sha256": "0d02dcab37074d3df4aaa0e79f7ebc3e7d5d97a5809a80c7cc758a43c71702a6"
+    },
+    {
+      "path": "benchmark/dem-r2-rain-benchmark.json.gz",
+      "bytes": 115050,
+      "sha256": "5354093d5de2027dafa7a37b2824497bb3011185cc2cf7c475cd9b97e12ee821"
+    },
+    {
+      "path": "benchmark/summary.json",
+      "bytes": 10426,
+      "sha256": "0de246bf3137481747eee65ddc57c1effaf2cb2d45704ad06994a727a121a068"
+    },
+    {
+      "path": "browser/dem-r1-sun-inland-css.jpg",
+      "bytes": 56774,
+      "sha256": "44a7ce3a661d789955583aca620fa72635b8ad00064b3d65be8f3ec6af39e14e"
+    },
+    {
+      "path": "browser/dem-r2-credits-ui-css.jpg",
+      "bytes": 65925,
+      "sha256": "3a2b1c7f94bf7bd8ea83304f51e0527df9f5d58e391ac02c334026849359ef3e"
+    },
+    {
+      "path": "browser/dem-r2-final-preview-animated-css.jpg",
+      "bytes": 49104,
+      "sha256": "8e440fd9f2f7cda1b39c679d1f0401ccc2f6508eba0621c6403a3caaaf928e34"
+    },
+    {
+      "path": "browser/dem-r2-main-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "browser/dem-r2-rain-benchmark-ui-css.jpg",
+      "bytes": 77968,
+      "sha256": "57d89822bcff172f68416d50e8b9e0f544108217e2ee3bbb46642b5043679872"
+    },
+    {
+      "path": "browser/dem-r2-sun-inland-css.jpg",
+      "bytes": 54216,
+      "sha256": "a0f9d3d02820091f6d4b9741c1e1dd73b586a3828876b24832575d68715decc2"
+    },
+    {
+      "path": "browser/dem-r2-sunset-inland-css.jpg",
+      "bytes": 44241,
+      "sha256": "d24ae3d3deca9e2d16c143c9c7d0e5b05b37ca1ea14e0c63a454183cb2cf978b"
+    },
+    {
+      "path": "browser/dem-r2-worker-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "browser/dem-r2-worker-sun-inland-css.jpg",
+      "bytes": 54216,
+      "sha256": "a0f9d3d02820091f6d4b9741c1e1dd73b586a3828876b24832575d68715decc2"
+    },
+    {
+      "path": "browser/metadata.json",
+      "bytes": 3712,
+      "sha256": "223e6ce397d4cd2eadbad70f285411f661d5148b20e49abccdd1ff23a4d61e3e"
+    },
+    {
+      "path": "browser/terrain-r5-sun-inland-css.jpg",
+      "bytes": 57666,
+      "sha256": "803d232207a9829a9a5cd462a42eac2553926240c060c3d056b4fd07e475d488"
+    },
+    {
+      "path": "origins.json",
+      "bytes": 7389,
+      "sha256": "510b6bd2c16befc78a4791555534ca87aeb358623dedf96fca4745c9130b9d7b"
+    },
+    {
+      "path": "preprocess/COP-DEM-GLO90-F-license.txt.gz",
+      "bytes": 3122,
+      "sha256": "58267cab9c15290c33fe95f590cba1df94f74dc088a6f42ec89625671110588d"
+    },
+    {
+      "path": "preprocess/NOTICE-COPERNICUS-DEM.txt",
+      "bytes": 713,
+      "sha256": "d097f4a1fd59caba078f09e9f813fec76c4216849ebfa3b2173a6365d5bd3927"
+    },
+    {
+      "path": "preprocess/PREPROCESS-PROTOCOL.md",
+      "bytes": 2195,
+      "sha256": "2298a3a6c8a4190ee6de72e1997b999dab19a23157419f166814e605f9bb81f9"
+    },
+    {
+      "path": "preprocess/dem-scientific-view.png",
+      "bytes": 1066792,
+      "sha256": "89cab5078a353ce862ca0e196f03d6705dfb413b5a9f61dafe4f9506c1993b6b"
+    },
+    {
+      "path": "preprocess/independent-verification.json",
+      "bytes": 1659,
+      "sha256": "fc2aea503ef166f3ab19b22ed2e246ac0d3fbdd7df27f0d5b5b6f92b376006ff"
+    },
+    {
+      "path": "preprocess/license-provenance.json",
+      "bytes": 1536,
+      "sha256": "ca7f9696866b1726e2be54fa1be6f19db273f6465167aa94aa5ef1f9edda2394"
+    },
+    {
+      "path": "preprocess/plot-dem.py",
+      "bytes": 7531,
+      "sha256": "6e1098beb0e01ed21a543e7af7e5e9aa0fdb8dea8e5421269015fe2fecb1238c"
+    },
+    {
+      "path": "preprocess/preprocess-dem.py",
+      "bytes": 10277,
+      "sha256": "f457a331013b209229f04e5dd8b8ef0aeb0f994d347e075ad83a7801256af07f"
+    },
+    {
+      "path": "preprocess/preprocess-pre-run-freeze.json",
+      "bytes": 519,
+      "sha256": "db7464d09fae36be87e4b884b3f379a34016403dcdfed26aa78c3afdc2f1e6e9"
+    },
+    {
+      "path": "preprocess/preprocess-result.json",
+      "bytes": 6895,
+      "sha256": "86c4a1d9f1fe76bb222a938c5e2c6a73fd161e3dfd7db83966aff2528190e867"
+    },
+    {
+      "path": "preprocess/tiles-manifest.json",
+      "bytes": 1797,
+      "sha256": "1e2e042fc2c54d6b9d8fae21e565d83d4ffab51a5ce558a1e23d9144d1ac402c"
+    },
+    {
+      "path": "receive-benchmark.py",
+      "bytes": 4843,
+      "sha256": "25ef0d232b8abc5ab39e0fe06f40eee196db7473cbbe33c00aba8da857e11b94"
+    },
+    {
+      "path": "source/dem-r2-dist-manifest.json",
+      "bytes": 4988,
+      "sha256": "d407ae9c37c5d1c6593816fe15633d257ad0af1a8de24de6f2f1111aa2027221"
+    },
+    {
+      "path": "source/dem-r2-source-manifest.json",
+      "bytes": 11801,
+      "sha256": "9a07a9225b29e4a19e45da2421e16f862d76b3c4a9311e557dce103504a6d46f"
+    },
+    {
+      "path": "source/dem-r2-suite.log.gz",
+      "bytes": 224,
+      "sha256": "e80ff5779c4dff92f2fa79a7d88b40270a1793a0c149dd48c4c88ae8d6fb7169"
+    },
+    {
+      "path": "timestamp-audit/CONCLUSION.md",
+      "bytes": 3524,
+      "sha256": "632eaea2993a163cafcd56c5774505fb8664585afbac7ffb6b9f9754e66fd655"
+    },
+    {
+      "path": "timestamp-audit/harness-r2-manifest.json.gz",
+      "bytes": 6328,
+      "sha256": "06a3b4fca5c7a4b2729008c25dcf0c9af21ea4616a522703b61db8eeefd9b646"
+    },
+    {
+      "path": "timestamp-audit/harness-r2-source-scope.json.gz",
+      "bytes": 1499,
+      "sha256": "6600a4d12a32a9d267b4f4088a935befcc9082499f27dd19ed04dd24755e6851"
+    },
+    {
+      "path": "timestamp-audit/manifest.json",
+      "bytes": 1430,
+      "sha256": "292b1788f9ee2ae6cb31cf1ad470ac51ae8b02384071f59b41a0a55f7fc0947b"
+    },
+    {
+      "path": "timestamp-audit/provenance.json",
+      "bytes": 2116,
+      "sha256": "9c2b46eda9a63025d918e7b912baf0862c34143cc9a7dc43299be994f17dc9d4"
+    },
+    {
+      "path": "timestamp-audit/summary.json",
+      "bytes": 8901,
+      "sha256": "3b7b21ecad86deedc9ec1786fba8a1547d37d886805443ee558475d0345f1288"
+    },
+    {
+      "path": "timestamp-audit/timestamp-r2-dom.json.gz",
+      "bytes": 20885,
+      "sha256": "b7d59f7846e6ba8e5bb9606c12f2ff75ce18affa49f4eda85a98c7de948208d4"
+    },
+    {
+      "path": "timestamp-audit/verify-result.json",
+      "bytes": 430,
+      "sha256": "34817341a6b0d1b227bf50188251a643ddaac13fff319fd9918ad331c32e420a"
+    },
+    {
+      "path": "timestamp-audit/verify.py",
+      "bytes": 9942,
+      "sha256": "eeb66f45ce5203c7d435278615896371c6f9b723a2120a8523a55058aed34e2d"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 10489,
+      "sha256": "261b2edcfdf72e781cc3500203974192d03d3ac7cec30fd44803e6efd66b1590"
+    }
+  ]
+}

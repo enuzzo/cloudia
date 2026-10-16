@@ -1,0 +1,57 @@
+{
+  "status": "PASS_READ_ONLY_NO_PREPROCESS_RERUN",
+  "scriptSha256": "86aabe0f75a8bb75814b6b60e124f6430bef3baff1f40d7e048e2f1b06c83cb0",
+  "sourceReportSha256": "86c4a1d9f1fe76bb222a938c5e2c6a73fd161e3dfd7db83966aff2528190e867",
+  "checks": {
+    "gzipIdentity": true,
+    "gzipMtimeZero": true,
+    "headerAndExactLength": true,
+    "heightCeiling": true,
+    "allOceanZeroHeight": true,
+    "allCoastSigns": true,
+    "fourSourceHashes": true,
+    "fiveIndependentSourcePoints": true
+  },
+  "assetSha256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d",
+  "gzipSha256": "cb0b81d061839d11f2bcf95f990dbaad1f7dde1755344452eb69eaed42171e57",
+  "points": [
+    {
+      "label": "xMinus_zMinus",
+      "sourceAbsErrorM": 0.0,
+      "heightCode": 910,
+      "coastCode": 4008
+    },
+    {
+      "label": "xPlus_zMinus",
+      "sourceAbsErrorM": 0.0,
+      "heightCode": 0,
+      "coastCode": -6883
+    },
+    {
+      "label": "xMinus_zPlus",
+      "sourceAbsErrorM": 0.0,
+      "heightCode": 724,
+      "coastCode": 10551
+    },
+    {
+      "label": "xPlus_zPlus",
+      "sourceAbsErrorM": 0.0,
+      "heightCode": 10714,
+      "coastCode": 3179
+    },
+    {
+      "label": "origin",
+      "sourceAbsErrorM": 0.0,
+      "heightCode": 0,
+      "coastCode": -538
+    }
+  ],
+  "heightMaxM": 2146.75,
+  "heightMaxWorldKm": [
+    -56.0,
+    21.5
+  ],
+  "exactBilinearGradientNormUpper": 2.244558976725717,
+  "gradientScope": "CDM1 bilinear field only; not native DSM, triangulated mesh or 48\u201364km hybrid blend",
+  "limitations": "Does not regenerate the full source projection, ocean flood or EDT; preserves and checks their frozen output."
+}

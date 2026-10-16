@@ -1,0 +1,67 @@
+{
+  "status": "FOUR_PUBLIC_COGS_DOWNLOADED_AND_DECODED_NO_PREPROCESS_ASSET_YET",
+  "source": "https://registry.opendata.aws/copernicus-dem/",
+  "sourceRelease": "AWS2021 per registry; ETag/LastModified preserved in per-file JSON",
+  "files": [
+    {
+      "file": "Copernicus_DSM_COG_30_N43_00_E009_00_DEM.tif",
+      "bytes": 76087,
+      "sha256": "dafd5832edecb475ef532fb49092cd79542078a364bb556e4f05f5ec5c006c44",
+      "size": [
+        1200,
+        1200
+      ],
+      "pillowMode": "F",
+      "decompressedExtrema": [
+        -0.2575538456439972,
+        423.69677734375
+      ]
+    },
+    {
+      "file": "Copernicus_DSM_COG_30_N43_00_E010_00_DEM.tif",
+      "bytes": 3772155,
+      "sha256": "256e4143bdfe6061d159557aa6beca194895deb4ee7c29b4ad1be89f4d38ea00",
+      "size": [
+        1200,
+        1200
+      ],
+      "pillowMode": "F",
+      "decompressedExtrema": [
+        -3.8530237674713135,
+        1293.087158203125
+      ]
+    },
+    {
+      "file": "Copernicus_DSM_COG_30_N44_00_E009_00_DEM.tif",
+      "bytes": 4405659,
+      "sha256": "6d6f05365b9a81b9ee70181263da57d7d3cf4418e73f027eff206d438ded39ae",
+      "size": [
+        1200,
+        1200
+      ],
+      "pillowMode": "F",
+      "decompressedExtrema": [
+        -3.7830026149749756,
+        1833.9541015625
+      ]
+    },
+    {
+      "file": "Copernicus_DSM_COG_30_N44_00_E010_00_DEM.tif",
+      "bytes": 5471608,
+      "sha256": "6527d4a1c54510ad2204792c097c2db8ad75ecac801c95439bc49e2f9f381fbd",
+      "size": [
+        1200,
+        1200
+      ],
+      "pillowMode": "F",
+      "decompressedExtrema": [
+        -1.1598961353302002,
+        2147.578369140625
+      ]
+    }
+  ],
+  "totalAssetBytes": 13725509,
+  "allFloat32Decompressed": true,
+  "fullTilesMaximumHeightM": 2147.578369140625,
+  "productEdits": false
+}

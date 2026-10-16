@@ -1,0 +1,48 @@
+{
+  "status": "FROZEN_OFFLINE_AUDIT_PASS_NO_NEW_GPU",
+  "payloadCount": 8,
+  "payloadBytes": 53625,
+  "rawSha256": "f493c72379a7239deaeb87433ceebf608c1aa9b189c02c431a66bcc10431ce58",
+  "files": [
+    {
+      "path": "CONCLUSION.md",
+      "bytes": 3524,
+      "sha256": "632eaea2993a163cafcd56c5774505fb8664585afbac7ffb6b9f9754e66fd655"
+    },
+    {
+      "path": "harness-r2-manifest.json.gz",
+      "bytes": 6328,
+      "sha256": "06a3b4fca5c7a4b2729008c25dcf0c9af21ea4616a522703b61db8eeefd9b646"
+    },
+    {
+      "path": "harness-r2-source-scope.json.gz",
+      "bytes": 1499,
+      "sha256": "6600a4d12a32a9d267b4f4088a935befcc9082499f27dd19ed04dd24755e6851"
+    },
+    {
+      "path": "provenance.json",
+      "bytes": 2116,
+      "sha256": "9c2b46eda9a63025d918e7b912baf0862c34143cc9a7dc43299be994f17dc9d4"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 8901,
+      "sha256": "3b7b21ecad86deedc9ec1786fba8a1547d37d886805443ee558475d0345f1288"
+    },
+    {
+      "path": "timestamp-r2-dom.json.gz",
+      "bytes": 20885,
+      "sha256": "b7d59f7846e6ba8e5bb9606c12f2ff75ce18affa49f4eda85a98c7de948208d4"
+    },
+    {
+      "path": "verify-result.json",
+      "bytes": 430,
+      "sha256": "34817341a6b0d1b227bf50188251a643ddaac13fff319fd9918ad331c32e420a"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 9942,
+      "sha256": "eeb66f45ce5203c7d435278615896371c6f9b723a2120a8523a55058aed34e2d"
+    }
+  ]
+}

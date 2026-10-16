@@ -1,0 +1,236 @@
+{
+  "status": "PREPROCESSED_CPU_NOT_RENDERED",
+  "protocolSha256": "2298a3a6c8a4190ee6de72e1997b999dab19a23157419f166814e605f9bb81f9",
+  "scriptSha256": "f457a331013b209229f04e5dd8b8ef0aeb0f994d347e075ad83a7801256af07f",
+  "inputManifestSha256": "1e2e042fc2c54d6b9d8fae21e565d83d4ffab51a5ce558a1e23d9144d1ac402c",
+  "format": {
+    "magic": "CDM1",
+    "headerBytes": 32,
+    "side": 1025,
+    "spacingKm": 0.125,
+    "minXKm": -64.0,
+    "minZKm": -64.0,
+    "maxXKm": 64,
+    "maxZKm": 64,
+    "heights": "uint16LE,code*.125m or code*.000125km",
+    "coast": "int16LE,code*8m or code*.008km",
+    "order": "row-major; Z south\u2192north, X east\u2192west; min coordinates are NODE CENTRES"
+  },
+  "projection": {
+    "type": "local equirectangular, explicitly not exact geodesic",
+    "originLatitude": 44,
+    "originLongitude": 10,
+    "kmPerDegreeLatitude": 111.1950802335,
+    "xDirection": "West",
+    "zDirection": "North",
+    "latitudeFormula": "44+z/111.1950802335",
+    "longitudeFormula": "10-x/(111.1950802335*cos(44deg))",
+    "latitudeRange": [
+      43.42443496721612,
+      44.57556503278388
+    ],
+    "longitudeRange": [
+      9.199870447161537,
+      10.800129552838463
+    ],
+    "verticalDatum": "EGM2008 orthometric metres; mapped to existing spherical-sea height, not ellipsoidal height"
+  },
+  "sourceSampleMetres": {
+    "count": 1050625,
+    "min": -3.759422359565309,
+    "mean": 323.87991370177906,
+    "p50": 44.46683428314039,
+    "p99": 1561.7868918786307,
+    "max": 2146.735570749915
+  },
+  "heightMetres": {
+    "count": 1050625,
+    "min": 0.0,
+    "mean": 323.88545722784056,
+    "p50": 44.5,
+    "p99": 1561.75,
+    "max": 2146.75
+  },
+  "heightQuantizationAbsErrorM": {
+    "count": 1050625,
+    "min": 0.0,
+    "mean": 0.01817412787005269,
+    "p50": 0.008707977637641307,
+    "p99": 0.06142459011490971,
+    "max": 0.06249962149286148
+  },
+  "coastMetres": {
+    "count": 1050625,
+    "min": -61448.0,
+    "mean": 7833.735637358715,
+    "p50": 8064.0,
+    "p99": 71976.0,
+    "max": 84408.0
+  },
+  "coastQuantizationAbsErrorM": {
+    "count": 1050625,
+    "min": 0.00014683269546367228,
+    "mean": 2.0091106842293422,
+    "p50": 2.024166991981474,
+    "p99": 3.9581658207862347,
+    "max": 3.999970530552673
+  },
+  "mask": {
+    "eligibleUnderHalfMetreNodes": 441704,
+    "borderConnectedOceanNodes": 434561,
+    "landNodes": 616064,
+    "isolatedLowNodesNotOcean": 7143,
+    "connectivity": 4,
+    "negativeSourceNodesClamped": 4978,
+    "oceanHeightAllZero": true,
+    "coastMethod": "exact separable Euclidean opposite-sample-centre distance minus half-grid62.5m; signed to approximate raster interface; not exact vector coast",
+    "edtIndependentTest": {
+      "cases": 3,
+      "nodes": 105,
+      "status": "PASS",
+      "oracle": "independent brute-force nearest source centre"
+    }
+  },
+  "seamAudit": {
+    "nativePixelCentreCases": 20,
+    "nativePixelCentreMaxErrorM": 1.546140993013978e-11,
+    "epsilonDegrees": 1e-09,
+    "eastWestLimitDifferenceM": {
+      "count": 1025,
+      "min": 0.0,
+      "mean": 1.2655820228545984e-05,
+      "p50": 0.0,
+      "p99": 9.605847334569262e-05,
+      "max": 0.0001184269702889651
+    },
+    "northSouthLimitDifferenceM": {
+      "count": 1025,
+      "min": 0.0,
+      "mean": 2.4830770699800018e-05,
+      "p50": 0.0,
+      "p99": 0.0001442419492764202,
+      "max": 0.00022361044034369115
+    },
+    "adjacentNativeCentreDifferenceEW_M": {
+      "count": 2400,
+      "min": 0.0,
+      "mean": 4.695572598072079,
+      "p50": 0.0,
+      "p99": 37.289711914062416,
+      "max": 63.71502685546875
+    },
+    "adjacentNativeCentreDifferenceNS_M": {
+      "count": 2400,
+      "min": 0.0,
+      "mean": 11.142864033281803,
+      "p50": 0.0,
+      "p99": 66.79187149047851,
+      "max": 123.6396484375
+    },
+    "scope": "limit continuity of one global bilinear mosaic; adjacent native centres need not have equal H"
+  },
+  "cornersAndOrigin": [
+    {
+      "label": "xMinus_zMinus",
+      "xWestKm": -64.0,
+      "zNorthKm": -64.0,
+      "latitude": 43.42443496721612,
+      "longitude": 10.800129552838463,
+      "sourceBilinearM": 113.72736850108264,
+      "heightCode": 910,
+      "heightM": 113.75,
+      "coastCode": 4008,
+      "coastM": 32064.0,
+      "ocean": false
+    },
+    {
+      "label": "xPlus_zMinus",
+      "xWestKm": 64.0,
+      "zNorthKm": -64.0,
+      "latitude": 43.42443496721612,
+      "longitude": 9.199870447161537,
+      "sourceBilinearM": 0.0,
+      "heightCode": 0,
+      "heightM": 0.0,
+      "coastCode": -6883,
+      "coastM": -55064.0,
+      "ocean": true
+    },
+    {
+      "label": "xMinus_zPlus",
+      "xWestKm": -64.0,
+      "zNorthKm": 64.0,
+      "latitude": 44.57556503278388,
+      "longitude": 10.800129552838463,
+      "sourceBilinearM": 90.55166962741126,
+      "heightCode": 724,
+      "heightM": 90.5,
+      "coastCode": 10551,
+      "coastM": 84408.0,
+      "ocean": false
+    },
+    {
+      "label": "xPlus_zPlus",
+      "xWestKm": 64.0,
+      "zNorthKm": 64.0,
+      "latitude": 44.57556503278388,
+      "longitude": 9.199870447161537,
+      "sourceBilinearM": 1339.230087549217,
+      "heightCode": 10714,
+      "heightM": 1339.25,
+      "coastCode": 3179,
+      "coastM": 25432.0,
+      "ocean": false
+    },
+    {
+      "label": "origin",
+      "xWestKm": 0.0,
+      "zNorthKm": 0.0,
+      "latitude": 44.0,
+      "longitude": 10.0,
+      "sourceBilinearM": 0.0,
+      "heightCode": 0,
+      "heightM": 0.0,
+      "coastCode": -538,
+      "coastM": -4304.0,
+      "ocean": true
+    }
+  ],
+  "sampledSlope": {
+    "count": 1050625,
+    "min": 0.0,
+    "mean": 0.14181813703449686,
+    "p50": 0.03900320499651278,
+    "p99": 0.6738255189054021,
+    "max": 1.7300555626915575
+  },
+  "asset": {
+    "path": "apuane-liguria-cdm1.bin",
+    "bytes": 4202532,
+    "sha256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d",
+    "gzipPath": "apuane-liguria-cdm1.bin.gz",
+    "gzipBytes": 2128410,
+    "gzipSha256": "cb0b81d061839d11f2bcf95f990dbaad1f7dde1755344452eb69eaed42171e57",
+    "gzipMtime": 0
+  },
+  "hardGates": {
+    "finiteSource": true,
+    "pixelIsPointNoHalfPixel": true,
+    "fourSeamsContinuousTo1cm": true,
+    "heightUnder3310m": true,
+    "heightNoExaggeration": true,
+    "heightQuantizationUnder0_0625m": true,
+    "coastNoSaturation": true,
+    "exactByteLength": true
+  },
+  "timeSeconds": 2.6484035829780623,
+  "pythonVersion": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "numpyVersion": "2.3.5",
+  "limitations": [
+    "125m gridded resampling of90mDSM; no invented finer detail",
+    "DSM includes vegetation/buildings; no true landcover/biome ground truth",
+    "Ocean is threshold+connectivity approximation, not authoritative coastline",
+    "Central48km and blend48\u201364 belong to runtime, not this asset; transition remains hybrid/procedural",
+    "No browser/GPU/FPS/art acceptance"
+  ]
+}

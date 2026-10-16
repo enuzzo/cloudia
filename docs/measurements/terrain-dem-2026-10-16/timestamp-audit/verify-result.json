@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "renderPairs": 48,
+  "computePairs": 12,
+  "actualRoles": 4,
+  "compiledShaderHashes": 4,
+  "overlapDraws": 12,
+  "overlapMs": {
+    "count": 12,
+    "mean": 67.190784,
+    "median": 69.07494399999999,
+    "min": 52.10112,
+    "max": 77.66016,
+    "total": 806.289408
+  },
+  "sumMs": 1629.945856,
+  "unionMs": 816.709632,
+  "rawSha256": "f493c72379a7239deaeb87433ceebf608c1aa9b189c02c431a66bcc10431ce58"
+}

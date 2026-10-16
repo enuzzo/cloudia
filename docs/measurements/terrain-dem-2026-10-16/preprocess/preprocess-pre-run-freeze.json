@@ -1,0 +1,20 @@
+{
+  "status": "PRE_RUN_NO_CDM1_YET",
+  "files": [
+    {
+      "path": "PREPROCESS-PROTOCOL.md",
+      "bytes": 2195,
+      "sha256": "2298a3a6c8a4190ee6de72e1997b999dab19a23157419f166814e605f9bb81f9"
+    },
+    {
+      "path": "preprocess-dem.py",
+      "bytes": 10277,
+      "sha256": "f457a331013b209229f04e5dd8b8ef0aeb0f994d347e075ad83a7801256af07f"
+    },
+    {
+      "path": "tiles-manifest.json",
+      "bytes": 1797,
+      "sha256": "1e2e042fc2c54d6b9d8fae21e565d83d4ffab51a5ce558a1e23d9144d1ac402c"
+    }
+  ]
+}

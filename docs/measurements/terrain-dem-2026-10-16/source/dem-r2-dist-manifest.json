@@ -1,0 +1,154 @@
+{
+  "root": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/dem-r2-dist",
+  "scope": "All explicit files of frozen external dem-r2-dist; no build payload copied into evidence package",
+  "files": [
+    {
+      "path": "COP-DEM-GLO90-F-license.pdf",
+      "bytes": 123425,
+      "sha256": "22359cb69199c6b5cc4e64a453cbeb283a7a844c0458f7fef0a1dddac4a0a3e7"
+    },
+    {
+      "path": "COP-DEM-GLO90-F-license.txt",
+      "bytes": 9203,
+      "sha256": "2c3123016f56f3342ac1107671480a6c0baa40596ffadad9f5aa500082ea8670"
+    },
+    {
+      "path": "assets/CumulonimbusApp-DhoMzUYI.js",
+      "bytes": 849228,
+      "sha256": "0f8f52e2571d4e320fea50449b383dde41fa83a55ad6c3708110eb25564e1346"
+    },
+    {
+      "path": "assets/CumulonimbusApp-DhoMzUYI.js.map",
+      "bytes": 3863992,
+      "sha256": "2f0eb5648ec6a464c6fb61b1f932ff4e7a28d334c94937398a81672809cfad47"
+    },
+    {
+      "path": "assets/CumulonimbusApp-fw8aK7_r.css",
+      "bytes": 13181,
+      "sha256": "bdf43d23ca041116c6b6eef5d8f95ab72115e3f0a0a8a728cb912e751dcaa9fb"
+    },
+    {
+      "path": "assets/LabApp-BIVQGmZd.js",
+      "bytes": 405933,
+      "sha256": "61b740644d902e97f0e29d2e7924b0d480f6bdfdd7eae827ea06300cd5b247b9"
+    },
+    {
+      "path": "assets/LabApp-BIVQGmZd.js.map",
+      "bytes": 1146944,
+      "sha256": "98012a6091b1e953d3866ecab1cce4e86972943f724a7a15370dd8108631d6a4"
+    },
+    {
+      "path": "assets/index-AIx2CXRS.js",
+      "bytes": 2837,
+      "sha256": "1caec2544b70ed135c7ac5b4b049c9290b3ad785af24b54857626cf0708ce307"
+    },
+    {
+      "path": "assets/index-AIx2CXRS.js.map",
+      "bytes": 1570,
+      "sha256": "2a579ea80631e6ba757bd440a8fc8a483c2c4661f839c886d05dd2be91d36b44"
+    },
+    {
+      "path": "assets/index-Cia3ypEr.css",
+      "bytes": 1245,
+      "sha256": "99354a5ec1ade2941e4aba36f030b413c9afbad79336f11800929c7d805b4714"
+    },
+    {
+      "path": "assets/liguria-apuane-dem-CFgFyJza.bin",
+      "bytes": 4202532,
+      "sha256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d"
+    },
+    {
+      "path": "assets/render.worker-Bh48YbU7.js",
+      "bytes": 1005535,
+      "sha256": "0f7c705fdcbb09633050d64ec76fee441fffce874572d6c2cc85b1e7a3d207b7"
+    },
+    {
+      "path": "assets/render.worker-Bh48YbU7.js.map",
+      "bytes": 5648391,
+      "sha256": "8bd8ad546aab9124d242c00afef45a9bbf9132b731a9ef6e5305a9d39b5cfcb9"
+    },
+    {
+      "path": "assets/sky.worker-CHm7n211.js",
+      "bytes": 2960,
+      "sha256": "503ad9438c1738310a9cbe2a41e9af0524e7046bce79e58d6da7c1e74863caaa"
+    },
+    {
+      "path": "assets/sky.worker-CHm7n211.js.map",
+      "bytes": 13323,
+      "sha256": "df7c7eaff6aefeb222e7b89eb86f6c9382a50f405fccd92e9886f2adaa6ac8be"
+    },
+    {
+      "path": "assets/three.core-DxR5k0T0.js",
+      "bytes": 195512,
+      "sha256": "e4d296a475f2cd168d934f17f032d4f56291682208332fc6a926b3937200a810"
+    },
+    {
+      "path": "assets/three.core-DxR5k0T0.js.map",
+      "bytes": 1858617,
+      "sha256": "f69fe4d9751737dc47e263bd686fd2ce8f9b2ce280b023c7b268328cde7e7f31"
+    },
+    {
+      "path": "assets/volume.worker-AVJPJnWD.js",
+      "bytes": 15821,
+      "sha256": "87aceed863518008e2cf3015460be964efe98d83159a85ef9cf9133964c338b5"
+    },
+    {
+      "path": "assets/volume.worker-AVJPJnWD.js.map",
+      "bytes": 78380,
+      "sha256": "1929f2c77381f12a8b2e4441183de330b75f960e0d5a930bc7e44d769157f60d"
+    },
+    {
+      "path": "cloudia-hero.iife.js",
+      "bytes": 526689,
+      "sha256": "d4363d2ccdbf676991be2c6ba05bc62da0ceef5debaa789f04766ab1248c30f5"
+    },
+    {
+      "path": "cloudia-hero.iife.js.map",
+      "bytes": 2860339,
+      "sha256": "e2cc94ad99c5378b67d3f37d8e72da3dd32da86fca304b63eb3d296903107f74"
+    },
+    {
+      "path": "cloudia-hero.js",
+      "bytes": 838767,
+      "sha256": "bc11f99470a6298e20fa804bc2d93041d4cc1a015d812ae97b6ad5827b5fa702"
+    },
+    {
+      "path": "cloudia-hero.js.map",
+      "bytes": 2925995,
+      "sha256": "6342676781cd11d4c2a6b72457beb5fe559d10db0d785a0e9e2d8de7a0d8fe76"
+    },
+    {
+      "path": "fonts/commissioner/OFL.txt",
+      "bytes": 4395,
+      "sha256": "4a7d88c77b4bc39ff84f2e058ba8f015636c50ce33588a86d9da97defe519933"
+    },
+    {
+      "path": "fonts/commissioner/SOURCE.md",
+      "bytes": 361,
+      "sha256": "4d62bb7d2afbda450c342cafc6987bab37990ecea6e19378e1a6b0f706183a33"
+    },
+    {
+      "path": "fonts/commissioner/latin-variable.woff2",
+      "bytes": 36696,
+      "sha256": "737ec8f28006b815be5333598aa32b203005f5788c8e61b09090b944eac8b79c"
+    },
+    {
+      "path": "index.html",
+      "bytes": 911,
+      "sha256": "d90fd7a4fdcd63ddf1f5732ca3965316e721458d741597b7157e5f99e206f1f1"
+    },
+    {
+      "path": "terrain-data-notice.txt",
+      "bytes": 713,
+      "sha256": "d097f4a1fd59caba078f09e9f813fec76c4216849ebfa3b2173a6365d5bd3927"
+    }
+  ],
+  "fileCount": 28,
+  "bytes": 26633495,
+  "inventoryLimits": {
+    "maxDepth": 4,
+    "maxFiles": 128,
+    "maxTotalBytes": 52428800,
+    "maxSeconds": 20
+  }
+}

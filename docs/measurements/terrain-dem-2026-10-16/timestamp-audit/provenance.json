@@ -1,0 +1,39 @@
+{
+  "scope": "Offline audit of actual R2 CUA capture; no GPU/browser/build/product changes",
+  "raw": {
+    "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/browser/timestamp-r2-dom.json",
+    "originalSha256": "f493c72379a7239deaeb87433ceebf608c1aa9b189c02c431a66bcc10431ce58",
+    "storage": "timestamp-r2-dom.json.gz",
+    "lossless": true
+  },
+  "harness": {
+    "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/timestamp-coverage-harness-r2",
+    "manifestStorage": "harness-r2-manifest.json.gz",
+    "manifestSha256": "36e09b39731f719659688a847674c3657d2f85cbbb71475de94e761c20a3f9da",
+    "sourceScopeStorage": "harness-r2-source-scope.json.gz",
+    "sourceScopeSha256": "afe0fcdc375648c00b63ad8d0307807878b4b7b22ec68d0f55eb0846ff3df9ab",
+    "sourceCheckpoint": "b985617",
+    "actualGpuRunPerformedBy": "root through explicit CUA buttons; not by audit agent"
+  },
+  "R5BenchmarkGridCrosscheck": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle18/browser/terrain-r5-rain-benchmark-dom.json",
+    "sha256": "b94b2be0c5961826134392094f5875ecbe13111f8fda0c7a9fb8c1530ed18c36",
+    "output": [
+      2474,
+      1844
+    ],
+    "internal": [
+      2474,
+      1844
+    ],
+    "sameCameraSubset": true,
+    "submissionFps": 16.21398464499032,
+    "interpretation": "Existing R5 production submission metric, not a measurement of v53 or a rate calculated from this diagnostic"
+  },
+  "limits": [
+    "Raw does not embed served bundle hash or URL; frozen harness manifest and separate root CUA/server records provide that provenance, not a cryptographic device attestation",
+    "No compositor/pixel identity or hardware-stage causality proof",
+    "R1 failed capture preserved separately; R2 does not replace it"
+  ],
+  "offlineVerifierDevelopment": "An initial name check expected the word linear in the output shader; actual function is sRGBTransferOETF. A first only-cloud/output overlap assumption was removed after secondary overlaps were found. Final verifier rederives all overlap multiplicities; no raw or GPU run changed."
+}

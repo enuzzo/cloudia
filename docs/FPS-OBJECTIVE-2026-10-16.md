@@ -8,7 +8,22 @@ output pieno configurato. Questo obiettivo si aggiunge ad anatomia delle tre
 famiglie, luce ravvicinata continua, pioggia/virga integrate nel paesaggio e UI.
 Nessuno di questi gate è sostituito dal contatore dei frame.
 
-## Stato corrente: v52 terreno raster, 60 FPS ancora aperti
+## Stato corrente: v53 rilievi misurati, 60 FPS ancora aperti
+
+[Il terreno v53](TERRAIN-MEASURED-2026-10-16.md) cambia la geografia centrale
+con un DSM reale a125m, mantenendo 256³/128³/384 e output pieno. Snapshot r2:
+328 test/41file, typecheck e app→hero PASS. Main pioggia80%, seed74, tempo60s
+in pausa, stessa posa e griglia nativa2474×1844 del recente R5: **14,5322192
+invii/s**, 436 intervalli/30.002,3ms, mediana66,7ms, p95 84ms/p99 200ms,
+prefisso coda completato. Presentazione non misurata. Nessun confronto causale
+percentuale da due singole misure con terreno differente; **60FPS non raggiunti**.
+
+Il controllo degli estremi timestamp su v52 registra programmi nube e output
+distinti, ma intervalli sovrapposti in12/12draw. La somma dei pass conta parte
+del tempo più volte; neppure l'unione prova tempo esclusivo o FPS. Usare cadenza
+e prefisso coda del prodotto completo. Nessuna causa hardware attribuita.
+
+## Riferimento precedente: v52 terreno raster
 
 La nuova richiesta del proprietario dà priorità a
 [terreno e montagne più credibili](TERRAIN-REALISM-2026-10-16.md). v52

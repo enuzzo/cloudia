@@ -1,0 +1,153 @@
+{
+  "copiedOriginals": [
+    {
+      "path": "browser/terrain-r5-sun-inland-css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle18/browser/terrain-r5-sun-inland-css.jpg",
+      "bytes": 57666,
+      "sha256": "803d232207a9829a9a5cd462a42eac2553926240c060c3d056b4fd07e475d488"
+    },
+    {
+      "path": "browser/dem-r1-sun-inland-css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/browser/dem-r1-sun-inland-css.jpg",
+      "bytes": 56774,
+      "sha256": "44a7ce3a661d789955583aca620fa72635b8ad00064b3d65be8f3ec6af39e14e"
+    },
+    {
+      "path": "browser/dem-r2-sun-inland-css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/browser/dem-r2-sun-inland-css.jpg",
+      "bytes": 54216,
+      "sha256": "a0f9d3d02820091f6d4b9741c1e1dd73b586a3828876b24832575d68715decc2"
+    },
+    {
+      "path": "browser/dem-r2-credits-ui-css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/browser/dem-r2-credits-ui-css.jpg",
+      "bytes": 65925,
+      "sha256": "3a2b1c7f94bf7bd8ea83304f51e0527df9f5d58e391ac02c334026849359ef3e"
+    },
+    {
+      "path": "browser/dem-r2-worker-sun-inland-css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/browser/dem-r2-worker-sun-inland-css.jpg",
+      "bytes": 54216,
+      "sha256": "a0f9d3d02820091f6d4b9741c1e1dd73b586a3828876b24832575d68715decc2"
+    },
+    {
+      "path": "preprocess/dem-scientific-view.png",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/dem-feasibility/dem-scientific-view.png",
+      "bytes": 1066792,
+      "sha256": "89cab5078a353ce862ca0e196f03d6705dfb413b5a9f61dafe4f9506c1993b6b"
+    },
+    {
+      "path": "preprocess/preprocess-result.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/dem-feasibility/preprocess-result.json",
+      "bytes": 6895,
+      "sha256": "86c4a1d9f1fe76bb222a938c5e2c6a73fd161e3dfd7db83966aff2528190e867"
+    },
+    {
+      "path": "preprocess/PREPROCESS-PROTOCOL.md",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/dem-feasibility/PREPROCESS-PROTOCOL.md",
+      "bytes": 2195,
+      "sha256": "2298a3a6c8a4190ee6de72e1997b999dab19a23157419f166814e605f9bb81f9"
+    },
+    {
+      "path": "preprocess/preprocess-dem.py",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/dem-feasibility/preprocess-dem.py",
+      "bytes": 10277,
+      "sha256": "f457a331013b209229f04e5dd8b8ef0aeb0f994d347e075ad83a7801256af07f"
+    },
+    {
+      "path": "preprocess/tiles-manifest.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/dem-feasibility/tiles-manifest.json",
+      "bytes": 1797,
+      "sha256": "1e2e042fc2c54d6b9d8fae21e565d83d4ffab51a5ce558a1e23d9144d1ac402c"
+    },
+    {
+      "path": "preprocess/preprocess-pre-run-freeze.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/dem-feasibility/preprocess-pre-run-freeze.json",
+      "bytes": 519,
+      "sha256": "db7464d09fae36be87e4b884b3f379a34016403dcdfed26aa78c3afdc2f1e6e9"
+    },
+    {
+      "path": "preprocess/independent-verification.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/dem-feasibility/independent-verification.json",
+      "bytes": 1659,
+      "sha256": "fc2aea503ef166f3ab19b22ed2e246ac0d3fbdd7df27f0d5b5b6f92b376006ff"
+    },
+    {
+      "path": "preprocess/plot-dem.py",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/dem-feasibility/plot-dem.py",
+      "bytes": 7531,
+      "sha256": "6e1098beb0e01ed21a543e7af7e5e9aa0fdb8dea8e5421269015fe2fecb1238c"
+    },
+    {
+      "path": "preprocess/NOTICE-COPERNICUS-DEM.txt",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/dem-feasibility/NOTICE-COPERNICUS-DEM.txt",
+      "bytes": 713,
+      "sha256": "d097f4a1fd59caba078f09e9f813fec76c4216849ebfa3b2173a6365d5bd3927"
+    },
+    {
+      "path": "preprocess/COP-DEM-GLO90-F-license.txt.gz",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/dem-feasibility/COP-DEM-GLO90-F-license.txt",
+      "uncompressedBytes": 9203,
+      "uncompressedSha256": "2c3123016f56f3342ac1107671480a6c0baa40596ffadad9f5aa500082ea8670",
+      "storage": "gzip lossless mtime0; original whitespace and bytes preserved"
+    },
+    {
+      "path": "preprocess/license-provenance.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/dem-feasibility/license-provenance.json",
+      "bytes": 1536,
+      "sha256": "ca7f9696866b1726e2be54fa1be6f19db273f6465167aa94aa5ef1f9edda2394"
+    },
+    {
+      "path": "source/dem-r2-source-manifest.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/dem-r2-source-manifest.json",
+      "bytes": 11801,
+      "sha256": "9a07a9225b29e4a19e45da2421e16f862d76b3c4a9311e557dce103504a6d46f"
+    },
+    {
+      "path": "browser/dem-r2-main-console.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/browser/dem-r2-main-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "source/dem-r2-suite.log.gz",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/dem-r2-suite.log",
+      "uncompressedBytes": 266,
+      "uncompressedSha256": "e22f38d28e97da40a700c096b09b982782a1b7cfa1ad4f1afd683d95b1e2f4cf",
+      "storage": "gzip lossless mtime0"
+    },
+    {
+      "path": "browser/dem-r2-rain-benchmark-ui-css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/browser/dem-r2-rain-benchmark-ui-css.jpg",
+      "bytes": 77968,
+      "sha256": "57d89822bcff172f68416d50e8b9e0f544108217e2ee3bbb46642b5043679872"
+    },
+    {
+      "path": "browser/dem-r2-worker-console.json",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/browser/dem-r2-worker-console.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "browser/dem-r2-sunset-inland-css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/browser/dem-r2-sunset-inland-css.jpg",
+      "bytes": 44241,
+      "sha256": "d24ae3d3deca9e2d16c143c9c7d0e5b05b37ca1ea14e0c63a454183cb2cf978b"
+    },
+    {
+      "path": "browser/dem-r2-final-preview-animated-css.jpg",
+      "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/browser/dem-r2-final-preview-animated-css.jpg",
+      "bytes": 49104,
+      "sha256": "8e440fd9f2f7cda1b39c679d1f0401ccc2f6508eba0621c6403a3caaaf928e34"
+    }
+  ],
+  "timestampAudit": "Byte-identical copy including its own frozen manifest/verifier; raw R2 timestamps remain a separate R5 diagnostic",
+  "excluded": "No TIFF, source float buffer, mask buffer, CDM1 raw/gzip, full source/build copies, HTML or PDF report",
+  "benchmarkRaw": {
+    "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/browser/dem-r2-rain-benchmark-dom.json",
+    "storage": "benchmark/dem-r2-rain-benchmark.json.gz",
+    "uncompressedBytes": 1573167,
+    "uncompressedSha256": "b99d7601c433f7b256577b87304594da74a51e051a3ab8b47e8896bdab877ed6",
+    "gzip": "lossless mtime0"
+  }
+}

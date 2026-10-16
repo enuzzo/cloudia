@@ -1,0 +1,293 @@
+{
+  "scope": "Recorded timestamp interval overlap, not proof of hardware parallelism, command-buffer cause, exclusive busy time or FPS",
+  "rawSha256": "f493c72379a7239deaeb87433ceebf608c1aa9b189c02c431a66bcc10431ce58",
+  "checkpoint": "b985617 R5 external diagnostic",
+  "output": [
+    2474,
+    1844
+  ],
+  "driver": "12 logical draws, one in flight; same-grid R5 source, source-entry Three186 bundling and observer hooks",
+  "independentChecks": "PASS: 48 render +12 compute endpoints/durations/indices, 48 role/target/pipeline records,4 compiled shader hashes,12 draw ledgers,24 clear calls, native/full-quality state and initial/final equality",
+  "roles": {
+    "terrain-shadow": {
+      "compiledShaderSha256": "750699c13903e1248680d96f0be9873b13783a58ef6a675a2b42a45fa172d2bc",
+      "returnedDurationMs": {
+        "count": 12,
+        "mean": 0.31675733333333334,
+        "median": 0.262144,
+        "min": 0.196608,
+        "max": 0.98304,
+        "total": 3.801088
+      }
+    },
+    "terrain-radiance": {
+      "compiledShaderSha256": "4a34e8bc23509f82edf139b2e9d1261ae1d8e6be250e08f4d02f1e82bafb1020",
+      "returnedDurationMs": {
+        "count": 12,
+        "mean": 0.6990506666666667,
+        "median": 0.65536,
+        "min": 0.65536,
+        "max": 1.179648,
+        "total": 8.388608000000001
+      }
+    },
+    "cloud-integrator": {
+      "compiledShaderSha256": "ed9918c92fd3db43c85f716d073a93ce5c5c6de3efd3a6c39a18511f9d744e72",
+      "returnedDurationMs": {
+        "count": 12,
+        "mean": 67.28362666666666,
+        "median": 69.10771199999999,
+        "min": 52.10112,
+        "max": 78.577664,
+        "total": 807.4035200000001
+      }
+    },
+    "output-color-transform": {
+      "compiledShaderSha256": "f188e77f26953b9e257d76c8c9e9fd17fb14b9bf417aff9f7e8b7bc56ef51c3d",
+      "returnedDurationMs": {
+        "count": 12,
+        "mean": 67.52938666666667,
+        "median": 69.533696,
+        "min": 52.4288,
+        "max": 77.856768,
+        "total": 810.3526400000001
+      }
+    }
+  },
+  "overlappingRolePairs": {
+    "cloud-integrator / output-color-transform": 12,
+    "terrain-shadow / terrain-radiance": 11,
+    "terrain-radiance / cloud-integrator": 11,
+    "terrain-radiance / output-color-transform": 11
+  },
+  "returnedIntervalMultiplicityMs": {
+    "1": 9.17504,
+    "2": 801.83296,
+    "3": 5.701632
+  },
+  "cloudOutputOverlapMs": {
+    "count": 12,
+    "mean": 67.190784,
+    "median": 69.07494399999999,
+    "min": 52.10112,
+    "max": 77.66016,
+    "total": 806.289408
+  },
+  "equalStarts": 8,
+  "equalEnds": 0,
+  "cloudOutputStartDeltaMs": {
+    "count": 12,
+    "mean": 0.09284266666666667,
+    "median": 0.0,
+    "min": 0.0,
+    "max": 0.917504,
+    "total": 1.114112
+  },
+  "cloudOutputEndDeltaMs": {
+    "count": 12,
+    "mean": 0.33860266666666666,
+    "median": 0.229376,
+    "min": 0.131072,
+    "max": 0.720896,
+    "total": 4.063232
+  },
+  "sumOfReturnedRenderIntervalsMs": 1629.945856,
+  "unionOfReturnedRenderIntervalsMs": 816.709632,
+  "doubleCountedOverlapMs": 813.236224,
+  "unionLimit": "Union describes only queried returned intervals, excludes untimed clears/gaps and is not GPU busy time, complete frame time or FPS",
+  "relations": [
+    {
+      "draw": 1,
+      "cloudUID": "r:3:4:f2939",
+      "outputUID": "r:4:5:f2939",
+      "cloudStartNs": "971799483842560",
+      "cloudEndNs": "971799562420224",
+      "outputStartNs": "971799484760064",
+      "outputEndNs": "971799562616832",
+      "overlapNs": "77660160",
+      "overlapMs": 77.66016,
+      "equalStarts": false,
+      "equalEnds": false,
+      "startDeltaMs": 0.917504,
+      "endDeltaMs": 0.196608
+    },
+    {
+      "draw": 2,
+      "cloudUID": "r:3:4:f2942",
+      "outputUID": "r:4:5:f2942",
+      "cloudStartNs": "971799565631488",
+      "cloudEndNs": "971799634706432",
+      "outputStartNs": "971799565697024",
+      "outputEndNs": "971799634903040",
+      "overlapNs": "69009408",
+      "overlapMs": 69.009408,
+      "equalStarts": false,
+      "equalEnds": false,
+      "startDeltaMs": 0.065536,
+      "endDeltaMs": 0.196608
+    },
+    {
+      "draw": 3,
+      "cloudUID": "r:3:4:f2946",
+      "outputUID": "r:4:5:f2946",
+      "cloudStartNs": "971799637524480",
+      "cloudEndNs": "971799694868480",
+      "outputStartNs": "971799637524480",
+      "outputEndNs": "971799695523840",
+      "overlapNs": "57344000",
+      "overlapMs": 57.344,
+      "equalStarts": true,
+      "equalEnds": false,
+      "startDeltaMs": 0.0,
+      "endDeltaMs": 0.65536
+    },
+    {
+      "draw": 4,
+      "cloudUID": "r:3:4:f2951",
+      "outputUID": "r:4:5:f2951",
+      "cloudStartNs": "971799704240128",
+      "cloudEndNs": "971799773380608",
+      "outputStartNs": "971799704240128",
+      "outputEndNs": "971799774101504",
+      "overlapNs": "69140480",
+      "overlapMs": 69.14048,
+      "equalStarts": true,
+      "equalEnds": false,
+      "startDeltaMs": 0.0,
+      "endDeltaMs": 0.720896
+    },
+    {
+      "draw": 5,
+      "cloudUID": "r:3:4:f2955",
+      "outputUID": "r:4:5:f2955",
+      "cloudStartNs": "971799775674368",
+      "cloudEndNs": "971799845732352",
+      "outputStartNs": "971799775739904",
+      "outputEndNs": "971799845928960",
+      "overlapNs": "69992448",
+      "overlapMs": 69.992448,
+      "equalStarts": false,
+      "equalEnds": false,
+      "startDeltaMs": 0.065536,
+      "endDeltaMs": 0.196608
+    },
+    {
+      "draw": 6,
+      "cloudUID": "r:3:4:f2959",
+      "outputUID": "r:4:5:f2959",
+      "cloudStartNs": "971799848484864",
+      "cloudEndNs": "971799909171200",
+      "outputStartNs": "971799848484864",
+      "outputEndNs": "971799909367808",
+      "overlapNs": "60686336",
+      "overlapMs": 60.686336,
+      "equalStarts": true,
+      "equalEnds": false,
+      "startDeltaMs": 0.0,
+      "endDeltaMs": 0.196608
+    },
+    {
+      "draw": 7,
+      "cloudUID": "r:3:4:f2963",
+      "outputUID": "r:4:5:f2963",
+      "cloudStartNs": "971799911661568",
+      "cloudEndNs": "971799979163648",
+      "outputStartNs": "971799911661568",
+      "outputEndNs": "971799979360256",
+      "overlapNs": "67502080",
+      "overlapMs": 67.50208,
+      "equalStarts": true,
+      "equalEnds": false,
+      "startDeltaMs": 0.0,
+      "endDeltaMs": 0.196608
+    },
+    {
+      "draw": 8,
+      "cloudUID": "r:3:4:f2968",
+      "outputUID": "r:4:5:f2968",
+      "cloudStartNs": "971799993974784",
+      "cloudEndNs": "971800066392064",
+      "outputStartNs": "971799994040320",
+      "outputEndNs": "971800066654208",
+      "overlapNs": "72351744",
+      "overlapMs": 72.351744,
+      "equalStarts": false,
+      "equalEnds": false,
+      "startDeltaMs": 0.065536,
+      "endDeltaMs": 0.262144
+    },
+    {
+      "draw": 9,
+      "cloudUID": "r:3:4:f2971",
+      "outputUID": "r:4:5:f2971",
+      "cloudStartNs": "971800070455296",
+      "cloudEndNs": "971800142872576",
+      "outputStartNs": "971800070455296",
+      "outputEndNs": "971800143134720",
+      "overlapNs": "72417280",
+      "overlapMs": 72.41728,
+      "equalStarts": true,
+      "equalEnds": false,
+      "startDeltaMs": 0.0,
+      "endDeltaMs": 0.262144
+    },
+    {
+      "draw": 10,
+      "cloudUID": "r:3:4:f2975",
+      "outputUID": "r:4:5:f2975",
+      "cloudStartNs": "971800147329024",
+      "cloudEndNs": "971800199430144",
+      "outputStartNs": "971800147329024",
+      "outputEndNs": "971800199757824",
+      "overlapNs": "52101120",
+      "overlapMs": 52.10112,
+      "equalStarts": true,
+      "equalEnds": false,
+      "startDeltaMs": 0.0,
+      "endDeltaMs": 0.32768
+    },
+    {
+      "draw": 11,
+      "cloudUID": "r:3:4:f2979",
+      "outputUID": "r:4:5:f2979",
+      "cloudStartNs": "971800203755520",
+      "cloudEndNs": "971800275058688",
+      "outputStartNs": "971800203755520",
+      "outputEndNs": "971800275779584",
+      "overlapNs": "71303168",
+      "overlapMs": 71.303168,
+      "equalStarts": true,
+      "equalEnds": false,
+      "startDeltaMs": 0.0,
+      "endDeltaMs": 0.720896
+    },
+    {
+      "draw": 12,
+      "cloudUID": "r:3:4:f2983",
+      "outputUID": "r:4:5:f2983",
+      "cloudStartNs": "971800277483520",
+      "cloudEndNs": "971800344264704",
+      "outputStartNs": "971800277483520",
+      "outputEndNs": "971800344395776",
+      "overlapNs": "66781184",
+      "overlapMs": 66.781184,
+      "equalStarts": true,
+      "equalEnds": false,
+      "startDeltaMs": 0.0,
+      "endDeltaMs": 0.131072
+    }
+  ],
+  "gpuTimestampQuantumGcdNs": 65536,
+  "adapter": {
+    "vendor": "apple",
+    "architecture": "metal-3",
+    "device": "",
+    "description": "",
+    "isFallbackAdapter": false
+  },
+  "deviceFeatures": [
+    "core-features-and-limits",
+    "timestamp-query"
+  ],
+  "v53Implication": "Preserve whole-frame submission pacing and completed queue-prefix metrics at full native quality; do not sum cloud/output as exclusive costs or assign long intervals to terrain. This R5 diagnostic proves no v53 FPS or 60-stable result."
+}

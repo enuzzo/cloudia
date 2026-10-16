@@ -1,0 +1,98 @@
+{
+  "images": [
+    {
+      "path": "browser/dem-r1-sun-inland-css.jpg",
+      "encodedDimensions": [
+        1237,
+        922
+      ],
+      "capture": "Original CSS JPEG from Root CUA; UI included, no native PNG or video",
+      "nativeCanvasScope": "Not asserted by this JPEG metadata",
+      "sceneScope": "Sun inland visual record"
+    },
+    {
+      "path": "browser/dem-r2-credits-ui-css.jpg",
+      "encodedDimensions": [
+        1237,
+        922
+      ],
+      "capture": "Original CSS JPEG from Root CUA; UI included, no native PNG or video",
+      "nativeCanvasScope": "R2 Root UI observed 2474x1844; benchmark also records this size. Not derivable from JPEG pixels alone.",
+      "sceneScope": "Credits interface"
+    },
+    {
+      "path": "browser/dem-r2-final-preview-animated-css.jpg",
+      "encodedDimensions": [
+        1237,
+        922
+      ],
+      "capture": "Original CSS JPEG from Root CUA; UI included, no native PNG or video",
+      "nativeCanvasScope": "R2 Root UI observed 2474x1844; benchmark also records this size. Not derivable from JPEG pixels alone.",
+      "sceneScope": "Animated final Sun preview observed by Root"
+    },
+    {
+      "path": "browser/dem-r2-rain-benchmark-ui-css.jpg",
+      "encodedDimensions": [
+        1237,
+        922
+      ],
+      "capture": "Original CSS JPEG from Root CUA; UI included, no native PNG or video",
+      "nativeCanvasScope": "R2 Root UI observed 2474x1844; benchmark also records this size. Not derivable from JPEG pixels alone.",
+      "sceneScope": "Benchmark interface"
+    },
+    {
+      "path": "browser/dem-r2-sun-inland-css.jpg",
+      "encodedDimensions": [
+        1237,
+        922
+      ],
+      "capture": "Original CSS JPEG from Root CUA; UI included, no native PNG or video",
+      "nativeCanvasScope": "R2 Root UI observed 2474x1844; benchmark also records this size. Not derivable from JPEG pixels alone.",
+      "sceneScope": "Sun inland visual record"
+    },
+    {
+      "path": "browser/dem-r2-sunset-inland-css.jpg",
+      "encodedDimensions": [
+        1237,
+        922
+      ],
+      "capture": "Original CSS JPEG from Root CUA; UI included, no native PNG or video",
+      "nativeCanvasScope": "R2 Root UI observed 2474x1844; benchmark also records this size. Not derivable from JPEG pixels alone.",
+      "sceneScope": "Tramonto Main observed by Root"
+    },
+    {
+      "path": "browser/dem-r2-worker-sun-inland-css.jpg",
+      "encodedDimensions": [
+        1237,
+        922
+      ],
+      "capture": "Original CSS JPEG from Root CUA; UI included, no native PNG or video",
+      "nativeCanvasScope": "R2 Root UI observed 2474x1844; benchmark also records this size. Not derivable from JPEG pixels alone.",
+      "sceneScope": "Sun Worker observed by Root"
+    },
+    {
+      "path": "browser/terrain-r5-sun-inland-css.jpg",
+      "encodedDimensions": [
+        1237,
+        922
+      ],
+      "capture": "Original CSS JPEG from Root CUA; UI included, no native PNG or video",
+      "nativeCanvasScope": "Not asserted by this JPEG metadata",
+      "sceneScope": "Sun inland visual record"
+    }
+  ],
+  "evidenceLimits": [
+    "No claim of identical camera from JPEGs alone",
+    "Main and Worker Sun JPEGs happen to be byte-identical; this is not native radiance parity proof",
+    "Root reported zero console warnings/errors for Main and Worker; original empty console arrays are preserved",
+    "R2 final preview was returned to active animation after benchmark and paused QA"
+  ],
+  "scientificFigure": {
+    "path": "preprocess/dem-scientific-view.png",
+    "encodedDimensions": [
+      2240,
+      1790
+    ],
+    "scope": "Original exported scientific figure, no recapture or recompression"
+  }
+}
