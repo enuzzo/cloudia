@@ -1,0 +1,11 @@
+{
+  "source": "Saved JSON only; no model/sample rerun",
+  "checkpoints": 84,
+  "macroCorners": 672,
+  "liquidDensityReproduced": 84,
+  "iceDensityNotReconstructed": 0,
+  "maxMacroRArithmeticError": 2.220446049250313e-16,
+  "maxLiquidRhoArithmeticError": 3.3306690738754696e-16,
+  "maxSigmaError": 0,
+  "maxWeightIdentityError": 1.5543122344752192e-15
+}

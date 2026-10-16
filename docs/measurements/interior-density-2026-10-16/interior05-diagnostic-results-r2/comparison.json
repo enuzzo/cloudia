@@ -1,0 +1,845 @@
+{
+  "status": "COMPLETE_SPARSE_CPU_ONLY",
+  "rows": [
+    {
+      "uv": [
+        0.05,
+        0.05
+      ],
+      "firstDensityDeltaMetres": 14.999999999998348,
+      "tau1DeltaMetres": 27.82241155795573,
+      "tau3DeltaMetres": 242.3567479113209,
+      "weightedDepthDeltaMetres": 60.6606277030246,
+      "Afirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.977499999999893,
+          "intervalKm": [
+            1.976999999999893,
+            1.977999999999893
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.9794999999998928,
+          "intervalKm": [
+            1.9789999999998928,
+            1.9799999999998927
+          ]
+        },
+        "tau1": 2.088403753943446,
+        "tau3": 2.2881451605221597
+      },
+      "Bfirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.9924999999998914,
+          "intervalKm": [
+            1.9919999999998914,
+            1.9929999999998913
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.9944999999998911,
+          "intervalKm": [
+            1.9939999999998912,
+            1.994999999999891
+          ]
+        },
+        "tau1": 2.1162261655014016,
+        "tau3": 2.5305019084334806
+      },
+      "Aweighted": {
+        "distanceKm": 2.0866093014535303,
+        "rho": 0.5670546539435809
+      },
+      "Bweighted": {
+        "distanceKm": 2.147269929156555,
+        "rho": 0.4826641913063791
+      },
+      "terrainProvenA": true,
+      "terrainProvenB": true
+    },
+    {
+      "uv": [
+        0.5,
+        0.05
+      ],
+      "firstDensityDeltaMetres": 80.99999999999108,
+      "tau1DeltaMetres": 127.41522181817366,
+      "tau3DeltaMetres": 247.30687421264452,
+      "weightedDepthDeltaMetres": 153.6199551763433,
+      "Afirst": {
+        "rho002": {
+          "sampleDistanceKm": 2.427499999999844,
+          "intervalKm": [
+            2.4269999999998437,
+            2.4279999999998436
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 2.4294999999998437,
+          "intervalKm": [
+            2.4289999999998435,
+            2.4299999999998434
+          ]
+        },
+        "tau1": 2.574460451222012,
+        "tau3": 2.7658333250692824
+      },
+      "Bfirst": {
+        "rho002": {
+          "sampleDistanceKm": 2.508499999999835,
+          "intervalKm": [
+            2.507999999999835,
+            2.5089999999998347
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 2.5144999999998343,
+          "intervalKm": [
+            2.513999999999834,
+            2.514999999999834
+          ]
+        },
+        "tau1": 2.7018756730401856,
+        "tau3": 3.013140199281927
+      },
+      "Aweighted": {
+        "distanceKm": 2.5642927204574413,
+        "rho": 0.4915979877517594
+      },
+      "Bweighted": {
+        "distanceKm": 2.7179126756337846,
+        "rho": 0.42800566166069326
+      },
+      "terrainProvenA": true,
+      "terrainProvenB": true
+    },
+    {
+      "uv": [
+        0.95,
+        0.05
+      ],
+      "firstDensityDeltaMetres": 35.999999999996035,
+      "tau1DeltaMetres": 36.88980366680372,
+      "tau3DeltaMetres": 36.77438847235726,
+      "weightedDepthDeltaMetres": 37.37300026523194,
+      "Afirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.8914999999999025,
+          "intervalKm": [
+            1.8909999999999025,
+            1.8919999999999024
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.8934999999999023,
+          "intervalKm": [
+            1.8929999999999023,
+            1.8939999999999022
+          ]
+        },
+        "tau1": 1.9938041984170987,
+        "tau3": 2.1338861566561262
+      },
+      "Bfirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.9274999999998985,
+          "intervalKm": [
+            1.9269999999998986,
+            1.9279999999998985
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.9294999999998983,
+          "intervalKm": [
+            1.9289999999998984,
+            1.9299999999998982
+          ]
+        },
+        "tau1": 2.0306940020839024,
+        "tau3": 2.1706605451284835
+      },
+      "Aweighted": {
+        "distanceKm": 1.9887788003279923,
+        "rho": 0.6717925266821939
+      },
+      "Bweighted": {
+        "distanceKm": 2.026151800593224,
+        "rho": 0.6826172537987543
+      },
+      "terrainProvenA": true,
+      "terrainProvenB": true
+    },
+    {
+      "uv": [
+        0.05,
+        0.5
+      ],
+      "firstDensityDeltaMetres": 27.999999999996916,
+      "tau1DeltaMetres": 11.706606600172087,
+      "tau3DeltaMetres": 14.291361762642119,
+      "weightedDepthDeltaMetres": 13.04128634453594,
+      "Afirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.9564999999998953,
+          "intervalKm": [
+            1.9559999999998954,
+            1.9569999999998953
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.959499999999895,
+          "intervalKm": [
+            1.958999999999895,
+            1.959999999999895
+          ]
+        },
+        "tau1": 2.07969957145107,
+        "tau3": 2.2465852962149886
+      },
+      "Bfirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.9844999999998922,
+          "intervalKm": [
+            1.9839999999998923,
+            1.9849999999998922
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.986499999999892,
+          "intervalKm": [
+            1.985999999999892,
+            1.986999999999892
+          ]
+        },
+        "tau1": 2.0914061780512423,
+        "tau3": 2.2608766579776307
+      },
+      "Aweighted": {
+        "distanceKm": 2.0764637421215335,
+        "rho": 0.6093580822676029
+      },
+      "Bweighted": {
+        "distanceKm": 2.0895050284660694,
+        "rho": 0.633933900699666
+      },
+      "terrainProvenA": true,
+      "terrainProvenB": true
+    },
+    {
+      "uv": [
+        0.5,
+        0.5
+      ],
+      "firstDensityDeltaMetres": 37.999999999995815,
+      "tau1DeltaMetres": 69.7900625419423,
+      "tau3DeltaMetres": 75.17164702751788,
+      "weightedDepthDeltaMetres": 63.30292574780394,
+      "Afirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.760499999999917,
+          "intervalKm": [
+            1.759999999999917,
+            1.7609999999999169
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.7624999999999167,
+          "intervalKm": [
+            1.7619999999999167,
+            1.7629999999999166
+          ]
+        },
+        "tau1": 1.8892279411765374,
+        "tau3": 2.031504614510387
+      },
+      "Bfirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.7984999999999127,
+          "intervalKm": [
+            1.7979999999999128,
+            1.7989999999999127
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.8024999999999123,
+          "intervalKm": [
+            1.8019999999999123,
+            1.8029999999999122
+          ]
+        },
+        "tau1": 1.9590180037184797,
+        "tau3": 2.106676261537905
+      },
+      "Aweighted": {
+        "distanceKm": 1.877720736204381,
+        "rho": 0.5884679847752936
+      },
+      "Bweighted": {
+        "distanceKm": 1.941023661952185,
+        "rho": 0.5178641160117732
+      },
+      "terrainProvenA": true,
+      "terrainProvenB": true
+    },
+    {
+      "uv": [
+        0.95,
+        0.5
+      ],
+      "firstDensityDeltaMetres": 10.999999999998789,
+      "tau1DeltaMetres": 21.365627325093286,
+      "tau3DeltaMetres": 22.274160817691737,
+      "weightedDepthDeltaMetres": 18.859583361588996,
+      "Afirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.6754999999999263,
+          "intervalKm": [
+            1.6749999999999263,
+            1.6759999999999262
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.677499999999926,
+          "intervalKm": [
+            1.676999999999926,
+            1.677999999999926
+          ]
+        },
+        "tau1": 1.7910581751829522,
+        "tau3": 1.9243491278198692
+      },
+      "Bfirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.686499999999925,
+          "intervalKm": [
+            1.6859999999999251,
+            1.686999999999925
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.6884999999999248,
+          "intervalKm": [
+            1.687999999999925,
+            1.6889999999999248
+          ]
+        },
+        "tau1": 1.8124238025080455,
+        "tau3": 1.946623288637561
+      },
+      "Aweighted": {
+        "distanceKm": 1.7834884050716306,
+        "rho": 0.6657122747384149
+      },
+      "Bweighted": {
+        "distanceKm": 1.8023479884332196,
+        "rho": 0.6322140567581122
+      },
+      "terrainProvenA": true,
+      "terrainProvenB": true
+    },
+    {
+      "uv": [
+        0.05,
+        0.95
+      ],
+      "firstDensityDeltaMetres": 45.999999999994934,
+      "tau1DeltaMetres": 34.75687695619101,
+      "tau3DeltaMetres": 35.312742146025315,
+      "weightedDepthDeltaMetres": 37.11606370689324,
+      "Afirst": {
+        "rho002": {
+          "sampleDistanceKm": 2.1654999999998727,
+          "intervalKm": [
+            2.1649999999998726,
+            2.1659999999998725
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 2.1684999999998724,
+          "intervalKm": [
+            2.1679999999998723,
+            2.168999999999872
+          ]
+        },
+        "tau1": 2.2794319133139727,
+        "tau3": 2.417452200385361
+      },
+      "Bfirst": {
+        "rho002": {
+          "sampleDistanceKm": 2.2114999999998677,
+          "intervalKm": [
+            2.2109999999998675,
+            2.2119999999998674
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 2.2144999999998674,
+          "intervalKm": [
+            2.213999999999867,
+            2.214999999999867
+          ]
+        },
+        "tau1": 2.3141887902701637,
+        "tau3": 2.4527649425313864
+      },
+      "Aweighted": {
+        "distanceKm": 2.2729233583376476,
+        "rho": 0.6543597364915686
+      },
+      "Bweighted": {
+        "distanceKm": 2.310039422044541,
+        "rho": 0.6968184378540954
+      },
+      "terrainProvenA": true,
+      "terrainProvenB": true
+    },
+    {
+      "uv": [
+        0.5,
+        0.95
+      ],
+      "firstDensityDeltaMetres": 30.999999999996586,
+      "tau1DeltaMetres": 52.38528532159536,
+      "tau3DeltaMetres": 55.27780384566006,
+      "weightedDepthDeltaMetres": 48.636527158633534,
+      "Afirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.5984999999999348,
+          "intervalKm": [
+            1.5979999999999348,
+            1.5989999999999347
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.6004999999999345,
+          "intervalKm": [
+            1.5999999999999346,
+            1.6009999999999345
+          ]
+        },
+        "tau1": 1.7089967898438745,
+        "tau3": 1.8391924549673153
+      },
+      "Bfirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.6294999999999313,
+          "intervalKm": [
+            1.6289999999999314,
+            1.6299999999999313
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.6314999999999311,
+          "intervalKm": [
+            1.6309999999999312,
+            1.631999999999931
+          ]
+        },
+        "tau1": 1.7613820751654699,
+        "tau3": 1.8944702588129754
+      },
+      "Aweighted": {
+        "distanceKm": 1.7004422078251948,
+        "rho": 0.6720819273975543
+      },
+      "Bweighted": {
+        "distanceKm": 1.7490787349838284,
+        "rho": 0.6119721823411941
+      },
+      "terrainProvenA": true,
+      "terrainProvenB": true
+    },
+    {
+      "uv": [
+        0.95,
+        0.95
+      ],
+      "firstDensityDeltaMetres": 18.999999999997907,
+      "tau1DeltaMetres": 20.39707405478186,
+      "tau3DeltaMetres": 76.01185550575894,
+      "weightedDepthDeltaMetres": 27.637919065359284,
+      "Afirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.5524999999999398,
+          "intervalKm": [
+            1.5519999999999399,
+            1.5529999999999398
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.5544999999999396,
+          "intervalKm": [
+            1.5539999999999397,
+            1.5549999999999395
+          ]
+        },
+        "tau1": 1.6466189138190512,
+        "tau3": 1.804252133495148
+      },
+      "Bfirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.5714999999999377,
+          "intervalKm": [
+            1.5709999999999378,
+            1.5719999999999377
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.5724999999999376,
+          "intervalKm": [
+            1.5719999999999377,
+            1.5729999999999376
+          ]
+        },
+        "tau1": 1.667015987873833,
+        "tau3": 1.880263989000907
+      },
+      "Aweighted": {
+        "distanceKm": 1.644996974816655,
+        "rho": 0.6788399928452299
+      },
+      "Bweighted": {
+        "distanceKm": 1.6726348938820144,
+        "rho": 0.6059871971233373
+      },
+      "terrainProvenA": true,
+      "terrainProvenB": true
+    },
+    {
+      "uv": [
+        0.35,
+        0.5
+      ],
+      "firstDensityDeltaMetres": 14.999999999998348,
+      "tau1DeltaMetres": 19.753789380291487,
+      "tau3DeltaMetres": 18.225534237195085,
+      "weightedDepthDeltaMetres": 19.127661855004252,
+      "Afirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.8204999999999103,
+          "intervalKm": [
+            1.8199999999999104,
+            1.8209999999999102
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.82249999999991,
+          "intervalKm": [
+            1.8219999999999101,
+            1.82299999999991
+          ]
+        },
+        "tau1": 1.930519777224435,
+        "tau3": 2.0795267136456963
+      },
+      "Bfirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.8354999999999086,
+          "intervalKm": [
+            1.8349999999999087,
+            1.8359999999999086
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.8374999999999084,
+          "intervalKm": [
+            1.8369999999999085,
+            1.8379999999999084
+          ]
+        },
+        "tau1": 1.9502735666047264,
+        "tau3": 2.0977522478828914
+      },
+      "Aweighted": {
+        "distanceKm": 1.9234894893631422,
+        "rho": 0.6161537181508189
+      },
+      "Bweighted": {
+        "distanceKm": 1.9426171512181465,
+        "rho": 0.6097198356480762
+      },
+      "terrainProvenA": true,
+      "terrainProvenB": true
+    },
+    {
+      "uv": [
+        0.65,
+        0.5
+      ],
+      "firstDensityDeltaMetres": 131.99999999998545,
+      "tau1DeltaMetres": 107.05330483597497,
+      "tau3DeltaMetres": 100.30446865168763,
+      "weightedDepthDeltaMetres": 123.9635197564799,
+      "Afirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.7634999999999166,
+          "intervalKm": [
+            1.7629999999999166,
+            1.7639999999999165
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.7654999999999164,
+          "intervalKm": [
+            1.7649999999999164,
+            1.7659999999999163
+          ]
+        },
+        "tau1": 1.92890984525259,
+        "tau3": 2.0603846243959922
+      },
+      "Bfirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.895499999999902,
+          "intervalKm": [
+            1.894999999999902,
+            1.895999999999902
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.9014999999999014,
+          "intervalKm": [
+            1.9009999999999014,
+            1.9019999999999013
+          ]
+        },
+        "tau1": 2.035963150088565,
+        "tau3": 2.16068909304768
+      },
+      "Aweighted": {
+        "distanceKm": 1.9010805800447041,
+        "rho": 0.5222235428359808
+      },
+      "Bweighted": {
+        "distanceKm": 2.025044099801184,
+        "rho": 0.6579044747239271
+      },
+      "terrainProvenA": true,
+      "terrainProvenB": true
+    },
+    {
+      "uv": [
+        0.5,
+        0.35
+      ],
+      "firstDensityDeltaMetres": 406.99999999995515,
+      "tau1DeltaMetres": 142.06252438964472,
+      "tau3DeltaMetres": 187.9648553782971,
+      "weightedDepthDeltaMetres": 273.2894392284431,
+      "Afirst": {
+        "rho002": {
+          "sampleDistanceKm": 2.083499999999882,
+          "intervalKm": [
+            2.0829999999998816,
+            2.0839999999998815
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 2.0864999999998814,
+          "intervalKm": [
+            2.0859999999998813,
+            2.086999999999881
+          ]
+        },
+        "tau1": 2.4945092858161586,
+        "tau3": 2.6393142811479433
+      },
+      "Bfirst": {
+        "rho002": {
+          "sampleDistanceKm": 2.490499999999837,
+          "intervalKm": [
+            2.489999999999837,
+            2.4909999999998367
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 2.4934999999998366,
+          "intervalKm": [
+            2.4929999999998365,
+            2.4939999999998363
+          ]
+        },
+        "tau1": 2.6365718102058033,
+        "tau3": 2.8272791365262404
+      },
+      "Aweighted": {
+        "distanceKm": 2.354140947841639,
+        "rho": 0.4475018415604512
+      },
+      "Bweighted": {
+        "distanceKm": 2.627430387070082,
+        "rho": 0.4773770716447486
+      },
+      "terrainProvenA": true,
+      "terrainProvenB": true
+    },
+    {
+      "uv": [
+        0.5,
+        0.65
+      ],
+      "firstDensityDeltaMetres": 20.999999999997687,
+      "tau1DeltaMetres": 35.080947751482185,
+      "tau3DeltaMetres": 38.21278294839314,
+      "weightedDepthDeltaMetres": 32.49836306867127,
+      "Afirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.6924999999999244,
+          "intervalKm": [
+            1.6919999999999245,
+            1.6929999999999243
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.6944999999999242,
+          "intervalKm": [
+            1.6939999999999242,
+            1.6949999999999241
+          ]
+        },
+        "tau1": 1.7829830368947328,
+        "tau3": 1.9130813479451947
+      },
+      "Bfirst": {
+        "rho002": {
+          "sampleDistanceKm": 1.713499999999922,
+          "intervalKm": [
+            1.7129999999999221,
+            1.713999999999922
+          ]
+        },
+        "rho025": {
+          "sampleDistanceKm": 1.7154999999999219,
+          "intervalKm": [
+            1.714999999999922,
+            1.7159999999999218
+          ]
+        },
+        "tau1": 1.818063984646215,
+        "tau3": 1.9512941308935878
+      },
+      "Aweighted": {
+        "distanceKm": 1.7788352974536175,
+        "rho": 0.7429730087395072
+      },
+      "Bweighted": {
+        "distanceKm": 1.8113336605222887,
+        "rho": 0.6766896980508247
+      },
+      "terrainProvenA": true,
+      "terrainProvenB": true
+    }
+  ],
+  "rays": 13,
+  "cameraEqual": true,
+  "flowEqual": true,
+  "detailRGBNote": "Detail alpha contains occupancy and may change with volume; raw fullRGBA hash is not an RGB equality test",
+  "centerHalfMetre": {
+    "A": {
+      "rho002": {
+        "sampleDistanceKm": 1.7602499999998618,
+        "intervalKm": [
+          1.7599999999998617,
+          1.7604999999998616
+        ]
+      },
+      "rho025": {
+        "sampleDistanceKm": 1.7627499999998615,
+        "intervalKm": [
+          1.7624999999998614,
+          1.7629999999998613
+        ]
+      },
+      "tau1": 1.8892282940964993,
+      "tau3": 2.0315046954535365
+    },
+    "B": {
+      "rho002": {
+        "sampleDistanceKm": 1.7982499999998576,
+        "intervalKm": [
+          1.7979999999998575,
+          1.7984999999998574
+        ]
+      },
+      "rho025": {
+        "sampleDistanceKm": 1.8017499999998572,
+        "intervalKm": [
+          1.801499999999857,
+          1.801999999999857
+        ]
+      },
+      "tau1": 1.9590178157450353,
+      "tau3": 2.106676398973563
+    },
+    "weightedDepthDeltaMetres": 63.315187369850975
+  },
+  "execution": [
+    {
+      "variant": "A",
+      "command": [
+        "bun",
+        "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle23/interior05-diagnostic-r2/probe.ts",
+        "A",
+        "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle23/interior05-diagnostic-r2/PROTOCOL.json",
+        "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle23/interior05-diagnostic-results-r2/A-rays.json"
+      ],
+      "pid": 7429,
+      "terminalObservedByPopen": true,
+      "exitCode": 0,
+      "signal": null,
+      "reason": null,
+      "elapsedSeconds": 23.6729389160173,
+      "childCpuSeconds": 23.959765,
+      "peakRSSBytesSampled": 999849984,
+      "cumulativeOwnedChildPeakRSSBytes": 999849984,
+      "peakPhysicalFootprintBytesSampled": 808109520,
+      "libprocSamples": 99,
+      "lastLibproc": {
+        "rssBytes": 999849984,
+        "physicalFootprintBytes": 808109520,
+        "cpuSeconds": 0.57478383
+      },
+      "validation": {
+        "rays": 13,
+        "centerHalfMetre": true,
+        "terrainLimited": [],
+        "resultSHA256": "35344bc3a9df08f91981a54d1bfba7ecc8fc45f4ef0e5ff3cb3d977ee06631d8"
+      },
+      "status": "PASS_EXECUTION"
+    },
+    {
+      "variant": "B",
+      "command": [
+        "bun",
+        "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle23/interior05-diagnostic-r2/probe.ts",
+        "B",
+        "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle23/interior05-diagnostic-r2/PROTOCOL.json",
+        "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle23/interior05-diagnostic-results-r2/B-rays.json"
+      ],
+      "pid": 7654,
+      "terminalObservedByPopen": true,
+      "exitCode": 0,
+      "signal": null,
+      "reason": null,
+      "elapsedSeconds": 23.702668708981946,
+      "childCpuSeconds": 23.995223000000003,
+      "peakRSSBytesSampled": 1001537536,
+      "cumulativeOwnedChildPeakRSSBytes": 1001537536,
+      "peakPhysicalFootprintBytesSampled": 810436048,
+      "libprocSamples": 100,
+      "lastLibproc": {
+        "rssBytes": 1001537536,
+        "physicalFootprintBytes": 810436048,
+        "cpuSeconds": 0.575882829
+      },
+      "validation": {
+        "rays": 13,
+        "centerHalfMetre": true,
+        "terrainLimited": [],
+        "resultSHA256": "d0ee37abe1337636b4746da46d9ed8185de856a85ffff8a549bf26584050e70c"
+      },
+      "status": "PASS_EXECUTION"
+    }
+  ],
+  "scope": "Depth/opacity only; no art/RGB/performance acceptance. No retry."
+}

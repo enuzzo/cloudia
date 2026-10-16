@@ -1,0 +1,208 @@
+{
+  "status": "ONE_SERIAL_A_B_COMPLETE_NOT_ADOPTED",
+  "scope": "13 fixed rays+center0.5m,CPU depth only; parent four-still judgement nonconvincing, no artist acceptance",
+  "cameraSHA256": "b98f7f961467bde763b42a000981ea4db73d496778ca035dc0dce67aff9497ec",
+  "camera": {
+    "seed": 74,
+    "time": 60,
+    "inspection": 0.6,
+    "origin": [
+      0.3515625,
+      3.119140625,
+      2.4401802442338285
+    ],
+    "target": [
+      0.3515625,
+      3.119140625,
+      -0.0546875
+    ],
+    "output": [
+      1920,
+      1080
+    ],
+    "flow": "full",
+    "windStrength": 0.55,
+    "dispersion": 0,
+    "volume": 256,
+    "detail": 128,
+    "nominalSteps": 384
+  },
+  "dataSHA256": {
+    "A": "35344bc3a9df08f91981a54d1bfba7ecc8fc45f4ef0e5ff3cb3d977ee06631d8",
+    "B": "d0ee37abe1337636b4746da46d9ed8185de856a85ffff8a549bf26584050e70c",
+    "comparison": "afb70dae803a40a14dd6fc89a2c301e4c98e2d7c5def06d7b36f86e246c5280c"
+  },
+  "rays": 13,
+  "allRaysHaveFirstDensityAndTau1": true,
+  "deltaMetresBminusA": {
+    "firstDensityDeltaMetres": {
+      "min": 10.999999999998789,
+      "max": 406.99999999995515,
+      "median": 30.999999999996586,
+      "mean": 67.69230769230023,
+      "maxAbs": 406.99999999995515,
+      "maxAbsUV": [
+        0.5,
+        0.35
+      ]
+    },
+    "tau1DeltaMetres": {
+      "min": 11.706606600172087,
+      "max": 142.06252438964472,
+      "median": 35.080947751482185,
+      "mean": 54.344579707700184,
+      "maxAbs": 142.06252438964472,
+      "maxAbsUV": [
+        0.5,
+        0.35
+      ]
+    },
+    "weightedDepthDeltaMetres": {
+      "min": 13.04128634453594,
+      "max": 273.2894392284431,
+      "median": 37.37300026523194,
+      "mean": 69.93283634138564,
+      "maxAbs": 273.2894392284431,
+      "maxAbsUV": [
+        0.5,
+        0.35
+      ]
+    }
+  },
+  "center": {
+    "A": {
+      "firstDensityKm": 1.760499999999917,
+      "tau1Km": 1.8892279411765374,
+      "tau3Km": 2.031504614510387,
+      "weightedDepthKm": 1.877720736204381,
+      "weightedDensity": 0.5884679847752936,
+      "tau1Density": 0.6638909332968381,
+      "footprintAtWeightedKm": {
+        "axialDepthKm": 1.8774047219343015,
+        "widthKm": 1.913784653434895,
+        "heightKm": 1.0765038675571286
+      }
+    },
+    "B": {
+      "firstDensityKm": 1.7984999999999127,
+      "tau1Km": 1.9590180037184797,
+      "tau3Km": 2.106676261537905,
+      "weightedDepthKm": 1.941023661952185,
+      "weightedDensity": 0.5178641160117732,
+      "tau1Density": 0.666125513991959,
+      "footprintAtWeightedKm": {
+        "axialDepthKm": 1.9406969940063548,
+        "widthKm": 1.978303389090211,
+        "heightKm": 1.112795656363244
+      }
+    }
+  },
+  "center0_5mConvergenceMetres": {
+    "A": {
+      "firstDensityDifferenceMetres": 0.25000000005515055,
+      "tau1DifferenceMetres": 0.00035291996192121644,
+      "tau3DifferenceMetres": 8.094314951634374e-05,
+      "weightedDepthDifferenceMetres": 0.012364514399454407
+    },
+    "B": {
+      "firstDensityDifferenceMetres": 0.25000000005515055,
+      "tau1DifferenceMetres": 0.0001879734443654968,
+      "tau3DifferenceMetres": 0.00013743565796531243,
+      "weightedDepthDifferenceMetres": 0.00010289235241600636
+    }
+  },
+  "centerRetreatMetres": {
+    "front": 37.999999999995815,
+    "tau1": 69.7900625419423,
+    "weighted": 63.30292574780394,
+    "weightedHalfMetre": 63.315187369850975
+  },
+  "microAtNonemptySupport": "First material of every ray is beyond1.55km, hence view-dependent micro(0.08\u20130.3km) is zero in all occupied sampled intervals; implemented inspection0.6 correctly but inactive here",
+  "terrain": {
+    "all13ProvenUnoccludedBoth": true,
+    "minimumClearanceAboveGlobalTerrainUpperBoundMetres": 1987.7445173149474
+  },
+  "execution": [
+    {
+      "variant": "A",
+      "pid": 7429,
+      "terminalObservedByPopen": true,
+      "exitCode": 0,
+      "elapsedSeconds": 23.6729389160173,
+      "childCpuSeconds": 23.959765,
+      "peakRSSBytesSampled": 999849984,
+      "cumulativeOwnedChildPeakRSSBytes": 999849984,
+      "status": "PASS_EXECUTION"
+    },
+    {
+      "variant": "B",
+      "pid": 7654,
+      "terminalObservedByPopen": true,
+      "exitCode": 0,
+      "elapsedSeconds": 23.702668708981946,
+      "childCpuSeconds": 23.995223000000003,
+      "peakRSSBytesSampled": 1001537536,
+      "cumulativeOwnedChildPeakRSSBytes": 1001537536,
+      "status": "PASS_EXECUTION"
+    }
+  ],
+  "limitsPerVariant": {
+    "RSSBytes": 2147483648,
+    "kernelCpuSeconds": 180,
+    "wallSeconds": 240,
+    "allRespected": true
+  },
+  "libprocCpuErratum": {
+    "sampledCpuValuesMislabelled": true,
+    "savedValuesUnchanged": true,
+    "MachTimebase": [
+      125,
+      3
+    ],
+    "offlineMultiplier": 41.666666666666664,
+    "correctedLastSamples": [
+      {
+        "variant": "A",
+        "savedMislabelledSeconds": 0.57478383,
+        "correctedCpuSeconds": 23.94932625,
+        "terminalGetrusageSeconds": 23.959765
+      },
+      {
+        "variant": "B",
+        "savedMislabelledSeconds": 0.575882829,
+        "correctedCpuSeconds": 23.995117875000002,
+        "terminalGetrusageSeconds": 23.995223000000003
+      }
+    ],
+    "sampledCpuGuardWasNotReliable": "Tick conversion missing; actual RLIMIT_CPU180 and terminal getrusage delta remain valid, not dependent on that guard"
+  },
+  "preflightR1": {
+    "executedBakes": 0,
+    "status": "BLOCKED_BEFORE_RUN",
+    "cause": "Missing engine inverse-shear halo[1.3,0,.65] in both common and actual clipping boxes",
+    "preservedUnchanged": true
+  },
+  "actualRun": {
+    "code": "interior05-diagnostic-r2",
+    "output": "interior05-diagnostic-results-r2",
+    "totalVolumeBakes": 2,
+    "variants": [
+      "A",
+      "B"
+    ],
+    "retries": 0,
+    "sourceAndInputVerifiedAfter": true
+  },
+  "savedArithmeticValidation": {
+    "source": "Saved JSON only; no model/sample rerun",
+    "checkpoints": 84,
+    "macroCorners": 672,
+    "liquidDensityReproduced": 84,
+    "iceDensityNotReconstructed": 0,
+    "maxMacroRArithmeticError": 2.220446049250313e-16,
+    "maxLiquidRhoArithmeticError": 3.3306690738754696e-16,
+    "maxSigmaError": 0,
+    "maxWeightIdentityError": 1.5543122344752192e-15
+  },
+  "interpretation": "In this fixed near60 camera the candidate retreats the visible/optical material on every ray; at each new center tau1 density remains similar. The data do not establish improved relief or RGB contrast, and do not override the negative app judgement."
+}

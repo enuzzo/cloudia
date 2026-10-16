@@ -1,0 +1,59 @@
+[
+  {
+    "name": "typecheck",
+    "command": [
+      "bun",
+      "run",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 1.5032270839437842,
+    "wallTimedOut": false
+  },
+  {
+    "name": "targeted-tests",
+    "command": [
+      "bun",
+      "run",
+      "test",
+      "--",
+      "src/cumulonimbus/volume.test.ts",
+      "src/cumulonimbus/inclinedShoulder.test.ts",
+      "--reporter=json",
+      "--outputFile=/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle23/interior05-evidence/targeted-test-results.json"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 2.1442165839252993,
+    "wallTimedOut": false,
+    "tests": {
+      "numTotalTests": 31,
+      "numPassedTests": 31,
+      "numFailedTests": 0,
+      "success": true,
+      "testFiles": 2
+    },
+    "failures": []
+  },
+  {
+    "name": "app-build",
+    "command": [
+      "bun",
+      "run",
+      "build"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 4.133700083009899,
+    "wallTimedOut": false
+  },
+  {
+    "name": "hero-build",
+    "command": [
+      "bun",
+      "run",
+      "build:hero"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 2.0459668750409037,
+    "wallTimedOut": false
+  }
+]

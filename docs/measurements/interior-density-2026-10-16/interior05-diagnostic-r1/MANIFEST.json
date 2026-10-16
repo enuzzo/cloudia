@@ -1,0 +1,46 @@
+{
+  "files": [
+    {
+      "path": "CAMERA.json",
+      "bytes": 1931,
+      "sha256": "b98f7f961467bde763b42a000981ea4db73d496778ca035dc0dce67aff9497ec"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "bytes": 3298,
+      "sha256": "19d11e3669f64bca8ad2e32037d9330464a0928df22e717bc6af93084fda4c87"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1675,
+      "sha256": "21690cea272cdc87b035eb4c83891111e56ecc3b1916e2a4966706a2d3423eda"
+    },
+    {
+      "path": "baseline-source-manifest.json",
+      "bytes": 12815,
+      "sha256": "e826b119ff2758fa51ed04cf8748d0d40ad1ff09516fc498826466ceae3974b7"
+    },
+    {
+      "path": "candidate-source-manifest.json",
+      "bytes": 12815,
+      "sha256": "07d8fbb4ee270cdd5e8f6d4d5408fbc2c8c3ab2d4766e55457e7c804459705cf"
+    },
+    {
+      "path": "inputs.json",
+      "bytes": 1690,
+      "sha256": "65f998042b9e9d4b5465762604c19d306fb4e31ec15720764046a8007eba131d"
+    },
+    {
+      "path": "probe.ts",
+      "bytes": 11058,
+      "sha256": "a9436e02f1fe46c37fea00e9daa192f4a0bba7ee5dca0c04e7a3289cbc7aee3c"
+    },
+    {
+      "path": "run.py",
+      "bytes": 9667,
+      "sha256": "feb8718012620a9549c137aef4a9899c614d1e12cca173b10af2830a1a16db63"
+    }
+  ],
+  "fileCount": 8,
+  "payloadBytes": 54949
+}

@@ -26,6 +26,14 @@ e552/552 completati;1791/548 draw con timestamp completi e9/4 mancanti.
 Presentazione non misurata.30s di Sole vicino al limite rAF non chiudono
 pioggia, altre viste, continuità o60FPS sostenuti complessivi.
 
+Il [trial interior .6→.5](EXPERIMENT-INTERIOR-DENSITY-2026-10-16.md) è scartato
+per qualità e resta esterno. Cinque finestre30s a1920×1080,74 near60 fisso,
+misurano59,963–59,998invii/s, tutte con prefisso completato. Camera, qualità e
+vettori Sole/Tramonto A/B verificati uguali; prove sequenziali, non uno speedup
+causale né una nuova misura a2474×1844 o di pioggia. Il riferimento nativo v56
+qui sopra e il gate60FPS complessivo restano invariati. Le immagini sono JPEG
+CSS1237×922; export PNG dello stesso draw è soltanto il prossimo piano.
+
 ## Riferimento precedente: v55 cromaticità del terreno
 
 [v55](TERRAIN-COLOUR-2026-10-16.md) cambia soltanto sei costanti RGB dei

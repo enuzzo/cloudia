@@ -1,0 +1,68 @@
+[
+  {
+    "variant": "A",
+    "command": [
+      "bun",
+      "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle23/interior05-diagnostic-r2/probe.ts",
+      "A",
+      "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle23/interior05-diagnostic-r2/PROTOCOL.json",
+      "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle23/interior05-diagnostic-results-r2/A-rays.json"
+    ],
+    "pid": 7429,
+    "terminalObservedByPopen": true,
+    "exitCode": 0,
+    "signal": null,
+    "reason": null,
+    "elapsedSeconds": 23.6729389160173,
+    "childCpuSeconds": 23.959765,
+    "peakRSSBytesSampled": 999849984,
+    "cumulativeOwnedChildPeakRSSBytes": 999849984,
+    "peakPhysicalFootprintBytesSampled": 808109520,
+    "libprocSamples": 99,
+    "lastLibproc": {
+      "rssBytes": 999849984,
+      "physicalFootprintBytes": 808109520,
+      "cpuSeconds": 0.57478383
+    },
+    "validation": {
+      "rays": 13,
+      "centerHalfMetre": true,
+      "terrainLimited": [],
+      "resultSHA256": "35344bc3a9df08f91981a54d1bfba7ecc8fc45f4ef0e5ff3cb3d977ee06631d8"
+    },
+    "status": "PASS_EXECUTION"
+  },
+  {
+    "variant": "B",
+    "command": [
+      "bun",
+      "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle23/interior05-diagnostic-r2/probe.ts",
+      "B",
+      "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle23/interior05-diagnostic-r2/PROTOCOL.json",
+      "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle23/interior05-diagnostic-results-r2/B-rays.json"
+    ],
+    "pid": 7654,
+    "terminalObservedByPopen": true,
+    "exitCode": 0,
+    "signal": null,
+    "reason": null,
+    "elapsedSeconds": 23.702668708981946,
+    "childCpuSeconds": 23.995223000000003,
+    "peakRSSBytesSampled": 1001537536,
+    "cumulativeOwnedChildPeakRSSBytes": 1001537536,
+    "peakPhysicalFootprintBytesSampled": 810436048,
+    "libprocSamples": 100,
+    "lastLibproc": {
+      "rssBytes": 1001537536,
+      "physicalFootprintBytes": 810436048,
+      "cpuSeconds": 0.575882829
+    },
+    "validation": {
+      "rays": 13,
+      "centerHalfMetre": true,
+      "terrainLimited": [],
+      "resultSHA256": "d0ee37abe1337636b4746da46d9ed8185de856a85ffff8a549bf26584050e70c"
+    },
+    "status": "PASS_EXECUTION"
+  }
+]

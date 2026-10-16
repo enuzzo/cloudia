@@ -1,0 +1,95 @@
+{
+  "status": "PLANNED_NOT_EXECUTED_AWAIT_PARENT_GO",
+  "cameraFile": "CAMERA.json",
+  "cameraSHA256": "b98f7f961467bde763b42a000981ea4db73d496778ca035dc0dce67aff9497ec",
+  "seed": 74,
+  "time": 60,
+  "inspection": 0.6,
+  "origin": [
+    0.3515625,
+    3.119140625,
+    2.4401802442338285
+  ],
+  "target": [
+    0.3515625,
+    3.119140625,
+    -0.0546875
+  ],
+  "surfaceKm": 0.7227685139973958,
+  "yaw": 0,
+  "pitch": 0,
+  "aspect": [
+    1920,
+    1080
+  ],
+  "tanFov": 0.2867,
+  "uvConvention": "continuous normalized top-left, exact listed UV; not rounded pixel centres",
+  "uvs": [
+    [
+      0.05,
+      0.05
+    ],
+    [
+      0.5,
+      0.05
+    ],
+    [
+      0.95,
+      0.05
+    ],
+    [
+      0.05,
+      0.5
+    ],
+    [
+      0.5,
+      0.5
+    ],
+    [
+      0.95,
+      0.5
+    ],
+    [
+      0.05,
+      0.95
+    ],
+    [
+      0.5,
+      0.95
+    ],
+    [
+      0.95,
+      0.95
+    ],
+    [
+      0.35,
+      0.5
+    ],
+    [
+      0.65,
+      0.5
+    ],
+    [
+      0.5,
+      0.35
+    ],
+    [
+      0.5,
+      0.65
+    ]
+  ],
+  "screenYFormula": "1 - 2*v - .16*(1-inspection)",
+  "microWeightFormula": "inspection*(1-smoothstep(.08,.3,t))*(1-ice)",
+  "stepKm": 0.001,
+  "refinement": "center .0005km midpoint; no adaptive parameter search",
+  "limits": {
+    "maxRSSBytes": 2147483648,
+    "kernelCpuSeconds": 180,
+    "wallSeconds": 240,
+    "maxConcurrentVolumes": 1,
+    "gpu": false
+  },
+  "baseSourceManifestSHA256": "e826b119ff2758fa51ed04cf8748d0d40ad1ff09516fc498826466ceae3974b7",
+  "candidateSourceManifestSHA256": "07d8fbb4ee270cdd5e8f6d4d5408fbc2c8c3ab2d4766e55457e7c804459705cf",
+  "requiredBeforeExecution": "parent visual verdict and explicit CPU go"
+}

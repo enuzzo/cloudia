@@ -1,0 +1,3 @@
+START {"name": "typecheck", "pid": 719, "command": ["bun", "run", "typecheck"], "wallLimitSeconds": 120}
+$ tsc --noEmit
+COMPLETE {"name": "typecheck", "command": ["bun", "run", "typecheck"], "exitCode": 0, "elapsedSeconds": 1.5032270839437842, "wallTimedOut": false}

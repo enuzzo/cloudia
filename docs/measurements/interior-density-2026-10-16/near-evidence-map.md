@@ -1,0 +1,24 @@
+# Vicino bianco/morbido — mappa causale e prossimo falsificatore
+
+Base corrente verificata: `a8653c53ba617e7dd8ba56c868d28b7c3d4c5234`, v56; formula volume invariata `.6`. Questa mappa è una lettura delle prove esistenti, senza nuovi campi, bake o immagini.
+
+| Evidenza verificata | Interpretazione e limite |
+|---|---|
+| Seed72 storico: primo materiale a 103 m dalla camera; tredici raggi a 103–123 m. Modello/JPEG: nove patch valide, RMSE 0,350/255 e correlazione 0,99854. | La camera controllata era esterna; il gradiente largo è previsto dal modello. Non dimostra ogni pixel GPU né la posa74 attuale. `EXPERIMENT-NEAR-LIGHT-CAUSALITY-2026-10-16.md:9–30`. |
+| Al centro τ1, otto nodi su otto nel clamp alto; il 76,53% del peso di opacità cade in stencil saturi. Esistono già cellule nominali 556/222 m, noise278/111 m e billow160–700 m. | La risposta del carving viene persa nel plateau di densità: è una causa verificata del poco rilievo campionato. Aggiungere una scala generica non affronta questo passaggio. Stesso documento:34–38; sorgente `volume.ts:409–419`. |
+| Microerosione on/off: 0,10–1,18/255; passo adattivo contro1m: <0,020/255 sui raggi verificati. | Non supportano micro più forte o passo più corto come prima cura. Non escludono altri errori di marcia fuori da quei campioni. Stesso documento:30. |
+| Cinque raggi centrali: luminanza lineare varia ~20,91% rispetto alla media; dopo film/sRGB ~3,64%. Il cache contiene variazione. | La mappatura comprime un gradiente reale; non è prova di un bug cromatico o che scurire crei cavità. `measurements/near-light-causality-2026-10-16/reports/INITIAL-DIAGNOSIS.md:35–49`; `cloudShader.ts:1–13,174–213`. |
+
+## Cosa è già fallito
+
+- **App reali:** meso26m aggiunto, phase120 e sky5, ricostruzione U/M, gain32/extinction50 e dettaglio su U: miglioramenti parziali del bordo o semplice scurimento, corpo ancora uniforme. Extinction60 fallì un test e non fu caricato. Riferimenti: `EXPERIMENT-MESO-2026-10-15.md:5–8,73–78`; `EXPERIMENT-LIGHT-SOURCE-2026-10-15.md:3–6,85–95`; `EXPERIMENT-RECONSTRUCTION-2026-10-15.md:53–68,93–99,161–165`.
+- **CPU soltanto:** luce locale 128m non sosteneva la cura del vicino; guardia preclamp preservò i campioni front+5m ma annullò quasi tutta la variazione utile (CVτ1 4,7662→4,7985%, contro6,3385% senza guardia). Nessuna app della guardia. `EXPERIMENT-LOCAL-LIGHT-2026-10-15.md:35–59`; `EXPERIMENT-NEAR-BOUNDARY-GUARD-2026-10-16.md:31–44`.
+- **Anatomia:** R3 sollevava il corpo e peggiorava il vicino617; in A/B il probe mosse la camera di463,476m, quindi quel confronto non isola la fotometria alla stessa origine. R5 adottata conserva il corpo e cambia soltanto la componente inward della spalla; il vicino resta aperto. `measurements/shoulder-continuity-2026-10-16/rejected-visual/REVIEW-NEAR617.md:19–32`; `SHOULDER-CONTINUITY-2026-10-16.md:22–27,63–78`.
+
+## `.6→.5`: precedente preciso e prova ancora mancante
+
+La formula esatta `1-.5*smoothstep(.04,.28,F)` fu riprodotta su196 nodi/52 vecchie coordinate del seed72: sette nodi centrali su otto desaturati, densitàτ1 0,6804→0,6078, ma13/13 vecchi front+5m vuoti. **Non furono ricalcolati frontiera, volume, luce o render.** Il risultato respinse una correzione che dovesse preservare quella frontiera, non dimostrò un fallimento artistico di una nuova app. Nei resoconti e nelle patch consultati non è emersa una prova app precedente di questa formula; la ricerca Git della formula identifica solo la sua introduzione originaria. Il `.5` del v39 era invece una sottrazione di dettaglio su U, quindi un modello diverso. Fonti: `EXPERIMENT-NEAR-LIGHT-CAUSALITY-2026-10-16.md:42–48`; relativo `preclamp/README.md:3–8`; `EXPERIMENT-RECONSTRUCTION-2026-10-15.md:136–149`.
+
+Con erosion≤0, ridurre il coefficiente aumenta il carving negativo e può arretrare il fronte. L'uscita dal clamp può recuperare articolazione, ma la riduzione della profondità ottica può anche schiarire il materiale rimasto: **non è automaticamente una cura del bianco**. Le percentuali seed72 non vanno trasferite alla posa74.
+
+Prossimo falsificatore autorizzato: una sola variante app `.6→.5`, primitivi/RNG, dettaglio, shader, coefficienti ottici e qualità256³/128³/384 invariati; nuove cache ricavate dalla stessa nuova densità fine (`volume.ts:428–451`). Confronto74 near60 Sole/Tramonto alla stessa origine/target/aspect/tempo60/flow e meteo della baseline raw: fissare anche surface, verificare camera effettiva e clamp terreno (`GPUSceneEngine.ts:448–479`). Misurare separatamente l'arretramento del fronte; il vecchio punto+5m non è un veto artistico universale. La prova passa localmente soltanto se le immagini rendono leggibili lobi/cavità nel corpo senza svuotamenti, tagli o perdita del contesto; un mero cambio di luminanza/opacità o un bordo più ruvido con corpo ancora uniforme la falsifica. Nessun ritocco automatico dopo l'esito e nessun PASS globale anticipato.

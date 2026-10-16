@@ -1,0 +1,29 @@
+{
+  "status": "OFFLINE_METADATA_CORRECTION_NO_RERUN",
+  "machTimebaseNumer": 125,
+  "machTimebaseDenom": 3,
+  "multiplicationForMislabelledLibprocCpuSeconds": 41.666666666666664,
+  "cause": "libproc rusage_info_v2 user/system fields are Mach absolute ticks on this host; frozen wrapper divided by1e9 without timebase conversion",
+  "unaffected": [
+    "RLIMIT_CPU180 kernel enforcement",
+    "terminal resource.getrusage child CPU seconds",
+    "RSS bytes and2GiB monitoring",
+    "wall time and240s enforcement",
+    "field/ray results"
+  ],
+  "canonicalCpuSource": "execution.json childCpuSeconds from terminal getrusage delta",
+  "correctedLastLibproc": [
+    {
+      "variant": "A",
+      "savedMislabelledSeconds": 0.57478383,
+      "correctedCpuSeconds": 23.94932625,
+      "terminalGetrusageSeconds": 23.959765
+    },
+    {
+      "variant": "B",
+      "savedMislabelledSeconds": 0.575882829,
+      "correctedCpuSeconds": 23.995117875000002,
+      "terminalGetrusageSeconds": 23.995223000000003
+    }
+  ]
+}

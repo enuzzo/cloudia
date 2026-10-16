@@ -1,0 +1,38 @@
+{
+  "status": "FROZEN_BEFORE_EXECUTION",
+  "model": "interior05-r1",
+  "version": "observatory-v57-interior05-trial",
+  "baseCommit": "a8653c53ba617e7dd8ba56c868d28b7c3d4c5234",
+  "baseSourceManifestSHA256": "e826b119ff2758fa51ed04cf8748d0d40ad1ff09516fc498826466ceae3974b7",
+  "sourceFileCount": 122,
+  "changedPaths": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/lifecycle.test.ts",
+    "src/cumulonimbus/volume.ts"
+  ],
+  "formulaBefore": "const interior=1-.6*smoothstep(.04,.28,field[idx]);",
+  "formulaAfter": "const interior=1-.5*smoothstep(.04,.28,field[idx]);",
+  "sourceManifestSHA256": "07d8fbb4ee270cdd5e8f6d4d5408fbc2c8c3ab2d4766e55457e7c804459705cf",
+  "patchSHA256": "61073a7430c6d514fe6d41d323af581f0f2e05060679b50b2d57aaf31836cc70",
+  "volumeSHA256": "1b25c84300c2315cbba229f838cd3da50d0fe9d5a402a624d499e843af1af04a",
+  "dependencies": {
+    "method": "existing root symlink; no install",
+    "ignoreAttributeBefore": "1"
+  },
+  "allowedChecks": [
+    "typecheck",
+    "31 existing volume+inclinedShoulder tests",
+    "APP build",
+    "hero build appended to same dist"
+  ],
+  "limits": {
+    "typecheckWallSeconds": 120,
+    "targetedWallSeconds": 600,
+    "eachBuildWallSeconds": 180,
+    "noNewFull256CPUAudit": true,
+    "noLayoutScanner": true,
+    "noGPU": true
+  },
+  "visualStatus": "NOT_ASSESSED; parent owns same-world-camera seed74 near60 Sole/Tramonto qualification",
+  "historicalWarning": "Seed72 CPU old-front+5m emptied; this is not by itself an artistic veto on a newly rebaked application"
+}

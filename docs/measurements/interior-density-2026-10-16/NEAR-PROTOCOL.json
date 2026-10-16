@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-16T17:54:39.898164+00:00",
+  "previousGoalTurn": "progress: source+evidence commit a8653c53ba617e7dd8ba56c868d28b7c3d4c5234,350tests, native Sun/Rain measurements; full objective active",
+  "baseCommit": "a8653c53ba617e7dd8ba56c868d28b7c3d4c5234",
+  "baseSourceManifest": "e826b119ff2758fa51ed04cf8748d0d40ad1ff09516fc498826466ceae3974b7",
+  "hypothesis": "Preclamp scalar interior.6\u2192.5 may restore carving response. Oldfront preservation is not user requirement; actual remade density/light + same world camera must be judged. No arbitrary newnoise/darkening/zoomlimit.",
+  "controls": "seed74,t60paused,wind55disp0,flowfull,1920x1080,256macro/128detail/384steps. Actualnear60 probe first to export referenceworldcamera. Thenfixedbaseline radius+target in both A/B.",
+  "minimum": [
+    "A/B Sole worldcamera identical",
+    "A/B Tramonto worldcamera identical",
+    "recompute first-density/optical-dominant depth and projected field-of-view to distinguish structural relief from boundary retreat or brightness shift",
+    "if candidate improves: actualprobe andotherseeds, fullapproachaudit thenintegratedtests/mainworker/perf; else preserve rejection without coefficienthunt"
+  ],
+  "qualityDecision": "Need visible connected relief and light-side response, not only contrast/grain or an empty oldfront. No photoPASS from histograms/prefix/checksum.",
+  "baselineCamera": "pending actual report, never inferred from old72/v56near617"
+}

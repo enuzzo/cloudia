@@ -1,0 +1,14 @@
+{
+  "status": "PREFLIGHT_PASS_NO_BAKE",
+  "wrapperPID": 7426,
+  "ownLibprocSample": {
+    "rssBytes": 43302912,
+    "physicalFootprintBytes": 32702992,
+    "cpuSeconds": 0.002317651
+  },
+  "sourcesVerified": {
+    "A": 122,
+    "B": 122
+  },
+  "manifestSHA256": "fdc7d031797f38611333348352aa0bcaae63c48fd18c056cc8ae525a97e21e83"
+}
