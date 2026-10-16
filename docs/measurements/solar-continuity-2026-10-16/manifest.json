@@ -4,7 +4,7 @@
   "scope": "Curated source/controller/replay/test/browser evidence. No large volumes, complete project snapshot or build outputs. Main document owns qualification claims; archive is not whole-goal acceptance.",
   "selfExcluded": true,
   "payloadCount": 37,
-  "payloadBytes": 808343,
+  "payloadBytes": 808159,
   "files": {
     "GPUSceneEngine.patch.gz": {
       "bytes": 2358,
@@ -150,17 +150,9 @@
       "bytes": 1212,
       "sha256": "764919bb6a7e1221e7a59cf9d64ae09f3f7fd0faea4edbbd917593add4c8b1c6"
     },
-    "validation/focused-revision2.log": {
-      "bytes": 448,
-      "sha256": "6264d717150372594f7bf36a44332c8b72d7491aaac26e93f38e12406f7a9c06"
-    },
     "validation/full-suite-provenance.json": {
       "bytes": 1249,
       "sha256": "77cc67ad626a97a2009e38c27cab42ca622266a4e68f25f39d1cedf3e6370710"
-    },
-    "validation/full-tests-frozen-before-final-assertions.log": {
-      "bytes": 273,
-      "sha256": "a2f04bc028f6bb7b6c3b99eebded5cf5fb44cdf86785c6c17cb2cf1538c07d52"
     },
     "validation/portable-replay-check.json": {
       "bytes": 816,
@@ -197,6 +189,22 @@
     "integration/ordinary-preview-proof.json": {
       "bytes": 2731,
       "sha256": "c911d3a814de4428913c175fa3b4714e76f98c6e2bed1463014d780f30c560db"
+    },
+    "validation/focused-revision2.log.gz": {
+      "bytes": 306,
+      "sha256": "a51206200d3922d0977c40ada7af14ece4dc0c83519de34e9d5347d68639a274",
+      "uncompressed": {
+        "bytes": 448,
+        "sha256": "6264d717150372594f7bf36a44332c8b72d7491aaac26e93f38e12406f7a9c06"
+      }
+    },
+    "validation/full-tests-frozen-before-final-assertions.log.gz": {
+      "bytes": 231,
+      "sha256": "8871fe8773143bc41b62678d4a1ed87abf5c02e01ded0156c3cb0ef90a1df264",
+      "uncompressed": {
+        "bytes": 273,
+        "sha256": "a2f04bc028f6bb7b6c3b99eebded5cf5fb44cdf86785c6c17cb2cf1538c07d52"
+      }
     }
   },
   "compressedArtifacts": {
@@ -207,5 +215,6 @@
       "losslessRoundtripVerified": true
     }
   },
-  "finalIntegration": "integration/verification.json; pre-tag browser evidence retained separately"
+  "finalIntegration": "integration/verification.json; pre-tag browser evidence retained separately",
+  "validationLogStorage": "Lossless gzip; *.log is ignored by Git. Plain originals remain in external QA; uncompressed bytes and hashes preserved."
 }
