@@ -1,0 +1,14 @@
+{
+  "phase": "preparation-file-IO-only",
+  "observedError": "AttributeError: module 'os' has no attribute 'getxattr'",
+  "origin": "Preparation hash/freezing script, after 124 source file hashes, before PRE-RUN-FREEZE creation",
+  "noChildLaunched": true,
+  "noBunInvoked": true,
+  "noMeshOrDemSamplerRun": true,
+  "noRunDirectory": true,
+  "preservation": "R1 reconstructed byte-for-byte by reversing the single recorded R1-to-R2 patch; 9628 bytes matches root-read original; frozen before any R2 execution",
+  "r1SHA256": "45d03f775774270fc1ddbe180e5b28d69f4025f86ed9bd8c7a3eaafb92abe392",
+  "r2SHA256": "d6c83aace2ea9d31cac4b380021c72379fd5664c72f9169aeccea466b57e8e73",
+  "r2Change": "Only Darwin six-argument getxattr via ctypes/use_errno and exact b1 check; no extra process; all CPU/wall/RSS limits and witness unchanged",
+  "nativeAttributeReadViaXattrCommand": "1"
+}

@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "scope": "One full-core geometry reference; no GPU/art/performance acceptance",
+  "launched": true,
+  "pid": 82827,
+  "terminalObserved": true,
+  "exitCode": 0,
+  "wallKilled": false,
+  "error": null,
+  "budgetPASS": true,
+  "budget": {
+    "combinedCPUSeconds": 1.711925,
+    "childCPUSeconds": 1.66431,
+    "wrapperCPUSeconds": 0.04761499999999999,
+    "wallSeconds": 1.4285647500073537,
+    "childPeakRSSBytes": 898826240,
+    "wrapperPeakRSSBytes": 33783808,
+    "conservativeSumOfPeakRSSBytes": 932610048,
+    "CPUHardLimitSeconds": 20,
+    "wallLimitSeconds": 40,
+    "RSSGateBytes": 2147483648,
+    "RSSScope": "macOS terminal getrusage byte peaks; sum of peaks is conservative, not concurrent RSS; no RLIMIT_AS/RSS and no ps"
+  },
+  "preflight": {
+    "inputFilesVerified": 19,
+    "sourceFilesVerified": 124,
+    "sourceManifestSHA256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+    "freezeSHA256": "e786a324da35961ca8cc5ab83760ca9cb9989a90a7a8f5b8e04235aa168406da",
+    "dependencyIgnoreValue": "1",
+    "threeVersion": "0.186.0",
+    "bunPath": "/Users/enuzzo/.bun/bin/bun",
+    "preflightSeconds": 0.03690329205710441,
+    "dependencyIgnoreValueAfter": "1"
+  },
+  "resultSHA256": "5ae2135e94ffca23757f07ae985b01033d5fedf985971e2439b04d6033c71a27",
+  "resultBytes": 2532734
+}

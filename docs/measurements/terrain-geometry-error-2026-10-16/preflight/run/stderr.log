@@ -1,0 +1,3 @@
+{"phase":"mesh-build-start","elapsedSeconds":0.006549333000000018,"options":{"cellsPerSide":256,"levels":9,"spacingKm":0.032,"normalMode":"geometry"}}
+{"phase":"baseline-identity-pass","elapsedSeconds":1.023711166,"faces":17,"buildMs":1008.014208}
+{"phase":"complete","elapsedSeconds":1.2114992909999998,"queries":591361,"outputBytes":2532734}

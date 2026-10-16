@@ -1,0 +1,83 @@
+{
+  "state": "PREPARED_UNEXECUTED_REQUIRES_ROOT_REVIEW",
+  "revision": "R2_WHOLE_CORE_NODES_ONLY",
+  "baseCommit": "908078042bda26471d57cb6a27d69dbec8655c3f",
+  "sourceFiles": 124,
+  "sourceManifestSHA256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+  "meshOptions": {
+    "cellsPerSide": 256,
+    "levels": 9,
+    "spacingKm": 0.032,
+    "normalMode": "geometry"
+  },
+  "nodes": {
+    "sourceIndexFirst": 128,
+    "sourceIndexLast": 896,
+    "side": 769,
+    "count": 591361,
+    "queryCap": 600000,
+    "coreKm": [
+      -48,
+      48
+    ],
+    "order": "increasing iz then ix, inclusive"
+  },
+  "measurement": "1000*(terrainMeshSurfaceY(sourceDEMheight)-terrainMeshHeightAt(actualFloat32mesh)); metres",
+  "aggregates": [
+    "global",
+    "ring0",
+    "ring1",
+    "ring2",
+    "ring3",
+    "ring4"
+  ],
+  "categories": [
+    "all",
+    "coast>=0 material mask",
+    "coast<0 material mask"
+  ],
+  "worstCases": {
+    "topK": 8,
+    "lists": [
+      "absolute",
+      "positive",
+      "negative"
+    ],
+    "ties": "ascending row-major order; retain extrema tie counts"
+  },
+  "histogram": {
+    "minMetres": -5000,
+    "maxMetres": 5000,
+    "binWidthMetres": 1,
+    "interiorBins": 10000,
+    "underflowOverflowBins": 2
+  },
+  "errorDigest": {
+    "type": "SHA256",
+    "encoding": "Float64LE signed error per node; no header; row-major iz/ix",
+    "bytes": 4730888,
+    "streamRetained": false
+  },
+  "budget": {
+    "combinedCPUSeconds": 20,
+    "childCPUHardLimitSeconds": 20,
+    "wallSecondsIncludingPreflight": 40,
+    "sumOfTerminalPeakRSSGateBytes": 2147483648,
+    "resultPayloadMaxBytes": 4194304
+  },
+  "singleAttempt": "Exclusive run/ directory; no retry or fallback; one Bun child only",
+  "excluded": [
+    "new rays",
+    "edge/interior probes",
+    "adaptive points",
+    "new source assets",
+    "variants",
+    "refinement",
+    "GPU",
+    "browser",
+    "build",
+    "test",
+    "bake"
+  ],
+  "futureCommand": "python3 run.py --execute-reviewed-r2"
+}

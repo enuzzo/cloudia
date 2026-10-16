@@ -1,0 +1,140 @@
+{
+  "state": "PREPARED_UNEXECUTED_REQUIRES_ROOT_REVIEW",
+  "revision": "R2_WHOLE_CORE_NODES_ONLY",
+  "frozenAtUTC": "2026-10-16T21:06:14.730830+00:00",
+  "sourceRoot": "../../Cloudia-QA-2026-10-16-cycle27/source",
+  "sourceManifest": "../../Cloudia-QA-2026-10-16-cycle27/source-manifest.json",
+  "sourceFilesVerifiedBeforeFreeze": 124,
+  "sourceManifestSHA256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2",
+  "sourcePayloadBytes": 17665346,
+  "bun": "../../../../.bun/bin/bun",
+  "runtime": "Bun1.3.11 arm64 binary pinned, not invoked during preparation",
+  "dependencyIgnoreValueVerified": "1 via read-only xattr command; R2 native ctypes check remains unexecuted",
+  "dependencies": "Existing frozen source/node_modules symlink only; no install or new symlink",
+  "savedFaces": [
+    249937,
+    249939,
+    358458,
+    370841,
+    370842,
+    379379,
+    379929,
+    379930,
+    385738,
+    386018,
+    386019,
+    386020,
+    388890,
+    388891,
+    389947,
+    389948,
+    389949
+  ],
+  "budget": {
+    "combinedCPUTerminalGateSeconds": 20,
+    "childCPUHardLimitSeconds": 20,
+    "totalWallWatchdogSeconds": 40,
+    "sumOfTerminalPeakRSSGateBytes": 2147483648,
+    "measurementQueryCap": 600000,
+    "plannedMeasurementQueries": 591361
+  },
+  "inputs": [
+    {
+      "path": "witness.ts",
+      "bytes": 14325,
+      "sha256": "db65410172c553ae203ebd4ebf9cdae52f9fd9d5394e6014bcdbb68c16b91636"
+    },
+    {
+      "path": "run.py",
+      "bytes": 10348,
+      "sha256": "d6c83aace2ea9d31cac4b380021c72379fd5664c72f9169aeccea466b57e8e73"
+    },
+    {
+      "path": "protocol.md",
+      "bytes": 8283,
+      "sha256": "0f2ae6514391661ac16ad87c948fdeb7da9057022dbe814c349c0ef7470c4934"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "bytes": 2003,
+      "sha256": "b9211d812cfdc4f56e7182a4c3312e8d1a10fd39730acdee86a36286fe8e3d4d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3084,
+      "sha256": "1b8f5d4bcbcf323007d6057943d124088af84a5f9b10aedf5da3c82aca14935f"
+    },
+    {
+      "path": "preparation/run-r1-getxattr.py",
+      "bytes": 9628,
+      "sha256": "45d03f775774270fc1ddbe180e5b28d69f4025f86ed9bd8c7a3eaafb92abe392"
+    },
+    {
+      "path": "preparation/error.json",
+      "bytes": 876,
+      "sha256": "fe624fe053b2cd1c8ed2a9ad477fb8646cbff2722d105b465b309e381e5440b0"
+    },
+    {
+      "path": "preparation/r1-r2.diff",
+      "bytes": 2199,
+      "sha256": "f0b5f0fe30cded57a781f8b295365628560998da338458b0390f99a5732cd40c"
+    },
+    {
+      "path": "../../Cloudia-QA-2026-10-16-cycle27/source-manifest.json",
+      "bytes": 13042,
+      "sha256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2"
+    },
+    {
+      "path": "../../Cloudia-QA-2026-10-16-cycle27/positive-witness/result.json",
+      "bytes": 74899,
+      "sha256": "f416a5fc3aa706186cc2f08811d7a35192153297f91486e31e6202409ed034cc"
+    },
+    {
+      "path": "../../Cloudia-QA-2026-10-16-cycle27/positive-witness/PRE-RUN-FREEZE.json",
+      "bytes": 4887,
+      "sha256": "4f1079b944b697eb7cb66289fe3e3f10e9ffc3b6790ec8ebf479c4d34ac52e34"
+    },
+    {
+      "path": "../../Cloudia-QA-2026-10-16-cycle27/positive-witness/selected-pixels.json",
+      "bytes": 2842,
+      "sha256": "d89b771513bdbddb15b3ada83c845fd75377eab8286707295c1375eff25ecc79"
+    },
+    {
+      "path": "../../Cloudia-QA-2026-10-16-cycle27/source/src/cumulonimbus/assets/liguria-apuane-dem.bin",
+      "bytes": 4202532,
+      "sha256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d"
+    },
+    {
+      "path": "../../Cloudia-QA-2026-10-16-cycle27/next-geometry-protocol-local17-r1.md",
+      "bytes": 10527,
+      "sha256": "5d2b1c982e8fcce17bd2f1109aee52e1e1dfe315fe9624329cc93ee657400fb9"
+    },
+    {
+      "path": "../../Cloudia-QA-2026-10-16-cycle27/source/node_modules/three/package.json",
+      "bytes": 3672,
+      "sha256": "ab4ff6950aab522dfe6980f19914a5eb2cadb689a36c6c44f4d3869c5e46dc89"
+    },
+    {
+      "path": "../../Cloudia-QA-2026-10-16-cycle27/source/node_modules/three/build/three.webgpu.js",
+      "bytes": 2284823,
+      "sha256": "a78400fa1d359e81fcc12b84ed0a89a7fbecb4b8373e28ae8f9d2b11f6ea13bc"
+    },
+    {
+      "path": "../../Cloudia-QA-2026-10-16-cycle27/source/node_modules/three/build/three.tsl.js",
+      "bytes": 36854,
+      "sha256": "6e6b92d8ce467818944f73815a96abadc6392fb34de577d479a23810b6aeeed0"
+    },
+    {
+      "path": "../../Cloudia-QA-2026-10-16-cycle27/source/node_modules/three/build/three.core.js",
+      "bytes": 1458113,
+      "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6"
+    },
+    {
+      "path": "../../../../.bun/bin/bun",
+      "bytes": 61069216,
+      "sha256": "1d77af7bfd811aebb7d37bec496a5eed14fe227ded3ab7866d2f39786e8107b6"
+    }
+  ],
+  "selfDigestPolicy": "This freeze excludes itself; its digest is reported externally to root.",
+  "executionState": "No run directory, no result, no Bun/test/mesh/DEM/kernel invocation for this package."
+}

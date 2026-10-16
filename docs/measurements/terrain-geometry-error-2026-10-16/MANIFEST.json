@@ -1,0 +1,125 @@
+{
+  "schema": "cloudia-saved-evidence-v1",
+  "status": "GEOMETRY_ERROR_OBSERVED_NO_PRODUCT_ADOPTION",
+  "runtimeBaselineCommit": "908078042bda26471d57cb6a27d69dbec8655c3f",
+  "payloadFiles": 23,
+  "payloadBytes": 2645221,
+  "payload": [
+    {
+      "path": ".gitattributes",
+      "bytes": 45,
+      "sha256": "3cbf257acf64108f70c058f787d2e2bd92cdacce9531344c5602809161a0e02e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2955,
+      "sha256": "4ab2c5186495481d4f26790fe744df03dfe6e04ba78b1e8040baff491157743c"
+    },
+    {
+      "path": "geometry-references.md",
+      "bytes": 1589,
+      "sha256": "9784e6fc8c53ada03702406dd213c77f5eb6102aef65b3df3fb9aad3ddf3bab2"
+    },
+    {
+      "path": "geometry-results-review.md",
+      "bytes": 6159,
+      "sha256": "6a201d9b3fe77c91b8fb14f158d89fa9f34c1ace1ab72e675d67c0ea32e4298b"
+    },
+    {
+      "path": "next-split-proposal/terrainSplitTriangle.test.ts",
+      "bytes": 8040,
+      "sha256": "c013bbd7c291992461e5c133317a2a1df546979b2c2d164c3fdf9a097207d9a1"
+    },
+    {
+      "path": "next-split-proposal/terrainSplitTriangle.ts",
+      "bytes": 1249,
+      "sha256": "e8a14126eedcea99390b9bf9503b9df53fae6ad85e2f39aa184817d104443163"
+    },
+    {
+      "path": "post-run-hash-verification.json",
+      "bytes": 257,
+      "sha256": "c932f6d74538777aee25dc73afbb1eb48384640ce3d2d99975ec9c0ba1d60c0d"
+    },
+    {
+      "path": "pre-run-root-review.md",
+      "bytes": 1756,
+      "sha256": "17f32a21843911ae0b32b5d01c2d298545cfffa2f438cff001ea3438ac227f56"
+    },
+    {
+      "path": "preflight/PRE-RUN-FREEZE.json",
+      "bytes": 4969,
+      "sha256": "e786a324da35961ca8cc5ab83760ca9cb9989a90a7a8f5b8e04235aa168406da"
+    },
+    {
+      "path": "preflight/PROTOCOL.json",
+      "bytes": 2003,
+      "sha256": "b9211d812cfdc4f56e7182a4c3312e8d1a10fd39730acdee86a36286fe8e3d4d"
+    },
+    {
+      "path": "preflight/README.md",
+      "bytes": 3084,
+      "sha256": "1b8f5d4bcbcf323007d6057943d124088af84a5f9b10aedf5da3c82aca14935f"
+    },
+    {
+      "path": "preflight/preparation/error.json",
+      "bytes": 876,
+      "sha256": "fe624fe053b2cd1c8ed2a9ad477fb8646cbff2722d105b465b309e381e5440b0"
+    },
+    {
+      "path": "preflight/preparation/r1-r2.diff",
+      "bytes": 2199,
+      "sha256": "f0b5f0fe30cded57a781f8b295365628560998da338458b0390f99a5732cd40c"
+    },
+    {
+      "path": "preflight/preparation/run-r1-getxattr.py",
+      "bytes": 9628,
+      "sha256": "45d03f775774270fc1ddbe180e5b28d69f4025f86ed9bd8c7a3eaafb92abe392"
+    },
+    {
+      "path": "preflight/protocol.md",
+      "bytes": 8283,
+      "sha256": "0f2ae6514391661ac16ad87c948fdeb7da9057022dbe814c349c0ef7470c4934"
+    },
+    {
+      "path": "preflight/run/result.json",
+      "bytes": 2532734,
+      "sha256": "5ae2135e94ffca23757f07ae985b01033d5fedf985971e2439b04d6033c71a27"
+    },
+    {
+      "path": "preflight/run/run.json",
+      "bytes": 1337,
+      "sha256": "d7ef1d4aedd493788aea814d8058a9ee891f3033761852340aeefcf2f6c00700"
+    },
+    {
+      "path": "preflight/run/stderr.log",
+      "bytes": 344,
+      "sha256": "eeb758f21545868a43a906db5862c63f86aa0e282479d8282b19170cc9ab113c"
+    },
+    {
+      "path": "preflight/run/stdout.log",
+      "bytes": 204,
+      "sha256": "dc83dc7f0b3bb0e71f24c17f035dcf56a7be1abf245c46cf491d173690ff06cb"
+    },
+    {
+      "path": "preflight/run.py",
+      "bytes": 10348,
+      "sha256": "d6c83aace2ea9d31cac4b380021c72379fd5664c72f9169aeccea466b57e8e73"
+    },
+    {
+      "path": "preflight/witness.ts",
+      "bytes": 14325,
+      "sha256": "db65410172c553ae203ebd4ebf9cdae52f9fd9d5394e6014bcdbb68c16b91636"
+    },
+    {
+      "path": "source-manifest.json",
+      "bytes": 13042,
+      "sha256": "21cda2a07fdc8896b78885beac706fb81b435a659120060949e7f78dfdb86ee2"
+    },
+    {
+      "path": "verify_geometry_archive.py",
+      "bytes": 19795,
+      "sha256": "c43ef36989c46e995506f263c3630c7b42ef95b058ed9e6d631974ec1d5ee740"
+    }
+  ],
+  "scope": "Saved full-core node evidence and unexecuted next-helper proposal; no runtime/dependency copies or replay."
+}
