@@ -1,0 +1,50 @@
+{
+  "cycle": 34,
+  "date": "2026-10-17",
+  "parentCommit": "2901c76ac3b948991032ddeaa4fbd77b4f39c06a",
+  "goalStatus": "active",
+  "runtimeVersion": "observatory-v59-terrain-source-refinement",
+  "runtimeCommit": "9ea98406706ef53412b3105987262397df232ccd",
+  "runtimeManifestSHA256": "fb6c231918e7a825f5b1a407efcd98aaacf5cca352c60cbdcdb9b5271a913ff2",
+  "audit": {
+    "rendererVersion": "diagnostic-v59-rain-emitter-audit",
+    "sourceManifestSHA256": "f57c5a0d10925513438a902093c45dd5102167dcb7ca23916075f3d3c16086de",
+    "status": "MEASURED_CPU_SOURCE_NOT_GPU_READBACK",
+    "positiveCells": 963,
+    "haloZeroCells": 148,
+    "positivePackedBAPairs": 441,
+    "cpuElapsedMs": 13.699999928474426,
+    "nativePNGMatchesKnownV59": "0dd971b684b29c9d9855a405878d903da025eb729f17832dda813ac50051fa1b"
+  },
+  "lightingTrial": {
+    "rendererVersion": "experiment-v59-rain-emitter-light",
+    "sourceManifestSHA256": "18366114886a898e86c6fff87249820e857440462e121eddcb49648d44f7de4c",
+    "status": "REJECTED_NATIVE_ART_FAIL_ROOT_AND_INDEPENDENT",
+    "nativeSHA256": "fa80da6695f7f3eafd2a3dab134beaab804894e1fe57018bd3ee167a0c3f08d8",
+    "nativeBytes": 2569912,
+    "nativeDimensions": [
+      2474,
+      1844
+    ],
+    "workerAfterFail": false,
+    "sunAfterFail": false,
+    "motionAfterFail": false,
+    "fpsAfterFail": false,
+    "parameterRefitAfterFail": false,
+    "promotion": false
+  },
+  "servers": {
+    "4196": "preserved v59 ordinary preview",
+    "53769": "intentional Ctrl-C session34247 terminal0",
+    "53770": "intentional Ctrl-C session21789 terminal0",
+    "4201": "unrelated, untouched"
+  },
+  "nextAction": "Return to terrain shadow correctness: remap the existing fixed native UV witnesses onto actual v59 mesh before making a new shadow decision. Old v58 blockers are not current physical truth. No raw-nearest/PCF or winner-plane bias fitting trial.",
+  "openGoals": [
+    "cloud anatomy and near lighting",
+    "credible rain and virga",
+    "terrain shadow correctness and photorealism",
+    "UI acceptance",
+    "stable60FPS full-quality full-output"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "status": "checkpoint-ready; product preserved",
+  "checkpoint": "CHECKPOINT.json",
+  "reuseBaseSource": "base-source",
+  "doNotUseAsBase": [
+    "audit-source",
+    "light-source"
+  ],
+  "nextAction": "Return to terrain shadow correctness: remap the existing fixed native UV witnesses onto actual v59 mesh before making a new shadow decision. Old v58 blockers are not current physical truth. No raw-nearest/PCF or winner-plane bias fitting trial."
+}

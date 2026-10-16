@@ -1,0 +1,24 @@
+{
+  "status": "PASS_SAVED_EVIDENCE_ONLY",
+  "scope": "Hash/size/source overlay/native owner transfer and stop-rule checks only; no model, bake, GPU, benchmark or visual replay. Artistic FAIL is preserved.",
+  "payloadCount": 49,
+  "payloadBytes": 3566885,
+  "manifestSHA256": "f565e05cde5887bf3f28ec9fba8008bba25e87bdecec21e11d9ef6e6fce03880",
+  "runtimeSourceFilesUnchanged": 126,
+  "overlaysChecked": {
+    "audit": 128,
+    "light": 128
+  },
+  "nativePNG": {
+    "sha256": "fa80da6695f7f3eafd2a3dab134beaab804894e1fe57018bd3ee167a0c3f08d8",
+    "bytes": 2569912,
+    "dimensions": [
+      2474,
+      1844
+    ],
+    "parts": 53
+  },
+  "wallSeconds": 0.06130174989812076,
+  "cpuSeconds": 0.039646999999999995,
+  "maxRssBytes": 41385984
+}

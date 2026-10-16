@@ -1,0 +1,99 @@
+{
+  "scope": "Matched submitted CPU material/camera/lighting metadata; not GPU texture/readback proof.",
+  "rows": [
+    {
+      "path": "seed",
+      "equalWithin1e-12": true
+    },
+    {
+      "path": "quality",
+      "equalWithin1e-12": true
+    },
+    {
+      "path": "nominalSteps",
+      "equalWithin1e-12": true
+    },
+    {
+      "path": "output",
+      "equalWithin1e-12": true
+    },
+    {
+      "path": "internal",
+      "equalWithin1e-12": true
+    },
+    {
+      "path": "canvas",
+      "equalWithin1e-12": true
+    },
+    {
+      "path": "volume",
+      "equalWithin1e-12": true
+    },
+    {
+      "path": "detailVolume",
+      "equalWithin1e-12": true
+    },
+    {
+      "path": "flowMode",
+      "equalWithin1e-12": true
+    },
+    {
+      "path": "ablation",
+      "equalWithin1e-12": true
+    },
+    {
+      "path": "paused",
+      "equalWithin1e-12": true
+    },
+    {
+      "path": "orbit",
+      "equalWithin1e-12": true
+    },
+    {
+      "path": "camera.origin",
+      "equalWithin1e-12": true
+    },
+    {
+      "path": "camera.target",
+      "equalWithin1e-12": true
+    },
+    {
+      "path": "camera.yaw",
+      "equalWithin1e-12": true
+    },
+    {
+      "path": "camera.pitch",
+      "equalWithin1e-12": true
+    },
+    {
+      "path": "material",
+      "equalWithin1e-12": true
+    },
+    {
+      "path": "lighting",
+      "equalWithin1e-12": true
+    }
+  ],
+  "clocksExceptWeatherTimeEqualWithin1e-12": true,
+  "weatherTimeValues": [
+    29.185100000000052,
+    15.600900000000033
+  ],
+  "weatherTimeScope": "Wall time differs. GPUSceneEngine uses it for flash scheduling/intensity; Rain has no active flash and all flash uniforms/counters match. It is not precipitation or flow uniform time.",
+  "otherWeatherEqualWithin1e-12": true,
+  "rainCpuValues": [
+    0.7999999999999992,
+    0.7999999883073284
+  ],
+  "rainFloat32Values": [
+    0.800000011920929,
+    0.800000011920929
+  ],
+  "rainFloat32Identical": true,
+  "roi": [
+    900,
+    1240,
+    1800,
+    1820
+  ]
+}

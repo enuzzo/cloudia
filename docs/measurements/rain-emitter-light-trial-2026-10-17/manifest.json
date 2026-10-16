@@ -1,0 +1,204 @@
+{
+  "schema": "cloudia-saved-emitter-trial-evidence-v1",
+  "scope": "Saved bounded experiment evidence and source overlays only; no replay/bake/benchmark. Product v59 preserved.",
+  "files": {
+    "source/base-manifest.json": {
+      "sha256": "fb6c231918e7a825f5b1a407efcd98aaacf5cca352c60cbdcdb9b5271a913ff2",
+      "bytes": 13275
+    },
+    "source/audit-manifest.json": {
+      "sha256": "f57c5a0d10925513438a902093c45dd5102167dcb7ca23916075f3d3c16086de",
+      "bytes": 13500
+    },
+    "source/audit-overlay/src/cumulonimbus/GPUSceneEngine.ts": {
+      "sha256": "e2d03adce24f5c245dc92f6b577d82e1cd3881a0841dfa38e34f5db250694e00",
+      "bytes": 76902
+    },
+    "source/audit-overlay/src/cumulonimbus/lifecycle.test.ts": {
+      "sha256": "96425d50f372ce3062a5f6a6d088da367047a73f3daccf61a87e241bf14ec9cd",
+      "bytes": 71059
+    },
+    "source/audit-overlay/src/cumulonimbus/rainEmitterAudit.test.ts": {
+      "sha256": "3f7ded21bcc64f3a7835a38006f9926d54990bd1bfc7d46dba033293143614a1",
+      "bytes": 5421
+    },
+    "source/audit-overlay/src/cumulonimbus/rainEmitterAudit.ts": {
+      "sha256": "ecf8bc35810c9e4b08cfd047b82f204276598bd77acb2de8ee3c6c4cd9499fa4",
+      "bytes": 15404
+    },
+    "source/light-manifest.json": {
+      "sha256": "18366114886a898e86c6fff87249820e857440462e121eddcb49648d44f7de4c",
+      "bytes": 13500
+    },
+    "source/light-overlay/src/cumulonimbus/GPUSceneEngine.ts": {
+      "sha256": "55773eb8a00ff02e6f4919ebeb120315531e43512ffa0bf619d4000d5c960764",
+      "bytes": 76042
+    },
+    "source/light-overlay/src/cumulonimbus/cloudShader.test.ts": {
+      "sha256": "54f78f5797d0d917b1bd344bba9211701f1c2a29b8e8d2c35a416330fd67673f",
+      "bytes": 8175
+    },
+    "source/light-overlay/src/cumulonimbus/cloudShader.ts": {
+      "sha256": "e8eca6d8d2808b4bec50a1bc9fa6b1ae64cd279e96efe6c025eb027bf34d8759",
+      "bytes": 16351
+    },
+    "source/light-overlay/src/cumulonimbus/lifecycle.test.ts": {
+      "sha256": "24e0277d101c74e8baeb2539e925910bdb75e1e7802d69943469c365e596eeaa",
+      "bytes": 71333
+    },
+    "source/light-overlay/src/cumulonimbus/rainEmitterLight.test.ts": {
+      "sha256": "a27c062e2681326ac76495841f98967e62fdb26aceb46eb3309d6efaf42e3329",
+      "bytes": 4881
+    },
+    "source/light-overlay/src/cumulonimbus/rainEmitterLight.ts": {
+      "sha256": "fc0bac8469f8134dbc38a12b78e47bf2aa01fb4976e02d518cc2340d4a887d44",
+      "bytes": 4829
+    },
+    "qualification/1.log": {
+      "sha256": "bf36f0f82006c9b6ebed78c139f86605c8b2c393ec0968c71965d26b875c59b8",
+      "bytes": 351
+    },
+    "qualification/2.log": {
+      "sha256": "9953d07cdb997b42dce6ef44fc4c1d72db575e83b2717d23d93bb219f0fdc0fb",
+      "bytes": 1149
+    },
+    "qualification/3.log": {
+      "sha256": "bf0d38e815936ab0e3957e2a9e74c83f0c5e644b39f4eb94c9c18f72d31acf42",
+      "bytes": 1484
+    },
+    "qualification/4.log": {
+      "sha256": "5bfe26b0dd4acad355779fc0026c1333b0267e66fe1709462b173b8c214f1ab7",
+      "bytes": 393
+    },
+    "qualification/results.json": {
+      "sha256": "1e49dc7dcf1b5fdfdc5f8054435ea6283f44d105153a2a7efdf24e73eb467580",
+      "bytes": 1055
+    },
+    "light-qualification/1.log": {
+      "sha256": "39a6b625ee5570df3916f4f5567fd7c29f4511dfd672a54033c6779388e23c7f",
+      "bytes": 365
+    },
+    "light-qualification/2.log": {
+      "sha256": "d66d9a31e2e812a539c70c8a15ca3bfcc60e76ff82327958794a16ebd7cf1e97",
+      "bytes": 1151
+    },
+    "light-qualification/3.log": {
+      "sha256": "a872066cc2ab7547c46a8a5426c9adaaa728649ba2fc1e8d1a4f8832c966abd4",
+      "bytes": 134
+    },
+    "light-qualification/4.log": {
+      "sha256": "58767e168ee94b5103d23f3b014250d9227eac3d7189cbbd913a013a9ea86cab",
+      "bytes": 341
+    },
+    "light-qualification/5.log": {
+      "sha256": "b53b1345bcf84573695992bfa39bf7affbb447157197c6ab75f35ef619b2311e",
+      "bytes": 1484
+    },
+    "light-qualification/6.log": {
+      "sha256": "d5a98943419044fc1e3b1b5ac91da59cd6f171f7d9d936d70fdbbdf1d27c0283",
+      "bytes": 393
+    },
+    "light-qualification/results.json": {
+      "sha256": "a3bd1c74219194c80d1afec1e22b5f6c5a9d9f087aa686d396d1e6678266f848",
+      "bytes": 1658
+    },
+    "emitter-audit-review.md": {
+      "sha256": "b51ea673ca21bf340cbc473806caf165f4e70d7bb3d9f7e670207fcec60ca7c4",
+      "bytes": 7748
+    },
+    "emitter-light-review.md": {
+      "sha256": "afe7c43d17f850cde6a1954082c9efe52f5232aae901cc32e8bdacbf474f744b",
+      "bytes": 4003
+    },
+    "CHECKPOINT.json": {
+      "sha256": "35ec91d519d47b6a2577237ba4abed603b9d72c6a572c4beb600f85a3cfddf76",
+      "bytes": 2086
+    },
+    "CURRENT-WIP.json": {
+      "sha256": "5f3c4a51338ce29df9d6ba876a8eaad4896bee255791ac752a177ea55fbd3517",
+      "bytes": 455
+    },
+    "emitter-audit-proposal/README.md": {
+      "sha256": "8f213f816f8e0b2c1155817a96af944ce445d307d5a41af34025a68b916bde39",
+      "bytes": 4111
+    },
+    "light-proposal/README.md": {
+      "sha256": "888a5da1b27734f30e8ee1be85c4fcdcc171fbb7c97c0158c02d903984121e32",
+      "bytes": 3316
+    },
+    "browser/emitter-audit-console.json": {
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    "browser/emitter-audit-native-bitmap-alias.json": {
+      "sha256": "ca4c6305fcccf6670ab4525c6c1bd7903240182413a5d100010ae1b71f30fa19",
+      "bytes": 818
+    },
+    "browser/emitter-audit-native.json": {
+      "sha256": "66f885f230e76d41ab4570e8a97d463ba6373ec8957b7c52e83114d45ea40d29",
+      "bytes": 285877
+    },
+    "browser/emitter-audit-summary.json": {
+      "sha256": "a6fd3e44bcee87fdf4d9b16d6a4ee04b8b9e0ebc65694db8192268d4b89042b2",
+      "bytes": 5924
+    },
+    "browser/emitter-light-baseline-roi.png": {
+      "sha256": "d1f4525fdb622583a4fbcff1719095890beb386705a4a8b6ab7a1f23479d5cab",
+      "bytes": 52025
+    },
+    "browser/emitter-light-candidate-roi.png": {
+      "sha256": "e59884ba685384eca153b05b41ed0fe5275a4fe693ac36376af3642c3b59ad81",
+      "bytes": 41848
+    },
+    "browser/emitter-light-comparison.json": {
+      "sha256": "d547a64de5902af387db001d1bbeab49d3704d85ccd57d72205b180fa7115cd4",
+      "bytes": 2001
+    },
+    "browser/emitter-light-console.json": {
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    "browser/emitter-light-main-rain-native-transfer.json": {
+      "sha256": "60a097455bb99e5003f3e067a9d1da5632c124b406f956401a6aec62133b76fb",
+      "bytes": 4344
+    },
+    "browser/emitter-light-main-rain-native.json": {
+      "sha256": "a66564e6e7429cb6f0450a23f288a7ce11615cdbc0b3aa46bb4e0b020cab2153",
+      "bytes": 12249
+    },
+    "browser/emitter-light-main-rain-native.png": {
+      "sha256": "fa80da6695f7f3eafd2a3dab134beaab804894e1fe57018bd3ee167a0c3f08d8",
+      "bytes": 2569912
+    },
+    "browser/independent-emitter-light-baseline-roi.png": {
+      "sha256": "d1f4525fdb622583a4fbcff1719095890beb386705a4a8b6ab7a1f23479d5cab",
+      "bytes": 52025
+    },
+    "browser/independent-emitter-light-candidate-roi.png": {
+      "sha256": "e59884ba685384eca153b05b41ed0fe5275a4fe693ac36376af3642c3b59ad81",
+      "bytes": 41848
+    },
+    "browser/independent-emitter-light-review.md": {
+      "sha256": "e0e539ef48a1dce00459007e8ca73a447844f7334a84a53243a659f4ea70f502",
+      "bytes": 2692
+    },
+    "browser/native-collector30.js": {
+      "sha256": "b0d1b5f74a33376d26802f3c2d7b8be828fb5aadaaff64e63aeb74d43a87aaf9",
+      "bytes": 2025
+    },
+    "browser/ordinary-restored.jpg": {
+      "sha256": "30bcbcbc2350fd2697ea082b4a97b3d5a721335dd44bdf6c23d06ca0b1280ce4",
+      "bytes": 67866
+    },
+    "browser/ordinary-restored.json": {
+      "sha256": "bed9484f3dbd6813bafb732c417697ea45e16a61b1b2129cfb09090acc4ee353",
+      "bytes": 1718
+    },
+    "browser/root-emitter-light-review.md": {
+      "sha256": "daa40d52eb830e69a8b6dd81e01f2962d47f8fe55640344ea1e711edc3c225d8",
+      "bytes": 1358
+    }
+  },
+  "payloadCount": 49,
+  "payloadBytes": 3566885
+}

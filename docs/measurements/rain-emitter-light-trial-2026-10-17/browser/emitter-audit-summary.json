@@ -1,0 +1,212 @@
+{
+  "scope": "Actual installed CPU source arrays, ideal trilinear hypothetical BA packing; not GPU light readback or art acceptance.",
+  "cells": {
+    "positive": 963,
+    "haloZero": 148,
+    "remainingZero": 2985
+  },
+  "currentGate": {
+    "supportCells": 1111,
+    "positiveCells": 963,
+    "distinctPackedBAPairs": 459,
+    "identicalPackedBAOnSupport": false,
+    "constantVisibilityOnSupport": false,
+    "stopForCurrentLighting": false,
+    "conclusion": "VARIATION_ONLY_NOT_ART_PASS",
+    "limitation": "Variation only in the R0 halo or tiny response differences do not establish useful positive-source contrast or native quality."
+  },
+  "current": {
+    "positive": {
+      "cells": 963,
+      "distinctPackedBAPairs": 441,
+      "sun": {
+        "packedDistinct": 183,
+        "fullCount": 434,
+        "zeroCount": 167,
+        "visibility": {
+          "massFactor": 1,
+          "distinct": 183,
+          "min": 1.1253517471925912e-07,
+          "max": 1,
+          "mean": 0.22021233190579192,
+          "quantiles": {
+            "p00": 1.1253517471925912e-07,
+            "p05": 1.1253517471925912e-07,
+            "p25": 1.1253517471925912e-07,
+            "p50": 3.269909529232291e-07,
+            "p75": 0.12611157660179406,
+            "p95": 1,
+            "p100": 1
+          }
+        },
+        "rWeighted": {
+          "weightSumRCode": 132910,
+          "weightUnit": "R byte code; divide by255 for sum of normalized source strengths, not physical water mass.",
+          "meanTau": 13.836885051214077,
+          "quantilesTau": {
+            "p00": 0,
+            "p05": 2.5098039215686274,
+            "p25": 13.929411764705883,
+            "p50": 16,
+            "p75": 16,
+            "p95": 16,
+            "p100": 16
+          },
+          "meanVisibility": 0.033715981610259294,
+          "visibilityQuantiles": {
+            "p00": 1.1253517471925912e-07,
+            "p05": 1.1253517471925912e-07,
+            "p25": 1.1253517471925912e-07,
+            "p50": 1.1253517471925912e-07,
+            "p75": 8.92346109307606e-07,
+            "p95": 0.08128417575211445,
+            "p100": 1
+          }
+        }
+      },
+      "sky": {
+        "packedDistinct": 203,
+        "fullCount": 391,
+        "zeroCount": 174,
+        "visibility": {
+          "massFactor": 1,
+          "distinct": 203,
+          "min": 0.183032248247516,
+          "max": 1,
+          "mean": 0.4113542499118438,
+          "quantiles": {
+            "p00": 0.183032248247516,
+            "p05": 0.183032248247516,
+            "p25": 0.183032248247516,
+            "p50": 0.1923640681513825,
+            "p75": 0.7322551803010535,
+            "p95": 1,
+            "p100": 1
+          }
+        },
+        "rWeighted": {
+          "weightSumRCode": 132910,
+          "weightUnit": "R byte code; divide by255 for sum of normalized source strengths, not physical water mass.",
+          "meanTau": 14.076122276463066,
+          "quantilesTau": {
+            "p00": 0,
+            "p05": 5.584313725490196,
+            "p25": 13.427450980392157,
+            "p50": 16,
+            "p75": 16,
+            "p95": 16,
+            "p100": 16
+          },
+          "meanVisibility": 0.21242419734198142,
+          "visibilityQuantiles": {
+            "p00": 0.183032248247516,
+            "p05": 0.183032248247516,
+            "p25": 0.183032248247516,
+            "p50": 0.183032248247516,
+            "p75": 0.18746105255272094,
+            "p95": 0.296139788206456,
+            "p100": 1
+          }
+        }
+      }
+    },
+    "haloZero": {
+      "cells": 148,
+      "distinctPackedBAPairs": 26,
+      "sun": {
+        "packedDistinct": 21,
+        "fullCount": 13,
+        "zeroCount": 114,
+        "visibility": {
+          "massFactor": 1,
+          "distinct": 21,
+          "min": 1.1253517471925912e-07,
+          "max": 1,
+          "mean": 0.7704260339207675,
+          "quantiles": {
+            "p00": 1.1253517471925912e-07,
+            "p05": 1.1253517471925912e-07,
+            "p25": 1,
+            "p50": 1,
+            "p75": 1,
+            "p95": 1,
+            "p100": 1
+          }
+        },
+        "rWeighted": {}
+      },
+      "sky": {
+        "packedDistinct": 4,
+        "fullCount": 0,
+        "zeroCount": 136,
+        "visibility": {
+          "massFactor": 1,
+          "distinct": 4,
+          "min": 0.9477176231267788,
+          "max": 1,
+          "mean": 0.9982051751412179,
+          "quantiles": {
+            "p00": 0.9477176231267788,
+            "p05": 0.9821884504957772,
+            "p25": 1,
+            "p50": 1,
+            "p75": 1,
+            "p95": 1,
+            "p100": 1
+          }
+        },
+        "rWeighted": {}
+      }
+    },
+    "remainingZero": {
+      "cells": 2985,
+      "distinctPackedBAPairs": 154,
+      "sun": {
+        "packedDistinct": 141,
+        "fullCount": 14,
+        "zeroCount": 2634,
+        "visibility": {
+          "massFactor": 1,
+          "distinct": 141,
+          "min": 1.1253517471925912e-07,
+          "max": 1,
+          "mean": 0.9268005524335047,
+          "quantiles": {
+            "p00": 1.1253517471925912e-07,
+            "p05": 0.029785740991672624,
+            "p25": 1,
+            "p50": 1,
+            "p75": 1,
+            "p95": 1,
+            "p100": 1
+          }
+        },
+        "rWeighted": {}
+      },
+      "sky": {
+        "packedDistinct": 2,
+        "fullCount": 0,
+        "zeroCount": 2955,
+        "visibility": {
+          "massFactor": 1,
+          "distinct": 2,
+          "min": 0.9821884504957772,
+          "max": 1,
+          "mean": 0.9998209894522198,
+          "quantiles": {
+            "p00": 0.9821884504957772,
+            "p05": 1,
+            "p25": 1,
+            "p50": 1,
+            "p75": 1,
+            "p95": 1,
+            "p100": 1
+          }
+        },
+        "rWeighted": {}
+      }
+    }
+  },
+  "cpuElapsedMs": 13.699999928474426,
+  "reportCompactBytes": 50966
+}
