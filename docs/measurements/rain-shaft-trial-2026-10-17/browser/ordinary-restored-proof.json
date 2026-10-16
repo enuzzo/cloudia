@@ -1,0 +1,14 @@
+{
+  "url": "http://localhost:4196/?seed=74",
+  "sourceVersion": "observatory-v59-terrain-source-refinement",
+  "canvas": {
+    "cssHeight": 922,
+    "cssWidth": 1237,
+    "height": 1844,
+    "width": 2474
+  },
+  "paused": false,
+  "pauseButtonCount": 1,
+  "profileExportCount": 0,
+  "console": []
+}

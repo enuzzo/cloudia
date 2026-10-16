@@ -1,0 +1,24 @@
+{
+  "status": "PASS_WITH1e-12NUMERIC_TOLERANCE",
+  "fieldsCompared": [
+    "quality",
+    "output",
+    "internal",
+    "volume",
+    "detailVolume",
+    "nominalSteps",
+    "ablation",
+    "flowMode",
+    "camera",
+    "lighting"
+  ],
+  "differences": [],
+  "weatherDifference": "actualRain0.7999999999999995 vs0.7999999999820894; same0.8target,atmosphereprogress1,haze2.6,overcast.85; weatherTime owner-specific.",
+  "roi": [
+    900,
+    1240,
+    1800,
+    1820
+  ],
+  "crops": "Derived native1:1 no resize; not separate captures."
+}

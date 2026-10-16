@@ -1,0 +1,17 @@
+{
+  "baselinePNG": {
+    "path": "docs/measurements/terrain-source-refinement-2026-10-16/browser/refine-main-rain-native.png",
+    "bytes": 2585113,
+    "sha256": "0dd971b684b29c9d9855a405878d903da025eb729f17832dda813ac50051fa1b"
+  },
+  "runtimeBaseCommit": "9ea98406706ef53412b3105987262397df232ccd",
+  "base126ManifestSHA256": "fb6c231918e7a825f5b1a407efcd98aaacf5cca352c60cbdcdb9b5271a913ff2",
+  "candidate128ManifestSHA256": "6ab184e48b0ac74c96a9532df0e58d8fd2b90c1fa406f3e986bf576a0f693460",
+  "derivedCropROI": [
+    900,
+    1240,
+    1800,
+    1820
+  ],
+  "scope": "Original baseline bitmap was transferred in prior checkpoint; fresh v59 owner export confirms same hash. Candidate transferred once in full. Crops are derived native pixels, not new captures."
+}

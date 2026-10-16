@@ -1,0 +1,38 @@
+{
+  "schema": "cloudia-external-rain-sheet-proposal-v1",
+  "state": "FROZEN_UNEXECUTED_ROOT_SELECTION_PENDING",
+  "baseCommit": "9ea98406706ef53412b3105987262397df232ccd",
+  "files": [
+    {
+      "path": "PROTOCOL.json",
+      "bytes": 3001,
+      "sha256": "535b3e9140861c70eb99e9700f689bbbcef7303c1c0c3a8b34bec98c86561ae2"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2570,
+      "sha256": "8dc780becdda550562c840c03e488dad7628eaca65652c39b1ed2eaa1d45775c"
+    },
+    {
+      "path": "SOURCE-CHECKS.json",
+      "bytes": 1192,
+      "sha256": "5087288595391fd6e7acdaf37b5f204abd740681d31be4c2d5dfe40f2fed178d"
+    },
+    {
+      "path": "candidate.patch",
+      "bytes": 4859,
+      "sha256": "c3545c0858ca76e292ea19dc7004d929f155c7961251a67454dde13f5899b3d7"
+    },
+    {
+      "path": "src/cumulonimbus/rainSheetFactor.test.ts",
+      "bytes": 1933,
+      "sha256": "4a3a01f3fa98d6ed3adca52f215821c8e12aab73421afb21ee6c59b0273a4d60"
+    },
+    {
+      "path": "src/cumulonimbus/rainSheetFactor.ts",
+      "bytes": 874,
+      "sha256": "fc0efbd4c7a9f0629f8d5e09cec7983f11bef1d3bb8ad1fa89f690cb579c8cad"
+    }
+  ],
+  "selfPolicy": "Only this root MANIFEST is excluded; no runtime/model/test/build/GPU executed."
+}

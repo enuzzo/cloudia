@@ -1,0 +1,58 @@
+[
+  {
+    "name": "targeted-tests",
+    "command": [
+      "bun",
+      "run",
+      "test",
+      "--",
+      "src/cumulonimbus/rainSheetFactor.test.ts",
+      "src/cumulonimbus/cloudShader.test.ts",
+      "--reporter=json",
+      "--outputFile=/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-qualification/targeted-results.json"
+    ],
+    "exitCode": 0,
+    "timedOut": false,
+    "terminalObservedByPopen": true,
+    "elapsedSeconds": 1.0438647909322754
+  },
+  {
+    "name": "full-tests",
+    "command": [
+      "bun",
+      "run",
+      "test",
+      "--",
+      "--reporter=json",
+      "--outputFile=/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-qualification/test-results.json"
+    ],
+    "exitCode": 0,
+    "timedOut": false,
+    "terminalObservedByPopen": true,
+    "elapsedSeconds": 6.328438500058837
+  },
+  {
+    "name": "app-build",
+    "command": [
+      "bun",
+      "run",
+      "build"
+    ],
+    "exitCode": 0,
+    "timedOut": false,
+    "terminalObservedByPopen": true,
+    "elapsedSeconds": 4.3955638750921935
+  },
+  {
+    "name": "hero-build",
+    "command": [
+      "bun",
+      "run",
+      "build:hero"
+    ],
+    "exitCode": 0,
+    "timedOut": false,
+    "terminalObservedByPopen": true,
+    "elapsedSeconds": 2.163567000068724
+  }
+]

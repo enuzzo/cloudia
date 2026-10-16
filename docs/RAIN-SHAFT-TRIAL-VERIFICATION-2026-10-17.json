@@ -1,0 +1,45 @@
+{
+  "state": "ROOT_SAVED_EVIDENCE_PASS",
+  "manifestSHA256": "0f301ec3ed38c23e8518062a59f5063c755f9f715e7f27d1aa45c9f35887d629",
+  "note": "Archive is pre-run immutable; this sidecar stores subsequent root read-only verification outside its inventory to avoid a circular hash.",
+  "run": {
+    "status": "PASS",
+    "exitCode": 0,
+    "terminalObserved": true,
+    "timedOut": false,
+    "wallSeconds": 0.13173066696617752,
+    "childCPUSeconds": 0.070042,
+    "childPeakRSSBytes": 44056576,
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/archive-payload/verify_saved.py",
+      "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/archive-payload",
+      "--runtime-source",
+      "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia"
+    ],
+    "inputsUnchanged": true,
+    "scope": "One read-only saved-evidence verification, no workload replay."
+  },
+  "result": {
+    "status": "SAVED_EVIDENCE_PASS",
+    "payloadFiles": 45,
+    "manifestSHA256": "0f301ec3ed38c23e8518062a59f5063c755f9f715e7f27d1aa45c9f35887d629",
+    "source126AndOverlay128Verified": true,
+    "testsSaved": 439,
+    "targetedSaved": 10,
+    "nativePNG_SHA256": "665ee2e54bcde7ea2fcdeaa5fafceb9fde6a6e376ab93e3638d0af9350864389",
+    "scope": "Stored bytes, source overlays and retained declarations only. No model, test, render, artistic or FPS acceptance is rerun or inferred."
+  },
+  "rawRecords": {
+    "PRE-RUN-FREEZE.json": "{\n  \"state\": \"ROOT_APPROVED_UNEXECUTED\",\n  \"inputs\": [\n    {\n      \"path\": \"/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/archive-payload/MANIFEST.json\",\n      \"bytes\": 19200,\n      \"sha256\": \"0f301ec3ed38c23e8518062a59f5063c755f9f715e7f27d1aa45c9f35887d629\"\n    },\n    {\n      \"path\": \"/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/archive-payload/verify_saved.py\",\n      \"bytes\": 5339,\n      \"sha256\": \"3a0a6688f912ac7e7ee74c2abedb8d0f1d70af4ec56bb3e4a61a2ecefa77a66e\"\n    }\n  ],\n  \"scope\": \"Bounded read-only retained evidence; no model/source import/test/build/GPU replay.\"\n}\n",
+    "run.json": "{\n  \"status\": \"PASS\",\n  \"exitCode\": 0,\n  \"terminalObserved\": true,\n  \"timedOut\": false,\n  \"wallSeconds\": 0.13173066696617752,\n  \"childCPUSeconds\": 0.070042,\n  \"childPeakRSSBytes\": 44056576,\n  \"command\": [\n    \"/opt/homebrew/opt/python@3.14/bin/python3.14\",\n    \"/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/archive-payload/verify_saved.py\",\n    \"/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/archive-payload\",\n    \"--runtime-source\",\n    \"/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia\"\n  ],\n  \"inputsUnchanged\": true,\n  \"scope\": \"One read-only saved-evidence verification, no workload replay.\"\n}\n",
+    "stdout.json": "{\n  \"status\": \"SAVED_EVIDENCE_PASS\",\n  \"payloadFiles\": 45,\n  \"manifestSHA256\": \"0f301ec3ed38c23e8518062a59f5063c755f9f715e7f27d1aa45c9f35887d629\",\n  \"source126AndOverlay128Verified\": true,\n  \"testsSaved\": 439,\n  \"targetedSaved\": 10,\n  \"nativePNG_SHA256\": \"665ee2e54bcde7ea2fcdeaa5fafceb9fde6a6e376ab93e3638d0af9350864389\",\n  \"scope\": \"Stored bytes, source overlays and retained declarations only. No model, test, render, artistic or FPS acceptance is rerun or inferred.\"\n}\n",
+    "stderr.log": ""
+  },
+  "rawSHA256": {
+    "PRE-RUN-FREEZE.json": "0f9c5432edd223ff6daa2d91c929b50e9dfaea09c5529874a8e9ea59fddbc383",
+    "run.json": "4f7e3e21a433e12f8989d234b308bc21753ad05a981710ddbdbef5178e1e4fb1",
+    "stdout.json": "3007fae469f215834aafcb29698708e5af4ba76b0e957b319f06f6106706105e",
+    "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

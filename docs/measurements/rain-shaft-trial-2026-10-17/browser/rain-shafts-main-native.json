@@ -1,0 +1,413 @@
+{
+  "captureId": "main-1-665ee2e54bcd",
+  "metadata": {
+    "ablation": "full",
+    "ablationCode": 0,
+    "camera": {
+      "approach": 0,
+      "aspect": 1.341648590021692,
+      "comparisonSurfaceKm": 0.7227685139973958,
+      "comparisonTargetKm": [
+        0.3515625,
+        3.119140625,
+        -0.0546875
+      ],
+      "forward": [
+        -0.9442590869231424,
+        -0.27743952638107033,
+        -0.177206337258352
+      ],
+      "ground": 1,
+      "origin": [
+        15.45970789077028,
+        7.558173047097125,
+        2.780613896133632
+      ],
+      "pitch": 0.2811279826464208,
+      "probe": null,
+      "probeAgeMs": null,
+      "probeSkipped": true,
+      "right": [
+        0.18444716051358995,
+        0,
+        -0.982842431409264
+      ],
+      "surfaceEstimateKm": null,
+      "tanHalfVerticalFov": 0.2867,
+      "target": [
+        0.3515625,
+        3.119140625,
+        -0.0546875
+      ],
+      "terrainClearanceKm": 0.2,
+      "up": [
+        -0.27267933867740585,
+        0.9607431026041496,
+        -0.05117293285522365
+      ],
+      "yaw": 1.385286984640259
+    },
+    "canvas": [
+      2474,
+      1844
+    ],
+    "clocks": {
+      "flowFieldDispersion": 0,
+      "flowFieldTime": 60,
+      "flowUniformTime": 60,
+      "forcingTime": 0,
+      "note": "Precipitation uniform is applied before this frame advances forcingTime. A frozen flow texture retains its installation time/dispersion even while flowUniformTime advances.",
+      "precipitationUniformTime": 0,
+      "simulationTime": 60,
+      "weatherTime": 21.00180000000001
+    },
+    "densitySampling": {
+      "allocationAccounting": "nominal payload; GPU upload/residency not measured",
+      "dimensions": [
+        256,
+        256,
+        256
+      ],
+      "extraCpuPayloadBytes": 16777216,
+      "extraGpuPayloadBytes": 16777216,
+      "fallback": null,
+      "format": "r8unorm",
+      "path": "r8unorm-extracted-r",
+      "reason": "rain with valid densityR8 payload",
+      "sampling": "same volumeSampler; linear/clamp-to-edge/mip0; NoColorSpace",
+      "textureBytes": 16777216
+    },
+    "detailVolume": [
+      128,
+      128,
+      128
+    ],
+    "emptyStepKm": 0.0546875,
+    "executionThread": "main",
+    "family": "sheared",
+    "flowComputeThisDraw": true,
+    "flowMode": "full",
+    "flowSampled": true,
+    "frame": {
+      "counterScope": "Frame-loop draw calls in this engine owner, including regeneration draws; not GPU completion or presentation",
+      "date": "2026-10-16T22:15:44.400Z",
+      "localSnapshotTime": 39385.10000002384,
+      "localTimeOrigin": 1792188905015,
+      "ownerDrawSerial": 1102,
+      "rafTimestamp": 39372.5
+    },
+    "internal": [
+      2474,
+      1844
+    ],
+    "lighting": {
+      "ambientColor": [
+        0.13816603378582587,
+        0.14292492314664618,
+        0.1526947116045606
+      ],
+      "flash": [
+        0,
+        3.5,
+        0.5,
+        0
+      ],
+      "flashBend": [
+        0,
+        0,
+        0
+      ],
+      "flashBranch": [
+        0,
+        0,
+        0
+      ],
+      "flashCount": 0,
+      "flashEnd": [
+        0,
+        0,
+        0
+      ],
+      "flashTop": [
+        0,
+        0,
+        0
+      ],
+      "lightSide": 0,
+      "solarColor": [
+        0.6777388380064986,
+        0.6122756339623218,
+        0.5226716530932641
+      ],
+      "sunDirection": [
+        -0.668126592347077,
+        0.7126683651702156,
+        0.2138005095510647
+      ],
+      "sunsetAmount": 0
+    },
+    "material": {
+      "drift": [
+        0.121372967564859,
+        0.010131947708267265,
+        0
+      ],
+      "extinctionPerKm": 18,
+      "flowFamily": 2,
+      "forcing": [
+        0,
+        0
+      ],
+      "growth": [
+        1,
+        1,
+        1
+      ],
+      "iceExtinctionPerKm": 6.5,
+      "iceRange": [
+        4.51146714868378,
+        5.196156475759857
+      ],
+      "seedPhase": 0.014788732394366197,
+      "supportMax": [
+        5.56953125,
+        6.4063671875,
+        2.943046875
+      ],
+      "supportMin": [
+        -4.86640625,
+        -0.1680859374999999,
+        -3.052421875
+      ],
+      "wind": [
+        0.26052456720014755,
+        0.0900943800894126
+      ]
+    },
+    "motionField": [
+      16,
+      16,
+      16
+    ],
+    "narrowCloudSpecialization": "rain",
+    "nominalSteps": 384,
+    "orbit": false,
+    "output": [
+      2474,
+      1844
+    ],
+    "outputMode": "screen",
+    "paused": true,
+    "quality": "ultra",
+    "ready": true,
+    "regenerating": false,
+    "rendererOutputColorSpace": "srgb",
+    "rendererToneMapping": 0,
+    "rendererVersion": "experiment-v59-rain-shaft-coverage",
+    "schemaVersion": 1,
+    "scope": "Lossless PNG of the canvas bitmap at this submitted draw; excludes page UI, linear/HDR buffers and compositor presentation. Capture is not a performance sample.",
+    "seed": 74,
+    "skyTextures": {
+      "from": {
+        "colorSpace": "",
+        "height": 128,
+        "type": 1016,
+        "uuid": "6a1829e8-f412-4d35-821d-76c3853ca30c",
+        "version": 3,
+        "width": 128
+      },
+      "requestSerial": 3,
+      "requestedSide": 0,
+      "scope": "Owner-local texture objects and upload revisions; not portable content hashes.",
+      "to": {
+        "colorSpace": "",
+        "height": 128,
+        "type": 1016,
+        "uuid": "5ecd6dd8-5d70-487e-b0c9-14f28bb0bda1",
+        "version": 3,
+        "width": 128
+      }
+    },
+    "speed": 1,
+    "stepSizeKm": 0.018229166666666668,
+    "terrain": {
+      "axisX": "west",
+      "axisZ": "north",
+      "coverId": "esa-worldcover-2021-area-fractions-v1",
+      "hash": "u32-avalanche-24-v1",
+      "originDegrees": [
+        44,
+        10
+      ],
+      "surfaceId": "copernicus-glo90-liguria-apuane-v1",
+      "verticalExaggeration": 1
+    },
+    "terrainRaster": {
+      "baseSpacingKm": 0.032,
+      "cache": "No cached geometry pass; terrain shading stays live each render",
+      "cellsPerSide": 256,
+      "colourDistanceBytes": 72992896,
+      "colourFormat": "rgba32float",
+      "cpuTriangleLookupBytes": 2949120,
+      "depthBytes": 18248224,
+      "distanceComponent": "alpha; km from actual camera origin; -1 miss",
+      "farKm": 1600,
+      "geometryBytes": 33127816,
+      "geometryScope": "First visible triangle of this static stitched mesh; not exact analytic-height intersection",
+      "height": 1844,
+      "levels": 9,
+      "maximumHeightKm": 3.0260982513427734,
+      "memoryScope": "Nominal retained geometry and target/depth payload only; CPU construction temporaries and driver residency/peak are unmeasured",
+      "minimumHeightKm": 0,
+      "nearKm": 0.025,
+      "normalBlendEndRadiusKm": 65.536,
+      "normalBlendStartRadiusKm": 32.768,
+      "normalMode": "geometry",
+      "normalPolicy": "Shared incident-area-weighted actual mesh normal at every vertex; no bilinear-source gradient seams",
+      "outerExtentKm": 1048.576,
+      "perFrameCpuHeightSamples": 0,
+      "refinement": {
+        "addedGeometryBytes": 7077224,
+        "addedTriangles": 252758,
+        "addedVertices": 126379,
+        "boundsKm": {
+          "max": [
+            1048.5760498046875,
+            -1.675218939781189,
+            1048.5760498046875
+          ],
+          "min": [
+            -1048.5760498046875,
+            -178.98373413085938,
+            -1048.5760498046875
+          ]
+        },
+        "cellTriangleCountBytes": 589824,
+        "eligibleNodesAboveThreshold": 209488,
+        "greenFaces": 21853,
+        "markedRedFaces": 69833,
+        "maxErrorKm": 0.005,
+        "maximumCellTriangles": 20,
+        "midpointVerticesOutsideDomain": 405,
+        "nodesAboveThreshold": 209659,
+        "originalFacesBySplitEdgeCount": [
+          838106,
+          7390,
+          7520,
+          76776
+        ],
+        "originalTriangles": 929792,
+        "originalVertices": 465409,
+        "probeSampleCalls": 591361,
+        "selectedNodeColumns": 769,
+        "selectedNodeRows": 769,
+        "selectionDomain": {
+          "maxXKm": 48,
+          "maxZKm": 48,
+          "minXKm": -48,
+          "minZKm": -48
+        },
+        "sourceGrid": {
+          "columns": 1025,
+          "minXKm": -64,
+          "minZKm": -64,
+          "rows": 1025,
+          "spacingKm": 0.125
+        },
+        "sourceSpacingKm": 0.125,
+        "splitEdgeCount": 126379,
+        "totalSampleCalls": 1183149,
+        "vertexSampleCalls": 591788
+      },
+      "reversedDepthBuffer": true,
+      "sampleCalls": 1183149,
+      "shadow": {
+        "baseBiasKm": 0.001,
+        "biasLimit": "No guarantee for multiple non-coplanar faces inside one light texel; aliasing and contact-shadow loss require visual qualification",
+        "biasPolicy": "Caster affine height minimum over one actual light texel: 0.5*(abs(dpdx(q))+abs(dpdy(q))) +1m; erodes unresolved contact shadows, especially at low Sun",
+        "cache": {
+          "epoch": 0,
+          "hits": 1102,
+          "ownership": "Static casters and exclusive target; call invalidate after caster mutations, external target writes or same-owner renderer/backend reset; disposed owner is terminal",
+          "requests": 1103,
+          "scope": "Owner-local CPU calls: requests are validated render calls, submissions are renderer.render attempts (including throws), hits skip shadow clear/draw; no GPU completion or presentation claim",
+          "submissions": 1,
+          "valid": true
+        },
+        "colourBytes": 16777216,
+        "colourFormat": "r32float relative solar height km; -1000000 clear",
+        "coverage": "128km square in light right/up coordinates, centered at [0,-4,0], outer 15% fades to lit; not global terrain shadows",
+        "depthBytes": 16777216,
+        "depthFit": {
+          "cameraDistanceKm": 927.4244346416148,
+          "farKm": 1977.8974431000836,
+          "maximumCasterHeightKm": 926.4244346416148,
+          "minimumCasterHeightKm": -1049.473008458469,
+          "nearKm": 0.5
+        },
+        "depthFormat": "depth32float",
+        "filter": "One nearest textureLoad; no receiver-plane extrapolation or PCF blur; outside coverage lit",
+        "radiusKm": 64,
+        "receiverPolicy": "Only shadow lookup point elevated along planet radial by half one light texel; geometry/radiance point unchanged; contact shadows below this scale may disappear",
+        "receiverRadialOffsetKm": 0.03125,
+        "resolution": 2048,
+        "reversedDepthBuffer": true,
+        "targetPayloadBytes": 33554432,
+        "updates": "Exact-input cached shadow map; terrain colour draw remains live; shared geometry not owned by shadow"
+      },
+      "stitchedCells": 4096,
+      "targetPayloadBytes": 91241120,
+      "triangles": 1182550,
+      "vertices": 591788,
+      "width": 2474
+    },
+    "threeRevision": "186",
+    "uniformScope": "CPU-side values submitted to Three uniforms at this draw; GPU float32 rounding is not read back.",
+    "viewport": {
+      "dpr": 2,
+      "height": 922,
+      "width": 1237
+    },
+    "volume": [
+      256,
+      256,
+      256
+    ],
+    "weather": {
+      "atmosphereBlend": 1,
+      "atmosphereProgress": 1,
+      "dispersion": 0,
+      "haze": 2.6,
+      "overcast": 0.85,
+      "precipitationBounds": [
+        -3.359375,
+        -2.0234375,
+        2.265625,
+        2.1328125
+      ],
+      "precipitationExtinctionPerKm": 0.85,
+      "precipitationStepKm": 0.006,
+      "rain": 0.7999999999820894,
+      "skyIntent": "rain",
+      "skyPending": false,
+      "targetRain": 0.8,
+      "windStrength": 0.55
+    }
+  },
+  "png": {
+    "byteLength": 2589151,
+    "height": 1844,
+    "mime": "image/png",
+    "sha256": "665ee2e54bcde7ea2fcdeaa5fafceb9fde6a6e376ab93e3638d0af9350864389",
+    "width": 2474
+  },
+  "requestId": 1,
+  "schema": "cloudia-native-frame-v1",
+  "state": "ready",
+  "textExport": {
+    "format": "Consecutive text parts of the PNG data URL; concatenate in order without separators.",
+    "partCharacters": 65536,
+    "parts": 53,
+    "totalCharacters": 3452226
+  }
+}

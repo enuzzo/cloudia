@@ -1,0 +1,28 @@
+{
+  "baseCommit": "9ea98406706ef53412b3105987262397df232ccd",
+  "existingFiles": [
+    {
+      "path": "src/cumulonimbus/cloudShader.ts",
+      "beforeSHA256": "f9d05d60526904297a4aab1cb013b84895f928c23a49cdf984b48447fbb9e568",
+      "beforeBytes": 15837,
+      "afterSHA256": "371215673163fb22a4ed3f8fb0b39c1604b416899f2bacca382947d435e4056c",
+      "afterBytes": 16177
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "src/cumulonimbus/rainSheetFactor.ts",
+      "bytes": 874,
+      "sha256": "fc0efbd4c7a9f0629f8d5e09cec7983f11bef1d3bb8ad1fa89f690cb579c8cad"
+    },
+    {
+      "path": "src/cumulonimbus/rainSheetFactor.test.ts",
+      "bytes": 1933,
+      "sha256": "4a3a01f3fa98d6ed3adca52f215821c8e12aab73421afb21ee6c59b0273a4d60"
+    }
+  ],
+  "patchSHA256": "c3545c0858ca76e292ea19dc7004d929f155c7961251a67454dde13f5899b3d7",
+  "unchangedPrecipitationSHA256": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72",
+  "dryLiteralSHA256": "7e53cc5d735fdc3a9c97efc35b9e5634f5261b3633e246e65351c26b1f9c96d0",
+  "sourceWritten": "Only new helper/test files and unified patch outside repository; existing cloudShader candidate is represented by patch plus expected after hash."
+}

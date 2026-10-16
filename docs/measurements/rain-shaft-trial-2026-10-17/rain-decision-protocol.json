@@ -1,0 +1,58 @@
+{
+  "state": "PREDECLARED_BEFORE_CANDIDATE_GPU",
+  "trial": "One rain broad-sheet intermittency candidate; no parameter search after image",
+  "base126ManifestSHA256": "fb6c231918e7a825f5b1a407efcd98aaacf5cca352c60cbdcdb9b5271a913ff2",
+  "formula": {
+    "low": 0.35,
+    "high": 0.65,
+    "peak": 2,
+    "definition": "2*smoothstep(.35,.65,sheets)^2",
+    "old": ".15+1.85*sheets^2",
+    "limits": "Authored redistribution, not mass-conserving or calibrated rainfall; no physical intensity claim."
+  },
+  "unchanged": [
+    "rain source RG64 footprint and base",
+    "original sheets supplied to virga survival",
+    "6m integration step",
+    "cloud256cubed/detail128cubed/384steps",
+    "native2474x1844 output",
+    "dry integration source and dependencies",
+    "terrainv59geometry/shadow/material",
+    "rain lighting and fine streaks"
+  ],
+  "firstGate": {
+    "capture": "Main paused t60 seed74 matched Rain pose; settle weather before export",
+    "pose": {
+      "surface": 0.7227685139973958,
+      "target": [
+        0.3515625,
+        3.119140625,
+        -0.0546875
+      ],
+      "leftKeys": 14,
+      "downKeys": 3
+    },
+    "visualPASS": "Actual openings and distinct coherent curtains/depth recognizable versus v59; no stripes/palisade/attachment/terrain clipping regressions. Root plus independent native review.",
+    "visualFAIL": "Only less opacity/luminance, or new grid/palisade/detachment. IfFAIL: no worker/motion/FPS qualification for this candidate; preserve v59.",
+    "fixedReviewROI": [
+      900,
+      1240,
+      1800,
+      1820
+    ],
+    "scanRows": [
+      1400,
+      1600,
+      1780
+    ],
+    "scanScope": "Optional raw RGB profiles only; no opacity/physical transmittance inferred."
+  },
+  "laterGates": [
+    "Dry Sun native byte parity",
+    "Worker Rain native parity",
+    "Visible motion check",
+    "FullqualitycostA/B/A",
+    "Lifecycle unit/build",
+    "Adopt only all relevant gatesPASS"
+  ]
+}

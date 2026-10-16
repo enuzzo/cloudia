@@ -1,0 +1,48 @@
+{
+  "state": "REJECTED_NATIVE_VISUAL_FAIL",
+  "productRuntime": "observatory-v59-terrain-source-refinement",
+  "productSourceFiles126Unchanged": true,
+  "candidate128SHA256": "6ab184e48b0ac74c96a9532df0e58d8fd2b90c1fa406f3e986bf576a0f693460",
+  "changedCandidatePaths": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/cloudShader.test.ts",
+    "src/cumulonimbus/cloudShader.ts",
+    "src/cumulonimbus/lifecycle.test.ts",
+    "src/cumulonimbus/rainSheetFactor.test.ts",
+    "src/cumulonimbus/rainSheetFactor.ts"
+  ],
+  "tests": {
+    "targeted": 10,
+    "full": 439,
+    "files": 47,
+    "APPandHeroBuild": "PASS"
+  },
+  "nativePNG": {
+    "sha256": "665ee2e54bcde7ea2fcdeaa5fafceb9fde6a6e376ab93e3638d0af9350864389",
+    "bytes": 2589151,
+    "dimensions": [
+      2474,
+      1844
+    ],
+    "parts": 53
+  },
+  "visual": "Root and independent FAIL: visible vertical slots/panels, no convincing shaft depth. Not uniform attenuation, still fails artistic gate.",
+  "stopRule": {
+    "worker": false,
+    "drySun": false,
+    "motion": false,
+    "FPS": false,
+    "reason": "Stopped after first nativeRainFAIL; no parameter fitting after image."
+  },
+  "resources": "No additional texture, render target, lookup or pass in shader source; this is not a measured speedup.",
+  "trialServer": {
+    "session": 43856,
+    "exitCode": 130,
+    "port": 53768
+  },
+  "stableServer": {
+    "session": 4972,
+    "port": 4196
+  },
+  "remaining": "Full goal active: cloud anatomy/near lighting, rain+virga integration, landscape/material/shadow, UI and stable60FPS."
+}

@@ -1,0 +1,53 @@
+{
+  "state": "PROPOSAL_FROZEN_UNEXECUTED_REQUIRES_ROOT_TRIAL_SELECTION",
+  "baseCommit": "9ea98406706ef53412b3105987262397df232ccd",
+  "purpose": "Visible broad rain-shaft intermittency; intentional material change, not equivalent optimization or calibrated precipitation physics.",
+  "formula": {
+    "low": 0.35,
+    "high": 0.65,
+    "peak": 2,
+    "coverage": "smoothstep(low,high,sheets)",
+    "factor": "peak*coverage*coverage",
+    "oldFactor": ".15+1.85*sheets*sheets",
+    "domain": "Finite existing filtered texture samples; physical authored range [0,1]."
+  },
+  "selection": "Root last explicit directive chose .35/.65/2. No .32/.68/2.45 file or parallel candidate was created.",
+  "fixedBeforeAnyTrialImage": true,
+  "forbiddenRetuning": "If native guard fails, preserve failure and stop; no threshold/gain fitting to that image.",
+  "unchanged": [
+    "precipitation RG8 generation and source/base",
+    "evaporation receives ORIGINAL sheets",
+    "streak coordinates/value/phase",
+    "rain extinction .85/km",
+    "rain RGB/lighting and shared aerial",
+    "weather presets and clocks",
+    "cloud density/lighting/materials",
+    "t/ds/jitter and terrain clip",
+    "rain step6m",
+    "macro256/detail128/nominal384/full configured output"
+  ],
+  "dryScope": {
+    "integrationSourceLiteralBytes": 12454,
+    "integrationSourceLiteralSHA256": "7e53cc5d735fdc3a9c97efc35b9e5634f5261b3633e246e65351c26b1f9c96d0",
+    "exactLiteralUnchanged": true,
+    "includes": [
+      "film",
+      "motion",
+      "channel",
+      "landscape",
+      "media",
+      "precipitation"
+    ],
+    "helperIncludedOnlyIf": "useNarrow (existing rainy compile-time specialization)",
+    "compiledShaderEquality": "Not compiled or measured here; root must qualify actual trial."
+  },
+  "densityLimits": "Zero interval added; maximum broad factor stays2, so global authored rain-density ceiling is not increased. Pointwise density may rise or fall. Integral mass/opacity is not conserved. Earlier/later transmittance cutoff can change visited sample count.",
+  "qualificationPlan": [
+    "Root selects one external trial and explicit renderer label before execution.",
+    "Run the three small math tests and typecheck; compile rainy and dry WGSL. No volume regeneration needed for this factor-only change if frozen textures can be reused.",
+    "First native Rain80 seed74 t60 paused same camera/clock/light/textures/output as pinned PNG. Compare full bitmap and unchanged terrain/cloud areas, not CSS JPEG.",
+    "PASS only if broad channels/nuclei and distance become visibly credible without palisade/cutout/banding/detachment. Merely darker/lighter/more transparent is FAIL. No after-image gain compensation.",
+    "Only after this guard: weak virga20/45, wind0/55/100, Sun+rain and lowSun, near/far and short motion, main/worker/lifecycle. Then native A/B/A timing; no FPS inferred from static lookup counts."
+  ],
+  "execution": "No tests/typecheck/build/model/bake/GPU/browser run by this package."
+}

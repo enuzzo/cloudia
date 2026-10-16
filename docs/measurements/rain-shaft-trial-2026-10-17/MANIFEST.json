@@ -1,0 +1,413 @@
+{
+  "schema": "cloudia-rain-trial-evidence-v1",
+  "state": "PRE_RUN_FROZEN_REJECTED_TRIAL",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1925,
+      "sha256": "c4699c373a258f0a1a29c750475e20a5628e924b248bb1e45f71dc773b62acbb",
+      "rawBytes": 1925,
+      "rawSHA256": "c4699c373a258f0a1a29c750475e20a5628e924b248bb1e45f71dc773b62acbb",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/archive-README.md"
+    },
+    {
+      "path": "REFERENCES.json",
+      "bytes": 769,
+      "sha256": "aa04479bc6465bfebe24ae49d9837fdc7603086981224a14c38a5338e9c462f0",
+      "rawBytes": 769,
+      "rawSHA256": "aa04479bc6465bfebe24ae49d9837fdc7603086981224a14c38a5338e9c462f0",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/archive-references.json"
+    },
+    {
+      "path": "browser/independent-rain-review.md",
+      "bytes": 3482,
+      "sha256": "910d2a89b680f138a4b514d19f7510c99a26fc504f6351666d2f33bde91b8507",
+      "rawBytes": 3482,
+      "rawSHA256": "910d2a89b680f138a4b514d19f7510c99a26fc504f6351666d2f33bde91b8507",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/browser/independent-rain-review.md"
+    },
+    {
+      "path": "browser/native-collector29.js",
+      "bytes": 1669,
+      "sha256": "b5e0c6ce38266fa307c72590db45f112025dd6a26d22e48fc217653b653ffa25",
+      "rawBytes": 1669,
+      "rawSHA256": "b5e0c6ce38266fa307c72590db45f112025dd6a26d22e48fc217653b653ffa25",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/browser/native-collector29.js"
+    },
+    {
+      "path": "browser/ordinary-restored-proof.json",
+      "bytes": 299,
+      "sha256": "195a15f507f7f96af5b35a929bd5f575ce6ac610997b7235bb6d8b996cb4e8f2",
+      "rawBytes": 299,
+      "rawSHA256": "195a15f507f7f96af5b35a929bd5f575ce6ac610997b7235bb6d8b996cb4e8f2",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/browser/ordinary-restored-proof.json"
+    },
+    {
+      "path": "browser/ordinary-restored.jpg",
+      "bytes": 67795,
+      "sha256": "e908aa3a694acc670d18a5e7a3e79b8a0b79214fba37c68f0c6a00037a1f8ff7",
+      "rawBytes": 67795,
+      "rawSHA256": "e908aa3a694acc670d18a5e7a3e79b8a0b79214fba37c68f0c6a00037a1f8ff7",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/browser/ordinary-restored.jpg"
+    },
+    {
+      "path": "browser/rain-metadata-match.json",
+      "bytes": 538,
+      "sha256": "9757c5d4cae463ca8edc0914fbc9b20f8ab6f8ba775ad016809121f524cabeaf",
+      "rawBytes": 538,
+      "rawSHA256": "9757c5d4cae463ca8edc0914fbc9b20f8ab6f8ba775ad016809121f524cabeaf",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/browser/rain-metadata-match.json"
+    },
+    {
+      "path": "browser/rain-shafts-main-native-transfer.json",
+      "bytes": 4298,
+      "sha256": "7e2c69b8e1df839447de4b4f4a63bfe81606b39d7969327b1ac5f5173adde9f5",
+      "rawBytes": 4298,
+      "rawSHA256": "7e2c69b8e1df839447de4b4f4a63bfe81606b39d7969327b1ac5f5173adde9f5",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/browser/rain-shafts-main-native-transfer.json"
+    },
+    {
+      "path": "browser/rain-shafts-main-native.json",
+      "bytes": 11967,
+      "sha256": "aa8a8aa18cb08e9cdac2456a4ef64336a555451d94ea331f5f732098aa4d7685",
+      "rawBytes": 11967,
+      "rawSHA256": "aa8a8aa18cb08e9cdac2456a4ef64336a555451d94ea331f5f732098aa4d7685",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/browser/rain-shafts-main-native.json"
+    },
+    {
+      "path": "browser/rain-shafts-main-native.png",
+      "bytes": 2589151,
+      "sha256": "665ee2e54bcde7ea2fcdeaa5fafceb9fde6a6e376ab93e3638d0af9350864389",
+      "rawBytes": 2589151,
+      "rawSHA256": "665ee2e54bcde7ea2fcdeaa5fafceb9fde6a6e376ab93e3638d0af9350864389",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/browser/rain-shafts-main-native.png"
+    },
+    {
+      "path": "browser/rain-trial-console.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "rawBytes": 3,
+      "rawSHA256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/browser/rain-trial-console.json"
+    },
+    {
+      "path": "browser/root-rain-review.md",
+      "bytes": 1368,
+      "sha256": "4b21e280abe8645b827dd05aa1ec972b7cce63f9685080c503018d591b1684b1",
+      "rawBytes": 1368,
+      "rawSHA256": "4b21e280abe8645b827dd05aa1ec972b7cce63f9685080c503018d591b1684b1",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/browser/root-rain-review.md"
+    },
+    {
+      "path": "browser/v59-rain-baseline-current.json",
+      "bytes": 11975,
+      "sha256": "2454ece850cff9420cd7b4452533f4cccff0d8c1badd9c91d824af827b36688e",
+      "rawBytes": 11975,
+      "rawSHA256": "2454ece850cff9420cd7b4452533f4cccff0d8c1badd9c91d824af827b36688e",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/browser/v59-rain-baseline-current.json"
+    },
+    {
+      "path": "browser/v59-rain-baseline-reference.json",
+      "bytes": 392,
+      "sha256": "213f50da2f6f577894e56dda9cc6a896a07c3138918f0b542db6bce0e6bf482c",
+      "rawBytes": 392,
+      "rawSHA256": "213f50da2f6f577894e56dda9cc6a896a07c3138918f0b542db6bce0e6bf482c",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/browser/v59-rain-baseline-reference.json"
+    },
+    {
+      "path": "proposal/MANIFEST.json",
+      "bytes": 1227,
+      "sha256": "76d6aa8894d2a58bc5b73ac711e4b740dd1e11486730fc8c5077d17e2aaf74e6",
+      "rawBytes": 1227,
+      "rawSHA256": "76d6aa8894d2a58bc5b73ac711e4b740dd1e11486730fc8c5077d17e2aaf74e6",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-proposal/MANIFEST.json"
+    },
+    {
+      "path": "proposal/PROTOCOL.json",
+      "bytes": 3001,
+      "sha256": "535b3e9140861c70eb99e9700f689bbbcef7303c1c0c3a8b34bec98c86561ae2",
+      "rawBytes": 3001,
+      "rawSHA256": "535b3e9140861c70eb99e9700f689bbbcef7303c1c0c3a8b34bec98c86561ae2",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-proposal/PROTOCOL.json"
+    },
+    {
+      "path": "proposal/README.md",
+      "bytes": 2570,
+      "sha256": "8dc780becdda550562c840c03e488dad7628eaca65652c39b1ed2eaa1d45775c",
+      "rawBytes": 2570,
+      "rawSHA256": "8dc780becdda550562c840c03e488dad7628eaca65652c39b1ed2eaa1d45775c",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-proposal/README.md"
+    },
+    {
+      "path": "proposal/SOURCE-CHECKS.json",
+      "bytes": 1192,
+      "sha256": "5087288595391fd6e7acdaf37b5f204abd740681d31be4c2d5dfe40f2fed178d",
+      "rawBytes": 1192,
+      "rawSHA256": "5087288595391fd6e7acdaf37b5f204abd740681d31be4c2d5dfe40f2fed178d",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-proposal/SOURCE-CHECKS.json"
+    },
+    {
+      "path": "proposal/candidate.patch.gz",
+      "bytes": 1922,
+      "sha256": "1504ac509ee9fe85bee60b536624cb6f31caddcea99e2e0a5798e842cbed5082",
+      "rawBytes": 4859,
+      "rawSHA256": "c3545c0858ca76e292ea19dc7004d929f155c7961251a67454dde13f5899b3d7",
+      "encoding": "gzip",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-proposal/candidate.patch"
+    },
+    {
+      "path": "proposal/src/cumulonimbus/rainSheetFactor.test.ts.gz",
+      "bytes": 857,
+      "sha256": "635a5c07866ad30e8b1dfacd21d68373a2d12d91fb173a9d4400fb7c4ef586c4",
+      "rawBytes": 1933,
+      "rawSHA256": "4a3a01f3fa98d6ed3adca52f215821c8e12aab73421afb21ee6c59b0273a4d60",
+      "encoding": "gzip",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-proposal/src/cumulonimbus/rainSheetFactor.test.ts"
+    },
+    {
+      "path": "proposal/src/cumulonimbus/rainSheetFactor.ts.gz",
+      "bytes": 448,
+      "sha256": "87537e8b5e861113ed28348c86c129a723bcddcf39fbfe29bcd275fb520fb4c7",
+      "rawBytes": 874,
+      "rawSHA256": "fc0efbd4c7a9f0629f8d5e09cec7983f11bef1d3bb8ad1fa89f690cb579c8cad",
+      "encoding": "gzip",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-proposal/src/cumulonimbus/rainSheetFactor.ts"
+    },
+    {
+      "path": "qualification/PROTOCOL.json",
+      "bytes": 453,
+      "sha256": "fabc2b51fa9d024445d609f9e63356215bd6e178d59cbab952754c8647f8162e",
+      "rawBytes": 453,
+      "rawSHA256": "fabc2b51fa9d024445d609f9e63356215bd6e178d59cbab952754c8647f8162e",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-qualification/PROTOCOL.json"
+    },
+    {
+      "path": "qualification/app-build.log.gz",
+      "bytes": 702,
+      "sha256": "28e4a70b7cbeaba9a28fd1e2d427f3b571ba912f1890ff24412f2a599e17bc78",
+      "rawBytes": 1460,
+      "rawSHA256": "2d4bd67197b9393ca0693efd38372242c1a6173a933262f6a125f7d4c0c6265e",
+      "encoding": "gzip",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-qualification/app-build.log"
+    },
+    {
+      "path": "qualification/checks.json",
+      "bytes": 1295,
+      "sha256": "f7d9d66f9b63bf18521e05d2b4606397d027c4245199cedf14c6f7d070812467",
+      "rawBytes": 1295,
+      "rawSHA256": "f7d9d66f9b63bf18521e05d2b4606397d027c4245199cedf14c6f7d070812467",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-qualification/checks.json"
+    },
+    {
+      "path": "qualification/dist-manifest.json",
+      "bytes": 3083,
+      "sha256": "87003d1f8374de59c017083e176fe12ca50a7bbb75538cf50295a41d0daac244",
+      "rawBytes": 3083,
+      "rawSHA256": "87003d1f8374de59c017083e176fe12ca50a7bbb75538cf50295a41d0daac244",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-qualification/dist-manifest.json"
+    },
+    {
+      "path": "qualification/full-tests.log.gz",
+      "bytes": 166,
+      "sha256": "68e7a0ea5d6aa05e20c5e8b5d9e1af3d90651ccfb677387ac14e8c39290a882f",
+      "rawBytes": 263,
+      "rawSHA256": "44bb3a6555c1e571ac405ad33bd4223cf80ae1e9f4f5ec7ea268cba2d0a6a0c7",
+      "encoding": "gzip",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-qualification/full-tests.log"
+    },
+    {
+      "path": "qualification/hero-build.log.gz",
+      "bytes": 246,
+      "sha256": "830a109a7fa684335f2772b8f3b632639949b696cefa5e00695f851762193d1d",
+      "rawBytes": 364,
+      "rawSHA256": "c1e48cfdf06dfa04c79a975147a5c170eb5ece78610c360454833d1b549b6edd",
+      "encoding": "gzip",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-qualification/hero-build.log"
+    },
+    {
+      "path": "qualification/run.py",
+      "bytes": 2164,
+      "sha256": "7a5e0f904b21d227c9db8f9843a8427ef84206f4766180235e8b0c535649f1c1",
+      "rawBytes": 2164,
+      "rawSHA256": "7a5e0f904b21d227c9db8f9843a8427ef84206f4766180235e8b0c535649f1c1",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-qualification/run.py"
+    },
+    {
+      "path": "qualification/targeted-results.json.gz",
+      "bytes": 1132,
+      "sha256": "e5afefc141edb86e2cc7a38bb9f69c9778c2a176097032254217d49b76bdc0ae",
+      "rawBytes": 4622,
+      "rawSHA256": "7628bbd17c72da29c63454456977ea90c8ac2ddcd90608cf49c499b6758e5648",
+      "encoding": "gzip",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-qualification/targeted-results.json"
+    },
+    {
+      "path": "qualification/targeted-tests.log.gz",
+      "bytes": 205,
+      "sha256": "ed857b59bd5eda2b7d2deedd140ee4f43e3a49d667040fe95c36a8fadf5cdbdd",
+      "rawBytes": 349,
+      "rawSHA256": "b65312ea0632da45eca137e04d52d42b15e9e2b9f86b0f06c14465a0073cc9a5",
+      "encoding": "gzip",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-qualification/targeted-tests.log"
+    },
+    {
+      "path": "qualification/test-results.json.gz",
+      "bytes": 21955,
+      "sha256": "9c53382c94c08e88e2113a685afb8a204faad57df9f5792782dd159fe32ba0ac",
+      "rawBytes": 166050,
+      "rawSHA256": "56cecce7569179de72fd3993f7e7ea76e23891c54c3fdfd44cf6641696f30954",
+      "encoding": "gzip",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-qualification/test-results.json"
+    },
+    {
+      "path": "rain-decision-protocol.json",
+      "bytes": 1948,
+      "sha256": "4aa8c64cf742ca9cc70dd55bdb8127a37967a8f219c7de151dd751d71bdd7643",
+      "rawBytes": 1948,
+      "rawSHA256": "4aa8c64cf742ca9cc70dd55bdb8127a37967a8f219c7de151dd751d71bdd7643",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-decision-protocol.json"
+    },
+    {
+      "path": "rain-diagnosis.md",
+      "bytes": 10648,
+      "sha256": "67e9f9467c8e2396de2fa9ee9d80238c07960e134496972c64144b3948439f76",
+      "rawBytes": 10648,
+      "rawSHA256": "67e9f9467c8e2396de2fa9ee9d80238c07960e134496972c64144b3948439f76",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-diagnosis.md"
+    },
+    {
+      "path": "rain-source-light-plan.md",
+      "bytes": 12189,
+      "sha256": "fcc476073073d07808d0afafa373032947e64dce8cefec28f4ea43c5ea592009",
+      "rawBytes": 12189,
+      "rawSHA256": "fcc476073073d07808d0afafa373032947e64dce8cefec28f4ea43c5ea592009",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-source-light-plan.md"
+    },
+    {
+      "path": "rain-trial-conclusion.json",
+      "bytes": 1574,
+      "sha256": "8b50284114c24f0ecdef4283b589260e49d8498ea94a30c6800270b288e350f1",
+      "rawBytes": 1574,
+      "rawSHA256": "8b50284114c24f0ecdef4283b589260e49d8498ea94a30c6800270b288e350f1",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-trial-conclusion.json"
+    },
+    {
+      "path": "shadow-options.md",
+      "bytes": 9888,
+      "sha256": "652f37608b684ae55a0a3279fdd9ee405527ef41bd7bb0a3c949181fb29bae57",
+      "rawBytes": 9888,
+      "rawSHA256": "652f37608b684ae55a0a3279fdd9ee405527ef41bd7bb0a3c949181fb29bae57",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/shadow-options.md"
+    },
+    {
+      "path": "source/base-manifest.json",
+      "bytes": 13275,
+      "sha256": "fb6c231918e7a825f5b1a407efcd98aaacf5cca352c60cbdcdb9b5271a913ff2",
+      "rawBytes": 13275,
+      "rawSHA256": "fb6c231918e7a825f5b1a407efcd98aaacf5cca352c60cbdcdb9b5271a913ff2",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/base-source-manifest.json"
+    },
+    {
+      "path": "source/candidate-manifest.json",
+      "bytes": 13498,
+      "sha256": "6ab184e48b0ac74c96a9532df0e58d8fd2b90c1fa406f3e986bf576a0f693460",
+      "rawBytes": 13498,
+      "rawSHA256": "6ab184e48b0ac74c96a9532df0e58d8fd2b90c1fa406f3e986bf576a0f693460",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-source-manifest.json"
+    },
+    {
+      "path": "source/changed/src/cumulonimbus/GPUSceneEngine.ts.gz",
+      "bytes": 20192,
+      "sha256": "8a8f9c361a14d0e9b2dfa5bf4d6251786e3d9d9986d8fc20226abe28008afd48",
+      "rawBytes": 75071,
+      "rawSHA256": "446e3f2ea92ace21a9c1196d2a58d22b20cd11b32e24cd83c12b41583923303f",
+      "encoding": "gzip",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-source/src/cumulonimbus/GPUSceneEngine.ts"
+    },
+    {
+      "path": "source/changed/src/cumulonimbus/cloudShader.test.ts.gz",
+      "bytes": 2563,
+      "sha256": "a16f0bf7e3ec16059ea72330ec5ca32a7584c979a2386dd3f69ee2ab38273a61",
+      "rawBytes": 7744,
+      "rawSHA256": "05e6ea8e6eed958c13c597616f8fe764d7a8922a7de8a62fff38666f3e0754ad",
+      "encoding": "gzip",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-source/src/cumulonimbus/cloudShader.test.ts"
+    },
+    {
+      "path": "source/changed/src/cumulonimbus/cloudShader.ts.gz",
+      "bytes": 5702,
+      "sha256": "5a97d795ef92f65fab03bf2259ac10d797715e88687b54cab74340a0845744e1",
+      "rawBytes": 16185,
+      "rawSHA256": "0bc1746dda56bc7629600391fa97c088e13a2f5ffda22de2f22ebbc058289705",
+      "encoding": "gzip",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-source/src/cumulonimbus/cloudShader.ts"
+    },
+    {
+      "path": "source/changed/src/cumulonimbus/lifecycle.test.ts.gz",
+      "bytes": 13183,
+      "sha256": "39d2602b7ffc7016fcea9551c1bd8ffb9f715200a56b0c6c2c9735fac2108b21",
+      "rawBytes": 69583,
+      "rawSHA256": "73a2c7fb5d49d475efd65f35421fc9ec1bcc4bf80deb60061de8e4a5d66fce94",
+      "encoding": "gzip",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-source/src/cumulonimbus/lifecycle.test.ts"
+    },
+    {
+      "path": "source/changed/src/cumulonimbus/rainSheetFactor.test.ts.gz",
+      "bytes": 857,
+      "sha256": "635a5c07866ad30e8b1dfacd21d68373a2d12d91fb173a9d4400fb7c4ef586c4",
+      "rawBytes": 1933,
+      "rawSHA256": "4a3a01f3fa98d6ed3adca52f215821c8e12aab73421afb21ee6c59b0273a4d60",
+      "encoding": "gzip",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-source/src/cumulonimbus/rainSheetFactor.test.ts"
+    },
+    {
+      "path": "source/changed/src/cumulonimbus/rainSheetFactor.ts.gz",
+      "bytes": 448,
+      "sha256": "87537e8b5e861113ed28348c86c129a723bcddcf39fbfe29bcd275fb520fb4c7",
+      "rawBytes": 874,
+      "rawSHA256": "fc0efbd4c7a9f0629f8d5e09cec7983f11bef1d3bb8ad1fa89f690cb579c8cad",
+      "encoding": "gzip",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/rain-source/src/cumulonimbus/rainSheetFactor.ts"
+    },
+    {
+      "path": "verify_saved.py",
+      "bytes": 5339,
+      "sha256": "3a0a6688f912ac7e7ee74c2abedb8d0f1d70af4ec56bb3e4a61a2ecefa77a66e",
+      "rawBytes": 5339,
+      "rawSHA256": "3a0a6688f912ac7e7ee74c2abedb8d0f1d70af4ec56bb3e4a61a2ecefa77a66e",
+      "encoding": "identity",
+      "origin": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle29/verify_rain_trial.py"
+    }
+  ],
+  "scope": "Immutable retained evidence and unexecuted followup plans; no product runtime adoption.",
+  "selfPolicy": "Manifest excludes itself. Raw gzip hashes preserve exact bytes."
+}

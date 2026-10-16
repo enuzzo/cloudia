@@ -1,0 +1,17 @@
+{
+  "state": "ROOT_APPROVED_UNEXECUTED",
+  "source128ManifestSHA256": "6ab184e48b0ac74c96a9532df0e58d8fd2b90c1fa406f3e986bf576a0f693460",
+  "trialFormula": [
+    0.35,
+    0.65,
+    2
+  ],
+  "checks": [
+    "targeted mathematical/integration tests",
+    "full439tests47files",
+    "APP typecheck/build",
+    "hero typecheck/build"
+  ],
+  "timeoutSecondsPerCommand": 45,
+  "notAuthorizedByThis": "GPU/model/numerical replay; nativeRain gate separate."
+}
