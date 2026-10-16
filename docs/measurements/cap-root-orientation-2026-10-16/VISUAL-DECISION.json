@@ -1,0 +1,17 @@
+{
+  "decision": "retired; do not promote",
+  "baselineCommit": "10493afa7f6d90389c39e17b2cad79397dfdac01",
+  "candidateVolumeSha256": "27a225f0b81a9d194844349cc4ed195f2e1099f1910548f75a8d8abd330617b2",
+  "candidateHelperSha256": "e7a09cd38b0bd75a258f21beec1c8386402463ed393dde6391c3712319a0b327",
+  "views": [
+    "seed74 front",
+    "seed74 side about88deg"
+  ],
+  "findings": [
+    "The upper cap changes, becoming slightly fuller/elevated.",
+    "The narrow wrist and internal hook do not improve convincingly.",
+    "U gap and the dominant hierarchy remain.",
+    "Native256 raster-box iteration counts increase43-56percent arithmetically; no256 bake timings or FPS were measured."
+  ],
+  "scope": "Two UI photo pairs; CSS JPEG1280x720 from native2560x1440 canvas. No full-framebuffer/photorealism proof. Baselines77/80 were prepared but not candidate comparisons."
+}

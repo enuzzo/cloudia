@@ -1,0 +1,308 @@
+{
+  "records": [
+    {
+      "logicalPath": "originals/NUMERIC-REPORT.md",
+      "storedPath": "originals/NUMERIC-REPORT.md.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/NUMERIC-REPORT.md",
+      "originalBytes": 6950,
+      "originalSha256": "1a99dca6b24ada15c43284cd380da2696723100a4e04c3ed93102da2843adfee",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "originals/frozen-summary.json",
+      "storedPath": "originals/frozen-summary.json.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/frozen-summary.json",
+      "originalBytes": 858,
+      "originalSha256": "4628cc2385bc2ffcc6fffa163226cc66c40bf1d2e91a7ce3b0275a440c88008b",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "originals/cap-root-orientation.patch",
+      "storedPath": "originals/cap-root-orientation.patch.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/cap-root-orientation.patch",
+      "originalBytes": 8465,
+      "originalSha256": "6d028e463e27c3d8a1c5f97a00b5f1fb86f35ee003c50a40e904572d31c79403",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "originals/baseline-input-manifest.json",
+      "storedPath": "originals/baseline-input-manifest.json.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/baseline-input-manifest.json",
+      "originalBytes": 17843,
+      "originalSha256": "ef4ed45e8916c3829c99b5ce262f420295af2e61e38f279605e742bf1c060e73",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "originals/baseline-source-reference.json",
+      "storedPath": "originals/baseline-source-reference.json.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/baseline-source-reference.json",
+      "originalBytes": 257,
+      "originalSha256": "21d040fdb1469f011052bdb7a3b36a50c488816886d7791e40452c0b64f47092",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "originals/probe-cap-root.mjs",
+      "storedPath": "originals/probe-cap-root.mjs.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/probe-cap-root.mjs",
+      "originalBytes": 11668,
+      "originalSha256": "fd1b179145fed042fec47de1a7d946760528cd5867a2ad4d6a5cb56f4baa5eb5",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "originals/audit-helper.mjs",
+      "storedPath": "originals/audit-helper.mjs.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/audit-helper.mjs",
+      "originalBytes": 3635,
+      "originalSha256": "0a8f123802677f329d6473e8ee0d97be5cd421742279ab6b46677fbeae811984",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "originals/verify-type-only.mjs",
+      "storedPath": "originals/verify-type-only.mjs.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/verify-type-only.mjs",
+      "originalBytes": 1452,
+      "originalSha256": "76aa58a5c8d6203726685cb879d2728ab6ccf21b4598c5299c8c5a69e64e84db",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "originals/build-app.mjs",
+      "storedPath": "originals/build-app.mjs.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/build-app.mjs",
+      "originalBytes": 444,
+      "originalSha256": "21bc75af6c145a0255f591c901102eb309f4a344c95f27353f46f280e23a80b1",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "originals/confirm-uninstrumented.mjs",
+      "storedPath": "originals/confirm-uninstrumented.mjs.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/confirm-uninstrumented.mjs",
+      "originalBytes": 1800,
+      "originalSha256": "efe4d5ef1f0af9c71c7288e0602a17438df26633521b1f69af3a904523d634e6",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "originals/type-only-equivalence.json",
+      "storedPath": "originals/type-only-equivalence.json.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/type-only-equivalence.json",
+      "originalBytes": 612,
+      "originalSha256": "38521f901d515ff2c91b99dcbc934ee5fc2911befe43153afb2d0878fa85581a",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "originals/helper-audit.json",
+      "storedPath": "originals/helper-audit.json.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/helper-audit.json",
+      "originalBytes": 3217,
+      "originalSha256": "069d0f449686ffb5dad46f9498dff605fe761f26172691b74803ba58b6e76799",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "originals/comparison-32-64.json",
+      "storedPath": "originals/comparison-32-64.json.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/comparison-32-64.json",
+      "originalBytes": 77202,
+      "originalSha256": "12586bf61a98f2c58479f6df3298f567cbbda22eda9c9da14417ed6f77db1509",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "originals/geometry-traces.json.gz",
+      "storedPath": "originals/geometry-traces.json.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/geometry-traces.json.gz",
+      "originalBytes": 1111920,
+      "originalSha256": "abfe84ee5a5281afadd579e1ed239bb0c2cf725fa31568d111f2efbb921bf38b",
+      "storage": "unchanged"
+    },
+    {
+      "logicalPath": "originals/raster-cost-analytic.json",
+      "storedPath": "originals/raster-cost-analytic.json.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/raster-cost-analytic.json",
+      "originalBytes": 5874,
+      "originalSha256": "db03bffec67b03f2357df7abf2914750a0a1f4a741e58dd97c0a61fa975edccb",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "originals/uninstrumented-confirmation.json",
+      "storedPath": "originals/uninstrumented-confirmation.json.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/uninstrumented-confirmation.json",
+      "originalBytes": 936,
+      "originalSha256": "69553af886dedbc97c95f21d3d88cf7e6ccea95691d58225d7f17470d3e0628b",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "originals/validation.json",
+      "storedPath": "originals/validation.json.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/validation.json",
+      "originalBytes": 1910,
+      "originalSha256": "b7adda60b2f4edb7005692e78b3c0cda447c900653eba04323629cf0cf127a15",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "originals/dist-manifest.json",
+      "storedPath": "originals/dist-manifest.json.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/dist-manifest.json",
+      "originalBytes": 3620,
+      "originalSha256": "d52fa5f6f5dc79a187945b2b9a122ede651a365a319ac38c7b85f2c58ed1d14c",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "originals/probe-32-64.log.gz",
+      "storedPath": "originals/probe-32-64.log.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/probe-32-64.log.gz",
+      "originalBytes": 1185,
+      "originalSha256": "32e0352525c5870a82167f09e085bc93e021329a5af4bbc88a18dedf236dc978",
+      "storage": "unchanged"
+    },
+    {
+      "logicalPath": "originals/build-app.log.gz",
+      "storedPath": "originals/build-app.log.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/build-app.log.gz",
+      "originalBytes": 644,
+      "originalSha256": "b5dc36cb6be254943d48fbff5a97634ff37811e1ab0f2c288e419f6c81f1eea4",
+      "storage": "unchanged"
+    },
+    {
+      "logicalPath": "originals/typecheck-r2.log.gz",
+      "storedPath": "originals/typecheck-r2.log.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/typecheck-r2.log.gz",
+      "originalBytes": 61,
+      "originalSha256": "dc03f01eba9c65912aa3ca0a76e3be3c87d0565d2dc58a30e86423efdcdcf1c1",
+      "storage": "unchanged"
+    },
+    {
+      "logicalPath": "originals/evidence-manifest.json",
+      "storedPath": "originals/evidence-manifest.json.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/evidence-manifest.json",
+      "originalBytes": 3545,
+      "originalSha256": "41174b435e3bf59a057b247458288c708c7d4f35c9aa2663ee6a229e994986b0",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "sources/baseline-volume.ts",
+      "storedPath": "sources/baseline-volume.ts.gz",
+      "originalSource": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/volume.ts",
+      "originalBytes": 27243,
+      "originalSha256": "a53410c45b04143710cffd098b6a33deade3242c66ecf7eecc6405a214a93b00",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "sources/candidate-volume.ts",
+      "storedPath": "sources/candidate-volume.ts.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/candidate-source/src/cumulonimbus/volume.ts",
+      "originalBytes": 28184,
+      "originalSha256": "27a225f0b81a9d194844349cc4ed195f2e1099f1910548f75a8d8abd330617b2",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "sources/candidate-capRootOrientation.ts",
+      "storedPath": "sources/candidate-capRootOrientation.ts.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/candidate-source/src/cumulonimbus/capRootOrientation.ts",
+      "originalBytes": 2873,
+      "originalSha256": "e7a09cd38b0bd75a258f21beec1c8386402463ed393dde6391c3712319a0b327",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "sources/candidate-source-manifest.json",
+      "storedPath": "sources/candidate-source-manifest.json.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/cap-root-orientation/candidate-source/source-manifest.json",
+      "originalBytes": 18748,
+      "originalSha256": "d698d6a27a75ce323d154a1aada60d3a4c33e1811165566652ee00ca28eea993",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "browser/baseline-74-front.jpg",
+      "storedPath": "browser/baseline-74-front.jpg",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/browser-cap-root-orientation/baseline-74-front.jpg",
+      "originalBytes": 55969,
+      "originalSha256": "bfeffac68a071d1c6920ccd5480a13f56eb9102140f9c9d277acf08aa77e2ec2",
+      "storage": "unchanged"
+    },
+    {
+      "logicalPath": "browser/baseline-74-front-metadata.txt",
+      "storedPath": "browser/baseline-74-front-metadata.txt.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/browser-cap-root-orientation/baseline-74-front-metadata.txt",
+      "originalBytes": 80,
+      "originalSha256": "e986aee3a5622d8259de8a599ab7e2fc39764752ae35e2eaff4f7be92355083a",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "browser/baseline-74-side.jpg",
+      "storedPath": "browser/baseline-74-side.jpg",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/browser-cap-root-orientation/baseline-74-side.jpg",
+      "originalBytes": 70737,
+      "originalSha256": "027739846a51d3f1e96e20c44703d4388ea81b9e6b49748a5047f2d8f8d6a80c",
+      "storage": "unchanged"
+    },
+    {
+      "logicalPath": "browser/baseline-74-side-metadata.txt",
+      "storedPath": "browser/baseline-74-side-metadata.txt.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/browser-cap-root-orientation/baseline-74-side-metadata.txt",
+      "originalBytes": 81,
+      "originalSha256": "9a90b790d1f590819a641272af9031b1bf0e074b87f4fed5dde66504922e94b1",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "browser/candidate-74-front.jpg",
+      "storedPath": "browser/candidate-74-front.jpg",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/browser-cap-root-orientation/candidate-74-front.jpg",
+      "originalBytes": 55957,
+      "originalSha256": "14981a1f3f74c514c2f84d01b2499e6685d5550173a64f92429aecb302a94cd2",
+      "storage": "unchanged"
+    },
+    {
+      "logicalPath": "browser/candidate-74-front-metadata.txt",
+      "storedPath": "browser/candidate-74-front-metadata.txt.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/browser-cap-root-orientation/candidate-74-front-metadata.txt",
+      "originalBytes": 80,
+      "originalSha256": "e986aee3a5622d8259de8a599ab7e2fc39764752ae35e2eaff4f7be92355083a",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "browser/candidate-74-side.jpg",
+      "storedPath": "browser/candidate-74-side.jpg",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/browser-cap-root-orientation/candidate-74-side.jpg",
+      "originalBytes": 70761,
+      "originalSha256": "a4f4a74e57701bb8bb887da6f28ee5c723d4758c48cf4d2428d420434165924d",
+      "storage": "unchanged"
+    },
+    {
+      "logicalPath": "browser/candidate-74-side-metadata.txt",
+      "storedPath": "browser/candidate-74-side-metadata.txt.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/browser-cap-root-orientation/candidate-74-side-metadata.txt",
+      "originalBytes": 81,
+      "originalSha256": "9a90b790d1f590819a641272af9031b1bf0e074b87f4fed5dde66504922e94b1",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "browser/candidate-console.json",
+      "storedPath": "browser/candidate-console.json.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/browser-cap-root-orientation/candidate-console.json",
+      "originalBytes": 2,
+      "originalSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "browser/candidate-diagnostics.txt",
+      "storedPath": "browser/candidate-diagnostics.txt.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/browser-cap-root-orientation/candidate-diagnostics.txt",
+      "originalBytes": 3937,
+      "originalSha256": "a9fd847a8600c72d93426fdfa8cd5099972976ef842524471de30b31adf72181",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "browser/candidate-canvas.json",
+      "storedPath": "browser/candidate-canvas.json.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/browser-cap-root-orientation/candidate-canvas.json",
+      "originalBytes": 83,
+      "originalSha256": "bd7a185a654ec9ece204669a5ae1c22594c94b259ed529b0970f8bcb182fceaa",
+      "storage": "lossless-gzip"
+    },
+    {
+      "logicalPath": "browser/baseline-reuse-provenance.json",
+      "storedPath": "browser/baseline-reuse-provenance.json.gz",
+      "originalSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle15/browser-cap-root-orientation/baseline-reuse-provenance.json",
+      "originalBytes": 2106,
+      "originalSha256": "74b97168ed20184a9bf39df7389339741c0e6208d5326e52283aab449d1c614c",
+      "storage": "lossless-gzip"
+    }
+  ]
+}
