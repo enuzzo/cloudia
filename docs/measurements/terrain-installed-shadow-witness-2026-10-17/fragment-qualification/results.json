@@ -1,0 +1,45 @@
+[
+  {
+    "command": [
+      "node_modules/.bin/vitest",
+      "run",
+      "src/cumulonimbus/TerrainShadow.test.ts",
+      "src/cumulonimbus/terrainShadowWitness.test.ts",
+      "src/cumulonimbus/lifecycle.test.ts",
+      "--reporter=dot"
+    ],
+    "exitCode": 0,
+    "wallSeconds": 5.68479795800522,
+    "log": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle31/fragment-qualification/1.log"
+  },
+  {
+    "command": [
+      "node_modules/.bin/vitest",
+      "run",
+      "--reporter=dot"
+    ],
+    "exitCode": 0,
+    "wallSeconds": 6.519439665949903,
+    "log": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle31/fragment-qualification/2.log"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exitCode": 0,
+    "wallSeconds": 4.3746597920544446,
+    "log": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle31/fragment-qualification/3.log"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "build:hero"
+    ],
+    "exitCode": 0,
+    "wallSeconds": 2.4096027499763295,
+    "log": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle31/fragment-qualification/4.log"
+  }
+]

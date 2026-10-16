@@ -1,0 +1,51 @@
+{
+  "revision": "R2_SOURCE_ONLY_NOT_EXECUTED",
+  "status": "FROZEN_SOURCE_PROPOSAL_NOT_EXECUTED",
+  "scope": "Root-requested caps Float32/Uint32 and optional CPU interpolated normal added before any execution; no geometry/model/test/typecheck/build/GPU/browser run.",
+  "previousRevision": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle31/witness-proposal/preparation/r1/MANIFEST.json",
+    "bytes": 1949,
+    "sha256": "c0ee590662fc5561eadfe5a527c6db5e5ccb94c43c4e9b038c9cee00323cf800"
+  },
+  "files": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle31/witness-proposal/terrainShadowWitness.ts",
+      "bytes": 19488,
+      "sha256": "f3c0592543529affce96832814840823f7c868bb92af7d17470d0a22226b13a3"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle31/witness-proposal/terrainShadowWitness.test.ts",
+      "bytes": 4196,
+      "sha256": "d790317962c9cc0ebb881aba4cfe120903a52930f21e3080e4c5c7bb7e323f29"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle31/witness-proposal/README.md",
+      "bytes": 4261,
+      "sha256": "87dbf897fd9185fdde5738ed9822f74367ac0b58cf5f5efbde9a4d21ede83b0d"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/triangle-shadow-trial-2026-10-16/positive-witness/witness.ts",
+      "bytes": 13227,
+      "sha256": "71bb80711c5a523494be66beb58ef6cfd51655423ac0ecd5eb40214f39d45be2"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/triangle-shadow-trial-2026-10-16/positive-witness/selected-pixels.json",
+      "bytes": 2842,
+      "sha256": "d89b771513bdbddb15b3ada83c845fd75377eab8286707295c1375eff25ecc79"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/TerrainShadow.ts",
+      "bytes": 16036,
+      "sha256": "ed628cb7e81a77d8fe1d57ecabd7f43b8072cfee0c8959a6d2b5746965640692"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/terrainMesh.ts",
+      "bytes": 30453,
+      "sha256": "c7bc36a93960a688102546f70fadffcf67005073e86889b0afd2ab659ba78e5a"
+    }
+  ],
+  "fileCount": 3,
+  "payloadBytes": 27945
+}

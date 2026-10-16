@@ -1,0 +1,336 @@
+{
+  "scope": "Saved CPU installed-mesh reference plus GPU diagnostic fragment variant from a second stable owner with the same source geometry functions/assets and exact native bitmap identity. Not original-pipeline identity, caster winner-ID, RGB causality, global shadow frequency, physical geographic terrain, or FPS proof.",
+  "counts": {
+    "points": 12,
+    "matchingAddresses": 12,
+    "gpuSignMatches": 12,
+    "physicalBlocked": 5,
+    "physicalUnoccluded": 7,
+    "gpuShadow": 1,
+    "missedPhysicalBlockers": 4,
+    "falseShadows": 0
+  },
+  "maxAbsoluteQDifferenceMetres": 0.029280876002957257,
+  "maxAbsoluteDistanceDifferenceMetres": 0.060589468162675075,
+  "maxAbsoluteGridDifferenceTexels": 0.0006635065601585666,
+  "gpuReadback": {
+    "rgba1x1": 24,
+    "uniqueR32f1x1": 11,
+    "nominalReturnedBytes": 428,
+    "scissor": {
+      "x": 64,
+      "y": 610,
+      "width": 2137,
+      "height": 491,
+      "pixels": 1049267
+    },
+    "newFullTargets": 0,
+    "debugDraws": 1,
+    "restoreDraws": 1,
+    "probeElapsedMs": 11.800000071525574,
+    "totalElapsedMs": 13.700000047683716,
+    "scope": "performance.now elapsed around explicit diagnostic and awaited copies; not CPU usage, GPU timestamp, compositor or FPS benchmark"
+  },
+  "rows": [
+    {
+      "id": "L1-artifact",
+      "physicalClassification": "BLOCKED",
+      "cpuChosenPixel": [
+        1067,
+        1248
+      ],
+      "gpuChosenPixel": [
+        1067,
+        1248
+      ],
+      "sameAddress": true,
+      "gpuGridMinusCpuTexels": [
+        -9.895344510368886e-05,
+        3.2776404168544104e-05
+      ],
+      "gpuQMinusCpuMetres": -0.0074063550670189215,
+      "gpuDistanceMinusCpuMetres": -0.0009686836222044803,
+      "gpuVisibility": 0,
+      "gpuSignVisibility": 0,
+      "gpuSignMatches": true,
+      "lookupMinusStoredMetres": -138.06724548339844,
+      "missedPhysicalBlocker": false,
+      "falseShadow": false
+    },
+    {
+      "id": "L1-control",
+      "physicalClassification": "BLOCKED",
+      "cpuChosenPixel": [
+        1069,
+        1248
+      ],
+      "gpuChosenPixel": [
+        1069,
+        1248
+      ],
+      "sameAddress": true,
+      "gpuGridMinusCpuTexels": [
+        -0.0001194161884541245,
+        1.0036622143161367e-05
+      ],
+      "gpuQMinusCpuMetres": -0.013840630032291301,
+      "gpuDistanceMinusCpuMetres": -0.003948510972406893,
+      "gpuVisibility": 1,
+      "gpuSignVisibility": 1,
+      "gpuSignMatches": true,
+      "lookupMinusStoredMetres": 634.2105865478516,
+      "missedPhysicalBlocker": true,
+      "falseShadow": false
+    },
+    {
+      "id": "L2-artifact",
+      "physicalClassification": "UNOCCLUDED_ENTIRE_MESH",
+      "cpuChosenPixel": [
+        1011,
+        1235
+      ],
+      "gpuChosenPixel": [
+        1011,
+        1235
+      ],
+      "sameAddress": true,
+      "gpuGridMinusCpuTexels": [
+        0.00014465474441749393,
+        -7.69540843066352e-05
+      ],
+      "gpuQMinusCpuMetres": 0.014482262795212364,
+      "gpuDistanceMinusCpuMetres": -0.0013898364770170701,
+      "gpuVisibility": 1,
+      "gpuSignVisibility": 1,
+      "gpuSignMatches": true,
+      "lookupMinusStoredMetres": 190.0949478149414,
+      "missedPhysicalBlocker": false,
+      "falseShadow": false
+    },
+    {
+      "id": "L2-control",
+      "physicalClassification": "BLOCKED",
+      "cpuChosenPixel": [
+        1010,
+        1236
+      ],
+      "gpuChosenPixel": [
+        1010,
+        1236
+      ],
+      "sameAddress": true,
+      "gpuGridMinusCpuTexels": [
+        -9.129211503022816e-05,
+        4.2778785655173124e-05
+      ],
+      "gpuQMinusCpuMetres": -0.0014147034530509472,
+      "gpuDistanceMinusCpuMetres": 0.0027974672178743276,
+      "gpuVisibility": 1,
+      "gpuSignVisibility": 1,
+      "gpuSignMatches": true,
+      "lookupMinusStoredMetres": 1018.7358856201172,
+      "missedPhysicalBlocker": true,
+      "falseShadow": false
+    },
+    {
+      "id": "L3-artifact",
+      "physicalClassification": "BLOCKED",
+      "cpuChosenPixel": [
+        883,
+        1302
+      ],
+      "gpuChosenPixel": [
+        883,
+        1302
+      ],
+      "sameAddress": true,
+      "gpuGridMinusCpuTexels": [
+        -7.606150029459968e-05,
+        -2.6520337314650533e-05
+      ],
+      "gpuQMinusCpuMetres": 0.0037918797879399335,
+      "gpuDistanceMinusCpuMetres": 0.007216522291741967,
+      "gpuVisibility": 1,
+      "gpuSignVisibility": 1,
+      "gpuSignMatches": true,
+      "lookupMinusStoredMetres": 800.59814453125,
+      "missedPhysicalBlocker": true,
+      "falseShadow": false
+    },
+    {
+      "id": "L3-control",
+      "physicalClassification": "BLOCKED",
+      "cpuChosenPixel": [
+        883,
+        1302
+      ],
+      "gpuChosenPixel": [
+        883,
+        1302
+      ],
+      "sameAddress": true,
+      "gpuGridMinusCpuTexels": [
+        -0.00011606043335632421,
+        2.6096676492670667e-05
+      ],
+      "gpuQMinusCpuMetres": -0.0023718084776191972,
+      "gpuDistanceMinusCpuMetres": 0.0008765775518781993,
+      "gpuVisibility": 1,
+      "gpuSignVisibility": 1,
+      "gpuSignMatches": true,
+      "lookupMinusStoredMetres": 875.0381469726562,
+      "missedPhysicalBlocker": true,
+      "falseShadow": false
+    },
+    {
+      "id": "C1-ocean",
+      "physicalClassification": "UNOCCLUDED_ENTIRE_MESH",
+      "cpuChosenPixel": [
+        792,
+        1104
+      ],
+      "gpuChosenPixel": [
+        792,
+        1104
+      ],
+      "sameAddress": true,
+      "gpuGridMinusCpuTexels": [
+        7.78071176910089e-05,
+        -0.00012950546192769252
+      ],
+      "gpuQMinusCpuMetres": -0.0033608714273825058,
+      "gpuDistanceMinusCpuMetres": -0.007349961997249466,
+      "gpuVisibility": 1,
+      "gpuSignVisibility": 1,
+      "gpuSignMatches": true,
+      "lookupMinusStoredMetres": 77.1341323852539,
+      "missedPhysicalBlocker": false,
+      "falseShadow": false
+    },
+    {
+      "id": "C2-coastal-lowland",
+      "physicalClassification": "UNOCCLUDED_ENTIRE_MESH",
+      "cpuChosenPixel": [
+        796,
+        1171
+      ],
+      "gpuChosenPixel": [
+        796,
+        1171
+      ],
+      "sameAddress": true,
+      "gpuGridMinusCpuTexels": [
+        -1.3205020877649076e-05,
+        0.00019977120609837584
+      ],
+      "gpuQMinusCpuMetres": 0.012577622129583688,
+      "gpuDistanceMinusCpuMetres": 0.011159555917572561,
+      "gpuVisibility": 1,
+      "gpuSignVisibility": 1,
+      "gpuSignMatches": true,
+      "lookupMinusStoredMetres": 82.43942260742188,
+      "missedPhysicalBlocker": false,
+      "falseShadow": false
+    },
+    {
+      "id": "C3-plain",
+      "physicalClassification": "UNOCCLUDED_ENTIRE_MESH",
+      "cpuChosenPixel": [
+        614,
+        1234
+      ],
+      "gpuChosenPixel": [
+        614,
+        1234
+      ],
+      "sameAddress": true,
+      "gpuGridMinusCpuTexels": [
+        -9.465370794714545e-05,
+        0.00019607288754741603
+      ],
+      "gpuQMinusCpuMetres": 0.01122332041170182,
+      "gpuDistanceMinusCpuMetres": 0.015029925194198768,
+      "gpuVisibility": 1,
+      "gpuSignVisibility": 1,
+      "gpuSignMatches": true,
+      "lookupMinusStoredMetres": 75.12569427490234,
+      "missedPhysicalBlocker": false,
+      "falseShadow": false
+    },
+    {
+      "id": "C4-ridge-L1",
+      "physicalClassification": "UNOCCLUDED_ENTIRE_MESH",
+      "cpuChosenPixel": [
+        1048,
+        1258
+      ],
+      "gpuChosenPixel": [
+        1048,
+        1258
+      ],
+      "sameAddress": true,
+      "gpuGridMinusCpuTexels": [
+        -2.9384745857896633e-05,
+        9.022002882375091e-05
+      ],
+      "gpuQMinusCpuMetres": 0.004357397823895326,
+      "gpuDistanceMinusCpuMetres": 0.009156066013815689,
+      "gpuVisibility": 1,
+      "gpuSignVisibility": 1,
+      "gpuSignMatches": true,
+      "lookupMinusStoredMetres": 222.52464294433594,
+      "missedPhysicalBlocker": false,
+      "falseShadow": false
+    },
+    {
+      "id": "C5-ridge-L2",
+      "physicalClassification": "UNOCCLUDED_ENTIRE_MESH",
+      "cpuChosenPixel": [
+        996,
+        1263
+      ],
+      "gpuChosenPixel": [
+        996,
+        1263
+      ],
+      "sameAddress": true,
+      "gpuGridMinusCpuTexels": [
+        -5.347908768271736e-05,
+        2.0671411220973823e-05
+      ],
+      "gpuQMinusCpuMetres": -0.0065866631508981754,
+      "gpuDistanceMinusCpuMetres": -0.003824792749185235,
+      "gpuVisibility": 1,
+      "gpuSignVisibility": 1,
+      "gpuSignMatches": true,
+      "lookupMinusStoredMetres": 116.29104614257812,
+      "missedPhysicalBlocker": false,
+      "falseShadow": false
+    },
+    {
+      "id": "C6-ridge-L3",
+      "physicalClassification": "UNOCCLUDED_ENTIRE_MESH",
+      "cpuChosenPixel": [
+        856,
+        1342
+      ],
+      "gpuChosenPixel": [
+        856,
+        1342
+      ],
+      "sameAddress": true,
+      "gpuGridMinusCpuTexels": [
+        0.0006635065601585666,
+        -0.0005674072740475822
+      ],
+      "gpuQMinusCpuMetres": -0.029280876002957257,
+      "gpuDistanceMinusCpuMetres": -0.060589468162675075,
+      "gpuVisibility": 1,
+      "gpuSignVisibility": 1,
+      "gpuSignMatches": true,
+      "lookupMinusStoredMetres": 160.30502319335938,
+      "missedPhysicalBlocker": false,
+      "falseShadow": false
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+
+> cloudia@0.0.0 build
+> tsc && vite build
+
+src/cumulonimbus/terrainShadowWitness.ts(170,6): error TS2322: Type 'number' is not assignable to type '-1000000'.

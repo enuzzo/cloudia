@@ -1,0 +1,65 @@
+[
+  {
+    "command": [
+      "node_modules/.bin/vitest",
+      "run",
+      "src/cumulonimbus/terrainShadowWitness.test.ts",
+      "src/cumulonimbus/lifecycle.test.ts",
+      "--reporter=dot"
+    ],
+    "exitCode": 0,
+    "wallSeconds": 5.9533473330084234,
+    "log": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle31/qualification/1.log"
+  },
+  {
+    "command": [
+      "node_modules/.bin/vitest",
+      "run",
+      "--reporter=dot"
+    ],
+    "exitCode": 0,
+    "wallSeconds": 6.616440457990393,
+    "log": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle31/qualification/2.log"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exitCode": 2,
+    "wallSeconds": 1.741022082976997,
+    "log": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle31/qualification/3.log"
+  },
+  {
+    "command": [
+      "node_modules/.bin/vitest",
+      "run",
+      "src/cumulonimbus/terrainShadowWitness.test.ts",
+      "--reporter=dot"
+    ],
+    "exitCode": 0,
+    "wallSeconds": 0.7044208339648321,
+    "log": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle31/qualification/4.log"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exitCode": 0,
+    "wallSeconds": 4.514989415998571,
+    "log": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle31/qualification/5.log"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "build:hero"
+    ],
+    "exitCode": 0,
+    "wallSeconds": 2.3592075419146568,
+    "log": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle31/qualification/6.log"
+  }
+]

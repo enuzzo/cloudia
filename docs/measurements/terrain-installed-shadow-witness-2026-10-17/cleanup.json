@@ -1,0 +1,30 @@
+{
+  "ownedDiagnosticServers": [
+    {
+      "port": 53771,
+      "session": 66326,
+      "finalExitCode": 0
+    },
+    {
+      "port": 53772,
+      "session": 36843,
+      "finalExitCode": 0
+    }
+  ],
+  "ordinaryPreview": {
+    "url": "http://localhost:4196/?seed=74",
+    "runtime": "v59",
+    "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle28/final-source/dist",
+    "scope": "Retained original v59 server, UI Sun animated and native output observed."
+  },
+  "unrelatedPreserved": [
+    "node_modules 2/",
+    "TCP4201"
+  ],
+  "nodeModules": {
+    "gitIgnored": true,
+    "trackedEntries": 0,
+    "fileProviderIgnore": "1",
+    "installPerformed": false
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "diagnostic": {
+    "sourceFiles": 128,
+    "changedOrAdded": [
+      "src/cumulonimbus/CumulonimbusApp.ts",
+      "src/cumulonimbus/GPUSceneEngine.ts",
+      "src/cumulonimbus/lifecycle.test.ts",
+      "src/cumulonimbus/sceneMarkup.ts",
+      "src/cumulonimbus/terrainShadowWitness.test.ts",
+      "src/cumulonimbus/terrainShadowWitness.ts"
+    ],
+    "scope": "Only changed/added source overlay; unchanged assets/functions remain the base126 manifest."
+  },
+  "fragment": {
+    "sourceFiles": 128,
+    "changedOrAdded": [
+      "src/cumulonimbus/CumulonimbusApp.ts",
+      "src/cumulonimbus/GPUSceneEngine.ts",
+      "src/cumulonimbus/TerrainShadow.test.ts",
+      "src/cumulonimbus/TerrainShadow.ts",
+      "src/cumulonimbus/lifecycle.test.ts",
+      "src/cumulonimbus/sceneMarkup.ts",
+      "src/cumulonimbus/terrainMesh.ts",
+      "src/cumulonimbus/terrainShadowWitness.test.ts",
+      "src/cumulonimbus/terrainShadowWitness.ts"
+    ],
+    "scope": "Only changed/added source overlay; unchanged assets/functions remain the base126 manifest."
+  }
+}

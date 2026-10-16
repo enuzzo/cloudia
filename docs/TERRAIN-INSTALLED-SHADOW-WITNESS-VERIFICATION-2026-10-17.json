@@ -1,0 +1,10 @@
+{
+  "status": "PASS_SAVED_EVIDENCE_ONLY",
+  "scope": "Saved payload hashes and the recorded12-point/owner/source/PNG invariants; no model, browser, GPU, benchmark or artistic replay.",
+  "payloadFiles": 72,
+  "payloadBytes": 867968,
+  "manifestSHA256": "4b06291c0f1d60549b3382debf2f7396009eac37f0985f26527026df69c1e24a",
+  "productSourceFilesUnchanged": 126,
+  "knownBitmapSHA256": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d",
+  "elapsedSeconds": 0.013929457985796034
+}
