@@ -1,0 +1,24 @@
+{
+  "changedTest": {
+    "path": "src/cumulonimbus/solarTransition.test.ts",
+    "bytes": 9322,
+    "sha256": "a2f745fb3541ea0a223ccc23341564700ef836a7e6ecf0ba8232a69762524fab"
+  },
+  "unchangedProductSources": {
+    "src/cumulonimbus/GPUSceneEngine.ts": "49174226267924eafe5f02a3b641884360e9dd49dc29da836008b83bc1b215f8",
+    "src/cumulonimbus/solarTransition.ts": "9e769472891cef26bca446e3d6340a0e8e25d0d57f84383b545cf178e7d29d8e"
+  },
+  "focusedTest": {
+    "command": "npm test -- src/cumulonimbus/solarTransition.test.ts",
+    "result": "17 passed / 1 file",
+    "startAt": "2026-10-16 09:52:25 Europe/Rome",
+    "durationMs": 642,
+    "scope": "Actual shared controller, synthetic sky replies and LUTs, two RenderHost thread labels; no GPU/browser/actual worker transport."
+  },
+  "addedAssertions": [
+    "Low-sun fixture uses actual sunset mode.",
+    "reset requests sunset-left and reaches exact low-sun-left direction with sunsetAmount=1.",
+    "probe-reference requests storm-left and reaches exact day-left direction with sunsetAmount=0.",
+    "reset/probe immediately clear active flash and preview without snapping displayed sky, light colors, haze or overcast at command/reply blend zero."
+  ]
+}

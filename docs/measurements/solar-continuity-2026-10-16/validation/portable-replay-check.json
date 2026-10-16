@@ -1,0 +1,16 @@
+{
+  "before": {
+    "sourceSha256": "47c3fd0f8946abcfad47477618e10215c8a19545d0d7ab580b14b532638fbe60",
+    "allMethodHashesAndResultsEqualArchivedOriginal": true
+  },
+  "after": {
+    "sourceSha256": "49174226267924eafe5f02a3b641884360e9dd49dc29da836008b83bc1b215f8",
+    "helperSha256": "9e769472891cef26bca446e3d6340a0e8e25d0d57f84383b545cf178e7d29d8e",
+    "allMethodHashesAndResultsEqualArchivedOriginal": true
+  },
+  "adaptation": "Only Three import path, source/helper paths and optional process.argv[2] output destination changed; extracted method/helper bodies unchanged.",
+  "commands": [
+    "node docs/measurements/solar-continuity-2026-10-16/replay-before.mjs /tmp/cloudia-solar-before.json",
+    "node docs/measurements/solar-continuity-2026-10-16/replay-after.mjs /tmp/cloudia-solar-after.json"
+  ]
+}

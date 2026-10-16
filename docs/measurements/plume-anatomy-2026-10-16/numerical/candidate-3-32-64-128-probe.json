@@ -1,0 +1,228 @@
+{
+  "description": "CPU-only actual generated-density mass moments. At every skipped bake-input voxel, re-evaluate the displaced fine-density sampler unconditionally; a nonzero value is a false-empty prefilter.",
+  "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/visual-candidate-3/volume.ts",
+  "sourceSha256": "ff0647fef1d1e5e1b477c8e1ec534ce20438764cf24f0d65f127aa031ef6fe79",
+  "helperSha256": "f3e42145c8d154d3c02254df2d8aa05044a4e64e75b5cac4f1238de115e9aaf4",
+  "bundleSha256": "2d4def1b77c03ee774ed61e17c55593b9977ffa62e9a68cd86d69ff49e4e88dd",
+  "sizes": [
+    32,
+    64,
+    128
+  ],
+  "seeds": [
+    72,
+    73,
+    74
+  ],
+  "replacedSource": "if(field[i]<-supportMargin) {density[i]=0;continue;}",
+  "replacement": "if(field[i]<-supportMargin) {\n const py=voxelCenter(y,1,size),ice=smoothstep(iceStart,iceEnd,py);\n const exact=sampleCloudDensity(envelope,detail,voxelCenter(x,0,size),py,voxelCenter(z,2,size),ice);\n audit.skipped++;if(exact>0){audit.missed++;audit.maxMissed=Math.max(audit.maxMissed,exact);}\n density[i]=0;continue;\n}",
+  "records": [
+    {
+      "label": "candidate-3",
+      "size": 32,
+      "seed": 72,
+      "mass": 1255.7411764705835,
+      "centroid": [
+        -0.4576187721336371,
+        2.2224111258408463,
+        -0.04443873862479495
+      ],
+      "spread": [
+        1.4543516630970896,
+        0.835152538033971,
+        0.6459918232061382
+      ],
+      "upperFraction": 0.21824779678590003,
+      "support": {
+        "skipped": 18537,
+        "missed": 0,
+        "maxMissed": 0
+      },
+      "elapsedMs": 77.84087500000001
+    },
+    {
+      "label": "candidate-3",
+      "size": 32,
+      "seed": 73,
+      "mass": 1086.6745098039219,
+      "centroid": [
+        -0.14227500162395124,
+        2.3386010611615866,
+        -0.05486630374374762
+      ],
+      "spread": [
+        1.5950544213816535,
+        1.0720414166698151,
+        0.5871162181532262
+      ],
+      "upperFraction": 0.2846533045593315,
+      "support": {
+        "skipped": 18150,
+        "missed": 0,
+        "maxMissed": 0
+      },
+      "elapsedMs": 38.84745799999999
+    },
+    {
+      "label": "candidate-3",
+      "size": 32,
+      "seed": 74,
+      "mass": 810.5411764705868,
+      "centroid": [
+        -0.19328196363601202,
+        2.533902775560266,
+        -0.08087128909273884
+      ],
+      "spread": [
+        0.9561123261014345,
+        1.1189329008668978,
+        0.5651413148388397
+      ],
+      "upperFraction": 0.31123722712494223,
+      "support": {
+        "skipped": 20112,
+        "missed": 0,
+        "maxMissed": 0
+      },
+      "elapsedMs": 27.798709000000002
+    },
+    {
+      "label": "candidate-3",
+      "size": 64,
+      "seed": 72,
+      "mass": 9979.388235294575,
+      "centroid": [
+        -0.44692363947019526,
+        2.2290962427113605,
+        -0.04344231801901625
+      ],
+      "spread": [
+        1.458401431807825,
+        0.8307944399036158,
+        0.649843038055857
+      ],
+      "upperFraction": 0.21943936207334508,
+      "support": {
+        "skipped": 187451,
+        "missed": 0,
+        "maxMissed": 0
+      },
+      "elapsedMs": 235.878667
+    },
+    {
+      "label": "candidate-3",
+      "size": 64,
+      "seed": 73,
+      "mass": 8652.094117647848,
+      "centroid": [
+        -0.14553323880786698,
+        2.353392362026858,
+        -0.05374291115739865
+      ],
+      "spread": [
+        1.5973814605246706,
+        1.067400652289584,
+        0.5874457163542542
+      ],
+      "upperFraction": 0.28865322868676374,
+      "support": {
+        "skipped": 187196,
+        "missed": 0,
+        "maxMissed": 0
+      },
+      "elapsedMs": 243.82095799999996
+    },
+    {
+      "label": "candidate-3",
+      "size": 64,
+      "seed": 74,
+      "mass": 6402.568627451517,
+      "centroid": [
+        -0.20514165385520614,
+        2.5274097515815748,
+        -0.08135444548143261
+      ],
+      "spread": [
+        0.9504495705969344,
+        1.1056279270524845,
+        0.5693122221383261
+      ],
+      "upperFraction": 0.30769513461199943,
+      "support": {
+        "skipped": 198361,
+        "missed": 0,
+        "maxMissed": 0
+      },
+      "elapsedMs": 200.78195900000003
+    },
+    {
+      "label": "candidate-3",
+      "size": 128,
+      "seed": 72,
+      "mass": 79890.92156860635,
+      "centroid": [
+        -0.4478725431116143,
+        2.2283757590510067,
+        -0.044016956169349704
+      ],
+      "spread": [
+        1.4581996420799739,
+        0.830480410625699,
+        0.6500045506285606
+      ],
+      "upperFraction": 0.19782458288106136,
+      "support": {
+        "skipped": 1663775,
+        "missed": 0,
+        "maxMissed": 0
+      },
+      "elapsedMs": 1690.154292
+    },
+    {
+      "label": "candidate-3",
+      "size": 128,
+      "seed": 73,
+      "mass": 69241.5882352785,
+      "centroid": [
+        -0.14485224465224328,
+        2.3523844497352853,
+        -0.053411901089934745
+      ],
+      "spread": [
+        1.5978070474467956,
+        1.067719408597222,
+        0.5878724682411053
+      ],
+      "upperFraction": 0.2718105207654933,
+      "support": {
+        "skipped": 1671999,
+        "missed": 0,
+        "maxMissed": 0
+      },
+      "elapsedMs": 1602.8628749999998
+    },
+    {
+      "label": "candidate-3",
+      "size": 128,
+      "seed": 74,
+      "mass": 51284.141176459525,
+      "centroid": [
+        -0.2052301638407816,
+        2.528545311465312,
+        -0.08178093492535636
+      ],
+      "spread": [
+        0.9520015459809597,
+        1.1077076144538553,
+        0.5688021800332034
+      ],
+      "upperFraction": 0.29092875556229775,
+      "support": {
+        "skipped": 1743213,
+        "missed": 0,
+        "maxMissed": 0
+      },
+      "elapsedMs": 1550.7156249999998
+    }
+  ]
+}

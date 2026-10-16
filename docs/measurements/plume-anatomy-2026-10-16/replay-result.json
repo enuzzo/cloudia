@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "method": "Six exact64-cubed generated buffer and contraction-record comparisons; no render claim",
+  "results": [
+    {
+      "label": "candidate-2",
+      "seed": 72,
+      "matching": true,
+      "densitySha256": "bb4e6bb93fc174bb2d10074c8b305c0b491fe898d4780326378a970b6d94e4ca",
+      "maximumPositionErrorKm": 0
+    },
+    {
+      "label": "candidate-2",
+      "seed": 73,
+      "matching": true,
+      "densitySha256": "3372fbf0a46c3c9e571894aae8f61d5d9a021a3c1a9f6ba812faa2d7768b93e2",
+      "maximumPositionErrorKm": 0
+    },
+    {
+      "label": "candidate-2",
+      "seed": 74,
+      "matching": true,
+      "densitySha256": "e57df2ccbaa5bbc834da7f3f7619081a5456226c2a8bf788c5b5bfc765466a5d",
+      "maximumPositionErrorKm": 0.49030210674437447
+    },
+    {
+      "label": "candidate-3",
+      "seed": 72,
+      "matching": true,
+      "densitySha256": "bb4e6bb93fc174bb2d10074c8b305c0b491fe898d4780326378a970b6d94e4ca",
+      "maximumPositionErrorKm": 0
+    },
+    {
+      "label": "candidate-3",
+      "seed": 73,
+      "matching": true,
+      "densitySha256": "3372fbf0a46c3c9e571894aae8f61d5d9a021a3c1a9f6ba812faa2d7768b93e2",
+      "maximumPositionErrorKm": 0
+    },
+    {
+      "label": "candidate-3",
+      "seed": 74,
+      "matching": true,
+      "densitySha256": "4308ef98fdb3b80065d984e7797e44b092d68d5e2b1a54a367cc8a4b1e37cc58",
+      "maximumPositionErrorKm": 0
+    }
+  ]
+}

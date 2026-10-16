@@ -1,0 +1,20 @@
+{
+  "utc": "2026-10-16T08:00:39.815819+00:00",
+  "files": [
+    {
+      "path": "src/cumulonimbus/volume.ts",
+      "bytes": 27088,
+      "sha256": "ff0647fef1d1e5e1b477c8e1ec534ce20438764cf24f0d65f127aa031ef6fe79"
+    },
+    {
+      "path": "src/cumulonimbus/morphology.ts",
+      "bytes": 2904,
+      "sha256": "f3e42145c8d154d3c02254df2d8aa05044a4e64e75b5cac4f1238de115e9aaf4"
+    },
+    {
+      "path": "src/cumulonimbus/morphology.test.ts",
+      "bytes": 5424,
+      "sha256": "70d7ed1052610a29df45aa379f7af513ddb4f1cf1a1e97fc9a21c4e20ca1384e"
+    }
+  ]
+}

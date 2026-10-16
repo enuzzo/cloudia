@@ -1,0 +1,252 @@
+{
+  "description": "Exact same authored geometry and parameters; candidate3 only owns sweep vertex/stretch arrays, so in-place contraction applies once. Source frozen per candidate.",
+  "results": [
+    {
+      "label": "candidate-2",
+      "seed": 72,
+      "size": 64,
+      "sourceSha256": "5cf1fdd548be860cdae1dc1eca4f1bf2e8eac94daf82f9063bc5b0610d8d01b9",
+      "helperSha256": "45f4e6eee0c36faefc6e7c0d7eb3a232a3375f98af18c7b0265224542a0b08b2",
+      "densitySha256": "bb4e6bb93fc174bb2d10074c8b305c0b491fe898d4780326378a970b6d94e4ca",
+      "rgbaSha256": "d58b5030f03de385d09d21bd4fd9d3876fe522e9f35b93282b14f464f9a881fd",
+      "sunsetSha256": "579915b9948596c0ea093c54ef3e1703c82a2b401f80938cf47ddc22d0742f73",
+      "contraction": [
+        {
+          "axis": 0,
+          "extent": 3.465826765878945,
+          "limit": 4.35,
+          "scale": 1,
+          "vertices": 45,
+          "sharedVertices": 19,
+          "maximumApplications": 2,
+          "maximumPositionError": 0,
+          "examples": []
+        },
+        {
+          "axis": 2,
+          "extent": 2.0895469707263707,
+          "limit": 2.8,
+          "scale": 1,
+          "vertices": 45,
+          "sharedVertices": 19,
+          "maximumApplications": 2,
+          "maximumPositionError": 0,
+          "examples": []
+        }
+      ]
+    },
+    {
+      "label": "candidate-2",
+      "seed": 73,
+      "size": 64,
+      "sourceSha256": "5cf1fdd548be860cdae1dc1eca4f1bf2e8eac94daf82f9063bc5b0610d8d01b9",
+      "helperSha256": "45f4e6eee0c36faefc6e7c0d7eb3a232a3375f98af18c7b0265224542a0b08b2",
+      "densitySha256": "3372fbf0a46c3c9e571894aae8f61d5d9a021a3c1a9f6ba812faa2d7768b93e2",
+      "rgbaSha256": "e1f7629fd0ef4b73b942a73e707517b0355cb81b8c3ef31ee54e7df33c097936",
+      "sunsetSha256": "784d1cfb045dbfbf9ce9061e9a32282778a53b32d3ac3609337f45c920b89e03",
+      "contraction": [
+        {
+          "axis": 0,
+          "extent": 3.8346400712630055,
+          "limit": 4.35,
+          "scale": 1,
+          "vertices": 51,
+          "sharedVertices": 13,
+          "maximumApplications": 2,
+          "maximumPositionError": 0,
+          "examples": []
+        },
+        {
+          "axis": 2,
+          "extent": 1.9656903086091575,
+          "limit": 2.8,
+          "scale": 1,
+          "vertices": 51,
+          "sharedVertices": 13,
+          "maximumApplications": 2,
+          "maximumPositionError": 0,
+          "examples": []
+        }
+      ]
+    },
+    {
+      "label": "candidate-2",
+      "seed": 74,
+      "size": 64,
+      "sourceSha256": "5cf1fdd548be860cdae1dc1eca4f1bf2e8eac94daf82f9063bc5b0610d8d01b9",
+      "helperSha256": "45f4e6eee0c36faefc6e7c0d7eb3a232a3375f98af18c7b0265224542a0b08b2",
+      "densitySha256": "e57df2ccbaa5bbc834da7f3f7619081a5456226c2a8bf788c5b5bfc765466a5d",
+      "rgbaSha256": "2209a7722052102719a710df5b31921877a23bd59c357f796562c7b273933d79",
+      "sunsetSha256": "1062b3c4b09a1d5e5bb69fc8211d51114bc43a01936a3402ecb0f42ff36ef7d9",
+      "contraction": [
+        {
+          "axis": 0,
+          "extent": 5.906924469568888,
+          "limit": 4.35,
+          "scale": 0.736423839920452,
+          "vertices": 51,
+          "sharedVertices": 13,
+          "maximumApplications": 2,
+          "maximumPositionError": 0.49030210674437447,
+          "examples": [
+            {
+              "before": -0.5480585674678666,
+              "count": 2,
+              "actual": -0.29722316177113506,
+              "expected": -0.40360339475598844,
+              "error": 0.10638023298485338
+            },
+            {
+              "before": 1.6688296965821294,
+              "count": 2,
+              "actual": 0.9050398412114714,
+              "expected": 1.2289659733302947,
+              "error": -0.32392613211882326
+            },
+            {
+              "before": -0.2928466979024211,
+              "count": 2,
+              "actual": -0.15881664229233555,
+              "expected": -0.21565928977732554,
+              "error": 0.05684264748498999
+            },
+            {
+              "before": -0.306332594763384,
+              "count": 2,
+              "actual": -0.16613031484900045,
+              "expected": -0.225590625728447,
+              "error": 0.05946031087944653
+            },
+            {
+              "before": 0.7475226541887933,
+              "count": 2,
+              "actual": 0.4053965396436772,
+              "expected": 0.5504935034252393,
+              "error": -0.14509696378156206
+            },
+            {
+              "before": -0.5646575325641453,
+              "count": 2,
+              "actual": -0.30622511371732725,
+              "expected": -0.41582726837089556,
+              "error": 0.10960215465356832
+            }
+          ]
+        },
+        {
+          "axis": 2,
+          "extent": 1.8628076157348785,
+          "limit": 2.8,
+          "scale": 1,
+          "vertices": 51,
+          "sharedVertices": 13,
+          "maximumApplications": 2,
+          "maximumPositionError": 0,
+          "examples": []
+        }
+      ]
+    },
+    {
+      "label": "candidate-3",
+      "seed": 72,
+      "size": 64,
+      "sourceSha256": "ff0647fef1d1e5e1b477c8e1ec534ce20438764cf24f0d65f127aa031ef6fe79",
+      "helperSha256": "f3e42145c8d154d3c02254df2d8aa05044a4e64e75b5cac4f1238de115e9aaf4",
+      "densitySha256": "bb4e6bb93fc174bb2d10074c8b305c0b491fe898d4780326378a970b6d94e4ca",
+      "rgbaSha256": "d58b5030f03de385d09d21bd4fd9d3876fe522e9f35b93282b14f464f9a881fd",
+      "sunsetSha256": "579915b9948596c0ea093c54ef3e1703c82a2b401f80938cf47ddc22d0742f73",
+      "contraction": [
+        {
+          "axis": 0,
+          "extent": 3.465826765878945,
+          "limit": 4.35,
+          "scale": 1,
+          "vertices": 64,
+          "sharedVertices": 0,
+          "maximumApplications": 1,
+          "maximumPositionError": 0,
+          "examples": []
+        },
+        {
+          "axis": 2,
+          "extent": 2.0895469707263707,
+          "limit": 2.8,
+          "scale": 1,
+          "vertices": 64,
+          "sharedVertices": 0,
+          "maximumApplications": 1,
+          "maximumPositionError": 0,
+          "examples": []
+        }
+      ]
+    },
+    {
+      "label": "candidate-3",
+      "seed": 73,
+      "size": 64,
+      "sourceSha256": "ff0647fef1d1e5e1b477c8e1ec534ce20438764cf24f0d65f127aa031ef6fe79",
+      "helperSha256": "f3e42145c8d154d3c02254df2d8aa05044a4e64e75b5cac4f1238de115e9aaf4",
+      "densitySha256": "3372fbf0a46c3c9e571894aae8f61d5d9a021a3c1a9f6ba812faa2d7768b93e2",
+      "rgbaSha256": "e1f7629fd0ef4b73b942a73e707517b0355cb81b8c3ef31ee54e7df33c097936",
+      "sunsetSha256": "784d1cfb045dbfbf9ce9061e9a32282778a53b32d3ac3609337f45c920b89e03",
+      "contraction": [
+        {
+          "axis": 0,
+          "extent": 3.8346400712630055,
+          "limit": 4.35,
+          "scale": 1,
+          "vertices": 64,
+          "sharedVertices": 0,
+          "maximumApplications": 1,
+          "maximumPositionError": 0,
+          "examples": []
+        },
+        {
+          "axis": 2,
+          "extent": 1.9656903086091575,
+          "limit": 2.8,
+          "scale": 1,
+          "vertices": 64,
+          "sharedVertices": 0,
+          "maximumApplications": 1,
+          "maximumPositionError": 0,
+          "examples": []
+        }
+      ]
+    },
+    {
+      "label": "candidate-3",
+      "seed": 74,
+      "size": 64,
+      "sourceSha256": "ff0647fef1d1e5e1b477c8e1ec534ce20438764cf24f0d65f127aa031ef6fe79",
+      "helperSha256": "f3e42145c8d154d3c02254df2d8aa05044a4e64e75b5cac4f1238de115e9aaf4",
+      "densitySha256": "4308ef98fdb3b80065d984e7797e44b092d68d5e2b1a54a367cc8a4b1e37cc58",
+      "rgbaSha256": "097c8367eb3c8dd4967c7e1a27b2df30806292d5b18f0a00d452cac8a2c56ef8",
+      "sunsetSha256": "df735ba944dabb8cb375d50a313e5fc00b49ece257cf4d158c549b47ee6ec83d",
+      "contraction": [
+        {
+          "axis": 0,
+          "extent": 5.906924469568888,
+          "limit": 4.35,
+          "scale": 0.736423839920452,
+          "vertices": 64,
+          "sharedVertices": 0,
+          "maximumApplications": 1,
+          "maximumPositionError": 0,
+          "examples": []
+        },
+        {
+          "axis": 2,
+          "extent": 1.8628076157348785,
+          "limit": 2.8,
+          "scale": 1,
+          "vertices": 64,
+          "sharedVertices": 0,
+          "maximumApplications": 1,
+          "maximumPositionError": 0,
+          "examples": []
+        }
+      ]
+    }
+  ]
+}

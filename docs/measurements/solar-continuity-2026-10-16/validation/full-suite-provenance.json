@@ -1,0 +1,19 @@
+{
+  "source": "root integration run",
+  "frozenSourceDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/lighting/frozen-solar",
+  "base": "59bb8d3",
+  "candidate": "solar continuity only, original volume",
+  "externalManifestSha256": "f99933b2c97e0a1958bbd470baf7ea7b0f67f80080759f3b9bc109e3d6406386",
+  "externalManifestFileCount": 94,
+  "relevantSources": {
+    "src/cumulonimbus/GPUSceneEngine.ts": "49174226267924eafe5f02a3b641884360e9dd49dc29da836008b83bc1b215f8",
+    "src/cumulonimbus/solarTransition.ts": "9e769472891cef26bca446e3d6340a0e8e25d0d57f84383b545cf178e7d29d8e",
+    "src/cumulonimbus/solarTransition.test.ts": "02aee3eeafe155b1c95a55099d4e53e56bee012e2420be9188c2356961f1dc7e",
+    "src/cumulonimbus/volume.ts": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74"
+  },
+  "limitation": "247/35 run includes the first solar test snapshot. Final revision only adds assertions/fixes fixture scenario; its separate focused17 run passed. Root owns final integration validation.",
+  "logArchiveNormalization": {
+    "originalSha256": "3477d302e67c30a591b5a67d0cb50c124d2b34ffdcb031cb1610bf6e63b4e816",
+    "change": "Only final blank lines removed; all diagnostic/test-result lines unchanged."
+  }
+}

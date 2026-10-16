@@ -1,0 +1,530 @@
+{
+  "base": "59bb8d3",
+  "rendererVersion": "observatory-v49-quality-checkpoint",
+  "scope": "Final source and app-then-hero build provenance, no performance or whole-goal acceptance. Browser images on4190 use identical runtime method bodies before label update. Final browser smoke tracked separately.",
+  "frozenSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/final-source",
+  "dist": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/final-dist",
+  "sourceFilesVerifiedAgainstWorktree": 97,
+  "sourceFiles": {
+    "src/main.ts": "5d5243cd348204920dde24188fbc4d7d48e0a9d56ec040957fad99c48479f2c9",
+    "src/styles.css": "74953ccc0ee5401602405b2f3acb535b32908eb010a16a20307b83f601601029",
+    "src/cumulonimbus/CumulonimbusApp.ts": "7156df28a6a0f2691b0316b2d66042a442cbcf1e18619b3b811c4e91d49aecae",
+    "src/cumulonimbus/panels.ts": "e6e6da9ec0ebaff930a4ed91e07c20c64878b3fb94f0ffda3498a724af0e58e8",
+    "src/cumulonimbus/solarTransition.ts": "9e769472891cef26bca446e3d6340a0e8e25d0d57f84383b545cf178e7d29d8e",
+    "src/cumulonimbus/atmosphere.ts": "8065352c5304b4c95ab18ef9805dcebbc62696ae341a87ecdff0dd67c1f2cf1f",
+    "src/cumulonimbus/landscape.ts": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+    "src/cumulonimbus/weatherInteraction.ts": "31cb68650093530f9e3952afa87f8b97bcf2e87cd3627b4a43d45d2e2b3f99ba",
+    "src/cumulonimbus/motion.test.ts": "7719d2975954b01b7f3802bfa09d409b3947e7921fc37a96203dcd7d9ccf03ae",
+    "src/cumulonimbus/timestampBatchMeasurement.test.ts": "cb04e13e082b067ce1b72119b59fa78296092ef9913f727215b259222936aa34",
+    "src/cumulonimbus/performance.ts": "175e4be041d8bf2cf325e6ba4e09922b5a1be79c34d5bc4b4f704230ca01a7e8",
+    "src/cumulonimbus/light.test.ts": "fc9db41e6a2e4a41ae2e47b7da33d22141fde36e0aa5d2c626f8ebe6b5549450",
+    "src/cumulonimbus/storm.test.ts": "6852073934a0f6a5696be684736576c44a8dc7142c7523f639e9a79663c3b018",
+    "src/cumulonimbus/motionField.test.ts": "d802fe726730c71e8192ea79e713544db9a188f397790e6c0256240149a9a2ad",
+    "src/cumulonimbus/medium.test.ts": "2d2e24070d121d269bae9c60c5e8781c536eae6630a211a8aa00093767ac3233",
+    "src/cumulonimbus/timestampBatchMeasurement.ts": "43654a3918b0f5f531aff26727247291c469cd037a98d44e76e88ae03ceb905c",
+    "src/cumulonimbus/skyModel.ts": "9809736594d784f8a5db4cc88d2dd867820c26f11542739b2901d48a57a1259b",
+    "src/cumulonimbus/render.worker.ts": "d9ba5b7018e0675052fbba309f56fb745468844af20cdc6fed43b8bf014d9e91",
+    "src/cumulonimbus/emptyTraversal.ts": "281a4209f2afc13a63735d6526f954dc93d775972aa1d8ccd6cf46d1677c57d4",
+    "src/cumulonimbus/motionField.ts": "d8817eb9d90a70ee975eea89d2c2fca6d9c6783280bea810fdf76cff2b2d4d8a",
+    "src/cumulonimbus/atmosphere.test.ts": "5903a055e286c07d7b64c500b515ad463b4de440d51946c70c71701edc483a8d",
+    "src/cumulonimbus/densityR8.ts": "ef6695219129c12143b805c3cecfda40d87ce821083b42b89dab5887b931a390",
+    "src/cumulonimbus/sceneMarkup.ts": "9bafd21bf506298fffab4b79bff595182e640b9233856981b0f1d11b855b5983",
+    "src/cumulonimbus/emptyTraversal.test.ts": "209777209c81b4670d1f4593425cf02eac0e46d1db4770bffb2c703dcb1e3859",
+    "src/cumulonimbus/camera.test.ts": "2adb70ba577ada07701f3b4cc8754364cca9210bfb410c2e87d15c5030af2663",
+    "src/cumulonimbus/cloudShader.ts": "2e2e8b0ec236a1ae77363419bc766fb464d816b5ff2ce980af5f2bd72873cc44",
+    "src/cumulonimbus/storm.ts": "7b3259d5d454cbf10b921f2ef6e8f5e03608c43801bbdaec3f1c7480a8c8030c",
+    "src/cumulonimbus/three186TimestampBatch.ts": "24f35dcdaeb1d0da6c57ceef55560f1140c9d151955f636fcf80cf7d7e4d7658",
+    "src/cumulonimbus/precipitation.ts": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72",
+    "src/cumulonimbus/motion.ts": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2",
+    "src/cumulonimbus/camera.ts": "a7f7b113ee4251454e4f31fd8fa470f131dae3a9bc41ec5cf1d2480871066a69",
+    "src/cumulonimbus/volume.test.ts": "0934cc1bfb8f27df253ddd3abecc38957ab9a37a0b8fa248a4acc8ff3a328b79",
+    "src/cumulonimbus/three186TimestampBatch.test.ts": "585e288a991a41e5482bb854f0fc08035cb5394b6ed3e6fc8d403247de51d4ed",
+    "src/cumulonimbus/skyCache.test.ts": "e95a18f2ad55c936fbf39f92890eadc78baaaf0dfce857c1ee2ccbcf67054097",
+    "src/cumulonimbus/ThunderAudio.test.ts": "0432897d72c32d059127cd720327951b6f4eb1d00692fcf1f04180c16db4e515",
+    "src/cumulonimbus/volume.ts": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74",
+    "src/cumulonimbus/queuePrefixMeasurement.ts": "bf26e53d0a1aafd6e75bd20b4903d1a3633fd19937fdecf5d8fe3cd4b354324d",
+    "src/cumulonimbus/GPUSceneEngine.ts": "8ad9a31302c14f45723c8ca319ca7ce27bd99de9c8c0a234acf4052be2d35d49",
+    "src/cumulonimbus/environment.test.ts": "10553c5620f147a983dc7c634fd82b9d99c5d56349e56befa365d2cd0cdb9fad",
+    "src/cumulonimbus/solarTransition.test.ts": "a2f745fb3541ea0a223ccc23341564700ef836a7e6ecf0ba8232a69762524fab",
+    "src/cumulonimbus/volume.worker.test.ts": "5a8a36291f7d7c36a701735ae32f833ec0eb0d3de9bd07eb42863569874a201c",
+    "src/cumulonimbus/narrowCloud.test.ts": "acf7ca030abf7a2c8ae2ef533e3061a3f0dd95175e01210b6572d29e3a092ba5",
+    "src/cumulonimbus/workerBridge.test.ts": "5e254d46e217fcf7698e0d7ac35538dc92c3d8d2892fb976caf65310bf03d41e",
+    "src/cumulonimbus/renderProtocol.ts": "0c22eb7865cbde715c6d26d9cd29ffc77c871e481b1e2e19aacd00bfddbc81a9",
+    "src/cumulonimbus/densityR8.test.ts": "29c9de4528c51c74d5773e4c48425ed97282dcd32c9f487dac390f59c9136674",
+    "src/cumulonimbus/landscape.test.ts": "b826465b959b20979f631d80df22a57b540ffe25bac4dad5bc63fe2e0bb9a704",
+    "src/cumulonimbus/skyCache.ts": "fb969d67183153f040b4458516e204016b8e44256d5df794ecec1620f82f984b",
+    "src/cumulonimbus/pointer.test.ts": "f8761d8c114f5310c20b779024c1c880a09a46ee925438a7b4b21047556548b4",
+    "src/cumulonimbus/medium.ts": "ddfd487055e4fde6581ab351345e91fb3466b032dda954c803082a39a9a142d6",
+    "src/cumulonimbus/performance.test.ts": "3e98c210b40b7d521844231a74722f6e39bbf2febf75b843f21ed50aa6df2285",
+    "src/cumulonimbus/ThunderAudio.ts": "f0eea6bee149a5262ff7c881ef8588de3d70b6f0a962b0e8d43891d1092209d4",
+    "src/cumulonimbus/sky.worker.ts": "b89754046a88c8f66fe193c806ce1db9ae4eb13d4c06471ccec2feefb4da8b7d",
+    "src/cumulonimbus/narrowCloud.ts": "6b3ebc7e3299d1ae995405e75ad04f90190789605136200d72d0cd4ea51e9759",
+    "src/cumulonimbus/scene.css": "6c45a2c39ad9d84555c7c5c98c37645ceedb99fbea31848f0f7d0bf63740ad46",
+    "src/cumulonimbus/weatherState.ts": "11fb5e122b12e6760b37f72abb405f8d8dd7fd65ceef2bc4c666ee81d3e0e0b9",
+    "src/cumulonimbus/light.ts": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf",
+    "src/cumulonimbus/volume.worker.ts": "89eccd6b67a4d473b9305e75be4e1d25b22f28c04a3987e0ff39afdb637b8242",
+    "src/cumulonimbus/uiIcons.ts": "907b3e3a96f46b694a7836e799140d3621a171a69eecfc0d967a396c736a406b",
+    "src/cumulonimbus/sun.ts": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc",
+    "src/cumulonimbus/cloudShader.test.ts": "b3f07f81f214150273601a17f881083388ddf444ec17adb5fa25071483b90090",
+    "src/cumulonimbus/weatherState.test.ts": "7bfaeb584e7eda840ec9759588fda15cfa48a2d0aa379d2026982974f80a3fee",
+    "src/cumulonimbus/weatherInteraction.test.ts": "7c2e4a20b88c478203963f5d698bf60ecb42435e5a38540319d549243bad879c",
+    "src/cumulonimbus/queuePrefixMeasurement.test.ts": "6408e934d56834cca922a283cbf893b979afbdb9b795ea4fddd0540ba54a2371",
+    "src/cumulonimbus/lifecycle.test.ts": "9ecd73f03f44ebbebd1e8da0f42b2ae951bd0b7014df82277633a81974185c23",
+    "src/cumulonimbus/inspector.test.ts": "09486c439cc9a8af1763dd7e70e7000e532437860d5f3b38883f3fba92dd5a1e",
+    "src/core/easing.test.ts": "fcd2fe9ddd6331ee23f9d06a3959e73f596b8e3a8fefcf0ca105a1c6620a19e0",
+    "src/core/stateMachine.ts": "ee59de6a1e6aac4b4f0deddcc0cc5266a892c1a356e794347831c3d0dd8e76f1",
+    "src/core/defaultPreset.ts": "af7fc152263dc7a7bc402644b9e41caee2ff20ea7f291ae7a5ce0ac6f44ec219",
+    "src/core/presetStore.ts": "08e8e5f953def9c6afad41d7be251f8d51d5e536f2e57c3a47718dc66624d9da",
+    "src/core/stateMachine.test.ts": "89363df587a48b8020aefb856b04f6d54938fe2aea9c21b69c697120f648ff12",
+    "src/core/types.ts": "5f6da80b20afbc9ffd390573f9d20f7f0c1ac7d8b2b3f638bc227bcfb34cb277",
+    "src/core/renderQuality.test.ts": "c1910907cfe596d6e66619f358ecc02353a4bbfd7406510f78564329f7c76ff0",
+    "src/core/easing.ts": "1ae88dbff8c5c55e1854a0bcf4a6e9cd901ba89c6771ce6e9eb62df4f6275515",
+    "src/core/presetStore.test.ts": "9a124e837eab21356a2345878a7e9090abf181435032b166355690a2d125b4ac",
+    "src/core/renderQuality.ts": "88c5893350c5033eefc713a5c8e76d9b98d819907ee5910f453c0d6f40145144",
+    "src/embed/CloudiaHero.test.ts": "f93e20b11e88b8e08d120813f8c8c7a421733f32fbd714f07612986a8e965412",
+    "src/embed/CloudiaHero.ts": "19381af09756c82e5fd320dc9cb9f74847bdde472398c3e972e3d6fff8189143",
+    "src/input/inputController.ts": "b6029782bedbf39c4e245e2cb01a2f467648e26ade61a5db0d188498eede0e3e",
+    "src/input/gestureMapper.test.ts": "c4b71879bde6b59f580fc778b5e4b49c7e2500ce9e9387b1b2401302740eac93",
+    "src/input/gestureMapper.ts": "8a03aeacaf0e9205cf478139393ff710f2a062bbda1527ed240094b35841af28",
+    "src/lab/LabApp.ts": "2fa879c6a9c9025cf858b6508b2c58afede162e5380125acc6b5f44f6f452d9a",
+    "src/lab/LabUI.ts": "12ac22f24e2b5da3df38b32193994de423f9b137749d6ee8564ba61794ca9460",
+    "src/render/cloudVertex.ts": "d8bcc643ac853509a6d0a9f33b3b639c1757b52b53bae420da66075e88ea01a9",
+    "src/render/CloudEngine.ts": "dc8491ad902181d4acea7209858782e9a20c45f4572b2b2ad6b98979b37fedd9",
+    "src/render/cloudFragment.ts": "b7342771c82b8b327b4611997fc804a9eaf49d3d4ef56054ab0a6c2450738b47",
+    "src/weather/WeatherLayer.ts": "9d1ee9f3691c84a5d66d4146b903490758436a74d6ae5a538cc2e13be2d5c257",
+    "src/weather/WeatherLayer.test.ts": "2a5fefca9babf8bb4abfe020d220d248066ef82e45d0d084d17501f12b714fec",
+    "scripts/qa-near-density.ts": "8085da4fc0b0afb82c2116bc486318f539a46ef1064946df7a97a1fda594197b",
+    "scripts/qa-local-light.ts": "8d6d625e0dc58e9d17709536fe50d1128c3295b51bde51f56fedd8af478ff057",
+    "scripts/qa-approach.ts": "7e80d5e44aa047467f87b891476e2158e3156a122d370557ed1f145f0786c986",
+    "scripts/qa-light-transport.ts": "22ed207d3438c9280a483896f37205396e7d40fcbdfee50d462a3e9c7bc002b5",
+    "scripts/qa-morphology.ts": "8bf22d63a6f7ce0a0f49708bab2bfceabe94456afc55365220e1d1a6610e570d",
+    "scripts/qa-visible-source.ts": "3bfec59e05066c74ea75100367d8b2e3aed7bd6d1281f8c8bc9cc940c364b923",
+    "scripts/qa-terrain-gpu.ts": "33057ad234f2116f6a5dbd18ba00d046b26fdac4f7bb184e8c34406ef029c3e3",
+    "public/fonts/commissioner/latin-variable.woff2": "737ec8f28006b815be5333598aa32b203005f5788c8e61b09090b944eac8b79c",
+    "public/fonts/commissioner/SOURCE.md": "4d62bb7d2afbda450c342cafc6987bab37990ecea6e19378e1a6b0f706183a33",
+    "public/fonts/commissioner/OFL.txt": "4a7d88c77b4bc39ff84f2e058ba8f015636c50ce33588a86d9da97defe519933"
+  },
+  "sourcemapChecks": [
+    {
+      "map": "cloudia-hero.js.map",
+      "source": "src/core/defaultPreset.ts",
+      "matches": true
+    },
+    {
+      "map": "cloudia-hero.js.map",
+      "source": "src/core/renderQuality.ts",
+      "matches": true
+    },
+    {
+      "map": "cloudia-hero.js.map",
+      "source": "src/render/cloudFragment.ts",
+      "matches": true
+    },
+    {
+      "map": "cloudia-hero.js.map",
+      "source": "src/render/cloudVertex.ts",
+      "matches": true
+    },
+    {
+      "map": "cloudia-hero.js.map",
+      "source": "src/render/CloudEngine.ts",
+      "matches": true
+    },
+    {
+      "map": "cloudia-hero.js.map",
+      "source": "src/core/easing.ts",
+      "matches": true
+    },
+    {
+      "map": "cloudia-hero.js.map",
+      "source": "src/weather/WeatherLayer.ts",
+      "matches": true
+    },
+    {
+      "map": "cloudia-hero.js.map",
+      "source": "src/embed/CloudiaHero.ts",
+      "matches": true
+    },
+    {
+      "map": "cloudia-hero.iife.js.map",
+      "source": "src/core/defaultPreset.ts",
+      "matches": true
+    },
+    {
+      "map": "cloudia-hero.iife.js.map",
+      "source": "src/core/renderQuality.ts",
+      "matches": true
+    },
+    {
+      "map": "cloudia-hero.iife.js.map",
+      "source": "src/render/cloudFragment.ts",
+      "matches": true
+    },
+    {
+      "map": "cloudia-hero.iife.js.map",
+      "source": "src/render/cloudVertex.ts",
+      "matches": true
+    },
+    {
+      "map": "cloudia-hero.iife.js.map",
+      "source": "src/render/CloudEngine.ts",
+      "matches": true
+    },
+    {
+      "map": "cloudia-hero.iife.js.map",
+      "source": "src/core/easing.ts",
+      "matches": true
+    },
+    {
+      "map": "cloudia-hero.iife.js.map",
+      "source": "src/weather/WeatherLayer.ts",
+      "matches": true
+    },
+    {
+      "map": "cloudia-hero.iife.js.map",
+      "source": "src/embed/CloudiaHero.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/core/defaultPreset.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/core/easing.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/core/stateMachine.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/input/inputController.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/core/renderQuality.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/render/cloudFragment.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/render/cloudVertex.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/render/CloudEngine.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/weather/WeatherLayer.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/core/presetStore.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/lab/LabUI.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/LabApp-BIVQGmZd.js.map",
+      "source": "src/lab/LabApp.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/weatherState.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/sun.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/solarTransition.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/camera.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/motion.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/volume.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/landscape.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/precipitation.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/weatherInteraction.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/medium.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/cloudShader.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/atmosphere.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/skyModel.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/skyCache.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/storm.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/motionField.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/emptyTraversal.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/performance.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/queuePrefixMeasurement.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/three186TimestampBatch.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/timestampBatchMeasurement.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/densityR8.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/GPUSceneEngine.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/panels.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/uiIcons.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/sceneMarkup.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/ThunderAudio.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/CumulonimbusApp-BsbWVYYF.js.map",
+      "source": "src/cumulonimbus/CumulonimbusApp.ts",
+      "matches": true
+    },
+    {
+      "map": "assets/index-ptw48pl1.js.map",
+      "source": "src/main.ts",
+      "matches": true
+    }
+  ],
+  "sourcemapMismatches": [],
+  "assets": {
+    "cloudia-hero.iife.js": {
+      "bytes": 526689,
+      "sha256": "d4363d2ccdbf676991be2c6ba05bc62da0ceef5debaa789f04766ab1248c30f5"
+    },
+    "index.html": {
+      "bytes": 911,
+      "sha256": "e2bd88ee2d0f9a36f4ab5085aeb6fdb4b53349d75b076929fc6cb5dbda4bbd68"
+    },
+    "cloudia-hero.js.map": {
+      "bytes": 2925987,
+      "sha256": "ffcc395f57cb448a12f817c6dac75520d91262881f2d9812beb34675aec503b2"
+    },
+    "cloudia-hero.iife.js.map": {
+      "bytes": 2860331,
+      "sha256": "e0082054f4738d544366b0cd1b230283ccc9a7eea42c73500785f9f8115f4cd2"
+    },
+    "cloudia-hero.js": {
+      "bytes": 838767,
+      "sha256": "bc11f99470a6298e20fa804bc2d93041d4cc1a015d812ae97b6ad5827b5fa702"
+    },
+    "assets/index-Cia3ypEr.css": {
+      "bytes": 1245,
+      "sha256": "99354a5ec1ade2941e4aba36f030b413c9afbad79336f11800929c7d805b4714"
+    },
+    "assets/index-ptw48pl1.js": {
+      "bytes": 2837,
+      "sha256": "892effc8a649a7b0e4c6bd2e68a442ca71735bef0a5ca6b5614f43e0a2efdb6a"
+    },
+    "assets/CumulonimbusApp-BsbWVYYF.js": {
+      "bytes": 822473,
+      "sha256": "593d643e45458ca6c5956b04082aa08e937a1eba69c4e41cbad0e5124339deaa"
+    },
+    "assets/volume.worker-C8xjTIth.js.map": {
+      "bytes": 71455,
+      "sha256": "9a90370656c43a11cfdd3ac558b9192c983ab81ea07f339cf67ac6b01ea9ff20"
+    },
+    "assets/LabApp-BIVQGmZd.js.map": {
+      "bytes": 1146932,
+      "sha256": "04fe5d544f01d907e801c1c0439b91f4180a28001793ac46c2e7a35bface6b2e"
+    },
+    "assets/sky.worker-CHm7n211.js.map": {
+      "bytes": 13323,
+      "sha256": "df7c7eaff6aefeb222e7b89eb86f6c9382a50f405fccd92e9886f2adaa6ac8be"
+    },
+    "assets/three.core-DxR5k0T0.js.map": {
+      "bytes": 1858617,
+      "sha256": "f69fe4d9751737dc47e263bd686fd2ce8f9b2ce280b023c7b268328cde7e7f31"
+    },
+    "assets/LabApp-BIVQGmZd.js": {
+      "bytes": 405933,
+      "sha256": "61b740644d902e97f0e29d2e7924b0d480f6bdfdd7eae827ea06300cd5b247b9"
+    },
+    "assets/three.core-DxR5k0T0.js": {
+      "bytes": 195512,
+      "sha256": "e4d296a475f2cd168d934f17f032d4f56291682208332fc6a926b3937200a810"
+    },
+    "assets/sky.worker-CHm7n211.js": {
+      "bytes": 2960,
+      "sha256": "503ad9438c1738310a9cbe2a41e9af0524e7046bce79e58d6da7c1e74863caaa"
+    },
+    "assets/render.worker-DxLLWdA4.js": {
+      "bytes": 978926,
+      "sha256": "f1f69e29975fb199254d0244b3ae524a5fa420dfe48cd505f0f4a86d955cb194"
+    },
+    "assets/CumulonimbusApp-BsbWVYYF.js.map": {
+      "bytes": 3783769,
+      "sha256": "ccf67a44016a2c9a7bdbd4b2f6565942f8d9e82b671e427e06ecd766a87b3166"
+    },
+    "assets/render.worker-DxLLWdA4.js.map": {
+      "bytes": 5568660,
+      "sha256": "36cb734c5e8fd2c453aac2f1410da628da174fcdf8af525ffb0284b946f3c52f"
+    },
+    "assets/volume.worker-C8xjTIth.js": {
+      "bytes": 14392,
+      "sha256": "5b8ee50a65b79ce5ff5cbc3bb76a9657c0c21ef56718e02fad88168f5c5dc4d5"
+    },
+    "assets/index-ptw48pl1.js.map": {
+      "bytes": 1569,
+      "sha256": "2b69a22b1bfb89980d0a434be366d4dc42e5f1365f0dba14ac0e788d3b28facd"
+    },
+    "assets/CumulonimbusApp-fw8aK7_r.css": {
+      "bytes": 13181,
+      "sha256": "bdf43d23ca041116c6b6eef5d8f95ab72115e3f0a0a8a728cb912e751dcaa9fb"
+    },
+    "fonts/commissioner/latin-variable.woff2": {
+      "bytes": 36696,
+      "sha256": "737ec8f28006b815be5333598aa32b203005f5788c8e61b09090b944eac8b79c"
+    },
+    "fonts/commissioner/SOURCE.md": {
+      "bytes": 361,
+      "sha256": "4d62bb7d2afbda450c342cafc6987bab37990ecea6e19378e1a6b0f706183a33"
+    },
+    "fonts/commissioner/OFL.txt": {
+      "bytes": 4395,
+      "sha256": "4a7d88c77b4bc39ff84f2e058ba8f015636c50ce33588a86d9da97defe519933"
+    }
+  },
+  "product": {
+    "src/cumulonimbus/GPUSceneEngine.ts": {
+      "bytes": 61272,
+      "sha256": "8ad9a31302c14f45723c8ca319ca7ce27bd99de9c8c0a234acf4052be2d35d49"
+    },
+    "src/cumulonimbus/solarTransition.ts": {
+      "bytes": 1130,
+      "sha256": "9e769472891cef26bca446e3d6340a0e8e25d0d57f84383b545cf178e7d29d8e"
+    },
+    "src/cumulonimbus/solarTransition.test.ts": {
+      "bytes": 9322,
+      "sha256": "a2f745fb3541ea0a223ccc23341564700ef836a7e6ecf0ba8232a69762524fab"
+    },
+    "src/cumulonimbus/lifecycle.test.ts": {
+      "bytes": 45532,
+      "sha256": "9ecd73f03f44ebbebd1e8da0f42b2ae951bd0b7014df82277633a81974185c23"
+    },
+    "src/cumulonimbus/volume.ts": {
+      "bytes": 25749,
+      "sha256": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74"
+    },
+    "src/cumulonimbus/cloudShader.ts": {
+      "bytes": 15553,
+      "sha256": "2e2e8b0ec236a1ae77363419bc766fb464d816b5ff2ce980af5f2bd72873cc44"
+    }
+  },
+  "originalAnatomyRestored": true,
+  "sunRuntimeMethodBodiesEqualPreTag": true,
+  "tests": {
+    "files": 35,
+    "passed": 247,
+    "failed": 0
+  },
+  "typecheckExit": 0,
+  "appBuildExit": 0,
+  "heroBuildExit": 0,
+  "newPerformanceMeasurement": false
+}

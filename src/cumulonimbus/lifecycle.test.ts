@@ -224,7 +224,7 @@ describe('scene async lifecycle',()=>{
       queuePrefix:{status:string;measuredSubmissions:number;confirmedPrefixId:number;samples:Array<{kind:string;prefixId:number}>}};
     expect(report.densitySamplingStart).toMatchObject({path:'r8unorm-extracted-r',format:'r8unorm',dimensions:[1,1,1],textureBytes:1,extraCpuPayloadBytes:1,extraGpuPayloadBytes:1,fallback:null});
     expect(report.densitySamplingEnd).toEqual(report.densitySamplingStart);
-    expect(report.rendererVersion).toBe('observatory-v48-rain-density-r8-trial');
+    expect(report.rendererVersion).toBe('observatory-v49-quality-checkpoint');
     expect(report.stats.frames).toBe(2);expect(report.queuePrefix.measuredSubmissions).toBe(report.stats.frames);
     expect(report.queuePrefix.status).toBe('completed');expect(report.queuePrefix.confirmedPrefixId).toBe(2);
     expect(report.queuePrefix.samples.filter(sample=>sample.kind==='end')).toHaveLength(1);

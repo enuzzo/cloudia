@@ -1,0 +1,63 @@
+{
+  "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/near-diagnosis/near-probes-supplement-summary.json",
+  "sourceSha256": "cc394f7b91590381b234e0f37cd0b8cfbcef61b41e10503ecfd6da6786cca022",
+  "sourceScope": "CPU Float64/half-filtered frozen59bb8d3 density classification, not a GPU render or radiance proof. Inputs and full study remain in external near-diagnosis directory.",
+  "target": [
+    -0.28995623264629566,
+    2.4981598424383944,
+    -0.02734375
+  ],
+  "selectedCases": [
+    {
+      "target": "exact-fps-target",
+      "yaw": 0,
+      "radius": "ordinary-probe",
+      "approach": 1,
+      "distance": 1.3795113574194038,
+      "ordinaryRadius": 1.3795113574194038,
+      "originRho": 0,
+      "depthKm": 0,
+      "first": {
+        "rho002": 0.003,
+        "rho025": 0.004,
+        "tau1": 0.10815949419829052,
+        "tau3": 0.2571245725517329
+      },
+      "tau100m": 0.9017879212924896
+    },
+    {
+      "target": "exact-fps-target",
+      "yaw": 0,
+      "radius": "fixed-surface-0.4",
+      "approach": 1,
+      "distance": 0.4,
+      "ordinaryRadius": 1.3795113574194038,
+      "originRho": 0.7125585419778706,
+      "depthKm": 0.9765113574194039,
+      "first": {
+        "rho002": 0,
+        "rho025": 0,
+        "tau1": 0.08133032515890165,
+        "tau3": 0.27789078075101253
+      },
+      "tau100m": 1.2130563477639213
+    },
+    {
+      "target": "exact-fps-target",
+      "yaw": 0,
+      "radius": "external-pad-100m",
+      "approach": 1,
+      "distance": 1.4795113574194039,
+      "ordinaryRadius": 1.3795113574194038,
+      "originRho": 0,
+      "depthKm": 0,
+      "first": {
+        "rho002": 0.10300000000000008,
+        "rho025": 0.10400000000000008,
+        "tau1": 0.20746133789758656,
+        "tau3": 0.3557256224809729
+      },
+      "tau100m": 0
+    }
+  ]
+}

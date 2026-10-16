@@ -1,0 +1,92 @@
+{
+  "baselineCommit": "59bb8d308c8a12144f56c5ecf0347422b28189d0",
+  "externalQA": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13",
+  "excluded": [
+    "Generated volumes and density/light binaries",
+    "Built applications and source maps",
+    "node_modules and duplicate frozen full-source trees",
+    "Unrelated solar continuity evidence"
+  ],
+  "files": {
+    "sources/baseline-59bb8d3/volume.ts": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/before/volume.ts",
+    "sources/baseline-59bb8d3/volume.test.ts": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/before/volume.test.ts",
+    "sources/candidate-1/volume.ts": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/visual-candidate-1/volume.ts",
+    "sources/candidate-1/morphology.ts": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/visual-candidate-1/morphology.ts",
+    "sources/candidate-1/morphology.test.ts": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/visual-candidate-1/morphology.test.ts",
+    "sources/candidate-1/manifest.json": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/visual-candidate-1/manifest.json",
+    "sources/candidate-2/volume.ts": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/visual-candidate-2/volume.ts",
+    "sources/candidate-2/morphology.ts": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/visual-candidate-2/morphology.ts",
+    "sources/candidate-2/morphology.test.ts": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/visual-candidate-2/morphology.test.ts",
+    "sources/candidate-2/manifest.json": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/visual-candidate-2/manifest.json",
+    "sources/candidate-3/volume.ts": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/visual-candidate-3/volume.ts",
+    "sources/candidate-3/morphology.ts": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/visual-candidate-3/morphology.ts",
+    "sources/candidate-3/morphology.test.ts": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/visual-candidate-3/morphology.test.ts",
+    "sources/candidate-3/manifest.json": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/visual-candidate-3/manifest.json",
+    "browser/baseline-seed72-front0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/baseline-seed72-front0.jpg",
+    "browser/baseline-seed72-front35.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/baseline-seed72-front35.jpg",
+    "browser/baseline-seed72-quarter0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/baseline-seed72-quarter0.jpg",
+    "browser/baseline-seed73-front0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/baseline-seed73-front0.jpg",
+    "browser/baseline-seed73-quarter0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/baseline-seed73-quarter0.jpg",
+    "browser/baseline-seed74-front0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/baseline-seed74-front0.jpg",
+    "browser/baseline-seed74-quarter0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/baseline-seed74-quarter0.jpg",
+    "browser/candidate1-seed72-front0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/candidate1-seed72-front0.jpg",
+    "browser/candidate1-seed72-quarter0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/candidate1-seed72-quarter0.jpg",
+    "browser/candidate1-seed73-front0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/candidate1-seed73-front0.jpg",
+    "browser/candidate1-seed73-quarter0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/candidate1-seed73-quarter0.jpg",
+    "browser/candidate1-seed74-front0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/candidate1-seed74-front0.jpg",
+    "browser/candidate1-seed74-quarter0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/candidate1-seed74-quarter0.jpg",
+    "browser/candidate2-seed72-front0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/candidate2-seed72-front0.jpg",
+    "browser/candidate2-seed72-quarter0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/candidate2-seed72-quarter0.jpg",
+    "browser/candidate2-seed73-front0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/candidate2-seed73-front0.jpg",
+    "browser/candidate2-seed73-quarter0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/candidate2-seed73-quarter0.jpg",
+    "browser/candidate2-seed74-front0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/candidate2-seed74-front0.jpg",
+    "browser/candidate2-seed74-quarter0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/candidate2-seed74-quarter0.jpg",
+    "owner-reports/CANDIDATE-1.md": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/CANDIDATE-1.md",
+    "owner-reports/CANDIDATE-2.md": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/CANDIDATE-2.md",
+    "numerical/support-skip-probe.json": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/support-skip-probe.json",
+    "numerical/candidate-moments.json": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/candidate-moments.json",
+    "numerical/candidate-2-32-64-128-probe.json": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/candidate-2-32-64-128-probe.json",
+    "numerical/candidate-3-32-64-128-probe.json": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/candidate-3-32-64-128-probe.json",
+    "numerical/candidate-2-vs-3-contraction.json": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/candidate-2-vs-3-contraction.json",
+    "numerical/candidate-2-seed74-material-sections.json": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/candidate-2-seed74-material-sections.json",
+    "numerical/candidate-2-seed74-primitive-metadata.json": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/candidate-2-seed74-primitive-metadata.json",
+    "audit-code/candidate-2-contraction-audit.mjs": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/candidate-2-contraction-audit.mjs",
+    "audit-code/candidate-3-contraction-audit.mjs": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/candidate-3-contraction-audit.mjs",
+    "audit-code/candidate-2-contraction-audit.ts": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/candidate-2-contraction-audit.ts",
+    "audit-code/candidate-3-contraction-audit.ts": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/candidate-3-contraction-audit.ts",
+    "audit-code/candidate-2-32-64-128-probe.mjs": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/candidate-2-32-64-128-probe.mjs",
+    "audit-code/candidate-3-32-64-128-probe.mjs": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/candidate-3-32-64-128-probe.mjs",
+    "audit-code/cpu-baseline-support-probe.mjs": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/cpu-baseline-support-probe.mjs",
+    "audit-code/cpu-candidate-support-probe.mjs": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/cpu-candidate-support-probe.mjs",
+    "patches/baseline-to-candidate-1.patch.gz": {
+      "generatedFrom": [
+        "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/before/volume.ts",
+        "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/visual-candidate-1/volume.ts"
+      ],
+      "uncompressedBytes": 8020,
+      "uncompressedSha256": "675abf8297adadb9372c976609ea71f3484fa5c9656745c7583e1c577ddaa7b1"
+    },
+    "patches/candidate-1-to-2.patch.gz": {
+      "generatedFrom": [
+        "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/visual-candidate-1/volume.ts",
+        "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/visual-candidate-2/volume.ts"
+      ],
+      "uncompressedBytes": 10008,
+      "uncompressedSha256": "bbbfcb72d46f0d417802c3aacd5ed83cd6c8c5167481f6ac1b872277d4d39575"
+    },
+    "patches/candidate-2-to-3.patch.gz": {
+      "generatedFrom": [
+        "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/visual-candidate-2/volume.ts",
+        "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/visual-candidate-3/volume.ts"
+      ],
+      "uncompressedBytes": 1134,
+      "uncompressedSha256": "f33a429f09437a13974036c015ec884d6413aa70fe6a28c7bd37e39f16dc8a1b"
+    },
+    "browser/candidate3-seed74-front0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/candidate3-seed74-front0.jpg",
+    "browser/candidate3-seed74-quarter0.jpg": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/browser/candidate3-seed74-quarter0.jpg",
+    "owner-reports/DIAGNOSIS-CANDIDATES-1-3.md": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/DIAGNOSIS-CANDIDATES-1-3.md",
+    "audit-code/candidate-2-material-sections.mjs": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/candidate-2-material-sections.mjs",
+    "audit-code/candidate-2-material-sections.ts": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/candidate-2-material-sections.ts",
+    "audit-code/candidate-2-sections-probe.mjs": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/anatomy/candidate-2-sections-probe.mjs"
+  }
+}

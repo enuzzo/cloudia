@@ -1,0 +1,204 @@
+{
+  "configuredViewportCSS": [
+    1280,
+    720
+  ],
+  "configuredNativeRender": [
+    2560,
+    1440
+  ],
+  "nominalSteps": 384,
+  "configurationEvidence": "Root browser session setting check; JPEG headers directly verify only screenshot dimensions",
+  "targetCaveat": "Targets follow each morphology support center; no pixel A/B claim",
+  "images": [
+    {
+      "path": "browser/baseline-seed72-front0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": false,
+      "exclusion": null
+    },
+    {
+      "path": "browser/baseline-seed72-front35.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": true,
+      "exclusion": "Approach35 context only"
+    },
+    {
+      "path": "browser/baseline-seed72-quarter0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": true,
+      "exclusion": "Home target includes drift; candidate reset-center"
+    },
+    {
+      "path": "browser/baseline-seed73-front0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": false,
+      "exclusion": null
+    },
+    {
+      "path": "browser/baseline-seed73-quarter0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": false,
+      "exclusion": null
+    },
+    {
+      "path": "browser/baseline-seed74-front0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": false,
+      "exclusion": null
+    },
+    {
+      "path": "browser/baseline-seed74-quarter0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": false,
+      "exclusion": null
+    },
+    {
+      "path": "browser/candidate1-seed72-front0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": false,
+      "exclusion": null
+    },
+    {
+      "path": "browser/candidate1-seed72-quarter0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": false,
+      "exclusion": null
+    },
+    {
+      "path": "browser/candidate1-seed73-front0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": false,
+      "exclusion": null
+    },
+    {
+      "path": "browser/candidate1-seed73-quarter0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": false,
+      "exclusion": null
+    },
+    {
+      "path": "browser/candidate1-seed74-front0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": false,
+      "exclusion": null
+    },
+    {
+      "path": "browser/candidate1-seed74-quarter0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": false,
+      "exclusion": null
+    },
+    {
+      "path": "browser/candidate2-seed72-front0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": false,
+      "exclusion": null
+    },
+    {
+      "path": "browser/candidate2-seed72-quarter0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": false,
+      "exclusion": null
+    },
+    {
+      "path": "browser/candidate2-seed73-front0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": false,
+      "exclusion": null
+    },
+    {
+      "path": "browser/candidate2-seed73-quarter0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": false,
+      "exclusion": null
+    },
+    {
+      "path": "browser/candidate2-seed74-front0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": false,
+      "exclusion": null
+    },
+    {
+      "path": "browser/candidate2-seed74-quarter0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": false,
+      "exclusion": null
+    },
+    {
+      "path": "browser/candidate3-seed74-front0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": false,
+      "exclusion": null
+    },
+    {
+      "path": "browser/candidate3-seed74-quarter0.jpg",
+      "width": 1280,
+      "height": 720,
+      "encoding": "JPEG",
+      "strictWorldCameraMatch": false,
+      "strictPoseMatchExcluded": false,
+      "exclusion": null
+    }
+  ]
+}

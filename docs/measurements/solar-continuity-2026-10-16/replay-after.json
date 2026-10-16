@@ -1,0 +1,345 @@
+{
+  "date": "2026-10-16T07:49:52.717Z",
+  "sourceCommit": "working tree atop 59bb8d3",
+  "helperSha256": "9e769472891cef26bca446e3d6340a0e8e25d0d57f84383b545cf178e7d29d8e",
+  "sourcePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle13/lighting/solar-continuity-after/src/cumulonimbus/GPUSceneEngine.ts",
+  "sourceSha256": "49174226267924eafe5f02a3b641884360e9dd49dc29da836008b83bc1b215f8",
+  "scope": "Actual action, applySky and advanceAtmosphere method bodies and actual interpolateSolarDirection function body extracted unchanged except TypeScript signatures. Stub state and synthetic sky LUT/color values, no GPU/DOM/frame rendering/worker latency measurement. Event timing is intentionally simulated. Vector math is actual Three0.186.0. DataUtils half packing stubbed because LUT bytes are not used to establish sun/cache timing. Does not establish the cause of close-up fog or visible flicker under ordinary continuous thermal motion.",
+  "methodSha256": {
+    "action": "30ff6866cf8419c5c590fa98ef3a9bab8cf3b8342288c114c7ed8f9225f2fb29",
+    "applySky": "301a5462743d16bb0e76e102a4a2af02936e23d30908def0f48c81a7d6103b3a",
+    "advance": "8eefeca2b58341a26d9f69626be2c2ae2e95d020eb30e8bd1227170a1d685e8e"
+  },
+  "results": [
+    {
+      "preset": "day",
+      "samples": [
+        {
+          "label": "before-command",
+          "timeMs": 0,
+          "sideTarget": 0,
+          "lightSide": 0,
+          "sun": [
+            -0.6681265923470772,
+            0.7126683651702157,
+            0.2138005095510647
+          ],
+          "sunset": 0,
+          "blend": 1,
+          "solar": [
+            1,
+            0.9,
+            0.8
+          ],
+          "sky0": 1
+        },
+        {
+          "label": "after-command-before-frame",
+          "timeMs": 0,
+          "sideTarget": 1,
+          "lightSide": 0,
+          "sun": [
+            -0.6681265923470772,
+            0.7126683651702157,
+            0.2138005095510647
+          ],
+          "sunset": 0,
+          "blend": 1,
+          "solar": [
+            1,
+            0.9,
+            0.8
+          ],
+          "sky0": 1
+        },
+        {
+          "label": "frame-before-sky-reply",
+          "timeMs": 16.666666666666668,
+          "sideTarget": 1,
+          "lightSide": 0,
+          "sun": [
+            -0.6681265923470772,
+            0.7126683651702157,
+            0.2138005095510647
+          ],
+          "sunset": 0,
+          "blend": 1,
+          "solar": [
+            1,
+            0.9,
+            0.8
+          ],
+          "sky0": 1
+        },
+        {
+          "label": "sky-reply-fade-at-zero",
+          "timeMs": 200,
+          "sideTarget": 1,
+          "lightSide": 0,
+          "sun": [
+            -0.6681265923470772,
+            0.7126683651702157,
+            0.2138005095510647
+          ],
+          "sunset": 0,
+          "blend": 0,
+          "solar": [
+            1,
+            0.9,
+            0.8
+          ],
+          "sky0": 1
+        },
+        {
+          "label": "first-frame-after-sky-reply",
+          "timeMs": 216.66666666666666,
+          "sideTarget": 1,
+          "lightSide": 0.00014400612997256517,
+          "sun": [
+            -0.6680488937195879,
+            0.7126683651702156,
+            0.21404316594006692
+          ],
+          "sunset": 0,
+          "blend": 0.00014400612997256517,
+          "solar": [
+            0.9999711987740055,
+            0.9,
+            0.8000288012259945
+          ],
+          "sky0": 1.0004320183899178
+        },
+        {
+          "label": "halfway-fade",
+          "timeMs": 1400,
+          "sideTarget": 1,
+          "lightSide": 0.5,
+          "sun": [
+            0,
+            0.7126683651702156,
+            0.7015011056909406
+          ],
+          "sunset": 0,
+          "blend": 0.5,
+          "solar": [
+            0.9,
+            0.9,
+            0.9
+          ],
+          "sky0": 2.5
+        },
+        {
+          "label": "reversed-target-awaiting-reply",
+          "timeMs": 1416.6666666666667,
+          "sideTarget": 0,
+          "lightSide": 0.5104159968707133,
+          "sun": [
+            0.018427078487137427,
+            0.7126683651702156,
+            0.7012590420551033
+          ],
+          "sunset": 0,
+          "blend": 0.5104159968707133,
+          "solar": [
+            0.8979168006258573,
+            0.9,
+            0.9020831993741427
+          ],
+          "sky0": 2.53124799061214
+        },
+        {
+          "label": "reversed-reply-fade-at-zero",
+          "timeMs": 1600,
+          "sideTarget": 0,
+          "lightSide": 0.5104159968707133,
+          "sun": [
+            0.018427078487137427,
+            0.7126683651702156,
+            0.7012590420551033
+          ],
+          "sunset": 0,
+          "blend": 0,
+          "solar": [
+            0.8979168006258573,
+            0.9,
+            0.9020831993741427
+          ],
+          "sky0": 2.531248092651367
+        }
+      ],
+      "observations": {
+        "commandShadowJump": 0,
+        "renderedFrameStillUsesOldDirectionDegrees": 0,
+        "directionJumpAtReplyDegrees": 0,
+        "skyBlendAtDirectionJump": 0,
+        "solarChangeAtDirectionJump": 0,
+        "directionJumpOnInterruptedReplyDegrees": 0
+      }
+    },
+    {
+      "preset": "low-sun",
+      "samples": [
+        {
+          "label": "before-command",
+          "timeMs": 0,
+          "sideTarget": 0,
+          "lightSide": 0,
+          "sun": [
+            -0.9519445346424993,
+            0.031731484488083314,
+            0.30462225108559976
+          ],
+          "sunset": 1,
+          "blend": 1,
+          "solar": [
+            1,
+            0.9,
+            0.8
+          ],
+          "sky0": 1
+        },
+        {
+          "label": "after-command-before-frame",
+          "timeMs": 0,
+          "sideTarget": 1,
+          "lightSide": 0,
+          "sun": [
+            -0.9519445346424993,
+            0.031731484488083314,
+            0.30462225108559976
+          ],
+          "sunset": 1,
+          "blend": 1,
+          "solar": [
+            1,
+            0.9,
+            0.8
+          ],
+          "sky0": 1
+        },
+        {
+          "label": "frame-before-sky-reply",
+          "timeMs": 16.666666666666668,
+          "sideTarget": 1,
+          "lightSide": 0,
+          "sun": [
+            -0.9519445346424993,
+            0.031731484488083314,
+            0.30462225108559976
+          ],
+          "sunset": 1,
+          "blend": 1,
+          "solar": [
+            1,
+            0.9,
+            0.8
+          ],
+          "sky0": 1
+        },
+        {
+          "label": "sky-reply-fade-at-zero",
+          "timeMs": 200,
+          "sideTarget": 1,
+          "lightSide": 0,
+          "sun": [
+            -0.9519445346424993,
+            0.031731484488083314,
+            0.30462225108559976
+          ],
+          "sunset": 1,
+          "blend": 0,
+          "solar": [
+            1,
+            0.9,
+            0.8
+          ],
+          "sky0": 1
+        },
+        {
+          "label": "first-frame-after-sky-reply",
+          "timeMs": 216.66666666666666,
+          "sideTarget": 1,
+          "lightSide": 0.00014400612997256517,
+          "sun": [
+            -0.9518338298978674,
+            0.03173148448808331,
+            0.3049679870972369
+          ],
+          "sunset": 1,
+          "blend": 0.00014400612997256517,
+          "solar": [
+            0.9999711987740055,
+            0.9,
+            0.8000288012259945
+          ],
+          "sky0": 1.0004320183899178
+        },
+        {
+          "label": "halfway-fade",
+          "timeMs": 1400,
+          "sideTarget": 1,
+          "lightSide": 0.5,
+          "sun": [
+            0,
+            0.03173148448808331,
+            0.9994964296545449
+          ],
+          "sunset": 1,
+          "blend": 0.5,
+          "solar": [
+            0.9,
+            0.9,
+            0.9
+          ],
+          "sky0": 2.5
+        },
+        {
+          "label": "reversed-target-awaiting-reply",
+          "timeMs": 1416.6666666666667,
+          "sideTarget": 0,
+          "lightSide": 0.5104159968707133,
+          "sun": [
+            0.026254839810576486,
+            0.03173148448808331,
+            0.9991515381956351
+          ],
+          "sunset": 1,
+          "blend": 0.5104159968707133,
+          "solar": [
+            0.8979168006258573,
+            0.9,
+            0.9020831993741427
+          ],
+          "sky0": 2.53124799061214
+        },
+        {
+          "label": "reversed-reply-fade-at-zero",
+          "timeMs": 1600,
+          "sideTarget": 0,
+          "lightSide": 0.5104159968707133,
+          "sun": [
+            0.026254839810576486,
+            0.03173148448808331,
+            0.9991515381956351
+          ],
+          "sunset": 1,
+          "blend": 0,
+          "solar": [
+            0.8979168006258573,
+            0.9,
+            0.9020831993741427
+          ],
+          "sky0": 2.531248092651367
+        }
+      ],
+      "observations": {
+        "commandShadowJump": 0,
+        "renderedFrameStillUsesOldDirectionDegrees": 0,
+        "directionJumpAtReplyDegrees": 0,
+        "skyBlendAtDirectionJump": 0,
+        "solarChangeAtDirectionJump": 0,
+        "directionJumpOnInterruptedReplyDegrees": 0
+      }
+    }
+  ]
+}

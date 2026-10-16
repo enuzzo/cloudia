@@ -1,0 +1,151 @@
+{
+  "description": "At every skipped bake-input voxel, evaluate the same displaced fine-density sampler unconditionally. A nonzero value is a false-empty bake prefilter.",
+  "sourceTarget": "if(field[i]<-supportMargin) {density[i]=0;continue;}",
+  "replacement": "if(field[i]<-supportMargin) {\n const py=voxelCenter(y,1,size),ice=smoothstep(iceStart,iceEnd,py);\n const exact=sampleCloudDensity(envelope,detail,voxelCenter(x,0,size),py,voxelCenter(z,2,size),ice);\n audit.skipped++;if(exact>0){audit.missed++;audit.maxMissed=Math.max(audit.maxMissed,exact);}\n density[i]=0;continue;\n}",
+  "results": [
+    {
+      "label": "baseline",
+      "size": 32,
+      "seed": 72,
+      "skipped": 17841,
+      "missed": 0,
+      "maxMissed": 0
+    },
+    {
+      "label": "baseline",
+      "size": 32,
+      "seed": 73,
+      "skipped": 17146,
+      "missed": 0,
+      "maxMissed": 0
+    },
+    {
+      "label": "baseline",
+      "size": 32,
+      "seed": 74,
+      "skipped": 18603,
+      "missed": 0,
+      "maxMissed": 0
+    },
+    {
+      "label": "baseline",
+      "size": 64,
+      "seed": 72,
+      "skipped": 183278,
+      "missed": 0,
+      "maxMissed": 0
+    },
+    {
+      "label": "baseline",
+      "size": 64,
+      "seed": 73,
+      "skipped": 179952,
+      "missed": 0,
+      "maxMissed": 0
+    },
+    {
+      "label": "baseline",
+      "size": 64,
+      "seed": 74,
+      "skipped": 189508,
+      "missed": 0,
+      "maxMissed": 0
+    },
+    {
+      "label": "baseline",
+      "size": 128,
+      "seed": 72,
+      "skipped": 1639138,
+      "missed": 0,
+      "maxMissed": 0
+    },
+    {
+      "label": "baseline",
+      "size": 128,
+      "seed": 73,
+      "skipped": 1619781,
+      "missed": 0,
+      "maxMissed": 0
+    },
+    {
+      "label": "baseline",
+      "size": 128,
+      "seed": 74,
+      "skipped": 1681425,
+      "missed": 0,
+      "maxMissed": 0
+    },
+    {
+      "label": "candidate",
+      "size": 32,
+      "seed": 72,
+      "skipped": 17659,
+      "missed": 0,
+      "maxMissed": 0
+    },
+    {
+      "label": "candidate",
+      "size": 32,
+      "seed": 73,
+      "skipped": 17408,
+      "missed": 0,
+      "maxMissed": 0
+    },
+    {
+      "label": "candidate",
+      "size": 32,
+      "seed": 74,
+      "skipped": 19175,
+      "missed": 0,
+      "maxMissed": 0
+    },
+    {
+      "label": "candidate",
+      "size": 64,
+      "seed": 72,
+      "skipped": 183069,
+      "missed": 0,
+      "maxMissed": 0
+    },
+    {
+      "label": "candidate",
+      "size": 64,
+      "seed": 73,
+      "skipped": 182887,
+      "missed": 0,
+      "maxMissed": 0
+    },
+    {
+      "label": "candidate",
+      "size": 64,
+      "seed": 74,
+      "skipped": 193069,
+      "missed": 0,
+      "maxMissed": 0
+    },
+    {
+      "label": "candidate",
+      "size": 128,
+      "seed": 72,
+      "skipped": 1640567,
+      "missed": 0,
+      "maxMissed": 0
+    },
+    {
+      "label": "candidate",
+      "size": 128,
+      "seed": 73,
+      "skipped": 1645132,
+      "missed": 0,
+      "maxMissed": 0
+    },
+    {
+      "label": "candidate",
+      "size": 128,
+      "seed": 74,
+      "skipped": 1710308,
+      "missed": 0,
+      "maxMissed": 0
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "baseCommit": "59bb8d3",
+  "candidate": "Pre-version-tag solar continuity controller; original cloud anatomy in browser proof",
+  "scope": "Curated source/controller/replay/test/browser evidence. No large volumes, complete project snapshot or build outputs. Main document owns qualification claims; archive is not whole-goal acceptance.",
+  "selfExcluded": true,
+  "payloadCount": 37,
+  "payloadBytes": 808343,
+  "files": {
+    "GPUSceneEngine.patch.gz": {
+      "bytes": 2358,
+      "sha256": "5ea9e4e09169d1e0e3047ffd9f5dd25f28e4e9fcf0aff4de1e39036746f25c8d"
+    },
+    "after/GPUSceneEngine.ts": {
+      "bytes": 61275,
+      "sha256": "49174226267924eafe5f02a3b641884360e9dd49dc29da836008b83bc1b215f8"
+    },
+    "after/solarTransition.test.ts": {
+      "bytes": 9322,
+      "sha256": "a2f745fb3541ea0a223ccc23341564700ef836a7e6ecf0ba8232a69762524fab"
+    },
+    "after/solarTransition.ts": {
+      "bytes": 1130,
+      "sha256": "9e769472891cef26bca446e3d6340a0e8e25d0d57f84383b545cf178e7d29d8e"
+    },
+    "before/GPUSceneEngine.ts": {
+      "bytes": 61072,
+      "sha256": "47c3fd0f8946abcfad47477618e10215c8a19545d0d7ab580b14b532638fbe60"
+    },
+    "browser/near-classification-report.md": {
+      "bytes": 6758,
+      "sha256": "2853c85263a525669a38d8c2a3695909e0ec15df202a891f2ff7a9cdee0c2efd"
+    },
+    "browser/near-classification-selected.json": {
+      "bytes": 1829,
+      "sha256": "af58aaca628445fd7da660fe7ebdee97308e4f835560a4efdd885fa803ae6f39"
+    },
+    "browser/solar-day-after-command.jpg": {
+      "bytes": 28888,
+      "sha256": "74e63dbc392d7584ccfc8c39e2a499a07adad17e2b1bd31c695ae5d818510b10",
+      "imageSize": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    "browser/solar-day-left-near.jpg": {
+      "bytes": 28862,
+      "sha256": "01526746efc42e11e6b93159f2924308a92df21ea95cd40712a3df4e50b2349b",
+      "imageSize": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    "browser/solar-day-left20.jpg": {
+      "bytes": 62584,
+      "sha256": "4a6a0ba3686da26f3fb1f0d4310ab0eb662765659e52c71ac3aa60e018dfb646",
+      "imageSize": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    "browser/solar-day-reverse-start20.jpg": {
+      "bytes": 64251,
+      "sha256": "e737ab2d851ed797e9691261f6a66b0877c12c1d3e74b4334664cffbc4967e1e",
+      "imageSize": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    "browser/solar-day-right20.jpg": {
+      "bytes": 64403,
+      "sha256": "68e4912c1066762a8f19fde53bfdc24a8458a27be7cc446a704830736b66999f",
+      "imageSize": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    "browser/solar-sunset-after-command20.jpg": {
+      "bytes": 54189,
+      "sha256": "26aa2f6bc9cc39a260e7be31ea74210579bc5e16600f09fd16370c4f4998890d",
+      "imageSize": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    "browser/solar-sunset-left20.jpg": {
+      "bytes": 55857,
+      "sha256": "770cd09303ee840f63f1b7c5804b887b3bd242b55ba124202541727f9d74c8b3",
+      "imageSize": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    "browser/solar-sunset-right20.jpg": {
+      "bytes": 55015,
+      "sha256": "47dce9c77a0fb9b06a4452e491e25f9c91abf872c62f9ee2f27041fe42a86063",
+      "imageSize": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    "browser/solar-worker-proof.json": {
+      "bytes": 4221,
+      "sha256": "2479c4d4d1e6d31e3bb0f861b6b8cc8d819cf4315ed3d5396999e0b41f031a60"
+    },
+    "browser/solar-worker-sunset-after-command.jpg": {
+      "bytes": 43746,
+      "sha256": "91b6cced8eee50420285247111b1de0d5d484b7dee6027047cc6bb2ee0ec697d",
+      "imageSize": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    "browser/solar-worker-sunset-left.jpg": {
+      "bytes": 44561,
+      "sha256": "66c63b2401d6aa5e94d7739eae88c91ace9d12ee376a51aafac497bf88664a84",
+      "imageSize": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    "browser/solar-worker-sunset-right.jpg": {
+      "bytes": 44843,
+      "sha256": "5833f0270120a0241366623104363b31f04be20594f5f98d9e0991ff0e6ed8c9",
+      "imageSize": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    "replay-after.json": {
+      "bytes": 9240,
+      "sha256": "2d0d2330481a8bd61b481fe2daf8e87b6277d6a9ef43a31000acf41418bdeb77"
+    },
+    "replay-after.mjs": {
+      "bytes": 6670,
+      "sha256": "5d30121f3e1e48b3a2118f94fdd637d75eaa1dd85545d7ed22a30d9fcf581e8f"
+    },
+    "replay-before.json": {
+      "bytes": 9025,
+      "sha256": "bc4017f2c36994ba2efe552462f8cdd8a9b0616cd2134773ae199d31ab8cdaa3"
+    },
+    "replay-before.mjs": {
+      "bytes": 5988,
+      "sha256": "13f93ea24a5f158c7fa021fcd359554f8e8b626d7171d577d3c60271aa5cbd3d"
+    },
+    "validation/archive-verification.json": {
+      "bytes": 2033,
+      "sha256": "d73292b9f28cf713f543c4b86dcb93837e9d5758683b466038483258b927b2a5"
+    },
+    "validation/focused-revision2.json": {
+      "bytes": 1212,
+      "sha256": "764919bb6a7e1221e7a59cf9d64ae09f3f7fd0faea4edbbd917593add4c8b1c6"
+    },
+    "validation/focused-revision2.log": {
+      "bytes": 448,
+      "sha256": "6264d717150372594f7bf36a44332c8b72d7491aaac26e93f38e12406f7a9c06"
+    },
+    "validation/full-suite-provenance.json": {
+      "bytes": 1249,
+      "sha256": "77cc67ad626a97a2009e38c27cab42ca622266a4e68f25f39d1cedf3e6370710"
+    },
+    "validation/full-tests-frozen-before-final-assertions.log": {
+      "bytes": 273,
+      "sha256": "a2f04bc028f6bb7b6c3b99eebded5cf5fb44cdf86785c6c17cb2cf1538c07d52"
+    },
+    "validation/portable-replay-check.json": {
+      "bytes": 816,
+      "sha256": "3a8f1d2e053a301fa4a68d1bc2ca26c8e08455835d6d3d427c486922b2892824"
+    },
+    "integration/final-browser-proof.json": {
+      "bytes": 4205,
+      "sha256": "2497348a12d2c404699efba48bea364c6f2aa6c75aa265db1509815b85e0f8df"
+    },
+    "integration/final-v49-sunset-right.jpg": {
+      "bytes": 44843,
+      "sha256": "5833f0270120a0241366623104363b31f04be20594f5f98d9e0991ff0e6ed8c9"
+    },
+    "integration/final-tests.log.gz": {
+      "bytes": 224,
+      "sha256": "2d0868add421c71880f5fedec0bcf7ef07b54b6c8479a98e20526e77b2fe8a42"
+    },
+    "integration/final-build-app.log.gz": {
+      "bytes": 744,
+      "sha256": "219b27932d4d3ff5a1db4e23cee6153876fa06c97f12eb1393902a25898493da"
+    },
+    "integration/verification.json": {
+      "bytes": 23230,
+      "sha256": "16af8a5d8dd6498e6759565ca1bddd102a90764a15f04b760c48d972e1f999da"
+    },
+    "integration/final-typecheck.log.gz": {
+      "bytes": 20,
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    "integration/final-build-hero.log.gz": {
+      "bytes": 228,
+      "sha256": "5c210466e786ff5f13111d57679fb35e9fbd139c6de01c8e85bf946831272f43"
+    },
+    "integration/ordinary-preview-proof.json": {
+      "bytes": 2731,
+      "sha256": "c911d3a814de4428913c175fa3b4714e76f98c6e2bed1463014d780f30c560db"
+    }
+  },
+  "compressedArtifacts": {
+    "GPUSceneEngine.patch.gz": {
+      "encoding": "gzip",
+      "rawBytes": 7744,
+      "rawSha256": "5a43cc721a75c2dc923f19a6edbea767adab8f4e744891a8f9879b69c182a5e3",
+      "losslessRoundtripVerified": true
+    }
+  },
+  "finalIntegration": "integration/verification.json; pre-tag browser evidence retained separately"
+}

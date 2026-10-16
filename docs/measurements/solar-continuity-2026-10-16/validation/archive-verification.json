@@ -1,0 +1,74 @@
+{
+  "archivedReplaySourcesMatchSha256": true,
+  "finalTestRevision": 2,
+  "portableReplaysMatchOriginalMethodHashesAndResults": true,
+  "workerProof": {
+    "executionThread": "real worker as reported in live UI",
+    "canvas": [
+      2560,
+      1440
+    ],
+    "nominalSteps": 384,
+    "consoleEntries": 0
+  },
+  "jpegDimensions": {
+    "solar-day-right20.jpg": {
+      "width": 1280,
+      "height": 720
+    },
+    "solar-sunset-after-command20.jpg": {
+      "width": 1280,
+      "height": 720
+    },
+    "solar-worker-sunset-after-command.jpg": {
+      "width": 1280,
+      "height": 720
+    },
+    "solar-day-after-command.jpg": {
+      "width": 1280,
+      "height": 720
+    },
+    "solar-worker-sunset-left.jpg": {
+      "width": 1280,
+      "height": 720
+    },
+    "solar-worker-sunset-right.jpg": {
+      "width": 1280,
+      "height": 720
+    },
+    "solar-day-left20.jpg": {
+      "width": 1280,
+      "height": 720
+    },
+    "solar-sunset-right20.jpg": {
+      "width": 1280,
+      "height": 720
+    },
+    "solar-sunset-left20.jpg": {
+      "width": 1280,
+      "height": 720
+    },
+    "solar-day-left-near.jpg": {
+      "width": 1280,
+      "height": 720
+    },
+    "solar-day-reverse-start20.jpg": {
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "limits": [
+    "Sparse CSS JPEG images, not native canvas captures or continuous temporal recording.",
+    "Controller replay does not measure radiance or physical intermediate-direction transport.",
+    "Near-field quality and stable60FPS remain open."
+  ],
+  "finalProductSnapshotsMatchedOwnedSourcesAtArchiveCapture": true,
+  "candidateScope": "Pre-version-tag solar controller engine SHA49174226267924eafe5f02a3b641884360e9dd49dc29da836008b83bc1b215f8. Browser/replay proof precedes root final v49 checkpoint label and geometry decision.",
+  "patchCompression": {
+    "encoding": "gzip",
+    "mtime": 0,
+    "rawBytes": 7744,
+    "rawSha256": "5a43cc721a75c2dc923f19a6edbea767adab8f4e744891a8f9879b69c182a5e3",
+    "losslessRoundtripVerified": true
+  }
+}
