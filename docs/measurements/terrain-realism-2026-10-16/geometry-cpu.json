@@ -1,0 +1,27 @@
+{
+  "scope": "One CPU construction including samples, welding, indices and area-weighted normal blend; not GPU timing or FPS evidence",
+  "configuration": {
+    "cellsPerSide": 256,
+    "levels": 9,
+    "spacingKm": 0.032
+  },
+  "vertices": 465409,
+  "triangles": 929792,
+  "stitchedCells": 4096,
+  "levels": 9,
+  "cellsPerSide": 256,
+  "baseSpacingKm": 0.032,
+  "outerExtentKm": 1048.576,
+  "geometryBytes": 26050592,
+  "sampleCalls": 465409,
+  "minimumHeightKm": 0,
+  "maximumHeightKm": 3.0260982513427734,
+  "normalBlendStartRadiusKm": 32.768,
+  "normalBlendEndRadiusKm": 65.536,
+  "cpuTriangleLookupBytes": 2359296,
+  "buildMs": 681.9035,
+  "sourceHashes": {
+    "terrainMesh.ts": "fd739f10d510b0aff05d19e4a283be95b8aee386a27bcf5df1f54e0866a0da99",
+    "terrainSurface.ts": "85cb74d951a088b3f789f5aea92c8f26fa20e1e74fa1283532a8a2724da2976e"
+  }
+}

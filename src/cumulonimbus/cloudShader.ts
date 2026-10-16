@@ -21,7 +21,7 @@ const channel=wgsl(`fn lightningChannelDistance(p:vec3<f32>,a:vec3<f32>,b:vec3<f
 }`);
 const integrationSource = `
 fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler,
-  inspection:f32, ground:f32, rainBounds:vec4<f32>, rainMap:texture_2d<f32>, rainSampler:sampler,
+  inspection:f32, ground:f32, terrainRaster:texture_2d<f32>, rainBounds:vec4<f32>, rainMap:texture_2d<f32>, rainSampler:sampler,
   sunsetLight:texture_3d<f32>, sunsetSampler:sampler, sunsetAmount:f32,
   skyLUT: texture_2d<f32>, skySampler: sampler, skyFrom:texture_2d<f32>, skyFromSampler:sampler, atmosphereBlend:f32, precipitationTime:f32, solarColor:vec3<f32>, ambientColor:vec3<f32>, weather:vec3<f32>, forcing:vec2<f32>, wind:vec2<f32>, flash:vec4<f32>, flashTop:vec3<f32>, flashBend:vec3<f32>, flashEnd:vec3<f32>, flashBranch:vec3<f32>,
   detail: texture_3d<f32>, detailSampler: sampler, flow: texture_3d<f32>, flowSampler: sampler, iceRange: vec2<f32>,
@@ -39,13 +39,19 @@ fn integrateCloud(uv: vec2<f32>, volume: texture_3d<f32>, volumeSampler: sampler
   let flashDirection=normalize(flash.xyz+drift-origin);
   sky+=vec3<f32>(0.12,0.122,0.126)*flash.w*(0.15+pow(max(0.0,dot(ray,flashDirection)),32.0));
   var backdrop=sky;
-  var groundDistance=earthDistance(origin,ray);
-  // Overcast changes atmospheric light; it must not dissolve the land itself.
-  let groundAmount=ground;
-  if(groundDistance>0.0 && groundAmount>0.001){
-    groundDistance=landscapeDistance(origin,ray,groundDistance);
-    backdrop=mix(sky,landscapeColor(origin+ray*groundDistance,groundDistance,sun,solarColor,ambientColor,sky,weather.x),groundAmount);
-  }else{groundDistance=10000.0;}
+  var groundDistance=10000.0;
+  // The depth-tested terrain pass supplies the first visible triangle, including
+  // relief above the sea horizon. Its RGB is linear radiance without aerial/film.
+  if(ground>0.001){
+    let terrainSize=vec2<i32>(textureDimensions(terrainRaster,0));
+    let terrainPixel=clamp(vec2<i32>(floor(uv*vec2<f32>(terrainSize))),vec2<i32>(0),terrainSize-vec2<i32>(1));
+    let terrainHit=textureLoad(terrainRaster,terrainPixel,0);
+    if(terrainHit.a>0.0){
+      groundDistance=terrainHit.a;
+      let terrainBackdrop=mix(sky,terrainHit.rgb,aerialTransmittance(groundDistance,weather.x));
+      backdrop=mix(sky,terrainBackdrop,ground);
+    }
+  }
   let hasRain=weather.z>0.001 && rainBounds.z>rainBounds.x && rainBounds.w>rainBounds.y;
   // Source bounds include the bilinear halo. At base<=2.5 and y>=-4.75,
   // falling drift plus source shear is bounded by 7.25*.32+.155 < 2.5.

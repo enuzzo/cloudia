@@ -1,6 +1,6 @@
 import { DataTexture, DataUtils, Vector4, Data3DTexture, LinearFilter, MeshBasicNodeMaterial, NoColorSpace, QuadMesh,
-  RGBAFormat, RGFormat, RedFormat, NearestFilter, RepeatWrapping, ClampToEdgeWrapping, UnsignedByteType, HalfFloatType, Storage3DTexture, Vector2, Vector3, WebGPURenderer } from 'three/webgpu';
-import { Fn, instanceIndex, vec3, wgslFn, storageTexture3D, textureStore, texture3D, texture, uniform, uv } from 'three/tsl';
+  RGBAFormat, RGFormat, RedFormat, NearestFilter, RepeatWrapping, ClampToEdgeWrapping, UnsignedByteType, HalfFloatType, Storage3DTexture, Vector2, Vector3, type Node, WebGPURenderer } from 'three/webgpu';
+import { Fn, instanceIndex, vec3, wgsl, wgslFn, storageTexture3D, textureStore, texture3D, texture, uniform, uv } from 'three/tsl';
 import {WeatherState,WEATHER_SCENES,type AtmosphereIntent,type WeatherScene} from './weatherState';
 import {solarDirection} from './sun';
 import {interpolateSolarDirection} from './solarTransition';
@@ -16,6 +16,8 @@ import { MOTION_FIELD_SIZE,fillMotionField,writeFilteredSourcePosition } from '.
 import { EXTINCTION, ICE_EXTINCTION, DETAIL_RESOLUTION, SUN_LEFT, VOLUME_RESOLUTION, cloudParameters, morphologyFamily, iceHeights, sampleCloudDensity, BOUNDS_MIN, BOUNDS_SIZE, type CloudVolume } from './volume';
 import { conservativeEmptyStep } from './emptyTraversal';
 import {clampCameraAboveLandscape,CAMERA_TERRAIN_CLEARANCE_KM,TERRAIN_HASH_ID} from './landscape';
+import {TerrainMesh} from './terrainMesh';
+import {terrainSurfaceSample,TERRAIN_SURFACE_WGSL,TERRAIN_SURFACE_ID} from './terrainSurface';
 import { FrameMeasurement, summarizeFrames, summarizeSamples } from './performance';
 import {QueuePrefixMeasurement} from './queuePrefixMeasurement';
 import {resolveThree186TimestampBatch,type TimestampPoolKind} from './three186TimestampBatch';
@@ -37,6 +39,7 @@ export class GPUSceneEngine {
   private device: GPUDevice | null = null;
   private quad: QuadMesh | null = null;
   private material: MeshBasicNodeMaterial | null = null;
+  private terrainRaster:TerrainMesh|null=null;
   private volume: Data3DTexture | null = null;
   private detailVolume: Data3DTexture | null = null;
   private narrowCloudVolume:Data3DTexture|null=null;
@@ -206,7 +209,7 @@ export class GPUSceneEngine {
       const device=await adapter.requestDevice({requiredFeatures:this.timingMode!=='off'&&adapter.features.has('timestamp-query')?['timestamp-query']:[]});
       if(this.destroyed) { device.destroy(); return; }
       this.device=device;
-      const renderer = new WebGPURenderer({canvas:this.host.canvas as HTMLCanvasElement,antialias:false,device,trackTimestamp:this.timingMode!=='off'});
+      const renderer = new WebGPURenderer({canvas:this.host.canvas as HTMLCanvasElement,antialias:false,device,reversedDepthBuffer:true,trackTimestamp:this.timingMode!=='off'});
       this.renderer = renderer;
       const originalDeviceLost=renderer.onDeviceLost.bind(renderer);
       renderer.onDeviceLost=(info)=>{
@@ -231,8 +234,10 @@ export class GPUSceneEngine {
       const texture = await this.loadVolume();
       if(this.destroyed || this.deviceLost) { this.disposeCloudTextures(texture); return; }
       device.pushErrorScope?.('validation');
+      this.createTerrain();
       this.installVolume(texture);
       this.applySize();
+      this.renderTerrain();
       this.quad!.render(renderer); // Compile the shader before declaring the scene ready.
       const shaderError=await device.popErrorScope?.();
       if(shaderError)throw new Error(`Compilazione GPU fallita: ${shaderError.message.slice(0,500)}`);
@@ -282,15 +287,28 @@ export class GPUSceneEngine {
     this.renderer?.compute(this.interpolateFlow); // Initialize this seed even for the frozen diagnostic control.
     oldMaterial?.dispose(); oldVolume?.dispose();oldDetail?.dispose();oldSunset?.dispose();oldNarrow?.dispose();oldDensity?.dispose();
   }
+  private createTerrain(){
+    const shade=wgslFn(`fn terrainRasterColour(point:vec3<f32>,normal:vec3<f32>,height:f32,coast:f32,distance:f32,sun:vec3<f32>,solar:vec3<f32>,ambient:vec3<f32>,solarVisibility:f32)->vec3<f32>{
+      let pixelKm=max(max(length(dpdx(point)),length(dpdy(point))),.00001);
+      return terrainSurfaceMaterial(point,height,coast,normal,distance,pixelKm,sun,solar,ambient,solarVisibility);
+    }`,[wgsl(TERRAIN_SURFACE_WGSL)]);
+    this.terrainRaster=new TerrainMesh({cellsPerSide:256,levels:9,sample:terrainSurfaceSample,shade:({positionWorld,normal,height,coast,distance,shadowVisibility})=>
+      shade({point:positionWorld,normal,height,coast,distance,sun:this.sun,solar:this.solarColor,ambient:this.ambientColor,solarVisibility:shadowVisibility}) as Node<'vec3'>});
+  }
+  private renderTerrain(){
+    if(this.renderer&&this.terrainRaster&&this.ground.value>.001)this.terrainRaster.render(this.renderer,{
+      origin:this.origin.value,forward:this.forward.value,right:this.right.value,up:this.up.value,
+      aspect:this.aspect.value,tanFov:.2867,inspection:this.inspection.value},this.sun.value);
+  }
   private configureIntegrator(){
     const useNarrow=this.weatherState.targetRain>.001||this.weatherState.rain>.001;
-    if(!this.material||!this.volume||!this.detailVolume||!this.sunsetVolume||(useNarrow&&!this.narrowCloudVolume))return;
+    if(!this.material||!this.terrainRaster||!this.volume||!this.detailVolume||!this.sunsetVolume||(useNarrow&&!this.narrowCloudVolume))return;
     this.approachTime=-1000;this.approachFieldTime=NaN;
     if(this.diagnostic.value===3)this.approachField.fill(0);
     const volumeNode=texture3D(this.volume),detailNode=texture3D(this.detailVolume);
     const flowNode=texture3D(this.currentFlow),sunsetNode=texture3D(this.sunsetVolume);
     const skyNode=texture(this.skyTexture),skyFromNode=texture(this.skyFromTexture),rainNode=texture(this.rainTexture);
-    const parameters={inspection:this.inspection,ground:this.ground,rainBounds:this.rainBounds,rainMap:rainNode,rainSampler:rainNode,sunsetLight:sunsetNode,sunsetSampler:sunsetNode,sunsetAmount:this.sunsetAmount,precipitationTime:this.precipitationTime,atmosphereBlend:this.atmosphereBlend,skyFrom:skyFromNode,skyFromSampler:skyFromNode,skyLUT:skyNode,skySampler:skyNode,solarColor:this.solarColor,ambientColor:this.ambientColor,weather:this.weather,forcing:this.forcing,wind:this.wind,flash:this.flash,flashTop:this.flashTop,flashBend:this.flashBend,flashEnd:this.flashEnd,flashBranch:this.flashBranch,uv:uv(),volume:volumeNode,volumeSampler:volumeNode,detail:detailNode,detailSampler:detailNode,flow:flowNode,flowSampler:flowNode,iceRange:this.iceRange,
+    const parameters={inspection:this.inspection,ground:this.ground,terrainRaster:texture(this.terrainRaster.texture),rainBounds:this.rainBounds,rainMap:rainNode,rainSampler:rainNode,sunsetLight:sunsetNode,sunsetSampler:sunsetNode,sunsetAmount:this.sunsetAmount,precipitationTime:this.precipitationTime,atmosphereBlend:this.atmosphereBlend,skyFrom:skyFromNode,skyFromSampler:skyFromNode,skyLUT:skyNode,skySampler:skyNode,solarColor:this.solarColor,ambientColor:this.ambientColor,weather:this.weather,forcing:this.forcing,wind:this.wind,flash:this.flash,flashTop:this.flashTop,flashBend:this.flashBend,flashEnd:this.flashEnd,flashBranch:this.flashBranch,uv:uv(),volume:volumeNode,volumeSampler:volumeNode,detail:detailNode,detailSampler:detailNode,flow:flowNode,flowSampler:flowNode,iceRange:this.iceRange,
       origin:this.origin,forward:this.forward,right:this.right,up:this.up,aspect:this.aspect,tanFov:uniform(.2867),
       stepSize:this.stepSize,emptyStep:this.emptyStep,resolution:this.resolution,drift:this.drift,growth:this.growth,supportMin:this.supportMin,supportMax:this.supportMax,sun:this.sun,lightSide:this.lightSide,extinction:uniform(EXTINCTION),iceExtinction:uniform(ICE_EXTINCTION)};
     const useDensityR8=useNarrow&&this.densityR8Volume!==null;
@@ -436,7 +454,7 @@ export class GPUSceneEngine {
     }
     this.inspection.value=this.view.approach;
     const camera=this.view.frame(focus,this.aspect.value,autoYaw,this.comparisonSurface??this.approachSurface);
-    if(this.ground.value>0)camera.origin=clampCameraAboveLandscape(camera.origin);
+    if(this.ground.value>0)camera.origin=clampCameraAboveLandscape(camera.origin,CAMERA_TERRAIN_CLEARANCE_KM,this.terrainRaster?.surfaceY(camera.origin[0],camera.origin[2])??null);
     else camera.origin[1]=Math.max(-3.8,camera.origin[1]);
     this.origin.value.fromArray(camera.origin);
     this.forward.value.copy(this.viewFocus).sub(this.origin.value).normalize();
@@ -447,6 +465,7 @@ export class GPUSceneEngine {
     const computeStart=performance.now();
     if(!this.frozenFlow) this.renderer.compute(this.interpolateFlow);
     const renderStart=performance.now();
+    this.renderTerrain();
     this.quad.render(this.renderer);
     const drawId=timestampBatch?++this.timestampDrawSerial:0,countersAfter=timestampBatch?this.readTimestampCounters():null;
     const measured=this.measurement;
@@ -588,6 +607,7 @@ export class GPUSceneEngine {
     this.internalHeight=Math.round(this.outputHeight*QUALITY[this.quality].scale);
     this.renderer.setPixelRatio(1);
     this.renderer.setSize(this.internalWidth,this.internalHeight,false);
+    this.terrainRaster?.resize(this.internalWidth,this.internalHeight);
     this.aspect.value=this.outputWidth/this.outputHeight;
     this.emit({type:'layout',fixed:this.outputMode==='720'||this.outputMode==='1080'});
     this.resolution.value.set(this.internalWidth,this.internalHeight);
@@ -633,7 +653,7 @@ export class GPUSceneEngine {
     this.benchmarkContext={date:new Date().toISOString(),backend:'WebGPU',adapter:this.adapterInfo,threeRevision:'186',quality:this.quality,
       output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],nominalSteps:QUALITY[this.quality].steps,
       cloudExtinctionPerKm:EXTINCTION,iceExtinctionPerKm:ICE_EXTINCTION,mediaIntegration:'co-located cloud/rain exponential segments',virgaReachVariation:'broad advected sheets, 0.7–1.3 of weak fall distance',precipitationMaxStepKm:RAIN_SAMPLE_STEP,precipitationExtinctionPerKm:RAIN_EXTINCTION,precipitationSourceBounds:this.rainBounds.value.toArray(),
-      rendererVersion:'observatory-v50-quality-checkpoint',navigationVersion:'filtered-field-terrain-clearance-v3',terrainCameraClearanceKm:CAMERA_TERRAIN_CLEARANCE_KM,terrainHash:TERRAIN_HASH_ID,skyCalculation:'cached dedicated worker',skyPending:this.skyPending,solarVisibility:'256-cubed day + RG8 low-sun endpoints',sunDirection:this.sun.value.toArray(),sunsetAmount:this.sunsetAmount.value,extraSunsetTextureBytes:VOLUME_RESOLUTION**3*2,probeImplementation:'compile-time specialization',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{comparisonSurfaceKm:this.comparisonSurface,comparisonTargetKm:this.comparisonTarget,probeSkipped:this.comparisonSurface!==null,approach:this.view.approach,origin:this.origin.value.toArray(),probeFlow:'16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively',probeFieldBytes:this.approachField.byteLength,surfaceEstimateKm:this.comparisonSurface===null?this.approachSurface:null,probe:this.approachProbe,probeAgeMs:this.approachProbe?performance.now()-this.approachTime:null,altitudeKm:this.origin.value.y+4,ground:this.ground.value,yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
+      rendererVersion:'observatory-v52-terrain-raster',terrainSurfaceId:TERRAIN_SURFACE_ID,terrainRaster:this.terrainRaster?.stats(),navigationVersion:'filtered-field-triangulated-terrain-clearance-v4',terrainCameraClearanceKm:CAMERA_TERRAIN_CLEARANCE_KM,terrainHash:TERRAIN_HASH_ID,skyCalculation:'cached dedicated worker',skyPending:this.skyPending,solarVisibility:'256-cubed day + RG8 low-sun endpoints',sunDirection:this.sun.value.toArray(),sunsetAmount:this.sunsetAmount.value,extraSunsetTextureBytes:VOLUME_RESOLUTION**3*2,probeImplementation:'compile-time specialization',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{comparisonSurfaceKm:this.comparisonSurface,comparisonTargetKm:this.comparisonTarget,probeSkipped:this.comparisonSurface!==null,approach:this.view.approach,origin:this.origin.value.toArray(),probeFlow:'16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively',probeFieldBytes:this.approachField.byteLength,surfaceEstimateKm:this.comparisonSurface===null?this.approachSurface:null,probe:this.approachProbe,probeAgeMs:this.approachProbe?performance.now()-this.approachTime:null,altitudeKm:this.origin.value.y+4,ground:this.ground.value,yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
       densitySamplingStart:this.densitySamplingReport(),
       narrowCloudSkip:{method:'point-nearest-after-flow-v3-weather-specialization-trial',specialization:this.integratorUsesNarrow?'rain':'dry',boundInIntegrator:this.integratorUsesNarrow===true,selection:'targetRain > 0.001 or actual rain > 0.001; dry uses original WGSL signature',resolution:this.narrowCloudVolume?[this.narrowCloudVolume.image.width,this.narrowCloudVolume.image.height,this.narrowCloudVolume.image.depth]:null,extraMaskBytes:this.narrowCloudVolume?.image.data?.byteLength??0,unqualifiedPayload:'fully occupied compatibility mask'},
       clockStateStart:{forcingTime:this.forcingTime,weatherTime:this.weatherTime,precipitationUniformTime:this.precipitationTime.value},
@@ -763,6 +783,7 @@ export class GPUSceneEngine {
       await this.queuePromise;
       await Promise.all(this.frameCompletions);
       this.releasingGPU=true;
+      this.terrainRaster?.dispose();this.terrainRaster=null;
       this.skyRequest++;this.skyCache.destroy();this.rainTexture.dispose();this.cameraVolume=null;this.material?.dispose(); this.volume?.dispose();this.detailVolume?.dispose();this.sunsetVolume?.dispose();this.narrowCloudVolume?.dispose();this.densityR8Volume?.dispose();this.currentFlow.dispose();this.skyTexture.dispose();this.skyFromTexture.dispose();this.interpolateFlow.dispose(); this.renderer?.dispose(); this.device?.destroy();
     })();
     return this.cleanup;

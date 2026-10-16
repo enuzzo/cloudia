@@ -1,4 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import type {Texture} from 'three/webgpu';
+import type {TerrainCameraFrame,TerrainMeshConfiguration} from './terrainMesh';
 type MockTimestampKind='render'|'compute';
 interface MockTimestampPool {
  currentQueryIndex:number;pendingResolve:false|null|Promise<number>;lastValue:number;frames:number[];
@@ -9,7 +11,13 @@ interface MockRendererControl {
  info:{frame:number;render:{frameCalls:number;timestamp:number};compute:{frameCalls:number;timestamp:number}};
  recordRenderPasses:()=>void;
 }
+interface MockTerrainControl {
+ texture:Texture;configuration:TerrainMeshConfiguration;
+ resize:ReturnType<typeof vi.fn>;render:ReturnType<typeof vi.fn>;surfaceY:ReturnType<typeof vi.fn>;
+ dispose:ReturnType<typeof vi.fn>;stats:ReturnType<typeof vi.fn>;
+}
 const control = vi.hoisted(()=>({initResolve:()=>{},renderer:null as MockRendererControl|null,
+ terrain:[] as MockTerrainControl[],
  workers:[] as Array<{onmessage:((event:unknown)=>void)|null;terminate:ReturnType<typeof vi.fn>}>,
  render:vi.fn(),compute:vi.fn(),originalLost:vi.fn(),timestamps:false,
  timestampJobs:[] as Array<{kind:MockTimestampKind;uids:string[];finish:()=>void}>}));
@@ -56,6 +64,26 @@ vi.mock('three/webgpu',async(importOriginal)=>{
     setPixelRatio() {} setSize() {}
   },QuadMesh:class {render(renderer:MockRendererControl){control.render(renderer);renderer.recordRenderPasses();}}};
 });
+// These tests exercise Engine ownership, not terrain construction/rasterization.
+// Keep a real lightweight texture for the TSL binding, with no mesh or GPU work.
+vi.mock('./terrainMesh',async()=>{
+ const {DataTexture,FloatType,RGBAFormat}=await import('three/webgpu');
+ return {TerrainMesh:class {
+  readonly texture=new DataTexture(new Float32Array([0,0,0,-1]),1,1,RGBAFormat,FloatType);
+  private width=1;private height=1;
+  resize=vi.fn((width:number,height:number)=>{this.width=width;this.height=height;this.texture.image.width=width;this.texture.image.height=height;});
+  render=vi.fn((_renderer:MockRendererControl,_frame:TerrainCameraFrame,_sunVector:TerrainCameraFrame['origin'])=>{});
+  surfaceY=vi.fn((_x:number,_z:number)=>-4);
+  dispose=vi.fn(()=>this.texture.dispose());
+  stats=vi.fn(()=>({vertices:4,triangles:2,stitchedCells:0,levels:1,cellsPerSide:4,baseSpacingKm:1,outerExtentKm:2,
+   geometryBytes:152,sampleCalls:4,minimumHeightKm:0,maximumHeightKm:1,
+   geometryScope:'Isolated lifecycle mock; no mesh construction',width:this.width,height:this.height,
+   colourFormat:'rgba32float',distanceComponent:'alpha; km from actual camera origin; -1 miss',
+   colourDistanceBytes:this.width*this.height*16,depthBytes:this.width*this.height*4,targetPayloadBytes:this.width*this.height*20,
+   memoryScope:'Mock target accounting only',perFrameCpuHeightSamples:0,nearKm:.025,farKm:1600,cache:'Live mock render'}));
+  constructor(readonly configuration:TerrainMeshConfiguration){control.terrain.push(this);}
+ }};
+});
 import { CumulonimbusApp } from './CumulonimbusApp';
 import { Data3DTexture,NearestFilter,LinearFilter,ClampToEdgeWrapping,NoColorSpace,RedFormat,UnsignedByteType } from 'three/webgpu';
 import * as cloudShader from './cloudShader';
@@ -66,7 +94,7 @@ import type {TimestampBatchMeasurementReport} from './timestampBatchMeasurement'
 async function flush() {for(let i=0;i<15;i++) await Promise.resolve();}
 const device={destroy:vi.fn(),queue:{onSubmittedWorkDone:vi.fn(()=>Promise.resolve())}};
 beforeEach(()=>{
-  vi.clearAllMocks(); control.renderer=null; control.workers=[];control.timestamps=false;control.timestampJobs=[];
+  vi.clearAllMocks(); control.renderer=null; control.workers=[];control.terrain=[];control.timestamps=false;control.timestampJobs=[];
   device.queue.onSubmittedWorkDone.mockReset().mockResolvedValue(undefined);
   Object.defineProperty(navigator,'gpu',{configurable:true,value:{requestAdapter:async()=>({info:{vendor:'test'},features:new Set(control.timestamps?['timestamp-query']:[]),requestDevice:async()=>device})}});
   vi.stubGlobal('requestAnimationFrame',vi.fn(()=>1)); vi.stubGlobal('cancelAnimationFrame',vi.fn());
@@ -106,7 +134,75 @@ function expectDensityTexture(value:unknown,data:Uint8Array):Data3DTexture{
   expect(value.unpackAlignment).toBe(1);return value;
 }
 type DensitySamplingSnapshot={path:string;format:string;dimensions:number[];textureBytes:number;extraCpuPayloadBytes:number;extraGpuPayloadBytes:number;fallback:string|null;reason:string;allocationAccounting:string};
+function terrainComponents(value:TerrainCameraFrame['origin']):number[]{
+ return 'x' in value?[value.x,value.y,value.z]:Array.from(value);
+}
 describe('scene async lifecycle',()=>{
+  it('retains one bound terrain raster across weather changes and resizes it to the native output',async()=>{
+    history.replaceState(null,'','/?profile=1&timing=off&flow=frozen');
+    vi.spyOn(document,'hidden','get').mockReturnValue(false);
+    const inputs:Record<string,unknown>[]=[],original=cloudShader.createCloudIntegrator;
+    vi.spyOn(cloudShader,'createCloudIntegrator').mockImplementation((mode,narrow,r8)=>new Proxy(original(mode,narrow,r8),{
+      apply(target,thisArg,args){inputs.push(args[0] as Record<string,unknown>);return Reflect.apply(target,thisArg,args);},
+    }));
+    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    control.workers[0].onmessage!({data:{volume:cloudVolume()}});await starting;
+    try{
+      expect(control.terrain).toHaveLength(1);const terrain=control.terrain[0];
+      expect(terrain.configuration.sample).toEqual(expect.any(Function));expect(terrain.configuration.shade).toEqual(expect.any(Function));
+      expect(terrain.resize).toHaveBeenLastCalledWith(1920,1080);
+      expect((inputs[0].terrainRaster as {value:unknown}).value).toBe(terrain.texture);
+      expect(terrain.render).toHaveBeenCalledOnce();
+      expect(terrain.render.mock.invocationCallOrder[0]).toBeLessThan(control.render.mock.invocationCallOrder[0]);
+      const frame=vi.mocked(requestAnimationFrame).mock.calls[0][0];frame(1000);
+      expect(terrain.render).toHaveBeenCalledTimes(2);
+      const camera=terrain.render.mock.calls.at(-1)![1] as TerrainCameraFrame;
+      expect(terrain.render.mock.calls.at(-1)![0]).toBe(control.renderer);
+      expect(terrain.render.mock.calls.at(-1)![2]).toBe((inputs[0].sun as {value:unknown}).value);
+      for(const key of ['origin','forward','right','up'] as const){
+        expect(terrainComponents(camera[key])).toEqual((inputs[0][key] as {value:{toArray:()=>number[]}}).value.toArray());
+      }
+      expect(camera.aspect).toBe((inputs[0].aspect as {value:number}).value);
+      expect(camera.inspection).toBe((inputs[0].inspection as {value:number}).value);
+      expect(camera.tanFov).toBe(.2867);
+      app.applyAtmosphereIntent({type:'rain',amount:.8});
+      expect(inputs).toHaveLength(2);expect(control.terrain).toHaveLength(1);
+      expect((inputs[1].terrainRaster as {value:unknown}).value).toBe(terrain.texture);
+      const output=root.querySelector<HTMLSelectElement>('[name="output"]')!;
+      output.value='720';output.dispatchEvent(new Event('change',{bubbles:true}));frame(2000);
+      expect(terrain.resize).toHaveBeenLastCalledWith(1280,720);
+      expect(terrain.render).toHaveBeenCalledTimes(3);expect(terrain.dispose).not.toHaveBeenCalled();
+      expect(terrain.render.mock.calls.at(-1)![2]).toBe((inputs[1].sun as {value:unknown}).value);
+    }finally{app.destroy();await flush();}
+  });
+  it('skips the terrain prepass for ground zero and resumes it before the cloud draw when enabled',async()=>{
+    vi.spyOn(document,'hidden','get').mockReturnValue(false);
+    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    control.workers[0].onmessage!({data:{volume:cloudVolume()}});await starting;
+    try{
+      const terrain=control.terrain[0],frame=vi.mocked(requestAnimationFrame).mock.calls[0][0];
+      expect(terrain.render).toHaveBeenCalledOnce();
+      const ground=root.querySelector<HTMLSelectElement>('[name="ground"]')!;
+      ground.value='0';ground.dispatchEvent(new Event('change',{bubbles:true}));frame(1000);
+      expect(terrain.render).toHaveBeenCalledOnce();expect(control.render).toHaveBeenCalledTimes(2);
+      ground.value='1';ground.dispatchEvent(new Event('change',{bubbles:true}));frame(2000);
+      expect(terrain.render).toHaveBeenCalledTimes(2);expect(control.render).toHaveBeenCalledTimes(3);
+      expect(terrain.render.mock.invocationCallOrder.at(-1)).toBeLessThan(control.render.mock.invocationCallOrder.at(-1)!);
+      expect(control.terrain).toHaveLength(1);expect(terrain.dispose).not.toHaveBeenCalled();
+    }finally{app.destroy();await flush();}
+  });
+  it('disposes the terrain target once after device loss and cannot render it during later teardown',async()=>{
+    const {app}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    control.workers[0].onmessage!({data:{volume:cloudVolume()}});await starting;
+    const terrain=control.terrain[0],dispose=vi.spyOn(terrain.texture,'dispose');
+    expect(terrain.render).toHaveBeenCalledOnce();
+    control.renderer!.onDeviceLost();await flush();
+    expect(terrain.dispose).toHaveBeenCalledOnce();expect(dispose).toHaveBeenCalledOnce();
+    const frame=vi.mocked(requestAnimationFrame).mock.calls[0][0];frame(1000);
+    expect(terrain.render).toHaveBeenCalledOnce();
+    app.destroy();await flush();
+    expect(terrain.dispose).toHaveBeenCalledOnce();expect(dispose).toHaveBeenCalledOnce();
+  });
   it('publishes fresh pass coverage for explicit draw ranges, excluding warmup and the interval anchor',async()=>{
     control.timestamps=true;history.replaceState(null,'','/?profile=1&timing=stages');
     vi.spyOn(document,'hidden','get').mockReturnValue(false);
@@ -224,7 +320,9 @@ describe('scene async lifecycle',()=>{
       queuePrefix:{status:string;measuredSubmissions:number;confirmedPrefixId:number;samples:Array<{kind:string;prefixId:number}>}};
     expect(report.densitySamplingStart).toMatchObject({path:'r8unorm-extracted-r',format:'r8unorm',dimensions:[1,1,1],textureBytes:1,extraCpuPayloadBytes:1,extraGpuPayloadBytes:1,fallback:null});
     expect(report.densitySamplingEnd).toEqual(report.densitySamplingStart);
-    expect(report.rendererVersion).toBe('observatory-v50-quality-checkpoint');
+    expect(report.rendererVersion).toBe('observatory-v52-terrain-raster');
+    expect(control.terrain[0].stats).toHaveBeenCalled();
+    expect(report).toHaveProperty('terrainRaster',expect.objectContaining({width:1920,height:1080,targetPayloadBytes:1920*1080*20,perFrameCpuHeightSamples:0}));
     expect(report.stats.frames).toBe(2);expect(report.queuePrefix.measuredSubmissions).toBe(report.stats.frames);
     expect(report.queuePrefix.status).toBe('completed');expect(report.queuePrefix.confirmedPrefixId).toBe(2);
     expect(report.queuePrefix.samples.filter(sample=>sample.kind==='end')).toHaveLength(1);

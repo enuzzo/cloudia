@@ -1,0 +1,40 @@
+{
+  "purpose": "User requested credible matte terrain/mountains; geometry and materials deliberately changed, not parity/FPS optimization.",
+  "seed": 74,
+  "profile": 1,
+  "simulationTime": 60,
+  "paused": true,
+  "output": "screen/native, quality ultra 384",
+  "canvasCss": [
+    1056,
+    922
+  ],
+  "inlandPose": {
+    "actionsAfterComparisonReset": [
+      "14 ArrowLeft",
+      "3 ArrowDown"
+    ],
+    "yawFormula": "14*36/1056*3.4",
+    "pitchFormula": "3*36/922*2.4"
+  },
+  "highCoastPose": {
+    "actionsAfterComparisonReset": [
+      "6 ArrowDown"
+    ]
+  },
+  "scenes": [
+    "clear",
+    "sunset",
+    "rain"
+  ],
+  "evidence": "CUA JPEG at CSS resolution; configured native output checked separately, no native framebuffer/compositor/image-equivalence claim.",
+  "criteria": [
+    "No bright smooth dune-like caps",
+    "Connected sharp ridgelines and readable valleys",
+    "No horizontal solver bands or stitch cracks",
+    "Diffuse rock/forest materials",
+    "Sun direction casts coherent ridge shadows",
+    "Cloud/rain use raster terrain distance; camera stays above actual triangles"
+  ],
+  "fps": "Separate60fps target remains open. Zero-factor A1/B/A2 interrupted after A1; no speedup claim."
+}

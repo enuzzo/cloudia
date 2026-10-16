@@ -8,7 +8,35 @@ output pieno configurato. Questo obiettivo si aggiunge ad anatomia delle tre
 famiglie, luce ravvicinata continua, pioggia/virga integrate nel paesaggio e UI.
 Nessuno di questi gate è sostituito dal contatore dei frame.
 
-## Stato corrente: v50 preservata, cache terreno ritirata
+## Stato corrente: v52 terreno raster, 60 FPS ancora aperti
+
+La nuova richiesta del proprietario dà priorità a
+[terreno e montagne più credibili](TERRAIN-REALISM-2026-10-16.md). v52
+sostituisce il vecchio solver con una mesh sferica saldata, materiali opachi e
+ombre reali tra dorsali. Nube 256³/128³, 384 passi nominali e output pieno
+rimangono configurati. È un cambio di geometria e di immagine autorizzato,
+quindi un suo tempo non è una misura di speedup a immagine equivalente.
+
+R5: 320 test/40 file, typecheck e app→hero PASS. La misura corrente è una nuova caratterizzazione, separata dalle vecchie coppie A/B.
+
+R5 main, seed 74, tempo 60 s in pausa, vento 55%, dispersione 0%, pioggia 80%,
+yaw 1,3852869846402587 / pitch 0,2811279826464208, flusso completo e output
+nativo **2474×1844**: 30 s, 487 intervalli, **16,2139846 invii/s**, mediana
+66,60 ms / p95 67,20 ms, prefisso coda completato. Presentazione del compositore
+non misurata. Il ledger registra quattro chiamate render per draw; le somme
+di pass non equivalgono al tempo trascorso né al throughput GPU. La risoluzione,
+il seed, il terreno e la camera differiscono dai vecchi controlli: nessuna
+percentuale di miglioramento ricavata da quel confronto. **60 FPS non raggiunti.**
+
+Il trial esterno zero-factor ha superato il controllo Float32 nativo nella
+posa controllata, ma la serie prestazionale si è interrotta dopo A1:
+14,3751 invii/s a 2112×1844. L'attesa dell'API download è durata circa 75 minuti,
+poi la nuova richiesta sul terreno ha cambiato la priorità. Nessun B o A2,
+nessuna attribuzione di vantaggio e nessuna promozione delle guardie. Non
+riprendere quella coppia attraverso un'interruzione così lunga: occorre una
+serie nuova e continua se verrà riproposto il trial.
+
+## Riferimento storico v50 e cache terreno ritirata
 
 Il prodotto resta quello di `10493af`: 256³/128³/384 e output pieno, R8
 selezionata nella pioggia, continuità solare v49 e modifiche di qualità v50.

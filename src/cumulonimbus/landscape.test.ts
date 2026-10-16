@@ -60,4 +60,44 @@ describe('camera clearance above the spherical natural landscape',()=>{
   const high=[-3,8,2];
   expect(clampCameraAboveLandscape(high)).toEqual(high);
  });
+
+ it('keeps a 200m radial margin above a supplied triangle surface without moving xz or mutating the input',()=>{
+  // Barycentric point of a sloped rendered triangle, independent of the
+  // procedural field. Its world-space y is the optional mesh contract.
+  const a=[120,-2,-90],b=[121,-1.5,-90],c=[120,-1.75,-89],weights=[.25,.5,.25];
+  const point=a.map((value,axis)=>value*weights[0]+b[axis]*weights[1]+c[axis]*weights[2]);
+  const origin=Object.freeze([point[0],-8,point[2]]),before=[...origin];
+  const corrected=clampCameraAboveLandscape(origin,.2,point[1]);
+  expect(radialHeight(corrected)-radialHeight(point)).toBeCloseTo(.2,9);
+  expect(corrected[1]-point[1]).toBeGreaterThan(.2); // radial clearance is not a vertical offset
+  expect(corrected[0]).toBe(origin[0]);expect(corrected[2]).toBe(origin[2]);
+  expect(origin).toEqual(before);expect(corrected).not.toBe(origin);
+  expect(clampCameraAboveLandscape(corrected,.2,point[1])).toEqual(corrected);
+ });
+
+ it('uses the supplied mesh floor while preserving the orbit target and already-clear cameras',()=>{
+  const target=Object.freeze([.4296875,2.9365234375,0]),beforeTarget=[...target],view=new OrbitView();
+  view.pitch=-.92;
+  const origin=view.frame(target,16/9,0,.6045067691053366).origin,beforeOrigin=[...origin];
+  const meshY=origin[1]+.75;
+  for(const clearance of [0,CAMERA_TERRAIN_CLEARANCE_KM,.5]){
+   const corrected=clampCameraAboveLandscape(origin,clearance,meshY),meshPoint=[origin[0],meshY,origin[2]];
+   expect(radialHeight(corrected)-radialHeight(meshPoint)).toBeCloseTo(clearance,9);
+   expect(corrected[0]).toBe(origin[0]);expect(corrected[2]).toBe(origin[2]);
+  }
+  expect(origin).toEqual(beforeOrigin);expect(target).toEqual(beforeTarget);
+  const high=Object.freeze([origin[0],meshY+2,origin[2]]);
+  expect(clampCameraAboveLandscape(high,.2,meshY)).toEqual(high);
+ });
+
+ it('keeps the default analytic floor when the optional mesh surface is omitted or null',()=>{
+  for(const origin of [[-24,-8,0],[120,-8,-90],[-3,8,2]]){
+   expect(clampCameraAboveLandscape(origin)).toEqual(clampCameraAboveLandscape(origin,CAMERA_TERRAIN_CLEARANCE_KM,null));
+   for(const clearance of [0,.2,.5]){
+    const expected=[origin[0],Math.max(origin[1],landscapeSurfaceY(origin[0],origin[2],clearance)),origin[2]];
+    expect(clampCameraAboveLandscape(origin,clearance)).toEqual(expected);
+    expect(clampCameraAboveLandscape(origin,clearance,null)).toEqual(expected);
+   }
+  }
+ });
 });
