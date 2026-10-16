@@ -1,0 +1,51 @@
+{
+  "baseHEAD": "99fc989024f062f9fc10ef619534af08b59d0f3e",
+  "sourceCount": 124,
+  "candidateSourceSHA256": "402fc5b7c4c39472bf980d744f13e935626f846f89ea14bbbea42c05afe8553c",
+  "changes": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/lifecycle.test.ts"
+  ],
+  "experiment": "Terrain material uses visibility=1.0 only; renderer identity/test identity updated. Shadow resources/pass remain authored; no FPS comparison.",
+  "cameraBaseline": "cycle24/browser/main74-sun-terrain-native.json",
+  "plannedPNG": "unshadowed74-sun-terrain-native",
+  "seed": 74,
+  "time": 60,
+  "paused": true,
+  "native": [
+    2474,
+    1844
+  ],
+  "quality": "256/128/384 fullflow",
+  "surface": 0.7227685139973958,
+  "target": [
+    0.3515625,
+    3.119140625,
+    -0.0546875
+  ],
+  "approach": 0,
+  "yawKeysLeft": 14,
+  "pitchKeysDown": 3,
+  "ROIs": {
+    "L1": [
+      40,
+      820,
+      140,
+      910
+    ],
+    "L2": [
+      390,
+      810,
+      520,
+      890
+    ],
+    "L3": [
+      860,
+      620,
+      970,
+      715
+    ]
+  },
+  "prediction": "Scaglie lighten if branch shadow causes them; visibility1 removes true shadows too, so this alone does not prove acne or qualify adoption.",
+  "stopRule": "If scaglie persist unchanged, stop bias trial; do not add noise/palette to mask it."
+}

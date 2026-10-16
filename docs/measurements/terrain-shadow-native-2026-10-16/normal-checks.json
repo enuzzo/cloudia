@@ -1,0 +1,35 @@
+[
+  {
+    "name": "typecheck",
+    "command": [
+      "bun",
+      "run",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "terminalObservedByPopen": true,
+    "elapsedSeconds": 1.5429582090582699
+  },
+  {
+    "name": "app-build",
+    "command": [
+      "bun",
+      "run",
+      "build"
+    ],
+    "exitCode": 0,
+    "terminalObservedByPopen": true,
+    "elapsedSeconds": 4.3328627499286085
+  },
+  {
+    "name": "hero-build",
+    "command": [
+      "bun",
+      "run",
+      "build:hero"
+    ],
+    "exitCode": 0,
+    "terminalObservedByPopen": true,
+    "elapsedSeconds": 2.203433332964778
+  }
+]

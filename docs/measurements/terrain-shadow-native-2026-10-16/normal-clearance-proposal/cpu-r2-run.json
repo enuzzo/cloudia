@@ -1,0 +1,11 @@
+{
+  "exitCode": 0,
+  "wallSeconds": 0.16850712499581277,
+  "cpuSeconds": 0.12285399999999999,
+  "peakRSSBytes": 119701504,
+  "rssLimitBytes": 2147483648,
+  "rssEnforcement": "terminal getrusage peak checked; native RSS setrlimit unavailable; no RLIMIT_AS (JIT virtual mapping)",
+  "wallKilled": false,
+  "budgetPASS": true,
+  "pass": true
+}

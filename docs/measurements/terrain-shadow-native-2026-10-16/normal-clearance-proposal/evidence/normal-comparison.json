@@ -1,0 +1,55 @@
+{
+  "status": "SAME_METADATA_FIELDS_VERIFIED",
+  "comparedFields": [
+    "camera",
+    "quality",
+    "nominalSteps",
+    "volume",
+    "detailVolume",
+    "output",
+    "internal",
+    "canvas",
+    "material",
+    "lighting",
+    "weather",
+    "paused",
+    "seed",
+    "flowMode"
+  ],
+  "ROIsPredetermined": true,
+  "differences": {
+    "all": {
+      "pixels": 4562056,
+      "changedVsBaseline": 1006,
+      "changedVsUnshadowed": 782,
+      "minChannelDelta": -9,
+      "maxChannelDelta": 23,
+      "meanChannelDelta": 0.0016941922676968456
+    },
+    "L1": {
+      "pixels": 9000,
+      "changedVsBaseline": 364,
+      "changedVsUnshadowed": 361,
+      "minChannelDelta": -5,
+      "maxChannelDelta": 20,
+      "meanChannelDelta": 0.3234814814814815
+    },
+    "L2": {
+      "pixels": 10400,
+      "changedVsBaseline": 190,
+      "changedVsUnshadowed": 26,
+      "minChannelDelta": 0,
+      "maxChannelDelta": 21,
+      "meanChannelDelta": 0.16118589743589742
+    },
+    "L3": {
+      "pixels": 10450,
+      "changedVsBaseline": 45,
+      "changedVsUnshadowed": 287,
+      "minChannelDelta": -9,
+      "maxChannelDelta": 17,
+      "meanChannelDelta": 0.023923444976076555
+    }
+  },
+  "scope": "Native PNGdisplayvalues, not proofphysicalshadow, noFPS/artPASS. All fields apply to this exactSuncamera only."
+}

@@ -1,0 +1,20 @@
+--- /Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/GPUSceneEngine.ts	2026-10-16 20:30:29
++++ /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle25/unshadowed-source/src/cumulonimbus/GPUSceneEngine.ts	2026-10-16 21:02:12
+@@ -30,7 +30,7 @@
+ import {readDensityR8,type DensityR8Packet} from './densityR8';
+ import {NativeFrameExporter,type NativeFrameExportEvent} from './nativeFrameExport';
+ 
+-const RENDERER_VERSION='observatory-v57-native-frame-export';
++const RENDERER_VERSION='experiment-v57-terrain-unshadowed';
+ 
+ export const QUALITY = {
+   native: {label:'Alta · 100% / 128 passi', scale:1, steps:128},
+@@ -318,7 +318,7 @@
+       let measured=(1.0-smoothstep(48.0,64.0,abs(point.x)))*(1.0-smoothstep(48.0,64.0,abs(point.z)));
+       let coverA=mix(vec4<f32>(1.0,0.0,0.0,0.0),a/total,measured);
+       let coverB=b*(measured/total);
+-      return terrainSurfaceMaterial(point,height,coast,normal,distance,pixelKm,sun,solar,ambient,solarVisibility,coverA,coverB);
++      return terrainSurfaceMaterial(point,height,coast,normal,distance,pixelKm,sun,solar,ambient,1.0,coverA,coverB);
+     }`,[wgsl(TERRAIN_SURFACE_WGSL)]);
+     if(!this.terrainCover)throw new Error('Copertura del suolo non preparata');
+     const coverMapA=texture(this.terrainCover.coverA),coverMapB=texture(this.terrainCover.coverB);

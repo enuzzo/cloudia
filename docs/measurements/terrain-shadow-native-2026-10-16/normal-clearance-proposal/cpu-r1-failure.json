@@ -1,0 +1,10 @@
+{
+  "status": "HARNESS_SETUP_FAIL_BEFORE_BUN_EXEC",
+  "error": "subprocess.SubprocessError: Exception occurred in preexec_fn.",
+  "isolation": "RLIMIT_CPU(5,5) succeeds; RLIMIT_RSS(2147483648,2147483648) raises ValueError: current limit exceeds maximum limit",
+  "kernelExecuted": false,
+  "preservedWrapper": "run-oracle-r1.py",
+  "stdoutBytes": 0,
+  "stderrBytes": 0,
+  "noNumericalResult": true
+}

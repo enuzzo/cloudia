@@ -1,0 +1,63 @@
+{
+  "state": "PRE-RUN FREEZE",
+  "runtime": "Bun1.3.11 arm64",
+  "dependencies": "existing ignored1/untracked root node_modules symlink; no install",
+  "f32AccuracyScope": "p=[0,-4,0] and [15,-3,2] km only, well-conditioned plane derivatives; extrema at[64,-3,-64] test finite only, not2mm accuracy",
+  "payload": [
+    {
+      "path": "PROTOCOL.json",
+      "bytes": 2441,
+      "sha256": "b1de6215e873194a4e960e74d3f73ed675d8453a17bf1913c73a787149a6bf3c"
+    },
+    {
+      "path": "prepare.py",
+      "bytes": 7856,
+      "sha256": "7950333e9381589bf4942ef8b9b31f5ad81a586d2df2af0d470f5930f25bb13c"
+    },
+    {
+      "path": "cpu-oracle.ts",
+      "bytes": 7411,
+      "sha256": "d421286edb36a07c977cb710484f5149daf7e1b7c99bacb5f780cf2cb5c92bdb"
+    },
+    {
+      "path": "run-oracle.py",
+      "bytes": 1455,
+      "sha256": "c14d4eb7f99c715648e9792608127b98b8887d9321703c00c8640fa39404f564"
+    },
+    {
+      "path": "before/TerrainShadow.ts",
+      "bytes": 12087,
+      "sha256": "0fa68e56eed14e400d7fb18381aac2d3a6823a5a4f28f927fa267e3d9a6d095e"
+    },
+    {
+      "path": "after/src/cumulonimbus/TerrainShadow.ts",
+      "bytes": 14016,
+      "sha256": "5529dc52040f45a108a89f3b7675b393f4e27cebe04ae17c08984b6bc104bcb1"
+    },
+    {
+      "path": "after/src/cumulonimbus/landscape.ts",
+      "bytes": 5477,
+      "sha256": "8a0e17f79d6ec5759dd0615ffa94434c479b7961d1f9e007df583fb463ca98ab"
+    },
+    {
+      "path": "after/src/cumulonimbus/aerial.ts",
+      "bytes": 621,
+      "sha256": "a066cfe3664d77e4c448045010fa13c40eefb35add6c163d143bd2bb01af10da"
+    },
+    {
+      "path": "after/src/cumulonimbus/terrainSurface.ts",
+      "bytes": 13659,
+      "sha256": "0ff8de3514feb3714ba4e931c246d0bd339634661aa37a7d87e79f61c1ddff3f"
+    },
+    {
+      "path": "TerrainShadow.patch",
+      "bytes": 6520,
+      "sha256": "a2425b4cd3b84eef7316b5dd2d4481455a8a859fe0bcad2234626fcd7b92402a"
+    },
+    {
+      "path": "lookup-point.wgsl",
+      "bytes": 1085,
+      "sha256": "be27fd5ffbc8b682222b4b090526cf97a24619c94de6ec5c17edc7057b80b2d1"
+    }
+  ]
+}

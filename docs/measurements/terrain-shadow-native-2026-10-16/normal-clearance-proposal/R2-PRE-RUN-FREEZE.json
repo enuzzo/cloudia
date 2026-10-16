@@ -1,0 +1,30 @@
+{
+  "state": "R2 FREEZE BEFORE FIRST NUMERICAL EXECUTION",
+  "authorization": "root allowed launcher R2 after isolated RSS setup failure; same oracle/candidate/cases/gates",
+  "runtime": "Bun1.3.11 arm64",
+  "CPUHardSeconds": 5,
+  "wallSeconds": 15,
+  "RSS2GiB": "terminal getrusage checked (no live RSS enforcement); no RLIMIT_AS",
+  "payload": [
+    {
+      "path": "cpu-oracle.ts",
+      "bytes": 7411,
+      "sha256": "d421286edb36a07c977cb710484f5149daf7e1b7c99bacb5f780cf2cb5c92bdb"
+    },
+    {
+      "path": "run-oracle-r2.py",
+      "bytes": 1507,
+      "sha256": "aec4c460685b85d59e528c3be8556fcb87902fedeaf7a75ac08902e7a469d9b0"
+    },
+    {
+      "path": "after/src/cumulonimbus/TerrainShadow.ts",
+      "bytes": 14016,
+      "sha256": "5529dc52040f45a108a89f3b7675b393f4e27cebe04ae17c08984b6bc104bcb1"
+    },
+    {
+      "path": "TerrainShadow.patch",
+      "bytes": 6520,
+      "sha256": "a2425b4cd3b84eef7316b5dd2d4481455a8a859fe0bcad2234626fcd7b92402a"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "status": "SAME_METADATA_FIELDS_VERIFIED",
+  "comparedFields": [
+    "camera",
+    "quality",
+    "nominalSteps",
+    "volume",
+    "detailVolume",
+    "output",
+    "internal",
+    "canvas",
+    "material",
+    "lighting",
+    "weather",
+    "paused",
+    "seed",
+    "flowMode"
+  ],
+  "excludedClock": "weatherTime not sampled in settled Sun material",
+  "ROIsPredetermined": true,
+  "differences": {
+    "all": {
+      "changedPixels": 1778,
+      "pixels": 4562056
+    },
+    "L1": {
+      "changedPixels": 721,
+      "pixels": 9000,
+      "minChannelDelta": 0,
+      "maxChannelDelta": 20,
+      "meanChannelDelta": 0.4812592592592593
+    },
+    "L2": {
+      "changedPixels": 216,
+      "pixels": 10400,
+      "minChannelDelta": 0,
+      "maxChannelDelta": 21,
+      "meanChannelDelta": 0.18057692307692308
+    },
+    "L3": {
+      "changedPixels": 328,
+      "pixels": 10450,
+      "minChannelDelta": 0,
+      "maxChannelDelta": 17,
+      "meanChannelDelta": 0.12880382775119617
+    }
+  },
+  "scope": "PNGdisplayvalues, not floatlinearbuffer or proofacne. Crops derived from lossless originals."
+}

@@ -1,0 +1,29 @@
+{
+  "scope": "Root-generated native evidence; no GPU work by proposal author",
+  "files": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle25/browser/unshadowed74-sun-terrain-native.png",
+      "bytes": 2816591,
+      "sha256": "ba02c0cbcfac0931dc20668631ad6cee93830e74cb4c26261dad9f37358a54b1",
+      "copiedHere": false
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle25/browser/unshadowed74-sun-terrain-native.json",
+      "bytes": 6987,
+      "sha256": "3428337325972e93e6b6a8ab7117e19cefaaf8361c77eaeca4fdb41172474a1c",
+      "copiedHere": false
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle25/browser/normal-clearance74-sun-terrain-native.png",
+      "bytes": 2816555,
+      "sha256": "2221300edeac5d6ba17d69b668d4daea9849db9deb28d6b21ddd9c76f66d0ec6",
+      "copiedHere": false
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle25/browser/normal-clearance74-sun-terrain-native.json",
+      "bytes": 7006,
+      "sha256": "e96930b00ac7725a304948d8a81ce1c781296d682a642f229d434dca53fe911b",
+      "copiedHere": false
+    }
+  ]
+}

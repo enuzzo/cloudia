@@ -1,0 +1,152 @@
+{
+  "state": "EXTERNAL NUMERIC PROPOSAL FROZEN; FIRST NATIVE TRIAL VISUAL FAIL / NOT ADOPTED",
+  "payload": [
+    {
+      "path": "NATIVE-EVIDENCE-REFERENCES.json",
+      "bytes": 1177,
+      "sha256": "c81516bb1e3b8efa92b73eb37cbd0f1f9e029a511c715d2bf926b46db78146a9"
+    },
+    {
+      "path": "PRE-RUN-FREEZE-R1.json",
+      "bytes": 2062,
+      "sha256": "fbce87e7970b7587e7b8d91e68025a945188ccd2ab239a7b7f74fc39d95aa947"
+    },
+    {
+      "path": "PRE-RUN-FREEZE.json",
+      "bytes": 2377,
+      "sha256": "95aa4ce651bad4ff6e7d780fabbb3abd60eb904dbf4553ba433145efc5ea9c09"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "bytes": 2441,
+      "sha256": "b1de6215e873194a4e960e74d3f73ed675d8453a17bf1913c73a787149a6bf3c"
+    },
+    {
+      "path": "R2-PRE-RUN-FREEZE.json",
+      "bytes": 981,
+      "sha256": "570196ea639f2c4b8151c72c071f4165320011ad820158b201aceaf9c1277733"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7840,
+      "sha256": "a91246ae2f64779b667faef353e6321b61554007e45cea1fbd7cbf93f2e4903a"
+    },
+    {
+      "path": "TerrainShadow.patch",
+      "bytes": 6520,
+      "sha256": "a2425b4cd3b84eef7316b5dd2d4481455a8a859fe0bcad2234626fcd7b92402a"
+    },
+    {
+      "path": "after/src/cumulonimbus/TerrainShadow.ts",
+      "bytes": 14016,
+      "sha256": "5529dc52040f45a108a89f3b7675b393f4e27cebe04ae17c08984b6bc104bcb1"
+    },
+    {
+      "path": "after/src/cumulonimbus/aerial.ts",
+      "bytes": 621,
+      "sha256": "a066cfe3664d77e4c448045010fa13c40eefb35add6c163d143bd2bb01af10da"
+    },
+    {
+      "path": "after/src/cumulonimbus/landscape.ts",
+      "bytes": 5477,
+      "sha256": "8a0e17f79d6ec5759dd0615ffa94434c479b7961d1f9e007df583fb463ca98ab"
+    },
+    {
+      "path": "after/src/cumulonimbus/terrainSurface.ts",
+      "bytes": 13659,
+      "sha256": "0ff8de3514feb3714ba4e931c246d0bd339634661aa37a7d87e79f61c1ddff3f"
+    },
+    {
+      "path": "before/TerrainShadow.ts",
+      "bytes": 12087,
+      "sha256": "0fa68e56eed14e400d7fb18381aac2d3a6823a5a4f28f927fa267e3d9a6d095e"
+    },
+    {
+      "path": "cpu-oracle.ts",
+      "bytes": 7411,
+      "sha256": "d421286edb36a07c977cb710484f5149daf7e1b7c99bacb5f780cf2cb5c92bdb"
+    },
+    {
+      "path": "cpu-r1-failure.json",
+      "bytes": 400,
+      "sha256": "7487f36887232107fc421ece4b982a16be0d340371ea77c500f86994ee81c55d"
+    },
+    {
+      "path": "cpu-r1.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cpu-r1.stdout.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cpu-r2-run.json",
+      "bytes": 341,
+      "sha256": "348b7a369fb5bf7c483841694d45d00db146ae58c3cc89e408e1e46232127e51"
+    },
+    {
+      "path": "cpu-r2.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cpu-r2.stdout.json",
+      "bytes": 54564,
+      "sha256": "4fd4b2b69911ffbf60732fafba15565b62ec5fd16f23c5503ede535eee5f10cf"
+    },
+    {
+      "path": "cpu.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cpu.stdout.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/ablation-comparison.json",
+      "bytes": 1109,
+      "sha256": "b39c7eb03d5561ec701c5547bc0685ae90e62242eb37324b0fe358d45117035a"
+    },
+    {
+      "path": "evidence/normal-comparison.json",
+      "bytes": 1317,
+      "sha256": "7b4a567795119b830d160f03c341d2f9a4511ef31022f6ff3b6ff38684055b24"
+    },
+    {
+      "path": "lookup-point.wgsl",
+      "bytes": 1085,
+      "sha256": "be27fd5ffbc8b682222b4b090526cf97a24619c94de6ec5c17edc7057b80b2d1"
+    },
+    {
+      "path": "prepare.py",
+      "bytes": 8066,
+      "sha256": "c8a0f5fa162fc9460d4d64f83a4ecd631d121521e587d7cb636c182e99d3b644"
+    },
+    {
+      "path": "run-oracle-r1.py",
+      "bytes": 1455,
+      "sha256": "c14d4eb7f99c715648e9792608127b98b8887d9321703c00c8640fa39404f564"
+    },
+    {
+      "path": "run-oracle-r2.py",
+      "bytes": 1507,
+      "sha256": "aec4c460685b85d59e528c3be8556fcb87902fedeaf7a75ac08902e7a469d9b0"
+    },
+    {
+      "path": "run-oracle.py",
+      "bytes": 1455,
+      "sha256": "c14d4eb7f99c715648e9792608127b98b8887d9321703c00c8640fa39404f564"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 1443,
+      "sha256": "41777a5818c13745c95eaaac80c10e70fbd8708971b0eb2e2e84a453fc5143f3"
+    }
+  ],
+  "bytes": 149411,
+  "scope": "Hashes and saved rows only; no extra numerical model/GPU run after root FAIL"
+}

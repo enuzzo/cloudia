@@ -1,0 +1,49 @@
+{
+  "state": "FROZEN BEFORE STANDALONE CPU ORACLE; NOT IMPLEMENTED IN PRODUCT",
+  "baseSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle25/normal-clearance-source",
+  "baseTerrainShadowSHA256": "0fa68e56eed14e400d7fb18381aac2d3a6823a5a4f28f927fa267e3d9a6d095e",
+  "scope": "one receiver lookup-point change; exact same caster, 1 textureLoad, target, depth, map resolution, mesh, material and transport",
+  "formula": "e=radius/resolution; c=clamp(dot(ng,radial),0,1); lookup=point+e*radial+e*(1-c)*ng",
+  "ng": "actual fragment geometric normal from dpdx/dpdy(point), oriented toward planet radial; scale each finite derivative before cross; protected normalization and radial fallback for degeneracy",
+  "precision": "CPU double helper plus explicitly labelled f32 ALU surrogate; not GPU derivative evaluation or WGSL compile qualification",
+  "predeclaredTests": [
+    "flat preserves old lookup exactly",
+    "planar signed distance from independent plane equation equals e for nondegenerate derivatives",
+    "60/80/89 degree slopes and derivative sign/scale invariance",
+    "two-face crease tested on each actual face, not extrapolated into neighbor",
+    "zero/parallel/tiny derivative radial fallback",
+    "finite f32 inputs at extreme derivative magnitudes avoid cross overflow by rescaling",
+    "joint UV and solar-height projection from the same biased point",
+    "separate 200m blocker remains shadowed",
+    "35m real contact can be lost and must be reported as a limitation",
+    "multi-face texel false shadow can remain and is not declared solved"
+  ],
+  "gates": {
+    "finite": true,
+    "doublePlaneDistanceAbsKm": 1e-11,
+    "f32PlaneDistanceAbsKm": 2e-06,
+    "offsetLengthMaxKm": 0.044196173824159225,
+    "flatExact": true,
+    "extraTextureLoads": 0
+  },
+  "budget": {
+    "cpuSeconds": 5,
+    "wallSeconds": 15,
+    "rssBytes": 2147483648,
+    "noFullMeshGrid": true,
+    "noGPU": true,
+    "noBuild": true,
+    "noProductTests": true
+  },
+  "stopRule": "Native unshadowed attribution identifies the shadow branch, not false-vs-true shadow by itself. CPU properties do not prove acne resolved or art acceptance. Any numerical gate failure is preserved; no tuning/retry.",
+  "preexistingNativeEvidence": {
+    "allPixels": 4562056,
+    "changedPixels": 1778,
+    "allChannelDeltasNonnegative": "reported by root",
+    "ROIChanges": {
+      "L1": 721,
+      "L2": 216,
+      "L3": 328
+    }
+  }
+}

@@ -1,0 +1,81 @@
+--- a/src/cumulonimbus/TerrainShadow.ts
++++ b/src/cumulonimbus/TerrainShadow.ts
+@@ -51,20 +51,33 @@
+ export function terrainShadowCasterMinimum(heightKm:number,derivativeXKm:number,derivativeYKm:number):number{
+  return heightKm-.5*(Math.abs(derivativeXKm)+Math.abs(derivativeYKm))-TERRAIN_SHADOW_DEFAULTS.baseBiasKm;
+ }
+-/** Elevate only the shadow lookup receiver by half a light texel along the
+- * planet radial, never the visible mesh. In the default map this is 31.25m.
+- * Both UV and solar height must use this elevated point; a global q offset
+- * would produce a different and excessive bias when the Sun is near horizontal.
++/** Trial: keep the radial half-texel offset, optionally completing its
++ * clearance from the actual face plane. With derivatives supplied, ng·delta=e
++ * in real arithmetic; |delta|<=sqrt(2)*e. This is not a multi-face shadow proof.
++ * Both UV and solar height use this same point; visible geometry is unchanged.
+  */
+-export function terrainShadowLookupPoint(point:TerrainShadowVector,frame:TerrainShadowFrame):Vector3{
++export function terrainShadowLookupPoint(point:TerrainShadowVector,frame:TerrainShadowFrame,derivativeX?:TerrainShadowVector,derivativeY?:TerrainShadowVector):Vector3{
+  const original=vector(point),planetCenter=frame.center.clone().add(new Vector3(0,-EARTH_RADIUS,0));
+- return original.clone().addScaledVector(original.clone().sub(planetCenter).normalize(),frame.radiusKm/frame.resolution);
++ const radial=original.clone().sub(planetCenter).normalize(),e=frame.radiusKm/frame.resolution;
++ const lookup=original.clone().addScaledVector(radial,e);
++ if(derivativeX===undefined&&derivativeY===undefined)return lookup; // No inferred face normal in legacy CPU callers.
++ if(derivativeX===undefined||derivativeY===undefined)throw new RangeError('Both terrain face derivatives are required');
++ const dx=vector(derivativeX),dy=vector(derivativeY);
++ // Scaling preserves a finite nondegenerate face normal without cross overflow.
++ dx.divideScalar(Math.max(Math.abs(dx.x),Math.abs(dx.y),Math.abs(dx.z),1e-20));
++ dy.divideScalar(Math.max(Math.abs(dy.x),Math.abs(dy.y),Math.abs(dy.z),1e-20));
++ const face=dx.cross(dy),lengthSquared=face.lengthSq();
++ if(lengthSquared<=1e-20)return lookup; // Degenerate/near-parallel screen footprint: retain radial policy.
++ face.multiplyScalar(1/Math.sqrt(lengthSquared));
++ if(face.dot(radial)<0)face.negate();
++ const cosine=Math.max(0,Math.min(1,face.dot(radial)));
++ return lookup.addScaledVector(face,e*(1-cosine));
+ }
+ /** CPU map-addressing oracle. One stored caster-face minimum replaces the old
+  * 3x3 receiver-plane extrapolation, which was invalid across terrain creases.
+  */
+-export function terrainShadowVisibility(point:TerrainShadowVector,frame:TerrainShadowFrame,sample:(x:number,y:number)=>number):number{
+- const p=terrainShadowProject(terrainShadowLookupPoint(point,frame),frame);
++export function terrainShadowVisibility(point:TerrainShadowVector,frame:TerrainShadowFrame,sample:(x:number,y:number)=>number,derivativeX?:TerrainShadowVector,derivativeY?:TerrainShadowVector):number{
++ const p=terrainShadowProject(terrainShadowLookupPoint(point,frame,derivativeX,derivativeY),frame);
+  if(p.u<0||p.v<0||p.u>=1||p.v>=1)return 1;
+  const visibility=terrainShadowCompare(p.heightKm,sample(Math.floor(p.u*frame.resolution),Math.floor(p.v*frame.resolution)),0);
+  const edge=Math.max(Math.abs(p.u*2-1),Math.abs(p.v*2-1)),t=Math.max(0,Math.min(1,(edge-TERRAIN_SHADOW_DEFAULTS.fadeStart)/(1-TERRAIN_SHADOW_DEFAULTS.fadeStart)));
+@@ -82,10 +95,25 @@
+ `;
+ export const TERRAIN_SHADOW_WGSL=/* wgsl */`
+ fn terrainMeshShadowVisibility(point:vec3<f32>, shadowMap:texture_2d<f32>, center:vec3<f32>, sun:vec3<f32>, right:vec3<f32>, up:vec3<f32>, radius:f32)->f32 {
++ // Derivatives must execute in uniform fragment control flow, before the UV branch below.
++ let dx=dpdx(point);let dy=dpdy(point);
+  let size=textureDimensions(shadowMap);
+- // Half of the actual light texel in km, radially above the visible receiver.
+  let radial=normalize(point-center+vec3<f32>(0.0,${EARTH_RADIUS}.0,0.0));
+- let lookupPoint=point+radial*(radius/f32(size.x));
++ // Rescale before cross so every finite derivative component stays bounded.
++ let scaleX=max(max(abs(dx.x),abs(dx.y)),abs(dx.z));
++ let scaleY=max(max(abs(dy.x),abs(dy.y)),abs(dy.z));
++ let faceCross=cross(dx/max(scaleX,1e-20),dy/max(scaleY,1e-20));
++ let lengthSquared=dot(faceCross,faceCross);
++ let rawNormal=faceCross*inverseSqrt(max(lengthSquared,1e-20));
++ let alignment=dot(rawNormal,radial);
++ let oriented=select(-rawNormal,rawNormal,alignment>=0.0);
++ let valid=lengthSquared>1e-20;
++ let faceNormal=select(radial,oriented,valid);
++ let cosine=select(1.0,clamp(abs(alignment),0.0,1.0),valid);
++ let e=radius/f32(size.x);
++ // Complete the radial offset to half-texel clearance from this face plane.
++ // UV and solar height both use this same point; visible geometry is unchanged.
++ let lookupPoint=point+radial*e+faceNormal*(e*(1.0-cosine));
+  let relative=lookupPoint-center;
+  let uv=vec2<f32>(.5+dot(relative,right)/(2.0*radius),.5-dot(relative,up)/(2.0*radius));
+  if(any(uv<vec2<f32>(0.0)) || any(uv>=vec2<f32>(1.0))){return 1.0;}
+@@ -158,7 +186,7 @@
+   baseBiasKm:TERRAIN_SHADOW_DEFAULTS.baseBiasKm,receiverRadialOffsetKm:TERRAIN_SHADOW_DEFAULTS.radiusKm/TERRAIN_SHADOW_DEFAULTS.resolution,
+   filter:'One nearest textureLoad; no receiver-plane extrapolation or PCF blur; outside coverage lit',
+   biasPolicy:'Caster affine height minimum over one actual light texel: 0.5*(abs(dpdx(q))+abs(dpdy(q))) +1m; erodes unresolved contact shadows, especially at low Sun',
+-  receiverPolicy:'Only shadow lookup point elevated along planet radial by half one light texel; geometry/radiance point unchanged; contact shadows below this scale may disappear',
++  receiverPolicy:'Trial: radial half-texel plus missing geometric face-normal clearance; local offset 31.25–44.20m; geometry/radiance point unchanged; contact shadows may disappear',
+   biasLimit:'No guarantee for multiple non-coplanar faces inside one light texel; aliasing and contact-shadow loss require visual qualification',
+   depthFit:this.frame?{nearKm:this.frame.nearKm,farKm:this.frame.farKm,cameraDistanceKm:this.frame.distanceKm,minimumCasterHeightKm:this.frame.minimumCasterHeightKm,maximumCasterHeightKm:this.frame.maximumCasterHeightKm}:null,
+   reversedDepthBuffer:this.reversedDepth,updates:'One live shadow draw before each terrain colour draw; shared geometry not owned by shadow'};}

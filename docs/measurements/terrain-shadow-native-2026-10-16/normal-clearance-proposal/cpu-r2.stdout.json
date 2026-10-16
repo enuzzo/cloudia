@@ -1,0 +1,2430 @@
+{
+  "status": "PASS_NUMERICAL_SCOPE_ONLY",
+  "scope": "actual candidate CPU helper + independent planar distance oracle; f32 ALU surrogate is not GPU/WGSL execution",
+  "assertions": 654,
+  "planeRows": 126,
+  "maxDoublePlaneErrorKm": 6.696032617270475e-16,
+  "maxF32PlaneErrorKm": 3.1468546438095935e-7,
+  "oldRadialCounterexamples": 108,
+  "limits": {
+    "real35mContactErased": true,
+    "separate200mBlockerPreserved": true,
+    "multiFaceTexelFalseShadowNotSolved": true,
+    "derivativesUniformityNotCompiled": true,
+    "artOrPerformancePass": false
+  },
+  "contactWitness": {
+    "oldLookup": [
+      0,
+      -3.96875,
+      0
+    ],
+    "newLookup": [
+      -0.006472086912079613,
+      -3.96227791308792,
+      0
+    ],
+    "oldQ": 0.03125,
+    "newQ": 0.03772208691207979,
+    "blockerTopKm": 0.035,
+    "storedKm": 0.034,
+    "oldContact": 0,
+    "newContact": 1
+  },
+  "rows": [
+    {
+      "degrees": 0,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.03125,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.03125,
+      "f32Lookup": [
+        0,
+        -3.96875,
+        0
+      ],
+      "f32ErrorKm": 0
+    },
+    {
+      "degrees": 0,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.03125,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.03125,
+      "f32Lookup": [
+        0,
+        -3.96875,
+        0
+      ],
+      "f32ErrorKm": 0
+    },
+    {
+      "degrees": 0,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.03125,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.03125,
+      "f32Lookup": [
+        0,
+        -3.96875,
+        0
+      ],
+      "f32ErrorKm": 0
+    },
+    {
+      "degrees": 0,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.031249911874389635,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.031250088125361654,
+      "f32Lookup": [
+        15.000073432922363,
+        -2.96875,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 0
+    },
+    {
+      "degrees": 0,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.031249911874389635,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.031250088125361654,
+      "f32Lookup": [
+        15.000073432922363,
+        -2.96875,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 0
+    },
+    {
+      "degrees": 0,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.031249911874389635,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.031250088125361654,
+      "f32Lookup": [
+        15.000073432922363,
+        -2.96875,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 0
+    },
+    {
+      "degrees": 0,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.03125,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.03125,
+      "f32Lookup": [
+        0,
+        -3.96875,
+        0
+      ],
+      "f32ErrorKm": 0
+    },
+    {
+      "degrees": 0,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.03125,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.03125,
+      "f32Lookup": [
+        0,
+        -3.96875,
+        0
+      ],
+      "f32ErrorKm": 0
+    },
+    {
+      "degrees": 0,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.03125,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.03125,
+      "f32Lookup": [
+        0,
+        -3.96875,
+        0
+      ],
+      "f32ErrorKm": 0
+    },
+    {
+      "degrees": 0,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.031249911874389635,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.031250088125361654,
+      "f32Lookup": [
+        15.000073432922363,
+        -2.96875,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 0
+    },
+    {
+      "degrees": 0,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.031249911874389635,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.031250088125361654,
+      "f32Lookup": [
+        15.000073432922363,
+        -2.96875,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 0
+    },
+    {
+      "degrees": 0,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.031249911874389635,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.031250088125361654,
+      "f32Lookup": [
+        15.000073432922363,
+        -2.96875,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 0
+    },
+    {
+      "degrees": 0,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.03125,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.03125,
+      "f32Lookup": [
+        0,
+        -3.96875,
+        0
+      ],
+      "f32ErrorKm": 0
+    },
+    {
+      "degrees": 0,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.03125,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.03125,
+      "f32Lookup": [
+        0,
+        -3.96875,
+        0
+      ],
+      "f32ErrorKm": 0
+    },
+    {
+      "degrees": 0,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.03125,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.03125,
+      "f32Lookup": [
+        0,
+        -3.96875,
+        0
+      ],
+      "f32ErrorKm": 0
+    },
+    {
+      "degrees": 0,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.031249911874389635,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.031250088125361654,
+      "f32Lookup": [
+        15.000073432922363,
+        -2.96875,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 0
+    },
+    {
+      "degrees": 0,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.031249911874389635,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.031250088125361654,
+      "f32Lookup": [
+        15.000073432922363,
+        -2.96875,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 0
+    },
+    {
+      "degrees": 0,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.031249911874389635,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.031250088125361654,
+      "f32Lookup": [
+        15.000073432922363,
+        -2.96875,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 0
+    },
+    {
+      "degrees": 15,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.030185182071533388,
+      "newPlaneDistanceKm": 0.031249999999999792,
+      "offsetKm": 0.03227971163607824,
+      "f32Lookup": [
+        -0.00027559525915421546,
+        -3.967721462249756,
+        0
+      ],
+      "f32ErrorKm": 2.5496165317884234e-9
+    },
+    {
+      "degrees": 15,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.030185182071533388,
+      "newPlaneDistanceKm": 0.031249999999999792,
+      "offsetKm": 0.03227971163607824,
+      "f32Lookup": [
+        -0.00027559525915421546,
+        -3.967721462249756,
+        0
+      ],
+      "f32ErrorKm": 2.5496165317884234e-9
+    },
+    {
+      "degrees": 15,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.030185182071533388,
+      "newPlaneDistanceKm": 0.03125000000000022,
+      "offsetKm": 0.03227971163607869,
+      "f32Lookup": [
+        -0.00027559525915421546,
+        -3.967721462249756,
+        0
+      ],
+      "f32ErrorKm": 2.5496165317884234e-9
+    },
+    {
+      "degrees": 15,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.030166057230390342,
+      "newPlaneDistanceKm": 0.031249999999999653,
+      "offsetKm": 0.03229758491238608,
+      "f32Lookup": [
+        14.99979305267334,
+        -2.967703104019165,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 3.2153667197526437e-8
+    },
+    {
+      "degrees": 15,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.030166057230390342,
+      "newPlaneDistanceKm": 0.031249999999999653,
+      "offsetKm": 0.03229758491238608,
+      "f32Lookup": [
+        14.99979305267334,
+        -2.967703104019165,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 3.2153667197526437e-8
+    },
+    {
+      "degrees": 15,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.030166057230390342,
+      "newPlaneDistanceKm": 0.031249999999999653,
+      "offsetKm": 0.03229758491238608,
+      "f32Lookup": [
+        14.99979305267334,
+        -2.967703104019165,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 3.2153667197526437e-8
+    },
+    {
+      "degrees": 15,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.030185182071533388,
+      "newPlaneDistanceKm": 0.031249999999999792,
+      "offsetKm": 0.03227971163607824,
+      "f32Lookup": [
+        -0.0002107868785969913,
+        -3.967721462249756,
+        -0.00017754334839992225
+      ],
+      "f32ErrorKm": 2.550499991760269e-9
+    },
+    {
+      "degrees": 15,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.030185182071533388,
+      "newPlaneDistanceKm": 0.031249999999999792,
+      "offsetKm": 0.03227971163607824,
+      "f32Lookup": [
+        -0.0002107868785969913,
+        -3.967721462249756,
+        -0.00017754334839992225
+      ],
+      "f32ErrorKm": 2.550499991760269e-9
+    },
+    {
+      "degrees": 15,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.030185182071533388,
+      "newPlaneDistanceKm": 0.03125000000000022,
+      "offsetKm": 0.03227971163607869,
+      "f32Lookup": [
+        -0.0002107868785969913,
+        -3.967721462249756,
+        -0.00017754333384800702
+      ],
+      "f32ErrorKm": 2.5480736617899957e-9
+    },
+    {
+      "degrees": 15,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.030168899139134606,
+      "newPlaneDistanceKm": 0.031249999999999806,
+      "offsetKm": 0.03229493032555887,
+      "f32Lookup": [
+        14.999859809875488,
+        -2.967705726623535,
+        1.9998295307159424
+      ],
+      "f32ErrorKm": 4.7466827961251123e-8
+    },
+    {
+      "degrees": 15,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.030168899139134606,
+      "newPlaneDistanceKm": 0.031249999999999806,
+      "offsetKm": 0.03229493032555887,
+      "f32Lookup": [
+        14.999859809875488,
+        -2.967705726623535,
+        1.9998295307159424
+      ],
+      "f32ErrorKm": 4.7466827961251123e-8
+    },
+    {
+      "degrees": 15,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.030168899139134606,
+      "newPlaneDistanceKm": 0.031249999999999806,
+      "offsetKm": 0.03229493032555887,
+      "f32Lookup": [
+        14.999859809875488,
+        -2.967705726623535,
+        1.9998295307159424
+      ],
+      "f32ErrorKm": 4.7466827961251123e-8
+    },
+    {
+      "degrees": 15,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.030185182071533388,
+      "newPlaneDistanceKm": 0.031249999999999792,
+      "offsetKm": 0.03227971163607825,
+      "f32Lookup": [
+        0.00006261582166189328,
+        -3.967721462249756,
+        -0.0002683877828530967
+      ],
+      "f32ErrorKm": 2.5478504653286826e-9
+    },
+    {
+      "degrees": 15,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.030185182071533388,
+      "newPlaneDistanceKm": 0.031249999999999792,
+      "offsetKm": 0.03227971163607825,
+      "f32Lookup": [
+        0.00006261582166189328,
+        -3.967721462249756,
+        -0.0002683877828530967
+      ],
+      "f32ErrorKm": 2.5478504653286826e-9
+    },
+    {
+      "degrees": 15,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.030185182071533388,
+      "newPlaneDistanceKm": 0.03125000000000022,
+      "offsetKm": 0.03227971163607869,
+      "f32Lookup": [
+        0.00006261582166189328,
+        -3.967721462249756,
+        -0.0002683877828530967
+      ],
+      "f32ErrorKm": 2.5478504653286826e-9
+    },
+    {
+      "degrees": 15,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.03018695057467318,
+      "newPlaneDistanceKm": 0.031249999999999886,
+      "offsetKm": 0.032278057794765454,
+      "f32Lookup": [
+        15.000136375427246,
+        -2.9677231311798096,
+        1.999741792678833
+      ],
+      "f32ErrorKm": 1.618733977068465e-7
+    },
+    {
+      "degrees": 15,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.03018695057467318,
+      "newPlaneDistanceKm": 0.031249999999999886,
+      "offsetKm": 0.032278057794765454,
+      "f32Lookup": [
+        15.000136375427246,
+        -2.9677231311798096,
+        1.999741792678833
+      ],
+      "f32ErrorKm": 1.618733977068465e-7
+    },
+    {
+      "degrees": 15,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.03018695057467318,
+      "newPlaneDistanceKm": 0.031249999999999886,
+      "offsetKm": 0.032278057794765454,
+      "f32Lookup": [
+        15.000136375427246,
+        -2.9677231311798096,
+        1.999741792678833
+      ],
+      "f32ErrorKm": 1.618733977068465e-7
+    },
+    {
+      "degrees": 30,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.02706329386826371,
+      "newPlaneDistanceKm": 0.031249999999999875,
+      "offsetKm": 0.03493856214843406,
+      "f32Lookup": [
+        -0.0020933523774147034,
+        -3.9651241302490234,
+        0
+      ],
+      "f32ErrorKm": 6.537213032009603e-8
+    },
+    {
+      "degrees": 30,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.02706329386826371,
+      "newPlaneDistanceKm": 0.031249999999999875,
+      "offsetKm": 0.03493856214843406,
+      "f32Lookup": [
+        -0.0020933523774147034,
+        -3.9651241302490234,
+        0
+      ],
+      "f32ErrorKm": 6.537213032009603e-8
+    },
+    {
+      "degrees": 30,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.02706329386826371,
+      "newPlaneDistanceKm": 0.031249999999999875,
+      "offsetKm": 0.03493856214843406,
+      "f32Lookup": [
+        -0.0020933523774147034,
+        -3.9651241302490234,
+        0
+      ],
+      "f32ErrorKm": 6.537213032009603e-8
+    },
+    {
+      "degrees": 30,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.027026435637906587,
+      "newPlaneDistanceKm": 0.031249999999999598,
+      "offsetKm": 0.03496708132958856,
+      "f32Lookup": [
+        14.99796199798584,
+        -2.965092182159424,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 5.804769868944515e-8
+    },
+    {
+      "degrees": 30,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.027026435637906587,
+      "newPlaneDistanceKm": 0.031249999999999598,
+      "offsetKm": 0.03496708132958856,
+      "f32Lookup": [
+        14.99796199798584,
+        -2.965092182159424,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 5.804769868944515e-8
+    },
+    {
+      "degrees": 30,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.027026435637906587,
+      "newPlaneDistanceKm": 0.031249999999999598,
+      "offsetKm": 0.03496708132958856,
+      "f32Lookup": [
+        14.99796199798584,
+        -2.965092182159424,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 5.804769868944515e-8
+    },
+    {
+      "degrees": 30,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.02706329386826371,
+      "newPlaneDistanceKm": 0.031249999999999875,
+      "offsetKm": 0.03493856214843406,
+      "f32Lookup": [
+        -0.0016010848339647055,
+        -3.9651241302490234,
+        -0.001348575227893889
+      ],
+      "f32ErrorKm": 6.580383168225401e-8
+    },
+    {
+      "degrees": 30,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.02706329386826371,
+      "newPlaneDistanceKm": 0.031249999999999875,
+      "offsetKm": 0.03493856214843406,
+      "f32Lookup": [
+        -0.0016010848339647055,
+        -3.9651241302490234,
+        -0.0013485753443092108
+      ],
+      "f32ErrorKm": 6.584133008941118e-8
+    },
+    {
+      "degrees": 30,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.02706329386826371,
+      "newPlaneDistanceKm": 0.031249999999999875,
+      "offsetKm": 0.03493856214843406,
+      "f32Lookup": [
+        -0.0016010848339647055,
+        -3.9651241302490234,
+        -0.001348575227893889
+      ],
+      "f32ErrorKm": 6.580383168225401e-8
+    },
+    {
+      "degrees": 30,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.027031925784010667,
+      "newPlaneDistanceKm": 0.03124999999999968,
+      "offsetKm": 0.034962837247679394,
+      "f32Lookup": [
+        14.99846076965332,
+        -2.965096950531006,
+        1.998651146888733
+      ],
+      "f32ErrorKm": 3.917812039372359e-8
+    },
+    {
+      "degrees": 30,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.027031925784010667,
+      "newPlaneDistanceKm": 0.03124999999999968,
+      "offsetKm": 0.034962837247679394,
+      "f32Lookup": [
+        14.99846076965332,
+        -2.965096950531006,
+        1.998651146888733
+      ],
+      "f32ErrorKm": 3.917812039372359e-8
+    },
+    {
+      "degrees": 30,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.027031925784010667,
+      "newPlaneDistanceKm": 0.03124999999999968,
+      "offsetKm": 0.034962837247679394,
+      "f32Lookup": [
+        14.99846076965332,
+        -2.965096950531006,
+        1.998651146888733
+      ],
+      "f32ErrorKm": 3.917812039372359e-8
+    },
+    {
+      "degrees": 30,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.02706329386826371,
+      "newPlaneDistanceKm": 0.031249999999999875,
+      "offsetKm": 0.03493856214843406,
+      "f32Lookup": [
+        0.0004756142443511635,
+        -3.9651241302490234,
+        -0.0020386071410030127
+      ],
+      "f32ErrorKm": 6.582699277335458e-8
+    },
+    {
+      "degrees": 30,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.02706329386826371,
+      "newPlaneDistanceKm": 0.031249999999999875,
+      "offsetKm": 0.03493856214843406,
+      "f32Lookup": [
+        0.0004756142443511635,
+        -3.9651241302490234,
+        -0.0020386071410030127
+      ],
+      "f32ErrorKm": 6.582699277335458e-8
+    },
+    {
+      "degrees": 30,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.02706329386826371,
+      "newPlaneDistanceKm": 0.031249999999999875,
+      "offsetKm": 0.03493856214843406,
+      "f32Lookup": [
+        0.00047561406972818077,
+        -3.9651241302490234,
+        -0.002038606209680438
+      ],
+      "f32ErrorKm": 6.535367228638345e-8
+    },
+    {
+      "degrees": 30,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.027066798479587276,
+      "newPlaneDistanceKm": 0.031249999999999886,
+      "offsetKm": 0.03493584720692196,
+      "f32Lookup": [
+        15.000548362731934,
+        -2.9651272296905518,
+        1.997972846031189
+      ],
+      "f32ErrorKm": 6.911397134462538e-8
+    },
+    {
+      "degrees": 30,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.027066798479587276,
+      "newPlaneDistanceKm": 0.031249999999999886,
+      "offsetKm": 0.03493584720692196,
+      "f32Lookup": [
+        15.000548362731934,
+        -2.9651272296905518,
+        1.997972846031189
+      ],
+      "f32ErrorKm": 6.911397134462538e-8
+    },
+    {
+      "degrees": 30,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.027066798479587276,
+      "newPlaneDistanceKm": 0.031249999999999886,
+      "offsetKm": 0.03493584720692196,
+      "f32Lookup": [
+        15.000548362731934,
+        -2.9651272296905518,
+        1.997972846031189
+      ],
+      "f32ErrorKm": 6.911397134462538e-8
+    },
+    {
+      "degrees": 45,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.02209708691207961,
+      "newPlaneDistanceKm": 0.031250000000000125,
+      "offsetKm": 0.038273277230987335,
+      "f32Lookup": [
+        -0.006472086999565363,
+        -3.962277889251709,
+        0
+      ],
+      "f32ErrorKm": 1.6916608495953778e-8
+    },
+    {
+      "degrees": 45,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.02209708691207961,
+      "newPlaneDistanceKm": 0.031250000000000125,
+      "offsetKm": 0.038273277230987335,
+      "f32Lookup": [
+        -0.006472086999565363,
+        -3.962277889251709,
+        0
+      ],
+      "f32ErrorKm": 1.6916608495953778e-8
+    },
+    {
+      "degrees": 45,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.02209708691207961,
+      "newPlaneDistanceKm": 0.031250000000000125,
+      "offsetKm": 0.038273277230987335,
+      "f32Lookup": [
+        -0.006472086999565363,
+        -3.962277889251709,
+        0
+      ],
+      "f32ErrorKm": 1.6916608495953778e-8
+    },
+    {
+      "degrees": 45,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.022045007119996143,
+      "newPlaneDistanceKm": 0.03125000000000057,
+      "offsetKm": 0.0383032983054895,
+      "f32Lookup": [
+        14.99356460571289,
+        -2.9622411727905273,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 3.3709493446609784e-8
+    },
+    {
+      "degrees": 45,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.022045007119996143,
+      "newPlaneDistanceKm": 0.03125000000000057,
+      "offsetKm": 0.0383032983054895,
+      "f32Lookup": [
+        14.99356460571289,
+        -2.9622411727905273,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 3.3709493446609784e-8
+    },
+    {
+      "degrees": 45,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.022045007119996143,
+      "newPlaneDistanceKm": 0.03125000000000057,
+      "offsetKm": 0.0383032983054895,
+      "f32Lookup": [
+        14.99356460571289,
+        -2.9622411727905273,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 3.3709493446609784e-8
+    },
+    {
+      "degrees": 45,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.02209708691207961,
+      "newPlaneDistanceKm": 0.03125000000000013,
+      "offsetKm": 0.038273277230987335,
+      "f32Lookup": [
+        -0.004950125701725483,
+        -3.962277889251709,
+        -0.004169432912021875
+      ],
+      "f32ErrorKm": 1.719743663447515e-8
+    },
+    {
+      "degrees": 45,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.02209708691207961,
+      "newPlaneDistanceKm": 0.03125000000000013,
+      "offsetKm": 0.038273277230987335,
+      "f32Lookup": [
+        -0.004950125701725483,
+        -3.962277889251709,
+        -0.004169432912021875
+      ],
+      "f32ErrorKm": 1.719743663447515e-8
+    },
+    {
+      "degrees": 45,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.02209708691207961,
+      "newPlaneDistanceKm": 0.03125000000000013,
+      "offsetKm": 0.038273277230987335,
+      "f32Lookup": [
+        -0.004950125236064196,
+        -3.962277889251709,
+        -0.004169432912021875
+      ],
+      "f32ErrorKm": 1.6945595322781504e-8
+    },
+    {
+      "degrees": 45,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.022052771359075945,
+      "newPlaneDistanceKm": 0.03125000000000014,
+      "offsetKm": 0.03829882864245739,
+      "f32Lookup": [
+        14.995099067687988,
+        -2.9622466564178467,
+        1.995820164680481
+      ],
+      "f32ErrorKm": 2.3574220345268238e-7
+    },
+    {
+      "degrees": 45,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.022052771359075945,
+      "newPlaneDistanceKm": 0.03125000000000014,
+      "offsetKm": 0.03829882864245739,
+      "f32Lookup": [
+        14.995099067687988,
+        -2.9622466564178467,
+        1.995820164680481
+      ],
+      "f32ErrorKm": 2.3574220345268238e-7
+    },
+    {
+      "degrees": 45,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.022052771359075945,
+      "newPlaneDistanceKm": 0.03125000000000014,
+      "offsetKm": 0.03829882864245739,
+      "f32Lookup": [
+        14.995099067687988,
+        -2.9622466564178467,
+        1.995820164680481
+      ],
+      "f32ErrorKm": 2.3574220345268238e-7
+    },
+    {
+      "degrees": 45,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.02209708691207961,
+      "newPlaneDistanceKm": 0.03125000000000013,
+      "offsetKm": 0.038273277230987335,
+      "f32Lookup": [
+        0.0014704717323184013,
+        -3.962277889251709,
+        -0.006302826572209597
+      ],
+      "f32ErrorKm": 1.690486119143575e-8
+    },
+    {
+      "degrees": 45,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.02209708691207961,
+      "newPlaneDistanceKm": 0.031250000000000125,
+      "offsetKm": 0.038273277230987335,
+      "f32Lookup": [
+        0.0014704717323184013,
+        -3.962277889251709,
+        -0.006302826572209597
+      ],
+      "f32ErrorKm": 1.690486119143575e-8
+    },
+    {
+      "degrees": 45,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.02209708691207961,
+      "newPlaneDistanceKm": 0.031250000000000125,
+      "offsetKm": 0.038273277230987335,
+      "f32Lookup": [
+        0.0014704717323184013,
+        -3.962277889251709,
+        -0.006302826572209597
+      ],
+      "f32ErrorKm": 1.690486119143575e-8
+    },
+    {
+      "degrees": 45,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.022102088798116898,
+      "newPlaneDistanceKm": 0.031249999999999743,
+      "offsetKm": 0.038270388954910285,
+      "f32Lookup": [
+        15.001543045043945,
+        -2.9622814655303955,
+        1.9937103986740112
+      ],
+      "f32ErrorKm": 4.034901055632867e-8
+    },
+    {
+      "degrees": 45,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.022102088798116898,
+      "newPlaneDistanceKm": 0.031249999999999743,
+      "offsetKm": 0.038270388954910285,
+      "f32Lookup": [
+        15.001543045043945,
+        -2.9622814655303955,
+        1.9937103986740112
+      ],
+      "f32ErrorKm": 4.034901055632867e-8
+    },
+    {
+      "degrees": 45,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.022102088798116898,
+      "newPlaneDistanceKm": 0.031249999999999743,
+      "offsetKm": 0.038270388954910285,
+      "f32Lookup": [
+        15.001543045043945,
+        -2.9622814655303955,
+        1.9937103986740112
+      ],
+      "f32ErrorKm": 4.034901055632867e-8
+    },
+    {
+      "degrees": 60,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.015625000000000003,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.04133986423538423,
+      "f32Lookup": [
+        -0.013531647622585297,
+        -3.9609375,
+        0
+      ],
+      "f32ErrorKm": 5.962181720553517e-10
+    },
+    {
+      "degrees": 60,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.015625000000000003,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.04133986423538423,
+      "f32Lookup": [
+        -0.013531644828617573,
+        -3.9609375,
+        0
+      ],
+      "f32ErrorKm": 1.823428852354425e-9
+    },
+    {
+      "degrees": 60,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.015625000000000003,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.04133986423538423,
+      "f32Lookup": [
+        -0.013531647622585297,
+        -3.9609375,
+        0
+      ],
+      "f32ErrorKm": 5.962181720553517e-10
+    },
+    {
+      "degrees": 60,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.015561247797954755,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.04136390415532174,
+      "f32Lookup": [
+        14.986486434936523,
+        -2.9609055519104004,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 3.1468546438095935e-7
+    },
+    {
+      "degrees": 60,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.015561247797954755,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.04136390415532174,
+      "f32Lookup": [
+        14.986486434936523,
+        -2.9609055519104004,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 3.1468546438095935e-7
+    },
+    {
+      "degrees": 60,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.015561247797954755,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.04136390415532174,
+      "f32Lookup": [
+        14.986486434936523,
+        -2.9609055519104004,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 3.1468546438095935e-7
+    },
+    {
+      "degrees": 60,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.015625000000000003,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.04133986423538423,
+      "f32Lookup": [
+        -0.010349574498832226,
+        -3.9609375,
+        -0.008717326447367668
+      ],
+      "f32ErrorKm": 1.2629933904273472e-10
+    },
+    {
+      "degrees": 60,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.015625000000000003,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.04133986423538423,
+      "f32Lookup": [
+        -0.010349574498832226,
+        -3.9609375,
+        -0.008717326447367668
+      ],
+      "f32ErrorKm": 1.2629933904273472e-10
+    },
+    {
+      "degrees": 60,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.015625000000000003,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.04133986423538423,
+      "f32Lookup": [
+        -0.010349574498832226,
+        -3.9609375,
+        -0.008717326447367668
+      ],
+      "f32ErrorKm": 1.2629933904273472e-10
+    },
+    {
+      "degrees": 60,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.015570757009947997,
+      "newPlaneDistanceKm": 0.03124999999999965,
+      "offsetKm": 0.0413603255081137,
+      "f32Lookup": [
+        14.9896879196167,
+        -2.9609103202819824,
+        1.9912621974945068
+      ],
+      "f32ErrorKm": 1.7867907824153928e-7
+    },
+    {
+      "degrees": 60,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.015570757009947997,
+      "newPlaneDistanceKm": 0.03124999999999965,
+      "offsetKm": 0.0413603255081137,
+      "f32Lookup": [
+        14.9896879196167,
+        -2.9609103202819824,
+        1.9912621974945068
+      ],
+      "f32ErrorKm": 1.7867907824153928e-7
+    },
+    {
+      "degrees": 60,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.015570757009947997,
+      "newPlaneDistanceKm": 0.03124999999999965,
+      "offsetKm": 0.0413603255081137,
+      "f32Lookup": [
+        14.9896879196167,
+        -2.9609103202819824,
+        1.9912621974945068
+      ],
+      "f32ErrorKm": 1.7867907824153928e-7
+    },
+    {
+      "degrees": 60,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.015625000000000007,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.04133986423538423,
+      "f32Lookup": [
+        0.0030744182877242565,
+        -3.9609375,
+        -0.013177762739360332
+      ],
+      "f32ErrorKm": 3.159285402731804e-10
+    },
+    {
+      "degrees": 60,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.015625000000000007,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.04133986423538423,
+      "f32Lookup": [
+        0.0030744182877242565,
+        -3.9609375,
+        -0.013177762739360332
+      ],
+      "f32ErrorKm": 3.159285402731804e-10
+    },
+    {
+      "degrees": 60,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.015625000000000007,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.04133986423538423,
+      "f32Lookup": [
+        0.0030744182877242565,
+        -3.9609375,
+        -0.013177760876715183
+      ],
+      "f32ErrorKm": 1.2549831451824645e-9
+    },
+    {
+      "degrees": 60,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.01563115829048357,
+      "newPlaneDistanceKm": 0.031249999999999858,
+      "offsetKm": 0.04133753609611757,
+      "f32Lookup": [
+        15.003146171569824,
+        -2.9609405994415283,
+        1.9868371486663818
+      ],
+      "f32ErrorKm": 6.9626352912355305e-9
+    },
+    {
+      "degrees": 60,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.01563115829048357,
+      "newPlaneDistanceKm": 0.031249999999999858,
+      "offsetKm": 0.04133753609611757,
+      "f32Lookup": [
+        15.003146171569824,
+        -2.9609405994415283,
+        1.9868371486663818
+      ],
+      "f32ErrorKm": 6.9626352912355305e-9
+    },
+    {
+      "degrees": 60,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.01563115829048357,
+      "newPlaneDistanceKm": 0.031249999999999858,
+      "offsetKm": 0.04133753609611757,
+      "f32Lookup": [
+        15.003146171569824,
+        -2.9609405994415283,
+        1.9868372678756714
+      ],
+      "f32ErrorKm": 1.0750098298345501e-7
+    },
+    {
+      "degrees": 80,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.005426505552091575,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.043859754188699265,
+      "f32Lookup": [
+        -0.025431176647543907,
+        -3.964265823364258,
+        0
+      ],
+      "f32ErrorKm": 5.416050916778881e-9
+    },
+    {
+      "degrees": 80,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.005426505552091575,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.043859754188699265,
+      "f32Lookup": [
+        -0.025431176647543907,
+        -3.964265823364258,
+        0
+      ],
+      "f32ErrorKm": 5.416050916778881e-9
+    },
+    {
+      "degrees": 80,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.005426505552091575,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.043859754188699265,
+      "f32Lookup": [
+        -0.025431176647543907,
+        -3.964265823364258,
+        0
+      ],
+      "f32ErrorKm": 5.416050916778881e-9
+    },
+    {
+      "degrees": 80,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.005354044026323799,
+      "newPlaneDistanceKm": 0.031249999999999934,
+      "offsetKm": 0.04386865865927709,
+      "f32Lookup": [
+        14.974571228027344,
+        -2.9642531871795654,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 1.7930807925600756e-7
+    },
+    {
+      "degrees": 80,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.005354044026323799,
+      "newPlaneDistanceKm": 0.031249999999999934,
+      "offsetKm": 0.04386865865927709,
+      "f32Lookup": [
+        14.974571228027344,
+        -2.9642531871795654,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 1.7930807925600756e-7
+    },
+    {
+      "degrees": 80,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.005354044026323799,
+      "newPlaneDistanceKm": 0.031249999999999934,
+      "offsetKm": 0.04386865865927709,
+      "f32Lookup": [
+        14.974571228027344,
+        -2.9642531871795654,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 1.7930807925600756e-7
+    },
+    {
+      "degrees": 80,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.005426505552091575,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.043859754188699265,
+      "f32Lookup": [
+        -0.01945083774626255,
+        -3.964265823364258,
+        -0.01638321578502655
+      ],
+      "f32ErrorKm": 3.425390984745924e-9
+    },
+    {
+      "degrees": 80,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.005426505552091575,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.043859754188699265,
+      "f32Lookup": [
+        -0.01945083774626255,
+        -3.964265823364258,
+        -0.0163832139223814
+      ],
+      "f32ErrorKm": 4.60711001640246e-9
+    },
+    {
+      "degrees": 80,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.005426505552091575,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.043859754188699265,
+      "f32Lookup": [
+        -0.01945083774626255,
+        -3.964265823364258,
+        -0.0163832139223814
+      ],
+      "f32ErrorKm": 4.60711001640246e-9
+    },
+    {
+      "degrees": 80,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.005364857503220735,
+      "newPlaneDistanceKm": 0.031250000000000215,
+      "offsetKm": 0.0438673375527868,
+      "f32Lookup": [
+        14.980576515197754,
+        -2.9642550945281982,
+        1.9835875034332275
+      ],
+      "f32ErrorKm": 1.666127277324958e-7
+    },
+    {
+      "degrees": 80,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.005364857503220735,
+      "newPlaneDistanceKm": 0.031250000000000215,
+      "offsetKm": 0.0438673375527868,
+      "f32Lookup": [
+        14.980576515197754,
+        -2.9642550945281982,
+        1.9835875034332275
+      ],
+      "f32ErrorKm": 1.666127277324958e-7
+    },
+    {
+      "degrees": 80,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.005364857503220735,
+      "newPlaneDistanceKm": 0.031250000000000215,
+      "offsetKm": 0.0438673375527868,
+      "f32Lookup": [
+        14.980576515197754,
+        -2.9642550945281982,
+        1.9835875034332275
+      ],
+      "f32ErrorKm": 1.666127277324958e-7
+    },
+    {
+      "degrees": 80,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.0054265055520915755,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.043859754188699265,
+      "f32Lookup": [
+        0.005778016988188028,
+        -3.964265823364258,
+        -0.024766093119978905
+      ],
+      "f32ErrorKm": 3.4204907656265604e-9
+    },
+    {
+      "degrees": 80,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.0054265055520915755,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.043859754188699265,
+      "f32Lookup": [
+        0.005778016988188028,
+        -3.964265823364258,
+        -0.024766093119978905
+      ],
+      "f32ErrorKm": 3.4204907656265604e-9
+    },
+    {
+      "degrees": 80,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.0054265055520915755,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.043859754188699265,
+      "f32Lookup": [
+        0.005778016988188028,
+        -3.964265823364258,
+        -0.024766091257333755
+      ],
+      "f32ErrorKm": 5.206865619222789e-9
+    },
+    {
+      "degrees": 80,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.005433543305165295,
+      "newPlaneDistanceKm": 0.03125000000000002,
+      "offsetKm": 0.04385888287623027,
+      "f32Lookup": [
+        15.005849838256836,
+        -2.9642670154571533,
+        1.975250482559204
+      ],
+      "f32ErrorKm": 3.7338612302734164e-8
+    },
+    {
+      "degrees": 80,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.005433543305165295,
+      "newPlaneDistanceKm": 0.03125000000000002,
+      "offsetKm": 0.04385888287623027,
+      "f32Lookup": [
+        15.005849838256836,
+        -2.9642670154571533,
+        1.975250482559204
+      ],
+      "f32ErrorKm": 3.7338612302734164e-8
+    },
+    {
+      "degrees": 80,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.005433543305165295,
+      "newPlaneDistanceKm": 0.03125000000000002,
+      "offsetKm": 0.04385888287623027,
+      "f32Lookup": [
+        15.005849838256836,
+        -2.9642670154571533,
+        1.975250482559204
+      ],
+      "f32ErrorKm": 3.7338612302734164e-8
+    },
+    {
+      "degrees": 89,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.0005453877011651055,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.044190808458947795,
+      "f32Lookup": [
+        -0.03069993667304516,
+        -3.9682140350341797,
+        0
+      ],
+      "f32ErrorKm": 2.5035761172520488e-9
+    },
+    {
+      "degrees": 89,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.0005453877011651055,
+      "newPlaneDistanceKm": 0.031249999999999997,
+      "offsetKm": 0.044190808458947795,
+      "f32Lookup": [
+        -0.03069993667304516,
+        -3.9682140350341797,
+        0
+      ],
+      "f32ErrorKm": 2.5035761172520488e-9
+    },
+    {
+      "degrees": 89,
+      "azimuth": 0,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.0005453877011651055,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.044190808458947795,
+      "f32Lookup": [
+        -0.03069993667304516,
+        -3.9682140350341797,
+        0
+      ],
+      "f32ErrorKm": 2.5035761172520488e-9
+    },
+    {
+      "degrees": 89,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.00047183354460799906,
+      "newPlaneDistanceKm": 0.03124999999999933,
+      "offsetKm": 0.04419165501659924,
+      "f32Lookup": [
+        14.969300270080566,
+        -2.968212842941284,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 1.834136561448818e-7
+    },
+    {
+      "degrees": 89,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.00047183354460799906,
+      "newPlaneDistanceKm": 0.03124999999999933,
+      "offsetKm": 0.04419165501659924,
+      "f32Lookup": [
+        14.969300270080566,
+        -2.968212842941284,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 1.834136561448818e-7
+    },
+    {
+      "degrees": 89,
+      "azimuth": 0,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.00047183354460799906,
+      "newPlaneDistanceKm": 0.03124999999999933,
+      "offsetKm": 0.04419165501659924,
+      "f32Lookup": [
+        14.969300270080566,
+        -2.968212842941284,
+        2.000009775161743
+      ],
+      "f32ErrorKm": 1.834136561448818e-7
+    },
+    {
+      "degrees": 89,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.0005453877011651054,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.044190808458947795,
+      "f32Lookup": [
+        -0.023480605334043503,
+        -3.9682140350341797,
+        -0.019777441397309303
+      ],
+      "f32ErrorKm": 9.296779318601622e-10
+    },
+    {
+      "degrees": 89,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.0005453877011651054,
+      "newPlaneDistanceKm": 0.031249999999999997,
+      "offsetKm": 0.044190808458947795,
+      "f32Lookup": [
+        -0.023480605334043503,
+        -3.9682140350341797,
+        -0.019777441397309303
+      ],
+      "f32ErrorKm": 9.296779318601622e-10
+    },
+    {
+      "degrees": 89,
+      "azimuth": 0.7,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.0005453877011651054,
+      "newPlaneDistanceKm": 0.03125000000000001,
+      "offsetKm": 0.044190808458947795,
+      "f32Lookup": [
+        -0.023480605334043503,
+        -3.9682140350341797,
+        -0.019777441397309303
+      ],
+      "f32ErrorKm": 9.296779318601622e-10
+    },
+    {
+      "degrees": 89,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.0004828121644644711,
+      "newPlaneDistanceKm": 0.031250000000000576,
+      "offsetKm": 0.04419153643418453,
+      "f32Lookup": [
+        14.976545333862305,
+        -2.9682130813598633,
+        1.9801920652389526
+      ],
+      "f32ErrorKm": 1.774241145877098e-7
+    },
+    {
+      "degrees": 89,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.0004828121644644711,
+      "newPlaneDistanceKm": 0.031250000000000576,
+      "offsetKm": 0.04419153643418453,
+      "f32Lookup": [
+        14.976545333862305,
+        -2.9682130813598633,
+        1.9801920652389526
+      ],
+      "f32ErrorKm": 1.774241145877098e-7
+    },
+    {
+      "degrees": 89,
+      "azimuth": 0.7,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.0004828121644644711,
+      "newPlaneDistanceKm": 0.031250000000000576,
+      "offsetKm": 0.04419153643418453,
+      "f32Lookup": [
+        14.976545333862305,
+        -2.9682130813598633,
+        1.9801920652389526
+      ],
+      "f32ErrorKm": 1.774241145877098e-7
+    },
+    {
+      "degrees": 89,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.0005453877011651055,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.044190808458947795,
+      "f32Lookup": [
+        0.00697508966550231,
+        -3.9682140350341797,
+        -0.029897060245275497
+      ],
+      "f32ErrorKm": 2.1033503688761e-9
+    },
+    {
+      "degrees": 89,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.0005453877011651055,
+      "newPlaneDistanceKm": 0.03125,
+      "offsetKm": 0.044190808458947795,
+      "f32Lookup": [
+        0.00697508966550231,
+        -3.9682140350341797,
+        -0.029897060245275497
+      ],
+      "f32ErrorKm": 2.1033503688761e-9
+    },
+    {
+      "degrees": 89,
+      "azimuth": 1.8,
+      "point": [
+        0,
+        -4,
+        0
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.0005453877011651055,
+      "newPlaneDistanceKm": 0.031249999999999997,
+      "offsetKm": 0.04419080845894779,
+      "f32Lookup": [
+        0.00697508966550231,
+        -3.9682140350341797,
+        -0.029897060245275497
+      ],
+      "f32ErrorKm": 2.1033503688761e-9
+    },
+    {
+      "degrees": 89,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1,
+      "oldPlaneDistanceKm": 0.0005525469330567978,
+      "newPlaneDistanceKm": 0.03124999999999987,
+      "offsetKm": 0.044190719522165973,
+      "f32Lookup": [
+        15.007046699523926,
+        -2.968214273452759,
+        1.9701197147369385
+      ],
+      "f32ErrorKm": 6.841437219864965e-8
+    },
+    {
+      "degrees": 89,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": -3,
+      "oldPlaneDistanceKm": 0.0005525469330567978,
+      "newPlaneDistanceKm": 0.03124999999999987,
+      "offsetKm": 0.044190719522165973,
+      "f32Lookup": [
+        15.007046699523926,
+        -2.968214273452759,
+        1.9701197147369385
+      ],
+      "f32ErrorKm": 6.841437219864965e-8
+    },
+    {
+      "degrees": 89,
+      "azimuth": 1.8,
+      "point": [
+        15,
+        -3,
+        2
+      ],
+      "derivativeScale": 1e+30,
+      "oldPlaneDistanceKm": 0.0005525469330567978,
+      "newPlaneDistanceKm": 0.03124999999999987,
+      "offsetKm": 0.044190719522165973,
+      "f32Lookup": [
+        15.007046699523926,
+        -2.968214273452759,
+        1.9701197147369385
+      ],
+      "f32ErrorKm": 6.841437219864965e-8
+    }
+  ]
+}

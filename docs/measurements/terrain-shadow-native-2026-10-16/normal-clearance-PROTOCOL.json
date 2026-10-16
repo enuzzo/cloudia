@@ -1,0 +1,16 @@
+{
+  "baseHEAD": "99fc989024f062f9fc10ef619534af08b59d0f3e",
+  "sourceCount": 124,
+  "changedPaths": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/TerrainShadow.ts",
+    "src/cumulonimbus/lifecycle.test.ts"
+  ],
+  "manifestSHA256": "a0e5de32ff16c994291d14b356486f7f925046988f585f44b1058dd2e6272dca",
+  "terrainShadowSHA256": "5529dc52040f45a108a89f3b7675b393f4e27cebe04ae17c08984b6bc104bcb1",
+  "materialVisibility": "original, shadow compare retained",
+  "normalClearance": "e*r+e*(1-c)*ng; ng geometric derivatives, oriented radial, scaled before cross; radial fallback",
+  "limits": "local plane condition only, no multiface shadow proof; contact loss risk",
+  "acceptance": "Same native Sun camera/quality from cycle24; three preregistered ROI scaglie should lessen without new broad light leaks. Native Rain/Sunset+camera perturbation needed before adoption.",
+  "noFPSClaim": true
+}

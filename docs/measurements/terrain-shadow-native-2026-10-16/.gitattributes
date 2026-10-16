@@ -1,0 +1,2 @@
+# Preserve literal blank context lines in the archived unified diff.
+unshadowed-engine.patch -whitespace
