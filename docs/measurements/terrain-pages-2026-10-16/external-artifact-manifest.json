@@ -1,0 +1,380 @@
+{
+  "schema": 1,
+  "externalRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle12/terrain-pages",
+  "productModifiedByThisTask": false,
+  "GPUExecuted": false,
+  "dependencyInstalled": false,
+  "gitMutationByThisTask": false,
+  "replayProcessesFinished": true,
+  "fixtureAndOriginalMetadataReusedInPlace": true,
+  "executedPhases": [
+    "packing",
+    "pages",
+    "full"
+  ],
+  "fullPhaseCount": 1,
+  "fullGate": "FAIL unresolved 660 > 333",
+  "archiveAdvice": "Keep source, descriptors, all unfiltered results and execution records; exclude resident-base.f32.bin and resident-gradient.f32.bin from Dropbox. Old fixture and original binary are not duplicated here. Executed source snapshots preserve the phase-1 reporting-label difference.",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 6841,
+      "sha256": "8f89ccd6f70ce0782c6bb0f8f1d55152de4cba35f49eb5ff76b4527b97ccf9b8",
+      "derivedBinary": false
+    },
+    {
+      "path": "RESULTS.md",
+      "bytes": 9125,
+      "sha256": "5c594f998cad76b4b2b02b9c3648c6c20e4c5c791afedb73cdf747d176e258f5",
+      "derivedBinary": false
+    },
+    {
+      "path": "baseline/bounds.ts",
+      "bytes": 9316,
+      "sha256": "53ed370b2b1443d29274c155330bdef912836a5bf3700650ed9e4d8752e5bd2d",
+      "derivedBinary": false
+    },
+    {
+      "path": "baseline/data.ts",
+      "bytes": 4314,
+      "sha256": "4da0e13f07f84888f408a11407b52b63a15e4710b081ee67184663b38642425c",
+      "derivedBinary": false
+    },
+    {
+      "path": "baseline/gradient.ts",
+      "bytes": 9528,
+      "sha256": "f3aaa08202d65169615a25d1d22d957d5867e85d5d8bad6bb18444c08158e141",
+      "derivedBinary": false
+    },
+    {
+      "path": "baseline/landscape.source.ts",
+      "bytes": 6980,
+      "sha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+      "derivedBinary": false
+    },
+    {
+      "path": "baseline/regressions.ts",
+      "bytes": 1464,
+      "sha256": "32dd09823727a018358d927a70e994414c44456b73a5fcbfe05fc56d7384a6f7",
+      "derivedBinary": false
+    },
+    {
+      "path": "baseline/trace.ts",
+      "bytes": 9052,
+      "sha256": "fc318525b71684d00f22958619cd61e3cbc302ccd5b4d00a89c64bbeaa1d4239",
+      "derivedBinary": false
+    },
+    {
+      "path": "baseline/validate.ts",
+      "bytes": 4157,
+      "sha256": "d55694581495348a1e79d608fb946eba00f05b99fffb10c795b3b963430d66df",
+      "derivedBinary": false
+    },
+    {
+      "path": "compact.ts",
+      "bytes": 11069,
+      "sha256": "fe09eae46546b403ae83486941527d279e465ff9dfe097d51fc5312b002ab595",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/packing/baseline/bounds.ts",
+      "bytes": 9316,
+      "sha256": "53ed370b2b1443d29274c155330bdef912836a5bf3700650ed9e4d8752e5bd2d",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/packing/baseline/data.ts",
+      "bytes": 4314,
+      "sha256": "4da0e13f07f84888f408a11407b52b63a15e4710b081ee67184663b38642425c",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/packing/baseline/gradient.ts",
+      "bytes": 9528,
+      "sha256": "f3aaa08202d65169615a25d1d22d957d5867e85d5d8bad6bb18444c08158e141",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/packing/baseline/landscape.source.ts",
+      "bytes": 6980,
+      "sha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/packing/baseline/trace.ts",
+      "bytes": 9052,
+      "sha256": "fc318525b71684d00f22958619cd61e3cbc302ccd5b4d00a89c64bbeaa1d4239",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/packing/baseline/validate.ts",
+      "bytes": 4157,
+      "sha256": "d55694581495348a1e79d608fb946eba00f05b99fffb10c795b3b963430d66df",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/packing/compact.ts",
+      "bytes": 11069,
+      "sha256": "fe09eae46546b403ae83486941527d279e465ff9dfe097d51fc5312b002ab595",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/packing/fixture.ts",
+      "bytes": 2077,
+      "sha256": "0b720c8c98f9b2842985aa7e1fff8286d4cca701d5e44fe03691beb5e34b5aac",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/packing/protocol.ts",
+      "bytes": 2903,
+      "sha256": "70894e050f011625fb8ca227c974c26b1217d5ee3295437f7e3444f3517f3cb0",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/packing/run.ts",
+      "bytes": 9603,
+      "sha256": "663fdb7870133ca0a98c27404f5c0733bfd29308d5d0717508fe3174030b3aff",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/packing/trace-compact.ts",
+      "bytes": 9781,
+      "sha256": "aa7d62454e9a6a51ad4a5a1247904ed9c66d340283e5850f734fde29c1a3839a",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/packing/validate-pages.ts",
+      "bytes": 1818,
+      "sha256": "cd4f78e078da5b246114de8ce44c3b0b7e14609c2df5eebba78aae8590a37a63",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/pages-full/baseline/bounds.ts",
+      "bytes": 9316,
+      "sha256": "53ed370b2b1443d29274c155330bdef912836a5bf3700650ed9e4d8752e5bd2d",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/pages-full/baseline/data.ts",
+      "bytes": 4314,
+      "sha256": "4da0e13f07f84888f408a11407b52b63a15e4710b081ee67184663b38642425c",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/pages-full/baseline/gradient.ts",
+      "bytes": 9528,
+      "sha256": "f3aaa08202d65169615a25d1d22d957d5867e85d5d8bad6bb18444c08158e141",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/pages-full/baseline/landscape.source.ts",
+      "bytes": 6980,
+      "sha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/pages-full/baseline/trace.ts",
+      "bytes": 9052,
+      "sha256": "fc318525b71684d00f22958619cd61e3cbc302ccd5b4d00a89c64bbeaa1d4239",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/pages-full/baseline/validate.ts",
+      "bytes": 4157,
+      "sha256": "d55694581495348a1e79d608fb946eba00f05b99fffb10c795b3b963430d66df",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/pages-full/compact.ts",
+      "bytes": 11069,
+      "sha256": "fe09eae46546b403ae83486941527d279e465ff9dfe097d51fc5312b002ab595",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/pages-full/fixture.ts",
+      "bytes": 2077,
+      "sha256": "0b720c8c98f9b2842985aa7e1fff8286d4cca701d5e44fe03691beb5e34b5aac",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/pages-full/protocol.ts",
+      "bytes": 2903,
+      "sha256": "70894e050f011625fb8ca227c974c26b1217d5ee3295437f7e3444f3517f3cb0",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/pages-full/run.ts",
+      "bytes": 10491,
+      "sha256": "dc618bf81ee6b4f73dd61e0b3ca2b3de96dadf17e9dd552354b994dd8e87f646",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/pages-full/trace-compact.ts",
+      "bytes": 9781,
+      "sha256": "aa7d62454e9a6a51ad4a5a1247904ed9c66d340283e5850f734fde29c1a3839a",
+      "derivedBinary": false
+    },
+    {
+      "path": "executed/pages-full/validate-pages.ts",
+      "bytes": 1818,
+      "sha256": "cd4f78e078da5b246114de8ce44c3b0b7e14609c2df5eebba78aae8590a37a63",
+      "derivedBinary": false
+    },
+    {
+      "path": "execution.json",
+      "bytes": 242,
+      "sha256": "30c3d7da583b1c37ac5b77b53bf76d98445c55806011d2977b6b2cafce45e535",
+      "derivedBinary": false
+    },
+    {
+      "path": "fixture.ts",
+      "bytes": 2077,
+      "sha256": "0b720c8c98f9b2842985aa7e1fff8286d4cca701d5e44fe03691beb5e34b5aac",
+      "derivedBinary": false
+    },
+    {
+      "path": "full-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "derivedBinary": false
+    },
+    {
+      "path": "full-stdout.json",
+      "bytes": 2891,
+      "sha256": "dd99771fee5816b8e16e91884d675a4033b1b528ff4a466db9683816c4fbc68a",
+      "derivedBinary": false
+    },
+    {
+      "path": "packing-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "derivedBinary": false
+    },
+    {
+      "path": "packing-stdout.json",
+      "bytes": 2666,
+      "sha256": "c85fef73e1e806cc44aee287c47cc1c35bfcddf3df818f194cb00a5b6bea5888",
+      "derivedBinary": false
+    },
+    {
+      "path": "pages-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "derivedBinary": false
+    },
+    {
+      "path": "pages-stdout.json",
+      "bytes": 3808,
+      "sha256": "23fd33cbcdd46aad91ae7c005d94b926c89ed09ea484794814c7205f20ac0138",
+      "derivedBinary": false
+    },
+    {
+      "path": "protocol.ts",
+      "bytes": 2903,
+      "sha256": "70894e050f011625fb8ca227c974c26b1217d5ee3295437f7e3444f3517f3cb0",
+      "derivedBinary": false
+    },
+    {
+      "path": "results/all-unresolved.json",
+      "bytes": 421467,
+      "sha256": "5427645af782f9a354778fde7a0d659d6599563b19ce5696c637a2b4d0f02bdb",
+      "derivedBinary": false
+    },
+    {
+      "path": "results/analysis.json",
+      "bytes": 1977,
+      "sha256": "9f1296018b4c95e8432b2b5fb6f95a8813cc0c779a6e117d74553573372783ce",
+      "derivedBinary": false
+    },
+    {
+      "path": "results/full-rows.json",
+      "bytes": 3322723,
+      "sha256": "b8baadca80d5fb4d2ad2aae55848c6b8c72a819721e26f17577e770ae2f7d338",
+      "derivedBinary": false
+    },
+    {
+      "path": "results/full.json",
+      "bytes": 3401,
+      "sha256": "52fc522f9d644c6adf7ed7104bc20b9a44dd85c5741df254657c5a543d231e6e",
+      "derivedBinary": false
+    },
+    {
+      "path": "results/packing-compact-rows.json",
+      "bytes": 3321610,
+      "sha256": "57fd6bed4d32997fb5512cc3d8339ebae56cfc53c0acb90edbb61cdcaba97399",
+      "derivedBinary": false
+    },
+    {
+      "path": "results/packing-normalized-summary.json",
+      "bytes": 2422,
+      "sha256": "a1143a98ee74455df79a88f2e48c5563bc818a92329ca9a99bcc84aa587209db",
+      "derivedBinary": false
+    },
+    {
+      "path": "results/packing-original-rows.json",
+      "bytes": 2773474,
+      "sha256": "d9a4b7a6be7e99725a360432a0762c82325aa94f641095c862d5208adcdba0b0",
+      "derivedBinary": false
+    },
+    {
+      "path": "results/packing.json",
+      "bytes": 3190,
+      "sha256": "cb9a400b90c30e5fc5801e3a12653ae1f5d4f2468ce8e2cd27153c3c9f726208",
+      "derivedBinary": false
+    },
+    {
+      "path": "results/pages.json",
+      "bytes": 295075,
+      "sha256": "e8a2156de7f147cf3045eec606ee03313fc21c121b7cd6122b9316b29e26c883",
+      "derivedBinary": false
+    },
+    {
+      "path": "results/resident-base.f32.bin",
+      "bytes": 3171152,
+      "sha256": "81ba6b2255f38bd58f3e7f22f02cd978218b5838a36032999aa2a54f3a3e202c",
+      "derivedBinary": true
+    },
+    {
+      "path": "results/resident-gradient.f32.bin",
+      "bytes": 2378368,
+      "sha256": "22a07038d415e2868e2c5feab433ecb806ed29b96202ce23ff64782182febfec",
+      "derivedBinary": true
+    },
+    {
+      "path": "review-notes.md",
+      "bytes": 4658,
+      "sha256": "4c1390eb4ef591d9cf301ac12402275acb6ece05bef2400ba379fecfc5f88d2f",
+      "derivedBinary": false
+    },
+    {
+      "path": "run.ts",
+      "bytes": 10491,
+      "sha256": "dc618bf81ee6b4f73dd61e0b3ca2b3de96dadf17e9dd552354b994dd8e87f646",
+      "derivedBinary": false
+    },
+    {
+      "path": "structural-result.json",
+      "bytes": 224,
+      "sha256": "f98605cae87a27360bae64cd4999cbbe3414a4e1fa01f7e8620f52025753eb1d",
+      "derivedBinary": false
+    },
+    {
+      "path": "structural.ts",
+      "bytes": 2872,
+      "sha256": "5c2331694ee763c8c0a7b745ce2064521790b56e2fdf327e7466c226759db532",
+      "derivedBinary": false
+    },
+    {
+      "path": "trace-compact.ts",
+      "bytes": 9781,
+      "sha256": "aa7d62454e9a6a51ad4a5a1247904ed9c66d340283e5850f734fde29c1a3839a",
+      "derivedBinary": false
+    },
+    {
+      "path": "validate-pages.ts",
+      "bytes": 1818,
+      "sha256": "cd4f78e078da5b246114de8ce44c3b0b7e14609c2df5eebba78aae8590a37a63",
+      "derivedBinary": false
+    }
+  ]
+}

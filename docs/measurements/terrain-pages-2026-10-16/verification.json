@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "passed": true,
+  "manifestSha256": "5f194f817e6ea7a2ba4c7bb2001ea24a762d4e27abe0d600a4bf8f94a1a0877f",
+  "payloadFilesChecked": 41,
+  "originalByteStreamsChecked": 36,
+  "executedSourceHashesChecked": 24,
+  "packingGeometryIdenticalRays": 5198,
+  "fullGridRays": 5198,
+  "fullUnresolved": 660,
+  "prospectiveUnresolvedGate": 333,
+  "pagingGatePassed": false,
+  "newGeometricConflicts": 0,
+  "invalidHitWitnesses": 0,
+  "resolvedToUnresolved": 0,
+  "newPageFiniteChecksReported": 10240,
+  "terrainPointEvaluationsExecutedByVerifier": 0,
+  "tracerOrBuilderExecuted": false,
+  "GPUExecuted": false,
+  "phaseBoundaryDerivedBinaryHashGuardWasPresent": false
+}

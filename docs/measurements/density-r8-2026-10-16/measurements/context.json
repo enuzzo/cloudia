@@ -1,0 +1,23 @@
+{
+  "status": "v47 finite native main comparison",
+  "baselineCommit": "6a7df91",
+  "baselinePort": 4185,
+  "candidatePort": 4187,
+  "candidateBuild": "v47 frozen 2026-10-16T01:22:20Z",
+  "browserTab": 32,
+  "browserInventoryBeforeRun": "empty after manual closure reply; one fresh tab created, old31 absent",
+  "rawGPUAudit": "completed before this sequence; device destroy and raw readbacks independently verified",
+  "cpuWindows": "No orchestrated replay/bake/test/build/other GPU audit during timed windows; pages and raw audit tasks finished before A1",
+  "notHardwareIsolated": true,
+  "nativeOutput": [
+    2560,
+    1440
+  ],
+  "DPR": 2,
+  "CSS": [
+    1280,
+    720
+  ],
+  "presentedCanvasFps": null,
+  "initialAttempts": "B and A2 near requested before sky transition complete; preserved separately and excluded. Repeated after explicit settle; A1 valid unchanged."
+}

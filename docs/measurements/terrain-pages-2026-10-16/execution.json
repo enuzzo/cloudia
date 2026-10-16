@@ -1,0 +1,15 @@
+{
+  "events": [
+    {
+      "phase": "pages",
+      "exitCode": 0,
+      "durationS": 5.468851250014268
+    },
+    {
+      "phase": "full",
+      "exitCode": 1,
+      "durationS": 0.3178771670209244
+    }
+  ],
+  "totalS": 5.787153291981667
+}

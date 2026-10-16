@@ -1,0 +1,8 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cloudia · equivalenza sampler R8/RGBA8</title>
+<style>body{font:16px/1.5 system-ui,sans-serif;max-width:1120px;margin:24px;background:#f7f5ee;color:#20272a}button{font:inherit;padding:10px 18px;min-height:44px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#fff;padding:16px;border:1px solid #bbb}a{display:block;margin:8px 0}button:focus-visible{outline:3px solid #35603b;outline-offset:3px}</style>
+<h1>Sampler R8 contro RGBA8.r</h1>
+<p>Stesse UV float32, sampler lineare condiviso, clamp XYZ e mip0. Dati reali seed72 e fixture finite; criterio iniziale: identità dei bit f32. Nessun renderer Three, bake o misura FPS. La GPU parte soltanto con Avvia. Durante l'audit il medesimo pulsante annulla; anche Esc o la chiusura pagina rilasciano il device.</p>
+<button id="run">Avvia</button><p id="status" role="status">Pronto: GPU non eseguita.</p>
+<div id="downloads"></div><pre id="audit-json"></pre>
+<script type="module" src="./audit.js"></script></html>

@@ -1,0 +1,42 @@
+{
+  "status": "PASS scoped checkpoint validation; raw frozen whitespace preserved",
+  "archiveHashChecks": 192,
+  "stagedPathsBeforeThisProof": 170,
+  "indexBytesMatchWorkingTree": true,
+  "rawWhitespaceExceptionRows": [
+    "docs/measurements/density-r8-2026-10-16/before-source/src/cumulonimbus/cloudShader.ts:249: new blank line at EOF.",
+    "docs/measurements/density-r8-2026-10-16/density-r8-v47.patch:15: trailing whitespace.",
+    "docs/measurements/density-r8-2026-10-16/density-r8-v47.patch:24: trailing whitespace.",
+    "docs/measurements/density-r8-2026-10-16/density-r8-v47.patch:172: trailing whitespace.",
+    "docs/measurements/density-r8-2026-10-16/density-r8-v47.patch:428: trailing whitespace.",
+    "docs/measurements/density-r8-2026-10-16/density-r8-v47.patch:431: trailing whitespace.",
+    "docs/measurements/density-r8-2026-10-16/frozen-source/src/cumulonimbus/cloudShader.ts:254: new blank line at EOF.",
+    "docs/measurements/density-r8-2026-10-16/gpu-audit/cloudShader.v46.ts:249: new blank line at EOF.",
+    "docs/measurements/density-r8-2026-10-16/v48-source/src/cumulonimbus/cloudShader.ts:254: new blank line at EOF.",
+    "docs/measurements/density-r8-2026-10-16/v48-vs-v46.patch:15: trailing whitespace.",
+    "docs/measurements/density-r8-2026-10-16/v48-vs-v46.patch:24: trailing whitespace.",
+    "docs/measurements/density-r8-2026-10-16/v48-vs-v46.patch:175: trailing whitespace.",
+    "docs/measurements/density-r8-2026-10-16/v48-vs-v46.patch:477: trailing whitespace.",
+    "docs/measurements/density-r8-2026-10-16/v48-vs-v46.patch:480: trailing whitespace."
+  ],
+  "rawWhitespaceExceptionPaths": [
+    "docs/measurements/density-r8-2026-10-16/before-source/src/cumulonimbus/cloudShader.ts",
+    "docs/measurements/density-r8-2026-10-16/density-r8-v47.patch",
+    "docs/measurements/density-r8-2026-10-16/frozen-source/src/cumulonimbus/cloudShader.ts",
+    "docs/measurements/density-r8-2026-10-16/gpu-audit/cloudShader.v46.ts",
+    "docs/measurements/density-r8-2026-10-16/v48-source/src/cumulonimbus/cloudShader.ts",
+    "docs/measurements/density-r8-2026-10-16/v48-vs-v46.patch"
+  ],
+  "reason": "Four frozen WGSL source snapshots preserve original blank EOF. Two literal patch snapshots preserve context spaces. Product and all other staged paths pass whitespace checks; no config override.",
+  "tests": {
+    "passed": 230,
+    "files": 34
+  },
+  "typecheck": "pass",
+  "appHeroBuilds": "pass",
+  "rawGpuFiniteQueries": 77629,
+  "newGPUorRuntimeTestsDuringArchival": false,
+  "largeJsonReports": "byte-preserving gzip, original SHA verified",
+  "nodeModules2": "untouched and excluded",
+  "goal": "active; 60, presentation, terrain correctness and artistic gates open"
+}

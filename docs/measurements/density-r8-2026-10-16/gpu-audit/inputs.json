@@ -1,0 +1,170 @@
+{
+  "kind": "density-r8-sampler-audit-inputs",
+  "newBakes": 0,
+  "criterion": "Exact equality of f32 output bit patterns; all finite differences reported even if zero absolute difference with differing bits. Finite dataset only, not universal equivalence.",
+  "source": {
+    "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/data/macro-rgba8.bin",
+    "macroSHA256": "72e3f360b81f3c8f812800cc309a174ce893d96c80e666c9bf98fca178187b9f",
+    "exactRExtraction": "density[i]=macro[4*i], order x+256*(y+256*z)",
+    "v46ShaderSHA256": "b24ce50ad82609723b1f083a2195c07baf388309a3e3cfa102d9b8abef953e3d",
+    "shaderSnapshotScope": "Frozen v46 sampler reference, not the future densityR8 candidate or a Three compiled pipeline."
+  },
+  "datasets": [
+    {
+      "name": "real-seed72",
+      "size": 256,
+      "rgbaFile": "macro-rgba8.bin",
+      "r8File": "density-r8.bin",
+      "queryFile": "real-queries-f32.bin",
+      "queryCount": 53041,
+      "expectedConstant": null
+    },
+    {
+      "name": "zero-r-varying-gba",
+      "size": 16,
+      "rgbaFile": "zero-r-varying-gba-rgba.bin",
+      "r8File": "zero-r-varying-gba-r8.bin",
+      "queryFile": "fixture-queries-f32.bin",
+      "queryCount": 8196,
+      "expectedConstant": 0
+    },
+    {
+      "name": "one-r-varying-gba",
+      "size": 16,
+      "rgbaFile": "one-r-varying-gba-rgba.bin",
+      "r8File": "one-r-varying-gba-r8.bin",
+      "queryFile": "fixture-queries-f32.bin",
+      "queryCount": 8196,
+      "expectedConstant": 1
+    },
+    {
+      "name": "ramp-checker-varying-gba",
+      "size": 16,
+      "rgbaFile": "ramp-checker-varying-gba-rgba.bin",
+      "r8File": "ramp-checker-varying-gba-r8.bin",
+      "queryFile": "fixture-queries-f32.bin",
+      "queryCount": 8196,
+      "expectedConstant": null
+    }
+  ],
+  "files": {
+    "one-r-varying-gba-rgba.bin": {
+      "bytes": 16384,
+      "sha256": "77af54054d77580542a82e95667c48c610ddd7a85e5cc9045607faef99ad5ac9"
+    },
+    "fixture-queries-f32.bin": {
+      "bytes": 131136,
+      "sha256": "1923dfcd2818db2a5c362f5aca6126b8f50f949deffd27c1dc4f0375de978f1f"
+    },
+    "one-r-varying-gba-r8.bin": {
+      "bytes": 4096,
+      "sha256": "f47a8ec3e9aff2318d896942282ad4fe37d6391c82914f54a5da8a37de1300c6"
+    },
+    "audit.wgsl": {
+      "bytes": 1397,
+      "sha256": "756ebcde1d93feddbaf74448a6e3dfc7dd9b5bfa480519ba8768516c7eb1e12a"
+    },
+    "ramp-checker-varying-gba-r8.bin": {
+      "bytes": 4096,
+      "sha256": "3da5bfde9b2040901ddaba32df8715071ff0d2f3f26c0f3e0b4feeb91692ae36"
+    },
+    "density-r8.bin": {
+      "bytes": 16777216,
+      "sha256": "61364caa2ebfe2fd1b8769b3381ded22ce4648033872d31ec4e5af9c62cabe28"
+    },
+    "zero-r-varying-gba-rgba.bin": {
+      "bytes": 16384,
+      "sha256": "62a28c3b457ef9786381efa280460701f20d91036687044a4f10c5aea3a11d17"
+    },
+    "ramp-checker-varying-gba-rgba.bin": {
+      "bytes": 16384,
+      "sha256": "5b399d8aa6d2f3f0efff8ffe04db9d01bc9a6f073b509c43c1c67b92220c50f1"
+    },
+    "real-queries-f32.bin": {
+      "bytes": 848656,
+      "sha256": "36af32183d39bea6726ce67ef33e75f3e559d441fd032901e98c9170a3cb288d"
+    },
+    "cloudShader.v46.ts": {
+      "bytes": 15196,
+      "sha256": "b24ce50ad82609723b1f083a2195c07baf388309a3e3cfa102d9b8abef953e3d"
+    },
+    "macro-rgba8.bin": {
+      "bytes": 67108864,
+      "sha256": "72e3f360b81f3c8f812800cc309a174ce893d96c80e666c9bf98fca178187b9f"
+    },
+    "zero-r-varying-gba-r8.bin": {
+      "bytes": 4096,
+      "sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7"
+    }
+  },
+  "queryLayout": {
+    "strideBytes": 16,
+    "components": "u,v,w,group all little-endian f32"
+  },
+  "outputLayout": {
+    "strideBytes": 48,
+    "samplesF32ByteOffset": 0,
+    "bitsU32ByteOffset": 16,
+    "echoF32ByteOffset": 32
+  },
+  "groups": {
+    "1": {
+      "queries": 512,
+      "description": "512 exact positive texel centres"
+    },
+    "2": {
+      "queries": 512,
+      "description": "512 exact zero texel centres"
+    },
+    "3": {
+      "queries": 4096,
+      "description": "16-cubed stratified texel centres"
+    },
+    "4": {
+      "queries": 4096,
+      "description": "Halton domain"
+    },
+    "5": {
+      "queries": 32768,
+      "description": "deterministic random near/outside domain"
+    },
+    "6": {
+      "queries": 6144,
+      "description": "f32 ULP neighbours of centres + interpolation planes"
+    },
+    "7": {
+      "queries": 4913,
+      "description": "Cartesian faces/edges/OOB clamp"
+    }
+  },
+  "fixtureGroups": [
+    8,
+    9,
+    10
+  ],
+  "textureContract": {
+    "dimension": "3d",
+    "mipLevelCount": 1,
+    "formats": [
+      "rgba8unorm",
+      "r8unorm"
+    ],
+    "usages": [
+      "TEXTURE_BINDING",
+      "COPY_DST"
+    ],
+    "sampler": {
+      "addressModeUVW": "clamp-to-edge",
+      "minFilter": "linear",
+      "magFilter": "linear",
+      "mipmapFilter": "nearest"
+    },
+    "level": 0
+  },
+  "memory": {
+    "realTexturePayloadBytes": 83886080,
+    "fixtureTexturePayloadBytes": 20480,
+    "queryBuffers": "16N input +48N storage output +48N+16 readback +16 counters; textures released between datasets"
+  },
+  "cpuPreparation": "Bounded input extraction/query preparation, no volume generation. R identity is byte-exact; that alone does not qualify native sampler equivalence."
+}

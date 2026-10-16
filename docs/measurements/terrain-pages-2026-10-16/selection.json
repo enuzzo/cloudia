@@ -1,0 +1,281 @@
+{
+  "externalRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle12/terrain-pages",
+  "selected": [
+    {
+      "sourcePath": "compact.ts",
+      "archivePath": "compact.ts",
+      "mode": "exact-bytes",
+      "originalBytes": 11069,
+      "originalSha256": "fe09eae46546b403ae83486941527d279e465ff9dfe097d51fc5312b002ab595"
+    },
+    {
+      "sourcePath": "trace-compact.ts",
+      "archivePath": "trace-compact.ts",
+      "mode": "exact-bytes",
+      "originalBytes": 9781,
+      "originalSha256": "aa7d62454e9a6a51ad4a5a1247904ed9c66d340283e5850f734fde29c1a3839a"
+    },
+    {
+      "sourcePath": "protocol.ts",
+      "archivePath": "protocol.ts",
+      "mode": "exact-bytes",
+      "originalBytes": 2903,
+      "originalSha256": "70894e050f011625fb8ca227c974c26b1217d5ee3295437f7e3444f3517f3cb0"
+    },
+    {
+      "sourcePath": "run.ts",
+      "archivePath": "run.ts",
+      "mode": "exact-bytes",
+      "originalBytes": 10491,
+      "originalSha256": "dc618bf81ee6b4f73dd61e0b3ca2b3de96dadf17e9dd552354b994dd8e87f646"
+    },
+    {
+      "sourcePath": "fixture.ts",
+      "archivePath": "fixture.ts",
+      "mode": "exact-bytes",
+      "originalBytes": 2077,
+      "originalSha256": "0b720c8c98f9b2842985aa7e1fff8286d4cca701d5e44fe03691beb5e34b5aac"
+    },
+    {
+      "sourcePath": "validate-pages.ts",
+      "archivePath": "validate-pages.ts",
+      "mode": "exact-bytes",
+      "originalBytes": 1818,
+      "originalSha256": "cd4f78e078da5b246114de8ce44c3b0b7e14609c2df5eebba78aae8590a37a63"
+    },
+    {
+      "sourcePath": "structural.ts",
+      "archivePath": "structural.ts",
+      "mode": "exact-bytes",
+      "originalBytes": 2872,
+      "originalSha256": "5c2331694ee763c8c0a7b745ce2064521790b56e2fdf327e7466c226759db532"
+    },
+    {
+      "sourcePath": "structural-result.json",
+      "archivePath": "structural-result.json",
+      "mode": "exact-bytes",
+      "originalBytes": 224,
+      "originalSha256": "f98605cae87a27360bae64cd4999cbbe3414a4e1fa01f7e8620f52025753eb1d"
+    },
+    {
+      "sourcePath": "RESULTS.md",
+      "archivePath": "RESULTS.md",
+      "mode": "exact-bytes",
+      "originalBytes": 9125,
+      "originalSha256": "5c594f998cad76b4b2b02b9c3648c6c20e4c5c791afedb73cdf747d176e258f5"
+    },
+    {
+      "sourcePath": "review-notes.md",
+      "archivePath": "review-notes.md",
+      "mode": "exact-bytes",
+      "originalBytes": 4658,
+      "originalSha256": "4c1390eb4ef591d9cf301ac12402275acb6ece05bef2400ba379fecfc5f88d2f"
+    },
+    {
+      "sourcePath": "execution.json",
+      "archivePath": "execution.json",
+      "mode": "exact-bytes",
+      "originalBytes": 242,
+      "originalSha256": "30c3d7da583b1c37ac5b77b53bf76d98445c55806011d2977b6b2cafce45e535"
+    },
+    {
+      "sourcePath": "packing-stdout.json",
+      "archivePath": "packing-stdout.json",
+      "mode": "exact-bytes",
+      "originalBytes": 2666,
+      "originalSha256": "c85fef73e1e806cc44aee287c47cc1c35bfcddf3df818f194cb00a5b6bea5888"
+    },
+    {
+      "sourcePath": "packing-stderr.txt",
+      "archivePath": "packing-stderr.txt",
+      "mode": "exact-bytes",
+      "originalBytes": 0,
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sourcePath": "pages-stdout.json",
+      "archivePath": "pages-stdout.json",
+      "mode": "exact-bytes",
+      "originalBytes": 3808,
+      "originalSha256": "23fd33cbcdd46aad91ae7c005d94b926c89ed09ea484794814c7205f20ac0138"
+    },
+    {
+      "sourcePath": "pages-stderr.txt",
+      "archivePath": "pages-stderr.txt",
+      "mode": "exact-bytes",
+      "originalBytes": 0,
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sourcePath": "full-stdout.json",
+      "archivePath": "full-stdout.json",
+      "mode": "exact-bytes",
+      "originalBytes": 2891,
+      "originalSha256": "dd99771fee5816b8e16e91884d675a4033b1b528ff4a466db9683816c4fbc68a"
+    },
+    {
+      "sourcePath": "full-stderr.txt",
+      "archivePath": "full-stderr.txt",
+      "mode": "exact-bytes",
+      "originalBytes": 0,
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sourcePath": "baseline/bounds.ts",
+      "archivePath": "baseline/bounds.ts",
+      "mode": "exact-bytes",
+      "originalBytes": 9316,
+      "originalSha256": "53ed370b2b1443d29274c155330bdef912836a5bf3700650ed9e4d8752e5bd2d"
+    },
+    {
+      "sourcePath": "baseline/data.ts",
+      "archivePath": "baseline/data.ts",
+      "mode": "exact-bytes",
+      "originalBytes": 4314,
+      "originalSha256": "4da0e13f07f84888f408a11407b52b63a15e4710b081ee67184663b38642425c"
+    },
+    {
+      "sourcePath": "baseline/gradient.ts",
+      "archivePath": "baseline/gradient.ts",
+      "mode": "exact-bytes",
+      "originalBytes": 9528,
+      "originalSha256": "f3aaa08202d65169615a25d1d22d957d5867e85d5d8bad6bb18444c08158e141"
+    },
+    {
+      "sourcePath": "baseline/landscape.source.ts",
+      "archivePath": "baseline/landscape.source.ts",
+      "mode": "exact-bytes",
+      "originalBytes": 6980,
+      "originalSha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99"
+    },
+    {
+      "sourcePath": "baseline/regressions.ts",
+      "archivePath": "baseline/regressions.ts",
+      "mode": "exact-bytes",
+      "originalBytes": 1464,
+      "originalSha256": "32dd09823727a018358d927a70e994414c44456b73a5fcbfe05fc56d7384a6f7"
+    },
+    {
+      "sourcePath": "baseline/trace.ts",
+      "archivePath": "baseline/trace.ts",
+      "mode": "exact-bytes",
+      "originalBytes": 9052,
+      "originalSha256": "fc318525b71684d00f22958619cd61e3cbc302ccd5b4d00a89c64bbeaa1d4239"
+    },
+    {
+      "sourcePath": "baseline/validate.ts",
+      "archivePath": "baseline/validate.ts",
+      "mode": "exact-bytes",
+      "originalBytes": 4157,
+      "originalSha256": "d55694581495348a1e79d608fb946eba00f05b99fffb10c795b3b963430d66df"
+    },
+    {
+      "sourcePath": "executed/packing/run.ts",
+      "archivePath": "executed/packing/run.ts",
+      "mode": "exact-bytes",
+      "originalBytes": 9603,
+      "originalSha256": "663fdb7870133ca0a98c27404f5c0733bfd29308d5d0717508fe3174030b3aff"
+    },
+    {
+      "sourcePath": "README.md",
+      "archivePath": "execution-README.md",
+      "mode": "exact-bytes",
+      "originalBytes": 6841,
+      "originalSha256": "8f89ccd6f70ce0782c6bb0f8f1d55152de4cba35f49eb5ff76b4527b97ccf9b8"
+    },
+    {
+      "sourcePath": "artifact-manifest.json",
+      "archivePath": "external-artifact-manifest.json",
+      "mode": "exact-bytes",
+      "originalBytes": 12198,
+      "originalSha256": "6b6b401bdfa1c80730bb933cd3fdecc1a0e1f4655aec3ef98514b1a02041356c"
+    },
+    {
+      "sourcePath": "results/all-unresolved.json",
+      "archivePath": "results/all-unresolved.json.gz",
+      "mode": "gzip-original-bytes",
+      "originalBytes": 421467,
+      "originalSha256": "5427645af782f9a354778fde7a0d659d6599563b19ce5696c637a2b4d0f02bdb"
+    },
+    {
+      "sourcePath": "results/analysis.json",
+      "archivePath": "results/analysis.json",
+      "mode": "exact-bytes",
+      "originalBytes": 1977,
+      "originalSha256": "9f1296018b4c95e8432b2b5fb6f95a8813cc0c779a6e117d74553573372783ce"
+    },
+    {
+      "sourcePath": "results/full-rows.json",
+      "archivePath": "results/full-rows.json.gz",
+      "mode": "gzip-original-bytes",
+      "originalBytes": 3322723,
+      "originalSha256": "b8baadca80d5fb4d2ad2aae55848c6b8c72a819721e26f17577e770ae2f7d338"
+    },
+    {
+      "sourcePath": "results/full.json",
+      "archivePath": "results/full.json",
+      "mode": "exact-bytes",
+      "originalBytes": 3401,
+      "originalSha256": "52fc522f9d644c6adf7ed7104bc20b9a44dd85c5741df254657c5a543d231e6e"
+    },
+    {
+      "sourcePath": "results/packing-compact-rows.json",
+      "archivePath": "results/packing-compact-rows.json.gz",
+      "mode": "gzip-original-bytes",
+      "originalBytes": 3321610,
+      "originalSha256": "57fd6bed4d32997fb5512cc3d8339ebae56cfc53c0acb90edbb61cdcaba97399"
+    },
+    {
+      "sourcePath": "results/packing-normalized-summary.json",
+      "archivePath": "results/packing-normalized-summary.json",
+      "mode": "exact-bytes",
+      "originalBytes": 2422,
+      "originalSha256": "a1143a98ee74455df79a88f2e48c5563bc818a92329ca9a99bcc84aa587209db"
+    },
+    {
+      "sourcePath": "results/packing-original-rows.json",
+      "archivePath": "results/packing-original-rows.json.gz",
+      "mode": "gzip-original-bytes",
+      "originalBytes": 2773474,
+      "originalSha256": "d9a4b7a6be7e99725a360432a0762c82325aa94f641095c862d5208adcdba0b0"
+    },
+    {
+      "sourcePath": "results/packing.json",
+      "archivePath": "results/packing.json",
+      "mode": "exact-bytes",
+      "originalBytes": 3190,
+      "originalSha256": "cb9a400b90c30e5fc5801e3a12653ae1f5d4f2468ce8e2cd27153c3c9f726208"
+    },
+    {
+      "sourcePath": "results/pages.json",
+      "archivePath": "results/pages.json.gz",
+      "mode": "gzip-original-bytes",
+      "originalBytes": 295075,
+      "originalSha256": "e8a2156de7f147cf3045eec606ee03313fc21c121b7cd6122b9316b29e26c883"
+    }
+  ],
+  "excluded": [
+    {
+      "path": "results/resident-base.f32.bin",
+      "reason": "Regenerable metadata binary; exact current SHA preserved in results/analysis.json."
+    },
+    {
+      "path": "results/resident-gradient.f32.bin",
+      "reason": "Regenerable metadata binary; exact current SHA preserved in results/analysis.json."
+    },
+    {
+      "path": "executed/packing/* except run.ts",
+      "reason": "Exact executed source bytes deduplicated through executed-source-map.json."
+    },
+    {
+      "path": "executed/pages-full/*",
+      "reason": "Exact executed source bytes deduplicated through executed-source-map.json."
+    }
+  ],
+  "inputReferences": {
+    "originalFixtureGzip": "../terrain-gradient-2026-10-16/audit-cases.json.gz",
+    "originalFixtureSha256": "cfad064c4dbe4b100294222c8c12a4fbcd98cf8f5316f0f1a3a10494543800a1",
+    "originalMetadataSha256": "69b2b49c06eddb8c582b9f1b14cdb944f707488fd73a4f5f17d6e261f62b12c4",
+    "originalMetadataRebuild": "../terrain-gradient-2026-10-16/run.ts --candidate-only in an external copy, with the original fixture restored; do not run in Dropbox."
+  }
+}

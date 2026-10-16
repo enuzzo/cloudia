@@ -1,0 +1,79 @@
+{
+  "kind": "density-r8 raw sampler audit prepared package",
+  "GPUExecution": "not-run",
+  "newVolumeBakes": 0,
+  "files": {
+    "README.md": {
+      "bytes": 3106,
+      "sha256": "2254b080ec0a79d45f4a7ee22c2b1f28ba7c8987e7cdd81a79c19fd3885409c8"
+    },
+    "audit.js": {
+      "bytes": 13784,
+      "sha256": "c3cf6c8d441f2b21a1753569ea6e39518d1111b33f273c5e23a6bd3dee4e13c2"
+    },
+    "audit.wgsl": {
+      "bytes": 1397,
+      "sha256": "756ebcde1d93feddbaf74448a6e3dfc7dd9b5bfa480519ba8768516c7eb1e12a"
+    },
+    "cloudShader.v46.ts": {
+      "bytes": 15196,
+      "sha256": "b24ce50ad82609723b1f083a2195c07baf388309a3e3cfa102d9b8abef953e3d"
+    },
+    "cpu-preflight.json": {
+      "bytes": 343,
+      "sha256": "00b4c87e8701d99a95b9a4c08e23733daf9f3099ece73839df725f69786fd2b5"
+    },
+    "density-r8.bin": {
+      "bytes": 16777216,
+      "sha256": "61364caa2ebfe2fd1b8769b3381ded22ce4648033872d31ec4e5af9c62cabe28"
+    },
+    "fixture-queries-f32.bin": {
+      "bytes": 131136,
+      "sha256": "1923dfcd2818db2a5c362f5aca6126b8f50f949deffd27c1dc4f0375de978f1f"
+    },
+    "index.html": {
+      "bytes": 1100,
+      "sha256": "08d76339953418b005bbc1a7c837106bfb214b19329434a3e6a36d8451ad9386"
+    },
+    "inputs.json": {
+      "bytes": 5317,
+      "sha256": "f01881b1efa9f64cadb1802f73a02a09cbad950b847de0d08dc4040d0b23cd27"
+    },
+    "macro-rgba8.bin": {
+      "bytes": 67108864,
+      "sha256": "72e3f360b81f3c8f812800cc309a174ce893d96c80e666c9bf98fca178187b9f"
+    },
+    "one-r-varying-gba-r8.bin": {
+      "bytes": 4096,
+      "sha256": "f47a8ec3e9aff2318d896942282ad4fe37d6391c82914f54a5da8a37de1300c6"
+    },
+    "one-r-varying-gba-rgba.bin": {
+      "bytes": 16384,
+      "sha256": "77af54054d77580542a82e95667c48c610ddd7a85e5cc9045607faef99ad5ac9"
+    },
+    "prepare.py": {
+      "bytes": 6260,
+      "sha256": "11021b6a6d9ab019e758e205de1b19291e6f5d969761d049d573e052840d5bc3"
+    },
+    "ramp-checker-varying-gba-r8.bin": {
+      "bytes": 4096,
+      "sha256": "3da5bfde9b2040901ddaba32df8715071ff0d2f3f26c0f3e0b4feeb91692ae36"
+    },
+    "ramp-checker-varying-gba-rgba.bin": {
+      "bytes": 16384,
+      "sha256": "5b399d8aa6d2f3f0efff8ffe04db9d01bc9a6f073b509c43c1c67b92220c50f1"
+    },
+    "real-queries-f32.bin": {
+      "bytes": 848656,
+      "sha256": "36af32183d39bea6726ce67ef33e75f3e559d441fd032901e98c9170a3cb288d"
+    },
+    "zero-r-varying-gba-r8.bin": {
+      "bytes": 4096,
+      "sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7"
+    },
+    "zero-r-varying-gba-rgba.bin": {
+      "bytes": 16384,
+      "sha256": "62a28c3b457ef9786381efa280460701f20d91036687044a4f10c5aea3a11d17"
+    }
+  }
+}

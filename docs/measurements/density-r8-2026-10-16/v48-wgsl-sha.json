@@ -1,0 +1,20 @@
+{
+  "method": "CPU FunctionNode.code; not GPU compilation",
+  "rows": [
+    {
+      "name": "dry-v46",
+      "sha256": "d38fe3918e5cf95e2f13a1f6ca9a111a20045b2497600b89118cb7a8200bcb8c",
+      "bytes": 12036
+    },
+    {
+      "name": "rain-v46",
+      "sha256": "6d30dc1d1ab7bc99513c451f4fcbdee81c402fe90220d565bb3a6df52c5cb655",
+      "bytes": 12674
+    },
+    {
+      "name": "rain-r8-v47-v48",
+      "sha256": "a18990471542f55f04269b3a0f525a49dc8ee6908828a552b1c3be50c4ef2e83",
+      "bytes": 12705
+    }
+  ]
+}

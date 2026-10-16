@@ -1,0 +1,11 @@
+{
+  "url": "http://localhost:4188/?seed=72",
+  "viewport": {
+    "dpr": 2,
+    "height": 720,
+    "panelOpen": false,
+    "width": 1280
+  },
+  "interfaceMetrics": "WebGPU · 60.0 fps rAF · apple\nOutput 2560×1440 · interno 2560×1440\n384 passi nominali · mediana 16.70 ms · p95 17.60 ms\nGPU rendering 23.79 ms · flusso 0.000 ms\nVolume 256³ + dettaglio 128³ · nessun TAA\nTempo della nube: 228.5 s · seme: 72\nForma: congestus · vento 55% · dispersione 0%\nCielo: clear · velocità 1× · lampi: 0 · luce 0.00",
+  "console": []
+}

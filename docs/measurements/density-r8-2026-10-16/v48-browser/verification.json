@@ -1,0 +1,188 @@
+{
+  "status": "PASS scoped v48 runtime and report consistency; global60 and artistic gates OPEN",
+  "runs": [
+    {
+      "name": "worker-rain-static-30s",
+      "sha256": "0774ceaad2912efb26f81e390cc0880bc087ddbaa70694d32ab9c014eb35e6a1",
+      "fps": 12.854194343491903,
+      "stats": {
+        "frames": 388,
+        "durationMs": 30184.699999999997,
+        "fps": 12.854194343491903,
+        "medianMs": 49.89999999999418,
+        "p95Ms": 216.6999999999971,
+        "p99Ms": 233.39999999999418,
+        "maxMs": 233.5,
+        "over18Ms": 198,
+        "over33Ms": 197
+      },
+      "prefix": "completed",
+      "drainMs": 314.60000002384186,
+      "completionBoundedRate": 12.7224377239654,
+      "simulationTime": [
+        60,
+        60
+      ],
+      "clockState": [
+        {
+          "forcingTime": 0,
+          "weatherTime": 32.76859999999997,
+          "precipitationUniformTime": 0
+        },
+        {
+          "forcingTime": 0,
+          "weatherTime": 64.98680000000031,
+          "precipitationUniformTime": 0
+        }
+      ],
+      "path": "r8unorm-extracted-r",
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 388,
+          "expectedCalls": 776,
+          "matchedFreshCalls": 770,
+          "completeDraws": 385,
+          "partialDraws": 0,
+          "missingDraws": 3,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 388,
+          "expectedCalls": 388,
+          "matchedFreshCalls": 385,
+          "completeDraws": 385,
+          "partialDraws": 0,
+          "missingDraws": 3,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      }
+    },
+    {
+      "name": "main-rain-motion-90s",
+      "sha256": "c2f3d453f337f0f60858ed42b40675e21637555e705b9f031babca9cec8822bc",
+      "fps": 13.355952224992837,
+      "stats": {
+        "frames": 1203,
+        "durationMs": 90072.20000000001,
+        "fps": 13.355952224992837,
+        "medianMs": 67.5,
+        "p95Ms": 83.60000000000582,
+        "p99Ms": 84.29999999998836,
+        "maxMs": 233.39999999999418,
+        "over18Ms": 1203,
+        "over33Ms": 1203
+      },
+      "prefix": "completed",
+      "drainMs": 261.7999999523163,
+      "completionBoundedRate": 13.31591822277321,
+      "simulationTime": [
+        60.64999999999996,
+        122.09999999999647
+      ],
+      "clockState": [
+        {
+          "forcingTime": 0.9990999999999913,
+          "weatherTime": 29.38419999999991,
+          "precipitationUniformTime": 0.9165000000000001
+        },
+        {
+          "forcingTime": 93.0890000000007,
+          "weatherTime": 121.47410000000119,
+          "precipitationUniformTime": 93.0056000000007
+        }
+      ],
+      "path": "r8unorm-extracted-r",
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 1203,
+          "expectedCalls": 2406,
+          "matchedFreshCalls": 2398,
+          "completeDraws": 1199,
+          "partialDraws": 0,
+          "missingDraws": 4,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 1203,
+          "expectedCalls": 1203,
+          "matchedFreshCalls": 1199,
+          "completeDraws": 1199,
+          "partialDraws": 0,
+          "missingDraws": 4,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      }
+    },
+    {
+      "name": "main-dry-after-rain-30s",
+      "sha256": "fb5780959caaaea6f06dad7bc7236e88b1e52f309ded14094fc000a63d4b944a",
+      "fps": 54.69653588606051,
+      "stats": {
+        "frames": 1641,
+        "durationMs": 30001.900000000023,
+        "fps": 54.69653588606051,
+        "medianMs": 16.70000000001164,
+        "p95Ms": 33.300000000046566,
+        "p99Ms": 33.800000000046566,
+        "maxMs": 34.300000000046566,
+        "over18Ms": 159,
+        "over33Ms": 82
+      },
+      "prefix": "completed",
+      "drainMs": 74.09999990463257,
+      "completionBoundedRate": 54.56377244816444,
+      "simulationTime": [
+        143.39999999999964,
+        143.39999999999964
+      ],
+      "clockState": [
+        {
+          "forcingTime": 125.5077000000014,
+          "weatherTime": 192.74430000000214,
+          "precipitationUniformTime": 125.5077000000014
+        },
+        {
+          "forcingTime": 125.5077000000014,
+          "weatherTime": 224.76390000000742,
+          "precipitationUniformTime": 125.5077000000014
+        }
+      ],
+      "path": "macro-rgba8-r",
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 1641,
+          "expectedCalls": 3282,
+          "matchedFreshCalls": 3274,
+          "completeDraws": 1637,
+          "partialDraws": 0,
+          "missingDraws": 4,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 1641,
+          "expectedCalls": 1641,
+          "matchedFreshCalls": 1637,
+          "completeDraws": 1637,
+          "partialDraws": 0,
+          "missingDraws": 4,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      }
+    }
+  ],
+  "presentationMeasured": false,
+  "comparisonCausality": "v48 runs qualify paths and completed prefixes, not new A/B improvement claims; v47 frozen rain shader is identical",
+  "motionImages": "before/after only; no continuous video or temporal-art acceptance"
+}

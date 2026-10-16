@@ -1,0 +1,83 @@
+{
+  "changedStatuses": [
+    {
+      "name": "home-down-0-5",
+      "before": "unresolved-height-budget",
+      "after": "hit",
+      "beforeKey": 1342472203,
+      "afterKey": 3259647461
+    },
+    {
+      "name": "home-down-1-5",
+      "before": "unresolved-height-budget",
+      "after": "hit",
+      "beforeKey": 1342472203,
+      "afterKey": 3259418089
+    },
+    {
+      "name": "home-down-2-5",
+      "before": "unresolved-height-budget",
+      "after": "hit",
+      "beforeKey": 1342472203,
+      "afterKey": 3259155951
+    },
+    {
+      "name": "home-down-3-5",
+      "before": "unresolved-height-budget",
+      "after": "hit",
+      "beforeKey": 1342455819,
+      "afterKey": 3258926579
+    },
+    {
+      "name": "home-down-4-5",
+      "before": "unresolved-height-budget",
+      "after": "hit",
+      "beforeKey": 1342455819,
+      "afterKey": 3258713590
+    },
+    {
+      "name": "home-down-5-5",
+      "before": "unresolved-height-budget",
+      "after": "hit",
+      "beforeKey": 1342455819,
+      "afterKey": 3258467836
+    }
+  ],
+  "remainingUnresolvedByLeafKm": {
+    "0.25": 238,
+    "2.0": 415,
+    "32.0": 7
+  },
+  "remainingUnresolvedByGroup": {
+    "low-x": 1,
+    "home-down": 388,
+    "level-sea-miss": 40,
+    "coastal-horizon": 231
+  },
+  "acceptedPagesByKind": {
+    "blocker": 6,
+    "neighbor-prefetch": 18
+  },
+  "acceptedPagesByOriginalSizeKm": {
+    "32.0": 4,
+    "2.0": 20
+  },
+  "requestStatuses": {
+    "resident": 24,
+    "already-at-target": 50
+  },
+  "analyticPagePreparationMs": 4961.953289000001,
+  "allRefillMs": 5011.026584000001,
+  "serializationMs": 133.91333400000082,
+  "trainingTraceMs": 6.837917000000033,
+  "residentBins": {
+    "resident-base.f32.bin": {
+      "bytes": 3171152,
+      "sha256": "81ba6b2255f38bd58f3e7f22f02cd978218b5838a36032999aa2a54f3a3e202c"
+    },
+    "resident-gradient.f32.bin": {
+      "bytes": 2378368,
+      "sha256": "22a07038d415e2868e2c5feab433ecb806ed29b96202ce23ff64782182febfec"
+    }
+  }
+}

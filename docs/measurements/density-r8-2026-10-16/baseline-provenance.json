@@ -1,0 +1,168 @@
+{
+  "commit": "6a7df91",
+  "port": 4185,
+  "rendererVersion": "observatory-v46-compiled-rain-mask-trial",
+  "externalRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle11/ui",
+  "assetsVerified": [
+    {
+      "path": "trial-dist/assets/CumulonimbusApp-C2618gh2.js",
+      "bytes": 820165,
+      "sha256": "9370eac5d63666bfe1df9406bb1de8fa72b8142e3dd34b729f3a692233160cca"
+    },
+    {
+      "path": "trial-dist/assets/CumulonimbusApp-C2618gh2.js.map",
+      "bytes": 3776483,
+      "sha256": "be6cacabe74f340ff48310db89691d8a95a7bd60dc2905ad8c9d59ab9019a9a2"
+    },
+    {
+      "path": "trial-dist/assets/CumulonimbusApp-C9XaZ0-O.css",
+      "bytes": 13068,
+      "sha256": "7fc93cd26d97bedfed056024477eed294b69e4f12866809faf8167e349de19eb"
+    },
+    {
+      "path": "trial-dist/assets/CumulonimbusApp-DEzHXz-U.js",
+      "bytes": 820165,
+      "sha256": "bfc133a61f312a68b79ef4f25bb165f9ca995cf8f61aa2287b21f4ced27c9cf4"
+    },
+    {
+      "path": "trial-dist/assets/CumulonimbusApp-DEzHXz-U.js.map",
+      "bytes": 3776483,
+      "sha256": "490c3cd1b90a8490fea2a05ac3bc16ad1570a8a7651360aef2c40539ca74ae3e"
+    },
+    {
+      "path": "trial-dist/assets/CumulonimbusApp-fw8aK7_r.css",
+      "bytes": 13181,
+      "sha256": "bdf43d23ca041116c6b6eef5d8f95ab72115e3f0a0a8a728cb912e751dcaa9fb"
+    },
+    {
+      "path": "trial-dist/assets/LabApp-BIVQGmZd.js",
+      "bytes": 405933,
+      "sha256": "61b740644d902e97f0e29d2e7924b0d480f6bdfdd7eae827ea06300cd5b247b9"
+    },
+    {
+      "path": "trial-dist/assets/LabApp-BIVQGmZd.js.map",
+      "bytes": 1147466,
+      "sha256": "e2ea91469045e771a175a2da3b66880824456acba5f9127eb0c9d22cebf6733c"
+    },
+    {
+      "path": "trial-dist/assets/index-BwzYo1RM.js",
+      "bytes": 2837,
+      "sha256": "de4af37a162920960fa267e519d15d88e6a0876a3d5ddca14dba300bd692bee7"
+    },
+    {
+      "path": "trial-dist/assets/index-BwzYo1RM.js.map",
+      "bytes": 1613,
+      "sha256": "c4e7bfeb356d4cf1b6bcd872ba6edd58cee739111ed3592e8b766b0d0c924187"
+    },
+    {
+      "path": "trial-dist/assets/index-Cia3ypEr.css",
+      "bytes": 1245,
+      "sha256": "99354a5ec1ade2941e4aba36f030b413c9afbad79336f11800929c7d805b4714"
+    },
+    {
+      "path": "trial-dist/assets/index-D98Q4AD4.js",
+      "bytes": 2837,
+      "sha256": "f3c2f9defdf789557ea9d637290b6ea4fe9a4eef5586bb686b74fd025a88c19a"
+    },
+    {
+      "path": "trial-dist/assets/index-D98Q4AD4.js.map",
+      "bytes": 1613,
+      "sha256": "775f62f21fcc4559c78d0bff025e4460c2ebaea2a81701dfd5b78cab826490cf"
+    },
+    {
+      "path": "trial-dist/assets/render.worker-DPPVRw2Z.js",
+      "bytes": 976602,
+      "sha256": "862bf04177fa6bd30347315846e45bd27b89cb9c0ac45fe46d22d1805700087d"
+    },
+    {
+      "path": "trial-dist/assets/render.worker-DPPVRw2Z.js.map",
+      "bytes": 5560121,
+      "sha256": "46544577949e4c7e76235acdf494711b95aed97b286eba411ac91fb406e3c66a"
+    },
+    {
+      "path": "trial-dist/assets/sky.worker-CHm7n211.js",
+      "bytes": 2960,
+      "sha256": "503ad9438c1738310a9cbe2a41e9af0524e7046bce79e58d6da7c1e74863caaa"
+    },
+    {
+      "path": "trial-dist/assets/sky.worker-CHm7n211.js.map",
+      "bytes": 13323,
+      "sha256": "df7c7eaff6aefeb222e7b89eb86f6c9382a50f405fccd92e9886f2adaa6ac8be"
+    },
+    {
+      "path": "trial-dist/assets/three.core-DxR5k0T0.js",
+      "bytes": 195512,
+      "sha256": "e4d296a475f2cd168d934f17f032d4f56291682208332fc6a926b3937200a810"
+    },
+    {
+      "path": "trial-dist/assets/three.core-DxR5k0T0.js.map",
+      "bytes": 1858620,
+      "sha256": "1db6d177a84ab2823ca902a0261d4c3be1aba1fdbc870fba2593c66bb0c07798"
+    },
+    {
+      "path": "trial-dist/assets/volume.worker-BApztFKl.js",
+      "bytes": 13835,
+      "sha256": "0fc0f4eb5bae453fc1dcb603c1be9718e75b50d0bc24b7a970dc8c7cfd7c0cac"
+    },
+    {
+      "path": "trial-dist/assets/volume.worker-BApztFKl.js.map",
+      "bytes": 69063,
+      "sha256": "87a18567313763524a70ed752fabfb259c5eb7c49e793a5778e1794f1065832f"
+    },
+    {
+      "path": "trial-dist/fonts/commissioner/OFL.txt",
+      "bytes": 4395,
+      "sha256": "4a7d88c77b4bc39ff84f2e058ba8f015636c50ce33588a86d9da97defe519933"
+    },
+    {
+      "path": "trial-dist/fonts/commissioner/SOURCE.md",
+      "bytes": 361,
+      "sha256": "4d62bb7d2afbda450c342cafc6987bab37990ecea6e19378e1a6b0f706183a33"
+    },
+    {
+      "path": "trial-dist/fonts/commissioner/latin-variable.woff2",
+      "bytes": 36696,
+      "sha256": "737ec8f28006b815be5333598aa32b203005f5788c8e61b09090b944eac8b79c"
+    },
+    {
+      "path": "trial-dist/index.html",
+      "bytes": 911,
+      "sha256": "2036ee42475b6b877aed534526ead0713f3baf8500d87ec6b2c4cf3ad0863bbf"
+    },
+    {
+      "path": "trial-hero/cloudia-hero.iife.js",
+      "bytes": 526689,
+      "sha256": "d4363d2ccdbf676991be2c6ba05bc62da0ceef5debaa789f04766ab1248c30f5"
+    },
+    {
+      "path": "trial-hero/cloudia-hero.iife.js.map",
+      "bytes": 2860689,
+      "sha256": "a204f3f7edb0e4712ada6dc146d092ca6631f791cf8f5a830697b402c3eb3dfb"
+    },
+    {
+      "path": "trial-hero/cloudia-hero.js",
+      "bytes": 838767,
+      "sha256": "bc11f99470a6298e20fa804bc2d93041d4cc1a015d812ae97b6ad5827b5fa702"
+    },
+    {
+      "path": "trial-hero/cloudia-hero.js.map",
+      "bytes": 2926345,
+      "sha256": "a3f1c7b8de9484745e34cd10e6f967d00a86bc3267f61ac88a4c4e51f293b56c"
+    },
+    {
+      "path": "trial-hero/fonts/commissioner/OFL.txt",
+      "bytes": 4395,
+      "sha256": "4a7d88c77b4bc39ff84f2e058ba8f015636c50ce33588a86d9da97defe519933"
+    },
+    {
+      "path": "trial-hero/fonts/commissioner/SOURCE.md",
+      "bytes": 361,
+      "sha256": "4d62bb7d2afbda450c342cafc6987bab37990ecea6e19378e1a6b0f706183a33"
+    },
+    {
+      "path": "trial-hero/fonts/commissioner/latin-variable.woff2",
+      "bytes": 36696,
+      "sha256": "737ec8f28006b815be5333598aa32b203005f5788c8e61b09090b944eac8b79c"
+    }
+  ]
+}

@@ -57,10 +57,11 @@ vi.mock('three/webgpu',async(importOriginal)=>{
   },QuadMesh:class {render(renderer:MockRendererControl){control.render(renderer);renderer.recordRenderPasses();}}};
 });
 import { CumulonimbusApp } from './CumulonimbusApp';
-import { Data3DTexture,NearestFilter,NoColorSpace,RedFormat,UnsignedByteType } from 'three/webgpu';
+import { Data3DTexture,NearestFilter,LinearFilter,ClampToEdgeWrapping,NoColorSpace,RedFormat,UnsignedByteType } from 'three/webgpu';
 import * as cloudShader from './cloudShader';
 import type { CloudVolume } from './volume';
 import type {NarrowCloudMask} from './narrowCloud';
+import type {DensityR8} from './densityR8';
 import type {TimestampBatchMeasurementReport} from './timestampBatchMeasurement';
 async function flush() {for(let i=0;i<15;i++) await Promise.resolve();}
 const device={destroy:vi.fn(),queue:{onSubmittedWorkDone:vi.fn(()=>Promise.resolve())}};
@@ -79,8 +80,8 @@ function createApp() {const root=document.createElement('main');document.body.ap
 function cloudVolume():CloudVolume {
   return {size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
 }
-function cloudWithNarrow(value=255):CloudVolume & {narrowMask:NarrowCloudMask}{
-  return {...cloudVolume(),narrowMask:{size:1,data:new Uint8Array([value])}};
+function cloudWithNarrow(value=255):CloudVolume & {narrowMask:NarrowCloudMask;densityR8:DensityR8}{
+  return {...cloudVolume(),narrowMask:{size:1,data:new Uint8Array([value])},densityR8:{size:1,data:new Uint8Array([0])}};
 }
 function textureDisposals(contexts:readonly unknown[],data:Uint8Array){
   return contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===data).length;
@@ -96,6 +97,15 @@ function expectNarrowTexture(value:unknown,data?:Uint8Array):Data3DTexture{
   if(data)expect(value.image.data).toBe(data);
   return value;
 }
+function expectDensityTexture(value:unknown,data:Uint8Array):Data3DTexture{
+  if(!(value instanceof Data3DTexture))throw new Error('Expected the bound density R8 texture.');
+  expect(value.image.data).toBe(data);expect(value.format).toBe(RedFormat);expect(value.type).toBe(UnsignedByteType);
+  expect(value.colorSpace).toBe(NoColorSpace);expect(value.generateMipmaps).toBe(false);expect(value.flipY).toBe(false);
+  expect(value.minFilter).toBe(LinearFilter);expect(value.magFilter).toBe(LinearFilter);
+  expect([value.wrapS,value.wrapT,value.wrapR]).toEqual([ClampToEdgeWrapping,ClampToEdgeWrapping,ClampToEdgeWrapping]);
+  expect(value.unpackAlignment).toBe(1);return value;
+}
+type DensitySamplingSnapshot={path:string;format:string;dimensions:number[];textureBytes:number;extraCpuPayloadBytes:number;extraGpuPayloadBytes:number;fallback:string|null;reason:string;allocationAccounting:string};
 describe('scene async lifecycle',()=>{
   it('publishes fresh pass coverage for explicit draw ranges, excluding warmup and the interval anchor',async()=>{
     control.timestamps=true;history.replaceState(null,'','/?profile=1&timing=stages');
@@ -199,8 +209,8 @@ describe('scene async lifecycle',()=>{
     let clock=1000;vi.spyOn(performance,'now').mockImplementation(()=>clock);
     const fences:Array<()=>void>=[];
     device.queue.onSubmittedWorkDone.mockImplementation(()=>new Promise<void>(resolve=>fences.push(resolve)));
-    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
-    control.workers[0].onmessage!({data:{volume:cloudVolume()}});await starting;
+    const {app,root}=createApp();const starting=app.start();app.applyAtmosphereIntent({type:'rain',amount:.8});await flush();control.initResolve();await flush();
+    control.workers[0].onmessage!({data:{volume:cloudWithNarrow()}});await starting;
     const frame=vi.mocked(requestAnimationFrame).mock.calls[0][0];
     const draw=(time:number)=>{clock=time;frame(time);};
     const raw=root.querySelector('[data-testid="benchmark-json"]')!;
@@ -210,8 +220,11 @@ describe('scene async lifecycle',()=>{
     clock=33100;fences[0]();fences[1]();await flush();
     expect(raw.textContent).toBe(''); // an initial/periodic completion cannot publish the report
     clock=33200;fences[2]();await flush();
-    const report=JSON.parse(raw.textContent!) as {stats:{frames:number;fps:number};submissionFps:number;presentedCanvasFps:null;
+    const report=JSON.parse(raw.textContent!) as {densitySamplingStart:DensitySamplingSnapshot;densitySamplingEnd:DensitySamplingSnapshot;rendererVersion:string;stats:{frames:number;fps:number};submissionFps:number;presentedCanvasFps:null;
       queuePrefix:{status:string;measuredSubmissions:number;confirmedPrefixId:number;samples:Array<{kind:string;prefixId:number}>}};
+    expect(report.densitySamplingStart).toMatchObject({path:'r8unorm-extracted-r',format:'r8unorm',dimensions:[1,1,1],textureBytes:1,extraCpuPayloadBytes:1,extraGpuPayloadBytes:1,fallback:null});
+    expect(report.densitySamplingEnd).toEqual(report.densitySamplingStart);
+    expect(report.rendererVersion).toBe('observatory-v48-rain-density-r8-trial');
     expect(report.stats.frames).toBe(2);expect(report.queuePrefix.measuredSubmissions).toBe(report.stats.frames);
     expect(report.queuePrefix.status).toBe('completed');expect(report.queuePrefix.confirmedPrefixId).toBe(2);
     expect(report.queuePrefix.samples.filter(sample=>sample.kind==='end')).toHaveLength(1);
@@ -221,11 +234,11 @@ describe('scene async lifecycle',()=>{
     expect(fences).toHaveLength(3);expect(raw.textContent).toBe(snapshot);
     app.destroy();await flush();
   });
-  it('binds the narrow texture and disposes previous/current macro and R8 exactly once',async()=>{
+  it('binds macro, narrow and density R8 and disposes both generations exactly once',async()=>{
     const dispose=vi.spyOn(Data3DTexture.prototype,'dispose');
     const disposed=(volume:CloudVolume)=>dispose.mock.contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.data).length;
     const inputs:Record<string,unknown>[]=[],original=cloudShader.createCloudIntegrator;
-    vi.spyOn(cloudShader,'createCloudIntegrator').mockImplementation((mode,useNarrow)=>new Proxy(original(mode,useNarrow),{
+    vi.spyOn(cloudShader,'createCloudIntegrator').mockImplementation((mode,useNarrow,useDensityR8)=>new Proxy(original(mode,useNarrow,useDensityR8),{
       apply(target,thisArg,args){inputs.push(args[0] as Record<string,unknown>);return Reflect.apply(target,thisArg,args);},
     }));
     const initial=cloudWithNarrow(0),replacement=cloudWithNarrow();
@@ -233,25 +246,28 @@ describe('scene async lifecycle',()=>{
     const {app,root}=createApp();const starting=app.start();app.applyAtmosphereIntent({type:'rain',amount:.8});await flush();control.initResolve();await flush();
     control.workers[0].onmessage!({data:{volume:initial}});await starting;
     expect(inputs).toHaveLength(1);
+    expectDensityTexture((inputs[0].densityR8 as {value:unknown}).value,initial.densityR8.data);
+    expect((inputs[0].volume as {value:Data3DTexture}).value.image.data).toBe(initial.data);
     const firstNarrow=expectNarrowTexture((inputs[0].narrowCloud as {value:unknown}).value,initial.narrowMask.data);
-    expect(disposed(initial)).toBe(0);expect(narrowDisposed(initial)).toBe(0);
+    expect(disposed(initial)).toBe(0);expect(narrowDisposed(initial)).toBe(0);expect(textureDisposals(dispose.mock.contexts,initial.densityR8.data)).toBe(0);
     root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
     expect(disposed(initial)).toBe(0);
     control.workers[1].onmessage!({data:{volume:replacement}});await flush();
     expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(0);
     expect(inputs).toHaveLength(2);
+    expectDensityTexture((inputs[1].densityR8 as {value:unknown}).value,replacement.densityR8.data);
     const secondNarrow=expectNarrowTexture((inputs[1].narrowCloud as {value:unknown}).value,replacement.narrowMask.data);
     expect(secondNarrow).not.toBe(firstNarrow);
-    expect(narrowDisposed(initial)).toBe(1);expect(narrowDisposed(replacement)).toBe(0);
+    expect(narrowDisposed(initial)).toBe(1);expect(textureDisposals(dispose.mock.contexts,initial.densityR8.data)).toBe(1);expect(narrowDisposed(replacement)).toBe(0);expect(textureDisposals(dispose.mock.contexts,replacement.densityR8.data)).toBe(0);
     app.destroy();await flush();
     expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(1);
-    expect(narrowDisposed(initial)).toBe(1);expect(narrowDisposed(replacement)).toBe(1);
+    expect(narrowDisposed(initial)).toBe(1);expect(textureDisposals(dispose.mock.contexts,initial.densityR8.data)).toBe(1);expect(narrowDisposed(replacement)).toBe(1);expect(textureDisposals(dispose.mock.contexts,replacement.densityR8.data)).toBe(1);
   });
   it('switches dry/rain bindings only on intent and residual-rain transitions, not on each frame',async()=>{
-    const variants:boolean[]=[],inputs:Record<string,unknown>[]=[],original=cloudShader.createCloudIntegrator;
-    vi.spyOn(cloudShader,'createCloudIntegrator').mockImplementation((mode,useNarrow)=>{
-      variants.push(useNarrow===true);
-      return new Proxy(original(mode,useNarrow),{
+    const densityVariants:boolean[]=[],variants:boolean[]=[],inputs:Record<string,unknown>[]=[],original=cloudShader.createCloudIntegrator;
+    vi.spyOn(cloudShader,'createCloudIntegrator').mockImplementation((mode,useNarrow,useDensityR8)=>{
+      variants.push(useNarrow===true);densityVariants.push(useDensityR8===true);
+      return new Proxy(original(mode,useNarrow,useDensityR8),{
         apply(target,thisArg,args){inputs.push(args[0] as Record<string,unknown>);return Reflect.apply(target,thisArg,args);},
       });
     });
@@ -259,9 +275,9 @@ describe('scene async lifecycle',()=>{
     control.workers[0].onmessage!({data:{volume:cloudWithNarrow()}});await starting;
     const frame=vi.mocked(requestAnimationFrame).mock.calls[0][0];
     try{
-      expect(variants).toEqual([false]);expect(inputs[0]).not.toHaveProperty('narrowCloud');
+      expect(variants).toEqual([false]);expect(inputs[0]).not.toHaveProperty('narrowCloud');expect(inputs[0]).not.toHaveProperty('densityR8');expect(densityVariants).toEqual([false]);
       app.applyAtmosphereIntent({type:'rain',amount:.8});
-      expect(variants).toEqual([false,true]);expect(inputs[1]).toHaveProperty('narrowCloud');
+      expect(variants).toEqual([false,true]);expect(inputs[1]).toHaveProperty('narrowCloud');expect(inputs[1]).toHaveProperty('densityR8');expect(densityVariants).toEqual([false,true]);
       frame(1000);frame(2000);
       const weather=inputs[1].weather as {value:{z:number}};
       expect(weather.value.z).toBeGreaterThan(.001);expect(variants).toHaveLength(2);
@@ -273,10 +289,10 @@ describe('scene async lifecycle',()=>{
       app.applyAtmosphereIntent({type:'rain',amount:0});
       for(let time=5000;time<=13000;time+=1000)frame(time);
       expect(weather.value.z).toBeLessThanOrEqual(.001);
-      expect(variants).toEqual([false,true,false]);expect(inputs[2]).not.toHaveProperty('narrowCloud');
+      expect(variants).toEqual([false,true,false]);expect(inputs[2]).not.toHaveProperty('narrowCloud');expect(inputs[2]).not.toHaveProperty('densityR8');expect(densityVariants).toEqual([false,true,false]);
       frame(14000);frame(15000);expect(variants).toHaveLength(3);
       app.applyAtmosphereIntent({type:'rain',amount:.6});
-      expect(variants).toEqual([false,true,false,true]);expect(inputs[3]).toHaveProperty('narrowCloud');
+      expect(variants).toEqual([false,true,false,true]);expect(inputs[3]).toHaveProperty('narrowCloud');expect(inputs[3]).toHaveProperty('densityR8');expect(densityVariants).toEqual([false,true,false,true]);
     }finally{app.destroy();await flush();}
   });
   it('uses an occupied nearest R8 compatibility texture for a legacy packet without narrowMask',async()=>{
@@ -301,6 +317,8 @@ describe('scene async lifecycle',()=>{
     app.destroy();await starting;await flush();
     expect(dispose.mock.contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.data)).toHaveLength(1);
     expect(textureDisposals(dispose.mock.contexts,volume.narrowMask.data)).toBe(1);
+    expect(textureDisposals(dispose.mock.contexts,volume.densityR8.data)).toBe(1);
+    expectDensityTexture(dispose.mock.contexts.find(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.densityR8.data),volume.densityR8.data);
     expectNarrowTexture(dispose.mock.contexts.find(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.narrowMask.data),volume.narrowMask.data);
     expect(control.render).not.toHaveBeenCalled();expect(device.destroy).toHaveBeenCalledOnce();
   });
@@ -315,13 +333,13 @@ describe('scene async lifecycle',()=>{
     let drained=()=>{};device.queue.onSubmittedWorkDone.mockImplementationOnce(()=>new Promise<void>(resolve=>{drained=resolve;}));
     control.workers[1].onmessage!({data:{volume:replacement}});await flush();
     expect(disposed(initial)).toBe(0);expect(disposed(replacement)).toBe(0);
-    expect(narrowDisposed(initial)).toBe(0);expect(narrowDisposed(replacement)).toBe(0);
+    expect(narrowDisposed(initial)).toBe(0);expect(textureDisposals(dispose.mock.contexts,initial.densityR8.data)).toBe(0);expect(narrowDisposed(replacement)).toBe(0);expect(textureDisposals(dispose.mock.contexts,replacement.densityR8.data)).toBe(0);
     app.destroy();await flush();
     expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(0);
-    expect(narrowDisposed(initial)).toBe(1);expect(narrowDisposed(replacement)).toBe(0);
+    expect(narrowDisposed(initial)).toBe(1);expect(textureDisposals(dispose.mock.contexts,initial.densityR8.data)).toBe(1);expect(narrowDisposed(replacement)).toBe(0);expect(textureDisposals(dispose.mock.contexts,replacement.densityR8.data)).toBe(0);
     drained();await flush();
     expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(1);
-    expect(narrowDisposed(initial)).toBe(1);expect(narrowDisposed(replacement)).toBe(1);
+    expect(narrowDisposed(initial)).toBe(1);expect(textureDisposals(dispose.mock.contexts,initial.densityR8.data)).toBe(1);expect(narrowDisposed(replacement)).toBe(1);expect(textureDisposals(dispose.mock.contexts,replacement.densityR8.data)).toBe(1);
     expect(control.render).toHaveBeenCalledOnce();
   });
   it('disposes a rejected replacement macro texture while retaining the installed texture until teardown',async()=>{
@@ -335,12 +353,76 @@ describe('scene async lifecycle',()=>{
     device.queue.onSubmittedWorkDone.mockRejectedValueOnce(new Error('GPU drain rejected'));
     control.workers[1].onmessage!({data:{volume:replacement}});await flush();
     expect(disposed(initial)).toBe(0);expect(disposed(replacement)).toBe(1);
-    expect(narrowDisposed(initial)).toBe(0);expect(narrowDisposed(replacement)).toBe(1);
+    expect(narrowDisposed(initial)).toBe(0);expect(textureDisposals(dispose.mock.contexts,initial.densityR8.data)).toBe(0);expect(narrowDisposed(replacement)).toBe(1);expect(textureDisposals(dispose.mock.contexts,replacement.densityR8.data)).toBe(1);
     expect(root.querySelector('[data-testid="scene-status"]')!.textContent).toContain('GPU drain rejected');
     expect(control.render).toHaveBeenCalledOnce();
     app.destroy();await flush();
     expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(1);
-    expect(narrowDisposed(initial)).toBe(1);expect(narrowDisposed(replacement)).toBe(1);
+    expect(narrowDisposed(initial)).toBe(1);expect(textureDisposals(dispose.mock.contexts,initial.densityR8.data)).toBe(1);expect(narrowDisposed(replacement)).toBe(1);expect(textureDisposals(dispose.mock.contexts,replacement.densityR8.data)).toBe(1);
+  });
+  it('reports dry macro sampling while retaining the allocated R8 payload across the measurement',async()=>{
+    history.replaceState(null,'','/?profile=1&timing=off&flow=frozen');
+    vi.spyOn(document,'hidden','get').mockReturnValue(false);
+    let clock=1000;vi.spyOn(performance,'now').mockImplementation(()=>clock);
+    const dispose=vi.spyOn(Data3DTexture.prototype,'dispose'),volume=cloudWithNarrow();
+    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    control.workers[0].onmessage!({data:{volume}});await starting;
+    const frame=vi.mocked(requestAnimationFrame).mock.calls[0][0];
+    root.querySelector<HTMLButtonElement>('[data-action="benchmark"]')!.click();
+    for(const time of [3000,3050,33000]){clock=time;frame(time);}await flush();
+    const report=JSON.parse(root.querySelector('[data-testid="benchmark-json"]')!.textContent!) as {densitySamplingStart:DensitySamplingSnapshot;densitySamplingEnd:DensitySamplingSnapshot};
+    expect(report.densitySamplingStart).toMatchObject({path:'macro-rgba8-r',dimensions:[1,1,1],textureBytes:4,extraCpuPayloadBytes:1,extraGpuPayloadBytes:1,reason:'dry weather; R8 retained but not bound',fallback:null});
+    expect(report.densitySamplingStart.allocationAccounting).toContain('nominal');
+    expect(report.densitySamplingEnd).toEqual(report.densitySamplingStart);
+    expect(textureDisposals(dispose.mock.contexts,volume.densityR8.data)).toBe(0);
+    app.destroy();await flush();expect(textureDisposals(dispose.mock.contexts,volume.densityR8.data)).toBe(1);
+  });
+  it.each([undefined,{size:2,data:new Uint8Array(1)},{size:1,data:new Uint8Array(2)},{size:1,data:new Float32Array(1)}])('reports the original macro path for missing or invalid R8 payload: %s',async densityR8=>{
+    history.replaceState(null,'','/?profile=1&timing=off&flow=frozen');
+    vi.spyOn(document,'hidden','get').mockReturnValue(false);
+    let clock=1000;vi.spyOn(performance,'now').mockImplementation(()=>clock);
+    const inputs:Record<string,unknown>[]=[],original=cloudShader.createCloudIntegrator;
+    vi.spyOn(cloudShader,'createCloudIntegrator').mockImplementation((mode,narrow,r8)=>{
+      expect(r8).toBe(false);
+      return new Proxy(original(mode,narrow,r8),{apply(target,thisArg,args){inputs.push(args[0] as Record<string,unknown>);return Reflect.apply(target,thisArg,args);}});
+    });
+    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    control.workers[0].onmessage!({data:{volume:{...cloudVolume(),densityR8}}});await starting;
+    expect(inputs[0]).not.toHaveProperty('densityR8');
+    const frame=vi.mocked(requestAnimationFrame).mock.calls[0][0];
+    root.querySelector<HTMLButtonElement>('[data-action="benchmark"]')!.click();
+    for(const time of [3000,3050,33000]){clock=time;frame(time);}await flush();
+    const report=JSON.parse(root.querySelector('[data-testid="benchmark-json"]')!.textContent!) as {densitySamplingStart:DensitySamplingSnapshot;densitySamplingEnd:DensitySamplingSnapshot};
+    expect(report.densitySamplingStart).toMatchObject({path:'macro-rgba8-r',format:'rgba8unorm',dimensions:[1,1,1],textureBytes:4,extraCpuPayloadBytes:0,extraGpuPayloadBytes:0});
+    expect(report.densitySamplingStart.fallback).toBeTruthy();expect(report.densitySamplingEnd).toEqual(report.densitySamplingStart);
+    app.destroy();await flush();
+  });
+  it('keeps the density binding through diagnostic changes and removes it on a legacy seed swap',async()=>{
+    history.replaceState(null,'','/?profile=1');
+    const dispose=vi.spyOn(Data3DTexture.prototype,'dispose'),volume=cloudWithNarrow();
+    const variants:Array<{mode:number|undefined;r8:boolean|undefined}>=[],inputs:Record<string,unknown>[]=[],original=cloudShader.createCloudIntegrator;
+    vi.spyOn(cloudShader,'createCloudIntegrator').mockImplementation((mode,narrow,r8)=>{
+      variants.push({mode,r8});return new Proxy(original(mode,narrow,r8),{apply(target,thisArg,args){inputs.push(args[0] as Record<string,unknown>);return Reflect.apply(target,thisArg,args);}});
+    });
+    const {app,root}=createApp();const starting=app.start();app.applyAtmosphereIntent({type:'rain',amount:.8});await flush();control.initResolve();await flush();
+    control.workers[0].onmessage!({data:{volume}});await starting;
+    const ablation=root.querySelector<HTMLSelectElement>('[name="ablation"]')!;
+    for(const value of ['density','cache','no-flow','no-detail','no-flash','full']){ablation.value=value;ablation.dispatchEvent(new Event('change',{bubbles:true}));}
+    expect(variants.every(variant=>variant.r8===true)).toBe(true);
+    for(const input of inputs)expectDensityTexture((input.densityR8 as {value:unknown}).value,volume.densityR8.data);
+    root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
+    control.workers[1].onmessage!({data:{volume:cloudVolume()}});await flush();
+    expect(variants.at(-1)?.r8).toBe(false);expect(inputs.at(-1)).not.toHaveProperty('densityR8');
+    expect(textureDisposals(dispose.mock.contexts,volume.densityR8.data)).toBe(1);
+    app.destroy();await flush();expect(textureDisposals(dispose.mock.contexts,volume.densityR8.data)).toBe(1);
+  });
+  it('disposes installed density R8 once on device loss and subsequent teardown',async()=>{
+    const dispose=vi.spyOn(Data3DTexture.prototype,'dispose'),volume=cloudWithNarrow();
+    const {app}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+    control.workers[0].onmessage!({data:{volume}});await starting;
+    control.renderer!.onDeviceLost();await flush();
+    expect(textureDisposals(dispose.mock.contexts,volume.densityR8.data)).toBe(1);
+    app.destroy();await flush();expect(textureDisposals(dispose.mock.contexts,volume.densityR8.data)).toBe(1);
   });
   it('does not declare ready when GPU shader validation fails',async()=>{
     Object.assign(device,{pushErrorScope:vi.fn(),popErrorScope:vi.fn(async()=>({message:'invalid sampler'}))});

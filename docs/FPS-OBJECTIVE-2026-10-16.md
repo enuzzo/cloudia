@@ -8,6 +8,38 @@ output pieno configurato. Questo obiettivo si aggiunge ad anatomia delle tre
 famiglie, luce ravvicinata continua, pioggia/virga integrate nel paesaggio e UI.
 Nessuno di questi gate è sostituito dal contatore dei frame.
 
+## Stato corrente: R8 selezionata soltanto con pioggia
+
+La [candidata v48](EXPERIMENT-DENSITY-R8-2026-10-16.md) conserva lo shader
+asciutto v46 e usa una copia byte-esatta R8 nel lookup densità con pioggia.
+V47 A/B/A rain: 12,7447 / 13,6659 / 12,8183 invii/s, +6,61% sul migliore
+controllo; immagini CSS identiche. Il Sole near non beneficia della copia,
+quindi la versione finale seleziona il percorso originale quando asciutto.
+Memoria aggiuntiva esplicita: 16 MiB CPU e 16 MiB nominali GPU.
+
+Audit raw finito 77.629 confronti bit-identici. V48 passa worker statico,
+main in moto 90 s e ritorno dry, tutti con prefisso GPU completato e qualità
+piena. I 90 s rain misurano **13,3560 invii/s**, p95 83,6 ms; tutti gli
+intervalli oltre 33,34 ms. **Obiettivo 60 ancora aperto**, insieme a
+presentazione, altre pose/seed e continuità artistica. I confronti storici
+sotto rimangono riferiti ai rispettivi build e sessioni.
+
+## Stato corrente dopo il confronto pioggia A/B/A
+
+Il [checkpoint locale 6a7df91](FPS-RAIN-ABA-2026-10-16.md) documenta un vantaggio
+della maschera v46 in una scena pioggia statica a qualità piena: 17,3227 invii/s
+contro 14,9831 e 15,7236 nei due controlli. Il margine sul migliore è 10,17%;
+non è una qualifica dei 60 FPS o della presentazione. La scheda diagnostica
+bloccata citata nei resoconti precedenti non era più presente. I tre prefissi
+finali sono completati, le immagini CSS byte-identiche e le console vuote.
+
+I conteggi del lavoro e i tempi GPU restano diagnostici; lo schema 3 identifica
+i pass e la copertura effettiva. La parte storica sotto non sostituisce queste
+misure. La cache A/s rimane non promossa dopo l'audit CPU e non è un percorso
+implementato. La prossima candidata separa gli stessi byte densità in R8:
+nuova memoria esplicita, parità del sampler e beneficio da verificare prima
+dell'adozione, senza cambiare campioni, materiale o qualità.
+
 ## Aggiornamento del decimo ciclo
 
 [Schema 3 con pass identificati](FPS-PASS-LEDGER-2026-10-16.md) implementato e

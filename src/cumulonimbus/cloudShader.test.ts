@@ -6,8 +6,8 @@ vi.mock('three/tsl',async(importOriginal)=>{
 });
 import {wgslFn} from 'three/tsl';
 import {createCloudIntegrator} from './cloudShader';
-const source=(mode=0,useNarrow=false)=>{
-  createCloudIntegrator(mode,useNarrow);
+const source=(mode=0,useNarrow=false,useDensityR8=false)=>{
+  createCloudIntegrator(mode,useNarrow,useDensityR8);
   const code=vi.mocked(wgslFn).mock.calls.at(-1)?.[0];
   if(typeof code!=='string')throw new Error('Expected the WGSL integrator source.');
   return code;
@@ -37,5 +37,17 @@ describe('weather-specialized cloud integrator',()=>{
       expect(code.includes('narrowCloud')).toBe(narrow);
     }
     expect(source(-1)).toBe(source());expect(source(6)).toBe(source());
+  });
+  it('changes only the warped-density texture in every R8 weather/diagnostic specialization',()=>{
+    for(const narrow of [false,true])for(let mode=0;mode<=5;mode++){
+      const candidate=source(mode,narrow,true);
+      expect(candidate).toContain('let voxel = textureSampleLevel(volume,volumeSampler,coord,0.0);');
+      const restored=candidate
+        .replace('volumeSampler: sampler, densityR8: texture_3d<f32>,','volumeSampler: sampler,')
+        .replace('textureSampleLevel(densityR8,volumeSampler,coord+warp/vec3<f32>(10.0,8.5,7.0),0.0).r',
+          'textureSampleLevel(volume,volumeSampler,coord+warp/vec3<f32>(10.0,8.5,7.0),0.0).r');
+      expect(restored).toBe(source(mode,narrow));
+      expect(candidate).not.toBe(restored);
+    }
   });
 });

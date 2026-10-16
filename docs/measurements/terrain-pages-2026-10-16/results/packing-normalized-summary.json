@@ -1,0 +1,80 @@
+{
+  "phase": "packing",
+  "provenance": {
+    "sourceSha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+    "datasetSha256": "cfad064c4dbe4b100294222c8c12a4fbcd98cf8f5316f0f1a3a10494543800a1",
+    "metadataSha256": "69b2b49c06eddb8c582b9f1b14cdb944f707488fd73a4f5f17d6e261f62b12c4",
+    "nodeCount": 109141,
+    "originalBytes": 5238768
+  },
+  "protocol": {
+    "heightCap": 16,
+    "visits": 256,
+    "stack": 48,
+    "toleranceKm": 0.001,
+    "targetPageKm": 0.25,
+    "maxBytes": 8388608,
+    "trainingRounds": 3,
+    "neighborPolicy": "four face neighbors of the blocking leaf, from current metadata only; primary requests first",
+    "primaryUnresolvedGate": 333,
+    "metadataRecordReductionGate": 0.5,
+    "holdoutYawRad": 0.003
+  },
+  "structural": {
+    "rectangles": 109141,
+    "pointers": 109141,
+    "heightValues": 218282,
+    "gradientValues": 327424,
+    "bytes": 3055952,
+    "nodeCount": 109141,
+    "leafCount": 81856,
+    "exactValues": true
+  },
+  "original": {
+    "count": 5198,
+    "counts": {
+      "hit": 1911,
+      "unresolved-height-budget": 666,
+      "miss": 1777,
+      "outer-envelope-miss": 844
+    },
+    "groups": {},
+    "unresolved": 666,
+    "heightEvaluations": 31226,
+    "visits": 106949,
+    "baseRecordLoads": 0,
+    "gradientRecordLoads": 0,
+    "metadataRecordLoads": 751146,
+    "childClips": 0
+  },
+  "compact": {
+    "count": 5198,
+    "counts": {
+      "hit": 1911,
+      "unresolved-height-budget": 666,
+      "miss": 1777,
+      "outer-envelope-miss": 844
+    },
+    "groups": {},
+    "unresolved": 666,
+    "heightEvaluations": 31226,
+    "visits": 106949,
+    "baseRecordLoads": 95087,
+    "gradientRecordLoads": 4419,
+    "metadataRecordLoads": 99506,
+    "childClips": 246096
+  },
+  "recordsBefore": 751146,
+  "recordsAfter": 99506,
+  "reduction": 0.8675277509299124,
+  "recordGatePassed": true,
+  "originalMs": 81.39733299999999,
+  "compactMs": 80.41629100000003,
+  "CPUTimeIsGPUTime": false,
+  "normalizationNote": "The raw executed packing.json and stdout retain the initial original.metadataRecordLoads field whose value is node accesses, not texels. This summary labels original RGBA32F records using recordsBefore, which was already correct. No replay or geometric value changed.",
+  "rawResultSha256": "cb9a400b90c30e5fc5801e3a12653ae1f5d4f2468ce8e2cd27153c3c9f726208",
+  "identity": {
+    "count": 5198,
+    "failureCount": 0
+  }
+}

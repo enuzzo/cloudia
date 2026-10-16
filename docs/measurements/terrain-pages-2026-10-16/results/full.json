@@ -1,0 +1,93 @@
+{
+  "phase": "full",
+  "provenance": {
+    "sourceSha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+    "datasetSha256": "cfad064c4dbe4b100294222c8c12a4fbcd98cf8f5316f0f1a3a10494543800a1",
+    "metadataSha256": "69b2b49c06eddb8c582b9f1b14cdb944f707488fd73a4f5f17d6e261f62b12c4",
+    "nodeCount": 109141,
+    "originalBytes": 5238768
+  },
+  "frozenSourceHashes": {
+    "compact.ts": "fe09eae46546b403ae83486941527d279e465ff9dfe097d51fc5312b002ab595",
+    "trace-compact.ts": "aa7d62454e9a6a51ad4a5a1247904ed9c66d340283e5850f734fde29c1a3839a",
+    "protocol.ts": "70894e050f011625fb8ca227c974c26b1217d5ee3295437f7e3444f3517f3cb0",
+    "run.ts": "dc618bf81ee6b4f73dd61e0b3ca2b3de96dadf17e9dd552354b994dd8e87f646",
+    "fixture.ts": "0b720c8c98f9b2842985aa7e1fff8286d4cca701d5e44fe03691beb5e34b5aac",
+    "validate-pages.ts": "cd4f78e078da5b246114de8ce44c3b0b7e14609c2df5eebba78aae8590a37a63",
+    "baseline/validate.ts": "d55694581495348a1e79d608fb946eba00f05b99fffb10c795b3b963430d66df",
+    "baseline/data.ts": "4da0e13f07f84888f408a11407b52b63a15e4710b081ee67184663b38642425c",
+    "baseline/trace.ts": "fc318525b71684d00f22958619cd61e3cbc302ccd5b4d00a89c64bbeaa1d4239",
+    "baseline/gradient.ts": "f3aaa08202d65169615a25d1d22d957d5867e85d5d8bad6bb18444c08158e141",
+    "baseline/bounds.ts": "53ed370b2b1443d29274c155330bdef912836a5bf3700650ed9e4d8752e5bd2d",
+    "baseline/landscape.source.ts": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99"
+  },
+  "protocol": {
+    "heightCap": 16,
+    "visits": 256,
+    "stack": 48,
+    "toleranceKm": 0.001,
+    "targetPageKm": 0.25,
+    "maxBytes": 8388608,
+    "trainingRounds": 3,
+    "neighborPolicy": "four face neighbors of the blocking leaf, from current metadata only; primary requests first",
+    "primaryUnresolvedGate": 333,
+    "metadataRecordReductionGate": 0.5,
+    "holdoutYawRad": 0.003
+  },
+  "descriptor": {
+    "format": "one RGBA32F base per node; one RGBA32F gradient per leaf; implicit dyadic coordinates",
+    "nodeCount": 198197,
+    "leafCount": 148648,
+    "bytes": 5549520,
+    "baseBytes": 3171152,
+    "gradientBytes": 2378368,
+    "sourceSha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99",
+    "ledgerVersion": "gradient-cpu-local-ledger-cycle10-f3aaa082"
+  },
+  "before": {
+    "count": 5198,
+    "counts": {
+      "hit": 1911,
+      "unresolved-height-budget": 666,
+      "miss": 1777,
+      "outer-envelope-miss": 844
+    },
+    "groups": {},
+    "unresolved": 666,
+    "heightEvaluations": 31226,
+    "visits": 106949,
+    "baseRecordLoads": 95087,
+    "gradientRecordLoads": 4419,
+    "metadataRecordLoads": 99506,
+    "childClips": 246096
+  },
+  "after": {
+    "count": 5198,
+    "counts": {
+      "hit": 1917,
+      "unresolved-height-budget": 660,
+      "miss": 1777,
+      "outer-envelope-miss": 844
+    },
+    "groups": {},
+    "unresolved": 660,
+    "heightEvaluations": 31207,
+    "visits": 107038,
+    "baseRecordLoads": 95239,
+    "gradientRecordLoads": 4423,
+    "metadataRecordLoads": 99662,
+    "childClips": 246424
+  },
+  "safety": {
+    "conflicts": [],
+    "invalidWitnesses": [],
+    "resolvedToUnresolved": []
+  },
+  "unresolvedGatePassed": false,
+  "bytesGatePassed": true,
+  "baselineMs": 84.12270799999999,
+  "pagedMs": 69.29320899999999,
+  "CPUTimeIsGPUTime": false,
+  "GPUExecuted": false,
+  "oracleWasUsedForPageRequests": false
+}

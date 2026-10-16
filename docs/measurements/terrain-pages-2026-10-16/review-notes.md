@@ -1,0 +1,23 @@
+# Independent read-only review, 2026-10-16
+
+Scope: source inspection and lightweight aggregation of existing JSON/bytes only. No replay, analytical builder, tests, benchmark, browser or GPU execution. Current prototype source hashes match `results/full.json`.
+
+No new geometric or packing fault was found in the inspected path. The dyadic key layout is consistent through level 14; f32 pointers remain exact under the checked range; child rectangles are checked against implicit keys; page allocation reserves the complete subtree before committing it. The recorded packing comparison preserves every compared geometric outcome on 5198 rays. That is a finite CPU result, consistent with `roundingQualified: false` and `GPUQualified: false`.
+
+`cleanPose` strips fixture results, and page requests read only normal-cap status and the pending leaf key. Fixed training bundles request pages; offset/yaw holdouts and controls do not. No oracle result or hit distance enters page construction in the inspected code. The analytical center query supplies an enclosure anchor, rather than a fitted replacement field.
+
+The following qualifications need to remain explicit in the archived report:
+
+1. **Record-count reduction is a CPU reference-model result.** The correct packing comparison is 751146 logical RGBA32F records before versus 99506 after, a reduction of 86.7528%. Raw `packing.json.original.metadataRecordLoads` is the old node-access count, 250382; `packing-normalized-summary.json` correctly documents its conversion by three. Preserve the raw result and use the normalized field when describing records. These numbers neither measure actual GPU transactions nor establish a stack implementation of 16 bytes per entry. CPU `Work` retains the complete `Node` object, its lazily cached gradient, and an anchor; a per-ray `pointCache` also preserves samples. A GPU implementation storing only interval/index/key must specify where these values survive or account for reloads/recomputation without exceeding the 16-query cap.
+
+2. **Paging fails its global efficiency gate.** Unresolved rays fall only from 666 to 660, against the prospective target of at most 333. Full-grid record accesses rise from 99506 to 99662, or 0.1568%, and visits rise from 106949 to 107038. The local holdout improvement is real within this corpus (32 to 21 unresolved; yaw holdout 12 to 7), but does not establish a global gain. No promotion follows from the CPU timing difference.
+
+3. **8 MiB qualifies serialized residency, not implementation peak memory.** The initial packed data is 3055952 bytes (2.9144 MiB), and the prepared resident data is 5549520 bytes (5.2924 MiB). Merely retaining both during replacement totals 8605472 bytes (8.2068 MiB), before debug nodes, temporary arrays, staging/upload buffers or GPU retirement. This does not violate the stated resident-only protocol, but an implementation with a strict 8 MiB peak would need a different update plan. No GPU update, eviction, upload or queue cost is measured here.
+
+4. **A future GPU port needs a push-time stack guard.** The CPU checks `stack.length > stackCap` at the top of the next iteration, after appending children. A fixed array must check capacity before writing. The current recorded corpus reaches only 18 reported entries and has zero `unresolved-stack` results, so this is an implementation gap rather than an observed corpus failure.
+
+5. **The phase-reuse guard binds source hashes and byte lengths, not resident binary contents.** The full phase reloads resident arrays and checks their combined size, without comparing content hashes or rerunning `verifyRepack` on the loaded bytes. No corruption was observed; current binary hashes are base `81ba6b2255f38bd58f3e7f22f02cd978218b5838a36032999aa2a54f3a3e202c` and gradient `22a07038d415e2868e2c5feab433ecb806ed29b96202ce23ff64782182febfec`. The archive should record these hashes and retain the recorded phase provenance. A stronger reuse guard is needed before relying on mutable external files as qualified runtime input.
+
+6. **README execution state is stale.** Its final section still says no 5198-ray replay, analytical page build or benchmark result exists. Existing `pages.json`, `full.json` and `execution.json` now show those phases, with the full phase exiting 1 for the failed unresolved gate. Correct this prose before presenting the archive as current.
+
+The recorded zero conflicts, invalid witnesses and resolved-to-unresolved changes support the limited finite CPU safety conclusion. They do not qualify universal rounding, first-entry behavior outside the corpus, GPU execution, artistic terrain quality or frame performance.

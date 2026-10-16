@@ -1,0 +1,20 @@
+{
+  "kind": "excluded large inputs, verified against frozen inputs.json",
+  "files": {
+    "macro-rgba8.bin": {
+      "bytes": 67108864,
+      "sha256": "72e3f360b81f3c8f812800cc309a174ce893d96c80e666c9bf98fca178187b9f",
+      "externalAuditPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle12/density-r8/gpu-audit/macro-rgba8.bin",
+      "originalCachePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle10/rain-work/data/macro-rgba8.bin",
+      "archived": false
+    },
+    "density-r8.bin": {
+      "bytes": 16777216,
+      "sha256": "61364caa2ebfe2fd1b8769b3381ded22ce4648033872d31ec4e5af9c62cabe28",
+      "externalAuditPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle12/density-r8/gpu-audit/density-r8.bin",
+      "originalCachePath": null,
+      "archived": false
+    }
+  },
+  "reconstruction": "Verify original macro byte length and SHA-256; obtain density-r8.bin by raw byte extraction macro[0::4], preserving x-fastest voxel order. No new cloud bake is required while original macro survives. Never populate these two files in this repository archive."
+}

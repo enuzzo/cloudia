@@ -1,0 +1,94 @@
+{
+  "method": "gzip level6 mtime0; original raw bytes unchanged",
+  "externalUncompressedCopies": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle12/density-r8/uncompressed-archive-copies",
+  "files": [
+    {
+      "path": "measurements/near/A1-30s.json.gz",
+      "bytes": 157677,
+      "sha256": "33982d24e82df36c33dae823aa4c7a1ac731a00275e9cf9a50e74a381c2e90d6",
+      "uncompressedPath": "measurements/near/A1-30s.json",
+      "uncompressedBytes": 3671219,
+      "uncompressedSHA256": "d11ad07220c528b86d759f305acaf031d289c31c4af6ea78fc24b85c64cf525a"
+    },
+    {
+      "path": "measurements/near/A2-30s.json.gz",
+      "bytes": 156666,
+      "sha256": "96eef0325ac1ca3cb7ded1ecdfba39c6d69e1c77a45d7b2090f975518e7b6a1b",
+      "uncompressedPath": "measurements/near/A2-30s.json",
+      "uncompressedBytes": 3664278,
+      "uncompressedSHA256": "c0ab7a64380acaa8e60904e1ad72c36c60ae599818cb81350395bd92c3e18f25"
+    },
+    {
+      "path": "measurements/near/B-30s.json.gz",
+      "bytes": 156372,
+      "sha256": "33f3b126216d1771cb404fda1984cb641960cc4f6229876169904acfb735f79f",
+      "uncompressedPath": "measurements/near/B-30s.json",
+      "uncompressedBytes": 3640635,
+      "uncompressedSHA256": "0e5c06fbd3ea7885b9ea1b1f0a4354eb1c84608552ac7942c20961b4382335c7"
+    },
+    {
+      "path": "measurements/near/preliminary-unsettled-start/A2-30s.json.gz",
+      "bytes": 158428,
+      "sha256": "9d8416423c555d2df6bba9d79a2fc27cf0726e02faccc8abd5bef8c82e803c2b",
+      "uncompressedPath": "measurements/near/preliminary-unsettled-start/A2-30s.json",
+      "uncompressedBytes": 3746923,
+      "uncompressedSHA256": "7067b0cdbc61f417a1a4cb5e8d2531f8e2a5bd2c6bb109489b63f0be989d3844"
+    },
+    {
+      "path": "measurements/near/preliminary-unsettled-start/B-30s.json.gz",
+      "bytes": 157228,
+      "sha256": "405708f570a30f24fb613f70d24f0812eadaaacbfad4cd2294e112b249d8516e",
+      "uncompressedPath": "measurements/near/preliminary-unsettled-start/B-30s.json",
+      "uncompressedBytes": 3589951,
+      "uncompressedSHA256": "2fda3dc4f547e6d58866faa6687e493e23edefd27e144f31e53d0bd5192a929f"
+    },
+    {
+      "path": "measurements/rain/A1-30s.json.gz",
+      "bytes": 98198,
+      "sha256": "13518372734139c5a6f84df902d3db10fdff0ec29d5517967764cd5e6ddfbf36",
+      "uncompressedPath": "measurements/rain/A1-30s.json",
+      "uncompressedBytes": 2113151,
+      "uncompressedSHA256": "0d8130992d0328120e3d0cdbd552ca23aefc50c2cae1c652c29f3740b2f56d46"
+    },
+    {
+      "path": "measurements/rain/A2-30s.json.gz",
+      "bytes": 99803,
+      "sha256": "f5071d525c2dd25b5454db536d761096f53803e2a2b0e1ef5f4959b38dd8c328",
+      "uncompressedPath": "measurements/rain/A2-30s.json",
+      "uncompressedBytes": 2105854,
+      "uncompressedSHA256": "67e941e77aab0641d789670b5267b2a6d074639193fcfa1284d39c09359d6709"
+    },
+    {
+      "path": "measurements/rain/B-30s.json.gz",
+      "bytes": 104575,
+      "sha256": "45a30238a4d2fdb49bd97594a2d9d45088bd5b686b761a11e9dd95c806fc3740",
+      "uncompressedPath": "measurements/rain/B-30s.json",
+      "uncompressedBytes": 2240256,
+      "uncompressedSHA256": "3c595116e4b869cc3edf0156a67cf8df60bb5a4d4da8574b97e1f7998ffefbec"
+    },
+    {
+      "path": "v48-browser/main-dry-after-rain-30s.json.gz",
+      "bytes": 402485,
+      "sha256": "34197e862a6119136774e1260e2ebce8e140572a8c02201f879d0018587d48b6",
+      "uncompressedPath": "v48-browser/main-dry-after-rain-30s.json",
+      "uncompressedBytes": 8080859,
+      "uncompressedSHA256": "fb5780959caaaea6f06dad7bc7236e88b1e52f309ded14094fc000a63d4b944a"
+    },
+    {
+      "path": "v48-browser/main-rain-motion-90s.json.gz",
+      "bytes": 279561,
+      "sha256": "2fd6ed17fce6cb5233e7655ad5abd75f4c0fcc0b7d034f6e6db3de5a36e540b4",
+      "uncompressedPath": "v48-browser/main-rain-motion-90s.json",
+      "uncompressedBytes": 6332549,
+      "uncompressedSHA256": "c2f3d453f337f0f60858ed42b40675e21637555e705b9f031babca9cec8822bc"
+    },
+    {
+      "path": "v48-browser/worker-rain-static-30s.json.gz",
+      "bytes": 101900,
+      "sha256": "0ae9d7cc69f810069c967093c2221c79aace5e81308ae45ddb6ecf3936b5edec",
+      "uncompressedPath": "v48-browser/worker-rain-static-30s.json",
+      "uncompressedBytes": 2101402,
+      "uncompressedSHA256": "0774ceaad2912efb26f81e390cc0880bc087ddbaa70694d32ab9c014eb35e6a1"
+    }
+  ]
+}

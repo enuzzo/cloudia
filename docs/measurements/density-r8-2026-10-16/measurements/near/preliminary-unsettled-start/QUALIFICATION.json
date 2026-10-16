@@ -1,0 +1,5 @@
+{
+  "status": "not accepted as settled-state comparison",
+  "cause": "atmosphereTransition at benchmark request was .458375/.451458 rather than1; no snapshot at measured-window start proves settling. Preserve raw reports; repeat B/A2 after DOM live state settles.",
+  "A1": "retained valid settled control at same native scene"
+}

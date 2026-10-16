@@ -1,0 +1,567 @@
+{
+  "kind": "density-r8-raw-sampler-audit",
+  "status": "PASS",
+  "gpuStatus": "completed",
+  "startedAt": "2026-10-16T01:22:25.395Z",
+  "phases": [
+    {
+      "name": "Lettura manifest e sorgenti",
+      "atMs": 0
+    },
+    {
+      "name": "Input: one-r-varying-gba-rgba.bin",
+      "atMs": 9.899999976158142
+    },
+    {
+      "name": "Input: fixture-queries-f32.bin",
+      "atMs": 11.799999952316284
+    },
+    {
+      "name": "Input: one-r-varying-gba-r8.bin",
+      "atMs": 13.200000047683716
+    },
+    {
+      "name": "Input: audit.wgsl",
+      "atMs": 14.299999952316284
+    },
+    {
+      "name": "Input: ramp-checker-varying-gba-r8.bin",
+      "atMs": 15.399999976158142
+    },
+    {
+      "name": "Input: density-r8.bin",
+      "atMs": 16.299999952316284
+    },
+    {
+      "name": "Input: zero-r-varying-gba-rgba.bin",
+      "atMs": 21.600000023841858
+    },
+    {
+      "name": "Input: ramp-checker-varying-gba-rgba.bin",
+      "atMs": 23.100000023841858
+    },
+    {
+      "name": "Input: real-queries-f32.bin",
+      "atMs": 24.399999976158142
+    },
+    {
+      "name": "Input: cloudShader.v46.ts",
+      "atMs": 26.100000023841858
+    },
+    {
+      "name": "Input: macro-rgba8.bin",
+      "atMs": 27.399999976158142
+    },
+    {
+      "name": "Input: zero-r-varying-gba-r8.bin",
+      "atMs": 46.39999997615814
+    },
+    {
+      "name": "Richiesta adapter",
+      "atMs": 103
+    },
+    {
+      "name": "Richiesta device",
+      "atMs": 105.79999995231628
+    },
+    {
+      "name": "Compilazione modulo",
+      "atMs": 108.10000002384186
+    },
+    {
+      "name": "Pipeline compute",
+      "atMs": 111.10000002384186
+    },
+    {
+      "name": "Upload e submit: real-seed72",
+      "atMs": 304.60000002384186
+    },
+    {
+      "name": "Readback: real-seed72",
+      "atMs": 310.2999999523163
+    },
+    {
+      "name": "Validation: real-seed72",
+      "atMs": 325.89999997615814
+    },
+    {
+      "name": "Conteggi: real-seed72",
+      "atMs": 326.10000002384186
+    },
+    {
+      "name": "Upload e submit: zero-r-varying-gba",
+      "atMs": 336.7000000476837
+    },
+    {
+      "name": "Readback: zero-r-varying-gba",
+      "atMs": 336.89999997615814
+    },
+    {
+      "name": "Validation: zero-r-varying-gba",
+      "atMs": 341.89999997615814
+    },
+    {
+      "name": "Conteggi: zero-r-varying-gba",
+      "atMs": 342.10000002384186
+    },
+    {
+      "name": "Upload e submit: one-r-varying-gba",
+      "atMs": 344.10000002384186
+    },
+    {
+      "name": "Readback: one-r-varying-gba",
+      "atMs": 344.2000000476837
+    },
+    {
+      "name": "Validation: one-r-varying-gba",
+      "atMs": 345.7999999523163
+    },
+    {
+      "name": "Conteggi: one-r-varying-gba",
+      "atMs": 345.89999997615814
+    },
+    {
+      "name": "Upload e submit: ramp-checker-varying-gba",
+      "atMs": 347.5
+    },
+    {
+      "name": "Readback: ramp-checker-varying-gba",
+      "atMs": 347.7000000476837
+    },
+    {
+      "name": "Validation: ramp-checker-varying-gba",
+      "atMs": 348.5
+    },
+    {
+      "name": "Conteggi: ramp-checker-varying-gba",
+      "atMs": 348.5
+    },
+    {
+      "name": "Coda finale completata",
+      "atMs": 349.7999999523163
+    }
+  ],
+  "phase": "Coda finale completata",
+  "provenance": {
+    "inputsSHA256": "f01881b1efa9f64cadb1802f73a02a09cbad950b847de0d08dc4040d0b23cd27",
+    "runnerSHA256": "c3cf6c8d441f2b21a1753569ea6e39518d1111b33f273c5e23a6bd3dee4e13c2",
+    "htmlSHA256": "08d76339953418b005bbc1a7c837106bfb214b19329434a3e6a36d8451ad9386",
+    "fileHashes": {
+      "one-r-varying-gba-rgba.bin": "77af54054d77580542a82e95667c48c610ddd7a85e5cc9045607faef99ad5ac9",
+      "fixture-queries-f32.bin": "1923dfcd2818db2a5c362f5aca6126b8f50f949deffd27c1dc4f0375de978f1f",
+      "one-r-varying-gba-r8.bin": "f47a8ec3e9aff2318d896942282ad4fe37d6391c82914f54a5da8a37de1300c6",
+      "audit.wgsl": "756ebcde1d93feddbaf74448a6e3dfc7dd9b5bfa480519ba8768516c7eb1e12a",
+      "ramp-checker-varying-gba-r8.bin": "3da5bfde9b2040901ddaba32df8715071ff0d2f3f26c0f3e0b4feeb91692ae36",
+      "density-r8.bin": "61364caa2ebfe2fd1b8769b3381ded22ce4648033872d31ec4e5af9c62cabe28",
+      "zero-r-varying-gba-rgba.bin": "62a28c3b457ef9786381efa280460701f20d91036687044a4f10c5aea3a11d17",
+      "ramp-checker-varying-gba-rgba.bin": "5b399d8aa6d2f3f0efff8ffe04db9d01bc9a6f073b509c43c1c67b92220c50f1",
+      "real-queries-f32.bin": "36af32183d39bea6726ce67ef33e75f3e559d441fd032901e98c9170a3cb288d",
+      "cloudShader.v46.ts": "b24ce50ad82609723b1f083a2195c07baf388309a3e3cfa102d9b8abef953e3d",
+      "macro-rgba8.bin": "72e3f360b81f3c8f812800cc309a174ce893d96c80e666c9bf98fca178187b9f",
+      "zero-r-varying-gba-r8.bin": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7"
+    },
+    "pins": {
+      "macro": "72e3f360b81f3c8f812800cc309a174ce893d96c80e666c9bf98fca178187b9f",
+      "legacyShader": "b24ce50ad82609723b1f083a2195c07baf388309a3e3cfa102d9b8abef953e3d"
+    },
+    "newBakes": 0
+  },
+  "input": {
+    "datasets": [
+      {
+        "name": "real-seed72",
+        "size": 256,
+        "rgbaFile": "macro-rgba8.bin",
+        "r8File": "density-r8.bin",
+        "queryFile": "real-queries-f32.bin",
+        "queryCount": 53041,
+        "expectedConstant": null
+      },
+      {
+        "name": "zero-r-varying-gba",
+        "size": 16,
+        "rgbaFile": "zero-r-varying-gba-rgba.bin",
+        "r8File": "zero-r-varying-gba-r8.bin",
+        "queryFile": "fixture-queries-f32.bin",
+        "queryCount": 8196,
+        "expectedConstant": 0
+      },
+      {
+        "name": "one-r-varying-gba",
+        "size": 16,
+        "rgbaFile": "one-r-varying-gba-rgba.bin",
+        "r8File": "one-r-varying-gba-r8.bin",
+        "queryFile": "fixture-queries-f32.bin",
+        "queryCount": 8196,
+        "expectedConstant": 1
+      },
+      {
+        "name": "ramp-checker-varying-gba",
+        "size": 16,
+        "rgbaFile": "ramp-checker-varying-gba-rgba.bin",
+        "r8File": "ramp-checker-varying-gba-r8.bin",
+        "queryFile": "fixture-queries-f32.bin",
+        "queryCount": 8196,
+        "expectedConstant": null
+      }
+    ],
+    "groups": {
+      "1": {
+        "queries": 512,
+        "description": "512 exact positive texel centres"
+      },
+      "2": {
+        "queries": 512,
+        "description": "512 exact zero texel centres"
+      },
+      "3": {
+        "queries": 4096,
+        "description": "16-cubed stratified texel centres"
+      },
+      "4": {
+        "queries": 4096,
+        "description": "Halton domain"
+      },
+      "5": {
+        "queries": 32768,
+        "description": "deterministic random near/outside domain"
+      },
+      "6": {
+        "queries": 6144,
+        "description": "f32 ULP neighbours of centres + interpolation planes"
+      },
+      "7": {
+        "queries": 4913,
+        "description": "Cartesian faces/edges/OOB clamp"
+      }
+    },
+    "fixtureGroups": [
+      8,
+      9,
+      10
+    ],
+    "textureContract": {
+      "dimension": "3d",
+      "mipLevelCount": 1,
+      "formats": [
+        "rgba8unorm",
+        "r8unorm"
+      ],
+      "usages": [
+        "TEXTURE_BINDING",
+        "COPY_DST"
+      ],
+      "sampler": {
+        "addressModeUVW": "clamp-to-edge",
+        "minFilter": "linear",
+        "magFilter": "linear",
+        "mipmapFilter": "nearest"
+      },
+      "level": 0
+    },
+    "queryLayout": {
+      "strideBytes": 16,
+      "components": "u,v,w,group all little-endian f32"
+    },
+    "outputLayout": {
+      "strideBytes": 48,
+      "samplesF32ByteOffset": 0,
+      "bitsU32ByteOffset": 16,
+      "echoF32ByteOffset": 32
+    },
+    "memory": {
+      "realTexturePayloadBytes": 83886080,
+      "fixtureTexturePayloadBytes": 20480,
+      "queryBuffers": "16N input +48N storage output +48N+16 readback +16 counters; textures released between datasets"
+    }
+  },
+  "adapter": {
+    "vendor": "apple",
+    "architecture": "metal-3",
+    "device": "",
+    "description": "",
+    "isFallbackAdapter": null
+  },
+  "device": {
+    "features": [
+      "core-features-and-limits"
+    ],
+    "limits": {
+      "maxTextureDimension3D": 2048,
+      "maxStorageBufferBindingSize": 134217728,
+      "maxComputeWorkgroupsPerDimension": 65535
+    }
+  },
+  "compilationMessages": [],
+  "datasets": [
+    {
+      "name": "real-seed72",
+      "size": 256,
+      "queryCount": 53041,
+      "querySHA256": "36af32183d39bea6726ce67ef33e75f3e559d441fd032901e98c9170a3cb288d",
+      "rgbaSHA256": "72e3f360b81f3c8f812800cc309a174ce893d96c80e666c9bf98fca178187b9f",
+      "r8SHA256": "61364caa2ebfe2fd1b8769b3381ded22ce4648033872d31ec4e5af9c62cabe28",
+      "outputSHA256": "d43305c114b1830541360160bd042769746259548097512c205dc84b57e5eefd",
+      "pairsSHA256": "875e1898a9bdb1c91ea56d24d95e19ef4e7a5d2f70e72ddb13f0f23b0fe30e33",
+      "summary": {
+        "queries": 53041,
+        "bitMismatches": 0,
+        "nonfinite": 0,
+        "outsideUnit": 0,
+        "echoMismatches": 0,
+        "gpuFlagMismatches": 0,
+        "constantFixtureMismatches": 0,
+        "zeroPairs": 50263,
+        "positivePairs": 2778,
+        "fractionalPairs": 2778,
+        "maxAbsDifference": 0,
+        "maxULPDifference": 0,
+        "groups": {
+          "1": {
+            "queries": 512,
+            "bitMismatches": 0,
+            "zeroPairs": 0,
+            "positivePairs": 512,
+            "fractionalPairs": 512
+          },
+          "2": {
+            "queries": 512,
+            "bitMismatches": 0,
+            "zeroPairs": 512,
+            "positivePairs": 0,
+            "fractionalPairs": 0
+          },
+          "3": {
+            "queries": 4096,
+            "bitMismatches": 0,
+            "zeroPairs": 3893,
+            "positivePairs": 203,
+            "fractionalPairs": 203
+          },
+          "4": {
+            "queries": 4096,
+            "bitMismatches": 0,
+            "zeroPairs": 3875,
+            "positivePairs": 221,
+            "fractionalPairs": 221
+          },
+          "5": {
+            "queries": 32768,
+            "bitMismatches": 0,
+            "zeroPairs": 31227,
+            "positivePairs": 1541,
+            "fractionalPairs": 1541
+          },
+          "6": {
+            "queries": 6144,
+            "bitMismatches": 0,
+            "zeroPairs": 5844,
+            "positivePairs": 300,
+            "fractionalPairs": 300
+          },
+          "7": {
+            "queries": 4913,
+            "bitMismatches": 0,
+            "zeroPairs": 4912,
+            "positivePairs": 1,
+            "fractionalPairs": 1
+          }
+        },
+        "firstDifferences": [],
+        "gpuCounters": {
+          "processed": 53041,
+          "mismatches": 0,
+          "nonfinite": 0,
+          "outside": 0
+        },
+        "counterAgreement": true,
+        "coverage": true,
+        "passed": true
+      }
+    },
+    {
+      "name": "zero-r-varying-gba",
+      "size": 16,
+      "queryCount": 8196,
+      "querySHA256": "1923dfcd2818db2a5c362f5aca6126b8f50f949deffd27c1dc4f0375de978f1f",
+      "rgbaSHA256": "62a28c3b457ef9786381efa280460701f20d91036687044a4f10c5aea3a11d17",
+      "r8SHA256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+      "outputSHA256": "23029d7c133050484c584465ed4c9551c6720ac97f642329ae02acba7b62f562",
+      "pairsSHA256": "a2b9859d8ad584f8abc932b96c7c433d6f5f0ee0cc2d2cbda828fc6dfcd3e6b1",
+      "summary": {
+        "queries": 8196,
+        "bitMismatches": 0,
+        "nonfinite": 0,
+        "outsideUnit": 0,
+        "echoMismatches": 0,
+        "gpuFlagMismatches": 0,
+        "constantFixtureMismatches": 0,
+        "zeroPairs": 8196,
+        "positivePairs": 0,
+        "fractionalPairs": 0,
+        "maxAbsDifference": 0,
+        "maxULPDifference": 0,
+        "groups": {
+          "8": {
+            "queries": 4096,
+            "bitMismatches": 0,
+            "zeroPairs": 4096,
+            "positivePairs": 0,
+            "fractionalPairs": 0
+          },
+          "9": {
+            "queries": 4,
+            "bitMismatches": 0,
+            "zeroPairs": 4,
+            "positivePairs": 0,
+            "fractionalPairs": 0
+          },
+          "10": {
+            "queries": 4096,
+            "bitMismatches": 0,
+            "zeroPairs": 4096,
+            "positivePairs": 0,
+            "fractionalPairs": 0
+          }
+        },
+        "firstDifferences": [],
+        "gpuCounters": {
+          "processed": 8196,
+          "mismatches": 0,
+          "nonfinite": 0,
+          "outside": 0
+        },
+        "counterAgreement": true,
+        "coverage": true,
+        "passed": true
+      }
+    },
+    {
+      "name": "one-r-varying-gba",
+      "size": 16,
+      "queryCount": 8196,
+      "querySHA256": "1923dfcd2818db2a5c362f5aca6126b8f50f949deffd27c1dc4f0375de978f1f",
+      "rgbaSHA256": "77af54054d77580542a82e95667c48c610ddd7a85e5cc9045607faef99ad5ac9",
+      "r8SHA256": "f47a8ec3e9aff2318d896942282ad4fe37d6391c82914f54a5da8a37de1300c6",
+      "outputSHA256": "fce7a51c2fca9b20883436bad2da400dede834c672c35802ece894776ace64dd",
+      "pairsSHA256": "52ebb41d5340d58d8f80130fb517da75d00131d46b8dd3b02dcb1ec6087cd9d8",
+      "summary": {
+        "queries": 8196,
+        "bitMismatches": 0,
+        "nonfinite": 0,
+        "outsideUnit": 0,
+        "echoMismatches": 0,
+        "gpuFlagMismatches": 0,
+        "constantFixtureMismatches": 0,
+        "zeroPairs": 0,
+        "positivePairs": 8196,
+        "fractionalPairs": 0,
+        "maxAbsDifference": 0,
+        "maxULPDifference": 0,
+        "groups": {
+          "8": {
+            "queries": 4096,
+            "bitMismatches": 0,
+            "zeroPairs": 0,
+            "positivePairs": 4096,
+            "fractionalPairs": 0
+          },
+          "9": {
+            "queries": 4,
+            "bitMismatches": 0,
+            "zeroPairs": 0,
+            "positivePairs": 4,
+            "fractionalPairs": 0
+          },
+          "10": {
+            "queries": 4096,
+            "bitMismatches": 0,
+            "zeroPairs": 0,
+            "positivePairs": 4096,
+            "fractionalPairs": 0
+          }
+        },
+        "firstDifferences": [],
+        "gpuCounters": {
+          "processed": 8196,
+          "mismatches": 0,
+          "nonfinite": 0,
+          "outside": 0
+        },
+        "counterAgreement": true,
+        "coverage": true,
+        "passed": true
+      }
+    },
+    {
+      "name": "ramp-checker-varying-gba",
+      "size": 16,
+      "queryCount": 8196,
+      "querySHA256": "1923dfcd2818db2a5c362f5aca6126b8f50f949deffd27c1dc4f0375de978f1f",
+      "rgbaSHA256": "5b399d8aa6d2f3f0efff8ffe04db9d01bc9a6f073b509c43c1c67b92220c50f1",
+      "r8SHA256": "3da5bfde9b2040901ddaba32df8715071ff0d2f3f26c0f3e0b4feeb91692ae36",
+      "outputSHA256": "350a616bd734e894d364633acff0f2dfd0fec0cf1ce55f91bdf1c182f24c51b5",
+      "pairsSHA256": "3b60bf8c597e2d12e8b0f08bfd14188c23014f1a0772f0acb7b8c76dc7d5e03a",
+      "summary": {
+        "queries": 8196,
+        "bitMismatches": 0,
+        "nonfinite": 0,
+        "outsideUnit": 0,
+        "echoMismatches": 0,
+        "gpuFlagMismatches": 0,
+        "constantFixtureMismatches": 0,
+        "zeroPairs": 35,
+        "positivePairs": 8161,
+        "fractionalPairs": 8161,
+        "maxAbsDifference": 0,
+        "maxULPDifference": 0,
+        "groups": {
+          "8": {
+            "queries": 4096,
+            "bitMismatches": 0,
+            "zeroPairs": 0,
+            "positivePairs": 4096,
+            "fractionalPairs": 4096
+          },
+          "9": {
+            "queries": 4,
+            "bitMismatches": 0,
+            "zeroPairs": 1,
+            "positivePairs": 3,
+            "fractionalPairs": 3
+          },
+          "10": {
+            "queries": 4096,
+            "bitMismatches": 0,
+            "zeroPairs": 34,
+            "positivePairs": 4062,
+            "fractionalPairs": 4062
+          }
+        },
+        "firstDifferences": [],
+        "gpuCounters": {
+          "processed": 8196,
+          "mismatches": 0,
+          "nonfinite": 0,
+          "outside": 0
+        },
+        "counterAgreement": true,
+        "coverage": true,
+        "passed": true
+      }
+    }
+  ],
+  "uncapturedErrors": [],
+  "wallMs": 350,
+  "cleanup": {
+    "allCreatedBufferDestroyCalled": true,
+    "allCreatedTextureDestroyCalled": true,
+    "deviceDestroyCalled": true,
+    "lateDevicePromiseCleanupInstalled": true
+  },
+  "qualification": "Finite raw WebGPU compute comparison of exact extracted R8 and original RGBA8.r at identical input f32 UV, shared linear/clamp/mip0 sampler. Initial acceptance requires identical output f32 bits. No Three.js pipeline/binding, renderer frame, lifecycle, throughput, arbitrary UV/backend or universal equivalence claim.",
+  "integrity": {
+    "algorithm": "SHA-256",
+    "payloadWithoutIntegritySHA256": "b73f07f77da494a184743f7273e6ded51ac9187774a46163d3646b4bc5819051"
+  }
+}

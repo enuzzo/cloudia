@@ -242,8 +242,13 @@ const rainIntegrationSource=integrationSource
   )
 ;
 /** Compile both weather choice and diagnostic; no narrow binding exists in dry mode. */
-export function createCloudIntegrator(mode=0,useNarrow=false){
+export function createCloudIntegrator(mode=0,useNarrow=false,useDensityR8=false){
   const selected=Number.isInteger(mode)&&mode>=0&&mode<=5?mode:0;
-  return wgslFn((useNarrow?rainIntegrationSource:integrationSource).replaceAll('probeMode',`${selected}.0`),[film,motion,channel,landscape,media,precipitation]);
+  let source=useNarrow?rainIntegrationSource:integrationSource;
+  if(useDensityR8)source=source
+    .replace('volumeSampler: sampler,','volumeSampler: sampler, densityR8: texture_3d<f32>,')
+    .replace('textureSampleLevel(volume,volumeSampler,coord+warp/vec3<f32>(10.0,8.5,7.0),0.0).r',
+      'textureSampleLevel(densityR8,volumeSampler,coord+warp/vec3<f32>(10.0,8.5,7.0),0.0).r');
+  return wgslFn(source.replaceAll('probeMode',`${selected}.0`),[film,motion,channel,landscape,media,precipitation]);
 }
 

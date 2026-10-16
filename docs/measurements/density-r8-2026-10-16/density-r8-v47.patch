@@ -1,0 +1,554 @@
+--- a/src/cumulonimbus/GPUSceneEngine.ts
++++ b/src/cumulonimbus/GPUSceneEngine.ts
+@@ -1,5 +1,5 @@
+ import { DataTexture, DataUtils, Vector4, Data3DTexture, LinearFilter, MeshBasicNodeMaterial, NoColorSpace, QuadMesh,
+-  RGBAFormat, RGFormat, RedFormat, NearestFilter, RepeatWrapping, UnsignedByteType, HalfFloatType, Storage3DTexture, Vector2, Vector3, WebGPURenderer } from 'three/webgpu';
++  RGBAFormat, RGFormat, RedFormat, NearestFilter, RepeatWrapping, ClampToEdgeWrapping, UnsignedByteType, HalfFloatType, Storage3DTexture, Vector2, Vector3, WebGPURenderer } from 'three/webgpu';
+ import { Fn, instanceIndex, vec3, wgslFn, storageTexture3D, textureStore, texture3D, texture, uniform, uv } from 'three/tsl';
+ import {WeatherState,WEATHER_SCENES,type AtmosphereIntent,type WeatherScene} from './weatherState';
+ import {solarDirection} from './sun';
+@@ -21,6 +21,7 @@
+ import {TimestampBatchMeasurement,type TimestampDrawCounters} from './timestampBatchMeasurement';
+ import type {RenderHost,Viewport,RenderEvent} from './renderProtocol';
+ import type {NarrowCloudVolume} from './narrowCloud';
++import {readDensityR8,type DensityR8Packet} from './densityR8';
+ 
+ export const QUALITY = {
+   native: {label:'Alta · 100% / 128 passi', scale:1, steps:128},
+@@ -28,7 +29,7 @@
+   balanced: {label:'Fluida · 75% / 96 passi', scale:.75, steps:96},
+ } as const;
+ export type Quality = keyof typeof QUALITY;
+-type CloudTextures = {source:NarrowCloudVolume;macro:Data3DTexture;sunset:Data3DTexture;detail:Data3DTexture;narrow:Data3DTexture;supportBounds:CloudVolume['supportBounds']};
++type CloudTextures = {source:NarrowCloudVolume&DensityR8Packet;macro:Data3DTexture;density:Data3DTexture|null;sunset:Data3DTexture;detail:Data3DTexture;narrow:Data3DTexture;supportBounds:CloudVolume['supportBounds']};
+ 
+ export class GPUSceneEngine {
+   private renderer: WebGPURenderer | null = null;
+@@ -38,6 +39,8 @@
+   private volume: Data3DTexture | null = null;
+   private detailVolume: Data3DTexture | null = null;
+   private narrowCloudVolume:Data3DTexture|null=null;
++  private densityR8Volume:Data3DTexture|null=null;
++  private integratorUsesDensityR8=false;
+   private integratorUsesNarrow:boolean|null=null;
+   private cameraVolume:CloudVolume|null=null;
+   private approachSurface=.4;private approachTime=-1000;
+@@ -247,17 +250,17 @@
+     }
+   }
+   private disposeCloudTextures(textures:CloudTextures){
+-    textures.macro.dispose();textures.detail.dispose();textures.sunset.dispose();textures.narrow.dispose();
++    textures.macro.dispose();textures.detail.dispose();textures.sunset.dispose();textures.narrow.dispose();textures.density?.dispose();
+   }
+   private installVolume(textures: CloudTextures) {
+-    const oldMaterial=this.material, oldVolume=this.volume, oldDetail=this.detailVolume,oldSunset=this.sunsetVolume,oldNarrow=this.narrowCloudVolume;
++    const oldMaterial=this.material, oldVolume=this.volume, oldDetail=this.detailVolume,oldSunset=this.sunsetVolume,oldNarrow=this.narrowCloudVolume,oldDensity=this.densityR8Volume;
+     this.cameraVolume=textures.source;
+     const rainMap=precipitationFootprint(textures.source);
+     this.rainTexture.image.data=rainMap;
+     this.rainBounds.value.fromArray(precipitationSourceBounds(rainMap)??[0,0,0,0]);
+     this.rainTexture.minFilter=LinearFilter;this.rainTexture.magFilter=LinearFilter;this.rainTexture.colorSpace=NoColorSpace;this.rainTexture.generateMipmaps=false;this.rainTexture.needsUpdate=true;
+     this.approachTime=-1000;this.approachProbe=null;this.approachFieldTime=NaN;
+-    this.volume=textures.macro;this.detailVolume=textures.detail;this.sunsetVolume=textures.sunset;this.narrowCloudVolume=textures.narrow; this.material=new MeshBasicNodeMaterial();
++    this.volume=textures.macro;this.detailVolume=textures.detail;this.sunsetVolume=textures.sunset;this.narrowCloudVolume=textures.narrow;this.densityR8Volume=textures.density; this.material=new MeshBasicNodeMaterial();
+     this.updateAtmosphere();
+     this.iceRange.value.fromArray(iceHeights(this.seed));
+     this.cloudCenter.fromArray(textures.supportBounds.min).add(new Vector3().fromArray(textures.supportBounds.max)).multiplyScalar(.5);
+@@ -275,7 +278,7 @@
+     this.configureIntegrator();
+     this.quad=new QuadMesh(this.material);
+     this.renderer?.compute(this.interpolateFlow); // Initialize this seed even for the frozen diagnostic control.
+-    oldMaterial?.dispose(); oldVolume?.dispose();oldDetail?.dispose();oldSunset?.dispose();oldNarrow?.dispose();
++    oldMaterial?.dispose(); oldVolume?.dispose();oldDetail?.dispose();oldSunset?.dispose();oldNarrow?.dispose();oldDensity?.dispose();
+   }
+   private configureIntegrator(){
+     const useNarrow=this.weatherState.targetRain>.001||this.weatherState.rain>.001;
+@@ -288,11 +291,13 @@
+     const parameters={inspection:this.inspection,ground:this.ground,rainBounds:this.rainBounds,rainMap:rainNode,rainSampler:rainNode,sunsetLight:sunsetNode,sunsetSampler:sunsetNode,sunsetAmount:this.sunsetAmount,precipitationTime:this.precipitationTime,atmosphereBlend:this.atmosphereBlend,skyFrom:skyFromNode,skyFromSampler:skyFromNode,skyLUT:skyNode,skySampler:skyNode,solarColor:this.solarColor,ambientColor:this.ambientColor,weather:this.weather,forcing:this.forcing,wind:this.wind,flash:this.flash,flashTop:this.flashTop,flashBend:this.flashBend,flashEnd:this.flashEnd,flashBranch:this.flashBranch,uv:uv(),volume:volumeNode,volumeSampler:volumeNode,detail:detailNode,detailSampler:detailNode,flow:flowNode,flowSampler:flowNode,iceRange:this.iceRange,
+       origin:this.origin,forward:this.forward,right:this.right,up:this.up,aspect:this.aspect,tanFov:uniform(.2867),
+       stepSize:this.stepSize,emptyStep:this.emptyStep,resolution:this.resolution,drift:this.drift,growth:this.growth,supportMin:this.supportMin,supportMax:this.supportMax,sun:this.sun,lightSide:this.lightSide,extinction:uniform(EXTINCTION),iceExtinction:uniform(ICE_EXTINCTION)};
+-    const integrate=createCloudIntegrator(this.diagnostic.value,useNarrow);
+-    if(useNarrow&&this.narrowCloudVolume)this.material.fragmentNode=integrate({...parameters,narrowCloud:texture3D(this.narrowCloudVolume)});
+-    else this.material.fragmentNode=integrate(parameters);
++    const useDensityR8=this.densityR8Volume!==null;
++    const densityParameters=this.densityR8Volume?{...parameters,densityR8:texture3D(this.densityR8Volume)}:parameters;
++    const integrate=createCloudIntegrator(this.diagnostic.value,useNarrow,useDensityR8);
++    if(useNarrow&&this.narrowCloudVolume)this.material.fragmentNode=integrate({...densityParameters,narrowCloud:texture3D(this.narrowCloudVolume)});
++    else this.material.fragmentNode=integrate(densityParameters);
+     this.material.needsUpdate=true;
+-    this.integratorUsesNarrow=useNarrow;
++    this.integratorUsesNarrow=useNarrow;this.integratorUsesDensityR8=useDensityR8;
+   }
+   private syncIntegratorVariant(){
+     if(this.ready&&this.integratorUsesNarrow!==(this.weatherState.targetRain>.001||this.weatherState.rain>.001))this.configureIntegrator();
+@@ -326,7 +331,7 @@
+     return new Promise((resolve,reject)=>{
+       const worker=this.worker!;
+       this.rejectVolume=reject;
+-      worker.onmessage=(event: MessageEvent<{progress?:number;volume?:NarrowCloudVolume;error?:string}>)=>{
++      worker.onmessage=(event: MessageEvent<{progress?:number;volume?:NarrowCloudVolume&DensityR8Packet;error?:string}>)=>{
+         if(this.destroyed || this.deviceLost) return;
+         if(event.data.progress!==undefined) this.text('status',`Formazione della nube e della luce · ${Math.round(event.data.progress*100)}%`);
+         if(event.data.error) { worker.terminate(); this.worker=null; this.rejectVolume=null; reject(new Error(event.data.error)); }
+@@ -351,7 +356,16 @@
+           narrowTexture.format=RedFormat;narrowTexture.type=UnsignedByteType;narrowTexture.colorSpace=NoColorSpace;
+           narrowTexture.minFilter=NearestFilter;narrowTexture.magFilter=NearestFilter;narrowTexture.unpackAlignment=1;
+           narrowTexture.generateMipmaps=false;narrowTexture.needsUpdate=true;
+-          worker.terminate(); this.worker=null; this.rejectVolume=null; resolve({source:event.data.volume,macro:texture,detail:detailTexture,sunset:sunsetTexture,narrow:narrowTexture,supportBounds:event.data.volume.supportBounds});
++          const densityPayload=readDensityR8(event.data.volume);
++          let densityTexture:Data3DTexture|null=null;
++          if(densityPayload){
++            densityTexture=new Data3DTexture(densityPayload.data,size,size,size);
++            densityTexture.format=RedFormat;densityTexture.type=UnsignedByteType;densityTexture.colorSpace=NoColorSpace;
++            densityTexture.minFilter=LinearFilter;densityTexture.magFilter=LinearFilter;densityTexture.unpackAlignment=1;
++            densityTexture.wrapS=ClampToEdgeWrapping;densityTexture.wrapT=ClampToEdgeWrapping;densityTexture.wrapR=ClampToEdgeWrapping;
++            densityTexture.generateMipmaps=false;densityTexture.flipY=false;densityTexture.needsUpdate=true;
++          }
++          worker.terminate(); this.worker=null; this.rejectVolume=null; resolve({source:event.data.volume,macro:texture,density:densityTexture,detail:detailTexture,sunset:sunsetTexture,narrow:narrowTexture,supportBounds:event.data.volume.supportBounds});
+         }
+       };
+       worker.onerror=()=>{ worker.terminate(); this.worker=null; this.rejectVolume=null; reject(new Error('La generazione del volume è fallita. Ricarica la scena.')); };
+@@ -589,6 +603,15 @@
+       this.text('result',`Misura in corso · ${Math.ceil(remaining)} s · ${this.measurement.intervals.length} frame raccolti`);
+     }
+   }
++  private densitySamplingReport(){
++    const usesR8=this.integratorUsesDensityR8&&this.densityR8Volume!==null;
++    const image=(usesR8?this.densityR8Volume:this.volume)?.image;
++    const extraBytes=this.densityR8Volume?.image.data?.byteLength??0;
++    return {path:usesR8?'r8unorm-extracted-r':'macro-rgba8-r',format:usesR8?'r8unorm':'rgba8unorm',
++      dimensions:image?[image.width,image.height,image.depth]:null,textureBytes:image?.data?.byteLength??0,
++      extraCpuPayloadBytes:extraBytes,extraGpuPayloadBytes:extraBytes,
++      sampling:'same volumeSampler; linear/clamp-to-edge/mip0; NoColorSpace',fallback:usesR8?null:'missing or invalid densityR8 payload'};
++  }
+   private startBenchmark(duration: number) {
+     if(!this.ready || !this.visible || this.benchmarkCompletion) return;
+     if(this.dirtySize) this.applySize();
+@@ -601,7 +624,8 @@
+     this.benchmarkContext={date:new Date().toISOString(),backend:'WebGPU',adapter:this.adapterInfo,threeRevision:'186',quality:this.quality,
+       output:[this.outputWidth,this.outputHeight],internal:[this.internalWidth,this.internalHeight],nominalSteps:QUALITY[this.quality].steps,
+       cloudExtinctionPerKm:EXTINCTION,iceExtinctionPerKm:ICE_EXTINCTION,mediaIntegration:'co-located cloud/rain exponential segments',virgaReachVariation:'broad advected sheets, 0.7–1.3 of weak fall distance',precipitationMaxStepKm:RAIN_SAMPLE_STEP,precipitationExtinctionPerKm:RAIN_EXTINCTION,precipitationSourceBounds:this.rainBounds.value.toArray(),
+-      rendererVersion:'observatory-v46-compiled-rain-mask-trial',navigationVersion:'filtered-field-terrain-clearance-v3',terrainCameraClearanceKm:CAMERA_TERRAIN_CLEARANCE_KM,terrainHash:TERRAIN_HASH_ID,skyCalculation:'cached dedicated worker',skyPending:this.skyPending,solarVisibility:'256-cubed day + RG8 low-sun endpoints',sunDirection:this.sun.value.toArray(),sunsetAmount:this.sunsetAmount.value,extraSunsetTextureBytes:VOLUME_RESOLUTION**3*2,probeImplementation:'compile-time specialization',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{comparisonSurfaceKm:this.comparisonSurface,comparisonTargetKm:this.comparisonTarget,probeSkipped:this.comparisonSurface!==null,approach:this.view.approach,origin:this.origin.value.toArray(),probeFlow:'16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively',probeFieldBytes:this.approachField.byteLength,surfaceEstimateKm:this.comparisonSurface===null?this.approachSurface:null,probe:this.approachProbe,probeAgeMs:this.approachProbe?performance.now()-this.approachTime:null,altitudeKm:this.origin.value.y+4,ground:this.ground.value,yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
++      rendererVersion:'observatory-v47-density-r8-trial',navigationVersion:'filtered-field-terrain-clearance-v3',terrainCameraClearanceKm:CAMERA_TERRAIN_CLEARANCE_KM,terrainHash:TERRAIN_HASH_ID,skyCalculation:'cached dedicated worker',skyPending:this.skyPending,solarVisibility:'256-cubed day + RG8 low-sun endpoints',sunDirection:this.sun.value.toArray(),sunsetAmount:this.sunsetAmount.value,extraSunsetTextureBytes:VOLUME_RESOLUTION**3*2,probeImplementation:'compile-time specialization',ablation:this.diagnosticName,ablationWarning:this.diagnostic.value?'Diagnostic only; output/workload differs. Costs are not additive.':null,executionThread:this.host.thread,clockSample:this.clockSample,skippedFramesScope:'includes warmup',profiling:this.profiling,timingMode:this.timingMode,automaticComputeReadback:this.timingMode==='render',maxFramesInFlight:this.frameLimit||null,skippedFramesAtStart:this.skippedFrames,queueSampling:this.frameLimit?'after-each-submitted-frame':'every-500ms-in-queue-mode',flowMode:this.frozenFlow?'frozen':'full',simulationTimeStart:this.simulationTime,motionModel:'16-cubed analytic updraft/downdraft/outflow/dispersal, inverse height-dependent shear, co-deformed approximate light',supportBounds:{min:this.supportMin.value.toArray(),max:this.supportMax.value.toArray()},flashCountStart:this.flashSerial,camera:{comparisonSurfaceKm:this.comparisonSurface,comparisonTargetKm:this.comparisonTarget,probeSkipped:this.comparisonSurface!==null,approach:this.view.approach,origin:this.origin.value.toArray(),probeFlow:'16-cubed half-float CPU reference, filtered; dynamic dispersal/micro erosion omitted conservatively',probeFieldBytes:this.approachField.byteLength,surfaceEstimateKm:this.comparisonSurface===null?this.approachSurface:null,probe:this.approachProbe,probeAgeMs:this.approachProbe?performance.now()-this.approachTime:null,altitudeKm:this.origin.value.y+4,ground:this.ground.value,yaw:this.view.yaw,pitch:this.view.pitch,target:this.viewFocus.toArray()},weather:{wind:this.windStrength,dispersion:this.dispersal.amount,sky:this.skyMode,rain:this.weatherState.rain,atmosphereTransition:this.atmosphereProgress,speed:this.speed,autoLightning:this.stormAuto,distanceKm:this.stormDistance,flashPreview:this.flashPreview},outputMode:this.outputMode,emptyStepWorld:this.emptyStep.value,volume:[VOLUME_RESOLUTION,VOLUME_RESOLUTION,VOLUME_RESOLUTION],detailVolume:[DETAIL_RESOLUTION,DETAIL_RESOLUTION,DETAIL_RESOLUTION],seed:this.seed,shape:cloudParameters(this.seed),sun:this.side===0?'left':'right',orbit:this.orbit,paused:this.paused,
++      densitySamplingStart:this.densitySamplingReport(),
+       narrowCloudSkip:{method:'point-nearest-after-flow-v3-weather-specialization-trial',specialization:this.integratorUsesNarrow?'rain':'dry',boundInIntegrator:this.integratorUsesNarrow===true,selection:'targetRain > 0.001 or actual rain > 0.001; dry uses original WGSL signature',resolution:this.narrowCloudVolume?[this.narrowCloudVolume.image.width,this.narrowCloudVolume.image.height,this.narrowCloudVolume.image.depth]:null,extraMaskBytes:this.narrowCloudVolume?.image.data?.byteLength??0,unqualifiedPayload:'fully occupied compatibility mask'},
+       clockStateStart:{forcingTime:this.forcingTime,weatherTime:this.weatherTime,precipitationUniformTime:this.precipitationTime.value},
+       userAgent:navigator.userAgent,devicePixelRatio:this.viewport.dpr,
+@@ -613,7 +637,7 @@
+     const run=this.measurement,prefix=this.queuePrefix,batchRun=this.timestampBatch,generation=this.benchmarkGeneration;
+     if(!run?.result||this.benchmarkCompletion)return;
+     const stats=run.result,gpu=run.gpuSamplesMs,cpu=run.cpuSamplesMs;
+-    const legacy={...this.benchmarkContext,simulationTimeEnd:this.simulationTime,narrowCloudSpecializationEnd:this.integratorUsesNarrow?'rain':'dry',flashCountEnd:this.flashSerial,skippedFrames:this.skippedFrames-(this.benchmarkContext.skippedFramesAtStart as number),emptyStepWorldEnd:this.emptyStep.value,stats,
++    const legacy={...this.benchmarkContext,densitySamplingEnd:this.densitySamplingReport(),simulationTimeEnd:this.simulationTime,narrowCloudSpecializationEnd:this.integratorUsesNarrow?'rain':'dry',flashCountEnd:this.flashSerial,skippedFrames:this.skippedFrames-(this.benchmarkContext.skippedFramesAtStart as number),emptyStepWorldEnd:this.emptyStep.value,stats,
+       clockStateEnd:{forcingTime:this.forcingTime,weatherTime:this.weatherTime,precipitationUniformTime:this.precipitationTime.value},
+       gpu:summarizeSamples(gpu),cpu:summarizeSamples(cpu),gpuCompute:summarizeSamples(run.computeSamplesMs),queueCompletion:summarizeSamples(run.queueSamplesMs),
+       rafDispatch:summarizeSamples(run.dispatchSamplesMs),cpuCompute:summarizeSamples(run.cpuComputeSamplesMs),cpuRender:summarizeSamples(run.cpuRenderSamplesMs),
+@@ -730,7 +754,7 @@
+       await this.queuePromise;
+       await Promise.all(this.frameCompletions);
+       this.releasingGPU=true;
+-      this.skyRequest++;this.skyCache.destroy();this.rainTexture.dispose();this.cameraVolume=null;this.material?.dispose(); this.volume?.dispose();this.detailVolume?.dispose();this.sunsetVolume?.dispose();this.narrowCloudVolume?.dispose();this.currentFlow.dispose();this.skyTexture.dispose();this.skyFromTexture.dispose();this.interpolateFlow.dispose(); this.renderer?.dispose(); this.device?.destroy();
++      this.skyRequest++;this.skyCache.destroy();this.rainTexture.dispose();this.cameraVolume=null;this.material?.dispose(); this.volume?.dispose();this.detailVolume?.dispose();this.sunsetVolume?.dispose();this.narrowCloudVolume?.dispose();this.densityR8Volume?.dispose();this.currentFlow.dispose();this.skyTexture.dispose();this.skyFromTexture.dispose();this.interpolateFlow.dispose(); this.renderer?.dispose(); this.device?.destroy();
+     })();
+     return this.cleanup;
+   }
+--- a/src/cumulonimbus/cloudShader.ts
++++ b/src/cumulonimbus/cloudShader.ts
+@@ -242,8 +242,13 @@
+   )
+ ;
+ /** Compile both weather choice and diagnostic; no narrow binding exists in dry mode. */
+-export function createCloudIntegrator(mode=0,useNarrow=false){
++export function createCloudIntegrator(mode=0,useNarrow=false,useDensityR8=false){
+   const selected=Number.isInteger(mode)&&mode>=0&&mode<=5?mode:0;
+-  return wgslFn((useNarrow?rainIntegrationSource:integrationSource).replaceAll('probeMode',`${selected}.0`),[film,motion,channel,landscape,media,precipitation]);
++  let source=useNarrow?rainIntegrationSource:integrationSource;
++  if(useDensityR8)source=source
++    .replace('volumeSampler: sampler,','volumeSampler: sampler, densityR8: texture_3d<f32>,')
++    .replace('textureSampleLevel(volume,volumeSampler,coord+warp/vec3<f32>(10.0,8.5,7.0),0.0).r',
++      'textureSampleLevel(densityR8,volumeSampler,coord+warp/vec3<f32>(10.0,8.5,7.0),0.0).r');
++  return wgslFn(source.replaceAll('probeMode',`${selected}.0`),[film,motion,channel,landscape,media,precipitation]);
+ }
+ 
+--- a/src/cumulonimbus/cloudShader.test.ts
++++ b/src/cumulonimbus/cloudShader.test.ts
+@@ -6,8 +6,8 @@
+ });
+ import {wgslFn} from 'three/tsl';
+ import {createCloudIntegrator} from './cloudShader';
+-const source=(mode=0,useNarrow=false)=>{
+-  createCloudIntegrator(mode,useNarrow);
++const source=(mode=0,useNarrow=false,useDensityR8=false)=>{
++  createCloudIntegrator(mode,useNarrow,useDensityR8);
+   const code=vi.mocked(wgslFn).mock.calls.at(-1)?.[0];
+   if(typeof code!=='string')throw new Error('Expected the WGSL integrator source.');
+   return code;
+@@ -38,4 +38,16 @@
+     }
+     expect(source(-1)).toBe(source());expect(source(6)).toBe(source());
+   });
++  it('changes only the warped-density texture in every R8 weather/diagnostic specialization',()=>{
++    for(const narrow of [false,true])for(let mode=0;mode<=5;mode++){
++      const candidate=source(mode,narrow,true);
++      expect(candidate).toContain('let voxel = textureSampleLevel(volume,volumeSampler,coord,0.0);');
++      const restored=candidate
++        .replace('volumeSampler: sampler, densityR8: texture_3d<f32>,','volumeSampler: sampler,')
++        .replace('textureSampleLevel(densityR8,volumeSampler,coord+warp/vec3<f32>(10.0,8.5,7.0),0.0).r',
++          'textureSampleLevel(volume,volumeSampler,coord+warp/vec3<f32>(10.0,8.5,7.0),0.0).r');
++      expect(restored).toBe(source(mode,narrow));
++      expect(candidate).not.toBe(restored);
++    }
++  });
+ });
+--- a/src/cumulonimbus/lifecycle.test.ts
++++ b/src/cumulonimbus/lifecycle.test.ts
+@@ -57,10 +57,11 @@
+   },QuadMesh:class {render(renderer:MockRendererControl){control.render(renderer);renderer.recordRenderPasses();}}};
+ });
+ import { CumulonimbusApp } from './CumulonimbusApp';
+-import { Data3DTexture,NearestFilter,NoColorSpace,RedFormat,UnsignedByteType } from 'three/webgpu';
++import { Data3DTexture,NearestFilter,LinearFilter,ClampToEdgeWrapping,NoColorSpace,RedFormat,UnsignedByteType } from 'three/webgpu';
+ import * as cloudShader from './cloudShader';
+ import type { CloudVolume } from './volume';
+ import type {NarrowCloudMask} from './narrowCloud';
++import type {DensityR8} from './densityR8';
+ import type {TimestampBatchMeasurementReport} from './timestampBatchMeasurement';
+ async function flush() {for(let i=0;i<15;i++) await Promise.resolve();}
+ const device={destroy:vi.fn(),queue:{onSubmittedWorkDone:vi.fn(()=>Promise.resolve())}};
+@@ -79,8 +80,8 @@
+ function cloudVolume():CloudVolume {
+   return {size:1,data:new Uint8Array(4),sunsetLight:new Uint8Array(2),detail:{size:1,data:new Uint8Array(4)},supportBounds:{min:[-5,-.5,-3.5],max:[5,8,3.5]}};
+ }
+-function cloudWithNarrow(value=255):CloudVolume & {narrowMask:NarrowCloudMask}{
+-  return {...cloudVolume(),narrowMask:{size:1,data:new Uint8Array([value])}};
++function cloudWithNarrow(value=255):CloudVolume & {narrowMask:NarrowCloudMask;densityR8:DensityR8}{
++  return {...cloudVolume(),narrowMask:{size:1,data:new Uint8Array([value])},densityR8:{size:1,data:new Uint8Array([0])}};
+ }
+ function textureDisposals(contexts:readonly unknown[],data:Uint8Array){
+   return contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===data).length;
+@@ -96,6 +97,15 @@
+   if(data)expect(value.image.data).toBe(data);
+   return value;
+ }
++function expectDensityTexture(value:unknown,data:Uint8Array):Data3DTexture{
++  if(!(value instanceof Data3DTexture))throw new Error('Expected the bound density R8 texture.');
++  expect(value.image.data).toBe(data);expect(value.format).toBe(RedFormat);expect(value.type).toBe(UnsignedByteType);
++  expect(value.colorSpace).toBe(NoColorSpace);expect(value.generateMipmaps).toBe(false);expect(value.flipY).toBe(false);
++  expect(value.minFilter).toBe(LinearFilter);expect(value.magFilter).toBe(LinearFilter);
++  expect([value.wrapS,value.wrapT,value.wrapR]).toEqual([ClampToEdgeWrapping,ClampToEdgeWrapping,ClampToEdgeWrapping]);
++  expect(value.unpackAlignment).toBe(1);return value;
++}
++type DensitySamplingSnapshot={path:string;format:string;dimensions:number[];textureBytes:number;extraCpuPayloadBytes:number;extraGpuPayloadBytes:number;fallback:string|null};
+ describe('scene async lifecycle',()=>{
+   it('publishes fresh pass coverage for explicit draw ranges, excluding warmup and the interval anchor',async()=>{
+     control.timestamps=true;history.replaceState(null,'','/?profile=1&timing=stages');
+@@ -200,7 +210,7 @@
+     const fences:Array<()=>void>=[];
+     device.queue.onSubmittedWorkDone.mockImplementation(()=>new Promise<void>(resolve=>fences.push(resolve)));
+     const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+-    control.workers[0].onmessage!({data:{volume:cloudVolume()}});await starting;
++    control.workers[0].onmessage!({data:{volume:cloudWithNarrow()}});await starting;
+     const frame=vi.mocked(requestAnimationFrame).mock.calls[0][0];
+     const draw=(time:number)=>{clock=time;frame(time);};
+     const raw=root.querySelector('[data-testid="benchmark-json"]')!;
+@@ -210,8 +220,11 @@
+     clock=33100;fences[0]();fences[1]();await flush();
+     expect(raw.textContent).toBe(''); // an initial/periodic completion cannot publish the report
+     clock=33200;fences[2]();await flush();
+-    const report=JSON.parse(raw.textContent!) as {stats:{frames:number;fps:number};submissionFps:number;presentedCanvasFps:null;
++    const report=JSON.parse(raw.textContent!) as {densitySamplingStart:DensitySamplingSnapshot;densitySamplingEnd:DensitySamplingSnapshot;rendererVersion:string;stats:{frames:number;fps:number};submissionFps:number;presentedCanvasFps:null;
+       queuePrefix:{status:string;measuredSubmissions:number;confirmedPrefixId:number;samples:Array<{kind:string;prefixId:number}>}};
++    expect(report.densitySamplingStart).toMatchObject({path:'r8unorm-extracted-r',format:'r8unorm',dimensions:[1,1,1],textureBytes:1,extraCpuPayloadBytes:1,extraGpuPayloadBytes:1,fallback:null});
++    expect(report.densitySamplingEnd).toEqual(report.densitySamplingStart);
++    expect(report.rendererVersion).toBe('observatory-v47-density-r8-trial');
+     expect(report.stats.frames).toBe(2);expect(report.queuePrefix.measuredSubmissions).toBe(report.stats.frames);
+     expect(report.queuePrefix.status).toBe('completed');expect(report.queuePrefix.confirmedPrefixId).toBe(2);
+     expect(report.queuePrefix.samples.filter(sample=>sample.kind==='end')).toHaveLength(1);
+@@ -221,11 +234,11 @@
+     expect(fences).toHaveLength(3);expect(raw.textContent).toBe(snapshot);
+     app.destroy();await flush();
+   });
+-  it('binds the narrow texture and disposes previous/current macro and R8 exactly once',async()=>{
++  it('binds macro, narrow and density R8 and disposes both generations exactly once',async()=>{
+     const dispose=vi.spyOn(Data3DTexture.prototype,'dispose');
+     const disposed=(volume:CloudVolume)=>dispose.mock.contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.data).length;
+     const inputs:Record<string,unknown>[]=[],original=cloudShader.createCloudIntegrator;
+-    vi.spyOn(cloudShader,'createCloudIntegrator').mockImplementation((mode,useNarrow)=>new Proxy(original(mode,useNarrow),{
++    vi.spyOn(cloudShader,'createCloudIntegrator').mockImplementation((mode,useNarrow,useDensityR8)=>new Proxy(original(mode,useNarrow,useDensityR8),{
+       apply(target,thisArg,args){inputs.push(args[0] as Record<string,unknown>);return Reflect.apply(target,thisArg,args);},
+     }));
+     const initial=cloudWithNarrow(0),replacement=cloudWithNarrow();
+@@ -233,25 +246,28 @@
+     const {app,root}=createApp();const starting=app.start();app.applyAtmosphereIntent({type:'rain',amount:.8});await flush();control.initResolve();await flush();
+     control.workers[0].onmessage!({data:{volume:initial}});await starting;
+     expect(inputs).toHaveLength(1);
++    expectDensityTexture((inputs[0].densityR8 as {value:unknown}).value,initial.densityR8.data);
++    expect((inputs[0].volume as {value:Data3DTexture}).value.image.data).toBe(initial.data);
+     const firstNarrow=expectNarrowTexture((inputs[0].narrowCloud as {value:unknown}).value,initial.narrowMask.data);
+-    expect(disposed(initial)).toBe(0);expect(narrowDisposed(initial)).toBe(0);
++    expect(disposed(initial)).toBe(0);expect(narrowDisposed(initial)).toBe(0);expect(textureDisposals(dispose.mock.contexts,initial.densityR8.data)).toBe(0);
+     root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
+     expect(disposed(initial)).toBe(0);
+     control.workers[1].onmessage!({data:{volume:replacement}});await flush();
+     expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(0);
+     expect(inputs).toHaveLength(2);
++    expectDensityTexture((inputs[1].densityR8 as {value:unknown}).value,replacement.densityR8.data);
+     const secondNarrow=expectNarrowTexture((inputs[1].narrowCloud as {value:unknown}).value,replacement.narrowMask.data);
+     expect(secondNarrow).not.toBe(firstNarrow);
+-    expect(narrowDisposed(initial)).toBe(1);expect(narrowDisposed(replacement)).toBe(0);
++    expect(narrowDisposed(initial)).toBe(1);expect(textureDisposals(dispose.mock.contexts,initial.densityR8.data)).toBe(1);expect(narrowDisposed(replacement)).toBe(0);expect(textureDisposals(dispose.mock.contexts,replacement.densityR8.data)).toBe(0);
+     app.destroy();await flush();
+     expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(1);
+-    expect(narrowDisposed(initial)).toBe(1);expect(narrowDisposed(replacement)).toBe(1);
++    expect(narrowDisposed(initial)).toBe(1);expect(textureDisposals(dispose.mock.contexts,initial.densityR8.data)).toBe(1);expect(narrowDisposed(replacement)).toBe(1);expect(textureDisposals(dispose.mock.contexts,replacement.densityR8.data)).toBe(1);
+   });
+   it('switches dry/rain bindings only on intent and residual-rain transitions, not on each frame',async()=>{
+     const variants:boolean[]=[],inputs:Record<string,unknown>[]=[],original=cloudShader.createCloudIntegrator;
+-    vi.spyOn(cloudShader,'createCloudIntegrator').mockImplementation((mode,useNarrow)=>{
++    vi.spyOn(cloudShader,'createCloudIntegrator').mockImplementation((mode,useNarrow,useDensityR8)=>{
+       variants.push(useNarrow===true);
+-      return new Proxy(original(mode,useNarrow),{
++      return new Proxy(original(mode,useNarrow,useDensityR8),{
+         apply(target,thisArg,args){inputs.push(args[0] as Record<string,unknown>);return Reflect.apply(target,thisArg,args);},
+       });
+     });
+@@ -301,6 +317,8 @@
+     app.destroy();await starting;await flush();
+     expect(dispose.mock.contexts.filter(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.data)).toHaveLength(1);
+     expect(textureDisposals(dispose.mock.contexts,volume.narrowMask.data)).toBe(1);
++    expect(textureDisposals(dispose.mock.contexts,volume.densityR8.data)).toBe(1);
++    expectDensityTexture(dispose.mock.contexts.find(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.densityR8.data),volume.densityR8.data);
+     expectNarrowTexture(dispose.mock.contexts.find(texture=>texture instanceof Data3DTexture&&texture.image.data===volume.narrowMask.data),volume.narrowMask.data);
+     expect(control.render).not.toHaveBeenCalled();expect(device.destroy).toHaveBeenCalledOnce();
+   });
+@@ -315,13 +333,13 @@
+     let drained=()=>{};device.queue.onSubmittedWorkDone.mockImplementationOnce(()=>new Promise<void>(resolve=>{drained=resolve;}));
+     control.workers[1].onmessage!({data:{volume:replacement}});await flush();
+     expect(disposed(initial)).toBe(0);expect(disposed(replacement)).toBe(0);
+-    expect(narrowDisposed(initial)).toBe(0);expect(narrowDisposed(replacement)).toBe(0);
++    expect(narrowDisposed(initial)).toBe(0);expect(textureDisposals(dispose.mock.contexts,initial.densityR8.data)).toBe(0);expect(narrowDisposed(replacement)).toBe(0);expect(textureDisposals(dispose.mock.contexts,replacement.densityR8.data)).toBe(0);
+     app.destroy();await flush();
+     expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(0);
+-    expect(narrowDisposed(initial)).toBe(1);expect(narrowDisposed(replacement)).toBe(0);
++    expect(narrowDisposed(initial)).toBe(1);expect(textureDisposals(dispose.mock.contexts,initial.densityR8.data)).toBe(1);expect(narrowDisposed(replacement)).toBe(0);expect(textureDisposals(dispose.mock.contexts,replacement.densityR8.data)).toBe(0);
+     drained();await flush();
+     expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(1);
+-    expect(narrowDisposed(initial)).toBe(1);expect(narrowDisposed(replacement)).toBe(1);
++    expect(narrowDisposed(initial)).toBe(1);expect(textureDisposals(dispose.mock.contexts,initial.densityR8.data)).toBe(1);expect(narrowDisposed(replacement)).toBe(1);expect(textureDisposals(dispose.mock.contexts,replacement.densityR8.data)).toBe(1);
+     expect(control.render).toHaveBeenCalledOnce();
+   });
+   it('disposes a rejected replacement macro texture while retaining the installed texture until teardown',async()=>{
+@@ -335,12 +353,59 @@
+     device.queue.onSubmittedWorkDone.mockRejectedValueOnce(new Error('GPU drain rejected'));
+     control.workers[1].onmessage!({data:{volume:replacement}});await flush();
+     expect(disposed(initial)).toBe(0);expect(disposed(replacement)).toBe(1);
+-    expect(narrowDisposed(initial)).toBe(0);expect(narrowDisposed(replacement)).toBe(1);
++    expect(narrowDisposed(initial)).toBe(0);expect(textureDisposals(dispose.mock.contexts,initial.densityR8.data)).toBe(0);expect(narrowDisposed(replacement)).toBe(1);expect(textureDisposals(dispose.mock.contexts,replacement.densityR8.data)).toBe(1);
+     expect(root.querySelector('[data-testid="scene-status"]')!.textContent).toContain('GPU drain rejected');
+     expect(control.render).toHaveBeenCalledOnce();
+     app.destroy();await flush();
+     expect(disposed(initial)).toBe(1);expect(disposed(replacement)).toBe(1);
+-    expect(narrowDisposed(initial)).toBe(1);expect(narrowDisposed(replacement)).toBe(1);
++    expect(narrowDisposed(initial)).toBe(1);expect(textureDisposals(dispose.mock.contexts,initial.densityR8.data)).toBe(1);expect(narrowDisposed(replacement)).toBe(1);expect(textureDisposals(dispose.mock.contexts,replacement.densityR8.data)).toBe(1);
++  });
++  it.each([undefined,{size:2,data:new Uint8Array(1)},{size:1,data:new Uint8Array(2)},{size:1,data:new Float32Array(1)}])('reports the original macro path for missing or invalid R8 payload: %s',async densityR8=>{
++    history.replaceState(null,'','/?profile=1&timing=off&flow=frozen');
++    vi.spyOn(document,'hidden','get').mockReturnValue(false);
++    let clock=1000;vi.spyOn(performance,'now').mockImplementation(()=>clock);
++    const inputs:Record<string,unknown>[]=[],original=cloudShader.createCloudIntegrator;
++    vi.spyOn(cloudShader,'createCloudIntegrator').mockImplementation((mode,narrow,r8)=>{
++      expect(r8).toBe(false);
++      return new Proxy(original(mode,narrow,r8),{apply(target,thisArg,args){inputs.push(args[0] as Record<string,unknown>);return Reflect.apply(target,thisArg,args);}});
++    });
++    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
++    control.workers[0].onmessage!({data:{volume:{...cloudVolume(),densityR8}}});await starting;
++    expect(inputs[0]).not.toHaveProperty('densityR8');
++    const frame=vi.mocked(requestAnimationFrame).mock.calls[0][0];
++    root.querySelector<HTMLButtonElement>('[data-action="benchmark"]')!.click();
++    for(const time of [3000,3050,33000]){clock=time;frame(time);}await flush();
++    const report=JSON.parse(root.querySelector('[data-testid="benchmark-json"]')!.textContent!) as {densitySamplingStart:DensitySamplingSnapshot;densitySamplingEnd:DensitySamplingSnapshot};
++    expect(report.densitySamplingStart).toMatchObject({path:'macro-rgba8-r',format:'rgba8unorm',dimensions:[1,1,1],textureBytes:4,extraCpuPayloadBytes:0,extraGpuPayloadBytes:0});
++    expect(report.densitySamplingStart.fallback).toBeTruthy();expect(report.densitySamplingEnd).toEqual(report.densitySamplingStart);
++    app.destroy();await flush();
++  });
++  it('keeps the density binding through diagnostic changes and removes it on a legacy seed swap',async()=>{
++    history.replaceState(null,'','/?profile=1');
++    const dispose=vi.spyOn(Data3DTexture.prototype,'dispose'),volume=cloudWithNarrow();
++    const variants:Array<{mode:number|undefined;r8:boolean|undefined}>=[],inputs:Record<string,unknown>[]=[],original=cloudShader.createCloudIntegrator;
++    vi.spyOn(cloudShader,'createCloudIntegrator').mockImplementation((mode,narrow,r8)=>{
++      variants.push({mode,r8});return new Proxy(original(mode,narrow,r8),{apply(target,thisArg,args){inputs.push(args[0] as Record<string,unknown>);return Reflect.apply(target,thisArg,args);}});
++    });
++    const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
++    control.workers[0].onmessage!({data:{volume}});await starting;
++    const ablation=root.querySelector<HTMLSelectElement>('[name="ablation"]')!;
++    for(const value of ['density','cache','no-flow','no-detail','no-flash','full']){ablation.value=value;ablation.dispatchEvent(new Event('change',{bubbles:true}));}
++    expect(variants.every(variant=>variant.r8===true)).toBe(true);
++    for(const input of inputs)expectDensityTexture((input.densityR8 as {value:unknown}).value,volume.densityR8.data);
++    root.querySelector<HTMLButtonElement>('[data-action="new-cloud"]')!.click();await flush();
++    control.workers[1].onmessage!({data:{volume:cloudVolume()}});await flush();
++    expect(variants.at(-1)?.r8).toBe(false);expect(inputs.at(-1)).not.toHaveProperty('densityR8');
++    expect(textureDisposals(dispose.mock.contexts,volume.densityR8.data)).toBe(1);
++    app.destroy();await flush();expect(textureDisposals(dispose.mock.contexts,volume.densityR8.data)).toBe(1);
++  });
++  it('disposes installed density R8 once on device loss and subsequent teardown',async()=>{
++    const dispose=vi.spyOn(Data3DTexture.prototype,'dispose'),volume=cloudWithNarrow();
++    const {app}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
++    control.workers[0].onmessage!({data:{volume}});await starting;
++    control.renderer!.onDeviceLost();await flush();
++    expect(textureDisposals(dispose.mock.contexts,volume.densityR8.data)).toBe(1);
++    app.destroy();await flush();expect(textureDisposals(dispose.mock.contexts,volume.densityR8.data)).toBe(1);
+   });
+   it('does not declare ready when GPU shader validation fails',async()=>{
+     Object.assign(device,{pushErrorScope:vi.fn(),popErrorScope:vi.fn(async()=>({message:'invalid sampler'}))});
+--- a/src/cumulonimbus/volume.worker.ts
++++ b/src/cumulonimbus/volume.worker.ts
+@@ -1,9 +1,11 @@
+ import { generateVolume } from './volume';
+ import {buildNarrowCloudMask,type NarrowCloudVolume} from './narrowCloud';
++import {extractDensityR8,type DensityR8Packet} from './densityR8';
+ self.onmessage = (event: MessageEvent<{size: number; seed: number}>) => {
+   try {
+-    const volume:NarrowCloudVolume = generateVolume(event.data.size, event.data.seed, fraction => self.postMessage({progress: fraction}));
++    const volume:NarrowCloudVolume&DensityR8Packet = generateVolume(event.data.size, event.data.seed, fraction => self.postMessage({progress: fraction}));
+     volume.narrowMask=buildNarrowCloudMask(volume,volume.detail.size);
+-    self.postMessage({volume}, {transfer: [volume.data.buffer,volume.detail.data.buffer,volume.sunsetLight.buffer,volume.narrowMask.data.buffer]});
++    volume.densityR8=extractDensityR8(volume);
++    self.postMessage({volume}, {transfer: [volume.data.buffer,volume.detail.data.buffer,volume.sunsetLight.buffer,volume.narrowMask.data.buffer,volume.densityR8.data.buffer]});
+   } catch(error) { self.postMessage({error: error instanceof Error ? error.message : String(error)}); }
+ };
+--- a/src/cumulonimbus/narrowCloud.test.ts
++++ b/src/cumulonimbus/narrowCloud.test.ts
+@@ -1,6 +1,7 @@
+ import {afterEach,beforeAll,describe,expect,it,vi} from 'vitest';
+ import {createHash} from 'node:crypto';
+ import * as volumeModule from './volume';
++import type {DensityR8Packet} from './densityR8';
+ import {BOUNDS_MIN,BOUNDS_SIZE,sampleCloudDensity,sampleDetail,type DetailVolume} from './volume';
+ import {buildNarrowCloudMask,NARROW_CLOUD_GUARD_KM,type NarrowCloudMask,type NarrowCloudVolume} from './narrowCloud';
+ 
+@@ -107,8 +108,8 @@
+ });
+ 
+ describe('volume worker narrow transfer',()=>{
+-  it('adds exactly one independent R8 buffer, preserving existing buffers/progress/errors',async()=>{
+-    const generated:NarrowCloudVolume={size:2,data:new Uint8Array(2**3*4),detail:{size:1,data:new Uint8Array([3,5,7,11])},
++  it('transfers independent mask and density R8 buffers, preserving existing buffers/progress/errors',async()=>{
++    const generated:NarrowCloudVolume&DensityR8Packet={size:2,data:new Uint8Array(2**3*4),detail:{size:1,data:new Uint8Array([3,5,7,11])},
+       sunsetLight:new Uint8Array(2**3*2),supportBounds:{min:[-1,0,-1],max:[1,2,1]}};
+     const generate=vi.spyOn(volumeModule,'generateVolume').mockImplementation((_size,_seed,progress)=>{
+       progress?.(.5);return generated;
+@@ -119,12 +120,14 @@
+     scope.onmessage!({data:{size:2,seed:72}} as MessageEvent<{size:number;seed:number}>);
+     expect(generate).toHaveBeenCalledWith(2,72,expect.any(Function));
+     expect(postMessage).toHaveBeenNthCalledWith(1,{progress:.5});
+-    const [packet,options]=postMessage.mock.calls[1] as [{volume:NarrowCloudVolume},{transfer:ArrayBuffer[]}];
++    const [packet,options]=postMessage.mock.calls[1] as [{volume:NarrowCloudVolume&DensityR8Packet},{transfer:ArrayBuffer[]}];
+     expect(packet.volume).toBe(generated);
+     expect(packet.volume.narrowMask).toEqual({size:1,data:new Uint8Array([255])});
+     expect([...packet.volume.detail.data]).toEqual([3,5,7,11]);
+-    expect(options.transfer).toEqual([generated.data.buffer,generated.detail.data.buffer,generated.sunsetLight.buffer,generated.narrowMask!.data.buffer]);
+-    expect(new Set(options.transfer).size).toBe(4);
++    expect(options.transfer).toEqual([generated.data.buffer,generated.detail.data.buffer,generated.sunsetLight.buffer,generated.narrowMask!.data.buffer,generated.densityR8!.data.buffer]);
++    expect(new Set(options.transfer).size).toBe(5);
++    expect(generated.densityR8!.data).toEqual(new Uint8Array(8));
++    expect(generated.densityR8!.data.buffer).not.toBe(generated.data.buffer);
+     expect(generated.narrowMask!.data.buffer.byteLength).toBe(1);
+     generate.mockImplementation(()=>{throw new Error('generation failed');});
+     scope.onmessage!({data:{size:2,seed:73}} as MessageEvent<{size:number;seed:number}>);
+--- /dev/null
++++ b/src/cumulonimbus/densityR8.ts
+@@ -0,0 +1,26 @@
++export interface DensityR8 {size:number;data:Uint8Array}
++/** Derived render payload; legacy packets retain the original RGBA sampling path. */
++export interface DensityR8Packet {densityR8?:DensityR8}
++
++const voxelCount=(size:number)=>Number.isSafeInteger(size)&&size>0&&Number.isSafeInteger(size**3)?size**3:null;
++
++/** Copy bytes only: no new quantization, density model, filtering or bake. */
++export function extractDensityR8(source:{size:number;data:Uint8Array}):DensityR8{
++  const count=voxelCount(source.size);
++  if(count===null)throw new RangeError('Density R8 size must be a positive integer with a safe voxel count.');
++  if(!(source.data instanceof Uint8Array))throw new TypeError('Macro density must use Uint8Array RGBA bytes.');
++  if(source.data.length!==count*4)throw new RangeError('Macro RGBA payload length does not match its dimensions.');
++  const data=new Uint8Array(count);
++  for(let i=0;i<count;i++)data[i]=source.data[i*4];
++  return {size:source.size,data};
++}
++
++/** Invalid/legacy input selects the unchanged macro shader, never a constant density. */
++export function readDensityR8(source:{size:number;data?:Uint8Array;densityR8?:unknown}):DensityR8|null{
++  const count=voxelCount(source.size),payload=source.densityR8;
++  if(count===null||!payload||typeof payload!=='object')return null;
++  const candidate=payload as Partial<DensityR8>;
++  if(candidate.size!==source.size||!(candidate.data instanceof Uint8Array)||candidate.data.length!==count)return null;
++  if(source.data&&candidate.data.buffer===source.data.buffer)return null;
++  return candidate as DensityR8;
++}
+--- /dev/null
++++ b/src/cumulonimbus/densityR8.test.ts
+@@ -0,0 +1,30 @@
++// @vitest-environment node
++import {describe,expect,it} from 'vitest';
++import {extractDensityR8,readDensityR8} from './densityR8';
++
++describe('exact macro density R8 payload',()=>{
++  it('preserves raw endpoints and weak tails independently of light channels and source edits',()=>{
++    const data=new Uint8Array([0,91,2,3,1,81,4,5,255,71,6,7,17,61,8,9,83,51,10,11,128,41,12,13,254,31,14,15,7,21,16,17]);
++    const before=data.slice(),source={size:2,data},result=extractDensityR8(source);
++    expect([...result.data]).toEqual([0,1,255,17,83,128,254,7]);
++    expect(result.size).toBe(2);expect(result.data.buffer.byteLength).toBe(8);
++    expect(result.data.buffer).not.toBe(data.buffer);expect(data).toEqual(before);
++    data[0]=77;expect(result.data[0]).toBe(0);result.data[1]=99;expect(data[4]).toBe(1);
++  });
++  it.each([0,-1,1.5,NaN,Infinity,Number.MAX_SAFE_INTEGER])('rejects invalid dimensions before allocation: %s',size=>{
++    expect(()=>extractDensityR8({size,data:new Uint8Array(4)})).toThrow(RangeError);
++  });
++  it('rejects malformed source storage instead of silently changing the field',()=>{
++    expect(()=>extractDensityR8({size:2,data:new Uint8Array(8)})).toThrow(RangeError);
++    expect(()=>extractDensityR8({size:1,data:new Float32Array(4) as unknown as Uint8Array})).toThrow(TypeError);
++  });
++  it('accepts only a matching independent packet and returns its original array without allocation',()=>{
++    const source={size:2,data:new Uint8Array(32)},densityR8=extractDensityR8(source);
++    expect(readDensityR8({...source,densityR8})).toBe(densityR8);
++    for(const invalid of [undefined,null,{},'r8',{size:1,data:new Uint8Array(8)},{size:2,data:new Uint8Array(7)},
++      {size:2,data:new Float32Array(8)},{size:2,data:new Uint8Array(source.data.buffer,0,8)}]){
++      expect(readDensityR8({...source,densityR8:invalid})).toBeNull();
++    }
++    expect(readDensityR8({size:0,densityR8})).toBeNull();
++  });
++});
+--- /dev/null
++++ b/src/cumulonimbus/volume.worker.test.ts
+@@ -0,0 +1,32 @@
++// @vitest-environment node
++import {afterEach,expect,it,vi} from 'vitest';
++import * as volumeModule from './volume';
++import type {NarrowCloudVolume} from './narrowCloud';
++import type {DensityR8Packet} from './densityR8';
++afterEach(()=>{vi.restoreAllMocks();vi.unstubAllGlobals();});
++
++it('transfers five distinct buffers with exact density bytes and intact light/detail channels',async()=>{
++  const macro=new Uint8Array([0,9,8,7,1,6,5,4,255,3,2,1,17,9,8,7,83,6,5,4,128,3,2,1,254,9,8,7,7,6,5,4]);
++  const before=macro.slice();
++  const generated:NarrowCloudVolume&DensityR8Packet={size:2,data:macro,sunsetLight:new Uint8Array(16).fill(33),
++    detail:{size:1,data:new Uint8Array([3,5,7,11])},supportBounds:{min:[-1,0,-1],max:[1,2,1]}};
++  vi.spyOn(volumeModule,'generateVolume').mockImplementation((_size,_seed,progress)=>{progress?.(.5);return generated;});
++  let received:(NarrowCloudVolume&DensityR8Packet)|undefined;
++  let transferred:ArrayBuffer[]=[];
++  const progress:number[]=[];
++  const scope={onmessage:null as null|((event:MessageEvent<{size:number;seed:number}>)=>void),
++    postMessage:(packet:{volume?:NarrowCloudVolume&DensityR8Packet;progress?:number},options?:{transfer:ArrayBuffer[]})=>{
++      if(packet.progress!==undefined)progress.push(packet.progress);
++      if(options){transferred=[...options.transfer];received=structuredClone(packet,{transfer:options.transfer}).volume;}
++    }};
++  vi.stubGlobal('self',scope);await import('./volume.worker');
++  scope.onmessage!({data:{size:2,seed:72}} as MessageEvent<{size:number;seed:number}>);
++  expect(progress).toEqual([.5]);expect(new Set(transferred).size).toBe(5);
++  expect(transferred.every(buffer=>buffer.byteLength===0)).toBe(true);
++  expect(generated.data.byteLength).toBe(0);expect(generated.densityR8!.data.byteLength).toBe(0);
++  expect(received!.data).toEqual(before);expect([...received!.densityR8!.data]).toEqual([0,1,255,17,83,128,254,7]);
++  expect(received!.densityR8!.data.buffer).not.toBe(received!.data.buffer);
++  expect([...received!.detail.data]).toEqual([3,5,7,11]);
++  expect(received!.sunsetLight.every(value=>value===33)).toBe(true);
++  expect([...received!.narrowMask!.data]).toEqual([255]);
++});

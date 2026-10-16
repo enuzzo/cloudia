@@ -1,0 +1,14 @@
+{
+  "kind": "CPU-only preparer/classifier preflight",
+  "newBakes": 0,
+  "gpuExecuted": false,
+  "jsSyntax": "PASS",
+  "checks": {
+    "exactZeroPass": true,
+    "finiteMismatchFails": true,
+    "negativeZeroBitMismatchFails": true,
+    "counterMismatchFails": true
+  },
+  "gpuWGSLCompilation": "not-run",
+  "nativeSamplerResult": "not-run"
+}

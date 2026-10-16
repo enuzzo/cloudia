@@ -1,6 +1,7 @@
 import {afterEach,beforeAll,describe,expect,it,vi} from 'vitest';
 import {createHash} from 'node:crypto';
 import * as volumeModule from './volume';
+import type {DensityR8Packet} from './densityR8';
 import {BOUNDS_MIN,BOUNDS_SIZE,sampleCloudDensity,sampleDetail,type DetailVolume} from './volume';
 import {buildNarrowCloudMask,NARROW_CLOUD_GUARD_KM,type NarrowCloudMask,type NarrowCloudVolume} from './narrowCloud';
 
@@ -107,8 +108,8 @@ describe('post-flow narrow cloud mask',()=>{
 });
 
 describe('volume worker narrow transfer',()=>{
-  it('adds exactly one independent R8 buffer, preserving existing buffers/progress/errors',async()=>{
-    const generated:NarrowCloudVolume={size:2,data:new Uint8Array(2**3*4),detail:{size:1,data:new Uint8Array([3,5,7,11])},
+  it('transfers independent mask and density R8 buffers, preserving existing buffers/progress/errors',async()=>{
+    const generated:NarrowCloudVolume&DensityR8Packet={size:2,data:new Uint8Array(2**3*4),detail:{size:1,data:new Uint8Array([3,5,7,11])},
       sunsetLight:new Uint8Array(2**3*2),supportBounds:{min:[-1,0,-1],max:[1,2,1]}};
     const generate=vi.spyOn(volumeModule,'generateVolume').mockImplementation((_size,_seed,progress)=>{
       progress?.(.5);return generated;
@@ -119,12 +120,14 @@ describe('volume worker narrow transfer',()=>{
     scope.onmessage!({data:{size:2,seed:72}} as MessageEvent<{size:number;seed:number}>);
     expect(generate).toHaveBeenCalledWith(2,72,expect.any(Function));
     expect(postMessage).toHaveBeenNthCalledWith(1,{progress:.5});
-    const [packet,options]=postMessage.mock.calls[1] as [{volume:NarrowCloudVolume},{transfer:ArrayBuffer[]}];
+    const [packet,options]=postMessage.mock.calls[1] as [{volume:NarrowCloudVolume&DensityR8Packet},{transfer:ArrayBuffer[]}];
     expect(packet.volume).toBe(generated);
     expect(packet.volume.narrowMask).toEqual({size:1,data:new Uint8Array([255])});
     expect([...packet.volume.detail.data]).toEqual([3,5,7,11]);
-    expect(options.transfer).toEqual([generated.data.buffer,generated.detail.data.buffer,generated.sunsetLight.buffer,generated.narrowMask!.data.buffer]);
-    expect(new Set(options.transfer).size).toBe(4);
+    expect(options.transfer).toEqual([generated.data.buffer,generated.detail.data.buffer,generated.sunsetLight.buffer,generated.narrowMask!.data.buffer,generated.densityR8!.data.buffer]);
+    expect(new Set(options.transfer).size).toBe(5);
+    expect(generated.densityR8!.data).toEqual(new Uint8Array(8));
+    expect(generated.densityR8!.data.buffer).not.toBe(generated.data.buffer);
     expect(generated.narrowMask!.data.buffer.byteLength).toBe(1);
     generate.mockImplementation(()=>{throw new Error('generation failed');});
     scope.onmessage!({data:{size:2,seed:73}} as MessageEvent<{size:number;seed:number}>);

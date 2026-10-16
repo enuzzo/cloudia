@@ -1,0 +1,728 @@
+{
+  "status": "frozen-v48-local-trial-awaiting-root-qualification",
+  "frozenAtUTC": "2026-10-16T07:20:02.316160+00:00",
+  "baseCommit": "6a7df91940f84091b2de0b625480e9e51a3ed378",
+  "parentTrial": "v47 density R8",
+  "rendererVersion": "observatory-v48-rain-density-r8-trial",
+  "changesFromV47": [
+    {
+      "path": "src/cumulonimbus/GPUSceneEngine.ts",
+      "beforeSha256": "925b58b2d10eaa7454b8cb79634b7e4a516d45b2ee8d920eb19d9cec51d7b9e0",
+      "afterSha256": "47c3fd0f8946abcfad47477618e10215c8a19545d0d7ab580b14b532638fbe60"
+    },
+    {
+      "path": "src/cumulonimbus/lifecycle.test.ts",
+      "beforeSha256": "33122cdefa47780658fdacbb0313bd11f40125adf057486b6eab6e8296e0564e",
+      "afterSha256": "504ece8ae2fba7c71fb919a461cfb4ff4346420bb88953663cb3cc2700814907"
+    }
+  ],
+  "shaderSourceUnchangedFromV47": true,
+  "wgsl": {
+    "method": "CPU FunctionNode.code; not GPU compilation",
+    "rows": [
+      {
+        "name": "dry-v46",
+        "sha256": "d38fe3918e5cf95e2f13a1f6ca9a111a20045b2497600b89118cb7a8200bcb8c",
+        "bytes": 12036
+      },
+      {
+        "name": "rain-v46",
+        "sha256": "6d30dc1d1ab7bc99513c451f4fcbdee81c402fe90220d565bb3a6df52c5cb655",
+        "bytes": 12674
+      },
+      {
+        "name": "rain-r8-v47-v48",
+        "sha256": "a18990471542f55f04269b3a0f525a49dc8ee6908828a552b1c3be50c4ef2e83",
+        "bytes": 12705
+      }
+    ]
+  },
+  "v47FrozenSourcesVerified": 9,
+  "v47BuildArtifactsVerified": 27,
+  "tests": {
+    "targeted": {
+      "passed": 31,
+      "files": 2
+    },
+    "full": {
+      "passed": 230,
+      "files": 34,
+      "durationMs": 4500
+    },
+    "typecheckExitCode": 0
+  },
+  "builds": {
+    "appExitCode": 0,
+    "heroExitCode": 0,
+    "appOutDir": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle12/density-r8/v48-dist",
+    "heroOutDir": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle12/density-r8/v48-hero",
+    "directoriesEmptied": false
+  },
+  "nodeModules": {
+    "ignoreBefore": "1",
+    "ignoreAfter": "1",
+    "gitIgnored": true,
+    "trackedFiles": 0,
+    "installed": false
+  },
+  "densitySelection": {
+    "condition": "same as useNarrow: targetRain > 0.001 or actual rain > 0.001, and valid R8 payload",
+    "dry": "macro, no R8 argument/binding; R8 object retained",
+    "nominalExtraCpuPayloadBytes": 16777216,
+    "nominalExtraGpuPayloadBytes": 16777216,
+    "gpuResidencyOrUploadMeasured": false
+  },
+  "browserOrGpuUsedByThisAgent": false,
+  "patches": [
+    {
+      "path": "v48-selection.patch",
+      "sha256": "a0eda7835f536764c2f007a2a690fcadbf3b7bddabc8c2956e506e43b145cd7d"
+    },
+    {
+      "path": "v48-vs-v46.patch",
+      "sha256": "389789a99dfe29557c58dc73b0e9bdc4c3d6c07d236435ff8e81bfa51fdd26bf"
+    }
+  ],
+  "sourceHashes": [
+    {
+      "path": "src/core/defaultPreset.ts",
+      "sha256": "af7fc152263dc7a7bc402644b9e41caee2ff20ea7f291ae7a5ce0ac6f44ec219"
+    },
+    {
+      "path": "src/core/easing.test.ts",
+      "sha256": "fcd2fe9ddd6331ee23f9d06a3959e73f596b8e3a8fefcf0ca105a1c6620a19e0"
+    },
+    {
+      "path": "src/core/easing.ts",
+      "sha256": "1ae88dbff8c5c55e1854a0bcf4a6e9cd901ba89c6771ce6e9eb62df4f6275515"
+    },
+    {
+      "path": "src/core/presetStore.test.ts",
+      "sha256": "9a124e837eab21356a2345878a7e9090abf181435032b166355690a2d125b4ac"
+    },
+    {
+      "path": "src/core/presetStore.ts",
+      "sha256": "08e8e5f953def9c6afad41d7be251f8d51d5e536f2e57c3a47718dc66624d9da"
+    },
+    {
+      "path": "src/core/renderQuality.test.ts",
+      "sha256": "c1910907cfe596d6e66619f358ecc02353a4bbfd7406510f78564329f7c76ff0"
+    },
+    {
+      "path": "src/core/renderQuality.ts",
+      "sha256": "88c5893350c5033eefc713a5c8e76d9b98d819907ee5910f453c0d6f40145144"
+    },
+    {
+      "path": "src/core/stateMachine.test.ts",
+      "sha256": "89363df587a48b8020aefb856b04f6d54938fe2aea9c21b69c697120f648ff12"
+    },
+    {
+      "path": "src/core/stateMachine.ts",
+      "sha256": "ee59de6a1e6aac4b4f0deddcc0cc5266a892c1a356e794347831c3d0dd8e76f1"
+    },
+    {
+      "path": "src/core/types.ts",
+      "sha256": "5f6da80b20afbc9ffd390573f9d20f7f0c1ac7d8b2b3f638bc227bcfb34cb277"
+    },
+    {
+      "path": "src/cumulonimbus/CumulonimbusApp.ts",
+      "sha256": "7156df28a6a0f2691b0316b2d66042a442cbcf1e18619b3b811c4e91d49aecae"
+    },
+    {
+      "path": "src/cumulonimbus/GPUSceneEngine.ts",
+      "sha256": "47c3fd0f8946abcfad47477618e10215c8a19545d0d7ab580b14b532638fbe60"
+    },
+    {
+      "path": "src/cumulonimbus/ThunderAudio.test.ts",
+      "sha256": "0432897d72c32d059127cd720327951b6f4eb1d00692fcf1f04180c16db4e515"
+    },
+    {
+      "path": "src/cumulonimbus/ThunderAudio.ts",
+      "sha256": "f0eea6bee149a5262ff7c881ef8588de3d70b6f0a962b0e8d43891d1092209d4"
+    },
+    {
+      "path": "src/cumulonimbus/atmosphere.test.ts",
+      "sha256": "5903a055e286c07d7b64c500b515ad463b4de440d51946c70c71701edc483a8d"
+    },
+    {
+      "path": "src/cumulonimbus/atmosphere.ts",
+      "sha256": "8065352c5304b4c95ab18ef9805dcebbc62696ae341a87ecdff0dd67c1f2cf1f"
+    },
+    {
+      "path": "src/cumulonimbus/camera.test.ts",
+      "sha256": "2adb70ba577ada07701f3b4cc8754364cca9210bfb410c2e87d15c5030af2663"
+    },
+    {
+      "path": "src/cumulonimbus/camera.ts",
+      "sha256": "a7f7b113ee4251454e4f31fd8fa470f131dae3a9bc41ec5cf1d2480871066a69"
+    },
+    {
+      "path": "src/cumulonimbus/cloudShader.test.ts",
+      "sha256": "b3f07f81f214150273601a17f881083388ddf444ec17adb5fa25071483b90090"
+    },
+    {
+      "path": "src/cumulonimbus/cloudShader.ts",
+      "sha256": "2e2e8b0ec236a1ae77363419bc766fb464d816b5ff2ce980af5f2bd72873cc44"
+    },
+    {
+      "path": "src/cumulonimbus/densityR8.test.ts",
+      "sha256": "29c9de4528c51c74d5773e4c48425ed97282dcd32c9f487dac390f59c9136674"
+    },
+    {
+      "path": "src/cumulonimbus/densityR8.ts",
+      "sha256": "ef6695219129c12143b805c3cecfda40d87ce821083b42b89dab5887b931a390"
+    },
+    {
+      "path": "src/cumulonimbus/emptyTraversal.test.ts",
+      "sha256": "209777209c81b4670d1f4593425cf02eac0e46d1db4770bffb2c703dcb1e3859"
+    },
+    {
+      "path": "src/cumulonimbus/emptyTraversal.ts",
+      "sha256": "281a4209f2afc13a63735d6526f954dc93d775972aa1d8ccd6cf46d1677c57d4"
+    },
+    {
+      "path": "src/cumulonimbus/environment.test.ts",
+      "sha256": "10553c5620f147a983dc7c634fd82b9d99c5d56349e56befa365d2cd0cdb9fad"
+    },
+    {
+      "path": "src/cumulonimbus/inspector.test.ts",
+      "sha256": "09486c439cc9a8af1763dd7e70e7000e532437860d5f3b38883f3fba92dd5a1e"
+    },
+    {
+      "path": "src/cumulonimbus/landscape.test.ts",
+      "sha256": "b826465b959b20979f631d80df22a57b540ffe25bac4dad5bc63fe2e0bb9a704"
+    },
+    {
+      "path": "src/cumulonimbus/landscape.ts",
+      "sha256": "72a15a3c6b422405324b2006d94e5074c33eb272bbbe51e123a79eb3b2b90d99"
+    },
+    {
+      "path": "src/cumulonimbus/lifecycle.test.ts",
+      "sha256": "504ece8ae2fba7c71fb919a461cfb4ff4346420bb88953663cb3cc2700814907"
+    },
+    {
+      "path": "src/cumulonimbus/light.test.ts",
+      "sha256": "fc9db41e6a2e4a41ae2e47b7da33d22141fde36e0aa5d2c626f8ebe6b5549450"
+    },
+    {
+      "path": "src/cumulonimbus/light.ts",
+      "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+    },
+    {
+      "path": "src/cumulonimbus/medium.test.ts",
+      "sha256": "2d2e24070d121d269bae9c60c5e8781c536eae6630a211a8aa00093767ac3233"
+    },
+    {
+      "path": "src/cumulonimbus/medium.ts",
+      "sha256": "ddfd487055e4fde6581ab351345e91fb3466b032dda954c803082a39a9a142d6"
+    },
+    {
+      "path": "src/cumulonimbus/motion.test.ts",
+      "sha256": "7719d2975954b01b7f3802bfa09d409b3947e7921fc37a96203dcd7d9ccf03ae"
+    },
+    {
+      "path": "src/cumulonimbus/motion.ts",
+      "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+    },
+    {
+      "path": "src/cumulonimbus/motionField.test.ts",
+      "sha256": "d802fe726730c71e8192ea79e713544db9a188f397790e6c0256240149a9a2ad"
+    },
+    {
+      "path": "src/cumulonimbus/motionField.ts",
+      "sha256": "d8817eb9d90a70ee975eea89d2c2fca6d9c6783280bea810fdf76cff2b2d4d8a"
+    },
+    {
+      "path": "src/cumulonimbus/narrowCloud.test.ts",
+      "sha256": "acf7ca030abf7a2c8ae2ef533e3061a3f0dd95175e01210b6572d29e3a092ba5"
+    },
+    {
+      "path": "src/cumulonimbus/narrowCloud.ts",
+      "sha256": "6b3ebc7e3299d1ae995405e75ad04f90190789605136200d72d0cd4ea51e9759"
+    },
+    {
+      "path": "src/cumulonimbus/panels.ts",
+      "sha256": "e6e6da9ec0ebaff930a4ed91e07c20c64878b3fb94f0ffda3498a724af0e58e8"
+    },
+    {
+      "path": "src/cumulonimbus/performance.test.ts",
+      "sha256": "3e98c210b40b7d521844231a74722f6e39bbf2febf75b843f21ed50aa6df2285"
+    },
+    {
+      "path": "src/cumulonimbus/performance.ts",
+      "sha256": "175e4be041d8bf2cf325e6ba4e09922b5a1be79c34d5bc4b4f704230ca01a7e8"
+    },
+    {
+      "path": "src/cumulonimbus/pointer.test.ts",
+      "sha256": "f8761d8c114f5310c20b779024c1c880a09a46ee925438a7b4b21047556548b4"
+    },
+    {
+      "path": "src/cumulonimbus/precipitation.ts",
+      "sha256": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72"
+    },
+    {
+      "path": "src/cumulonimbus/queuePrefixMeasurement.test.ts",
+      "sha256": "6408e934d56834cca922a283cbf893b979afbdb9b795ea4fddd0540ba54a2371"
+    },
+    {
+      "path": "src/cumulonimbus/queuePrefixMeasurement.ts",
+      "sha256": "bf26e53d0a1aafd6e75bd20b4903d1a3633fd19937fdecf5d8fe3cd4b354324d"
+    },
+    {
+      "path": "src/cumulonimbus/render.worker.ts",
+      "sha256": "d9ba5b7018e0675052fbba309f56fb745468844af20cdc6fed43b8bf014d9e91"
+    },
+    {
+      "path": "src/cumulonimbus/renderProtocol.ts",
+      "sha256": "0c22eb7865cbde715c6d26d9cd29ffc77c871e481b1e2e19aacd00bfddbc81a9"
+    },
+    {
+      "path": "src/cumulonimbus/scene.css",
+      "sha256": "6c45a2c39ad9d84555c7c5c98c37645ceedb99fbea31848f0f7d0bf63740ad46"
+    },
+    {
+      "path": "src/cumulonimbus/sceneMarkup.ts",
+      "sha256": "9bafd21bf506298fffab4b79bff595182e640b9233856981b0f1d11b855b5983"
+    },
+    {
+      "path": "src/cumulonimbus/sky.worker.ts",
+      "sha256": "b89754046a88c8f66fe193c806ce1db9ae4eb13d4c06471ccec2feefb4da8b7d"
+    },
+    {
+      "path": "src/cumulonimbus/skyCache.test.ts",
+      "sha256": "e95a18f2ad55c936fbf39f92890eadc78baaaf0dfce857c1ee2ccbcf67054097"
+    },
+    {
+      "path": "src/cumulonimbus/skyCache.ts",
+      "sha256": "fb969d67183153f040b4458516e204016b8e44256d5df794ecec1620f82f984b"
+    },
+    {
+      "path": "src/cumulonimbus/skyModel.ts",
+      "sha256": "9809736594d784f8a5db4cc88d2dd867820c26f11542739b2901d48a57a1259b"
+    },
+    {
+      "path": "src/cumulonimbus/storm.test.ts",
+      "sha256": "6852073934a0f6a5696be684736576c44a8dc7142c7523f639e9a79663c3b018"
+    },
+    {
+      "path": "src/cumulonimbus/storm.ts",
+      "sha256": "7b3259d5d454cbf10b921f2ef6e8f5e03608c43801bbdaec3f1c7480a8c8030c"
+    },
+    {
+      "path": "src/cumulonimbus/sun.ts",
+      "sha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc"
+    },
+    {
+      "path": "src/cumulonimbus/three186TimestampBatch.test.ts",
+      "sha256": "585e288a991a41e5482bb854f0fc08035cb5394b6ed3e6fc8d403247de51d4ed"
+    },
+    {
+      "path": "src/cumulonimbus/three186TimestampBatch.ts",
+      "sha256": "24f35dcdaeb1d0da6c57ceef55560f1140c9d151955f636fcf80cf7d7e4d7658"
+    },
+    {
+      "path": "src/cumulonimbus/timestampBatchMeasurement.test.ts",
+      "sha256": "cb04e13e082b067ce1b72119b59fa78296092ef9913f727215b259222936aa34"
+    },
+    {
+      "path": "src/cumulonimbus/timestampBatchMeasurement.ts",
+      "sha256": "43654a3918b0f5f531aff26727247291c469cd037a98d44e76e88ae03ceb905c"
+    },
+    {
+      "path": "src/cumulonimbus/uiIcons.ts",
+      "sha256": "907b3e3a96f46b694a7836e799140d3621a171a69eecfc0d967a396c736a406b"
+    },
+    {
+      "path": "src/cumulonimbus/volume.test.ts",
+      "sha256": "0934cc1bfb8f27df253ddd3abecc38957ab9a37a0b8fa248a4acc8ff3a328b79"
+    },
+    {
+      "path": "src/cumulonimbus/volume.ts",
+      "sha256": "86a575e16bd23439f72ebe0ebc24cb6cea5900b22ac79321ca3e4366ac7afd74"
+    },
+    {
+      "path": "src/cumulonimbus/volume.worker.test.ts",
+      "sha256": "5a8a36291f7d7c36a701735ae32f833ec0eb0d3de9bd07eb42863569874a201c"
+    },
+    {
+      "path": "src/cumulonimbus/volume.worker.ts",
+      "sha256": "89eccd6b67a4d473b9305e75be4e1d25b22f28c04a3987e0ff39afdb637b8242"
+    },
+    {
+      "path": "src/cumulonimbus/weatherInteraction.test.ts",
+      "sha256": "7c2e4a20b88c478203963f5d698bf60ecb42435e5a38540319d549243bad879c"
+    },
+    {
+      "path": "src/cumulonimbus/weatherInteraction.ts",
+      "sha256": "31cb68650093530f9e3952afa87f8b97bcf2e87cd3627b4a43d45d2e2b3f99ba"
+    },
+    {
+      "path": "src/cumulonimbus/weatherState.test.ts",
+      "sha256": "7bfaeb584e7eda840ec9759588fda15cfa48a2d0aa379d2026982974f80a3fee"
+    },
+    {
+      "path": "src/cumulonimbus/weatherState.ts",
+      "sha256": "11fb5e122b12e6760b37f72abb405f8d8dd7fd65ceef2bc4c666ee81d3e0e0b9"
+    },
+    {
+      "path": "src/cumulonimbus/workerBridge.test.ts",
+      "sha256": "5e254d46e217fcf7698e0d7ac35538dc92c3d8d2892fb976caf65310bf03d41e"
+    },
+    {
+      "path": "src/embed/CloudiaHero.test.ts",
+      "sha256": "f93e20b11e88b8e08d120813f8c8c7a421733f32fbd714f07612986a8e965412"
+    },
+    {
+      "path": "src/embed/CloudiaHero.ts",
+      "sha256": "19381af09756c82e5fd320dc9cb9f74847bdde472398c3e972e3d6fff8189143"
+    },
+    {
+      "path": "src/input/gestureMapper.test.ts",
+      "sha256": "c4b71879bde6b59f580fc778b5e4b49c7e2500ce9e9387b1b2401302740eac93"
+    },
+    {
+      "path": "src/input/gestureMapper.ts",
+      "sha256": "8a03aeacaf0e9205cf478139393ff710f2a062bbda1527ed240094b35841af28"
+    },
+    {
+      "path": "src/input/inputController.ts",
+      "sha256": "b6029782bedbf39c4e245e2cb01a2f467648e26ade61a5db0d188498eede0e3e"
+    },
+    {
+      "path": "src/lab/LabApp.ts",
+      "sha256": "2fa879c6a9c9025cf858b6508b2c58afede162e5380125acc6b5f44f6f452d9a"
+    },
+    {
+      "path": "src/lab/LabUI.ts",
+      "sha256": "12ac22f24e2b5da3df38b32193994de423f9b137749d6ee8564ba61794ca9460"
+    },
+    {
+      "path": "src/main.ts",
+      "sha256": "5d5243cd348204920dde24188fbc4d7d48e0a9d56ec040957fad99c48479f2c9"
+    },
+    {
+      "path": "src/render/CloudEngine.ts",
+      "sha256": "dc8491ad902181d4acea7209858782e9a20c45f4572b2b2ad6b98979b37fedd9"
+    },
+    {
+      "path": "src/render/cloudFragment.ts",
+      "sha256": "b7342771c82b8b327b4611997fc804a9eaf49d3d4ef56054ab0a6c2450738b47"
+    },
+    {
+      "path": "src/render/cloudVertex.ts",
+      "sha256": "d8bcc643ac853509a6d0a9f33b3b639c1757b52b53bae420da66075e88ea01a9"
+    },
+    {
+      "path": "src/styles.css",
+      "sha256": "74953ccc0ee5401602405b2f3acb535b32908eb010a16a20307b83f601601029"
+    },
+    {
+      "path": "src/weather/WeatherLayer.test.ts",
+      "sha256": "2a5fefca9babf8bb4abfe020d220d248066ef82e45d0d084d17501f12b714fec"
+    },
+    {
+      "path": "src/weather/WeatherLayer.ts",
+      "sha256": "9d1ee9f3691c84a5d66d4146b903490758436a74d6ae5a538cc2e13be2d5c257"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "v48-dist/assets/CumulonimbusApp-fw8aK7_r.css",
+      "bytes": 13181,
+      "sha256": "bdf43d23ca041116c6b6eef5d8f95ab72115e3f0a0a8a728cb912e751dcaa9fb"
+    },
+    {
+      "path": "v48-dist/assets/CumulonimbusApp-jPorW5TE.js",
+      "bytes": 822168,
+      "sha256": "4244eb1735a6c03c5fa9f1e17a501607a947300fff86966a8e5b4482338d5bba"
+    },
+    {
+      "path": "v48-dist/assets/CumulonimbusApp-jPorW5TE.js.map",
+      "bytes": 3782814,
+      "sha256": "f7ca06c9d8d7211344980b3400e0ac00a7e92e1f6bbe33e395db29e0c65243ce"
+    },
+    {
+      "path": "v48-dist/assets/LabApp-BIVQGmZd.js",
+      "bytes": 405933,
+      "sha256": "61b740644d902e97f0e29d2e7924b0d480f6bdfdd7eae827ea06300cd5b247b9"
+    },
+    {
+      "path": "v48-dist/assets/LabApp-BIVQGmZd.js.map",
+      "bytes": 1147466,
+      "sha256": "e2ea91469045e771a175a2da3b66880824456acba5f9127eb0c9d22cebf6733c"
+    },
+    {
+      "path": "v48-dist/assets/index-Cia3ypEr.css",
+      "bytes": 1245,
+      "sha256": "99354a5ec1ade2941e4aba36f030b413c9afbad79336f11800929c7d805b4714"
+    },
+    {
+      "path": "v48-dist/assets/index-CycsRjAC.js",
+      "bytes": 2837,
+      "sha256": "900a5d3b4e9f51014c49c1cfe90df9c1c54dc12087ea0723d72ad260621a818b"
+    },
+    {
+      "path": "v48-dist/assets/index-CycsRjAC.js.map",
+      "bytes": 1613,
+      "sha256": "7ad4865bb940773a0b7a60f28a390709b2b62ff8dd70a0a2e3b176942c051f5c"
+    },
+    {
+      "path": "v48-dist/assets/render.worker-n3edDSVd.js",
+      "bytes": 978621,
+      "sha256": "45449ca22b084feb1959e14a472d05ba381f2ee1ef1054192aa66a17a3038dd0"
+    },
+    {
+      "path": "v48-dist/assets/render.worker-n3edDSVd.js.map",
+      "bytes": 5566342,
+      "sha256": "c23f8201b78fe0d173a056fed3c0d9969fa41240583a889eb7f3353ecd8eb385"
+    },
+    {
+      "path": "v48-dist/assets/sky.worker-CHm7n211.js",
+      "bytes": 2960,
+      "sha256": "503ad9438c1738310a9cbe2a41e9af0524e7046bce79e58d6da7c1e74863caaa"
+    },
+    {
+      "path": "v48-dist/assets/sky.worker-CHm7n211.js.map",
+      "bytes": 13323,
+      "sha256": "df7c7eaff6aefeb222e7b89eb86f6c9382a50f405fccd92e9886f2adaa6ac8be"
+    },
+    {
+      "path": "v48-dist/assets/three.core-DxR5k0T0.js",
+      "bytes": 195512,
+      "sha256": "e4d296a475f2cd168d934f17f032d4f56291682208332fc6a926b3937200a810"
+    },
+    {
+      "path": "v48-dist/assets/three.core-DxR5k0T0.js.map",
+      "bytes": 1858620,
+      "sha256": "1db6d177a84ab2823ca902a0261d4c3be1aba1fdbc870fba2593c66bb0c07798"
+    },
+    {
+      "path": "v48-dist/assets/volume.worker-C8xjTIth.js",
+      "bytes": 14392,
+      "sha256": "5b8ee50a65b79ce5ff5cbc3bb76a9657c0c21ef56718e02fad88168f5c5dc4d5"
+    },
+    {
+      "path": "v48-dist/assets/volume.worker-C8xjTIth.js.map",
+      "bytes": 71455,
+      "sha256": "9a90370656c43a11cfdd3ac558b9192c983ab81ea07f339cf67ac6b01ea9ff20"
+    },
+    {
+      "path": "v48-dist/fonts/commissioner/OFL.txt",
+      "bytes": 4395,
+      "sha256": "4a7d88c77b4bc39ff84f2e058ba8f015636c50ce33588a86d9da97defe519933"
+    },
+    {
+      "path": "v48-dist/fonts/commissioner/SOURCE.md",
+      "bytes": 361,
+      "sha256": "4d62bb7d2afbda450c342cafc6987bab37990ecea6e19378e1a6b0f706183a33"
+    },
+    {
+      "path": "v48-dist/fonts/commissioner/latin-variable.woff2",
+      "bytes": 36696,
+      "sha256": "737ec8f28006b815be5333598aa32b203005f5788c8e61b09090b944eac8b79c"
+    },
+    {
+      "path": "v48-dist/index.html",
+      "bytes": 911,
+      "sha256": "b195c13ebbcfe03e658753f8eda580df488872dbf3e832ab7e78c75456cab4c3"
+    },
+    {
+      "path": "v48-hero/cloudia-hero.iife.js",
+      "bytes": 526689,
+      "sha256": "d4363d2ccdbf676991be2c6ba05bc62da0ceef5debaa789f04766ab1248c30f5"
+    },
+    {
+      "path": "v48-hero/cloudia-hero.iife.js.map",
+      "bytes": 2860689,
+      "sha256": "a204f3f7edb0e4712ada6dc146d092ca6631f791cf8f5a830697b402c3eb3dfb"
+    },
+    {
+      "path": "v48-hero/cloudia-hero.js",
+      "bytes": 838767,
+      "sha256": "bc11f99470a6298e20fa804bc2d93041d4cc1a015d812ae97b6ad5827b5fa702"
+    },
+    {
+      "path": "v48-hero/cloudia-hero.js.map",
+      "bytes": 2926345,
+      "sha256": "a3f1c7b8de9484745e34cd10e6f967d00a86bc3267f61ac88a4c4e51f293b56c"
+    },
+    {
+      "path": "v48-hero/fonts/commissioner/OFL.txt",
+      "bytes": 4395,
+      "sha256": "4a7d88c77b4bc39ff84f2e058ba8f015636c50ce33588a86d9da97defe519933"
+    },
+    {
+      "path": "v48-hero/fonts/commissioner/SOURCE.md",
+      "bytes": 361,
+      "sha256": "4d62bb7d2afbda450c342cafc6987bab37990ecea6e19378e1a6b0f706183a33"
+    },
+    {
+      "path": "v48-hero/fonts/commissioner/latin-variable.woff2",
+      "bytes": 36696,
+      "sha256": "737ec8f28006b815be5333598aa32b203005f5788c8e61b09090b944eac8b79c"
+    }
+  ],
+  "appSourcemapSourceChecks": [
+    {
+      "path": "src/cumulonimbus/weatherState.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/sun.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/camera.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/motion.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/volume.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/landscape.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/precipitation.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/weatherInteraction.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/medium.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/cloudShader.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/atmosphere.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/skyModel.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/skyCache.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/storm.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/motionField.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/emptyTraversal.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/performance.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/queuePrefixMeasurement.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/three186TimestampBatch.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/timestampBatchMeasurement.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/densityR8.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/GPUSceneEngine.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/panels.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/uiIcons.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/sceneMarkup.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/ThunderAudio.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/CumulonimbusApp.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/core/defaultPreset.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/core/easing.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/core/stateMachine.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/input/inputController.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/core/renderQuality.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/render/cloudFragment.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/render/cloudVertex.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/render/CloudEngine.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/weather/WeatherLayer.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/core/presetStore.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/lab/LabUI.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/lab/LabApp.ts",
+      "matchesCurrent": true
+    },
+    {
+      "path": "src/main.ts",
+      "matchesCurrent": true
+    }
+  ],
+  "appSourcemapMismatchCount": 0
+}

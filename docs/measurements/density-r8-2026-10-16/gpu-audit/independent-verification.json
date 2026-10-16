@@ -1,0 +1,43 @@
+{
+  "status": "PASS independent raw readback verification",
+  "queries": 77629,
+  "datasets": [
+    {
+      "name": "real-seed72",
+      "queries": 53041,
+      "zero": 50263,
+      "positive": 2778,
+      "exactBits": true,
+      "echoBits": true,
+      "outputSHA256": "d43305c114b1830541360160bd042769746259548097512c205dc84b57e5eefd"
+    },
+    {
+      "name": "zero-r-varying-gba",
+      "queries": 8196,
+      "zero": 8196,
+      "positive": 0,
+      "exactBits": true,
+      "echoBits": true,
+      "outputSHA256": "23029d7c133050484c584465ed4c9551c6720ac97f642329ae02acba7b62f562"
+    },
+    {
+      "name": "one-r-varying-gba",
+      "queries": 8196,
+      "zero": 0,
+      "positive": 8196,
+      "exactBits": true,
+      "echoBits": true,
+      "outputSHA256": "fce7a51c2fca9b20883436bad2da400dede834c672c35802ece894776ace64dd"
+    },
+    {
+      "name": "ramp-checker-varying-gba",
+      "queries": 8196,
+      "zero": 35,
+      "positive": 8161,
+      "exactBits": true,
+      "echoBits": true,
+      "outputSHA256": "350a616bd734e894d364633acff0f2dfd0fec0cf1ce55f91bdf1c182f24c51b5"
+    }
+  ],
+  "scope": "Finite shared sampler raw WebGPU result, not renderer/Three or universal proof."
+}
