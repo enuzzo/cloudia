@@ -1,0 +1,16 @@
+{
+  "baseCommit": "8b3a1448553dae248de7ae846fe0459b1be1a962",
+  "baseManifest": "base-manifest.json",
+  "manifest": "albedo-manifest.json",
+  "changedOrAdded": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/lifecycle.test.ts",
+    "src/cumulonimbus/sceneMarkup.ts",
+    "src/cumulonimbus/terrainMaterialDiagnostic.test.ts",
+    "src/cumulonimbus/terrainMaterialDiagnostic.ts",
+    "src/cumulonimbus/terrainMaterialWitness.test.ts",
+    "src/cumulonimbus/terrainMaterialWitness.ts"
+  ],
+  "deleted": [],
+  "scope": "Overlay on unchanged canonical129 source manifest; experiment only, not product adoption"
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "file": "ordinary-primary-roi.png",
+    "box": [
+      0,
+      560,
+      1000,
+      1000
+    ],
+    "sourceSHA256": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d",
+    "sha256": "435a18cbd0730c3f0328b110bf77e0d13a3b804174673826971ee21cd9f64b52",
+    "scope": "Lossless1:1crop, no resampling/tone/colour change"
+  },
+  {
+    "file": "ordinary-secondary-roi.png",
+    "box": [
+      700,
+      540,
+      1030,
+      780
+    ],
+    "sourceSHA256": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d",
+    "sha256": "f463179eebbf4a86907cad5b12f668a67420bfb40b1db1568522178fcb1080b1",
+    "scope": "Lossless1:1crop, no resampling/tone/colour change"
+  },
+  {
+    "file": "albedo-primary-roi.png",
+    "box": [
+      0,
+      560,
+      1000,
+      1000
+    ],
+    "sourceSHA256": "5eb7d8bef55d6e707ee552bd2f0ed5f93b39d97dcaf4e69f7a3cd2033f0e0f2b",
+    "sha256": "4f8efb3c663277863dc6f9e4beca01576b1d97a93fbb8d12e0d965f6a2bd3506",
+    "scope": "Lossless1:1crop, no resampling/tone/colour change"
+  },
+  {
+    "file": "albedo-secondary-roi.png",
+    "box": [
+      700,
+      540,
+      1030,
+      780
+    ],
+    "sourceSHA256": "5eb7d8bef55d6e707ee552bd2f0ed5f93b39d97dcaf4e69f7a3cd2033f0e0f2b",
+    "sha256": "8a806cf7dd5c6bc09697ddcbce7fbcc7b638a9b61dea6b8e976b9158f867ae92",
+    "scope": "Lossless1:1crop, no resampling/tone/colour change"
+  }
+]

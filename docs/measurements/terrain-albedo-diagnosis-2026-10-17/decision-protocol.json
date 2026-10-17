@@ -1,0 +1,31 @@
+{
+  "previousGoalTurn": "PROGRESS: v60 exact-input terrain cache adopted with actual native parity and small measured static gain; visual realism still open",
+  "baseCommit": "8b3a1448553dae248de7ae846fe0459b1be1a962",
+  "experiment": "A/B/A fresh owners with immutable compile-time ordinary/albedo/ordinary material; original ordinary library and wrapper byte-exact, albedo factory changes only ground expression",
+  "candidate": "R1 albedo-source fresh129 v60 plus diagnostic helpers; R0source/logs/protocol/browser retained separately",
+  "hypothesis": "Authored albedo mixture versus normal/direct/ambient response may explain selected patch contrasts; no attribution from apparent shininess alone",
+  "mode1Formula": "Change only let ground line to albedo+inlandWater*coverB.w. Same wrapper signature/args; no diagnostic uniform, terrain geometry, shadow, cover, sea, aerial/cloud/film change.",
+  "gates": [
+    "Before B, ordinaryA must recover entire canonicalRGBA targetSHA e4435ce3a0a45e243c19dea24e5bc1133f6db1c8fd5ca168e94e644b1c6c9045,48uint32witnesswords and PNG90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d; otherwise stop again",
+    "Same seed74 fixedpose native2474x1844 ultra256^3/128^3/384, t60paused noorbit, Sole settled noflash, flowfull; one active renderer",
+    "B: all4,562,056 alpha words via whole-alphaSHA and12selectedalpha bitidentical toA, oceancontrolRGBunchanged, current-mode cached/fresh fulltargetidentical",
+    "Native mode1PNG transferred/inspected root+independent; primaryROI[0,560,1000,1000] and secondary[700,540,1030,780]1:1",
+    "ReturnA freshowner recovers fullRGBA/alphaSHA,12RGBA bits and PNG. Each mode uses its own compiled shader/owner, same source geometry/target format and frozen state; no shared-pipeline claim.",
+    "Compute relative pair luminance contrast on selected rawRGB before aerial;12pixels do not prove shape/causality of every patch",
+    "If mixed, preserve mixed result; do not invent palette/roughness/ambient coefficients or angle/bias sweeps",
+    "Diagnostic is not a final visual material orFPSbenchmark; no adoption of mode1, no shader quality reduced"
+  ],
+  "rawViewLimit": "FulltargetSHA/12rawpixel values are read; nativePNG still includes aerial/cloud/film. No raw-fulltarget colour image is captured; global pre-aerial patch shape cannot be asserted from12points",
+  "createdAt": "2026-10-17T00:41:25.446703+00:00",
+  "revision": "R1 before any albedo-mode GPU capture",
+  "r0Outcome": {
+    "status": "FAIL_CANONICAL_FULL_TARGET_GATE",
+    "cachedAndFreshSHA256": "61209ebce8def7481d6b183eb479d2c5128a649fd0c4598ed1938dddca87aee5",
+    "canonicalSHA256": "e4435ce3a0a45e243c19dea24e5bc1133f6db1c8fd5ca168e94e644b1c6c9045",
+    "pngAndTwelveWitnessBits": "exact",
+    "cause": "Not identified; no difference count/location/magnitude inferred from hashes",
+    "mode1": "not attempted"
+  },
+  "pipelineLimit": "A/B pipelines differ. Measures renderer effect of one source ground-expression change, not exact algebraic isolation of every float from compiler choices. NoFPScomparison; possible DCE removes lighting inB.",
+  "alphaMemory": "No extraGPUread/target. Extract4bytealpha/pixel from existing packed CPU buffer; max24MiB extraCPU per read, actual18,248,224B atnative; residency/GC/staging unmeasured."
+}

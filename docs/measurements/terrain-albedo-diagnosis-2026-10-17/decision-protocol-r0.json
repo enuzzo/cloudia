@@ -1,0 +1,20 @@
+{
+  "previousGoalTurn": "PROGRESS: v60 exact-input terrain cache adopted with actual native parity and small measured static gain; visual realism still open",
+  "baseCommit": "8b3a1448553dae248de7ae846fe0459b1be1a962",
+  "experiment": "one shared diagnostic terrain pipeline, materialDiagnosticMode0ordinary /1unlitlandalbedo /0return",
+  "candidate": "albedo-source fresh verified129-source v60",
+  "hypothesis": "Authored albedo mixture versus normal/direct/ambient response may explain selected patch contrasts; no attribution from apparent shininess alone",
+  "mode1Formula": "sea unchanged; ground selected as albedo+inlandWater*coverB.w; noise, geometry, fractions, camera, aerial/cloud/film unchanged",
+  "gates": [
+    "Before interpreting mode1, mode0 fulltargetSHA e4435ce3a0a45e243c19dea24e5bc1133f6db1c8fd5ca168e94e644b1c6c9045 plus all12ordinaryFloat32RGBA bits match cycle32 and PNG90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d",
+    "Same seed74 fixedpose native2474x1844 ultra256^3/128^3/384, t60paused noorbit, Sole settled noflash, flowfull; one active renderer",
+    "Mode1 alpha bitidentical at12historicalpixels, oceancontrol RGBunchanged; cache modechange producesdraw and same mode reusehit",
+    "Native mode1PNG transferred/inspected root+independent; primaryROI[0,560,1000,1000] and secondary[700,540,1030,780]1:1",
+    "Returnmode0 recovers entire targetSHA,12RGBA bits and PNG exactly; no material/target replacement",
+    "Compute relative pair luminance contrast on selected rawRGB before aerial;12pixels do not prove shape/causality of every patch",
+    "If mixed, preserve mixed result; do not invent palette/roughness/ambient coefficients or angle/bias sweeps",
+    "Diagnostic is not a final visual material orFPSbenchmark; no adoption of mode1, no shader quality reduced"
+  ],
+  "rawViewLimit": "FulltargetSHA/12rawpixel values are read; nativePNG still includes aerial/cloud/film. No raw-fulltarget colour image is captured; global pre-aerial patch shape cannot be asserted from12points",
+  "createdAt": "2026-10-17T00:33:47.998820+00:00"
+}

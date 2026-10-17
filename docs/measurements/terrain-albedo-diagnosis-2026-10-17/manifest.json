@@ -1,0 +1,277 @@
+{
+  "schema": "cloudia-evidence-archive-v1",
+  "scope": "Cycle38 external albedo R0 failed gate, R1 A/B/A mixed diagnosis; no product source adoption",
+  "baseCommit": "8b3a1448553dae248de7ae846fe0459b1be1a962",
+  "payloadCount": 67,
+  "payloadBytes": 4313291,
+  "files": {
+    "README.md": {
+      "bytes": 1317,
+      "sha256": "ba2e1b9c7bde38b75d531097bbfb05b04bf26be6d0401e85b6abac7eaff31dbc"
+    },
+    "albedo-checkpoint-review.md": {
+      "bytes": 2778,
+      "sha256": "008764c9a22f89cf282acea60a028e6d97cfdb4914fd550829b5d902fed5c2e0"
+    },
+    "albedo-integration-review.md": {
+      "bytes": 4294,
+      "sha256": "490f7f55563565ab43110b9319ce5abf3528cf5f928bab1b1aa0b03202225a62"
+    },
+    "albedo-r0-gate-review.md": {
+      "bytes": 2966,
+      "sha256": "471d06cab937c5a6171e660b48a3c706a33f5b449a6e0d6ae0ef941289067cca"
+    },
+    "albedo-r1-integration-review.md": {
+      "bytes": 3550,
+      "sha256": "8f9e4843766ed0b8a00183d4a43785642e852dd9dfcdb3c580b84304e9c9f514"
+    },
+    "albedo-r1-native-review.md": {
+      "bytes": 4369,
+      "sha256": "21876373905c8fc4c2599fce8e6ae028049ee99c040c481d777914e17a5730d2"
+    },
+    "albedo-r1-point-analysis.json": {
+      "bytes": 15507,
+      "sha256": "177d613f1b859669f0a5f851a63588e844c06b6c88523238ccee2b09c7db0dde"
+    },
+    "albedo-r1-point-analysis.md": {
+      "bytes": 5161,
+      "sha256": "4bf66634edaea1c56288ee40a015b9eb0fac00943a6fc2af458b16ac239fa080"
+    },
+    "albedo-root-verdict.json": {
+      "bytes": 1598,
+      "sha256": "34b0bc5da22c69118d3bbd48b91ebee0cfee33df951782772bbaebcc0bed3ac7"
+    },
+    "browser/albedo-console.json": {
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "browser/albedo-f32.json": {
+      "bytes": 23831,
+      "sha256": "c92fda25940409b9fbde50434d96313888b555890d5f343a6b42e00d101c0f87"
+    },
+    "browser/albedo-native-transfer.json": {
+      "bytes": 9132,
+      "sha256": "4ec6ccf5d8e227423d67d11ed41b5f38dfbe3b25975ae510a38617b54468e1d5"
+    },
+    "browser/albedo-native.json": {
+      "bytes": 12500,
+      "sha256": "6e7143cc78be7c2e9fa1d00f598ccb0277f9bd211892192359414bd7fd17a52f"
+    },
+    "browser/albedo-native.png": {
+      "bytes": 3005033,
+      "sha256": "5eb7d8bef55d6e707ee552bd2f0ed5f93b39d97dcaf4e69f7a3cd2033f0e0f2b"
+    },
+    "browser/albedo-primary-roi.png": {
+      "bytes": 236846,
+      "sha256": "4f8efb3c663277863dc6f9e4beca01576b1d97a93fbb8d12e0d965f6a2bd3506"
+    },
+    "browser/albedo-secondary-roi.png": {
+      "bytes": 37146,
+      "sha256": "8a806cf7dd5c6bc09697ddcbce7fbcc7b638a9b61dea6b8e976b9158f867ae92"
+    },
+    "browser/ordinary-before-f32.json": {
+      "bytes": 23862,
+      "sha256": "7e31ec882e09507911723948cf856847189e81079b922be83cf75f624cda586e"
+    },
+    "browser/ordinary-before-native.json": {
+      "bytes": 12471,
+      "sha256": "7fa6f02287c3e952dae78d5bb133211a9764a23a07804b37f9955305d2d5d9fd"
+    },
+    "browser/ordinary-png-alias.json": {
+      "bytes": 479,
+      "sha256": "fd00c0320df2dd9d53c2a8fc9e52a5f5e9781176ff1a0d2f9bae21d1a0279e74"
+    },
+    "browser/ordinary-primary-roi.png": {
+      "bytes": 257559,
+      "sha256": "435a18cbd0730c3f0328b110bf77e0d13a3b804174673826971ee21cd9f64b52"
+    },
+    "browser/ordinary-return-console.json": {
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "browser/ordinary-return-f32.json": {
+      "bytes": 23863,
+      "sha256": "1e1f59cfd983f05fc6d2cc983f0048e702561b681163a371cdcf19e24baa78de"
+    },
+    "browser/ordinary-return-native.json": {
+      "bytes": 12485,
+      "sha256": "00318965986735ee895f7d8e3cd632710217c5525ec94644998733498ddf14c0"
+    },
+    "browser/ordinary-secondary-roi.png": {
+      "bytes": 43987,
+      "sha256": "f463179eebbf4a86907cad5b12f668a67420bfb40b1db1568522178fcb1080b1"
+    },
+    "browser/r0-ordinary-before-f32.json": {
+      "bytes": 23533,
+      "sha256": "3da5359512f02078db21e5cf48e441ffd868db81d2d1115431ff63af7e371a2a"
+    },
+    "browser/r0-ordinary-before-native.json": {
+      "bytes": 12481,
+      "sha256": "86f5cf60930ff58108778c8f11962ccdeb70611be8139f903e7659b672772b70"
+    },
+    "browser/restored-v60-console.json": {
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "browser/restored-v60-preview-state.txt": {
+      "bytes": 1354,
+      "sha256": "4dca340f908a031c9db8c5e8ae28f6636bdf0514e8e7d690e847ce170c7058f5"
+    },
+    "browser/restored-v60-preview.png": {
+      "bytes": 68033,
+      "sha256": "458b158610f355f1292d14959a520b15b4b16bd0ab63b8ceee2e2062f5cd3266"
+    },
+    "browser/roi-ledger.json": {
+      "bytes": 1393,
+      "sha256": "4e176a21bce52b1267ac5551c1aae334bf97b931f1d29d6aaf3605c82170b759"
+    },
+    "decision-protocol-r0.json": {
+      "bytes": 2096,
+      "sha256": "1942ce5dcdff44258c82e1fc7939843081d955da396006f59d71bf460e08eb56"
+    },
+    "decision-protocol.json": {
+      "bytes": 3314,
+      "sha256": "bcd5c495b62de40698c88ac00ee27bfae696956751dd182cd13ff2ea74db518c"
+    },
+    "material-diagnostic-freeze.json": {
+      "bytes": 1742,
+      "sha256": "83ddacbb96b2886b7e809425ca93544aaa052e5f177c2612db629b8beaf813a3"
+    },
+    "material-references.md": {
+      "bytes": 1079,
+      "sha256": "cad1c0b966f029cc26e675c6e75a3dc3acdf41e38c788d1056face404979d3af"
+    },
+    "next-dem-resolution-candidate.md": {
+      "bytes": 9427,
+      "sha256": "8a596e440787c3703258827e6a27918530e13340be1c2c400fb4f85cffa9ff87"
+    },
+    "ordinary-r1-gate.json": {
+      "bytes": 417,
+      "sha256": "69f77243c1c33981c1c928dd884e3312bf09abae1eb9086033c0d20cf9fdb104"
+    },
+    "qualification/1.log": {
+      "bytes": 372,
+      "sha256": "cdce223bb017f77cc3d212dfe2ab515feed0da9af458636b34a2c3db515a14ff"
+    },
+    "qualification/2.log": {
+      "bytes": 1306,
+      "sha256": "3c6d09ca6cabbca22c95c8d7c78dec33822cc7e79d91fd61abc04decce2384c5"
+    },
+    "qualification/3.log": {
+      "bytes": 1484,
+      "sha256": "2b304d4b02a07bf1c100ef52587de1b0ba01442b3626e088dda989ed166928af"
+    },
+    "qualification/4.log": {
+      "bytes": 393,
+      "sha256": "4adf9c8bae38eb32c7619d3683148b4eb56ec94246167841bc9477a2e60e5ab9"
+    },
+    "qualification/results.json": {
+      "bytes": 1122,
+      "sha256": "f53d318b953af84b7617b695df4de4d536c307ebf0ca555322c8c3dd7ffe0d2f"
+    },
+    "qualification-r0/1.log": {
+      "bytes": 366,
+      "sha256": "0e76e07252da084b423e322c2c0ac517c10854ea47945322d0f42abc164b8d38"
+    },
+    "qualification-r0/2.log": {
+      "bytes": 1300,
+      "sha256": "09b742bde48d1a5c1321556061d8ea3ead4741f14d7badeb458bc400cccb63a4"
+    },
+    "qualification-r0/3.log": {
+      "bytes": 1484,
+      "sha256": "bf7f33ce980c23ea2f1c7c57ae8c1d44c2cdb10778bf72ee91edef880b46bf69"
+    },
+    "qualification-r0/4.log": {
+      "bytes": 393,
+      "sha256": "5abe681fae9e064913c9b2840ebc2d45570cdd1ee043c59ed4fea31fe9635bcc"
+    },
+    "qualification-r0/results.json": {
+      "bytes": 1123,
+      "sha256": "7eb832274eb6ac159d5e1043ac39eecbeddfa33059d20f4ec52704fe8f05a051"
+    },
+    "run-qualification.py": {
+      "bytes": 1577,
+      "sha256": "61f5e29f5235cf5cc2da09e67ee7a548e203dd47afa11f42e9db0f4359406fb5"
+    },
+    "source/albedo-manifest.json": {
+      "bytes": 14095,
+      "sha256": "92dfa11fc714a7f6942a645dcefe32705aa1330f9571567d3ed597f9d98a4e94"
+    },
+    "source/albedo-r0-manifest.json": {
+      "bytes": 14095,
+      "sha256": "f4e65b2e71ec52fd9a93e3ffcac09ab2e278336813056088ec2c2403bfa17f97"
+    },
+    "source/albedo-r0-source/src/cumulonimbus/CumulonimbusApp.ts": {
+      "bytes": 23322,
+      "sha256": "9c0b63860a933203d5d1146b93c338efb7ab1bfca01c96d97279e078db63b379"
+    },
+    "source/albedo-r0-source/src/cumulonimbus/GPUSceneEngine.ts": {
+      "bytes": 84050,
+      "sha256": "cf659878286ba014eded32bf1882797f63c8dabaa9986ed91e66650cf29bffe1"
+    },
+    "source/albedo-r0-source/src/cumulonimbus/lifecycle.test.ts": {
+      "bytes": 73692,
+      "sha256": "ad8110092fa724e94e1cc8b7b00b793a547a5d16c0696c52e084c4e557610001"
+    },
+    "source/albedo-r0-source/src/cumulonimbus/sceneMarkup.ts": {
+      "bytes": 13185,
+      "sha256": "46e55b28e5e691525ef5ec7b0ca274fc185977ccec9813e817a503c1e3b9e715"
+    },
+    "source/albedo-r0-source/src/cumulonimbus/terrainMaterialDiagnostic.test.ts": {
+      "bytes": 3952,
+      "sha256": "508a80dcd8d156e410748d98da9a1d26e200d600b8487ee76a1aefc115815ddc"
+    },
+    "source/albedo-r0-source/src/cumulonimbus/terrainMaterialDiagnostic.ts": {
+      "bytes": 2359,
+      "sha256": "ed11bde13898149db9c0beed1bfe23f18e3420c43712b2d1a8c55409fd724235"
+    },
+    "source/albedo-r0-source/src/cumulonimbus/terrainMaterialWitness.test.ts": {
+      "bytes": 4402,
+      "sha256": "3814c7e7782e1c22e8fa8cc82d96da33eb6bc2ecaef8150bd13291d7ba4ee90d"
+    },
+    "source/albedo-r0-source/src/cumulonimbus/terrainMaterialWitness.ts": {
+      "bytes": 2967,
+      "sha256": "bfc06597edad45689e4b656133f5cb2647de237265a2684af17f9d76588d808b"
+    },
+    "source/albedo-r0-source-overlay.json": {
+      "bytes": 672,
+      "sha256": "494d5642917c1662869574b0387d7b5567da8960605ba9b4816bbe19e3f2f346"
+    },
+    "source/albedo-source/src/cumulonimbus/GPUSceneEngine.ts": {
+      "bytes": 83657,
+      "sha256": "c5bd4440bc9a18725e9c7bcd473fd617fab05a393061976b262fe209d40ae79b"
+    },
+    "source/albedo-source/src/cumulonimbus/lifecycle.test.ts": {
+      "bytes": 73457,
+      "sha256": "d8a8df1a2d503908b74cac95f84c72e276fefb8da7e4cf58d2adfa14a9a20de9"
+    },
+    "source/albedo-source/src/cumulonimbus/sceneMarkup.ts": {
+      "bytes": 12996,
+      "sha256": "69c3d57aec581f9b94dce885c6d908cca5d01cab82b3498cd7a2921f4002b6b0"
+    },
+    "source/albedo-source/src/cumulonimbus/terrainMaterialDiagnostic.test.ts": {
+      "bytes": 3535,
+      "sha256": "3d4c70319fedcc6abfac42ff55afc0aea98ffa6e7f01eddf2fca91e8866c7d99"
+    },
+    "source/albedo-source/src/cumulonimbus/terrainMaterialDiagnostic.ts": {
+      "bytes": 1123,
+      "sha256": "a59fee9e58413cd479c7cd8a37073f40fb7d6ad14f07cd93b28133aecc81c9fe"
+    },
+    "source/albedo-source/src/cumulonimbus/terrainMaterialWitness.test.ts": {
+      "bytes": 6589,
+      "sha256": "1c7d5aad724e6938fb0ecdb2dfabd26e557476b7e90ec6b74070f2b2d94fe306"
+    },
+    "source/albedo-source/src/cumulonimbus/terrainMaterialWitness.ts": {
+      "bytes": 4370,
+      "sha256": "9ed3f42e8eb385c6a4ca9720bf51c100b35dc1c6e97043a266cd84048e315fbf"
+    },
+    "source/albedo-source-overlay.json": {
+      "bytes": 626,
+      "sha256": "fad6f637d8804505089690a19ed63cfaf3cc17f41fad7501b9e5c585e1e713b9"
+    },
+    "source/base-manifest.json": {
+      "bytes": 13615,
+      "sha256": "a4e38cfc8afdfb5899cc31d20124ee7704754108af1838517a5d3d6583a51b2b"
+    }
+  }
+}

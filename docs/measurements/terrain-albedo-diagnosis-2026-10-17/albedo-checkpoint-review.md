@@ -1,0 +1,13 @@
+# Review indipendente del checkpoint albedo
+
+17 ottobre 2026. **PASS fattuale del rapporto; nessun rilievo bloccante.** Revisione in sola lettura di `docs/TERRAIN-ALBEDO-DIAGNOSIS-2026-10-17.md`, dei JSON effettivi curati, dei calcoli locali già congelati e dei log di qualifica. Nessun modello, test, build, browser o GPU eseguito.
+
+- La cronologia distingue correttamente R0 da R1. R0 fallisce la parità del target ordinary completo (`61209ebc…` contro `e4435ce3…`) prima di qualsiasi B; PNG e dodici campioni uguali non vengono usati per aggirare quel gate. Il rapporto non inventa quantità, posizione o causa delle differenze. R1 torna alla libreria ordinary canonica e separa gli owner A/B/A.
+- I tre audit R1 confermano cached=fresh nel proprio modo: RGBA `e4435ce3…` / `0ed1d665…` / `e4435ce3…`, alpha comune `29a4e015…` su 4.562.056 pixel. Il ritorno A recupera anche le 48 parole dei dodici campioni. Byte packed/readback/alpha, PNG B e trasferimento a 62 parti sono riportati senza confondere il bitmap ordinary riusato con un nuovo trasferimento.
+- Le tre coppie e le interpretazioni coincidono con `albedo-r1-point-analysis.json` (SHA256 `177d613f1b859669f0a5f851a63588e844c06b6c88523238ccee2b09c7db0dde`): L1 quasi invariata (.082698→.082441), L2 attenuata (.210618→.020868), L3 attenuata (.018846→.004769) e con ordine delle due luminanze invertito. Il rapporto mantiene distinto il contrasto assoluto dal segno ricavato dai valori originali.
+- Sono espliciti i limiti decisivi: etichette storiche dei controlli, dodici punti non rappresentativi dell’intero terreno, assenza di immagine raw dell’intero target, pipeline B compilata distinta, ramo rimosso che combina normali/diretto/ambiente, nessuna attribuzione globale delle macchie. La critica visiva mista concorda con la review indipendente già salvata e non diventa un PASS fotografico.
+- I log curati confermano R0 52 mirati / 516 completi e R1 55 / 519, con 50 file nella suite completa; i risultati di typecheck e build risultano terminali 0. I manifest sorgente confermano base129, candidate133 e overlay8/7. La rilocazione dei vecchi log R0 è dichiarata, senza riscrivere il record originale.
+
+**Nessuna correzione necessaria del contenuto esaminato.** L’eventuale formulazione più esplicita «inversione dell’ordine delle luminanze» al posto di «inversione del segno» sarebbe soltanto editoriale: i numeri e il significato attuale sono corretti.
+
+Questa review non è la verifica finale dell’inventario archivio: il manifest conclusivo era ancora in preparazione al momento della richiesta. Non certifica sorgenti/runtime attraverso un replay, prestazioni, altri preset, worker o moto. Prodotto e obiettivo fotografico restano nello stato dichiarato dal rapporto.

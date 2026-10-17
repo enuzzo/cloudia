@@ -1,0 +1,565 @@
+{
+  "schema": "cloudia-albedo-r1-twelve-point-analysis-v1",
+  "scope": "Arithmetic on saved JSON target samples only; no rendering/model, image inspection or new selection. Historical IDs are not current material classes. Ordinary return owner remains pending at this analysis.",
+  "sources": {
+    "ordinary": {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle34/browser/ordinary-before-f32.json",
+      "bytes": 23862,
+      "sha256": "7e31ec882e09507911723948cf856847189e81079b922be83cf75f624cda586e"
+    },
+    "albedo": {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle34/browser/albedo-f32.json",
+      "bytes": 23831,
+      "sha256": "c92fda25940409b9fbde50434d96313888b555890d5f343a6b42e00d101c0f87"
+    },
+    "ordinaryNative": {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle34/browser/ordinary-before-native.json",
+      "bytes": 12471,
+      "sha256": "7fa6f02287c3e952dae78d5bb133211a9764a23a07804b37f9955305d2d5d9fd"
+    },
+    "albedoNative": {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle34/browser/albedo-native.json",
+      "bytes": 12500,
+      "sha256": "6e7143cc78be7c2e9fa1d00f598ccb0277f9bd211892192359414bd7fd17a52f"
+    },
+    "historical": {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle32/browser/direct-counterfactual.json",
+      "bytes": 19558,
+      "sha256": "2e04bc7fb451fbe0dc172046b64d6124bd2b0f80ff728be0df80a9b206ebcdb7"
+    }
+  },
+  "formula": {
+    "Yweights": [
+      0.2126,
+      0.7152,
+      0.0722
+    ],
+    "Yscope": "Linear target RGB before cloud/rain/aerial transport and film, not PNG sRGB brightness or measured physical albedo.",
+    "MichelsonAbs": "abs(Yfirst-Ycontrol)/(Yfirst+Ycontrol)",
+    "MichelsonSigned": "(Yfirst-Ycontrol)/(Yfirst+Ycontrol)",
+    "scope": "Two fixed samples per pair, not full-ROI/image contrast; denominators positive in these records."
+  },
+  "metadataComparison": {
+    "exactFields": [
+      "seed",
+      "family",
+      "quality",
+      "nominalSteps",
+      "stepSizeKm",
+      "emptyStepKm",
+      "output",
+      "internal",
+      "outputMode",
+      "canvas",
+      "viewport",
+      "rendererOutputColorSpace",
+      "rendererToneMapping",
+      "volume",
+      "detailVolume",
+      "motionField",
+      "ablation",
+      "ablationCode",
+      "flowMode",
+      "flowSampled",
+      "flowComputeThisDraw",
+      "densitySampling",
+      "narrowCloudSpecialization",
+      "camera",
+      "paused",
+      "orbit",
+      "speed",
+      "material",
+      "weather",
+      "lighting",
+      "terrain"
+    ],
+    "differences": {},
+    "clockDifferences": {
+      "weatherTime": [
+        16.01909999999996,
+        10.733999999999995
+      ]
+    },
+    "excluded": "Owner wall/frame counters and local sky texture UUIDs are not portable buffer identities; intended material mode differs."
+  },
+  "target": {
+    "ordinary": {
+      "width": 2474,
+      "height": 1844,
+      "sha256": "e4435ce3a0a45e243c19dea24e5bc1133f6db1c8fd5ca168e94e644b1c6c9045",
+      "alphaSHA256": "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c",
+      "alphaBytes": 18248224,
+      "returnedBytes": 73169824,
+      "packedBytes": 72992896,
+      "format": "rgba32float"
+    },
+    "albedo": {
+      "width": 2474,
+      "height": 1844,
+      "sha256": "0ed1d66537553dba4479bc88546d8c1a50890a96a5ceb7398ab91cb359d255ab",
+      "alphaSHA256": "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c",
+      "alphaBytes": 18248224,
+      "returnedBytes": 73169824,
+      "packedBytes": 72992896,
+      "format": "rgba32float"
+    },
+    "eachCachedFreshWitnessEqual": [
+      true,
+      true
+    ],
+    "alphaSHAEqual": true,
+    "alphaPixels": 4562056
+  },
+  "nativePNGMetadata": {
+    "ordinary": {
+      "mime": "image/png",
+      "width": 2474,
+      "height": 1844,
+      "byteLength": 2909134,
+      "sha256": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d"
+    },
+    "albedo": {
+      "mime": "image/png",
+      "width": 2474,
+      "height": 1844,
+      "byteLength": 3005033,
+      "sha256": "5eb7d8bef55d6e707ee552bd2f0ed5f93b39d97dcaf4e69f7a3cd2033f0e0f2b"
+    },
+    "actualPNGInspected": false
+  },
+  "rows": [
+    {
+      "id": "L1-artifact",
+      "uv": [
+        0.028900565885206144,
+        0.46447939262472887
+      ],
+      "pixel": [
+        71,
+        856
+      ],
+      "ordinaryRGB": [
+        0.006063022650778294,
+        0.008782604709267616,
+        0.008711271919310093
+      ],
+      "albedoRGB": [
+        0.07506752759218216,
+        0.084034264087677,
+        0.05583260580897331
+      ],
+      "Yordinary": 0.008199271336197854,
+      "Yalbedo": 0.08009177618101239,
+      "ratioY": 9.768157790732701,
+      "alphaOrdinary": 36.562217712402344,
+      "alphaAlbedo": 36.562217712402344,
+      "alphaBitsOrdinary": 1108492214,
+      "alphaBitsAlbedo": 1108492214,
+      "alphaBitsEqual": true,
+      "RGBBitsEqual": false,
+      "ordinaryHistoricalBitsEqual": true
+    },
+    {
+      "id": "L1-control",
+      "uv": [
+        0.026071139854486662,
+        0.46447939262472887
+      ],
+      "pixel": [
+        64,
+        856
+      ],
+      "ordinaryRGB": [
+        0.007890620268881321,
+        0.010145480744540691,
+        0.01030550617724657
+      ],
+      "albedoRGB": [
+        0.0971989557147026,
+        0.09658132493495941,
+        0.06571479141712189
+      ],
+      "Yordinary": 0.009677651243656873,
+      "Yalbedo": 0.09448406951874494,
+      "ratioY": 9.763119907908816,
+      "alphaOrdinary": 36.556861877441406,
+      "alphaAlbedo": 36.556861877441406,
+      "alphaBitsOrdinary": 1108490810,
+      "alphaBitsAlbedo": 1108490810,
+      "alphaBitsEqual": true,
+      "RGBBitsEqual": false,
+      "ordinaryHistoricalBitsEqual": true
+    },
+    {
+      "id": "L2-artifact",
+      "uv": [
+        0.1744139046079224,
+        0.46068329718004336
+      ],
+      "pixel": [
+        431,
+        849
+      ],
+      "ordinaryRGB": [
+        0.022848322987556458,
+        0.02388734742999077,
+        0.017091836780309677
+      ],
+      "albedoRGB": [
+        0.08867725729942322,
+        0.09044522047042847,
+        0.058568671345710754
+      ],
+      "Yordinary": 0.02317581496462226,
+      "Yalbedo": 0.08776786465346813,
+      "ratioY": 3.7870454517972827,
+      "alphaOrdinary": 36.058143615722656,
+      "alphaAlbedo": 36.058143615722656,
+      "alphaBitsOrdinary": 1108360074,
+      "alphaBitsAlbedo": 1108360074,
+      "alphaBitsEqual": true,
+      "RGBBitsEqual": false,
+      "ordinaryHistoricalBitsEqual": true
+    },
+    {
+      "id": "L2-control",
+      "uv": [
+        0.1744139046079224,
+        0.4579718004338395
+      ],
+      "pixel": [
+        431,
+        844
+      ],
+      "ordinaryRGB": [
+        0.013982273638248444,
+        0.01572258584201336,
+        0.012387160211801529
+      ],
+      "albedoRGB": [
+        0.08450133353471756,
+        0.08692119270563126,
+        0.056074488908052444
+      ],
+      "Yordinary": 0.015111777736991645,
+      "Yalbedo": 0.0841795986317098,
+      "ratioY": 5.570462992295686,
+      "alphaOrdinary": 36.13376998901367,
+      "alphaAlbedo": 36.13376998901367,
+      "alphaBitsOrdinary": 1108379899,
+      "alphaBitsAlbedo": 1108379899,
+      "alphaBitsEqual": true,
+      "RGBBitsEqual": false,
+      "ordinaryHistoricalBitsEqual": true
+    },
+    {
+      "id": "L3-artifact",
+      "uv": [
+        0.36519805982215037,
+        0.35330802603036876
+      ],
+      "pixel": [
+        903,
+        651
+      ],
+      "ordinaryRGB": [
+        0.006782742217183113,
+        0.008856769651174545,
+        0.008527116850018501
+      ],
+      "albedoRGB": [
+        0.08667787164449692,
+        0.08746783435344696,
+        0.056409019976854324
+      ],
+      "Yordinary": 0.0083920304864645,
+      "Yalbedo": 0.0850574418835342,
+      "ratioY": 10.135502012382258,
+      "alphaOrdinary": 43.868621826171875,
+      "alphaAlbedo": 43.868621826171875,
+      "alphaBitsOrdinary": 1110407544,
+      "alphaBitsAlbedo": 1110407544,
+      "alphaBitsEqual": true,
+      "RGBBitsEqual": false,
+      "ordinaryHistoricalBitsEqual": true
+    },
+    {
+      "id": "L3-control",
+      "uv": [
+        0.36519805982215037,
+        0.35059652928416485
+      ],
+      "pixel": [
+        903,
+        646
+      ],
+      "ordinaryRGB": [
+        0.007045034319162369,
+        0.009199468418955803,
+        0.008825168944895267
+      ],
+      "albedoRGB": [
+        0.08586838841438293,
+        0.08665288239717484,
+        0.0556822307407856
+      ],
+      "Yordinary": 0.008714411307312549,
+      "Yalbedo": 0.08425001792684197,
+      "ratioY": 9.6678955073127,
+      "alphaOrdinary": 43.906856536865234,
+      "alphaAlbedo": 43.906856536865234,
+      "alphaBitsOrdinary": 1110417567,
+      "alphaBitsAlbedo": 1110417567,
+      "alphaBitsEqual": true,
+      "RGBBitsEqual": false,
+      "ordinaryHistoricalBitsEqual": true
+    },
+    {
+      "id": "C1-ocean",
+      "uv": [
+        0.8894502829426031,
+        0.5968004338394793
+      ],
+      "pixel": [
+        2200,
+        1100
+      ],
+      "ordinaryRGB": [
+        0.008158542215824127,
+        0.0251751895993948,
+        0.04044027999043465
+      ],
+      "albedoRGB": [
+        0.008158542215824127,
+        0.0251751895993948,
+        0.04044027999043465
+      ],
+      "Yordinary": 0.02265958989188075,
+      "Yalbedo": 0.02265958989188075,
+      "ratioY": 1.0,
+      "alphaOrdinary": 32.39778518676758,
+      "alphaAlbedo": 32.39778518676758,
+      "alphaBitsOrdinary": 1107400533,
+      "alphaBitsAlbedo": 1107400533,
+      "alphaBitsEqual": true,
+      "RGBBitsEqual": true,
+      "ordinaryHistoricalBitsEqual": true
+    },
+    {
+      "id": "C2-coastal-lowland",
+      "uv": [
+        0.7277687954729184,
+        0.5046095444685467
+      ],
+      "pixel": [
+        1800,
+        930
+      ],
+      "ordinaryRGB": [
+        0.06634655594825745,
+        0.0691831186413765,
+        0.06093408912420273
+      ],
+      "albedoRGB": [
+        0.09726269543170929,
+        0.10210543125867844,
+        0.09160275012254715
+      ],
+      "Yordinary": 0.06798448548167943,
+      "Yalbedo": 0.10031757204383611,
+      "ratioY": 1.4755950763335535,
+      "alphaOrdinary": 36.3409309387207,
+      "alphaAlbedo": 36.3409309387207,
+      "alphaBitsOrdinary": 1108434205,
+      "alphaBitsAlbedo": 1108434205,
+      "alphaBitsEqual": true,
+      "RGBBitsEqual": false,
+      "ordinaryHistoricalBitsEqual": true
+    },
+    {
+      "id": "C3-plain",
+      "uv": [
+        0.8894502829426031,
+        0.37988069414316705
+      ],
+      "pixel": [
+        2200,
+        700
+      ],
+      "ordinaryRGB": [
+        0.008942077867686749,
+        0.027352871373295784,
+        0.03533002734184265
+      ],
+      "albedoRGB": [
+        0.008942077867686749,
+        0.027352871373295784,
+        0.03533002734184265
+      ],
+      "Yordinary": 0.024014687334932384,
+      "Yalbedo": 0.024014687334932384,
+      "ratioY": 1.0,
+      "alphaOrdinary": 47.58469772338867,
+      "alphaAlbedo": 47.58469772338867,
+      "alphaBitsOrdinary": 1111381691,
+      "alphaBitsAlbedo": 1111381691,
+      "alphaBitsEqual": true,
+      "RGBBitsEqual": true,
+      "ordinaryHistoricalBitsEqual": true
+    },
+    {
+      "id": "C4-ridge-L1",
+      "uv": [
+        0.06891673403395311,
+        0.43682212581344904
+      ],
+      "pixel": [
+        170,
+        805
+      ],
+      "ordinaryRGB": [
+        0.02714800462126732,
+        0.02739052288234234,
+        0.02036752738058567
+      ],
+      "albedoRGB": [
+        0.09986035525798798,
+        0.09805494546890259,
+        0.06572119146585464
+      ],
+      "Yordinary": 0.02683190322481096,
+      "Yalbedo": 0.09610427855104206,
+      "ratioY": 3.581716799804802,
+      "alphaOrdinary": 37.66872024536133,
+      "alphaAlbedo": 37.66872024536133,
+      "alphaBitsOrdinary": 1108782277,
+      "alphaBitsAlbedo": 1108782277,
+      "alphaBitsEqual": true,
+      "RGBBitsEqual": false,
+      "ordinaryHistoricalBitsEqual": true
+    },
+    {
+      "id": "C5-ridge-L2",
+      "uv": [
+        0.18613581244947452,
+        0.4341106290672451
+      ],
+      "pixel": [
+        460,
+        800
+      ],
+      "ordinaryRGB": [
+        0.021612498909235,
+        0.025569701567292213,
+        0.01614665612578392
+      ],
+      "albedoRGB": [
+        0.052493952214717865,
+        0.06287650018930435,
+        0.038382355123758316
+      ],
+      "Yordinary": 0.02404805640131235,
+      "Yalbedo": 0.05890069321617484,
+      "ratioY": 2.44929121228111,
+      "alphaOrdinary": 38.43931198120117,
+      "alphaAlbedo": 38.43931198120117,
+      "alphaBitsOrdinary": 1108984283,
+      "alphaBitsAlbedo": 1108984283,
+      "alphaBitsEqual": true,
+      "RGBBitsEqual": false,
+      "ordinaryHistoricalBitsEqual": true
+    },
+    {
+      "id": "C6-ridge-L3",
+      "uv": [
+        0.374090541632983,
+        0.33107375271149675
+      ],
+      "pixel": [
+        925,
+        610
+      ],
+      "ordinaryRGB": [
+        0.02299650013446808,
+        0.029047733172774315,
+        0.017911938950419426
+      ],
+      "albedoRGB": [
+        0.049874160438776016,
+        0.06441299617290497,
+        0.03912341594696045
+      ],
+      "Yordinary": 0.026957236685976386,
+      "Yalbedo": 0.05949613200351596,
+      "ratioY": 2.207056038294417,
+      "alphaOrdinary": 47.44137191772461,
+      "alphaAlbedo": 47.44137191772461,
+      "alphaBitsOrdinary": 1111344119,
+      "alphaBitsAlbedo": 1111344119,
+      "alphaBitsEqual": true,
+      "RGBBitsEqual": false,
+      "ordinaryHistoricalBitsEqual": true
+    }
+  ],
+  "pairs": [
+    {
+      "id": "L1",
+      "first": "L1-artifact",
+      "control": "L1-control",
+      "ordinary": {
+        "Yfirst": 0.008199271336197854,
+        "Ycontrol": 0.009677651243656873,
+        "MichelsonAbs": 0.08269767354281585,
+        "MichelsonSigned": -0.08269767354281585
+      },
+      "albedo": {
+        "Yfirst": 0.08009177618101239,
+        "Ycontrol": 0.09448406951874494,
+        "MichelsonAbs": 0.0824414928654277,
+        "MichelsonSigned": -0.0824414928654277
+      },
+      "deltaMichelsonAbs": -0.0002561806773881403
+    },
+    {
+      "id": "L2",
+      "first": "L2-artifact",
+      "control": "L2-control",
+      "ordinary": {
+        "Yfirst": 0.02317581496462226,
+        "Ycontrol": 0.015111777736991645,
+        "MichelsonAbs": 0.2106175044870528,
+        "MichelsonSigned": 0.2106175044870528
+      },
+      "albedo": {
+        "Yfirst": 0.08776786465346813,
+        "Ycontrol": 0.0841795986317098,
+        "MichelsonAbs": 0.020868385919756902,
+        "MichelsonSigned": 0.020868385919756902
+      },
+      "deltaMichelsonAbs": -0.1897491185672959
+    },
+    {
+      "id": "L3",
+      "first": "L3-artifact",
+      "control": "L3-control",
+      "ordinary": {
+        "Yfirst": 0.0083920304864645,
+        "Ycontrol": 0.008714411307312549,
+        "MichelsonAbs": 0.018845580205073577,
+        "MichelsonSigned": -0.018845580205073577
+      },
+      "albedo": {
+        "Yfirst": 0.0850574418835342,
+        "Ycontrol": 0.08425001792684197,
+        "MichelsonAbs": 0.004768980395763655,
+        "MichelsonSigned": 0.004768980395763655
+      },
+      "deltaMichelsonAbs": -0.014076599809309922
+    }
+  ],
+  "limitations": [
+    "No cause for global surfaces inferred from twelve samples.",
+    "No full RGB per-pixel difference statistics can be derived from whole-target digests.",
+    "Native PNG and fixed ROI visual inspection pending; ordinary return owner pending."
+  ]
+}

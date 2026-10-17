@@ -1,0 +1,30 @@
+{
+  "revision": "r1",
+  "api": "terrainSurfaceWGSL(diagnostic=false):string",
+  "diagnosticWgslArgument": "materialDiagnosticMode:f32; owner uniform0/1",
+  "files": {
+    "src/cumulonimbus/terrainMaterialDiagnostic.ts": {
+      "bytes": 2359,
+      "sha256": "ed11bde13898149db9c0beed1bfe23f18e3420c43712b2d1a8c55409fd724235"
+    },
+    "src/cumulonimbus/terrainMaterialDiagnostic.test.ts": {
+      "bytes": 3952,
+      "sha256": "508a80dcd8d156e410748d98da9a1d26e200d600b8487ee76a1aefc115815ddc"
+    }
+  },
+  "immutableBase": {
+    "path": "src/cumulonimbus/terrainSurface.ts",
+    "sha256": "0ff8de3514feb3714ba4e931c246d0bd339634661aa37a7d87e79f61c1ddff3f",
+    "wgslUtf8Bytes": 7591,
+    "wgslSHA256": "1099a97f339851e3d520a4e4cfdd3831f865832c98660c1535a7754d387e55df",
+    "wgslHashMethod": "Static template-text extraction plus its two literal ID substitutions; no JavaScript/module execution."
+  },
+  "contract": {
+    "default": "returns original library unchanged",
+    "diagnostic": "three exact unique replacements: required final material mode argument, final select replacing ground only, fallback call mode0",
+    "source": "single material/noise/derivative computation; original ordinary ground expression, sea/inland water kept; no texture/target/pass additions",
+    "ownerRequirements": "Uniform0/1 in one compiled pipeline; include mode in cacheInputs; actual mode0 F32/PNG parity before interpreting mode1."
+  },
+  "tests": "6 source-contract tests written, not executed: frozen default hash, reverse three edits, operation/function counts, three missing/duplicate anchor cases",
+  "executed": "Only filesystem reads/writes and digests. No tests, compiler, JavaScript/module import, build, GPU, browser, models or Git."
+}

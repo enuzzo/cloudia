@@ -1,0 +1,33 @@
+{
+  "status": "PASS_DIAGNOSTIC_GATES_MIXED_MATERIAL_RESULT",
+  "productAdopted": false,
+  "baseCommit": "8b3a1448553dae248de7ae846fe0459b1be1a962",
+  "canonical129SourcesUnchanged": true,
+  "wholeRGBA_A_B_A": [
+    "e4435ce3a0a45e243c19dea24e5bc1133f6db1c8fd5ca168e94e644b1c6c9045",
+    "0ed1d66537553dba4479bc88546d8c1a50890a96a5ceb7398ab91cb359d255ab",
+    "e4435ce3a0a45e243c19dea24e5bc1133f6db1c8fd5ca168e94e644b1c6c9045"
+  ],
+  "wholeAlphaSHA256": "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c",
+  "alphaPixels": 4562056,
+  "alphaBytes": 18248224,
+  "twelveWitnessAlphaExactAcrossABA": true,
+  "returnWitnessRGBAWordsExact": 48,
+  "oceanAndHistoricalC3WholeRGBAExact": true,
+  "nativeAlbedo": {
+    "width": 2474,
+    "height": 1844,
+    "bytes": 3005033,
+    "sha256": "5eb7d8bef55d6e707ee552bd2f0ed5f93b39d97dcaf4e69f7a3cd2033f0e0f2b"
+  },
+  "visual": "Root and independent review: many dark scales attenuate, broad flat colour fields and rounded slopes remain. Not a final material or photorealism PASS.",
+  "r0": "Failed canonical fulltarget gate; no R0 mode1 GPU executed; difference cause/count/location/magnitude unknown.",
+  "limits": [
+    "Fresh immutable A/B pipelines, not shared shader pipeline or exact float-algebra isolation",
+    "Full alpha hash and12 rawRGB points; nativePNG still contains aerial/cloud/film",
+    "No full rawtarget colour image",
+    "NoFPS,worker,Rain,Sunset or motion qualification here"
+  ],
+  "preview": "Ordinary4196 v60, native animated Sun/mature cloud restored; QA53777/53778 stopped intentionally exit0",
+  "goal": "active"
+}
