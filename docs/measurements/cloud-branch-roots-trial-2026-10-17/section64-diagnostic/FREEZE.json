@@ -1,0 +1,105 @@
+{
+  "schema": "cloudia-section64-pre-run-freeze-v1",
+  "status": "PREPARED_NOT_EXECUTED",
+  "files": [
+    {
+      "path": "PREPARATION-NOTE.md",
+      "bytes": 283,
+      "sha256": "c910394345e318e5dd098f90b4bd6e08c671f8c5c9c4ca260a07db3ff9fc5544"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "bytes": 2889,
+      "sha256": "44e3f1dcc840cde07e36285709ce4825251c0f24eec0fc05c5035858e7e9c25b"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3314,
+      "sha256": "7ede549856bb5d118e700fa669382068b6578b74ea47981017e1ccd3e8147146"
+    },
+    {
+      "path": "input-pins.json",
+      "bytes": 5250,
+      "sha256": "cd16d135a11d568c382722145a808744198e3449b0e68dba51d4164642764744"
+    },
+    {
+      "path": "preparation-verification.json",
+      "bytes": 458,
+      "sha256": "58891ddb296e5cadcefd7b882e0373d2ac45a8e9d4c0e0b3ef2cba4fc5c4af23"
+    },
+    {
+      "path": "run.py",
+      "bytes": 6969,
+      "sha256": "647dbb0912bc534d3fc988d9d1925b13965e501d5a513b12cd3cd15b1f10ea0e"
+    },
+    {
+      "path": "section64.mjs",
+      "bytes": 10078,
+      "sha256": "e928a7598dc495d93fbe145c02b92d46ca03a5ef4c083d61e0b18487a3eb352a"
+    },
+    {
+      "path": "sources/A/inclinedShoulder.ts",
+      "bytes": 2009,
+      "sha256": "32a844aaacd1de2bde2760da5cc1686693337445e930611cca4a55e3513d8f66"
+    },
+    {
+      "path": "sources/A/light.ts",
+      "bytes": 3041,
+      "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+    },
+    {
+      "path": "sources/A/motion.ts",
+      "bytes": 7238,
+      "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+    },
+    {
+      "path": "sources/A/sun.ts",
+      "bytes": 397,
+      "sha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc"
+    },
+    {
+      "path": "sources/A/volume.ts",
+      "bytes": 29836,
+      "sha256": "c349e8f7526a2dafa0348516079f3f67ab7288a17769f28193ebcef7e124d34d"
+    },
+    {
+      "path": "sources/B/continuousOutflow.ts",
+      "bytes": 20523,
+      "sha256": "d87f162bda0303a05ec5e7bab85a68ef2ee3c983e23ddd1bdef54fccbb253de6"
+    },
+    {
+      "path": "sources/B/light.ts",
+      "bytes": 3041,
+      "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+    },
+    {
+      "path": "sources/B/motion.ts",
+      "bytes": 7238,
+      "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+    },
+    {
+      "path": "sources/B/sun.ts",
+      "bytes": 397,
+      "sha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc"
+    },
+    {
+      "path": "sources/B/volume.ts",
+      "bytes": 33197,
+      "sha256": "6b8f59bf2258bd5c56f00f436bae73e2a84348882e20716d3cf2279048d9ae8f"
+    },
+    {
+      "path": "sources/manifest-A.json",
+      "bytes": 15037,
+      "sha256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73"
+    },
+    {
+      "path": "sources/manifest-B.json",
+      "bytes": 15387,
+      "sha256": "3b29dd3bc23258c7b40bbfc6871ebeb196af612b4b3c4768f5d922e972318d64"
+    }
+  ],
+  "fileCount": 19,
+  "payloadBytes": 166582,
+  "dependencySymlinkExcluded": "node_modules -> /Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules",
+  "noModelOrTestOrTranspileExecuted": true
+}

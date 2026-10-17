@@ -1,0 +1,7 @@
+[
+  "src/cumulonimbus/GPUSceneEngine.ts",
+  "src/cumulonimbus/layoutPrefix.test-helper.ts",
+  "src/cumulonimbus/lifecycle.test.ts",
+  "src/cumulonimbus/volume.layout-regression.test.ts",
+  "src/cumulonimbus/volume.ts"
+]

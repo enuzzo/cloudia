@@ -1,0 +1,16 @@
+{
+  "kind": "oneexistingablationcounterfactual-beforeB",
+  "seed": 73,
+  "pose": "side frozenactualcamera baseline-73-side.json",
+  "A": "full,PNG02c800c333702084df9f6e92beb08a0c5cb5ab03bf96ab64d115a6425c26ce2a",
+  "B": "existingUIablation no-detail (probe4), compiledspecialization; NOT a productcandidate",
+  "return": "full restored actualnewDTOandPNGdigest, aliasonlyifbyteexactA",
+  "fixed": "Sunleftsettled,t60paused,force0,flowfull,wind.55,disp0,rain0,orbitfalse,full256/128/3842474x1844, no camera movement or newmodel",
+  "changed": "fine package: detailconstant.6, constantnonzerowarp, erosion.184+flow, noicewispmaterial/microdetail; macroprecarvingandiceExtinction/lightbakes remain ordinary",
+  "prediction": "If upper contours become rounded, fine package contributes; if flat crowns persist, fine package insufficient explanation. No singlefactor wisp/iceRange attribution.",
+  "ownerMetadata": "frame/request/skyobject/timestamp and all terrain/cache/shadow owner-local requests,hits,submissions permitted; do not recast as physicalinputs",
+  "weatherTime": "nonrendering clock exempt onlyclearpausedzeroRainflashoff as sourcecontract",
+  "noFPS": "Capture/ablation scope cannotqualify finalquality orperformance",
+  "review": "Root+independent fullnative A/B; independentpredictions frozen0b4449af\u2026",
+  "stop": "OneB andAreturn only; no parameter tuning or extraablations"
+}

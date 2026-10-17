@@ -1,0 +1,18 @@
+{
+  "kind": "singlebranchcompositionrule-beforeimplementation",
+  "baseline": "v61canonical1412577f187\u2026; rejectedcontinuousR2isnotbase",
+  "families": [
+    72,
+    73,
+    74
+  ],
+  "dominant": "highestactualsummit,lowercellfamiliesretainallheadsandlocalcaps",
+  "rule": "For each non-dominant turret, XZ root distance to dominant foundation becomes min(originalDistance,halfSumDirectionalFoundationRadii). Apply rootXZoffset times(1-clampednormalizedCoreHeight) rigidly toeachactualliquidcoreanditsgenericdescendants. Topgroupfactor0,rootgroupfactor1. Centers/radii/cap/RNG/appendcountotherwiseunchanged.",
+  "directionalRadii": "For unitXZ direction u, ellipsoid radial reach=1/sqrt((ux/rx)^2+(uz/rz)^2); halfsum roots overlap geometrically. No camera-dependentparameter.",
+  "placement": "Afteroriginalhorizontalcontraction,beforeexistinginwardshoulderjoint; no newglobalrescaling. Rejectifnewlobeextentsescapeoriginal4.35/2.8halo.",
+  "ownership": "SeparatebranchGroups actualcore+genericdescendants,uniqueeach; doesnottracksharedBody/pulse/collars/icecap. Younglateralshouldersbelongtheiractualturret.",
+  "preserved": "Alloriginalprimitives,radii,randomstreams,mainmature/caps,oldinclinedshoulderandquality. No newdensity/noise/shaderlookup/GPUresource. Existingjointwillreadactualmovedfoundationpositions; notpromiseentirematurounchangedafterexistingjointuntilpreflight proves.",
+  "failure": "No parameter/radiussearch. Existingtestsrequired; thenfullqualitynativefrontside3familiesandactualnear,motion/worker/weather/FPS beforeadoption. A narrowpassneverfullgoalcompletion.",
+  "criterion": "Coherentobliqueyoungerbranches,insteadparallelstems; preserveunequalseparateheadsandavoidpillow/bridge.",
+  "cost": "Generation-onlytrackingO(primitives), changesdensity/supportandGPUwork; noFPSorzerocostinference"
+}

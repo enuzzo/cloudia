@@ -1,0 +1,64 @@
+{
+  "schema": "cloudia-fixed-section64-diagnostic-protocol-v1",
+  "status": "PREPARED_NOT_EXECUTED",
+  "purpose": "Observe the existing failed section contract on frozen A/B without changing the model or its bakes.",
+  "execution": {
+    "order": [
+      "A",
+      "B"
+    ],
+    "generateCallsPerVariant": 1,
+    "size": 64,
+    "seed": 74,
+    "fullOriginalBakes": true,
+    "retry": false
+  },
+  "section": {
+    "x": 0.5609226029381325,
+    "y": 4.0458440042043025,
+    "count": 96,
+    "zFormula": "BOUNDS_MIN[2]+(i+.5)/96*BOUNDS_SIZE[2]",
+    "iRangeInclusive": [
+      0,
+      95
+    ],
+    "ice": "The existing inclinedShoulder test caller: clamped iceHeights(74) smoothstep."
+  },
+  "observations": [
+    "One hook immediately before the original light-prune loop: readonly field reference and one Float32 density copy.",
+    "One hook at the original sampleCloudDensity final expression, active only for the fixed96 external calls; saves actual r/g/b, warp, warped R, erosion, material, final.",
+    "Exactly eight stored/clamped neighbors per warped coordinate, including original Float32 field and pre-prune carved density plus R8. Replay of these eight R8 samples must equal the actual warped result exactly."
+  ],
+  "unchanged": [
+    "RNG",
+    "recipe",
+    "primitive parameters",
+    "raster",
+    "carving arithmetic/order",
+    "original full detail/light/sunset/occupancy bakes",
+    "sampleCloudDensity final arithmetic"
+  ],
+  "budgets": {
+    "cpuSecondsCombined": 20,
+    "childWallSeconds": 30,
+    "outerWallSeconds": 40,
+    "rssBytesConservativeSumOfPeaks": 402653184,
+    "childCpuOsRlimitSeconds": 20,
+    "liveRssPollSeconds": 0.05,
+    "heartbeatSeconds": 5
+  },
+  "budgetScope": "The child CPU rlimit is OS-enforced; wall/RSS are observed between monitor polls and at terminal. Final combined CPU includes the wrapper from reviewed entry. Final RSS is the conservative sum of child and wrapper peaks, not a falsely simultaneous peak. No claim of a hard RSS interrupt between polls.",
+  "outputs": [
+    "run/result.json",
+    "run/stderr.log",
+    "run/execution.json"
+  ],
+  "acceptance": "Terminal child exit0 + COMPLETE_DIAGNOSTIC_ONLY + exactly A/B and96 rows each + exact warped R replay + unchanged observed field + wrapper budget checks. No required sign/count is assumed.",
+  "limits": [
+    "CPU64 fixed-section evidence only; not256/GPU/whole-cloud/artist acceptance.",
+    "Raw field/carved trilinear references are interpolated observations, not continuous source evaluation.",
+    "No new geometry/pixel/seed/radius search and no resampling beyond the specified96 points.",
+    "TypeScript5.9.3 and Node26.11 arm64 pinned; selected source dependencies authenticated. Node dylib/runtime closure is not fully pinned.",
+    "No full volume is archived; density copy is one MiB per variant and output contains only bounded observations."
+  ]
+}

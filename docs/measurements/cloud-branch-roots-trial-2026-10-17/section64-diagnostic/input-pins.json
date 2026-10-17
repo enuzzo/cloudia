@@ -1,0 +1,111 @@
+{
+  "schema": "cloudia-section64-diagnostic-inputs-v1",
+  "variants": [
+    {
+      "label": "A",
+      "originalRoot": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia",
+      "fullManifestPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle40/baseline-manifest.json",
+      "fullManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+      "fullManifestCount": 141,
+      "files": [
+        {
+          "originalPath": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/volume.ts",
+          "path": "sources/A/volume.ts",
+          "bytes": 29836,
+          "sha256": "c349e8f7526a2dafa0348516079f3f67ab7288a17769f28193ebcef7e124d34d"
+        },
+        {
+          "originalPath": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/light.ts",
+          "path": "sources/A/light.ts",
+          "bytes": 3041,
+          "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+        },
+        {
+          "originalPath": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/sun.ts",
+          "path": "sources/A/sun.ts",
+          "bytes": 397,
+          "sha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc"
+        },
+        {
+          "originalPath": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/motion.ts",
+          "path": "sources/A/motion.ts",
+          "bytes": 7238,
+          "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+        },
+        {
+          "originalPath": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/inclinedShoulder.ts",
+          "path": "sources/A/inclinedShoulder.ts",
+          "bytes": 2009,
+          "sha256": "32a844aaacd1de2bde2760da5cc1686693337445e930611cca4a55e3513d8f66"
+        }
+      ]
+    },
+    {
+      "label": "B",
+      "originalRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle40/continuous-source",
+      "fullManifestPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle40/run/SOURCE-FREEZE-R2A.json",
+      "fullManifestSHA256": "3b29dd3bc23258c7b40bbfc6871ebeb196af612b4b3c4768f5d922e972318d64",
+      "fullManifestCount": 144,
+      "files": [
+        {
+          "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle40/continuous-source/src/cumulonimbus/volume.ts",
+          "path": "sources/B/volume.ts",
+          "bytes": 33197,
+          "sha256": "6b8f59bf2258bd5c56f00f436bae73e2a84348882e20716d3cf2279048d9ae8f"
+        },
+        {
+          "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle40/continuous-source/src/cumulonimbus/light.ts",
+          "path": "sources/B/light.ts",
+          "bytes": 3041,
+          "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+        },
+        {
+          "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle40/continuous-source/src/cumulonimbus/sun.ts",
+          "path": "sources/B/sun.ts",
+          "bytes": 397,
+          "sha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc"
+        },
+        {
+          "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle40/continuous-source/src/cumulonimbus/motion.ts",
+          "path": "sources/B/motion.ts",
+          "bytes": 7238,
+          "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+        },
+        {
+          "originalPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle40/continuous-source/src/cumulonimbus/continuousOutflow.ts",
+          "path": "sources/B/continuousOutflow.ts",
+          "bytes": 20523,
+          "sha256": "d87f162bda0303a05ec5e7bab85a68ef2ee3c983e23ddd1bdef54fccbb253de6"
+        }
+      ]
+    }
+  ],
+  "dependencyRoot": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules",
+  "dependencyIgnoreXattr": "1",
+  "dependencies": [
+    {
+      "kind": "nodeExecutable",
+      "path": "/opt/homebrew/Cellar/node/26.11.0/bin/node",
+      "realPath": "/opt/homebrew/Cellar/node/26.11.0/bin/node",
+      "bytes": 132848,
+      "sha256": "02dc8fa00d7f857c2412a5d55a85a1b7a341e94c3df430bd8733c732e31dca46"
+    },
+    {
+      "kind": "typescriptModule",
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/typescript/lib/typescript.js",
+      "realPath": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/typescript/lib/typescript.js",
+      "bytes": 9112572,
+      "sha256": "3ae902c92cc44dace175c0e69e13a4b0899f6983c6121d76b9ab8dd5795e7675"
+    },
+    {
+      "kind": "typescriptPackage",
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/typescript/package.json",
+      "realPath": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/typescript/package.json",
+      "bytes": 3620,
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+    }
+  ],
+  "nodeMachO": "arm64",
+  "typescriptVersion": "5.9.3",
+  "nodeModulesLink": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle41/section64-diagnostic/node_modules"
+}

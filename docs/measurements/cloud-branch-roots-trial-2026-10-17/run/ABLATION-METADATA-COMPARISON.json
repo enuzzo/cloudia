@@ -1,0 +1,62 @@
+{
+  "status": "MATCH_CONTROLLED_COMPOSITE_ABLATION_INPUTS",
+  "scope": "Only recordedB sameowner, notreturncheck orvisualqualityacceptance",
+  "diffs": [
+    [
+      ".ablation",
+      "full",
+      "no-detail"
+    ],
+    [
+      ".ablationCode",
+      0,
+      4
+    ],
+    [
+      ".clocks.weatherTime",
+      102.45590000000391,
+      175.69350000000387
+    ],
+    [
+      ".frame.date",
+      "2026-10-17T04:21:08.128Z",
+      "2026-10-17T04:22:21.365Z"
+    ],
+    [
+      ".frame.localSnapshotTime",
+      223172.60000002384,
+      296410.39999997616
+    ],
+    [
+      ".frame.ownerDrawSerial",
+      13020,
+      17401
+    ],
+    [
+      ".frame.rafTimestamp",
+      223172.1,
+      296409.7
+    ],
+    [
+      ".terrainRaster.cache.hits",
+      12866,
+      17247
+    ],
+    [
+      ".terrainRaster.cache.requests",
+      13021,
+      17402
+    ],
+    [
+      ".terrainRaster.shadow.cache.hits",
+      13020,
+      17401
+    ],
+    [
+      ".terrainRaster.shadow.cache.requests",
+      13021,
+      17402
+    ]
+  ],
+  "unexpected": []
+}

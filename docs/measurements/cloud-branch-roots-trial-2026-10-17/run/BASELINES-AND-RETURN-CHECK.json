@@ -1,0 +1,61 @@
+{
+  "status": "PASS_FIXED_BASELINE_INPUTS_AND_PNG_INTEGRITY",
+  "scope": "Current4full baselinecaptures plus1compositeablationandactualAreturn. No candidate, photorealism, near or FPS qualification.",
+  "baselineRows": [
+    {
+      "seed": 72,
+      "pose": "front",
+      "png": {
+        "mime": "image/png",
+        "width": 2474,
+        "height": 1844,
+        "byteLength": 3777739,
+        "sha256": "1448b7d984cd01256227a458efacfa82c4ab7cc5d37aef4ee07a7688b47b6676"
+      },
+      "sameWorldCameraAs74": true,
+      "sameLightingAs74": true
+    },
+    {
+      "seed": 72,
+      "pose": "side",
+      "png": {
+        "mime": "image/png",
+        "width": 2474,
+        "height": 1844,
+        "byteLength": 1418995,
+        "sha256": "a7b406461e238ebf48296271f3590cf80772e8c749a1dc8c39f4adae612333cf"
+      },
+      "sameWorldCameraAs74": true,
+      "sameLightingAs74": true
+    },
+    {
+      "seed": 73,
+      "pose": "front",
+      "png": {
+        "mime": "image/png",
+        "width": 2474,
+        "height": 1844,
+        "byteLength": 3743616,
+        "sha256": "0d13f6221b37e31ec1cc4baed4420656954bead4622b3b19b836a51e226afbf5"
+      },
+      "sameWorldCameraAs74": true,
+      "sameLightingAs74": true
+    },
+    {
+      "seed": 73,
+      "pose": "side",
+      "png": {
+        "mime": "image/png",
+        "width": 2474,
+        "height": 1844,
+        "byteLength": 1579151,
+        "sha256": "02c800c333702084df9f6e92beb08a0c5cb5ab03bf96ab64d115a6425c26ce2a"
+      },
+      "sameWorldCameraAs74": true,
+      "sameLightingAs74": true
+    }
+  ],
+  "ablationReturn": "actualnewfullDTO and independentlyrehashed samePNG02c800c3, no duplicatedtransfer",
+  "allNativePngs": 5,
+  "nativeParts": 247
+}

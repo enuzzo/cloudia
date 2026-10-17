@@ -1,0 +1,8 @@
+{
+  "originalHelperSHA256": "278e4cf852d7120976859f49e58dd726f07c2736e63b0c3c971f5fde4a4a2867",
+  "newHelperSHA256": "b1dece216057fdcd55abc47e94086ef6a68640cb46bce07cfe235cb43d862c70",
+  "change": "Explicit number[]/Lobe/tuple annotations in test-only observer tobreak TS7022inferencecycle; no expressions/iteration/order/assertionschanged.",
+  "originalFullTests": "564/564in53filesPASS",
+  "typeFailure": "TS7022core/beforeCore/afterCore; rawretained",
+  "sourceFreezeSHA256": "393d1d87b759740388fb9fbf04887145723a3b940e4fe1fdc49b04f7e498c41a"
+}

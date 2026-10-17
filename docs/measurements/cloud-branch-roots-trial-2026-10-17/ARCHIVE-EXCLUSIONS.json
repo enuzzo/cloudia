@@ -1,0 +1,6 @@
+{
+  "excludedDependencyLinks": [
+    "section64-diagnostic/node_modules"
+  ],
+  "initialCopy": "Stopped by explicit symlink guard before copying any dependency; resumed after checking the sole symlink target. Existing copied files verified before reuse. No model or test rerun."
+}

@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "status": "PASS_SAVED_ARTIFACT_INTEGRITY_ONLY",
+  "archivePayloads": 138,
+  "archivePayloadBytes": 25733201,
+  "archiveManifestSHA256": "49f1624f41ec6087dfef748a75ab0f1082f45b66772f6c3156f0dff1d41c36f3",
+  "canonicalSourceCount": 141,
+  "canonicalSourcesExact": true,
+  "candidateReconstructionCount": 141,
+  "overlayPaths": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/layoutPrefix.test-helper.ts",
+    "src/cumulonimbus/lifecycle.test.ts",
+    "src/cumulonimbus/volume.layout-regression.test.ts",
+    "src/cumulonimbus/volume.ts"
+  ],
+  "pngs": [
+    {
+      "path": "browser/ablation-73-side-no-detail.png",
+      "sha256": "50d5f5ff1eaf2cfaf92af009bcc0714ae39857d0f0edd5a4e383d7df9691f3da",
+      "bytes": 1484610,
+      "width": 2474,
+      "height": 1844,
+      "crcAndInflation": true
+    },
+    {
+      "path": "browser/baseline-72-front.png",
+      "sha256": "1448b7d984cd01256227a458efacfa82c4ab7cc5d37aef4ee07a7688b47b6676",
+      "bytes": 3777739,
+      "width": 2474,
+      "height": 1844,
+      "crcAndInflation": true
+    },
+    {
+      "path": "browser/baseline-72-side.png",
+      "sha256": "a7b406461e238ebf48296271f3590cf80772e8c749a1dc8c39f4adae612333cf",
+      "bytes": 1418995,
+      "width": 2474,
+      "height": 1844,
+      "crcAndInflation": true
+    },
+    {
+      "path": "browser/baseline-73-front.png",
+      "sha256": "0d13f6221b37e31ec1cc4baed4420656954bead4622b3b19b836a51e226afbf5",
+      "bytes": 3743616,
+      "width": 2474,
+      "height": 1844,
+      "crcAndInflation": true
+    },
+    {
+      "path": "browser/baseline-73-side.png",
+      "sha256": "02c800c333702084df9f6e92beb08a0c5cb5ab03bf96ab64d115a6425c26ce2a",
+      "bytes": 1579151,
+      "width": 2474,
+      "height": 1844,
+      "crcAndInflation": true
+    },
+    {
+      "path": "browser/branch-74-front.png",
+      "sha256": "eb0b90f945a993afa1faaf2e1cce41a81c62b11428a95dc12f023e6c22bc2f34",
+      "bytes": 3598957,
+      "width": 2474,
+      "height": 1844,
+      "crcAndInflation": true
+    },
+    {
+      "path": "browser/branch-74-side.png",
+      "sha256": "8101ebe6a852d551b9a518a1626bf58763eecfe20685e30240cd58e76c282f66",
+      "bytes": 1339890,
+      "width": 2474,
+      "height": 1844,
+      "crcAndInflation": true
+    }
+  ],
+  "aliasesPreserved": [
+    {
+      "path": "browser/baseline-73-side-return-alias.json",
+      "record": {
+        "kind": "actualnewexport-exact-content-alias",
+        "actualDTO": "baseline-73-side-return.json",
+        "fullBitmap": "baseline-73-side.png",
+        "sha256": "02c800c333702084df9f6e92beb08a0c5cb5ab03bf96ab64d115a6425c26ce2a",
+        "bytes": 1579151,
+        "scope": "Fresh actualreturn export digest matches independentlyrehashed fullA; no repeatedPNGtransfer"
+      },
+      "actualBitmapRehashed": true
+    },
+    {
+      "path": "browser/baseline-74-front-alias.json",
+      "record": {
+        "actualDTO": "baseline-74-front.json",
+        "existingExactPNG": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/terrain-optical-material-2026-10-17/browser/candidate-b-native.png",
+        "sha256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9",
+        "bytes": 3599836,
+        "scope": "Freshactualexportdigest + independentfullbitmaprehash; noduplicatePNGtransfer"
+      },
+      "actualBitmapRehashed": true
+    },
+    {
+      "path": "browser/baseline-74-side-alias.json",
+      "record": {
+        "actualDTO": "baseline-74-side.json",
+        "existingExactPNG": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/cloud-outflow-anchor-trial-2026-10-17/browser/baseline-74-side.png",
+        "sha256": "c9c4681b03b9c4771c7be62974712b12b516e8b8717c22dc0907f18318aa2749",
+        "bytes": 1359259,
+        "scope": "Freshactualexportdigest + independentfullbitmaprehash; noduplicatePNGtransfer"
+      },
+      "actualBitmapRehashed": true
+    }
+  ],
+  "wallSeconds": 0.1761290830327198,
+  "doesNotRun": [
+    "recipe",
+    "generateVolume",
+    "GPU",
+    "tests",
+    "FPS"
+  ],
+  "artistGate": "FAIL_74_FRONT_SIDE",
+  "goal": "active"
+}

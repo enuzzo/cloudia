@@ -1,0 +1,41 @@
+{
+  "scope": "Savedprefixarrays arithmetic only; no newrecipes, GPUvolume ordensityidentityclaim",
+  "rows": [
+    {
+      "seed": 72,
+      "directMovedGroups": 13,
+      "totalChangedPrimitivesVsCanonical": 1183,
+      "maxParameterDeltaKm": 0.5863363021590455,
+      "changedWithoutDirectBranchTranslation": 0,
+      "maxIndirectParameterDeltaKm": 0,
+      "jointModes": [
+        "unmodified-family",
+        "unmodified-family"
+      ]
+    },
+    {
+      "seed": 73,
+      "directMovedGroups": 6,
+      "totalChangedPrimitivesVsCanonical": 546,
+      "maxParameterDeltaKm": 1.5980771757213441,
+      "changedWithoutDirectBranchTranslation": 0,
+      "maxIndirectParameterDeltaKm": 0,
+      "jointModes": [
+        "unmodified-family",
+        "unmodified-family"
+      ]
+    },
+    {
+      "seed": 74,
+      "directMovedGroups": 5,
+      "totalChangedPrimitivesVsCanonical": 545,
+      "maxParameterDeltaKm": 0.8757997436079418,
+      "changedWithoutDirectBranchTranslation": 90,
+      "maxIndirectParameterDeltaKm": 2.220446049250313e-16,
+      "jointModes": [
+        "inward-projected",
+        "inward-projected"
+      ]
+    }
+  ]
+}

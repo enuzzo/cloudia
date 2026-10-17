@@ -1,0 +1,21 @@
+{
+  "status": "STATIC_IO_ONLY_NO_MODEL_EXECUTION",
+  "variants": [
+    {
+      "variant": "A",
+      "rawFiles": 5,
+      "fullManifestEntries": 141,
+      "uniqueHookAnchors": 2,
+      "filesMatchTheirFullManifest": true
+    },
+    {
+      "variant": "B",
+      "rawFiles": 5,
+      "fullManifestEntries": 144,
+      "uniqueHookAnchors": 2,
+      "filesMatchTheirFullManifest": true
+    }
+  ],
+  "preparedExecutablesRun": false,
+  "tsTranspileRun": false
+}

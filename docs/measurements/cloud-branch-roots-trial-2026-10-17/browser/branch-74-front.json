@@ -1,0 +1,831 @@
+{
+  "schema": "cloudia-native-frame-v1",
+  "state": "ready",
+  "captureId": "main-1-eb0b90f945a9",
+  "requestId": 1,
+  "png": {
+    "mime": "image/png",
+    "width": 2474,
+    "height": 1844,
+    "byteLength": 3598957,
+    "sha256": "eb0b90f945a993afa1faaf2e1cce41a81c62b11428a95dc12f023e6c22bc2f34"
+  },
+  "metadata": {
+    "schemaVersion": 1,
+    "rendererVersion": "experiment-v61-branched-roots-r1",
+    "anatomyVariant": "hierarchical-liquid-branch-roots",
+    "branchAnatomy": {
+      "rule": "foundation-overlap-height-pinned-v1",
+      "dominantTurret": 0,
+      "turretCount": 2,
+      "coreGroupCount": 13,
+      "trackedPrimitiveCount": 1183,
+      "movedGroupCount": 5,
+      "movedPrimitiveCount": 455,
+      "maxTranslationKm": 0.9382097143616912,
+      "preBranchExtentsKm": [
+        4.35,
+        2.220565369750186
+      ],
+      "extentCapsKm": [
+        4.35,
+        2.8
+      ],
+      "postBranchExtentsKm": [
+        4.35,
+        2.220565369750186
+      ],
+      "postJointExtentsKm": [
+        4.35,
+        2.220565369750186
+      ],
+      "turrets": [
+        {
+          "index": 0,
+          "dominant": true,
+          "rootDistanceBeforeKm": 0,
+          "targetRootDistanceKm": 0,
+          "rootDistanceAfterKm": 0,
+          "directionalRadiiKm": null,
+          "rootTranslationXZ": [
+            0,
+            0
+          ],
+          "groups": [
+            {
+              "role": "foundation",
+              "ordinal": 0,
+              "factor": 1,
+              "primitiveCount": 91,
+              "translationXZ": [
+                0,
+                0
+              ],
+              "beforeCoreXYZ": [
+                -0.9154822231844648,
+                1.9183940277806641,
+                -0.3013858078432576
+              ],
+              "afterBranchCoreXYZ": [
+                -0.9154822231844648,
+                1.9183940277806641,
+                -0.3013858078432576
+              ],
+              "finalCoreXYZ": [
+                -0.9154822231844648,
+                1.9183940277806641,
+                -0.3013858078432576
+              ]
+            },
+            {
+              "role": "middle",
+              "ordinal": 0,
+              "factor": 0.5303590143471959,
+              "primitiveCount": 91,
+              "translationXZ": [
+                0,
+                0
+              ],
+              "beforeCoreXYZ": [
+                -0.4984883143454621,
+                3.1821909098109034,
+                -0.32538059008710446
+              ],
+              "afterBranchCoreXYZ": [
+                -0.4984883143454621,
+                3.1821909098109034,
+                -0.32538059008710446
+              ],
+              "finalCoreXYZ": [
+                -0.4984883143454621,
+                3.1821909098109034,
+                -0.32538059008710446
+              ]
+            },
+            {
+              "role": "neck",
+              "ordinal": 0,
+              "factor": 0.26517950717359795,
+              "primitiveCount": 91,
+              "translationXZ": [
+                0,
+                0
+              ],
+              "beforeCoreXYZ": [
+                -0.2272187499071064,
+                3.8957850052633507,
+                -0.3413771115830025
+              ],
+              "afterBranchCoreXYZ": [
+                -0.2272187499071064,
+                3.8957850052633507,
+                -0.3413771115830025
+              ],
+              "finalCoreXYZ": [
+                -0.2272187499071064,
+                3.8957850052633507,
+                -0.3413771115830025
+              ]
+            },
+            {
+              "role": "top",
+              "ordinal": 0,
+              "factor": 0,
+              "primitiveCount": 91,
+              "translationXZ": [
+                0,
+                0
+              ],
+              "beforeCoreXYZ": [
+                0.04280943884321254,
+                4.609379100715798,
+                -0.3413771115830025
+              ],
+              "afterBranchCoreXYZ": [
+                0.04280943884321254,
+                4.609379100715798,
+                -0.3413771115830025
+              ],
+              "finalCoreXYZ": [
+                0.04280943884321254,
+                4.609379100715798,
+                -0.3413771115830025
+              ]
+            },
+            {
+              "role": "shoulder",
+              "ordinal": 0,
+              "factor": 0.3808615316823126,
+              "primitiveCount": 91,
+              "translationXZ": [
+                0,
+                0
+              ],
+              "beforeCoreXYZ": [
+                0.16273211014671457,
+                3.584486404103483,
+                0.1434988400303256
+              ],
+              "afterBranchCoreXYZ": [
+                0.16273211014671457,
+                3.584486404103483,
+                0.1434988400303256
+              ],
+              "finalCoreXYZ": [
+                -0.4170262692993067,
+                3.584486404103483,
+                -0.07923642533279354
+              ]
+            },
+            {
+              "role": "shoulder",
+              "ordinal": 1,
+              "factor": 0.658457724028267,
+              "primitiveCount": 91,
+              "translationXZ": [
+                0,
+                0
+              ],
+              "beforeCoreXYZ": [
+                -1.2665073624242096,
+                2.8374791941968898,
+                -0.4556439367362314
+              ],
+              "afterBranchCoreXYZ": [
+                -1.2665073624242096,
+                2.8374791941968898,
+                -0.4556439367362314
+              ],
+              "finalCoreXYZ": [
+                -1.2665073624242096,
+                2.8374791941968898,
+                -0.4556439367362314
+              ]
+            },
+            {
+              "role": "shoulder",
+              "ordinal": 2,
+              "factor": 0.4666238107765095,
+              "primitiveCount": 91,
+              "translationXZ": [
+                0,
+                0
+              ],
+              "beforeCoreXYZ": [
+                -0.10158351212105923,
+                3.3537013912401026,
+                -1.203675227712722
+              ],
+              "afterBranchCoreXYZ": [
+                -0.10158351212105923,
+                3.3537013912401026,
+                -1.203675227712722
+              ],
+              "finalCoreXYZ": [
+                -0.10158351212105923,
+                3.3537013912401026,
+                -1.203675227712722
+              ]
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "dominant": false,
+          "rootDistanceBeforeKm": 1.9884210493696663,
+          "targetRootDistanceKm": 1.0502113350079751,
+          "rootDistanceAfterKm": 1.0502113350079751,
+          "directionalRadiiKm": [
+            0.8731457925038728,
+            1.2272768775120777
+          ],
+          "rootTranslationXZ": [
+            -0.8757997436079418,
+            -0.3364703214533337
+          ],
+          "groups": [
+            {
+              "role": "foundation",
+              "ordinal": 0,
+              "factor": 1,
+              "primitiveCount": 91,
+              "translationXZ": [
+                -0.8757997436079418,
+                -0.3364703214533337
+              ],
+              "beforeCoreXYZ": [
+                0.9406685057678416,
+                2.0797904366849806,
+                0.41172199676007654
+              ],
+              "afterBranchCoreXYZ": [
+                0.06486876215989978,
+                2.0797904366849806,
+                0.07525167530674282
+              ],
+              "finalCoreXYZ": [
+                0.06486876215989978,
+                2.0797904366849806,
+                0.07525167530674282
+              ]
+            },
+            {
+              "role": "middle",
+              "ordinal": 0,
+              "factor": 0.4177232833206651,
+              "primitiveCount": 91,
+              "translationXZ": [
+                -0.36584194443130613,
+                -0.1405514874174462
+              ],
+              "beforeCoreXYZ": [
+                1.2754235846294555,
+                3.0832643390500607,
+                0.40534786275323204
+              ],
+              "afterBranchCoreXYZ": [
+                0.9095816401981494,
+                3.0832643390500607,
+                0.2647963753357858
+              ],
+              "finalCoreXYZ": [
+                0.9095816401981494,
+                3.0832643390500607,
+                0.2647963753357858
+              ]
+            },
+            {
+              "role": "neck",
+              "ordinal": 0,
+              "factor": 0.20886164166033283,
+              "primitiveCount": 91,
+              "translationXZ": [
+                -0.18292097221565332,
+                -0.07027574370872318
+              ],
+              "beforeCoreXYZ": [
+                1.441093894352803,
+                3.4432086758364004,
+                0.40109844008200246
+              ],
+              "afterBranchCoreXYZ": [
+                1.2581729221371498,
+                3.4432086758364004,
+                0.33082269637327927
+              ],
+              "finalCoreXYZ": [
+                1.2581729221371498,
+                3.4432086758364004,
+                0.33082269637327927
+              ]
+            },
+            {
+              "role": "top",
+              "ordinal": 0,
+              "factor": 0,
+              "primitiveCount": 91,
+              "translationXZ": [
+                0,
+                0
+              ],
+              "beforeCoreXYZ": [
+                1.5745324837604153,
+                3.803153012622741,
+                0.40109844008200246
+              ],
+              "afterBranchCoreXYZ": [
+                1.5745324837604153,
+                3.803153012622741,
+                0.40109844008200246
+              ],
+              "finalCoreXYZ": [
+                1.5745324837604153,
+                3.803153012622741,
+                0.40109844008200246
+              ]
+            },
+            {
+              "role": "shoulder",
+              "ordinal": 0,
+              "factor": 0.3837566971965132,
+              "primitiveCount": 91,
+              "translationXZ": [
+                -0.33609401701253677,
+                -0.12912273926558043
+              ],
+              "beforeCoreXYZ": [
+                1.2003203855028686,
+                3.141801082408791,
+                -0.17351854732663397
+              ],
+              "afterBranchCoreXYZ": [
+                0.8642263684903317,
+                3.141801082408791,
+                -0.3026412865922144
+              ],
+              "finalCoreXYZ": [
+                0.8642263684903317,
+                3.141801082408791,
+                -0.3026412865922144
+              ]
+            },
+            {
+              "role": "shoulder",
+              "ordinal": 1,
+              "factor": 0.5669029185594988,
+              "primitiveCount": 91,
+              "translationXZ": [
+                -0.49649343072500296,
+                -0.19074600724054763
+              ],
+              "beforeCoreXYZ": [
+                1.5956308746991275,
+                2.826173738587409,
+                0.5704483069410298
+              ],
+              "afterBranchCoreXYZ": [
+                1.0991374439741244,
+                2.826173738587409,
+                0.37970229970048214
+              ],
+              "finalCoreXYZ": [
+                1.0991374439741244,
+                2.826173738587409,
+                0.37970229970048214
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "threeRevision": "186",
+    "executionThread": "main",
+    "scope": "Lossless PNG of the canvas bitmap at this submitted draw; excludes page UI, linear/HDR buffers and compositor presentation. Capture is not a performance sample.",
+    "uniformScope": "CPU-side values submitted to Three uniforms at this draw; GPU float32 rounding is not read back.",
+    "frame": {
+      "ownerDrawSerial": 3274,
+      "rafTimestamp": 60366.4,
+      "localSnapshotTime": 60367,
+      "localTimeOrigin": 1792212322422.4,
+      "date": "2026-10-17T04:46:22.789Z",
+      "counterScope": "Frame-loop draw calls in this engine owner, including regeneration draws; not GPU completion or presentation"
+    },
+    "ready": true,
+    "regenerating": false,
+    "seed": 74,
+    "family": "sheared",
+    "terrainRaster": {
+      "vertices": 591788,
+      "triangles": 1182550,
+      "stitchedCells": 4096,
+      "levels": 9,
+      "cellsPerSide": 256,
+      "baseSpacingKm": 0.032,
+      "outerExtentKm": 1048.576,
+      "geometryBytes": 33127816,
+      "sampleCalls": 1183149,
+      "minimumHeightKm": 0,
+      "maximumHeightKm": 3.0260982513427734,
+      "normalBlendStartRadiusKm": 32.768,
+      "normalBlendEndRadiusKm": 65.536,
+      "normalMode": "geometry",
+      "refinement": {
+        "originalVertices": 465409,
+        "originalTriangles": 929792,
+        "probeSampleCalls": 591361,
+        "vertexSampleCalls": 591788,
+        "totalSampleCalls": 1183149,
+        "nodesAboveThreshold": 209659,
+        "eligibleNodesAboveThreshold": 209488,
+        "markedRedFaces": 69833,
+        "greenFaces": 21853,
+        "splitEdgeCount": 126379,
+        "addedVertices": 126379,
+        "addedTriangles": 252758,
+        "addedGeometryBytes": 7077224,
+        "sourceSpacingKm": 0.125,
+        "maxErrorKm": 0.005,
+        "sourceGrid": {
+          "minXKm": -64,
+          "minZKm": -64,
+          "spacingKm": 0.125,
+          "columns": 1025,
+          "rows": 1025
+        },
+        "selectionDomain": {
+          "minXKm": -48,
+          "maxXKm": 48,
+          "minZKm": -48,
+          "maxZKm": 48
+        },
+        "selectedNodeColumns": 769,
+        "selectedNodeRows": 769,
+        "originalFacesBySplitEdgeCount": [
+          838106,
+          7390,
+          7520,
+          76776
+        ],
+        "maximumCellTriangles": 20,
+        "cellTriangleCountBytes": 589824,
+        "midpointVerticesOutsideDomain": 405,
+        "boundsKm": {
+          "min": [
+            -1048.5760498046875,
+            -178.98373413085938,
+            -1048.5760498046875
+          ],
+          "max": [
+            1048.5760498046875,
+            -1.675218939781189,
+            1048.5760498046875
+          ]
+        }
+      },
+      "geometryScope": "First visible triangle of this static stitched mesh; not exact analytic-height intersection",
+      "shadow": {
+        "resolution": 2048,
+        "radiusKm": 64,
+        "coverage": "128km square in light right/up coordinates, centered at [0,-4,0], outer 15% fades to lit; not global terrain shadows",
+        "colourFormat": "r32float relative solar height km; -1000000 clear",
+        "depthFormat": "depth32float",
+        "colourBytes": 16777216,
+        "depthBytes": 16777216,
+        "targetPayloadBytes": 33554432,
+        "baseBiasKm": 0.001,
+        "receiverRadialOffsetKm": 0.03125,
+        "filter": "One nearest textureLoad; no receiver-plane extrapolation or PCF blur; outside coverage lit",
+        "biasPolicy": "Caster affine height minimum over one actual light texel: 0.5*(abs(dpdx(q))+abs(dpdy(q))) +1m; erodes unresolved contact shadows, especially at low Sun",
+        "receiverPolicy": "Only shadow lookup point elevated along planet radial by half one light texel; geometry/radiance point unchanged; contact shadows below this scale may disappear",
+        "biasLimit": "No guarantee for multiple non-coplanar faces inside one light texel; aliasing and contact-shadow loss require visual qualification",
+        "depthFit": {
+          "nearKm": 0.5,
+          "farKm": 1977.8974431000836,
+          "cameraDistanceKm": 927.4244346416147,
+          "minimumCasterHeightKm": -1049.473008458469,
+          "maximumCasterHeightKm": 926.4244346416147
+        },
+        "reversedDepthBuffer": true,
+        "updates": "Exact-input cached shadow map; terrain colour draw remains live; shared geometry not owned by shadow",
+        "cache": {
+          "requests": 3275,
+          "submissions": 1,
+          "hits": 3274,
+          "epoch": 0,
+          "valid": true,
+          "scope": "Owner-local CPU calls: requests are validated render calls, submissions are renderer.render attempts (including throws), hits skip shadow clear/draw; no GPU completion or presentation claim",
+          "ownership": "Static casters and exclusive target; call invalidate after caster mutations, external target writes or same-owner renderer/backend reset; disposed owner is terminal"
+        }
+      },
+      "width": 2474,
+      "height": 1844,
+      "colourFormat": "rgba32float",
+      "distanceComponent": "alpha; km from actual camera origin; -1 miss",
+      "colourDistanceBytes": 72992896,
+      "depthBytes": 18248224,
+      "targetPayloadBytes": 91241120,
+      "cpuTriangleLookupBytes": 2949120,
+      "normalPolicy": "Shared incident-area-weighted actual mesh normal at every vertex; no bilinear-source gradient seams",
+      "memoryScope": "Nominal retained geometry and target/depth payload only; CPU construction temporaries and driver residency/peak are unmeasured",
+      "perFrameCpuHeightSamples": 0,
+      "nearKm": 0.025,
+      "farKm": 1600,
+      "reversedDepthBuffer": true,
+      "cache": {
+        "enabled": true,
+        "requests": 3275,
+        "hits": 3127,
+        "submissions": 148,
+        "epoch": 4,
+        "valid": true,
+        "scope": "Owner-local CPU requests/render attempts; hits skip colour clear/draw. Not GPU completion, presentation or FPS.",
+        "ownership": "Static scene/geometry and exclusive target. cacheInputs covers every mutable shade binding; invalidate for external writes/reset, invalidateGeometry for raw caster/world changes after updating bounds."
+      }
+    },
+    "terrainCacheMode": "exact-input",
+    "terrainOptical": {
+      "enabled": true,
+      "variant": "observed-premult-valid-land-v1",
+      "stats": {
+        "gridSize": [
+          2048,
+          2048
+        ],
+        "cellKm": 0.0625,
+        "minEdgeKm": [
+          -64,
+          -64
+        ],
+        "rowOrder": "south-to-north; v0=minZ",
+        "dataConvention": "premultiplied-linear-RGB-and-valid-area",
+        "sourceAssetBytes": 33554432,
+        "basePayloadBytes": 33554432,
+        "nominalMipPayloadBytes": 11184808,
+        "totalGpuPayloadBytes": 44739240,
+        "retainedCpuPayloadBytes": 33554432,
+        "mipLevels": 12
+      }
+    },
+    "quality": "ultra",
+    "nominalSteps": 384,
+    "stepSizeKm": 0.018229166666666668,
+    "emptyStepKm": 0.0546875,
+    "output": [
+      2474,
+      1844
+    ],
+    "internal": [
+      2474,
+      1844
+    ],
+    "outputMode": "screen",
+    "canvas": [
+      2474,
+      1844
+    ],
+    "viewport": {
+      "width": 1237,
+      "height": 922,
+      "dpr": 2
+    },
+    "rendererOutputColorSpace": "srgb",
+    "rendererToneMapping": 0,
+    "volume": [
+      256,
+      256,
+      256
+    ],
+    "detailVolume": [
+      128,
+      128,
+      128
+    ],
+    "motionField": [
+      16,
+      16,
+      16
+    ],
+    "ablation": "full",
+    "ablationCode": 0,
+    "flowMode": "full",
+    "flowSampled": true,
+    "flowComputeThisDraw": true,
+    "densitySampling": {
+      "path": "macro-rgba8-r",
+      "format": "rgba8unorm",
+      "dimensions": [
+        256,
+        256,
+        256
+      ],
+      "textureBytes": 67108864,
+      "extraCpuPayloadBytes": 16777216,
+      "extraGpuPayloadBytes": 16777216,
+      "sampling": "same volumeSampler; linear/clamp-to-edge/mip0; NoColorSpace",
+      "reason": "dry weather; R8 retained but not bound",
+      "allocationAccounting": "nominal payload; GPU upload/residency not measured",
+      "fallback": null
+    },
+    "narrowCloudSpecialization": "dry",
+    "camera": {
+      "origin": [
+        15.459707890770279,
+        7.558173047097125,
+        2.780613896133632
+      ],
+      "target": [
+        0.3515625,
+        3.119140625,
+        -0.0546875
+      ],
+      "forward": [
+        -0.9442590869231424,
+        -0.27743952638107033,
+        -0.177206337258352
+      ],
+      "right": [
+        0.18444716051358995,
+        0,
+        -0.9828424314092641
+      ],
+      "up": [
+        -0.27267933867740585,
+        0.9607431026041495,
+        -0.05117293285522365
+      ],
+      "yaw": 1.3852869846402587,
+      "pitch": 0.2811279826464208,
+      "approach": 0,
+      "aspect": 1.341648590021692,
+      "tanHalfVerticalFov": 0.2867,
+      "comparisonSurfaceKm": 0.7227685139973958,
+      "comparisonTargetKm": [
+        0.3515625,
+        3.119140625,
+        -0.0546875
+      ],
+      "probeSkipped": true,
+      "surfaceEstimateKm": null,
+      "probe": null,
+      "probeAgeMs": null,
+      "ground": 1,
+      "terrainClearanceKm": 0.2
+    },
+    "clocks": {
+      "simulationTime": 60,
+      "forcingTime": 0,
+      "weatherTime": 18.500399999999928,
+      "precipitationUniformTime": 0,
+      "flowUniformTime": 60,
+      "flowFieldTime": 60,
+      "flowFieldDispersion": 0,
+      "note": "Precipitation uniform is applied before this frame advances forcingTime. A frozen flow texture retains its installation time/dispersion even while flowUniformTime advances."
+    },
+    "paused": true,
+    "orbit": false,
+    "speed": 1,
+    "material": {
+      "growth": [
+        1,
+        1,
+        1
+      ],
+      "drift": [
+        0.121372967564859,
+        0.010131947708267265,
+        0
+      ],
+      "wind": [
+        0.26052456720014755,
+        0.09009438008941259
+      ],
+      "forcing": [
+        0,
+        0
+      ],
+      "iceRange": [
+        4.51146714868378,
+        5.196156475759857
+      ],
+      "seedPhase": 0.014788732394366197,
+      "flowFamily": 2,
+      "supportMin": [
+        -4.86640625,
+        -0.1680859374999999,
+        -3.052421875
+      ],
+      "supportMax": [
+        5.56953125,
+        6.4063671875,
+        2.943046875
+      ],
+      "extinctionPerKm": 18,
+      "iceExtinctionPerKm": 6.5
+    },
+    "weather": {
+      "skyIntent": "clear",
+      "rain": 0,
+      "targetRain": 0,
+      "haze": 1,
+      "overcast": 0,
+      "skyPending": false,
+      "atmosphereProgress": 1,
+      "atmosphereBlend": 1,
+      "windStrength": 0.55,
+      "dispersion": 0,
+      "precipitationBounds": [
+        -3.359375,
+        -2.0234375,
+        2.109375,
+        2.1328125
+      ],
+      "precipitationStepKm": 0.006,
+      "precipitationExtinctionPerKm": 0.85
+    },
+    "skyTextures": {
+      "requestSerial": 3,
+      "requestedSide": 0,
+      "from": {
+        "uuid": "937df2ad-d07d-47e3-b5dc-6d6ba2309dae",
+        "version": 3,
+        "width": 128,
+        "height": 128,
+        "type": 1016,
+        "colorSpace": ""
+      },
+      "to": {
+        "uuid": "7b9ea501-b779-44f5-817f-45ad7c3d1dd5",
+        "version": 3,
+        "width": 128,
+        "height": 128,
+        "type": 1016,
+        "colorSpace": ""
+      },
+      "scope": "Owner-local texture objects and upload revisions; not portable content hashes."
+    },
+    "lighting": {
+      "sunDirection": [
+        -0.668126592347077,
+        0.7126683651702156,
+        0.21380050955106467
+      ],
+      "lightSide": 0,
+      "sunsetAmount": 0,
+      "solarColor": [
+        0.9313426391412541,
+        0.8413836906464631,
+        0.7182507029227312
+      ],
+      "ambientColor": [
+        0.08283003529291262,
+        0.10718098056640865,
+        0.1600090087683047
+      ],
+      "flash": [
+        0,
+        3.5,
+        0.5,
+        0
+      ],
+      "flashTop": [
+        0,
+        0,
+        0
+      ],
+      "flashBend": [
+        0,
+        0,
+        0
+      ],
+      "flashEnd": [
+        0,
+        0,
+        0
+      ],
+      "flashBranch": [
+        0,
+        0,
+        0
+      ],
+      "flashCount": 0
+    },
+    "terrain": {
+      "surfaceId": "copernicus-glo90-liguria-apuane-v1",
+      "coverId": "esa-worldcover-2021-area-fractions-v1",
+      "hash": "u32-avalanche-24-v1",
+      "verticalExaggeration": 1,
+      "originDegrees": [
+        44,
+        10
+      ],
+      "axisX": "west",
+      "axisZ": "north"
+    }
+  },
+  "textExport": {
+    "format": "Consecutive text parts of the PNG data URL; concatenate in order without separators.",
+    "partCharacters": 65536,
+    "totalCharacters": 4798634,
+    "parts": 74
+  }
+}

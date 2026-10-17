@@ -1,0 +1,17 @@
+{
+  "steps": [
+    {
+      "step": "typecheck",
+      "exitCode": 0,
+      "wallSeconds": 1.5681639580288902,
+      "logSHA256": "0e16a3edbb514aa8bffdbf94899f6caaad53fcb431e899221770792223f367c1"
+    },
+    {
+      "step": "APPbuild",
+      "exitCode": 0,
+      "wallSeconds": 4.479189582983963,
+      "logSHA256": "a0f60a58cfd689d73d4cca146ffca8e337b0d36a05c31540063213a41911025f"
+    }
+  ],
+  "sourceFreezeSHA256": "393d1d87b759740388fb9fbf04887145723a3b940e4fe1fdc49b04f7e498c41a"
+}

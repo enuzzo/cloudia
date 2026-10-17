@@ -1,0 +1,11 @@
+{
+  "renderer": "experiment-v61-branched-roots-r1",
+  "sourceCount": 141,
+  "sourceFreezeSHA256": "393d1d87b759740388fb9fbf04887145723a3b940e4fe1fdc49b04f7e498c41a",
+  "runtimeVolumeSHA256": "d161e2efd350f38cce6ee353ef70a0af45a689c90c75d74f99d81213b4895003",
+  "validation": "564/564in53PASS; strictTypecheckandAPPbuildPASS; testtypeannotationidenticalemittedJS549140\u2026; rawfailuresretained",
+  "protocol": "BRANCH-NATIVE-PROTOCOL-BEFORE-B.json",
+  "baselineCurrent": "All3familiesfreshactualfrontsideDTOs72/73fullPNGand74exactcontentaliasesverified",
+  "port": 53788,
+  "stage": "before firstBnavigation, node_modulesignore1 verified"
+}

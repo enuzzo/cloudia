@@ -1,0 +1,175 @@
+--- a/src/cumulonimbus/volume.ts
++++ b/src/cumulonimbus/volume.ts
+@@ -17,7 +17,18 @@
+ export const voxelCenter=(index:number,axis:0|1|2,size:number)=>BOUNDS_MIN[axis]+(index+.5)/size*BOUNDS_SIZE[axis];
+ export const heightErosionScale = (worldY: number) => (.48+.52*smoothstep(1.6,2.5,worldY))*(1-.55*smoothstep(5.1,6.2,worldY));
+ export interface DetailVolume { size: number; data: Uint8Array }
+-export interface CloudVolume { size: number; data: Uint8Array; sunsetLight: Uint8Array; detail: DetailVolume; supportBounds:{min:number[];max:number[]} }
++export interface BranchAnatomy {
++  rule:'foundation-overlap-height-pinned-v1'; dominantTurret:number; turretCount:number;
++  coreGroupCount:number; trackedPrimitiveCount:number; movedGroupCount:number; movedPrimitiveCount:number; maxTranslationKm:number;
++  preBranchExtentsKm:number[]; extentCapsKm:number[]; postBranchExtentsKm:number[]; postJointExtentsKm:number[];
++  turrets:Array<{
++    index:number; dominant:boolean; rootDistanceBeforeKm:number; targetRootDistanceKm:number; rootDistanceAfterKm:number;
++    directionalRadiiKm:number[]|null; rootTranslationXZ:number[];
++    groups:Array<{role:'foundation'|'middle'|'neck'|'top'|'shoulder'|'buried'; ordinal:number; factor:number; primitiveCount:number;
++      translationXZ:number[]; beforeCoreXYZ:number[]; afterBranchCoreXYZ:number[]; finalCoreXYZ:number[]}>;
++  }>;
++}
++export interface CloudVolume { size: number; data: Uint8Array; sunsetLight: Uint8Array; detail: DetailVolume; supportBounds:{min:number[];max:number[]}; branchAnatomy?:BranchAnatomy }
+ /** The raw linear density footprint, enlarged for fine warp and bounded flow.
+  * Growth contracts toward x/z=0 and y=.72, so including those anchors covers
+  * every growth phase as well as the mature cloud. The global texture box stays fixed.
+@@ -166,6 +177,8 @@
+   const liquid:Lobe[]=[],iceCores:Lobe[]=[],summits:Lobe[]=[],foundations:Lobe[]=[];
+   const capParents=new Map<Lobe,Lobe>();
+   const authoredShoulders:Array<{core:Lobe;top:Lobe;foundation:Lobe;ordinal:number}>=[];
++  const turrets:Array<{foundation:Lobe;middle:Lobe;neck:Lobe;top:Lobe;shoulders:Lobe[];buried:Lobe|null}>=[];
++  const turretCores=(turret:typeof turrets[number])=>[turret.foundation,turret.middle,turret.neck,turret.top,...turret.shoulders,...(turret.buried?[turret.buried]:[])];
+   let sharedBody:Lobe|null=null;
+   const anatomy=random(seed^0x1b37c9a5);
+   const turret=(x:number,z:number,height:number,width:number,lean:number) => {
+@@ -179,10 +192,13 @@
+     const top:Lobe=[siteX+lean+offset,crest,siteZ+depth,tipWidth,.65+anatomy()*.24,tipWidth*(.86+anatomy()*.2)];
+     const foundation:Lobe=[siteX,lower,siteZ,girth*1.2,.94+anatomy()*.14,girth*1.06];
+     liquid.push(foundation);foundations.push(foundation);
+-    liquid.push([siteX+lean*.4+offset*.6,shoulder,siteZ+depth*.6,girth*(.91+anatomy()*.12),(crest-lower)*.37,girth*.94]);
++    const middle:Lobe=[siteX+lean*.4+offset*.6,shoulder,siteZ+depth*.6,girth*(.91+anatomy()*.12),(crest-lower)*.37,girth*.94];
++    liquid.push(middle);
+     // A buried neck keeps the main mass connected without smoothing the summit.
+-    liquid.push([siteX+lean*.72+offset,(shoulder+crest)*.5,siteZ+depth,girth*.74,(crest-shoulder)*.5+.48,girth*.77],top);
++    const neck:Lobe=[siteX+lean*.72+offset,(shoulder+crest)*.5,siteZ+depth,girth*.74,(crest-shoulder)*.5+.48,girth*.77];
++    liquid.push(neck,top);
+     summits.push(top);
++    const branch={foundation,middle,neck,top,shoulders:[] as Lobe[],buried:null as Lobe|null};turrets.push(branch);
+     // Irregular lateral shoulders belong to this updraft, rather than a global
+     // height layer. They are broad enough to read before any fine erosion.
+     const shoulders=2+Math.floor(anatomy()*2),phase=anatomy()*Math.PI*2;
+@@ -192,6 +208,7 @@
+       const lateral:Lobe=[siteX+lean*level+Math.cos(angle)*radius,lower+(crest-lower)*level,
+         siteZ+depth*level+Math.sin(angle)*radius,bulge,bulge*(.88+anatomy()*.4),bulge*(.82+anatomy()*.3),.16];
+       liquid.push(lateral);authoredShoulders.push({core:lateral,top,foundation,ordinal:j});
++      branch.shoulders.push(lateral);
+     }
+   };
+   if(shape.family==='congestus') {
+@@ -247,6 +264,7 @@
+     // updraft. Surface shoulders and distinct summits sit outside this nucleus.
+     liquid.push([foot[0]+(top[0]-foot[0])*.32,(bottom+roof)*.5,foot[2]+(top[2]-foot[2])*.32,
+       foot[3]*.94,(roof-bottom)*.5+.1,foot[5]*.98,.18]);
++    turrets[i].buried=liquid.at(-1)!;
+   }
+   const transform=(c:Lobe,isIce:boolean) => {
+     const width=isIce?shape.anvilSpread:shape.towerWidth;
+@@ -276,6 +294,12 @@
+     }
+   }
+   const lobes:Lobe[]=[...liquid,...iceCores];
++  // Actual turret cores, including their own buried body, own branches; shared masses do not.
++  const branchGroups=new Map<Lobe,Set<Lobe>>();
++  for(const turret of turrets)for(const core of turretCores(turret)) {
++    if(branchGroups.has(core))throw new Error('Branch cores must have unique ownership');
++    branchGroups.set(core,new Set([core]));
++  }
+   // Retain actual descendants without changing the append schedule or RNG.
+   const trackedGroups=new Map<Lobe,Set<Lobe>>();
+   if(shape.family==='sheared') {
+@@ -285,6 +309,7 @@
+   }
+   [...liquid,...iceCores].forEach((c,i) => {
+     const tracked=trackedGroups.get(c);
++    const branch=branchGroups.get(c);
+     const isIce=i>=liquid.length,count=isIce?10:18;
+     for (let j=0; j<count; j++) {
+       const theta=rng()*Math.PI*2, elevation=(rng()-.5)*1.8;
+@@ -298,12 +323,14 @@
+       lobes.push([c[0]+Math.cos(theta)*c[3]*radius*Math.cos(elevation), c[1]+Math.sin(elevation)*c[4]*radius,
+         c[2]+Math.sin(theta)*c[5]*radius*Math.cos(elevation), s*stretchX, s*stretchY, s*.85, isIce?.045:.2]);
+       tracked?.add(lobes.at(-1)!);
++      branch?.add(lobes.at(-1)!);
+       if(!isIce) {
+         const l=lobes.at(-1)!;
+         for(let k=0;k<4;k++) {
+           const a=rng()*Math.PI*2,e=(rng()-.5)*2,r=s*(.24+rng()*.22);
+           lobes.push([l[0]+Math.cos(a)*s*.76*Math.cos(e),l[1]+Math.sin(e)*s*.76,l[2]+Math.sin(a)*s*.76*Math.cos(e),r,r*.9,r]);
+           tracked?.add(lobes.at(-1)!);
++          branch?.add(lobes.at(-1)!);
+         }
+       }
+     }
+@@ -345,6 +372,56 @@
+     const scale=Math.min(1,limit/extent);
+     for(const c of lobes) {c[axis]*=scale;c[radius]*=scale;}
+   }
++  // Apply the branch hierarchy to actual core groups after horizontal contraction.
++  const branchOwned=new Set<Lobe>(),actualLobes=new Set(lobes);
++  for(const group of branchGroups.values()) {
++    if(group.size!==91)throw new Error('Each branch needs its core and all 90 generic descendants');
++    for(const lobe of group) {
++      if(!actualLobes.has(lobe)||branchOwned.has(lobe))throw new Error('Branch descendants must have unique actual ownership');
++      branchOwned.add(lobe);
++    }
++  }
++  const horizontalExtents=()=>[Math.max(...lobes.map(c=>Math.abs(c[0])+c[3])),Math.max(...lobes.map(c=>Math.abs(c[2])+c[5]))];
++  const coreXYZ=(core:Lobe)=>[core[0],core[1],core[2]];
++  const preBranchExtentsKm=horizontalExtents(),extentCapsKm=preBranchExtentsKm.map((extent,i)=>Math.max(extent,[4.35,2.8][i]));
++  const dominant=turrets.reduce((a,b)=>a.top[1]>b.top[1]?a:b),dominantTurret=turrets.indexOf(dominant);
++  const branchAnatomy:BranchAnatomy={rule:'foundation-overlap-height-pinned-v1',dominantTurret,turretCount:turrets.length,
++    coreGroupCount:branchGroups.size,trackedPrimitiveCount:branchOwned.size,movedGroupCount:0,movedPrimitiveCount:0,maxTranslationKm:0,
++    preBranchExtentsKm,extentCapsKm,postBranchExtentsKm:[],postJointExtentsKm:[],turrets:[]};
++  for(const [index,turret] of turrets.entries()) {
++    const foot=turret.foundation,rise=turret.top[1]-foot[1];
++    if(!(rise>0)||![...foot,...turret.top].every(Number.isFinite))throw new Error('A branch needs finite geometry and a positive vertical range');
++    const dx=foot[0]-dominant.foundation[0],dz=foot[2]-dominant.foundation[2],distance=Math.hypot(dx,dz);
++    let target=distance,translation=[0,0],directionalRadiiKm:number[]|null=null;
++    if(turret!==dominant&&distance>0) {
++      const ux=dx/distance,uz=dz/distance;
++      const reach=(core:Lobe)=>1/Math.sqrt((ux/core[3])**2+(uz/core[5])**2);
++      directionalRadiiKm=[reach(foot),reach(dominant.foundation)];
++      target=Math.min(distance,(directionalRadiiKm[0]+directionalRadiiKm[1])*.5);
++      translation=[-ux*(distance-target),-uz*(distance-target)];
++      if(![target,...translation,...directionalRadiiKm].every(Number.isFinite))throw new Error('Branch root translation must be finite');
++    }
++    const report:BranchAnatomy['turrets'][number]={index,dominant:turret===dominant,rootDistanceBeforeKm:distance,
++      targetRootDistanceKm:target,rootDistanceAfterKm:distance,directionalRadiiKm,rootTranslationXZ:translation,groups:[]};
++    const cores=turretCores(turret);
++    for(const [ordinal,core] of cores.entries()) {
++      if(!core.every(value=>typeof value==='number'&&Number.isFinite(value))||[core[3],core[4],core[5]].some(radius=>!(radius>0)))throw new Error('Branch cores need finite geometry and positive radii');
++      const factor=1-clamp((core[1]-foot[1])/rise),group=branchGroups.get(core)!,beforeCoreXYZ=coreXYZ(core);
++      const delta=[translation[0]*factor,translation[1]*factor];let moved=0;
++      if(delta[0]!==0||delta[1]!==0)for(const lobe of group) {
++        const x=lobe[0],z=lobe[2];lobe[0]+=delta[0];lobe[2]+=delta[1];
++        if(lobe[0]!==x||lobe[2]!==z)moved++;
++      }
++      if(moved)branchAnatomy.movedGroupCount++;
++      branchAnatomy.movedPrimitiveCount+=moved;branchAnatomy.maxTranslationKm=Math.max(branchAnatomy.maxTranslationKm,Math.hypot(...delta));
++      report.groups.push({role:ordinal<4?(['foundation','middle','neck','top'] as const)[ordinal]:core===turret.buried?'buried':'shoulder',ordinal:ordinal<4||core===turret.buried?0:ordinal-4,
++        factor,primitiveCount:group.size,translationXZ:delta,beforeCoreXYZ,afterBranchCoreXYZ:coreXYZ(core),finalCoreXYZ:[]});
++    }
++    report.rootDistanceAfterKm=Math.hypot(foot[0]-dominant.foundation[0],foot[2]-dominant.foundation[2]);branchAnatomy.turrets.push(report);
++  }
++  branchAnatomy.postBranchExtentsKm=horizontalExtents();
++  if(branchAnatomy.postBranchExtentsKm.some((extent,i)=>!Number.isFinite(extent)||extent>extentCapsKm[i]))throw new Error('Branch translation exceeds the original horizontal extent cap');
++  // The existing inward shoulder joint reads the moved young foundations.
+   if(shape.family==='sheared') {
+     // Remove only the inward component of the mature shoulder offset;
+     // perpendicular offsets, shared body and other groups stay unchanged.
+@@ -369,6 +446,10 @@
+     const translation=[-inner[0]*selected.projection,0,-inner[2]*selected.projection];
+     if(selected.projection>0)for(const lobe of innerGroup){lobe[0]+=translation[0];lobe[2]+=translation[2];}
+   }
++  branchAnatomy.postJointExtentsKm=horizontalExtents();
++  if(branchAnatomy.postJointExtentsKm.some((extent,i)=>!Number.isFinite(extent)||extent>extentCapsKm[i]))throw new Error('The resulting inward joint exceeds the original horizontal extent cap');
++  for(const [index,turret] of turrets.entries())for(const [ordinal,core] of turretCores(turret).entries())
++    branchAnatomy.turrets[index].groups[ordinal].finalCoreXYZ=coreXYZ(core);
+   // Rasterize lobes into their local bounds instead of testing every lobe at every voxel.
+   for (const [cx,cy,cz,rx,ry,rz,blend=.2] of lobes) {
+     const lo = [cx-rx-.35,cy-ry-.35,cz-rz-.35], hi=[cx+rx+.35,cy+ry+.35,cz+rz+.35];
+@@ -452,5 +533,5 @@
+     progress?.(.82+.09*(side+1));
+   }
+   bakeOccupancy(envelope,detail,THERMAL_DISPLACEMENT);
+-  return {size, data, sunsetLight, detail, supportBounds:densitySupportBounds(envelope)};
+-}
++  return {size, data, sunsetLight, detail, supportBounds:densitySupportBounds(envelope),branchAnatomy};
++}

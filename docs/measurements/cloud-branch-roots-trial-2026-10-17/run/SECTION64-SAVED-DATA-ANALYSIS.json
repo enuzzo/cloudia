@@ -1,0 +1,24 @@
+{
+  "sourceResultSHA256": "615a63cee52fa6e1907a514c03e7a75a987d47918a650731428818023c5e2035",
+  "rows": [
+    {
+      "variant": "A",
+      "positiveFinal": 15,
+      "maxFinal": 0.8636423791490866,
+      "maximumR8MinusFineErosion": 0.7103205226923033,
+      "maximumUnquantizedMacroMinusFineErosion": 0.7089321943504371,
+      "maximumAbsoluteQuantizationEffectOnMacro": 0.001475939987757413
+    },
+    {
+      "variant": "B",
+      "positiveFinal": 0,
+      "maxFinal": 0,
+      "maximumR8MinusFineErosion": -0.09029256400954713,
+      "maximumUnquantizedMacroMinusFineErosion": -0.09033351135252865,
+      "maximumAbsoluteQuantizationEffectOnMacro": 0.0001556184036647229
+    }
+  ],
+  "scope": "Arithmetic of saved96samples only; no model or256claim",
+  "conclusion": "Rejectedloft loses usefulmacro postcarving support before fine: Bbelow thresholdwithR8andunquantizedF32. SameRGBwarp/erosion inA/B. Notlightprune, notfixedbyR8format; no singleprimitive attribution.",
+  "execution": "oneA64+B64 fulloriginalbakes, withinbudget; no qualityreductioncandidate"
+}

@@ -1,0 +1,21 @@
+{
+  "url": "http://127.0.0.1:4196/?seed=74",
+  "renderer": "observatory-v61-observed-terrain-material",
+  "state": "Browser tab: 1, Title: \"Cloudia · Un cielo da muovere\", URL: \"http://127.0.0.1:4196/?seed=74\".\nThere has been no change in the accessibility tree.\nThe focused UI element is 29 button (collapsed) Description: Regola il cielo, Help: Regola, Secondary Actions: Expand",
+  "console": [],
+  "canvas": {
+    "cssHeight": 922,
+    "cssWidth": 1237,
+    "height": 1844,
+    "width": 2474
+  },
+  "qaOwner": {
+    "session": 24894,
+    "closedExit": 0
+  },
+  "ordinaryOwner": {
+    "session": 48736,
+    "confirmedRunning": true
+  },
+  "claim": "Ordinary preview restored; not a new performance or native comparison capture."
+}

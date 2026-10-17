@@ -1,0 +1,969 @@
+{
+  "status": "MATCH_FROZEN_RENDER_INPUTS",
+  "protocol": "BRANCH-NATIVE-PROTOCOL-BEFORE-B.json",
+  "scope": "Inputs only, no density/lightfield or artistic/performance proof",
+  "rows": [
+    {
+      "seed": 74,
+      "pose": "front",
+      "status": "MATCH_FROZEN_RENDER_INPUTS",
+      "diffs": [
+        [
+          ".anatomyVariant",
+          null,
+          "hierarchical-liquid-branch-roots"
+        ],
+        [
+          ".branchAnatomy",
+          null,
+          {
+            "rule": "foundation-overlap-height-pinned-v1",
+            "dominantTurret": 0,
+            "turretCount": 2,
+            "coreGroupCount": 13,
+            "trackedPrimitiveCount": 1183,
+            "movedGroupCount": 5,
+            "movedPrimitiveCount": 455,
+            "maxTranslationKm": 0.9382097143616912,
+            "preBranchExtentsKm": [
+              4.35,
+              2.220565369750186
+            ],
+            "extentCapsKm": [
+              4.35,
+              2.8
+            ],
+            "postBranchExtentsKm": [
+              4.35,
+              2.220565369750186
+            ],
+            "postJointExtentsKm": [
+              4.35,
+              2.220565369750186
+            ],
+            "turrets": [
+              {
+                "index": 0,
+                "dominant": true,
+                "rootDistanceBeforeKm": 0,
+                "targetRootDistanceKm": 0,
+                "rootDistanceAfterKm": 0,
+                "directionalRadiiKm": null,
+                "rootTranslationXZ": [
+                  0,
+                  0
+                ],
+                "groups": [
+                  {
+                    "role": "foundation",
+                    "ordinal": 0,
+                    "factor": 1,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      0,
+                      0
+                    ],
+                    "beforeCoreXYZ": [
+                      -0.9154822231844648,
+                      1.9183940277806641,
+                      -0.3013858078432576
+                    ],
+                    "afterBranchCoreXYZ": [
+                      -0.9154822231844648,
+                      1.9183940277806641,
+                      -0.3013858078432576
+                    ],
+                    "finalCoreXYZ": [
+                      -0.9154822231844648,
+                      1.9183940277806641,
+                      -0.3013858078432576
+                    ]
+                  },
+                  {
+                    "role": "middle",
+                    "ordinal": 0,
+                    "factor": 0.5303590143471959,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      0,
+                      0
+                    ],
+                    "beforeCoreXYZ": [
+                      -0.4984883143454621,
+                      3.1821909098109034,
+                      -0.32538059008710446
+                    ],
+                    "afterBranchCoreXYZ": [
+                      -0.4984883143454621,
+                      3.1821909098109034,
+                      -0.32538059008710446
+                    ],
+                    "finalCoreXYZ": [
+                      -0.4984883143454621,
+                      3.1821909098109034,
+                      -0.32538059008710446
+                    ]
+                  },
+                  {
+                    "role": "neck",
+                    "ordinal": 0,
+                    "factor": 0.26517950717359795,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      0,
+                      0
+                    ],
+                    "beforeCoreXYZ": [
+                      -0.2272187499071064,
+                      3.8957850052633507,
+                      -0.3413771115830025
+                    ],
+                    "afterBranchCoreXYZ": [
+                      -0.2272187499071064,
+                      3.8957850052633507,
+                      -0.3413771115830025
+                    ],
+                    "finalCoreXYZ": [
+                      -0.2272187499071064,
+                      3.8957850052633507,
+                      -0.3413771115830025
+                    ]
+                  },
+                  {
+                    "role": "top",
+                    "ordinal": 0,
+                    "factor": 0,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      0,
+                      0
+                    ],
+                    "beforeCoreXYZ": [
+                      0.04280943884321254,
+                      4.609379100715798,
+                      -0.3413771115830025
+                    ],
+                    "afterBranchCoreXYZ": [
+                      0.04280943884321254,
+                      4.609379100715798,
+                      -0.3413771115830025
+                    ],
+                    "finalCoreXYZ": [
+                      0.04280943884321254,
+                      4.609379100715798,
+                      -0.3413771115830025
+                    ]
+                  },
+                  {
+                    "role": "shoulder",
+                    "ordinal": 0,
+                    "factor": 0.3808615316823126,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      0,
+                      0
+                    ],
+                    "beforeCoreXYZ": [
+                      0.16273211014671457,
+                      3.584486404103483,
+                      0.1434988400303256
+                    ],
+                    "afterBranchCoreXYZ": [
+                      0.16273211014671457,
+                      3.584486404103483,
+                      0.1434988400303256
+                    ],
+                    "finalCoreXYZ": [
+                      -0.4170262692993067,
+                      3.584486404103483,
+                      -0.07923642533279354
+                    ]
+                  },
+                  {
+                    "role": "shoulder",
+                    "ordinal": 1,
+                    "factor": 0.658457724028267,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      0,
+                      0
+                    ],
+                    "beforeCoreXYZ": [
+                      -1.2665073624242096,
+                      2.8374791941968898,
+                      -0.4556439367362314
+                    ],
+                    "afterBranchCoreXYZ": [
+                      -1.2665073624242096,
+                      2.8374791941968898,
+                      -0.4556439367362314
+                    ],
+                    "finalCoreXYZ": [
+                      -1.2665073624242096,
+                      2.8374791941968898,
+                      -0.4556439367362314
+                    ]
+                  },
+                  {
+                    "role": "shoulder",
+                    "ordinal": 2,
+                    "factor": 0.4666238107765095,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      0,
+                      0
+                    ],
+                    "beforeCoreXYZ": [
+                      -0.10158351212105923,
+                      3.3537013912401026,
+                      -1.203675227712722
+                    ],
+                    "afterBranchCoreXYZ": [
+                      -0.10158351212105923,
+                      3.3537013912401026,
+                      -1.203675227712722
+                    ],
+                    "finalCoreXYZ": [
+                      -0.10158351212105923,
+                      3.3537013912401026,
+                      -1.203675227712722
+                    ]
+                  }
+                ]
+              },
+              {
+                "index": 1,
+                "dominant": false,
+                "rootDistanceBeforeKm": 1.9884210493696663,
+                "targetRootDistanceKm": 1.0502113350079751,
+                "rootDistanceAfterKm": 1.0502113350079751,
+                "directionalRadiiKm": [
+                  0.8731457925038728,
+                  1.2272768775120777
+                ],
+                "rootTranslationXZ": [
+                  -0.8757997436079418,
+                  -0.3364703214533337
+                ],
+                "groups": [
+                  {
+                    "role": "foundation",
+                    "ordinal": 0,
+                    "factor": 1,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      -0.8757997436079418,
+                      -0.3364703214533337
+                    ],
+                    "beforeCoreXYZ": [
+                      0.9406685057678416,
+                      2.0797904366849806,
+                      0.41172199676007654
+                    ],
+                    "afterBranchCoreXYZ": [
+                      0.06486876215989978,
+                      2.0797904366849806,
+                      0.07525167530674282
+                    ],
+                    "finalCoreXYZ": [
+                      0.06486876215989978,
+                      2.0797904366849806,
+                      0.07525167530674282
+                    ]
+                  },
+                  {
+                    "role": "middle",
+                    "ordinal": 0,
+                    "factor": 0.4177232833206651,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      -0.36584194443130613,
+                      -0.1405514874174462
+                    ],
+                    "beforeCoreXYZ": [
+                      1.2754235846294555,
+                      3.0832643390500607,
+                      0.40534786275323204
+                    ],
+                    "afterBranchCoreXYZ": [
+                      0.9095816401981494,
+                      3.0832643390500607,
+                      0.2647963753357858
+                    ],
+                    "finalCoreXYZ": [
+                      0.9095816401981494,
+                      3.0832643390500607,
+                      0.2647963753357858
+                    ]
+                  },
+                  {
+                    "role": "neck",
+                    "ordinal": 0,
+                    "factor": 0.20886164166033283,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      -0.18292097221565332,
+                      -0.07027574370872318
+                    ],
+                    "beforeCoreXYZ": [
+                      1.441093894352803,
+                      3.4432086758364004,
+                      0.40109844008200246
+                    ],
+                    "afterBranchCoreXYZ": [
+                      1.2581729221371498,
+                      3.4432086758364004,
+                      0.33082269637327927
+                    ],
+                    "finalCoreXYZ": [
+                      1.2581729221371498,
+                      3.4432086758364004,
+                      0.33082269637327927
+                    ]
+                  },
+                  {
+                    "role": "top",
+                    "ordinal": 0,
+                    "factor": 0,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      0,
+                      0
+                    ],
+                    "beforeCoreXYZ": [
+                      1.5745324837604153,
+                      3.803153012622741,
+                      0.40109844008200246
+                    ],
+                    "afterBranchCoreXYZ": [
+                      1.5745324837604153,
+                      3.803153012622741,
+                      0.40109844008200246
+                    ],
+                    "finalCoreXYZ": [
+                      1.5745324837604153,
+                      3.803153012622741,
+                      0.40109844008200246
+                    ]
+                  },
+                  {
+                    "role": "shoulder",
+                    "ordinal": 0,
+                    "factor": 0.3837566971965132,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      -0.33609401701253677,
+                      -0.12912273926558043
+                    ],
+                    "beforeCoreXYZ": [
+                      1.2003203855028686,
+                      3.141801082408791,
+                      -0.17351854732663397
+                    ],
+                    "afterBranchCoreXYZ": [
+                      0.8642263684903317,
+                      3.141801082408791,
+                      -0.3026412865922144
+                    ],
+                    "finalCoreXYZ": [
+                      0.8642263684903317,
+                      3.141801082408791,
+                      -0.3026412865922144
+                    ]
+                  },
+                  {
+                    "role": "shoulder",
+                    "ordinal": 1,
+                    "factor": 0.5669029185594988,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      -0.49649343072500296,
+                      -0.19074600724054763
+                    ],
+                    "beforeCoreXYZ": [
+                      1.5956308746991275,
+                      2.826173738587409,
+                      0.5704483069410298
+                    ],
+                    "afterBranchCoreXYZ": [
+                      1.0991374439741244,
+                      2.826173738587409,
+                      0.37970229970048214
+                    ],
+                    "finalCoreXYZ": [
+                      1.0991374439741244,
+                      2.826173738587409,
+                      0.37970229970048214
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          ".clocks.weatherTime",
+          83.80330000000126,
+          18.500399999999928
+        ],
+        [
+          ".frame.date",
+          "2026-10-17T04:43:44.678Z",
+          "2026-10-17T04:46:22.789Z"
+        ],
+        [
+          ".frame.localSnapshotTime",
+          362622.7000000477,
+          60367
+        ],
+        [
+          ".frame.localTimeOrigin",
+          1792211862056.2,
+          1792212322422.4
+        ],
+        [
+          ".frame.ownerDrawSerial",
+          21399,
+          3274
+        ],
+        [
+          ".frame.rafTimestamp",
+          362621.8,
+          60366.4
+        ],
+        [
+          ".rendererVersion",
+          "observatory-v61-observed-terrain-material",
+          "experiment-v61-branched-roots-r1"
+        ],
+        [
+          ".skyTextures.from.uuid",
+          "9b075c58-246a-42eb-89e9-b76cec13978c",
+          "937df2ad-d07d-47e3-b5dc-6d6ba2309dae"
+        ],
+        [
+          ".skyTextures.to.uuid",
+          "a57dca08-74be-410b-b0e3-d150d2f179ab",
+          "7b9ea501-b779-44f5-817f-45ad7c3d1dd5"
+        ],
+        [
+          ".terrainRaster.cache.hits",
+          21252,
+          3127
+        ],
+        [
+          ".terrainRaster.cache.requests",
+          21400,
+          3275
+        ],
+        [
+          ".terrainRaster.shadow.cache.hits",
+          21399,
+          3274
+        ],
+        [
+          ".terrainRaster.shadow.cache.requests",
+          21400,
+          3275
+        ],
+        [
+          ".weather.precipitationBounds",
+          [
+            -3.359375,
+            -2.0234375,
+            2.265625,
+            2.1328125
+          ],
+          [
+            -3.359375,
+            -2.0234375,
+            2.109375,
+            2.1328125
+          ]
+        ]
+      ],
+      "unexpected": []
+    },
+    {
+      "seed": 74,
+      "pose": "side",
+      "status": "MATCH_FROZEN_RENDER_INPUTS",
+      "diffs": [
+        [
+          ".anatomyVariant",
+          null,
+          "hierarchical-liquid-branch-roots"
+        ],
+        [
+          ".branchAnatomy",
+          null,
+          {
+            "rule": "foundation-overlap-height-pinned-v1",
+            "dominantTurret": 0,
+            "turretCount": 2,
+            "coreGroupCount": 13,
+            "trackedPrimitiveCount": 1183,
+            "movedGroupCount": 5,
+            "movedPrimitiveCount": 455,
+            "maxTranslationKm": 0.9382097143616912,
+            "preBranchExtentsKm": [
+              4.35,
+              2.220565369750186
+            ],
+            "extentCapsKm": [
+              4.35,
+              2.8
+            ],
+            "postBranchExtentsKm": [
+              4.35,
+              2.220565369750186
+            ],
+            "postJointExtentsKm": [
+              4.35,
+              2.220565369750186
+            ],
+            "turrets": [
+              {
+                "index": 0,
+                "dominant": true,
+                "rootDistanceBeforeKm": 0,
+                "targetRootDistanceKm": 0,
+                "rootDistanceAfterKm": 0,
+                "directionalRadiiKm": null,
+                "rootTranslationXZ": [
+                  0,
+                  0
+                ],
+                "groups": [
+                  {
+                    "role": "foundation",
+                    "ordinal": 0,
+                    "factor": 1,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      0,
+                      0
+                    ],
+                    "beforeCoreXYZ": [
+                      -0.9154822231844648,
+                      1.9183940277806641,
+                      -0.3013858078432576
+                    ],
+                    "afterBranchCoreXYZ": [
+                      -0.9154822231844648,
+                      1.9183940277806641,
+                      -0.3013858078432576
+                    ],
+                    "finalCoreXYZ": [
+                      -0.9154822231844648,
+                      1.9183940277806641,
+                      -0.3013858078432576
+                    ]
+                  },
+                  {
+                    "role": "middle",
+                    "ordinal": 0,
+                    "factor": 0.5303590143471959,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      0,
+                      0
+                    ],
+                    "beforeCoreXYZ": [
+                      -0.4984883143454621,
+                      3.1821909098109034,
+                      -0.32538059008710446
+                    ],
+                    "afterBranchCoreXYZ": [
+                      -0.4984883143454621,
+                      3.1821909098109034,
+                      -0.32538059008710446
+                    ],
+                    "finalCoreXYZ": [
+                      -0.4984883143454621,
+                      3.1821909098109034,
+                      -0.32538059008710446
+                    ]
+                  },
+                  {
+                    "role": "neck",
+                    "ordinal": 0,
+                    "factor": 0.26517950717359795,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      0,
+                      0
+                    ],
+                    "beforeCoreXYZ": [
+                      -0.2272187499071064,
+                      3.8957850052633507,
+                      -0.3413771115830025
+                    ],
+                    "afterBranchCoreXYZ": [
+                      -0.2272187499071064,
+                      3.8957850052633507,
+                      -0.3413771115830025
+                    ],
+                    "finalCoreXYZ": [
+                      -0.2272187499071064,
+                      3.8957850052633507,
+                      -0.3413771115830025
+                    ]
+                  },
+                  {
+                    "role": "top",
+                    "ordinal": 0,
+                    "factor": 0,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      0,
+                      0
+                    ],
+                    "beforeCoreXYZ": [
+                      0.04280943884321254,
+                      4.609379100715798,
+                      -0.3413771115830025
+                    ],
+                    "afterBranchCoreXYZ": [
+                      0.04280943884321254,
+                      4.609379100715798,
+                      -0.3413771115830025
+                    ],
+                    "finalCoreXYZ": [
+                      0.04280943884321254,
+                      4.609379100715798,
+                      -0.3413771115830025
+                    ]
+                  },
+                  {
+                    "role": "shoulder",
+                    "ordinal": 0,
+                    "factor": 0.3808615316823126,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      0,
+                      0
+                    ],
+                    "beforeCoreXYZ": [
+                      0.16273211014671457,
+                      3.584486404103483,
+                      0.1434988400303256
+                    ],
+                    "afterBranchCoreXYZ": [
+                      0.16273211014671457,
+                      3.584486404103483,
+                      0.1434988400303256
+                    ],
+                    "finalCoreXYZ": [
+                      -0.4170262692993067,
+                      3.584486404103483,
+                      -0.07923642533279354
+                    ]
+                  },
+                  {
+                    "role": "shoulder",
+                    "ordinal": 1,
+                    "factor": 0.658457724028267,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      0,
+                      0
+                    ],
+                    "beforeCoreXYZ": [
+                      -1.2665073624242096,
+                      2.8374791941968898,
+                      -0.4556439367362314
+                    ],
+                    "afterBranchCoreXYZ": [
+                      -1.2665073624242096,
+                      2.8374791941968898,
+                      -0.4556439367362314
+                    ],
+                    "finalCoreXYZ": [
+                      -1.2665073624242096,
+                      2.8374791941968898,
+                      -0.4556439367362314
+                    ]
+                  },
+                  {
+                    "role": "shoulder",
+                    "ordinal": 2,
+                    "factor": 0.4666238107765095,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      0,
+                      0
+                    ],
+                    "beforeCoreXYZ": [
+                      -0.10158351212105923,
+                      3.3537013912401026,
+                      -1.203675227712722
+                    ],
+                    "afterBranchCoreXYZ": [
+                      -0.10158351212105923,
+                      3.3537013912401026,
+                      -1.203675227712722
+                    ],
+                    "finalCoreXYZ": [
+                      -0.10158351212105923,
+                      3.3537013912401026,
+                      -1.203675227712722
+                    ]
+                  }
+                ]
+              },
+              {
+                "index": 1,
+                "dominant": false,
+                "rootDistanceBeforeKm": 1.9884210493696663,
+                "targetRootDistanceKm": 1.0502113350079751,
+                "rootDistanceAfterKm": 1.0502113350079751,
+                "directionalRadiiKm": [
+                  0.8731457925038728,
+                  1.2272768775120777
+                ],
+                "rootTranslationXZ": [
+                  -0.8757997436079418,
+                  -0.3364703214533337
+                ],
+                "groups": [
+                  {
+                    "role": "foundation",
+                    "ordinal": 0,
+                    "factor": 1,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      -0.8757997436079418,
+                      -0.3364703214533337
+                    ],
+                    "beforeCoreXYZ": [
+                      0.9406685057678416,
+                      2.0797904366849806,
+                      0.41172199676007654
+                    ],
+                    "afterBranchCoreXYZ": [
+                      0.06486876215989978,
+                      2.0797904366849806,
+                      0.07525167530674282
+                    ],
+                    "finalCoreXYZ": [
+                      0.06486876215989978,
+                      2.0797904366849806,
+                      0.07525167530674282
+                    ]
+                  },
+                  {
+                    "role": "middle",
+                    "ordinal": 0,
+                    "factor": 0.4177232833206651,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      -0.36584194443130613,
+                      -0.1405514874174462
+                    ],
+                    "beforeCoreXYZ": [
+                      1.2754235846294555,
+                      3.0832643390500607,
+                      0.40534786275323204
+                    ],
+                    "afterBranchCoreXYZ": [
+                      0.9095816401981494,
+                      3.0832643390500607,
+                      0.2647963753357858
+                    ],
+                    "finalCoreXYZ": [
+                      0.9095816401981494,
+                      3.0832643390500607,
+                      0.2647963753357858
+                    ]
+                  },
+                  {
+                    "role": "neck",
+                    "ordinal": 0,
+                    "factor": 0.20886164166033283,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      -0.18292097221565332,
+                      -0.07027574370872318
+                    ],
+                    "beforeCoreXYZ": [
+                      1.441093894352803,
+                      3.4432086758364004,
+                      0.40109844008200246
+                    ],
+                    "afterBranchCoreXYZ": [
+                      1.2581729221371498,
+                      3.4432086758364004,
+                      0.33082269637327927
+                    ],
+                    "finalCoreXYZ": [
+                      1.2581729221371498,
+                      3.4432086758364004,
+                      0.33082269637327927
+                    ]
+                  },
+                  {
+                    "role": "top",
+                    "ordinal": 0,
+                    "factor": 0,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      0,
+                      0
+                    ],
+                    "beforeCoreXYZ": [
+                      1.5745324837604153,
+                      3.803153012622741,
+                      0.40109844008200246
+                    ],
+                    "afterBranchCoreXYZ": [
+                      1.5745324837604153,
+                      3.803153012622741,
+                      0.40109844008200246
+                    ],
+                    "finalCoreXYZ": [
+                      1.5745324837604153,
+                      3.803153012622741,
+                      0.40109844008200246
+                    ]
+                  },
+                  {
+                    "role": "shoulder",
+                    "ordinal": 0,
+                    "factor": 0.3837566971965132,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      -0.33609401701253677,
+                      -0.12912273926558043
+                    ],
+                    "beforeCoreXYZ": [
+                      1.2003203855028686,
+                      3.141801082408791,
+                      -0.17351854732663397
+                    ],
+                    "afterBranchCoreXYZ": [
+                      0.8642263684903317,
+                      3.141801082408791,
+                      -0.3026412865922144
+                    ],
+                    "finalCoreXYZ": [
+                      0.8642263684903317,
+                      3.141801082408791,
+                      -0.3026412865922144
+                    ]
+                  },
+                  {
+                    "role": "shoulder",
+                    "ordinal": 1,
+                    "factor": 0.5669029185594988,
+                    "primitiveCount": 91,
+                    "translationXZ": [
+                      -0.49649343072500296,
+                      -0.19074600724054763
+                    ],
+                    "beforeCoreXYZ": [
+                      1.5956308746991275,
+                      2.826173738587409,
+                      0.5704483069410298
+                    ],
+                    "afterBranchCoreXYZ": [
+                      1.0991374439741244,
+                      2.826173738587409,
+                      0.37970229970048214
+                    ],
+                    "finalCoreXYZ": [
+                      1.0991374439741244,
+                      2.826173738587409,
+                      0.37970229970048214
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          ".clocks.weatherTime",
+          97.75570000000197,
+          114.29050000000392
+        ],
+        [
+          ".frame.date",
+          "2026-10-17T04:43:58.630Z",
+          "2026-10-17T04:47:58.581Z"
+        ],
+        [
+          ".frame.localSnapshotTime",
+          376574.89999997616,
+          156158.60000002384
+        ],
+        [
+          ".frame.localTimeOrigin",
+          1792211862056.2,
+          1792212322422.4
+        ],
+        [
+          ".frame.ownerDrawSerial",
+          22234,
+          9019
+        ],
+        [
+          ".frame.rafTimestamp",
+          376574.2,
+          156156.5
+        ],
+        [
+          ".rendererVersion",
+          "observatory-v61-observed-terrain-material",
+          "experiment-v61-branched-roots-r1"
+        ],
+        [
+          ".skyTextures.from.uuid",
+          "9b075c58-246a-42eb-89e9-b76cec13978c",
+          "937df2ad-d07d-47e3-b5dc-6d6ba2309dae"
+        ],
+        [
+          ".skyTextures.to.uuid",
+          "a57dca08-74be-410b-b0e3-d150d2f179ab",
+          "7b9ea501-b779-44f5-817f-45ad7c3d1dd5"
+        ],
+        [
+          ".terrainRaster.cache.hits",
+          22081,
+          8866
+        ],
+        [
+          ".terrainRaster.cache.requests",
+          22235,
+          9020
+        ],
+        [
+          ".terrainRaster.shadow.cache.hits",
+          22234,
+          9019
+        ],
+        [
+          ".terrainRaster.shadow.cache.requests",
+          22235,
+          9020
+        ],
+        [
+          ".weather.precipitationBounds",
+          [
+            -3.359375,
+            -2.0234375,
+            2.265625,
+            2.1328125
+          ],
+          [
+            -3.359375,
+            -2.0234375,
+            2.109375,
+            2.1328125
+          ]
+        ]
+      ],
+      "unexpected": []
+    }
+  ]
+}

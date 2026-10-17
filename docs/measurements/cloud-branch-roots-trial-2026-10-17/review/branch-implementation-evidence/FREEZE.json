@@ -1,0 +1,52 @@
+{
+  "schema": "cloudia-branch-implementation-freeze-v1",
+  "status": "SOURCE_FROZEN_UNEXECUTED",
+  "ownedCandidatePath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle41/branched-source/src/cumulonimbus/volume.ts",
+  "candidate": {
+    "bytes": 36234,
+    "sha256": "d161e2efd350f38cce6ee353ef70a0af45a689c90c75d74f99d81213b4895003"
+  },
+  "files": [
+    {
+      "path": "review/branch-implementation-evidence/volume.before.ts",
+      "bytes": 29836,
+      "sha256": "c349e8f7526a2dafa0348516079f3f67ab7288a17769f28193ebcef7e124d34d"
+    },
+    {
+      "path": "review/branch-implementation-evidence/volume.after.ts",
+      "bytes": 36234,
+      "sha256": "d161e2efd350f38cce6ee353ef70a0af45a689c90c75d74f99d81213b4895003"
+    },
+    {
+      "path": "review/branch-implementation-evidence/candidate.patch",
+      "bytes": 11877,
+      "sha256": "72db8cc47bc314616a3e2a1758e2b04e41829b77c830a64b2020dad23da364fe"
+    },
+    {
+      "path": "review/branch-implementation-evidence/source-checks.json",
+      "bytes": 243,
+      "sha256": "980a1813d0cc32e2c82de298ff6fa9dc6c32904aac29c1e26418852c62563a8a"
+    },
+    {
+      "path": "run/BRANCH-RULE-BEFORE-IMPLEMENTATION.json",
+      "bytes": 1824,
+      "sha256": "3a2e9d75b4a2ecd4d0c4518fe7ab36a5d288286ac688f2fcdad0515a98f996c4"
+    },
+    {
+      "path": "run/BRANCH-OWNERSHIP-AND-ROUNDING-BEFORE-RUN.json",
+      "bytes": 869,
+      "sha256": "01a3b0fbb07c02e68761e3d915a733f25ac131a91f5d305d5923b736b1257966"
+    }
+  ],
+  "noExecutions": [
+    "recipe-prefix",
+    "model",
+    "tests",
+    "typecheck",
+    "build",
+    "browser",
+    "GPU",
+    "Git"
+  ],
+  "scope": "Only candidate volume.ts changed by this agent; protocol addendum belongs to root."
+}

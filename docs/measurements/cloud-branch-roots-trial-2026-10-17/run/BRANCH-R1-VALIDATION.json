@@ -1,0 +1,19 @@
+{
+  "sourceFreezeSHA256": "03e6d5a7033627535cde1d80d2217cf621f490165747097198e9697ba5614e11",
+  "dependencyIgnoreBefore": 1,
+  "steps": [
+    {
+      "step": "full-tests",
+      "exitCode": 0,
+      "wallSeconds": 7.326203958014958,
+      "logSHA256": "93055bdc0eedb018a38b5e7cd1df81baffb40956d39d6e1a12ce8597a7123b6e"
+    },
+    {
+      "step": "typecheck",
+      "exitCode": 2,
+      "wallSeconds": 1.6356283330824226,
+      "logSHA256": "17e166b7d93ef610d24c2df61bc853380b5d0d1aaba6c2921716a2b9835c5e2d"
+    }
+  ],
+  "hero": "notbuiltuntilcandidateadoptionqualification"
+}

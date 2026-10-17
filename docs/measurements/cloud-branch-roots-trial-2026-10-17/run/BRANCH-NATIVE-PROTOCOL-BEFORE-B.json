@@ -1,0 +1,52 @@
+{
+  "kind": "branchedroot-anatomy-native-gate-beforeB",
+  "source": "Canonicalv61baseline141; onebranchrule+pre-runownership/roundingclarification; candidatefreeze/tests/typecheck/APP required beforeB",
+  "baseline": {
+    "renderer": "observatory-v61-observed-terrain-material",
+    "manifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+    "A72A73": "Freshfullnativefrontsidealreadycaptured2474x1844",
+    "A74": "NewactualDTOfrontside beforeB; fullPNGaliasesonlyifexportdigestmatchesexistingfullbitmaprehash"
+  },
+  "candidate": "experiment-v61-branched-roots-r1,externalonly",
+  "quality": {
+    "macro": [
+      256,
+      256,
+      256
+    ],
+    "detail": [
+      128,
+      128,
+      128
+    ],
+    "nominalSteps": 384,
+    "outputAndInternal": [
+      2474,
+      1844
+    ],
+    "mode": "screen",
+    "ablation": "full",
+    "flow": "full"
+  },
+  "state": "Sunleftsettledclear,t60paused,force0,orbitfalse,wind.55,disp0,rain0,autoStormfalse/flashCount0; useactualDTO",
+  "worldCamera": "Front14Left3Downfromfrozencomparison; side16Right; target[.3515625,3.119140625,-.0546875],surface.7227685139973958. EntireDTOmustmatchA perpose; noactualboundsrecenter",
+  "expectedPhysicalChanges": [
+    "anatomyVariant/branchAnatomy",
+    "rendererVersion",
+    "anatomy-derivedsupportMin/supportMax",
+    "precipitationBounds/densitycounts onlyifactualanatomychanged"
+  ],
+  "ownerExceptions": [
+    "capture/request/frameIDsandtimestamps/localtimeorigin",
+    "skytextureUUID/versionobjectownership",
+    "terrain/cache/shadow requests,hits,submissions,epoch,CPUtiming/allocationownership; cache.validmustremaintrue"
+  ],
+  "clockException": "weatherTime onlyinactualclearpausednonorbitzeroRainflashoff; it onlyschedulesstorms/flash inexistingengine. Renderingclocksmustmatch.",
+  "metadata": "CompareentireDTO recursive,mustreportunexpectedbeforepixelreview. Inputmatchdoesnotproveidenticaldensity/lightfield/GPUcompletion/FPS. ExplicitownerexceptionsfrozenbeforeB.",
+  "initialUnit": "All3families front+side. Sequence74frontsidefirst; anyclearvisualFAILmaystopremainingBbecauseunitcannotpass. If74benefits, require72/73bothposesactualtoo; a singlepair cannotqualifyallfamilies.",
+  "visual": "Root+independentreadfullnative. Seekcoherentobliqueroot-to-headbranches, preservedunequalheads/iceoutflow anddistinctcells, lessparallelstem/U composition. FAILifnopositiveoverallbenefit, newpillow/massivebridge/swallowedhead/texturewall orsupportregression. Existingcap/near/rainlimitationsnotdeclaredsolvedfromrootshift.",
+  "stop": "AfterFAILnotuning,extraGPUseeds/near/weather/worker/motion/FPS. Preserveandrestorev61ordinary.",
+  "afterBenefit": "Actualnear/motionandlights,moreseeds3families,main-worker,weather/UIandfullqualityFPSqualificationincludingRainbeforeadoption. Initialunitbenefitnevercompletegoal.",
+  "native": "FullvisiblePNGparts<=16Kreads,length/SHA/IHDRledger. Exactaliasonlyverifiedactualnewexport. Noalternatebrowser/CDP/downloadfallback.",
+  "newUserApprovalNeeded": false
+}

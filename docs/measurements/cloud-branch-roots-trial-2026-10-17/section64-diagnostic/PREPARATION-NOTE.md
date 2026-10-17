@@ -1,0 +1,1 @@
+Prima preparazione I/O interrotta dopo la copia dei10moduli: questo Python macOS non espone os.getxattr. Nessun Node/modello/test è stato avviato. Si prosegue verificando le copie e leggendo xattr con API Darwin nativa a6argomenti; nessuna cancellazione o sostituzione degli input.

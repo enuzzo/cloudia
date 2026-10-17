@@ -1,0 +1,8 @@
+{"phase":"verify-A","activeVariant":"A","cpuSeconds":0.07607,"wallSeconds":0.074419375,"currentRssBytes":77729920,"node":"v26.11.0","arch":"arm64"}
+{"phase":"generate64-A","activeVariant":"A","cpuSeconds":0.233495,"wallSeconds":0.14252766699999997,"currentRssBytes":113171632,"node":"v26.11.0","arch":"arm64"}
+{"phase":"section96-A","activeVariant":"A","cpuSeconds":0.697568,"wallSeconds":0.441071334,"currentRssBytes":128065336,"node":"v26.11.0","arch":"arm64"}
+{"phase":"complete-A","activeVariant":"A","cpuSeconds":0.703275,"wallSeconds":0.44312245899999997,"currentRssBytes":128409544,"node":"v26.11.0","arch":"arm64"}
+{"phase":"verify-B","activeVariant":"B","cpuSeconds":0.703323,"wallSeconds":0.44316945900000004,"currentRssBytes":128409544,"node":"v26.11.0","arch":"arm64"}
+{"phase":"generate64-B","activeVariant":"B","cpuSeconds":0.804232,"wallSeconds":0.48219875,"currentRssBytes":143222528,"node":"v26.11.0","arch":"arm64"}
+{"phase":"section96-B","activeVariant":"B","cpuSeconds":1.228638,"wallSeconds":0.7948479169999999,"currentRssBytes":168390368,"node":"v26.11.0","arch":"arm64"}
+{"phase":"complete-B","activeVariant":"B","cpuSeconds":1.233106,"wallSeconds":0.7963791250000001,"currentRssBytes":168439520,"node":"v26.11.0","arch":"arm64"}

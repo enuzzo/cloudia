@@ -1,0 +1,14 @@
+{
+  "failure": "Defaultimport node:assert/strict was undefined because rootwrapper transpile omitted esModuleInterop; fails atfirsthashassert in compareBranchLayouts beforecreateLayoutPrefix orrecipe calls.",
+  "actualRecipeCallsR0": 0,
+  "sourceChanges": "none to141candidatefiles or comparisonlogic; onlyrootexecutorCommonJSinteropanddistinctoutputpath",
+  "preservedFiles": [
+    "branch-prefix.mjs",
+    "BRANCH-PREFIX-INPUTS.json",
+    "BRANCH-PREFIX-RESULT.json",
+    "BRANCH-PREFIX.log",
+    "BRANCH-PREFIX-EXECUTION.json"
+  ],
+  "newExecutorSHA256": "2ed64d7e27de649422dc244ee141d3d0b3c98339b2d4946a0a0d444672db31ed",
+  "scope": "One correctedactualpreflight stillrequired; no shape/cap/epsilonchanges"
+}
