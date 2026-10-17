@@ -1,0 +1,21 @@
+--- a/src/cumulonimbus/cloudShader.ts
++++ b/src/cumulonimbus/cloudShader.ts
+@@ -217,6 +217,18 @@
+  */
+ const rainIntegrationSource=integrationSource
+   .replace(
++    `        let forwardRain=.08+.2*pow(max(0.0,dot(ray,sun)),8.0);
++        let rainLight=sky*.25+ambientColor*.28+solarColor*forwardRain*(1.0-weather.y*.7);
++        rainSource=mix(sky,rainLight,aerialTransmittance(t,weather.x));`,
++    `        rainSource=mix(sky,rainLight,aerialTransmittance(t,weather.x));`,
++  )
++  .replace(
++    `  for (var i=0u; i<8192u; i++) {`,
++    `  let forwardRain=.08+.2*pow(max(0.0,dot(ray,sun)),8.0);
++  let rainLight=sky*.25+ambientColor*.28+solarColor*forwardRain*(1.0-weather.y*.7);
++  for (var i=0u; i<8192u; i++) {`,
++  )
++  .replace(
+     `detail: texture_3d<f32>, detailSampler: sampler, flow: texture_3d<f32>`,
+     `detail: texture_3d<f32>, detailSampler: sampler, narrowCloud: texture_3d<f32>, flow: texture_3d<f32>`,
+   )

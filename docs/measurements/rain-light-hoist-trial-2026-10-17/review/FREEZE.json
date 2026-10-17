@@ -1,0 +1,47 @@
+{
+  "schema": "cloudia-rain-light-hoist-source-freeze-v1",
+  "status": "SOURCE_ONLY_NOT_EXECUTED",
+  "source": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle46/candidate-source/src/cumulonimbus/cloudShader.ts",
+    "bytes": 16401,
+    "sha256": "9cf8a8eb15c6ae82e33e45c258cfaf50bacb3b2220610044ac2d5a07920435c2"
+  },
+  "before": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle46/review/cloudShader.before.ts",
+    "bytes": 15837,
+    "sha256": "f9d05d60526904297a4aab1cb013b84895f928c23a49cdf984b48447fbb9e568"
+  },
+  "afterCopy": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle46/review/cloudShader.after.ts",
+    "bytes": 16401,
+    "sha256": "9cf8a8eb15c6ae82e33e45c258cfaf50bacb3b2220610044ac2d5a07920435c2"
+  },
+  "patch": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle46/review/candidate.patch",
+    "bytes": 931,
+    "sha256": "92d56a7c008f15dfa102c0c3a3c3c7ef286a85fa0bb7d6ef3807a87301c89f3d"
+  },
+  "note": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle46/review/hoist-implementation.md",
+    "bytes": 1254,
+    "sha256": "cd6d5dd7a61d0a678994ffd2175d41d12dd9e0c01f812d1b448e60028db32500"
+  },
+  "sourceInverseByteExact": true,
+  "dryTemplate": {
+    "bytes": 12454,
+    "sha256": "7e53cc5d735fdc3a9c97efc35b9e5634f5261b3633e246e65351c26b1f9c96d0",
+    "byteExact": true
+  },
+  "sourceScope": "Only cloudShader.ts in external candidate-source; root owns Engine/lifecycle/version/test",
+  "noExecution": [
+    "WGSL factory",
+    "prefix",
+    "recipe/model",
+    "test",
+    "typecheck",
+    "build",
+    "browser/GPU"
+  ],
+  "runtimeChange": "Only rainIntegrationSource: literal forwardRain/rainLight relocation; original mix aerial remains at point",
+  "limits": "No GPU speedup or parity asserted; register lifetime/compiler LICM unknown"
+}

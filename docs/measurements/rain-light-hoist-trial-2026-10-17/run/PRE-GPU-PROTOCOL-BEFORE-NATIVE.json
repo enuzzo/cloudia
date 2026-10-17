@@ -1,0 +1,55 @@
+{
+  "kind": "First literal wet rain-light hoist qualification",
+  "baseManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "candidateManifestSHA256": "74fab83ee0c7cbc2ea5dddc8bd62874c4f1d3018ec8a74b0829e2be06f573edc",
+  "flow": "Existing active FPS goal: frozen native Rain A/B parity then active90s A1/B/A2; no new model diagnostic apparatus. Prior attachment candidate remains stopped.",
+  "browser": "Browser plugin not available. Reuse existing CUA Playwright bridge IAB2/tab1; no alternate browser/CDP.",
+  "sourcePreflight": "Independent static review, inverse literal relocation retaining old rainy hash and exact dry template, existing full tests/typecheck/APP before native. APP before hero if candidate qualifies.",
+  "native": {
+    "setup": "seed74,profile1,timingoff,frozen comparison surface.7227685139973958,target[.3515625,3.119140625,-.0546875],Fissa stato confronto->Rain.8,Sunleft,fullflow,paused sim60/forcing0/precip0;14Left3Down; screen selected explicitly. Allow weather>=15s settle.",
+    "quality": {
+      "macro": [
+        256,
+        256,
+        256
+      ],
+      "detail": [
+        128,
+        128,
+        128
+      ],
+      "nominalSteps": 384,
+      "output": [
+        2474,
+        1844
+      ],
+      "internal": [
+        2474,
+        1844
+      ],
+      "mode": "screen",
+      "ablation": "full",
+      "flow": "full"
+    },
+    "physicalInputs": "Entire recursive DTO must match before pixel judgment. Only rendererVersion differs. Rain CPUdouble may differ only if both Math.fround values exactly equal; record this exact GPU-f32-equivalence separately, no tolerance for other physical controls.",
+    "ownerExceptions": [
+      "capture/request/frame identity and timestamps/timeorigin/date",
+      "skytexture UUID/version and requestserial owner identity; dimensions/type/colorspace unchanged",
+      "terrain/cache/shadow owner requests/hits/submissions/epoch;validmusttrue",
+      "weatherTime with autoLightning/flashoff only; all rendering/forcing/flow clocks exact"
+    ],
+    "criterion": "Full native PNG SHA256 must match after metadata qualification. PNG transfer uses existing full text parts,16Kreads,length/bytes/SHA/IHDR. No ROI-only or screenshot substitute.",
+    "stop": "Any physical input mismatch unresolved without tuning, native image mismatch or static failure: stop candidate, retain evidence, no performanceB/tuning/extraGPUseeds; restorev61."
+  },
+  "performance": {
+    "sequence": "A1/B/A2,one90s each using existingUI warmup2s,default timingstages,seed74/profile1/sameworldcamera/quality/fullflow/fullablation/screen.",
+    "setup": "Fresh Fissa confronto paused60/forcing0, selectRain.8 andsettle, same14Left3Down. Resume+Misura90 in same CUA task. No interaction/visibility change during interval.",
+    "clockQualification": "Before first native/performance A/B: initial actualreported simstart60..60.1 and forcingstart0..0.1,100ms UI dispatch envelope, differences explicitly recorded. forcing uses real dt while simulation uses min(dt,.05), so this is NOT claimed oneframe, identical phase perframe or synchronized replay. Two separate UI RPCs cannot promise atomic start. No clock alteration, no postdata threshold repair.",
+    "validity": "Full quality and outputexact, settledrain f32.8/skyPendingfalse/atmosphere1, noorbit/flash/disperse, coda finaleprefix completed; preserve timestampmissingcoverage and allraw. Read benchmark-jsonDOM16Kchunks.",
+    "adoptionCriterionBeforeFirstA": "After native parity: B submissionFPS and completionBoundedSubmissionFPS each >=1.05*max(A1,A2); Bp95 andp99 no worse than worseA. Otherwise no adoption, no extra repetition/tuning. These are practical improvement gates, not global60 acceptance.",
+    "scope": "Previous19.80253 is continuity only, not matchedA. Cadence/submission/queue/sparse timestamp/complete pass sums/presentation remain distinct. Full goal60 and all visual gates remain open regardless of this trial."
+  },
+  "newUserApprovalRequired": false,
+  "noInstall": true,
+  "preDataRevision": "Static source re-read confirms forcing dt is unclamped, simulation dt clamps. Replaced initial mistaken <=.05 oneframe claim with explicit100ms start envelope before any native/performanceA orB. Source freeze unchanged."
+}

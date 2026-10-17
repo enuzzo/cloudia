@@ -1,0 +1,275 @@
+{
+  "kind": "Saved literal wet light-hoist trial, rejected by prefixed practical FPS gate",
+  "canonicalVersion": "observatory-v61-observed-terrain-material",
+  "candidateVersion": "experiment-v61-rain-light-hoist-r1",
+  "canonicalSourceManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "candidateSourceManifestSHA256": "74fab83ee0c7cbc2ea5dddc8bd62874c4f1d3018ec8a74b0829e2be06f573edc",
+  "candidateAdopted": false,
+  "payload": {
+    "MANIFEST-R1.json": {
+      "bytes": 10058,
+      "sha256": "4a664fa2a3af5299ed6cd58e65e8780dd0cc1fa93f7096982df8d23df1066bcc"
+    },
+    "README.md": {
+      "bytes": 2367,
+      "sha256": "8bca3c168b9238104cd1935a32bbd6e3fb86f13675e669a8c6c1609128b24f28"
+    },
+    "analysis/verify-saved.py": {
+      "bytes": 3105,
+      "sha256": "7d278e800af04dc67f3bc2c485533294210295510893839e40c0b491ad654eac"
+    },
+    "browser/benchmark-transfer-helper.js": {
+      "bytes": 2053,
+      "sha256": "139b26aea36b485ec14333d00f3a5cbf5be80001cc02bd1184e2093b451b3470"
+    },
+    "browser/keyboard-a1-ui-readiness.json": {
+      "bytes": 105,
+      "sha256": "801976fcd04ab0be93ab6ce6c9914987b90e4564dcc82219ee7358590cc1e3f9"
+    },
+    "browser/keyboard-a2-ui-readiness.json": {
+      "bytes": 141,
+      "sha256": "4a38c60412fc0171d6061a9f62f6c1b2cf4dd131f1091a9a7bf387f7b8929906"
+    },
+    "browser/keyboard-b-ui-readiness.json": {
+      "bytes": 141,
+      "sha256": "682f10d28461a5cb1fdc4e9c57a4db4490cef6da41275bf6e93bd4e61c02695f"
+    },
+    "browser/native-a-rain-transfer.json": {
+      "bytes": 9858,
+      "sha256": "0add807ee6759f121e42fc45ca8fdc27689d85c225eea522e43837c6576e2f22"
+    },
+    "browser/native-a-rain.json": {
+      "bytes": 13093,
+      "sha256": "c9c0ff6587ea0c5e66ca1568239dc995deec63ae564ef61e2b392390088bc9f3"
+    },
+    "browser/native-a-rain.png": {
+      "bytes": 3258221,
+      "sha256": "6ea5e9a22052c40ebdbd223594a1a9ec2761e321410e6a009086ea8ca5972fd1"
+    },
+    "browser/native-b-rain-alias.json": {
+      "bytes": 423,
+      "sha256": "c7a826c33b9ccf58c9c4b3fd77f0ca5f5f9593e9ae7b6c7e9fb29e3d6551164c"
+    },
+    "browser/native-b-rain.json": {
+      "bytes": 13086,
+      "sha256": "1cb076385ab4ab87968c40f8fcf467a730bc953e508b27857c08f4f62ed87ec5"
+    },
+    "browser/native-parameter-comparison.json": {
+      "bytes": 2899,
+      "sha256": "4d82e9e819564a808cbb2d924939b2e57c6e11dabb70ed133af7f5424ab65512"
+    },
+    "browser/native-transfer-first-attempt.json": {
+      "bytes": 387,
+      "sha256": "a9eb5c970210999bb5ba31630a3be83d9202c72144e6deace9d47ed953525f42"
+    },
+    "browser/ordinary-v61-restored.json": {
+      "bytes": 415,
+      "sha256": "37f6b3b76fc8be8fe1bfe5d305cece07d090233fb42bbf5693f8e50080f082eb"
+    },
+    "browser/ordinary-v61-restored.png": {
+      "bytes": 74525,
+      "sha256": "0d6823d525987653dbd69a02c2800fe4d67c4faf279196c92a79ad93fcdf0ce2"
+    },
+    "browser/performance-a1-keyboard-transfer.json": {
+      "bytes": 49280,
+      "sha256": "bfc310cc84e38581e54e3695e37fb5727393873c649c76e9a6b5b29070fada07"
+    },
+    "browser/performance-a1-keyboard-validity.json": {
+      "bytes": 1924,
+      "sha256": "849f1737f7467595783b5beda032f321fba4d4419a1ed7224ee67daa58698376"
+    },
+    "browser/performance-a1-keyboard.json": {
+      "bytes": 4617056,
+      "sha256": "2b66d7d8dadde802350458ee9dd033726a90fba72499a8ff180121cb2bc9ba6c"
+    },
+    "browser/performance-a1-transfer.json": {
+      "bytes": 47714,
+      "sha256": "9c7bdc4e0c6c0bdb90c994f955a9cfd76637a3787a707fa1495332e550c27eed"
+    },
+    "browser/performance-a1.json": {
+      "bytes": 4466587,
+      "sha256": "16ecfab7f34750744b82b5b1f7e9b607f7a6300ce28b99fc5ad8c21586b77b3b"
+    },
+    "browser/performance-a2-transfer.json": {
+      "bytes": 48583,
+      "sha256": "d0e31458aa1ccaa7f49c144b03aad7828582920475dd321db34ef285794abb0c"
+    },
+    "browser/performance-a2-validity.json": {
+      "bytes": 1938,
+      "sha256": "db2c82b29dae0f6b9c98799c9be15dedb12dd6484b634dd5dfde046a9ae90975"
+    },
+    "browser/performance-a2.json": {
+      "bytes": 4540188,
+      "sha256": "460696ed57a7595280998833989a906968f27c34b26c8ecf5ea5e4de475aed5f"
+    },
+    "browser/performance-b-transfer.json": {
+      "bytes": 48583,
+      "sha256": "8b04fbe11e1654cf36a2899f1f265b7b1642c133bd565291d1bb2a1417315c67"
+    },
+    "browser/performance-b-validity.json": {
+      "bytes": 1954,
+      "sha256": "f264b11cb7d25c54e970510a35e6299cd2addd9d03b1a2e7e11ed472754c19d7"
+    },
+    "browser/performance-b.json": {
+      "bytes": 4543949,
+      "sha256": "78298ed496fa87db1d78d0cb9bc54f83bb56002d26cc394e15d1fb3cf211bd9d"
+    },
+    "browser/performance-comparison.json": {
+      "bytes": 7796,
+      "sha256": "c978d41a7658513ba5b2dfef3d820a6ee9851b1c13e04b4760845faa81a1e61b"
+    },
+    "browser/transfer-helper-source.js": {
+      "bytes": 2830,
+      "sha256": "c3e32fb26204283f018c4cee14643ad1b74e176db83a4a3b3fee843ca4a75de1"
+    },
+    "review/FREEZE.json": {
+      "bytes": 1881,
+      "sha256": "e3d15e5b44c83b8bf274519a1b901ddd125b98027d2ac300c0074cd76cf1de75"
+    },
+    "review/a1-start-repair-static-optical.md": {
+      "bytes": 1757,
+      "sha256": "46646bfe3c65a1645fbee72610830fe39c5834371bcdac6395281c91eeaa55eb"
+    },
+    "review/archive-readme-r1.md": {
+      "bytes": 2063,
+      "sha256": "94b033fcfd82766c4cebf80b4d78e2bc936521df2da45c0432f0fed5779b864f"
+    },
+    "review/automation-research.md": {
+      "bytes": 665,
+      "sha256": "f33045d759d5fbbdac36186048b3bbfbc6aa310183849cf86dbc874f8b7f07a3"
+    },
+    "review/candidate.patch": {
+      "bytes": 931,
+      "sha256": "92d56a7c008f15dfa102c0c3a3c3c7ef286a85fa0bb7d6ef3807a87301c89f3d"
+    },
+    "review/cloudShader.after.ts": {
+      "bytes": 16401,
+      "sha256": "9cf8a8eb15c6ae82e33e45c258cfaf50bacb3b2220610044ac2d5a07920435c2"
+    },
+    "review/cloudShader.before.ts": {
+      "bytes": 15837,
+      "sha256": "f9d05d60526904297a4aab1cb013b84895f928c23a49cdf984b48447fbb9e568"
+    },
+    "review/hoist-implementation.md": {
+      "bytes": 1254,
+      "sha256": "cd6d5dd7a61d0a678994ffd2175d41d12dd9e0c01f812d1b448e60028db32500"
+    },
+    "review/light-hoist-static-optical.md": {
+      "bytes": 2692,
+      "sha256": "737d1636d2e986d37632117798977cca0764d0bdf3df715504576215c79d67d4"
+    },
+    "review/matched-rain-performance-optical.md": {
+      "bytes": 4900,
+      "sha256": "32b331111e761d720c66095573e9eb2229c6a39e316daa7e1192a434c9683fb0"
+    },
+    "review/matched-rain-protocol-optical.md": {
+      "bytes": 6146,
+      "sha256": "76fc4d3d1cb11465287383e2b69e9c61e4f849e779d459242b33d026dd003759"
+    },
+    "review/native-rain-parity-optical.md": {
+      "bytes": 3080,
+      "sha256": "d400a35618ce9f718c1fdd4bcbede22215d932c9c20bb21023294c13e6a7bb9a"
+    },
+    "review/next-rain-bottleneck-action.md": {
+      "bytes": 6533,
+      "sha256": "e208b6a338b3312d429dad188634799791de67e1af9a9fded64a12fe739d4fb1"
+    },
+    "run/A1-START-REPAIR.json": {
+      "bytes": 2023,
+      "sha256": "71b900172c5c45d7e30d7929eb503f6c52c3f6afe23092374d917c8609bbf334"
+    },
+    "run/PRE-GPU-PROTOCOL-BEFORE-FIRST-PERFORMANCE.json": {
+      "bytes": 4633,
+      "sha256": "e45a17b5b664b4d10a259d8f392ad7a5e3907b5dfbd10eeebc6eeab01fe7981a"
+    },
+    "run/PRE-GPU-PROTOCOL-BEFORE-NATIVE.json": {
+      "bytes": 4292,
+      "sha256": "d0fd831ee874f580d1b0a73bb533db575f152d086b6b548bd18d485b7f31948a"
+    },
+    "run/PRE-GPU-PROTOCOL.json": {
+      "bytes": 4633,
+      "sha256": "e45a17b5b664b4d10a259d8f392ad7a5e3907b5dfbd10eeebc6eeab01fe7981a"
+    },
+    "run/ROOT-AFTER.json": {
+      "bytes": 1207,
+      "sha256": "1a388ee257b2dbe7c82d72d7059f406ba4cc3138846237b0ca1e8d040ad68cef"
+    },
+    "run/ROOT-BEFORE.json": {
+      "bytes": 438,
+      "sha256": "cabf9e36aa848e9ecb31fa6a20756388de3e65069bb04af683c7626c904438c1"
+    },
+    "run/RUN.py": {
+      "bytes": 2429,
+      "sha256": "e5b5802a45aca6095eb345ab6dc5093d2fa8b44b0ea77f7045424098d63a6ae8"
+    },
+    "run/SOURCE-FREEZE-R1.json": {
+      "bytes": 15037,
+      "sha256": "74fab83ee0c7cbc2ea5dddc8bd62874c4f1d3018ec8a74b0829e2be06f573edc"
+    },
+    "run/analyze-performance.py": {
+      "bytes": 3419,
+      "sha256": "d6810f422efbff33242b52cd8148110f91e3cbba3b1db316b593cc612e173fa1"
+    },
+    "run/app-execution.json": {
+      "bytes": 738,
+      "sha256": "5b832fd100b126ca4048959a73768590cb6732777dc2d626cfdd8c3936733e9d"
+    },
+    "run/app.log": {
+      "bytes": 1546,
+      "sha256": "eac1f44240bf86383a9a7b90923fc61dc5ab62baaeb7f9abbd1449c5baefa72c"
+    },
+    "run/archive-whitespace-check.json": {
+      "bytes": 1143,
+      "sha256": "00991f1cb6486ee23dda6c47476f18a027f73e7e17b997de6072e2b3b0003da8"
+    },
+    "run/archive.py": {
+      "bytes": 2973,
+      "sha256": "433ce75ca8dfe0f52d45f0b9742277ee71e7060ef7727114668e4eb16b6b5b97"
+    },
+    "run/compare-performance.py": {
+      "bytes": 2250,
+      "sha256": "07380ef3ce98b3645aac50ca9d9f89909d447e917e700bdafc46405779123b9e"
+    },
+    "run/source-baseline141.json": {
+      "bytes": 15037,
+      "sha256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73"
+    },
+    "run/tests-execution.json": {
+      "bytes": 922,
+      "sha256": "2887e674a7e1893388fb00a4732a1b9cfb5cbe3aead0184da92dba8fe035b79a"
+    },
+    "run/tests-result.json": {
+      "bytes": 212425,
+      "sha256": "1694bdb575cf186a2a5eec9ceb9a2d8f67988f6ab0cdf884cccc1946ac1b672b"
+    },
+    "run/tests.log": {
+      "bytes": 3866,
+      "sha256": "9eafb3551518fcd55475e064f414a4fa303b597f6ccf1842f35fa132621709d7"
+    },
+    "run/typecheck-execution.json": {
+      "bytes": 748,
+      "sha256": "b943c7188c0deed35430e73a850c4d985d6ba95e08809004e4ff03d2ffdc5b50"
+    },
+    "run/typecheck.log": {
+      "bytes": 15,
+      "sha256": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92"
+    },
+    "source-overlay/src/cumulonimbus/GPUSceneEngine.ts": {
+      "bytes": 84988,
+      "sha256": "e069cf9bd953fcd4433d3d8a7adf417462ac7ed4b19c065631e01968472eb376"
+    },
+    "source-overlay/src/cumulonimbus/cloudShader.test.ts": {
+      "bytes": 7855,
+      "sha256": "27d33a08f90ad307c7b9264c5781a41f8970c46eace65cb2682c406ba21feca0"
+    },
+    "source-overlay/src/cumulonimbus/cloudShader.ts": {
+      "bytes": 16401,
+      "sha256": "9cf8a8eb15c6ae82e33e45c258cfaf50bacb3b2220610044ac2d5a07920435c2"
+    },
+    "source-overlay/src/cumulonimbus/lifecycle.test.ts": {
+      "bytes": 78366,
+      "sha256": "49cf06160427f32483f56c43db3fd0f2de737dfd03ff4e4630f1fdaf958f680c"
+    }
+  },
+  "archiveRevision": "R2 documentation-only whitespace correction; original manifest/README and raw check retained"
+}

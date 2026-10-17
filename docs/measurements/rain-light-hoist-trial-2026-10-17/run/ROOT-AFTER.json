@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-17T07:32:40.489586+00:00",
+  "canonicalExact": 141,
+  "candidateExact": 141,
+  "changedPaths": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/cloudShader.test.ts",
+    "src/cumulonimbus/cloudShader.ts",
+    "src/cumulonimbus/lifecycle.test.ts"
+  ],
+  "sourceFreezeSHA256": "74fab83ee0c7cbc2ea5dddc8bd62874c4f1d3018ec8a74b0829e2be06f573edc",
+  "canonicalSourceManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "dependencyIgnore": "1",
+  "noInstallOrLockEdit": true,
+  "candidateAdopted": false,
+  "candidateServer": {
+    "port": 53789,
+    "ownedSession": 6302,
+    "stoppedIntentionally": true,
+    "observedExitCode": 0
+  },
+  "canonicalServer": {
+    "port": 4196,
+    "ownedSession": 48736,
+    "verifiedBy": "existing exec session poll returned running, no new server or process-list dependency"
+  },
+  "processListAttempt": "ps denied by sandbox EPERM after all source/dependency checks; no process changed; existing session used instead",
+  "unrelatedPreserved": [
+    "node_modules 2/",
+    "port4201"
+  ],
+  "scope": "Saved source integrity, dependency exclusion and observed server cleanup only; not a model/GPU rerun."
+}

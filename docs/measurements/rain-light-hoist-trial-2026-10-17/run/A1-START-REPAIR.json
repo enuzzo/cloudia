@@ -1,0 +1,47 @@
+{
+  "state": "FROZEN_BEFORE_KEYBOARD_QUALIFICATION",
+  "kind": "One explicit procedure repair, not shader or criterion tuning",
+  "initialAttempt": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle46/browser/performance-a1.json",
+    "sha256": "16ecfab7f34750744b82b5b1f7e9b607f7a6300ce28b99fc5ad8c21586b77b3b",
+    "status": "INVALID_FOR_MATCHED_START",
+    "simulationTimeStart": 60.13440000000001,
+    "forcingTimeStart": 0.1346999999999971,
+    "cadenceStillObserved": 19.52461233982155
+  },
+  "cause": "Resume used Enter then benchmark click. Official Playwright click stability checks span consecutive animation frames; at low cadence this can advance the clock before benchmark context. Causal attribution is inference, actual start offsets are observed.",
+  "primarySource": "https://playwright.dev/docs/actionability",
+  "repair": "Use documented locator.press(Enter) on both visible enabled existing buttons, same task. Native keyboard click, no pointerdown/actionability stability wait, no evaluate actions or direct app state. Reset state through existing Fissa confronto and Rain UI, same camera/fullquality, settle>=15s.",
+  "unchanged": {
+    "sourceFreezeSHA256": "74fab83ee0c7cbc2ea5dddc8bd62874c4f1d3018ec8a74b0829e2be06f573edc",
+    "nativeParity": "PASS, unchanged",
+    "startEnvelopeSeconds": 0.1,
+    "durationMs": 90000,
+    "warmupMs": 2000,
+    "adoption": "B submission and completionbounded >=1.05*max(validA1,A2), Bp95/p99 no worse than worseA",
+    "output": [
+      2474,
+      1844
+    ],
+    "macro": [
+      256,
+      256,
+      256
+    ],
+    "detail": [
+      128,
+      128,
+      128
+    ],
+    "steps": 384
+  },
+  "sequence": [
+    "performance-a1-keyboard",
+    "performance-b",
+    "performance-a2"
+  ],
+  "firstAttemptRetained": true,
+  "automaticRetry": false,
+  "oneExplicitRepairOnly": true,
+  "failureStop": "If keyboard A1 still outside same100ms envelope, stop before performanceB without further scheduling changes, shader tuning or wider limits."
+}

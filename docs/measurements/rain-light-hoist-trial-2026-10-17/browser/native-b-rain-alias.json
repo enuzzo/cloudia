@@ -1,0 +1,10 @@
+{
+  "kind": "Verified identical full native bitmap alias",
+  "actualBExport": "native-b-rain.json",
+  "fullBitmap": "native-a-rain.png",
+  "sha256": "6ea5e9a22052c40ebdbd223594a1a9ec2761e321410e6a009086ea8ca5972fd1",
+  "bytes": 3258221,
+  "width": 2474,
+  "height": 1844,
+  "scope": "New actual Bcapture digest/length/dimensions equal newly transferred and rehashed A fullbitmap; no duplicate transfer or new rendering."
+}

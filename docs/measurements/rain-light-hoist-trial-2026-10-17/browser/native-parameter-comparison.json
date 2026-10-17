@@ -1,0 +1,101 @@
+{
+  "status": "PASS_NATIVE_INPUT_AND_BITMAP_PARITY",
+  "checks": {
+    "wholeDTOUnexpectedDifferencesZero": true,
+    "fullNativePNGIdentical": true,
+    "qualityExact": true,
+    "simulation60Forcing0": true,
+    "cacheValid": true,
+    "weatherSettled": true,
+    "flashOff": true,
+    "cameraExact": true,
+    "renderControlsExact": true
+  },
+  "differences": [
+    {
+      "path": ".metadata.clocks.weatherTime",
+      "a": 31.60200000000003,
+      "b": 55.57199999999982,
+      "classification": "lightning-scheduling-clock-flash-off"
+    },
+    {
+      "path": ".metadata.frame.date",
+      "a": "2026-10-17T07:02:28.889Z",
+      "b": "2026-10-17T07:08:02.663Z",
+      "classification": "owner-frame-identity"
+    },
+    {
+      "path": ".metadata.frame.localSnapshotTime",
+      "a": 81354.29999995232,
+      "b": 87895.70000004768,
+      "classification": "owner-frame-identity"
+    },
+    {
+      "path": ".metadata.frame.localTimeOrigin",
+      "a": 1792220467534.7,
+      "b": 1792220794767.6,
+      "classification": "owner-frame-identity"
+    },
+    {
+      "path": ".metadata.frame.ownerDrawSerial",
+      "a": 3301,
+      "b": 2695,
+      "classification": "owner-frame-identity"
+    },
+    {
+      "path": ".metadata.frame.rafTimestamp",
+      "a": 81340.1,
+      "b": 87895.1,
+      "classification": "owner-frame-identity"
+    },
+    {
+      "path": ".metadata.rendererVersion",
+      "a": "observatory-v61-observed-terrain-material",
+      "b": "experiment-v61-rain-light-hoist-r1",
+      "classification": "expected-version"
+    },
+    {
+      "path": ".metadata.skyTextures.from.uuid",
+      "a": "de844ed9-3f4a-4573-beaa-d80753611175",
+      "b": "a6db064c-9313-41bb-badd-fca401a82123",
+      "classification": "owner-sky-identity"
+    },
+    {
+      "path": ".metadata.skyTextures.to.uuid",
+      "a": "c7364bc8-3707-413f-9b13-2f95ba328db1",
+      "b": "1dbd622c-26a3-4682-b12d-74c55156eab5",
+      "classification": "owner-sky-identity"
+    },
+    {
+      "path": ".metadata.terrainRaster.cache.hits",
+      "a": 3250,
+      "b": 2650,
+      "classification": "owner-cache-counter"
+    },
+    {
+      "path": ".metadata.terrainRaster.cache.requests",
+      "a": 3302,
+      "b": 2696,
+      "classification": "owner-cache-counter"
+    },
+    {
+      "path": ".metadata.terrainRaster.cache.submissions",
+      "a": 52,
+      "b": 46,
+      "classification": "owner-cache-counter"
+    },
+    {
+      "path": ".metadata.terrainRaster.shadow.cache.hits",
+      "a": 3301,
+      "b": 2695,
+      "classification": "owner-cache-counter"
+    },
+    {
+      "path": ".metadata.terrainRaster.shadow.cache.requests",
+      "a": 3302,
+      "b": 2696,
+      "classification": "owner-cache-counter"
+    }
+  ],
+  "scope": "Entire actual DTO compared; explicit predetermined owner exceptions only. Lossless canvas PNG equality, not linear-HDR or compositor/motion/global-weather proof."
+}

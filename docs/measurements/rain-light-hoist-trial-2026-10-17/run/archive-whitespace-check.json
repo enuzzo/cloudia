@@ -1,0 +1,22 @@
+{
+  "kind": "Archive documentation correction only, after staged whitespace check",
+  "originalManifestSHA256": "4a664fa2a3af5299ed6cd58e65e8780dd0cc1fa93f7096982df8d23df1066bcc",
+  "originalPayloadFiles": 63,
+  "originalPayloadBytes": 22287215,
+  "stagedWhitespaceExitCode": 2,
+  "observations": [
+    "review/cloudShader.after.ts:272: new blank line at EOF",
+    "review/cloudShader.before.ts:260: new blank line at EOF",
+    "source-overlay/src/cumulonimbus/cloudShader.ts:272: new blank line at EOF"
+  ],
+  "firstStagedAssertions": "All 63 payload SHA/byte checks succeeded; the subsequent assertion incorrectly expected patch context single-space lines and failed because there are none.",
+  "actualReason": "All shader copies retain canonical ending LF brace LF LF; patch has no trailing whitespace.",
+  "preservedOriginals": [
+    "MANIFEST-R1.json",
+    "review/archive-readme-r1.md"
+  ],
+  "changedEvidenceFiles": [],
+  "changedRuntimeSourceFiles": [],
+  "changedProtocolOrPerformanceCriteria": false,
+  "scope": "Correct inaccurate README assumption; retain frozen source bytes, first manifest, original README and check failure."
+}

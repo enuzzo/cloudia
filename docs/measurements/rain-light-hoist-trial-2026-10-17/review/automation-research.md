@@ -1,0 +1,3 @@
+# Attivazione UI del benchmark
+
+Fonte primaria consultata dopo il primo A non allineato e prima della sola riparazione procedurale: [Playwright Auto-waiting](https://playwright.dev/docs/actionability). La tabella distingue click, che verifica stabilità, e press, senza quei controlli; la stabilità richiede due animation frame consecutivi. Inferenza per questa sessione: l'attesa del click può spiegare parte del ritardo osservato134,7ms. La documentazione non prova il tempo interno del bridge CUA e non garantisce un avvio atomico: il nuovo contesto deve ancora rispettare lo stesso limite100ms. Il primo rapporto completo resta conservato come non allineato.

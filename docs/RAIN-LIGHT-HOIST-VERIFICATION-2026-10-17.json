@@ -1,0 +1,18 @@
+{
+  "status": "PASS_CONSERVATION_ONLY",
+  "manifestSHA256": "46b6c51a45da3b8d7c1e87fac7c325fb025fa4dc2219eba124bba2dfa063bf1a",
+  "payloadFiles": 66,
+  "payloadBytes": 22300783,
+  "canonicalSourceFilesExact": 141,
+  "reconstructedCandidateSourceFilesExact": 141,
+  "candidateOverlayFiles": 4,
+  "candidateAdopted": false,
+  "candidateOverall": "FAIL_ADOPTION_GATE_NO_ADOPTION",
+  "invalidInitialA": "Retained and excluded before B; no threshold widening",
+  "global60": "NOT_REACHED",
+  "wholeGoal": "active",
+  "modelReplays": 0,
+  "testReplays": 0,
+  "GPUReplays": 0,
+  "scope": "File integrity and preserved verdicts only; no new visual, timing or whole-goal qualification."
+}

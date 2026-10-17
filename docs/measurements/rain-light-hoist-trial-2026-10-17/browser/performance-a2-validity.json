@@ -1,0 +1,70 @@
+{
+  "status": "PASS_WINDOW_INPUTS_AND_ARITHMETIC",
+  "reportSHA256": "460696ed57a7595280998833989a906968f27c34b26c8ecf5ea5e4de475aed5f",
+  "checks": {
+    "statisticsRecompute": true,
+    "finiteIntervals": true,
+    "sourceVersion": true,
+    "fullQuality": true,
+    "fullOutput": true,
+    "fullModes": true,
+    "timingStagesMain": true,
+    "startEnvelope": true,
+    "settledRain": true,
+    "motion": true,
+    "noFlash": true,
+    "windDispersionSpeed": true,
+    "cameraHeld": true,
+    "duration90": true,
+    "queueCompleted": true,
+    "completionRateRecompute": true,
+    "presentationUnmeasured": true
+  },
+  "stats": {
+    "frames": 1796,
+    "durationMs": 90039.0,
+    "fps": 19.94691189373494,
+    "medianMs": 50,
+    "p95Ms": 67.30000000000291,
+    "p99Ms": 68.40000000000873,
+    "maxMs": 83.60000000000582,
+    "over18Ms": 1796,
+    "over33Ms": 1583
+  },
+  "simulationStart": 60,
+  "forcingStart": 0,
+  "simulationEnd": 144.2073000000004,
+  "queue": {
+    "status": "completed",
+    "measuredSubmissions": 1796,
+    "confirmedPrefixId": 1796,
+    "endDrainMs": 162.90000009536743,
+    "completionBoundedSubmissionFps": 19.910204534116733,
+    "maxUnconfirmedMeasuredFrames": 27
+  },
+  "timestampCoverage": {
+    "render": {
+      "measuredDraws": 1796,
+      "expectedCalls": 3592,
+      "matchedFreshCalls": 3582,
+      "completeDraws": 1791,
+      "partialDraws": 0,
+      "missingDraws": 5,
+      "notRequestedDraws": 0,
+      "invalidLedgerDraws": 0,
+      "conflictDraws": 0
+    },
+    "compute": {
+      "measuredDraws": 1796,
+      "expectedCalls": 1796,
+      "matchedFreshCalls": 1791,
+      "completeDraws": 1791,
+      "partialDraws": 0,
+      "missingDraws": 5,
+      "notRequestedDraws": 0,
+      "invalidLedgerDraws": 0,
+      "conflictDraws": 0
+    }
+  },
+  "scope": "Saved report arithmetic/context only; no presentation, paired frame replay, isolated GPU throughput, broad visual or global60 claim"
+}
