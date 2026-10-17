@@ -1,0 +1,11 @@
+{
+  "url": "http://127.0.0.1:4196/?seed=74",
+  "canvas": {
+    "clientHeight": 922,
+    "clientWidth": 1237,
+    "height": 1844,
+    "width": 2474
+  },
+  "pausedButtonVisible": true,
+  "scope": "Restored ordinary UI DOM; not new native comparison export or FPS proof."
+}

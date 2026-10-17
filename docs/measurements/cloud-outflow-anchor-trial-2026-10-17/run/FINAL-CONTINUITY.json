@@ -1,0 +1,55 @@
+{
+  "current141": "EXACT",
+  "candidate143": "EXACT",
+  "changedPaths": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/layoutPrefix.test-helper.ts",
+    "src/cumulonimbus/lifecycle.test.ts",
+    "src/cumulonimbus/outflowAnchor.test.ts",
+    "src/cumulonimbus/outflowAnchor.ts",
+    "src/cumulonimbus/volume.ts"
+  ],
+  "dropboxChecks": [
+    {
+      "args": [
+        "git",
+        "check-ignore",
+        "node_modules"
+      ],
+      "returncode": 0,
+      "stdout": "node_modules\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "git",
+        "ls-files",
+        "--",
+        "node_modules"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "xattr",
+        "-p",
+        "com.apple.fileprovider.ignore#P",
+        "node_modules"
+      ],
+      "returncode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    }
+  ],
+  "noInstallLockEdit": true,
+  "unrelatedUntracked": "node_modules 2/ preserved",
+  "preview": {
+    "url": "http://127.0.0.1:4196/?seed=74",
+    "ownerSession": 48736,
+    "confirmedLive": true,
+    "QA53786Session97027": "intentional Ctrl-C exit0"
+  },
+  "scope": "Source hashes and local protection, no model/GPU/FPS replay."
+}

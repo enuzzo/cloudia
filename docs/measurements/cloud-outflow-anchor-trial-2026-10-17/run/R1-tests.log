@@ -1,0 +1,13 @@
+
+> cloudia@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.6 /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/outflow-source
+
+
+ Test Files  54 passed (54)
+      Tests  569 passed (569)
+   Start at  05:05:45
+   Duration  7.25s (transform 3.03s, setup 0ms, import 5.00s, tests 12.80s, environment 22.55s)
+

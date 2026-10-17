@@ -1,0 +1,63 @@
+{
+  "archiveIntegrity": "PASS_SAVED_ONLY",
+  "trialOutcome": "FAIL_VISUAL_NOT_ADOPTED",
+  "nativeMetadataOutcome": "FAIL_NATIVE_METADATA_CONTROLS",
+  "goalStatus": "active",
+  "fullGoalComplete": false,
+  "productRenderer": "observatory-v61-observed-terrain-material",
+  "newProductCorrection": false,
+  "product141ManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "experiment143ManifestSHA256": "e809c77ed113331d54003d5d730a964c15b87589b794d634fe1d4e4286e08792",
+  "archiveManifestSHA256": "5851bb577f69240aee1ec03697ddd1ffef24b4495c27e96fb46717a406a1feb1",
+  "payloadFiles": 61,
+  "payloadBytes": 8051138,
+  "originalPayloadsAlsoFixedInVerifier": 50,
+  "verifierSHA256": "418c11da38a07bb030871ae86ae47c9353113b9d6e66bdb20c27802eb424e92d",
+  "command": "python3 docs/measurements/cloud-outflow-anchor-trial-2026-10-17/verify_saved.py --current141",
+  "observedExitCode": 0,
+  "observedVerifierRuntime": {
+    "wallSeconds": 0.10660941700916737,
+    "bytesRead": 70931786,
+    "wallBudgetSeconds": 15,
+    "readBudgetBytes": 536870912
+  },
+  "actualIntegrityChecks": {
+    "current141": "MATCHES_BASELINE141",
+    "sourceOverlay": 6,
+    "indexedNativeImages": 4,
+    "preservedReviewCrops": 4,
+    "transferredParts_A_side_B_front_B_side": [28, 74, 30],
+    "A_front": "Fresh actual DTO and exact existing repository bitmap alias",
+    "frozenAnalysisFAILRetained": true,
+    "onlyFormalMismatches": [
+      "terrainRaster.shadow.cache.hits",
+      "terrainRaster.shadow.cache.requests"
+    ],
+    "consoleErrorsWarnings": []
+  },
+  "QA": {
+    "tests": 569,
+    "testFiles": 54,
+    "typecheck": "PASS",
+    "APPbuild": "PASS",
+    "heroThisCycle": false,
+    "recipeOnly": "74 checked; 72/73 Float64 and RNG exact, no dense volume or GPU identity claim",
+    "native": [2474, 1844],
+    "viewport": [1237, 922],
+    "browser": "Browser plugin unavailable; existing CUA Playwright IAB",
+    "workerWeatherNavigationFPS": "Not run after visual FAIL"
+  },
+  "preview": {
+    "url": "http://127.0.0.1:4196/?seed=74",
+    "renderer": "v61",
+    "animated": true,
+    "ownerSession": 48736,
+    "ownerConfirmedLive": true,
+    "QA53786Session97027": "Intentional Ctrl-C exit0"
+  },
+  "nextAction": "Proposal only: replace decorated collars plus shoulder with a continuous neck-top-cap envelope from canonical v61. Requires bounded CPU evaluator before a future trial; no new user authorization is needed to continue the existing goal.",
+  "noInstallLockEdit": true,
+  "noPushDeploy": true,
+  "gitWhitespace": "Original terminal blank lines in R1-tests.log and R1-typecheck.log retained byte-exact. Plain staged check may flag blank-at-eof; one-shot core.whitespace=-blank-at-eof check preserves logs without persistent Git configuration.",
+  "scope": "This sidecar records the observed saved-only verifier output. PASS means evidence conservation, not a new numerical gate, replay, FPS measurement or artistic acceptance. Both trial failures remain explicit."
+}

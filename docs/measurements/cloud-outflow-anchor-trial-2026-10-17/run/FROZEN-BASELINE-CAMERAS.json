@@ -1,0 +1,279 @@
+{
+  "scope": "Actualbaseline worldcamera andstate frozen before candidateGPU. Derived precipitationBounds/support/densitySampling may change intentionally; userweathercontrols mustmatch.",
+  "views": {
+    "front": {
+      "metadataSHA256": "a63cf6c81e79c68986797358a9a53273026d7b3aa71104f2ff345701e7be92ec",
+      "camera": {
+        "origin": [
+          15.459707890770279,
+          7.558173047097125,
+          2.780613896133632
+        ],
+        "target": [
+          0.3515625,
+          3.119140625,
+          -0.0546875
+        ],
+        "forward": [
+          -0.9442590869231424,
+          -0.27743952638107033,
+          -0.177206337258352
+        ],
+        "right": [
+          0.18444716051358995,
+          0,
+          -0.9828424314092641
+        ],
+        "up": [
+          -0.27267933867740585,
+          0.9607431026041495,
+          -0.05117293285522365
+        ],
+        "yaw": 1.3852869846402587,
+        "pitch": 0.2811279826464208,
+        "approach": 0,
+        "aspect": 1.341648590021692,
+        "tanHalfVerticalFov": 0.2867,
+        "comparisonSurfaceKm": 0.7227685139973958,
+        "comparisonTargetKm": [
+          0.3515625,
+          3.119140625,
+          -0.0546875
+        ],
+        "probeSkipped": true,
+        "surfaceEstimateKm": null,
+        "probe": null,
+        "probeAgeMs": null,
+        "ground": 1,
+        "terrainClearanceKm": 0.2
+      },
+      "lighting": {
+        "sunDirection": [
+          -0.668126592347077,
+          0.7126683651702156,
+          0.21380050955106467
+        ],
+        "lightSide": 0,
+        "sunsetAmount": 0,
+        "solarColor": [
+          0.9313426391412541,
+          0.8413836906464631,
+          0.7182507029227312
+        ],
+        "ambientColor": [
+          0.08283003529291262,
+          0.10718098056640865,
+          0.1600090087683047
+        ],
+        "flash": [
+          0,
+          3.5,
+          0.5,
+          0
+        ],
+        "flashTop": [
+          0,
+          0,
+          0
+        ],
+        "flashBend": [
+          0,
+          0,
+          0
+        ],
+        "flashEnd": [
+          0,
+          0,
+          0
+        ],
+        "flashBranch": [
+          0,
+          0,
+          0
+        ],
+        "flashCount": 0
+      },
+      "quality": {
+        "quality": "ultra",
+        "nominalSteps": 384,
+        "output": [
+          2474,
+          1844
+        ],
+        "internal": [
+          2474,
+          1844
+        ],
+        "canvas": [
+          2474,
+          1844
+        ],
+        "volume": [
+          256,
+          256,
+          256
+        ],
+        "detailVolume": [
+          128,
+          128,
+          128
+        ],
+        "flowMode": "full"
+      },
+      "clocks": {
+        "simulationTime": 60,
+        "forcingTime": 0,
+        "weatherTime": 15.035500000000004,
+        "precipitationUniformTime": 0,
+        "flowUniformTime": 60,
+        "flowFieldTime": 60,
+        "flowFieldDispersion": 0,
+        "note": "Precipitation uniform is applied before this frame advances forcingTime. A frozen flow texture retains its installation time/dispersion even while flowUniformTime advances."
+      },
+      "png": {
+        "mime": "image/png",
+        "width": 2474,
+        "height": 1844,
+        "byteLength": 3599836,
+        "sha256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9"
+      }
+    },
+    "side": {
+      "metadataSHA256": "56001fbcd1bf32fa859c7f8bdaf39734320c7c5327c930148729f59323cc0626",
+      "camera": {
+        "origin": [
+          -2.670688295776402,
+          7.558173047097125,
+          15.017173409754953
+        ],
+        "target": [
+          0.3515625,
+          3.119140625,
+          -0.0546875
+        ],
+        "forward": [
+          0.18889067473602514,
+          -0.27743952638107033,
+          -0.9419913068596846
+        ],
+        "right": [
+          0.9804819876472314,
+          0,
+          0.19660893138241228
+        ],
+        "up": [
+          0.05454708880502483,
+          0.9607431026041495,
+          -0.27202445827801836
+        ],
+        "yaw": -0.19789814066289424,
+        "pitch": 0.2811279826464208,
+        "approach": 0,
+        "aspect": 1.341648590021692,
+        "tanHalfVerticalFov": 0.2867,
+        "comparisonSurfaceKm": 0.7227685139973958,
+        "comparisonTargetKm": [
+          0.3515625,
+          3.119140625,
+          -0.0546875
+        ],
+        "probeSkipped": true,
+        "surfaceEstimateKm": null,
+        "probe": null,
+        "probeAgeMs": null,
+        "ground": 1,
+        "terrainClearanceKm": 0.2
+      },
+      "lighting": {
+        "sunDirection": [
+          -0.668126592347077,
+          0.7126683651702156,
+          0.21380050955106467
+        ],
+        "lightSide": 0,
+        "sunsetAmount": 0,
+        "solarColor": [
+          0.9313426391412541,
+          0.8413836906464631,
+          0.7182507029227312
+        ],
+        "ambientColor": [
+          0.08283003529291262,
+          0.10718098056640865,
+          0.1600090087683047
+        ],
+        "flash": [
+          0,
+          3.5,
+          0.5,
+          0
+        ],
+        "flashTop": [
+          0,
+          0,
+          0
+        ],
+        "flashBend": [
+          0,
+          0,
+          0
+        ],
+        "flashEnd": [
+          0,
+          0,
+          0
+        ],
+        "flashBranch": [
+          0,
+          0,
+          0
+        ],
+        "flashCount": 0
+      },
+      "quality": {
+        "quality": "ultra",
+        "nominalSteps": 384,
+        "output": [
+          2474,
+          1844
+        ],
+        "internal": [
+          2474,
+          1844
+        ],
+        "canvas": [
+          2474,
+          1844
+        ],
+        "volume": [
+          256,
+          256,
+          256
+        ],
+        "detailVolume": [
+          128,
+          128,
+          128
+        ],
+        "flowMode": "full"
+      },
+      "clocks": {
+        "simulationTime": 60,
+        "forcingTime": 0,
+        "weatherTime": 40.70380000000004,
+        "precipitationUniformTime": 0,
+        "flowUniformTime": 60,
+        "flowFieldTime": 60,
+        "flowFieldDispersion": 0,
+        "note": "Precipitation uniform is applied before this frame advances forcingTime. A frozen flow texture retains its installation time/dispersion even while flowUniformTime advances."
+      },
+      "png": {
+        "mime": "image/png",
+        "width": 2474,
+        "height": 1844,
+        "byteLength": 1359259,
+        "sha256": "c9c4681b03b9c4771c7be62974712b12b516e8b8717c22dc0907f18318aa2749"
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "cloudia-outflow-static-review-inputs-v1",
+  "method": "Read-only source/diff/metadata review; no test, prefix, model, build or GPU execution.",
+  "files": [
+    {
+      "path": "outflow-source/src/cumulonimbus/volume.ts",
+      "bytes": 30536,
+      "sha256": "3f67f044d9bfe653d60fa2daac3521f69680f98d6838b0441249c4b9a35b6eb7"
+    },
+    {
+      "path": "outflow-source/src/cumulonimbus/outflowAnchor.ts",
+      "bytes": 1169,
+      "sha256": "b0838fed4e63ff202a6204f6f3216dc05c8ac97f43fce7cd57bfeaa4eb057a95"
+    },
+    {
+      "path": "outflow-source/src/cumulonimbus/outflowAnchor.test.ts",
+      "bytes": 4540,
+      "sha256": "d810b2c9e780cceb7ac396d0b576f766a9c7d433d3c12e19c44369ae673f9ed3"
+    },
+    {
+      "path": "outflow-helper-freeze/FREEZE.json",
+      "bytes": 1841,
+      "sha256": "a19aeaa5965fe1a2e6f2c78396259153eb27955c0a6f22361275e57da7569d73"
+    },
+    {
+      "path": "browser/baseline-74-front.json",
+      "bytes": 13073,
+      "sha256": "a63cf6c81e79c68986797358a9a53273026d7b3aa71104f2ff345701e7be92ec"
+    },
+    {
+      "path": "browser/baseline-74-side.json",
+      "bytes": 13075,
+      "sha256": "56001fbcd1bf32fa859c7f8bdaf39734320c7c5327c930148729f59323cc0626"
+    }
+  ]
+}

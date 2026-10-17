@@ -1,0 +1,79 @@
+{
+  "kind": "source-anchored-outflow-one-structural-trial-v1",
+  "previousGoalTurn": "progress: nativefaceDFAIL+exactAreturn closed causalterraintrial and selected structuralanatomy sourcefix, commitf2218a0",
+  "goalScope": "All originalanatomy3families/near-light/rainvirga/terrain/UI/fullquality/FPS remainopen; no newroadmapcompletionrequirements.",
+  "productBaselineCommit": "f2218a0e2889bb2ff7162e3e962c73ad115101b2",
+  "product141ManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "formulaFrozenBeforeBaselineCapture": "Onlysheared: pretransform Ffoundation/Mmaturesummit/Cfirstproximalcap; t=(Cy-Fy)/(My-Fy); deltaXZ=F.xz+t*(M.xz-F.xz)-C.xz. Translatebothicecores beforetransform, setmatureparentfirstcore; shift48streaks bydelta*towerWidth aftertransform; collar/shoulderreuseparent. PreserveRNGcount/order, primitivecount, allY/radii/blends beforeaxiscontraction.",
+  "notAllowed": [
+    "No freecoefficient/lift/radii/noisechange",
+    "No bias/palette/terrainchange",
+    "No tuningafterFAIL",
+    "No claimedtowerbyteidentity afterglobalaxiscontraction",
+    "No newframepass/texture/reducedquality"
+  ],
+  "quality": {
+    "macro": 256,
+    "detail": 128,
+    "nominalSteps": 384,
+    "output": [
+      2474,
+      1844
+    ],
+    "flow": "full",
+    "simulationTime": 60,
+    "paused": true,
+    "Sun": "left clear settled",
+    "wind": 0.55,
+    "dispersion": 0,
+    "rain": 0
+  },
+  "camera": {
+    "seed": 74,
+    "target": [
+      0.3515625,
+      3.119140625,
+      -0.0546875
+    ],
+    "comparisonSurface": 0.7227685139973958,
+    "front": "14ArrowLeft+3ArrowDown afterfixedstate, CSS1237x922",
+    "frontOrigin": [
+      15.459707890770279,
+      7.558173047097125,
+      2.780613896133632
+    ],
+    "side": "fromfront16ArrowRight atCSSwidth1237; yawdelta=-16*36/1237*3.4=-1.5831851253rad(~90.71deg), not24keys. ActualbaselineDTOworldmatrixfrozenthenBmustmatchexactly.",
+    "noReprobe": true,
+    "noCameraRecenterOnCandidateBounds": true
+  },
+  "baseline": {
+    "url": "http://127.0.0.1:4196/",
+    "renderer": "observatory-v61-observed-terrain-material",
+    "full141sourcebuildAlreadyVerified": "cycle36/final-source/dist currentowner48736",
+    "frontPNG_SHA256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9",
+    "frontTerrainFullF32SHA256": "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9"
+  },
+  "gates": [
+    "Sourcepreflight3tinyrecipes74/72/73, no densebuffers: delta/parents/RNG/count/axiscontraction/endpoints, unshearedrecipeexact",
+    "Meaningfulunit/fulltests+typecheck+APPbuild beforecandidateGPU; immutablecandidatefreeze",
+    "NativeA/Bfrontandside74, actualmatrix/lighting/weather/qualitymatch; freshsourcevolumeandallbakes fromnewdensity",
+    "Independentrootandreview: improvedbody-incus transitionbothviews; reject if shelfonlytranslated/Uunchanged/newwall/cushion",
+    "StopafterearlyFAIL. Onlyifvisualbenefit: frozenworldnear,77/80 and72/73 dataidentity, motion/weather/worker/FPS beforeadoption"
+  ],
+  "memory": "Existinglocalcanonicalnode_modules Gitignored/untracked, Dropboxignore1; externaldependency symlink. Noinstall/lockedit.",
+  "browser": "Browserpluginunavailable; existingCUAPlaywrightinIAB, oneactiveGPUowner.",
+  "capsSeconds": {
+    "typecheck": 30,
+    "tests": 60,
+    "build": 90,
+    "tinyRecipePreflight": 15,
+    "browserload": 45,
+    "PNGtransferEach": 60
+  },
+  "limits": [
+    "Authoredlinearaxisattachment, notwindCFD ormeteorologicalgroundtruth.",
+    "ChangesglobalX/Zcontraction can alter nonoutflowcoordinates, supportbounds, raywork and FPS.",
+    "Tinyrecipechecks do not prove densitychannels/lighting/runtime orartquality.",
+    "NoFPSmeasurementinfailedtrial; no60claim."
+  ]
+}

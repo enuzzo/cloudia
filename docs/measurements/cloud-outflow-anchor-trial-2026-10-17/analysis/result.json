@@ -1,0 +1,1239 @@
+{
+  "status": "FAIL_NATIVE_METADATA_CONTROLS",
+  "error": null,
+  "limits": {
+    "wallSeconds": 10,
+    "cpuSeconds": 5,
+    "peakRssBytes": 536870912,
+    "fixedPoses": [
+      "front",
+      "side"
+    ],
+    "sourcePaths": 143
+  },
+  "runtime": {
+    "wallSeconds": 0.06025775,
+    "cpuSeconds": 0.054855,
+    "peakRssBytes": 82362368,
+    "node": "v26.11.0",
+    "arch": "arm64"
+  },
+  "inputs": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/run/SOURCE-FREEZE-R1.json",
+      "bytes": 15256,
+      "sha256": "e809c77ed113331d54003d5d730a964c15b87589b794d634fe1d4e4286e08792"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/outflow-source/src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 85115,
+      "sha256": "d2279f60b29a373c66976af628f6783025ff96e4e883a6da01e4da237c9657c8"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/browser/baseline-74-front.json",
+      "bytes": 13073,
+      "sha256": "a63cf6c81e79c68986797358a9a53273026d7b3aa71104f2ff345701e7be92ec"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/browser/baseline-74-front-alias.json",
+      "bytes": 524,
+      "sha256": "ebb7e4ec6d45716b4ff3877cd6f3a32083d00ccfeb317ee72e6087116499c59e"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/terrain-optical-material-2026-10-17/browser/candidate-b-native.png",
+      "bytes": 3599836,
+      "sha256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/browser/candidate-74-front.json",
+      "bytes": 13143,
+      "sha256": "577dd6c1570eda54f0873730af976ceb3d7922a674b782c1bb27c07502dcceb7"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/browser/candidate-74-front.png",
+      "bytes": 3607225,
+      "sha256": "a5618ec2982212f7587d7930a5f42b271d86cab19288ae9094d502f2901934aa"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/browser/candidate-74-front-transfer.json",
+      "bytes": 10716,
+      "sha256": "09101f9d558e55a42a97cd88a27c359b0418da51b43e6d61a8c4663eb0de2207"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/browser/baseline-74-side.json",
+      "bytes": 13075,
+      "sha256": "56001fbcd1bf32fa859c7f8bdaf39734320c7c5327c930148729f59323cc0626"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/browser/baseline-74-side.png",
+      "bytes": 1359259,
+      "sha256": "c9c4681b03b9c4771c7be62974712b12b516e8b8717c22dc0907f18318aa2749"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/browser/baseline-74-side-transfer.json",
+      "bytes": 4230,
+      "sha256": "68de230d83a33a272e806cbbd6b75393e54d257eed2d6ffdec880cc2dfbd6041"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/browser/candidate-74-side.json",
+      "bytes": 13137,
+      "sha256": "347cb6730bcb553edc2e7169576cd8d3d0fd8e5ba5ddd4c92fb9a6d88901dcf3"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/browser/candidate-74-side.png",
+      "bytes": 1467060,
+      "sha256": "64a047ec9d21590c6e7bdfead6a9e7b10b05210c5685c54e99ae978731d63a2a"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/browser/candidate-74-side-transfer.json",
+      "bytes": 4512,
+      "sha256": "9c35615ec37fe6eedcf071b29f324344cdafcfb517ed6a87f085f782ef653b0a"
+    }
+  ],
+  "sourceVerification": {
+    "manifestSHA256": "e809c77ed113331d54003d5d730a964c15b87589b794d634fe1d4e4286e08792",
+    "count": 143,
+    "allActualHashesMatch": true,
+    "files": [
+      {
+        "path": "bun.lock",
+        "bytes": 34530,
+        "sha256": "c908faf57b4c09b38caed590193f2f14decf57881cffa1a8b564d30c11c74530"
+      },
+      {
+        "path": "index.html",
+        "bytes": 812,
+        "sha256": "9071f19fe0b5b95e93e2aa962fc5ffa6275693bd718ae2f357391370673ec573"
+      },
+      {
+        "path": "package.json",
+        "bytes": 778,
+        "sha256": "51a4c94b1b976f94f359d4012b517751bbd441c660a6feb10b47dbdc601e802b"
+      },
+      {
+        "path": "public/COP-DEM-GLO90-F-license.pdf",
+        "bytes": 123425,
+        "sha256": "22359cb69199c6b5cc4e64a453cbeb283a7a844c0458f7fef0a1dddac4a0a3e7"
+      },
+      {
+        "path": "public/COP-DEM-GLO90-F-license.txt",
+        "bytes": 9203,
+        "sha256": "2c3123016f56f3342ac1107671480a6c0baa40596ffadad9f5aa500082ea8670"
+      },
+      {
+        "path": "public/fonts/commissioner/OFL.txt",
+        "bytes": 4395,
+        "sha256": "4a7d88c77b4bc39ff84f2e058ba8f015636c50ce33588a86d9da97defe519933"
+      },
+      {
+        "path": "public/fonts/commissioner/SOURCE.md",
+        "bytes": 361,
+        "sha256": "4d62bb7d2afbda450c342cafc6987bab37990ecea6e19378e1a6b0f706183a33"
+      },
+      {
+        "path": "public/fonts/commissioner/latin-variable.woff2",
+        "bytes": 36696,
+        "sha256": "737ec8f28006b815be5333598aa32b203005f5788c8e61b09090b944eac8b79c"
+      },
+      {
+        "path": "public/terrain-data-notice.txt",
+        "bytes": 5122,
+        "sha256": "5286e3ff34eabc0e357b451de619dc402ec70847269ead0485b9907005e29bc2"
+      },
+      {
+        "path": "public/worldcover-data-notice.txt",
+        "bytes": 978,
+        "sha256": "4131f41e831f1f661406f3baba9d0ded259ed9d368a2e42621a240b0bf041e10"
+      },
+      {
+        "path": "scripts/qa-layout.ts",
+        "bytes": 6082,
+        "sha256": "1b6e6df29a21ec9a1fee0c30aaff95450ac778c57b8a6c57b7fd4af9fb126595"
+      },
+      {
+        "path": "src/core/defaultPreset.ts",
+        "bytes": 1353,
+        "sha256": "af7fc152263dc7a7bc402644b9e41caee2ff20ea7f291ae7a5ce0ac6f44ec219"
+      },
+      {
+        "path": "src/core/easing.test.ts",
+        "bytes": 444,
+        "sha256": "fcd2fe9ddd6331ee23f9d06a3959e73f596b8e3a8fefcf0ca105a1c6620a19e0"
+      },
+      {
+        "path": "src/core/easing.ts",
+        "bytes": 387,
+        "sha256": "1ae88dbff8c5c55e1854a0bcf4a6e9cd901ba89c6771ce6e9eb62df4f6275515"
+      },
+      {
+        "path": "src/core/presetStore.test.ts",
+        "bytes": 1060,
+        "sha256": "9a124e837eab21356a2345878a7e9090abf181435032b166355690a2d125b4ac"
+      },
+      {
+        "path": "src/core/presetStore.ts",
+        "bytes": 700,
+        "sha256": "08e8e5f953def9c6afad41d7be251f8d51d5e536f2e57c3a47718dc66624d9da"
+      },
+      {
+        "path": "src/core/renderQuality.test.ts",
+        "bytes": 466,
+        "sha256": "c1910907cfe596d6e66619f358ecc02353a4bbfd7406510f78564329f7c76ff0"
+      },
+      {
+        "path": "src/core/renderQuality.ts",
+        "bytes": 331,
+        "sha256": "88c5893350c5033eefc713a5c8e76d9b98d819907ee5910f453c0d6f40145144"
+      },
+      {
+        "path": "src/core/stateMachine.test.ts",
+        "bytes": 806,
+        "sha256": "89363df587a48b8020aefb856b04f6d54938fe2aea9c21b69c697120f648ff12"
+      },
+      {
+        "path": "src/core/stateMachine.ts",
+        "bytes": 959,
+        "sha256": "ee59de6a1e6aac4b4f0deddcc0cc5266a892c1a356e794347831c3d0dd8e76f1"
+      },
+      {
+        "path": "src/core/types.ts",
+        "bytes": 1741,
+        "sha256": "5f6da80b20afbc9ffd390573f9d20f7f0c1ac7d8b2b3f638bc227bcfb34cb277"
+      },
+      {
+        "path": "src/cumulonimbus/CumulonimbusApp.ts",
+        "bytes": 23296,
+        "sha256": "e719baefc778d0166722b6dc78267bbac357a34c67578d2ead759b68bbdfc648"
+      },
+      {
+        "path": "src/cumulonimbus/GPUSceneEngine.ts",
+        "bytes": 85115,
+        "sha256": "d2279f60b29a373c66976af628f6783025ff96e4e883a6da01e4da237c9657c8"
+      },
+      {
+        "path": "src/cumulonimbus/TerrainShadow.test.ts",
+        "bytes": 16056,
+        "sha256": "050142581b22d097adbeb38017dd657ef1e1a0921dd97c7cfc08976865777388"
+      },
+      {
+        "path": "src/cumulonimbus/TerrainShadow.ts",
+        "bytes": 16036,
+        "sha256": "ed628cb7e81a77d8fe1d57ecabd7f43b8072cfee0c8959a6d2b5746965640692"
+      },
+      {
+        "path": "src/cumulonimbus/ThunderAudio.test.ts",
+        "bytes": 1562,
+        "sha256": "0432897d72c32d059127cd720327951b6f4eb1d00692fcf1f04180c16db4e515"
+      },
+      {
+        "path": "src/cumulonimbus/ThunderAudio.ts",
+        "bytes": 2708,
+        "sha256": "f0eea6bee149a5262ff7c881ef8588de3d70b6f0a962b0e8d43891d1092209d4"
+      },
+      {
+        "path": "src/cumulonimbus/aerial.test.ts",
+        "bytes": 1321,
+        "sha256": "4a637a2346461ebe82f1225c3d44fd7aff58142225efe7bc58b32e21eb5a2198"
+      },
+      {
+        "path": "src/cumulonimbus/aerial.ts",
+        "bytes": 621,
+        "sha256": "a066cfe3664d77e4c448045010fa13c40eefb35add6c163d143bd2bb01af10da"
+      },
+      {
+        "path": "src/cumulonimbus/assets/liguria-apuane-cover.bin",
+        "bytes": 12582944,
+        "sha256": "e7fa38f2b0a8c3c469737410dc8d265e680071226e663b3cb12b23930ebda5fc"
+      },
+      {
+        "path": "src/cumulonimbus/assets/liguria-apuane-dem.bin",
+        "bytes": 4202532,
+        "sha256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d"
+      },
+      {
+        "path": "src/cumulonimbus/assets/liguria-apuane-optical.bin",
+        "bytes": 33554432,
+        "sha256": "217325bcdb50dd58076b2f5068ee0b5ba524f6f076a70d4345f279f233f5dd62"
+      },
+      {
+        "path": "src/cumulonimbus/atmosphere.test.ts",
+        "bytes": 1731,
+        "sha256": "5903a055e286c07d7b64c500b515ad463b4de440d51946c70c71701edc483a8d"
+      },
+      {
+        "path": "src/cumulonimbus/atmosphere.ts",
+        "bytes": 4074,
+        "sha256": "8065352c5304b4c95ab18ef9805dcebbc62696ae341a87ecdff0dd67c1f2cf1f"
+      },
+      {
+        "path": "src/cumulonimbus/camera.test.ts",
+        "bytes": 4063,
+        "sha256": "2adb70ba577ada07701f3b4cc8754364cca9210bfb410c2e87d15c5030af2663"
+      },
+      {
+        "path": "src/cumulonimbus/camera.ts",
+        "bytes": 7127,
+        "sha256": "a7f7b113ee4251454e4f31fd8fa470f131dae3a9bc41ec5cf1d2480871066a69"
+      },
+      {
+        "path": "src/cumulonimbus/cloudShader.test.ts",
+        "bytes": 6846,
+        "sha256": "e024547e1163248015d04b1eb140e1f2346d6598ed3a53bfb6f425804489a84e"
+      },
+      {
+        "path": "src/cumulonimbus/cloudShader.ts",
+        "bytes": 15837,
+        "sha256": "f9d05d60526904297a4aab1cb013b84895f928c23a49cdf984b48447fbb9e568"
+      },
+      {
+        "path": "src/cumulonimbus/densityR8.test.ts",
+        "bytes": 1922,
+        "sha256": "29c9de4528c51c74d5773e4c48425ed97282dcd32c9f487dac390f59c9136674"
+      },
+      {
+        "path": "src/cumulonimbus/densityR8.ts",
+        "bytes": 1580,
+        "sha256": "ef6695219129c12143b805c3cecfda40d87ce821083b42b89dab5887b931a390"
+      },
+      {
+        "path": "src/cumulonimbus/emptyTraversal.test.ts",
+        "bytes": 4011,
+        "sha256": "209777209c81b4670d1f4593425cf02eac0e46d1db4770bffb2c703dcb1e3859"
+      },
+      {
+        "path": "src/cumulonimbus/emptyTraversal.ts",
+        "bytes": 1624,
+        "sha256": "281a4209f2afc13a63735d6526f954dc93d775972aa1d8ccd6cf46d1677c57d4"
+      },
+      {
+        "path": "src/cumulonimbus/environment.test.ts",
+        "bytes": 8628,
+        "sha256": "10553c5620f147a983dc7c634fd82b9d99c5d56349e56befa365d2cd0cdb9fad"
+      },
+      {
+        "path": "src/cumulonimbus/fixtures/terrain-v60-raster.wgsl",
+        "bytes": 1068,
+        "sha256": "ab6615fdad7ba034bd1f081806d8ee9716de2dff7073586c1887508a93211318"
+      },
+      {
+        "path": "src/cumulonimbus/inclinedShoulder.test.ts",
+        "bytes": 3884,
+        "sha256": "3d17c32d99eab907fde72e876147ae92720e7894f80bb367d7f519628813a106"
+      },
+      {
+        "path": "src/cumulonimbus/inclinedShoulder.ts",
+        "bytes": 2009,
+        "sha256": "32a844aaacd1de2bde2760da5cc1686693337445e930611cca4a55e3513d8f66"
+      },
+      {
+        "path": "src/cumulonimbus/inspector.test.ts",
+        "bytes": 11774,
+        "sha256": "09486c439cc9a8af1763dd7e70e7000e532437860d5f3b38883f3fba92dd5a1e"
+      },
+      {
+        "path": "src/cumulonimbus/landscape.test.ts",
+        "bytes": 5741,
+        "sha256": "ee5a2824078c456c4f6447bfa72d973d467655e6abd6e02ad2b82dba76a3424b"
+      },
+      {
+        "path": "src/cumulonimbus/landscape.ts",
+        "bytes": 5477,
+        "sha256": "8a0e17f79d6ec5759dd0615ffa94434c479b7961d1f9e007df583fb463ca98ab"
+      },
+      {
+        "path": "src/cumulonimbus/layoutPrefix.test-helper.ts",
+        "bytes": 8440,
+        "sha256": "2ba00a25a651b01f29c54d9a5e3bca7fc9db43429402f7d862a933660283b724"
+      },
+      {
+        "path": "src/cumulonimbus/lifecycle.test.ts",
+        "bytes": 78373,
+        "sha256": "c36decf350dec72710a2b762ff0bb559c22c7e3e7d9bd60513be549d12b94a89"
+      },
+      {
+        "path": "src/cumulonimbus/light.test.ts",
+        "bytes": 3166,
+        "sha256": "fc9db41e6a2e4a41ae2e47b7da33d22141fde36e0aa5d2c626f8ebe6b5549450"
+      },
+      {
+        "path": "src/cumulonimbus/light.ts",
+        "bytes": 3041,
+        "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+      },
+      {
+        "path": "src/cumulonimbus/medium.test.ts",
+        "bytes": 1470,
+        "sha256": "2d2e24070d121d269bae9c60c5e8781c536eae6630a211a8aa00093767ac3233"
+      },
+      {
+        "path": "src/cumulonimbus/medium.ts",
+        "bytes": 1176,
+        "sha256": "ddfd487055e4fde6581ab351345e91fb3466b032dda954c803082a39a9a142d6"
+      },
+      {
+        "path": "src/cumulonimbus/motion.test.ts",
+        "bytes": 4455,
+        "sha256": "7719d2975954b01b7f3802bfa09d409b3947e7921fc37a96203dcd7d9ccf03ae"
+      },
+      {
+        "path": "src/cumulonimbus/motion.ts",
+        "bytes": 7238,
+        "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+      },
+      {
+        "path": "src/cumulonimbus/motionField.test.ts",
+        "bytes": 3156,
+        "sha256": "d802fe726730c71e8192ea79e713544db9a188f397790e6c0256240149a9a2ad"
+      },
+      {
+        "path": "src/cumulonimbus/motionField.ts",
+        "bytes": 2639,
+        "sha256": "d8817eb9d90a70ee975eea89d2c2fca6d9c6783280bea810fdf76cff2b2d4d8a"
+      },
+      {
+        "path": "src/cumulonimbus/narrowCloud.test.ts",
+        "bytes": 7609,
+        "sha256": "acf7ca030abf7a2c8ae2ef533e3061a3f0dd95175e01210b6572d29e3a092ba5"
+      },
+      {
+        "path": "src/cumulonimbus/narrowCloud.ts",
+        "bytes": 1417,
+        "sha256": "6b3ebc7e3299d1ae995405e75ad04f90190789605136200d72d0cd4ea51e9759"
+      },
+      {
+        "path": "src/cumulonimbus/nativeFrameExport.test.ts",
+        "bytes": 14281,
+        "sha256": "afa6d6b393837c866bbc6dac3f6ffdd29faeec497e67dfcf46daceb9996b03f2"
+      },
+      {
+        "path": "src/cumulonimbus/nativeFrameExport.ts",
+        "bytes": 7326,
+        "sha256": "13213516cd00e70f1c4c4c5c9d16bf0b007bd3670e38eb47641e581bfa229037"
+      },
+      {
+        "path": "src/cumulonimbus/outflowAnchor.test.ts",
+        "bytes": 4540,
+        "sha256": "d810b2c9e780cceb7ac396d0b576f766a9c7d433d3c12e19c44369ae673f9ed3"
+      },
+      {
+        "path": "src/cumulonimbus/outflowAnchor.ts",
+        "bytes": 1169,
+        "sha256": "b0838fed4e63ff202a6204f6f3216dc05c8ac97f43fce7cd57bfeaa4eb057a95"
+      },
+      {
+        "path": "src/cumulonimbus/panels.ts",
+        "bytes": 4341,
+        "sha256": "e6e6da9ec0ebaff930a4ed91e07c20c64878b3fb94f0ffda3498a724af0e58e8"
+      },
+      {
+        "path": "src/cumulonimbus/performance.test.ts",
+        "bytes": 2622,
+        "sha256": "3e98c210b40b7d521844231a74722f6e39bbf2febf75b843f21ed50aa6df2285"
+      },
+      {
+        "path": "src/cumulonimbus/performance.ts",
+        "bytes": 2810,
+        "sha256": "175e4be041d8bf2cf325e6ba4e09922b5a1be79c34d5bc4b4f704230ca01a7e8"
+      },
+      {
+        "path": "src/cumulonimbus/pointer.test.ts",
+        "bytes": 4191,
+        "sha256": "f8761d8c114f5310c20b779024c1c880a09a46ee925438a7b4b21047556548b4"
+      },
+      {
+        "path": "src/cumulonimbus/precipitation.ts",
+        "bytes": 5993,
+        "sha256": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72"
+      },
+      {
+        "path": "src/cumulonimbus/queuePrefixMeasurement.test.ts",
+        "bytes": 4451,
+        "sha256": "6408e934d56834cca922a283cbf893b979afbdb9b795ea4fddd0540ba54a2371"
+      },
+      {
+        "path": "src/cumulonimbus/queuePrefixMeasurement.ts",
+        "bytes": 5805,
+        "sha256": "bf26e53d0a1aafd6e75bd20b4903d1a3633fd19937fdecf5d8fe3cd4b354324d"
+      },
+      {
+        "path": "src/cumulonimbus/render.worker.ts",
+        "bytes": 1693,
+        "sha256": "8e643e59b3c94b77f64246960e5ddffc87783f5a4d95498244512bce3c261446"
+      },
+      {
+        "path": "src/cumulonimbus/renderProtocol.ts",
+        "bytes": 1630,
+        "sha256": "b950291299bed3463d917079af09d5f4cf9c5deb8c46a0700debee54856636c4"
+      },
+      {
+        "path": "src/cumulonimbus/rgba32fReadback.test.ts",
+        "bytes": 2953,
+        "sha256": "05157557e91561dd3de4d0991f3b8ba65bed879df633c44a1146c2a8e92cd10d"
+      },
+      {
+        "path": "src/cumulonimbus/rgba32fReadback.ts",
+        "bytes": 1754,
+        "sha256": "b30f4d16c35ff2595c3fbef73ce6a8d3ea5699984f6b85a89f97e04f755f0855"
+      },
+      {
+        "path": "src/cumulonimbus/scene.css",
+        "bytes": 13746,
+        "sha256": "54d7822126e00cc3651470a987484e157411e8a7cf86fcd75bf81e97b60d7905"
+      },
+      {
+        "path": "src/cumulonimbus/sceneMarkup.ts",
+        "bytes": 12929,
+        "sha256": "14e35d52bacf8912d0c9c007ead7aad748755d72e26e359d52c813679aab8306"
+      },
+      {
+        "path": "src/cumulonimbus/sky.worker.ts",
+        "bytes": 411,
+        "sha256": "b89754046a88c8f66fe193c806ce1db9ae4eb13d4c06471ccec2feefb4da8b7d"
+      },
+      {
+        "path": "src/cumulonimbus/skyCache.test.ts",
+        "bytes": 1953,
+        "sha256": "e95a18f2ad55c936fbf39f92890eadc78baaaf0dfce857c1ee2ccbcf67054097"
+      },
+      {
+        "path": "src/cumulonimbus/skyCache.ts",
+        "bytes": 2145,
+        "sha256": "fb969d67183153f040b4458516e204016b8e44256d5df794ecec1620f82f984b"
+      },
+      {
+        "path": "src/cumulonimbus/skyModel.ts",
+        "bytes": 644,
+        "sha256": "9809736594d784f8a5db4cc88d2dd867820c26f11542739b2901d48a57a1259b"
+      },
+      {
+        "path": "src/cumulonimbus/solarTransition.test.ts",
+        "bytes": 9322,
+        "sha256": "a2f745fb3541ea0a223ccc23341564700ef836a7e6ecf0ba8232a69762524fab"
+      },
+      {
+        "path": "src/cumulonimbus/solarTransition.ts",
+        "bytes": 1130,
+        "sha256": "9e769472891cef26bca446e3d6340a0e8e25d0d57f84383b545cf178e7d29d8e"
+      },
+      {
+        "path": "src/cumulonimbus/storm.test.ts",
+        "bytes": 1873,
+        "sha256": "6852073934a0f6a5696be684736576c44a8dc7142c7523f639e9a79663c3b018"
+      },
+      {
+        "path": "src/cumulonimbus/storm.ts",
+        "bytes": 3021,
+        "sha256": "7b3259d5d454cbf10b921f2ef6e8f5e03608c43801bbdaec3f1c7480a8c8030c"
+      },
+      {
+        "path": "src/cumulonimbus/sun.ts",
+        "bytes": 397,
+        "sha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc"
+      },
+      {
+        "path": "src/cumulonimbus/terrainCover.test.ts",
+        "bytes": 3162,
+        "sha256": "04fa120220b74362738e801e924715c066b915e1063a69e3cc591a7ad0f17300"
+      },
+      {
+        "path": "src/cumulonimbus/terrainCover.ts",
+        "bytes": 3001,
+        "sha256": "b1dcda2fc3064b590bc75aabde4bc0fcb7d6abc85ab76e881f5263f86971ec34"
+      },
+      {
+        "path": "src/cumulonimbus/terrainCoverTextures.test.ts",
+        "bytes": 4390,
+        "sha256": "34a89a1fd9fd6f77b06ad9c501f8c32d81c2c534193f29866df86b5e06e55d6b"
+      },
+      {
+        "path": "src/cumulonimbus/terrainCoverTextures.ts",
+        "bytes": 3661,
+        "sha256": "13a04913d82689c1a1b46dc5748371e71f607b663a268bb284f6ecadaf0ac1ae"
+      },
+      {
+        "path": "src/cumulonimbus/terrainDem.test.ts",
+        "bytes": 4183,
+        "sha256": "9673beaa4e1fbbfd5ea1efe7d77ae5adec7fccca741eb7cc0c9db572301e279c"
+      },
+      {
+        "path": "src/cumulonimbus/terrainDem.ts",
+        "bytes": 4394,
+        "sha256": "335dfde27717448fa58b7e8d26fc4ce684a1d42ed6ead007f36fb345fe9dd386"
+      },
+      {
+        "path": "src/cumulonimbus/terrainMaterialWitness.test.ts",
+        "bytes": 6589,
+        "sha256": "1c7d5aad724e6938fb0ecdb2dfabd26e557476b7e90ec6b74070f2b2d94fe306"
+      },
+      {
+        "path": "src/cumulonimbus/terrainMaterialWitness.ts",
+        "bytes": 4370,
+        "sha256": "9ed3f42e8eb385c6a4ca9720bf51c100b35dc1c6e97043a266cd84048e315fbf"
+      },
+      {
+        "path": "src/cumulonimbus/terrainMesh.test.ts",
+        "bytes": 27863,
+        "sha256": "fc77a756c01abef42bfed1818fde57bdeaac93501eec0703fe8d8401c7549755"
+      },
+      {
+        "path": "src/cumulonimbus/terrainMesh.ts",
+        "bytes": 41782,
+        "sha256": "00c170a8d4653817720b9dddc8eb10d647671128602dac55a1de52fe55216d72"
+      },
+      {
+        "path": "src/cumulonimbus/terrainNavigationDiagnostic.test.ts",
+        "bytes": 2728,
+        "sha256": "9f628e41f5ab65478d9e5bec390c0642394cd20757fc679f10428dd01bcd2e5e"
+      },
+      {
+        "path": "src/cumulonimbus/terrainNavigationDiagnostic.ts",
+        "bytes": 1000,
+        "sha256": "fd31885d67948f6a1a3cba22b970a7a5ca624d9c495c1c0eb4bf19480352c673"
+      },
+      {
+        "path": "src/cumulonimbus/terrainOptical.test.ts",
+        "bytes": 9946,
+        "sha256": "e20b67d6cefb740840750879ed206b12f0f6e9c8b7c650de0c984d47c7049043"
+      },
+      {
+        "path": "src/cumulonimbus/terrainOptical.ts",
+        "bytes": 5963,
+        "sha256": "e3bfc4994d8ab80a8de1bc9b61b63ca6580ce103a705b531b395de6661848370"
+      },
+      {
+        "path": "src/cumulonimbus/terrainOpticalMaterial.test.ts",
+        "bytes": 7981,
+        "sha256": "5388c817d8930e34eaf2df770157a0127cd18e3235584328b281a6a7a3fa97f0"
+      },
+      {
+        "path": "src/cumulonimbus/terrainOpticalMaterial.ts",
+        "bytes": 2728,
+        "sha256": "78f80bc90be7be9fcc4fbcccb7908fa680b9de1ed67e2348117431c240d083e8"
+      },
+      {
+        "path": "src/cumulonimbus/terrainOpticalRaster.test.ts",
+        "bytes": 1391,
+        "sha256": "8461163ed1ee3e9cbfab0fae69772603652979018c5c5507255cf4be5735d25b"
+      },
+      {
+        "path": "src/cumulonimbus/terrainOpticalRaster.ts",
+        "bytes": 1924,
+        "sha256": "339ceec6a03d273f2e24538d42456f608fc18d8bcfc89ecaf972965e25f75e99"
+      },
+      {
+        "path": "src/cumulonimbus/terrainRasterCache.test.ts",
+        "bytes": 12502,
+        "sha256": "fe73b9731d0e6b5bde89018bca6dc0b1a1b945ac1b71948c44c58a4805f9e84e"
+      },
+      {
+        "path": "src/cumulonimbus/terrainSplitTriangle.test.ts",
+        "bytes": 8040,
+        "sha256": "c013bbd7c291992461e5c133317a2a1df546979b2c2d164c3fdf9a097207d9a1"
+      },
+      {
+        "path": "src/cumulonimbus/terrainSplitTriangle.ts",
+        "bytes": 1249,
+        "sha256": "e8a14126eedcea99390b9bf9503b9df53fae6ad85e2f39aa184817d104443163"
+      },
+      {
+        "path": "src/cumulonimbus/terrainSurface.test.ts",
+        "bytes": 4742,
+        "sha256": "1dd97c5e23177c526d7dc535fba32d2775f389243857d115e6c42e4ee076262d"
+      },
+      {
+        "path": "src/cumulonimbus/terrainSurface.ts",
+        "bytes": 13659,
+        "sha256": "0ff8de3514feb3714ba4e931c246d0bd339634661aa37a7d87e79f61c1ddff3f"
+      },
+      {
+        "path": "src/cumulonimbus/three186TimestampBatch.test.ts",
+        "bytes": 5723,
+        "sha256": "585e288a991a41e5482bb854f0fc08035cb5394b6ed3e6fc8d403247de51d4ed"
+      },
+      {
+        "path": "src/cumulonimbus/three186TimestampBatch.ts",
+        "bytes": 8843,
+        "sha256": "24f35dcdaeb1d0da6c57ceef55560f1140c9d151955f636fcf80cf7d7e4d7658"
+      },
+      {
+        "path": "src/cumulonimbus/timestampBatchMeasurement.test.ts",
+        "bytes": 9297,
+        "sha256": "cb04e13e082b067ce1b72119b59fa78296092ef9913f727215b259222936aa34"
+      },
+      {
+        "path": "src/cumulonimbus/timestampBatchMeasurement.ts",
+        "bytes": 12153,
+        "sha256": "43654a3918b0f5f531aff26727247291c469cd037a98d44e76e88ae03ceb905c"
+      },
+      {
+        "path": "src/cumulonimbus/uiIcons.ts",
+        "bytes": 1093,
+        "sha256": "907b3e3a96f46b694a7836e799140d3621a171a69eecfc0d967a396c736a406b"
+      },
+      {
+        "path": "src/cumulonimbus/volume.layout-regression.test.ts",
+        "bytes": 2285,
+        "sha256": "830162fc4a54bef3c45240808db834fcb2a69f89be2dc584225cd38cda5b1046"
+      },
+      {
+        "path": "src/cumulonimbus/volume.test.ts",
+        "bytes": 17229,
+        "sha256": "0934cc1bfb8f27df253ddd3abecc38957ab9a37a0b8fa248a4acc8ff3a328b79"
+      },
+      {
+        "path": "src/cumulonimbus/volume.ts",
+        "bytes": 30536,
+        "sha256": "3f67f044d9bfe653d60fa2daac3521f69680f98d6838b0441249c4b9a35b6eb7"
+      },
+      {
+        "path": "src/cumulonimbus/volume.worker.test.ts",
+        "bytes": 2177,
+        "sha256": "5a8a36291f7d7c36a701735ae32f833ec0eb0d3de9bd07eb42863569874a201c"
+      },
+      {
+        "path": "src/cumulonimbus/volume.worker.ts",
+        "bytes": 824,
+        "sha256": "89eccd6b67a4d473b9305e75be4e1d25b22f28c04a3987e0ff39afdb637b8242"
+      },
+      {
+        "path": "src/cumulonimbus/weatherInteraction.test.ts",
+        "bytes": 1149,
+        "sha256": "7c2e4a20b88c478203963f5d698bf60ecb42435e5a38540319d549243bad879c"
+      },
+      {
+        "path": "src/cumulonimbus/weatherInteraction.ts",
+        "bytes": 986,
+        "sha256": "31cb68650093530f9e3952afa87f8b97bcf2e87cd3627b4a43d45d2e2b3f99ba"
+      },
+      {
+        "path": "src/cumulonimbus/weatherState.test.ts",
+        "bytes": 848,
+        "sha256": "7bfaeb584e7eda840ec9759588fda15cfa48a2d0aa379d2026982974f80a3fee"
+      },
+      {
+        "path": "src/cumulonimbus/weatherState.ts",
+        "bytes": 1080,
+        "sha256": "11fb5e122b12e6760b37f72abb405f8d8dd7fd65ceef2bc4c666ee81d3e0e0b9"
+      },
+      {
+        "path": "src/cumulonimbus/workerBridge.test.ts",
+        "bytes": 7444,
+        "sha256": "5e254d46e217fcf7698e0d7ac35538dc92c3d8d2892fb976caf65310bf03d41e"
+      },
+      {
+        "path": "src/embed/CloudiaHero.test.ts",
+        "bytes": 677,
+        "sha256": "f93e20b11e88b8e08d120813f8c8c7a421733f32fbd714f07612986a8e965412"
+      },
+      {
+        "path": "src/embed/CloudiaHero.ts",
+        "bytes": 2592,
+        "sha256": "19381af09756c82e5fd320dc9cb9f74847bdde472398c3e972e3d6fff8189143"
+      },
+      {
+        "path": "src/input/gestureMapper.test.ts",
+        "bytes": 1184,
+        "sha256": "c4b71879bde6b59f580fc778b5e4b49c7e2500ce9e9387b1b2401302740eac93"
+      },
+      {
+        "path": "src/input/gestureMapper.ts",
+        "bytes": 1800,
+        "sha256": "8a03aeacaf0e9205cf478139393ff710f2a062bbda1527ed240094b35841af28"
+      },
+      {
+        "path": "src/input/inputController.ts",
+        "bytes": 1515,
+        "sha256": "b6029782bedbf39c4e245e2cb01a2f467648e26ade61a5db0d188498eede0e3e"
+      },
+      {
+        "path": "src/lab/LabApp.ts",
+        "bytes": 2752,
+        "sha256": "2fa879c6a9c9025cf858b6508b2c58afede162e5380125acc6b5f44f6f452d9a"
+      },
+      {
+        "path": "src/lab/LabUI.ts",
+        "bytes": 1597,
+        "sha256": "12ac22f24e2b5da3df38b32193994de423f9b137749d6ee8564ba61794ca9460"
+      },
+      {
+        "path": "src/main.ts",
+        "bytes": 778,
+        "sha256": "5d5243cd348204920dde24188fbc4d7d48e0a9d56ec040957fad99c48479f2c9"
+      },
+      {
+        "path": "src/render/CloudEngine.ts",
+        "bytes": 5087,
+        "sha256": "dc8491ad902181d4acea7209858782e9a20c45f4572b2b2ad6b98979b37fedd9"
+      },
+      {
+        "path": "src/render/cloudFragment.ts",
+        "bytes": 5179,
+        "sha256": "b7342771c82b8b327b4611997fc804a9eaf49d3d4ef56054ab0a6c2450738b47"
+      },
+      {
+        "path": "src/render/cloudVertex.ts",
+        "bytes": 151,
+        "sha256": "d8bcc643ac853509a6d0a9f33b3b639c1757b52b53bae420da66075e88ea01a9"
+      },
+      {
+        "path": "src/styles.css",
+        "bytes": 1596,
+        "sha256": "74953ccc0ee5401602405b2f3acb535b32908eb010a16a20307b83f601601029"
+      },
+      {
+        "path": "src/weather/WeatherLayer.test.ts",
+        "bytes": 1095,
+        "sha256": "2a5fefca9babf8bb4abfe020d220d248066ef82e45d0d084d17501f12b714fec"
+      },
+      {
+        "path": "src/weather/WeatherLayer.ts",
+        "bytes": 6838,
+        "sha256": "9d1ee9f3691c84a5d66d4146b903490758436a74d6ae5a538cc2e13be2d5c257"
+      },
+      {
+        "path": "tsconfig.json",
+        "bytes": 608,
+        "sha256": "b896d22df51d51d0fa3a3aecf815369219b077a38da0c29b7a10cd9bc63e2f7c"
+      },
+      {
+        "path": "vite.config.ts",
+        "bytes": 187,
+        "sha256": "267a24b468c0ae3ac76a5f3de429a8b319407b6a66893da839f83a10a4b824a1"
+      },
+      {
+        "path": "vite.hero.config.ts",
+        "bytes": 465,
+        "sha256": "0e8b158a0ba8c9a057d5027ca2e79379b19c7add3bee505e1e043382698757cd"
+      },
+      {
+        "path": "vitest.config.ts",
+        "bytes": 176,
+        "sha256": "884247be9d403f492f4fcbbefd98a271b8de73671f8a67d1f1b0fba229a7287d"
+      }
+    ]
+  },
+  "scriptSHA256": "fb1bb24d10f11ec761b4bca419b9d3bf9f9e96b8c1b6a70ae1504e6e16d9036b",
+  "contractSHA256": "7e0f50d936432cd0ab47c7f334cf6bf0c03bfee3e687ee44f08fa9da1eebe28e",
+  "rows": [
+    {
+      "pose": "front",
+      "baselinePNG": {
+        "sha256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9",
+        "bytes": 3599836,
+        "width": 2474,
+        "height": 1844,
+        "alias": {
+          "exactContentAlias": true,
+          "existingExactPNG": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/terrain-optical-material-2026-10-17/browser/candidate-b-native.png",
+          "actualExportMetadata": "baseline-74-front.json",
+          "scope": "Actual export digest plus independent existing bitmap hash; no duplicate transfer claimed."
+        }
+      },
+      "candidatePNG": {
+        "sha256": "a5618ec2982212f7587d7930a5f42b271d86cab19288ae9094d502f2901934aa",
+        "bytes": 3607225,
+        "width": 2474,
+        "height": 1844,
+        "transfer": {
+          "parts": 74,
+          "characters": 4809658,
+          "allPartHashesVerified": true
+        }
+      },
+      "qualified": false,
+      "mismatches": [
+        {
+          "path": "terrainRaster.shadow.cache.hits",
+          "a": 1805,
+          "b": 6998,
+          "missingA": false,
+          "missingB": false
+        },
+        {
+          "path": "terrainRaster.shadow.cache.requests",
+          "a": 1806,
+          "b": 6999,
+          "missingA": false,
+          "missingB": false
+        }
+      ],
+      "recordedExclusions": [
+        {
+          "path": "rendererVersion",
+          "a": "observatory-v61-observed-terrain-material",
+          "b": "experiment-v61-source-anchored-outflow-r1",
+          "equal": false
+        },
+        {
+          "path": "anatomyVariant",
+          "a": null,
+          "b": "source-axis-outflow-horizontal-translation",
+          "equal": false
+        },
+        {
+          "path": "frame.ownerDrawSerial",
+          "a": 1805,
+          "b": 6998,
+          "equal": false
+        },
+        {
+          "path": "frame.rafTimestamp",
+          "a": 36995.4,
+          "b": 122861.8,
+          "equal": false
+        },
+        {
+          "path": "frame.localSnapshotTime",
+          "a": 36996.40000009537,
+          "b": 122862.39999997616,
+          "equal": false
+        },
+        {
+          "path": "frame.localTimeOrigin",
+          "a": 1792206159208.5,
+          "b": 1792206619228.9,
+          "equal": false
+        },
+        {
+          "path": "frame.date",
+          "a": "2026-10-17T03:03:16.204Z",
+          "b": "2026-10-17T03:12:22.091Z",
+          "equal": false
+        },
+        {
+          "path": "terrainRaster.cache.requests",
+          "a": 1806,
+          "b": 6999,
+          "equal": false
+        },
+        {
+          "path": "terrainRaster.cache.hits",
+          "a": 1658,
+          "b": 6850,
+          "equal": false
+        },
+        {
+          "path": "terrainRaster.cache.submissions",
+          "a": 148,
+          "b": 149,
+          "equal": false
+        },
+        {
+          "path": "terrainRaster.cache.epoch",
+          "a": 4,
+          "b": 4,
+          "equal": true
+        },
+        {
+          "path": "skyTextures.requestSerial",
+          "a": 3,
+          "b": 3,
+          "equal": true
+        },
+        {
+          "path": "skyTextures.from.uuid",
+          "a": "e6903f9c-852d-41de-950c-afcea923b4cb",
+          "b": "e7d95a4d-e03c-48dc-9776-9b63eb8c38d7",
+          "equal": false
+        },
+        {
+          "path": "skyTextures.from.version",
+          "a": 3,
+          "b": 3,
+          "equal": true
+        },
+        {
+          "path": "skyTextures.to.uuid",
+          "a": "bdab3e54-b3fe-4b01-a5db-e7daf1281f71",
+          "b": "4b55899f-2bea-4a83-9d57-8b362228d3d0",
+          "equal": false
+        },
+        {
+          "path": "skyTextures.to.version",
+          "a": 3,
+          "b": 3,
+          "equal": true
+        },
+        {
+          "path": "material.supportMin",
+          "a": [
+            -4.86640625,
+            -0.1680859374999999,
+            -3.052421875
+          ],
+          "b": [
+            -5.29609375,
+            -0.1680859374999999,
+            -3.079765625
+          ],
+          "equal": false
+        },
+        {
+          "path": "material.supportMax",
+          "a": [
+            5.56953125,
+            6.4063671875,
+            2.943046875
+          ],
+          "b": [
+            5.53046875,
+            6.4063671875,
+            2.970390625
+          ],
+          "equal": false
+        },
+        {
+          "path": "weather.precipitationBounds",
+          "a": [
+            -3.359375,
+            -2.0234375,
+            2.265625,
+            2.1328125
+          ],
+          "b": [
+            -3.671875,
+            -2.1328125,
+            2.421875,
+            2.1328125
+          ],
+          "equal": false
+        },
+        {
+          "path": "clocks.weatherTime",
+          "a": 15.035500000000004,
+          "b": 15.651599999999991,
+          "equal": false
+        }
+      ],
+      "weatherTime": {
+        "a": 15.035500000000004,
+        "b": 15.651599999999991,
+        "equal": false,
+        "exemptionValid": true,
+        "sourceProof": {
+          "file": "src/cumulonimbus/GPUSceneEngine.ts",
+          "sha256": "d2279f60b29a373c66976af628f6783025ff96e4e883a6da01e4da237c9657c8",
+          "advanceLine": 464,
+          "stormUseLines": [
+            746,
+            773
+          ],
+          "comparisonClearLine": 906,
+          "scope": "weatherTime advances while paused; only lightning/scheduling uses affect rendering. Under settled clear/no-flash controls it is an owner wall/storm clock, not a submitted shader uniform."
+        }
+      },
+      "pngContentIdentity": false,
+      "scope": "Exact submitted CPU metadata controls; PNG content identity is not a quality score, GPU uniform/readback, density proof or performance evidence."
+    },
+    {
+      "pose": "side",
+      "baselinePNG": {
+        "sha256": "c9c4681b03b9c4771c7be62974712b12b516e8b8717c22dc0907f18318aa2749",
+        "bytes": 1359259,
+        "width": 2474,
+        "height": 1844,
+        "transfer": {
+          "parts": 28,
+          "characters": 1812370,
+          "allPartHashesVerified": true
+        }
+      },
+      "candidatePNG": {
+        "sha256": "64a047ec9d21590c6e7bdfead6a9e7b10b05210c5685c54e99ae978731d63a2a",
+        "bytes": 1467060,
+        "width": 2474,
+        "height": 1844,
+        "transfer": {
+          "parts": 30,
+          "characters": 1956102,
+          "allPartHashesVerified": true
+        }
+      },
+      "qualified": false,
+      "mismatches": [
+        {
+          "path": "terrainRaster.shadow.cache.hits",
+          "a": 3343,
+          "b": 10907,
+          "missingA": false,
+          "missingB": false
+        },
+        {
+          "path": "terrainRaster.shadow.cache.requests",
+          "a": 3344,
+          "b": 10908,
+          "missingA": false,
+          "missingB": false
+        }
+      ],
+      "recordedExclusions": [
+        {
+          "path": "rendererVersion",
+          "a": "observatory-v61-observed-terrain-material",
+          "b": "experiment-v61-source-anchored-outflow-r1",
+          "equal": false
+        },
+        {
+          "path": "anatomyVariant",
+          "a": null,
+          "b": "source-axis-outflow-horizontal-translation",
+          "equal": false
+        },
+        {
+          "path": "frame.ownerDrawSerial",
+          "a": 3343,
+          "b": 10907,
+          "equal": false
+        },
+        {
+          "path": "frame.rafTimestamp",
+          "a": 62663.7,
+          "b": 188049.5,
+          "equal": false
+        },
+        {
+          "path": "frame.localSnapshotTime",
+          "a": 62664.200000047684,
+          "b": 188051,
+          "equal": false
+        },
+        {
+          "path": "frame.localTimeOrigin",
+          "a": 1792206159208.5,
+          "b": 1792206619228.9,
+          "equal": false
+        },
+        {
+          "path": "frame.date",
+          "a": "2026-10-17T03:03:41.872Z",
+          "b": "2026-10-17T03:13:27.279Z",
+          "equal": false
+        },
+        {
+          "path": "terrainRaster.cache.requests",
+          "a": 3344,
+          "b": 10908,
+          "equal": false
+        },
+        {
+          "path": "terrainRaster.cache.hits",
+          "a": 3189,
+          "b": 10750,
+          "equal": false
+        },
+        {
+          "path": "terrainRaster.cache.submissions",
+          "a": 155,
+          "b": 158,
+          "equal": false
+        },
+        {
+          "path": "terrainRaster.cache.epoch",
+          "a": 4,
+          "b": 4,
+          "equal": true
+        },
+        {
+          "path": "skyTextures.requestSerial",
+          "a": 3,
+          "b": 3,
+          "equal": true
+        },
+        {
+          "path": "skyTextures.from.uuid",
+          "a": "e6903f9c-852d-41de-950c-afcea923b4cb",
+          "b": "e7d95a4d-e03c-48dc-9776-9b63eb8c38d7",
+          "equal": false
+        },
+        {
+          "path": "skyTextures.from.version",
+          "a": 3,
+          "b": 3,
+          "equal": true
+        },
+        {
+          "path": "skyTextures.to.uuid",
+          "a": "bdab3e54-b3fe-4b01-a5db-e7daf1281f71",
+          "b": "4b55899f-2bea-4a83-9d57-8b362228d3d0",
+          "equal": false
+        },
+        {
+          "path": "skyTextures.to.version",
+          "a": 3,
+          "b": 3,
+          "equal": true
+        },
+        {
+          "path": "material.supportMin",
+          "a": [
+            -4.86640625,
+            -0.1680859374999999,
+            -3.052421875
+          ],
+          "b": [
+            -5.29609375,
+            -0.1680859374999999,
+            -3.079765625
+          ],
+          "equal": false
+        },
+        {
+          "path": "material.supportMax",
+          "a": [
+            5.56953125,
+            6.4063671875,
+            2.943046875
+          ],
+          "b": [
+            5.53046875,
+            6.4063671875,
+            2.970390625
+          ],
+          "equal": false
+        },
+        {
+          "path": "weather.precipitationBounds",
+          "a": [
+            -3.359375,
+            -2.0234375,
+            2.265625,
+            2.1328125
+          ],
+          "b": [
+            -3.671875,
+            -2.1328125,
+            2.421875,
+            2.1328125
+          ],
+          "equal": false
+        },
+        {
+          "path": "clocks.weatherTime",
+          "a": 40.70380000000004,
+          "b": 80.83930000000136,
+          "equal": false
+        }
+      ],
+      "weatherTime": {
+        "a": 40.70380000000004,
+        "b": 80.83930000000136,
+        "equal": false,
+        "exemptionValid": true,
+        "sourceProof": {
+          "file": "src/cumulonimbus/GPUSceneEngine.ts",
+          "sha256": "d2279f60b29a373c66976af628f6783025ff96e4e883a6da01e4da237c9657c8",
+          "advanceLine": 464,
+          "stormUseLines": [
+            746,
+            773
+          ],
+          "comparisonClearLine": 906,
+          "scope": "weatherTime advances while paused; only lightning/scheduling uses affect rendering. Under settled clear/no-flash controls it is an owner wall/storm clock, not a submitted shader uniform."
+        }
+      },
+      "pngContentIdentity": false,
+      "scope": "Exact submitted CPU metadata controls; PNG content identity is not a quality score, GPU uniform/readback, density proof or performance evidence."
+    }
+  ],
+  "scope": "Offline saved native DTO, PNG/transfer binding and installed source hashes. Exact CPU-side submitted controls, with predeclared settled-clear weatherTime exemption. Not a GPU readback, density equivalence, visual judgement, model generation or FPS sample."
+}

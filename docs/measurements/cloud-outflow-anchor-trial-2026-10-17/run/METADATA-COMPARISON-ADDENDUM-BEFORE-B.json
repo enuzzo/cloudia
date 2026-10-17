@@ -1,0 +1,30 @@
+{
+  "kind": "metadata-comparison-addendum-before-first-candidate-capture-v1",
+  "reason": "Baseline DTO reveals weatherTime is an owner wall storm clock that advances while paused. Source inspected before any candidate nativecapture/DTOread. Exact comparison of all clocks would conflate irrelevant wall timing with fixed shader state.",
+  "excludedClock": "clocks.weatherTime",
+  "requiredConditions": [
+    "clear sky/rain0/pausedtrue/orbitfalse",
+    "full lighting exact, flashCount0 and flash.w0",
+    "probe-reference clears storm; no flash action; auto storm cannottrigger paused"
+  ],
+  "sourceProof": {
+    "engineSHA256": "d2279f60b29a373c66976af628f6783025ff96e4e883a6da01e4da237c9657c8",
+    "advance": "line464 weatherTime+=positiveRAFinterval evenpaused",
+    "uses": "createFlash/flashIntensity/storm scheduling only at746-773; not passedtoordinarywind/growth/flow/precip uniforms",
+    "controls": "referenceaction resetsweatherTime/clearStorm/autoStormfalse; pausedpreventsauto trigger"
+  },
+  "compareExact": [
+    "all camera world matrix fields",
+    "all lighting includingflashvalues",
+    "all clocks exceptweatherTime/note",
+    "material uniforms exceptderivedsupportMin/Max",
+    "weather usercontrols exceptderivedprecipitationBounds",
+    "qualityvolume/output/samplingmode"
+  ],
+  "recordDifference": [
+    "weatherTime A/B",
+    "derivedsupportbounds/precipbounds",
+    "ownerframe/cache/textureUUID revisions"
+  ],
+  "scope": "Explicit source-grounded comparison rule before B capture, not a post-outcome relaxation. No claim wallclocks match."
+}

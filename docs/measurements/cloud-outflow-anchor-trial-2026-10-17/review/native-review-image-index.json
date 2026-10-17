@@ -1,0 +1,310 @@
+{
+  "images": [
+    {
+      "id": "A-front",
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/terrain-optical-material-2026-10-17/browser/candidate-b-native.png",
+      "bytes": 3599836,
+      "sha256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9",
+      "size": [
+        2474,
+        1844
+      ],
+      "metadata": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/browser/baseline-74-front.json",
+      "metadataSHA256": "a63cf6c81e79c68986797358a9a53273026d7b3aa71104f2ff345701e7be92ec",
+      "crop": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/review/a-front-junction-crop.png",
+      "cropPIL_LTRB": [
+        980,
+        280,
+        1590,
+        850
+      ],
+      "cropSHA256": "4feb5c04914c4108fc47a2259b7fa9a0a7ad9acf8f2bfaa9c70cce6fc086ff2f"
+    },
+    {
+      "id": "B-front",
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/browser/candidate-74-front.png",
+      "bytes": 3607225,
+      "sha256": "a5618ec2982212f7587d7930a5f42b271d86cab19288ae9094d502f2901934aa",
+      "size": [
+        2474,
+        1844
+      ],
+      "metadata": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/browser/candidate-74-front.json",
+      "metadataSHA256": "577dd6c1570eda54f0873730af976ceb3d7922a674b782c1bb27c07502dcceb7",
+      "crop": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/review/b-front-junction-crop.png",
+      "cropPIL_LTRB": [
+        980,
+        280,
+        1590,
+        850
+      ],
+      "cropSHA256": "5635a671a3b7e7aaf28af067a986da004269909389aa48bb5f5e8ae727cbcf79"
+    },
+    {
+      "id": "A-side",
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/browser/baseline-74-side.png",
+      "bytes": 1359259,
+      "sha256": "c9c4681b03b9c4771c7be62974712b12b516e8b8717c22dc0907f18318aa2749",
+      "size": [
+        2474,
+        1844
+      ],
+      "metadata": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/browser/baseline-74-side.json",
+      "metadataSHA256": "56001fbcd1bf32fa859c7f8bdaf39734320c7c5327c930148729f59323cc0626",
+      "crop": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/review/a-side-junction-crop.png",
+      "cropPIL_LTRB": [
+        940,
+        270,
+        1760,
+        850
+      ],
+      "cropSHA256": "5b17c4e0fbf40d5541b47af6519b0553d3ad01625949e3fe6ba9180842e59cb0"
+    },
+    {
+      "id": "B-side",
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/browser/candidate-74-side.png",
+      "bytes": 1467060,
+      "sha256": "64a047ec9d21590c6e7bdfead6a9e7b10b05210c5685c54e99ae978731d63a2a",
+      "size": [
+        2474,
+        1844
+      ],
+      "metadata": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/browser/candidate-74-side.json",
+      "metadataSHA256": "347cb6730bcb553edc2e7169576cd8d3d0fd8e5ba5ddd4c92fb9a6d88901dcf3",
+      "crop": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle39/review/b-side-junction-crop.png",
+      "cropPIL_LTRB": [
+        940,
+        270,
+        1760,
+        850
+      ],
+      "cropSHA256": "310ccb9785b6f34095ba0f4253ee4f3e1af8b17d2227bbe431f1877ee8b3c603"
+    }
+  ],
+  "metadataDifferences": {
+    "front": [
+      [
+        ".anatomyVariant",
+        null,
+        "source-axis-outflow-horizontal-translation"
+      ],
+      [
+        ".clocks.weatherTime",
+        15.035500000000004,
+        15.651599999999991
+      ],
+      [
+        ".frame.date",
+        "2026-10-17T03:03:16.204Z",
+        "2026-10-17T03:12:22.091Z"
+      ],
+      [
+        ".frame.localSnapshotTime",
+        36996.40000009537,
+        122862.39999997616
+      ],
+      [
+        ".frame.localTimeOrigin",
+        1792206159208.5,
+        1792206619228.9
+      ],
+      [
+        ".frame.ownerDrawSerial",
+        1805,
+        6998
+      ],
+      [
+        ".frame.rafTimestamp",
+        36995.4,
+        122861.8
+      ],
+      [
+        ".material.supportMax[0]",
+        5.56953125,
+        5.53046875
+      ],
+      [
+        ".material.supportMax[2]",
+        2.943046875,
+        2.970390625
+      ],
+      [
+        ".material.supportMin[0]",
+        -4.86640625,
+        -5.29609375
+      ],
+      [
+        ".material.supportMin[2]",
+        -3.052421875,
+        -3.079765625
+      ],
+      [
+        ".rendererVersion",
+        "observatory-v61-observed-terrain-material",
+        "experiment-v61-source-anchored-outflow-r1"
+      ],
+      [
+        ".skyTextures.from.uuid",
+        "e6903f9c-852d-41de-950c-afcea923b4cb",
+        "e7d95a4d-e03c-48dc-9776-9b63eb8c38d7"
+      ],
+      [
+        ".skyTextures.to.uuid",
+        "bdab3e54-b3fe-4b01-a5db-e7daf1281f71",
+        "4b55899f-2bea-4a83-9d57-8b362228d3d0"
+      ],
+      [
+        ".terrainRaster.cache.hits",
+        1658,
+        6850
+      ],
+      [
+        ".terrainRaster.cache.requests",
+        1806,
+        6999
+      ],
+      [
+        ".terrainRaster.cache.submissions",
+        148,
+        149
+      ],
+      [
+        ".terrainRaster.shadow.cache.hits",
+        1805,
+        6998
+      ],
+      [
+        ".terrainRaster.shadow.cache.requests",
+        1806,
+        6999
+      ],
+      [
+        ".weather.precipitationBounds[0]",
+        -3.359375,
+        -3.671875
+      ],
+      [
+        ".weather.precipitationBounds[1]",
+        -2.0234375,
+        -2.1328125
+      ],
+      [
+        ".weather.precipitationBounds[2]",
+        2.265625,
+        2.421875
+      ]
+    ],
+    "side": [
+      [
+        ".anatomyVariant",
+        null,
+        "source-axis-outflow-horizontal-translation"
+      ],
+      [
+        ".clocks.weatherTime",
+        40.70380000000004,
+        80.83930000000136
+      ],
+      [
+        ".frame.date",
+        "2026-10-17T03:03:41.872Z",
+        "2026-10-17T03:13:27.279Z"
+      ],
+      [
+        ".frame.localSnapshotTime",
+        62664.200000047684,
+        188051
+      ],
+      [
+        ".frame.localTimeOrigin",
+        1792206159208.5,
+        1792206619228.9
+      ],
+      [
+        ".frame.ownerDrawSerial",
+        3343,
+        10907
+      ],
+      [
+        ".frame.rafTimestamp",
+        62663.7,
+        188049.5
+      ],
+      [
+        ".material.supportMax[0]",
+        5.56953125,
+        5.53046875
+      ],
+      [
+        ".material.supportMax[2]",
+        2.943046875,
+        2.970390625
+      ],
+      [
+        ".material.supportMin[0]",
+        -4.86640625,
+        -5.29609375
+      ],
+      [
+        ".material.supportMin[2]",
+        -3.052421875,
+        -3.079765625
+      ],
+      [
+        ".rendererVersion",
+        "observatory-v61-observed-terrain-material",
+        "experiment-v61-source-anchored-outflow-r1"
+      ],
+      [
+        ".skyTextures.from.uuid",
+        "e6903f9c-852d-41de-950c-afcea923b4cb",
+        "e7d95a4d-e03c-48dc-9776-9b63eb8c38d7"
+      ],
+      [
+        ".skyTextures.to.uuid",
+        "bdab3e54-b3fe-4b01-a5db-e7daf1281f71",
+        "4b55899f-2bea-4a83-9d57-8b362228d3d0"
+      ],
+      [
+        ".terrainRaster.cache.hits",
+        3189,
+        10750
+      ],
+      [
+        ".terrainRaster.cache.requests",
+        3344,
+        10908
+      ],
+      [
+        ".terrainRaster.cache.submissions",
+        155,
+        158
+      ],
+      [
+        ".terrainRaster.shadow.cache.hits",
+        3343,
+        10907
+      ],
+      [
+        ".terrainRaster.shadow.cache.requests",
+        3344,
+        10908
+      ],
+      [
+        ".weather.precipitationBounds[0]",
+        -3.359375,
+        -3.671875
+      ],
+      [
+        ".weather.precipitationBounds[1]",
+        -2.0234375,
+        -2.1328125
+      ],
+      [
+        ".weather.precipitationBounds[2]",
+        2.265625,
+        2.421875
+      ]
+    ]
+  }
+}
