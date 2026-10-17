@@ -1,0 +1,114 @@
+--- a/src/cumulonimbus/volume.ts
++++ b/src/cumulonimbus/volume.ts
+@@ -3,7 +3,7 @@
+ export {SUN_LEFT,SUN_RIGHT} from './sun';
+ import { THERMAL_DISPLACEMENT } from './motion';
+ import {
+-  prepareContinuousOutflow, CONTINUOUS_OUTFLOW_ROUNDOFF_SLACK_KM,
++  prepareContinuousOutflow, forEachContinuousOutflowRow, CONTINUOUS_OUTFLOW_ROUNDOFF_SLACK_KM,
+   type ContinuousOutflowLobe, type PreparedContinuousOutflow, type ContinuousOutflowStats,
+ } from './continuousOutflow';
+ /** World bounds and extinction are shared by the bake and ray integrator. */
+@@ -169,7 +169,7 @@
+     maxFieldErrorKm:Math.min(...BOUNDS_SIZE)/size/8,
+     negativeBandKm:Math.max(.35,supportMargin+.16+CONTINUOUS_OUTFLOW_ROUNDOFF_SLACK_KM),
+     grid:{min:BOUNDS_MIN,size:BOUNDS_SIZE,resolution:size},
+-    maxKernels:4096,maxRasterVoxelVisits:256_000_000,maxEnvelopeBytes:16*1024*1024,
++    maxKernels:4096,maxRasterVoxelVisits:256_000_000,maxEnvelopeBytes:16*1024*1024,maxRowSetupCount:16_000_000,
+   });
+ }
+ 
+@@ -178,7 +178,7 @@
+  */
+ export function rasterizeContinuousOutflow(
+   field:Float32Array,size:number,
+-  prepared:Pick<PreparedContinuousOutflow,'kernels'|'raster'> & {stats:Pick<ContinuousOutflowStats,'fieldFloorKm'>},
++  prepared:Pick<PreparedContinuousOutflow,'kernels'|'raster'> & {stats:Pick<ContinuousOutflowStats,'fieldFloorKm'|'negativeBandKm'>},
+ ):void {
+   if(field.length!==size**3)throw new RangeError('Outflow raster needs its native field');
+   const floor=prepared.stats.fieldFloorKm;
+@@ -188,13 +188,17 @@
+   if(width<1||height<1||depth<1||voxelCount!==width*height*depth||bytes!==voxelCount*4||bytes>16*1024*1024)
+     throw new RangeError('Outflow raster envelope exceeds its owner budget');
+   const local=new Float32Array(voxelCount);local.fill(floor);
+-  for(const {lobe:[cx,cy,cz,rx,ry,rz],start:lo,end:hi} of prepared.kernels) {
+-    for(let z=lo[2];z<=hi[2];z++)for(let y=lo[1];y<=hi[1];y++)for(let x=lo[0];x<=hi[0];x++) {
+-      const px=voxelCenter(x,0,size),py=voxelCenter(y,1,size),pz=voxelCenter(z,2,size);
+-      const sd=(1-Math.sqrt(((px-cx)/rx)**2+((py-cy)/ry)**2+((pz-cz)/rz)**2))*Math.min(rx,ry,rz);
+-      const index=((z-start[2])*height+y-start[1])*width+x-start[0];
+-      if(sd>local[index])local[index]=sd;
+-    }
++  const grid={min:BOUNDS_MIN,size:BOUNDS_SIZE,resolution:size};
++  for(const kernel of prepared.kernels) {
++    const [cx,cy,cz,rx,ry,rz]=kernel.lobe;
++    forEachContinuousOutflowRow(kernel,grid,prepared.stats.negativeBandKm,(z,y,startX,endX)=>{
++      for(let x=startX;x<=endX;x++) {
++        const px=voxelCenter(x,0,size),py=voxelCenter(y,1,size),pz=voxelCenter(z,2,size);
++        const sd=(1-Math.sqrt(((px-cx)/rx)**2+((py-cy)/ry)**2+((pz-cz)/rz)**2))*Math.min(rx,ry,rz);
++        const index=((z-start[2])*height+y-start[1])*width+x-start[0];
++        if(sd>local[index])local[index]=sd;
++      }
++    });
+   }
+   for(let z=start[2];z<=end[2];z++)for(let y=start[1];y<=end[1];y++)for(let x=start[0];x<=end[0];x++) {
+     const sd=local[((z-start[2])*height+y-start[1])*width+x-start[0]];
+--- a/src/cumulonimbus/continuousOutflow.layout.test.ts
++++ b/src/cumulonimbus/continuousOutflow.layout.test.ts
+@@ -63,6 +63,7 @@
+     expect(prepared.stats.fieldErrorBoundKm).toBeLessThanOrEqual(7/size/8);
+     expect(prepared.stats.kernelCount).toBeLessThanOrEqual(4096);
+     expect(prepared.stats.totalRasterVoxelVisits).toBeLessThanOrEqual(256_000_000);
++    expect(prepared.stats.rowSetupCount).toBeLessThanOrEqual(16_000_000);
+     expect(prepared.raster.bytes).toBeLessThanOrEqual(16*1024*1024);
+     expect(prepared.sample(0,3,0)).toBe(.1);
+   });
+@@ -74,7 +75,7 @@
+   });
+   const input=(kernels:readonly ContinuousOutflowKernel[],lastX=1)=>({
+     kernels,raster:{start:[1,1,1] as const,end:[lastX,1,1] as const,voxelCount:lastX,bytes:lastX*4},
+-    stats:{fieldFloorKm:-.35},
++    stats:{fieldFloorKm:-.35,negativeBandKm:.35},
+   });
+ 
+   it('MAXes coincident kernels before the single blend, rather than inflating with one blend per kernel',()=>{
+@@ -106,7 +107,39 @@
+     expect(()=>rasterizeContinuousOutflow(new Float32Array(1),size,input([]))).toThrow('native field');
+     const over=input([],4_194_305);
+     expect(()=>rasterizeContinuousOutflow(new Float32Array(size**3),size,over)).toThrow('owner budget');
+-    expect(()=>rasterizeContinuousOutflow(new Float32Array(size**3),size,{...input([]),stats:{fieldFloorKm:NaN}}))
++    expect(()=>rasterizeContinuousOutflow(new Float32Array(size**3),size,{...input([]),stats:{...input([]).stats,fieldFloorKm:NaN}}))
+       .toThrow('field floor');
+   });
++
++  it('matches the frozen AABB traversal bit-for-bit on a bounded unequal-section fixture',()=>{
++    const nativeSize=16;
++    const frames:readonly [ContinuousOutflowLobe,ContinuousOutflowLobe,ContinuousOutflowLobe]=[
++      [-.6,2.6,-.2,.7,.35,.55],[.05,3.6,.2,.5,.8,.4],[.8,4.5,.25,1.1,.2,.6],
++    ];
++    const prepared=prepareVolumeContinuousOutflow(frames,nativeSize);
++    const actual=new Float32Array(nativeSize**3);
++    for(let i=0;i<actual.length;i++)actual[i]=(i%11)*.04-.1;
++    const expected=new Float32Array(actual);
++    // Deliberately retain the R1 AABB method as the independent traversal
++    // reference. Same sd/F32 MAX/blend; only the set of visited points changes.
++    const {start,end,voxelCount}=prepared.raster;
++    const width=end[0]-start[0]+1,height=end[1]-start[1]+1;
++    const local=new Float32Array(voxelCount);local.fill(prepared.stats.fieldFloorKm);
++    for(const {lobe:[cx,cy,cz,rx,ry,rz],start:lo,end:hi} of prepared.kernels)
++      for(let z=lo[2];z<=hi[2];z++)for(let y=lo[1];y<=hi[1];y++)for(let x=lo[0];x<=hi[0];x++){
++        const px=voxelCenter(x,0,nativeSize),py=voxelCenter(y,1,nativeSize),pz=voxelCenter(z,2,nativeSize);
++        const sd=(1-Math.sqrt(((px-cx)/rx)**2+((py-cy)/ry)**2+((pz-cz)/rz)**2))*Math.min(rx,ry,rz);
++        const offset=((z-start[2])*height+y-start[1])*width+x-start[0];
++        if(sd>local[offset])local[offset]=sd;
++      }
++    for(let z=start[2];z<=end[2];z++)for(let y=start[1];y<=end[1];y++)for(let x=start[0];x<=end[0];x++){
++      const sd=local[((z-start[2])*height+y-start[1])*width+x-start[0]];
++      const offset=(z*nativeSize+y)*nativeSize+x,old=expected[offset],blend=.16;
++      const h=Math.max(0,Math.min(1,.5+.5*(old-sd)/blend));
++      expected[offset]=sd+(old-sd)*h+blend*h*(1-h);
++    }
++    rasterizeContinuousOutflow(actual,nativeSize,prepared);
++    expect(new Uint32Array(actual.buffer)).toEqual(new Uint32Array(expected.buffer));
++    expect(prepared.stats.kernelVoxelVisits).toBeLessThanOrEqual(prepared.stats.kernelAabbVoxelVisits);
++  });
+ });

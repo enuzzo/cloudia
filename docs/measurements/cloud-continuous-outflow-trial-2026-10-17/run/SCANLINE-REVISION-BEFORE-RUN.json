@@ -1,0 +1,30 @@
+{
+  "kind": "same-field-raster-efficiency-revision-before-execution",
+  "previousIntegratedR1": {
+    "sourceFreeze144SHA256": "be4e30b0283e393285a1fa077ddc5e792fa1868255dce7a4c4b064ea09ffeea1",
+    "backupManifestSHA256": "ba601cb181ed88dded5b51675fa2661b5c3a1d5b1105a43460cbb7ef5a554b49",
+    "preflightResultSHA256": "c9b27961f182960bbbd6a393e0496db245365b624a26ebb6248d7e1c91589f94",
+    "status": "FAIL_PREPARE_GATE",
+    "failedSeed": 74,
+    "partialRasterVisitsAtStop": 256603112,
+    "partialIsNotCompleteCost": true,
+    "allFiveRecipeIdentities": "PASS",
+    "prepareRowsCompleted": 0,
+    "modelRasterGPU": "Not executed"
+  },
+  "newImplementation": "Same parameter grid, ellipsoid tuples, clipped finite MAX and one smooth-union.16. Enumerate negative-band ellipsoid z/y scanlines and conservative x ranges instead of visiting all corners of each Cartesian AABB.",
+  "preserve": "No change to keyframes, radii, RNG, contraction, t-grid certificate, epsilon or band. Same density/carving/light/render quality. Source proof plus bounded bitexact old-box-versus-new-row Float32 fixtures required before actual prefix/prepare.",
+  "numericCulling": "Conservative guard applies to z/y rejection and x bounds, accounts for fieldFloor Float32 comparison and existing nonformal conditioning reserve. Do not claim a full IEEE proof absent one.",
+  "fixedCaps": {
+    "kernels": 4096,
+    "pointVisitsPlusSingleMerge": 256000000,
+    "localEnvelopeBytes": 16777216,
+    "newExplicitRowSetupCount": 16000000,
+    "prepareProcessCpuSeconds": 6,
+    "prepareProcessWallSeconds": 10,
+    "prepareProcessRssBytes": 402653184
+  },
+  "accounting": "Report Cartesian candidate count, conservative row point visits, rows/setup work and merge separately. Omitting field evaluations is an algorithm change, not a new definition of those evaluations or an FPS claim.",
+  "execution": "No new run authorized until revised source/helper/tests/independent review and new input pins are frozen. Never overwrite/retry the failed R1 artifacts or raise its caps.",
+  "visualGate": "Unchanged native74 front/side then near/other families/weather/motion/FPS only after initial benefit; full goal remains active."
+}

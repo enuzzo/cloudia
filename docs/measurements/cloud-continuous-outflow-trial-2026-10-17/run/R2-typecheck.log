@@ -1,0 +1,8 @@
+
+> cloudia@0.0.0 typecheck
+> tsc --noEmit
+
+src/cumulonimbus/continuousOutflow.test.ts(37,36): error TS2556: A spread argument must either have a tuple type or be passed to a rest parameter.
+src/cumulonimbus/continuousOutflow.test.ts(37,60): error TS2556: A spread argument must either have a tuple type or be passed to a rest parameter.
+src/cumulonimbus/continuousOutflow.test.ts(93,51): error TS2556: A spread argument must either have a tuple type or be passed to a rest parameter.
+src/cumulonimbus/continuousOutflow.test.ts(93,75): error TS2556: A spread argument must either have a tuple type or be passed to a rest parameter.

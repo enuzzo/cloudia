@@ -1,0 +1,190 @@
+[
+  [
+    ".anatomyVariant",
+    null,
+    "continuous-neck-top-cap-envelope"
+  ],
+  [
+    ".clocks.weatherTime",
+    14.517500000000005,
+    13.96930000000002
+  ],
+  [
+    ".continuousOutflow",
+    null,
+    {
+      "kernelCount": 601,
+      "kernelVoxelVisits": 195681804,
+      "kernelAabbVoxelVisits": 372803790,
+      "rowSetupCount": 4991608,
+      "rowCount": 3738093,
+      "rowBoundaryCheckCount": 6836734,
+      "rowFallbackCount": 0,
+      "xPeakSearchComparisons": 4089,
+      "guardEvaluations": 11828342,
+      "rowAnalyticRootCount": 3738093,
+      "totalGenerationKernelEvaluations": 219338488,
+      "totalGenerationWork": 222486942,
+      "totalGenerationRowSetupCount": 9983216,
+      "mergeVoxelVisits": 3148454,
+      "totalRasterVoxelVisits": 210658600,
+      "envelopeBytes": 12593816,
+      "analyticErrorBoundKm": 0.003415611353780835,
+      "floatingPointGuardKm": 1e-06,
+      "fieldErrorBoundKm": 0.0034166113537808353,
+      "fieldFloorKm": -0.35,
+      "errorScope": "clipped-field-on-native-raster-domain",
+      "floatingPointGuardIsFormal": false,
+      "negativeBandKm": 0.35,
+      "positiveBounds": {
+        "min": [
+          -0.9714039227687479,
+          2.6589365443954476,
+          -1.5952337426366283
+        ],
+        "max": [
+          1.9204591037755847,
+          5.4871494397671885,
+          1.1698380779335273
+        ]
+      },
+      "negativeBounds": {
+        "min": [
+          -2.0483357127696116,
+          2.077230569739796,
+          -2.8801896262480082
+        ],
+        "max": [
+          2.9973908937764486,
+          6.06885541442284,
+          2.4547939615449073
+        ]
+      },
+      "errorDomain": {
+        "min": [
+          -2.05078125,
+          2.0732421875,
+          -2.884765625
+        ],
+        "max": [
+          3.02734375,
+          6.0908203125,
+          2.474609375
+        ]
+      },
+      "parameterIntervals": [
+        {
+          "segment": 0,
+          "from": 0,
+          "to": 0.6912778261660913,
+          "minAxis": 0,
+          "derivativeBoundKm": 1.1716809699371347,
+          "boxDerivativeBoundKm": 1.5432479215612322,
+          "activeDerivativeBoundKm": 1.1716809699371347,
+          "steps": 119,
+          "errorBoundKm": 0.0034031809825979826
+        },
+        {
+          "segment": 0,
+          "from": 0.6912778261660913,
+          "to": 1,
+          "minAxis": 0,
+          "derivativeBoundKm": 1.362296960254768,
+          "boxDerivativeBoundKm": 2.1143424471349084,
+          "activeDerivativeBoundKm": 1.362296960254768,
+          "steps": 62,
+          "errorBoundKm": 0.0033917038627191763
+        },
+        {
+          "segment": 1,
+          "from": 0,
+          "to": 0.05252157532872829,
+          "minAxis": 0,
+          "derivativeBoundKm": 2.527562435807683,
+          "boxDerivativeBoundKm": 3.8040702893926026,
+          "activeDerivativeBoundKm": 2.527562435807683,
+          "steps": 20,
+          "errorBoundKm": 0.0033187890217584296
+        },
+        {
+          "segment": 1,
+          "from": 0.05252157532872829,
+          "to": 1,
+          "minAxis": 1,
+          "derivativeBoundKm": 2.8767492634597724,
+          "boxDerivativeBoundKm": 5.189994175454174,
+          "activeDerivativeBoundKm": 2.8767492634597724,
+          "steps": 399,
+          "errorBoundKm": 0.003415611353780835
+        }
+      ],
+      "retiredCollars": 3,
+      "retiredPrimitives": 273
+    }
+  ],
+  [
+    ".frame.date",
+    "2026-10-17T03:34:22.089Z",
+    "2026-10-17T04:01:06.388Z"
+  ],
+  [
+    ".frame.localSnapshotTime",
+    49565.09999990463,
+    29424.900000095367
+  ],
+  [
+    ".frame.localTimeOrigin",
+    1792208012526.4,
+    1792209636963.8
+  ],
+  [
+    ".frame.ownerDrawSerial",
+    2561,
+    1312
+  ],
+  [
+    ".frame.rafTimestamp",
+    49564.4,
+    29424.3
+  ],
+  [
+    ".rendererVersion",
+    "observatory-v61-observed-terrain-material",
+    "experiment-v61-continuous-outflow-r2"
+  ],
+  [
+    ".skyTextures.from.uuid",
+    "36befba9-ebe4-4f32-bb23-d9d3aaf02d13",
+    "a9890e34-56b1-40ec-8713-45e919670a29"
+  ],
+  [
+    ".skyTextures.to.uuid",
+    "8177f0da-ce64-4599-ac5a-37020bfa9000",
+    "796d66b4-9e8d-4017-b951-bba5167bb37e"
+  ],
+  [
+    ".terrainRaster.cache.hits",
+    2413,
+    1165
+  ],
+  [
+    ".terrainRaster.cache.requests",
+    2562,
+    1313
+  ],
+  [
+    ".terrainRaster.cache.submissions",
+    149,
+    148
+  ],
+  [
+    ".terrainRaster.shadow.cache.hits",
+    2561,
+    1312
+  ],
+  [
+    ".terrainRaster.shadow.cache.requests",
+    2562,
+    1313
+  ]
+]

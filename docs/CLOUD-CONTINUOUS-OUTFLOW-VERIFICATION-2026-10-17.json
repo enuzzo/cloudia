@@ -1,0 +1,25 @@
+{
+  "status": "PASS_CONSERVATION_ONLY",
+  "scope": "Archive byte/source/PNG/part/alias integrity only; no model, recipe, raster, build, tests, GPU or FPS rerun; original preflight/fullsuite/visual FAIL and input-counter qualification retained.",
+  "manifestSHA256": "5f1824f6922e4e84d3fbdcc0580f0f30737c287808c959a85986bd46f8afed98",
+  "payloadFiles": 142,
+  "payloadBytes": 7389215,
+  "canonicalFilesVerified": 141,
+  "candidateReconstructionFilesVerified": 144,
+  "sourceFreezeSHA256": "3b29dd3bc23258c7b40bbfc6871ebeb196af612b4b3c4768f5d922e972318d64",
+  "checks": [
+    "all142 payload exact",
+    "canonical141 current exact",
+    "candidate144 reconstruct fromcanonical+overlay7",
+    "B PNG fullsha,length,IHDR,74+28partsha",
+    "A freshDTO existingbitmapsha,length",
+    "failedfullsuite rawhash",
+    "R1FAIL andR2PASS distinct",
+    "inputqualification retained",
+    "rejectedoutcome",
+    "Dropboxignore1"
+  ],
+  "bytesRead": 120308121,
+  "wallSeconds": 0.101379832951352,
+  "gitHeadBeforeCheckpoint": "909d17a66f6820bc971e540dd4032163cde24c9f"
+}

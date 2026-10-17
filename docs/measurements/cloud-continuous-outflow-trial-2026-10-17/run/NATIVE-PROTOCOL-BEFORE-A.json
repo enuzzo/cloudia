@@ -1,0 +1,50 @@
+{
+  "kind": "continuous-outflow-native-initial-gate-v1",
+  "goalScope": "All original anatomy/near-light/rainvirga/terrain/UI/full-quality and FPS remain open",
+  "baseline": {
+    "renderer": "observatory-v61-observed-terrain-material",
+    "manifest141SHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+    "sourceVerifiedCurrent": true,
+    "url": "http://127.0.0.1:4196/",
+    "ownerSessionConfirmedLive": 48736
+  },
+  "candidate": "experiment-v61-continuous-outflow-r1; external only, source freeze/tests/preflight required before B GPU",
+  "camera": {
+    "seed": 74,
+    "target": [0.3515625, 3.119140625, -0.0546875],
+    "comparisonSurface": 0.7227685139973958,
+    "front": "Reset comparison, Sun left,14ArrowLeft+3ArrowDown at CSS1237x922",
+    "side": "From front16ArrowRight, yawdelta=-1.583185125303153rad",
+    "noReprobeOrRecenter": true,
+    "match": "Entire actual camera DTO fields per pose exactly"
+  },
+  "state": {
+    "macro": 256,
+    "detail": 128,
+    "nominalSteps": 384,
+    "nativeOutput": [2474, 1844],
+    "flow": "full",
+    "simulationTime": 60,
+    "paused": true,
+    "orbit": false,
+    "sun": "left settled clear",
+    "wind": 0.55,
+    "dispersion": 0,
+    "rainCurrentAndTarget": 0,
+    "storm": "auto false, cleared, flashCount0,flashW0"
+  },
+  "comparability": {
+    "mustMatch": "Camera world, full lighting, clear settled sky, material uniforms except derived support, weather controls except derived precipitation bounds, formats/output/quality and render-affecting clocks",
+    "expectedChanges": "rendererVersion/anatomyVariant, anatomy-derived support/precipitation bounds and density counts",
+    "ownerMetadata": "Capture/frame serials, timestamps, sky UUID, cache CPU request/hit counters including terrainRaster.shadow.cache.hits and requests, allocation/local ownership identifiers",
+    "weatherTimeExemption": "Explicit before A/B, only clear/paused/nonorbit/zeroRain/flashoff: existing engine increments wall weatherTime while paused, but only storm scheduling/flash uses it. All render-affecting clocks must match. Do not compare owner-local CPU counters as physical inputs.",
+    "notPhysicalInference": "No identical volume/density/lighting field or FPS claim from matching controls"
+  },
+  "captures": "Fresh actual A DTOs for both poses; exact existing A bitmap may be reused only after fresh export digest plus independent file rehash. All new B PNG parts transferred and SHA/length/IHDR checked.",
+  "initialVisualGate": "Root and independent reviewer inspect full native front+side74. Benefit in both required. FAIL if same cap/neck/U persists without benefit, new wall/cushion/steps or closer support alone disguises the issue.",
+  "stop": "After initial visualFAIL no tuning, near/extra GPU seeds, worker/weather/motion/FPS adoption qualification. Preserve failed candidate separately and restore v61 ordinary.",
+  "ifBenefit": "Continue frozen-world actual near,77/80 and72/73 identity, main-worker/weather/motion and full-quality performance before any adoption. Initial narrow PASS never completes the goal.",
+  "nativeHandling": "CUA Playwright existing IAB tab only, one active GPU owner. UI chunk reads <=16384, complete PNG transfer ledger. No alternate browser/hidden runtime APIs.",
+  "capsSeconds": {"browserObservation": 45,"nativeTransferEach": 60},
+  "newUserApprovalRequired": false
+}

@@ -1,0 +1,13 @@
+{
+  "rows": [
+    {
+      "phase": "typecheck",
+      "exitCode": 2,
+      "wallSeconds": 1.6849305420182645,
+      "capSeconds": 30,
+      "logSHA256": "d1e8a7eaa767adf2d34b30099b3cca291074d62e98a5d00bcfbb3b04186f0c3d"
+    }
+  ],
+  "scope": "Typecheck and APP compile only; no cloud model/raster/browser/GPU/FPS",
+  "source144Freeze": "30c3ce126c18d6ce9c5937777452a514caabfee147c373561c7847185ac0f950"
+}

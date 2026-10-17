@@ -1,0 +1,14 @@
+{
+  "scope": "Only10synthetic helper tests, no actualrecipe/densevolume/bake/browser/GPU",
+  "command": [
+    "npm",
+    "test",
+    "--",
+    "src/cumulonimbus/continuousOutflow.test.ts",
+    "--reporter=dot"
+  ],
+  "exitCode": 0,
+  "wallSeconds": 1.0516752080293372,
+  "wallCapSeconds": 30,
+  "logSHA256": "472288943798d1c719e16a85956a1d25adfa2d76497e346adffdc9113120ec71"
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "cloudia-continuous-outflow-revision-record-v1",
+  "revision": "R2",
+  "previousFreeze": {
+    "path": "revisions/r1/FREEZE.json",
+    "sha256": "a6a39f4b16f84397584117744e030ff5fa8c328042768ddb203a3176a01cb487"
+  },
+  "reason": "Independent source/math review proves a tighter active-band derivative bound for H=max(-b,F). Change made before any actual keyframe/preflight/model/test execution, not selected from observed output.",
+  "changes": [
+    "Use min(M_box,M_active) for clipped-field sampling bound on common native raster domain",
+    "Initialize reference/future local envelope at -negativeBand rather than -Infinity",
+    "Add explicit clipped scope/floor/nonformal floating guard flags",
+    "Add one far-negative synthetic test and update oracle semantics"
+  ],
+  "unchanged": [
+    "neck->top->cap curve and authored keyframes",
+    "epsilon .00341796875km field",
+    "negative-band rule and1mm numerical reserve",
+    "4096 kernels/256000000 visits/16MiB caps",
+    "6CPU/10wall/384MiB future preflight gate",
+    "no actual data inspected or recipe executed"
+  ],
+  "execution": []
+}

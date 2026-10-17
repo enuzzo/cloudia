@@ -1,0 +1,9 @@
+[
+  "src/cumulonimbus/GPUSceneEngine.ts",
+  "src/cumulonimbus/continuousOutflow.layout.test.ts",
+  "src/cumulonimbus/continuousOutflow.test.ts",
+  "src/cumulonimbus/continuousOutflow.ts",
+  "src/cumulonimbus/layoutPrefix.test-helper.ts",
+  "src/cumulonimbus/lifecycle.test.ts",
+  "src/cumulonimbus/volume.ts"
+]

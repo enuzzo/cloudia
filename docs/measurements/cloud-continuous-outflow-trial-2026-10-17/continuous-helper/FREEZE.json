@@ -1,0 +1,41 @@
+{
+  "schema": "cloudia-continuous-outflow-helper-freeze-v3",
+  "revision": "R3",
+  "files": [
+    {
+      "path": "continuousOutflow.ts",
+      "bytes": 20523,
+      "sha256": "d87f162bda0303a05ec5e7bab85a68ef2ee3c983e23ddd1bdef54fccbb253de6"
+    },
+    {
+      "path": "continuousOutflow.test.ts",
+      "bytes": 12145,
+      "sha256": "e6831779b318830c96f3e4aa5a06d57b5705ab17b63ddc84178ad3e3f61c1a70"
+    },
+    {
+      "path": "README.md",
+      "bytes": 10487,
+      "sha256": "69f63990f80314b873ca6404aa4b4023877206580a4ef1ac83c3943348fb9b47"
+    },
+    {
+      "path": "PRE-RUN-PROTOCOL.json",
+      "bytes": 2219,
+      "sha256": "9e17e20cc9d1b69c0efe3c228c4149c7a546066c6f361ef00ac3736580c02775"
+    },
+    {
+      "path": "REVISION-R3.json",
+      "bytes": 1114,
+      "sha256": "575e6fc5881ddfd61f2857f460ffdfff3a5abe1b87477b79a0ef7b9d4d17321f"
+    }
+  ],
+  "preservedR2FreezeSHA256": "8b2a36e320072ce85fe120e1fc27504511f209bcf298535a5a7d71421485136d",
+  "scope": "external helper only; no product/candidate-source or prefix/model execution by this agent",
+  "execution": {
+    "R3tests": "NOT EXECUTED",
+    "typecheck": "NOT EXECUTED",
+    "prefix": "NOT EXECUTED",
+    "model": "NOT EXECUTED",
+    "build": "NOT EXECUTED",
+    "GPU": "NOT EXECUTED"
+  }
+}

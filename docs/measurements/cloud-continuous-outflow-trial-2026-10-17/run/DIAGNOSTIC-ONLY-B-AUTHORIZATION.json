@@ -1,0 +1,11 @@
+{
+  "decision": "Candidate is ineligible for adoption because preserved full-suite section occupancy test fails. One seed74 front/side B native diagnostic is authorized solely to relate morphology to this failure and choose next direction; no FPS, near, other seed or adoption gate can pass from it.",
+  "sourceFreezeSHA256": "3b29dd3bc23258c7b40bbfc6871ebeb196af612b4b3c4768f5d922e972318d64",
+  "fullSuite": {
+    "pass": 589,
+    "fail": 1,
+    "logSHA256": "fa4ea808740b5ccf70fe5d926bee042461f9a21581337c5f9b21fba92e73e1f4"
+  },
+  "nativeProtocol": "NATIVE-PROTOCOL-BEFORE-A.json",
+  "noShapeEditsAfterFailure": true
+}

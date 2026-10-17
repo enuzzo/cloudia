@@ -1,0 +1,36 @@
+{
+  "schema": "cloudia-continuous-outflow-pre-run-v1",
+  "state": "PREPARED_NOT_EXECUTED",
+  "source": "canonical v61 141-source, volume c349e8f7526a2dafa0348516079f3f67ab7288a17769f28193ebcef7e124d34d; no cycle39 R1 transform",
+  "model": "two continuous segments neck->top->first proximal cap; finite fixed t-grid; pure MAX then exactly one smooth union .16",
+  "fieldErrorKm": 0.00341796875,
+  "fieldErrorInterpretation": "scalar-field real-arithmetic bound plus explicit 1mm numerical reserve, not surface/density/GPU bit error",
+  "roundoffReserveKm": 1e-06,
+  "negativeBandRule": "max(.35,.13+hypot(10,8.5,7)/N+.16+roundoffReserveKm)",
+  "caps": {
+    "maxKernels": 4096,
+    "maxRasterVoxelVisits": 256000000,
+    "maxEnvelopeBytes": 16777216
+  },
+  "futureRootPreflight": {
+    "seeds": [
+      74,
+      77,
+      80,
+      72,
+      73
+    ],
+    "macroSize": 256,
+    "detailSize": 128,
+    "prefixOnly": true,
+    "prepareOnlyFor": "sheared",
+    "cpuSeconds": 6,
+    "wallSeconds": 10,
+    "rssBytes": 402653184,
+    "noRaster": true,
+    "noFullVolume": true,
+    "automaticRetry": false
+  },
+  "stop": "Any guard/extraction/resource failure is preserved. No full model or increase of tolerance/caps after observed numbers.",
+  "execution": []
+}

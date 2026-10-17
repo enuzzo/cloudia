@@ -1,0 +1,440 @@
+{
+  "status": "MATCH_RENDER_INPUTS_WITH_EXPLICIT_OWNER_COUNTER_QUALIFICATION",
+  "protocol": "NATIVE-PROTOCOL-BEFORE-A.json",
+  "diagnosticOnly": true,
+  "warning": "Not identical density, visual acceptance, GPU completion or FPS. Cache submissions are owner-local render attempts per actual metadata.",
+  "poses": {
+    "front": {
+      "status": "MATCH_CAMERA_LIGHTING_QUALITY_WITH_OWNER_COUNTER_QUALIFICATION",
+      "mismatches": [
+        [
+          ".anatomyVariant",
+          null,
+          "continuous-neck-top-cap-envelope"
+        ],
+        [
+          ".clocks.weatherTime",
+          14.517500000000005,
+          13.96930000000002
+        ],
+        [
+          ".continuousOutflow",
+          null,
+          {
+            "kernelCount": 601,
+            "kernelVoxelVisits": 195681804,
+            "kernelAabbVoxelVisits": 372803790,
+            "rowSetupCount": 4991608,
+            "rowCount": 3738093,
+            "rowBoundaryCheckCount": 6836734,
+            "rowFallbackCount": 0,
+            "xPeakSearchComparisons": 4089,
+            "guardEvaluations": 11828342,
+            "rowAnalyticRootCount": 3738093,
+            "totalGenerationKernelEvaluations": 219338488,
+            "totalGenerationWork": 222486942,
+            "totalGenerationRowSetupCount": 9983216,
+            "mergeVoxelVisits": 3148454,
+            "totalRasterVoxelVisits": 210658600,
+            "envelopeBytes": 12593816,
+            "analyticErrorBoundKm": 0.003415611353780835,
+            "floatingPointGuardKm": 1e-06,
+            "fieldErrorBoundKm": 0.0034166113537808353,
+            "fieldFloorKm": -0.35,
+            "errorScope": "clipped-field-on-native-raster-domain",
+            "floatingPointGuardIsFormal": false,
+            "negativeBandKm": 0.35,
+            "positiveBounds": {
+              "min": [
+                -0.9714039227687479,
+                2.6589365443954476,
+                -1.5952337426366283
+              ],
+              "max": [
+                1.9204591037755847,
+                5.4871494397671885,
+                1.1698380779335273
+              ]
+            },
+            "negativeBounds": {
+              "min": [
+                -2.0483357127696116,
+                2.077230569739796,
+                -2.8801896262480082
+              ],
+              "max": [
+                2.9973908937764486,
+                6.06885541442284,
+                2.4547939615449073
+              ]
+            },
+            "errorDomain": {
+              "min": [
+                -2.05078125,
+                2.0732421875,
+                -2.884765625
+              ],
+              "max": [
+                3.02734375,
+                6.0908203125,
+                2.474609375
+              ]
+            },
+            "parameterIntervals": [
+              {
+                "segment": 0,
+                "from": 0,
+                "to": 0.6912778261660913,
+                "minAxis": 0,
+                "derivativeBoundKm": 1.1716809699371347,
+                "boxDerivativeBoundKm": 1.5432479215612322,
+                "activeDerivativeBoundKm": 1.1716809699371347,
+                "steps": 119,
+                "errorBoundKm": 0.0034031809825979826
+              },
+              {
+                "segment": 0,
+                "from": 0.6912778261660913,
+                "to": 1,
+                "minAxis": 0,
+                "derivativeBoundKm": 1.362296960254768,
+                "boxDerivativeBoundKm": 2.1143424471349084,
+                "activeDerivativeBoundKm": 1.362296960254768,
+                "steps": 62,
+                "errorBoundKm": 0.0033917038627191763
+              },
+              {
+                "segment": 1,
+                "from": 0,
+                "to": 0.05252157532872829,
+                "minAxis": 0,
+                "derivativeBoundKm": 2.527562435807683,
+                "boxDerivativeBoundKm": 3.8040702893926026,
+                "activeDerivativeBoundKm": 2.527562435807683,
+                "steps": 20,
+                "errorBoundKm": 0.0033187890217584296
+              },
+              {
+                "segment": 1,
+                "from": 0.05252157532872829,
+                "to": 1,
+                "minAxis": 1,
+                "derivativeBoundKm": 2.8767492634597724,
+                "boxDerivativeBoundKm": 5.189994175454174,
+                "activeDerivativeBoundKm": 2.8767492634597724,
+                "steps": 399,
+                "errorBoundKm": 0.003415611353780835
+              }
+            ],
+            "retiredCollars": 3,
+            "retiredPrimitives": 273
+          }
+        ],
+        [
+          ".frame.date",
+          "2026-10-17T03:34:22.089Z",
+          "2026-10-17T04:01:06.388Z"
+        ],
+        [
+          ".frame.localSnapshotTime",
+          49565.09999990463,
+          29424.900000095367
+        ],
+        [
+          ".frame.localTimeOrigin",
+          1792208012526.4,
+          1792209636963.8
+        ],
+        [
+          ".frame.ownerDrawSerial",
+          2561,
+          1312
+        ],
+        [
+          ".frame.rafTimestamp",
+          49564.4,
+          29424.3
+        ],
+        [
+          ".rendererVersion",
+          "observatory-v61-observed-terrain-material",
+          "experiment-v61-continuous-outflow-r2"
+        ],
+        [
+          ".skyTextures.from.uuid",
+          "36befba9-ebe4-4f32-bb23-d9d3aaf02d13",
+          "a9890e34-56b1-40ec-8713-45e919670a29"
+        ],
+        [
+          ".skyTextures.to.uuid",
+          "8177f0da-ce64-4599-ac5a-37020bfa9000",
+          "796d66b4-9e8d-4017-b951-bba5167bb37e"
+        ],
+        [
+          ".terrainRaster.cache.hits",
+          2413,
+          1165
+        ],
+        [
+          ".terrainRaster.cache.requests",
+          2562,
+          1313
+        ],
+        [
+          ".terrainRaster.cache.submissions",
+          149,
+          148
+        ],
+        [
+          ".terrainRaster.shadow.cache.hits",
+          2561,
+          1312
+        ],
+        [
+          ".terrainRaster.shadow.cache.requests",
+          2562,
+          1313
+        ]
+      ],
+      "unexpected": [],
+      "aPNG": {
+        "mime": "image/png",
+        "width": 2474,
+        "height": 1844,
+        "byteLength": 3599836,
+        "sha256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9"
+      },
+      "bPNG": {
+        "mime": "image/png",
+        "width": 2474,
+        "height": 1844,
+        "byteLength": 3598468,
+        "sha256": "60757e475a67cb50976d220f4d8fee5444ad494c65ab85aeb0ed3af08349af97"
+      },
+      "notExplicitlyNamedBeforeB": [
+        [
+          ".terrainRaster.cache.submissions",
+          149,
+          148
+        ]
+      ]
+    },
+    "side": {
+      "status": "MATCH_CAMERA_LIGHTING_QUALITY_WITH_OWNER_COUNTER_QUALIFICATION",
+      "mismatches": [
+        [
+          ".anatomyVariant",
+          null,
+          "continuous-neck-top-cap-envelope"
+        ],
+        [
+          ".clocks.weatherTime",
+          38.58570000000003,
+          94.4576000000027
+        ],
+        [
+          ".continuousOutflow",
+          null,
+          {
+            "kernelCount": 601,
+            "kernelVoxelVisits": 195681804,
+            "kernelAabbVoxelVisits": 372803790,
+            "rowSetupCount": 4991608,
+            "rowCount": 3738093,
+            "rowBoundaryCheckCount": 6836734,
+            "rowFallbackCount": 0,
+            "xPeakSearchComparisons": 4089,
+            "guardEvaluations": 11828342,
+            "rowAnalyticRootCount": 3738093,
+            "totalGenerationKernelEvaluations": 219338488,
+            "totalGenerationWork": 222486942,
+            "totalGenerationRowSetupCount": 9983216,
+            "mergeVoxelVisits": 3148454,
+            "totalRasterVoxelVisits": 210658600,
+            "envelopeBytes": 12593816,
+            "analyticErrorBoundKm": 0.003415611353780835,
+            "floatingPointGuardKm": 1e-06,
+            "fieldErrorBoundKm": 0.0034166113537808353,
+            "fieldFloorKm": -0.35,
+            "errorScope": "clipped-field-on-native-raster-domain",
+            "floatingPointGuardIsFormal": false,
+            "negativeBandKm": 0.35,
+            "positiveBounds": {
+              "min": [
+                -0.9714039227687479,
+                2.6589365443954476,
+                -1.5952337426366283
+              ],
+              "max": [
+                1.9204591037755847,
+                5.4871494397671885,
+                1.1698380779335273
+              ]
+            },
+            "negativeBounds": {
+              "min": [
+                -2.0483357127696116,
+                2.077230569739796,
+                -2.8801896262480082
+              ],
+              "max": [
+                2.9973908937764486,
+                6.06885541442284,
+                2.4547939615449073
+              ]
+            },
+            "errorDomain": {
+              "min": [
+                -2.05078125,
+                2.0732421875,
+                -2.884765625
+              ],
+              "max": [
+                3.02734375,
+                6.0908203125,
+                2.474609375
+              ]
+            },
+            "parameterIntervals": [
+              {
+                "segment": 0,
+                "from": 0,
+                "to": 0.6912778261660913,
+                "minAxis": 0,
+                "derivativeBoundKm": 1.1716809699371347,
+                "boxDerivativeBoundKm": 1.5432479215612322,
+                "activeDerivativeBoundKm": 1.1716809699371347,
+                "steps": 119,
+                "errorBoundKm": 0.0034031809825979826
+              },
+              {
+                "segment": 0,
+                "from": 0.6912778261660913,
+                "to": 1,
+                "minAxis": 0,
+                "derivativeBoundKm": 1.362296960254768,
+                "boxDerivativeBoundKm": 2.1143424471349084,
+                "activeDerivativeBoundKm": 1.362296960254768,
+                "steps": 62,
+                "errorBoundKm": 0.0033917038627191763
+              },
+              {
+                "segment": 1,
+                "from": 0,
+                "to": 0.05252157532872829,
+                "minAxis": 0,
+                "derivativeBoundKm": 2.527562435807683,
+                "boxDerivativeBoundKm": 3.8040702893926026,
+                "activeDerivativeBoundKm": 2.527562435807683,
+                "steps": 20,
+                "errorBoundKm": 0.0033187890217584296
+              },
+              {
+                "segment": 1,
+                "from": 0.05252157532872829,
+                "to": 1,
+                "minAxis": 1,
+                "derivativeBoundKm": 2.8767492634597724,
+                "boxDerivativeBoundKm": 5.189994175454174,
+                "activeDerivativeBoundKm": 2.8767492634597724,
+                "steps": 399,
+                "errorBoundKm": 0.003415611353780835
+              }
+            ],
+            "retiredCollars": 3,
+            "retiredPrimitives": 273
+          }
+        ],
+        [
+          ".frame.date",
+          "2026-10-17T03:34:46.157Z",
+          "2026-10-17T04:02:26.877Z"
+        ],
+        [
+          ".frame.localSnapshotTime",
+          73633.29999995232,
+          109913.60000002384
+        ],
+        [
+          ".frame.localTimeOrigin",
+          1792208012526.4,
+          1792209636963.8
+        ],
+        [
+          ".frame.ownerDrawSerial",
+          4002,
+          6139
+        ],
+        [
+          ".frame.rafTimestamp",
+          73632.6,
+          109912.6
+        ],
+        [
+          ".rendererVersion",
+          "observatory-v61-observed-terrain-material",
+          "experiment-v61-continuous-outflow-r2"
+        ],
+        [
+          ".skyTextures.from.uuid",
+          "36befba9-ebe4-4f32-bb23-d9d3aaf02d13",
+          "a9890e34-56b1-40ec-8713-45e919670a29"
+        ],
+        [
+          ".skyTextures.to.uuid",
+          "8177f0da-ce64-4599-ac5a-37020bfa9000",
+          "796d66b4-9e8d-4017-b951-bba5167bb37e"
+        ],
+        [
+          ".terrainRaster.cache.hits",
+          3847,
+          5986
+        ],
+        [
+          ".terrainRaster.cache.requests",
+          4003,
+          6140
+        ],
+        [
+          ".terrainRaster.cache.submissions",
+          156,
+          154
+        ],
+        [
+          ".terrainRaster.shadow.cache.hits",
+          4002,
+          6139
+        ],
+        [
+          ".terrainRaster.shadow.cache.requests",
+          4003,
+          6140
+        ]
+      ],
+      "unexpected": [],
+      "aPNG": {
+        "mime": "image/png",
+        "width": 2474,
+        "height": 1844,
+        "byteLength": 1359259,
+        "sha256": "c9c4681b03b9c4771c7be62974712b12b516e8b8717c22dc0907f18318aa2749"
+      },
+      "bPNG": {
+        "mime": "image/png",
+        "width": 2474,
+        "height": 1844,
+        "byteLength": 1341477,
+        "sha256": "e0b47ea7d238b6649e5720004dead4b832eb7c2db33777905bef4ce7664f9860"
+      },
+      "notExplicitlyNamedBeforeB": [
+        [
+          ".terrainRaster.cache.submissions",
+          156,
+          154
+        ]
+      ]
+    }
+  },
+  "qualification": "Initial classifier allowed terrainRaster.cache.submissions as owner-local render-attempt count. Pre-B prose named request/hit counters, but did not explicitly name submissions. Report this qualification rather than declaring an unqualified whole-DTO protocol PASS; no rerun or physical input change. Native metadata itself labels cache counters owner-local, not GPU completion or presentation.",
+  "initialClassifierSHA256": "4f3ee6340688488664ff082623a5447b94e0be5a2a151b309f3b59a437b3b5d0"
+}

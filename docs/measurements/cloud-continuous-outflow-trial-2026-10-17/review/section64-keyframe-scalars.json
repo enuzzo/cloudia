@@ -1,0 +1,105 @@
+{
+  "schema": "cloudia-section64-source-scalar-diagnosis-v1",
+  "sourceResultSHA256": "9e830cfc9df0a549029bf9ef03c8b800372a53b2d32118af9dac8ba91fbf64bb",
+  "testPointXYKm": [
+    0.5609226029381325,
+    4.0458440042043025
+  ],
+  "savedKeyframeIds": [
+    3,
+    4,
+    20
+  ],
+  "method": "Closed-form best-over-Z value of only three saved ellipsoids, two fixed midpoint interpolants, and the interpolant whose centreY equals testY. No optimiser, kernel table, grid, noise, recipe or density execution. These are not a maximum of the continuous envelope and not eroded density.",
+  "centerAtTestYParameter": 0.21028621158336283,
+  "rows": [
+    {
+      "label": "saved-neck",
+      "lobe": [
+        -0.2272187499071064,
+        3.8957850052633507,
+        -0.3413771115830025,
+        0.7441851728616415,
+        1.236848460867903,
+        1.017310057843372
+      ],
+      "bestZKm": -0.3413771115830025,
+      "xyNormalizedSquared": 1.1363406205132927,
+      "singleKernelMaxOverAllZKm": -0.04911085310460049
+    },
+    {
+      "label": "saved-top",
+      "lobe": [
+        0.04280943884321254,
+        4.609379100715798,
+        -0.3413771115830025,
+        0.7335287131069066,
+        0.7768848201179783,
+        0.8749298758919407
+      ],
+      "bestZKm": -0.3413771115830025,
+      "xyNormalizedSquared": 1.0250748678141421,
+      "singleKernelMaxOverAllZKm": -0.00913962873859855
+    },
+    {
+      "label": "saved-proximal",
+      "lobe": [
+        0.7617447139716137,
+        5.110570309875346,
+        -0.21269783235155046,
+        1.158714389803971,
+        0.3765791298918426,
+        1.3825359102850778
+      ],
+      "bestZKm": -0.21269783235155046,
+      "xyNormalizedSquared": 8.024025596537491,
+      "singleKernelMaxOverAllZKm": -0.6901456905930692
+    },
+    {
+      "label": "fixed-midpoint-segment-0",
+      "lobe": [
+        -0.09220465553194693,
+        4.252582052989574,
+        -0.3413771115830025,
+        0.7388569429842741,
+        1.0068666404929405,
+        0.9461199668676563
+      ],
+      "bestZKm": -0.3413771115830025,
+      "xyNormalizedSquared": 0.8235623322455469,
+      "singleKernelMaxOverAllZKm": 0.06834179124750321
+    },
+    {
+      "label": "fixed-midpoint-segment-1",
+      "lobe": [
+        0.4022770764074131,
+        4.859974705295572,
+        -0.27703747196727646,
+        0.9461215514554387,
+        0.5767319750049105,
+        1.1287328930885092
+      ],
+      "bestZKm": -0.27703747196727646,
+      "xyNormalizedSquared": 2.0208086600189175,
+      "singleKernelMaxOverAllZKm": -0.24312222771426464
+    },
+    {
+      "label": "neck-top-center-at-test-y",
+      "lobe": [
+        -0.1704355450740846,
+        4.0458440042043025,
+        -0.3413771115830025,
+        0.7419442663109278,
+        1.1401244493885103,
+        0.9873694687762556
+      ],
+      "bestZKm": -0.3413771115830025,
+      "xyNormalizedSquared": 0.9716674230187907,
+      "singleKernelMaxOverAllZKm": 0.010586118298710668
+    }
+  ],
+  "size64Contracts": {
+    "negativeBandKm": 0.522414668447555,
+    "maxFieldErrorKm": 0.013671875
+  }
+}

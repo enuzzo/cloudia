@@ -1,0 +1,91 @@
+{
+  "schema": "cloudia-continuous-native-independent-image-index-v1",
+  "files": [
+    {
+      "id": "a-front",
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/terrain-optical-material-2026-10-17/browser/candidate-b-native.png",
+      "bytes": 3599836,
+      "sha256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9",
+      "size": [
+        2474,
+        1844
+      ],
+      "crop": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle40/review/a-front-junction-native.png",
+      "PIL_LTRB": [
+        980,
+        280,
+        1590,
+        850
+      ],
+      "cropSHA256": "4feb5c04914c4108fc47a2259b7fa9a0a7ad9acf8f2bfaa9c70cce6fc086ff2f"
+    },
+    {
+      "id": "b-front",
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle40/browser/candidate-74-front.png",
+      "bytes": 3598468,
+      "sha256": "60757e475a67cb50976d220f4d8fee5444ad494c65ab85aeb0ed3af08349af97",
+      "size": [
+        2474,
+        1844
+      ],
+      "crop": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle40/review/b-front-junction-native.png",
+      "PIL_LTRB": [
+        980,
+        280,
+        1590,
+        850
+      ],
+      "cropSHA256": "98484379ee3b9b7401c2980ddcfe5ea15349b47aaa81d99c09bc12a6732c81dc"
+    },
+    {
+      "id": "a-side",
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/cloud-outflow-anchor-trial-2026-10-17/browser/baseline-74-side.png",
+      "bytes": 1359259,
+      "sha256": "c9c4681b03b9c4771c7be62974712b12b516e8b8717c22dc0907f18318aa2749",
+      "size": [
+        2474,
+        1844
+      ],
+      "crop": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle40/review/a-side-junction-native.png",
+      "PIL_LTRB": [
+        940,
+        270,
+        1760,
+        850
+      ],
+      "cropSHA256": "5b17c4e0fbf40d5541b47af6519b0553d3ad01625949e3fe6ba9180842e59cb0"
+    },
+    {
+      "id": "b-side",
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle40/browser/candidate-74-side.png",
+      "bytes": 1341477,
+      "sha256": "e0b47ea7d238b6649e5720004dead4b832eb7c2db33777905bef4ce7664f9860",
+      "size": [
+        2474,
+        1844
+      ],
+      "crop": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle40/review/b-side-junction-native.png",
+      "PIL_LTRB": [
+        940,
+        270,
+        1760,
+        850
+      ],
+      "cropSHA256": "f284fe68befb3d02ebf5304e3e8e32761755e508fcd50bd1f587ba8681862c3d"
+    }
+  ],
+  "protocol": {
+    "path": "run/NATIVE-PROTOCOL-BEFORE-A.json",
+    "sha256": "e476b058240cef3f6246d7add14d5c9ce8e26e3008f246cb95a72e213d1b9aa8"
+  },
+  "initialControlComparisonRead": {
+    "path": "run/NATIVE-CONTROL-COMPARISON.json",
+    "sha256": "1c040d6c2b2923738499c07128ce0482dbc1418a5f4d7101f4c139b8906777c5",
+    "scope": "Digest read before root counter qualification; root preserved the original report separately. This is not a pin of the now-current file."
+  },
+  "qualifiedControlComparison": {
+    "path": "run/NATIVE-CONTROL-COMPARISON.json",
+    "sha256": "1c040d6c2b2923738499c07128ce0482dbc1418a5f4d7101f4c139b8906777c5",
+    "status": "MATCH_RENDER_INPUTS_WITH_EXPLICIT_OWNER_COUNTER_QUALIFICATION"
+  }
+}

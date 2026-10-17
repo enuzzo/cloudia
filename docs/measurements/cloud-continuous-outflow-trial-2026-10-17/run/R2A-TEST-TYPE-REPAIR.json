@@ -1,0 +1,9 @@
+{
+  "previousTypecheck": "FAIL_TS2556_in_test_only",
+  "previousLog": "R2-typecheck.log",
+  "change": "Explicit tuple indexing instead of spreading union-of-tuples in four test calls; same values/evaluation order, no runtime helper/owner/shader edits",
+  "previousTestSHA256": "e6831779b318830c96f3e4aa5a06d57b5705ab17b63ddc84178ad3e3f61c1a70",
+  "currentTestSHA256": "3ef2e447ca8080ea7e36ed24504c246dd714610661d85e79e5540dbdc8149360",
+  "freeze144SHA256": "3b29dd3bc23258c7b40bbfc6871ebeb196af612b4b3c4768f5d922e972318d64",
+  "previousR2Retained": true
+}

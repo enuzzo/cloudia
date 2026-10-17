@@ -1,0 +1,19 @@
+{
+  "schema": "cloudia-continuous-outflow-revision-record-v1",
+  "revision": "R3",
+  "previousFreeze": {
+    "path": "revisions/r2/FREEZE.json",
+    "sha256": "8b2a36e320072ce85fe120e1fc27504511f209bcf298535a5a7d71421485136d"
+  },
+  "reason": "The first actual AABB preparation exceeded the unchanged visit cap. Replace only traversal with exact-preserving scanline culling and explicitly count guard evaluations; no geometry/t-grid/tolerance tuning.",
+  "priorFailurePreserved": "prepare74 partial W256603112 >256000000; no raster/full model/native candidate",
+  "sameKernelTable": "All interpolation, crossing, bound, step, lobe and start/end generation expressions remain unchanged from helperR2.",
+  "changes": [
+    "stateless row enumerator shared by counts and raster",
+    "forward voxel-center discrete peak, analytic guess plus counted one-voxel guard and exact outside-neighbor fallback",
+    "16M predeclared setup cap, guard sd included in256M cap",
+    "separate complete-generation accounting R+2guards+merge",
+    "four tiny fullFloat32bit comparison fixtures/tests added"
+  ],
+  "execution": []
+}

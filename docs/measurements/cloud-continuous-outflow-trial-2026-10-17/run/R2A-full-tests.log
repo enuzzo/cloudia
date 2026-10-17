@@ -1,0 +1,36 @@
+
+> cloudia@0.0.0 test
+> vitest run --reporter=dot
+
+
+ RUN  v4.1.6 /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle40/continuous-source
+
+··············································································································································································································································x·······························································································································································································································································································································································
+
+ Test Files  1 failed | 54 passed (55)
+      Tests  1 failed | 589 passed (590)
+   Start at  05:59:21
+   Duration  7.11s (transform 3.67s, setup 0ms, import 5.80s, tests 11.43s, environment 19.95s)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/cumulonimbus/inclinedShoulder.test.ts > inclined fed shoulder > feeds the previously empty upper-body section after fine erosion
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/cumulonimbus/inclinedShoulder.test.ts:18:22
+     16|       if (sampleCloudDensity(volume, volume.detail, x, y, z, ice) > 0)…
+     17|     }
+     18|     expect(occupied).toBe(true);
+       |                      ^
+     19|   });
+     20|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

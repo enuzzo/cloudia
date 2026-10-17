@@ -1,0 +1,58 @@
+{
+  "schema": "cloudia-continuous-outflow-scanline-owner-freeze-v1",
+  "ownerRevision": "scanline-integration-r1",
+  "previousOwnerFreeze": "review/integration-r1-freeze/FREEZE.json",
+  "parentFullSourceBackup": "revisions/integrated-r1",
+  "ownedFiles": [
+    {
+      "path": "src/cumulonimbus/volume.ts",
+      "bytes": 33197,
+      "sha256": "6b8f59bf2258bd5c56f00f436bae73e2a84348882e20716d3cf2279048d9ae8f"
+    },
+    {
+      "path": "src/cumulonimbus/layoutPrefix.test-helper.ts",
+      "bytes": 9599,
+      "sha256": "da024e69d489f126deb1f79de033e81a9a9dc704c41e81112a93e7b82860d465"
+    },
+    {
+      "path": "src/cumulonimbus/continuousOutflow.layout.test.ts",
+      "bytes": 8664,
+      "sha256": "dfd42f0f07f12aa8f2cadc817e57d9efe6d690f2b489e1c40874eec3be91f503"
+    }
+  ],
+  "dependencyFilesReadOnly": [
+    {
+      "frozenPath": "continuous-helper/continuousOutflow.ts",
+      "destination": "continuous-source/src/cumulonimbus/continuousOutflow.ts",
+      "bytes": 20523,
+      "sha256": "d87f162bda0303a05ec5e7bab85a68ef2ee3c983e23ddd1bdef54fccbb253de6"
+    },
+    {
+      "frozenPath": "continuous-helper/continuousOutflow.test.ts",
+      "destination": "continuous-source/src/cumulonimbus/continuousOutflow.test.ts",
+      "bytes": 12145,
+      "sha256": "e6831779b318830c96f3e4aa5a06d57b5705ab17b63ddc84178ad3e3f61c1a70"
+    }
+  ],
+  "rootCopiesDependencyToSource": true,
+  "newTestCases": 15,
+  "scopeChecks": {
+    "prefixR1ByteExact": true,
+    "volumeOutsideRasterizerImportAndRequiredMaxRowSetupCountR1ByteExact": true,
+    "sdFormulaF32MaxSingleBlendUnchanged": "SOURCE REVIEW ONLY",
+    "allLineageRngContractionCodeUnchanged": true
+  },
+  "changes": {
+    "raster": "forEachContinuousOutflowRow(kernel,grid,negativeBandKm,callback) then identical sd per x",
+    "requiredOption": "maxRowSetupCount=16000000",
+    "tests": "14 original cases retained, fixture supplies explicit negativeBandKm and checks row setup cap; one bounded16^3 AABB vs scanline finalUint32 equivalence case added"
+  },
+  "execution": {
+    "prefix": "NOT EXECUTED",
+    "tests": "NOT EXECUTED",
+    "typecheck": "NOT EXECUTED",
+    "modelOrBake": "NOT EXECUTED",
+    "build": "NOT EXECUTED",
+    "GPU": "NOT EXECUTED"
+  }
+}

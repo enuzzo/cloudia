@@ -1,0 +1,391 @@
+--- a/src/cumulonimbus/volume.ts
++++ b/src/cumulonimbus/volume.ts
+@@ -2,7 +2,10 @@
+ import {SUN_LEFT,SUN_RIGHT,solarDirection} from './sun';
+ export {SUN_LEFT,SUN_RIGHT} from './sun';
+ import { THERMAL_DISPLACEMENT } from './motion';
+-import { prepareInclinedShoulder } from './inclinedShoulder';
++import {
++  prepareContinuousOutflow, CONTINUOUS_OUTFLOW_ROUNDOFF_SLACK_KM,
++  type ContinuousOutflowLobe, type PreparedContinuousOutflow, type ContinuousOutflowStats,
++} from './continuousOutflow';
+ /** World bounds and extinction are shared by the bake and ray integrator. */
+ export const BOUNDS_MIN = [-5, -0.5, -3.5] as const;
+ export const BOUNDS_SIZE = [10, 8.5, 7] as const;
+@@ -17,7 +20,7 @@
+ export const voxelCenter=(index:number,axis:0|1|2,size:number)=>BOUNDS_MIN[axis]+(index+.5)/size*BOUNDS_SIZE[axis];
+ export const heightErosionScale = (worldY: number) => (.48+.52*smoothstep(1.6,2.5,worldY))*(1-.55*smoothstep(5.1,6.2,worldY));
+ export interface DetailVolume { size: number; data: Uint8Array }
+-export interface CloudVolume { size: number; data: Uint8Array; sunsetLight: Uint8Array; detail: DetailVolume; supportBounds:{min:number[];max:number[]} }
++export interface CloudVolume { size: number; data: Uint8Array; sunsetLight: Uint8Array; detail: DetailVolume; supportBounds:{min:number[];max:number[]}; continuousOutflow?:ContinuousOutflowStats & {retiredCollars:number;retiredPrimitives:number} }
+ /** The raw linear density footprint, enlarged for fine warp and bounded flow.
+  * Growth contracts toward x/z=0 and y=.72, so including those anchors covers
+  * every growth phase as well as the mature cloud. The global texture box stays fixed.
+@@ -155,6 +158,51 @@
+     return 1-clamp(Math.sqrt(distance));
+   };
+ }
++/** The real owner-side preparation, also usable with tiny synthetic keyframes.
++ * The negative band includes the existing light-prune margin and one blend.
++ */
++export function prepareVolumeContinuousOutflow(
++  keyframes:readonly [ContinuousOutflowLobe,ContinuousOutflowLobe,ContinuousOutflowLobe],size:number,
++):PreparedContinuousOutflow {
++  const supportMargin=.13+Math.hypot(...BOUNDS_SIZE)/size;
++  return prepareContinuousOutflow(keyframes,{
++    maxFieldErrorKm:Math.min(...BOUNDS_SIZE)/size/8,
++    negativeBandKm:Math.max(.35,supportMargin+.16+CONTINUOUS_OUTFLOW_ROUNDOFF_SLACK_KM),
++    grid:{min:BOUNDS_MIN,size:BOUNDS_SIZE,resolution:size},
++    maxKernels:4096,maxRasterVoxelVisits:256_000_000,maxEnvelopeBytes:16*1024*1024,
++  });
++}
++
++/** Clipped MAX in a bounded Float32 tile, followed by one legacy .16 blend.
++ * Empty cells retain the certified negative floor. No full-volume copy.
++ */
++export function rasterizeContinuousOutflow(
++  field:Float32Array,size:number,
++  prepared:Pick<PreparedContinuousOutflow,'kernels'|'raster'> & {stats:Pick<ContinuousOutflowStats,'fieldFloorKm'>},
++):void {
++  if(field.length!==size**3)throw new RangeError('Outflow raster needs its native field');
++  const floor=prepared.stats.fieldFloorKm;
++  if(!Number.isFinite(floor)||floor>0)throw new RangeError('Outflow raster needs a finite nonpositive field floor');
++  const {start,end,voxelCount,bytes}=prepared.raster;
++  const width=end[0]-start[0]+1,height=end[1]-start[1]+1,depth=end[2]-start[2]+1;
++  if(width<1||height<1||depth<1||voxelCount!==width*height*depth||bytes!==voxelCount*4||bytes>16*1024*1024)
++    throw new RangeError('Outflow raster envelope exceeds its owner budget');
++  const local=new Float32Array(voxelCount);local.fill(floor);
++  for(const {lobe:[cx,cy,cz,rx,ry,rz],start:lo,end:hi} of prepared.kernels) {
++    for(let z=lo[2];z<=hi[2];z++)for(let y=lo[1];y<=hi[1];y++)for(let x=lo[0];x<=hi[0];x++) {
++      const px=voxelCenter(x,0,size),py=voxelCenter(y,1,size),pz=voxelCenter(z,2,size);
++      const sd=(1-Math.sqrt(((px-cx)/rx)**2+((py-cy)/ry)**2+((pz-cz)/rz)**2))*Math.min(rx,ry,rz);
++      const index=((z-start[2])*height+y-start[1])*width+x-start[0];
++      if(sd>local[index])local[index]=sd;
++    }
++  }
++  for(let z=start[2];z<=end[2];z++)for(let y=start[1];y<=end[1];y++)for(let x=start[0];x<=end[0];x++) {
++    const sd=local[((z-start[2])*height+y-start[1])*width+x-start[0]];
++    const index=(z*size+y)*size+x,old=field[index],blend=.16,h=clamp(.5+.5*(old-sd)/blend);
++    field[index]=sd+(old-sd)*h+blend*h*(1-h);
++  }
++}
++
+ export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (fraction: number) => void): CloudVolume {
+   const n = size ** 3, field = new Float32Array(n), density = new Float32Array(n);
+   field.fill(-10);
+@@ -165,6 +213,9 @@
+   // summits and outflow geometry change topology, rather than scaling one stack.
+   const liquid:Lobe[]=[],iceCores:Lobe[]=[],summits:Lobe[]=[],foundations:Lobe[]=[];
+   const capParents=new Map<Lobe,Lobe>();
++  const neckByTop=new Map<Lobe,Lobe>();
++  const retiredCollarGroups=new Map<Lobe,Set<Lobe>>(),retiredRasterLobes=new Set<Lobe>();
++  let continuousFrames:readonly [Lobe,Lobe,Lobe]|null=null;
+   const authoredShoulders:Array<{core:Lobe;top:Lobe;foundation:Lobe;ordinal:number}>=[];
+   let sharedBody:Lobe|null=null;
+   const anatomy=random(seed^0x1b37c9a5);
+@@ -181,7 +232,8 @@
+     liquid.push(foundation);foundations.push(foundation);
+     liquid.push([siteX+lean*.4+offset*.6,shoulder,siteZ+depth*.6,girth*(.91+anatomy()*.12),(crest-lower)*.37,girth*.94]);
+     // A buried neck keeps the main mass connected without smoothing the summit.
+-    liquid.push([siteX+lean*.72+offset,(shoulder+crest)*.5,siteZ+depth,girth*.74,(crest-shoulder)*.5+.48,girth*.77],top);
++    const neck:Lobe=[siteX+lean*.72+offset,(shoulder+crest)*.5,siteZ+depth,girth*.74,(crest-shoulder)*.5+.48,girth*.77];
++    liquid.push(neck,top);neckByTop.set(top,neck);
+     summits.push(top);
+     // Irregular lateral shoulders belong to this updraft, rather than a global
+     // height layer. They are broad enough to read before any fine erosion.
+@@ -239,6 +291,10 @@
+     // The upper tower is advected into a narrow, long incus, with a short
+     // upwind shoulder and a much longer fibrous downwind end.
+     iceCores.push([-.25,5.85,-.2,1.45,.44,1.3,.045],[1.45,6.02,-.2,2.25,.36,1.05,.035]);
++    // References follow the one legacy transform/contraction without mutation.
++    // This first-cap role does not change the legacy nearest-parent collars.
++    const mature=summits.reduce((a,b)=>a[1]>b[1]?a:b);
++    continuousFrames=[neckByTop.get(mature)!,mature,iceCores[0]];
+   }
+   if(shape.family!=='sheared') for(let i=0;i<summits.length;i++) {
+     const top=summits[i],foot=foundations[i];
+@@ -271,8 +327,10 @@
+       const reach=broadShoulder?Math.sqrt(t):t*t;
+       const rx=top[3]*(1-reach)+Math.min(cap[3]*(broadShoulder?.95:.72),top[3]*(broadShoulder?2.05:1.65))*reach;
+       const rz=top[5]*(1-reach)+cap[5]*(broadShoulder?.9:.72)*reach;
+-      liquid.push([top[0]+(cap[0]-top[0])*t,top[1]+(cap[1]-top[1])*t,top[2]+(cap[2]-top[2])*t,
+-        rx,.3+(cap[1]-top[1])*.48,rz,.14]);
++      const collar:Lobe=[top[0]+(cap[0]-top[0])*t,top[1]+(cap[1]-top[1])*t,top[2]+(cap[2]-top[2])*t,
++        rx,.3+(cap[1]-top[1])*.48,rz,.14];
++      liquid.push(collar);
++      if(broadShoulder)retiredCollarGroups.set(collar,new Set([collar]));
+     }
+   }
+   const lobes:Lobe[]=[...liquid,...iceCores];
+@@ -285,6 +343,7 @@
+   }
+   [...liquid,...iceCores].forEach((c,i) => {
+     const tracked=trackedGroups.get(c);
++    const retired=retiredCollarGroups.get(c);
+     const isIce=i>=liquid.length,count=isIce?10:18;
+     for (let j=0; j<count; j++) {
+       const theta=rng()*Math.PI*2, elevation=(rng()-.5)*1.8;
+@@ -298,12 +357,14 @@
+       lobes.push([c[0]+Math.cos(theta)*c[3]*radius*Math.cos(elevation), c[1]+Math.sin(elevation)*c[4]*radius,
+         c[2]+Math.sin(theta)*c[5]*radius*Math.cos(elevation), s*stretchX, s*stretchY, s*.85, isIce?.045:.2]);
+       tracked?.add(lobes.at(-1)!);
++      retired?.add(lobes.at(-1)!);
+       if(!isIce) {
+         const l=lobes.at(-1)!;
+         for(let k=0;k<4;k++) {
+           const a=rng()*Math.PI*2,e=(rng()-.5)*2,r=s*(.24+rng()*.22);
+           lobes.push([l[0]+Math.cos(a)*s*.76*Math.cos(e),l[1]+Math.sin(e)*s*.76,l[2]+Math.sin(a)*s*.76*Math.cos(e),r,r*.9,r]);
+           tracked?.add(lobes.at(-1)!);
++          retired?.add(lobes.at(-1)!);
+         }
+       }
+     }
+@@ -337,6 +398,7 @@
+     lobes.push([cx,.72+(6.0+(iceRng()-.5)*.6-.72)*shape.towerHeight,
+       -.2+(iceRng()-.5)*1.7*shape.towerWidth,rx,.055+iceRng()*.045,.17+iceRng()*.22,.045]);
+   }
++  for(const group of retiredCollarGroups.values())for(const lobe of group)retiredRasterLobes.add(lobe);
+   // Contract whole horizontal axes if a seeded puff/outflow would approach the
+   // texture wall. This preserves curved lobe endings, without clipping any lobe
+   // or piling centres against a plane. Reserve a halo for smooth union and warp.
+@@ -370,7 +432,17 @@
+     if(selected.projection>0)for(const lobe of innerGroup){lobe[0]+=translation[0];lobe[2]+=translation[2];}
+   }
+   // Rasterize lobes into their local bounds instead of testing every lobe at every voxel.
+-  for (const [cx,cy,cz,rx,ry,rz,blend=.2] of lobes) {
++  let preparedOutflow:PreparedContinuousOutflow|undefined;
++  if(shape.family==='sheared') {
++    if(!continuousFrames||retiredCollarGroups.size!==3||retiredRasterLobes.size!==273||
++        [...retiredCollarGroups.values()].some(group=>group.size!==91)||continuousFrames.some(lobe=>retiredRasterLobes.has(lobe)))
++      throw new Error('The continuous outflow needs its original endpoints and three complete retired collar groups');
++    // Fail preparation budgets before either the legacy or the new raster loop.
++    preparedOutflow=prepareVolumeContinuousOutflow(continuousFrames,size);
++  }
++  for (const lobe of lobes) {
++    if(retiredRasterLobes.has(lobe))continue;
++    const [cx,cy,cz,rx,ry,rz,blend=.2]=lobe;
+     const lo = [cx-rx-.35,cy-ry-.35,cz-rz-.35], hi=[cx+rx+.35,cy+ry+.35,cz+rz+.35];
+     const start=lo.map((v,i)=>Math.max(1,Math.floor((v-BOUNDS_MIN[i])/BOUNDS_SIZE[i]*size-.5)));
+     const end=hi.map((v,i)=>Math.min(size-2,Math.ceil((v-BOUNDS_MIN[i])/BOUNDS_SIZE[i]*size-.5)));
+@@ -381,25 +453,10 @@
+       field[idx]=sd+(old-sd)*h+blend*h*(1-h);
+     }
+   }
+-  if(shape.family==='sheared') {
+-    const mature=summits.reduce((a,b)=>a[1]>b[1]?a:b),foot=foundations[summits.indexOf(mature)];
+-    const cap=iceCores.reduce((a,b)=>Math.hypot(a[0]-mature[0],a[2]-mature[2])<Math.hypot(b[0]-mature[0],b[2]-mature[2])?a:b);
+-    // Feed the outflow from the upper body, substantially below the summit.
+-    // The existing short head-to-cap collars cannot occupy the hollow beneath
+-    // the incus. This separate inclined mass preserves every original billow
+-    // and RNG draw, and uses the already contracted anatomy without mutation.
+-    const shoulder=prepareInclinedShoulder(
+-      [foot[0]+(mature[0]-foot[0])*.68,foot[1]+(mature[1]-foot[1])*.68,foot[2]+(mature[2]-foot[2])*.68],
+-      [cap[0]+cap[3]*.28,cap[1]-cap[4]*.1,cap[2]],
+-      Math.max(mature[3]*.95,foot[3]*.62),Math.max(mature[5]*.95,cap[5]*.68),
+-    );
+-    const start=shoulder.min.map((v,i)=>Math.max(1,Math.floor((v-.35-BOUNDS_MIN[i])/BOUNDS_SIZE[i]*size-.5)));
+-    const end=shoulder.max.map((v,i)=>Math.min(size-2,Math.ceil((v+.35-BOUNDS_MIN[i])/BOUNDS_SIZE[i]*size-.5)));
+-    for(let z=start[2];z<=end[2];z++) for(let y=start[1];y<=end[1];y++) for(let x=start[0];x<=end[0];x++) {
+-      const sd=shoulder.sample(voxelCenter(x,0,size),voxelCenter(y,1,size),voxelCenter(z,2,size));
+-      const idx=(z*size+y)*size+x,old=field[idx],blend=.16,h=clamp(.5+.5*(old-sd)/blend);
+-      field[idx]=sd+(old-sd)*h+blend*h*(1-h);
+-    }
++  let continuousOutflow:CloudVolume['continuousOutflow'];
++  if(preparedOutflow) {
++    rasterizeContinuousOutflow(field,size,preparedOutflow);
++    continuousOutflow={...preparedOutflow.stats,retiredCollars:retiredCollarGroups.size,retiredPrimitives:retiredRasterLobes.size};
+   }
+   const [iceStart,iceEnd]=iceHeights(seed);
+   for(let z=1;z<size-1;z++) {
+@@ -452,5 +509,5 @@
+     progress?.(.82+.09*(side+1));
+   }
+   bakeOccupancy(envelope,detail,THERMAL_DISPLACEMENT);
+-  return {size, data, sunsetLight, detail, supportBounds:densitySupportBounds(envelope)};
+-}
++  return {size, data, sunsetLight, detail, supportBounds:densitySupportBounds(envelope),...(continuousOutflow?{continuousOutflow}:{})};
++}
+--- a/src/cumulonimbus/layoutPrefix.test-helper.ts
++++ b/src/cumulonimbus/layoutPrefix.test-helper.ts
+@@ -7,6 +7,7 @@
+ import * as sun from './sun';
+ import * as motion from './motion';
+ import * as shoulder from './inclinedShoulder';
++import * as continuous from './continuousOutflow';
+ 
+ type Lobe=[number,number,number,number,number,number,number?];
+ type Rng={initialSeed:number;calls:number};
+@@ -16,6 +17,14 @@
+  summits:number[];foundations:number[];sharedBody:number|null;
+  shoulders:{core:number;top:number;foundation:number;ordinal:number}[];
+  groups:{core:number;ids:number[]}[];
++ iceCores:number[];
++ contraction:{axis:number;extent:number;scale:number}[];
++ continuous:null|{
++   keyframes:[number,number,number]|null;
++   necks:{top:number;neck:number}[];
++   collars:{core:number;ids:number[]}[];
++   retired:number[];
++ };
+ }
+ export interface JointLayoutCheck {
+  mode:'unmodified-family'|'inward-projected'|'outward-unchanged';projection:number|null;
+@@ -30,30 +39,38 @@
+  const marker='  // Rasterize lobes into their local bounds instead of testing every lobe at every voxel.';
+  once(source,marker);let prefix=source.slice(0,source.indexOf(marker));
+  const header='export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (fraction: number) => void): CloudVolume {';
+- once(prefix,header);prefix=prefix.replace(header,'export function traceLayout(seed = 71) {\n  __layoutRng=[];');
++ once(prefix,header);prefix=prefix.replace(header,'export function traceLayout(seed = 71) {\n  __layoutRng=[];\n  __layoutContraction=[];');
+  const allocation='  const n = size ** 3, field = new Float32Array(n), density = new Float32Array(n);\n  field.fill(-10);\n';
+  once(prefix,allocation);prefix=prefix.replace(allocation,'');
+  const cellular='  const cellular=cellularNoise(seed+137);\n';once(prefix,cellular);prefix=prefix.replace(cellular,'');
+  const random='function random(seed: number) {\n  return () => { seed |= 0;';once(prefix,random);
+  prefix=prefix.replace(random,'function random(seed: number) {\n  const counter={initialSeed:seed,calls:0};__layoutRng.push(counter);\n  return () => { counter.calls++; seed |= 0;');
++ const contraction='    const scale=Math.min(1,limit/extent);\n';once(prefix,contraction);
++ prefix=prefix.replace(contraction,contraction+'    __layoutContraction.push({axis,extent,scale});\n');
+  const joint=prefix.lastIndexOf("  if(shape.family==='sheared') {");
+  assert(joint>0&&prefix.slice(joint).includes('authoredShoulders.filter'),'Joint block boundary changed');
+  prefix=prefix.slice(0,joint)+'  const __beforeJoint=lobes.map(l=>l.slice());\n  const __beforeRng=__layoutRng.map(r=>({...r}));\n'+prefix.slice(joint);
+- prefix='let __layoutRng:Array<{initialSeed:number;calls:number}>=[];\n'+prefix;
++ prefix='let __layoutRng:Array<{initialSeed:number;calls:number}>=[];\nlet __layoutContraction:Array<{axis:number;extent:number;scale:number}>=[];\n'+prefix;
+  prefix+=`  return {family:shape.family,before:__beforeJoint,lobes,beforeRng:__beforeRng,afterRng:__layoutRng,
+     uniqueLobes:new Set(lobes).size,summits:summits.map(l=>lobes.indexOf(l)),foundations:foundations.map(l=>lobes.indexOf(l)),
+     sharedBody:sharedBody?lobes.indexOf(sharedBody):null,
+     shoulders:authoredShoulders.map(s=>({core:lobes.indexOf(s.core),top:lobes.indexOf(s.top),foundation:lobes.indexOf(s.foundation),ordinal:s.ordinal})),
+-    groups:[...trackedGroups].map(([core,refs])=>({core:lobes.indexOf(core),ids:[...refs].map(l=>lobes.indexOf(l))}))};\n}\n`;
++    groups:[...trackedGroups].map(([core,refs])=>({core:lobes.indexOf(core),ids:[...refs].map(l=>lobes.indexOf(l))})),
++    iceCores:iceCores.map(l=>lobes.indexOf(l)),contraction:__layoutContraction,
++    continuous:typeof continuousFrames==='undefined'?null:{
++      keyframes:continuousFrames?continuousFrames.map(l=>lobes.indexOf(l)):null,
++      necks:[...neckByTop].map(([top,neck])=>({top:lobes.indexOf(top),neck:lobes.indexOf(neck)})),
++      collars:[...retiredCollarGroups].map(([core,refs])=>({core:lobes.indexOf(core),ids:[...refs].map(l=>lobes.indexOf(l))})),
++      retired:[...retiredRasterLobes].map(l=>lobes.indexOf(l))}};\n}\n`;
+  const emitted=ts.transpileModule(prefix,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.CommonJS},reportDiagnostics:true});
+  assert(!emitted.diagnostics?.some(d=>d.category===ts.DiagnosticCategory.Error),'Prefix TypeScript syntax changed');
+- const modules:Record<string,unknown>={'./light':light,'./sun':sun,'./motion':motion,'./inclinedShoulder':shoulder};
++ const modules:Record<string,unknown>={'./light':light,'./sun':sun,'./motion':motion,'./inclinedShoulder':shoulder,'./continuousOutflow':continuous};
+  const requireLocal=(name:string)=>{assert(Object.hasOwn(modules,name),'Unexpected prefix import: '+name);return modules[name];};
+  const module={exports:{} as Record<string,unknown>};
+  // Only trusted local source is compiled; no fixture geometry or duplicate generator.
+  new Function('require','module','exports',emitted.outputText)(requireLocal,module,module.exports);
+  const trace=module.exports.traceLayout as (seed:number)=>LayoutTrace;assert.equal(typeof trace,'function');
+- for(const forbidden of ['new Float32Array','new Uint8Array','generateDetail(','bakeOccupancy('])assert(!trace.toString().includes(forbidden),forbidden);
++ for(const forbidden of ['new Float32Array','new Uint8Array','generateDetail(','bakeOccupancy(','prepareVolumeContinuousOutflow(','rasterizeContinuousOutflow(','prepareContinuousOutflow('])assert(!trace.toString().includes(forbidden),forbidden);
+  return trace;
+ }
+ 
+--- /dev/null
++++ b/src/cumulonimbus/continuousOutflow.layout.test.ts
+@@ -0,0 +1,112 @@
++// @vitest-environment node
++import {readFileSync} from 'node:fs';
++import {dirname,join} from 'node:path';
++import {fileURLToPath} from 'node:url';
++import {describe,it,expect} from 'vitest';
++import {createLayoutPrefix,assertJointLayoutContract} from './layoutPrefix.test-helper';
++import {prepareVolumeContinuousOutflow,rasterizeContinuousOutflow,voxelCenter,BOUNDS_SIZE} from './volume';
++import {CONTINUOUS_OUTFLOW_ROUNDOFF_SLACK_KM,type ContinuousOutflowKernel,type ContinuousOutflowLobe} from './continuousOutflow';
++
++const source=readFileSync(join(dirname(fileURLToPath(import.meta.url)),'volume.ts'),'utf8');
++const trace=createLayoutPrefix(source);
++
++describe('continuous outflow keeps the authored layout and retires only collar lineages',()=>{
++  it.each([74,77,80])('registers the mature neck/top/first cap and exactly three complete groups on seed%i',seed=>{
++    const t=trace(seed),details=t.continuous!;
++    expect(t.family).toBe('sheared');expect(details).not.toBeNull();
++    const [neck,top,cap]=details.keyframes!;
++    const mature=t.summits.reduce((a,b)=>t.lobes[a][1]>t.lobes[b][1]?a:b);
++    expect(top).toBe(mature);expect(cap).toBe(t.iceCores[0]);
++    expect(neck).toBe(details.necks.find(pair=>pair.top===mature)!.neck);
++    expect(new Set([neck,top,cap]).size).toBe(3);
++    expect(details.collars).toHaveLength(3);
++    const retired=new Set(details.retired);
++    expect(details.retired).toHaveLength(273);expect(retired.size).toBe(273);
++    const lineage=new Set<number>();
++    for(const group of details.collars){
++      expect(group.ids).toHaveLength(91);expect(new Set(group.ids).size).toBe(91);
++      expect(group.ids).toContain(group.core);
++      for(const id of group.ids){expect(id).toBeGreaterThanOrEqual(0);expect(id).toBeLessThan(t.lobes.length);lineage.add(id);}
++    }
++    expect([...lineage].sort((a,b)=>a-b)).toEqual([...retired].sort((a,b)=>a-b));
++    const protectedIds=[...t.summits,...t.foundations,...t.iceCores,...details.necks.map(pair=>pair.neck),
++      ...t.shoulders.map(shoulder=>shoulder.core),...t.groups.flatMap(group=>group.ids)];
++    for(const id of protectedIds)expect(retired.has(id)).toBe(false);
++    expect(t.uniqueLobes).toBe(t.lobes.length);
++    expect(t.contraction.map(entry=>entry.axis)).toEqual([0,2]);
++    for(const entry of t.contraction){expect(Number.isFinite(entry.extent)).toBe(true);expect(entry.scale).toBeGreaterThan(0);expect(entry.scale).toBeLessThanOrEqual(1);}
++    expect(assertJointLayoutContract(t).bodyExact).toBe(true);
++  });
++
++  it.each([72,73])('does not install a continuous raccord or retire any primitive on seed%i',seed=>{
++    const t=trace(seed);
++    expect(t.continuous!.keyframes).toBeNull();
++    expect(t.continuous!.collars).toEqual([]);expect(t.continuous!.retired).toEqual([]);
++    expect(assertJointLayoutContract(t).mode).toBe('unmodified-family');
++  });
++
++  it('keeps extraction fail-closed when the raster or contraction observation anchor changes',()=>{
++    const marker='  // Rasterize lobes into their local bounds instead of testing every lobe at every voxel.';
++    expect(()=>createLayoutPrefix(source.replace(marker,'  // changed raster boundary'))).toThrow('Extraction anchor changed');
++    expect(()=>createLayoutPrefix(source.replace('    const scale=Math.min(1,limit/extent);','    const scale = Math.min(1,limit/extent);')))
++      .toThrow('Extraction anchor changed');
++  });
++});
++
++describe('owner-side continuous preparation and one bounded MAX merge',()=>{
++  it.each([32,64,128,256])('derives error and light-prune band at native size%i without a volume bake',size=>{
++    const key:ContinuousOutflowLobe=[0,3,0,.1,.1,.1];
++    const prepared=prepareVolumeContinuousOutflow([key,key,key],size);
++    const margin=.13+Math.hypot(...BOUNDS_SIZE)/size;
++    expect(prepared.stats.negativeBandKm).toBe(Math.max(.35,margin+.16+CONTINUOUS_OUTFLOW_ROUNDOFF_SLACK_KM));
++    expect(prepared.stats.fieldFloorKm).toBe(-prepared.stats.negativeBandKm);
++    expect(prepared.stats.fieldErrorBoundKm).toBeLessThanOrEqual(7/size/8);
++    expect(prepared.stats.kernelCount).toBeLessThanOrEqual(4096);
++    expect(prepared.stats.totalRasterVoxelVisits).toBeLessThanOrEqual(256_000_000);
++    expect(prepared.raster.bytes).toBeLessThanOrEqual(16*1024*1024);
++    expect(prepared.sample(0,3,0)).toBe(.1);
++  });
++
++  const size=4,index=(x:number,y:number,z:number)=>(z*size+y)*size+x;
++  const kernel=(x:number,y:number,z:number,offset=0):ContinuousOutflowKernel=>({
++    lobe:[voxelCenter(x,0,size)+offset,voxelCenter(y,1,size),voxelCenter(z,2,size),1,1,1],
++    start:[x,y,z],end:[x,y,z],
++  });
++  const input=(kernels:readonly ContinuousOutflowKernel[],lastX=1)=>({
++    kernels,raster:{start:[1,1,1] as const,end:[lastX,1,1] as const,voxelCount:lastX,bytes:lastX*4},
++    stats:{fieldFloorKm:-.35},
++  });
++
++  it('MAXes coincident kernels before the single blend, rather than inflating with one blend per kernel',()=>{
++    const field=new Float32Array(size**3);field.fill(1);
++    const k=kernel(1,1,1);
++    rasterizeContinuousOutflow(field,size,input([k,k]));
++    expect(field[index(1,1,1)]).toBe(Math.fround(1.04));
++    expect([...field].filter(value=>value!==1)).toHaveLength(1);
++  });
++
++  it('is independent of kernel order and uses the nonzero tile origin',()=>{
++    const a=new Float32Array(size**3),b=new Float32Array(size**3);a.fill(-10);b.fill(-10);
++    const first=kernel(1,1,1,.5),second=kernel(1,1,1);
++    rasterizeContinuousOutflow(a,size,input([first,second]));
++    rasterizeContinuousOutflow(b,size,input([second,first]));
++    expect(a).toEqual(b);expect(a[index(1,1,1)]).toBe(1);expect(a[0]).toBe(-10);
++  });
++
++  it('keeps the certified negative floor in uncovered tile cells and leaves the exterior untouched',()=>{
++    const field=new Float32Array(size**3);field.fill(-10);
++    rasterizeContinuousOutflow(field,size,input([kernel(1,1,1)],2));
++    expect(field[index(1,1,1)]).toBe(1);
++    expect(field[index(2,1,1)]).toBe(Math.fround(-.35));
++    expect(field[index(1,2,1)]).toBe(-10);
++    expect([...field].every(Number.isFinite)).toBe(true);
++  });
++
++  it('rejects an inconsistent native field or over-budget tile before allocating its local envelope',()=>{
++    expect(()=>rasterizeContinuousOutflow(new Float32Array(1),size,input([]))).toThrow('native field');
++    const over=input([],4_194_305);
++    expect(()=>rasterizeContinuousOutflow(new Float32Array(size**3),size,over)).toThrow('owner budget');
++    expect(()=>rasterizeContinuousOutflow(new Float32Array(size**3),size,{...input([]),stats:{fieldFloorKm:NaN}}))
++      .toThrow('field floor');
++  });
++});

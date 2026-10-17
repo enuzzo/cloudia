@@ -1,0 +1,20 @@
+{
+  "rows": [
+    {
+      "phase": "typecheck",
+      "exitCode": 0,
+      "wallSeconds": 1.6326934170210734,
+      "capSeconds": 30,
+      "logSHA256": "0e16a3edbb514aa8bffdbf94899f6caaad53fcb431e899221770792223f367c1"
+    },
+    {
+      "phase": "build",
+      "exitCode": 0,
+      "wallSeconds": 4.519048542017117,
+      "capSeconds": 90,
+      "logSHA256": "4676f2e8f95a8a4d610614bc178ce09ed48351c27e3d7cacfcd34cd1cc82b749"
+    }
+  ],
+  "scope": "Typecheck and APP compile only; no cloud model/raster/browser/GPU/FPS",
+  "source144Freeze": "SOURCE-FREEZE-R2A.json"
+}

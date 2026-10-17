@@ -1,0 +1,18 @@
+{
+  "schema": "cloudia-continuous-outflow-preflight-freeze-v1",
+  "baselineRoot": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia",
+  "candidateRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle40/continuous-source",
+  "baselineManifest": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle40/baseline-manifest.json",
+    "sha256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+    "count": 141
+  },
+  "candidateManifest": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle40/run/SOURCE-FREEZE-R2A.json",
+    "sha256": "3b29dd3bc23258c7b40bbfc6871ebeb196af612b4b3c4768f5d922e972318d64",
+    "count": 144
+  },
+  "runnerSHA256": "0ac983058e5c4d99b71aebe0f7cf7270bd0b7a55c2b19251eb5c873456e524ec",
+  "contractSHA256": "3cc94fc735bf3fe018411158fd9fb9ddd2d35247565f2b1a87a730b640e0d55b",
+  "fixtureSHA256": "c0b0195f5f737f3ea3b732083c6440794f94760d6288329da1863e8ebc14fc56"
+}

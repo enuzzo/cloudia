@@ -1,0 +1,44 @@
+{
+  "decision": "REJECTED_NOT_ADOPTED",
+  "rendererKept": "observatory-v61-observed-terrain-material",
+  "candidate": "experiment-v61-continuous-outflow-r2",
+  "baseline141SHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "candidate144SHA256": "3b29dd3bc23258c7b40bbfc6871ebeb196af612b4b3c4768f5d922e972318d64",
+  "tests": {
+    "targetedPass": 29,
+    "allPass": 589,
+    "allFail": 1,
+    "allFiles": 55,
+    "failure": "inclinedShoulder.test.ts18; seed74,size64; posterosion section occupancy"
+  },
+  "compile": {
+    "typecheck": "PASS",
+    "app": "PASS",
+    "hero": "NOT_RUN"
+  },
+  "preflightR1": "FAIL partial visits256603112; no volume/GPU",
+  "preflightR2": "PASS_FIXED_PREFIX_IDENTITIES_AND_PREPARE_ACCOUNTING",
+  "nativeInputs": "Camera/lighting/quality match; owner cache.submissions149/148 not explicitly named pre-B; initial classifier retained and final report qualified. Not an unconditional whole-DTO protocol PASS.",
+  "nativeVisualRoot": "FAIL",
+  "nativeVisualIndependent": "FAIL; four full native and four matched crops reviewed; written freeze SHA5fb119d3e06114e9e916b6b1ebca4bf5231eb9a298561d67ba4fe4b64843ace6",
+  "performance": "No new FPS benchmark. Full-quality original60 target remains open. HeavyRain previous~19submittedFPS not remeasured.",
+  "restoration": {
+    "url": "http://127.0.0.1:4196/?seed=74",
+    "canonicalOwner": 48736,
+    "ownerConfirmedLive": true,
+    "qaOwner": 52097,
+    "qaExitCode": 0,
+    "canvas": [
+      2474,
+      1844
+    ],
+    "css": [
+      1237,
+      922
+    ],
+    "console": []
+  },
+  "terrainChoice": "Real geography including urban areas in same opticaltexture; no3Dbuildings or additional pass for urban areas; texture44,739,240B nominal GPU payload. No cost-zero claim.",
+  "fullGoal": "ACTIVE; original anatomy3families, near-light,motion,rainvirga,terrain,UI andFPS open",
+  "nextAction": "Bounded posterosion support-margin diagnosis at failed section against frozen legacy before another silhouette or GPU candidate; avoid radius sweep and raising cap."
+}

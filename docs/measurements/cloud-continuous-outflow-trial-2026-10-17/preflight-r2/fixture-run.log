@@ -1,0 +1,13 @@
+✔ tuple encoding preserves signed zero, optional blend and append order (2.730542ms)
+✔ local integer visits include only actual intersection; fractional ranges rejected (0.304167ms)
+✔ identity rejects RNG and post-contraction changes independently (6.575834ms)
+✔ retirement proves actual273 lineage and excludes kept anatomy (2.862041ms)
+✔ accounting includes guards, endpoints and error; shared enumerator replay is not a solver (0.595542ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 112.906333

@@ -1,0 +1,41 @@
+{
+  "schema": "cloudia-continuous-outflow-helper-freeze-v2",
+  "revision": "R2",
+  "files": [
+    {
+      "path": "continuousOutflow.ts",
+      "bytes": 13832,
+      "sha256": "4f96f7ddd4ca298ed89ba23c286de91f6ee121ab7b6a5fcce87e481ae7cde3d5"
+    },
+    {
+      "path": "continuousOutflow.test.ts",
+      "bytes": 7295,
+      "sha256": "0fd86b970386c404142b8b60539c14fd320c1b70f537431df490330f8a849d3e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7227,
+      "sha256": "728fbf0fb37d130c3c15cedfa2dcf9b0ac4e5f7e61e5662a7f94e15a61a04466"
+    },
+    {
+      "path": "PRE-RUN-PROTOCOL.json",
+      "bytes": 1505,
+      "sha256": "750178e7889bd19f36950d3b0b5a7aac523c7fc283dc00eb53343d5b652e108d"
+    },
+    {
+      "path": "REVISION-R2.json",
+      "bytes": 1117,
+      "sha256": "4276a304337fb5405560afd858ffe7b5732fa3d38716a7da8e258a555cf8bc2b"
+    }
+  ],
+  "preservedR1FreezeSHA256": "a6a39f4b16f84397584117744e030ff5fa8c328042768ddb203a3176a01cb487",
+  "scope": "Only external helper/test/readme/protocol/revision records; no product/candidate-source edits by this agent",
+  "execution": {
+    "test": "NOT EXECUTED",
+    "typecheck": "NOT EXECUTED",
+    "prefix": "NOT EXECUTED",
+    "model": "NOT EXECUTED",
+    "build": "NOT EXECUTED",
+    "GPU": "NOT EXECUTED"
+  }
+}

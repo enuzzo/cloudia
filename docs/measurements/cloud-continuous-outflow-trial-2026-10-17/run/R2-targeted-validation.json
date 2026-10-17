@@ -1,0 +1,15 @@
+{
+  "exitCode": 0,
+  "wallSeconds": 0.8897422919981182,
+  "wallCapSeconds": 30,
+  "command": [
+    "npm",
+    "test",
+    "--",
+    "src/cumulonimbus/continuousOutflow.test.ts",
+    "src/cumulonimbus/continuousOutflow.layout.test.ts",
+    "--reporter=dot"
+  ],
+  "source144FreezeSHA256": "30c3ce126c18d6ce9c5937777452a514caabfee147c373561c7847185ac0f950",
+  "scope": "14helper+15integration tests, five tinyrecipes and synthetic local16 raster parity; no dense cloud/bake/browser/GPU"
+}
