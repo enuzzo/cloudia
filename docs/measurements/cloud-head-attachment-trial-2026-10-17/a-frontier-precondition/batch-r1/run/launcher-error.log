@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/a-frontier-precondition/run.py", line 40, in main
+    if killed or usage.ru_utime+usage.ru_stime>20 or wall>40 or usage.ru_maxrss>384*1024**2: raise RuntimeError('Terminal resource gate failed')
+                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Terminal resource gate failed

@@ -1,0 +1,5 @@
+# Canonical A density frontier precondition, before any B execution
+
+Four actual original generateVolume(64) cases72,73,74,913, all five light bakes and64 detail. Read actual canonical layout prefix for head anchors; same frozen pure observer as candidate tests. Every upper head must have an assigned distinct R>=.4 frontier with an above neighbour below.4 inside the upper ellipsoid ROI padded by half a voxel. For multicell, actual older minus younger frontier height must remain>.25km. No world-X bins or mandatory U valley. These source-role guards were selected before B; no photographic qualification is inferred.
+
+One root child,20CPU/40wall/384MiB terminal Darwinwait4 RSS. No AS/ps, retry, candidate generation, render or GPU. If A predicate fails, stop before B and retain raw data; no threshold fitting. Static guard function/actual source and runtime inputs pinned before launch. Legacy prefix is intentionally final for canonical A, while B will explicitly use the post-attachment prefix and actual volume metadata.

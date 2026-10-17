@@ -1,0 +1,106 @@
+--- a/src/cumulonimbus/layoutPrefix.test-helper.ts
++++ b/src/cumulonimbus/layoutPrefix.test-helper.ts
+@@ -7,13 +7,17 @@
+ import * as sun from './sun';
+ import * as motion from './motion';
+ import * as shoulder from './inclinedShoulder';
++import * as attachment from './updraftAttachment';
++import {BOUNDS_SIZE,voxelCenter} from './volume';
+ 
+ type Lobe=[number,number,number,number,number,number,number?];
+ type Rng={initialSeed:number;calls:number};
+ export interface LayoutTrace {
++ stage?:'legacy'|'post-attachment';
+  family:'congestus'|'multicell'|'sheared';before:Lobe[];lobes:Lobe[];
+  beforeRng:Rng[];afterRng:Rng[];uniqueLobes:number;
+  summits:number[];foundations:number[];sharedBody:number|null;
++ summitTuples:Lobe[];foundationTuples:Lobe[];attachmentReport?:unknown;
+  shoulders:{core:number;top:number;foundation:number;ordinal:number}[];
+  groups:{core:number;ids:number[]}[];
+ }
+@@ -25,9 +29,12 @@
+  recenterDeltaXZ?:[number,number];recenterKm?:number;bodyExact?:boolean;outsideSelectedExact?:boolean;allNonXZExact?:boolean;
+ }
+ 
+-export function createLayoutPrefix(source:string):(seed:number)=>LayoutTrace {
++export function createLayoutPrefix(source:string,stage:'legacy'|'post-attachment'='legacy'):(seed:number)=>LayoutTrace {
+  const once=(text:string,needle:string)=>{assert.equal(text.split(needle).length,2,'Extraction anchor changed: '+needle);};
+- const marker='  // Rasterize lobes into their local bounds instead of testing every lobe at every voxel.';
++ assert(stage==='legacy'||stage==='post-attachment','Invalid layout trace stage');
++ const legacyMarker='  // Rasterize lobes into their local bounds instead of testing every lobe at every voxel.';
++ const marker=stage==='legacy'?legacyMarker:'  // The attached updraft heads are final; rasterize the original kernels next.';
++ once(source,legacyMarker);
+  once(source,marker);let prefix=source.slice(0,source.indexOf(marker));
+  const header='export function generateVolume(size = VOLUME_RESOLUTION, seed = 71, progress?: (fraction: number) => void): CloudVolume {';
+  once(prefix,header);prefix=prefix.replace(header,'export function traceLayout(seed = 71) {\n  __layoutRng=[];');
+@@ -36,18 +43,21 @@
+  const cellular='  const cellular=cellularNoise(seed+137);\n';once(prefix,cellular);prefix=prefix.replace(cellular,'');
+  const random='function random(seed: number) {\n  return () => { seed |= 0;';once(prefix,random);
+  prefix=prefix.replace(random,'function random(seed: number) {\n  const counter={initialSeed:seed,calls:0};__layoutRng.push(counter);\n  return () => { counter.calls++; seed |= 0;');
+- const joint=prefix.lastIndexOf("  if(shape.family==='sheared') {");
+- assert(joint>0&&prefix.slice(joint).includes('authoredShoulders.filter'),'Joint block boundary changed');
++ const legacyEnd=prefix.indexOf(legacyMarker),jointPrefix=legacyEnd<0?prefix:prefix.slice(0,legacyEnd);
++ const joint=jointPrefix.lastIndexOf("  if(shape.family==='sheared') {");
++ assert(joint>0&&jointPrefix.slice(joint).includes('authoredShoulders.filter'),'Joint block boundary changed');
+  prefix=prefix.slice(0,joint)+'  const __beforeJoint=lobes.map(l=>l.slice());\n  const __beforeRng=__layoutRng.map(r=>({...r}));\n'+prefix.slice(joint);
+  prefix='let __layoutRng:Array<{initialSeed:number;calls:number}>=[];\n'+prefix;
+- prefix+=`  return {family:shape.family,before:__beforeJoint,lobes,beforeRng:__beforeRng,afterRng:__layoutRng,
++ prefix+=`  return {stage:${JSON.stringify(stage)},family:shape.family,before:__beforeJoint,lobes,beforeRng:__beforeRng,afterRng:__layoutRng,
+     uniqueLobes:new Set(lobes).size,summits:summits.map(l=>lobes.indexOf(l)),foundations:foundations.map(l=>lobes.indexOf(l)),
++    summitTuples:summits.map(l=>l.slice()),foundationTuples:foundations.map(l=>l.slice()),
++    attachmentReport:typeof updraftAnatomy==='undefined'?undefined:updraftAnatomy,
+     sharedBody:sharedBody?lobes.indexOf(sharedBody):null,
+     shoulders:authoredShoulders.map(s=>({core:lobes.indexOf(s.core),top:lobes.indexOf(s.top),foundation:lobes.indexOf(s.foundation),ordinal:s.ordinal})),
+     groups:[...trackedGroups].map(([core,refs])=>({core:lobes.indexOf(core),ids:[...refs].map(l=>lobes.indexOf(l))}))};\n}\n`;
+  const emitted=ts.transpileModule(prefix,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.CommonJS},reportDiagnostics:true});
+  assert(!emitted.diagnostics?.some(d=>d.category===ts.DiagnosticCategory.Error),'Prefix TypeScript syntax changed');
+- const modules:Record<string,unknown>={'./light':light,'./sun':sun,'./motion':motion,'./inclinedShoulder':shoulder};
++ const modules:Record<string,unknown>={'./light':light,'./sun':sun,'./motion':motion,'./inclinedShoulder':shoulder,'./updraftAttachment':attachment};
+  const requireLocal=(name:string)=>{assert(Object.hasOwn(modules,name),'Unexpected prefix import: '+name);return modules[name];};
+  const module={exports:{} as Record<string,unknown>};
+  // Only trusted local source is compiled; no fixture geometry or duplicate generator.
+@@ -59,6 +69,7 @@
+ 
+ /** Observe projection/perpendicular invariants, never replay a translation formula. */
+ export function assertJointLayoutContract(t:LayoutTrace):JointLayoutCheck {
++ assert(t.stage!=='post-attachment','The legacy joint contract requires a pre-attachment trace');
+  const a=t.before,b=t.lobes;assert.equal(a.length,b.length);assert.equal(t.uniqueLobes,b.length);assert.deepEqual(t.beforeRng,t.afterRng);
+  const close=(x:number,y:number,message:string)=>assert(Number.isFinite(x)&&Number.isFinite(y)&&Math.abs(x-y)<1e-12,message);
+  if(t.family!=='sheared'){assert.deepEqual(a,b);return {mode:'unmodified-family',projection:null};}
+@@ -97,3 +108,36 @@
+  return {mode:'inward-projected',projection:beforeSigned,oldRoof,attachmentY,scale:b[t.sharedBody!][4]/core[4],selectedCore:selected.core,inwardUnitXZ:unit,signedAfter:afterSigned,
+   offsetBeforeXZ:beforeOffset,perpendicularBeforeXZ:beforePerp,perpendicularAfterXZ:afterPerp,recenterDeltaXZ:delta,recenterKm:Math.hypot(...delta),bodyExact:true,outsideSelectedExact:true,allNonXZExact:true};
+ }
++
++export interface HeadDensityFrontier {
++ head:number;anchor:Lobe;eligibleVoxels:number;denseVoxels:number;frontierVoxels:number;
++ highestFrontierYKm:number|null;highestFrontierIndex:number|null;maxRCode:number;
++}
++/** Pure R-channel observer, shared by canonical-A preflight and candidate tests.
++ * Regions follow actual post-layout head tuples, never fixed world quadrants.
++ * Every voxel is owned by at most one eligible upper-head region. */
++export function observeHeadDensityFrontiers(volume:{size:number;data:Uint8Array},heads:readonly Lobe[]){
++ const {size,data}=volume;
++ assert(Number.isInteger(size)&&size>=2&&size<=256&&data instanceof Uint8Array&&data.byteLength===size**3*4,'Invalid bounded head density volume');
++ assert(heads.length>0&&heads.length<=64,'Invalid head count');
++ for(const head of heads)assert(head.slice(0,6).every(v=>typeof v==='number'&&Number.isFinite(v))&&head[3]>0&&head[4]>0&&head[5]>0,'Invalid actual head tuple');
++ const halfVoxelKm=BOUNDS_SIZE.map(extent=>extent/(size*2)),threshold=.4,thresholdCode=threshold*255;
++ const rows:HeadDensityFrontier[]=heads.map((head,index)=>({head:index,anchor:[head[0],head[1],head[2],head[3],head[4],head[5]],
++  eligibleVoxels:0,denseVoxels:0,frontierVoxels:0,highestFrontierYKm:null,highestFrontierIndex:null,maxRCode:0}));
++ for(let z=0;z<size;z++)for(let y=0;y<size-1;y++)for(let x=0;x<size;x++){
++  const px=voxelCenter(x,0,size),py=voxelCenter(y,1,size),pz=voxelCenter(z,2,size);
++  let owner=-1,nearest=Infinity;
++  for(let i=0;i<heads.length;i++){
++   const h=heads[i];if(py<h[1]-halfVoxelKm[1])continue;
++   const distance=((px-h[0])/(h[3]+halfVoxelKm[0]))**2+((py-h[1])/(h[4]+halfVoxelKm[1]))**2+((pz-h[2])/(h[5]+halfVoxelKm[2]))**2;
++   if(distance<=1&&distance<nearest){owner=i;nearest=distance;}
++  }
++  if(owner<0)continue;
++  const row=rows[owner],index=(z*size+y)*size+x,value=data[index*4];row.eligibleVoxels++;row.maxRCode=Math.max(row.maxRCode,value);
++  if(value<thresholdCode)continue;row.denseVoxels++;
++  if(data[(index+size)*4]>=thresholdCode)continue;
++  row.frontierVoxels++;
++  if(row.highestFrontierYKm===null||py>row.highestFrontierYKm){row.highestFrontierYKm=py;row.highestFrontierIndex=index;}
++ }
++ return {size,threshold,halfVoxelKm,heads:rows,scope:'Actual macro R after carving/quantization; local upper density frontier only, not rendered silhouette or fine/flow/GPU proof'};
++}

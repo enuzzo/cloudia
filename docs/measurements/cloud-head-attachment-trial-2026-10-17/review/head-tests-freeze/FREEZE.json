@@ -1,0 +1,105 @@
+{
+  "schema": "cloudia-head-guard-freeze-v1",
+  "status": "SOURCE_ONLY_NOT_EXECUTED",
+  "basis": "Canonical v61 141 inputs; attachment runtime independently owned by Anatomy",
+  "execution": {
+    "prefix": false,
+    "recipe": false,
+    "model": false,
+    "tests": false,
+    "typecheck": false,
+    "build": false,
+    "gpu": false
+  },
+  "files": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/updraftAttachment.test.ts",
+      "bytes": 4475,
+      "sha256": "37a37f746e4c94a39aa3902c07f017e61652655f684f3ea1ef26c23b8d6d11be"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/layoutPrefix.test-helper.ts",
+      "bytes": 11682,
+      "sha256": "566e3d3deb52dd56cbb66cb138b863bc14648fdc6ff44b51c42a36e863f97afa"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/volume.test.ts",
+      "bytes": 18078,
+      "sha256": "4ff8aa30ab42efb2db8c5facb3fc205c514195477c490fcb84df6f1dc20cdfde"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/updraftAttachment.ts",
+      "bytes": 4134,
+      "sha256": "c9eba3ff685c6d916716af195c09bdd50aaa0fb76ec4867ce326cbf685f5d399"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/volume.ts",
+      "bytes": 34913,
+      "sha256": "db8c77bd79b1e412959b63f647ca1c1026be0cf1e460b4dd71964ad99c840a8f"
+    }
+  ],
+  "canonical": [
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/volume.ts",
+      "bytes": 29836,
+      "sha256": "c349e8f7526a2dafa0348516079f3f67ab7288a17769f28193ebcef7e124d34d"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/layoutPrefix.test-helper.ts",
+      "bytes": 8370,
+      "sha256": "150917f08f0b0752f88fc08a44c70e9662acfa0baa5b368d2ea6c61fe2dceff6"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/volume.test.ts",
+      "bytes": 17229,
+      "sha256": "0934cc1bfb8f27df253ddd3abecc38957ab9a37a0b8fa248a4acc8ff3a328b79"
+    }
+  ],
+  "proposal": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/review/density-guards-before-B.md",
+    "bytes": 3117,
+    "sha256": "3c1c121fe74e3d4f3a676c9a0e52f75747a27ebb5f16f56605babe087625a8e6"
+  },
+  "patches": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/review/head-tests-freeze/updraftAttachment.test.ts.patch",
+      "bytes": 4621,
+      "sha256": "0740729e2956166884996142e77870caced7a91970b3803916653b1a392350c7"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/review/head-tests-freeze/layoutPrefix.test-helper.ts.patch",
+      "bytes": 8476,
+      "sha256": "a65b308555aebbd39e0ff64086177ff771f3228399437fe1babe1dd697a74ad9"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/review/head-tests-freeze/volume.test.ts.patch",
+      "bytes": 4096,
+      "sha256": "957171c4358d8066b63c85a12f0ed0ee6a5867550b44523423a2f94b7f279c69"
+    }
+  ],
+  "contracts": {
+    "helperTests": 8,
+    "densitySeeds": [
+      72,
+      73,
+      74,
+      913
+    ],
+    "canonicalAFirstSeeds": [
+      72,
+      73,
+      74
+    ],
+    "canonicalAFailureStopsBeforeB": true,
+    "densityThreshold": 0.4,
+    "upperRegionPadding": "one half voxel per axis",
+    "multicellFrontierAgeKm": 0.25,
+    "stageDefault": "legacy",
+    "postStage": "post-attachment",
+    "postMarker": "  // The attached updraft heads are final; rasterize the original kernels next.",
+    "observer": "observeHeadDensityFrontiers(volume: {size:number;data:Uint8Array}, heads: readonly Lobe[])",
+    "scope": "Actual macro R frontier only, not fine/flow/GPU silhouette or artistic acceptance"
+  }
+}

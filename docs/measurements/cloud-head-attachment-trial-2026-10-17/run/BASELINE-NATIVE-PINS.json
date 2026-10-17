@@ -1,0 +1,56 @@
+[
+  {
+    "seed": 72,
+    "pose": "front",
+    "dto": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/cloud-branch-roots-trial-2026-10-17/browser/baseline-72-front.json",
+    "dtoSHA256": "4a10ca0e807e59d7d7287cb85987d7c4f036c0ee68e2d4b64d9428630cab2187",
+    "png": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/cloud-branch-roots-trial-2026-10-17/browser/baseline-72-front.png",
+    "pngSHA256": "1448b7d984cd01256227a458efacfa82c4ab7cc5d37aef4ee07a7688b47b6676",
+    "bytes": 3777739
+  },
+  {
+    "seed": 72,
+    "pose": "side",
+    "dto": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/cloud-branch-roots-trial-2026-10-17/browser/baseline-72-side.json",
+    "dtoSHA256": "489b67d7056cb0e701832e8f43bdf3b1eb1cd7580bc9ff5b062920a3c777f7b0",
+    "png": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/cloud-branch-roots-trial-2026-10-17/browser/baseline-72-side.png",
+    "pngSHA256": "a7b406461e238ebf48296271f3590cf80772e8c749a1dc8c39f4adae612333cf",
+    "bytes": 1418995
+  },
+  {
+    "seed": 73,
+    "pose": "front",
+    "dto": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/cloud-branch-roots-trial-2026-10-17/browser/baseline-73-front.json",
+    "dtoSHA256": "21a1bf053c18875f45750b139f530f12e618492b73007365bf87129397c88c2a",
+    "png": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/cloud-branch-roots-trial-2026-10-17/browser/baseline-73-front.png",
+    "pngSHA256": "0d13f6221b37e31ec1cc4baed4420656954bead4622b3b19b836a51e226afbf5",
+    "bytes": 3743616
+  },
+  {
+    "seed": 73,
+    "pose": "side",
+    "dto": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/cloud-branch-roots-trial-2026-10-17/browser/baseline-73-side.json",
+    "dtoSHA256": "c910eea581e1523f2fb466076c6a52a862ef0dc41aa023e1d38c1830417e4601",
+    "png": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/cloud-branch-roots-trial-2026-10-17/browser/baseline-73-side.png",
+    "pngSHA256": "02c800c333702084df9f6e92beb08a0c5cb5ab03bf96ab64d115a6425c26ce2a",
+    "bytes": 1579151
+  },
+  {
+    "seed": 74,
+    "pose": "front",
+    "dto": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/cloud-branch-roots-trial-2026-10-17/browser/baseline-74-front.json",
+    "dtoSHA256": "d8fabea1c3a9f566e63829bda315efd0bdf9c258b496a490dfc2447e138306ea",
+    "png": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/terrain-optical-material-2026-10-17/browser/candidate-b-native.png",
+    "pngSHA256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9",
+    "bytes": 3599836
+  },
+  {
+    "seed": 74,
+    "pose": "side",
+    "dto": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/cloud-branch-roots-trial-2026-10-17/browser/baseline-74-side.json",
+    "dtoSHA256": "d12c0f1c3a4d3d3ba5ba1a3251ef6843a22a312335fd5a65ed74028699f9f2ad",
+    "png": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/cloud-outflow-anchor-trial-2026-10-17/browser/baseline-74-side.png",
+    "pngSHA256": "c9c4681b03b9c4771c7be62974712b12b516e8b8717c22dc0907f18318aa2749",
+    "bytes": 1359259
+  }
+]

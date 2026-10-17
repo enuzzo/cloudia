@@ -1,0 +1,15 @@
+{
+  "baseSourceCommit": "8a9535f9cb849292f5dd868020ef7f514567109a",
+  "baseManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "candidateManifestSHA256": "ae6369636efc203ced8d0ad4afed74d95b805e77abff5619ca46cc59b2295ecb",
+  "deltas": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/layoutPrefix.test-helper.ts",
+    "src/cumulonimbus/lifecycle.test.ts",
+    "src/cumulonimbus/updraftAttachment.test.ts",
+    "src/cumulonimbus/updraftAttachment.ts",
+    "src/cumulonimbus/volume.test.ts",
+    "src/cumulonimbus/volume.ts"
+  ],
+  "canonicalSourceAdopted": false
+}

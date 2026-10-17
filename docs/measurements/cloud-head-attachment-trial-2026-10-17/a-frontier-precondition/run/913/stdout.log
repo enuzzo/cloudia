@@ -1,0 +1,1 @@
+{"status":"PASS_A_PRECONDITION_ONLY","cases":[{"seed":913,"pass":true,"checks":{"everyHeadHasUpperFrontier":true,"distinctAssignedFrontiers":true,"multicellAgeDifference":true}}]}

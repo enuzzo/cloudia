@@ -1,0 +1,34 @@
+{
+  "state": "FROZEN_IMPLEMENTATION_NOT_EXECUTED",
+  "baselineVolumeSHA256": "c349e8f7526a2dafa0348516079f3f67ab7288a17769f28193ebcef7e124d34d",
+  "files": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/volume.ts",
+      "bytes": 34913,
+      "sha256": "db8c77bd79b1e412959b63f647ca1c1026be0cf1e460b4dd71964ad99c840a8f"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/updraftAttachment.ts",
+      "bytes": 4134,
+      "sha256": "c9eba3ff685c6d916716af195c09bdd50aaa0fb76ec4867ce326cbf685f5d399"
+    }
+  ],
+  "patch": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/review/head-attachment-implementation.patch",
+    "bytes": 17086,
+    "sha256": "cc66b04b56079a9f0b472a9937b09a6238aff5416815cb4cf5010ae5cd7fb65c"
+  },
+  "scope": "Only volume.ts and updraftAttachment.ts external author writes. No recipe/prefix/model/test/build/GPU executed. Root owns qualification and adoption.",
+  "placement": "After original canonical contraction and inward shoulder joint, immediately after legacy Rasterize marker; new post marker before actual raster. No second contraction.",
+  "newPostMarker": "  // The attached updraft heads are final; rasterize the original kernels next.",
+  "api": "prepareUpdraftAttachment(matureFoot,matureHead,matureBody,youngHead): UpdraftAttachmentResult",
+  "ownership": "Actual updraft core sets and descendants; young local cap/collars/decor/streak full delta. Common base, MC pulse, sharedBody, mature groups fixed. Each reference checked unique in ownership.",
+  "metadata": "CloudVolume.updraftAnatomy optional lightweight copied post-layout head/foundation/cap descriptors, attachment results and moved-group/lobe counters.",
+  "invariantsPlannedNotExecuted": [
+    "Canonical pre-attachment tuples/RNG/order",
+    "Radii/Y/blend unchanged; foundation and mature exact",
+    "Connected fixed-Y quadric intervals; no jump over gaps; uncovered origin fails even D0",
+    "Existing horizontal margins checked, no resize/recontraction or fallback",
+    "Same raster/carving/detail/light/extinction/256/128/384 path"
+  ]
+}

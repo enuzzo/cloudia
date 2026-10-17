@@ -1,0 +1,20 @@
+{
+  "previousTurn": "PROGRESS: actual scalar/fullmesh/anatomy-preserving terrain representation measured; resource veto honored and archived in6b54983. Evidence changes next action: no third witness allocation tweak; resume main anatomy/near goals.",
+  "canonicalHead": "6b549838a8340db93799bae71121110a869075c9",
+  "productCommit": "8a9535f9cb849292f5dd868020ef7f514567109a",
+  "canonicalSourceFiles": 141,
+  "canonicalSourceManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "candidateSource": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source",
+  "dependencyIgnoreReadback": "1",
+  "architecture": "arm64",
+  "scope": "Preparation only. No model/test/build/GPU yet. Root sole executor; independent source/near reviews delegated. Browser plugin absent; existing CUA in-app bridge will be used for native export/UI checks.",
+  "preserve": [
+    "256macro",
+    "128detail",
+    "384nominal",
+    "configured fulloutput",
+    "main/worker",
+    "camera/audio explicit",
+    "unrelated node_modules2 and4201"
+  ]
+}

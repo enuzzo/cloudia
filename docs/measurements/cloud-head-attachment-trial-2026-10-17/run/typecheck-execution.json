@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "exitCode": 0,
+  "terminalObserved": true,
+  "sessionId": 80757,
+  "sourceFreezeSHA256": "ae6369636efc203ced8d0ad4afed74d95b805e77abff5619ca46cc59b2295ecb",
+  "logSHA256": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92",
+  "wallSeconds": null,
+  "wallScope": "Total wall not measured; initial tool wait1.001776125s is not total runtime."
+}

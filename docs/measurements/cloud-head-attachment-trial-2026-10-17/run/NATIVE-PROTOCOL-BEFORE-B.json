@@ -1,0 +1,55 @@
+{
+  "kind": "attached-young-crowns-native-before-B",
+  "source": "Canonicalv61base141 verified current. One geometric attachment rule on semantic actualgroups; helpers/guardpreconditions/layout64/sourcefullsuite/typecheck/APP beforeB.",
+  "baseline": {
+    "renderer": "observatory-v61-observed-terrain-material",
+    "manifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+    "A72A73": "Pinned existing fullnative front+side with actualDTO, source141exact; no recenter. Fresh74actualDTO/exportdigest beforeB verifies reproducibility.",
+    "A74": "NewactualDTOfrontside beforeB; fullPNGaliasesonlyifexportdigestmatchesexistingfullbitmaprehash"
+  },
+  "candidate": "experiment-v61-attached-young-crowns-r1 externalonly",
+  "quality": {
+    "macro": [
+      256,
+      256,
+      256
+    ],
+    "detail": [
+      128,
+      128,
+      128
+    ],
+    "nominalSteps": 384,
+    "outputAndInternal": [
+      2474,
+      1844
+    ],
+    "mode": "screen",
+    "ablation": "full",
+    "flow": "full"
+  },
+  "state": "Sunleftsettledclear,t60paused,force0,orbitfalse,wind.55,disp0,rain0,autoStormfalse/flashCount0; useactualDTO",
+  "worldCamera": "Front14Left3Downfromfrozencomparison; side16Right; target[.3515625,3.119140625,-.0546875],surface.7227685139973958. EntireDTOmustmatchA perpose; noactualboundsrecenter",
+  "expectedPhysicalChanges": [
+    "rendererVersion",
+    "updraftAnatomy: actualpostlayout descriptors/groupcounts only",
+    "anatomy-derived material.supportMin/material.supportMax",
+    "anatomy-derived weather.precipitationBounds",
+    "emptyStepKm only exact existing conservativeEmptyStep bound derived from new support maxAbsX; root recomputes from frozen B controls. Nominal stepSizeKm and384worktarget remain unchanged."
+  ],
+  "ownerExceptions": [
+    "capture/request/frameIDsandtimestamps/localtimeorigin",
+    "skytextureUUID/versionobjectownership",
+    "terrain/cache/shadow requests,hits,submissions,epoch,CPUtiming/allocationownership; cache.validmustremaintrue"
+  ],
+  "clockException": "weatherTime onlyinactualclearpausednonorbitzeroRainflashoff; it onlyschedulesstorms/flash inexistingengine. Renderingclocksmustmatch.",
+  "metadata": "CompareentireDTO recursive,mustreportunexpectedbeforepixelreview. Inputmatchdoesnotproveidenticaldensity/lightfield/GPUcompletion/FPS. ExplicitownerexceptionsfrozenbeforeB.",
+  "initialUnit": "All3families front+side. Sequence74frontsidefirst; anyclearvisualFAILmaystopremainingBbecauseunitcannotpass. If74benefits, require72/73bothposesactualtoo; a singlepair cannotqualifyallfamilies.",
+  "visual": "Root and independent read fullnative all3families front+side. Require coherent maturebulk with younger crowns attached at their own heights, age/irregularity preserved, less isolated parallellegs/deep-U dominance. FAIL on merely shifted detachedheads, swallowedheads/smoothpillow/newbridge or no convincing overallbenefit. No claim globalice/near/rainfixed fromgeometry.",
+  "stop": "AfterFAILnotuning,extraGPUseeds/near/weather/worker/motion/FPS. Preserveandrestorev61ordinary.",
+  "afterBenefit": "Actualnear/motionandlights,moreseeds3families,main-worker,weather/UIandfullqualityFPSqualificationincludingRainbeforeadoption. Initialunitbenefitnevercompletegoal.",
+  "native": "FullvisiblePNGparts<=16Kreads,length/SHA/IHDRledger. Exactaliasonlyverifiedactualnewexport. Noalternatebrowser/CDP/downloadfallback.",
+  "newUserApprovalNeeded": false,
+  "preflight": "A64 threefamilies must qualify frozenROI/frontier observer beforeB; sameobserver foractualB. Existingbulk/body/morphology/attachment-supportguards preserved. No gate refit after B FAIL.",
+  "layoutBoundsGuard": "After <= max(canonical limit, actual preattachment extent after canonical joint); non-worsening existing bound, not a proof original postjoint always <=4.35/2.8. No second contraction/fallback."
+}

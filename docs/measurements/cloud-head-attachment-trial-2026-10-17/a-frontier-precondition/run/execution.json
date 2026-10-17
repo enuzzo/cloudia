@@ -1,0 +1,80 @@
+{
+  "status": "PASS_A_ISOLATED_PRECONDITION_ONLY",
+  "freezeSHA256": "aaaa73e95401f4225c75581f3b01b832e05f758dbcce73c9373e4c228b778ed8",
+  "children": [
+    {
+      "seed": 72,
+      "status": "PASS_A_PRECONDITION_ONLY",
+      "error": null,
+      "exitCode": 0,
+      "terminalObserved": true,
+      "wallKilled": false,
+      "childCPUSeconds": 1.1460759999999999,
+      "childWallSeconds": 0.910885207937099,
+      "terminalChildPeakRSSBytes": 379322368,
+      "limits": {
+        "aggregateCPUSeconds": 20,
+        "aggregateWallSeconds": 40,
+        "perPIDTerminalRSSBytes": 402653184
+      },
+      "resultSHA256": "5d905ca4f1fcc86f22c81e1def0a6c9f8dda110269a6465c43aa760d78d1cf8a"
+    },
+    {
+      "seed": 73,
+      "status": "PASS_A_PRECONDITION_ONLY",
+      "error": null,
+      "exitCode": 0,
+      "terminalObserved": true,
+      "wallKilled": false,
+      "childCPUSeconds": 0.9395709999999999,
+      "childWallSeconds": 0.6945740419905633,
+      "terminalChildPeakRSSBytes": 215597056,
+      "limits": {
+        "aggregateCPUSeconds": 20,
+        "aggregateWallSeconds": 40,
+        "perPIDTerminalRSSBytes": 402653184
+      },
+      "resultSHA256": "d17a28d771e0a70d433936fb854010ba15616bc2c3a942fa3b214596b6c2ae84"
+    },
+    {
+      "seed": 74,
+      "status": "PASS_A_PRECONDITION_ONLY",
+      "error": null,
+      "exitCode": 0,
+      "terminalObserved": true,
+      "wallKilled": false,
+      "childCPUSeconds": 0.9032439999999999,
+      "childWallSeconds": 0.6464218330802396,
+      "terminalChildPeakRSSBytes": 235765760,
+      "limits": {
+        "aggregateCPUSeconds": 20,
+        "aggregateWallSeconds": 40,
+        "perPIDTerminalRSSBytes": 402653184
+      },
+      "resultSHA256": "fb768fde76576f1e3110beac7d7aeeb2d23f950fa9e654e40b55d01b20fcb051"
+    },
+    {
+      "seed": 913,
+      "status": "PASS_A_PRECONDITION_ONLY",
+      "error": null,
+      "exitCode": 0,
+      "terminalObserved": true,
+      "wallKilled": false,
+      "childCPUSeconds": 0.946124,
+      "childWallSeconds": 0.6858842090005055,
+      "terminalChildPeakRSSBytes": 228524032,
+      "limits": {
+        "aggregateCPUSeconds": 20,
+        "aggregateWallSeconds": 40,
+        "perPIDTerminalRSSBytes": 402653184
+      },
+      "resultSHA256": "da4d9dbd9c6c93ff93c002c708e85f9fc379a325ac9bf3266404461ac6482ef5"
+    }
+  ],
+  "aggregateChildCPUSeconds": 3.935015,
+  "aggregateWallSeconds": 3.2442169579444453,
+  "noRetry": true,
+  "candidateGenerations": 0,
+  "noGPU": true,
+  "RSSScope": "Darwin wait4 per actual PID; unchanged cap. Original batch resourceFAIL retained."
+}

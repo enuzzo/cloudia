@@ -1,0 +1,2007 @@
+{
+  "status": "FAIL_STOP_NO_FALLBACK",
+  "phase": "candidate-legacy",
+  "seed": 37,
+  "completed": 37,
+  "error": {
+    "name": "AssertionError",
+    "message": "Observed RSS budget exceeded",
+    "stack": "AssertionError [ERR_ASSERTION]: Observed RSS budget exceeded\n    at checkBudget (/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/review/attachment-prefix-witness.ts:36:2)\n    at /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/review/attachment-prefix-witness.ts:162:59\n    at moduleEvaluation (native:1:11)\n    at moduleEvaluation (native:1:11)\n    at loadAndEvaluateModule (native:2)\n    at processTicksAndRejections (native:7:39)"
+  },
+  "inputs": {
+    "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/volume.ts": "c349e8f7526a2dafa0348516079f3f67ab7288a17769f28193ebcef7e124d34d",
+    "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/volume.ts": "db8c77bd79b1e412959b63f647ca1c1026be0cf1e460b4dd71964ad99c840a8f",
+    "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/layoutPrefix.test-helper.ts": "566e3d3deb52dd56cbb66cb138b863bc14648fdc6ff44b51c42a36e863f97afa",
+    "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/updraftAttachment.ts": "c9eba3ff685c6d916716af195c09bdd50aaa0fb76ec4867ce326cbf685f5d399",
+    "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/light.ts": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf",
+    "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/sun.ts": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc",
+    "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/motion.ts": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2",
+    "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/inclinedShoulder.ts": "32a844aaacd1de2bde2760da5cc1686693337445e930611cca4a55e3513d8f66"
+  },
+  "instrumentedSourceSHA256": "61fb4123f69eb8ac5f9ef24777b5869b6776a398538e56583da52726c0d69a25",
+  "rows": [
+    {
+      "seed": 0,
+      "family": "congestus",
+      "canonicalLegacySHA256": "29a6a2281dad7efa12a3f65324f2a76d42f6a3b1e6c19aafda197903b268df42",
+      "postSHA256": "6bbe4dd7231bccff1709e43cf3861c7414d4f1347d811e3c01a791c4441b58d6",
+      "rng": [
+        {
+          "initialSeed": 0,
+          "calls": 7050
+        },
+        {
+          "initialSeed": 1103547991,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640933,
+          "calls": 81
+        },
+        {
+          "initialSeed": 2695083,
+          "calls": 84
+        },
+        {
+          "initialSeed": 1943411241,
+          "calls": 96
+        }
+      ],
+      "lobes": 2407,
+      "ownedLobes": 2134,
+      "groups": 24,
+      "movedLobes": 1092,
+      "movedGroups": 12,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 1.3307181264852541,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.0134154680723695,
+          "after": 4.0134154680723695,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.3299395145763824,
+          "after": 2.3299395145763824,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "attached",
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 1,
+      "family": "multicell",
+      "canonicalLegacySHA256": "4547b97a87dc401cc93ae435d8249947c3208ea47d118f90be5474cbbc07fe0d",
+      "postSHA256": "2cda9bbddd1dec6e3f49a535c5a6b432ff39bcdd32d2f9bbfa9b552116ef34eb",
+      "rng": [
+        {
+          "initialSeed": 1,
+          "calls": 6810
+        },
+        {
+          "initialSeed": 1103547990,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640932,
+          "calls": 68
+        },
+        {
+          "initialSeed": 2695082,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411240,
+          "calls": 216
+        }
+      ],
+      "lobes": 2361,
+      "ownedLobes": 1906,
+      "groups": 22,
+      "movedLobes": 862,
+      "movedGroups": 10,
+      "maxRigidResidualKm": 1.1102230246251565e-16,
+      "maxGroupShiftKm": 2.7128003980492927,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 3.9844425880857273,
+          "after": 3.9844425880857273,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.159828229181794,
+          "after": 2.159828229181794,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 2,
+      "family": "sheared",
+      "canonicalLegacySHA256": "ba2fcc3dfec40c6087d98a0b2fc1ab2a97786cd95b7c515a010796624a59dace",
+      "postSHA256": "ffb08e24b5130f73a3f6bd3a8009a1df7e7be9b482ec561e881c63672ad99751",
+      "rng": [
+        {
+          "initialSeed": 2,
+          "calls": 5730
+        },
+        {
+          "initialSeed": 1103547989,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640935,
+          "calls": 66
+        },
+        {
+          "initialSeed": 2695081,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411243,
+          "calls": 288
+        }
+      ],
+      "lobes": 2009,
+      "ownedLobes": 1274,
+      "groups": 14,
+      "movedLobes": 546,
+      "movedGroups": 6,
+      "maxRigidResidualKm": 1.1102230246251565e-16,
+      "maxGroupShiftKm": 0.9763556457546096,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.349999999999999,
+          "after": 4.349999999999999,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.2016344900926947,
+          "after": 2.2016344900926947,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 3,
+      "family": "congestus",
+      "canonicalLegacySHA256": "31dc1bb335e667b454ebd3b2e23594c9221f7c11e39fef31d7b70ebc4875e91a",
+      "postSHA256": "758383db40c71ef147fb34268a4c4de51dbdf32b66ae4675a654944a4802c398",
+      "rng": [
+        {
+          "initialSeed": 3,
+          "calls": 7590
+        },
+        {
+          "initialSeed": 1103547988,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640934,
+          "calls": 93
+        },
+        {
+          "initialSeed": 2695080,
+          "calls": 84
+        },
+        {
+          "initialSeed": 1943411242,
+          "calls": 96
+        }
+      ],
+      "lobes": 2589,
+      "ownedLobes": 2316,
+      "groups": 26,
+      "movedLobes": 1183,
+      "movedGroups": 13,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 1.322354176095053,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.102320458520129,
+          "after": 4.102320458520129,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.3880597793215514,
+          "after": 2.3880597793215514,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "attached",
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 4,
+      "family": "multicell",
+      "canonicalLegacySHA256": "4a8d2803f750f4040c358ce0d36c5c82b9a39e114f0eda30c4af4a085fac6f99",
+      "postSHA256": "f8ca29835f98b2c61a9185954c700fdd0a71c9a0417bf06f2d9538c409a033c4",
+      "rng": [
+        {
+          "initialSeed": 4,
+          "calls": 6540
+        },
+        {
+          "initialSeed": 1103547987,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640929,
+          "calls": 62
+        },
+        {
+          "initialSeed": 2695087,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411245,
+          "calls": 216
+        }
+      ],
+      "lobes": 2270,
+      "ownedLobes": 1815,
+      "groups": 21,
+      "movedLobes": 771,
+      "movedGroups": 9,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 2.5597232705142394,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.05189557254524,
+          "after": 4.05189557254524,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.1848353903581854,
+          "after": 2.1848353903581854,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 5,
+      "family": "sheared",
+      "canonicalLegacySHA256": "72a9b8fe32ac00f13bdee81845b39aa0094a4346066396536f2c271197f9173b",
+      "postSHA256": "170dd90d54a1cff1b0bce94e6ae3aef0248c12665daa2a3f28d85124be92e92c",
+      "rng": [
+        {
+          "initialSeed": 5,
+          "calls": 5730
+        },
+        {
+          "initialSeed": 1103547986,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640928,
+          "calls": 66
+        },
+        {
+          "initialSeed": 2695086,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411244,
+          "calls": 288
+        }
+      ],
+      "lobes": 2009,
+      "ownedLobes": 1274,
+      "groups": 14,
+      "movedLobes": 546,
+      "movedGroups": 6,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 0.7526161107234892,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.35,
+          "after": 4.35,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.057356857417673,
+          "after": 2.057356857417673,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 6,
+      "family": "congestus",
+      "canonicalLegacySHA256": "49274d4da1f67aff66a51c3152d27bb22d2b8a98d096d869f4cae003deb6990f",
+      "postSHA256": "d75995bbb7a7d23d953450fc90749e2cdf9db5a47403db75739ba03120d93c86",
+      "rng": [
+        {
+          "initialSeed": 6,
+          "calls": 7050
+        },
+        {
+          "initialSeed": 1103547985,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640931,
+          "calls": 81
+        },
+        {
+          "initialSeed": 2695085,
+          "calls": 84
+        },
+        {
+          "initialSeed": 1943411247,
+          "calls": 96
+        }
+      ],
+      "lobes": 2407,
+      "ownedLobes": 2134,
+      "groups": 24,
+      "movedLobes": 1092,
+      "movedGroups": 12,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 1.3994977010511382,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.148578210109919,
+          "after": 4.148578210109919,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.4100418018877874,
+          "after": 2.4100418018877874,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "attached",
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 7,
+      "family": "multicell",
+      "canonicalLegacySHA256": "2ed03a126d169c237852abe14d66231c0b9a6c48ba6a05c8394d15cc33b92a8f",
+      "postSHA256": "2e8d28bc66e664d42bfece3c4e31f627e73df7a77b80cca80510e6eff7e27c6b",
+      "rng": [
+        {
+          "initialSeed": 7,
+          "calls": 6540
+        },
+        {
+          "initialSeed": 1103547984,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640930,
+          "calls": 62
+        },
+        {
+          "initialSeed": 2695084,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411246,
+          "calls": 216
+        }
+      ],
+      "lobes": 2270,
+      "ownedLobes": 1815,
+      "groups": 21,
+      "movedLobes": 862,
+      "movedGroups": 10,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 2.439973645115378,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.091411724000215,
+          "after": 4.091411724000215,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.2154948029487396,
+          "after": 2.2154948029487396,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 8,
+      "family": "sheared",
+      "canonicalLegacySHA256": "6788b337b58de3652f631a6994c2475529db6f1c3a93e45531b1af8c14ae5b15",
+      "postSHA256": "231556b3ea5367434aa66125c24677daf2b380880cda28e1eb7918015d944c64",
+      "rng": [
+        {
+          "initialSeed": 8,
+          "calls": 5460
+        },
+        {
+          "initialSeed": 1103547999,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640941,
+          "calls": 60
+        },
+        {
+          "initialSeed": 2695075,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411233,
+          "calls": 288
+        }
+      ],
+      "lobes": 1918,
+      "ownedLobes": 1183,
+      "groups": 13,
+      "movedLobes": 455,
+      "movedGroups": 5,
+      "maxRigidResidualKm": 1.1102230246251565e-16,
+      "maxGroupShiftKm": 1.0603620926078565,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.35,
+          "after": 4.35,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.040940634802505,
+          "after": 2.040940634802505,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 9,
+      "family": "congestus",
+      "canonicalLegacySHA256": "007b13ee78261550b17cc2314ce88987c2476db75819fe271ec8159b67ad0073",
+      "postSHA256": "ab9d872f0e9af1e973396110f6ab70c8def300385ea924106a673e6ad1c98226",
+      "rng": [
+        {
+          "initialSeed": 9,
+          "calls": 7860
+        },
+        {
+          "initialSeed": 1103547998,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640940,
+          "calls": 99
+        },
+        {
+          "initialSeed": 2695074,
+          "calls": 84
+        },
+        {
+          "initialSeed": 1943411232,
+          "calls": 96
+        }
+      ],
+      "lobes": 2680,
+      "ownedLobes": 2407,
+      "groups": 27,
+      "movedLobes": 1274,
+      "movedGroups": 14,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 1.3866615975654066,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 3.8913357278152927,
+          "after": 3.8913357278152927,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.272268799362592,
+          "after": 2.272268799362592,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "attached",
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 10,
+      "family": "multicell",
+      "canonicalLegacySHA256": "1dfe18b4f0cbec98a5238a27b60b58901495e5e6a32a46e7a4a2816329025e6a",
+      "postSHA256": "797993d73612481b4913a14a6b29b05ba385e2d99e0e4cac1620bb91ad055330",
+      "rng": [
+        {
+          "initialSeed": 10,
+          "calls": 6270
+        },
+        {
+          "initialSeed": 1103547997,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640943,
+          "calls": 56
+        },
+        {
+          "initialSeed": 2695073,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411235,
+          "calls": 216
+        }
+      ],
+      "lobes": 2179,
+      "ownedLobes": 1724,
+      "groups": 20,
+      "movedLobes": 771,
+      "movedGroups": 9,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 2.276866225344206,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.125637846191251,
+          "after": 4.125637846191251,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.217931819196138,
+          "after": 2.217931819196138,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 11,
+      "family": "sheared",
+      "canonicalLegacySHA256": "35e75d648b8069fd9caf3039a42799ad447fbc80aa425fc5ede88cb228113f2f",
+      "postSHA256": "69ff0add1c07430d4e4980105788bf9a26be63aef1b5dc1d6f539cda8c2f7177",
+      "rng": [
+        {
+          "initialSeed": 11,
+          "calls": 5730
+        },
+        {
+          "initialSeed": 1103547996,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640942,
+          "calls": 66
+        },
+        {
+          "initialSeed": 2695072,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411234,
+          "calls": 288
+        }
+      ],
+      "lobes": 2009,
+      "ownedLobes": 1274,
+      "groups": 14,
+      "movedLobes": 546,
+      "movedGroups": 6,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 0.8123985948290251,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.35,
+          "after": 4.35,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.0814909443908185,
+          "after": 2.0814909443908185,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 12,
+      "family": "congestus",
+      "canonicalLegacySHA256": "7d515289bd172655370d09483c7631311f8915335087fdd683ad63fd8cf688b3",
+      "postSHA256": "d6bb9adfdc9d28c2875e99d741bb501172e8e940af40b7705d1e2a22e9be666c",
+      "rng": [
+        {
+          "initialSeed": 12,
+          "calls": 7590
+        },
+        {
+          "initialSeed": 1103547995,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640937,
+          "calls": 93
+        },
+        {
+          "initialSeed": 2695079,
+          "calls": 84
+        },
+        {
+          "initialSeed": 1943411237,
+          "calls": 96
+        }
+      ],
+      "lobes": 2589,
+      "ownedLobes": 2316,
+      "groups": 26,
+      "movedLobes": 1183,
+      "movedGroups": 13,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 1.3786497712341845,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.223391124510542,
+          "after": 4.223391124510542,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.4614105708381904,
+          "after": 2.4614105708381904,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "attached",
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 13,
+      "family": "multicell",
+      "canonicalLegacySHA256": "c98cc5564f813cc24cbf4381c639aea85a286867e9e6cd9212ff8bfca1cfeb72",
+      "postSHA256": "0b7adf876a7da7f819ce09ccb679566756c43f868e96f079cb20a92910702ece",
+      "rng": [
+        {
+          "initialSeed": 13,
+          "calls": 6540
+        },
+        {
+          "initialSeed": 1103547994,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640936,
+          "calls": 62
+        },
+        {
+          "initialSeed": 2695078,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411236,
+          "calls": 216
+        }
+      ],
+      "lobes": 2270,
+      "ownedLobes": 1815,
+      "groups": 21,
+      "movedLobes": 680,
+      "movedGroups": 8,
+      "maxRigidResidualKm": 1.1102230246251565e-16,
+      "maxGroupShiftKm": 2.5549194372640116,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.168345149787632,
+          "after": 4.168345149787632,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.2507261389794757,
+          "after": 2.2507261389794757,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 14,
+      "family": "sheared",
+      "canonicalLegacySHA256": "b410b903f59ca40e12e1ba68d250e7b2dcbef9eb1176cbf069ea765b6bf881c8",
+      "postSHA256": "a0903751057d43918099e6a7b0922daa0a2163ca046c58f1db2e3f5d3e16dec2",
+      "rng": [
+        {
+          "initialSeed": 14,
+          "calls": 5730
+        },
+        {
+          "initialSeed": 1103547993,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640939,
+          "calls": 66
+        },
+        {
+          "initialSeed": 2695077,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411239,
+          "calls": 288
+        }
+      ],
+      "lobes": 2009,
+      "ownedLobes": 1274,
+      "groups": 14,
+      "movedLobes": 546,
+      "movedGroups": 6,
+      "maxRigidResidualKm": 1.1102230246251565e-16,
+      "maxGroupShiftKm": 1.0346040769060167,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.35,
+          "after": 4.35,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.071145525686964,
+          "after": 2.071145525686964,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 15,
+      "family": "congestus",
+      "canonicalLegacySHA256": "c714825dd939b8735456b1cf4c85d9b3e1d22080184002d4ce50cc02a094f804",
+      "postSHA256": "e6b142f869fab992ff49d4daa184ec4f4d87b91c097ed27af231c325fb30bbe3",
+      "rng": [
+        {
+          "initialSeed": 15,
+          "calls": 7320
+        },
+        {
+          "initialSeed": 1103547992,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640938,
+          "calls": 87
+        },
+        {
+          "initialSeed": 2695076,
+          "calls": 84
+        },
+        {
+          "initialSeed": 1943411238,
+          "calls": 96
+        }
+      ],
+      "lobes": 2498,
+      "ownedLobes": 2225,
+      "groups": 25,
+      "movedLobes": 1183,
+      "movedGroups": 13,
+      "maxRigidResidualKm": 4.440892098500626e-16,
+      "maxGroupShiftKm": 1.4992203636199075,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 3.891959309810809,
+          "after": 3.891959309810809,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.274952334372438,
+          "after": 2.274952334372438,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "attached",
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 16,
+      "family": "multicell",
+      "canonicalLegacySHA256": "fb4530fccaceea1ee976689f867df9e8d7ff7ed653db30928a8ce7fc87aca04b",
+      "postSHA256": "ec326757c4835c805fcc4fb403e3db331e99d97c97cd9620e59212c776e28381",
+      "rng": [
+        {
+          "initialSeed": 16,
+          "calls": 6540
+        },
+        {
+          "initialSeed": 1103547975,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640949,
+          "calls": 62
+        },
+        {
+          "initialSeed": 2695099,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411257,
+          "calls": 216
+        }
+      ],
+      "lobes": 2270,
+      "ownedLobes": 1815,
+      "groups": 21,
+      "movedLobes": 862,
+      "movedGroups": 10,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 2.5548326133993475,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 3.97638009330905,
+          "after": 3.97638009330905,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.138733379426645,
+          "after": 2.138733379426645,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 17,
+      "family": "sheared",
+      "canonicalLegacySHA256": "2fd6391ec536fdf889674e20a1455d5ffecc6b4aef19bbda65740db51c4e12e1",
+      "postSHA256": "d8962ef446e5ca11e2b73c8e943834896f835a879919543da3223044c3e3e3aa",
+      "rng": [
+        {
+          "initialSeed": 17,
+          "calls": 5730
+        },
+        {
+          "initialSeed": 1103547974,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640948,
+          "calls": 66
+        },
+        {
+          "initialSeed": 2695098,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411256,
+          "calls": 288
+        }
+      ],
+      "lobes": 2009,
+      "ownedLobes": 1274,
+      "groups": 14,
+      "movedLobes": 546,
+      "movedGroups": 6,
+      "maxRigidResidualKm": 1.1102230246251565e-16,
+      "maxGroupShiftKm": 0.980428113578045,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.35,
+          "after": 4.35,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.081364764972627,
+          "after": 2.081364764972627,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 18,
+      "family": "congestus",
+      "canonicalLegacySHA256": "440544709e429fb5fc8e1075b749ecba5ef6d9b8d6aa7676e34fbe3a65a9cc63",
+      "postSHA256": "87692fd327db9d1e1ceb4b95460e25c378f4e742db5fb3d3d5aa9a700e62e964",
+      "rng": [
+        {
+          "initialSeed": 18,
+          "calls": 7590
+        },
+        {
+          "initialSeed": 1103547973,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640951,
+          "calls": 93
+        },
+        {
+          "initialSeed": 2695097,
+          "calls": 84
+        },
+        {
+          "initialSeed": 1943411259,
+          "calls": 96
+        }
+      ],
+      "lobes": 2589,
+      "ownedLobes": 2316,
+      "groups": 26,
+      "movedLobes": 1183,
+      "movedGroups": 13,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 0.9976255342566859,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.103102300021797,
+          "after": 4.103102300021797,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.3953813993191346,
+          "after": 2.3953813993191346,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "attached",
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 19,
+      "family": "multicell",
+      "canonicalLegacySHA256": "76a285c657f11c19e4db1dee7ee96fbbae58e72874d59d9f3ae9374b1a52219e",
+      "postSHA256": "c8b4fa439535689502d34c192a5a03663f2d28cf6b201d481f5cf8196b835367",
+      "rng": [
+        {
+          "initialSeed": 19,
+          "calls": 6540
+        },
+        {
+          "initialSeed": 1103547972,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640950,
+          "calls": 62
+        },
+        {
+          "initialSeed": 2695096,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411258,
+          "calls": 216
+        }
+      ],
+      "lobes": 2270,
+      "ownedLobes": 1815,
+      "groups": 21,
+      "movedLobes": 862,
+      "movedGroups": 10,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 2.28596260334898,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 3.905015588484309,
+          "after": 3.905015588484309,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.112030609527137,
+          "after": 2.112030609527137,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 20,
+      "family": "sheared",
+      "canonicalLegacySHA256": "4a1866b170734b257322c65fe810dd6d22c8faa7a1c861136b14ccbca6fcbfc4",
+      "postSHA256": "41c60499b7e065e1cf3e32ae57059c77aafc4ba6956b2d04026543b93663c3dc",
+      "rng": [
+        {
+          "initialSeed": 20,
+          "calls": 5460
+        },
+        {
+          "initialSeed": 1103547971,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640945,
+          "calls": 60
+        },
+        {
+          "initialSeed": 2695103,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411261,
+          "calls": 288
+        }
+      ],
+      "lobes": 1918,
+      "ownedLobes": 1183,
+      "groups": 13,
+      "movedLobes": 546,
+      "movedGroups": 6,
+      "maxRigidResidualKm": 1.1102230246251565e-16,
+      "maxGroupShiftKm": 1.25591376590752,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.35,
+          "after": 4.35,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.08327771699056,
+          "after": 2.08327771699056,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 21,
+      "family": "congestus",
+      "canonicalLegacySHA256": "f907d113277f6f69a6b3e7538eaa67478a322c1a7ee5de6f0e448f9fe7a54aa9",
+      "postSHA256": "4848636fcb90c054d888f5b4800427d957b3e4743a95ee9703857575e70c359e",
+      "rng": [
+        {
+          "initialSeed": 21,
+          "calls": 7860
+        },
+        {
+          "initialSeed": 1103547970,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640944,
+          "calls": 99
+        },
+        {
+          "initialSeed": 2695102,
+          "calls": 84
+        },
+        {
+          "initialSeed": 1943411260,
+          "calls": 96
+        }
+      ],
+      "lobes": 2680,
+      "ownedLobes": 2407,
+      "groups": 27,
+      "movedLobes": 1274,
+      "movedGroups": 14,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 1.2921822361862931,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 3.918252742910515,
+          "after": 3.918252742910515,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.287137176239043,
+          "after": 2.287137176239043,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "attached",
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 22,
+      "family": "multicell",
+      "canonicalLegacySHA256": "7a74e735b63f987be4de5495748ffbf820486bbf1e271c0e6bf908f4968e1e4f",
+      "postSHA256": "55d7327e01a8dbb5f8064272df3148944663323e44e42a3aff58190d58818be1",
+      "rng": [
+        {
+          "initialSeed": 22,
+          "calls": 6810
+        },
+        {
+          "initialSeed": 1103547969,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640947,
+          "calls": 68
+        },
+        {
+          "initialSeed": 2695101,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411263,
+          "calls": 216
+        }
+      ],
+      "lobes": 2361,
+      "ownedLobes": 1906,
+      "groups": 22,
+      "movedLobes": 862,
+      "movedGroups": 10,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 2.925524326090928,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.268947303285799,
+          "after": 4.268947303285799,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.3115724235394506,
+          "after": 2.3115724235394506,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 23,
+      "family": "sheared",
+      "canonicalLegacySHA256": "368bdfa2b531dabdad67dcc71088aa0991e2c7314f775113b557e32f959d4fb5",
+      "postSHA256": "6b474a3c0b8d8e5d2890578ee004a634cee49e166c0a823d79b1dd9aa2eddd84",
+      "rng": [
+        {
+          "initialSeed": 23,
+          "calls": 5460
+        },
+        {
+          "initialSeed": 1103547968,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640946,
+          "calls": 60
+        },
+        {
+          "initialSeed": 2695100,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411262,
+          "calls": 288
+        }
+      ],
+      "lobes": 1918,
+      "ownedLobes": 1183,
+      "groups": 13,
+      "movedLobes": 546,
+      "movedGroups": 6,
+      "maxRigidResidualKm": 1.1102230246251565e-16,
+      "maxGroupShiftKm": 0.8197025015293923,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.35,
+          "after": 4.35,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.010392991971075,
+          "after": 2.010392991971075,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 24,
+      "family": "congestus",
+      "canonicalLegacySHA256": "7b499144a97c6df5d1a220c147a88846e9ee4d89040ecd917e34f6e39ab6d438",
+      "postSHA256": "909760bb6e60136b0ffc597cf7a6b3ecf7fc828861c08a28468ddc1de9041e5c",
+      "rng": [
+        {
+          "initialSeed": 24,
+          "calls": 7320
+        },
+        {
+          "initialSeed": 1103547983,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640957,
+          "calls": 87
+        },
+        {
+          "initialSeed": 2695091,
+          "calls": 84
+        },
+        {
+          "initialSeed": 1943411249,
+          "calls": 96
+        }
+      ],
+      "lobes": 2498,
+      "ownedLobes": 2225,
+      "groups": 25,
+      "movedLobes": 1183,
+      "movedGroups": 13,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 1.0375455862745873,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 3.804097510381788,
+          "after": 3.804097510381788,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.2128259406114,
+          "after": 2.2128259406114,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "attached",
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 25,
+      "family": "multicell",
+      "canonicalLegacySHA256": "b0fe806a8cc4aee0c0414c7222174c422a0099b777bf6aca23f96a5f40d03d2f",
+      "postSHA256": "91b4c8239e0bce8f1d9d4ece129710f5f201fe5d9bfe2fc61de2c952517977df",
+      "rng": [
+        {
+          "initialSeed": 25,
+          "calls": 6540
+        },
+        {
+          "initialSeed": 1103547982,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640956,
+          "calls": 62
+        },
+        {
+          "initialSeed": 2695090,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411248,
+          "calls": 216
+        }
+      ],
+      "lobes": 2270,
+      "ownedLobes": 1815,
+      "groups": 21,
+      "movedLobes": 771,
+      "movedGroups": 9,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 2.184213618223053,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.1228930827300525,
+          "after": 4.1228930827300525,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.2221595548121593,
+          "after": 2.2221595548121593,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 26,
+      "family": "sheared",
+      "canonicalLegacySHA256": "fc6bffa31760bdfa4256ecde74bfa412f65a269a53cc35fa32157c90969bb7ea",
+      "postSHA256": "7246ba28078f93600a1f2fba6dc7f34f015e632f941142ddbd66d4cb5fcfc133",
+      "rng": [
+        {
+          "initialSeed": 26,
+          "calls": 5730
+        },
+        {
+          "initialSeed": 1103547981,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640959,
+          "calls": 66
+        },
+        {
+          "initialSeed": 2695089,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411251,
+          "calls": 288
+        }
+      ],
+      "lobes": 2009,
+      "ownedLobes": 1274,
+      "groups": 14,
+      "movedLobes": 546,
+      "movedGroups": 6,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 1.2524245608484104,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.35,
+          "after": 4.35,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.1196149175883083,
+          "after": 2.1196149175883083,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 27,
+      "family": "congestus",
+      "canonicalLegacySHA256": "5e01674dc96a339a5ba32f882750e7e2bdba3a50e19b32775296dd8ede36b532",
+      "postSHA256": "cdf0662b538e38fe411c75c9f545333ff300f1efd9c30b93a492c333d7e0c971",
+      "rng": [
+        {
+          "initialSeed": 27,
+          "calls": 7860
+        },
+        {
+          "initialSeed": 1103547980,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640958,
+          "calls": 99
+        },
+        {
+          "initialSeed": 2695088,
+          "calls": 84
+        },
+        {
+          "initialSeed": 1943411250,
+          "calls": 96
+        }
+      ],
+      "lobes": 2680,
+      "ownedLobes": 2407,
+      "groups": 27,
+      "movedLobes": 1274,
+      "movedGroups": 14,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 1.5930068247944669,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 3.96680949942667,
+          "after": 3.96680949942667,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.319540302366726,
+          "after": 2.319540302366726,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "attached",
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 28,
+      "family": "multicell",
+      "canonicalLegacySHA256": "07d7d914c41cd66736aca6871dca1aece346eeea7f8a08a3d9180ec174f086e2",
+      "postSHA256": "d591118b8522452eb19acd9f1b334c699285c87d9e672b323be04341507099bf",
+      "rng": [
+        {
+          "initialSeed": 28,
+          "calls": 6810
+        },
+        {
+          "initialSeed": 1103547979,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640953,
+          "calls": 68
+        },
+        {
+          "initialSeed": 2695095,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411253,
+          "calls": 216
+        }
+      ],
+      "lobes": 2361,
+      "ownedLobes": 1906,
+      "groups": 22,
+      "movedLobes": 862,
+      "movedGroups": 10,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 2.626125740959741,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 3.9246605151342235,
+          "after": 3.9246605151342235,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.115809147790447,
+          "after": 2.115809147790447,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 29,
+      "family": "sheared",
+      "canonicalLegacySHA256": "4978470614f5ad187b6ce7a798bafe602ca6942bf0c89afbcce664437e663b3f",
+      "postSHA256": "ff83aad333a52d2d47514910e3ce7d1b480a4564bcb245b5ab17020a8671e8de",
+      "rng": [
+        {
+          "initialSeed": 29,
+          "calls": 5190
+        },
+        {
+          "initialSeed": 1103547978,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640952,
+          "calls": 54
+        },
+        {
+          "initialSeed": 2695094,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411252,
+          "calls": 288
+        }
+      ],
+      "lobes": 1827,
+      "ownedLobes": 1092,
+      "groups": 12,
+      "movedLobes": 455,
+      "movedGroups": 5,
+      "maxRigidResidualKm": 1.1102230246251565e-16,
+      "maxGroupShiftKm": 1.0052403070860967,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.35,
+          "after": 4.35,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.2298370691904426,
+          "after": 2.2298370691904426,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 30,
+      "family": "congestus",
+      "canonicalLegacySHA256": "18706678f8859ddc86c9a7ec79113140a6bcda8c5c8f16bda4147f9eeeee8778",
+      "postSHA256": "c439aec6254c3ae01aa9c7f880b08f2d749a8e209be658b7cc039d6426d1457d",
+      "rng": [
+        {
+          "initialSeed": 30,
+          "calls": 7860
+        },
+        {
+          "initialSeed": 1103547977,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640955,
+          "calls": 99
+        },
+        {
+          "initialSeed": 2695093,
+          "calls": 84
+        },
+        {
+          "initialSeed": 1943411255,
+          "calls": 96
+        }
+      ],
+      "lobes": 2680,
+      "ownedLobes": 2407,
+      "groups": 27,
+      "movedLobes": 1274,
+      "movedGroups": 14,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 1.0974962783021178,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.100141939721293,
+          "after": 4.100141939721293,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.3839950441087776,
+          "after": 2.3839950441087776,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "attached",
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 31,
+      "family": "multicell",
+      "canonicalLegacySHA256": "b387c9222cd7cbcb94ee9998fb91dc9641ef1991d61d9acef4930fe0a92170ce",
+      "postSHA256": "9facfe78385a57279e08ee373dac60934e02e58df9ab1effc0f6d16cfcad9526",
+      "rng": [
+        {
+          "initialSeed": 31,
+          "calls": 6540
+        },
+        {
+          "initialSeed": 1103547976,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640954,
+          "calls": 62
+        },
+        {
+          "initialSeed": 2695092,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411254,
+          "calls": 216
+        }
+      ],
+      "lobes": 2270,
+      "ownedLobes": 1815,
+      "groups": 21,
+      "movedLobes": 862,
+      "movedGroups": 10,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 2.892534364554571,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.187342752138409,
+          "after": 4.187342752138409,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.2652282541069666,
+          "after": 2.2652282541069666,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 32,
+      "family": "sheared",
+      "canonicalLegacySHA256": "362a594570409088c142148c57592fa8f3bba5f6d6d7767f79a6abcfb289c01b",
+      "postSHA256": "9cdbe669066cea8b3b653a6a8f3f7d7ddc80fc98b241d157aaf53f81272a990e",
+      "rng": [
+        {
+          "initialSeed": 32,
+          "calls": 5730
+        },
+        {
+          "initialSeed": 1103548023,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640901,
+          "calls": 66
+        },
+        {
+          "initialSeed": 2695051,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411209,
+          "calls": 288
+        }
+      ],
+      "lobes": 2009,
+      "ownedLobes": 1274,
+      "groups": 14,
+      "movedLobes": 546,
+      "movedGroups": 6,
+      "maxRigidResidualKm": 1.1102230246251565e-16,
+      "maxGroupShiftKm": 1.0651972249726818,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.35,
+          "after": 4.35,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.0631242014561595,
+          "after": 2.0631242014561595,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 33,
+      "family": "congestus",
+      "canonicalLegacySHA256": "89a51cbc2d97be70afe1e204473180acc6f3a4a57ab72f8b84128a7ae6ccc7f9",
+      "postSHA256": "c4913b3e52b4f2f765821040fea657363f440dfa08cca8e4a2e65df72550bd02",
+      "rng": [
+        {
+          "initialSeed": 33,
+          "calls": 7320
+        },
+        {
+          "initialSeed": 1103548022,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640900,
+          "calls": 87
+        },
+        {
+          "initialSeed": 2695050,
+          "calls": 84
+        },
+        {
+          "initialSeed": 1943411208,
+          "calls": 96
+        }
+      ],
+      "lobes": 2498,
+      "ownedLobes": 2225,
+      "groups": 25,
+      "movedLobes": 1092,
+      "movedGroups": 12,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 1.4209193766619328,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.0532918937383595,
+          "after": 4.0532918937383595,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.3514723288207504,
+          "after": 2.3514723288207504,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "attached",
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 34,
+      "family": "multicell",
+      "canonicalLegacySHA256": "dc508b84ee7a456947ef851a9b176d718d10e96e66bfa1b9859f9c42097b6352",
+      "postSHA256": "96349327164b79e16b678ac9bdd2b5d34827c31736b1f35696427747bfe8ee4e",
+      "rng": [
+        {
+          "initialSeed": 34,
+          "calls": 6540
+        },
+        {
+          "initialSeed": 1103548021,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640903,
+          "calls": 62
+        },
+        {
+          "initialSeed": 2695049,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411211,
+          "calls": 216
+        }
+      ],
+      "lobes": 2270,
+      "ownedLobes": 1815,
+      "groups": 21,
+      "movedLobes": 771,
+      "movedGroups": 9,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 2.6109171475266955,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.263738820271612,
+          "after": 4.263738820271612,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.298722392525803,
+          "after": 2.298722392525803,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 35,
+      "family": "sheared",
+      "canonicalLegacySHA256": "f15a5d06d74646923876a33280767549d13a3d83391709e27bf80d96d96a604e",
+      "postSHA256": "f852cac39ddd05b40614ed33f35919923cfdfb70e0b06649b491f7336fa9e331",
+      "rng": [
+        {
+          "initialSeed": 35,
+          "calls": 5190
+        },
+        {
+          "initialSeed": 1103548020,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640902,
+          "calls": 54
+        },
+        {
+          "initialSeed": 2695048,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411210,
+          "calls": 288
+        }
+      ],
+      "lobes": 1827,
+      "ownedLobes": 1092,
+      "groups": 12,
+      "movedLobes": 455,
+      "movedGroups": 5,
+      "maxRigidResidualKm": 1.1102230246251565e-16,
+      "maxGroupShiftKm": 0.9372643591992105,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.35,
+          "after": 4.35,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.024424175406545,
+          "after": 2.024424175406545,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "dominant",
+        "attached"
+      ]
+    },
+    {
+      "seed": 36,
+      "family": "congestus",
+      "canonicalLegacySHA256": "7d863653467aefb385d735dd3c17429e18e0780f4014343272e77a17a9b14071",
+      "postSHA256": "374fef0faecf6ae2af8602c6e1232e0f7787655044412f70356a496ff482874e",
+      "rng": [
+        {
+          "initialSeed": 36,
+          "calls": 7860
+        },
+        {
+          "initialSeed": 1103548019,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456640897,
+          "calls": 99
+        },
+        {
+          "initialSeed": 2695055,
+          "calls": 84
+        },
+        {
+          "initialSeed": 1943411213,
+          "calls": 96
+        }
+      ],
+      "lobes": 2680,
+      "ownedLobes": 2407,
+      "groups": 27,
+      "movedLobes": 1274,
+      "movedGroups": 14,
+      "maxRigidResidualKm": 2.220446049250313e-16,
+      "maxGroupShiftKm": 1.461663545842245,
+      "extents": [
+        {
+          "axis": 0,
+          "before": 4.191042007372528,
+          "after": 4.191042007372528,
+          "canonicalLimitKm": 4.35
+        },
+        {
+          "axis": 2,
+          "before": 2.4346296514460812,
+          "after": 2.4346296514460812,
+          "canonicalLimitKm": 2.8
+        }
+      ],
+      "statuses": [
+        "attached",
+        "dominant",
+        "attached"
+      ]
+    }
+  ],
+  "focus": {},
+  "measurement": {
+    "wallSeconds": 0.31963837500000003,
+    "cpu": {
+      "user": 730708,
+      "system": 29136
+    },
+    "maxObservedRSSBetweenCallsBytes": 402735104
+  }
+}

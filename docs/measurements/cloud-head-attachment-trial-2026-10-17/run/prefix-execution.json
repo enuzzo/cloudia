@@ -1,0 +1,21 @@
+{
+  "step": "prefix",
+  "status": "FAIL",
+  "command": [
+    "/Users/enuzzo/.bun/bin/bun",
+    "--no-install",
+    "run",
+    "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/review/attachment-prefix-witness.ts"
+  ],
+  "sourceFreezeSHA256": "ae6369636efc203ced8d0ad4afed74d95b805e77abff5619ca46cc59b2295ecb",
+  "exitCode": 1,
+  "wallKilled": false,
+  "wallLimitSeconds": 30,
+  "wallSeconds": 0.7525472500128672,
+  "error": "Prefix CPU/RSS budget exceeded",
+  "terminalObserved": true,
+  "terminalProcessCPUSeconds": 1.035744,
+  "terminalProcessPeakRSSBytes": 403062784,
+  "resourceScope": "Darwin wait4 actual launched process, no claim of simultaneous process-tree peak",
+  "logSHA256": "161f6a4044c500ea16623a76181675650dc8d4a9771be063740d3aa3aa87e240"
+}

@@ -1,0 +1,132 @@
+{
+  "state": "FROZEN_NOT_EXECUTED",
+  "scope": "Necessary canonical A guard only; candidate not generated. No GPU.",
+  "canonicalRoot": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia",
+  "candidateRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source",
+  "dependencyRoot": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules",
+  "bunPath": "/Users/enuzzo/.bun/bin/bun",
+  "seeds": [
+    72,
+    73,
+    74,
+    913
+  ],
+  "inputs": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/a-frontier-precondition/witness.ts",
+      "bytes": 2835,
+      "sha256": "b964e652bbe09c8cab0a231ab1741b5f9fb936fab27c35d6ce9f91238a9b6a80"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/a-frontier-precondition/run.py",
+      "bytes": 5394,
+      "sha256": "391f25778fdcc1b7373e8567928397d1728ec9cfb8c4b68cabcfcba2ceb7e64a"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/a-frontier-precondition/PROTOCOL.md",
+      "bytes": 1030,
+      "sha256": "9c4b36b65a9eb11b797241db3663a73206830fa903ac4b0074d01da18c3707fd"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/run/SOURCE-FREEZE-R1.json",
+      "bytes": 15264,
+      "sha256": "ae6369636efc203ced8d0ad4afed74d95b805e77abff5619ca46cc59b2295ecb"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/run/source-baseline141.json",
+      "bytes": 15037,
+      "sha256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/review/head-tests-freeze/FREEZE-R2.json",
+      "bytes": 4651,
+      "sha256": "495a30697f500cb5cc83c6b8100cd808c758cecb510c0e5a5dfef0cf112db8d7"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/run/NATIVE-PROTOCOL-BEFORE-B.json",
+      "bytes": 3872,
+      "sha256": "5bf32e29cdbcb1160a1c7099f955cb06b4d331066a3f297ccdebc09161c23170"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/volume.ts",
+      "bytes": 29836,
+      "sha256": "c349e8f7526a2dafa0348516079f3f67ab7288a17769f28193ebcef7e124d34d"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/light.ts",
+      "bytes": 3041,
+      "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/sun.ts",
+      "bytes": 397,
+      "sha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/motion.ts",
+      "bytes": 7238,
+      "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/inclinedShoulder.ts",
+      "bytes": 2009,
+      "sha256": "32a844aaacd1de2bde2760da5cc1686693337445e930611cca4a55e3513d8f66"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/volume.ts",
+      "bytes": 34913,
+      "sha256": "db8c77bd79b1e412959b63f647ca1c1026be0cf1e460b4dd71964ad99c840a8f"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/light.ts",
+      "bytes": 3041,
+      "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/sun.ts",
+      "bytes": 397,
+      "sha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/motion.ts",
+      "bytes": 7238,
+      "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/inclinedShoulder.ts",
+      "bytes": 2009,
+      "sha256": "32a844aaacd1de2bde2760da5cc1686693337445e930611cca4a55e3513d8f66"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/updraftAttachment.ts",
+      "bytes": 4134,
+      "sha256": "c9eba3ff685c6d916716af195c09bdd50aaa0fb76ec4867ce326cbf685f5d399"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/layoutPrefix.test-helper.ts",
+      "bytes": 11682,
+      "sha256": "566e3d3deb52dd56cbb66cb138b863bc14648fdc6ff44b51c42a36e863f97afa"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/typescript/lib/typescript.js",
+      "bytes": 9112572,
+      "sha256": "3ae902c92cc44dace175c0e69e13a4b0899f6983c6121d76b9ab8dd5795e7675"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/typescript/package.json",
+      "bytes": 3620,
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+    },
+    {
+      "path": "/Users/enuzzo/.bun/bin/bun",
+      "bytes": 61069216,
+      "sha256": "1d77af7bfd811aebb7d37bec496a5eed14fe227ded3ab7866d2f39786e8107b6"
+    }
+  ],
+  "limits": {
+    "cpuSeconds": 20,
+    "wallSeconds": 40,
+    "terminalDarwinRSSBytes": 402653184
+  },
+  "selfDigestPolicy": "Root supplies digest; excludes itself."
+}

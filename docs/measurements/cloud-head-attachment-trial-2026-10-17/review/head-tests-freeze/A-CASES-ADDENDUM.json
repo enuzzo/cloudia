@@ -1,0 +1,19 @@
+{
+  "status": "BEFORE_EXECUTION_SOURCE_UNCHANGED",
+  "supersedes": "Canonical A first seeds [72,73,74] in the earlier note/freeze only",
+  "canonicalAFirstSeeds": [
+    72,
+    73,
+    74,
+    913
+  ],
+  "candidateDensityTestSeeds": [
+    72,
+    73,
+    74,
+    913
+  ],
+  "requirements": "Each actual head has a nonempty upper frontier and a distinct highest-frontier voxel; multicell oldest minus youngest frontier height > .25 km. Threshold .4 and half-voxel ROI unchanged. A failure stops before B; no refitting.",
+  "executionByThisAgent": "none",
+  "sourceChanged": false
+}

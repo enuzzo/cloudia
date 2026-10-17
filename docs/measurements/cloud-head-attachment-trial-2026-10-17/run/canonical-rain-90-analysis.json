@@ -1,0 +1,96 @@
+{
+  "status": "PASS_SAVED_REPORT_VALIDITY_ONLY",
+  "sourceReportSHA256": "67f64472fcf33d0a054f464837cd10ed3720251b033d399cc6287fa571728a73",
+  "protocolSHA256": "a9fde4febc174b3b1849efd7b3365fd229502d4c4735cf1abd6b93ec598deef6",
+  "checks": {
+    "statisticsExactlyRecomputed": true,
+    "nativeOutput": true,
+    "fullQuality": true,
+    "fullModes": true,
+    "animated": true,
+    "weatherSettled": true,
+    "noLightning": true,
+    "ninetySeconds": true,
+    "noSkippedFramesReported": true,
+    "main": true,
+    "sameCameraOrigin": true,
+    "sourceVersion": true,
+    "queueComplete": true,
+    "presentationUnmeasured": true,
+    "completionBoundedRateExactlyRecomputed": true,
+    "allFrameIntervalsFinitePositive": true
+  },
+  "stats": {
+    "frames": 1783,
+    "durationMs": 90039.0,
+    "fps": 19.802530014771378,
+    "medianMs": 50,
+    "p95Ms": 67.5,
+    "p99Ms": 68.39999999996508,
+    "maxMs": 89.20000000001164,
+    "over18Ms": 1783,
+    "over33Ms": 1563
+  },
+  "target60Reached": false,
+  "presentationFPS": null,
+  "queueSummary": {
+    "status": "completed",
+    "measuredSubmissions": 1783,
+    "confirmedPrefixId": 1783,
+    "unconfirmedMeasuredFrames": 0,
+    "maxUnconfirmedMeasuredFrames": 25,
+    "endDrainMs": 172.70000004768372,
+    "completionBoundedSubmissionFps": 19.7631963395308
+  },
+  "timestampCoverage": {
+    "render": {
+      "measuredDraws": 1783,
+      "expectedCalls": 3566,
+      "matchedFreshCalls": 3564,
+      "completeDraws": 1782,
+      "partialDraws": 0,
+      "missingDraws": 1,
+      "notRequestedDraws": 0,
+      "invalidLedgerDraws": 0,
+      "conflictDraws": 0
+    },
+    "compute": {
+      "measuredDraws": 1783,
+      "expectedCalls": 1783,
+      "matchedFreshCalls": 1782,
+      "completeDraws": 1782,
+      "partialDraws": 0,
+      "missingDraws": 1,
+      "notRequestedDraws": 0,
+      "invalidLedgerDraws": 0,
+      "conflictDraws": 0
+    }
+  },
+  "timestampCompletePassSums": {
+    "render": {
+      "completeSamples": 1782,
+      "meanPassSumMs": 97.89463904826037,
+      "p95PassSumMs": 123.666432,
+      "maxPassSumMs": 139.59168
+    },
+    "compute": {
+      "completeSamples": 1782,
+      "meanPassSumMs": 0.0254494455667789,
+      "p95PassSumMs": 0.131072,
+      "maxPassSumMs": 0.65536
+    }
+  },
+  "legacySparseGPU": {
+    "sampleCount": 377,
+    "meanMs": 98.12686158090185,
+    "p95Ms": 125.960192,
+    "maxMs": 137.95328
+  },
+  "cpuSubmission": {
+    "sampleCount": 1783,
+    "meanMs": 0.39489624297023823,
+    "p95Ms": 0.7999999523162842,
+    "maxMs": 1.5
+  },
+  "methodScope": "Saved JSON arithmetic only. Timestamp pass sums and legacy sparse means are separate, neither reciprocal frame throughput nor compositor presentation. Missing final timestamp draw retained; no inference of missing presented frames. One actual rain90 window, not whole-goal acceptance."
+}

@@ -1,0 +1,17 @@
+{
+  "seed": 74,
+  "status": "PASS_A_PRECONDITION_ONLY",
+  "error": null,
+  "exitCode": 0,
+  "terminalObserved": true,
+  "wallKilled": false,
+  "childCPUSeconds": 0.9032439999999999,
+  "childWallSeconds": 0.6464218330802396,
+  "terminalChildPeakRSSBytes": 235765760,
+  "limits": {
+    "aggregateCPUSeconds": 20,
+    "aggregateWallSeconds": 40,
+    "perPIDTerminalRSSBytes": 402653184
+  },
+  "resultSHA256": "fb768fde76576f1e3110beac7d7aeeb2d23f950fa9e654e40b55d01b20fcb051"
+}

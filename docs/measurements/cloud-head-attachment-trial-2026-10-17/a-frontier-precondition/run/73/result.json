@@ -1,0 +1,96 @@
+{
+  "status": "PASS_A_PRECONDITION_ONLY",
+  "scope": "Canonical A64 actual full generations only; frozen raw density-frontier observer, no candidate model/GPU/acceptance",
+  "seeds": [
+    73
+  ],
+  "cases": [
+    {
+      "seed": 73,
+      "family": "multicell",
+      "generatedSize": 64,
+      "detailSize": 64,
+      "allFiveLightBakes": true,
+      "layoutLobes": 2179,
+      "layoutSHA256": "905f906162ba8d70f48a86dc88139fc7eda1fe9aa6c101d1952a4d40ae969827",
+      "rng": [
+        {
+          "initialSeed": 73,
+          "calls": 6270
+        },
+        {
+          "initialSeed": 1103547934,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456641004,
+          "calls": 56
+        },
+        {
+          "initialSeed": 2695138,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411296,
+          "calls": 216
+        }
+      ],
+      "macroRGBASHA256": "c0f55d1cbf2002e2add9e85d6f3ee33fdf6236882e12f069aa21cb3a58e1b259",
+      "detailRGBASHA256": "62792d0d0643686d5706d2b460ddfed89feb9ce80330d4587ebb53eedc8ca2fb",
+      "sunsetSHA256": "6bc07a80ad7b44ae759a87a2c66b4e1fc9bfeb3ec9c43e09811925ff1f412313",
+      "observer": {
+        "size": 64,
+        "threshold": 0.4,
+        "halfVoxelKm": [
+          0.078125,
+          0.06640625,
+          0.0546875
+        ],
+        "heads": [
+          {
+            "head": 0,
+            "anchor": [
+              -1.7380970787077157,
+              4.751282850203946,
+              -0.509675397306101,
+              0.910205710982681,
+              0.704693010841653,
+              0.8310193169448429
+            ],
+            "eligibleVoxels": 704,
+            "denseVoxels": 381,
+            "frontierVoxels": 99,
+            "highestFrontierYKm": 5.27734375,
+            "highestFrontierIndex": 105173,
+            "maxRCode": 221
+          },
+          {
+            "head": 1,
+            "anchor": [
+              1.653028346786483,
+              3.8899813679851034,
+              0.2914075766102378,
+              0.9256046044412102,
+              0.7053787178693264,
+              0.9733981664752795
+            ],
+            "eligibleVoxels": 759,
+            "denseVoxels": 266,
+            "frontierVoxels": 93,
+            "highestFrontierYKm": 4.48046875,
+            "highestFrontierIndex": 125292,
+            "maxRCode": 245
+          }
+        ],
+        "scope": "Actual macro R after carving/quantization; local upper density frontier only, not rendered silhouette or fine/flow/GPU proof"
+      },
+      "checks": {
+        "everyHeadHasUpperFrontier": true,
+        "distinctAssignedFrontiers": true,
+        "multicellAgeDifference": true
+      },
+      "pass": true,
+      "wallMs": 517.333333
+    }
+  ]
+}

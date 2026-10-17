@@ -1,0 +1,514 @@
+{
+  "state": "FROZEN_NOT_EXECUTED",
+  "scope": "One explicitly repaired isolation qualification, unchanged source/predicate/fullbakes/data; four A-only children, same aggregate20CPU40wall and perPID384MiB, no B or automatic retry.",
+  "canonicalRoot": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia",
+  "candidateRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source",
+  "dependencyRoot": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules",
+  "bunPath": "/Users/enuzzo/.bun/bin/bun",
+  "seeds": [
+    72,
+    73,
+    74,
+    913
+  ],
+  "inputs": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/a-frontier-precondition/witness.ts",
+      "bytes": 3353,
+      "sha256": "cd09232356cdb9ae36af20863670f23a1aedd53888ab8ef9fc9fecf12a16e004"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/a-frontier-precondition/run.py",
+      "bytes": 4630,
+      "sha256": "bdf0f6db8c0f4a26878e2ce85c459df019aa6d119e78db36f2ee96c3c6d25379"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/a-frontier-precondition/PROTOCOL.md",
+      "bytes": 1030,
+      "sha256": "9c4b36b65a9eb11b797241db3663a73206830fa903ac4b0074d01da18c3707fd"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/run/SOURCE-FREEZE-R1.json",
+      "bytes": 15264,
+      "sha256": "ae6369636efc203ced8d0ad4afed74d95b805e77abff5619ca46cc59b2295ecb"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/run/source-baseline141.json",
+      "bytes": 15037,
+      "sha256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/review/head-tests-freeze/FREEZE-R2.json",
+      "bytes": 4651,
+      "sha256": "495a30697f500cb5cc83c6b8100cd808c758cecb510c0e5a5dfef0cf112db8d7"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/run/NATIVE-PROTOCOL-BEFORE-B.json",
+      "bytes": 3872,
+      "sha256": "5bf32e29cdbcb1160a1c7099f955cb06b4d331066a3f297ccdebc09161c23170"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/volume.ts",
+      "bytes": 29836,
+      "sha256": "c349e8f7526a2dafa0348516079f3f67ab7288a17769f28193ebcef7e124d34d"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/light.ts",
+      "bytes": 3041,
+      "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/sun.ts",
+      "bytes": 397,
+      "sha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/motion.ts",
+      "bytes": 7238,
+      "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/inclinedShoulder.ts",
+      "bytes": 2009,
+      "sha256": "32a844aaacd1de2bde2760da5cc1686693337445e930611cca4a55e3513d8f66"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/volume.ts",
+      "bytes": 34913,
+      "sha256": "db8c77bd79b1e412959b63f647ca1c1026be0cf1e460b4dd71964ad99c840a8f"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/light.ts",
+      "bytes": 3041,
+      "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/sun.ts",
+      "bytes": 397,
+      "sha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/motion.ts",
+      "bytes": 7238,
+      "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/inclinedShoulder.ts",
+      "bytes": 2009,
+      "sha256": "32a844aaacd1de2bde2760da5cc1686693337445e930611cca4a55e3513d8f66"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/updraftAttachment.ts",
+      "bytes": 4134,
+      "sha256": "c9eba3ff685c6d916716af195c09bdd50aaa0fb76ec4867ce326cbf685f5d399"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/candidate-source/src/cumulonimbus/layoutPrefix.test-helper.ts",
+      "bytes": 11682,
+      "sha256": "566e3d3deb52dd56cbb66cb138b863bc14648fdc6ff44b51c42a36e863f97afa"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/typescript/lib/typescript.js",
+      "bytes": 9112572,
+      "sha256": "3ae902c92cc44dace175c0e69e13a4b0899f6983c6121d76b9ab8dd5795e7675"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/typescript/package.json",
+      "bytes": 3620,
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+    },
+    {
+      "path": "/Users/enuzzo/.bun/bin/bun",
+      "bytes": 61069216,
+      "sha256": "1d77af7bfd811aebb7d37bec496a5eed14fe227ded3ab7866d2f39786e8107b6"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/a-frontier-precondition/ISOLATION-REVISION.md",
+      "bytes": 1234,
+      "sha256": "36d3ae61a8ce666d8887fffb0e11a549d42f19999f74367e4e53b099f10b5d9b"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/a-frontier-precondition/batch-r1/run/result.json",
+      "bytes": 10837,
+      "sha256": "c457c96f3aca1b34a9a0f81dce9e463d3fdefe806e927c6a1089860fb288ba9c"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle45/a-frontier-precondition/batch-r1/run/execution.json",
+      "bytes": 949,
+      "sha256": "65e58ab856fcbea1f477eb58e62cdf4510a422032ff19d91ca45ab711ef498c6"
+    }
+  ],
+  "limits": {
+    "cpuSeconds": 20,
+    "wallSeconds": 40,
+    "terminalDarwinRSSBytes": 402653184
+  },
+  "selfDigestPolicy": "Root supplies digest; excludes itself.",
+  "expectedCases": [
+    {
+      "seed": 72,
+      "family": "congestus",
+      "generatedSize": 64,
+      "detailSize": 64,
+      "allFiveLightBakes": true,
+      "layoutLobes": 2589,
+      "layoutSHA256": "1fdf846aea1de3681a5eeed2ece5c1e23482947df09cd837441b567f0024cf5f",
+      "rng": [
+        {
+          "initialSeed": 72,
+          "calls": 7590
+        },
+        {
+          "initialSeed": 1103547935,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456641005,
+          "calls": 93
+        },
+        {
+          "initialSeed": 2695139,
+          "calls": 84
+        },
+        {
+          "initialSeed": 1943411297,
+          "calls": 96
+        }
+      ],
+      "macroRGBASHA256": "c2825dd655980fcb98eab043dcf599dea2d8de2c771e07439976e31a825e71cc",
+      "detailRGBASHA256": "1a37901672785e71b96815b3cee69bd52932e5b105a1ffe48e2cf867a23c851b",
+      "sunsetSHA256": "cbab523179326fad1cf5ac2396dc14dacd5a3e1f1a0638328e3bd4f37ccdf62a",
+      "observer": {
+        "size": 64,
+        "threshold": 0.4,
+        "halfVoxelKm": [
+          0.078125,
+          0.06640625,
+          0.0546875
+        ],
+        "heads": [
+          {
+            "head": 0,
+            "anchor": [
+              -1.7217880074636582,
+              3.5492387981325892,
+              -0.2890071990806442,
+              1.1988178550033806,
+              0.547186027564251,
+              1.2402160199680285
+            ],
+            "eligibleVoxels": 1085,
+            "denseVoxels": 247,
+            "frontierVoxels": 115,
+            "highestFrontierYKm": 3.94921875,
+            "highestFrontierIndex": 112728,
+            "maxRCode": 247
+          },
+          {
+            "head": 1,
+            "anchor": [
+              0.214687843749105,
+              3.6738539853654055,
+              0.4812722944289109,
+              0.8952286064303443,
+              0.5048292530167109,
+              0.8060707107706728
+            ],
+            "eligibleVoxels": 502,
+            "denseVoxels": 188,
+            "frontierVoxels": 77,
+            "highestFrontierYKm": 4.08203125,
+            "highestFrontierIndex": 153760,
+            "maxRCode": 234
+          },
+          {
+            "head": 2,
+            "anchor": [
+              1.84216493368553,
+              3.2665834994396388,
+              -0.05405271561832757,
+              0.8087038369546034,
+              0.5206795627057852,
+              0.7855416315646987
+            ],
+            "eligibleVoxels": 457,
+            "denseVoxels": 100,
+            "frontierVoxels": 51,
+            "highestFrontierYKm": 3.55078125,
+            "highestFrontierIndex": 112556,
+            "maxRCode": 236
+          }
+        ],
+        "scope": "Actual macro R after carving/quantization; local upper density frontier only, not rendered silhouette or fine/flow/GPU proof"
+      },
+      "checks": {
+        "everyHeadHasUpperFrontier": true,
+        "distinctAssignedFrontiers": true,
+        "multicellAgeDifference": true
+      },
+      "pass": true,
+      "wallMs": 534.6817090000001
+    },
+    {
+      "seed": 73,
+      "family": "multicell",
+      "generatedSize": 64,
+      "detailSize": 64,
+      "allFiveLightBakes": true,
+      "layoutLobes": 2179,
+      "layoutSHA256": "905f906162ba8d70f48a86dc88139fc7eda1fe9aa6c101d1952a4d40ae969827",
+      "rng": [
+        {
+          "initialSeed": 73,
+          "calls": 6270
+        },
+        {
+          "initialSeed": 1103547934,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456641004,
+          "calls": 56
+        },
+        {
+          "initialSeed": 2695138,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411296,
+          "calls": 216
+        }
+      ],
+      "macroRGBASHA256": "c0f55d1cbf2002e2add9e85d6f3ee33fdf6236882e12f069aa21cb3a58e1b259",
+      "detailRGBASHA256": "62792d0d0643686d5706d2b460ddfed89feb9ce80330d4587ebb53eedc8ca2fb",
+      "sunsetSHA256": "6bc07a80ad7b44ae759a87a2c66b4e1fc9bfeb3ec9c43e09811925ff1f412313",
+      "observer": {
+        "size": 64,
+        "threshold": 0.4,
+        "halfVoxelKm": [
+          0.078125,
+          0.06640625,
+          0.0546875
+        ],
+        "heads": [
+          {
+            "head": 0,
+            "anchor": [
+              -1.7380970787077157,
+              4.751282850203946,
+              -0.509675397306101,
+              0.910205710982681,
+              0.704693010841653,
+              0.8310193169448429
+            ],
+            "eligibleVoxels": 704,
+            "denseVoxels": 381,
+            "frontierVoxels": 99,
+            "highestFrontierYKm": 5.27734375,
+            "highestFrontierIndex": 105173,
+            "maxRCode": 221
+          },
+          {
+            "head": 1,
+            "anchor": [
+              1.653028346786483,
+              3.8899813679851034,
+              0.2914075766102378,
+              0.9256046044412102,
+              0.7053787178693264,
+              0.9733981664752795
+            ],
+            "eligibleVoxels": 759,
+            "denseVoxels": 266,
+            "frontierVoxels": 93,
+            "highestFrontierYKm": 4.48046875,
+            "highestFrontierIndex": 125292,
+            "maxRCode": 245
+          }
+        ],
+        "scope": "Actual macro R after carving/quantization; local upper density frontier only, not rendered silhouette or fine/flow/GPU proof"
+      },
+      "checks": {
+        "everyHeadHasUpperFrontier": true,
+        "distinctAssignedFrontiers": true,
+        "multicellAgeDifference": true
+      },
+      "pass": true,
+      "wallMs": 468.17945900000007
+    },
+    {
+      "seed": 74,
+      "family": "sheared",
+      "generatedSize": 64,
+      "detailSize": 64,
+      "allFiveLightBakes": true,
+      "layoutLobes": 1918,
+      "layoutSHA256": "e4b0aa7aefe16cecdf16479004acc271920838b61d0d31c03cc959e2925b5129",
+      "rng": [
+        {
+          "initialSeed": 74,
+          "calls": 5460
+        },
+        {
+          "initialSeed": 1103547933,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456641007,
+          "calls": 60
+        },
+        {
+          "initialSeed": 2695137,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411299,
+          "calls": 288
+        }
+      ],
+      "macroRGBASHA256": "72c8bd8b7759f736cd09be206b3117f81f1e7082a4f9f7d728a0d190022add64",
+      "detailRGBASHA256": "0343537f81600f06de2c398aa6ee83b78de92f97badab32488e3ae5571eb695a",
+      "sunsetSHA256": "b58a273b0ee2107f1b8f316d77c08d0ff70f038d99d4d33727f38e23a932a505",
+      "observer": {
+        "size": 64,
+        "threshold": 0.4,
+        "halfVoxelKm": [
+          0.078125,
+          0.06640625,
+          0.0546875
+        ],
+        "heads": [
+          {
+            "head": 0,
+            "anchor": [
+              0.04280943884321254,
+              4.609379100715798,
+              -0.3413771115830025,
+              0.7335287131069066,
+              0.7768848201179783,
+              0.8749298758919407
+            ],
+            "eligibleVoxels": 651,
+            "denseVoxels": 485,
+            "frontierVoxels": 87,
+            "highestFrontierYKm": 5.27734375,
+            "highestFrontierIndex": 101088,
+            "maxRCode": 245
+          },
+          {
+            "head": 1,
+            "anchor": [
+              1.5745324837604153,
+              3.803153012622741,
+              0.40109844008200246,
+              0.6128307212057814,
+              0.7911159344100983,
+              0.7098034719127264
+            ],
+            "eligibleVoxels": 452,
+            "denseVoxels": 93,
+            "frontierVoxels": 38,
+            "highestFrontierYKm": 4.34765625,
+            "highestFrontierIndex": 145705,
+            "maxRCode": 247
+          }
+        ],
+        "scope": "Actual macro R after carving/quantization; local upper density frontier only, not rendered silhouette or fine/flow/GPU proof"
+      },
+      "checks": {
+        "everyHeadHasUpperFrontier": true,
+        "distinctAssignedFrontiers": true,
+        "multicellAgeDifference": true
+      },
+      "pass": true,
+      "wallMs": 426.1732920000002
+    },
+    {
+      "seed": 913,
+      "family": "multicell",
+      "generatedSize": 64,
+      "detailSize": 64,
+      "allFiveLightBakes": true,
+      "layoutLobes": 2179,
+      "layoutSHA256": "6834f648308314f899da73448fa0e70025c26546f22d0b39d15c5c089c06366f",
+      "rng": [
+        {
+          "initialSeed": 913,
+          "calls": 6270
+        },
+        {
+          "initialSeed": 1103547846,
+          "calls": 4
+        },
+        {
+          "initialSeed": 456641076,
+          "calls": 56
+        },
+        {
+          "initialSeed": 2694202,
+          "calls": 168
+        },
+        {
+          "initialSeed": 1943411128,
+          "calls": 216
+        }
+      ],
+      "macroRGBASHA256": "19482e31eeeae145cc52612689c0b83cd704c16dc7bce995abc11c38540d08f4",
+      "detailRGBASHA256": "368d902cec9ce08b35af0b5278b8aa3d122ba9ba23fb5e65a702b54a59138962",
+      "sunsetSHA256": "8c2532855dea0bc96a8d3fa12108957c0b6de70a688477af19f750605185db50",
+      "observer": {
+        "size": 64,
+        "threshold": 0.4,
+        "halfVoxelKm": [
+          0.078125,
+          0.06640625,
+          0.0546875
+        ],
+        "heads": [
+          {
+            "head": 0,
+            "anchor": [
+              -1.8176436435039638,
+              4.91181124523571,
+              -0.6072282350405133,
+              1.0668825761467384,
+              0.7853463860277282,
+              0.9226700984694777
+            ],
+            "eligibleVoxels": 1033,
+            "denseVoxels": 715,
+            "frontierVoxels": 139,
+            "highestFrontierYKm": 5.54296875,
+            "highestFrontierIndex": 97104,
+            "maxRCode": 224
+          },
+          {
+            "head": 1,
+            "anchor": [
+              1.9067294653794795,
+              3.7677967715367853,
+              0.33688632009521235,
+              0.7504066785417313,
+              0.8172724150761005,
+              0.7171162569515105
+            ],
+            "eligibleVoxels": 534,
+            "denseVoxels": 245,
+            "frontierVoxels": 75,
+            "highestFrontierYKm": 4.34765625,
+            "highestFrontierIndex": 137516,
+            "maxRCode": 251
+          }
+        ],
+        "scope": "Actual macro R after carving/quantization; local upper density frontier only, not rendered silhouette or fine/flow/GPU proof"
+      },
+      "checks": {
+        "everyHeadHasUpperFrontier": true,
+        "distinctAssignedFrontiers": true,
+        "multicellAgeDifference": true
+      },
+      "pass": true,
+      "wallMs": 558.8392080000001
+    }
+  ]
+}

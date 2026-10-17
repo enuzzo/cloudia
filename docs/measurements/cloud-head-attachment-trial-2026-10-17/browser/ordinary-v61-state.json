@@ -1,0 +1,21 @@
+{
+  "url": "http://127.0.0.1:4196/?seed=74",
+  "httpStatus": 200,
+  "uiObserved": "Sun checked, Pausa action, WebGPU convezione attiva, Regola collapsed, mature animated scene restored; two screenshots showed motion. Final screenshot CSS only, not native capture or FPS.",
+  "canvas": [
+    2474,
+    1844
+  ],
+  "cssViewport": [
+    1237,
+    922
+  ],
+  "consoleWarningsErrors": [],
+  "renderer": "observatory-v61-observed-terrain-material",
+  "candidateServerStarted": false,
+  "candidateGPURenders": 0,
+  "ownerSession": 48736,
+  "independentCanonicalRainPerformanceExecuted": true,
+  "canonicalRainReportSHA256": "67f64472fcf33d0a054f464837cd10ed3720251b033d399cc6287fa571728a73",
+  "restoredAfterRain": true
+}

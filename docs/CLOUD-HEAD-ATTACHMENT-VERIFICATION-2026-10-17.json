@@ -1,0 +1,16 @@
+{
+  "status": "PASS_CONSERVATION_ONLY",
+  "manifestSHA256": "b455740c5f74facf32bf6ef6a7f342ca106fb9167278cffa2e69f9a0f4e29a6c",
+  "payloadFiles": 89,
+  "payloadBytes": 5309768,
+  "canonicalSourceFilesExact": 141,
+  "reconstructedCandidateSourceFilesExact": 143,
+  "candidateAdopted": false,
+  "candidateOverall": "UNQUALIFIED_RESOURCE_FAIL",
+  "canonicalRainTarget60": "NOT_REACHED",
+  "wholeGoal": "active",
+  "modelReplays": 0,
+  "testReplays": 0,
+  "GPUReplays": 0,
+  "scope": "File integrity and preserved verdicts only; does not turn resource failure into acceptance or requalify model, visual appearance, performance or whole goal."
+}

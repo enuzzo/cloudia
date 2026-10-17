@@ -1,0 +1,29 @@
+{
+  "status": "FAIL_EXECUTION",
+  "error": "RuntimeError: Terminal resource gate failed",
+  "freezeSHA256": "ae7a1528b2aa51400fc7eba3f8bbfa5e7162ec0aa487476cf78160328c11388b",
+  "launched": true,
+  "terminalObserved": true,
+  "exitCode": 0,
+  "wallKilled": false,
+  "childCPUSeconds": 2.692416,
+  "childWallSeconds": 2.395486499997787,
+  "terminalChildPeakRSSBytes": 404570112,
+  "limits": {
+    "cpuSeconds": 20,
+    "wallSeconds": 40,
+    "terminalRSSBytes": 402653184
+  },
+  "RSSScope": "Darwin wait4 bytes for this PID; terminal gate, not reservation. No AS/ps.",
+  "executionPass": false,
+  "necessaryFrontierPass": null,
+  "noRetry": true,
+  "canonicalGenerations": 4,
+  "size": 64,
+  "candidateGenerations": 0,
+  "noGPU": true,
+  "launcherCPUSeconds": 0.040456000000000006,
+  "launcherWallSeconds": 2.4422886670799926,
+  "launcherPeakRSSBytes": 29310976,
+  "resultSHA256": "c457c96f3aca1b34a9a0f81dce9e463d3fdefe806e927c6a1089860fb288ba9c"
+}

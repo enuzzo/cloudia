@@ -1,0 +1,37 @@
+{
+  "kind": "independent canonical v61 Rain90 current baseline",
+  "authorizedScope": "Existing active full-quality FPS goal, separate from stopped head candidate. No candidate code or GPU rendering.",
+  "sourceManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "renderer": "observatory-v61-observed-terrain-material",
+  "url": "http://127.0.0.1:4196/?seed=74",
+  "scene": "Pioggia preset .8, matured previously, active motion, orbitfalse, autoLightningfalse, no camera/audio",
+  "quality": {
+    "macro": [
+      256,
+      256,
+      256
+    ],
+    "detail": [
+      128,
+      128,
+      128
+    ],
+    "steps": 384,
+    "output": [
+      2474,
+      1844
+    ],
+    "internal": [
+      2474,
+      1844
+    ],
+    "ablation": "full",
+    "flow": "full",
+    "outputMode": "screen"
+  },
+  "timingMode": "stages, existing ordinary default; diagnostic overhead not subtracted",
+  "measurement": "One existing UI Misura90secondi run, builtin2s warmup, >=15s weather settle before start, no interaction/visibility change during interval. Existing queue-prefix completion and sparse timestamps report retained.",
+  "validity": "Record exact context inclactualrain,skyPending,atmosphereTransition,camera/thread/density path; requirequality exact,fullmode,settled,animated,90scompleted; failure retained without automatic retry.",
+  "scopeLimit": "Submitted draw intervals and optional GPU/queue signals; compositor presentation unmeasured. One rain window cannot qualify global60 or directly compare older different settings.",
+  "after": "Save entire benchmark-json DOM text, verify intervals/statistics and queue summaries, restore ordinary animated Sun and final CSS screenshot. No tuning based on current measurement in this tranche."
+}

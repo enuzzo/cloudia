@@ -1,0 +1,7 @@
+{
+  "scope": "Renderer tag, actual postlayout metadata in native DTO and lifecycle expectation only. No shader/lighting/quality/terrain modifications. Compile pending helperauthor CloudVolume optionalproperty.",
+  "files": {
+    "GPUSceneEngine.ts": "627111474fa2ce44e300dbbbd0954b9a056547694b224803037a31c48a57a1de",
+    "lifecycle.test.ts": "c552668f0cc9b2bc270d3c53513b7678616fe5b0b9f80a019438b1055826552b"
+  }
+}
