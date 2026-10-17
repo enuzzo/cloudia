@@ -1,0 +1,12 @@
+terrainMeshAsset.ts(68,21): error TS18046: 'classes' is of type 'unknown'.
+terrainMeshAsset.ts(68,32): error TS18046: 'classes' is of type 'unknown'.
+terrainMeshAsset.ts(68,43): error TS18046: 'classes' is of type 'unknown'.
+terrainMeshAsset.ts(118,2): error TS2322: Type 'Uint8Array<ArrayBufferLike>' is not assignable to type 'Uint8Array<ArrayBuffer>'.
+  Type 'ArrayBufferLike' is not assignable to type 'ArrayBuffer'.
+    Type 'SharedArrayBuffer' is not assignable to type 'ArrayBuffer'.
+      Types of property '[Symbol.toStringTag]' are incompatible.
+        Type '"SharedArrayBuffer"' is not assignable to type '"ArrayBuffer"'.
+terrainMeshAsset.ts(193,53): error TS2345: Argument of type 'ArrayBuffer | undefined' is not assignable to parameter of type 'BufferSource'.
+  Type 'undefined' is not assignable to type 'BufferSource'.
+terrainMeshAsset.ts(195,125): error TS2345: Argument of type 'ArrayBuffer | undefined' is not assignable to parameter of type 'ArrayBuffer | Uint8Array<ArrayBufferLike>'.
+  Type 'undefined' is not assignable to type 'ArrayBuffer | Uint8Array<ArrayBufferLike>'.

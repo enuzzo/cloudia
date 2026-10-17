@@ -1,0 +1,320 @@
+{
+  "candidatePhotographicGate": "FAIL_ROOT_AND_INDEPENDENT",
+  "productAdopted": false,
+  "baselineRuntime": "observatory-v60-terrain-raster-cache",
+  "candidate": "GLO30 sampled62.5m with offline one-pass static mesh",
+  "candidateSource135UnchangedAfterQualification": true,
+  "preflight": "PASS_RESOURCE_AND_SOURCE_RETENTION_ONLY",
+  "cacheBitExactGate": "FAIL_REPRODUCED_R1_R2",
+  "difference": {
+    "format": "native-packed-rgba32f",
+    "byteOrder": "little-endian",
+    "width": 2474,
+    "height": 1844,
+    "packedByteLength": 72992896,
+    "pixelCount": 4562056,
+    "comparedWords": 18248224,
+    "changedWords": 21,
+    "changedPixels": 7,
+    "changedRgbWords": 21,
+    "changedRgbPixels": 7,
+    "changedAlphaWords": 0,
+    "changedAlphaPixels": 0,
+    "changedWordsByChannel": [
+      7,
+      7,
+      7,
+      0
+    ],
+    "boundingRect": {
+      "x": 284,
+      "y": 897,
+      "width": 2,
+      "height": 5
+    },
+    "finiteComparableWords": 18248224,
+    "maxFiniteAbsDelta": 0.005331589374691248,
+    "maxFiniteAbsDeltaByChannel": [
+      0.0033917909022420645,
+      0.005331589374691248,
+      0.002869958523660898,
+      0
+    ],
+    "beforeNonFinite": {
+      "nanWords": 0,
+      "positiveInfinityWords": 0,
+      "negativeInfinityWords": 0
+    },
+    "afterNonFinite": {
+      "nanWords": 0,
+      "positiveInfinityWords": 0,
+      "negativeInfinityWords": 0
+    },
+    "nonFinitePairs": {
+      "eitherNonFiniteWords": 0,
+      "bothNonFiniteWords": 0,
+      "finiteToNonFiniteWords": 0,
+      "nonFiniteToFiniteWords": 0,
+      "changedWordsWithNonFinite": 0,
+      "bothNaNChangedBits": 0
+    },
+    "signedZeroChangedWords": 0,
+    "firstDifferences": [
+      {
+        "x": 285,
+        "y": 897,
+        "channelMask": 7,
+        "before": {
+          "bits": [
+            1002792385,
+            1010128027,
+            1007469314,
+            1108037349
+          ],
+          "values": [
+            0.006024092901498079,
+            0.011067534796893597,
+            0.008591415360569954,
+            34.82704544067383
+          ]
+        },
+        "after": {
+          "bits": [
+            994018032,
+            1003506709,
+            1002814359,
+            1108037349
+          ],
+          "values": [
+            0.0029222331941127777,
+            0.006356725934892893,
+            0.0060343253426253796,
+            34.82704544067383
+          ]
+        }
+      },
+      {
+        "x": 284,
+        "y": 898,
+        "channelMask": 7,
+        "before": {
+          "bits": [
+            1003039589,
+            1010393316,
+            1007625516,
+            1108036291
+          ],
+          "values": [
+            0.006139206234365702,
+            0.011314604431390762,
+            0.008736889809370041,
+            34.8230094909668
+          ]
+        },
+        "after": {
+          "bits": [
+            993864591,
+            1003454848,
+            1002796497,
+            1108036291
+          ],
+          "values": [
+            0.0028865074273198843,
+            0.006332576274871826,
+            0.006026007700711489,
+            34.8230094909668
+          ]
+        }
+      },
+      {
+        "x": 285,
+        "y": 898,
+        "channelMask": 7,
+        "before": {
+          "bits": [
+            1002942916,
+            1010345096,
+            1007570753,
+            1108035726
+          ],
+          "values": [
+            0.006094189360737801,
+            0.011269696056842804,
+            0.008685887791216373,
+            34.82085418701172
+          ]
+        },
+        "after": {
+          "bits": [
+            993990408,
+            1003598523,
+            1002852674,
+            1108035726
+          ],
+          "values": [
+            0.002915801480412483,
+            0.006399480160325766,
+            0.006052167154848576,
+            34.82085418701172
+          ]
+        }
+      },
+      {
+        "x": 284,
+        "y": 899,
+        "channelMask": 7,
+        "before": {
+          "bits": [
+            1003173903,
+            1010600959,
+            1007718141,
+            1108034670
+          ],
+          "values": [
+            0.006201751064509153,
+            0.011507987044751644,
+            0.0088231535628438,
+            34.81682586669922
+          ]
+        },
+        "after": {
+          "bits": [
+            993852389,
+            1003559911,
+            1002839236,
+            1108034670
+          ],
+          "values": [
+            0.0028836664278060198,
+            0.006381500046700239,
+            0.006045909598469734,
+            34.81682586669922
+          ]
+        }
+      },
+      {
+        "x": 285,
+        "y": 899,
+        "channelMask": 7,
+        "before": {
+          "bits": [
+            1003101222,
+            1010571401,
+            1007669429,
+            1108034105
+          ],
+          "values": [
+            0.00616790633648634,
+            0.01148045901209116,
+            0.00877778697758913,
+            34.81467056274414
+          ]
+        },
+        "after": {
+          "bits": [
+            994001304,
+            1003726621,
+            1002905088,
+            1108034105
+          ],
+          "values": [
+            0.0029183384031057358,
+            0.006459130439907312,
+            0.0060765743255615234,
+            34.81467056274414
+          ]
+        }
+      },
+      {
+        "x": 284,
+        "y": 900,
+        "channelMask": 7,
+        "before": {
+          "bits": [
+            1003275214,
+            1010782551,
+            1007796118,
+            1108033049
+          ],
+          "values": [
+            0.006248927675187588,
+            0.011677107773721218,
+            0.00889577530324459,
+            34.81064224243164
+          ]
+        },
+        "after": {
+          "bits": [
+            993836126,
+            1003658657,
+            1002877673,
+            1108033049
+          ],
+          "values": [
+            0.002879879903048277,
+            0.006427482236176729,
+            0.006063808221369982,
+            34.81064224243164
+          ]
+        }
+      },
+      {
+        "x": 284,
+        "y": 901,
+        "channelMask": 7,
+        "before": {
+          "bits": [
+            1003289474,
+            1010892384,
+            1007843365,
+            1108031432
+          ],
+          "values": [
+            0.006255568005144596,
+            0.01177939772605896,
+            0.008939777500927448,
+            34.804473876953125
+          ]
+        },
+        "after": {
+          "bits": [
+            993766965,
+            1003702307,
+            1002890581,
+            1108031432
+          ],
+          "values": [
+            0.0028637771029025316,
+            0.006447808351367712,
+            0.00606981897726655,
+            34.804473876953125
+          ]
+        }
+      }
+    ]
+  },
+  "shadowDigest": {
+    "cached": {
+      "width": 2048,
+      "height": 2048,
+      "bytes": 16777216,
+      "sha256": "efedb5fbf752b8c0149234759a4fe233db6b4db30bf6934b054ba4e8e3dfae0a",
+      "scope": "Entire existing R32F shadow colour attachment; no depth readback, conversion, padding or extra target"
+    },
+    "fresh": {
+      "width": 2048,
+      "height": 2048,
+      "bytes": 16777216,
+      "sha256": "9eab703e2aa50491e4b05042d2d5bcde17294c27a02e6319c4bee2f6a12af0ee",
+      "scope": "Entire existing R32F shadow colour attachment; no depth readback, conversion, padding or extra target"
+    },
+    "identical": false
+  },
+  "limits": [
+    "All-target alpha unchanged means distance/miss unchanged in this fixed view, not global geometry identity",
+    "Firstcached042 has no nativePNG; the capturedPNG is only after stablefreshd7",
+    "Changed shadowattachment does not byitself establish uniqueRGBcause or GPUbinding/depth behavior",
+    "No worker/weather/motion/FPS tests of candidate after visualFAIL"
+  ],
+  "next": "Prepare one source-based optical material proposal on canonical v60 geometry; keep GLO30/static helpers as rejected experimental artifacts, no tuning sweep."
+}

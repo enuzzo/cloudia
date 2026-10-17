@@ -1,0 +1,94 @@
+produced using Copernicus WorldDEM™-90 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved
+
+The organisations in charge of the Copernicus programme by law or by delegation do not incur any liability for any use of the Copernicus WorldDEM™-90.
+
+Source: Copernicus DEM GLO-90 / AWS public COG release2021.
+Access date:2026-10-16.
+DOI:https://doi.org/10.5270/ESA-c5d3d65
+Source/registration:https://registry.opendata.aws/copernicus-dem/
+Licence:see COP-DEM-GLO90-F-license.pdf, original PDF viewer pages19–21 (zero-based18–20).
+This is a locally resampled/quantized derivative, not an officially endorsed product.
+
+Land-cover material layer:
+© ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium
+
+Dataset: ESA WorldCover 10 m 2021 v200.
+Citation: Zanaga, D., et al. (2022), ESA WorldCover 10 m 2021 v200.
+DOI: https://doi.org/10.5281/zenodo.7254221
+Source: https://esa-worldcover.org/en/data-access
+License: Creative Commons Attribution 4.0 International (CC BY 4.0).
+https://creativecommons.org/licenses/by/4.0/
+
+Modification: local equirectangular crop and exact rectangular area aggregation to 125 m cells; 12 categorical area fractions quantized to sum255. Source 2021 classification is unchanged; output is a derived representation, not the original native-resolution map. No endorsement by ESA or the consortium is implied.
+Class10 tree cover includes plantations and orchards. These fractions are class-area coverage, not physical canopy density or certified natural forest. Cropland40, built-up50 and NoData0 are retained as distinct channels.
+
+ESA WorldCover Sentinel-2 2021 — derived authored terrain colours
+
+© ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium
+
+Source: ESA WorldCover Sentinel-2 annual median L2A RGBNIR composite, 2021 v200.
+Recorded source band order: B04 (red), B03 (green), B02 (blue), B08 (near infrared).
+Official data access and composite description:
+https://esa-worldcover.org/en/data-access
+AWS registry of the annual composites:
+https://registry.opendata.aws/esa-worldcover-vito-composites/
+Dataset citation: Zanaga, D., et al. (2022), ESA WorldCover 10 m 2021 v200.
+https://doi.org/10.5281/zenodo.7254221
+
+License: Creative Commons Attribution 4.0 International (CC BY 4.0).
+https://creativecommons.org/licenses/by/4.0/
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+Changes and derivation: partial overview4 source crop and exact projected-area,
+valid-aware averaging to a 2048x2048 reference grid of 62.5m cells around 44N 10E;
+local equirectangular axes X west / Z north. A source pixel was admitted only
+when all four DN values were in 1..10000 inclusive (scale 0.0001). For the colour
+reference, samples were selected on a 250m lattice, valid area>=0.99, WorldCover
+class 10 (tree cover) or 30 (grassland) fraction>=0.95, combined NoData/cropland/built/
+water fraction<=0.01, proxy Y in [0.02,0.60], excluding the prefixed grey/bright
+heuristic(minRGB>=0.25 and range<=0.12). This is not an official cloud mask.
+
+For each admitted class, the component median of RGB/Y was renormalized to Y1
+using Y=0.2126R+0.7152G+0.0722B. A common per-channel correction factor was then
+derived against the equal-weight arithmetic centroid of the four original
+authored tree RGB endpoints (class 10) or two grass RGB endpoints (class 30):
+chromRef=centroid/Y(centroid), factor=targetMedianY1/chromRef. Each endpoint was
+multiplied by this common RGB factor, then normalized by the scalar
+Y(originalEndpoint)/Y(correctedEndpoint). This preserves its authored luminance
+and pairwise log-channel-ratio contrasts, up to Float32 rounding. It does not
+force the final rendered distribution to equal the satellite distribution.
+
+Only these authored tree/grass constants are derived. No satellite optical
+texture is distributed or sampled by this terrain material. No palette for
+sparse bare/shrub samples is inferred. WorldCover tree cover may include
+plantations/orchards and is not a certification of natural forest.
+
+Annual composite reflectance contains illumination, shadows and mixed dates;
+no physical albedo/BRDF recovery, radiometric calibration of the renderer,
+image repair, official endorsement or accuracy guarantee is claimed. The
+scientific reference visualization uses a separate fixed gain 3 and sRGB OETF;
+this display transform is not used for the authored colour derivation.
+
+
+Static GLO30 mesh candidate — heights and geometry
+
+produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved.
+
+The organisations in charge of the Copernicus programme by law or by delegation do not incur any liability for any use of the Copernicus WorldDEM-30.
+
+Source: Copernicus DEM GLO-30 Public, AWS COG2021 release; accessed2026-10-17.
+https://registry.opendata.aws/copernicus-dem/
+Licence: COP-DEM-GLO30-F-license.pdf.
+Modified data: bilinear local equirectangular resampling to2049x2049 node centres
+at62.5m, origin44N10E, X west/Z north, endpoints±64km; orthometric EGM2008
+heights. Negative heights clamped0, border-connected H<0.5m flattened to0.
+Height quantization0.125m; vertical scale1x. Core±48km and authored blend48–64km.
+Static mesh: existing32m-base stitched rings, one source-selected red/green
+refinement pass for observed source-node error>5m, geometric normals.
+Not a uniform62.5m mesh, independent ground-truth accuracy or a bare-earth DTM.
+Vegetation/buildings remain possible DSM content; no synthetic rock/erosion added.
+At every mesh construction sample the coast channel comes directly from the
+canonical GLO90-derived125m continuous sampler, not the new/requantized coast.
+Its interpolation across the new triangles may differ. No official shoreline
+or bathymetry is implied. GLO90 credits/licence above remain applicable.
+No endorsement by the data providers is implied.

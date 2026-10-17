@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "types": [
+      "vitest/globals",
+      "@webgpu/types",
+      "node"
+    ],
+    "skipLibCheck": true,
+    "moduleResolution": "Bundler",
+    "isolatedModules": true,
+    "noEmit": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "rootDirs": [
+      "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle35/mesh-bundle-helper",
+      "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus"
+    ]
+  },
+  "include": [
+    "terrainMeshAsset.ts",
+    "terrainMeshAsset.test.ts"
+  ]
+}

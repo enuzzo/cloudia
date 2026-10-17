@@ -1,0 +1,11 @@
+{
+  "exitCode": 0,
+  "childCpuSeconds": 4.672694,
+  "totalWallSeconds": 4.298411791911349,
+  "terminalChildPeakRssBytes": 1061519360,
+  "resourceGatePass": true,
+  "scope": "Offline terminal model run. PeakRSS is measured acceptance, not OS allocation cap. No GPU/FPS.",
+  "holdoutRMSRatio": 0.8952044577671757,
+  "sourceRetentionGatePass": true,
+  "gatePass": true
+}

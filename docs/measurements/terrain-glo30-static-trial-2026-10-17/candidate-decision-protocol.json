@@ -1,0 +1,29 @@
+{
+  "createdAt": "2026-10-17, before candidate GPU navigation",
+  "product": "v60 source unchanged, documentation HEAD f4d85edbcd822460cd910716df1ec1db1b0a1f3b",
+  "candidateManifestSHA256": "1c9ade9e79fb3a97ca9879dca6032403fde88f01074f36a027fca452727ac1e9",
+  "sourceFiles": 135,
+  "version": "experiment-v60-glo30-static-mesh",
+  "singleCandidate": "GLO30 native source sampled62.5m; original one-pass >5m red/green mesh, old continuous coast sampled directly, static prebuilt TMA1. No palette/lighting/shadow/cloud/full-quality change.",
+  "bundle": {
+    "bytes": 37639536,
+    "sha256": "59fc118c9676fffd2b96ac1d52ed04cc5fe4a34bf06e1e1c3069562b3690a831",
+    "sixArraysAndStatsExact": true
+  },
+  "preflight": "One run PASS4.672694CPU/4.298412wall/1061519360BpeakRSS; holdout fixedland83424 of147456 RMS14.6367871812->13.1029171320m, maxima116.1496808223->117.5014909854m; source retention only, not true geographic accuracy/art.",
+  "baselineBeforeGPU": {
+    "fullRGBA": "e4435ce3a0a45e243c19dea24e5bc1133f6db1c8fd5ca168e94e644b1c6c9045",
+    "png": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d",
+    "freshOwnerVerified": true
+  },
+  "state": "main,seed74,fixedsurface.7227685139973958,target[.3515625,3.119140625,-.0546875],Sun settled,t60pause,forcing0,noorbit/noflash,2474x1844,256^3/128^3/384,flowfull",
+  "gates": [
+    "Candidate loads hash-checked prebuilt asset with no model regeneration; correct source/stats and fullquality metadata, no originconsole warning/error",
+    "Whole target cached=fresh; unlike albedo no alpha identity expected against baseline because terrain changes",
+    "Full native candidate PNG transferred with bytes/SHA/IHDR and same primary/secondary1:1ROIs as previous material diagnosis plus full view",
+    "Root and independent visual decision: clearly more credible ridges/valleys without spikes/grid/coast/shadow regressions. RMS/test counts alone cannot pass art.",
+    "On nativeFAIL stop before worker,Rain,Sunset,motion,FPS; no cap/threshold/normal/palette fitting or repeated candidate sweeps. PreserveactualFAIL.",
+    "On visualPASS expand main/workerweather/navigation and fixedABAperformance before adoption; no60FPSpromise."
+  ],
+  "restoration": "Restore ordinary4196 v60 animated matureSun native, stopowned53779, preserve4201 and node_modules2."
+}

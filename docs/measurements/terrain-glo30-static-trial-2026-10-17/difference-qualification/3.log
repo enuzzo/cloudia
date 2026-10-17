@@ -1,0 +1,5 @@
+
+> cloudia@0.0.0 build
+> tsc && vite build
+
+src/cumulonimbus/lifecycle.test.ts(189,19): error TS2348: Value of type 'Mock<Procedure | Constructable>' is not callable. Did you mean to include 'new'?

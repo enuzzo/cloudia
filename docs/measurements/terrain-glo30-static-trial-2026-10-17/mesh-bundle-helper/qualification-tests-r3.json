@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/opt/homebrew/bin/node",
+    "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle35/mesh-bundle-helper/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "vitest.helper.config.mjs"
+  ],
+  "exitCode": 0,
+  "wallSeconds": 0.509269000031054,
+  "source": {
+    "terrainMeshAsset.ts": "fc7cd6045db25589ccc0db7860838f2684ec8cd52e6dda17481cac6190d96f67",
+    "terrainMeshAsset.test.ts": "adac0af99dddcfe6c3bdbdb40ff08848651f60db290e3d9caa02fd552bb28559"
+  }
+}

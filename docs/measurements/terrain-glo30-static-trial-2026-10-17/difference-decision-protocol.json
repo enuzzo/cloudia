@@ -1,0 +1,31 @@
+{
+  "scope": "One fresh owner reproduction, no candidate promotion or new terrain model. Product v60 unchanged. Candidate visualFAIL already recorded.",
+  "manifestSHA256": "a29cc4decf7752c7bbb46cab71a66ba0229ae186d9c1bb9e183af3ddc5def87e",
+  "sourceFiles": 137,
+  "changedVsR1": [
+    "src/cumulonimbus/CumulonimbusApp.ts",
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/lifecycle.test.ts",
+    "src/cumulonimbus/rgba32fDifference.test.ts",
+    "src/cumulonimbus/rgba32fDifference.ts"
+  ],
+  "version": "experiment-v60-glo30-cache-difference",
+  "renderCodeUnchanged": [
+    "createTerrain wrapper/library",
+    "terrainSurface.ts",
+    "TerrainShadow.ts",
+    "terrainMesh.ts",
+    "cloudShader.ts",
+    "geometry bundle SHA59fc118c..."
+  ],
+  "state": "same main fixed Sun seed74 native2474x1844,256^3/128^3/384, t60pause forcing0 orbitfalse flash0 flowfull; waitskysettled beforefirstactualaudit",
+  "operations": "cachedRGBAread -> cachedR32Fshadowread -> forcecolour+shadowredraw -> freshRGBAread -> freshR32Fshadowread; compareexistingpackedRGBA onCPU, emitonly24examplepixels and stats/digests",
+  "readbackBudget": "Four requests, twoRGBApacked72,992,896B eachnative retainedtemporarily fordiff plus twoshadow16,777,216B eachsequential; noGPUtarget added. Staging/GC/residency/peakunmeasured. Policycaps96MiBpackedRGBA/8192axis; shadowexact2048R32F.",
+  "gates": [
+    "Record actual first cache/fresh SHA, stable/qualified and allword/RGB/alpha counts without masking any bits",
+    "Require baselineR1 oldcached042/freshd7 pair to call exactreproduction; otherpair is newobservation, not proof oforiginalcause",
+    "R32Fhash comparesfullcolourattachment only, no depth/uniformbindingread; even a change does not byitself proveuniqueRGBcause",
+    "No fitting/source/material/cap retry orGPU owner sweep; oneaudit reproduction thenrestoreordinary4196",
+    "NativeR1freshPNG alreadyphotographicFAIL; no weather/worker/motion/FPS regardless ofthisdiagnosticoutcome"
+  ]
+}

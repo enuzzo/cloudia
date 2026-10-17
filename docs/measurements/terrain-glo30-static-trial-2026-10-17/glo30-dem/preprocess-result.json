@@ -1,0 +1,524 @@
+{
+  "status": "PREPROCESSED_DATA_ONLY_NO_MESH_NO_GPU",
+  "protocolSha256": "8401ab178fc58c72ee121c5c612855a1a17bad8d04ea7223752bad2289279e9f",
+  "scriptSha256": "be65761da9e7bf79041a6ac78c26fbd38db62be46bdbe65a84496c5a4dfb93aa",
+  "sourceManifestSha256": "86f016afb2d596abb63cfb5152defd56d7b58fe63066df3e9e3ad72919f145f6",
+  "sourceRelease": "AWS public COG2021",
+  "sourceMetadata": [
+    {
+      "file": "inputs/Copernicus_DSM_COG_10_N43_00_E009_00_DEM.tif",
+      "sha256": "b8d9ccd6979e6d53c22a5ad1daba15912ab9bce8a3c3a1b6bea05000fe0ed602",
+      "size": [
+        3600,
+        3600
+      ],
+      "mode": "F",
+      "bits": [
+        32
+      ],
+      "sampleFormat": [
+        3
+      ],
+      "pixelScale": [
+        0.0002777777777777778,
+        0.0002777777777777778,
+        0.0
+      ],
+      "tiepoint": [
+        0.0,
+        0.0,
+        0.0,
+        9.0,
+        44.0,
+        0.0
+      ],
+      "geoKeys": {
+        "1024": 2,
+        "1025": 2,
+        "2048": 4326,
+        "2054": 9102
+      },
+      "noDataTag": null,
+      "finite": true,
+      "extremaM": [
+        -3.26357102394104,
+        437.34539794921875
+      ]
+    },
+    {
+      "file": "inputs/Copernicus_DSM_COG_10_N43_00_E010_00_DEM.tif",
+      "sha256": "c97f97db6637b4100b20c894d9b609e79e21ba69eed07ef6532ca06494b0472d",
+      "size": [
+        3600,
+        3600
+      ],
+      "mode": "F",
+      "bits": [
+        32
+      ],
+      "sampleFormat": [
+        3
+      ],
+      "pixelScale": [
+        0.0002777777777777778,
+        0.0002777777777777778,
+        0.0
+      ],
+      "tiepoint": [
+        0.0,
+        0.0,
+        0.0,
+        10.0,
+        44.0,
+        0.0
+      ],
+      "geoKeys": {
+        "1024": 2,
+        "1025": 2,
+        "2048": 4326,
+        "2054": 9102
+      },
+      "noDataTag": null,
+      "finite": true,
+      "extremaM": [
+        -7.329555034637451,
+        1299.50390625
+      ]
+    },
+    {
+      "file": "inputs/Copernicus_DSM_COG_10_N44_00_E009_00_DEM.tif",
+      "sha256": "8fdd9ba5a8531a18ead33093ab6dadb361f1c017621cb0a7a7742d771fd357f7",
+      "size": [
+        3600,
+        3600
+      ],
+      "mode": "F",
+      "bits": [
+        32
+      ],
+      "sampleFormat": [
+        3
+      ],
+      "pixelScale": [
+        0.0002777777777777778,
+        0.0002777777777777778,
+        0.0
+      ],
+      "tiepoint": [
+        0.0,
+        0.0,
+        0.0,
+        9.0,
+        45.0,
+        0.0
+      ],
+      "geoKeys": {
+        "1024": 2,
+        "1025": 2,
+        "2048": 4326,
+        "2054": 9102
+      },
+      "noDataTag": null,
+      "finite": true,
+      "extremaM": [
+        -9.221379280090332,
+        1839.9644775390625
+      ]
+    },
+    {
+      "file": "inputs/Copernicus_DSM_COG_10_N44_00_E010_00_DEM.tif",
+      "sha256": "01e588e088de5656d59e0620190a181cccd8ac0a60a90880933996000d8e95cc",
+      "size": [
+        3600,
+        3600
+      ],
+      "mode": "F",
+      "bits": [
+        32
+      ],
+      "sampleFormat": [
+        3
+      ],
+      "pixelScale": [
+        0.0002777777777777778,
+        0.0002777777777777778,
+        0.0
+      ],
+      "tiepoint": [
+        0.0,
+        0.0,
+        0.0,
+        10.0,
+        45.0,
+        0.0
+      ],
+      "geoKeys": {
+        "1024": 2,
+        "1025": 2,
+        "2048": 4326,
+        "2054": 9102
+      },
+      "noDataTag": null,
+      "finite": true,
+      "extremaM": [
+        -5.387284278869629,
+        2159.388916015625
+      ]
+    }
+  ],
+  "format": {
+    "magic": "CDM1",
+    "headerBytes": 32,
+    "side": 2049,
+    "spacingKm": 0.0625,
+    "minXKm": -64,
+    "minZKm": -64,
+    "maxXKm": 64,
+    "maxZKm": 64,
+    "heightUnits": "u16LE*0.125m",
+    "coastUnits": "i16LE*8m",
+    "nodeCentres": true,
+    "rowOrder": "Zsouth\u2192north, Xeast\u2192west"
+  },
+  "projection": {
+    "originLatitude": 44,
+    "originLongitude": 10,
+    "kmPerDegreeLatitude": 111.1950802335,
+    "latitudeFormula": "44+z/111.1950802335",
+    "longitudeFormula": "10-x/(111.1950802335*cos44deg)",
+    "latitudeRange": [
+      43.42443496721612,
+      44.57556503278388
+    ],
+    "longitudeRange": [
+      9.199870447161537,
+      10.800129552838463
+    ],
+    "verticalDatum": "EGM2008 orthometric metres per official product; no extra geoid correction; mapped later to existing spherical sea",
+    "exaggeration": 1,
+    "geodesicExact": false
+  },
+  "sourceSampleMetres": {
+    "count": 4198401,
+    "min": -5.875313973571775,
+    "mean": 323.8840597037969,
+    "p50": 43.90144177983127,
+    "p99": 1562.648705755155,
+    "max": 2152.585457451522,
+    "rms": 537.6339846540928
+  },
+  "heightMetres": {
+    "count": 4198401,
+    "min": 0.0,
+    "mean": 323.8898827196354,
+    "p50": 43.875,
+    "p99": 1562.625,
+    "max": 2152.625,
+    "rms": 537.633983575856
+  },
+  "heightQuantizationAbsErrorM": {
+    "count": 4198401,
+    "min": 0.0,
+    "mean": 0.0181243496665828,
+    "p50": 0.008612007281612932,
+    "p99": 0.06143177614876549,
+    "max": 0.06249999881534052,
+    "rms": 0.02748157829716306
+  },
+  "recomputedCoastMetres": {
+    "count": 4198401,
+    "min": -61552.0,
+    "mean": 7380.3443701542565,
+    "p50": 7232.0,
+    "p99": 71872.0,
+    "max": 84432.0,
+    "rms": 30869.29674584985
+  },
+  "recomputedCoastQuantizationAbsErrorM": {
+    "count": 4198401,
+    "min": 7.316433766391128e-06,
+    "mean": 2.0132776207252525,
+    "p50": 2.019232672308135,
+    "p99": 3.9613744444504846,
+    "max": 3.9999779192949063,
+    "rms": 2.3196644691893624
+  },
+  "mask": {
+    "eligibleUnderHalfMetreNodes": 1768668,
+    "borderConnectedOceanNodes": 1739653,
+    "landNodes": 2458748,
+    "isolatedLowNodesNotOcean": 29015,
+    "negativeSourceNodesClamped": 21072,
+    "connectivity": 4,
+    "oceanHeightAllZero": true,
+    "coastMethod": "Exact separable squared EDT to opposite class centres, sqrt*62.5m minus31.25m; signed; NOT official coast",
+    "tinyEDTOracle": {
+      "cases": 3,
+      "nodes": 105,
+      "status": "PASS",
+      "oracle": "independent brute-force nearest source centre"
+    }
+  },
+  "seamAudit": {
+    "nativeCentreCases": 20,
+    "nativeCentreMaxAbsM": 5.729816621169448e-11,
+    "epsilonDegrees": 1e-09,
+    "eastWestLimitDifferenceM": {
+      "count": 2049,
+      "min": 0.0,
+      "mean": 1.4753272218951817e-05,
+      "p50": 0.0,
+      "p99": 0.00011131376621960953,
+      "max": 0.00015921797592000075,
+      "rms": 2.9251920097388177e-05
+    },
+    "northSouthLimitDifferenceM": {
+      "count": 2049,
+      "min": 0.0,
+      "mean": 2.89012117729747e-05,
+      "p50": 0.0,
+      "p99": 0.0001766217312228945,
+      "max": 0.00027188474757622316,
+      "rms": 5.501185980404633e-05
+    },
+    "note": "Adjacent distinct source samples can differ; only seam limits tested"
+  },
+  "cornersAndOrigin": [
+    {
+      "label": "xMinus_zMinus",
+      "xWestKm": -64.0,
+      "zNorthKm": -64.0,
+      "latitude": 43.42443496721612,
+      "longitude": 10.800129552838463,
+      "nativeBilinearM": 112.44060806558196,
+      "heightM": 112.5,
+      "recomputedCoastM": 31968.0,
+      "legacyRequantizedCoastM": 32064.0,
+      "ocean": false
+    },
+    {
+      "label": "xPlus_zMinus",
+      "xWestKm": 64.0,
+      "zNorthKm": -64.0,
+      "latitude": 43.42443496721612,
+      "longitude": 9.199870447161537,
+      "nativeBilinearM": 0.0,
+      "heightM": 0.0,
+      "recomputedCoastM": -55032.0,
+      "legacyRequantizedCoastM": -55064.0,
+      "ocean": true
+    },
+    {
+      "label": "xMinus_zPlus",
+      "xWestKm": -64.0,
+      "zNorthKm": 64.0,
+      "latitude": 44.57556503278388,
+      "longitude": 10.800129552838463,
+      "nativeBilinearM": 92.21592988255149,
+      "heightM": 92.25,
+      "recomputedCoastM": 84432.0,
+      "legacyRequantizedCoastM": 84408.0,
+      "ocean": false
+    },
+    {
+      "label": "xPlus_zPlus",
+      "xWestKm": 64.0,
+      "zNorthKm": 64.0,
+      "latitude": 44.57556503278388,
+      "longitude": 9.199870447161537,
+      "nativeBilinearM": 1337.1195972609626,
+      "heightM": 1337.125,
+      "recomputedCoastM": 25400.0,
+      "legacyRequantizedCoastM": 25432.0,
+      "ocean": false
+    },
+    {
+      "label": "origin",
+      "xWestKm": 0.0,
+      "zNorthKm": 0.0,
+      "latitude": 44.0,
+      "longitude": 10.0,
+      "nativeBilinearM": 0.0,
+      "heightM": 0.0,
+      "recomputedCoastM": -4304.0,
+      "legacyRequantizedCoastM": -4304.0,
+      "ocean": true
+    }
+  ],
+  "comparisonWithLegacy125m": {
+    "baselineFile": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle19/dem-feasibility/apuane-liguria-cdm1.bin",
+    "baselineSha256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d",
+    "coordinates": "all1025\u00b2 nodes coincide exactly; new[::2,::2] vs old; X/Z endpoints\u00b164km, same origin",
+    "heightDeltaNewMinusOldM": {
+      "all": {
+        "count": 1050625,
+        "min": -51.75,
+        "mean": 0.008378822129684712,
+        "p50": 0.0,
+        "p99": 9.625,
+        "max": 49.125,
+        "rms": 3.08471482575238
+      },
+      "legacyCoastNonnegative": {
+        "count": 616064,
+        "min": -51.75,
+        "mean": 0.014197794384998961,
+        "p50": 0.0,
+        "p99": 11.125,
+        "max": 49.125,
+        "rms": 4.02832313656117
+      },
+      "legacyCoastNegative": {
+        "count": 434561,
+        "min": 0.0,
+        "mean": 0.0001294409760655006,
+        "p50": 0.0,
+        "p99": 0.0,
+        "max": 3.625,
+        "rms": 0.013300476205366387
+      }
+    },
+    "recomputedCoastDeltaNewMinusOldM": {
+      "all": {
+        "count": 1050625,
+        "min": -5736.0,
+        "mean": -445.08345794170134,
+        "p50": -32.0,
+        "p99": 160.0,
+        "max": 944.0,
+        "rms": 1321.457290611277
+      },
+      "legacyCoastNonnegative": {
+        "count": 616064,
+        "min": -5736.0,
+        "mean": -748.409178267193,
+        "p50": -32.0,
+        "p99": 40.0,
+        "max": 208.0,
+        "rms": 1723.8516488885743
+      },
+      "legacyCoastNegative": {
+        "count": 434561,
+        "min": -120.0,
+        "mean": -15.067748831579456,
+        "p50": -32.0,
+        "p99": 552.0,
+        "max": 944.0,
+        "rms": 94.9492300079124
+      }
+    },
+    "maskAtCoincidentNodes": {
+      "oldLandNewOcean": 796,
+      "oldOceanNewLand": 59
+    },
+    "legacyRequantizationAtNewNodesAbsM": {
+      "count": 4198401,
+      "min": 0.0,
+      "mean": 1.4805736755493342,
+      "p50": 0.0,
+      "p99": 4.0,
+      "max": 4.0,
+      "rms": 2.357742905913812
+    },
+    "legacyRequantizedOffNodeHoldoutAbsM": {
+      "count": 147456,
+      "min": 0.0,
+      "mean": 0.7177700466579862,
+      "p50": 0.5,
+      "p99": 2.5,
+      "max": 3.0,
+      "rms": 1.0809401463239747
+    },
+    "limitation": "Delta between DSM derivatives is not physical accuracy. Legacy coast variant does not preserve original continuous125m coast exactly."
+  },
+  "holdout": {
+    "file": "holdout-native-m.f64le.bin",
+    "bytes": 1179648,
+    "sha256": "be7e34ad823f6499773c556dc6f05524665df1c3a93a26d8703cfb05632b65e9",
+    "dtype": "Float64LE",
+    "units": "metres EGM2008",
+    "shape": [
+      384,
+      384
+    ],
+    "count": 147456,
+    "rowOrder": "Z south to north; X east to west increasing localX",
+    "coordinatesKm": {
+      "xEqualsZAxis": true,
+      "formula": "-48+(4*i+0.5)*0.0625; i=0..383",
+      "first": -47.96875,
+      "stride": 0.25,
+      "last": 47.78125
+    },
+    "reference": "Native GLO30 mosaic bilinear; NOT sampled from62.5m raster; before clamp, ocean flattening or quantization",
+    "sourceManifestSha256": "86f016afb2d596abb63cfb5152defd56d7b58fe63066df3e9e3ad72919f145f6",
+    "summaryM": {
+      "count": 147456,
+      "min": -4.48155165691617,
+      "mean": 307.2095771940167,
+      "p50": 10.342794576693926,
+      "p99": 1593.1108569232756,
+      "max": 2083.1098648320185,
+      "rms": 530.1322467313361
+    }
+  },
+  "assets": {
+    "recomputedCoast": {
+      "file": "glo30-62_5m-recomputed-coast.cdm1.bin",
+      "bytes": 16793636,
+      "sha256": "79f84ba70848724549f65c4d4f6758041f10068dc9885156894c36e7bc2c4cd1",
+      "gzipFile": "glo30-62_5m-recomputed-coast.cdm1.bin.gz",
+      "gzipBytes": 7927122,
+      "gzipSha256": "e06e90d9970c88f4cc3cdc111f04184e36ee93f7ea0eace5e7075a7f0a3e5a19",
+      "gzipMtime": 0
+    },
+    "legacyCoastRequantized": {
+      "file": "glo30-62_5m-legacy-coast.cdm1.bin",
+      "bytes": 16793636,
+      "sha256": "6ef3fb47f90a375e82d8cc91160524207f2851ee72ffe50af9e12482f85943ff",
+      "gzipFile": "glo30-62_5m-legacy-coast.cdm1.bin.gz",
+      "gzipBytes": 7647793,
+      "gzipSha256": "5dca8a0a56ff826e0e692dd03caf386f88f62254254dc2224c7e577d4769e668",
+      "gzipMtime": 0
+    },
+    "heightChannelsIdentical": true,
+    "legacyCoastContinuousFieldIdentical": false
+  },
+  "hardGates": {
+    "sourceFinite": true,
+    "declaredNoDataRejected": true,
+    "nativeFloat32NoOverview": true,
+    "pixelIsPointNoHalfPixel": true,
+    "seamsWithin1cm": true,
+    "heightUnder3310m": true,
+    "heightQuantizationWithin0_0625m": true,
+    "coastQuantizationWithin4m": true,
+    "noSaturation": true,
+    "sameOriginAsLegacy": true,
+    "exactByteCounts": true,
+    "noModelOrGPU": true
+  },
+  "runtime": {
+    "pythonExecutable": "/Users/enuzzo/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "pythonVersion": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "machine": "arm64",
+    "numpyVersion": "2.3.5",
+    "pillowVersion": "12.3.0",
+    "cpuSeconds": 11.670453,
+    "wallSeconds": 11.637259916984476,
+    "peakRssBytes": 920977408,
+    "budgets": {
+      "cpuSeconds": 180,
+      "wallSeconds": 240,
+      "peakRssBytes": 2147483648
+    },
+    "rssEnforcement": "Phase and terminal gate; not a hard interruption during native calls"
+  },
+  "limitations": [
+    "DSM includes vegetation/buildings; not a bare-earth DTM",
+    "No physical truth comparison, erosion/noise/vertical rescaling",
+    "Ocean mask and EDT are approximate authored derivatives",
+    "No mesh construction, GPU, visual acceptance or FPS inference",
+    "Future builder should use old125m coast sampler directly for CPU field identity; new triangulation can change raster interpolation"
+  ]
+}

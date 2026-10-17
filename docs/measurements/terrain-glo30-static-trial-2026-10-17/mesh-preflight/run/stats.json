@@ -1,0 +1,69 @@
+{
+  "vertices": 619667,
+  "triangles": 1238308,
+  "stitchedCells": 4096,
+  "levels": 9,
+  "cellsPerSide": 256,
+  "baseSpacingKm": 0.032,
+  "outerExtentKm": 1048.576,
+  "geometryBytes": 34689040,
+  "sampleCalls": 2982036,
+  "minimumHeightKm": 0,
+  "maximumHeightKm": 3.0260982513427734,
+  "normalBlendStartRadiusKm": 32.768,
+  "normalBlendEndRadiusKm": 65.536,
+  "normalMode": "geometry",
+  "refinement": {
+    "originalVertices": 465409,
+    "originalTriangles": 929792,
+    "probeSampleCalls": 2362369,
+    "vertexSampleCalls": 619667,
+    "totalSampleCalls": 2982036,
+    "nodesAboveThreshold": 865195,
+    "eligibleNodesAboveThreshold": 865193,
+    "markedRedFaces": 94149,
+    "greenFaces": 14971,
+    "splitEdgeCount": 154258,
+    "addedVertices": 154258,
+    "addedTriangles": 308516,
+    "addedGeometryBytes": 8638448,
+    "sourceSpacingKm": 0.0625,
+    "maxErrorKm": 0.005,
+    "sourceGrid": {
+      "minXKm": -64,
+      "minZKm": -64,
+      "spacingKm": 0.0625,
+      "columns": 2049,
+      "rows": 2049
+    },
+    "selectionDomain": {
+      "minXKm": -48,
+      "maxXKm": 48,
+      "minZKm": -48,
+      "maxZKm": 48
+    },
+    "selectedNodeColumns": 1537,
+    "selectedNodeRows": 1537,
+    "originalFacesBySplitEdgeCount": [
+      820672,
+      7199,
+      4446,
+      97475
+    ],
+    "maximumCellTriangles": 20,
+    "cellTriangleCountBytes": 589824,
+    "midpointVerticesOutsideDomain": 425,
+    "boundsKm": {
+      "min": [
+        -1048.5760498046875,
+        -178.98373413085938,
+        -1048.5760498046875
+      ],
+      "max": [
+        1048.5760498046875,
+        -1.675299048423767,
+        1048.5760498046875
+      ]
+    }
+  }
+}

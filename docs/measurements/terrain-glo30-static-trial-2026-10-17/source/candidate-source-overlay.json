@@ -1,0 +1,24 @@
+{
+  "baseManifest": "base-manifest.json",
+  "manifest": "candidate-manifest-r1.json",
+  "changedOrAdded": [
+    "public/COP-DEM-GLO30-F-license.pdf",
+    "public/terrain-data-notice.txt",
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/assets/liguria-apuane-glo30-mesh.bin",
+    "src/cumulonimbus/lifecycle.test.ts",
+    "src/cumulonimbus/measuredTerrainMesh.ts",
+    "src/cumulonimbus/terrainMesh.ts",
+    "src/cumulonimbus/terrainMeshAsset.test.ts",
+    "src/cumulonimbus/terrainMeshAsset.ts",
+    "src/cumulonimbus/terrainMeshAssetIntegration.test.ts"
+  ],
+  "deleted": [],
+  "compressedAssetAlias": {
+    "target": "src/cumulonimbus/assets/liguria-apuane-glo30-mesh.bin",
+    "gzipArchivePath": "assets/liguria-apuane-glo30-mesh.bin.gz",
+    "uncompressedBytes": 37639536,
+    "uncompressedSHA256": "59fc118c9676fffd2b96ac1d52ed04cc5fe4a34bf06e1e1c3069562b3690a831"
+  },
+  "scope": "Experiment only. Apply after parent source overlay; decompress exact shared asset once for both."
+}

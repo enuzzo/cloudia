@@ -1,0 +1,74 @@
+
+ RUN  v4.1.6 /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle35/candidate-source
+
+······························································································x················x·xx···
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/cumulonimbus/lifecycle.test.ts > scene async lifecycle > publishes matching measured-submission and interval counts after exactly one final fence
+AssertionError: expected { …(99) } to have property "terrainSurfaceId" with value 'copernicus-glo90-liguria-apuane-v1'
+
+Expected: "copernicus-glo90-liguria-apuane-v1"
+Received: "copernicus-glo30-62_5m-legacy-coast-static-v1"
+
+ ❯ src/cumulonimbus/lifecycle.test.ts:538:20
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  src/cumulonimbus/lifecycle.test.ts > scene async lifecycle > starts exactly one RAF when initial generation finishes in a hidden tab
+AssertionError: expected "vi.fn()" to be called once, but got 2 times
+ ❯ src/cumulonimbus/lifecycle.test.ts:796:35
+    794|     expect(control.compute.mock.invocationCallOrder[0]).toBeLessThan(c…
+    795|     hidden.mockReturnValue(false);document.dispatchEvent(new Event('vi…
+    796|     expect(requestAnimationFrame).toHaveBeenCalledOnce();
+       |                                   ^
+    797|     app.destroy();await flush();hidden.mockRestore();
+    798|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  src/cumulonimbus/lifecycle.test.ts > scene async lifecycle > keeps an installed scene animating after hide/show during regeneration
+AssertionError: expected 4 to be 2 // Object.is equality
+
+- Expected
++ Received
+
+- 2
++ 4
+
+ ❯ src/cumulonimbus/lifecycle.test.ts:820:64
+    818|     const calls=vi.mocked(requestAnimationFrame).mock.calls.length;
+    819|     hidden.mockReturnValue(false);document.dispatchEvent(new Event('vi…
+    820|     expect(vi.mocked(requestAnimationFrame).mock.calls.length).toBe(ca…
+       |                                                                ^
+    821|     const frame=vi.mocked(requestAnimationFrame).mock.calls.at(-1)![0]…
+    822|     expect(control.render).toHaveBeenCalledTimes(2);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  src/cumulonimbus/lifecycle.test.ts > scene async lifecycle > does not start a second RAF loop when visibility changes during the final GPU drain
+AssertionError: expected 4 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 4
+
+ ❯ src/cumulonimbus/lifecycle.test.ts:836:64
+    834|     hidden.mockReturnValue(true);document.dispatchEvent(new Event('vis…
+    835|     hidden.mockReturnValue(false);document.dispatchEvent(new Event('vi…
+    836|     expect(vi.mocked(requestAnimationFrame).mock.calls.length).toBe(ca…
+       |                                                                ^
+    837|     drained();await flush();expect(vi.mocked(requestAnimationFrame).mo…
+    838|     app.destroy();await flush();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  4 failed | 114 passed (118)
+   Start at  03:05:18
+   Duration  5.78s (transform 365ms, setup 0ms, import 558ms, tests 5.14s, environment 966ms)
+

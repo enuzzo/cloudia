@@ -1,0 +1,5 @@
+{
+  "status": "PREPARATION_ERROR_BEFORE_TESTS",
+  "error": "Python os.getxattr unavailable; corrected setup uses xattr CLI",
+  "testsStarted": false
+}

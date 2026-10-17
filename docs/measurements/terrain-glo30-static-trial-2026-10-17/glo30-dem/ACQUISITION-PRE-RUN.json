@@ -1,0 +1,18 @@
+{
+  "frozenUTC": "2026-10-17T00:57:21.570308+00:00",
+  "scope": "acquisition only; preprocessing script not yet executed",
+  "files": {
+    "acquire-glo30.py": {
+      "bytes": 3676,
+      "sha256": "c66f13b8bd0468d63638ef4c09716d9f939678a355c39fe2bc10bf5e6c45dd1a"
+    },
+    "PREPROCESS-PROTOCOL.md": {
+      "bytes": 2446,
+      "sha256": "a7dbbf6cc3494c1f71a213c86810dbd112484b79458889a0b37aeaf958807ce8"
+    },
+    "NOTICE-COPERNICUS-DEM.txt": {
+      "bytes": 1564,
+      "sha256": "6b3fb800fbf7d06ace199de883aa6ec4aa591ce27a32cdd5d7ac210891b05c1b"
+    }
+  }
+}

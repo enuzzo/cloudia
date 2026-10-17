@@ -1,0 +1,119 @@
+{
+  "scope": "Encode one already built candidate; no mesh/model regeneration, exact6array bits and stats roundtrip. Runtime loader hashes before decode.",
+  "bytes": 37639536,
+  "sha256": "59fc118c9676fffd2b96ac1d52ed04cc5fe4a34bf06e1e1c3069562b3690a831",
+  "preflightInputs": {
+    "positions": {
+      "bytes": 7436004,
+      "length": 1859001,
+      "sha256": "029abc779f6804d313bdc21e3b15a5c87ad9eb67c41694a214837daa5a61a2f0",
+      "type": "Float32Array"
+    },
+    "normals": {
+      "bytes": 7436004,
+      "length": 1859001,
+      "sha256": "8c609b5c148c4d57a6ff54ae094562b8fa4bbb7c2f35903caf263199e340e699",
+      "type": "Float32Array"
+    },
+    "surface": {
+      "bytes": 4957336,
+      "length": 1239334,
+      "sha256": "9cc3d6cf8dba5ad20b7b3c91631e713639fc691abe8a9424109860cafc5128e1",
+      "type": "Float32Array"
+    },
+    "indices": {
+      "bytes": 14859696,
+      "length": 3714924,
+      "sha256": "2f36bc178b4c0248cd9b8809bd3fbd520ad1fe2fb44fe5684b3c76ee5e28b2b0",
+      "type": "Uint32Array"
+    },
+    "cellFirstIndex": {
+      "bytes": 2359296,
+      "length": 589824,
+      "sha256": "cfbbe807f20dd58637d022199b7ea0d3b01488cfe331e1e8486cbe992bdda0e9",
+      "type": "Uint32Array"
+    },
+    "cellTriangleCount": {
+      "bytes": 589824,
+      "length": 589824,
+      "sha256": "89bbfd0960b9c81751e45c3b31c006dc0b6ad5d80ca3955a9aa56f1b250cb984",
+      "type": "Uint8Array"
+    }
+  },
+  "stats": {
+    "vertices": 619667,
+    "triangles": 1238308,
+    "stitchedCells": 4096,
+    "levels": 9,
+    "cellsPerSide": 256,
+    "baseSpacingKm": 0.032,
+    "outerExtentKm": 1048.576,
+    "geometryBytes": 34689040,
+    "sampleCalls": 2982036,
+    "minimumHeightKm": 0,
+    "maximumHeightKm": 3.0260982513427734,
+    "normalBlendStartRadiusKm": 32.768,
+    "normalBlendEndRadiusKm": 65.536,
+    "normalMode": "geometry",
+    "refinement": {
+      "originalVertices": 465409,
+      "originalTriangles": 929792,
+      "probeSampleCalls": 2362369,
+      "vertexSampleCalls": 619667,
+      "totalSampleCalls": 2982036,
+      "nodesAboveThreshold": 865195,
+      "eligibleNodesAboveThreshold": 865193,
+      "markedRedFaces": 94149,
+      "greenFaces": 14971,
+      "splitEdgeCount": 154258,
+      "addedVertices": 154258,
+      "addedTriangles": 308516,
+      "addedGeometryBytes": 8638448,
+      "sourceSpacingKm": 0.0625,
+      "maxErrorKm": 0.005,
+      "sourceGrid": {
+        "minXKm": -64,
+        "minZKm": -64,
+        "spacingKm": 0.0625,
+        "columns": 2049,
+        "rows": 2049
+      },
+      "selectionDomain": {
+        "minXKm": -48,
+        "maxXKm": 48,
+        "minZKm": -48,
+        "maxZKm": 48
+      },
+      "selectedNodeColumns": 1537,
+      "selectedNodeRows": 1537,
+      "originalFacesBySplitEdgeCount": [
+        820672,
+        7199,
+        4446,
+        97475
+      ],
+      "maximumCellTriangles": 20,
+      "cellTriangleCountBytes": 589824,
+      "midpointVerticesOutsideDomain": 425,
+      "boundsKm": {
+        "min": [
+          -1048.5760498046875,
+          -178.98373413085938,
+          -1048.5760498046875
+        ],
+        "max": [
+          1048.5760498046875,
+          -1.675299048423767,
+          1048.5760498046875
+        ]
+      }
+    }
+  },
+  "roundtripSixArrayHashesExact": true,
+  "roundtripStatsExact": true,
+  "elapsedMs": {
+    "readAndEncode": 92.38075,
+    "decodeAndVerify": 113.73066699999998,
+    "total": 206.11162500000003
+  }
+}

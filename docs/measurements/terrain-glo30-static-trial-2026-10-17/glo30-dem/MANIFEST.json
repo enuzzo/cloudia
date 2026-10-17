@@ -1,0 +1,194 @@
+{
+  "schema": 1,
+  "frozenUTC": "2026-10-17T01:01:35.872370+00:00",
+  "scope": "GLO30 acquisition+two62.5m CDM1+native holdout; no mesh/model/GPU",
+  "excluded": [
+    "MANIFEST.json",
+    "verification.json",
+    "__pycache__/"
+  ],
+  "fileCount": 36,
+  "payloadBytes": 163950505,
+  "files": [
+    {
+      "path": "ACQUISITION-PRE-RUN.json",
+      "bytes": 567,
+      "sha256": "e64d5c7a7df3aa72ff0575e16b3b907a6d68c07a29325cf06186b3048744f72d"
+    },
+    {
+      "path": "License-COPDEM-30.pdf",
+      "bytes": 113786,
+      "sha256": "9cd37d37ea654bbcaf0a2e059e6a3a5b5f76072824d8dd860ccf274ada8951bd"
+    },
+    {
+      "path": "NOTICE-COPERNICUS-DEM.txt",
+      "bytes": 1564,
+      "sha256": "6b3fb800fbf7d06ace199de883aa6ec4aa591ce27a32cdd5d7ac210891b05c1b"
+    },
+    {
+      "path": "PREPROCESS-PRE-RUN.json",
+      "bytes": 1041,
+      "sha256": "cfc2f6839b8de9b416804b3e29cc9900675d303a73bd8e3a3f5f87bc27dd92b5"
+    },
+    {
+      "path": "PREPROCESS-PROTOCOL.md",
+      "bytes": 2923,
+      "sha256": "8401ab178fc58c72ee121c5c612855a1a17bad8d04ea7223752bad2289279e9f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5962,
+      "sha256": "83a1adfb70461c40792049fc78e4603998db29372920256a932388aaa07af292"
+    },
+    {
+      "path": "acquire-glo30.py",
+      "bytes": 3676,
+      "sha256": "c66f13b8bd0468d63638ef4c09716d9f939678a355c39fe2bc10bf5e6c45dd1a"
+    },
+    {
+      "path": "acquisition-result.json",
+      "bytes": 4755,
+      "sha256": "b82ad150ee2481e615d3a34e5f545bb2a58d5440dfab529ca322a6ca2217fdfe"
+    },
+    {
+      "path": "acquisition.err",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "acquisition.log",
+      "bytes": 873,
+      "sha256": "18edaa3904043bbfd7b71de6a8e9320f3d0c87e2d18cc14a0af80b930524f2f5"
+    },
+    {
+      "path": "baseline-source/COP-DEM-GLO90-F-license.pdf",
+      "bytes": 123425,
+      "sha256": "22359cb69199c6b5cc4e64a453cbeb283a7a844c0458f7fef0a1dddac4a0a3e7"
+    },
+    {
+      "path": "baseline-source/COP-DEM-GLO90-F-license.txt",
+      "bytes": 9203,
+      "sha256": "2c3123016f56f3342ac1107671480a6c0baa40596ffadad9f5aa500082ea8670"
+    },
+    {
+      "path": "baseline-source/PREPROCESS-PROTOCOL.md",
+      "bytes": 2195,
+      "sha256": "2298a3a6c8a4190ee6de72e1997b999dab19a23157419f166814e605f9bb81f9"
+    },
+    {
+      "path": "baseline-source/license-provenance.json",
+      "bytes": 1536,
+      "sha256": "ca7f9696866b1726e2be54fa1be6f19db273f6465167aa94aa5ef1f9edda2394"
+    },
+    {
+      "path": "baseline-source/preprocess-dem.py",
+      "bytes": 10277,
+      "sha256": "f457a331013b209229f04e5dd8b8ef0aeb0f994d347e075ad83a7801256af07f"
+    },
+    {
+      "path": "baseline-source/probe-dem.py",
+      "bytes": 2607,
+      "sha256": "f39420ded10056eb81e9274c249f95a1c9223ae9ca0d4771d7e5af75c006fbeb"
+    },
+    {
+      "path": "baseline-source/provenance.json",
+      "bytes": 782,
+      "sha256": "4f839bda46f8cfcbf1e725c685a76183f851131bca9f2518b8c0aca1a19829ab"
+    },
+    {
+      "path": "baseline-source/tiles-manifest.json",
+      "bytes": 1797,
+      "sha256": "1e2e042fc2c54d6b9d8fae21e565d83d4ffab51a5ce558a1e23d9144d1ac402c"
+    },
+    {
+      "path": "glo30-62_5m-legacy-coast.cdm1.bin",
+      "bytes": 16793636,
+      "sha256": "6ef3fb47f90a375e82d8cc91160524207f2851ee72ffe50af9e12482f85943ff"
+    },
+    {
+      "path": "glo30-62_5m-legacy-coast.cdm1.bin.gz",
+      "bytes": 7647793,
+      "sha256": "5dca8a0a56ff826e0e692dd03caf386f88f62254254dc2224c7e577d4769e668"
+    },
+    {
+      "path": "glo30-62_5m-recomputed-coast.cdm1.bin",
+      "bytes": 16793636,
+      "sha256": "79f84ba70848724549f65c4d4f6758041f10068dc9885156894c36e7bc2c4cd1"
+    },
+    {
+      "path": "glo30-62_5m-recomputed-coast.cdm1.bin.gz",
+      "bytes": 7927122,
+      "sha256": "e06e90d9970c88f4cc3cdc111f04184e36ee93f7ea0eace5e7075a7f0a3e5a19"
+    },
+    {
+      "path": "holdout-native-m.f64le.bin",
+      "bytes": 1179648,
+      "sha256": "be7e34ad823f6499773c556dc6f05524665df1c3a93a26d8703cfb05632b65e9"
+    },
+    {
+      "path": "holdout-native-m.metadata.json",
+      "bytes": 928,
+      "sha256": "f55d618c830a67ed819b95fdb3f49b7c9fa49811f6e9f4d3cee2f6a8fd01ea04"
+    },
+    {
+      "path": "inputs/Copernicus_DSM_COG_10_N43_00_E009_00_DEM.tif",
+      "bytes": 275853,
+      "sha256": "b8d9ccd6979e6d53c22a5ad1daba15912ab9bce8a3c3a1b6bea05000fe0ed602"
+    },
+    {
+      "path": "inputs/Copernicus_DSM_COG_10_N43_00_E010_00_DEM.tif",
+      "bytes": 31619637,
+      "sha256": "c97f97db6637b4100b20c894d9b609e79e21ba69eed07ef6532ca06494b0472d"
+    },
+    {
+      "path": "inputs/Copernicus_DSM_COG_10_N44_00_E009_00_DEM.tif",
+      "bytes": 35799772,
+      "sha256": "8fdd9ba5a8531a18ead33093ab6dadb361f1c017621cb0a7a7742d771fd357f7"
+    },
+    {
+      "path": "inputs/Copernicus_DSM_COG_10_N44_00_E010_00_DEM.tif",
+      "bytes": 45578379,
+      "sha256": "01e588e088de5656d59e0620190a181cccd8ac0a60a90880933996000d8e95cc"
+    },
+    {
+      "path": "preparation/PREPROCESS-PROTOCOL-acquisition-draft.md",
+      "bytes": 2446,
+      "sha256": "a7dbbf6cc3494c1f71a213c86810dbd112484b79458889a0b37aeaf958807ce8"
+    },
+    {
+      "path": "preparation/PROVENANCE.json",
+      "bytes": 421,
+      "sha256": "69a9bc63fc56796caea9ed1f67a84c69df5eb086ed9a114aee10940f78154b57"
+    },
+    {
+      "path": "preprocess-glo30.py",
+      "bytes": 17895,
+      "sha256": "be65761da9e7bf79041a6ac78c26fbd38db62be46bdbe65a84496c5a4dfb93aa"
+    },
+    {
+      "path": "preprocess-result.json",
+      "bytes": 14122,
+      "sha256": "69d3024da0bd16025b0fed0eb6b9e5650895298709f8ed91979b02300d3f8db7"
+    },
+    {
+      "path": "preprocess.err",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "preprocess.log",
+      "bytes": 2896,
+      "sha256": "e4111fa63ab588f7b363b2edfaa4dbfc2d8767495dcb6c1f7331375ccd43ba5f"
+    },
+    {
+      "path": "tiles-manifest.json",
+      "bytes": 4719,
+      "sha256": "86f016afb2d596abb63cfb5152defd56d7b58fe63066df3e9e3ad72919f145f6"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 4633,
+      "sha256": "d0a120f2484ea9ebfdd3b00fbd63d6b7698bd8f789d7ab2a842a404b0e853e5d"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "scope": "Verification of saved evidence only; no model/GPU replay. Photographic and exact-cache gates stillFAIL.",
+  "manifest": "docs/measurements/terrain-glo30-static-trial-2026-10-17/manifest.json",
+  "manifestSHA256": "cb21cc139da9bf7bbf8d74ccb86bc5678ab87653656f045fcc10cd720a0729c1",
+  "verification": {
+    "status": "PASS_SAVED_EVIDENCE_ONLY",
+    "payloads": 125,
+    "canonicalSourcePins": 129,
+    "candidatePins": 135,
+    "differencePins": 137,
+    "R0OverlaysExact": true,
+    "gzipAssetsExact": true,
+    "reproducedSavedPair": true,
+    "changedWords": 21,
+    "changedRgbPixels": 7,
+    "changedAlphaWords": 0,
+    "modelOrGPUReplayed": false
+  },
+  "scriptSHA256": "db959f5f5659c8530da208aba9dc7aa6464756d11b47c56c7245895226bb0442",
+  "productRuntime": "observatory-v60-terrain-raster-cache",
+  "productSource129Unchanged": true
+}

@@ -1,0 +1,97 @@
+{
+  "schema": "cloudia-terrain-mesh-codec-freeze-v1",
+  "status": "FROZEN_EXTERNAL_CODEC_ONLY",
+  "api": [
+    "encodeTerrainMeshAsset(data: TerrainMeshData): ArrayBuffer",
+    "decodeTerrainMeshAsset(buffer: ArrayBuffer | Uint8Array): TerrainMeshData",
+    "loadTerrainMeshAsset(url: string, expectedSHA: string, signal?: AbortSignal): Promise<TerrainMeshData>"
+  ],
+  "format": "TMA1 little-endian v1",
+  "validation": "11 synthetic tests PASS; isolated TypeScript PASS",
+  "executedModel": false,
+  "executedGPU": false,
+  "productEdits": false,
+  "dependencies": {
+    "existingSymlink": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle35/mesh-bundle-helper/node_modules",
+    "target": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules",
+    "gitIgnored": true,
+    "trackedPaths": 0,
+    "dropboxIgnoreBefore": "1",
+    "dropboxIgnoreAfter": "1",
+    "node": "v26.11.0"
+  },
+  "files": {
+    "README.md": {
+      "bytes": 6333,
+      "sha256": "e9d1d7bfc6d35a0722c07ab4424bd0c2e326b3dbda0e5cf8ced80d5a63854583"
+    },
+    "qualification-setup-r0.json": {
+      "bytes": 151,
+      "sha256": "56b2bae22d5c0d19f38976ff1779c7d9c3bee3ed8ba117fb671dea0323c109e0"
+    },
+    "qualification-tests-r1.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qualification-tests-r1.stdout.log": {
+      "bytes": 261,
+      "sha256": "dc9af0011154bd4a1075addfbce7736e9a7d941c7d911f52d0b08efba68bbd60"
+    },
+    "qualification-tests-r3.json": {
+      "bytes": 494,
+      "sha256": "7ec81eded01d4791ccfc05bdbf5f014831159e467fe64c19294f880bf21591f2"
+    },
+    "qualification-tests-r3.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qualification-tests-r3.stdout.log": {
+      "bytes": 261,
+      "sha256": "4477bcc9af88157ccbcc65ca6bbe38a123f2e90d7b57746c90f2e7f11c7a65a8"
+    },
+    "qualification-typecheck-r1.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qualification-typecheck-r1.stdout.log": {
+      "bytes": 1097,
+      "sha256": "234449f3bd6fdcf561b61f94df908df7949e1e76315865ba5b4fe202e12f0ee1"
+    },
+    "qualification-typecheck-r2.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qualification-typecheck-r2.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qualification-typecheck-r3.json": {
+      "bytes": 498,
+      "sha256": "46beade909202a324a057f5c06efba1c271949f6b9bd193adf87f46c7709a6f7"
+    },
+    "qualification-typecheck-r3.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "qualification-typecheck-r3.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "terrainMeshAsset.test.ts": {
+      "bytes": 13579,
+      "sha256": "adac0af99dddcfe6c3bdbdb40ff08848651f60db290e3d9caa02fd552bb28559"
+    },
+    "terrainMeshAsset.ts": {
+      "bytes": 16613,
+      "sha256": "fc7cd6045db25589ccc0db7860838f2684ec8cd52e6dda17481cac6190d96f67"
+    },
+    "tsconfig.helper.json": {
+      "bytes": 695,
+      "sha256": "b8981e52b60663aa6b5c3e0ec8f9a8a6bec503b85a6f40658ffb616d341cff1b"
+    },
+    "vitest.helper.config.mjs": {
+      "bytes": 93,
+      "sha256": "d56c09262e64875232fab36c436cfec10fac3814586db96c25dceaeadf0a8a10"
+    }
+  }
+}

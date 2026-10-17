@@ -1,0 +1,54 @@
+[
+  {
+    "source": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/terrain-source-refinement-2026-10-16/browser/refine-main-sun-native.png",
+    "sourceSHA256": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d",
+    "box": [
+      0,
+      560,
+      1000,
+      1000
+    ],
+    "output": "baseline-primary-roi.png",
+    "sha256": "435a18cbd0730c3f0328b110bf77e0d13a3b804174673826971ee21cd9f64b52",
+    "scope": "Lossless 1:1 native crop, no resize/tone adjustment"
+  },
+  {
+    "source": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/terrain-source-refinement-2026-10-16/browser/refine-main-sun-native.png",
+    "sourceSHA256": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d",
+    "box": [
+      700,
+      540,
+      1030,
+      780
+    ],
+    "output": "baseline-secondary-roi.png",
+    "sha256": "f463179eebbf4a86907cad5b12f668a67420bfb40b1db1568522178fcb1080b1",
+    "scope": "Lossless 1:1 native crop, no resize/tone adjustment"
+  },
+  {
+    "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle35/browser/candidate-after-forced-native.png",
+    "sourceSHA256": "90c8db0b4d7b9b3d4d31f80cf770007138359ede99fd3d1ce23b93ddac678e65",
+    "box": [
+      0,
+      560,
+      1000,
+      1000
+    ],
+    "output": "candidate-primary-roi.png",
+    "sha256": "e82183204966262e5ac425b7fdf2dd5218666e8809659abb124503c28dfebfb6",
+    "scope": "Lossless 1:1 native crop, no resize/tone adjustment"
+  },
+  {
+    "source": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle35/browser/candidate-after-forced-native.png",
+    "sourceSHA256": "90c8db0b4d7b9b3d4d31f80cf770007138359ede99fd3d1ce23b93ddac678e65",
+    "box": [
+      700,
+      540,
+      1030,
+      780
+    ],
+    "output": "candidate-secondary-roi.png",
+    "sha256": "e33d1e73d4bef15ab5d31d7664cf0139d3f4f84eaef9dc4bbdebaef11151ee88",
+    "scope": "Lossless 1:1 native crop, no resize/tone adjustment"
+  }
+]

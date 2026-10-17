@@ -1,0 +1,19 @@
+{
+  "baseManifest": "candidate-manifest-r1.json",
+  "manifest": "difference-manifest-r1.json",
+  "changedOrAdded": [
+    "src/cumulonimbus/CumulonimbusApp.ts",
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/lifecycle.test.ts",
+    "src/cumulonimbus/rgba32fDifference.test.ts",
+    "src/cumulonimbus/rgba32fDifference.ts"
+  ],
+  "deleted": [],
+  "compressedAssetAlias": {
+    "target": "src/cumulonimbus/assets/liguria-apuane-glo30-mesh.bin",
+    "gzipArchivePath": "assets/liguria-apuane-glo30-mesh.bin.gz",
+    "uncompressedBytes": 37639536,
+    "uncompressedSHA256": "59fc118c9676fffd2b96ac1d52ed04cc5fe4a34bf06e1e1c3069562b3690a831"
+  },
+  "scope": "Experiment only. Apply after parent source overlay; decompress exact shared asset once for both."
+}

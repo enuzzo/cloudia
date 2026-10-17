@@ -1,0 +1,46 @@
+[
+  {
+    "command": [
+      "node_modules/.bin/vitest",
+      "run",
+      "src/cumulonimbus/terrainMeshAsset.test.ts",
+      "src/cumulonimbus/terrainMeshAssetIntegration.test.ts",
+      "src/cumulonimbus/lifecycle.test.ts",
+      "src/cumulonimbus/terrainRasterCache.test.ts",
+      "--reporter=dot"
+    ],
+    "exitCode": 0,
+    "wallSeconds": 5.7857301669428125,
+    "log": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle35/qualification/1.log"
+  },
+  {
+    "command": [
+      "node_modules/.bin/vitest",
+      "run",
+      "--reporter=dot"
+    ],
+    "exitCode": 0,
+    "wallSeconds": 6.687898458098061,
+    "log": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle35/qualification/2.log"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exitCode": 0,
+    "wallSeconds": 4.543167750001885,
+    "log": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle35/qualification/3.log"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "build:hero"
+    ],
+    "exitCode": 0,
+    "wallSeconds": 2.3964479580754414,
+    "log": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle35/qualification/4.log"
+  }
+]

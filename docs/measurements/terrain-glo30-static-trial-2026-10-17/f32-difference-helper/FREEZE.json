@@ -1,0 +1,22 @@
+{
+  "frozenUTC": "2026-10-17T01:13:06.990557+00:00",
+  "scope": "Pure CPU helper and7 tests; no model/GPU/product changes",
+  "execution": "Not executed in this preparation; root qualification separate",
+  "files": [
+    {
+      "path": "rgba32fDifference.ts",
+      "bytes": 6997,
+      "sha256": "d80ad4980b5e60fba65a4dff7677d600e63de6926199386765ddb8db1e38f219"
+    },
+    {
+      "path": "rgba32fDifference.test.ts",
+      "bytes": 5428,
+      "sha256": "12e068baf6ddd366808095c1f05cd54d458743ded9422c7567e1c5936851a5ed"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2577,
+      "sha256": "11ed69a776fbe0f0c65c4350cdf5a50a663ec0cf0ad20b95f2b8aed3fac7739e"
+    }
+  ]
+}

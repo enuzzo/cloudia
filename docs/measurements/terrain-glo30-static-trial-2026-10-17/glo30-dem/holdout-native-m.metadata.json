@@ -1,0 +1,31 @@
+{
+  "file": "holdout-native-m.f64le.bin",
+  "bytes": 1179648,
+  "sha256": "be7e34ad823f6499773c556dc6f05524665df1c3a93a26d8703cfb05632b65e9",
+  "dtype": "Float64LE",
+  "units": "metres EGM2008",
+  "shape": [
+    384,
+    384
+  ],
+  "count": 147456,
+  "rowOrder": "Z south to north; X east to west increasing localX",
+  "coordinatesKm": {
+    "xEqualsZAxis": true,
+    "formula": "-48+(4*i+0.5)*0.0625; i=0..383",
+    "first": -47.96875,
+    "stride": 0.25,
+    "last": 47.78125
+  },
+  "reference": "Native GLO30 mosaic bilinear; NOT sampled from62.5m raster; before clamp, ocean flattening or quantization",
+  "sourceManifestSha256": "86f016afb2d596abb63cfb5152defd56d7b58fe63066df3e9e3ad72919f145f6",
+  "summaryM": {
+    "count": 147456,
+    "min": -4.48155165691617,
+    "mean": 307.2095771940167,
+    "p50": 10.342794576693926,
+    "p99": 1593.1108569232756,
+    "max": 2083.1098648320185,
+    "rms": 530.1322467313361
+  }
+}

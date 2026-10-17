@@ -1,0 +1,21 @@
+{
+  "baseManifestSHA256": "a4e38cfc8afdfb5899cc31d20124ee7704754108af1838517a5d3d6583a51b2b",
+  "baseSourceFiles": 129,
+  "witnessSHA256": "20ec1083acd1c4f3ebcd8abde0d16537d68b1335e198513c60c2e65c2658a1f6",
+  "inputs": {
+    "glo30-dem/glo30-62_5m-recomputed-coast.cdm1.bin": "79f84ba70848724549f65c4d4f6758041f10068dc9885156894c36e7bc2c4cd1",
+    "glo30-dem/holdout-native-m.f64le.bin": "be7e34ad823f6499773c556dc6f05524665df1c3a93a26d8703cfb05632b65e9"
+  },
+  "limits": {
+    "childCpuSeconds": 20,
+    "totalWallSeconds": 40,
+    "terminalChildPeakRssBytes": 2147483648,
+    "offlineProbeCount": 2400000,
+    "vertices": 1000000,
+    "triangles": 2000000,
+    "geometryBytes": 67108864
+  },
+  "qualityGateBeforeGPU": "All geometry invariants and budgets pass; fixed canonical-land native-source holdout RMS must improve at least10percent against canonical v60 mesh. Report extrema and regressions without claiming maximum error guarantee. If fails stop candidate without cap relaxation/retry/GPU.",
+  "comparison": "New GLO30 sampled62.5m, one existing red/green pass >5m, original256cells/9levels/32m base; source1x, old coast continuously sampled. Not global62.5m mesh, no palette/normal/lighting change.",
+  "gpuGate": "If preflight passes, codec+loader static bundle first, source/tests/build, then root+independent fixed native Sun PNG; stop after visualFAIL before worker/weather/FPS. No adoption from RMS."
+}
