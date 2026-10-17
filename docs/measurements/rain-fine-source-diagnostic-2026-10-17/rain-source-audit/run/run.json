@@ -1,0 +1,71 @@
+{
+  "status": "PASS_BOUNDED_CPU_DIAGNOSTIC",
+  "terminalExitCode": 0,
+  "spawnOrControllerError": null,
+  "wallSeconds": 0.5856503329705447,
+  "cpuUserSeconds": 0.5881179999999999,
+  "cpuSystemSeconds": 0.033802,
+  "cpuCombinedSeconds": 0.6219199999999999,
+  "terminalPeakRssBytes": 130449408,
+  "rssScope": "terminal getrusage maximum; not live enforcement or RLIMIT_AS",
+  "wallTimeout": false,
+  "resultValid": true,
+  "resultError": null,
+  "budget": {
+    "childCpuSecondsKernel": 20,
+    "childWallSeconds": 40,
+    "terminalPeakRssBytes": 402653184,
+    "rssEnforcement": "terminal getrusage gate, not RLIMIT_AS and not a live RSS limit",
+    "reducerScratchBytesEachCall": 57344,
+    "newPersistentGpuBytes": 0
+  },
+  "sourceFreezeSHA256": "1d0747559cbb95b4b91cd076bc345a32e47279e21f4d49f4df8ba296705d0b9c",
+  "runtime": {
+    "path": "/Users/enuzzo/.bun/bin/bun",
+    "bytes": 61069216,
+    "sha256": "1d77af7bfd811aebb7d37bec496a5eed14fe227ded3ab7866d2f39786e8107b6"
+  },
+  "runtimeUnchangedAfterRun": true,
+  "outputs": [
+    {
+      "path": "comparison.ppm",
+      "bytes": 49250,
+      "sha256": "a7d68d4a72f495085d9efbc71a76ba05f9a034b29ada7325c4c4708fdc09ecc1"
+    },
+    {
+      "path": "fine-rg.bin",
+      "bytes": 8192,
+      "sha256": "f4ee6bf153666d4582f8ab6b26d327b6d90733ef1ae8ba28b2dfdb30de8e67c8"
+    },
+    {
+      "path": "hook.json",
+      "bytes": 19054,
+      "sha256": "3421cd5865b0e25cefe563d6f05f17e1ab2a44112bc36828ae48f071ecd0dbb8"
+    },
+    {
+      "path": "macro-rg.bin",
+      "bytes": 8192,
+      "sha256": "342a1098fedf0e0d5a8014419eca6b720a1c0ad8c9aa6819ed9f61e2b1dbd250"
+    },
+    {
+      "path": "result.json",
+      "bytes": 40582,
+      "sha256": "b56c72b1f3ecf3186117530fcbe2a1328709eaeed34fc5ba3d035ba5f20ef0d9"
+    },
+    {
+      "path": "spatial.csv",
+      "bytes": 232945,
+      "sha256": "8675149e909374152b05b0f069863e7b10a3a559273c382d3747dc832b16efb9"
+    },
+    {
+      "path": "stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "stdout.log",
+      "bytes": 1245,
+      "sha256": "a14152ebe609a4962e75818fd1791bf1e375545b932c75cd5ac092895f526d3d"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "schema": "cloudia-rain-source-diagnostic-freeze-v1",
+  "status": "READY_UNEXECUTED_ROOT_ONLY",
+  "canonicalManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "case": {
+    "seed": 74,
+    "macro": 64,
+    "detail": 64,
+    "map": 64,
+    "generateVolumeCalls": 1
+  },
+  "scope": "Read/copy/hash/source derivation completed; no recipe, model, TypeScript execution, test, build, GPU or browser executed by preparer. No repository write.",
+  "budget": {
+    "childCpuSecondsKernel": 20,
+    "childWallSeconds": 40,
+    "terminalPeakRssBytes": 402653184,
+    "rssEnforcement": "terminal getrusage gate, not RLIMIT_AS and not a live RSS limit",
+    "reducerScratchBytesEachCall": 57344,
+    "newPersistentGpuBytes": 0
+  },
+  "sourceGuards": {
+    "oneGenerateVolumeCallInRunner": true,
+    "oneSynchronousHookCallSite": true,
+    "volumeNoPrecipitationImport": true,
+    "inverseVolumeExactlyCanonical": true,
+    "inverseReducerBodyExactlyCanonical": true,
+    "allOriginalBakesPreserved": true,
+    "reducerSourceStartLine": 65,
+    "hookBeforeCanonicalLine": 440
+  },
+  "files": [
+    {
+      "path": "PROTOCOL.json",
+      "bytes": 3294,
+      "sha256": "80b4dbcffc4e368c224bf3669be70dc636a87676e719e7366d31e3532e5ebeac"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6207,
+      "sha256": "4e9a6b0c31aaaeb4e5d7383789d9047cc6956b9960e2ab0c2c35037d5755a3af"
+    },
+    {
+      "path": "prepare_source.py",
+      "bytes": 5165,
+      "sha256": "2865ec7fedc0f17c5f125fe30e7cf18c8e53b6afa0d70e9d12c8c195f473e0f8"
+    },
+    {
+      "path": "runner.ts",
+      "bytes": 11656,
+      "sha256": "c684d590f4e6e6e933e908520e7e978cfa895182ed0022adfb3574209401ccf3"
+    },
+    {
+      "path": "launch.py",
+      "bytes": 3546,
+      "sha256": "5cfd90f5ebac6783ce078932543903e6570462cd0631b70de993a90ce6d33aab"
+    },
+    {
+      "path": "canonical-141-manifest.json",
+      "bytes": 15037,
+      "sha256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73"
+    },
+    {
+      "path": "source-provenance.json",
+      "bytes": 3041,
+      "sha256": "b50e441104514b0ec90abb72ec68064d30400e898a50817358c5c0cc00548c64"
+    },
+    {
+      "path": "instrumentation.patch",
+      "bytes": 4377,
+      "sha256": "21a88f09599f495bea6a7499b132fd9b1e857af445cfc06e40fda38c355dd082"
+    },
+    {
+      "path": "instrumented/volume.ts",
+      "bytes": 30164,
+      "sha256": "6b7d23ceb3facbb8f9e0e6abc43aacd9940ba8afa4c349704cca059348aa8ac9"
+    },
+    {
+      "path": "instrumented/precipitation.ts",
+      "bytes": 6078,
+      "sha256": "2ca1f7a666d9a680c407a0f4a1c7beeb0aa044a2c347d8320fa358920c681ed3"
+    },
+    {
+      "path": "baseline/src/cumulonimbus/volume.ts",
+      "bytes": 29836,
+      "sha256": "c349e8f7526a2dafa0348516079f3f67ab7288a17769f28193ebcef7e124d34d"
+    },
+    {
+      "path": "baseline/src/cumulonimbus/light.ts",
+      "bytes": 3041,
+      "sha256": "eb9ecfd6f035bc1cd4cbf40cde2d175ed225cac7eeaf5093cb58dbf92ede63cf"
+    },
+    {
+      "path": "baseline/src/cumulonimbus/sun.ts",
+      "bytes": 397,
+      "sha256": "893d2e6219a4985f88e83fcc6c9b28548dd4fe995509b0e159b719026d46d8fc"
+    },
+    {
+      "path": "baseline/src/cumulonimbus/motion.ts",
+      "bytes": 7238,
+      "sha256": "62cf7af24ade712c46e710c0607d09549391672845703108e1380e36e2027bb2"
+    },
+    {
+      "path": "baseline/src/cumulonimbus/inclinedShoulder.ts",
+      "bytes": 2009,
+      "sha256": "32a844aaacd1de2bde2760da5cc1686693337445e930611cca4a55e3513d8f66"
+    },
+    {
+      "path": "baseline/src/cumulonimbus/precipitation.ts",
+      "bytes": 5993,
+      "sha256": "561dace4f0ab9cbba246cefe0c14f23f5406bbabb1a5e3a00799d5d8aa08ce72"
+    },
+    {
+      "path": "baseline/src/cumulonimbus/landscape.ts",
+      "bytes": 5477,
+      "sha256": "8a0e17f79d6ec5759dd0615ffa94434c479b7961d1f9e007df583fb463ca98ab"
+    },
+    {
+      "path": "baseline/src/cumulonimbus/aerial.ts",
+      "bytes": 621,
+      "sha256": "a066cfe3664d77e4c448045010fa13c40eefb35add6c163d143bd2bb01af10da"
+    },
+    {
+      "path": "baseline/src/cumulonimbus/terrainSurface.ts",
+      "bytes": 13659,
+      "sha256": "0ff8de3514feb3714ba4e931c246d0bd339634661aa37a7d87e79f61c1ddff3f"
+    }
+  ],
+  "payloadBytes": 156836
+}

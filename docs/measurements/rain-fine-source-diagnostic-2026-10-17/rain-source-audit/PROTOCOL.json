@@ -1,0 +1,16 @@
+{
+  "schema": "cloudia-rain-fine-source-diagnostic-v1",
+  "status": "FROZEN_BEFORE_MODEL_EXECUTION",
+  "source": "Canonical v61 141-entry manifest 2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73; nine required local TS files individually verified, volume c349e8f7526a2dafa0348516079f3f67ab7288a17769f28193ebcef7e124d34d",
+  "singleCase": {"seed": 74, "macroResolution": 64, "detailResolutionExpected": 64, "rainMapResolution": 64, "generateVolumeCalls": 1, "allFiveOriginalLightBakes": true},
+  "instrumentation": "Synchronous callback after the existing loop writes fine-eroded, warped, material-weighted relative optical density into the reused Float32 density buffer, immediately before the first original light bake. Borrow only; do not mutate or retain the large arrays after callback.",
+  "sameReducer": "Derive once from canonical precipitationFootprint by replacing only its volume-size parameter and scalar-density accessor. Inverse source guard must reconstruct canonical reducer body exactly. At runtime canonical macro result must be byte-identical to the same derived reducer with byte/255 accessor BEFORE comparing the F32 result.",
+  "units": "Macro is R_UNORM8/255. Fine is actual stored Float32 sampleCloudDensity*materialExtinction(ice)/18. Reducer visits y<=2.5 km; require iceStart>2.5, so ice=0 there and materialExtinction/18=1. No rescale, refit, gain change or normalization of generated maps.",
+  "preserved": ["source top 2.5 km", "threshold .05", "area integration", "gain .85", "Gaussian 5x5", "base extrapolation halo1", "RG8 quantization", "all original generator bakes and occupancy"],
+  "output": ["result.json compact statistics and temporal hook/progress", "hook.json preserved even if a later light bake fails", "macro-rg.bin 8192 B", "fine-rg.bin 8192 B", "spatial.csv all 4096 texels", "comparison.ppm four fixed panels macroR/fineR/absoluteRdelta/signedRdelta"],
+  "spatialStatistics": ["R support transition counts at exact encoded >0", "centroid/support bounds", "per-channel code differences", "base-height differences on positive union and bilinear halo", "64 row and 64 column profiles", "spatial total variation between normalized R distributions as diagnostic only; maps remain unnormalized", "Pearson correlation and ratio distribution on shared-positive support"],
+  "nonMutation": "SHA256 borrowed full F32 and macro RGBA bytes immediately before and after reductions; never write either input. Record the hashes without serializing the volume.",
+  "budget": {"childCpuSecondsKernel": 20, "childWallSeconds": 40, "terminalPeakRssBytes": 402653184, "rssEnforcement": "terminal getrusage gate, not RLIMIT_AS and not a live RSS limit", "reducerScratchBytesEachCall": 57344, "newPersistentGpuBytes": 0},
+  "execution": "Root executor only, one child process, no automatic restart. If source/anchor/macro equality/unit/budget/generation fails, preserve that terminal failure and stop; do not run another resolution or seed.",
+  "interpretation": "Exploratory source diagnostic at 64/64, not product quality 256/128, not a native image, GPU parity, hydrometeor simulation or FPS prediction. Spatial differences are necessary information, not an artistic PASS. A nearly uniform attenuation does not justify a visual trial by itself."
+}

@@ -1,0 +1,11 @@
+# Root decision after one saved-map diagnostic
+
+17 ottobre2026, ciclo46. **Diagnosi CPU completata entro budget; nessun candidato prodotto o trialGPU giustificato da questi dati.** Unica generazione64/64seed74 con cinque bake originali eoccupancy.0.586s wall child,0.622s CPU,130.449.408B piccoRSS terminale; exit0. Macro reducer canonico e derivato8192B esatti, array prestati SHA invariati.
+
+Ho letto i risultati e i quattro pannelli a range0–255, anche in un ingrandimento nearest4x dichiarato, senza normalizzazione o stretch. La forma delle due emissioni postfiltro resta molto simile. Il totaleR scende7.843%; correlazione0.99749, TVspaziale normalizzata0.03624.816/4096texel cambianoR, nessun fineR supera il proprio macroR. Si perdono26/953texel positivi, tutti codici1–2 per29codici complessivi, e non se ne acquistano. Il bordoZ massimo si ritira di un texel109.375m; centroide cambia circa7.75m. La variazione non è matematicamente uniforme, ma prevale l'attenuazione della medesima impronta e dei suoi margini.
+
+La quota-baseG cambia anche sui927texel positivi condivisi: mediana+23.53m, p95+70.59m, massimo+141.18m e minimo−47.06m. È informazione utile, ma non prova una pioggia più credibile; il passoY64 è132.8125m e non si può trasferire il risultato a256. I grandi deltaG nel solohalo dell'unione non dimostrano di per sé una mensola visibile o un bug: parte dei texel non porta emissione fine effettiva. Non attribuire a questa statistica un difetto artistico nuovo.
+
+La coerenza del campo di densità è migliore come definizione statica, ma non basta per rappresentare gocce/microfisica, flow odispersione runtime. Questi risultati non mostrano la nuova struttura spaziale convincente che cercavamo dopo i filtri. Non aumento intensità, non ritocco soglie e non avvio una generazione256 oGPU per rincorrere questo risultato. È una chiusura del ramo diagnostico, non un FAIL del renderer canonico e non una certificazione finale della pioggia.
+
+Nessun cambiamento al prodotto o prestazione misurata. La prossima attività torna alla rappresentazione geometrica del terreno, con un solo controfattualeCPU prefissato:32m contro31.25m allineato ai nodi125m, stesso sampler/refinement, fit eholdout distinti, prima di qualunqueGPU. Il goal completo rimane aperto.

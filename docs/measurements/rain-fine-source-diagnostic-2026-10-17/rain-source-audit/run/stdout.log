@@ -1,0 +1,14 @@
+{"stage":"original-progress","fraction":0.15625,"elapsedMs":234.80149999999998}
+{"stage":"original-progress","fraction":0.21250000000000002,"elapsedMs":238.39662499999997}
+{"stage":"original-progress","fraction":0.26875000000000004,"elapsedMs":242.57124999999996}
+{"stage":"original-progress","fraction":0.325,"elapsedMs":246.84558399999997}
+{"stage":"original-progress","fraction":0.38125,"elapsedMs":251.264292}
+{"stage":"original-progress","fraction":0.4375,"elapsedMs":254.03729199999998}
+{"stage":"original-progress","fraction":0.49375,"elapsedMs":255.022667}
+{"stage":"fine-hook-complete","calls":1,"macroEquality":true,"macro":"342a1098fedf0e0d5a8014419eca6b720a1c0ad8c9aa6819ed9f61e2b1dbd250","fine":"f4ee6bf153666d4582f8ab6b26d327b6d90733ef1ae8ba28b2dfdb30de8e67c8"}
+{"stage":"original-progress","fraction":0.64,"elapsedMs":369.787709}
+{"stage":"original-progress","fraction":0.73,"elapsedMs":388.69708399999996}
+{"stage":"original-progress","fraction":0.8200000000000001,"elapsedMs":417.309709}
+{"stage":"original-progress","fraction":0.9099999999999999,"elapsedMs":437.117625}
+{"stage":"original-progress","fraction":1,"elapsedMs":455.32233399999996}
+{"status":"COMPLETE_CPU_SOURCE_DIAGNOSTIC_ONLY","generationMs":468.93399999999997}

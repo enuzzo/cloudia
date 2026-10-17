@@ -1,0 +1,1845 @@
+{
+  "status": "COMPLETE_CPU_SOURCE_DIAGNOSTIC_ONLY",
+  "seed": 74,
+  "macroResolution": 64,
+  "detailResolution": 64,
+  "rainMapResolution": 64,
+  "runtime": {
+    "name": "Bun",
+    "version": "1.3.11"
+  },
+  "originalGenerateVolumeCalls": 1,
+  "allOriginalLightBakeProgressObserved": true,
+  "generationIncludingHookMs": 467.682542,
+  "progress": [
+    {
+      "fraction": 0.15625,
+      "elapsedMs": 234.80149999999998
+    },
+    {
+      "fraction": 0.21250000000000002,
+      "elapsedMs": 238.39662499999997
+    },
+    {
+      "fraction": 0.26875000000000004,
+      "elapsedMs": 242.57124999999996
+    },
+    {
+      "fraction": 0.325,
+      "elapsedMs": 246.84558399999997
+    },
+    {
+      "fraction": 0.38125,
+      "elapsedMs": 251.264292
+    },
+    {
+      "fraction": 0.4375,
+      "elapsedMs": 254.03729199999998
+    },
+    {
+      "fraction": 0.49375,
+      "elapsedMs": 255.022667
+    },
+    {
+      "fraction": 0.64,
+      "elapsedMs": 369.787709
+    },
+    {
+      "fraction": 0.73,
+      "elapsedMs": 388.69708399999996
+    },
+    {
+      "fraction": 0.8200000000000001,
+      "elapsedMs": 417.309709
+    },
+    {
+      "fraction": 0.9099999999999999,
+      "elapsedMs": 437.117625
+    },
+    {
+      "fraction": 1,
+      "elapsedMs": 455.32233399999996
+    }
+  ],
+  "sourceFreezeSHA256": "1d0747559cbb95b4b91cd076bc345a32e47279e21f4d49f4df8ba296705d0b9c",
+  "protocolSHA256": "80b4dbcffc4e368c224bf3669be70dc636a87676e719e7366d31e3532e5ebeac",
+  "completedVolume": {
+    "macroRGBABytes": 1048576,
+    "macroRGBASHA256": "72c8bd8b7759f736cd09be206b3117f81f1e7082a4f9f7d728a0d190022add64",
+    "sunsetRGBytes": 524288,
+    "sunsetRGSHA256": "b58a273b0ee2107f1b8f316d77c08d0ff70f038d99d4d33727f38e23a932a505",
+    "detailRGBABytes": 1048576,
+    "detailRGBASHA256": "0343537f81600f06de2c398aa6ee83b78de92f97badab32488e3ae5571eb695a",
+    "supportBounds": {
+      "min": [
+        -3.546875,
+        -0.2510937499999999,
+        -2.2246875
+      ],
+      "max": [
+        4.328125,
+        6.42296875,
+        2.3340625
+      ]
+    }
+  },
+  "hook": {
+    "status": "COMPLETE_BORROWED_FINE_DENSITY",
+    "calls": 1,
+    "enteredElapsedMs": 323.845584,
+    "completedElapsedMs": 351.880167,
+    "location": "After reused density F32 is replaced with sampleCloudDensity*materialExtinction/18; before first original light bake",
+    "units": {
+      "macro": "R8/255",
+      "fine": "relative optical density normalized by liquid extinction18/km",
+      "iceStartKm": 4.51146714868378,
+      "sourceTopKm": 2.5,
+      "lowerSourcePhase": "liquid; no conversion or artistic scale applied"
+    },
+    "borrowed": {
+      "fineElements": 262144,
+      "fineBytes": 1048576,
+      "fineMin": 0,
+      "fineMax": 0.9863477349281311,
+      "macroRGBABytes": 1048576,
+      "beforeSHA256": {
+        "fineF32": "0a68c45ed77c9f5f5310b291d18eebc35e9b8a633a827f8ba4f811cb1559b385",
+        "macroRGBA": "db037cab98a72eede32b9abbdfc93882704b553af1b145e96ec413e4df2866c5"
+      },
+      "afterSHA256": {
+        "fineF32": "0a68c45ed77c9f5f5310b291d18eebc35e9b8a633a827f8ba4f811cb1559b385",
+        "macroRGBA": "db037cab98a72eede32b9abbdfc93882704b553af1b145e96ec413e4df2866c5"
+      },
+      "unchanged": true
+    },
+    "macroReducerByteEquality": {
+      "pass": true,
+      "bytes": 8192,
+      "canonicalSHA256": "342a1098fedf0e0d5a8014419eca6b720a1c0ad8c9aa6819ed9f61e2b1dbd250",
+      "sameReducerSHA256": "342a1098fedf0e0d5a8014419eca6b720a1c0ad8c9aa6819ed9f61e2b1dbd250"
+    },
+    "durationsMs": {
+      "canonicalReducer": 6.162875000000042,
+      "sameReducerMacro": 6.515541999999982,
+      "sameReducerFine": 2.5860000000000127
+    },
+    "retainedInputsAfterCallback": false,
+    "comparison": {
+      "mapSize": 64,
+      "texels": 4096,
+      "encodedUnit": "R/G UNORM8 codes; G decoded as 3*(G/255)-.5 km",
+      "macroSHA256": "342a1098fedf0e0d5a8014419eca6b720a1c0ad8c9aa6819ed9f61e2b1dbd250",
+      "fineSHA256": "f4ee6bf153666d4582f8ab6b26d327b6d90733ef1ae8ba28b2dfdb30de8e67c8",
+      "transition": {
+        "bothZero": 3143,
+        "bothPositive": 927,
+        "macroOnly": 26,
+        "fineOnly": 0
+      },
+      "r": {
+        "sumMacroCodes": 133660,
+        "sumFineCodes": 123177,
+        "meanMacro": 0.12796798406862744,
+        "meanFine": 0.11793141084558824,
+        "differentTexels": 816,
+        "maxAbsoluteCodeDelta": 39,
+        "meanAbsoluteCodeDelta": 2.559326171875,
+        "coefficientVariationMacro": 2.3191932473274073,
+        "coefficientVariationFine": 2.393719818887275,
+        "pearsonAllTexels": 0.997485775490884,
+        "spatialDistributionTV": 0.03624198340165635,
+        "sharedPositiveFineToMacroRatios": {
+          "count": 927,
+          "min": 0.3333333333333333,
+          "p50": 0.8689655172413793,
+          "p95": 1,
+          "max": 1
+        }
+      },
+      "g": {
+        "differentTexels": 938,
+        "maxAbsoluteCodeDelta": 121,
+        "meanAbsoluteCodeDelta": 1.416748046875,
+        "baseDeltaKmBothPositive": {
+          "count": 927,
+          "min": -0.047058823529411764,
+          "p50": 0.023529411764705882,
+          "p95": 0.07058823529411765,
+          "max": 0.1411764705882353
+        },
+        "baseDeltaKmPositiveUnion": {
+          "count": 953,
+          "min": -0.23529411764705882,
+          "p50": 0.023529411764705882,
+          "p95": 0.08235294117647059,
+          "max": 0.1411764705882353
+        },
+        "baseDeltaKmZeroRUnionHalo": {
+          "count": 147,
+          "min": -0.5294117647058824,
+          "p50": 0.03529411764705882,
+          "p95": 1.2117647058823529,
+          "max": 1.423529411764706
+        }
+      },
+      "macro": {
+        "supportBoundsKm": [
+          -3.359375,
+          -2.0234375,
+          2.109375,
+          2.1328125
+        ],
+        "centroidXZKm": [
+          -0.5585791373634595,
+          0.01603964817447254
+        ],
+        "rWeightedDecodedBaseKm": 1.0196679898953436
+      },
+      "fine": {
+        "supportBoundsKm": [
+          -3.359375,
+          -2.0234375,
+          2.109375,
+          2.0234375
+        ],
+        "centroidXZKm": [
+          -0.5583308217037272,
+          0.00829034387507408
+        ],
+        "rWeightedDecodedBaseKm": 1.0336168087147666
+      },
+      "rowProfilesZIncreasing": [
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 16,
+          "fineR": 8,
+          "macroPositive": 11,
+          "finePositive": 8
+        },
+        {
+          "macroR": 123,
+          "fineR": 72,
+          "macroPositive": 14,
+          "finePositive": 14
+        },
+        {
+          "macroR": 437,
+          "fineR": 299,
+          "macroPositive": 17,
+          "finePositive": 16
+        },
+        {
+          "macroR": 951,
+          "fineR": 738,
+          "macroPositive": 18,
+          "finePositive": 18
+        },
+        {
+          "macroR": 1547,
+          "fineR": 1285,
+          "macroPositive": 20,
+          "finePositive": 20
+        },
+        {
+          "macroR": 2126,
+          "fineR": 1840,
+          "macroPositive": 21,
+          "finePositive": 21
+        },
+        {
+          "macroR": 2641,
+          "fineR": 2352,
+          "macroPositive": 24,
+          "finePositive": 22
+        },
+        {
+          "macroR": 3107,
+          "fineR": 2783,
+          "macroPositive": 25,
+          "finePositive": 25
+        },
+        {
+          "macroR": 3595,
+          "fineR": 3211,
+          "macroPositive": 27,
+          "finePositive": 26
+        },
+        {
+          "macroR": 4139,
+          "fineR": 3716,
+          "macroPositive": 27,
+          "finePositive": 27
+        },
+        {
+          "macroR": 4707,
+          "fineR": 4278,
+          "macroPositive": 28,
+          "finePositive": 28
+        },
+        {
+          "macroR": 5193,
+          "fineR": 4808,
+          "macroPositive": 30,
+          "finePositive": 28
+        },
+        {
+          "macroR": 5575,
+          "fineR": 5264,
+          "macroPositive": 30,
+          "finePositive": 30
+        },
+        {
+          "macroR": 5874,
+          "fineR": 5629,
+          "macroPositive": 32,
+          "finePositive": 31
+        },
+        {
+          "macroR": 6091,
+          "fineR": 5890,
+          "macroPositive": 32,
+          "finePositive": 32
+        },
+        {
+          "macroR": 6237,
+          "fineR": 6042,
+          "macroPositive": 33,
+          "finePositive": 33
+        },
+        {
+          "macroR": 6360,
+          "fineR": 6142,
+          "macroPositive": 34,
+          "finePositive": 33
+        },
+        {
+          "macroR": 6460,
+          "fineR": 6227,
+          "macroPositive": 34,
+          "finePositive": 34
+        },
+        {
+          "macroR": 6524,
+          "fineR": 6280,
+          "macroPositive": 34,
+          "finePositive": 34
+        },
+        {
+          "macroR": 6517,
+          "fineR": 6267,
+          "macroPositive": 34,
+          "finePositive": 34
+        },
+        {
+          "macroR": 6449,
+          "fineR": 6182,
+          "macroPositive": 34,
+          "finePositive": 33
+        },
+        {
+          "macroR": 6353,
+          "fineR": 6071,
+          "macroPositive": 33,
+          "finePositive": 33
+        },
+        {
+          "macroR": 6243,
+          "fineR": 5944,
+          "macroPositive": 33,
+          "finePositive": 33
+        },
+        {
+          "macroR": 6097,
+          "fineR": 5734,
+          "macroPositive": 33,
+          "finePositive": 32
+        },
+        {
+          "macroR": 5815,
+          "fineR": 5328,
+          "macroPositive": 32,
+          "finePositive": 32
+        },
+        {
+          "macroR": 5279,
+          "fineR": 4679,
+          "macroPositive": 32,
+          "finePositive": 32
+        },
+        {
+          "macroR": 4532,
+          "fineR": 3910,
+          "macroPositive": 32,
+          "finePositive": 31
+        },
+        {
+          "macroR": 3752,
+          "fineR": 3196,
+          "macroPositive": 31,
+          "finePositive": 31
+        },
+        {
+          "macroR": 3099,
+          "fineR": 2626,
+          "macroPositive": 29,
+          "finePositive": 29
+        },
+        {
+          "macroR": 2565,
+          "fineR": 2154,
+          "macroPositive": 27,
+          "finePositive": 26
+        },
+        {
+          "macroR": 2054,
+          "fineR": 1706,
+          "macroPositive": 26,
+          "finePositive": 24
+        },
+        {
+          "macroR": 1531,
+          "fineR": 1254,
+          "macroPositive": 23,
+          "finePositive": 23
+        },
+        {
+          "macroR": 989,
+          "fineR": 778,
+          "macroPositive": 20,
+          "finePositive": 19
+        },
+        {
+          "macroR": 490,
+          "fineR": 359,
+          "macroPositive": 18,
+          "finePositive": 17
+        },
+        {
+          "macroR": 161,
+          "fineR": 108,
+          "macroPositive": 15,
+          "finePositive": 13
+        },
+        {
+          "macroR": 29,
+          "fineR": 17,
+          "macroPositive": 8,
+          "finePositive": 5
+        },
+        {
+          "macroR": 2,
+          "fineR": 0,
+          "macroPositive": 2,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        }
+      ],
+      "columnProfilesXIncreasing": [
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 12,
+          "fineR": 7,
+          "macroPositive": 6,
+          "finePositive": 5
+        },
+        {
+          "macroR": 81,
+          "fineR": 56,
+          "macroPositive": 11,
+          "finePositive": 9
+        },
+        {
+          "macroR": 285,
+          "fineR": 207,
+          "macroPositive": 17,
+          "finePositive": 16
+        },
+        {
+          "macroR": 667,
+          "fineR": 506,
+          "macroPositive": 21,
+          "finePositive": 21
+        },
+        {
+          "macroR": 1213,
+          "fineR": 945,
+          "macroPositive": 24,
+          "finePositive": 22
+        },
+        {
+          "macroR": 1904,
+          "fineR": 1528,
+          "macroPositive": 26,
+          "finePositive": 25
+        },
+        {
+          "macroR": 2788,
+          "fineR": 2338,
+          "macroPositive": 30,
+          "finePositive": 29
+        },
+        {
+          "macroR": 3837,
+          "fineR": 3382,
+          "macroPositive": 32,
+          "finePositive": 32
+        },
+        {
+          "macroR": 4738,
+          "fineR": 4323,
+          "macroPositive": 34,
+          "finePositive": 33
+        },
+        {
+          "macroR": 5382,
+          "fineR": 4994,
+          "macroPositive": 35,
+          "finePositive": 35
+        },
+        {
+          "macroR": 5830,
+          "fineR": 5446,
+          "macroPositive": 35,
+          "finePositive": 35
+        },
+        {
+          "macroR": 6133,
+          "fineR": 5772,
+          "macroPositive": 35,
+          "finePositive": 35
+        },
+        {
+          "macroR": 6358,
+          "fineR": 6035,
+          "macroPositive": 36,
+          "finePositive": 35
+        },
+        {
+          "macroR": 6551,
+          "fineR": 6240,
+          "macroPositive": 36,
+          "finePositive": 36
+        },
+        {
+          "macroR": 6700,
+          "fineR": 6346,
+          "macroPositive": 37,
+          "finePositive": 35
+        },
+        {
+          "macroR": 6718,
+          "fineR": 6328,
+          "macroPositive": 37,
+          "finePositive": 35
+        },
+        {
+          "macroR": 6608,
+          "fineR": 6207,
+          "macroPositive": 36,
+          "finePositive": 35
+        },
+        {
+          "macroR": 6454,
+          "fineR": 6060,
+          "macroPositive": 36,
+          "finePositive": 36
+        },
+        {
+          "macroR": 6282,
+          "fineR": 5892,
+          "macroPositive": 36,
+          "finePositive": 35
+        },
+        {
+          "macroR": 6084,
+          "fineR": 5695,
+          "macroPositive": 36,
+          "finePositive": 35
+        },
+        {
+          "macroR": 5886,
+          "fineR": 5529,
+          "macroPositive": 34,
+          "finePositive": 34
+        },
+        {
+          "macroR": 5710,
+          "fineR": 5389,
+          "macroPositive": 34,
+          "finePositive": 34
+        },
+        {
+          "macroR": 5490,
+          "fineR": 5200,
+          "macroPositive": 33,
+          "finePositive": 32
+        },
+        {
+          "macroR": 5190,
+          "fineR": 4916,
+          "macroPositive": 32,
+          "finePositive": 31
+        },
+        {
+          "macroR": 4935,
+          "fineR": 4637,
+          "macroPositive": 30,
+          "finePositive": 30
+        },
+        {
+          "macroR": 4762,
+          "fineR": 4413,
+          "macroPositive": 28,
+          "finePositive": 28
+        },
+        {
+          "macroR": 4517,
+          "fineR": 4096,
+          "macroPositive": 27,
+          "finePositive": 26
+        },
+        {
+          "macroR": 4026,
+          "fineR": 3563,
+          "macroPositive": 26,
+          "finePositive": 25
+        },
+        {
+          "macroR": 3308,
+          "fineR": 2882,
+          "macroPositive": 25,
+          "finePositive": 25
+        },
+        {
+          "macroR": 2479,
+          "fineR": 2117,
+          "macroPositive": 23,
+          "finePositive": 22
+        },
+        {
+          "macroR": 1616,
+          "fineR": 1317,
+          "macroPositive": 21,
+          "finePositive": 20
+        },
+        {
+          "macroR": 816,
+          "fineR": 611,
+          "macroPositive": 18,
+          "finePositive": 17
+        },
+        {
+          "macroR": 260,
+          "fineR": 178,
+          "macroPositive": 15,
+          "finePositive": 15
+        },
+        {
+          "macroR": 40,
+          "fineR": 22,
+          "macroPositive": 11,
+          "finePositive": 9
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        },
+        {
+          "macroR": 0,
+          "fineR": 0,
+          "macroPositive": 0,
+          "finePositive": 0
+        }
+      ],
+      "interpretation": "Normalized spatial TV/correlation/ratios are diagnostic comparisons only. Neither generated map is normalized or fitted. Code >0 defines support; no extra artistic threshold."
+    }
+  },
+  "comparison": {
+    "mapSize": 64,
+    "texels": 4096,
+    "encodedUnit": "R/G UNORM8 codes; G decoded as 3*(G/255)-.5 km",
+    "macroSHA256": "342a1098fedf0e0d5a8014419eca6b720a1c0ad8c9aa6819ed9f61e2b1dbd250",
+    "fineSHA256": "f4ee6bf153666d4582f8ab6b26d327b6d90733ef1ae8ba28b2dfdb30de8e67c8",
+    "transition": {
+      "bothZero": 3143,
+      "bothPositive": 927,
+      "macroOnly": 26,
+      "fineOnly": 0
+    },
+    "r": {
+      "sumMacroCodes": 133660,
+      "sumFineCodes": 123177,
+      "meanMacro": 0.12796798406862744,
+      "meanFine": 0.11793141084558824,
+      "differentTexels": 816,
+      "maxAbsoluteCodeDelta": 39,
+      "meanAbsoluteCodeDelta": 2.559326171875,
+      "coefficientVariationMacro": 2.3191932473274073,
+      "coefficientVariationFine": 2.393719818887275,
+      "pearsonAllTexels": 0.997485775490884,
+      "spatialDistributionTV": 0.03624198340165635,
+      "sharedPositiveFineToMacroRatios": {
+        "count": 927,
+        "min": 0.3333333333333333,
+        "p50": 0.8689655172413793,
+        "p95": 1,
+        "max": 1
+      }
+    },
+    "g": {
+      "differentTexels": 938,
+      "maxAbsoluteCodeDelta": 121,
+      "meanAbsoluteCodeDelta": 1.416748046875,
+      "baseDeltaKmBothPositive": {
+        "count": 927,
+        "min": -0.047058823529411764,
+        "p50": 0.023529411764705882,
+        "p95": 0.07058823529411765,
+        "max": 0.1411764705882353
+      },
+      "baseDeltaKmPositiveUnion": {
+        "count": 953,
+        "min": -0.23529411764705882,
+        "p50": 0.023529411764705882,
+        "p95": 0.08235294117647059,
+        "max": 0.1411764705882353
+      },
+      "baseDeltaKmZeroRUnionHalo": {
+        "count": 147,
+        "min": -0.5294117647058824,
+        "p50": 0.03529411764705882,
+        "p95": 1.2117647058823529,
+        "max": 1.423529411764706
+      }
+    },
+    "macro": {
+      "supportBoundsKm": [
+        -3.359375,
+        -2.0234375,
+        2.109375,
+        2.1328125
+      ],
+      "centroidXZKm": [
+        -0.5585791373634595,
+        0.01603964817447254
+      ],
+      "rWeightedDecodedBaseKm": 1.0196679898953436
+    },
+    "fine": {
+      "supportBoundsKm": [
+        -3.359375,
+        -2.0234375,
+        2.109375,
+        2.0234375
+      ],
+      "centroidXZKm": [
+        -0.5583308217037272,
+        0.00829034387507408
+      ],
+      "rWeightedDecodedBaseKm": 1.0336168087147666
+    },
+    "rowProfilesZIncreasing": [
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 16,
+        "fineR": 8,
+        "macroPositive": 11,
+        "finePositive": 8
+      },
+      {
+        "macroR": 123,
+        "fineR": 72,
+        "macroPositive": 14,
+        "finePositive": 14
+      },
+      {
+        "macroR": 437,
+        "fineR": 299,
+        "macroPositive": 17,
+        "finePositive": 16
+      },
+      {
+        "macroR": 951,
+        "fineR": 738,
+        "macroPositive": 18,
+        "finePositive": 18
+      },
+      {
+        "macroR": 1547,
+        "fineR": 1285,
+        "macroPositive": 20,
+        "finePositive": 20
+      },
+      {
+        "macroR": 2126,
+        "fineR": 1840,
+        "macroPositive": 21,
+        "finePositive": 21
+      },
+      {
+        "macroR": 2641,
+        "fineR": 2352,
+        "macroPositive": 24,
+        "finePositive": 22
+      },
+      {
+        "macroR": 3107,
+        "fineR": 2783,
+        "macroPositive": 25,
+        "finePositive": 25
+      },
+      {
+        "macroR": 3595,
+        "fineR": 3211,
+        "macroPositive": 27,
+        "finePositive": 26
+      },
+      {
+        "macroR": 4139,
+        "fineR": 3716,
+        "macroPositive": 27,
+        "finePositive": 27
+      },
+      {
+        "macroR": 4707,
+        "fineR": 4278,
+        "macroPositive": 28,
+        "finePositive": 28
+      },
+      {
+        "macroR": 5193,
+        "fineR": 4808,
+        "macroPositive": 30,
+        "finePositive": 28
+      },
+      {
+        "macroR": 5575,
+        "fineR": 5264,
+        "macroPositive": 30,
+        "finePositive": 30
+      },
+      {
+        "macroR": 5874,
+        "fineR": 5629,
+        "macroPositive": 32,
+        "finePositive": 31
+      },
+      {
+        "macroR": 6091,
+        "fineR": 5890,
+        "macroPositive": 32,
+        "finePositive": 32
+      },
+      {
+        "macroR": 6237,
+        "fineR": 6042,
+        "macroPositive": 33,
+        "finePositive": 33
+      },
+      {
+        "macroR": 6360,
+        "fineR": 6142,
+        "macroPositive": 34,
+        "finePositive": 33
+      },
+      {
+        "macroR": 6460,
+        "fineR": 6227,
+        "macroPositive": 34,
+        "finePositive": 34
+      },
+      {
+        "macroR": 6524,
+        "fineR": 6280,
+        "macroPositive": 34,
+        "finePositive": 34
+      },
+      {
+        "macroR": 6517,
+        "fineR": 6267,
+        "macroPositive": 34,
+        "finePositive": 34
+      },
+      {
+        "macroR": 6449,
+        "fineR": 6182,
+        "macroPositive": 34,
+        "finePositive": 33
+      },
+      {
+        "macroR": 6353,
+        "fineR": 6071,
+        "macroPositive": 33,
+        "finePositive": 33
+      },
+      {
+        "macroR": 6243,
+        "fineR": 5944,
+        "macroPositive": 33,
+        "finePositive": 33
+      },
+      {
+        "macroR": 6097,
+        "fineR": 5734,
+        "macroPositive": 33,
+        "finePositive": 32
+      },
+      {
+        "macroR": 5815,
+        "fineR": 5328,
+        "macroPositive": 32,
+        "finePositive": 32
+      },
+      {
+        "macroR": 5279,
+        "fineR": 4679,
+        "macroPositive": 32,
+        "finePositive": 32
+      },
+      {
+        "macroR": 4532,
+        "fineR": 3910,
+        "macroPositive": 32,
+        "finePositive": 31
+      },
+      {
+        "macroR": 3752,
+        "fineR": 3196,
+        "macroPositive": 31,
+        "finePositive": 31
+      },
+      {
+        "macroR": 3099,
+        "fineR": 2626,
+        "macroPositive": 29,
+        "finePositive": 29
+      },
+      {
+        "macroR": 2565,
+        "fineR": 2154,
+        "macroPositive": 27,
+        "finePositive": 26
+      },
+      {
+        "macroR": 2054,
+        "fineR": 1706,
+        "macroPositive": 26,
+        "finePositive": 24
+      },
+      {
+        "macroR": 1531,
+        "fineR": 1254,
+        "macroPositive": 23,
+        "finePositive": 23
+      },
+      {
+        "macroR": 989,
+        "fineR": 778,
+        "macroPositive": 20,
+        "finePositive": 19
+      },
+      {
+        "macroR": 490,
+        "fineR": 359,
+        "macroPositive": 18,
+        "finePositive": 17
+      },
+      {
+        "macroR": 161,
+        "fineR": 108,
+        "macroPositive": 15,
+        "finePositive": 13
+      },
+      {
+        "macroR": 29,
+        "fineR": 17,
+        "macroPositive": 8,
+        "finePositive": 5
+      },
+      {
+        "macroR": 2,
+        "fineR": 0,
+        "macroPositive": 2,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      }
+    ],
+    "columnProfilesXIncreasing": [
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 12,
+        "fineR": 7,
+        "macroPositive": 6,
+        "finePositive": 5
+      },
+      {
+        "macroR": 81,
+        "fineR": 56,
+        "macroPositive": 11,
+        "finePositive": 9
+      },
+      {
+        "macroR": 285,
+        "fineR": 207,
+        "macroPositive": 17,
+        "finePositive": 16
+      },
+      {
+        "macroR": 667,
+        "fineR": 506,
+        "macroPositive": 21,
+        "finePositive": 21
+      },
+      {
+        "macroR": 1213,
+        "fineR": 945,
+        "macroPositive": 24,
+        "finePositive": 22
+      },
+      {
+        "macroR": 1904,
+        "fineR": 1528,
+        "macroPositive": 26,
+        "finePositive": 25
+      },
+      {
+        "macroR": 2788,
+        "fineR": 2338,
+        "macroPositive": 30,
+        "finePositive": 29
+      },
+      {
+        "macroR": 3837,
+        "fineR": 3382,
+        "macroPositive": 32,
+        "finePositive": 32
+      },
+      {
+        "macroR": 4738,
+        "fineR": 4323,
+        "macroPositive": 34,
+        "finePositive": 33
+      },
+      {
+        "macroR": 5382,
+        "fineR": 4994,
+        "macroPositive": 35,
+        "finePositive": 35
+      },
+      {
+        "macroR": 5830,
+        "fineR": 5446,
+        "macroPositive": 35,
+        "finePositive": 35
+      },
+      {
+        "macroR": 6133,
+        "fineR": 5772,
+        "macroPositive": 35,
+        "finePositive": 35
+      },
+      {
+        "macroR": 6358,
+        "fineR": 6035,
+        "macroPositive": 36,
+        "finePositive": 35
+      },
+      {
+        "macroR": 6551,
+        "fineR": 6240,
+        "macroPositive": 36,
+        "finePositive": 36
+      },
+      {
+        "macroR": 6700,
+        "fineR": 6346,
+        "macroPositive": 37,
+        "finePositive": 35
+      },
+      {
+        "macroR": 6718,
+        "fineR": 6328,
+        "macroPositive": 37,
+        "finePositive": 35
+      },
+      {
+        "macroR": 6608,
+        "fineR": 6207,
+        "macroPositive": 36,
+        "finePositive": 35
+      },
+      {
+        "macroR": 6454,
+        "fineR": 6060,
+        "macroPositive": 36,
+        "finePositive": 36
+      },
+      {
+        "macroR": 6282,
+        "fineR": 5892,
+        "macroPositive": 36,
+        "finePositive": 35
+      },
+      {
+        "macroR": 6084,
+        "fineR": 5695,
+        "macroPositive": 36,
+        "finePositive": 35
+      },
+      {
+        "macroR": 5886,
+        "fineR": 5529,
+        "macroPositive": 34,
+        "finePositive": 34
+      },
+      {
+        "macroR": 5710,
+        "fineR": 5389,
+        "macroPositive": 34,
+        "finePositive": 34
+      },
+      {
+        "macroR": 5490,
+        "fineR": 5200,
+        "macroPositive": 33,
+        "finePositive": 32
+      },
+      {
+        "macroR": 5190,
+        "fineR": 4916,
+        "macroPositive": 32,
+        "finePositive": 31
+      },
+      {
+        "macroR": 4935,
+        "fineR": 4637,
+        "macroPositive": 30,
+        "finePositive": 30
+      },
+      {
+        "macroR": 4762,
+        "fineR": 4413,
+        "macroPositive": 28,
+        "finePositive": 28
+      },
+      {
+        "macroR": 4517,
+        "fineR": 4096,
+        "macroPositive": 27,
+        "finePositive": 26
+      },
+      {
+        "macroR": 4026,
+        "fineR": 3563,
+        "macroPositive": 26,
+        "finePositive": 25
+      },
+      {
+        "macroR": 3308,
+        "fineR": 2882,
+        "macroPositive": 25,
+        "finePositive": 25
+      },
+      {
+        "macroR": 2479,
+        "fineR": 2117,
+        "macroPositive": 23,
+        "finePositive": 22
+      },
+      {
+        "macroR": 1616,
+        "fineR": 1317,
+        "macroPositive": 21,
+        "finePositive": 20
+      },
+      {
+        "macroR": 816,
+        "fineR": 611,
+        "macroPositive": 18,
+        "finePositive": 17
+      },
+      {
+        "macroR": 260,
+        "fineR": 178,
+        "macroPositive": 15,
+        "finePositive": 15
+      },
+      {
+        "macroR": 40,
+        "fineR": 22,
+        "macroPositive": 11,
+        "finePositive": 9
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      },
+      {
+        "macroR": 0,
+        "fineR": 0,
+        "macroPositive": 0,
+        "finePositive": 0
+      }
+    ],
+    "interpretation": "Normalized spatial TV/correlation/ratios are diagnostic comparisons only. Neither generated map is normalized or fitted. Code >0 defines support; no extra artistic threshold."
+  },
+  "limits": "One seed at64/64; not product256/128, native image, GPU equality, terrain coupling, motion, worker integration, physical rain or FPS evidence."
+}

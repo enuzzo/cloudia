@@ -1,0 +1,14 @@
+{
+  "status": "PASS_SAVED_ARTIFACT_INTEGRITY_ONLY",
+  "archivePayloads": 38,
+  "archivePayloadBytes": 553327,
+  "manifestSHA256": "1406aa9384ebeee21b94608041db6d2439d3a1bb6dd083593cc179c0deceeab6",
+  "sourceFreezeSHA256": "1d0747559cbb95b4b91cd076bc345a32e47279e21f4d49f4df8ba296705d0b9c",
+  "frozenPayloads": 19,
+  "runOriginalOutputsAuthenticated": 8,
+  "currentCanonical141Exact": true,
+  "wallSeconds": 0.046642917091958225,
+  "noNewModelGPUOrFPS": true,
+  "verdict": "CPU complete; no next native candidate justified",
+  "goal": "active"
+}
