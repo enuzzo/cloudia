@@ -96,7 +96,7 @@ vi.mock('./terrainCover',async()=>{
  return {...actual,loadTerrainCover:vi.fn(async()=>{const fractions=new Uint8Array(48);for(let i=0;i<4;i++)fractions[i*12]=255;return {side:2,spacingKm:64,minX:-64,minZ:-64,fractions};})};
 });
 import { CumulonimbusApp } from './CumulonimbusApp';
-import { Data3DTexture,NearestFilter,LinearFilter,ClampToEdgeWrapping,NoColorSpace,RedFormat,UnsignedByteType } from 'three/webgpu';
+import { BufferGeometry,Float32BufferAttribute,Data3DTexture,NearestFilter,LinearFilter,ClampToEdgeWrapping,NoColorSpace,RedFormat,UnsignedByteType } from 'three/webgpu';
 import * as cloudShader from './cloudShader';
 import {loadTerrainDem,type TerrainDem} from './terrainDem';
 import {loadTerrainCover,type TerrainCover} from './terrainCover';
@@ -171,6 +171,42 @@ async function startNativeFixture(search='/?profile=1&timing=off&flow=frozen&see
  nativeSelect(root,'output','window');
  return {app,root,canvas,clock,draw:(time:number)=>{clock.value=time;frame(time);}};
 }
+
+describe('whole terrain cache audit lifecycle',()=>{
+ beforeEach(()=>{vi.stubGlobal('crypto',webcrypto);});
+ it('requires the explicit profile audit UI and rejects an animated scene before GPU readback',async()=>{
+  const {app,root,draw}=await startNativeFixture('/?profile=1&terrainAudit=1&timing=off&flow=frozen&seed=74');
+  const read=vi.fn();Object.defineProperty(control.renderer!,'readRenderTargetPixelsAsync',{value:read});
+  try{
+   draw(1000);expect(nativeButton(root,'terrain-cache-audit').disabled).toBe(false);
+   nativeButton(root,'terrain-cache-audit').click();await flush();
+   expect(read).not.toHaveBeenCalled();expect(root.querySelector('[data-testid="gpu-report-json"]')).not.toBeNull();
+   expect(root.textContent).toContain('Fissa la scena');
+  }finally{app.destroy();await settleNative();}
+ });
+ it('waits for a pending readback before disposing its target owner and skips the second read after destruction',async()=>{
+  const {app,root,draw}=await startNativeFixture('/?profile=1&terrainAudit=1&timing=off&flow=frozen&seed=74');
+  const renderer=control.renderer!,terrain=control.terrain[0],geometry=new BufferGeometry();
+  geometry.setAttribute('position',new Float32BufferAttribute([0,0,0],3));
+  Object.defineProperties(terrain,{target:{value:{texture:terrain.texture,width:1,height:1}},geometry:{value:geometry},invalidate:{value:vi.fn()}});
+  let release!:(value:Float32Array)=>void;
+  const read=vi.fn(()=>new Promise<Float32Array>(resolve=>{release=resolve;}));Object.defineProperty(renderer,'readRenderTargetPixelsAsync',{value:read});
+  try{
+   nativeButton(root,'probe-reference').click();await flush();draw(1000);draw(4000);
+   nativeSelect(root,'output','1080');nativeButton(root,'terrain-cache-audit').click();await flush();
+   expect(read).not.toHaveBeenCalled();expect(root.textContent).toContain('Attendi un disegno ordinario');
+   draw(4500);root.querySelector<HTMLTextAreaElement>('[data-testid="gpu-report-json"]')!.value='previous report';nativeButton(root,'export').disabled=false;
+   nativeButton(root,'terrain-cache-audit').click();await flush();expect(read).toHaveBeenCalledOnce();
+   expect(root.querySelector<HTMLTextAreaElement>('[data-testid="gpu-report-json"]')!.value).toBe('');expect(nativeButton(root,'export').disabled).toBe(true);
+   const draws=control.render.mock.calls.length;draw(5000);expect(control.render).toHaveBeenCalledTimes(draws);
+   expect(nativeButton(root,'frame-capture').disabled).toBe(true);expect(nativeButton(root,'benchmark').disabled).toBe(true);
+   app.destroy();await flush();expect(renderer.dispose).not.toHaveBeenCalled();expect(terrain.dispose).not.toHaveBeenCalled();
+   release(new Float32Array([0,0,0,-1]));await settleNative();await vi.waitFor(()=>expect(renderer.dispose).toHaveBeenCalledOnce());
+   expect(terrain.dispose).toHaveBeenCalledOnce();expect(read).toHaveBeenCalledOnce();
+   expect(root.querySelector<HTMLTextAreaElement>('[data-testid="gpu-report-json"]')!.value).toBe('');
+  }finally{release?.(new Float32Array([0,0,0,-1]));app.destroy();geometry.dispose();await settleNative();}
+ });
+});
 
 describe('native PNG export engine/App lifecycle regression',()=>{
  beforeEach(()=>{vi.stubGlobal('Blob',NodeBlob);vi.stubGlobal('crypto',webcrypto);});
@@ -497,7 +533,7 @@ describe('scene async lifecycle',()=>{
       queuePrefix:{status:string;measuredSubmissions:number;confirmedPrefixId:number;samples:Array<{kind:string;prefixId:number}>}};
     expect(report.densitySamplingStart).toMatchObject({path:'r8unorm-extracted-r',format:'r8unorm',dimensions:[1,1,1],textureBytes:1,extraCpuPayloadBytes:1,extraGpuPayloadBytes:1,fallback:null});
     expect(report.densitySamplingEnd).toEqual(report.densitySamplingStart);
-    expect(report.rendererVersion).toBe('observatory-v59-terrain-source-refinement');
+    expect(report.rendererVersion).toBe('observatory-v60-terrain-raster-cache');
     expect(report).toHaveProperty('terrainSurfaceId','copernicus-glo90-liguria-apuane-v1');
     expect(report).toHaveProperty('terrainGeography',expect.objectContaining({originDegrees:[44,10],verticalExaggeration:1,measuredSquareHalfWidthKm:48}));
     expect(report).toHaveProperty('terrainCover',expect.objectContaining({id:'esa-worldcover-2021-area-fractions-v1',year:2021,sourceClasses:12,materialGroups:8,gridSize:[2,2],sourceAssetBytes:80,retainedCpuPayloadBytes:32,totalGpuPayloadBytes:40}));

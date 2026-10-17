@@ -1,0 +1,14 @@
+{
+  "sun": {
+    "repositoryPath": "docs/measurements/terrain-source-refinement-2026-10-16/browser/refine-main-sun-native.png",
+    "byteLength": 2909134,
+    "sha256": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d",
+    "scope": "Existing verified bitmap; fresh owner metadata declares matching SHA/bytes/dimensions. No new native pixel transfer in this cycle."
+  },
+  "rain": {
+    "repositoryPath": "docs/measurements/terrain-source-refinement-2026-10-16/browser/refine-main-rain-native.png",
+    "byteLength": 2585113,
+    "sha256": "0dd971b684b29c9d9855a405878d903da025eb729f17832dda813ac50051fa1b",
+    "scope": "Existing verified bitmap; fresh owner metadata declares matching SHA/bytes/dimensions. No new native pixel transfer in this cycle."
+  }
+}

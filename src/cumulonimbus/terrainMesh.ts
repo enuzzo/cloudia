@@ -1,6 +1,6 @@
 import {
  BufferAttribute,BufferGeometry,Color,DepthFormat,DepthTexture,FloatType,Mesh,MeshBasicNodeMaterial,
- NearestFilter,NoBlending,NoColorSpace,PerspectiveCamera,RenderTarget,RGBAFormat,Scene,Vector3,WebGPUCoordinateSystem,
+ NearestFilter,NoBlending,NoColorSpace,PerspectiveCamera,RenderTarget,RGBAFormat,Scene,Vector3,Vector4,WebGPUCoordinateSystem,
  type Node,type Texture,type WebGPURenderer,
 } from 'three/webgpu';
 import {attribute,positionWorld,normalWorld,uniform,varying,vec4} from 'three/tsl';
@@ -324,9 +324,52 @@ export function configureTerrainCamera(camera:PerspectiveCamera,frame:TerrainCam
 }
 
 export interface TerrainShadeInputs {positionWorld:Node<'vec3'>;normal:Node<'vec3'>;height:Node<'float'>;coast:Node<'float'>;distance:Node<'float'>;pixelKm:Node<'float'>;shadowVisibility:Node<'float'>}
+export interface TerrainRasterCacheInputs {values:readonly number[];textures:readonly Texture[]}
+
+type TerrainRasterCacheKey={state:unknown[];attachments:Texture[];versions:number[];firstBindings:boolean[]};
+const sameRasterState=(a:readonly unknown[],b:readonly unknown[])=>a.length===b.length&&a.every((value,i)=>Object.is(value,b[i]));
+function rasterTextureState(texture:Texture,includeVersion=true):unknown[]{
+ const image=texture.image as {width?:number;height?:number;depth?:number}|undefined;
+ return [texture,texture.source,image,includeVersion?texture.version:null,includeVersion?texture.source.version:null,
+  image?.width,image?.height,image?.depth,texture.mapping,texture.channel,texture.format,texture.internalFormat,texture.type,texture.colorSpace,
+  texture.wrapS,texture.wrapT,'wrapR' in texture?texture.wrapR:null,texture.magFilter,texture.minFilter,texture.anisotropy,texture.generateMipmaps,
+  texture.flipY,texture.premultiplyAlpha,texture.unpackAlignment,texture.mipmaps,texture.mipmaps.length,
+  'compareFunction' in texture?texture.compareFunction:null,texture.matrixAutoUpdate,
+  ...texture.offset.toArray(),...texture.repeat.toArray(),...texture.center.toArray(),texture.rotation,...texture.matrix.elements];
+}
+function rasterAttributeState(attribute:ReturnType<BufferGeometry['getAttribute']>|null):unknown[]{
+ if(!attribute)return [null];
+ const data='data' in attribute?attribute.data:attribute;
+ return [attribute,data,data.array,data.version,data.count,data.usage,attribute.itemSize,attribute.normalized,
+  'gpuType' in attribute?attribute.gpuType:null,'offset' in attribute?attribute.offset:null,'stride' in data?data.stride:null];
+}
+function rasterObjectState(object:Mesh|Scene):unknown[]{
+ return [object,object.parent,object.visible,object.layers.mask,object.renderOrder,object.frustumCulled,
+  object.matrixAutoUpdate,object.matrixWorldAutoUpdate,...object.position.toArray(),...object.quaternion.toArray(),...object.scale.toArray(),
+  ...object.matrix.elements,...object.matrixWorld.elements];
+}
+function rasterGeometryState(geometry:BufferGeometry,positionOnly=false):unknown[]{
+ const state:unknown[]=[geometry,geometry.drawRange.start,geometry.drawRange.count,...rasterAttributeState(geometry.index),
+  geometry.boundingBox,...(geometry.boundingBox?[...geometry.boundingBox.min.toArray(),...geometry.boundingBox.max.toArray()]:[]),
+  geometry.boundingSphere,...(geometry.boundingSphere?[...geometry.boundingSphere.center.toArray(),geometry.boundingSphere.radius]:[])];
+ const names=positionOnly?['position']:Object.keys(geometry.attributes).sort();
+ for(const name of names)state.push(name,...rasterAttributeState(geometry.getAttribute(name)));
+ for(const group of geometry.groups)state.push(group.start,group.count,group.materialIndex);
+ return [...state,'groups',geometry.groups.length];
+}
+function sameRasterKey(a:TerrainRasterCacheKey,b:TerrainRasterCacheKey,firstBind=false):boolean{
+ return sameRasterState(a.state,b.state)&&a.versions.length===b.versions.length&&a.versions.every((value,i)=>
+  Object.is(value,b.versions[i])||(firstBind&&a.firstBindings[Math.floor(i/2)]&&b.versions[i]>=value));
+}
+
 export interface TerrainMeshConfiguration extends TerrainMeshOptions {
  sample?:TerrainSampler;shade:(input:TerrainShadeInputs)=>Node<'vec3'>;
  nearKm?:number;farKm?:number;
+ /** Opt in only when these finite values/textures describe every mutable shade
+  * dependency. No descriptor means live rendering; arbitrary closures cannot
+  * be introspected. Static geometry/scene and exclusive target ownership apply.
+  */
+ cacheInputs?:()=>TerrainRasterCacheInputs;
 }
 
 /** One live terrain prepass. All lighting bindings are supplied by the caller's
@@ -347,7 +390,21 @@ export class TerrainMesh {
  private readonly data:TerrainMeshData;
  private disposed=false;
  private reversedDepth:boolean|null=null;
+ private readonly cacheInputs:TerrainMeshConfiguration['cacheInputs'];
+ private cacheKey:TerrainRasterCacheKey|null=null;
+ private casterState:unknown[]|null=null;
+ private requests=0;private submissions=0;private hits=0;private epoch=0;
+ private readonly boundAttachments=new WeakSet<Texture>();
+ private readonly trackedTextures=new Map<Texture,()=>void>();
+ private readonly onTargetDisposed=()=>{
+  this.boundAttachments.delete(this.target.texture);if(this.target.depthTexture)this.boundAttachments.delete(this.target.depthTexture);
+  this.invalidateColour();
+ };
+ private readonly onShadowDisposed=()=>this.invalidateColour();
+ private readonly onGeometryDisposed=()=>this.invalidateGeometry();
+ private readonly onMaterialDisposed=()=>this.invalidateColour();
  constructor(configuration:TerrainMeshConfiguration){
+  this.cacheInputs=configuration.cacheInputs;
   const data=buildTerrainMeshData(configuration.sample,configuration);this.data=data;this.geometryStats=data.stats;
   this.geometry=new BufferGeometry();
   this.geometry.setAttribute('position',new BufferAttribute(data.positions,3));this.geometry.setAttribute('normal',new BufferAttribute(data.normals,3));
@@ -363,30 +420,108 @@ export class TerrainMesh {
   this.material.fragmentNode=vec4(configuration.shade({positionWorld,normal:normalWorld.normalize(),height:surface.x,coast:surface.y,distance,pixelKm:distance.mul(this.pixelAngle),shadowVisibility:this.shadow.visibility(positionWorld)}),distance);
   this.mesh=new Mesh(this.geometry,this.material);this.scene.add(this.mesh);
   this.target=makeTarget();
+  if(this.cacheInputs){
+   this.target.addEventListener('dispose',this.onTargetDisposed);this.shadow.target.addEventListener('dispose',this.onShadowDisposed);
+   this.geometry.addEventListener('dispose',this.onGeometryDisposed);this.material.addEventListener('dispose',this.onMaterialDisposed);
+  }
+ }
+ private invalidateColour():void{if(this.disposed)return;this.epoch++;this.cacheKey=null;}
+ /** Conservative invalidation of colour AND shadow for external target writes
+  * or same-owner renderer/backend resets. Also required for mutable shade
+  * dependencies absent from cacheInputs/versioning.
+  */
+ invalidate():void{if(this.disposed)return;this.invalidateColour();this.shadow.invalidate();}
+ /** Call after raw caster/world mutations, recomputing geometry bounds first.
+  * Attribute/index versions and owned transforms are also checked automatically.
+  * Raw array writes without needsUpdate and arbitrary callback changes are not
+  * discovered by the cache; the geometry/scene ownership contract stays static.
+  */
+ invalidateGeometry():void{if(this.disposed)return;this.invalidate();this.casterState=null;}
+ private trackTextures(textures:readonly Texture[]):void{
+  const current=new Set(textures);
+  for(const [texture,listener] of this.trackedTextures)if(!current.has(texture)){
+   texture.removeEventListener('dispose',listener);this.trackedTextures.delete(texture);
+  }
+  for(const texture of current)if(!this.trackedTextures.has(texture)){
+   const listener=()=>{this.boundAttachments.delete(texture);this.invalidateColour();};
+   texture.addEventListener('dispose',listener);this.trackedTextures.set(texture,listener);
+  }
+ }
+ private readCasterState(renderer:WebGPURenderer):unknown[]{
+  return [renderer,renderer.backend,renderer.reversedDepthBuffer,...rasterGeometryState(this.geometry,true),
+   this.mesh.geometry,...rasterObjectState(this.scene),...rasterObjectState(this.mesh)];
+ }
+ private readCacheKey(renderer:WebGPURenderer,frame:TerrainCameraFrame,sunVector:TerrainShadowVector):TerrainRasterCacheKey{
+  const input=this.cacheInputs!();
+  if(!input||!Array.isArray(input.values)||!input.values.every(Number.isFinite)||!Array.isArray(input.textures)||
+   !input.textures.every(texture=>texture?.isTexture===true))throw new RangeError('Invalid terrain raster cache inputs');
+  const attachments=[this.target.texture,...(this.target.depthTexture?[this.target.depthTexture]:[])];
+  const shadow=this.shadow.stats().cache,shadowTarget=this.shadow.target;
+  this.trackTextures([...attachments,...input.textures,shadowTarget.texture,...(shadowTarget.depthTexture?[shadowTarget.depthTexture]:[])]);
+  const material=this.material;
+  const state:unknown[]=[renderer,renderer.backend,renderer.reversedDepthBuffer,renderer.coordinateSystem,
+   renderer.outputColorSpace,renderer.toneMapping,renderer.toneMappingExposure,renderer.getPixelRatio(),
+   ...renderer.getViewport(new Vector4()).toArray(),...renderer.getScissor(new Vector4()).toArray(),renderer.getScissorTest(),
+   this.epoch,...components(frame.origin),...components(frame.forward),...components(frame.right),...components(frame.up),
+   frame.aspect,frame.tanFov,frame.inspection,...components(sunVector),this.camera.near,this.camera.far,this.camera.coordinateSystem,
+   ...this.camera.projectionMatrix.elements,...this.camera.matrixWorld.elements,
+   this.target,this.target.width,this.target.height,this.target.depth,this.target.samples,this.target.depthBuffer,this.target.stencilBuffer,
+   this.target.resolveColorBuffer,this.target.resolveDepthBuffer,this.target.resolveStencilBuffer,
+   ...this.target.viewport.toArray(),...this.target.scissor.toArray(),this.target.scissorTest,
+   ...rasterGeometryState(this.geometry),this.mesh.geometry,this.mesh.material,...rasterObjectState(this.scene),...rasterObjectState(this.mesh),
+   this.scene.overrideMaterial,material,material.version,material.fragmentNode,material.vertexNode,material.side,material.visible,
+   material.depthTest,material.depthWrite,material.depthFunc,material.colorWrite,material.blending,material.transparent,material.opacity,
+   material.alphaTest,material.premultipliedAlpha,material.toneMapped,material.fog,material.polygonOffset,material.polygonOffsetFactor,material.polygonOffsetUnits,
+   shadowTarget,shadowTarget.width,shadowTarget.height,shadowTarget.samples,shadow.valid,shadow.submissions,shadow.epoch,
+   ...rasterTextureState(shadowTarget.texture),...(shadowTarget.depthTexture?rasterTextureState(shadowTarget.depthTexture):[null]),
+   'shade-values',input.values.length,...input.values,'shade-textures',input.textures.length];
+  for(const texture of input.textures)state.push(...rasterTextureState(texture));
+  for(const texture of attachments)state.push(...rasterTextureState(texture,false));
+  return {state,attachments,versions:attachments.flatMap(texture=>[texture.version,texture.source.version]),
+   firstBindings:attachments.map(texture=>!this.boundAttachments.has(texture))};
  }
  get texture():Texture{return this.target.texture;}
  surfaceY(x:number,z:number):number|null{return terrainMeshHeightAt(this.data,x,z);}
  resize(width:number,height:number):void{
   if(this.disposed)throw new Error('Terrain mesh disposed');
   if(!Number.isInteger(width)||width<=0||!Number.isInteger(height)||height<=0)throw new RangeError('Invalid terrain target size');
+  if(width!==this.target.width||height!==this.target.height)this.invalidateColour();
   this.target.setSize(width,height);
  }
  render(renderer:WebGPURenderer,frame:TerrainCameraFrame,sunVector:TerrainShadowVector):void{
   if(this.disposed)throw new Error('Terrain mesh disposed');
-  this.reversedDepth=renderer.reversedDepthBuffer;
-  this.shadow.render(renderer,sunVector);
-  configureTerrainCamera(this.camera,frame,this.target.width,this.target.height);
-  this.origin.value.fromArray(components(frame.origin));this.pixelAngle.value=2*Math.fround(frame.tanFov)/this.target.height;
-  const previousTarget=renderer.getRenderTarget(),previousMRT=renderer.getMRT(),previousColour=renderer.getClearColor(new Color()),previousAlpha=renderer.getClearAlpha();
-  const previousDepth=renderer.reversedDepthBuffer?1-renderer.getClearDepth():renderer.getClearDepth(),previousAutoClear=renderer.autoClear;
+  this.requests++;
   try{
-   renderer.setMRT(null);renderer.setRenderTarget(this.target);renderer.autoClear=false;
-   renderer.setClearColor(0,-1);renderer.setClearDepth(1);renderer.clear(true,true,false);
-   renderer.render(this.scene,this.camera);
-  }finally{
-   renderer.autoClear=previousAutoClear;renderer.setClearColor(previousColour,previousAlpha);renderer.setClearDepth(previousDepth);
-   renderer.setRenderTarget(previousTarget);renderer.setMRT(previousMRT);
-  }
+   this.reversedDepth=renderer.reversedDepthBuffer;
+   if(this.cacheInputs){
+    const caster=this.readCasterState(renderer);
+    if(this.casterState&&!sameRasterState(caster,this.casterState))this.invalidateGeometry();
+    this.shadow.render(renderer,sunVector);this.casterState=caster;
+   }else this.shadow.render(renderer,sunVector);
+   configureTerrainCamera(this.camera,frame,this.target.width,this.target.height);
+   this.origin.value.fromArray(components(frame.origin));this.pixelAngle.value=2*Math.fround(frame.tanFov)/this.target.height;
+   const requested=this.cacheInputs?this.readCacheKey(renderer,frame,sunVector):null;
+   if(requested&&this.cacheKey&&sameRasterKey(this.cacheKey,requested)){this.hits++;return;}
+   // Clear/draw/restore failures must never preserve an entry for overwritten pixels.
+   this.cacheKey=null;
+   const previousTarget=renderer.getRenderTarget(),previousMRT=renderer.getMRT(),previousColour=renderer.getClearColor(new Color()),previousAlpha=renderer.getClearAlpha();
+   const previousDepth=renderer.reversedDepthBuffer?1-renderer.getClearDepth():renderer.getClearDepth(),previousAutoClear=renderer.autoClear;
+   try{
+    renderer.setMRT(null);renderer.setRenderTarget(this.target);renderer.autoClear=false;
+    renderer.setClearColor(0,-1);renderer.setClearDepth(1);renderer.clear(true,true,false);
+    this.submissions++;renderer.render(this.scene,this.camera);
+   }finally{
+    renderer.autoClear=previousAutoClear;renderer.setClearColor(previousColour,previousAlpha);renderer.setClearDepth(previousDepth);
+    renderer.setRenderTarget(previousTarget);renderer.setMRT(previousMRT);
+   }
+   if(requested&&!this.disposed){
+    for(const texture of requested.attachments)this.boundAttachments.add(texture);
+    const completed=this.readCacheKey(renderer,frame,sunVector);
+    // Only first-bind version increments of owned attachments may differ. Shade,
+    // caster, epoch and all other resource/config changes require another draw.
+    if(sameRasterKey(requested,completed,true)&&sameRasterState(this.casterState!,this.readCasterState(renderer))&&this.shadow.stats().cache.valid)this.cacheKey=completed;
+   }
+  }catch(error){this.cacheKey=null;throw error;}
  }
  stats(){
   const pixels=this.target.width*this.target.height;
@@ -396,9 +531,17 @@ export class TerrainMesh {
    cpuTriangleLookupBytes:this.data.cellFirstIndex.byteLength+(this.data.cellTriangleCount?.byteLength??0),
    normalPolicy:this.geometryStats.normalMode==='geometry'?'Shared incident-area-weighted actual mesh normal at every vertex; no bilinear-source gradient seams':'Shared vertex normal; analytic near, smooth width-based blend to incident-area-weighted mesh normal before coarse rings',
    memoryScope:'Nominal retained geometry and target/depth payload only; CPU construction temporaries and driver residency/peak are unmeasured',
-   perFrameCpuHeightSamples:0,nearKm:this.camera.near,farKm:this.camera.far,reversedDepthBuffer:this.reversedDepth,cache:'No cached geometry pass; terrain shading stays live each render'};
+   perFrameCpuHeightSamples:0,nearKm:this.camera.near,farKm:this.camera.far,reversedDepthBuffer:this.reversedDepth,cache:{enabled:!!this.cacheInputs,requests:this.requests,hits:this.hits,submissions:this.submissions,epoch:this.epoch,valid:this.cacheKey!==null,
+    scope:'Owner-local CPU requests/render attempts; hits skip colour clear/draw. Not GPU completion, presentation or FPS.',
+    ownership:'Static scene/geometry and exclusive target. cacheInputs covers every mutable shade binding; invalidate for external writes/reset, invalidateGeometry for raw caster/world changes after updating bounds.'}};
  }
- dispose():void{if(this.disposed)return;this.disposed=true;this.shadow.dispose();this.target.dispose();this.geometry.dispose();this.material.dispose();this.scene.remove(this.mesh);}
+ dispose():void{
+  if(this.disposed)return;this.disposed=true;this.cacheKey=null;this.casterState=null;
+  this.target.removeEventListener('dispose',this.onTargetDisposed);this.shadow.target.removeEventListener('dispose',this.onShadowDisposed);
+  this.geometry.removeEventListener('dispose',this.onGeometryDisposed);this.material.removeEventListener('dispose',this.onMaterialDisposed);
+  for(const [texture,listener] of this.trackedTextures)texture.removeEventListener('dispose',listener);this.trackedTextures.clear();
+  this.shadow.dispose();this.target.dispose();this.geometry.dispose();this.material.dispose();this.scene.remove(this.mesh);
+ }
 }
 
 function makeTarget(){

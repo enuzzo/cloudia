@@ -1,0 +1,16 @@
+{
+  "baseFilesVerified": 126,
+  "finalFilesVerified": 129,
+  "changedPaths": [
+    "src/cumulonimbus/CumulonimbusApp.ts",
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/lifecycle.test.ts",
+    "src/cumulonimbus/rgba32fReadback.test.ts",
+    "src/cumulonimbus/rgba32fReadback.ts",
+    "src/cumulonimbus/sceneMarkup.ts",
+    "src/cumulonimbus/terrainMesh.ts",
+    "src/cumulonimbus/terrainRasterCache.test.ts"
+  ],
+  "finalManifestSHA256": "a4e38cfc8afdfb5899cc31d20124ee7704754108af1838517a5d3d6583a51b2b",
+  "scope": "Exact source adoption, no dependency or dist writes in Dropbox"
+}

@@ -1,0 +1,19 @@
+# Un solo trial: separare albedo e illuminazione del terreno
+
+17 ottobre2026. Solo lettura sorgenti e PNG nativo Sole `refine-main-sun-native.png`2474×1844, SHA90641c32…; nessun edit prodotto, GPU, modello o test. Nel nativo i rilievi sinistri hanno grandi versanti grigio-verdi morbidi e creste quasi lucide nel contrasto; lo shader non contiene specularità. Il dettaglio DEM migliorato non basta a dare una lettura di montagna convincente.
+
+**Causa verificata nel codice, attribuzione spaziale ancora da provare:** la copertura reale è soltanto una miscela di classi, poi moltiplicata dalla risposta autoriale di luce/ambiente. Aumentare dettaglio o cambiare ancora le normali non identifica quale fattore produce le grandi patch.
+
+- `terrainSurface.ts:187–197`: albedo=Σ(weightClass×palette), poi `ground=albedo×[solar×.90×max(0,n·sun)×visibility + ambient×1.12×skyVisibility] + inlandWater×waterWeight`. `skyVisibility=clamp(.62+.38×max(0,n.y)−.12×valley,.45,1)`: anche con diretto nullo, slope/normal modulano il riempimento. I12ΔRGB0 del precedente force-visibility1 non hanno rimosso questi fattori.
+- `:154–177`: il filtro porta il dettaglio verso il valore medio. Fine43/km si annulla per footprint≥11,63m, canopy33/km≥15,15m, grain12/km≥41,67m. Sono soglie dedotte dalla formula, **non footprint GPU misurati nei pixel**. Resta soprattutto la miscela open/dense forest guidata da campi450m/2km e la risposta delle normali: una via concreta a larghe zone levigate, non prova della causa di ogni zona.
+- Non attribuire tutto allo slope-biome: `:188–189` applica biome×coverA.x al solo unknown/fallback. Nel core±48km, trees/grass/crops/bare misurati conservano i propri pesi; il blend autoriale cresce48–64km (`createTerrain:320–327`). WorldCover non misura albedo, chiome o rugosità. Senza pesi locali salvati non sappiamo quali classi dominino una specifica patch.
+
+## Formula unica proposta, solo diagnostica
+
+Sostituire soltanto la riga ground con **`ground=albedo+inlandWater*coverB.w`** in una snapshot esterna v60. Conservare albedo/noise/filtri, frazioni, normali, mesh, ombre, acqua/mare, aerial, film, camera e qualità. Zero asset/pass/lookup/target aggiuntivi; non riaprire crease45 o bias. È albedo non illuminata, **non un materiale finale da adottare**: nessuna luminosità ricercata, nessun altro coefficiente/fitting per renderlo gradevole. Diverso dal force-lit precedente: elimina anche Lambert e skyVisibility dal prodotto albedo×luce.
+
+Protocollo unico A/B: stessa posa Sole assestata del PNG, stessi crop1:1 già fissati `[0,560,1000,1000]` e `[700,540,1030,780]`; confrontare anche RGB lineare pre-aerial e alpha dei12pixel esistenti nel target. Alpha deve restare bit-identica. Se i grandi contorni spariscono già nel raw albedo, il ramo normal/illuminazione è causale lì; se persistono nel raw, investigare miscela/palette/filtraggio. Se spariscono nel raw ma restano nel PNG, aerial/film impediscono l'attribuzione al materiale. Un esito misto resta misto: niente sweep automatico né giudizio fotografico da12punti.
+
+Non propongo ora una variazione di ambient o palette: il PNG e il controfattuale precedente non ne determinano un valore giustificato. Il trial unlit è la discriminazione minima prima di un materiale correttivo; non promette di aggiungere struttura geometrica o risolvere neve/foresta/creste/FPS.
+
+Provenienza: terrainSurface v59 e snapshot cache v60 byte-identici, SHA256`0ff8de3514feb3714ba4e931c246d0bd339634661aa37a7d87e79f61c1ddff3f`; corpo WGSL createTerrain identico fra le due fonti (verifica testuale), SHA256`d41dc23c1aa6eea46e1142cb28ccc6bf12f53c1c4a3c465025f9a160a995e7a8`. Riletti `TERRAIN-DIRECT-LIGHT-AND-CREASE-2026-10-17.md` e `TERRAIN-COLOUR-2026-10-16.md`: nessuna ripetizione del trial45° o della palette cromatica uniforme R1 respinta.

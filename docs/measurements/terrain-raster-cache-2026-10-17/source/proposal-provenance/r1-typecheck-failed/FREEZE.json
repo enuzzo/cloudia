@@ -1,0 +1,32 @@
+{
+  "scope": "External CPU-only source preparation; no tests, typecheck, build, GPU or browser executed by author. Root owns qualification.",
+  "files": {
+    "src/cumulonimbus/terrainMesh.ts": {
+      "bytes": 41724,
+      "sha256": "bf46bed8b35cc8dd3ba3f51f266e79550b44011410b8547cf829f7db30953793"
+    },
+    "src/cumulonimbus/terrainRasterCache.test.ts": {
+      "bytes": 12502,
+      "sha256": "fe73b9731d0e6b5bde89018bca6dc0b1a1b945ac1b71948c44c58a4805f9e84e"
+    }
+  },
+  "baseline": {
+    "terrainMesh.ts": "c7bc36a93960a688102546f70fadffcf67005073e86889b0afd2ab659ba78e5a"
+  },
+  "staticSourceChecks": {
+    "sameCameraFunction": true,
+    "sameFragmentNodeAssignment": true,
+    "sameTargetFactory": true
+  },
+  "api": {
+    "configuration": "cacheInputs?:()=>{values:readonly number[];textures:readonly Texture[]}",
+    "default": "descriptor absent: live colour pass",
+    "invalidate": "conservatively colour+shadow; external writes/backend reset or uncovered shade mutations",
+    "invalidateGeometry": "colour+shadow and caster fingerprint; update owned bounds in place before raw geometry/world mutation"
+  },
+  "validation": "not executed; no claim of compilation/test/native parity/performance",
+  "patch": {
+    "bytes": 30315,
+    "sha256": "ad7df333bfa473dcd152a9305226421ea12f42de6ec030befe10197c76778b1a"
+  }
+}

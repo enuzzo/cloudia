@@ -1,0 +1,8 @@
+{
+  "scope": "Original R0 log overwritten by R1 run after archival-path typo; these are exact values observed in terminal tool output, no reconstructed raw log claim",
+  "targetedTestsPassed": 145,
+  "targetedTestsFailed": 1,
+  "failure": "lifecycle pending audit fixture expected size-change guard but had waited2s <2.4s sky transition, so correct settled-sky guard rejected first",
+  "sourceManifestSHA256": "0bab118badb9b09b6550c0882d035eb00bc52f5370f8899635efe9e027e15869",
+  "correction": "fixture advances3s before changing output; no runtime change for this failure"
+}

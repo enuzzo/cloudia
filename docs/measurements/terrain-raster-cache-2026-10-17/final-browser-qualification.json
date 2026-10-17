@@ -1,0 +1,37 @@
+{
+  "rows": [
+    {
+      "case": "final-main-sun",
+      "targetSHA256": "e4435ce3a0a45e243c19dea24e5bc1133f6db1c8fd5ca168e94e644b1c6c9045",
+      "pngSHA256": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d",
+      "pngBytes": 2909134,
+      "status": "PASS",
+      "scope": "Saved actual owner metadata/digests, not a GPU rerun or pixel transfer"
+    },
+    {
+      "case": "final-main-rain",
+      "targetSHA256": "d0a96b214411d8860551b7669e42159dee6eb6b1a7212db1c07cd0a17bbce0e3",
+      "pngSHA256": "0dd971b684b29c9d9855a405878d903da025eb729f17832dda813ac50051fa1b",
+      "pngBytes": 2585113,
+      "status": "PASS",
+      "scope": "Saved actual owner metadata/digests, not a GPU rerun or pixel transfer"
+    },
+    {
+      "case": "final-worker-sun",
+      "targetSHA256": "e4435ce3a0a45e243c19dea24e5bc1133f6db1c8fd5ca168e94e644b1c6c9045",
+      "pngSHA256": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d",
+      "pngBytes": 2909134,
+      "status": "PASS",
+      "scope": "Saved actual owner metadata/digests, not a GPU rerun or pixel transfer"
+    },
+    {
+      "case": "final-worker-rain",
+      "targetSHA256": "d0a96b214411d8860551b7669e42159dee6eb6b1a7212db1c07cd0a17bbce0e3",
+      "pngSHA256": "0dd971b684b29c9d9855a405878d903da025eb729f17832dda813ac50051fa1b",
+      "pngBytes": 2585113,
+      "status": "PASS",
+      "scope": "Saved actual owner metadata/digests, not a GPU rerun or pixel transfer"
+    }
+  ],
+  "scope": "Explicit field verification of final native/F32 records after actual browser acquisition; no model replay"
+}

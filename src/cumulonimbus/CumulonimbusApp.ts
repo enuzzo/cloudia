@@ -166,7 +166,10 @@ export class CumulonimbusApp {
       this.root.dataset.seed=String(event.seed);this.root.dataset.morphology=event.family;
       this.root.querySelector<HTMLInputElement>('input[name="dispersion"]')!.value='0';
     }
-    if(event.type==='report'){this.report=event.report;this.rawReport.textContent=event.report?JSON.stringify(event.report):'';}
+    if(event.type==='report'){this.report=event.report;this.rawReport.textContent=event.report?JSON.stringify(event.report):'';
+      const visible=this.root.querySelector<HTMLTextAreaElement>('[data-testid=gpu-report-json]');if(visible)visible.value=event.report?JSON.stringify(event.report):'';
+      if(event.report?.reportKind==='terrain-raster-cache-full-f32-v1'){const button=this.controls.querySelector<HTMLButtonElement>('[data-action=export]');if(button)button.disabled=false;}
+    }
     if(event.type==='flash'){
       this.audio.play(event.seed,event.distance,event.emittedAt);
       this.root.querySelector('[data-testid="storm-status"]')!.textContent=`Lampo · ${event.distance} km · tuono dopo ${event.delay.toFixed(1)} s${this.audioEnabled?'':' · audio disattivato'}`;
@@ -233,7 +236,7 @@ export class CumulonimbusApp {
       void this.audio.enable().then(()=>{if(this.destroyed||this.failed)return;this.audioEnabled=true;button.textContent='Disattiva audio';button.setAttribute('aria-pressed','true');this.root.querySelector('[data-testid="storm-status"]')!.textContent='Audio attivo · premi Lampo per ascoltare il tuono.';}).catch(error=>{if(!this.destroyed&&!this.failed){button.textContent='Attiva audio';this.root.querySelector('[data-testid="storm-status"]')!.textContent=error instanceof Error?error.message:String(error);}}).finally(()=>{if(!this.destroyed&&!this.failed)button.disabled=false;});return;
     }
     if(['pause','reset','new-cloud','mature','flash-preview'].includes(action))this.audio.cancel();
-    if(action==='export'&&this.report){const url=URL.createObjectURL(new Blob([JSON.stringify(this.report,null,2)],{type:'application/json'}));const output=this.report.output as number[];const a=document.createElement('a');a.href=url;a.download=`cloudia-${this.report.quality}-${output.join('x')}-seed-${this.report.seed}-${Date.now()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);return;}
+    if(action==='export'&&this.report){const url=URL.createObjectURL(new Blob([JSON.stringify(this.report,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;if(this.report.reportKind==='terrain-raster-cache-full-f32-v1')a.download=`cloudia-terrain-target-audit-${Date.now()}.json`;else{const output=this.report.output as number[];a.download=`cloudia-${this.report.quality}-${output.join('x')}-seed-${this.report.seed}-${Date.now()}.json`;}a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);return;}
     this.send({type:'action',action});
   };
   private showProbe(mode:string){
@@ -255,7 +258,7 @@ export class CumulonimbusApp {
   private onVisibility=()=>{if(document.hidden){this.audio.cancel();this.pointer.cancel();}this.send({type:'visibility',visible:!document.hidden});};
   destroy(){
     if(this.destroyed)return;this.frameExportRequest++;this.clearFrameExportData();this.destroyed=true;this.pointer.destroy();this.audio.destroy();this.events.abort();this.resolveReady?.();this.resolveReady=null;
-    for(const action of ['new-cloud','benchmark','sustained','frame-capture','frame-clear','frame-part-next','frame-part-previous']){const button=this.controls.querySelector<HTMLButtonElement>(`[data-action="${action}"]`);if(button)button.disabled=true;}
+    for(const action of ['new-cloud','benchmark','sustained','terrain-cache-audit','frame-capture','frame-clear','frame-part-next','frame-part-previous']){const button=this.controls.querySelector<HTMLButtonElement>(`[data-action="${action}"]`);if(button)button.disabled=true;}
     this.stopWorker();
     void this.engine?.destroy();this.canvas.remove();
   }

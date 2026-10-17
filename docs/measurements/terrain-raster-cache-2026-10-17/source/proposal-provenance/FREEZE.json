@@ -1,0 +1,44 @@
+{
+  "scope": "External CPU-only source preparation; no tests, typecheck, build, GPU or browser executed by author. Root owns qualification.",
+  "files": {
+    "src/cumulonimbus/terrainMesh.ts": {
+      "bytes": 41782,
+      "sha256": "00c170a8d4653817720b9dddc8eb10d647671128602dac55a1de52fe55216d72"
+    },
+    "src/cumulonimbus/terrainRasterCache.test.ts": {
+      "bytes": 12502,
+      "sha256": "fe73b9731d0e6b5bde89018bca6dc0b1a1b945ac1b71948c44c58a4805f9e84e"
+    }
+  },
+  "baseline": {
+    "terrainMesh.ts": "c7bc36a93960a688102546f70fadffcf67005073e86889b0afd2ab659ba78e5a"
+  },
+  "staticSourceChecks": {
+    "sameCameraFunction": true,
+    "sameFragmentNodeAssignment": true,
+    "sameTargetFactory": true
+  },
+  "api": {
+    "configuration": "cacheInputs?:()=>{values:readonly number[];textures:readonly Texture[]}",
+    "default": "descriptor absent: live colour pass",
+    "invalidate": "conservatively colour+shadow; external writes/backend reset or uncovered shade mutations",
+    "invalidateGeometry": "colour+shadow and caster fingerprint; update owned bounds in place before raw geometry/world mutation"
+  },
+  "validation": "not executed; no claim of compilation/test/native parity/performance",
+  "patch": {
+    "bytes": 30373,
+    "sha256": "110670c4a5cad078030e7fd5d869fc5b20c3e60ba0a99f51dce7ec7fe42ea361"
+  },
+  "revision": "r2-types-only-image-annotation",
+  "previousFreeze": {
+    "path": "r1-typecheck-failed/FREEZE.json",
+    "sha256": "71329f942441ade8a8138b8c009cc72720a238e67c3a6ef7b0087e5b7bcf9df9",
+    "terrainMeshSHA256": "bf46bed8b35cc8dd3ba3f51f266e79550b44011410b8547cf829f7db30953793",
+    "rootReportedQualification": "146 targeted / 505 full PASS; tsc failed only on image width/height/depth inferred {}. Logs preserved by root."
+  },
+  "typeOnlyDelta": {
+    "before": "const image=texture.image;",
+    "after": "const image=texture.image as {width?:number;height?:number;depth?:number}|undefined;",
+    "verification": "Textual reverse substitution recovers exact R1 bytes; TypeScript assertion only, no runtime expression/key change. No compiler/test executed by author."
+  }
+}

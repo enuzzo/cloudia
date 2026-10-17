@@ -1,0 +1,7 @@
+
+> cloudia@0.0.0 build
+> tsc && vite build
+
+src/cumulonimbus/terrainMesh.ts(334,10): error TS2339: Property 'width' does not exist on type '{}'.
+src/cumulonimbus/terrainMesh.ts(334,23): error TS2339: Property 'height' does not exist on type '{}'.
+src/cumulonimbus/terrainMesh.ts(334,37): error TS2339: Property 'depth' does not exist on type '{}'.

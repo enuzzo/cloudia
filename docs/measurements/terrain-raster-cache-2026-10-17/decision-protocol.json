@@ -1,0 +1,28 @@
+{
+  "candidate": "experiment-v59-terrain-raster-cache",
+  "baseline": "canonical v59, same candidate code with profile=1&terrainCache=off",
+  "parityGate": "entire RGBA32F target packed raw bytes equal to forced fresh draw; cached entry valid; exact native PNG equality for fixed-state on/off, original known hash when available",
+  "controls": [
+    "main native Sun camera return",
+    "native resize away/back",
+    "settled sunset/rain",
+    "worker native full target and PNG",
+    "light transition continues misses until settled"
+  ],
+  "performanceGate": {
+    "order": [
+      "A1 cache off",
+      "B cache on",
+      "A2 cache off"
+    ],
+    "durationMs": 30000,
+    "warmupMs": 2000,
+    "quality": "256^3 / 128^3 / 384, native 2474x1844",
+    "flow": "full",
+    "timing": "queue",
+    "camera": "same fixed seed74 terrain pose rain; paused cloud state for causal ABA, animation still full compute path",
+    "adopt": "B submission and completed-prefix rates exceed both A windows, improvement over mean A exceeds relative A1/A2 drift; all prefixes complete, no parity difference",
+    "motionControl": "full native orbit moving, cache on; verify no hits and inspect CPU/key overhead against disabled moving control; no stable60 or presented FPS claim from these runs"
+  },
+  "stop": "Any unexplained pixel/Float32 difference blocks measurement/adoption until fixed. Measured benefit must exceed drift; otherwise keep canonical runtime."
+}
