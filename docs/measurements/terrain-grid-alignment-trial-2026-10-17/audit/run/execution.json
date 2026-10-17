@@ -1,0 +1,52 @@
+{
+  "status": "COMPLETE_CPU_A_B_NOT_VISUAL_ACCEPTANCE",
+  "freezeSHA256": "3c3c394c0864ef6a1326b6265b1a73c90f9bccc753458aa63525e59bb2d7183b",
+  "children": [
+    {
+      "mode": "A",
+      "status": "PASS_EXECUTION_AND_PARITY_ONLY",
+      "error": null,
+      "launched": true,
+      "terminalObserved": true,
+      "exitCode": 0,
+      "wallKilled": false,
+      "childCPUSeconds": 2.7543469999999997,
+      "childWallSeconds": 2.4156796659808606,
+      "terminalChildPeakRSSBytes": 888815616,
+      "limits": {
+        "cpuSeconds": 20,
+        "wallSeconds": 30,
+        "terminalRSSBytes": 1610612736
+      },
+      "RSSScope": "Darwin wait4 bytes for this child; terminal gate, not allocation limit. No AS/ps.",
+      "scope": "Execution, source stability, invariants and A parity only; independent saved-stream analysis decides geometry benefit.",
+      "resultSHA256": "434a642b34c3d66b86164af5d00f7ce12fede07283dcdd3bb9be0f3132f61235"
+    },
+    {
+      "mode": "B",
+      "status": "PASS_EXECUTION_AND_PARITY_ONLY",
+      "error": null,
+      "launched": true,
+      "terminalObserved": true,
+      "exitCode": 0,
+      "wallKilled": false,
+      "childCPUSeconds": 2.632186,
+      "childWallSeconds": 2.2672422089381143,
+      "terminalChildPeakRSSBytes": 852836352,
+      "limits": {
+        "cpuSeconds": 20,
+        "wallSeconds": 30,
+        "terminalRSSBytes": 1610612736
+      },
+      "RSSScope": "Darwin wait4 bytes for this child; terminal gate, not allocation limit. No AS/ps.",
+      "scope": "Execution, source stability, invariants and A parity only; independent saved-stream analysis decides geometry benefit.",
+      "resultSHA256": "09c41d044fed51eefb24b42a726ba377b6bd2c72a73fd63f1799fc3e91b29872"
+    }
+  ],
+  "launcherCPUSeconds": 0.170147,
+  "launcherWallSeconds": 4.858641667058691,
+  "launcherPeakRSSBytes": 29589504,
+  "noRetry": true,
+  "noConcurrentMeshes": true,
+  "noGPU": true
+}

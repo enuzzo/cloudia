@@ -1,0 +1,157 @@
+{
+  "status": "COMPLETE_CPU_ONLY",
+  "mode": "A",
+  "scope": "One canonical mesh; fixed fit+holdout errors. No visual/GPU/FPS acceptance.",
+  "runtime": {
+    "bun": "1.3.11",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "sourceRoot": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia",
+  "pointPlanSHA256": "9cd4e10be6a6a66d21c550e9701a3fc0c003f645cf72196235592684e2340660",
+  "demSHA256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d",
+  "options": {
+    "cellsPerSide": 256,
+    "levels": 9,
+    "spacingKm": 0.032,
+    "normalMode": "geometry",
+    "refinement": {
+      "sourceGrid": {
+        "minXKm": -64,
+        "minZKm": -64,
+        "spacingKm": 0.125,
+        "columns": 1025,
+        "rows": 1025
+      },
+      "domain": {
+        "minXKm": -48,
+        "maxXKm": 48,
+        "minZKm": -48,
+        "maxZKm": 48
+      },
+      "maxErrorKm": 0.005,
+      "limits": {
+        "maxProbeCount": 600000,
+        "maxVertices": 1000000,
+        "maxTriangles": 2000000,
+        "maxGeometryBytes": 67108864
+      }
+    }
+  },
+  "meshStats": {
+    "vertices": 591788,
+    "triangles": 1182550,
+    "stitchedCells": 4096,
+    "levels": 9,
+    "cellsPerSide": 256,
+    "baseSpacingKm": 0.032,
+    "outerExtentKm": 1048.576,
+    "geometryBytes": 33127816,
+    "sampleCalls": 1183149,
+    "minimumHeightKm": 0,
+    "maximumHeightKm": 3.0260982513427734,
+    "normalBlendStartRadiusKm": 32.768,
+    "normalBlendEndRadiusKm": 65.536,
+    "normalMode": "geometry",
+    "refinement": {
+      "originalVertices": 465409,
+      "originalTriangles": 929792,
+      "probeSampleCalls": 591361,
+      "vertexSampleCalls": 591788,
+      "totalSampleCalls": 1183149,
+      "nodesAboveThreshold": 209659,
+      "eligibleNodesAboveThreshold": 209488,
+      "markedRedFaces": 69833,
+      "greenFaces": 21853,
+      "splitEdgeCount": 126379,
+      "addedVertices": 126379,
+      "addedTriangles": 252758,
+      "addedGeometryBytes": 7077224,
+      "sourceSpacingKm": 0.125,
+      "maxErrorKm": 0.005,
+      "sourceGrid": {
+        "minXKm": -64,
+        "minZKm": -64,
+        "spacingKm": 0.125,
+        "columns": 1025,
+        "rows": 1025
+      },
+      "selectionDomain": {
+        "minXKm": -48,
+        "maxXKm": 48,
+        "minZKm": -48,
+        "maxZKm": 48
+      },
+      "selectedNodeColumns": 769,
+      "selectedNodeRows": 769,
+      "originalFacesBySplitEdgeCount": [
+        838106,
+        7390,
+        7520,
+        76776
+      ],
+      "maximumCellTriangles": 20,
+      "cellTriangleCountBytes": 589824,
+      "midpointVerticesOutsideDomain": 405,
+      "boundsKm": {
+        "min": [
+          -1048.5760498046875,
+          -178.98373413085938,
+          -1048.5760498046875
+        ],
+        "max": [
+          1048.5760498046875,
+          -1.675218939781189,
+          1048.5760498046875
+        ]
+      }
+    }
+  },
+  "meshHashes": {
+    "positions": "4c7e3f0b92c294850dad4014d3c260e0cb922ba5ade13a952722240a2e5ecc64",
+    "normals": "3cb820d4d203c89f61e8e26809ddbdcd2f8ce2645dce0842b758a1b0ea6dcbfd",
+    "surface": "7595b45c14d4d249df98d99145fcaa485b21d62e419764b99ce4fedc780c76f2",
+    "indices": "87e1b8d5b569577c291efefb1698ca66b657ecb3f9c73dcf6ddc73316a1030ae",
+    "cellFirstIndex": "90c901563f05c3b73f3039ba64a1bface19b4d80811b576082330645afc06ac8",
+    "cellTriangleCount": "850e2b0edf48172d3ec82751b85eb0ff9e329846bcc7c2f6d382ffc8431497dd"
+  },
+  "buildSampleCalls": 1183149,
+  "invariants": {
+    "maxNormalUnitError": 4.127128594433316e-8,
+    "minimumWinding": 0.0010239812622785394,
+    "completeCellLookup": true
+  },
+  "historicalAAuthenticated": true,
+  "fitStreamSHA256": "58ca7139fc88f4f087854cb80a4901a8645536b23c7d504dc1c7bfecb7186093",
+  "summaryOnly": {
+    "fit": {
+      "count": 591361,
+      "minSignedMetres": -96.06550239192968,
+      "maxSignedMetres": 90.42770689763469,
+      "rmsMetres": 8.760919157698785
+    },
+    "holdout": {
+      "count": 589824,
+      "minSignedMetres": -83.43813179022108,
+      "maxSignedMetres": 87.02977014615732,
+      "rmsMetres": 5.560346143708551
+    }
+  },
+  "errorStream": {
+    "path": "errors.f64le.gz",
+    "rawBytes": 9449480,
+    "rawSHA256": "ef4836dae907207f904b851db56404df9f5cc40e370f56852246d9b2aac2189d",
+    "gzipBytes": 8059196,
+    "gzipSHA256": "7a2825569bad7e57b954886307f5218e2abebaeeb3b0a6a28e18713e377cf227",
+    "fitCount": 591361,
+    "holdoutCount": 589824,
+    "holdoutOffsetBytes": 4730888,
+    "encoding": "headerless Float64 little-endian signed error metres = 1000 * (spherical DEM reference Y - actual Float32 mesh lookup Y)"
+  },
+  "timings": {
+    "buildMs": 1534.0217499999999,
+    "queryMs": 424.12591699999984,
+    "totalMs": 2323.6594170000003
+  },
+  "statisticsScope": "Small summaries use ordinary Float64 sums; independent analysis reads the full saved F64 stream and fixed physical bands."
+}

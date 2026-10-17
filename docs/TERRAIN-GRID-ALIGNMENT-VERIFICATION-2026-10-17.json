@@ -1,0 +1,16 @@
+{
+  "status": "PASS_SAVED_ARTIFACT_INTEGRITY_ONLY",
+  "archivePayloads": 40,
+  "archivePayloadBytes": 15830702,
+  "manifestSHA256": "d33d1af08a1ffe74d5726133a9500f4500887afa919ac97b3979806102b37117",
+  "canonical141Exact": true,
+  "preparedExternal141ExactNeverEditedOrBuilt": true,
+  "canonicalModulesCopied": 7,
+  "rawStreamsVerified": 2,
+  "rawBytesPerStream": 9449480,
+  "frozenAnalysisBeforeMeshExact": true,
+  "gate": "FAIL_FROZEN_NUMERIC_GATE_NO_GPU",
+  "goal": "active",
+  "wallSeconds": 0.09691983298398554,
+  "noModelGPUOrBenchmarkRerun": true
+}

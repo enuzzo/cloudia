@@ -1,0 +1,18 @@
+{
+  "canonicalCommit": "8a9535f9cb849292f5dd868020ef7f514567109a",
+  "copiedCanonicalModules": [
+    "src/cumulonimbus/terrainMesh.ts",
+    "src/cumulonimbus/terrainDEM.ts",
+    "src/cumulonimbus/terrainSurface.ts",
+    "src/cumulonimbus/landscape.ts",
+    "src/cumulonimbus/aerial.ts",
+    "src/cumulonimbus/TerrainShadow.ts",
+    "src/cumulonimbus/terrainSplitTriangle.ts"
+  ],
+  "demAlias": {
+    "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/assets/liguria-apuane-dem.bin",
+    "sha256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d",
+    "trackedCanonicalAsset": true
+  },
+  "notDuplicated": "Bun executable, Three package/bundles, DEM binary and historical witness artifacts; exact fingerprints/paths retained in original PRE-RUN-FREEZE. Source and sourceRoot paths in raw runner are original observations; archive is evidence, not an independently relocatable installed runtime."
+}

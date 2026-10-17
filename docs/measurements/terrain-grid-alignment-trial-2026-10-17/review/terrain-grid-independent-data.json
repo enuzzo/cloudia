@@ -1,0 +1,498 @@
+{
+  "kind": "independent-saved-f64-analysis-no-model",
+  "inputs": {
+    "A": {
+      "gzipSHA256": "7a2825569bad7e57b954886307f5218e2abebaeeb3b0a6a28e18713e377cf227",
+      "rawSHA256": "ef4836dae907207f904b851db56404df9f5cc40e370f56852246d9b2aac2189d"
+    },
+    "B": {
+      "gzipSHA256": "a21d7c2991a37f234b1b4a89bb09d116a508310cf439cbf025d28b623a069b6a",
+      "rawSHA256": "9c5b967f13b443332a2ca305b01cf73f5b9492ffb3450285af60175248811b96"
+    }
+  },
+  "historicalAFitExact": true,
+  "mask": "same canonical coast >=0; fit node code, holdout four corner codes equal weights; no altitude formula evaluated",
+  "quantile": "sorted abs, floor(.99*(n-1)), no tolerance/interpolation",
+  "sets": {
+    "fit": {
+      "all": {
+        "A": {
+          "count": 591361,
+          "rmsM": 8.76091915769878,
+          "p99AbsM": 36.111329337759734,
+          "p99Index": 585446,
+          "maxAbsM": 96.06550239192968,
+          "minSignedM": -96.06550239192968,
+          "maxSignedM": 90.42770689763469
+        },
+        "B": {
+          "count": 591361,
+          "rmsM": 7.491585248909349,
+          "p99AbsM": 35.815627481615934,
+          "p99Index": 585446,
+          "maxAbsM": 125.75544573063935,
+          "minSignedM": -113.438388772924,
+          "maxSignedM": 125.75544573063935
+        }
+      },
+      "land": {
+        "A": {
+          "count": 334589,
+          "rmsM": 11.641356606813309,
+          "p99AbsM": 41.92110253554748,
+          "p99Index": 331242,
+          "maxAbsM": 96.06550239192968,
+          "minSignedM": -96.06550239192968,
+          "maxSignedM": 90.42770689763469
+        },
+        "B": {
+          "count": 334589,
+          "rmsM": 9.956495019419686,
+          "p99AbsM": 43.12817349317166,
+          "p99Index": 331242,
+          "maxAbsM": 125.75544573063935,
+          "minSignedM": -113.438388772924,
+          "maxSignedM": 125.75544573063935
+        }
+      },
+      "absComparison": {
+        "better": 407601,
+        "worse": 183705,
+        "equal": 55,
+        "maxWorsening": {
+          "deltaAbsM": 101.0976218183215,
+          "indexInSet": 330024,
+          "pointXZKm": [
+            -32.625,
+            5.625
+          ],
+          "signedA": -9.526426548760902,
+          "signedB": -110.6240483670824
+        },
+        "maxImprovement": {
+          "deltaAbsM": 95.92498110552228,
+          "indexInSet": 312286,
+          "pointXZKm": [
+            -39.0,
+            2.75
+          ],
+          "signedA": -95.92499733766013,
+          "signedB": 1.623213785606481e-05
+        }
+      },
+      "physicalBandsA": [
+        {
+          "count": 4225,
+          "landCount": 36,
+          "better": 1485,
+          "worse": 2719,
+          "equal": 21,
+          "landBetter": 35,
+          "landWorse": 0,
+          "landEqual": 1,
+          "maxWorseningAbsM": 0.00023720908970403798,
+          "maxWorseningPoint": [
+            -2.25,
+            -3.125
+          ],
+          "physicalBandKm": [
+            0,
+            4.096
+          ],
+          "allRmsM": [
+            0.024098216150366874,
+            0.00014392709138695274
+          ],
+          "landRmsM": [
+            0.21331712767185024,
+            0.00013063168339668576
+          ]
+        },
+        {
+          "count": 12936,
+          "landCount": 3696,
+          "better": 8444,
+          "worse": 4479,
+          "equal": 13,
+          "landBetter": 3690,
+          "landWorse": 4,
+          "landEqual": 2,
+          "maxWorseningAbsM": 0.00023479313338015118,
+          "maxWorseningPoint": [
+            1.625,
+            -7.875
+          ],
+          "physicalBandKm": [
+            4.096,
+            8.192
+          ],
+          "allRmsM": [
+            1.0961126232216616,
+            0.00012476296350338043
+          ],
+          "landRmsM": [
+            2.015449508146953,
+            9.401852431750079e-05
+          ]
+        },
+        {
+          "count": 52008,
+          "landCount": 23296,
+          "better": 49117,
+          "worse": 2881,
+          "equal": 10,
+          "landBetter": 23089,
+          "landWorse": 201,
+          "landEqual": 6,
+          "maxWorseningAbsM": 4.721196659304372,
+          "maxWorseningPoint": [
+            -2.75,
+            16.125
+          ],
+          "physicalBandKm": [
+            8.192,
+            16.384
+          ],
+          "allRmsM": [
+            2.907542705765773,
+            0.1295936488550165
+          ],
+          "landRmsM": [
+            4.3342248041783495,
+            0.19306444337768192
+          ]
+        },
+        {
+          "count": 206456,
+          "landCount": 117505,
+          "better": 162994,
+          "worse": 43451,
+          "equal": 11,
+          "landBetter": 105879,
+          "landWorse": 11618,
+          "landEqual": 8,
+          "maxWorseningAbsM": 101.0976218183215,
+          "maxWorseningPoint": [
+            -32.625,
+            5.625
+          ],
+          "physicalBandKm": [
+            16.384,
+            32.768
+          ],
+          "allRmsM": [
+            6.0641491477159,
+            2.044058803453365
+          ],
+          "landRmsM": [
+            8.032407346243144,
+            2.707800962842901
+          ]
+        },
+        {
+          "count": 315736,
+          "landCount": 190056,
+          "better": 185561,
+          "worse": 130175,
+          "equal": 0,
+          "landBetter": 112549,
+          "landWorse": 77507,
+          "landEqual": 0,
+          "maxWorseningAbsM": 90.30632484113576,
+          "maxWorseningPoint": [
+            -36.875,
+            16.125
+          ],
+          "physicalBandKm": [
+            32.768,
+            65.536
+          ],
+          "allRmsM": [
+            10.875149798374055,
+            10.118444407573916
+          ],
+          "landRmsM": [
+            14.011065195690078,
+            13.037688627740506
+          ]
+        }
+      ],
+      "gates": {
+        "landRmsLower": true,
+        "allP99Nonincrease": true,
+        "allMaxNonincrease": false
+      }
+    },
+    "holdout": {
+      "all": {
+        "A": {
+          "count": 589824,
+          "rmsM": 5.560346143708591,
+          "p99AbsM": 25.00927650918605,
+          "p99Index": 583924,
+          "maxAbsM": 87.02977014615732,
+          "minSignedM": -83.43813179022108,
+          "maxSignedM": 87.02977014615732
+        },
+        "B": {
+          "count": 589824,
+          "rmsM": 6.141492921218987,
+          "p99AbsM": 25.690309838291903,
+          "p99Index": 583924,
+          "maxAbsM": 75.31293325240674,
+          "minSignedM": -75.31293325240674,
+          "maxSignedM": 69.22227575229157
+        }
+      },
+      "land": {
+        "A": {
+          "count": 334018,
+          "rmsM": 7.386759891967312,
+          "p99AbsM": 29.641118928163568,
+          "p99Index": 330676,
+          "maxAbsM": 87.02977014615732,
+          "minSignedM": -83.43813179022108,
+          "maxSignedM": 87.02977014615732
+        },
+        "B": {
+          "count": 334018,
+          "rmsM": 8.159337979196621,
+          "p99AbsM": 30.186311218457273,
+          "p99Index": 330676,
+          "maxAbsM": 75.31293325240674,
+          "minSignedM": -75.31293325240674,
+          "maxSignedM": 69.22227575229157
+        }
+      },
+      "absComparison": {
+        "better": 244539,
+        "worse": 345283,
+        "equal": 2,
+        "maxWorsening": {
+          "deltaAbsM": 62.7205853225048,
+          "indexInSet": 513346,
+          "pointXZKm": [
+            -7.6875,
+            35.5625
+          ],
+          "signedA": 1.2785773839234515,
+          "signedB": -63.99916270642825
+        },
+        "maxImprovement": {
+          "deltaAbsM": 67.119293267635,
+          "indexInSet": 311111,
+          "pointXZKm": [
+            -39.0625,
+            2.6875
+          ],
+          "signedA": -77.46141620111713,
+          "signedB": -10.342122933482134
+        }
+      },
+      "physicalBandsA": [
+        {
+          "count": 4356,
+          "landCount": 56,
+          "better": 1519,
+          "worse": 2835,
+          "equal": 2,
+          "landBetter": 55,
+          "landWorse": 1,
+          "landEqual": 0,
+          "maxWorseningAbsM": 0.00023289899431233607,
+          "maxWorseningPoint": [
+            -2.4375,
+            -3.0625
+          ],
+          "physicalBandKm": [
+            0,
+            4.096
+          ],
+          "allRmsM": [
+            0.0023775775110476817,
+            0.00014295319780005257
+          ],
+          "landRmsM": [
+            0.019770361643860437,
+            0.00010980257757728409
+          ]
+        },
+        {
+          "count": 13068,
+          "landCount": 3818,
+          "better": 8078,
+          "worse": 4990,
+          "equal": 0,
+          "landBetter": 3570,
+          "landWorse": 248,
+          "landEqual": 0,
+          "maxWorseningAbsM": 20.04391262066907,
+          "maxWorseningPoint": [
+            -8.1875,
+            5.8125
+          ],
+          "physicalBandKm": [
+            4.096,
+            8.192
+          ],
+          "allRmsM": [
+            0.11801112880547725,
+            0.3689748723000264
+          ],
+          "landRmsM": [
+            0.216481498289336,
+            0.6826154114736662
+          ]
+        },
+        {
+          "count": 51220,
+          "landCount": 23025,
+          "better": 8674,
+          "worse": 42546,
+          "equal": 0,
+          "landBetter": 3414,
+          "landWorse": 19611,
+          "landEqual": 0,
+          "maxWorseningAbsM": 28.907775169406676,
+          "maxWorseningPoint": [
+            13.9375,
+            6.0625
+          ],
+          "physicalBandKm": [
+            8.192,
+            16.384
+          ],
+          "allRmsM": [
+            0.9939815285730195,
+            3.160718881426818
+          ],
+          "landRmsM": [
+            1.4810958743656415,
+            4.711193302246564
+          ]
+        },
+        {
+          "count": 205932,
+          "landCount": 117277,
+          "better": 73061,
+          "worse": 132871,
+          "equal": 0,
+          "landBetter": 35214,
+          "landWorse": 82063,
+          "landEqual": 0,
+          "maxWorseningAbsM": 59.49756589176226,
+          "maxWorseningPoint": [
+            -32.5625,
+            5.6875
+          ],
+          "physicalBandKm": [
+            16.384,
+            32.768
+          ],
+          "allRmsM": [
+            1.9369139678231897,
+            3.6679646649211044
+          ],
+          "landRmsM": [
+            2.5658919844246326,
+            4.859451089817633
+          ]
+        },
+        {
+          "count": 315248,
+          "landCount": 189842,
+          "better": 153207,
+          "worse": 162041,
+          "equal": 0,
+          "landBetter": 87893,
+          "landWorse": 101949,
+          "landEqual": 0,
+          "maxWorseningAbsM": 62.7205853225048,
+          "maxWorseningPoint": [
+            -7.6875,
+            35.5625
+          ],
+          "physicalBandKm": [
+            32.768,
+            65.536
+          ],
+          "allRmsM": [
+            7.431974315123727,
+            7.755786281743223
+          ],
+          "landRmsM": [
+            9.57439011751579,
+            9.992291501667669
+          ]
+        }
+      ],
+      "gates": {
+        "landRmsLower": false,
+        "allP99Nonincrease": false,
+        "allMaxNonincrease": true
+      }
+    }
+  },
+  "costs": {
+    "A": {
+      "meshStats": {
+        "vertices": 591788,
+        "triangles": 1182550,
+        "geometryBytes": 33127816,
+        "sampleCalls": 1183149,
+        "outerExtentKm": 1048.576
+      },
+      "execution": {
+        "mode": "A",
+        "status": "PASS_EXECUTION_AND_PARITY_ONLY",
+        "error": null,
+        "launched": true,
+        "terminalObserved": true,
+        "exitCode": 0,
+        "wallKilled": false,
+        "childCPUSeconds": 2.7543469999999997,
+        "childWallSeconds": 2.4156796659808606,
+        "terminalChildPeakRSSBytes": 888815616,
+        "limits": {
+          "cpuSeconds": 20,
+          "wallSeconds": 30,
+          "terminalRSSBytes": 1610612736
+        },
+        "RSSScope": "Darwin wait4 bytes for this child; terminal gate, not allocation limit. No AS/ps.",
+        "scope": "Execution, source stability, invariants and A parity only; independent saved-stream analysis decides geometry benefit.",
+        "resultSHA256": "434a642b34c3d66b86164af5d00f7ce12fede07283dcdd3bb9be0f3132f61235"
+      }
+    },
+    "B": {
+      "meshStats": {
+        "vertices": 568304,
+        "triangles": 1135582,
+        "geometryBytes": 31812712,
+        "sampleCalls": 1159665,
+        "outerExtentKm": 1024
+      },
+      "execution": {
+        "mode": "B",
+        "status": "PASS_EXECUTION_AND_PARITY_ONLY",
+        "error": null,
+        "launched": true,
+        "terminalObserved": true,
+        "exitCode": 0,
+        "wallKilled": false,
+        "childCPUSeconds": 2.632186,
+        "childWallSeconds": 2.2672422089381143,
+        "terminalChildPeakRSSBytes": 852836352,
+        "limits": {
+          "cpuSeconds": 20,
+          "wallSeconds": 30,
+          "terminalRSSBytes": 1610612736
+        },
+        "RSSScope": "Darwin wait4 bytes for this child; terminal gate, not allocation limit. No AS/ps.",
+        "scope": "Execution, source stability, invariants and A parity only; independent saved-stream analysis decides geometry benefit.",
+        "resultSHA256": "09c41d044fed51eefb24b42a726ba377b6bd2c72a73fd63f1799fc3e91b29872"
+      }
+    }
+  },
+  "gatePass": false,
+  "scope": "No root SAVED-GRID-ANALYSIS output read; only saved streams/records/point plan/DEM coast and pre-numeric gate. No mesh/model/GPU/build."
+}

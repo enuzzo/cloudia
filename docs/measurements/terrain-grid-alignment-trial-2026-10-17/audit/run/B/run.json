@@ -1,0 +1,20 @@
+{
+  "mode": "B",
+  "status": "PASS_EXECUTION_AND_PARITY_ONLY",
+  "error": null,
+  "launched": true,
+  "terminalObserved": true,
+  "exitCode": 0,
+  "wallKilled": false,
+  "childCPUSeconds": 2.632186,
+  "childWallSeconds": 2.2672422089381143,
+  "terminalChildPeakRSSBytes": 852836352,
+  "limits": {
+    "cpuSeconds": 20,
+    "wallSeconds": 30,
+    "terminalRSSBytes": 1610612736
+  },
+  "RSSScope": "Darwin wait4 bytes for this child; terminal gate, not allocation limit. No AS/ps.",
+  "scope": "Execution, source stability, invariants and A parity only; independent saved-stream analysis decides geometry benefit.",
+  "resultSHA256": "09c41d044fed51eefb24b42a726ba377b6bd2c72a73fd63f1799fc3e91b29872"
+}

@@ -1,0 +1,35 @@
+{
+  "status": "FROZEN_BEFORE_A_B_NUMERIC_RESULTS",
+  "candidateOnly": "spacingKm=.03125 instead of .032; rest canonicalv61, 256cells/9levels, 5m onepass and caps, no other spacing search",
+  "cpuGateBeforeAnyGPU": {
+    "must": "A authenticates six buffers and historical fit stream; Bwithin existing caps; land RMS lower in BOTHfit andholdout; absoluteerrorp99 and maximum do not increase in either set; preserve all local regressions",
+    "failure": "Stop candidate, no tuning/other spacing/GPU/FPS; saveddiagnostic only",
+    "limitations": "Discrete fit and independent sourcecellcentres holdout, not continuous accuracy or artistic proof",
+    "tailScope": "p99 and maximum absolute error on ALL same physical points of each set; land/coast>=0 is separately reported and RMSland is a gate. Coast mask is authored materialclassification, not independent geographyvalidation.",
+    "quantile": "Sorted absolute error, index floor(.99*(count-1)) for p99; no interpolation/tolerance. Signed errors in metres F64."
+  },
+  "nativeIfCpuPass": {
+    "baseline": "Currentv61native74front andside with actualDTOs/PNGexactaliases fromcycle41; newA needed only if inputs cannotmatch",
+    "camera": "Same frozenworldcameras, no bounds recenter",
+    "quality": "256macro/128detail/384 nominalsteps, full flow, screen2474x1844, CSS1237x922DPR2, Sunsettled t60paused rain0forcing0disp0wind.55autoStormfalseflashoff",
+    "allowedInputDifferences": [
+      "renderer tag",
+      "terrainmeshstats/bounds/outerextent andrefinementderivedvalues",
+      "newgeometryUUID andownerlocalcache requests/hits/submissions/epoch withvalid=true",
+      "frame/skyUUID",
+      "weatherTime under rain0/flashoff",
+      "derived terraincamera clearance only if outside fixedworldpose: no silentcamerachange allowed"
+    ],
+    "artGate": "Visible improvement of ridge articulation overall in measured nearterrain, no new grid/diagonal/facet emphasis/coastsupportregression. Not demand inventing sub125mrocks or solving authored farterrain beyond64km. Read fullPNGs root+independent, not numericPASSsubstitute. If no convincing benefit stop before weather/worker/motion/FPS.",
+    "adoptionFurtherRequirements": [
+      "currentSun main/worker",
+      "matchedSunset andRain",
+      "motion/camera clearances",
+      "boundedRainA_B_A cost no regressions",
+      "fullsuite typecheck APPandhero finalsource",
+      "canonicalpreservationbeforeverifiedadoption"
+    ]
+  },
+  "owner": "Rootsolemodel/GPU/productwriter",
+  "fullGoalStillOpen": true
+}

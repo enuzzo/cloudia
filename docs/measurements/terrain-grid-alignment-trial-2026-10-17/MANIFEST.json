@@ -1,0 +1,165 @@
+{
+  "schema": 1,
+  "files": {
+    "README.md": {
+      "bytes": 2425,
+      "sha256": "bb648db9b3a628f6d4e51ddda6d85dde6e03f93784d08c9b812d75616e39edfd"
+    },
+    "audit/POINTS.json": {
+      "bytes": 1201,
+      "sha256": "9cd4e10be6a6a66d21c550e9701a3fc0c003f645cf72196235592684e2340660"
+    },
+    "audit/PRE-RUN-FREEZE.json": {
+      "bytes": 6168,
+      "sha256": "3c3c394c0864ef6a1326b6265b1a73c90f9bccc753458aa63525e59bb2d7183b"
+    },
+    "audit/PROTOCOL.md": {
+      "bytes": 3467,
+      "sha256": "9ac758c3f8105575f8106d07dff2b971dfeb3701bf3b01cc172dfdb93d700116"
+    },
+    "audit/run/A/errors.f64le.gz": {
+      "bytes": 8059196,
+      "sha256": "7a2825569bad7e57b954886307f5218e2abebaeeb3b0a6a28e18713e377cf227"
+    },
+    "audit/run/A/result.json": {
+      "bytes": 4852,
+      "sha256": "434a642b34c3d66b86164af5d00f7ce12fede07283dcdd3bb9be0f3132f61235"
+    },
+    "audit/run/A/run.json": {
+      "bytes": 711,
+      "sha256": "c6f78acd392f097c95619f88e2c9997b03841310aca0f758f442d81553c16e9b"
+    },
+    "audit/run/A/stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "audit/run/A/stdout.log": {
+      "bytes": 200,
+      "sha256": "c1875250bd5b9506bf8cd666926a4608c4d1086535de5d09940a16a617a14579"
+    },
+    "audit/run/B/errors.f64le.gz": {
+      "bytes": 7494017,
+      "sha256": "a21d7c2991a37f234b1b4a89bb09d116a508310cf439cbf025d28b623a069b6a"
+    },
+    "audit/run/B/result.json": {
+      "bytes": 4774,
+      "sha256": "09c41d044fed51eefb24b42a726ba377b6bd2c72a73fd63f1799fc3e91b29872"
+    },
+    "audit/run/B/run.json": {
+      "bytes": 701,
+      "sha256": "00ba475f3ddcbb8b95ba96085cbecc3b9b30a5da001747a76a83f6eaa7300f3f"
+    },
+    "audit/run/B/stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "audit/run/B/stdout.log": {
+      "bytes": 200,
+      "sha256": "49090a53fb9843410a2c569c87ffe276f8b6f085edcf5c1078b7de1d231e2817"
+    },
+    "audit/run/execution.json": {
+      "bytes": 1917,
+      "sha256": "f4e6ad0210a5e8ab8e572d318ef6e73bdbe025cd2a2168e27294db5036b1c97f"
+    },
+    "audit/run.py": {
+      "bytes": 6919,
+      "sha256": "1183d62876819c2d761cf31786d674047fce908849253626ca9317a3dd344584"
+    },
+    "audit/witness.ts": {
+      "bytes": 8694,
+      "sha256": "4ddfdcdc5050a9e7bf0ad3ca86770db6dfbc0e98c2840b0f54fd79f0fa2db0b0"
+    },
+    "browser/ordinary-v61-final.jpg": {
+      "bytes": 74284,
+      "sha256": "c0c23899cf14f92c4fba844024eb16ca38b2b79ab3351c47cf06dec8f655f09c"
+    },
+    "browser/ordinary-v61-final.json": {
+      "bytes": 1794,
+      "sha256": "4cfe40fcf11ef767cf61d5236eec8725740a3d56f4b30bb74075fddc9fcb0227"
+    },
+    "review/terrain-dem-node-patch-next-action.md": {
+      "bytes": 3846,
+      "sha256": "fcdc0f093bce99d30ebbc1dc916b3b24c0bcaee1fef083dc796ebb71d08aa392"
+    },
+    "review/terrain-grid-independent-data.json": {
+      "bytes": 13548,
+      "sha256": "18c2eb777527ea86ffeb650164bb9130de73119c1d0e1336adb95c03ea4c1d0a"
+    },
+    "review/terrain-grid-result-independent.md": {
+      "bytes": 3552,
+      "sha256": "41815a705436f834b491ebdead83c66973e9d1e20610a1a20869383d68a2bc24"
+    },
+    "review/terrain-grid-root-result.md": {
+      "bytes": 2631,
+      "sha256": "df5b943a598027be76a6b7fb639179c76e720261c0c186fca236aee309976627"
+    },
+    "review/terrain-grid-runner-static.md": {
+      "bytes": 3061,
+      "sha256": "d36397856243f4317dc11c339fbd9fcde093f78f9b0be79af0b77f959ed674f4"
+    },
+    "run/ANALYSIS-FREEZE-BEFORE-MESH.json": {
+      "bytes": 303,
+      "sha256": "0249e93b110671a0a0f59d40a5e3424dd9ad3d13219b9ec7e78126b6bd007a7b"
+    },
+    "run/FINAL-SOURCE-CHECK.json": {
+      "bytes": 222,
+      "sha256": "6f1fd766616d4e51d3c7a1c5bab239dace33a5eead81ae4120f3703bee4f6271"
+    },
+    "run/NATIVE-GATE-BEFORE-NUMERIC.json": {
+      "bytes": 2525,
+      "sha256": "0cc1beba0addaf4aebd1d43862e25cc28d508432e7b4a288876533194597b3f5"
+    },
+    "run/PREPARATION.json": {
+      "bytes": 336,
+      "sha256": "f7b82969b71324763c100bcf3ee3b58e7d45d1232257a93ccfdc52c652661361"
+    },
+    "run/ROOT-PRE-NUMERIC-REVIEW.md": {
+      "bytes": 1239,
+      "sha256": "3665896f0e962cd0855b515b02c373adfa02f38b7348c53a876e4c33542aa123"
+    },
+    "run/SAVED-GRID-ANALYSIS.json": {
+      "bytes": 24494,
+      "sha256": "ccbf45a0947282c06bca031f69f1f0a4bc84fe8db7a2d4b05b78dcbd3f93bb1e"
+    },
+    "run/analyze_saved_grid.py": {
+      "bytes": 4221,
+      "sha256": "3edefafe8663f1c50b5a6a9ec5be680916bc1f288344143933caedda2c4cb13a"
+    },
+    "run/candidate-source-baseline.json": {
+      "bytes": 15037,
+      "sha256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73"
+    },
+    "source/EXTERNAL-INPUTS.json": {
+      "bytes": 949,
+      "sha256": "02e62e516720350a6d932f2117288b6c1ca9577e5538a712a72cc23f91a6eca0"
+    },
+    "source/canonical/src/cumulonimbus/TerrainShadow.ts": {
+      "bytes": 16036,
+      "sha256": "ed628cb7e81a77d8fe1d57ecabd7f43b8072cfee0c8959a6d2b5746965640692"
+    },
+    "source/canonical/src/cumulonimbus/aerial.ts": {
+      "bytes": 621,
+      "sha256": "a066cfe3664d77e4c448045010fa13c40eefb35add6c163d143bd2bb01af10da"
+    },
+    "source/canonical/src/cumulonimbus/landscape.ts": {
+      "bytes": 5477,
+      "sha256": "8a0e17f79d6ec5759dd0615ffa94434c479b7961d1f9e007df583fb463ca98ab"
+    },
+    "source/canonical/src/cumulonimbus/terrainDEM.ts": {
+      "bytes": 4394,
+      "sha256": "335dfde27717448fa58b7e8d26fc4ce684a1d42ed6ead007f36fb345fe9dd386"
+    },
+    "source/canonical/src/cumulonimbus/terrainMesh.ts": {
+      "bytes": 41782,
+      "sha256": "00c170a8d4653817720b9dddc8eb10d647671128602dac55a1de52fe55216d72"
+    },
+    "source/canonical/src/cumulonimbus/terrainSplitTriangle.ts": {
+      "bytes": 1249,
+      "sha256": "e8a14126eedcea99390b9bf9503b9df53fae6ad85e2f39aa184817d104443163"
+    },
+    "source/canonical/src/cumulonimbus/terrainSurface.ts": {
+      "bytes": 13659,
+      "sha256": "0ff8de3514feb3714ba4e931c246d0bd339634661aa37a7d87e79f61c1ddff3f"
+    }
+  }
+}

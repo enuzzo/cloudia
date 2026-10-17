@@ -1,0 +1,119 @@
+{
+  "state": "FROZEN_NOT_EXECUTED",
+  "scope": "Preparation only; root must separately authorize the single sequential A/B execution. No model/test/build/GPU has been run to prepare this freeze.",
+  "sourceRoot": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia",
+  "dependencyRoot": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules",
+  "bunPath": "/Users/enuzzo/.bun/bin/bun",
+  "demPath": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/assets/liguria-apuane-dem.bin",
+  "historicalReport": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/terrain-source-refinement-2026-10-16/witness/on/result.json.gz",
+  "historicalFitStream": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/terrain-source-refinement-2026-10-16/witness/on/errors.f64le.gz",
+  "expectedDemSHA256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d",
+  "expectedHistoricalFitSHA256": "58ca7139fc88f4f087854cb80a4901a8645536b23c7d504dc1c7bfecb7186093",
+  "sourceClosureFiles": 7,
+  "inputs": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle43/terrain-grid-audit/witness.ts",
+      "bytes": 8694,
+      "sha256": "4ddfdcdc5050a9e7bf0ad3ca86770db6dfbc0e98c2840b0f54fd79f0fa2db0b0"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle43/terrain-grid-audit/run.py",
+      "bytes": 6919,
+      "sha256": "1183d62876819c2d761cf31786d674047fce908849253626ca9317a3dd344584"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle43/terrain-grid-audit/POINTS.json",
+      "bytes": 1201,
+      "sha256": "9cd4e10be6a6a66d21c550e9701a3fc0c003f645cf72196235592684e2340660"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle43/terrain-grid-audit/PROTOCOL.md",
+      "bytes": 3467,
+      "sha256": "9ac758c3f8105575f8106d07dff2b971dfeb3701bf3b01cc172dfdb93d700116"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/terrainMesh.ts",
+      "bytes": 41782,
+      "sha256": "00c170a8d4653817720b9dddc8eb10d647671128602dac55a1de52fe55216d72"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/terrainDEM.ts",
+      "bytes": 4394,
+      "sha256": "335dfde27717448fa58b7e8d26fc4ce684a1d42ed6ead007f36fb345fe9dd386"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/terrainSurface.ts",
+      "bytes": 13659,
+      "sha256": "0ff8de3514feb3714ba4e931c246d0bd339634661aa37a7d87e79f61c1ddff3f"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/landscape.ts",
+      "bytes": 5477,
+      "sha256": "8a0e17f79d6ec5759dd0615ffa94434c479b7961d1f9e007df583fb463ca98ab"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/aerial.ts",
+      "bytes": 621,
+      "sha256": "a066cfe3664d77e4c448045010fa13c40eefb35add6c163d143bd2bb01af10da"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/TerrainShadow.ts",
+      "bytes": 16036,
+      "sha256": "ed628cb7e81a77d8fe1d57ecabd7f43b8072cfee0c8959a6d2b5746965640692"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/terrainSplitTriangle.ts",
+      "bytes": 1249,
+      "sha256": "e8a14126eedcea99390b9bf9503b9df53fae6ad85e2f39aa184817d104443163"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/assets/liguria-apuane-dem.bin",
+      "bytes": 4202532,
+      "sha256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/package.json",
+      "bytes": 3672,
+      "sha256": "ab4ff6950aab522dfe6980f19914a5eb2cadb689a36c6c44f4d3869c5e46dc89"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/build/three.webgpu.js",
+      "bytes": 2284823,
+      "sha256": "a78400fa1d359e81fcc12b84ed0a89a7fbecb4b8373e28ae8f9d2b11f6ea13bc"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/build/three.tsl.js",
+      "bytes": 36854,
+      "sha256": "6e6b92d8ce467818944f73815a96abadc6392fb34de577d479a23810b6aeeed0"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/build/three.core.js",
+      "bytes": 1458113,
+      "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6"
+    },
+    {
+      "path": "/Users/enuzzo/.bun/bin/bun",
+      "bytes": 61069216,
+      "sha256": "1d77af7bfd811aebb7d37bec496a5eed14fe227ded3ab7866d2f39786e8107b6"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/terrain-source-refinement-2026-10-16/witness/on/result.json.gz",
+      "bytes": 51467,
+      "sha256": "8a426c7eed131d9c9f8d9390c4a6b1d050eaab961761770ce71a3e5263a6a663"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/terrain-source-refinement-2026-10-16/witness/on/errors.f64le.gz",
+      "bytes": 4048160,
+      "sha256": "c97476cd159a415b31f8a2ce72fbabac6534376b258e027a12d2633f6165314b"
+    }
+  ],
+  "selfDigestPolicy": "This file excludes itself; root supplies its SHA256 to the authorized launcher.",
+  "reuseDecision": "Historical fit stream and six geometry digests are reusable identity evidence only; missing saved arrays prevent querying new holdout without rebuilding A.",
+  "geometryOnlyDelta": "spacingKm .032 vs .03125; all other builder/sampler/options identical; no alternate spacing after FAIL.",
+  "limitsPerChild": {
+    "cpuSeconds": 20,
+    "wallSeconds": 30,
+    "terminalDarwinRSSBytes": 1610612736
+  },
+  "rootDecisionGateSeparate": "cycle43/run/NATIVE-GATE-BEFORE-NUMERIC.json is not modified or evaluated by this runner; independent saved-stream analysis applies it."
+}
