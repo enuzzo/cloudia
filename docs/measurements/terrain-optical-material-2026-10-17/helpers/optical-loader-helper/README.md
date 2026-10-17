@@ -1,0 +1,14 @@
+# Optical loader helper, cycle 40
+
+Scope: `terrainOptical.ts` and its unit tests only. Root integrates these files into the external candidate source and copies the offline pack to `src/cumulonimbus/assets/liguria-apuane-optical.bin`. No product file, model, GPU, dependency install, TIFF download or browser is touched by this helper task.
+
+## Protocol before test execution
+
+- The immutable pack is raw little-endian RGBA binary16, 2048 × 2048 × 8 = 33,554,432 bytes. The SHA is supplied by the offline pack owner and pinned in source before execution. RGB is already multiplied by valid area; alpha is valid area. No colour transform, gain or alpha division is applied.
+- Streaming reads allocate exactly one final base buffer and reject any short or oversized body. Fetch receives the caller's AbortSignal. Body reading is cancelled on abort; owner cancellation is checked after response, body read and SHA digest, before creating a texture. Digest work itself is not cancellable.
+- SHA authenticates the complete payload before structural decoding and texture creation. Positive half words must satisfy `0 <= RGB <= A <= 1`; negative encodings, negative zero, infinity, NaN and coloured zero-validity samples fail explicitly. The returned Uint16Array is a view of the authenticated buffer, without a retained float32 copy. Little-endian hosts are required explicitly.
+- One DataTexture retains the base view. Its data is linear/no colour space; filters are linear trilinear/linear, edges clamp, no Y flip, no alpha premultiplication at upload, and mipmaps generate once on initial upload. Root must include the texture identity/configuration/version in the terrain cache input key and dispose the owner on cancellation/release.
+- Nominal payload is 33,554,432 base bytes plus 11,184,808 bytes of lower mips: 44,739,240 GPU bytes over 12 levels. Retained CPU payload is the base only. These counts exclude stream chunks, SHA implementation temporaries, driver allocation/alignment and actual residency; they are not measurements of physical GPU memory or FPS.
+- Tests use synthetic buffers and mocked fetch/digest only; no GPU. They cover malformed half words, exact size, chunk bounds, pinned digest, texture settings, buffer ownership, idempotent disposal, unavailable asset and owner cancellation at response/read/hash stages. Root runs integrated tests/typecheck/build. Helper execution budget, if used: 30 seconds CPU and 1 GiB RSS. Dependencies were observed Git-ignored/untracked and Dropbox ignore attribute `1` before any test execution.
+
+Status: implementation prepared and pinned to the offline pack SHA `217325bcdb50dd58076b2f5068ee0b5ba524f6f076a70d4345f279f233f5dd62`. The pack owner reports finite values, `RGBpremul <= A <= 1`, zero RGBA at zero validity, and per-channel maxima `[0.72021484375, 0.66259765625, 0.59326171875, 1]`. No helper tests have been run; root performs the integrated run.

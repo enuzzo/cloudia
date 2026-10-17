@@ -1,0 +1,948 @@
+{
+  "schema": 1,
+  "scope": "Frozen optical v61 data/code/browser/FPS evidence; verifier does not replay GPU",
+  "fileCount": 188,
+  "payloadBytes": 53965937,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2692,
+      "sha256": "e29a1acb247600941d85938aaaf6cfa0b6d9006e29b332f628fa0e16d72645ff"
+    },
+    {
+      "path": "archive-evidence.py",
+      "bytes": 3924,
+      "sha256": "e85695e9b149abb46c8f4a1485f13b9942d6a62fb048e25ca3f6abe7a6f04d2f"
+    },
+    {
+      "path": "browser/baseline-a-full-f32.json",
+      "bytes": 35000,
+      "sha256": "93df20a945e678469af8aa6e25c43e973bbe1e45be966de33d2ee1ec0bb0ac2f"
+    },
+    {
+      "path": "browser/baseline-a-native-primary.png",
+      "bytes": 257559,
+      "sha256": "435a18cbd0730c3f0328b110bf77e0d13a3b804174673826971ee21cd9f64b52"
+    },
+    {
+      "path": "browser/baseline-a-native-secondary.png",
+      "bytes": 43987,
+      "sha256": "f463179eebbf4a86907cad5b12f668a67420bfb40b1db1568522178fcb1080b1"
+    },
+    {
+      "path": "browser/baseline-a-native-transfer.json",
+      "bytes": 8764,
+      "sha256": "022b8ea73b63e98a319c84af52ddd0e751190837c21c5a49da63e3bf630d9a73"
+    },
+    {
+      "path": "browser/baseline-a-native.json",
+      "bytes": 12544,
+      "sha256": "df4f91888071f5f80cd0fca173a7f1fba5710a8ec6001731d61a501fb79ad061"
+    },
+    {
+      "path": "browser/baseline-a-native.png",
+      "bytes": 2909134,
+      "sha256": "90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d"
+    },
+    {
+      "path": "browser/candidate-b-full-f32.json",
+      "bytes": 35559,
+      "sha256": "66e6e7f1faac429ef98d117a24a7a45dce31808bee3e8f19ca7f77a9e7a68aa4"
+    },
+    {
+      "path": "browser/candidate-b-native-primary.png",
+      "bytes": 375772,
+      "sha256": "5d1d4e55fd134e89e3b507498e98f0a8d31ff35f1fde45101287810d37007ea1"
+    },
+    {
+      "path": "browser/candidate-b-native-secondary.png",
+      "bytes": 63214,
+      "sha256": "5e22f4182b7a7d04490ca1ff004f5e76f7e9c01dca0a7d9e2c409ff8c13823ac"
+    },
+    {
+      "path": "browser/candidate-b-native-transfer.json",
+      "bytes": 10738,
+      "sha256": "869ad4b1642cf91924385a7b46e618883c926b41e4d553ebfc910053f6fd51f2"
+    },
+    {
+      "path": "browser/candidate-b-native.json",
+      "bytes": 13073,
+      "sha256": "508b3a7c8df2f58e982a64fc7bf8538d76508f1a021288dd4f404a4f3a2c5b67"
+    },
+    {
+      "path": "browser/candidate-b-native.png",
+      "bytes": 3599836,
+      "sha256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9"
+    },
+    {
+      "path": "browser/candidate-b-opposite-full-f32.json",
+      "bytes": 35539,
+      "sha256": "80029e6aa642e2a5830bf9d962812b77f143da81208741eaf6fdbca062205614"
+    },
+    {
+      "path": "browser/candidate-b-opposite-native-primary.png",
+      "bytes": 417246,
+      "sha256": "37cfa2de1bf525d08b4d6e9264d021e3ad46e99078ea5bc4e3bf3f453998803a"
+    },
+    {
+      "path": "browser/candidate-b-opposite-native-transfer.json",
+      "bytes": 11302,
+      "sha256": "dc79581e1cebb12a9af49b1ce07ef9dfc4b3973df875cefe07e261882907fa32"
+    },
+    {
+      "path": "browser/candidate-b-opposite-native.json",
+      "bytes": 13079,
+      "sha256": "9e00e92c4cff95bd14162cd7b9a8b8d06db837e81c17c5d3bac47c49ee176d36"
+    },
+    {
+      "path": "browser/candidate-b-opposite-native.png",
+      "bytes": 3825624,
+      "sha256": "0cde923f487f2e2c94f7eef75a5db114403af11785afa8ce776cf66fea4a3582"
+    },
+    {
+      "path": "browser/candidate-b-rain-full-f32.json",
+      "bytes": 35557,
+      "sha256": "3a1fe289fea917fbc8025fae267f06adb313eace6567ecc816c46454dba7b49e"
+    },
+    {
+      "path": "browser/candidate-b-rain-native-transfer.json",
+      "bytes": 10315,
+      "sha256": "66af30b269905c56eb3a51a7b5fb9b8841fe96e4580024dbb909d2c812a248b3"
+    },
+    {
+      "path": "browser/candidate-b-rain-native.json",
+      "bytes": 13102,
+      "sha256": "436b4ecea83c436e6696208d68e58a9f9d75773d3f273acde79006eb85e68b04"
+    },
+    {
+      "path": "browser/candidate-b-rain-native.png",
+      "bytes": 3484202,
+      "sha256": "817224add2f23905efd68b2d90e215c13c7a728e2dfabb1b239c766f7769a381"
+    },
+    {
+      "path": "browser/candidate-b-sunset-full-f32.json",
+      "bytes": 35604,
+      "sha256": "982d1efd542bcfc2ae227253dbec0dc7fd7e58131f3d62f7bc9fbf33abd1eedd"
+    },
+    {
+      "path": "browser/candidate-b-sunset-native-transfer.json",
+      "bytes": 6367,
+      "sha256": "957ba76cc3d827c660591c681ba135c7e0827e6f5d81479a13d5055d91904341"
+    },
+    {
+      "path": "browser/candidate-b-sunset-native.json",
+      "bytes": 13092,
+      "sha256": "f2a5d8744bf8559960bbcf19fc735804ccc53f1dacd57532cc212ab0df641d03"
+    },
+    {
+      "path": "browser/candidate-b-sunset-native.png",
+      "bytes": 2100463,
+      "sha256": "e097d0cd67c03be4ec60153110dbce531a231cd4c2b40fd605fd58c094fdcb18"
+    },
+    {
+      "path": "browser/candidate-b-ui.jpg",
+      "bytes": 78710,
+      "sha256": "dc29c8fafa5160b30a33dcc72c9d34504b8e069b421ad1102417ea0d6ed53163"
+    },
+    {
+      "path": "browser/final-default-full-f32.json",
+      "bytes": 35570,
+      "sha256": "fea61341fd84fb5f8c8f6ee3ee4efac77d86cd1f3d17189dd65ad447e48ebe06"
+    },
+    {
+      "path": "browser/final-default-native.json",
+      "bytes": 13072,
+      "sha256": "28a7c881211523a99df76022e2bc8c4e1babce9dd8ffa8d1c5636327fb228eaf"
+    },
+    {
+      "path": "browser/final-preview-console.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "browser/final-v61-preview.jpg",
+      "bytes": 74341,
+      "sha256": "80a3350d2f7cd8dc019c3f586bc939afdf44f3b21a702b1345673e3f9df25f9a"
+    },
+    {
+      "path": "browser/navigation-a-auth-f32.json",
+      "bytes": 35020,
+      "sha256": "07689297a8c610097d039a2f451450a564ad3c5d6c0af1b775ec60960d0a1bb1"
+    },
+    {
+      "path": "browser/navigation-a-auth-native.json",
+      "bytes": 12552,
+      "sha256": "89d96e4308a649e3a83d76278416f119d017e46f4891bba6986639778a5ad509"
+    },
+    {
+      "path": "browser/navigation-b-auth-f32.json",
+      "bytes": 35572,
+      "sha256": "b377efc3e3161bae3d9cccc6e03e9659dc08c643d8ad3979ca572c2dd6e00998"
+    },
+    {
+      "path": "browser/navigation-b-auth-native.json",
+      "bytes": 13073,
+      "sha256": "6704119c946cd50ffeaee3a3d259f8d397cc8766f546d4dd45e700c97e402230"
+    },
+    {
+      "path": "browser/performance-navigation-a1.json",
+      "bytes": 224501,
+      "sha256": "3b7628383b7831ba75be3c9e119ae3c54bd5227ffc32649e51ee9d6f0b1a8098"
+    },
+    {
+      "path": "browser/performance-navigation-a2.json",
+      "bytes": 221314,
+      "sha256": "832ce6be0b7bd448f924441fbd0f14c4a75ee598d3ed5f79dcac01c36cf6c85b"
+    },
+    {
+      "path": "browser/performance-navigation-b.json",
+      "bytes": 223708,
+      "sha256": "4c433e6f86d988496fd2435fb7f7241ac9f039d9ba8b99fad06e78a925bbe147"
+    },
+    {
+      "path": "browser/performance-static-a1.json",
+      "bytes": 218468,
+      "sha256": "b1c82191feaef0374c6b4e3d34013f051da22ceea78a5076470384e2dab613e1"
+    },
+    {
+      "path": "browser/performance-static-a2.json",
+      "bytes": 217611,
+      "sha256": "d86f00307a1fb59f1dba7a74ea2184879a63545c4ac1e01a0a2cd4ca8a2c04d5"
+    },
+    {
+      "path": "browser/performance-static-b.json",
+      "bytes": 219422,
+      "sha256": "0905c9822dc2ad4daf66fa61d0f21e7fa3724e97d98fbf01ecba2ed9085c63ce"
+    },
+    {
+      "path": "browser/worker-b-rain-full-f32.json",
+      "bytes": 35532,
+      "sha256": "0ceb559bdc65105a9fe8ab1c506f903092dea2cadf660601645747944d856ef6"
+    },
+    {
+      "path": "browser/worker-b-rain-native.json",
+      "bytes": 13099,
+      "sha256": "f2302dbe3f091bb19010ab67c2b8f48733e7a11e0f4844eea210df1ff6920b2c"
+    },
+    {
+      "path": "browser/worker-b-sun-full-f32.json",
+      "bytes": 35559,
+      "sha256": "10487fc4bfb0f62d2eab2d8788515debc098f9d6b5fedf8fa34140ec9362f7e4"
+    },
+    {
+      "path": "browser/worker-b-sun-native.json",
+      "bytes": 13076,
+      "sha256": "cc7a8042297190e8d67f38d752613137df9f01e6165e7d6e5094e2f8d6239f6f"
+    },
+    {
+      "path": "helpers/navigation-helper/README.md",
+      "bytes": 2265,
+      "sha256": "f8a617bfdeecebf86e7a4570557c434340db05e6ecf72c63159175d7a5c5f8a3"
+    },
+    {
+      "path": "helpers/navigation-helper/terrainNavigationDiagnostic.test.ts",
+      "bytes": 2728,
+      "sha256": "9f628e41f5ab65478d9e5bec390c0642394cd20757fc679f10428dd01bcd2e5e"
+    },
+    {
+      "path": "helpers/navigation-helper/terrainNavigationDiagnostic.ts",
+      "bytes": 1000,
+      "sha256": "fd31885d67948f6a1a3cba22b970a7a5ca624d9c495c1c0eb4bf19480352c673"
+    },
+    {
+      "path": "helpers/optical-loader-helper/README.md",
+      "bytes": 2918,
+      "sha256": "3a0a3a80cad109b3ee74392bf4ee8f53067230aa8e9cf34b60b0d3f1dd6d0550"
+    },
+    {
+      "path": "helpers/optical-loader-helper/terrainOptical.test.ts",
+      "bytes": 9946,
+      "sha256": "e20b67d6cefb740840750879ed206b12f0f6e9c8b7c650de0c984d47c7049043"
+    },
+    {
+      "path": "helpers/optical-loader-helper/terrainOptical.ts",
+      "bytes": 5963,
+      "sha256": "e3bfc4994d8ab80a8de1bc9b61b63ca6580ce103a705b531b395de6661848370"
+    },
+    {
+      "path": "helpers/optical-material-helper/README.md",
+      "bytes": 4626,
+      "sha256": "69ec72cceb728a2b289e7d13eb36a1b4187d77881a8f37ff179986911050f1a9"
+    },
+    {
+      "path": "helpers/optical-material-helper/freeze/FREEZE.json",
+      "bytes": 1466,
+      "sha256": "0d83e34cda94d7fe09934043ddfaaae3b842ea33fdcc20a457c3f27d2ce5288e"
+    },
+    {
+      "path": "helpers/optical-material-helper/freeze/pre-qualification.json",
+      "bytes": 933,
+      "sha256": "398f7d3b3f84fac225aa530aecb39d569b33e828d54d0498791d7efe800e8d8d"
+    },
+    {
+      "path": "helpers/optical-material-helper/freeze/qualification/src/cumulonimbus/terrainOpticalMaterial.test.ts",
+      "bytes": 7981,
+      "sha256": "5388c817d8930e34eaf2df770157a0127cd18e3235584328b281a6a7a3fa97f0"
+    },
+    {
+      "path": "helpers/optical-material-helper/freeze/qualification/src/cumulonimbus/terrainOpticalMaterial.ts",
+      "bytes": 2728,
+      "sha256": "78f80bc90be7be9fcc4fbcccb7908fa680b9de1ed67e2348117431c240d083e8"
+    },
+    {
+      "path": "helpers/optical-material-helper/freeze/qualification/tsconfig.json",
+      "bytes": 761,
+      "sha256": "911ee118af9a145c1d97f96a02638988085d8b165ec153adf771efb493f3c0a1"
+    },
+    {
+      "path": "helpers/optical-material-helper/freeze/qualification/vitest.config.mjs",
+      "bytes": 325,
+      "sha256": "5e258f0c48e577fd3a0f60e983310ea55516cf652b2fb6b73ac01e5ee419c684"
+    },
+    {
+      "path": "helpers/optical-material-helper/freeze/tests-r1.json",
+      "bytes": 301,
+      "sha256": "10fcdb7b128e4dcf4c0320754d6f753dda3fe3dd8190c2d1d62d632aba7c032b"
+    },
+    {
+      "path": "helpers/optical-material-helper/freeze/tests-r1.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "helpers/optical-material-helper/freeze/tests-r1.stdout.log",
+      "bytes": 286,
+      "sha256": "08306f029f1b65f7d07cab65d88a8bd32e9aed13b6aa99ce0e8251fff5a4bdbb"
+    },
+    {
+      "path": "helpers/optical-material-helper/freeze/typecheck-r1.json",
+      "bytes": 304,
+      "sha256": "8bd1b4dc960e0b23c55c7615da92e701b9950fce2eaa761d0423110ca9af5e11"
+    },
+    {
+      "path": "helpers/optical-material-helper/freeze/typecheck-r1.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "helpers/optical-material-helper/freeze/typecheck-r1.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "helpers/optical-material-helper/terrainOpticalMaterial.test.ts",
+      "bytes": 7981,
+      "sha256": "5388c817d8930e34eaf2df770157a0127cd18e3235584328b281a6a7a3fa97f0"
+    },
+    {
+      "path": "helpers/optical-material-helper/terrainOpticalMaterial.ts",
+      "bytes": 2728,
+      "sha256": "78f80bc90be7be9fcc4fbcccb7908fa680b9de1ed67e2348117431c240d083e8"
+    },
+    {
+      "path": "optical-data/ASSET-ALIAS.json",
+      "bytes": 321,
+      "sha256": "59e90e266a7a3950c02a023221f6ba12c39466fc80be3bdff8b2f9b0853c3322"
+    },
+    {
+      "path": "optical-data/MANIFEST.json",
+      "bytes": 3403,
+      "sha256": "3e6f99b5022e2f16fd091be50735c5351cecb76f3ae09248eb2dea8c59b6b7b5"
+    },
+    {
+      "path": "optical-data/NOTICE-OPTICAL-DERIVATIVE.txt",
+      "bytes": 1535,
+      "sha256": "b0383e6df5b021dca8d55bb8faa383fa4ddf182301db02f0b0e6af4fb4926010"
+    },
+    {
+      "path": "optical-data/PRE-RUN-FREEZE.json",
+      "bytes": 2172,
+      "sha256": "ff38dfd11650c638d747dac48ce5193ecbb81b254c838e9eeab8832d5179ed3c"
+    },
+    {
+      "path": "optical-data/PROTOCOL.md",
+      "bytes": 3003,
+      "sha256": "a97fa0b5d1f78aea15062b3b388116434f92c194385935cab1955cda46fa8b1e"
+    },
+    {
+      "path": "optical-data/README.md",
+      "bytes": 4530,
+      "sha256": "1977fe7b042124b00d078e4c153077cb883fcc229c9a34ca5f7f9b1ff61f1da0"
+    },
+    {
+      "path": "optical-data/mip-fixtures.json",
+      "bytes": 6282,
+      "sha256": "0e40d04693c1590f1edd073b886f6d41b3c48f359912d82593eb12078391a388"
+    },
+    {
+      "path": "optical-data/optical-rgba16f.metadata.json",
+      "bytes": 5370,
+      "sha256": "37857825824d0ef3419f205b142b9ffd4600d55f6cf500d001f8dc821ac9380e"
+    },
+    {
+      "path": "optical-data/pack-optical.py",
+      "bytes": 12248,
+      "sha256": "351f20be21f826c274fa1b5e1d24101d24571e9d05e0a49505a778a2beedb51b"
+    },
+    {
+      "path": "optical-data/provenance/COPIED-SOURCES.json",
+      "bytes": 1261,
+      "sha256": "c83b1cb54f724f5aa671a47e6221b8014fe9f20c03adbdf463f05d249987937a"
+    },
+    {
+      "path": "optical-data/provenance/NOTICE-SENTINEL2.txt",
+      "bytes": 856,
+      "sha256": "30354b8fda6143a621f1e64a11aacfb4c60e4e09a59c02e59e74ae2ae8850f42"
+    },
+    {
+      "path": "optical-data/provenance/PROTOCOL.md",
+      "bytes": 4222,
+      "sha256": "ded51b69cb62b9a93fdb939e84a9d8ef8dbcbcdcbf1112cd34b1654387c0b513"
+    },
+    {
+      "path": "optical-data/provenance/SOURCE-LINKS.md",
+      "bytes": 857,
+      "sha256": "ec16a974fad7c3d1e0d975b5bc837763f2b41d3bbab0aff9c92fe7affd63e360"
+    },
+    {
+      "path": "optical-data/provenance/cc-by-4.0-legalcode.txt",
+      "bytes": 18657,
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    {
+      "path": "optical-data/provenance/preprocess-result.json",
+      "bytes": 4000,
+      "sha256": "69d8bd00d7b8d16d8947f2a2aa9be7a4a557e0bea1127d3951118092d4b69f21"
+    },
+    {
+      "path": "optical-data/provenance/source-witnesses.json",
+      "bytes": 3409,
+      "sha256": "da40f40e95ea0db9476d2ff18b74246cefbc9235640345bc777faed33a2f6201"
+    },
+    {
+      "path": "optical-data/run/execution.json",
+      "bytes": 883,
+      "sha256": "644f4ada374069663ea6f35a11ceb719bbba2713bd28ed6128dafa2edca1ab17"
+    },
+    {
+      "path": "optical-data/run/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "optical-data/run/stdout.log",
+      "bytes": 2849,
+      "sha256": "e241870049c68c56da49b2efe002c26e27ed8b6e0f6903a481916321b6176dfc"
+    },
+    {
+      "path": "optical-data/run.py",
+      "bytes": 2277,
+      "sha256": "4d4b682e99ca042b7258c30646d0c7722fed1f6c50272135ced2529b17384394"
+    },
+    {
+      "path": "optical-data/witnesses.json",
+      "bytes": 4285,
+      "sha256": "282dcccd179d7fea9dcc9beadb4cbe86e6c2fc214ab7a81f60cd78a1d9f9c9c1"
+    },
+    {
+      "path": "run/ADOPTION-PRE-RUN-FREEZE.json",
+      "bytes": 720,
+      "sha256": "bdf34f2ed65bc638031b3fcb52020c780b8ac64a32ce784328875595e41dbb58"
+    },
+    {
+      "path": "run/NAVIGATION-PRE-RUN-FREEZE.json",
+      "bytes": 1081,
+      "sha256": "2d10af36d403d51e63e69db9be94c90d0bb27367d966ebfad3f459880673c357"
+    },
+    {
+      "path": "run/PERFORMANCE-PRE-RUN-FREEZE.json",
+      "bytes": 1860,
+      "sha256": "4a06473eeaa7511a91f1f2acafd4423d736a449fd46607809c7c484eabd47b89"
+    },
+    {
+      "path": "run/PRE-RUN-FREEZE.json",
+      "bytes": 1569,
+      "sha256": "47e9e98bfe06c471ed2f20be8087489e12ffe2c6fae3efd89d3eccd45b53d7b2"
+    },
+    {
+      "path": "run/adopted-paths.json",
+      "bytes": 725,
+      "sha256": "179bde153f08f2210392f8894a258ac5311ed5c5799d9b831caf3c039f844f34"
+    },
+    {
+      "path": "run/baseline-manifest.json",
+      "bytes": 13615,
+      "sha256": "a4e38cfc8afdfb5899cc31d20124ee7704754108af1838517a5d3d6583a51b2b"
+    },
+    {
+      "path": "run/build-app-final-r3.log",
+      "bytes": 1546,
+      "sha256": "80091e409abb2f1cf2a342746a96044328ddfd88c1d1d3af96453198dd3b43e8"
+    },
+    {
+      "path": "run/build-app-final.log",
+      "bytes": 97,
+      "sha256": "274e4251d703cfec106fe9f46e43a0a097b1467a517116f3ad641a5f0cac9360"
+    },
+    {
+      "path": "run/build-app-r2.log",
+      "bytes": 1546,
+      "sha256": "38c75102c164134ca272a065d3fa0132f7a6961fd46cf690790c0ef91aeba24c"
+    },
+    {
+      "path": "run/build-app-r3.log",
+      "bytes": 1546,
+      "sha256": "3e51f60d6744d30935cdde3ff26fee59bbfed2eaeb7adf91d452e3ee6e4f208e"
+    },
+    {
+      "path": "run/build-hero-final.log",
+      "bytes": 364,
+      "sha256": "61b41ebe72d95bb721e3fd38a3508c7073f54a0fb306ab14397b4b9e4cec9d6c"
+    },
+    {
+      "path": "run/build-hero-r2.log",
+      "bytes": 364,
+      "sha256": "53ec53ef71e28e93b9f7a84fa7162844efb9764dded74af0dd00f5f3ab134f13"
+    },
+    {
+      "path": "run/build-hero-r4.log",
+      "bytes": 364,
+      "sha256": "9e61dfd18d4075db3e5ce7793aa3e016d32e7dca9ac9ddc6cd787a46b5c56a79"
+    },
+    {
+      "path": "run/candidate-manifest-r1.json",
+      "bytes": 14790,
+      "sha256": "b6901e479b7d8ee8e0932bd9fc1698b3103d05be9f81918b3e429232a0a05a6d"
+    },
+    {
+      "path": "run/candidate-manifest-r2.json",
+      "bytes": 14790,
+      "sha256": "9dc5ff28c7a809f1a09167ac5ca9893ec10f76f07ee21cd7ca9a469ac84599e3"
+    },
+    {
+      "path": "run/candidate-navigation-manifest-r4.json",
+      "bytes": 15037,
+      "sha256": "56d95db4283ce22c1ec9d805e6692eb05cf8cf9aefeb474b7f20552434b77519"
+    },
+    {
+      "path": "run/expanded-light-review.md",
+      "bytes": 4574,
+      "sha256": "ecc6de4818bafc046ec4d3ce9321421b92499b3844cef6268253fcca1d0b2fd3"
+    },
+    {
+      "path": "run/final-adoption-review.md",
+      "bytes": 4680,
+      "sha256": "bf9675d2f25c23bf6c8dea8f46bd011f16620bbee3f28318c552d4b69f2c8dd2"
+    },
+    {
+      "path": "run/final-manifest.json",
+      "bytes": 15037,
+      "sha256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73"
+    },
+    {
+      "path": "run/geometry-result.json",
+      "bytes": 2491,
+      "sha256": "b724b9695522623319f2c0253d2e601117d061337728f32bcfba09fcaf4334e5"
+    },
+    {
+      "path": "run/geometry-witness.ts",
+      "bytes": 2073,
+      "sha256": "2db22976bf9fbc760464ec56c9a3f47b1ed0d7ca522c5dc3c899218e11ab38f7"
+    },
+    {
+      "path": "run/native-independent-review.md",
+      "bytes": 4568,
+      "sha256": "9f3856a1d92dc5db701a0f2930ae30d35b640efaf6f6dd6c692043b0ca2ac3e0"
+    },
+    {
+      "path": "run/native-root-review.md",
+      "bytes": 2983,
+      "sha256": "5fedaf4145d8c0303b576b0bc88d4f9d7db8def42479965eac171c393dce8f69"
+    },
+    {
+      "path": "run/navigation-integration-review.md",
+      "bytes": 4007,
+      "sha256": "d2de25cbf697e9248affa63f4f54d86a5f1e87f7f98e611bf911678919b0eacd"
+    },
+    {
+      "path": "run/next-ridge-diagnostic.md",
+      "bytes": 6765,
+      "sha256": "651f48c66f23642f470b0a4508e69bad603fb45a626b20f71b91aeabd7d2461f"
+    },
+    {
+      "path": "run/optical-integration-review.md",
+      "bytes": 4227,
+      "sha256": "6a3fde8d0c21c8a3ca7baaf7f5fb697f0fd585145a1aadb44ce6f40366dfbc11"
+    },
+    {
+      "path": "run/optical-loader-engine-review.md",
+      "bytes": 6354,
+      "sha256": "fdad87481c040fe35c236dc80b786d2944837025f4987bd4c1526b6fbc154267"
+    },
+    {
+      "path": "run/performance-summary.json",
+      "bytes": 4977,
+      "sha256": "685e4934c9a592c5e0db9962fd6783e4d9e8ced68f274b819d636b2c1e683cc7"
+    },
+    {
+      "path": "run/qualification-results.json",
+      "bytes": 2021,
+      "sha256": "3d6d3e2c54121239babc62e562e58ef4f19b4190f2bb537d981cca02941168d4"
+    },
+    {
+      "path": "run/tests-final-r2.log",
+      "bytes": 109,
+      "sha256": "c91fc587b6184ac3b04dba91a14c7b1b7e9a9be755a31de16412ffbc59add80d"
+    },
+    {
+      "path": "run/tests-final-r3.log",
+      "bytes": 295,
+      "sha256": "d455b36302ddf1b3c4591dce151446475254340c75f5a16040400f9c61d3cf96"
+    },
+    {
+      "path": "run/tests-final.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/tests-navigation-r3-diagnosis.log",
+      "bytes": 1632,
+      "sha256": "5193f548414e424f7ecceb12a02ed3c43737dad5e406036893d4cfc143466ba1"
+    },
+    {
+      "path": "run/tests-navigation-r3.log",
+      "bytes": 1417,
+      "sha256": "f73dca3fc509f7c09f5348199b941ebc0b921e508d06cb118db6857ef6738511"
+    },
+    {
+      "path": "run/tests-navigation-r4.log",
+      "bytes": 300,
+      "sha256": "ce4506c7d6231d033e4824056bce1b58b694cb08d597ba1dedbf2f5ea8f11391"
+    },
+    {
+      "path": "run/tests-r1.log",
+      "bytes": 5004,
+      "sha256": "21a92d29a60fd6638afee3b16ffc97211c52ad8f2d53b8880efd94837513eac3"
+    },
+    {
+      "path": "run/tests-r2.log",
+      "bytes": 297,
+      "sha256": "5d46faa111bdf03c7036a9727e5b3f82e8024bfe757ef090f3d3575cc2ac407d"
+    },
+    {
+      "path": "run/typecheck-r1.log",
+      "bytes": 1028,
+      "sha256": "33bf62b0f2d913322c7b9027993ebef208ba3c723f7bdcc863120a12f2704a84"
+    },
+    {
+      "path": "run/verification-format-correction.json",
+      "bytes": 686,
+      "sha256": "20decb391562403853a99d19132ec154825be61072c392ea12fb76bc0fc45231"
+    },
+    {
+      "path": "run/verification-result.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "source/INDEX.json",
+      "bytes": 117235,
+      "sha256": "5e6d25766849e8f164dc2389b75cf17e4a045e75a9ef04288f5ad21b6f3d3493"
+    },
+    {
+      "path": "source/baseline-manifest.json",
+      "bytes": 13615,
+      "sha256": "a4e38cfc8afdfb5899cc31d20124ee7704754108af1838517a5d3d6583a51b2b"
+    },
+    {
+      "path": "source/candidate-manifest-r1.json",
+      "bytes": 14790,
+      "sha256": "b6901e479b7d8ee8e0932bd9fc1698b3103d05be9f81918b3e429232a0a05a6d"
+    },
+    {
+      "path": "source/candidate-manifest-r2.json",
+      "bytes": 14790,
+      "sha256": "9dc5ff28c7a809f1a09167ac5ca9893ec10f76f07ee21cd7ca9a469ac84599e3"
+    },
+    {
+      "path": "source/candidate-navigation-manifest-r4.json",
+      "bytes": 15037,
+      "sha256": "56d95db4283ce22c1ec9d805e6692eb05cf8cf9aefeb474b7f20552434b77519"
+    },
+    {
+      "path": "source/final-manifest.json",
+      "bytes": 15037,
+      "sha256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73"
+    },
+    {
+      "path": "source/final-overlay/public/terrain-data-notice.txt",
+      "bytes": 5122,
+      "sha256": "5286e3ff34eabc0e357b451de619dc402ec70847269ead0485b9907005e29bc2"
+    },
+    {
+      "path": "source/final-overlay/src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 84995,
+      "sha256": "268867e25190ea2352d96f7ad259e5fef3631cd294df23857c8b588ca33a888f"
+    },
+    {
+      "path": "source/final-overlay/src/cumulonimbus/assets/liguria-apuane-optical.bin",
+      "bytes": 33554432,
+      "sha256": "217325bcdb50dd58076b2f5068ee0b5ba524f6f076a70d4345f279f233f5dd62"
+    },
+    {
+      "path": "source/final-overlay/src/cumulonimbus/fixtures/terrain-v60-raster.wgsl",
+      "bytes": 1068,
+      "sha256": "ab6615fdad7ba034bd1f081806d8ee9716de2dff7073586c1887508a93211318"
+    },
+    {
+      "path": "source/final-overlay/src/cumulonimbus/lifecycle.test.ts",
+      "bytes": 78373,
+      "sha256": "bac913938a1581690a85b06ce7f0d537869a7c43fc0f47a4674181000aaa6410"
+    },
+    {
+      "path": "source/final-overlay/src/cumulonimbus/terrainMaterialWitness.test.ts",
+      "bytes": 6589,
+      "sha256": "1c7d5aad724e6938fb0ecdb2dfabd26e557476b7e90ec6b74070f2b2d94fe306"
+    },
+    {
+      "path": "source/final-overlay/src/cumulonimbus/terrainMaterialWitness.ts",
+      "bytes": 4370,
+      "sha256": "9ed3f42e8eb385c6a4ca9720bf51c100b35dc1c6e97043a266cd84048e315fbf"
+    },
+    {
+      "path": "source/final-overlay/src/cumulonimbus/terrainNavigationDiagnostic.test.ts",
+      "bytes": 2728,
+      "sha256": "9f628e41f5ab65478d9e5bec390c0642394cd20757fc679f10428dd01bcd2e5e"
+    },
+    {
+      "path": "source/final-overlay/src/cumulonimbus/terrainNavigationDiagnostic.ts",
+      "bytes": 1000,
+      "sha256": "fd31885d67948f6a1a3cba22b970a7a5ca624d9c495c1c0eb4bf19480352c673"
+    },
+    {
+      "path": "source/final-overlay/src/cumulonimbus/terrainOptical.test.ts",
+      "bytes": 9946,
+      "sha256": "e20b67d6cefb740840750879ed206b12f0f6e9c8b7c650de0c984d47c7049043"
+    },
+    {
+      "path": "source/final-overlay/src/cumulonimbus/terrainOptical.ts",
+      "bytes": 5963,
+      "sha256": "e3bfc4994d8ab80a8de1bc9b61b63ca6580ce103a705b531b395de6661848370"
+    },
+    {
+      "path": "source/final-overlay/src/cumulonimbus/terrainOpticalMaterial.test.ts",
+      "bytes": 7981,
+      "sha256": "5388c817d8930e34eaf2df770157a0127cd18e3235584328b281a6a7a3fa97f0"
+    },
+    {
+      "path": "source/final-overlay/src/cumulonimbus/terrainOpticalMaterial.ts",
+      "bytes": 2728,
+      "sha256": "78f80bc90be7be9fcc4fbcccb7908fa680b9de1ed67e2348117431c240d083e8"
+    },
+    {
+      "path": "source/final-overlay/src/cumulonimbus/terrainOpticalRaster.test.ts",
+      "bytes": 1391,
+      "sha256": "8461163ed1ee3e9cbfab0fae69772603652979018c5c5507255cf4be5735d25b"
+    },
+    {
+      "path": "source/final-overlay/src/cumulonimbus/terrainOpticalRaster.ts",
+      "bytes": 1924,
+      "sha256": "339ceec6a03d273f2e24538d42456f608fc18d8bcfc89ecaf972965e25f75e99"
+    },
+    {
+      "path": "source/navigation-r4-overlay/public/terrain-data-notice.txt",
+      "bytes": 5138,
+      "sha256": "306ff7391dad38a07e40f1ac9f97456860e5a6e94db14c1635e197ab3a529369"
+    },
+    {
+      "path": "source/navigation-r4-overlay/src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 84992,
+      "sha256": "6707f36d7dc2724b569597ec511dff386078e2bd3c71bdb2ae693bb26b2fee9a"
+    },
+    {
+      "path": "source/navigation-r4-overlay/src/cumulonimbus/fixtures/terrain-v60-raster.wgsl",
+      "bytes": 1068,
+      "sha256": "ab6615fdad7ba034bd1f081806d8ee9716de2dff7073586c1887508a93211318"
+    },
+    {
+      "path": "source/navigation-r4-overlay/src/cumulonimbus/lifecycle.test.ts",
+      "bytes": 77813,
+      "sha256": "ac244a0674f8f1e594191451ce376a3c934f0179f8c829a117891e342dd53300"
+    },
+    {
+      "path": "source/navigation-r4-overlay/src/cumulonimbus/terrainMaterialWitness.test.ts",
+      "bytes": 6589,
+      "sha256": "1c7d5aad724e6938fb0ecdb2dfabd26e557476b7e90ec6b74070f2b2d94fe306"
+    },
+    {
+      "path": "source/navigation-r4-overlay/src/cumulonimbus/terrainMaterialWitness.ts",
+      "bytes": 4370,
+      "sha256": "9ed3f42e8eb385c6a4ca9720bf51c100b35dc1c6e97043a266cd84048e315fbf"
+    },
+    {
+      "path": "source/navigation-r4-overlay/src/cumulonimbus/terrainNavigationDiagnostic.test.ts",
+      "bytes": 2728,
+      "sha256": "9f628e41f5ab65478d9e5bec390c0642394cd20757fc679f10428dd01bcd2e5e"
+    },
+    {
+      "path": "source/navigation-r4-overlay/src/cumulonimbus/terrainNavigationDiagnostic.ts",
+      "bytes": 1000,
+      "sha256": "fd31885d67948f6a1a3cba22b970a7a5ca624d9c495c1c0eb4bf19480352c673"
+    },
+    {
+      "path": "source/navigation-r4-overlay/src/cumulonimbus/terrainOptical.test.ts",
+      "bytes": 9946,
+      "sha256": "e20b67d6cefb740840750879ed206b12f0f6e9c8b7c650de0c984d47c7049043"
+    },
+    {
+      "path": "source/navigation-r4-overlay/src/cumulonimbus/terrainOptical.ts",
+      "bytes": 5963,
+      "sha256": "e3bfc4994d8ab80a8de1bc9b61b63ca6580ce103a705b531b395de6661848370"
+    },
+    {
+      "path": "source/navigation-r4-overlay/src/cumulonimbus/terrainOpticalMaterial.test.ts",
+      "bytes": 7981,
+      "sha256": "5388c817d8930e34eaf2df770157a0127cd18e3235584328b281a6a7a3fa97f0"
+    },
+    {
+      "path": "source/navigation-r4-overlay/src/cumulonimbus/terrainOpticalMaterial.ts",
+      "bytes": 2728,
+      "sha256": "78f80bc90be7be9fcc4fbcccb7908fa680b9de1ed67e2348117431c240d083e8"
+    },
+    {
+      "path": "source/navigation-r4-overlay/src/cumulonimbus/terrainOpticalRaster.test.ts",
+      "bytes": 1391,
+      "sha256": "8461163ed1ee3e9cbfab0fae69772603652979018c5c5507255cf4be5735d25b"
+    },
+    {
+      "path": "source/navigation-r4-overlay/src/cumulonimbus/terrainOpticalRaster.ts",
+      "bytes": 1924,
+      "sha256": "339ceec6a03d273f2e24538d42456f608fc18d8bcfc89ecaf972965e25f75e99"
+    },
+    {
+      "path": "source/r1-overlay/public/terrain-data-notice.txt",
+      "bytes": 5138,
+      "sha256": "306ff7391dad38a07e40f1ac9f97456860e5a6e94db14c1635e197ab3a529369"
+    },
+    {
+      "path": "source/r1-overlay/src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 83245,
+      "sha256": "735215235c2a142dfd781b7c4332b394180b38c092b717a7c5ae0c1a3dd2ab1b"
+    },
+    {
+      "path": "source/r1-overlay/src/cumulonimbus/fixtures/terrain-v60-raster.wgsl",
+      "bytes": 1068,
+      "sha256": "ab6615fdad7ba034bd1f081806d8ee9716de2dff7073586c1887508a93211318"
+    },
+    {
+      "path": "source/r1-overlay/src/cumulonimbus/lifecycle.test.ts",
+      "bytes": 75923,
+      "sha256": "bbf04077c48b70d721a39a754be5b1ac15d0e1f7e9abc1598c9b626f4cb58749"
+    },
+    {
+      "path": "source/r1-overlay/src/cumulonimbus/terrainMaterialWitness.test.ts",
+      "bytes": 6589,
+      "sha256": "1c7d5aad724e6938fb0ecdb2dfabd26e557476b7e90ec6b74070f2b2d94fe306"
+    },
+    {
+      "path": "source/r1-overlay/src/cumulonimbus/terrainMaterialWitness.ts",
+      "bytes": 4370,
+      "sha256": "9ed3f42e8eb385c6a4ca9720bf51c100b35dc1c6e97043a266cd84048e315fbf"
+    },
+    {
+      "path": "source/r1-overlay/src/cumulonimbus/terrainOptical.test.ts",
+      "bytes": 9946,
+      "sha256": "e20b67d6cefb740840750879ed206b12f0f6e9c8b7c650de0c984d47c7049043"
+    },
+    {
+      "path": "source/r1-overlay/src/cumulonimbus/terrainOptical.ts",
+      "bytes": 5963,
+      "sha256": "e3bfc4994d8ab80a8de1bc9b61b63ca6580ce103a705b531b395de6661848370"
+    },
+    {
+      "path": "source/r1-overlay/src/cumulonimbus/terrainOpticalMaterial.test.ts",
+      "bytes": 7981,
+      "sha256": "5388c817d8930e34eaf2df770157a0127cd18e3235584328b281a6a7a3fa97f0"
+    },
+    {
+      "path": "source/r1-overlay/src/cumulonimbus/terrainOpticalMaterial.ts",
+      "bytes": 2728,
+      "sha256": "78f80bc90be7be9fcc4fbcccb7908fa680b9de1ed67e2348117431c240d083e8"
+    },
+    {
+      "path": "source/r1-overlay/src/cumulonimbus/terrainOpticalRaster.test.ts",
+      "bytes": 1401,
+      "sha256": "2f4f69d5cee0fd295714912503c056ad45a96340e3d78cdf1c9e9cacd7893145"
+    },
+    {
+      "path": "source/r1-overlay/src/cumulonimbus/terrainOpticalRaster.ts",
+      "bytes": 1924,
+      "sha256": "339ceec6a03d273f2e24538d42456f608fc18d8bcfc89ecaf972965e25f75e99"
+    },
+    {
+      "path": "source/r2-overlay/public/terrain-data-notice.txt",
+      "bytes": 5138,
+      "sha256": "306ff7391dad38a07e40f1ac9f97456860e5a6e94db14c1635e197ab3a529369"
+    },
+    {
+      "path": "source/r2-overlay/src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 83265,
+      "sha256": "4cb0dab62b209dc8412033ec7d321370d890c0dfbf21731eebb2426166a6326a"
+    },
+    {
+      "path": "source/r2-overlay/src/cumulonimbus/fixtures/terrain-v60-raster.wgsl",
+      "bytes": 1068,
+      "sha256": "ab6615fdad7ba034bd1f081806d8ee9716de2dff7073586c1887508a93211318"
+    },
+    {
+      "path": "source/r2-overlay/src/cumulonimbus/lifecycle.test.ts",
+      "bytes": 75928,
+      "sha256": "c1b3ace394c2a53901fc043d6f4eddc199ec00b3c5f9eab1de7ecaa6ec9f84ba"
+    },
+    {
+      "path": "source/r2-overlay/src/cumulonimbus/terrainMaterialWitness.test.ts",
+      "bytes": 6589,
+      "sha256": "1c7d5aad724e6938fb0ecdb2dfabd26e557476b7e90ec6b74070f2b2d94fe306"
+    },
+    {
+      "path": "source/r2-overlay/src/cumulonimbus/terrainMaterialWitness.ts",
+      "bytes": 4370,
+      "sha256": "9ed3f42e8eb385c6a4ca9720bf51c100b35dc1c6e97043a266cd84048e315fbf"
+    },
+    {
+      "path": "source/r2-overlay/src/cumulonimbus/terrainOptical.test.ts",
+      "bytes": 9946,
+      "sha256": "e20b67d6cefb740840750879ed206b12f0f6e9c8b7c650de0c984d47c7049043"
+    },
+    {
+      "path": "source/r2-overlay/src/cumulonimbus/terrainOptical.ts",
+      "bytes": 5963,
+      "sha256": "e3bfc4994d8ab80a8de1bc9b61b63ca6580ce103a705b531b395de6661848370"
+    },
+    {
+      "path": "source/r2-overlay/src/cumulonimbus/terrainOpticalMaterial.test.ts",
+      "bytes": 7981,
+      "sha256": "5388c817d8930e34eaf2df770157a0127cd18e3235584328b281a6a7a3fa97f0"
+    },
+    {
+      "path": "source/r2-overlay/src/cumulonimbus/terrainOpticalMaterial.ts",
+      "bytes": 2728,
+      "sha256": "78f80bc90be7be9fcc4fbcccb7908fa680b9de1ed67e2348117431c240d083e8"
+    },
+    {
+      "path": "source/r2-overlay/src/cumulonimbus/terrainOpticalRaster.test.ts",
+      "bytes": 1391,
+      "sha256": "8461163ed1ee3e9cbfab0fae69772603652979018c5c5507255cf4be5735d25b"
+    },
+    {
+      "path": "source/r2-overlay/src/cumulonimbus/terrainOpticalRaster.ts",
+      "bytes": 1924,
+      "sha256": "339ceec6a03d273f2e24538d42456f608fc18d8bcfc89ecaf972965e25f75e99"
+    },
+    {
+      "path": "verify-saved.py",
+      "bytes": 3935,
+      "sha256": "52fbbbd5fc21db210b6cf768f5b187ba1541316731378b19c6b62927db43bc6e"
+    }
+  ]
+}

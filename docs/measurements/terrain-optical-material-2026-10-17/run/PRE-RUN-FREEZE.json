@@ -1,0 +1,17 @@
+{
+  "schema":"cloudia-optical-trial-r1",
+  "geometry":"canonical-v60-glo90-v59-refinement",
+  "baselineManifestSHA256":"a4e38cfc8afdfb5899cc31d20124ee7704754108af1838517a5d3d6583a51b2b",
+  "proposalSHA256":"72161b20dbcaf78cd2c3165b59ff768a739f245f91ac7f5ae6c586e37c4dd72e",
+  "variant":"U+(1-Q.a)*P+K*Q.rgb; observed RGB premult valid; no gain/gamma/fit",
+  "selection":"immutable profile=1&optical=1 per owner; A default canonical shader and bindings",
+  "nativePose":"fixed historical seed74 Sun t60 paused screen2474x1844",
+  "roiPrimary":[0,560,1000,1000],"roiSecondary":[700,540,1030,780],
+  "baselineExpected":{"rgba32f":"e4435ce3a0a45e243c19dea24e5bc1133f6db1c8fd5ca168e94e644b1c6c9045","png":"90641c32d46bf62874bf4855dbd26cd01013d4a2b220cbf76acb8ee2816d2a7d","alpha":"29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c"},
+  "gates":["offline pack and runtime auth tests","full tests/typecheck APP then hero","baseline A exact native and fullF32","B cached=fresh and alpha exact then native root+independent","if PASS only oppositeSun Sunset Rain mainworker","if PASS only steady ABA and fixednavigation"],
+  "firstVisualFail":"stop before worker weather FPS; no blend/gamma/strength secondvariant",
+  "quality":{"macro":256,"detail":128,"nominalSteps":384,"output":"screen"},
+  "oneBaselineGeometryBuildBudget":{"cpuSeconds":12,"wallSeconds":30,"peakRssBytes":1610612736},
+  "offlineTestsBudget":{"wallSeconds":180,"maxWorkers":2},
+  "claims":"No physical albedo recovery; observed annual reflectance can retain illumination; no FPS predicted."
+}

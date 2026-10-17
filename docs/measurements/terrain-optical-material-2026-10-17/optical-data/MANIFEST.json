@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "frozenUTC": "2026-10-17T01:39:44.458254+00:00",
+  "scope": "One optical data pack only; no TIFF, terrain model, GPU or product edits",
+  "fileCount": 20,
+  "payloadBytes": 33633128,
+  "excluded": [
+    "MANIFEST.json",
+    "__pycache__/"
+  ],
+  "files": [
+    {
+      "path": "NOTICE-OPTICAL-DERIVATIVE.txt",
+      "bytes": 1535,
+      "sha256": "b0383e6df5b021dca8d55bb8faa383fa4ddf182301db02f0b0e6af4fb4926010"
+    },
+    {
+      "path": "PRE-RUN-FREEZE.json",
+      "bytes": 2172,
+      "sha256": "ff38dfd11650c638d747dac48ce5193ecbb81b254c838e9eeab8832d5179ed3c"
+    },
+    {
+      "path": "PROTOCOL.md",
+      "bytes": 3003,
+      "sha256": "a97fa0b5d1f78aea15062b3b388116434f92c194385935cab1955cda46fa8b1e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4530,
+      "sha256": "1977fe7b042124b00d078e4c153077cb883fcc229c9a34ca5f7f9b1ff61f1da0"
+    },
+    {
+      "path": "mip-fixtures.json",
+      "bytes": 6282,
+      "sha256": "0e40d04693c1590f1edd073b886f6d41b3c48f359912d82593eb12078391a388"
+    },
+    {
+      "path": "optical-rgba16f.bin",
+      "bytes": 33554432,
+      "sha256": "217325bcdb50dd58076b2f5068ee0b5ba524f6f076a70d4345f279f233f5dd62"
+    },
+    {
+      "path": "optical-rgba16f.metadata.json",
+      "bytes": 5370,
+      "sha256": "37857825824d0ef3419f205b142b9ffd4600d55f6cf500d001f8dc821ac9380e"
+    },
+    {
+      "path": "pack-optical.py",
+      "bytes": 12248,
+      "sha256": "351f20be21f826c274fa1b5e1d24101d24571e9d05e0a49505a778a2beedb51b"
+    },
+    {
+      "path": "provenance/COPIED-SOURCES.json",
+      "bytes": 1261,
+      "sha256": "c83b1cb54f724f5aa671a47e6221b8014fe9f20c03adbdf463f05d249987937a"
+    },
+    {
+      "path": "provenance/NOTICE-SENTINEL2.txt",
+      "bytes": 856,
+      "sha256": "30354b8fda6143a621f1e64a11aacfb4c60e4e09a59c02e59e74ae2ae8850f42"
+    },
+    {
+      "path": "provenance/PROTOCOL.md",
+      "bytes": 4222,
+      "sha256": "ded51b69cb62b9a93fdb939e84a9d8ef8dbcbcdcbf1112cd34b1654387c0b513"
+    },
+    {
+      "path": "provenance/SOURCE-LINKS.md",
+      "bytes": 857,
+      "sha256": "ec16a974fad7c3d1e0d975b5bc837763f2b41d3bbab0aff9c92fe7affd63e360"
+    },
+    {
+      "path": "provenance/cc-by-4.0-legalcode.txt",
+      "bytes": 18657,
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    {
+      "path": "provenance/preprocess-result.json",
+      "bytes": 4000,
+      "sha256": "69d8bd00d7b8d16d8947f2a2aa9be7a4a557e0bea1127d3951118092d4b69f21"
+    },
+    {
+      "path": "provenance/source-witnesses.json",
+      "bytes": 3409,
+      "sha256": "da40f40e95ea0db9476d2ff18b74246cefbc9235640345bc777faed33a2f6201"
+    },
+    {
+      "path": "run/execution.json",
+      "bytes": 883,
+      "sha256": "644f4ada374069663ea6f35a11ceb719bbba2713bd28ed6128dafa2edca1ab17"
+    },
+    {
+      "path": "run/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/stdout.log",
+      "bytes": 2849,
+      "sha256": "e241870049c68c56da49b2efe002c26e27ed8b6e0f6903a481916321b6176dfc"
+    },
+    {
+      "path": "run.py",
+      "bytes": 2277,
+      "sha256": "4d4b682e99ca042b7258c30646d0c7722fed1f6c50272135ced2529b17384394"
+    },
+    {
+      "path": "witnesses.json",
+      "bytes": 4285,
+      "sha256": "282dcccd179d7fea9dcc9beadb4cbe86e6c2fc214ab7a81f60cd78a1d9f9c9c1"
+    }
+  ]
+}

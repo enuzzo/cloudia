@@ -1,0 +1,29 @@
+{
+  "sourceBaseline129": "a4e38cfc8afdfb5899cc31d20124ee7704754108af1838517a5d3d6583a51b2b",
+  "opticalSHA": "217325bcdb50dd58076b2f5068ee0b5ba524f6f076a70d4345f279f233f5dd62",
+  "r2source139": "9dc5ff28c7a809f1a09167ac5ca9893ec10f76f07ee21cd7ca9a469ac84599e3",
+  "navigation141": "56d95db4283ce22c1ec9d805e6692eb05cf8cf9aefeb474b7f20552434b77519",
+  "final141": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "tests": {
+    "opticalR2": "553/52 PASS",
+    "navigationR3": "560PASS/1FAIL fixture skysettlement; sourcepreserved",
+    "navigationR4": "561/53PASS",
+    "adoptionFinalR3": "561/53PASS"
+  },
+  "builds": "APP then hero PASS in each qualifiedsnapshot; largechunkexistingwarning",
+  "failedSetup": "Final initial command run fromcyclebase no tests; final-r2 dependencylink pointed tocyclebase so vitest/tsc absent; corrected only external owned symlink before actual final-r3 tests/build, no installs",
+  "nativeGate": "root+independent limited materialPASS; fullphotorealismOPEN, existingmarks/ribbonsstillvisible",
+  "cacheParity": "A,B,oppositeSun,sunset,rain,workerSun/Rain completecached=fresh; fullalphacanonical29a4e015\u2026",
+  "workerPNG": "SHA/byteLength/dimensions match actual mainnativePNG forSun andRain; workerduplicatebytes nottransferred",
+  "geometry": "allfourcanonicalbufferhashesPASS; same591788V1182550T",
+  "geometryRss": "UNQUALIFIED rawBunmacunit, invalid1024multipliercorrected; noRSSbudgetPASSclaimed",
+  "console": "observederrors/warnings[] at A,B,expandedweather,worker,performance endpoints",
+  "FPS": "static and navigation ABA complete; presentedCanvasFpsnull; oneABA/noCI/thermalcontrol; refreshceiling means noGPUheadroommeasurement",
+  "remaining": [
+    "ridge ribbons/darkmarks",
+    "true photorealism",
+    "currentRainFPS & otherheavyviews",
+    "near/anatomy/virga/UIwholegoal"
+  ],
+  "adoption": "APPLIED_LOCAL_v61: default fullF32 and PNGdigest match qualifiedB; 15exactpaths copied after129old/141new checks; all141product hashes verified"
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "cloudia-terrain-optical-helper-freeze-v1",
+  "status": "FROZEN_FOR_ROOT_INTEGRATION",
+  "api": "terrainOpticalSurfaceWGSL(enabled=false): string",
+  "files": {
+    "terrainOpticalMaterial.ts": {
+      "bytes": 2728,
+      "sha256": "78f80bc90be7be9fcc4fbcccb7908fa680b9de1ed67e2348117431c240d083e8"
+    },
+    "terrainOpticalMaterial.test.ts": {
+      "bytes": 7981,
+      "sha256": "5388c817d8930e34eaf2df770157a0127cd18e3235584328b281a6a7a3fa97f0"
+    },
+    "README.md": {
+      "bytes": 4626,
+      "sha256": "69ec72cceb728a2b289e7d13eb36a1b4187d77881a8f37ff179986911050f1a9"
+    }
+  },
+  "canonicalSource": {
+    "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/terrainSurface.ts",
+    "bytes": 13659,
+    "sha256": "0ff8de3514feb3714ba4e931c246d0bd339634661aa37a7d87e79f61c1ddff3f"
+  },
+  "ordinaryWGSL": {
+    "bytes": 7591,
+    "sha256": "1099a97f339851e3d520a4e4cfdd3831f865832c98660c1535a7754d387e55df"
+  },
+  "qualification": {
+    "tests": 15,
+    "testStatus": "PASS",
+    "typecheckStatus": "PASS",
+    "testRecord": "tests-r1.json",
+    "typecheckRecord": "typecheck-r1.json",
+    "dropboxIgnoreBefore": "1",
+    "dropboxIgnoreAfter": "1",
+    "copyByteExact": true,
+    "shaderExecution": false,
+    "modelExecution": false,
+    "GPU": false,
+    "appBuild": false,
+    "productChanges": false
+  },
+  "scope": "Factory only; CPU algebra reference exists solely in test and does not execute WGSL."
+}

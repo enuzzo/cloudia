@@ -1,0 +1,187 @@
+{
+  "status": "PACKED_DATA_ONLY_NO_RENDER",
+  "format": {
+    "file": "optical-rgba16f.bin",
+    "bytes": 33554432,
+    "sha256": "217325bcdb50dd58076b2f5068ee0b5ba524f6f076a70d4345f279f233f5dd62",
+    "width": 2048,
+    "height": 2048,
+    "channels": [
+      "R*valid",
+      "G*valid",
+      "B*valid",
+      "valid"
+    ],
+    "scalar": "IEEE754binary16",
+    "byteOrder": "little-endian",
+    "pixelBytes": 8,
+    "headerBytes": 0,
+    "interleaved": true,
+    "rowStrideBytes": 16384,
+    "colorSpace": "NoColorSpace; linear reflectance bands treated as RGB",
+    "arithmetic": "InputFloat32 promoted to Float64; exact binary product; one ties-to-even half rounding; no gain/gamma/clamp"
+  },
+  "grid": {
+    "cellKm": 0.0625,
+    "minEdgeKm": [
+      -64,
+      -64
+    ],
+    "maxEdgeKm": [
+      64,
+      64
+    ],
+    "centreFormulaKm": "-64+(index+0.5)*0.0625",
+    "originDegrees": [
+      44,
+      10
+    ],
+    "axisX": "west",
+    "axisZ": "north",
+    "firstRow": "south",
+    "firstColumn": "east",
+    "flipY": false,
+    "projection": "lat=44+z/111.1950802335;lon=10-x/(111.1950802335*cos44deg)",
+    "spatialResampling": false
+  },
+  "inputs": {
+    "rgb": {
+      "bytes": 50331648,
+      "sha256": "44205c43c1f243766716060b16e7f74948fba3a9366b6f38473d045c066a074e",
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/rgb-linear.f32",
+      "authenticatedSHA256": "44205c43c1f243766716060b16e7f74948fba3a9366b6f38473d045c066a074e"
+    },
+    "validity": {
+      "bytes": 16777216,
+      "sha256": "e89361dccb2b50a515f08ee7fee8500bdd3a535bdce4f5ea6159a736120f12c7",
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/valid-area.f32",
+      "authenticatedSHA256": "e89361dccb2b50a515f08ee7fee8500bdd3a535bdce4f5ea6159a736120f12c7"
+    }
+  },
+  "source": {
+    "dataset": "ESA WorldCover Sentinel-2 medianL2A RGBNIR2021v200; overview4 derivative",
+    "persistedChannels": "RGB+validity; no NIR grid",
+    "officialUrls": [
+      "https://esa-worldcover.org/en/data-access",
+      "https://registry.opendata.aws/esa-worldcover-vito-composites/"
+    ],
+    "license": "CC BY4.0; original notice and full license retained in provenance/",
+    "limits": "Annual observed composite, not light-independent albedo/BRDF or cloud truth"
+  },
+  "observed": {
+    "sourceRgbValidityMin": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "sourceRgbValidityMax": [
+      0.7341446876525879,
+      0.6624963879585266,
+      0.6108703017234802,
+      1.0
+    ],
+    "halfPremultipliedRgbaMin": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "halfPremultipliedRgbaMax": [
+      0.72021484375,
+      0.66259765625,
+      0.59326171875,
+      1.0
+    ],
+    "sourceZeroValidityPixels": 1388039,
+    "sourcePartialValidityPixels": 3562,
+    "sourceFullValidityPixels": 2802703,
+    "packedZeroAlphaPixels": 1388039,
+    "positiveUnderflowToZeroWordsByChannel": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "zeroValidityFourPositiveZeroWords": true,
+    "allSourceAndHalfFinite": true,
+    "premultipliedRgbAtMostAlpha": true
+  },
+  "quantization": {
+    "reference": "Float64 Q from exact Float32inputs; errors apply to premultipliedRGB, not unpremultiplied conditional RGB",
+    "wordsPerChannel": 4194304,
+    "maxAbsoluteErrorRGBA": [
+      0.00023937225341796875,
+      0.00023829936981201172,
+      0.00024318695068359375,
+      0.00024127960205078125
+    ],
+    "meanAbsoluteErrorRGBA": [
+      6.230322363942844e-06,
+      7.155088092964888e-06,
+      5.042967916821301e-06,
+      6.10989695573605e-08
+    ],
+    "rmsErrorRGBA": [
+      1.0673141281005906e-05,
+      1.1292690216418802e-05,
+      8.204276760514098e-06,
+      2.850947238434284e-06
+    ],
+    "nonzeroErrorWordsRGBA": [
+      2805934,
+      2805939,
+      2805472,
+      3562
+    ],
+    "firstMaximumLocationsRGBA": [
+      {
+        "x": 850,
+        "z": 1197,
+        "reference": 0.511469841003418,
+        "half": 0.51123046875
+      },
+      {
+        "x": 840,
+        "z": 1194,
+        "reference": 0.563238263130188,
+        "half": 0.5634765625
+      },
+      {
+        "x": 849,
+        "z": 1198,
+        "reference": 0.5222177505493164,
+        "half": 0.5224609375
+      },
+      {
+        "x": 1158,
+        "z": 30,
+        "reference": 0.5656766891479492,
+        "half": 0.56591796875
+      }
+    ],
+    "hardBoundAtUnitRange": 0.000244140625,
+    "saturationCount": 0
+  },
+  "nominalTexturePlan": {
+    "format": "rgba16float",
+    "baseBytes": 33554432,
+    "extraMipBytes": 11184808,
+    "totalMipPayloadBytes": 44739240,
+    "levels": 12,
+    "actualMipsGeneratedHere": false,
+    "scope": "One base resource only; GPU filter/mip generator must be qualified separately"
+  },
+  "preparation": {
+    "scriptSha256": "351f20be21f826c274fa1b5e1d24101d24571e9d05e0a49505a778a2beedb51b",
+    "protocolSha256": "a97fa0b5d1f78aea15062b3b388116434f92c194385935cab1955cda46fa8b1e",
+    "stripeRows": 32,
+    "numpyVersion": "2.3.5",
+    "pythonVersion": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "machine": "arm64",
+    "cpuSeconds": 0.510178,
+    "wallSeconds": 0.45821608405094594,
+    "childPeakRssBytes": 78807040
+  },
+  "scope": "No TIFF read, download, data selection, mesh/model, GPU, artistic or FPS acceptance. Source archives unchanged."
+}

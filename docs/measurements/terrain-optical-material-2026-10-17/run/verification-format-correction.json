@@ -1,0 +1,18 @@
+{
+  "firstSavedVerifier": "FAIL_FORMAT_ASSERTION_ON_UI_SCREENSHOT_EXTENSION",
+  "reason": "CUA UI screenshot bytes are JPEG; UI files originally named.png. Renamed to.jpg preserving exactbytes. Native exported PNG and fixed ROI PNG already have genuine PNG signature.",
+  "files": [
+    {
+      "old": "candidate-b-ui.png",
+      "new": "candidate-b-ui.jpg",
+      "sha256": "dc29c8fafa5160b30a33dcc72c9d34504b8e069b421ad1102417ea0d6ed53163",
+      "bytesUnchanged": true
+    },
+    {
+      "old": "final-v61-preview.png",
+      "new": "final-v61-preview.jpg",
+      "sha256": "80a3350d2f7cd8dc019c3f586bc939afdf44f3b21a702b1345673e3f9df25f9a",
+      "bytesUnchanged": true
+    }
+  ]
+}

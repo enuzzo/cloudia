@@ -1,0 +1,17 @@
+[
+  "public/terrain-data-notice.txt",
+  "src/cumulonimbus/GPUSceneEngine.ts",
+  "src/cumulonimbus/assets/liguria-apuane-optical.bin",
+  "src/cumulonimbus/fixtures/terrain-v60-raster.wgsl",
+  "src/cumulonimbus/lifecycle.test.ts",
+  "src/cumulonimbus/terrainMaterialWitness.test.ts",
+  "src/cumulonimbus/terrainMaterialWitness.ts",
+  "src/cumulonimbus/terrainNavigationDiagnostic.test.ts",
+  "src/cumulonimbus/terrainNavigationDiagnostic.ts",
+  "src/cumulonimbus/terrainOptical.test.ts",
+  "src/cumulonimbus/terrainOptical.ts",
+  "src/cumulonimbus/terrainOpticalMaterial.test.ts",
+  "src/cumulonimbus/terrainOpticalMaterial.ts",
+  "src/cumulonimbus/terrainOpticalRaster.test.ts",
+  "src/cumulonimbus/terrainOpticalRaster.ts"
+]

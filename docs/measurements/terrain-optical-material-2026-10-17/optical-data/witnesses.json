@@ -1,0 +1,182 @@
+{
+  "status": "PASS",
+  "count": 5,
+  "selection": "Exactly the5pre-existing cycle21 source witnesses",
+  "witnesses": [
+    {
+      "id": "class10quarter",
+      "x": 1239,
+      "z": 1967,
+      "worldCentreKm": [
+        13.46875,
+        58.96875
+      ],
+      "sourceRgb": [
+        0.048343218863010406,
+        0.05889284610748291,
+        0.035783551633358
+      ],
+      "sourceValidity": 1.0,
+      "referencePremultipliedRGBA": [
+        0.048343218863010406,
+        0.05889284610748291,
+        0.035783551633358,
+        1.0
+      ],
+      "halfDecodedRGBA": [
+        0.04833984375,
+        0.05889892578125,
+        0.035797119140625,
+        1.0
+      ],
+      "absoluteErrorRGBA": [
+        3.375113010406494e-06,
+        6.079673767089844e-06,
+        1.3567507266998291e-05,
+        0.0
+      ],
+      "packedBytesHex": "302a8a2b9528003c",
+      "halfOracle": "Pythonstdlibstruct<4e independent of NumPy cast"
+    },
+    {
+      "id": "class40quarter",
+      "x": 461,
+      "z": 1873,
+      "worldCentreKm": [
+        -35.15625,
+        53.09375
+      ],
+      "sourceRgb": [
+        0.061232034116983414,
+        0.07300600409507751,
+        0.0457603894174099
+      ],
+      "sourceValidity": 1.0,
+      "referencePremultipliedRGBA": [
+        0.061232034116983414,
+        0.07300600409507751,
+        0.0457603894174099,
+        1.0
+      ],
+      "halfDecodedRGBA": [
+        0.06121826171875,
+        0.072998046875,
+        0.045745849609375,
+        1.0
+      ],
+      "absoluteErrorRGBA": [
+        1.3772398233413696e-05,
+        7.957220077514648e-06,
+        1.453980803489685e-05,
+        0.0
+      ],
+      "packedBytesHex": "d62bac2cdb29003c",
+      "halfOracle": "Pythonstdlibstruct<4e independent of NumPy cast"
+    },
+    {
+      "id": "class50quarter",
+      "x": 263,
+      "z": 1045,
+      "worldCentreKm": [
+        -47.53125,
+        1.34375
+      ],
+      "sourceRgb": [
+        0.10333797335624695,
+        0.08056700974702835,
+        0.06276513636112213
+      ],
+      "sourceValidity": 1.0,
+      "referencePremultipliedRGBA": [
+        0.10333797335624695,
+        0.08056700974702835,
+        0.06276513636112213,
+        1.0
+      ],
+      "halfDecodedRGBA": [
+        0.10333251953125,
+        0.08056640625,
+        0.062744140625,
+        1.0
+      ],
+      "absoluteErrorRGBA": [
+        5.453824996948242e-06,
+        6.034970283508301e-07,
+        2.0995736122131348e-05,
+        0.0
+      ],
+      "packedBytesHex": "9d2e282d042c003c",
+      "halfOracle": "Pythonstdlibstruct<4e independent of NumPy cast"
+    },
+    {
+      "id": "class60quarter",
+      "x": 765,
+      "z": 1083,
+      "worldCentreKm": [
+        -16.15625,
+        3.71875
+      ],
+      "sourceRgb": [
+        0.19969403743743896,
+        0.1881181001663208,
+        0.17094989120960236
+      ],
+      "sourceValidity": 1.0,
+      "referencePremultipliedRGBA": [
+        0.19969403743743896,
+        0.1881181001663208,
+        0.17094989120960236,
+        1.0
+      ],
+      "halfDecodedRGBA": [
+        0.19970703125,
+        0.1881103515625,
+        0.1708984375,
+        1.0
+      ],
+      "absoluteErrorRGBA": [
+        1.2993812561035156e-05,
+        7.748603820800781e-06,
+        5.145370960235596e-05,
+        0.0
+      ],
+      "packedBytesHex": "643205327831003c",
+      "halfOracle": "Pythonstdlibstruct<4e independent of NumPy cast"
+    },
+    {
+      "id": "maximumPartialValidity",
+      "x": 1811,
+      "z": 1426,
+      "worldCentreKm": [
+        49.21875,
+        25.15625
+      ],
+      "sourceRgb": [
+        0.011790452525019646,
+        0.0245743989944458,
+        0.03963945060968399
+      ],
+      "sourceValidity": 0.4991382360458374,
+      "referencePremultipliedRGBA": [
+        0.0058850656755204955,
+        0.012266022165974277,
+        0.01978556545514376,
+        0.4991382360458374
+      ],
+      "halfDecodedRGBA": [
+        0.005886077880859375,
+        0.01226806640625,
+        0.0197906494140625,
+        0.4990234375
+      ],
+      "absoluteErrorRGBA": [
+        1.0122053388794683e-06,
+        2.0442402757225864e-06,
+        5.083958918739029e-06,
+        0.00011479854583740234
+      ],
+      "packedBytesHex": "071e48221125fc37",
+      "halfOracle": "Pythonstdlibstruct<4e independent of NumPy cast"
+    }
+  ]
+}

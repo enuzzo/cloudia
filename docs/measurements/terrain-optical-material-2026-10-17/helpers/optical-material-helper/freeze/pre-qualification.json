@@ -1,0 +1,35 @@
+{
+  "scope": "PRE_QUALIFICATION_NO_MODEL_GPU_APP_BUILD",
+  "dependencies": {
+    "git check-ignore": {
+      "exitCode": 0,
+      "stdout": "node_modules\n",
+      "stderr": ""
+    },
+    "git ls-files": {
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "xattr -p": {
+      "exitCode": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    }
+  },
+  "copiedSource": {
+    "terrainOpticalMaterial.ts": {
+      "bytes": 2728,
+      "sha256": "78f80bc90be7be9fcc4fbcccb7908fa680b9de1ed67e2348117431c240d083e8"
+    },
+    "terrainOpticalMaterial.test.ts": {
+      "bytes": 7981,
+      "sha256": "5388c817d8930e34eaf2df770157a0127cd18e3235584328b281a6a7a3fa97f0"
+    }
+  },
+  "canonicalTerrainSurface": {
+    "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/terrainSurface.ts",
+    "bytes": 13659,
+    "sha256": "0ff8de3514feb3714ba4e931c246d0bd339634661aa37a7d87e79f61c1ddff3f"
+  }
+}

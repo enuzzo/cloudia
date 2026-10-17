@@ -1,0 +1,13 @@
+# Materiale ottico terreno v61: evidenze congelate
+
+Unica variante materiale: RGB osservato Sentinel-2 annuale2021 nelle frazioni terrestri note, premoltiplicato per validità. Geometria canonica v60 conservata. Fonte/pack offline, factory, loader e test; A/B nativi, luci, pioggia, worker; due ABA da30s+2s warmup, statico e percorso yaw deterministico. Adozione locale v61 dopo autentica del default. Fotorealismo finale e60FPS nelle viste pesanti restano aperti.
+
+`source/INDEX.json` ricostruisce quattro snapshot eseguiti da commit base immutabile3e4f4f82a77742c3227ccaf64e339983b8d94c96 più overlay. Il singolo asset ottico33.554.432B è in `source/final-overlay/src/cumulonimbus/assets/liguria-apuane-optical.bin`, condiviso dagli altri snapshot e dal manifest del pack tramite `optical-data/ASSET-ALIAS.json`. R1 conserva anche la fonte dei test/typecheck falliti; R2 è la prima qualifica ottica, navigation-r4 la fonte del percorso, final il default adottato. Nessuna dipendenza/dist duplicata qui.
+
+`browser/` conserva PNG nativi completi e ritagli prefissati1:1, metadata, audit cached/fresh RGBA32F con alpha completa, sei report FPS grezzi, ledger di trasferimento e preview finale ordinaria. Worker/final/auth hanno digest PNG coincidenti con i bitmap già trasferiti: duplicati non trasferiti, alias verificati per hash. Non sono letture di profondità depth32float né presentazione del compositore.
+
+`run/` contiene protocolli prima dei run, manifest, risultati, review e log positivi/negativi. La navigazione manuale proposta inizialmente non è stata eseguita: cancellerebbe il benchmark. Il percorso automatico è stato congelato separatamente e verificato; non cambia nube/qualità né la camera manuale. Tre oscillazioni di10s, ampiezza.16rad, stessa funzione del tempo trascorso; rAF campionati in istanti differenti e ledger sparso, non identità framewise. Il breve tratto finale può essere già a offset0 perché la durata misurata parte dal primo rAF dopo warmup.
+
+`verify-saved.py --current` verifica payload, source/overlay/baseGit, pack e alias, PNG, report salvati e141file prodotto attuali. Richiede Python3 standard e Git; nessun modello, GPU, test o misura viene rieseguito. Il risultato esterno di questa verifica non è accettazione artistica né una nuova certificazione FPS. La memoria RSS del controllo geometria Bun resta non qualificata per unità ambigua; il pack Python ha il proprio conteggio separato.
+
+Snapshot completi e dist esterni: `/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle36/`. Preview4196 serve `final-source/dist`, owner48736; QA53781/53782/53783 chiusi intenzionalmente dopo i confronti. Nessun push o deploy pubblico.

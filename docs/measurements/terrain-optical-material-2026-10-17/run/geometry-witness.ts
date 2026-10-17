@@ -1,0 +1,12 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {buildTerrainMeshData} from './optical-source/src/cumulonimbus/terrainMesh';
+import {decodeTerrainDem,createDemTerrainSampler} from './optical-source/src/cumulonimbus/terrainDem';
+import {terrainSurfaceSample} from './optical-source/src/cumulonimbus/terrainSurface';
+const start=performance.now(),cpu=process.cpuUsage();const b=readFileSync(new URL('./optical-source/src/cumulonimbus/assets/liguria-apuane-dem.bin',import.meta.url));
+const g=decodeTerrainDem(b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength)),sample=createDemTerrainSampler(g,terrainSurfaceSample);
+const data=buildTerrainMeshData(sample,{cellsPerSide:256,levels:9,normalMode:'geometry',refinement:{sourceGrid:{minXKm:g.minX,minZKm:g.minZ,spacingKm:g.spacingKm,columns:g.side,rows:g.side},domain:{minXKm:-48,maxXKm:48,minZKm:-48,maxZKm:48},maxErrorKm:.005,limits:{maxProbeCount:600000,maxVertices:1000000,maxTriangles:2000000,maxGeometryBytes:64*1024*1024}}});
+const expected={positions:'4c7e3f0b92c294850dad4014d3c260e0cb922ba5ade13a952722240a2e5ecc64',normals:'3cb820d4d203c89f61e8e26809ddbdcd2f8ce2645dce0842b758a1b0ea6dcbfd',surface:'7595b45c14d4d249df98d99145fcaa485b21d62e419764b99ce4fedc780c76f2',indices:'87e1b8d5b569577c291efefb1698ca66b657ecb3f9c73dcf6ddc73316a1030ae'};
+const hashes=Object.fromEntries(Object.entries(expected).map(([k,v])=>{const a=data[k as keyof typeof expected],h=createHash('sha256').update(new Uint8Array(a.buffer,a.byteOffset,a.byteLength)).digest('hex');if(h!==v)throw new Error('Geometry mismatch '+k);return[k,h];}));
+const used=process.cpuUsage(cpu),result={status:'PASS_FOUR_CANONICAL_BUFFERS',hashes,stats:data.stats,wallMs:performance.now()-start,cpuMs:(used.user+used.system)/1000,maxRssRaw:process.resourceUsage().maxRSS,maxRssUnits:'Bun macOS units unqualified',scope:'One CPU canonical build, no GLO30 candidate/GPU.'};
+writeFileSync(new URL('./geometry-result.json',import.meta.url),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));

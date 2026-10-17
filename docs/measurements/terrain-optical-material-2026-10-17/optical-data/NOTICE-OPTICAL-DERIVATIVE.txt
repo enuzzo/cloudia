@@ -1,0 +1,25 @@
+© ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium
+
+Source: ESA WorldCover Sentinel-2 annual median L2A RGBNIR composite2021 v200.
+Citation: Zanaga, D., et al. (2022), ESA WorldCover10m2021 v200.
+DOI: https://doi.org/10.5281/zenodo.7254221
+https://esa-worldcover.org/en/data-access
+https://registry.opendata.aws/esa-worldcover-vito-composites/
+License: Creative Commons Attribution4.0 International (CC BY4.0).
+https://creativecommons.org/licenses/by/4.0/
+Full legal text and unchanged original notice are retained in provenance/.
+
+Prior modifications: partial overview4 crop, exact valid-aware rectangular-area
+aggregation into2048x2048 cells62.5m; linear Float32 RGB conditional mean and
+separate valid-area fraction. X west/Z north, domain128km around44N10E.
+
+This further derivative: pack one IEEE754 binary16 little-endian RGBA texture
+Q=(RGB*validity,validity), without spatial resampling, gain, gamma, new masks,
+palette fitting or synthetic detail. No TIFF source re-read or new download.
+The original Float32 RGB/validity fields remain unchanged in their archive.
+
+The annual composite contains observed illumination/shadow and mixed dates;
+no physical albedo/BRDF recovery, perfect de-lighting, certified cloud mask,
+forest geometry, current-season representation or official endorsement is claimed.
+The validity fraction is the previously frozen four-band DN gate, not optical
+opacity or independent cloud truth. NIR is not present in this RGBA output.

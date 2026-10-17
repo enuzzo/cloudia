@@ -1,0 +1,10 @@
+$ vitest run "--maxWorkers=2"
+
+ RUN  v4.1.6 /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle36/final-source
+
+
+ Test Files  53 passed (53)
+      Tests  561 passed (561)
+   Start at  04:10:18
+   Duration  13.11s (transform 600ms, setup 0ms, import 1.52s, tests 9.50s, environment 8.50s)
+

@@ -1,0 +1,10 @@
+$ vitest run "--maxWorkers=2"
+
+ RUN  v4.1.6 /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle36/optical-source
+
+
+ Test Files  52 passed (52)
+      Tests  553 passed (553)
+   Start at  03:40:27
+   Duration  12.61s (transform 561ms, setup 0ms, import 1.45s, tests 9.22s, environment 7.96s)
+

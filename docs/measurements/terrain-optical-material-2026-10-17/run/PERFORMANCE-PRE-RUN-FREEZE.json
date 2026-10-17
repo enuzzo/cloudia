@@ -1,0 +1,38 @@
+{
+  "schema": "single-optical-performance-aba-v1",
+  "prerequisite": "limited material/native/weather/mainworker gates must PASS first; not final photorealism",
+  "fixedQuality": {
+    "macro": 256,
+    "detail": 128,
+    "nominalSteps": 384,
+    "output": [
+      2474,
+      1844
+    ],
+    "flow": "full",
+    "timing": "off",
+    "cache": "on",
+    "seed": 74,
+    "time": 60,
+    "paused": true,
+    "orbit": false,
+    "weather": "Sun-side0"
+  },
+  "windows": "30s measured+2s warmup; builtin finalqueueprefix; presentedFPS unavailable",
+  "staticOrder": [
+    "A1",
+    "B",
+    "A2"
+  ],
+  "navigationOrder": [],
+  "owners": "fresh main renderer each; single GPU owner; same fixedpose",
+  "navigation": {
+    "keys": "70 presses alternating ten ArrowLeft,ten ArrowRight, repeated; 400ms targets from initial benchmark command; last press scheduled27.6s then stop, no input after finish",
+    "schedule": "absolute Node clock targets; actual start/completion times recorded; no hidden browser mutation",
+    "limitations": "browser/bridge input latency creates time deviations; controls can cancel measurements; do not report navigation causal effect without completed qualified reports and matching trajectory metadata",
+    "status": "NOT_RUN_MANUAL_ROTATION_CANCELS_BENCHMARK",
+    "preRunCorrection": "Static Engine review before any FPS run: rotate() invokes invalidate and cancels measurement. No manual-navigation run will be attempted or called qualified. Need a separately frozen deterministic navigation harness before matched motion cost. Ordinary Orbit is time-dependent, not substitute."
+  },
+  "scope": "single ABA each, no thermal isolation or confidence interval; compare B with mean A and A drift; do not infer60fps or costzero",
+  "cpuQuiet": "agents finish reads before runs; no builds/model/preprocess/export/audit during measure"
+}

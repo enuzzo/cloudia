@@ -1,0 +1,23 @@
+{
+  "exitCode": 0,
+  "command": [
+    "/Users/enuzzo/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle36/optical-data/pack-optical.py",
+    "--rgb",
+    "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/rgb-linear.f32",
+    "--validity",
+    "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2/valid-area.f32"
+  ],
+  "cpuCombinedSeconds": 0.5185749999999999,
+  "wallSeconds": 0.5987210840685293,
+  "wrapperPeakRssBytes": 27656192,
+  "childPeakRssBytes": 78856192,
+  "sumPeakRssBytes": 106512384,
+  "limits": {
+    "cpuCombinedSeconds": 10,
+    "wallSeconds": 20,
+    "sumPeakRssBytes": 201326592
+  },
+  "scope": "OSchildCPU10s;20swait;phase/terminalRSSacceptance,notOSallocationcap;sumpeaksconservative",
+  "gatePass": true
+}

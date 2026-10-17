@@ -1,0 +1,37 @@
+{
+  "copiedUTC": "2026-10-17T01:37:09.030301+00:00",
+  "sourceDirectory": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-16-cycle21/sentinel2-reference-r2",
+  "scope": "Small provenance files copied byte-identically; no TIFF read or raster resampling",
+  "files": [
+    {
+      "path": "provenance/NOTICE-SENTINEL2.txt",
+      "bytes": 856,
+      "sha256": "30354b8fda6143a621f1e64a11aacfb4c60e4e09a59c02e59e74ae2ae8850f42"
+    },
+    {
+      "path": "provenance/cc-by-4.0-legalcode.txt",
+      "bytes": 18657,
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    {
+      "path": "provenance/SOURCE-LINKS.md",
+      "bytes": 857,
+      "sha256": "ec16a974fad7c3d1e0d975b5bc837763f2b41d3bbab0aff9c92fe7affd63e360"
+    },
+    {
+      "path": "provenance/source-witnesses.json",
+      "bytes": 3409,
+      "sha256": "da40f40e95ea0db9476d2ff18b74246cefbc9235640345bc777faed33a2f6201"
+    },
+    {
+      "path": "provenance/preprocess-result.json",
+      "bytes": 4000,
+      "sha256": "69d8bd00d7b8d16d8947f2a2aa9be7a4a557e0bea1127d3951118092d4b69f21"
+    },
+    {
+      "path": "provenance/PROTOCOL.md",
+      "bytes": 4222,
+      "sha256": "ded51b69cb62b9a93fdb939e84a9d8ef8dbcbcdcbf1112cd34b1654387c0b513"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "status": "PASS_SAVED_EVIDENCE_ONLY",
+  "payloadFiles": 188,
+  "payloadBytes": 53965937,
+  "baseGitSourceFiles": 129,
+  "executedSources": {
+    "r1": 139,
+    "r2": 139,
+    "navigation-r4": 141,
+    "final": 141
+  },
+  "packFiles": 20,
+  "nativeMetadataMatchingArchivedPNG": 10,
+  "wholeF32Audits": 10,
+  "performanceWindows": 6,
+  "currentProductFilesVerified": 141,
+  "scope": "Hashes and saved reports only. No preprocess, model build, compiler, browser, GPU replay, FPS rerun or artistic judgement.",
+  "archiveManifestSHA256": "13043696001b9cdbab8b31992277a99bd32294c7d07798a01d7843698496a595",
+  "finalSourceManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "nativeGate": "PASS limited material improvement; finalphotorealismOPEN",
+  "preview": "4196ordinaryv61 animatednative; owner48736",
+  "qaServers": "53781/53782/53783 intentionally stopped exit0"
+}

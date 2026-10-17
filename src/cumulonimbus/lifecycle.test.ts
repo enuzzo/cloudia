@@ -95,6 +95,15 @@ vi.mock('./terrainCover',async()=>{
  const actual=await vi.importActual<typeof import('./terrainCover')>('./terrainCover');
  return {...actual,loadTerrainCover:vi.fn(async()=>{const fractions=new Uint8Array(48);for(let i=0;i<4;i++)fractions[i*12]=255;return {side:2,spacingKm:64,minX:-64,minZ:-64,fractions};})};
 });
+vi.mock('./terrainOptical',async()=>{
+ const actual=await vi.importActual<typeof import('./terrainOptical')>('./terrainOptical');
+ const {DataTexture,HalfFloatType,RGBAFormat}=await import('three/webgpu');
+ return {...actual,loadTerrainOptical:vi.fn(async()=>{
+  const texture=new DataTexture(new Uint16Array(4),1,1,RGBAFormat,HalfFloatType);
+  return {texture,stats:{gridSize:[1,1],cellKm:128,minEdgeKm:[-64,-64],rowOrder:'south-to-north; v0=minZ',dataConvention:'premultiplied-linear-RGB-and-valid-area',sourceAssetBytes:8,basePayloadBytes:8,nominalMipPayloadBytes:0,totalGpuPayloadBytes:8,retainedCpuPayloadBytes:8,mipLevels:1},dispose:vi.fn(()=>texture.dispose())};
+ })};
+});
+import {loadTerrainOptical,type TerrainOpticalTexture} from './terrainOptical';
 import { CumulonimbusApp } from './CumulonimbusApp';
 import { BufferGeometry,Float32BufferAttribute,Data3DTexture,NearestFilter,LinearFilter,ClampToEdgeWrapping,NoColorSpace,RedFormat,UnsignedByteType } from 'three/webgpu';
 import * as cloudShader from './cloudShader';
@@ -533,7 +542,7 @@ describe('scene async lifecycle',()=>{
       queuePrefix:{status:string;measuredSubmissions:number;confirmedPrefixId:number;samples:Array<{kind:string;prefixId:number}>}};
     expect(report.densitySamplingStart).toMatchObject({path:'r8unorm-extracted-r',format:'r8unorm',dimensions:[1,1,1],textureBytes:1,extraCpuPayloadBytes:1,extraGpuPayloadBytes:1,fallback:null});
     expect(report.densitySamplingEnd).toEqual(report.densitySamplingStart);
-    expect(report.rendererVersion).toBe('observatory-v60-terrain-raster-cache');
+    expect(report.rendererVersion).toBe('observatory-v61-observed-terrain-material');
     expect(report).toHaveProperty('terrainSurfaceId','copernicus-glo90-liguria-apuane-v1');
     expect(report).toHaveProperty('terrainGeography',expect.objectContaining({originDegrees:[44,10],verticalExaggeration:1,measuredSquareHalfWidthKm:48}));
     expect(report).toHaveProperty('terrainCover',expect.objectContaining({id:'esa-worldcover-2021-area-fractions-v1',year:2021,sourceClasses:12,materialGroups:8,gridSize:[2,2],sourceAssetBytes:80,retainedCpuPayloadBytes:32,totalGpuPayloadBytes:40}));
@@ -869,4 +878,67 @@ describe('scene async lifecycle',()=>{
     expect(root.querySelector<HTMLButtonElement>('[data-action="benchmark"]')!.disabled).toBe(true);
     app.destroy();await flush();
   });
+});
+
+
+describe('optical material experiment owner integration',()=>{
+ const configure=()=>{history.replaceState(null,'','/?profile=1&optical=1&timing=off');};
+ it('does not load optical data for the explicit canonical diagnostic owner',async()=>{
+  const {app}=await startNativeFixture('/?profile=1&optical=0&timing=off&seed=74');
+  try{expect(loadTerrainOptical).not.toHaveBeenCalled();expect(control.terrain[0].configuration.cacheInputs!().textures).toHaveLength(2);}
+  finally{app.destroy();await flush();}
+ });
+ it('fails explicitly before cloud generation when the optical asset fails authentication',async()=>{
+  configure();vi.mocked(loadTerrainOptical).mockRejectedValueOnce(new Error('Optical SHA mismatch'));
+  const {app,root}=createApp();const starting=app.start();await flush();control.initResolve();await starting;
+  expect(root.querySelector('[data-testid="scene-status"]')!.textContent).toContain('Optical SHA mismatch');
+  expect(control.workers).toHaveLength(0);expect(control.terrain).toHaveLength(0);expect(control.render).not.toHaveBeenCalled();
+  expect(control.renderer!.dispose).toHaveBeenCalledOnce();app.destroy();await flush();
+ });
+ it('aborts pending optical loading and disposes a late owner without allocating terrain/clouds',async()=>{
+  configure();let finish!:(value:TerrainOpticalTexture)=>void;
+  vi.mocked(loadTerrainOptical).mockImplementationOnce(()=>new Promise(resolve=>{finish=resolve;}));
+  const {app}=createApp();const starting=app.start();await flush();control.initResolve();await flush();
+  const signal=vi.mocked(loadTerrainOptical).mock.calls.at(-1)![0]!;
+  app.destroy();await flush();expect(signal.aborted).toBe(true);
+  const dispose=vi.fn();finish({dispose} as unknown as TerrainOpticalTexture);await starting;
+  expect(dispose).toHaveBeenCalledOnce();expect(control.workers).toHaveLength(0);expect(control.terrain).toHaveLength(0);
+  expect(control.renderer!.dispose).toHaveBeenCalledOnce();
+ });
+ it('declares the optical texture in cache dependencies, reuses it across frames and disposes once',async()=>{
+  const {DataTexture,HalfFloatType,RGBAFormat}=await import('three/webgpu');
+  const opticalTexture=new DataTexture(new Uint16Array(4),1,1,RGBAFormat,HalfFloatType),dispose=vi.fn(()=>opticalTexture.dispose());
+  const owner={texture:opticalTexture,stats:{},dispose} as unknown as TerrainOpticalTexture;
+  vi.mocked(loadTerrainOptical).mockResolvedValueOnce(owner);
+  const {app,draw}=await startNativeFixture('/?profile=1&optical=1&timing=off&seed=74');
+  try{
+   const inputs=control.terrain[0].configuration.cacheInputs!();expect(inputs.textures).toHaveLength(3);expect(inputs.textures[2]).toBe(opticalTexture);
+   const version=opticalTexture.version;draw(1000);draw(2000);
+   expect(loadTerrainOptical).toHaveBeenCalledOnce();expect(opticalTexture.version).toBe(version);expect(dispose).not.toHaveBeenCalled();
+  }finally{app.destroy();await settleNative();app.destroy();await settleNative();}
+  expect(dispose).toHaveBeenCalledOnce();
+ });
+});
+
+
+describe('deterministic benchmark navigation diagnostic',()=>{
+ it('changes only benchmark camera yaw after warmup, returns to base and records actual sparse witnesses',async()=>{
+  const {app,root,draw}=await startNativeFixture('/?profile=1&navAudit=1&timing=off&flow=frozen&seed=74');
+  const origin=()=>terrainComponents(control.terrain[0].render.mock.calls.at(-1)![1].origin);
+  try{
+   nativeButton(root,'probe-reference').click();await settleNative();draw(1000);const before=origin();draw(1500);expect(origin()).toEqual(before);
+   nativeButton(root,'benchmark').click(); // measurement.start=1500; warmup ends3500
+   draw(2500);expect(origin()).toEqual(before);draw(3500);expect(origin()).toEqual(before);
+   draw(6000);const quarter=origin();expect(Math.atan2(quarter[0],quarter[2])-Math.atan2(before[0],before[2])).toBeCloseTo(.16,12);
+   draw(8500);draw(33500);expect(origin()).toEqual(before);await settleNative();
+   expect(root.querySelector('[data-testid="benchmark-result"]')!.textContent).toContain('Ultima misura completata');
+   const report=JSON.parse(root.querySelector('[data-testid="benchmark-json"]')!.textContent!);
+   expect(report.navigationDiagnostic).toMatchObject({enabled:true,witnesses:[]});
+   expect(report.navigationDiagnosticEnd.witnesses.map((v:{elapsedMs:number})=>v.elapsedMs)).toEqual([0,2500,5000,30000]);
+   expect(report.navigationDiagnosticEnd.witnesses.at(-1).offsetRad).toBe(0);expect(report.simulationTimeStart).toBe(60);expect(report.simulationTimeEnd).toBe(60);
+   draw(34000);expect(origin()).toEqual(before);
+   nativeButton(root,'benchmark').click();draw(36000);draw(38500); // new measuredstart36000; +2500 quarter
+   nativeButton(root,'pause').click();await flush();expect(root.querySelector('[data-testid="benchmark-result"]')!.textContent).toContain('Misura annullata');
+  }finally{app.destroy();await settleNative();}
+ });
 });

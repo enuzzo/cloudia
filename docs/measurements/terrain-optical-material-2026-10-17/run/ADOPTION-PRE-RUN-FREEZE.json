@@ -1,0 +1,13 @@
+{
+  "action": "localmaterialadoption v61 after limitedvisual and static/motionABA gates",
+  "source": "navigationR4 formula/material unchanged",
+  "default": "optical enabled for ordinarymain/worker; explicit profile1&optical0 retainscanonicalA",
+  "unchanged": "256/128/384 fulloutput; cloudshader normals shadow geometry controls",
+  "newChecks": [
+    "fulltests APP hero",
+    "ordinary/default B fullF32 and PNGdigest same as qualifiedB",
+    "copy exact changed/new manifestpaths tocanonical afterverify",
+    "newpreviewordinaryanimatednative"
+  ],
+  "limits": "not final photorealism; ridge ribbons/marks remain; Rain FPS notqualifiedthiscycle, priorrain~19; no presented FPS; startup not independently timed"
+}

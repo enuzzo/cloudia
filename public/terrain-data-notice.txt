@@ -58,8 +58,16 @@ Y(originalEndpoint)/Y(correctedEndpoint). This preserves its authored luminance
 and pairwise log-channel-ratio contrasts, up to Float32 rounding. It does not
 force the final rendered distribution to equal the satellite distribution.
 
-Only these authored tree/grass constants are derived. No satellite optical
-texture is distributed or sampled by this terrain material. No palette for
+The canonical material derives only these authored tree/grass constants.
+The terrain material additionally distributes and samples a
+2048x2048 RGBA16F derivative of the previously acquired annual composite.
+RGB is the valid-aware projected-area mean at 62.5m, stored premultiplied
+by valid-area fraction; alpha is valid fraction. The shader substitutes the
+observed linear RGB for known terrestrial class contributions only, retaining
+canonical water, unknown-area fallback, geometry, normals and lighting.
+No display gain, sRGB encoding, class normalization, heuristic cloud mask or
+physical albedo/BRDF recovery is applied. Source overviews were used; this
+is not native10m optical detail. No palette for
 sparse bare/shrub samples is inferred. WorldCover tree cover may include
 plantations/orchards and is not a certification of natural forest.
 

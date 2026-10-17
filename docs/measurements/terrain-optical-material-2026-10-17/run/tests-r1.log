@@ -1,0 +1,101 @@
+$ vitest run "--maxWorkers=2"
+
+ RUN  v4.1.6 /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle36/optical-source
+
+ ❯ src/cumulonimbus/lifecycle.test.ts (45 tests | 4 failed) 5373ms
+     × publishes matching measured-submission and interval counts after exactly one final fence 139ms
+     × starts exactly one RAF when initial generation finishes in a hidden tab 116ms
+     × keeps an installed scene animating after hide/show during regeneration 126ms
+     × does not start a second RAF loop when visibility changes during the final GPU drain 123ms
+ ❯ src/cumulonimbus/terrainOpticalRaster.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/cumulonimbus/terrainOpticalRaster.test.ts [ src/cumulonimbus/terrainOpticalRaster.test.ts ]
+TypeError: The URL must be of scheme file
+ ❯ src/cumulonimbus/terrainOpticalRaster.test.ts:6:16
+      4| import {terrainOpticalRasterWGSL} from './terrainOpticalRaster';
+      5| // Baseline pinned before the new candidate: no runtime or GPU emulati…
+      6| const original=readFileSync(new URL('./fixtures/terrain-v60-raster.wgs…
+       |                ^
+      7| describe('immutable optical raster specialization',()=>{
+      8|  it('keeps the default wrapper byte exact including original argument …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/cumulonimbus/lifecycle.test.ts > scene async lifecycle > publishes matching measured-submission and interval counts after exactly one final fence
+AssertionError: expected 'observatory-v60-optical-material-tria…' to be 'observatory-v60-terrain-raster-cache' // Object.is equality
+
+Expected: "observatory-v60-terrain-raster-cache"
+Received: "observatory-v60-optical-material-trial-r1"
+
+ ❯ src/cumulonimbus/lifecycle.test.ts:541:36
+    539|     expect(report.densitySamplingStart).toMatchObject({path:'r8unorm-e…
+    540|     expect(report.densitySamplingEnd).toEqual(report.densitySamplingSt…
+    541|     expect(report.rendererVersion).toBe('observatory-v60-terrain-raste…
+       |                                    ^
+    542|     expect(report).toHaveProperty('terrainSurfaceId','copernicus-glo90…
+    543|     expect(report).toHaveProperty('terrainGeography',expect.objectCont…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  src/cumulonimbus/lifecycle.test.ts > scene async lifecycle > starts exactly one RAF when initial generation finishes in a hidden tab
+AssertionError: expected "vi.fn()" to be called once, but got 2 times
+ ❯ src/cumulonimbus/lifecycle.test.ts:800:35
+    798|     expect(control.compute.mock.invocationCallOrder[0]).toBeLessThan(c…
+    799|     hidden.mockReturnValue(false);document.dispatchEvent(new Event('vi…
+    800|     expect(requestAnimationFrame).toHaveBeenCalledOnce();
+       |                                   ^
+    801|     app.destroy();await flush();hidden.mockRestore();
+    802|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  src/cumulonimbus/lifecycle.test.ts > scene async lifecycle > keeps an installed scene animating after hide/show during regeneration
+AssertionError: expected 4 to be 2 // Object.is equality
+
+- Expected
++ Received
+
+- 2
++ 4
+
+ ❯ src/cumulonimbus/lifecycle.test.ts:824:64
+    822|     const calls=vi.mocked(requestAnimationFrame).mock.calls.length;
+    823|     hidden.mockReturnValue(false);document.dispatchEvent(new Event('vi…
+    824|     expect(vi.mocked(requestAnimationFrame).mock.calls.length).toBe(ca…
+       |                                                                ^
+    825|     const frame=vi.mocked(requestAnimationFrame).mock.calls.at(-1)![0]…
+    826|     expect(control.render).toHaveBeenCalledTimes(2);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  src/cumulonimbus/lifecycle.test.ts > scene async lifecycle > does not start a second RAF loop when visibility changes during the final GPU drain
+AssertionError: expected 4 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 4
+
+ ❯ src/cumulonimbus/lifecycle.test.ts:840:64
+    838|     hidden.mockReturnValue(true);document.dispatchEvent(new Event('vis…
+    839|     hidden.mockReturnValue(false);document.dispatchEvent(new Event('vi…
+    840|     expect(vi.mocked(requestAnimationFrame).mock.calls.length).toBe(ca…
+       |                                                                ^
+    841|     drained();await flush();expect(vi.mocked(requestAnimationFrame).mo…
+    842|     app.destroy();await flush();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  2 failed | 50 passed (52)
+      Tests  4 failed | 547 passed (551)
+   Start at  03:39:51
+   Duration  12.78s (transform 597ms, setup 0ms, import 1.49s, tests 9.18s, environment 8.29s)
+
+error: script "test" exited with code 1

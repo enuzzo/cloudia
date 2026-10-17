@@ -1,0 +1,32 @@
+$ vitest run "--maxWorkers=2" src/cumulonimbus/lifecycle.test.ts
+
+ RUN  v4.1.6 /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle36/navigation-source
+
+ ❯ src/cumulonimbus/lifecycle.test.ts (46 tests | 1 failed) 5493ms
+     × changes only benchmark camera yaw after warmup, returns to base and records actual sparse witnesses 164ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/cumulonimbus/lifecycle.test.ts > deterministic benchmark navigation diagnostic > changes only benchmark camera yaw after warmup, returns to base and records actual sparse witnesses
+AssertionError: expected 'Misura annullata: Cielo pronto.' to contain 'Ultima misura completata'
+
+Expected: "Ultima misura completata"
+Received: "Misura annullata: Cielo pronto."
+
+ ❯ src/cumulonimbus/lifecycle.test.ts:930:80
+    928|    draw(6000);const quarter=origin();expect(Math.atan2(quarter[0],quar…
+    929|    draw(8500);draw(33500);expect(origin()).toEqual(before);await settl…
+    930|    expect(root.querySelector('[data-testid="benchmark-result"]')!.text…
+       |                                                                                ^
+    931|    const report=JSON.parse(root.querySelector('[data-testid="benchmark…
+    932|    expect(report.navigationDiagnostic).toMatchObject({enabled:true,wit…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 45 passed (46)
+   Start at  04:02:37
+   Duration  6.07s (transform 207ms, setup 0ms, import 270ms, tests 5.49s, environment 177ms)
+
+error: script "test" exited with code 1

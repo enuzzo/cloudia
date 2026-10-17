@@ -1,0 +1,68 @@
+{
+  "frozenUTC": "2026-10-17T01:38:05.632556+00:00",
+  "scope": "One data pack only; no terrain model or GPU",
+  "budgets": {
+    "cpuCombinedSeconds": 10,
+    "wallSeconds": 20,
+    "sumPeakRssBytes": 201326592
+  },
+  "sourceRgbSHA256": "44205c43c1f243766716060b16e7f74948fba3a9366b6f38473d045c066a074e",
+  "sourceValiditySHA256": "e89361dccb2b50a515f08ee7fee8500bdd3a535bdce4f5ea6159a736120f12c7",
+  "files": [
+    {
+      "path": "NOTICE-OPTICAL-DERIVATIVE.txt",
+      "bytes": 1535,
+      "sha256": "b0383e6df5b021dca8d55bb8faa383fa4ddf182301db02f0b0e6af4fb4926010"
+    },
+    {
+      "path": "PROTOCOL.md",
+      "bytes": 3003,
+      "sha256": "a97fa0b5d1f78aea15062b3b388116434f92c194385935cab1955cda46fa8b1e"
+    },
+    {
+      "path": "pack-optical.py",
+      "bytes": 12248,
+      "sha256": "351f20be21f826c274fa1b5e1d24101d24571e9d05e0a49505a778a2beedb51b"
+    },
+    {
+      "path": "provenance/COPIED-SOURCES.json",
+      "bytes": 1261,
+      "sha256": "c83b1cb54f724f5aa671a47e6221b8014fe9f20c03adbdf463f05d249987937a"
+    },
+    {
+      "path": "provenance/NOTICE-SENTINEL2.txt",
+      "bytes": 856,
+      "sha256": "30354b8fda6143a621f1e64a11aacfb4c60e4e09a59c02e59e74ae2ae8850f42"
+    },
+    {
+      "path": "provenance/PROTOCOL.md",
+      "bytes": 4222,
+      "sha256": "ded51b69cb62b9a93fdb939e84a9d8ef8dbcbcdcbf1112cd34b1654387c0b513"
+    },
+    {
+      "path": "provenance/SOURCE-LINKS.md",
+      "bytes": 857,
+      "sha256": "ec16a974fad7c3d1e0d975b5bc837763f2b41d3bbab0aff9c92fe7affd63e360"
+    },
+    {
+      "path": "provenance/cc-by-4.0-legalcode.txt",
+      "bytes": 18657,
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    {
+      "path": "provenance/preprocess-result.json",
+      "bytes": 4000,
+      "sha256": "69d8bd00d7b8d16d8947f2a2aa9be7a4a557e0bea1127d3951118092d4b69f21"
+    },
+    {
+      "path": "provenance/source-witnesses.json",
+      "bytes": 3409,
+      "sha256": "da40f40e95ea0db9476d2ff18b74246cefbc9235640345bc777faed33a2f6201"
+    },
+    {
+      "path": "run.py",
+      "bytes": 2277,
+      "sha256": "4d4b682e99ca042b7258c30646d0c7722fed1f6c50272135ced2529b17384394"
+    }
+  ]
+}

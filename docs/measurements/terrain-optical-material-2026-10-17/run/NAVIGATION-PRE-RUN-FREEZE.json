@@ -1,0 +1,23 @@
+{
+  "variant": "same opticalmaterial R1; navigationdiagnostic only",
+  "sourceBaseManifest": "9dc5ff28c7a809f1a09167ac5ca9893ec10f76f07ee21cd7ca9a469ac84599e3",
+  "flag": "profile=1&navAudit=1",
+  "path": "yawOffset0.16sin(2pi elapsed/10000), elapsed since measuredstart after2swarmup; exact0 before0 after30000ms",
+  "cloud": "pausedt60 fullflow perframe output2474x1844 256/128/384",
+  "onlyDuring": "active builtin30s benchmark; no view mutation, manualrotate stillcancels",
+  "ledger": "one actualsubmittedcamera+elapsed+offset persecondbucket, atmost31smallrows; noGPUreadback",
+  "order": [
+    "A1",
+    "B",
+    "A2"
+  ],
+  "gates": [
+    "pureformula tests",
+    "Engine lifecycle active-only/reset/ordinary unchanged",
+    "fulltests APP hero",
+    "A navinactive fullF32+PNGdigest baselineexact",
+    "B navinactive fullF32+PNGdigest knownexact",
+    "samepathmetadata cachemissescounters during30s ABA"
+  ],
+  "limitations": "Threewindows noCI/thermalcontrol; samplesatdifferentrAFtimes butsamewalltimepath; sparsecamera ledger notperframeidentity; presentedFPSnull"
+}

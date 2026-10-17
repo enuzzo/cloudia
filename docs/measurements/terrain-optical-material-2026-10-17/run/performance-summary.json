@@ -1,0 +1,178 @@
+{
+  "static": {
+    "A1_B_A2": [
+      {
+        "submissionFps": 59.99820005399839,
+        "stats": {
+          "frames": 1800,
+          "durationMs": 30000.899999999994,
+          "fps": 59.99820005399839,
+          "medianMs": 16.69999999999709,
+          "p95Ms": 18.30000000000291,
+          "p99Ms": 18.60000000000582,
+          "maxMs": 29.19999999999709,
+          "over18Ms": 145,
+          "over33Ms": 0
+        },
+        "cpuRender": {
+          "sampleCount": 1800,
+          "meanMs": 0.32850000242392224,
+          "p95Ms": 0.5,
+          "maxMs": 1
+        },
+        "cache": {
+          "requests": 1921,
+          "hits": 1921,
+          "submissions": 0
+        },
+        "optical": false
+      },
+      {
+        "submissionFps": 59.995600322643014,
+        "stats": {
+          "frames": 1800,
+          "durationMs": 30002.199999999997,
+          "fps": 59.995600322643014,
+          "medianMs": 16.69999999999709,
+          "p95Ms": 18.30000000000291,
+          "p99Ms": 18.60000000000582,
+          "maxMs": 30.30000000000291,
+          "over18Ms": 177,
+          "over33Ms": 0
+        },
+        "cpuRender": {
+          "sampleCount": 1800,
+          "meanMs": 0.34877777801619636,
+          "p95Ms": 0.5,
+          "maxMs": 4.599999904632568
+        },
+        "cache": {
+          "requests": 1921,
+          "hits": 1921,
+          "submissions": 0
+        },
+        "optical": true
+      },
+      {
+        "submissionFps": 59.99340072592015,
+        "stats": {
+          "frames": 1800,
+          "durationMs": 30003.300000000003,
+          "fps": 59.99340072592015,
+          "medianMs": 16.69999999999709,
+          "p95Ms": 18.30000000000291,
+          "p99Ms": 18.60000000000582,
+          "maxMs": 28.80000000000291,
+          "over18Ms": 187,
+          "over33Ms": 0
+        },
+        "cpuRender": {
+          "sampleCount": 1800,
+          "meanMs": 0.3288888883590698,
+          "p95Ms": 0.5,
+          "maxMs": 1.8000000715255737
+        },
+        "cache": {
+          "requests": 1921,
+          "hits": 1921,
+          "submissions": 0
+        },
+        "optical": false
+      }
+    ],
+    "BvsMeanApercent": -0.0003334688677525399,
+    "A2vsA1percent": -0.007999120096802148,
+    "limitation": "One ABA at refresh ceiling; no headroom/zero-cost inference, noCI/thermalisolation, presentedFPS unmeasured."
+  },
+  "navigation": {
+    "A1_B_A2": [
+      {
+        "submissionFps": 59.96047075135569,
+        "stats": {
+          "frames": 1799,
+          "durationMs": 30003.1,
+          "fps": 59.96047075135569,
+          "medianMs": 16.69999999999709,
+          "p95Ms": 18.30000000000291,
+          "p99Ms": 18.60000000000582,
+          "maxMs": 30.20000000001164,
+          "over18Ms": 166,
+          "over33Ms": 0
+        },
+        "cpuRender": {
+          "sampleCount": 1799,
+          "meanMs": 0.5438021112641339,
+          "p95Ms": 0.8000000715255737,
+          "maxMs": 2.5
+        },
+        "cache": {
+          "requests": 1920,
+          "hits": 120,
+          "submissions": 1800
+        },
+        "optical": false,
+        "navigationWitnesses": 31,
+        "maxAnalyticCameraErrorKm": 0
+      },
+      {
+        "submissionFps": 59.99920001066652,
+        "stats": {
+          "frames": 1800,
+          "durationMs": 30000.4,
+          "fps": 59.99920001066652,
+          "medianMs": 16.69999999999709,
+          "p95Ms": 18.299999999995634,
+          "p99Ms": 18.60000000000582,
+          "maxMs": 23.19999999999709,
+          "over18Ms": 150,
+          "over33Ms": 0
+        },
+        "cpuRender": {
+          "sampleCount": 1800,
+          "meanMs": 0.5393333338366615,
+          "p95Ms": 0.8000000715255737,
+          "maxMs": 4
+        },
+        "cache": {
+          "requests": 1921,
+          "hits": 120,
+          "submissions": 1801
+        },
+        "optical": true,
+        "navigationWitnesses": 31,
+        "maxAnalyticCameraErrorKm": 4.440892098500626e-16
+      },
+      {
+        "submissionFps": 59.99540035263964,
+        "stats": {
+          "frames": 1800,
+          "durationMs": 30002.299999999996,
+          "fps": 59.99540035263964,
+          "medianMs": 16.69999999999709,
+          "p95Ms": 18.299999999995634,
+          "p99Ms": 18.599999999998545,
+          "maxMs": 28.80000000000291,
+          "over18Ms": 144,
+          "over33Ms": 0
+        },
+        "cpuRender": {
+          "sampleCount": 1800,
+          "meanMs": 0.5144999996158812,
+          "p95Ms": 0.7000000476837158,
+          "maxMs": 4.800000071525574
+        },
+        "cache": {
+          "requests": 1921,
+          "hits": 120,
+          "submissions": 1801
+        },
+        "optical": false,
+        "navigationWitnesses": 31,
+        "maxAnalyticCameraErrorKm": 0
+      }
+    ],
+    "BvsMeanApercent": 0.035453802257690015,
+    "A2vsA1percent": 0.058254381338662675,
+    "limitation": "One ABA at refresh ceiling; no headroom/zero-cost inference, noCI/thermalisolation, presentedFPS unmeasured."
+  }
+}

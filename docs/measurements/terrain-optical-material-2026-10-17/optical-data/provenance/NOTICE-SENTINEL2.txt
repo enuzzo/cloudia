@@ -1,0 +1,11 @@
+© ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium
+
+Source: ESA WorldCover Sentinel-2 median L2A (RGBNIR) composite, 2021 v200.
+Citation: Zanaga, D., et al. (2022), ESA WorldCover 10 m 2021 v200.
+DOI: https://doi.org/10.5281/zenodo.7254221
+Access: https://esa-worldcover.org/en/data-access
+Dataset registry: https://registry.opendata.aws/esa-worldcover-vito-composites/
+License: Creative Commons Attribution 4.0 International.
+https://creativecommons.org/licenses/by/4.0/
+
+Changes: overview4 partial crop to a local equirectangular 2048x2048 grid; valid-aware rectangular-area aggregation; Float32 linear RGB and separate valid-area fraction. A fixed gain3/sRGB display figure is a visualization only. No physical albedo/BRDF recovery, image repair or official endorsement is claimed.

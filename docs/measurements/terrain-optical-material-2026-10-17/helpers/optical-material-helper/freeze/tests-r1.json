@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/opt/homebrew/bin/node",
+    "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle36/optical-material-helper/freeze/qualification/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "vitest.config.mjs"
+  ],
+  "exitCode": 0,
+  "wallSeconds": 0.4779818750685081
+}

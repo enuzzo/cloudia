@@ -1,0 +1,3 @@
+$ vitest run "--maxWorkers=2"
+/bin/bash: vitest: command not found
+error: script "test" exited with code 127
