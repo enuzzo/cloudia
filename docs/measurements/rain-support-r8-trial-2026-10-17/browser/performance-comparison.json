@@ -1,0 +1,242 @@
+{
+  "status": "FAIL_ADOPTION_GATE_NO_ADOPTION",
+  "gateFrozenBeforeB": true,
+  "gates": {
+    "submissionFpsAtLeast5Percent": false,
+    "completionBoundedAtLeast5Percent": false,
+    "p95NoWorse": true,
+    "p99NoWorse": true
+  },
+  "submissionFpsBVsMaxA_percent": -7.181332192747791,
+  "completionBoundedBVsMaxA_percent": -7.2204858489355095,
+  "baselineA2VsA1_percent": 12.479733050455888,
+  "submissionThreshold": 17.134087887112415,
+  "completionBoundedThreshold": 17.086617836685495,
+  "rows": [
+    {
+      "name": "performance-a1",
+      "status": "PASS_WINDOW_INPUTS_AND_ARITHMETIC",
+      "reportSHA256": "da32e7ba6a159e9accace0bfec1dd2a91365bb005cc7e0067381d0bc14256dad",
+      "checks": {
+        "statisticsRecompute": true,
+        "finiteIntervals": true,
+        "sourceVersion": true,
+        "fullQuality": true,
+        "fullOutput": true,
+        "fullModes": true,
+        "timingStagesMain": true,
+        "startEnvelope": true,
+        "settledRain": true,
+        "motion": true,
+        "noFlash": true,
+        "windDispersionSpeed": true,
+        "cameraHeld": true,
+        "duration90": true,
+        "queueCompleted": true,
+        "completionRateRecompute": true,
+        "presentationUnmeasured": true,
+        "canonicalHasNoSupportR8": true
+      },
+      "stats": {
+        "frames": 1306,
+        "durationMs": 90021.40000000001,
+        "fps": 14.50766151159613,
+        "medianMs": 66.69999999999709,
+        "p95Ms": 83.39999999999418,
+        "p99Ms": 84,
+        "maxMs": 84.39999999999418,
+        "over18Ms": 1306,
+        "over33Ms": 1306
+      },
+      "simulationStart": 60.05,
+      "forcingStart": 0.06589999999999419,
+      "simulationEnd": 126.84089999999631,
+      "queue": {
+        "status": "completed",
+        "measuredSubmissions": 1306,
+        "confirmedPrefixId": 1306,
+        "endDrainMs": 283.39999997615814,
+        "completionBoundedSubmissionFps": 14.461380032001063,
+        "maxUnconfirmedMeasuredFrames": 19
+      },
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 1306,
+          "expectedCalls": 2612,
+          "matchedFreshCalls": 2608,
+          "completeDraws": 1304,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 1306,
+          "expectedCalls": 1306,
+          "matchedFreshCalls": 1304,
+          "completeDraws": 1304,
+          "partialDraws": 0,
+          "missingDraws": 2,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      },
+      "scope": "Saved report arithmetic/context only; no presentation, paired frame replay, isolated GPU throughput, broad visual or global60 claim"
+    },
+    {
+      "name": "performance-b",
+      "status": "PASS_WINDOW_INPUTS_AND_ARITHMETIC",
+      "reportSHA256": "a13863fad0bdd9c93c98e954811c65c64101b1d8c8109d479aca1de36ad2c2fb",
+      "checks": {
+        "statisticsRecompute": true,
+        "finiteIntervals": true,
+        "sourceVersion": true,
+        "fullQuality": true,
+        "fullOutput": true,
+        "fullModes": true,
+        "timingStagesMain": true,
+        "startEnvelope": true,
+        "settledRain": true,
+        "motion": true,
+        "noFlash": true,
+        "windDispersionSpeed": true,
+        "cameraHeld": true,
+        "duration90": true,
+        "queueCompleted": true,
+        "completionRateRecompute": true,
+        "presentationUnmeasured": true,
+        "supportR8BoundThroughout": true
+      },
+      "stats": {
+        "frames": 1364,
+        "durationMs": 90054.90000000001,
+        "fps": 15.14631630261096,
+        "medianMs": 66.69999999999709,
+        "p95Ms": 83.39999999999418,
+        "p99Ms": 83.80000000000291,
+        "maxMs": 84.30000000000291,
+        "over18Ms": 1364,
+        "over33Ms": 1363
+      },
+      "simulationStart": 60,
+      "forcingStart": 0,
+      "simulationEnd": 129.8627999999968,
+      "queue": {
+        "status": "completed",
+        "measuredSubmissions": 1364,
+        "confirmedPrefixId": 1364,
+        "endDrainMs": 276.10000002384186,
+        "completionBoundedSubmissionFps": 15.097981917834215,
+        "maxUnconfirmedMeasuredFrames": 20
+      },
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 1364,
+          "expectedCalls": 2728,
+          "matchedFreshCalls": 2722,
+          "completeDraws": 1361,
+          "partialDraws": 0,
+          "missingDraws": 3,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 1364,
+          "expectedCalls": 1364,
+          "matchedFreshCalls": 1361,
+          "completeDraws": 1361,
+          "partialDraws": 0,
+          "missingDraws": 3,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      },
+      "scope": "Saved report arithmetic/context only; no presentation, paired frame replay, isolated GPU throughput, broad visual or global60 claim"
+    },
+    {
+      "name": "performance-a2",
+      "status": "PASS_WINDOW_INPUTS_AND_ARITHMETIC",
+      "reportSHA256": "481b8cbecb3ae44c7333257fe2a6e0d8443e1c15335417ba907c41c0f6daaedc",
+      "checks": {
+        "statisticsRecompute": true,
+        "finiteIntervals": true,
+        "sourceVersion": true,
+        "fullQuality": true,
+        "fullOutput": true,
+        "fullModes": true,
+        "timingStagesMain": true,
+        "startEnvelope": true,
+        "settledRain": true,
+        "motion": true,
+        "noFlash": true,
+        "windDispersionSpeed": true,
+        "cameraHeld": true,
+        "duration90": true,
+        "queueCompleted": true,
+        "completionRateRecompute": true,
+        "presentationUnmeasured": true,
+        "canonicalHasNoSupportR8": true
+      },
+      "stats": {
+        "frames": 1469,
+        "durationMs": 90022.3,
+        "fps": 16.31817894010706,
+        "medianMs": 66.59999999999854,
+        "p95Ms": 83.69999999999709,
+        "p99Ms": 116.5,
+        "maxMs": 117.70000000001164,
+        "over18Ms": 1387,
+        "over33Ms": 1386
+      },
+      "simulationStart": 60,
+      "forcingStart": 0,
+      "simulationEnd": 132.18289999999752,
+      "queue": {
+        "status": "completed",
+        "measuredSubmissions": 1469,
+        "confirmedPrefixId": 1469,
+        "endDrainMs": 233.39999997615814,
+        "completionBoundedSubmissionFps": 16.272969368271898,
+        "maxUnconfirmedMeasuredFrames": 22
+      },
+      "timestampCoverage": {
+        "render": {
+          "measuredDraws": 1469,
+          "expectedCalls": 2938,
+          "matchedFreshCalls": 2936,
+          "completeDraws": 1468,
+          "partialDraws": 0,
+          "missingDraws": 1,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        },
+        "compute": {
+          "measuredDraws": 1469,
+          "expectedCalls": 1469,
+          "matchedFreshCalls": 1468,
+          "completeDraws": 1468,
+          "partialDraws": 0,
+          "missingDraws": 1,
+          "notRequestedDraws": 0,
+          "invalidLedgerDraws": 0,
+          "conflictDraws": 0
+        }
+      },
+      "scope": "Saved report arithmetic/context only; no presentation, paired frame replay, isolated GPU throughput, broad visual or global60 claim"
+    }
+  ],
+  "invalidPerformanceWindows": 0,
+  "sourceQualificationRepair": "R1 579pass/1fail old five-buffer test; R2 changes only test packet expectation to six and passes580; runtime unchanged",
+  "limitations": [
+    "One A/B/A bracket; no confidence interval or isolated thermal/driver state",
+    "Phase accepted within frozen100ms; active dt is not replayed per frame",
+    "Presented FPS not measured",
+    "Native parity is one paused Rain state only",
+    "No hero/worker/other weather or anatomy trial after failed adoption gate"
+  ]
+}

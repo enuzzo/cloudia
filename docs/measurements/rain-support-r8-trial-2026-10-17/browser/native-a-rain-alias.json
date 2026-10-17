@@ -1,0 +1,12 @@
+{
+  "status": "PASS_VERIFIED_COMPLETE_BITMAP_ALIAS",
+  "newExportDTO": "native-a-rain.json",
+  "newCaptureId": "main-1-6ea5e9a22052",
+  "sourceCompletePNG": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle46/browser/native-a-rain.png",
+  "savedCompletePNG": "native-a-rain.png",
+  "bytes": 3258221,
+  "sha256": "6ea5e9a22052c40ebdbd223594a1a9ec2761e321410e6a009086ea8ca5972fd1",
+  "width": 2474,
+  "height": 1844,
+  "scope": "New UI acquisition, prior full bitmap rehashed and exact; no second chunk transfer"
+}

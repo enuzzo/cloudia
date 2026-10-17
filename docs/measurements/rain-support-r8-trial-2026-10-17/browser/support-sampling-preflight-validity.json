@@ -1,0 +1,27 @@
+{
+  "status": "PASS_SAVED_SYNTHETIC_SAMPLE_PARITY",
+  "reportSHA256": "fcdd012e9cf32bbc3a2f4cad0376a41b15427c71313867910211ef497de4bedc",
+  "pointsPerCase": 7833,
+  "caseCount": 2,
+  "cases": [
+    {
+      "name": "byte-ramp",
+      "mismatch": 0,
+      "zeroMismatch": 0,
+      "maxAbs": 0.0,
+      "nonFinite": 0,
+      "zeroPairs": 251,
+      "positivePairs": 7582
+    },
+    {
+      "name": "binary-step-and-hole",
+      "mismatch": 0,
+      "zeroMismatch": 0,
+      "maxAbs": 0.0,
+      "nonFinite": 0,
+      "zeroPairs": 7077,
+      "positivePairs": 756
+    }
+  ],
+  "scope": "Saved F32 result bytes and arithmetic only; not universal filter equivalence or native app parity. Hole field interior coverage not guaranteed; no added points after data."
+}

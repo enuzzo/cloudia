@@ -1,0 +1,71 @@
+{
+  "status": "PASS_WINDOW_INPUTS_AND_ARITHMETIC",
+  "reportSHA256": "da32e7ba6a159e9accace0bfec1dd2a91365bb005cc7e0067381d0bc14256dad",
+  "checks": {
+    "statisticsRecompute": true,
+    "finiteIntervals": true,
+    "sourceVersion": true,
+    "fullQuality": true,
+    "fullOutput": true,
+    "fullModes": true,
+    "timingStagesMain": true,
+    "startEnvelope": true,
+    "settledRain": true,
+    "motion": true,
+    "noFlash": true,
+    "windDispersionSpeed": true,
+    "cameraHeld": true,
+    "duration90": true,
+    "queueCompleted": true,
+    "completionRateRecompute": true,
+    "presentationUnmeasured": true,
+    "canonicalHasNoSupportR8": true
+  },
+  "stats": {
+    "frames": 1306,
+    "durationMs": 90021.40000000001,
+    "fps": 14.50766151159613,
+    "medianMs": 66.69999999999709,
+    "p95Ms": 83.39999999999418,
+    "p99Ms": 84,
+    "maxMs": 84.39999999999418,
+    "over18Ms": 1306,
+    "over33Ms": 1306
+  },
+  "simulationStart": 60.05,
+  "forcingStart": 0.06589999999999419,
+  "simulationEnd": 126.84089999999631,
+  "queue": {
+    "status": "completed",
+    "measuredSubmissions": 1306,
+    "confirmedPrefixId": 1306,
+    "endDrainMs": 283.39999997615814,
+    "completionBoundedSubmissionFps": 14.461380032001063,
+    "maxUnconfirmedMeasuredFrames": 19
+  },
+  "timestampCoverage": {
+    "render": {
+      "measuredDraws": 1306,
+      "expectedCalls": 2612,
+      "matchedFreshCalls": 2608,
+      "completeDraws": 1304,
+      "partialDraws": 0,
+      "missingDraws": 2,
+      "notRequestedDraws": 0,
+      "invalidLedgerDraws": 0,
+      "conflictDraws": 0
+    },
+    "compute": {
+      "measuredDraws": 1306,
+      "expectedCalls": 1306,
+      "matchedFreshCalls": 1304,
+      "completeDraws": 1304,
+      "partialDraws": 0,
+      "missingDraws": 2,
+      "notRequestedDraws": 0,
+      "invalidLedgerDraws": 0,
+      "conflictDraws": 0
+    }
+  },
+  "scope": "Saved report arithmetic/context only; no presentation, paired frame replay, isolated GPU throughput, broad visual or global60 claim"
+}

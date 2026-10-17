@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "step": "typecheck",
+  "command": [
+    "/Users/enuzzo/.bun/bin/bun",
+    "run",
+    "typecheck"
+  ],
+  "exitCode": 0,
+  "wallSeconds": 1.6469831248978153,
+  "wallLimitSeconds": 180,
+  "wallKilled": false,
+  "terminalObserved": true,
+  "terminalProcessCPUSeconds": 3.100363,
+  "terminalProcessPeakRSSBytes": 475447296,
+  "resourceScope": "Darwin wait4 launched process, not simultaneous process-tree peak; no arbitrary per-model memory cutoff",
+  "sourceFreezeSHA256": "d1ff771c114c9aec7d8dc2528392cf7845a8d190919f5d80ce22c4e70e659772",
+  "runnerSHA256": "807c253f2545d92f5a996e4575ec0b387e24a860f405bb581fc09d5a1c215cdc",
+  "logSHA256": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92",
+  "error": null
+}

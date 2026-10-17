@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-17T08:10:25.513Z",
+  "url": "http://127.0.0.1:4196/?seed=74",
+  "observedScenario": "Sole",
+  "observedMaturity": "Nube matura",
+  "observedMotion": "Pausa button visible; active animation",
+  "cameraKeys": {
+    "left": 14,
+    "down": 3
+  },
+  "dimensions": {
+    "cssHeight": 922,
+    "cssWidth": 1237,
+    "height": 1844,
+    "width": 2474
+  },
+  "console": [],
+  "candidateAdopted": false
+}

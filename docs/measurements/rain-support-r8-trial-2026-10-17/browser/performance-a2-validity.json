@@ -1,0 +1,71 @@
+{
+  "status": "PASS_WINDOW_INPUTS_AND_ARITHMETIC",
+  "reportSHA256": "481b8cbecb3ae44c7333257fe2a6e0d8443e1c15335417ba907c41c0f6daaedc",
+  "checks": {
+    "statisticsRecompute": true,
+    "finiteIntervals": true,
+    "sourceVersion": true,
+    "fullQuality": true,
+    "fullOutput": true,
+    "fullModes": true,
+    "timingStagesMain": true,
+    "startEnvelope": true,
+    "settledRain": true,
+    "motion": true,
+    "noFlash": true,
+    "windDispersionSpeed": true,
+    "cameraHeld": true,
+    "duration90": true,
+    "queueCompleted": true,
+    "completionRateRecompute": true,
+    "presentationUnmeasured": true,
+    "canonicalHasNoSupportR8": true
+  },
+  "stats": {
+    "frames": 1469,
+    "durationMs": 90022.3,
+    "fps": 16.31817894010706,
+    "medianMs": 66.59999999999854,
+    "p95Ms": 83.69999999999709,
+    "p99Ms": 116.5,
+    "maxMs": 117.70000000001164,
+    "over18Ms": 1387,
+    "over33Ms": 1386
+  },
+  "simulationStart": 60,
+  "forcingStart": 0,
+  "simulationEnd": 132.18289999999752,
+  "queue": {
+    "status": "completed",
+    "measuredSubmissions": 1469,
+    "confirmedPrefixId": 1469,
+    "endDrainMs": 233.39999997615814,
+    "completionBoundedSubmissionFps": 16.272969368271898,
+    "maxUnconfirmedMeasuredFrames": 22
+  },
+  "timestampCoverage": {
+    "render": {
+      "measuredDraws": 1469,
+      "expectedCalls": 2938,
+      "matchedFreshCalls": 2936,
+      "completeDraws": 1468,
+      "partialDraws": 0,
+      "missingDraws": 1,
+      "notRequestedDraws": 0,
+      "invalidLedgerDraws": 0,
+      "conflictDraws": 0
+    },
+    "compute": {
+      "measuredDraws": 1469,
+      "expectedCalls": 1469,
+      "matchedFreshCalls": 1468,
+      "completeDraws": 1468,
+      "partialDraws": 0,
+      "missingDraws": 1,
+      "notRequestedDraws": 0,
+      "invalidLedgerDraws": 0,
+      "conflictDraws": 0
+    }
+  },
+  "scope": "Saved report arithmetic/context only; no presentation, paired frame replay, isolated GPU throughput, broad visual or global60 claim"
+}

@@ -1,0 +1,110 @@
+$ vitest run "--maxWorkers=2" "--reporter=default" "--reporter=json" "--outputFile=/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle47/run/tests-result.json"
+
+ RUN  v4.1.6 /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle47/candidate-source
+
+ ✓ src/cumulonimbus/volume.test.ts (26 tests) 1278ms
+     ✓ fills lower/middle sections without turning the elevated multicell saddle into one tower  509ms
+ ✓ src/cumulonimbus/inclinedShoulder.test.ts (5 tests) 358ms
+ ✓ src/cumulonimbus/terrainMesh.test.ts (43 tests) 333ms
+ ✓ src/cumulonimbus/emptyTraversal.test.ts (3 tests) 263ms
+ ✓ src/cumulonimbus/inspector.test.ts (26 tests) 209ms
+ ❯ src/cumulonimbus/narrowCloud.test.ts (12 tests | 1 failed) 205ms
+     ✓ returns only an independent R8 array and leaves every macro channel intact 22ms
+     ✓ covers exactly the clipped union of raw-positive seed cubes, including R=1 and overlap 25ms
+     ✓ never rejects a contributing macro corner under signed fine warp and mixed ice 7ms
+     ✓ clamps finite outside-domain points to positive face corners without wrapping 0ms
+     ✓ retains a rendered liquid sample that a radius-one mask would lose 0ms
+     ✓ certifies an empty production R channel even when lighting is nonzero 42ms
+     ✓ keeps unqualified macro4/mask2 fixtures fully occupied 0ms
+     ✓ keeps unqualified macro12/mask7 fixtures fully occupied 0ms
+     ✓ keeps unqualified macro96/mask128 fixtures fully occupied 10ms
+     ✓ keeps unqualified macro256/mask64 fixtures fully occupied 1ms
+     ✓ falls back for a malformed production payload and rejects invalid dimensions 10ms
+     × transfers independent mask and density R8 buffers, preserving existing buffers/progress/errors 8ms
+ ✓ src/cumulonimbus/motion.test.ts (10 tests) 178ms
+ ✓ src/cumulonimbus/terrainOptical.test.ts (21 tests) 167ms
+ ✓ src/cumulonimbus/ThunderAudio.test.ts (1 test) 135ms
+ ✓ src/cumulonimbus/workerBridge.test.ts (6 tests) 114ms
+ ✓ src/cumulonimbus/lifecycle.test.ts (52 tests) 6149ms
+     ✓ captures applied native128/ultra384 at identical dimensions with the actual pre-forcing precipitation and frozen-field clocks  331ms
+ ✓ src/cumulonimbus/environment.test.ts (14 tests) 67ms
+ ✓ src/cumulonimbus/solarTransition.test.ts (17 tests) 60ms
+ ✓ src/cumulonimbus/light.test.ts (5 tests) 44ms
+ ✓ src/cumulonimbus/terrainRasterCache.test.ts (64 tests) 40ms
+ ✓ src/cumulonimbus/terrainSurface.test.ts (7 tests) 40ms
+ ✓ src/cumulonimbus/volume.layout-regression.test.ts (9 tests) 26ms
+ ✓ src/cumulonimbus/storm.test.ts (4 tests) 34ms
+ ✓ src/cumulonimbus/terrainNavigationDiagnostic.test.ts (7 tests) 29ms
+ ✓ src/cumulonimbus/terrainSplitTriangle.test.ts (29 tests) 27ms
+ ✓ src/cumulonimbus/landscape.test.ts (9 tests) 22ms
+ ✓ src/cumulonimbus/pointer.test.ts (4 tests) 17ms
+ ✓ src/cumulonimbus/terrainCover.test.ts (3 tests) 17ms
+ ✓ src/cumulonimbus/terrainDem.test.ts (5 tests) 14ms
+ ✓ src/cumulonimbus/nativeFrameExport.test.ts (24 tests) 10ms
+ ✓ src/cumulonimbus/terrainOpticalMaterial.test.ts (15 tests) 8ms
+ ✓ src/cumulonimbus/TerrainShadow.test.ts (37 tests) 11ms
+ ✓ src/cumulonimbus/volume.worker.test.ts (1 test) 10ms
+ ✓ src/cumulonimbus/motionField.test.ts (5 tests) 11ms
+ ✓ src/cumulonimbus/terrainMaterialWitness.test.ts (6 tests) 6ms
+ ✓ src/cumulonimbus/rgba32fReadback.test.ts (4 tests) 5ms
+ ✓ src/cumulonimbus/cloudShader.test.ts (8 tests) 6ms
+ ✓ src/embed/CloudiaHero.test.ts (3 tests) 5ms
+ ✓ src/cumulonimbus/timestampBatchMeasurement.test.ts (10 tests) 5ms
+ ✓ src/cumulonimbus/queuePrefixMeasurement.test.ts (6 tests) 4ms
+ ✓ src/cumulonimbus/terrainCoverTextures.test.ts (7 tests) 4ms
+ ✓ src/cumulonimbus/three186TimestampBatch.test.ts (6 tests) 3ms
+ ✓ src/cumulonimbus/supportR8.test.ts (11 tests) 3ms
+ ✓ src/cumulonimbus/camera.test.ts (9 tests) 3ms
+ ✓ src/cumulonimbus/medium.test.ts (2 tests) 3ms
+ ✓ src/cumulonimbus/atmosphere.test.ts (4 tests) 3ms
+ ✓ src/cumulonimbus/densityR8.test.ts (9 tests) 3ms
+ ✓ src/cumulonimbus/skyCache.test.ts (3 tests) 3ms
+ ✓ src/cumulonimbus/aerial.test.ts (2 tests) 2ms
+ ✓ src/cumulonimbus/performance.test.ts (6 tests) 2ms
+ ✓ src/cumulonimbus/weatherInteraction.test.ts (3 tests) 2ms
+ ✓ src/cumulonimbus/terrainOpticalRaster.test.ts (2 tests) 2ms
+ ✓ src/core/presetStore.test.ts (3 tests) 2ms
+ ✓ src/input/gestureMapper.test.ts (2 tests) 2ms
+ ✓ src/weather/WeatherLayer.test.ts (2 tests) 1ms
+ ✓ src/cumulonimbus/weatherState.test.ts (2 tests) 1ms
+ ✓ src/core/stateMachine.test.ts (2 tests) 1ms
+ ✓ src/core/renderQuality.test.ts (2 tests) 1ms
+ ✓ src/core/easing.test.ts (2 tests) 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/cumulonimbus/narrowCloud.test.ts > volume worker narrow transfer > transfers independent mask and density R8 buffers, preserving existing buffers/progress/errors
+AssertionError: expected [ , , , , ,  ] to deeply equal [ , , , ,  ]
+
+- Expected
++ Received
+
+@@ -68,6 +68,9 @@
+      0,
+      0,
+      0,
+      0,
+    ],
++   ArrayBuffer [
++     11,
++   ],
+  ]
+
+ ❯ src/cumulonimbus/narrowCloud.test.ts:127:30
+    125|     expect(packet.volume.narrowMask).toEqual({size:1,data:new Uint8Arr…
+    126|     expect([...packet.volume.detail.data]).toEqual([3,5,7,11]);
+    127|     expect(options.transfer).toEqual([generated.data.buffer,generated.…
+       |                              ^
+    128|     expect(new Set(options.transfer).size).toBe(5);
+    129|     expect(generated.densityR8!.data).toEqual(new Uint8Array(8));
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 53 passed (54)
+      Tests  1 failed | 579 passed (580)
+   Start at  09:45:02
+   Duration  13.44s (transform 621ms, setup 0ms, import 1.53s, tests 9.95s, environment 8.58s)
+
+JSON report written to /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle47/run/tests-result.json
+error: script "test" exited with code 1

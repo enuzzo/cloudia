@@ -1,0 +1,197 @@
+--- /dev/null
++++ b/src/cumulonimbus/supportR8.ts
+@@ -0,0 +1,28 @@
++export interface SupportR8 {size:number;data:Uint8Array}
++/** Exact broad-support bytes; old packets retain the original detail-alpha path. */
++export interface SupportR8Packet {supportR8?:SupportR8}
++
++const voxelCount=(size:number)=>Number.isSafeInteger(size)&&size>0&&Number.isSafeInteger(size**3*4)?size**3:null;
++
++/** Copy the completed occupancy alpha only; no field, filter or quantization change. */
++export function extractSupportR8(detail:{size:number;data:Uint8Array}):SupportR8{
++  const count=voxelCount(detail.size);
++  if(count===null)throw new RangeError('Support R8 size must be a positive integer with a safe RGBA voxel count.');
++  if(!(detail.data instanceof Uint8Array))throw new TypeError('Detail support must use Uint8Array RGBA bytes.');
++  if(detail.data.length!==count*4)throw new RangeError('Detail RGBA payload length does not match its dimensions.');
++  const data=new Uint8Array(count);
++  for(let i=0;i<count;i++)data[i]=detail.data[i*4+3];
++  return {size:detail.size,data};
++}
++
++/** Invalid/legacy input keeps the original filtered alpha, never a fabricated support. */
++export function readSupportR8(source:{detail:{size:number;data:Uint8Array};supportR8?:unknown}):SupportR8|null{
++  const detail=source.detail,payload=source.supportR8;
++  if(!detail||typeof detail!=='object')return null;
++  const count=voxelCount(detail.size);
++  if(count===null||!(detail.data instanceof Uint8Array)||detail.data.length!==count*4||!payload||typeof payload!=='object')return null;
++  const candidate=payload as Partial<SupportR8>;
++  if(candidate.size!==detail.size||!(candidate.data instanceof Uint8Array)||candidate.data.length!==count)return null;
++  if(candidate.data.buffer===detail.data.buffer)return null;
++  return candidate as SupportR8;
++}
+--- /dev/null
++++ b/src/cumulonimbus/supportR8.test.ts
+@@ -0,0 +1,42 @@
++// @vitest-environment node
++import {describe,expect,it} from 'vitest';
++import {extractSupportR8,readSupportR8} from './supportR8';
++
++describe('exact broad-support R8 payload',()=>{
++  it('copies alpha endpoints and weak values independently of RGB, without mutating or aliasing',()=>{
++    const detail={size:2,data:new Uint8Array([91,2,3,0,81,4,5,1,71,6,7,255,61,8,9,17,51,10,11,83,41,12,13,128,31,14,15,254,21,16,17,7])};
++    const before=detail.data.slice(),result=extractSupportR8(detail);
++    expect(result.size).toBe(2);expect([...result.data]).toEqual([0,1,255,17,83,128,254,7]);
++    expect(result.data.buffer.byteLength).toBe(8);expect(result.data.buffer).not.toBe(detail.data.buffer);expect(detail.data).toEqual(before);
++    detail.data[3]=99;expect(result.data[0]).toBe(0);result.data[1]=33;expect(detail.data[7]).toBe(1);
++  });
++  it('respects an offset source view and ignores bytes outside the RGBA payload',()=>{
++    const backing=new Uint8Array(12).fill(77),view=new Uint8Array(backing.buffer,4,4);view.set([19,23,29,31]);
++    const result=extractSupportR8({size:1,data:view});
++    expect([...result.data]).toEqual([31]);expect([...backing]).toEqual([77,77,77,77,19,23,29,31,77,77,77,77]);
++  });
++  it.each([0,-1,1.5,NaN,Infinity,Number.MAX_SAFE_INTEGER])('rejects invalid dimensions before allocation: %s',size=>{
++    expect(()=>extractSupportR8({size,data:new Uint8Array(4)})).toThrow(RangeError);
++  });
++  it('rejects malformed source storage instead of accepting an incomplete occupancy field',()=>{
++    expect(()=>extractSupportR8({size:2,data:new Uint8Array(31)})).toThrow(RangeError);
++    expect(()=>extractSupportR8({size:1,data:new Float32Array(4) as unknown as Uint8Array})).toThrow(TypeError);
++  });
++  it('accepts the matching independent packet by identity without allocating another copy',()=>{
++    const detail={size:2,data:new Uint8Array(32)},supportR8=extractSupportR8(detail);
++    expect(readSupportR8({detail,supportR8})).toBe(supportR8);
++    const backing=new Uint8Array(12),offset={size:2,data:new Uint8Array(backing.buffer,2,8)};
++    expect(readSupportR8({detail,supportR8:offset})).toBe(offset);
++  });
++  it('falls back for absent, mismatched, malformed or aliased packets and malformed detail',()=>{
++    const detail={size:2,data:new Uint8Array(32)};
++    for(const supportR8 of [undefined,null,{},'r8',{size:1,data:new Uint8Array(8)},{size:2,data:new Uint8Array(7)},
++      {size:2,data:new Float32Array(8)},{size:2,data:new Uint8Array(detail.data.buffer,0,8)}]){
++      expect(readSupportR8({detail,supportR8})).toBeNull();
++    }
++    const valid={size:2,data:new Uint8Array(8)};
++    expect(readSupportR8({detail:{size:0,data:new Uint8Array(0)},supportR8:valid})).toBeNull();
++    expect(readSupportR8({detail:{size:2,data:new Uint8Array(31)},supportR8:valid})).toBeNull();
++    expect(readSupportR8({detail:{size:2,data:new Float32Array(32) as unknown as Uint8Array},supportR8:valid})).toBeNull();
++  });
++});
+--- a/src/cumulonimbus/volume.worker.ts
++++ b/src/cumulonimbus/volume.worker.ts
+@@ -1,11 +1,13 @@
+ import { generateVolume } from './volume';
+ import {buildNarrowCloudMask,type NarrowCloudVolume} from './narrowCloud';
+ import {extractDensityR8,type DensityR8Packet} from './densityR8';
++import {extractSupportR8,type SupportR8Packet} from './supportR8';
+ self.onmessage = (event: MessageEvent<{size: number; seed: number}>) => {
+   try {
+-    const volume:NarrowCloudVolume&DensityR8Packet = generateVolume(event.data.size, event.data.seed, fraction => self.postMessage({progress: fraction}));
++    const volume:NarrowCloudVolume&DensityR8Packet&SupportR8Packet = generateVolume(event.data.size, event.data.seed, fraction => self.postMessage({progress: fraction}));
+     volume.narrowMask=buildNarrowCloudMask(volume,volume.detail.size);
+     volume.densityR8=extractDensityR8(volume);
+-    self.postMessage({volume}, {transfer: [volume.data.buffer,volume.detail.data.buffer,volume.sunsetLight.buffer,volume.narrowMask.data.buffer,volume.densityR8.data.buffer]});
++    volume.supportR8=extractSupportR8(volume.detail);
++    self.postMessage({volume}, {transfer: [volume.data.buffer,volume.detail.data.buffer,volume.sunsetLight.buffer,volume.narrowMask.data.buffer,volume.densityR8.data.buffer,volume.supportR8.data.buffer]});
+   } catch(error) { self.postMessage({error: error instanceof Error ? error.message : String(error)}); }
+ };
+--- a/src/cumulonimbus/volume.worker.test.ts
++++ b/src/cumulonimbus/volume.worker.test.ts
+@@ -3,30 +3,35 @@
+ import * as volumeModule from './volume';
+ import type {NarrowCloudVolume} from './narrowCloud';
+ import type {DensityR8Packet} from './densityR8';
++import type {SupportR8Packet} from './supportR8';
+ afterEach(()=>{vi.restoreAllMocks();vi.unstubAllGlobals();});
+ 
+-it('transfers five distinct buffers with exact density bytes and intact light/detail channels',async()=>{
++it('transfers six distinct buffers with exact density/support bytes and intact light/detail channels',async()=>{
+   const macro=new Uint8Array([0,9,8,7,1,6,5,4,255,3,2,1,17,9,8,7,83,6,5,4,128,3,2,1,254,9,8,7,7,6,5,4]);
+   const before=macro.slice();
+-  const generated:NarrowCloudVolume&DensityR8Packet={size:2,data:macro,sunsetLight:new Uint8Array(16).fill(33),
++  const generated:NarrowCloudVolume&DensityR8Packet&SupportR8Packet={size:2,data:macro,sunsetLight:new Uint8Array(16).fill(33),
+     detail:{size:1,data:new Uint8Array([3,5,7,11])},supportBounds:{min:[-1,0,-1],max:[1,2,1]}};
+   vi.spyOn(volumeModule,'generateVolume').mockImplementation((_size,_seed,progress)=>{progress?.(.5);return generated;});
+-  let received:(NarrowCloudVolume&DensityR8Packet)|undefined;
++  let received:(NarrowCloudVolume&DensityR8Packet&SupportR8Packet)|undefined;
+   let transferred:ArrayBuffer[]=[];
+   const progress:number[]=[];
+   const scope={onmessage:null as null|((event:MessageEvent<{size:number;seed:number}>)=>void),
+-    postMessage:(packet:{volume?:NarrowCloudVolume&DensityR8Packet;progress?:number},options?:{transfer:ArrayBuffer[]})=>{
++    postMessage:(packet:{volume?:NarrowCloudVolume&DensityR8Packet&SupportR8Packet;progress?:number},options?:{transfer:ArrayBuffer[]})=>{
+       if(packet.progress!==undefined)progress.push(packet.progress);
+       if(options){transferred=[...options.transfer];received=structuredClone(packet,{transfer:options.transfer}).volume;}
+     }};
+   vi.stubGlobal('self',scope);await import('./volume.worker');
+   scope.onmessage!({data:{size:2,seed:72}} as MessageEvent<{size:number;seed:number}>);
+-  expect(progress).toEqual([.5]);expect(new Set(transferred).size).toBe(5);
++  expect(progress).toEqual([.5]);expect(transferred).toHaveLength(6);expect(new Set(transferred).size).toBe(6);
+   expect(transferred.every(buffer=>buffer.byteLength===0)).toBe(true);
+-  expect(generated.data.byteLength).toBe(0);expect(generated.densityR8!.data.byteLength).toBe(0);
++  expect(generated.data.byteLength).toBe(0);expect(generated.densityR8!.data.byteLength).toBe(0);expect(generated.supportR8!.data.byteLength).toBe(0);
+   expect(received!.data).toEqual(before);expect([...received!.densityR8!.data]).toEqual([0,1,255,17,83,128,254,7]);
+   expect(received!.densityR8!.data.buffer).not.toBe(received!.data.buffer);
+   expect([...received!.detail.data]).toEqual([3,5,7,11]);
++  expect([...received!.supportR8!.data]).toEqual([11]);
++  expect(received!.supportR8!.size).toBe(received!.detail.size);
++  expect(received!.supportR8!.data.buffer).not.toBe(received!.detail.data.buffer);
++  expect(new Set([received!.data.buffer,received!.detail.data.buffer,received!.sunsetLight.buffer,received!.narrowMask!.data.buffer,received!.densityR8!.data.buffer,received!.supportR8!.data.buffer]).size).toBe(6);
+   expect(received!.sunsetLight.every(value=>value===33)).toBe(true);
+   expect([...received!.narrowMask!.data]).toEqual([255]);
+ });
+--- a/src/cumulonimbus/cloudShader.ts
++++ b/src/cumulonimbus/cloudShader.ts
+@@ -248,13 +248,17 @@
+   )
+ ;
+ /** Compile both weather choice and diagnostic; no narrow binding exists in dry mode. */
+-export function createCloudIntegrator(mode=0,useNarrow=false,useDensityR8=false){
++export function createCloudIntegrator(mode=0,useNarrow=false,useDensityR8=false,useSupportR8=false){
+   const selected=Number.isInteger(mode)&&mode>=0&&mode<=5?mode:0;
+   let source=useNarrow?rainIntegrationSource:integrationSource;
+   if(useDensityR8)source=source
+     .replace('volumeSampler: sampler,','volumeSampler: sampler, densityR8: texture_3d<f32>,')
+     .replace('textureSampleLevel(volume,volumeSampler,coord+warp/vec3<f32>(10.0,8.5,7.0),0.0).r',
+       'textureSampleLevel(densityR8,volumeSampler,coord+warp/vec3<f32>(10.0,8.5,7.0),0.0).r');
++  if(useNarrow&&useSupportR8)source=source
++    .replace('detailSampler: sampler,','detailSampler: sampler, supportR8: texture_3d<f32>,')
++    .replace('textureSampleLevel(detail,detailSampler,clamp(referenceCoord,maskInset,vec3<f32>(1.0)-maskInset),0.0).a',
++      'textureSampleLevel(supportR8,detailSampler,clamp(referenceCoord,maskInset,vec3<f32>(1.0)-maskInset),0.0).r');
+   return wgslFn(source.replaceAll('probeMode',`${selected}.0`),[film,motion,channel,landscape,media,precipitation]);
+ }
+ 
+--- a/src/cumulonimbus/cloudShader.test.ts
++++ b/src/cumulonimbus/cloudShader.test.ts
+@@ -8,8 +8,8 @@
+ import {createCloudIntegrator} from './cloudShader';
+ import {LANDSCAPE_WGSL} from './landscape';
+ import {AERIAL_WGSL} from './aerial';
+-const source=(mode=0,useNarrow=false,useDensityR8=false)=>{
+-  createCloudIntegrator(mode,useNarrow,useDensityR8);
++const source=(mode=0,useNarrow=false,useDensityR8=false,useSupportR8=false)=>{
++  createCloudIntegrator(mode,useNarrow,useDensityR8,useSupportR8);
+   const code=vi.mocked(wgslFn).mock.calls.at(-1)?.[0];
+   if(typeof code!=='string')throw new Error('Expected the WGSL integrator source.');
+   return code;
+@@ -102,6 +102,24 @@
+       expect(candidate).not.toBe(restored);
+     }
+   });
++  it('keeps every dry variant byte-identical even when support R8 is requested',()=>{
++    for(const density of [false,true])for(let mode=0;mode<=5;mode++){
++      const candidate=source(mode,false,density,true);
++      expect(candidate).toBe(source(mode,false,density));expect(candidate).not.toContain('supportR8');
++    }
++  });
++  it('changes only the broad support binding/channel and preserves the original wet hash after inversion',()=>{
++    for(const density of [false,true])for(let mode=0;mode<=5;mode++){
++      const candidate=source(mode,true,density,true);
++      const binding='detailSampler: sampler, supportR8: texture_3d<f32>,';
++      const sample='textureSampleLevel(supportR8,detailSampler,clamp(referenceCoord,maskInset,vec3<f32>(1.0)-maskInset),0.0).r';
++      expect(candidate.split(binding)).toHaveLength(2);expect(candidate.split(sample)).toHaveLength(2);
++      const restored=candidate.replace(binding,'detailSampler: sampler,').replace(sample,
++        'textureSampleLevel(detail,detailSampler,clamp(referenceCoord,maskInset,vec3<f32>(1.0)-maskInset),0.0).a');
++      expect(restored).toBe(source(mode,true,density));expect(candidate).not.toBe(restored);
++      if(mode===0&&!density)expect(sha(beforeAerialTrial(beforeTerrainRaster(restored)))).toBe('6d30dc1d1ab7bc99513c451f4fcbdee81c402fe90220d565bb3a6df52c5cb655');
++    }
++  });
+   it('registers the shared aerial definition exactly once through the standalone landscape library',()=>{
+     for(const narrow of [false,true])for(const r8 of [false,true]){
+       const code=source(0,narrow,r8);

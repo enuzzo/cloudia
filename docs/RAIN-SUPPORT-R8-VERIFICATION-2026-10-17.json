@@ -1,0 +1,21 @@
+{
+  "status": "PASS_CONSERVATION_ONLY",
+  "manifestSHA256": "cfba787dba05a6c96e108d58e23b5769251656fcbe69ab804bf0c13276b401bd",
+  "payloadFiles": 88,
+  "payloadBytes": 15530679,
+  "canonicalSourcesExact": 141,
+  "candidateR1SourcesReconstructedExact": 143,
+  "candidateR2SourcesReconstructedExact": 143,
+  "overlayFiles": 9,
+  "candidateAdopted": false,
+  "trialVerdict": "FAIL_ADOPTION_GATE_NO_ADOPTION",
+  "retainedFirstSuite": "579PASS/1FAIL",
+  "qualifiedSuite": "580PASS/54files",
+  "firstArithmeticFailPreserved": true,
+  "global60": "NOT_REACHED",
+  "wholeGoal": "active",
+  "modelReplays": 0,
+  "testReplays": 0,
+  "GPUReplays": 0,
+  "scope": "Integrity and preserved verdicts only; no new source/sample/native/performance/artistic or whole-goal qualification."
+}

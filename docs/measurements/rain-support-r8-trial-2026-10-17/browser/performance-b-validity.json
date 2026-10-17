@@ -1,0 +1,71 @@
+{
+  "status": "PASS_WINDOW_INPUTS_AND_ARITHMETIC",
+  "reportSHA256": "a13863fad0bdd9c93c98e954811c65c64101b1d8c8109d479aca1de36ad2c2fb",
+  "checks": {
+    "statisticsRecompute": true,
+    "finiteIntervals": true,
+    "sourceVersion": true,
+    "fullQuality": true,
+    "fullOutput": true,
+    "fullModes": true,
+    "timingStagesMain": true,
+    "startEnvelope": true,
+    "settledRain": true,
+    "motion": true,
+    "noFlash": true,
+    "windDispersionSpeed": true,
+    "cameraHeld": true,
+    "duration90": true,
+    "queueCompleted": true,
+    "completionRateRecompute": true,
+    "presentationUnmeasured": true,
+    "supportR8BoundThroughout": true
+  },
+  "stats": {
+    "frames": 1364,
+    "durationMs": 90054.90000000001,
+    "fps": 15.14631630261096,
+    "medianMs": 66.69999999999709,
+    "p95Ms": 83.39999999999418,
+    "p99Ms": 83.80000000000291,
+    "maxMs": 84.30000000000291,
+    "over18Ms": 1364,
+    "over33Ms": 1363
+  },
+  "simulationStart": 60,
+  "forcingStart": 0,
+  "simulationEnd": 129.8627999999968,
+  "queue": {
+    "status": "completed",
+    "measuredSubmissions": 1364,
+    "confirmedPrefixId": 1364,
+    "endDrainMs": 276.10000002384186,
+    "completionBoundedSubmissionFps": 15.097981917834215,
+    "maxUnconfirmedMeasuredFrames": 20
+  },
+  "timestampCoverage": {
+    "render": {
+      "measuredDraws": 1364,
+      "expectedCalls": 2728,
+      "matchedFreshCalls": 2722,
+      "completeDraws": 1361,
+      "partialDraws": 0,
+      "missingDraws": 3,
+      "notRequestedDraws": 0,
+      "invalidLedgerDraws": 0,
+      "conflictDraws": 0
+    },
+    "compute": {
+      "measuredDraws": 1364,
+      "expectedCalls": 1364,
+      "matchedFreshCalls": 1361,
+      "completeDraws": 1361,
+      "partialDraws": 0,
+      "missingDraws": 3,
+      "notRequestedDraws": 0,
+      "invalidLedgerDraws": 0,
+      "conflictDraws": 0
+    }
+  },
+  "scope": "Saved report arithmetic/context only; no presentation, paired frame replay, isolated GPU throughput, broad visual or global60 claim"
+}

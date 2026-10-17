@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-17T08:11:43.373612+00:00",
+  "canonicalSourceFilesExact": 141,
+  "candidateSourceFilesExact": 143,
+  "canonicalManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "candidateR2ManifestSHA256": "428da0e97ab2635df4e5fa17594c44daff93b2d05fee2b35abcd3335d687c079",
+  "candidateAdopted": false,
+  "trialVerdict": "FAIL_ADOPTION_GATE_NO_ADOPTION",
+  "candidateServer": {
+    "port": 53790,
+    "ownedSession": 80462,
+    "stoppedIntentionally": true,
+    "observedExitCode": 0
+  },
+  "canonicalServer": {
+    "port": 4196,
+    "ownedSession": 48736,
+    "verifiedBy": "existing exec session poll returned running; ordinary page restored and screenshot/console/dimensions saved"
+  },
+  "dependencyIgnore": 1,
+  "noInstallOrLockEdit": true,
+  "unrelatedPreserved": [
+    "node_modules 2/",
+    "port4201"
+  ],
+  "noPushOrDeploy": true,
+  "wholeGoal": "active",
+  "scope": "Source/dependency conservation and observed cleanup only; no new model, suite or GPU replay."
+}

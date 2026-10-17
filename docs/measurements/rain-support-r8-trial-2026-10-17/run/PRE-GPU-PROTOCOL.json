@@ -1,0 +1,64 @@
+{
+  "kind": "First dedicated broad-support alpha R8 qualification",
+  "sourceFreezeSHA256": "428da0e97ab2635df4e5fa17594c44daff93b2d05fee2b35abcd3335d687c079",
+  "canonicalManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "browser": "Browser plugin not available; reuse CUA Playwright bridge IAB2/tab1, no alternate browser/CDP",
+  "flowUnderTest": "Canonical seed74 -> fixed full-quality Rain camera -> native export; candidate same controls -> identical native PNG; then active90s matchedA/B/A.",
+  "sourceChecks": "Static review, typecheck and existing full suite plus transfer/lifecycle/source guards; all prior failures retained. APP before GPU, hero only after practical qualification. No density/model changes or new model witness.",
+  "microGPU": {
+    "page": "run/support-sampling-preflight.html",
+    "pageSHA256": "1f7ee8321f2d300ddea7cfd806a68a1b542512ab7658f5b9bc3e48e46bf7cd1b",
+    "execution": "Navigate away from animated app; one manual UI activation of isolated synthetic WebGPU128cubed pair, no app renderer concurrent; drain/readback/destroy device before native app.",
+    "inputs": "Byte ramp and binary step/hole; RGBA alpha bytes copied independently toR8. Actual F32 position words include centers/interiors/zero-plane/inset ULP and outer clamp; points fixed in page source before data.",
+    "criterion": "Both cases finite, positive and zero pairs present, every saved output F32 word pair exactly equal and every zero predicate equal; validation scope null and device explicitly destroyed.",
+    "scope": "Synthetic format/filter compatibility at these points, not full native-field or universal filter equivalence, notFPS. Failure stops candidate before native/performance."
+  },
+  "native": {
+    "setup": "seed74/profile1/timingoff/surface.7227685139973958/target[.3515625,3.119140625,-.0546875],Fissa confronto->Rain.8; screen output explicitly;14Left3Down;pausedt60/forcing0/precip0;settle>=15s",
+    "quality": {
+      "macro": [
+        256,
+        256,
+        256
+      ],
+      "detail": [
+        128,
+        128,
+        128
+      ],
+      "steps": 384,
+      "output": [
+        2474,
+        1844
+      ],
+      "internal": [
+        2474,
+        1844
+      ],
+      "flow": "full",
+      "ablation": "full"
+    },
+    "comparability": "Entire recursiveDTO qualified before pixel criterion. Physical controls and rendering clocks exact; rainCPU difference accepted only identicalFloat32. New B supportSampling must be exactly qualified: R8extractedalpha,128cubed,2097152texturebytes,2097152extraCPU/GPU,full canonicaldetailSampler/repeat/linear/mip0/inset,fallbacknull. Other physical input changes disallowed.",
+    "ownerExceptions": [
+      "rendererVersion expected experiment label",
+      "capture/frame identities and owner clocks/date/origin",
+      "skyUUID/requestidentity with format/dimensions unchanged",
+      "cachehits/requests/submissions owner identity with validtrue",
+      "weatherTime only flash/autoLightning off"
+    ],
+    "criterion": "Whole native PNG SHA256 identical. A complete prior savedbitmap may be reused ONLY if a newactualexportDTO has sameSHA/bytes/dimensions and file rehashed; record alias. B same rule. Any mismatch stops without tuning/extraGPUcases/performanceB.",
+    "transfer": "Readonly DOM export in16Kreads; bounded batches with durable chunks; bytes/SHA/IHDR. No screenshot/ROI substitute."
+  },
+  "performance": {
+    "sequence": "One A1/B/A2,90s each+existing2s warmup;freshprofile timingstages;oneGPU/tab/main;fullquality/output/camera same native;activecloud/noorbit/navAudit/framecap/flash/dispersion",
+    "setup": "Fissa comparison paused60/forcing0, Rain.8,14Left3Down,screen,settle>=15s. Visible enabled Riprendi and Misura90 controls. Enter on BOTH in sameCUAtask; no pointer action tocloseinspector. No sourceclock alteration orhidden state mutation.",
+    "startQualification": "Actualsimstart60..60.1 andforcingstart0..0.1;100ms UI envelope fixed beforedata; exactoffsets recorded; no promise synchronized perframe replay because simulation dt clamps and forcing dt real. If a start fails, retain invalid and stop this unit rather than widening/tuning.",
+    "validity": "Allfullquality/mode/camera/settledrainF32.8; queueprefixfinal completed with all measured submissions confirmed. Full timestamp ledger coverage/missing/unmatched retained. PresentedFPS separate null.",
+    "practicalGate": "BsubmissionFPS andcompletionBoundedSubmissionFPS each>=1.05*max(validA1,A2), Bp95/p99<=worseA. Otherwise noadoption, no repetitions/tuning. Previous20fps continuity only, notmatchedA.",
+    "scope": "Does not certifyglobal60/compositorpresentation/isolatedGPUthroughput/headroom. If passes, actualbroaderwet/worker/lifecycle/native qualification+APP->hero required before adopting; fullgoal remains."
+  },
+  "stop": "Any failedsource/sample/native/practicalgate: preservefailures,restorev61,stopownedcandidate only. No arbitrary new memory cap/model witnesses.",
+  "scope": "Fullgoal anatomy3families/near/light/motion/rainvirga/terrain/UI/60fullquality remains intact; this is one testable performance candidate.",
+  "noInstallOrLockEdit": true,
+  "approvalRequired": false
+}

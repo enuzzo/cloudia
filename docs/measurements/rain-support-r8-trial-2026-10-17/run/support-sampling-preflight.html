@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="it"><meta charset="utf-8"><title>Cloudia · confronto filtro alpha R8</title>
+<style>body{font:16px system-ui;margin:32px;max-width:1100px}button{padding:12px}textarea{width:100%;height:65vh;font:12px monospace}pre{white-space:pre-wrap}</style>
+<h1>Confronto GPU del filtro alpha</h1>
+<p>Due campi sintetici 128³, stessi campioni e sampler. Questa prova verifica i punti registrati; non è un rendering della nube né una misura FPS.</p>
+<button id="run">Esegui una prova</button><pre id="status" role="status">In attesa.</pre>
+<textarea id="support-sampling-json" aria-label="Rapporto completo campionamento GPU" readonly></textarea>
+<script type="module">
+const button=document.querySelector('#run'),status=document.querySelector('#status'),output=document.querySelector('textarea');
+const shader=`
+@group(0) @binding(0) var detail: texture_3d<f32>;
+@group(0) @binding(1) var supportR8: texture_3d<f32>;
+@group(0) @binding(2) var detailSampler: sampler;
+@group(0) @binding(3) var<storage,read> positions: array<vec4<f32>>;
+@group(0) @binding(4) var<storage,read_write> results: array<vec2<f32>>;
+@compute @workgroup_size(64)
+fn main(@builtin(global_invocation_id) id:vec3<u32>){
+  if(id.x>=arrayLength(&positions)){return;}
+  let referenceCoord=positions[id.x].xyz;
+  let maskInset=vec3<f32>(0.5)/vec3<f32>(textureDimensions(detail,0));
+  let a=textureSampleLevel(detail,detailSampler,clamp(referenceCoord,maskInset,vec3<f32>(1.0)-maskInset),0.0).a;
+  let r=textureSampleLevel(supportR8,detailSampler,clamp(referenceCoord,maskInset,vec3<f32>(1.0)-maskInset),0.0).r;
+  results[id.x]=vec2<f32>(a,r);
+}`;
+const hash=async bytes=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),v=>v.toString(16).padStart(2,'0')).join('');
+const f32=Math.fround;
+function adjacent(value,direction){const f=new Float32Array([value]),u=new Uint32Array(f.buffer);u[0]+=direction;return f[0];}
+function points(){
+  const data=[],categories=[];
+  const add=(x,y,z,label)=>{data.push(f32(x),f32(y),f32(z),0);categories.push(label);};
+  const centers=[0,1,2,3,15,31,47,63,64,65,79,95,111,125,126,127].map(i=>(i+.5)/128);
+  for(const z of centers)for(const y of centers)for(const x of centers)add(x,y,z,'texel-center');
+  const interior=[.5/128,.75/128,1/128,1.25/128,.25,.5,.75,127/128,127.5/128];
+  for(const z of interior)for(const y of interior)for(const x of interior)add(x,y,z,'filtered-interior');
+  const edge=63.5/128,zeroEdges=[adjacent(edge,-1),edge,adjacent(edge,1),64/128,64.5/128];
+  for(const z of centers)for(const y of centers)for(const x of zeroEdges)add(x,y,z,'zero-plane-f32-ulp');
+  const inset=.5/128,last=1-inset;
+  const boundary=[-1,-.000001,0,adjacent(inset,-1),inset,adjacent(inset,1),adjacent(last,-1),last,adjacent(last,1),1,1.000001,2];
+  for(const z of boundary)for(const y of boundary)for(const x of boundary)add(x,y,z,'inset-clamp-f32-ulp');
+  const packed=new Float32Array(data);
+  return {packed,categories,words:Array.from(new Uint32Array(packed.buffer))};
+}
+button.addEventListener('click',async()=>{
+  button.disabled=true;status.textContent='Prova GPU in corso…';
+  const report={schema:'cloudia-support-filter-preflight-v1',date:new Date().toISOString(),size:128,
+    scope:'Synthetic texture-format/filter contract at saved float32 points only; no cloud model, full-field proof, native parity, speed or presentation claim',
+    sampler:{addressModeU:'repeat',addressModeV:'repeat',addressModeW:'repeat',minFilter:'linear',magFilter:'linear',mipmapFilter:'nearest'},
+    formats:['rgba8unorm','r8unorm'],shader,cases:[],deviceDestroyed:false};
+  let device;
+  try{
+    if(!navigator.gpu)throw new Error('WebGPU non disponibile');
+    const adapter=await navigator.gpu.requestAdapter({powerPreference:'high-performance'});
+    if(!adapter)throw new Error('Nessun adapter WebGPU');
+    report.adapter={vendor:adapter.info.vendor,architecture:adapter.info.architecture,device:adapter.info.device,description:adapter.info.description};
+    report.adapterFeatures=Array.from(adapter.features).sort();device=await adapter.requestDevice();
+    device.pushErrorScope('validation');
+    const pipeline=await device.createComputePipelineAsync({layout:'auto',compute:{module:device.createShaderModule({code:shader}),entryPoint:'main'}});
+    const sampler=device.createSampler(report.sampler),p=points();report.pointCount=p.categories.length;
+    report.pointFloat32Words=p.words;report.pointCategories=p.categories;
+    report.adjacentProof={edge:63.5/128,words:zeroEdgeWords()};
+    const input=device.createBuffer({size:p.packed.byteLength,usage:GPUBufferUsage.STORAGE|GPUBufferUsage.COPY_DST});
+    device.queue.writeBuffer(input,0,p.packed);
+    for(const name of ['byte-ramp','binary-step-and-hole']){
+      const count=128**3,rgba=new Uint8Array(count*4),alpha=new Uint8Array(count);
+      for(let z=0;z<128;z++)for(let y=0;y<128;y++)for(let x=0;x<128;x++){
+        const i=(z*128+y)*128+x;
+        const a=name==='byte-ramp'?((x*13+y*17+z*31)&255):
+          (x>=64&&y>=16&&y<112&&z>=8&&z<120&&!(x>=80&&x<88&&y>=48&&y<80&&z>=48&&z<80)?255:0);
+        rgba[i*4]=(x*7)&255;rgba[i*4+1]=(y*11)&255;rgba[i*4+2]=(z*19)&255;rgba[i*4+3]=a;alpha[i]=a;
+      }
+      const common={size:{width:128,height:128,depthOrArrayLayers:128},dimension:'3d',mipLevelCount:1,usage:GPUTextureUsage.TEXTURE_BINDING|GPUTextureUsage.COPY_DST};
+      const detail=device.createTexture({...common,format:'rgba8unorm'}),support=device.createTexture({...common,format:'r8unorm'});
+      device.queue.writeTexture({texture:detail},rgba,{bytesPerRow:512,rowsPerImage:128},common.size);
+      device.queue.writeTexture({texture:support},alpha,{bytesPerRow:128,rowsPerImage:128},common.size);
+      const bytes=p.categories.length*8,result=device.createBuffer({size:bytes,usage:GPUBufferUsage.STORAGE|GPUBufferUsage.COPY_SRC});
+      const read=device.createBuffer({size:bytes,usage:GPUBufferUsage.MAP_READ|GPUBufferUsage.COPY_DST});
+      const bind=device.createBindGroup({layout:pipeline.getBindGroupLayout(0),entries:[
+        {binding:0,resource:detail.createView()},{binding:1,resource:support.createView()},{binding:2,resource:sampler},
+        {binding:3,resource:{buffer:input}},{binding:4,resource:{buffer:result}}]});
+      const encoder=device.createCommandEncoder(),pass=encoder.beginComputePass();pass.setPipeline(pipeline);pass.setBindGroup(0,bind);pass.dispatchWorkgroups(Math.ceil(p.categories.length/64));pass.end();encoder.copyBufferToBuffer(result,0,read,0,bytes);device.queue.submit([encoder.finish()]);
+      await device.queue.onSubmittedWorkDone();await read.mapAsync(GPUMapMode.READ);
+      const copied=read.getMappedRange().slice(0),words=new Uint32Array(copied),floats=new Float32Array(copied);
+      let mismatch=0,zeroMismatch=0,maxAbs=0,nonFinite=0,zeroPairs=0,positivePairs=0;
+      for(let i=0;i<p.categories.length;i++){
+        const a=floats[2*i],r=floats[2*i+1];if(words[2*i]!==words[2*i+1])mismatch++;
+        if((a===0)!==(r===0))zeroMismatch++;if(!Number.isFinite(a)||!Number.isFinite(r))nonFinite++;
+        if(a===0&&r===0)zeroPairs++;if(a>0&&r>0)positivePairs++;maxAbs=Math.max(maxAbs,Math.abs(a-r));
+      }
+      report.cases.push({name,inputRGBABytes:rgba.length,inputR8Bytes:alpha.length,rgbaSHA256:await hash(rgba),alphaSHA256:await hash(alpha),
+        resultSHA256:await hash(copied),resultFloat32Words:Array.from(words),mismatch,zeroMismatch,maxAbs,nonFinite,zeroPairs,positivePairs,
+        pass:mismatch===0&&zeroMismatch===0&&nonFinite===0&&zeroPairs>0&&positivePairs>0});
+      read.unmap();read.destroy();result.destroy();detail.destroy();support.destroy();
+    }
+    input.destroy();await device.queue.onSubmittedWorkDone();
+    const validation=await device.popErrorScope();report.validationError=validation?.message??null;
+    report.pass=!validation&&report.cases.length===2&&report.cases.every(c=>c.pass);
+  }catch(error){report.pass=false;report.error=String(error?.stack??error);}
+  finally{if(device){device.destroy();report.deviceDestroyed=true;}output.value=JSON.stringify(report);status.textContent=report.pass?'PASS sui punti registrati · dispositivo chiuso':'FAIL · leggere rapporto completo';}
+});
+function zeroEdgeWords(){const edge=63.5/128;return [adjacent(edge,-1),edge,adjacent(edge,1)].map(v=>new Uint32Array(new Float32Array([v]).buffer)[0]);}
+</script></html>

@@ -1,0 +1,25 @@
+{
+  "status": "FAIL",
+  "step": "tests",
+  "command": [
+    "/Users/enuzzo/.bun/bin/bun",
+    "run",
+    "test",
+    "--maxWorkers=2",
+    "--reporter=default",
+    "--reporter=json",
+    "--outputFile=/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle47/run/tests-result.json"
+  ],
+  "exitCode": 1,
+  "wallSeconds": 13.829875458963215,
+  "wallLimitSeconds": 180,
+  "wallKilled": false,
+  "terminalObserved": true,
+  "terminalProcessCPUSeconds": 32.057191,
+  "terminalProcessPeakRSSBytes": 353222656,
+  "resourceScope": "Darwin wait4 launched process, not simultaneous process-tree peak; no arbitrary per-model memory cutoff",
+  "sourceFreezeSHA256": "d1ff771c114c9aec7d8dc2528392cf7845a8d190919f5d80ce22c4e70e659772",
+  "runnerSHA256": "807c253f2545d92f5a996e4575ec0b387e24a860f405bb581fc09d5a1c215cdc",
+  "logSHA256": "7393e4290e35241fe076940c6e70634c498d226e1a5089d20f2149f63b7aa03b",
+  "error": null
+}

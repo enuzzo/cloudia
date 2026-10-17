@@ -1,0 +1,130 @@
+{
+  "status": "PASS_FIXED_NATIVE_PNG_AND_INPUTS",
+  "differences": [
+    {
+      "path": ".metadata.clocks.weatherTime",
+      "A": 28.06829999999999,
+      "B": 38.31930000000003
+    },
+    {
+      "path": ".metadata.frame.date",
+      "A": "2026-10-17T07:51:50.194Z",
+      "B": "2026-10-17T07:53:16.138Z"
+    },
+    {
+      "path": ".metadata.frame.localSnapshotTime",
+      "A": 44654,
+      "B": 63769.10000002384
+    },
+    {
+      "path": ".metadata.frame.localTimeOrigin",
+      "A": 1792223465540.8,
+      "B": 1792223532369.4
+    },
+    {
+      "path": ".metadata.frame.ownerDrawSerial",
+      "A": 921,
+      "B": 1700
+    },
+    {
+      "path": ".metadata.frame.rafTimestamp",
+      "A": 44644.3,
+      "B": 63754.3
+    },
+    {
+      "path": ".metadata.rendererVersion",
+      "A": "observatory-v61-observed-terrain-material",
+      "B": "experiment-v61-support-alpha-r8-r1"
+    },
+    {
+      "path": ".metadata.skyTextures.from.uuid",
+      "A": "4c6aa951-56a5-440a-a49a-617f9148d3c9",
+      "B": "d23200e8-dc64-41b3-b7a3-68d23014e9ea"
+    },
+    {
+      "path": ".metadata.skyTextures.to.uuid",
+      "A": "c8b094a3-59c0-4cda-9532-6f8c012d285b",
+      "B": "08720830-0bde-4e49-8320-5a1c19c9efc8"
+    },
+    {
+      "path": ".metadata.supportSampling",
+      "A": "MISSING",
+      "B": {
+        "path": "r8unorm-extracted-alpha",
+        "format": "r8unorm",
+        "dimensions": [
+          128,
+          128,
+          128
+        ],
+        "textureBytes": 2097152,
+        "extraCpuPayloadBytes": 2097152,
+        "extraGpuPayloadBytes": 2097152,
+        "sampling": "same detailSampler; linear/repeat/mip0; explicit half-detail-texel inset clamp; NoColorSpace",
+        "reason": "rain with valid supportR8 payload",
+        "allocationAccounting": "nominal payload; GPU upload/residency not measured",
+        "fallback": null
+      }
+    },
+    {
+      "path": ".metadata.terrainRaster.cache.hits",
+      "A": 882,
+      "B": 1665
+    },
+    {
+      "path": ".metadata.terrainRaster.cache.requests",
+      "A": 922,
+      "B": 1701
+    },
+    {
+      "path": ".metadata.terrainRaster.cache.submissions",
+      "A": 40,
+      "B": 36
+    },
+    {
+      "path": ".metadata.terrainRaster.shadow.cache.hits",
+      "A": 921,
+      "B": 1700
+    },
+    {
+      "path": ".metadata.terrainRaster.shadow.cache.requests",
+      "A": 922,
+      "B": 1701
+    },
+    {
+      "path": ".metadata.weather.rain",
+      "A": 0.7999999999999975,
+      "B": 0.7999999999999995
+    }
+  ],
+  "differenceCount": 16,
+  "rainCPUFloat64": [
+    0.7999999999999975,
+    0.7999999999999995
+  ],
+  "rainGPUFloat32Equal": true,
+  "candidateSupportSampling": {
+    "path": "r8unorm-extracted-alpha",
+    "format": "r8unorm",
+    "dimensions": [
+      128,
+      128,
+      128
+    ],
+    "textureBytes": 2097152,
+    "extraCpuPayloadBytes": 2097152,
+    "extraGpuPayloadBytes": 2097152,
+    "sampling": "same detailSampler; linear/repeat/mip0; explicit half-detail-texel inset clamp; NoColorSpace",
+    "reason": "rain with valid supportR8 payload",
+    "allocationAccounting": "nominal payload; GPU upload/residency not measured",
+    "fallback": null
+  },
+  "png": {
+    "mime": "image/png",
+    "width": 2474,
+    "height": 1844,
+    "byteLength": 3258221,
+    "sha256": "6ea5e9a22052c40ebdbd223594a1a9ec2761e321410e6a009086ea8ca5972fd1"
+  },
+  "scope": "Whole PNG and entire saved CPU DTO qualification for this paused state; no HDR/universal filter/animated/presentation claim."
+}

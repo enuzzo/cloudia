@@ -1,0 +1,18 @@
+{
+  "kind": "Saved verifier algorithm correction, not a new measurement or gate",
+  "pythonVersion": "3.14.8 (main, Sep 30 2026, 17:55:09) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "javascriptActualAlgorithm": "values.reduce((a,b)=>a+b,0), ordinary sequential IEEE754 addition",
+  "oldVerifier": "Python built-in sum(values), compensated float summation in installedPython3.14",
+  "replacement": "Explicit duration=0.0; for interval in values: duration+=interval, exact sequential parity",
+  "originalReportDurationMs": 90022.3,
+  "oldVerifierDurationMs": 90022.30000000002,
+  "correctedVerifierDurationMs": 90022.3,
+  "originalReportFps": 16.31817894010706,
+  "runtimeSourceChanges": 0,
+  "protocolChanges": 0,
+  "newPerformanceWindows": 0,
+  "firstFailPreserved": "browser/performance-a2-validity-before-reduction-fix.json",
+  "oldVerifierPreserved": "run/analyze-performance-before-reduction-fix.py",
+  "newVerifierSHA256": "dc6c6a9820d4a64b90bb2bb5eb8beeac0326b5333d4bd45151920e077d5095d2",
+  "scope": "Arithmetic audit only; no tolerance widening, source mutation, rerun or promotion of candidate; practicalgate remainsfailed"
+}

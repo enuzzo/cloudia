@@ -1,0 +1,11 @@
+{
+  "head": "f67255d2d6f4eba7190f1c12a7187af238215876",
+  "status": "?? \"node_modules 2/\"\n",
+  "canonicalSourceFiles": 141,
+  "canonicalSourceManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "dependencyIgnore": 1,
+  "architecture": "arm64",
+  "externalCandidateSymlinksProtectedDependencies": true,
+  "noInstallOrLockEdit": true,
+  "scope": "First dedicated broad-support alpha R8 format trial; root sole runtime/model/test/build/browser/GPU executor; independent source authors and saved-only reviewers."
+}

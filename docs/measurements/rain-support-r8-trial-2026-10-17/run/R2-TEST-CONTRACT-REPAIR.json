@@ -1,0 +1,12 @@
+{
+  "kind": "Test contract correction after actual full suite",
+  "r1SourceFreezeSHA256": "d1ff771c114c9aec7d8dc2528392cf7845a8d190919f5d80ce22c4e70e659772",
+  "r2SourceFreezeSHA256": "428da0e97ab2635df4e5fa17594c44daff93b2d05fee2b35abcd3335d687c079",
+  "r1Passed": 579,
+  "r1Failed": 1,
+  "failure": "narrowCloud.test legacy worker transfer assertion enumerated only five buffers",
+  "changedRuntimeFiles": [],
+  "changedFile": "src/cumulonimbus/narrowCloud.test.ts",
+  "change": "Enumerate sixth independent support buffer and assert exact alpha11/content/non-alias; preserve progress/error assertions",
+  "scope": "One explicit correction of existing worker packet contract, no gate/quality/runtime change"
+}
