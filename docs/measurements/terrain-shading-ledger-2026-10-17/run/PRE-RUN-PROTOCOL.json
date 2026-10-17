@@ -1,0 +1,85 @@
+{
+  "kind": "terrain-shading-ledger-protocol-v1",
+  "baselineRenderer": "observatory-v61-observed-terrain-material",
+  "baselineCommit": "8a9535f9cb849292f5dd868020ef7f514567109a",
+  "baseline141ManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "purpose": "Read fixed12 macro-normal, final-normal, D/S/V factors and determine a narrowly supported next correction; no palette/gain/crease angle search.",
+  "productMutation": false,
+  "preserved": [
+    "256^3 macro",
+    "128^3 detail",
+    "384 nominal steps",
+    "full configured2474x1844",
+    "v61 optical material",
+    "canonical591788 vertices1182550 triangles",
+    "ordinary constructor expression and node object"
+  ],
+  "camera": {
+    "seed": 74,
+    "origin": [
+      15.459707890770279,
+      7.558173047097125,
+      2.780613896133632
+    ],
+    "target": [
+      0.3515625,
+      3.119140625,
+      -0.0546875
+    ],
+    "sun": [
+      -0.668126592347077,
+      0.7126683651702156,
+      0.21380050955106467
+    ],
+    "output": [
+      2474,
+      1844
+    ],
+    "pose": "Fissa stato confronto, screen output, Sole,14ArrowLeft+3ArrowDown; paused t60."
+  },
+  "method": {
+    "ordinaryFullReads": [
+      "cached",
+      "forcedfresh",
+      "restored"
+    ],
+    "diagnosticMaterials": 3,
+    "diagnosticCopies": 36,
+    "returnedDiagnosticBytes": 576,
+    "diagnosticScissor": {
+      "x": 64,
+      "y": 610,
+      "width": 2137,
+      "height": 491,
+      "pixels": 1049267
+    },
+    "newLargeTargets": 0,
+    "newGeometryBuilds": 0,
+    "ordinaryRestore": "invalidate and redraw full ordinary colour+shadow before first await; independent renderer/target/scissor restore; allSettled read and ownerdrain before clone disposal",
+    "baselineF32SHA256": "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9",
+    "baselineAlphaSHA256": "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c",
+    "baselinePNG_SHA256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9",
+    "CPUBufferHashes": "Existing installed upload arrays hashed, not a new model; historical CPU faces remain separate reference, not actual GPU face identity.",
+    "geometryBuildScope": "No additional mesh builder or model during the audit; the browser initializes the ordinary viewer once."
+  },
+  "limits": [
+    "Diagnostic shader DCE/codegen can differ. No claim exact ordinary pipeline or timing.",
+    "Three r186 mapAsync rejection bypasses internal staging destroy; drained promises do not prove freed staging on errors.",
+    "Full target reads use sequential <=96MiB packed buffers, alpha extracts. Allocator/GC/driver residency unmeasured.",
+    "Twelve historical pixel IDs not class/visibility proof; local hypotheses cannot generalize to whole ROI.",
+    "No FPS timing while audit/PNG transfer runs."
+  ],
+  "runCaps": {
+    "probeMockTestWallSeconds": 30,
+    "fullSuiteWallSeconds": 60,
+    "buildWallSeconds": 90,
+    "browserAuditWaitSeconds": 60
+  },
+  "acceptance": [
+    "cached/fresh/restored fullF32 and fullalpha identical to v61",
+    "nativePNG identical to v61 (one actual export and SHA; transfer only if hash differs)",
+    "36 records finite, valid distance, no sentinel; restored state and inputs stable, drain fulfilled",
+    "four currentinstalledCPU buffer hashes canonical",
+    "independent numeric interpretation, choose targeted next action or report inconclusive"
+  ]
+}

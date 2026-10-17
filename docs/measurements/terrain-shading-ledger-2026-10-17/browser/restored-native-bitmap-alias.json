@@ -1,0 +1,11 @@
+{
+  "kind": "native-png-exact-content-alias-v1",
+  "actualExportMetadata": "restored-native.json",
+  "metadataSHA256": "6075a9907ffca498bac614ded40fe7f6e6e246a6d519276627fa46eb4f202b39",
+  "actualExportSHA256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9",
+  "width": 2474,
+  "height": 1844,
+  "bytes": 3599836,
+  "existingExactPNG": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/terrain-optical-material-2026-10-17/browser/candidate-b-native.png",
+  "scope": "A new actual canvas export computed this digest; exact bitmap already retained in v61 archive was rehashed locally, avoiding a duplicate base64 transfer. The new PNG bytes were not retransferred."
+}

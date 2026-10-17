@@ -1,0 +1,13 @@
+
+> cloudia@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.6 /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle37/ledger-source
+
+
+ Test Files  55 passed (55)
+      Tests  600 passed (600)
+   Start at  04:35:09
+   Duration  9.23s (transform 3.05s, setup 0ms, import 4.83s, tests 14.60s, environment 20.02s)
+

@@ -1,0 +1,2342 @@
+{
+  "reportKind": "terrain-raster-cache-full-f32-v1",
+  "status": "COMPLETE_IDENTICAL_F32",
+  "scope": "Entire existing GPU terrain target, cached content compared with a forced fresh ordinary draw under stable owner inputs. Optional fixed twelve-pixel shading ledger uses three diagnostic materials and restores the full ordinary target. No new render target, model rebuild or FPS measurement.",
+  "snapshot": {
+    "schemaVersion": 1,
+    "rendererVersion": "diagnostic-v61-shading-ledger-r1",
+    "threeRevision": "186",
+    "executionThread": "main",
+    "scope": "Lossless PNG of the canvas bitmap at this submitted draw; excludes page UI, linear/HDR buffers and compositor presentation. Capture is not a performance sample.",
+    "uniformScope": "CPU-side values submitted to Three uniforms at this draw; GPU float32 rounding is not read back.",
+    "frame": {
+      "ownerDrawSerial": 852,
+      "rafTimestamp": 19907,
+      "localSnapshotTime": 19907.100000023842,
+      "localTimeOrigin": 1792204536467.6,
+      "date": "2026-10-17T02:35:56.374Z",
+      "counterScope": "Frame-loop draw calls in this engine owner, including regeneration draws; not GPU completion or presentation"
+    },
+    "ready": true,
+    "regenerating": false,
+    "seed": 74,
+    "family": "sheared",
+    "terrainRaster": {
+      "vertices": 591788,
+      "triangles": 1182550,
+      "stitchedCells": 4096,
+      "levels": 9,
+      "cellsPerSide": 256,
+      "baseSpacingKm": 0.032,
+      "outerExtentKm": 1048.576,
+      "geometryBytes": 33127816,
+      "sampleCalls": 1183149,
+      "minimumHeightKm": 0,
+      "maximumHeightKm": 3.0260982513427734,
+      "normalBlendStartRadiusKm": 32.768,
+      "normalBlendEndRadiusKm": 65.536,
+      "normalMode": "geometry",
+      "refinement": {
+        "originalVertices": 465409,
+        "originalTriangles": 929792,
+        "probeSampleCalls": 591361,
+        "vertexSampleCalls": 591788,
+        "totalSampleCalls": 1183149,
+        "nodesAboveThreshold": 209659,
+        "eligibleNodesAboveThreshold": 209488,
+        "markedRedFaces": 69833,
+        "greenFaces": 21853,
+        "splitEdgeCount": 126379,
+        "addedVertices": 126379,
+        "addedTriangles": 252758,
+        "addedGeometryBytes": 7077224,
+        "sourceSpacingKm": 0.125,
+        "maxErrorKm": 0.005,
+        "sourceGrid": {
+          "minXKm": -64,
+          "minZKm": -64,
+          "spacingKm": 0.125,
+          "columns": 1025,
+          "rows": 1025
+        },
+        "selectionDomain": {
+          "minXKm": -48,
+          "maxXKm": 48,
+          "minZKm": -48,
+          "maxZKm": 48
+        },
+        "selectedNodeColumns": 769,
+        "selectedNodeRows": 769,
+        "originalFacesBySplitEdgeCount": [
+          838106,
+          7390,
+          7520,
+          76776
+        ],
+        "maximumCellTriangles": 20,
+        "cellTriangleCountBytes": 589824,
+        "midpointVerticesOutsideDomain": 405,
+        "boundsKm": {
+          "min": [
+            -1048.5760498046875,
+            -178.98373413085938,
+            -1048.5760498046875
+          ],
+          "max": [
+            1048.5760498046875,
+            -1.675218939781189,
+            1048.5760498046875
+          ]
+        }
+      },
+      "geometryScope": "First visible triangle of this static stitched mesh; not exact analytic-height intersection",
+      "shadow": {
+        "resolution": 2048,
+        "radiusKm": 64,
+        "coverage": "128km square in light right/up coordinates, centered at [0,-4,0], outer 15% fades to lit; not global terrain shadows",
+        "colourFormat": "r32float relative solar height km; -1000000 clear",
+        "depthFormat": "depth32float",
+        "colourBytes": 16777216,
+        "depthBytes": 16777216,
+        "targetPayloadBytes": 33554432,
+        "baseBiasKm": 0.001,
+        "receiverRadialOffsetKm": 0.03125,
+        "filter": "One nearest textureLoad; no receiver-plane extrapolation or PCF blur; outside coverage lit",
+        "biasPolicy": "Caster affine height minimum over one actual light texel: 0.5*(abs(dpdx(q))+abs(dpdy(q))) +1m; erodes unresolved contact shadows, especially at low Sun",
+        "receiverPolicy": "Only shadow lookup point elevated along planet radial by half one light texel; geometry/radiance point unchanged; contact shadows below this scale may disappear",
+        "biasLimit": "No guarantee for multiple non-coplanar faces inside one light texel; aliasing and contact-shadow loss require visual qualification",
+        "depthFit": {
+          "nearKm": 0.5,
+          "farKm": 1977.8974431000836,
+          "cameraDistanceKm": 927.4244346416147,
+          "minimumCasterHeightKm": -1049.473008458469,
+          "maximumCasterHeightKm": 926.4244346416147
+        },
+        "reversedDepthBuffer": true,
+        "updates": "Exact-input cached shadow map; terrain colour draw remains live; shared geometry not owned by shadow",
+        "cache": {
+          "requests": 853,
+          "submissions": 1,
+          "hits": 852,
+          "epoch": 0,
+          "valid": true,
+          "scope": "Owner-local CPU calls: requests are validated render calls, submissions are renderer.render attempts (including throws), hits skip shadow clear/draw; no GPU completion or presentation claim",
+          "ownership": "Static casters and exclusive target; call invalidate after caster mutations, external target writes or same-owner renderer/backend reset; disposed owner is terminal"
+        }
+      },
+      "width": 2474,
+      "height": 1844,
+      "colourFormat": "rgba32float",
+      "distanceComponent": "alpha; km from actual camera origin; -1 miss",
+      "colourDistanceBytes": 72992896,
+      "depthBytes": 18248224,
+      "targetPayloadBytes": 91241120,
+      "cpuTriangleLookupBytes": 2949120,
+      "normalPolicy": "Shared incident-area-weighted actual mesh normal at every vertex; no bilinear-source gradient seams",
+      "memoryScope": "Nominal retained geometry and target/depth payload only; CPU construction temporaries and driver residency/peak are unmeasured",
+      "perFrameCpuHeightSamples": 0,
+      "nearKm": 0.025,
+      "farKm": 1600,
+      "reversedDepthBuffer": true,
+      "cache": {
+        "enabled": true,
+        "requests": 853,
+        "hits": 705,
+        "submissions": 148,
+        "epoch": 4,
+        "valid": true,
+        "scope": "Owner-local CPU requests/render attempts; hits skip colour clear/draw. Not GPU completion, presentation or FPS.",
+        "ownership": "Static scene/geometry and exclusive target. cacheInputs covers every mutable shade binding; invalidate for external writes/reset, invalidateGeometry for raw caster/world changes after updating bounds."
+      }
+    },
+    "terrainCacheMode": "exact-input",
+    "terrainOptical": {
+      "enabled": true,
+      "variant": "observed-premult-valid-land-v1",
+      "stats": {
+        "gridSize": [
+          2048,
+          2048
+        ],
+        "cellKm": 0.0625,
+        "minEdgeKm": [
+          -64,
+          -64
+        ],
+        "rowOrder": "south-to-north; v0=minZ",
+        "dataConvention": "premultiplied-linear-RGB-and-valid-area",
+        "sourceAssetBytes": 33554432,
+        "basePayloadBytes": 33554432,
+        "nominalMipPayloadBytes": 11184808,
+        "totalGpuPayloadBytes": 44739240,
+        "retainedCpuPayloadBytes": 33554432,
+        "mipLevels": 12
+      }
+    },
+    "quality": "ultra",
+    "nominalSteps": 384,
+    "stepSizeKm": 0.018229166666666668,
+    "emptyStepKm": 0.0546875,
+    "output": [
+      2474,
+      1844
+    ],
+    "internal": [
+      2474,
+      1844
+    ],
+    "outputMode": "screen",
+    "canvas": [
+      2474,
+      1844
+    ],
+    "viewport": {
+      "width": 1237,
+      "height": 922,
+      "dpr": 2
+    },
+    "rendererOutputColorSpace": "srgb",
+    "rendererToneMapping": 0,
+    "volume": [
+      256,
+      256,
+      256
+    ],
+    "detailVolume": [
+      128,
+      128,
+      128
+    ],
+    "motionField": [
+      16,
+      16,
+      16
+    ],
+    "ablation": "full",
+    "ablationCode": 0,
+    "flowMode": "full",
+    "flowSampled": true,
+    "flowComputeThisDraw": true,
+    "densitySampling": {
+      "path": "macro-rgba8-r",
+      "format": "rgba8unorm",
+      "dimensions": [
+        256,
+        256,
+        256
+      ],
+      "textureBytes": 67108864,
+      "extraCpuPayloadBytes": 16777216,
+      "extraGpuPayloadBytes": 16777216,
+      "sampling": "same volumeSampler; linear/clamp-to-edge/mip0; NoColorSpace",
+      "reason": "dry weather; R8 retained but not bound",
+      "allocationAccounting": "nominal payload; GPU upload/residency not measured",
+      "fallback": null
+    },
+    "narrowCloudSpecialization": "dry",
+    "camera": {
+      "origin": [
+        15.459707890770279,
+        7.558173047097125,
+        2.780613896133632
+      ],
+      "target": [
+        0.3515625,
+        3.119140625,
+        -0.0546875
+      ],
+      "forward": [
+        -0.9442590869231424,
+        -0.27743952638107033,
+        -0.177206337258352
+      ],
+      "right": [
+        0.18444716051358995,
+        0,
+        -0.9828424314092641
+      ],
+      "up": [
+        -0.27267933867740585,
+        0.9607431026041495,
+        -0.05117293285522365
+      ],
+      "yaw": 1.3852869846402587,
+      "pitch": 0.2811279826464208,
+      "approach": 0,
+      "aspect": 1.341648590021692,
+      "tanHalfVerticalFov": 0.2867,
+      "comparisonSurfaceKm": 0.7227685139973958,
+      "comparisonTargetKm": [
+        0.3515625,
+        3.119140625,
+        -0.0546875
+      ],
+      "probeSkipped": true,
+      "surfaceEstimateKm": null,
+      "probe": null,
+      "probeAgeMs": null,
+      "ground": 1,
+      "terrainClearanceKm": 0.2
+    },
+    "clocks": {
+      "simulationTime": 60,
+      "forcingTime": 0,
+      "weatherTime": 9.367300000000025,
+      "precipitationUniformTime": 0,
+      "flowUniformTime": 60,
+      "flowFieldTime": 60,
+      "flowFieldDispersion": 0,
+      "note": "Precipitation uniform is applied before this frame advances forcingTime. A frozen flow texture retains its installation time/dispersion even while flowUniformTime advances."
+    },
+    "paused": true,
+    "orbit": false,
+    "speed": 1,
+    "material": {
+      "growth": [
+        1,
+        1,
+        1
+      ],
+      "drift": [
+        0.121372967564859,
+        0.010131947708267265,
+        0
+      ],
+      "wind": [
+        0.26052456720014755,
+        0.09009438008941259
+      ],
+      "forcing": [
+        0,
+        0
+      ],
+      "iceRange": [
+        4.51146714868378,
+        5.196156475759857
+      ],
+      "seedPhase": 0.014788732394366197,
+      "flowFamily": 2,
+      "supportMin": [
+        -4.86640625,
+        -0.1680859374999999,
+        -3.052421875
+      ],
+      "supportMax": [
+        5.56953125,
+        6.4063671875,
+        2.943046875
+      ],
+      "extinctionPerKm": 18,
+      "iceExtinctionPerKm": 6.5
+    },
+    "weather": {
+      "skyIntent": "clear",
+      "rain": 0,
+      "targetRain": 0,
+      "haze": 1,
+      "overcast": 0,
+      "skyPending": false,
+      "atmosphereProgress": 1,
+      "atmosphereBlend": 1,
+      "windStrength": 0.55,
+      "dispersion": 0,
+      "precipitationBounds": [
+        -3.359375,
+        -2.0234375,
+        2.265625,
+        2.1328125
+      ],
+      "precipitationStepKm": 0.006,
+      "precipitationExtinctionPerKm": 0.85
+    },
+    "skyTextures": {
+      "requestSerial": 3,
+      "requestedSide": 0,
+      "from": {
+        "uuid": "cea958fe-5bec-43b0-9c4f-1b6af2e724c8",
+        "version": 3,
+        "width": 128,
+        "height": 128,
+        "type": 1016,
+        "colorSpace": ""
+      },
+      "to": {
+        "uuid": "5502e45f-9190-4c0c-853b-69c162bc437e",
+        "version": 3,
+        "width": 128,
+        "height": 128,
+        "type": 1016,
+        "colorSpace": ""
+      },
+      "scope": "Owner-local texture objects and upload revisions; not portable content hashes."
+    },
+    "lighting": {
+      "sunDirection": [
+        -0.668126592347077,
+        0.7126683651702156,
+        0.21380050955106467
+      ],
+      "lightSide": 0,
+      "sunsetAmount": 0,
+      "solarColor": [
+        0.9313426391412541,
+        0.8413836906464631,
+        0.7182507029227312
+      ],
+      "ambientColor": [
+        0.08283003529291262,
+        0.10718098056640865,
+        0.1600090087683047
+      ],
+      "flash": [
+        0,
+        3.5,
+        0.5,
+        0
+      ],
+      "flashTop": [
+        0,
+        0,
+        0
+      ],
+      "flashBend": [
+        0,
+        0,
+        0
+      ],
+      "flashEnd": [
+        0,
+        0,
+        0
+      ],
+      "flashBranch": [
+        0,
+        0,
+        0
+      ],
+      "flashCount": 0
+    },
+    "terrain": {
+      "surfaceId": "copernicus-glo90-liguria-apuane-v1",
+      "coverId": "esa-worldcover-2021-area-fractions-v1",
+      "hash": "u32-avalanche-24-v1",
+      "verticalExaggeration": 1,
+      "originDegrees": [
+        44,
+        10
+      ],
+      "axisX": "west",
+      "axisZ": "north"
+    }
+  },
+  "cacheTerrain": true,
+  "cached": {
+    "width": 2474,
+    "height": 1844,
+    "sha256": "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9",
+    "alphaSHA256": "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c",
+    "alphaBytes": 18248224,
+    "witness": [
+      {
+        "id": "L1-artifact",
+        "uv": [
+          0.028900565885206144,
+          0.46447939262472887
+        ],
+        "pixel": [
+          71,
+          856
+        ],
+        "rgba": [
+          0.010302993468940258,
+          0.014199471101164818,
+          0.015455827116966248,
+          36.562217712402344
+        ],
+        "bits": [
+          1009307107,
+          1013490918,
+          1014839920,
+          1108492214
+        ]
+      },
+      {
+        "id": "L1-control",
+        "uv": [
+          0.026071139854486662,
+          0.46447939262472887
+        ],
+        "pixel": [
+          64,
+          856
+        ],
+        "rgba": [
+          0.008368724025785923,
+          0.012483187019824982,
+          0.013630012050271034,
+          36.556861877441406
+        ],
+        "bits": [
+          1007230201,
+          1011648072,
+          1012879466,
+          1108490810
+        ]
+      },
+      {
+        "id": "L2-artifact",
+        "uv": [
+          0.1744139046079224,
+          0.46068329718004336
+        ],
+        "pixel": [
+          431,
+          849
+        ],
+        "rgba": [
+          0.037994351238012314,
+          0.03565721586346626,
+          0.030546927824616432,
+          36.058143615722656
+        ],
+        "bits": [
+          1025220599,
+          1024593229,
+          1023032717,
+          1108360074
+        ]
+      },
+      {
+        "id": "L2-control",
+        "uv": [
+          0.1744139046079224,
+          0.4579718004338395
+        ],
+        "pixel": [
+          431,
+          844
+        ],
+        "rgba": [
+          0.024521270766854286,
+          0.025326302275061607,
+          0.02478175237774849,
+          36.13376998901367
+        ],
+        "bits": [
+          1019797717,
+          1020229915,
+          1019937562,
+          1108379899
+        ]
+      },
+      {
+        "id": "L3-artifact",
+        "uv": [
+          0.36519805982215037,
+          0.35330802603036876
+        ],
+        "pixel": [
+          903,
+          651
+        ],
+        "rgba": [
+          0.010727212764322758,
+          0.013398812152445316,
+          0.015592668205499649,
+          43.868621826171875
+        ],
+        "bits": [
+          1009762609,
+          1012631217,
+          1014986852,
+          1110407544
+        ]
+      },
+      {
+        "id": "L3-control",
+        "uv": [
+          0.36519805982215037,
+          0.35059652928416485
+        ],
+        "pixel": [
+          903,
+          646
+        ],
+        "rgba": [
+          0.011557547375559807,
+          0.014112944714725018,
+          0.016019420698285103,
+          43.906856536865234
+        ],
+        "bits": [
+          1010654174,
+          1013398011,
+          1015233321,
+          1110417567
+        ]
+      },
+      {
+        "id": "C1-ocean",
+        "uv": [
+          0.8894502829426031,
+          0.5968004338394793
+        ],
+        "pixel": [
+          2200,
+          1100
+        ],
+        "rgba": [
+          0.008158542215824127,
+          0.0251751895993948,
+          0.04044027999043465,
+          32.39778518676758
+        ],
+        "bits": [
+          1007004520,
+          1020148787,
+          1025877173,
+          1107400533
+        ]
+      },
+      {
+        "id": "C2-coastal-lowland",
+        "uv": [
+          0.7277687954729184,
+          0.5046095444685467
+        ],
+        "pixel": [
+          1800,
+          930
+        ],
+        "rgba": [
+          0.14028950035572052,
+          0.13013672828674316,
+          0.10517383366823196,
+          36.3409309387207
+        ],
+        "bits": [
+          1041213453,
+          1040532112,
+          1037526369,
+          1108434205
+        ]
+      },
+      {
+        "id": "C3-plain",
+        "uv": [
+          0.8894502829426031,
+          0.37988069414316705
+        ],
+        "pixel": [
+          2200,
+          700
+        ],
+        "rgba": [
+          0.008942077867686749,
+          0.027352871373295784,
+          0.03533002734184265,
+          47.58469772338867
+        ],
+        "bits": [
+          1007845835,
+          1021317921,
+          1024505400,
+          1111381691
+        ]
+      },
+      {
+        "id": "C4-ridge-L1",
+        "uv": [
+          0.06891673403395311,
+          0.43682212581344904
+        ],
+        "pixel": [
+          170,
+          805
+        ],
+        "rgba": [
+          0.040221426635980606,
+          0.03778162598609924,
+          0.029715916141867638,
+          37.66872024536133
+        ],
+        "bits": [
+          1025818425,
+          1025163496,
+          1022586571,
+          1108782277
+        ]
+      },
+      {
+        "id": "C5-ridge-L2",
+        "uv": [
+          0.18613581244947452,
+          0.4341106290672451
+        ],
+        "pixel": [
+          460,
+          800
+        ],
+        "rgba": [
+          0.019902193918824196,
+          0.02556551806628704,
+          0.018076056614518166,
+          38.43931198120117
+        ],
+        "bits": [
+          1017317869,
+          1020358343,
+          1016337469,
+          1108984283
+        ]
+      },
+      {
+        "id": "C6-ridge-L3",
+        "uv": [
+          0.374090541632983,
+          0.33107375271149675
+        ],
+        "pixel": [
+          925,
+          610
+        ],
+        "rgba": [
+          0.020122051239013672,
+          0.02112502232193947,
+          0.013217429630458355,
+          47.44137191772461
+        ],
+        "bits": [
+          1017435904,
+          1017974370,
+          1012436459,
+          1111344119
+        ]
+      }
+    ],
+    "returnedBytes": 73169824,
+    "packedBytes": 72992896,
+    "format": "rgba32float",
+    "scope": "All returned pixel bits packed row-wise, excluding r186 inter-row256-byte padding; no colour conversion or quantization."
+  },
+  "fresh": {
+    "width": 2474,
+    "height": 1844,
+    "sha256": "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9",
+    "alphaSHA256": "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c",
+    "alphaBytes": 18248224,
+    "witness": [
+      {
+        "id": "L1-artifact",
+        "uv": [
+          0.028900565885206144,
+          0.46447939262472887
+        ],
+        "pixel": [
+          71,
+          856
+        ],
+        "rgba": [
+          0.010302993468940258,
+          0.014199471101164818,
+          0.015455827116966248,
+          36.562217712402344
+        ],
+        "bits": [
+          1009307107,
+          1013490918,
+          1014839920,
+          1108492214
+        ]
+      },
+      {
+        "id": "L1-control",
+        "uv": [
+          0.026071139854486662,
+          0.46447939262472887
+        ],
+        "pixel": [
+          64,
+          856
+        ],
+        "rgba": [
+          0.008368724025785923,
+          0.012483187019824982,
+          0.013630012050271034,
+          36.556861877441406
+        ],
+        "bits": [
+          1007230201,
+          1011648072,
+          1012879466,
+          1108490810
+        ]
+      },
+      {
+        "id": "L2-artifact",
+        "uv": [
+          0.1744139046079224,
+          0.46068329718004336
+        ],
+        "pixel": [
+          431,
+          849
+        ],
+        "rgba": [
+          0.037994351238012314,
+          0.03565721586346626,
+          0.030546927824616432,
+          36.058143615722656
+        ],
+        "bits": [
+          1025220599,
+          1024593229,
+          1023032717,
+          1108360074
+        ]
+      },
+      {
+        "id": "L2-control",
+        "uv": [
+          0.1744139046079224,
+          0.4579718004338395
+        ],
+        "pixel": [
+          431,
+          844
+        ],
+        "rgba": [
+          0.024521270766854286,
+          0.025326302275061607,
+          0.02478175237774849,
+          36.13376998901367
+        ],
+        "bits": [
+          1019797717,
+          1020229915,
+          1019937562,
+          1108379899
+        ]
+      },
+      {
+        "id": "L3-artifact",
+        "uv": [
+          0.36519805982215037,
+          0.35330802603036876
+        ],
+        "pixel": [
+          903,
+          651
+        ],
+        "rgba": [
+          0.010727212764322758,
+          0.013398812152445316,
+          0.015592668205499649,
+          43.868621826171875
+        ],
+        "bits": [
+          1009762609,
+          1012631217,
+          1014986852,
+          1110407544
+        ]
+      },
+      {
+        "id": "L3-control",
+        "uv": [
+          0.36519805982215037,
+          0.35059652928416485
+        ],
+        "pixel": [
+          903,
+          646
+        ],
+        "rgba": [
+          0.011557547375559807,
+          0.014112944714725018,
+          0.016019420698285103,
+          43.906856536865234
+        ],
+        "bits": [
+          1010654174,
+          1013398011,
+          1015233321,
+          1110417567
+        ]
+      },
+      {
+        "id": "C1-ocean",
+        "uv": [
+          0.8894502829426031,
+          0.5968004338394793
+        ],
+        "pixel": [
+          2200,
+          1100
+        ],
+        "rgba": [
+          0.008158542215824127,
+          0.0251751895993948,
+          0.04044027999043465,
+          32.39778518676758
+        ],
+        "bits": [
+          1007004520,
+          1020148787,
+          1025877173,
+          1107400533
+        ]
+      },
+      {
+        "id": "C2-coastal-lowland",
+        "uv": [
+          0.7277687954729184,
+          0.5046095444685467
+        ],
+        "pixel": [
+          1800,
+          930
+        ],
+        "rgba": [
+          0.14028950035572052,
+          0.13013672828674316,
+          0.10517383366823196,
+          36.3409309387207
+        ],
+        "bits": [
+          1041213453,
+          1040532112,
+          1037526369,
+          1108434205
+        ]
+      },
+      {
+        "id": "C3-plain",
+        "uv": [
+          0.8894502829426031,
+          0.37988069414316705
+        ],
+        "pixel": [
+          2200,
+          700
+        ],
+        "rgba": [
+          0.008942077867686749,
+          0.027352871373295784,
+          0.03533002734184265,
+          47.58469772338867
+        ],
+        "bits": [
+          1007845835,
+          1021317921,
+          1024505400,
+          1111381691
+        ]
+      },
+      {
+        "id": "C4-ridge-L1",
+        "uv": [
+          0.06891673403395311,
+          0.43682212581344904
+        ],
+        "pixel": [
+          170,
+          805
+        ],
+        "rgba": [
+          0.040221426635980606,
+          0.03778162598609924,
+          0.029715916141867638,
+          37.66872024536133
+        ],
+        "bits": [
+          1025818425,
+          1025163496,
+          1022586571,
+          1108782277
+        ]
+      },
+      {
+        "id": "C5-ridge-L2",
+        "uv": [
+          0.18613581244947452,
+          0.4341106290672451
+        ],
+        "pixel": [
+          460,
+          800
+        ],
+        "rgba": [
+          0.019902193918824196,
+          0.02556551806628704,
+          0.018076056614518166,
+          38.43931198120117
+        ],
+        "bits": [
+          1017317869,
+          1020358343,
+          1016337469,
+          1108984283
+        ]
+      },
+      {
+        "id": "C6-ridge-L3",
+        "uv": [
+          0.374090541632983,
+          0.33107375271149675
+        ],
+        "pixel": [
+          925,
+          610
+        ],
+        "rgba": [
+          0.020122051239013672,
+          0.02112502232193947,
+          0.013217429630458355,
+          47.44137191772461
+        ],
+        "bits": [
+          1017435904,
+          1017974370,
+          1012436459,
+          1111344119
+        ]
+      }
+    ],
+    "returnedBytes": 73169824,
+    "packedBytes": 72992896,
+    "format": "rgba32float",
+    "scope": "All returned pixel bits packed row-wise, excluding r186 inter-row256-byte padding; no colour conversion or quantization."
+  },
+  "restored": {
+    "width": 2474,
+    "height": 1844,
+    "sha256": "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9",
+    "alphaSHA256": "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c",
+    "alphaBytes": 18248224,
+    "witness": [
+      {
+        "id": "L1-artifact",
+        "uv": [
+          0.028900565885206144,
+          0.46447939262472887
+        ],
+        "pixel": [
+          71,
+          856
+        ],
+        "rgba": [
+          0.010302993468940258,
+          0.014199471101164818,
+          0.015455827116966248,
+          36.562217712402344
+        ],
+        "bits": [
+          1009307107,
+          1013490918,
+          1014839920,
+          1108492214
+        ]
+      },
+      {
+        "id": "L1-control",
+        "uv": [
+          0.026071139854486662,
+          0.46447939262472887
+        ],
+        "pixel": [
+          64,
+          856
+        ],
+        "rgba": [
+          0.008368724025785923,
+          0.012483187019824982,
+          0.013630012050271034,
+          36.556861877441406
+        ],
+        "bits": [
+          1007230201,
+          1011648072,
+          1012879466,
+          1108490810
+        ]
+      },
+      {
+        "id": "L2-artifact",
+        "uv": [
+          0.1744139046079224,
+          0.46068329718004336
+        ],
+        "pixel": [
+          431,
+          849
+        ],
+        "rgba": [
+          0.037994351238012314,
+          0.03565721586346626,
+          0.030546927824616432,
+          36.058143615722656
+        ],
+        "bits": [
+          1025220599,
+          1024593229,
+          1023032717,
+          1108360074
+        ]
+      },
+      {
+        "id": "L2-control",
+        "uv": [
+          0.1744139046079224,
+          0.4579718004338395
+        ],
+        "pixel": [
+          431,
+          844
+        ],
+        "rgba": [
+          0.024521270766854286,
+          0.025326302275061607,
+          0.02478175237774849,
+          36.13376998901367
+        ],
+        "bits": [
+          1019797717,
+          1020229915,
+          1019937562,
+          1108379899
+        ]
+      },
+      {
+        "id": "L3-artifact",
+        "uv": [
+          0.36519805982215037,
+          0.35330802603036876
+        ],
+        "pixel": [
+          903,
+          651
+        ],
+        "rgba": [
+          0.010727212764322758,
+          0.013398812152445316,
+          0.015592668205499649,
+          43.868621826171875
+        ],
+        "bits": [
+          1009762609,
+          1012631217,
+          1014986852,
+          1110407544
+        ]
+      },
+      {
+        "id": "L3-control",
+        "uv": [
+          0.36519805982215037,
+          0.35059652928416485
+        ],
+        "pixel": [
+          903,
+          646
+        ],
+        "rgba": [
+          0.011557547375559807,
+          0.014112944714725018,
+          0.016019420698285103,
+          43.906856536865234
+        ],
+        "bits": [
+          1010654174,
+          1013398011,
+          1015233321,
+          1110417567
+        ]
+      },
+      {
+        "id": "C1-ocean",
+        "uv": [
+          0.8894502829426031,
+          0.5968004338394793
+        ],
+        "pixel": [
+          2200,
+          1100
+        ],
+        "rgba": [
+          0.008158542215824127,
+          0.0251751895993948,
+          0.04044027999043465,
+          32.39778518676758
+        ],
+        "bits": [
+          1007004520,
+          1020148787,
+          1025877173,
+          1107400533
+        ]
+      },
+      {
+        "id": "C2-coastal-lowland",
+        "uv": [
+          0.7277687954729184,
+          0.5046095444685467
+        ],
+        "pixel": [
+          1800,
+          930
+        ],
+        "rgba": [
+          0.14028950035572052,
+          0.13013672828674316,
+          0.10517383366823196,
+          36.3409309387207
+        ],
+        "bits": [
+          1041213453,
+          1040532112,
+          1037526369,
+          1108434205
+        ]
+      },
+      {
+        "id": "C3-plain",
+        "uv": [
+          0.8894502829426031,
+          0.37988069414316705
+        ],
+        "pixel": [
+          2200,
+          700
+        ],
+        "rgba": [
+          0.008942077867686749,
+          0.027352871373295784,
+          0.03533002734184265,
+          47.58469772338867
+        ],
+        "bits": [
+          1007845835,
+          1021317921,
+          1024505400,
+          1111381691
+        ]
+      },
+      {
+        "id": "C4-ridge-L1",
+        "uv": [
+          0.06891673403395311,
+          0.43682212581344904
+        ],
+        "pixel": [
+          170,
+          805
+        ],
+        "rgba": [
+          0.040221426635980606,
+          0.03778162598609924,
+          0.029715916141867638,
+          37.66872024536133
+        ],
+        "bits": [
+          1025818425,
+          1025163496,
+          1022586571,
+          1108782277
+        ]
+      },
+      {
+        "id": "C5-ridge-L2",
+        "uv": [
+          0.18613581244947452,
+          0.4341106290672451
+        ],
+        "pixel": [
+          460,
+          800
+        ],
+        "rgba": [
+          0.019902193918824196,
+          0.02556551806628704,
+          0.018076056614518166,
+          38.43931198120117
+        ],
+        "bits": [
+          1017317869,
+          1020358343,
+          1016337469,
+          1108984283
+        ]
+      },
+      {
+        "id": "C6-ridge-L3",
+        "uv": [
+          0.374090541632983,
+          0.33107375271149675
+        ],
+        "pixel": [
+          925,
+          610
+        ],
+        "rgba": [
+          0.020122051239013672,
+          0.02112502232193947,
+          0.013217429630458355,
+          47.44137191772461
+        ],
+        "bits": [
+          1017435904,
+          1017974370,
+          1012436459,
+          1111344119
+        ]
+      }
+    ],
+    "returnedBytes": 73169824,
+    "packedBytes": 72992896,
+    "format": "rgba32float",
+    "scope": "All returned pixel bits packed row-wise, excluding r186 inter-row256-byte padding; no colour conversion or quantization."
+  },
+  "installedGeometry": {
+    "position": {
+      "sha256": "4c7e3f0b92c294850dad4014d3c260e0cb922ba5ade13a952722240a2e5ecc64",
+      "bytes": 7101456,
+      "expectedSHA256": "4c7e3f0b92c294850dad4014d3c260e0cb922ba5ade13a952722240a2e5ecc64",
+      "identical": true
+    },
+    "normal": {
+      "sha256": "3cb820d4d203c89f61e8e26809ddbdcd2f8ce2645dce0842b758a1b0ea6dcbfd",
+      "bytes": 7101456,
+      "expectedSHA256": "3cb820d4d203c89f61e8e26809ddbdcd2f8ce2645dce0842b758a1b0ea6dcbfd",
+      "identical": true
+    },
+    "terrainSurface": {
+      "sha256": "7595b45c14d4d249df98d99145fcaa485b21d62e419764b99ce4fedc780c76f2",
+      "bytes": 4734304,
+      "expectedSHA256": "7595b45c14d4d249df98d99145fcaa485b21d62e419764b99ce4fedc780c76f2",
+      "identical": true
+    },
+    "index": {
+      "sha256": "87e1b8d5b569577c291efefb1698ca66b657ecb3f9c73dcf6ddc73316a1030ae",
+      "bytes": 14190600,
+      "expectedSHA256": "87e1b8d5b569577c291efefb1698ca66b657ecb3f9c73dcf6ddc73316a1030ae",
+      "identical": true
+    }
+  },
+  "shadingAudit": true,
+  "shadingLedger": {
+    "status": "COMPLETE",
+    "rows": [
+      {
+        "id": "L1-artifact",
+        "x": 71,
+        "y": 856,
+        "records": {
+          "macro-normal": {
+            "rgba": [
+              0.734571635723114,
+              0.6599579453468323,
+              -0.15767072141170502,
+              36.562217712402344
+            ],
+            "bits": [
+              1060900067,
+              1059648257,
+              3189863535,
+              1108492214
+            ]
+          },
+          "final-normal": {
+            "rgba": [
+              0.7347930669784546,
+              0.6595398783683777,
+              -0.15838660299777985,
+              36.562217712402344
+            ],
+            "bits": [
+              1060903782,
+              1059641243,
+              3189911577,
+              1108492214
+            ]
+          },
+          "factors": {
+            "rgba": [
+              0,
+              0.8706251382827759,
+              0,
+              36.562217712402344
+            ],
+            "bits": [
+              0,
+              1063182666,
+              0,
+              1108492214
+            ]
+          }
+        }
+      },
+      {
+        "id": "L1-control",
+        "x": 64,
+        "y": 856,
+        "records": {
+          "macro-normal": {
+            "rgba": [
+              0.7002588510513306,
+              0.6711974143981934,
+              -0.24316996335983276,
+              36.556861877441406
+            ],
+            "bits": [
+              1060324394,
+              1059836824,
+              3195601292,
+              1108490810
+            ]
+          },
+          "final-normal": {
+            "rgba": [
+              0.7002935409545898,
+              0.6712415814399719,
+              -0.24294821918010712,
+              36.556861877441406
+            ],
+            "bits": [
+              1060324976,
+              1059837565,
+              3195586411,
+              1108490810
+            ]
+          },
+          "factors": {
+            "rgba": [
+              0,
+              0.8750718235969543,
+              1,
+              36.556861877441406
+            ],
+            "bits": [
+              0,
+              1063257269,
+              1065353216,
+              1108490810
+            ]
+          }
+        }
+      },
+      {
+        "id": "L2-artifact",
+        "x": 431,
+        "y": 849,
+        "records": {
+          "macro-normal": {
+            "rgba": [
+              0.12949272990226746,
+              0.6444872617721558,
+              -0.7535700798034668,
+              36.058143615722656
+            ],
+            "bits": [
+              1040488894,
+              1059388702,
+              3208702456,
+              1108360074
+            ]
+          },
+          "final-normal": {
+            "rgba": [
+              0.12949050962924957,
+              0.6444766521453857,
+              -0.7535794973373413,
+              36.058143615722656
+            ],
+            "bits": [
+              1040488745,
+              1059388524,
+              3208702614,
+              1108360074
+            ]
+          },
+          "factors": {
+            "rgba": [
+              0.21166637539863586,
+              0.8649011254310608,
+              1,
+              36.058143615722656
+            ],
+            "bits": [
+              1046003474,
+              1063086633,
+              1065353216,
+              1108360074
+            ]
+          }
+        }
+      },
+      {
+        "id": "L2-control",
+        "x": 431,
+        "y": 844,
+        "records": {
+          "macro-normal": {
+            "rgba": [
+              0.31913819909095764,
+              0.6488169431686401,
+              -0.6907874345779419,
+              36.13376998901367
+            ],
+            "bits": [
+              1050895893,
+              1059461342,
+              3207649138,
+              1108379899
+            ]
+          },
+          "final-normal": {
+            "rgba": [
+              0.31902918219566345,
+              0.6487776637077332,
+              -0.6908747553825378,
+              36.13376998901367
+            ],
+            "bits": [
+              1050892235,
+              1059460683,
+              3207650603,
+              1108379899
+            ]
+          },
+          "factors": {
+            "rgba": [
+              0.10150207579135895,
+              0.866535484790802,
+              1,
+              36.13376998901367
+            ],
+            "bits": [
+              1037033554,
+              1063114053,
+              1065353216,
+              1108379899
+            ]
+          }
+        }
+      },
+      {
+        "id": "L3-artifact",
+        "x": 903,
+        "y": 651,
+        "records": {
+          "macro-normal": {
+            "rgba": [
+              0.751492440700531,
+              0.5881879925727844,
+              -0.29882100224494934,
+              43.868621826171875
+            ],
+            "bits": [
+              1061183951,
+              1058444157,
+              3197697809,
+              1110407544
+            ]
+          },
+          "final-normal": {
+            "rgba": [
+              0.7514958381652832,
+              0.5881891846656799,
+              -0.298810213804245,
+              43.868621826171875
+            ],
+            "bits": [
+              1061184008,
+              1058444177,
+              3197697447,
+              1110407544
+            ]
+          },
+          "factors": {
+            "rgba": [
+              0,
+              0.8435118794441223,
+              1,
+              43.868621826171875
+            ],
+            "bits": [
+              0,
+              1062727781,
+              1065353216,
+              1110407544
+            ]
+          }
+        }
+      },
+      {
+        "id": "L3-control",
+        "x": 903,
+        "y": 646,
+        "records": {
+          "macro-normal": {
+            "rgba": [
+              0.6565065979957581,
+              0.6957637071609497,
+              -0.29139643907546997,
+              43.906856536865234
+            ],
+            "bits": [
+              1059590353,
+              1060248978,
+              3197448682,
+              1110417567
+            ]
+          },
+          "final-normal": {
+            "rgba": [
+              0.6565065979957581,
+              0.6957637071609497,
+              -0.29139643907546997,
+              43.906856536865234
+            ],
+            "bits": [
+              1059590353,
+              1060248978,
+              3197448682,
+              1110417567
+            ]
+          },
+          "factors": {
+            "rgba": [
+              0,
+              0.8843902349472046,
+              1,
+              43.906856536865234
+            ],
+            "bits": [
+              0,
+              1063413606,
+              1065353216,
+              1110417567
+            ]
+          }
+        }
+      },
+      {
+        "id": "C1-ocean",
+        "x": 2200,
+        "y": 1100,
+        "records": {
+          "macro-normal": {
+            "rgba": [
+              -0.0017506333533674479,
+              0.9999967813491821,
+              -0.0018244573147967458,
+              32.39778518676758
+            ],
+            "bits": [
+              3135600002,
+              1065353162,
+              3136234145,
+              1107400533
+            ]
+          },
+          "final-normal": {
+            "rgba": [
+              -0.0017506333533674479,
+              0.9999967813491821,
+              -0.0018244573147967458,
+              32.39778518676758
+            ],
+            "bits": [
+              3135600002,
+              1065353162,
+              3136234145,
+              1107400533
+            ]
+          },
+          "factors": {
+            "rgba": [
+              0.7134456634521484,
+              0.8799987435340881,
+              1,
+              32.39778518676758
+            ],
+            "bits": [
+              1060545632,
+              1063339929,
+              1065353216,
+              1107400533
+            ]
+          }
+        }
+      },
+      {
+        "id": "C2-coastal-lowland",
+        "x": 1800,
+        "y": 930,
+        "records": {
+          "macro-normal": {
+            "rgba": [
+              0.00712174829095602,
+              0.9999507069587708,
+              -0.006921297870576382,
+              36.3409309387207
+            ],
+            "bits": [
+              1005149582,
+              1065352389,
+              3152202766,
+              1108434205
+            ]
+          },
+          "final-normal": {
+            "rgba": [
+              0.008671234361827374,
+              0.9999454617500305,
+              -0.005822823848575354,
+              36.3409309387207
+            ],
+            "bits": [
+              1007555019,
+              1065352301,
+              3149843811,
+              1108434205
+            ]
+          },
+          "factors": {
+            "rgba": [
+              0.705591082572937,
+              0.8799792528152466,
+              1,
+              36.3409309387207
+            ],
+            "bits": [
+              1060413854,
+              1063339602,
+              1065353216,
+              1108434205
+            ]
+          }
+        }
+      },
+      {
+        "id": "C3-plain",
+        "x": 2200,
+        "y": 700,
+        "records": {
+          "macro-normal": {
+            "rgba": [
+              -0.003977463115006685,
+              0.9999877214431763,
+              -0.002945404965430498,
+              47.58469772338867
+            ],
+            "bits": [
+              3145880929,
+              1065353010,
+              3141601202,
+              1111381691
+            ]
+          },
+          "final-normal": {
+            "rgba": [
+              -0.003977463115006685,
+              0.9999877214431763,
+              -0.002945404965430498,
+              47.58469772338867
+            ],
+            "bits": [
+              3145880929,
+              1065353010,
+              3141601202,
+              1111381691
+            ]
+          },
+          "factors": {
+            "rgba": [
+              0.7146873474121094,
+              0.8799953460693359,
+              1,
+              47.58469772338867
+            ],
+            "bits": [
+              1060566464,
+              1063339872,
+              1065353216,
+              1111381691
+            ]
+          }
+        }
+      },
+      {
+        "id": "C4-ridge-L1",
+        "x": 170,
+        "y": 805,
+        "records": {
+          "macro-normal": {
+            "rgba": [
+              0.4152197241783142,
+              0.8187355399131775,
+              -0.39656612277030945,
+              37.66872024536133
+            ],
+            "bits": [
+              1054119854,
+              1062312103,
+              3200977591,
+              1108782277
+            ]
+          },
+          "final-normal": {
+            "rgba": [
+              0.4152197241783142,
+              0.8187355399131775,
+              -0.39656612277030945,
+              37.66872024536133
+            ],
+            "bits": [
+              1054119854,
+              1062312103,
+              3200977591,
+              1108782277
+            ]
+          },
+          "factors": {
+            "rgba": [
+              0.22128154337406158,
+              0.9311195015907288,
+              1,
+              37.66872024536133
+            ],
+            "bits": [
+              1046648737,
+              1064197593,
+              1065353216,
+              1108782277
+            ]
+          }
+        }
+      },
+      {
+        "id": "C5-ridge-L2",
+        "x": 460,
+        "y": 800,
+        "records": {
+          "macro-normal": {
+            "rgba": [
+              0.38946959376335144,
+              0.9198099970817566,
+              -0.04757087305188179,
+              38.43931198120117
+            ],
+            "bits": [
+              1053255823,
+              1064007851,
+              3175274925,
+              1108984283
+            ]
+          },
+          "final-normal": {
+            "rgba": [
+              0.38946959376335144,
+              0.9198099970817566,
+              -0.04757087305188179,
+              38.43931198120117
+            ],
+            "bits": [
+              1053255823,
+              1064007851,
+              3175274925,
+              1108984283
+            ]
+          },
+          "factors": {
+            "rgba": [
+              0.3851338326931,
+              0.958198070526123,
+              1,
+              38.43931198120117
+            ],
+            "bits": [
+              1053110339,
+              1064651896,
+              1065353216,
+              1108984283
+            ]
+          }
+        }
+      },
+      {
+        "id": "C6-ridge-L3",
+        "x": 925,
+        "y": 610,
+        "records": {
+          "macro-normal": {
+            "rgba": [
+              0.13315069675445557,
+              0.8837928175926208,
+              -0.44853222370147705,
+              47.44137191772461
+            ],
+            "bits": [
+              1040734376,
+              1063403583,
+              3202721284,
+              1111344119
+            ]
+          },
+          "final-normal": {
+            "rgba": [
+              0.13315069675445557,
+              0.8837928175926208,
+              -0.44853222370147705,
+              47.44137191772461
+            ],
+            "bits": [
+              1040734376,
+              1063403583,
+              3202721284,
+              1111344119
+            ]
+          },
+          "factors": {
+            "rgba": [
+              0.444993257522583,
+              0.9495928883552551,
+              1,
+              47.44137191772461
+            ],
+            "bits": [
+              1055118888,
+              1064507525,
+              1065353216,
+              1111344119
+            ]
+          }
+        }
+      }
+    ],
+    "stateRestored": true,
+    "inputsStable": true,
+    "bbox": {
+      "x": 64,
+      "y": 610,
+      "width": 2137,
+      "height": 491,
+      "pixels": 1049267
+    },
+    "errors": [],
+    "diagnosticDraws": 3,
+    "restoreDraws": 1,
+    "readbackRequests": 36,
+    "drain": {
+      "requested": true,
+      "settled": true,
+      "status": "fulfilled",
+      "error": null
+    },
+    "clearSentinelRGBA": [
+      -8192,
+      -8192,
+      -8192,
+      1
+    ],
+    "elapsedMs": 399.60000002384186,
+    "targetReused": true,
+    "newFullTargetAllocations": 0,
+    "scope": "Three immutable cloned diagnostic materials on the installed mesh/target; twelve one-pixel RGBA32F copies per mode. Ordinary material/node identity untouched, full ordinary redraw and renderer state restoration precede every await. All public read/drain promises settle before clone disposal. Caller qualifies distance bits, whole ordinary before/after/cache-fresh hashes and stable owner inputs; not original diagnostic codegen identity, GPU staging cleanup, physical sunlight, artwork or FPS proof."
+  },
+  "shadingQualified": true,
+  "ledgerDistanceQualified": true,
+  "ledgerValuesQualified": true,
+  "identical": true,
+  "stable": true,
+  "cacheStateQualified": true,
+  "statsBefore": {
+    "vertices": 591788,
+    "triangles": 1182550,
+    "stitchedCells": 4096,
+    "levels": 9,
+    "cellsPerSide": 256,
+    "baseSpacingKm": 0.032,
+    "outerExtentKm": 1048.576,
+    "geometryBytes": 33127816,
+    "sampleCalls": 1183149,
+    "minimumHeightKm": 0,
+    "maximumHeightKm": 3.0260982513427734,
+    "normalBlendStartRadiusKm": 32.768,
+    "normalBlendEndRadiusKm": 65.536,
+    "normalMode": "geometry",
+    "refinement": {
+      "originalVertices": 465409,
+      "originalTriangles": 929792,
+      "probeSampleCalls": 591361,
+      "vertexSampleCalls": 591788,
+      "totalSampleCalls": 1183149,
+      "nodesAboveThreshold": 209659,
+      "eligibleNodesAboveThreshold": 209488,
+      "markedRedFaces": 69833,
+      "greenFaces": 21853,
+      "splitEdgeCount": 126379,
+      "addedVertices": 126379,
+      "addedTriangles": 252758,
+      "addedGeometryBytes": 7077224,
+      "sourceSpacingKm": 0.125,
+      "maxErrorKm": 0.005,
+      "sourceGrid": {
+        "minXKm": -64,
+        "minZKm": -64,
+        "spacingKm": 0.125,
+        "columns": 1025,
+        "rows": 1025
+      },
+      "selectionDomain": {
+        "minXKm": -48,
+        "maxXKm": 48,
+        "minZKm": -48,
+        "maxZKm": 48
+      },
+      "selectedNodeColumns": 769,
+      "selectedNodeRows": 769,
+      "originalFacesBySplitEdgeCount": [
+        838106,
+        7390,
+        7520,
+        76776
+      ],
+      "maximumCellTriangles": 20,
+      "cellTriangleCountBytes": 589824,
+      "midpointVerticesOutsideDomain": 405,
+      "boundsKm": {
+        "min": [
+          -1048.5760498046875,
+          -178.98373413085938,
+          -1048.5760498046875
+        ],
+        "max": [
+          1048.5760498046875,
+          -1.675218939781189,
+          1048.5760498046875
+        ]
+      }
+    },
+    "geometryScope": "First visible triangle of this static stitched mesh; not exact analytic-height intersection",
+    "shadow": {
+      "resolution": 2048,
+      "radiusKm": 64,
+      "coverage": "128km square in light right/up coordinates, centered at [0,-4,0], outer 15% fades to lit; not global terrain shadows",
+      "colourFormat": "r32float relative solar height km; -1000000 clear",
+      "depthFormat": "depth32float",
+      "colourBytes": 16777216,
+      "depthBytes": 16777216,
+      "targetPayloadBytes": 33554432,
+      "baseBiasKm": 0.001,
+      "receiverRadialOffsetKm": 0.03125,
+      "filter": "One nearest textureLoad; no receiver-plane extrapolation or PCF blur; outside coverage lit",
+      "biasPolicy": "Caster affine height minimum over one actual light texel: 0.5*(abs(dpdx(q))+abs(dpdy(q))) +1m; erodes unresolved contact shadows, especially at low Sun",
+      "receiverPolicy": "Only shadow lookup point elevated along planet radial by half one light texel; geometry/radiance point unchanged; contact shadows below this scale may disappear",
+      "biasLimit": "No guarantee for multiple non-coplanar faces inside one light texel; aliasing and contact-shadow loss require visual qualification",
+      "depthFit": {
+        "nearKm": 0.5,
+        "farKm": 1977.8974431000836,
+        "cameraDistanceKm": 927.4244346416147,
+        "minimumCasterHeightKm": -1049.473008458469,
+        "maximumCasterHeightKm": 926.4244346416147
+      },
+      "reversedDepthBuffer": true,
+      "updates": "Exact-input cached shadow map; terrain colour draw remains live; shared geometry not owned by shadow",
+      "cache": {
+        "requests": 853,
+        "submissions": 1,
+        "hits": 852,
+        "epoch": 0,
+        "valid": true,
+        "scope": "Owner-local CPU calls: requests are validated render calls, submissions are renderer.render attempts (including throws), hits skip shadow clear/draw; no GPU completion or presentation claim",
+        "ownership": "Static casters and exclusive target; call invalidate after caster mutations, external target writes or same-owner renderer/backend reset; disposed owner is terminal"
+      }
+    },
+    "width": 2474,
+    "height": 1844,
+    "colourFormat": "rgba32float",
+    "distanceComponent": "alpha; km from actual camera origin; -1 miss",
+    "colourDistanceBytes": 72992896,
+    "depthBytes": 18248224,
+    "targetPayloadBytes": 91241120,
+    "cpuTriangleLookupBytes": 2949120,
+    "normalPolicy": "Shared incident-area-weighted actual mesh normal at every vertex; no bilinear-source gradient seams",
+    "memoryScope": "Nominal retained geometry and target/depth payload only; CPU construction temporaries and driver residency/peak are unmeasured",
+    "perFrameCpuHeightSamples": 0,
+    "nearKm": 0.025,
+    "farKm": 1600,
+    "reversedDepthBuffer": true,
+    "cache": {
+      "enabled": true,
+      "requests": 853,
+      "hits": 705,
+      "submissions": 148,
+      "epoch": 4,
+      "valid": true,
+      "scope": "Owner-local CPU requests/render attempts; hits skip colour clear/draw. Not GPU completion, presentation or FPS.",
+      "ownership": "Static scene/geometry and exclusive target. cacheInputs covers every mutable shade binding; invalidate for external writes/reset, invalidateGeometry for raw caster/world changes after updating bounds."
+    }
+  },
+  "statsAfter": {
+    "vertices": 591788,
+    "triangles": 1182550,
+    "stitchedCells": 4096,
+    "levels": 9,
+    "cellsPerSide": 256,
+    "baseSpacingKm": 0.032,
+    "outerExtentKm": 1048.576,
+    "geometryBytes": 33127816,
+    "sampleCalls": 1183149,
+    "minimumHeightKm": 0,
+    "maximumHeightKm": 3.0260982513427734,
+    "normalBlendStartRadiusKm": 32.768,
+    "normalBlendEndRadiusKm": 65.536,
+    "normalMode": "geometry",
+    "refinement": {
+      "originalVertices": 465409,
+      "originalTriangles": 929792,
+      "probeSampleCalls": 591361,
+      "vertexSampleCalls": 591788,
+      "totalSampleCalls": 1183149,
+      "nodesAboveThreshold": 209659,
+      "eligibleNodesAboveThreshold": 209488,
+      "markedRedFaces": 69833,
+      "greenFaces": 21853,
+      "splitEdgeCount": 126379,
+      "addedVertices": 126379,
+      "addedTriangles": 252758,
+      "addedGeometryBytes": 7077224,
+      "sourceSpacingKm": 0.125,
+      "maxErrorKm": 0.005,
+      "sourceGrid": {
+        "minXKm": -64,
+        "minZKm": -64,
+        "spacingKm": 0.125,
+        "columns": 1025,
+        "rows": 1025
+      },
+      "selectionDomain": {
+        "minXKm": -48,
+        "maxXKm": 48,
+        "minZKm": -48,
+        "maxZKm": 48
+      },
+      "selectedNodeColumns": 769,
+      "selectedNodeRows": 769,
+      "originalFacesBySplitEdgeCount": [
+        838106,
+        7390,
+        7520,
+        76776
+      ],
+      "maximumCellTriangles": 20,
+      "cellTriangleCountBytes": 589824,
+      "midpointVerticesOutsideDomain": 405,
+      "boundsKm": {
+        "min": [
+          -1048.5760498046875,
+          -178.98373413085938,
+          -1048.5760498046875
+        ],
+        "max": [
+          1048.5760498046875,
+          -1.675218939781189,
+          1048.5760498046875
+        ]
+      }
+    },
+    "geometryScope": "First visible triangle of this static stitched mesh; not exact analytic-height intersection",
+    "shadow": {
+      "resolution": 2048,
+      "radiusKm": 64,
+      "coverage": "128km square in light right/up coordinates, centered at [0,-4,0], outer 15% fades to lit; not global terrain shadows",
+      "colourFormat": "r32float relative solar height km; -1000000 clear",
+      "depthFormat": "depth32float",
+      "colourBytes": 16777216,
+      "depthBytes": 16777216,
+      "targetPayloadBytes": 33554432,
+      "baseBiasKm": 0.001,
+      "receiverRadialOffsetKm": 0.03125,
+      "filter": "One nearest textureLoad; no receiver-plane extrapolation or PCF blur; outside coverage lit",
+      "biasPolicy": "Caster affine height minimum over one actual light texel: 0.5*(abs(dpdx(q))+abs(dpdy(q))) +1m; erodes unresolved contact shadows, especially at low Sun",
+      "receiverPolicy": "Only shadow lookup point elevated along planet radial by half one light texel; geometry/radiance point unchanged; contact shadows below this scale may disappear",
+      "biasLimit": "No guarantee for multiple non-coplanar faces inside one light texel; aliasing and contact-shadow loss require visual qualification",
+      "depthFit": {
+        "nearKm": 0.5,
+        "farKm": 1977.8974431000836,
+        "cameraDistanceKm": 927.4244346416147,
+        "minimumCasterHeightKm": -1049.473008458469,
+        "maximumCasterHeightKm": 926.4244346416147
+      },
+      "reversedDepthBuffer": true,
+      "updates": "Exact-input cached shadow map; terrain colour draw remains live; shared geometry not owned by shadow",
+      "cache": {
+        "requests": 854,
+        "submissions": 2,
+        "hits": 852,
+        "epoch": 1,
+        "valid": true,
+        "scope": "Owner-local CPU calls: requests are validated render calls, submissions are renderer.render attempts (including throws), hits skip shadow clear/draw; no GPU completion or presentation claim",
+        "ownership": "Static casters and exclusive target; call invalidate after caster mutations, external target writes or same-owner renderer/backend reset; disposed owner is terminal"
+      }
+    },
+    "width": 2474,
+    "height": 1844,
+    "colourFormat": "rgba32float",
+    "distanceComponent": "alpha; km from actual camera origin; -1 miss",
+    "colourDistanceBytes": 72992896,
+    "depthBytes": 18248224,
+    "targetPayloadBytes": 91241120,
+    "cpuTriangleLookupBytes": 2949120,
+    "normalPolicy": "Shared incident-area-weighted actual mesh normal at every vertex; no bilinear-source gradient seams",
+    "memoryScope": "Nominal retained geometry and target/depth payload only; CPU construction temporaries and driver residency/peak are unmeasured",
+    "perFrameCpuHeightSamples": 0,
+    "nearKm": 0.025,
+    "farKm": 1600,
+    "reversedDepthBuffer": true,
+    "cache": {
+      "enabled": true,
+      "requests": 854,
+      "hits": 705,
+      "submissions": 149,
+      "epoch": 5,
+      "valid": true,
+      "scope": "Owner-local CPU requests/render attempts; hits skip colour clear/draw. Not GPU completion, presentation or FPS.",
+      "ownership": "Static scene/geometry and exclusive target. cacheInputs covers every mutable shade binding; invalidate for external writes/reset, invalidateGeometry for raw caster/world changes after updating bounds."
+    }
+  },
+  "statsFinal": {
+    "vertices": 591788,
+    "triangles": 1182550,
+    "stitchedCells": 4096,
+    "levels": 9,
+    "cellsPerSide": 256,
+    "baseSpacingKm": 0.032,
+    "outerExtentKm": 1048.576,
+    "geometryBytes": 33127816,
+    "sampleCalls": 1183149,
+    "minimumHeightKm": 0,
+    "maximumHeightKm": 3.0260982513427734,
+    "normalBlendStartRadiusKm": 32.768,
+    "normalBlendEndRadiusKm": 65.536,
+    "normalMode": "geometry",
+    "refinement": {
+      "originalVertices": 465409,
+      "originalTriangles": 929792,
+      "probeSampleCalls": 591361,
+      "vertexSampleCalls": 591788,
+      "totalSampleCalls": 1183149,
+      "nodesAboveThreshold": 209659,
+      "eligibleNodesAboveThreshold": 209488,
+      "markedRedFaces": 69833,
+      "greenFaces": 21853,
+      "splitEdgeCount": 126379,
+      "addedVertices": 126379,
+      "addedTriangles": 252758,
+      "addedGeometryBytes": 7077224,
+      "sourceSpacingKm": 0.125,
+      "maxErrorKm": 0.005,
+      "sourceGrid": {
+        "minXKm": -64,
+        "minZKm": -64,
+        "spacingKm": 0.125,
+        "columns": 1025,
+        "rows": 1025
+      },
+      "selectionDomain": {
+        "minXKm": -48,
+        "maxXKm": 48,
+        "minZKm": -48,
+        "maxZKm": 48
+      },
+      "selectedNodeColumns": 769,
+      "selectedNodeRows": 769,
+      "originalFacesBySplitEdgeCount": [
+        838106,
+        7390,
+        7520,
+        76776
+      ],
+      "maximumCellTriangles": 20,
+      "cellTriangleCountBytes": 589824,
+      "midpointVerticesOutsideDomain": 405,
+      "boundsKm": {
+        "min": [
+          -1048.5760498046875,
+          -178.98373413085938,
+          -1048.5760498046875
+        ],
+        "max": [
+          1048.5760498046875,
+          -1.675218939781189,
+          1048.5760498046875
+        ]
+      }
+    },
+    "geometryScope": "First visible triangle of this static stitched mesh; not exact analytic-height intersection",
+    "shadow": {
+      "resolution": 2048,
+      "radiusKm": 64,
+      "coverage": "128km square in light right/up coordinates, centered at [0,-4,0], outer 15% fades to lit; not global terrain shadows",
+      "colourFormat": "r32float relative solar height km; -1000000 clear",
+      "depthFormat": "depth32float",
+      "colourBytes": 16777216,
+      "depthBytes": 16777216,
+      "targetPayloadBytes": 33554432,
+      "baseBiasKm": 0.001,
+      "receiverRadialOffsetKm": 0.03125,
+      "filter": "One nearest textureLoad; no receiver-plane extrapolation or PCF blur; outside coverage lit",
+      "biasPolicy": "Caster affine height minimum over one actual light texel: 0.5*(abs(dpdx(q))+abs(dpdy(q))) +1m; erodes unresolved contact shadows, especially at low Sun",
+      "receiverPolicy": "Only shadow lookup point elevated along planet radial by half one light texel; geometry/radiance point unchanged; contact shadows below this scale may disappear",
+      "biasLimit": "No guarantee for multiple non-coplanar faces inside one light texel; aliasing and contact-shadow loss require visual qualification",
+      "depthFit": {
+        "nearKm": 0.5,
+        "farKm": 1977.8974431000836,
+        "cameraDistanceKm": 927.4244346416147,
+        "minimumCasterHeightKm": -1049.473008458469,
+        "maximumCasterHeightKm": 926.4244346416147
+      },
+      "reversedDepthBuffer": true,
+      "updates": "Exact-input cached shadow map; terrain colour draw remains live; shared geometry not owned by shadow",
+      "cache": {
+        "requests": 855,
+        "submissions": 3,
+        "hits": 852,
+        "epoch": 2,
+        "valid": true,
+        "scope": "Owner-local CPU calls: requests are validated render calls, submissions are renderer.render attempts (including throws), hits skip shadow clear/draw; no GPU completion or presentation claim",
+        "ownership": "Static casters and exclusive target; call invalidate after caster mutations, external target writes or same-owner renderer/backend reset; disposed owner is terminal"
+      }
+    },
+    "width": 2474,
+    "height": 1844,
+    "colourFormat": "rgba32float",
+    "distanceComponent": "alpha; km from actual camera origin; -1 miss",
+    "colourDistanceBytes": 72992896,
+    "depthBytes": 18248224,
+    "targetPayloadBytes": 91241120,
+    "cpuTriangleLookupBytes": 2949120,
+    "normalPolicy": "Shared incident-area-weighted actual mesh normal at every vertex; no bilinear-source gradient seams",
+    "memoryScope": "Nominal retained geometry and target/depth payload only; CPU construction temporaries and driver residency/peak are unmeasured",
+    "perFrameCpuHeightSamples": 0,
+    "nearKm": 0.025,
+    "farKm": 1600,
+    "reversedDepthBuffer": true,
+    "cache": {
+      "enabled": true,
+      "requests": 855,
+      "hits": 705,
+      "submissions": 150,
+      "epoch": 7,
+      "valid": true,
+      "scope": "Owner-local CPU requests/render attempts; hits skip colour clear/draw. Not GPU completion, presentation or FPS.",
+      "ownership": "Static scene/geometry and exclusive target. cacheInputs covers every mutable shade binding; invalidate for external writes/reset, invalidateGeometry for raw caster/world changes after updating bounds."
+    }
+  },
+  "elapsedMs": 631.5,
+  "readbackRequests": 39,
+  "temporaryMemoryScope": "Sequential full readbacks with packed CPU buffers and alpha extraction; four existing CPU upload arrays hashed sequentially; optional36one-pixel returned records (576 bytes). Allocator/GC/driver residency unmeasured; Three r186 mapAsync rejection can bypass internal staging-buffer destroy. Only small digests and witness rows retained."
+}

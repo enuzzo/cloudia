@@ -1,0 +1,157 @@
+{
+  "kind": "cloudia-shading-ledger-saved-artifacts-v1",
+  "files": {
+    "README.md": {
+      "bytes": 1146,
+      "sha256": "dea4b29a899425c36cba9f5106a18ae349bab1f6272c38f55085e2e1017ebba9"
+    },
+    "analysis/INTERPRETATION.md": {
+      "bytes": 4292,
+      "sha256": "0726eb75f06d7d9c29bf7f6f9879a814078b55bf55f5a38ee27c72f2228327f6"
+    },
+    "analysis/PROTOCOL.md": {
+      "bytes": 5400,
+      "sha256": "a636e5330aaa094fdc184582cdeae0e6b90707128c188f9c6b62b48ce233cc50"
+    },
+    "analysis/analyze-shading-ledger.py": {
+      "bytes": 17762,
+      "sha256": "3c003461a6e86b576687bf20ce9f7dcb3f62226597bbb59344b8a47c7b5d6b18"
+    },
+    "analysis/shading-ledger-analysis.json": {
+      "bytes": 59528,
+      "sha256": "6cb1cd854e4f83ac73500ee7fd28e9baf1a73a0c9f442f6d561a9df4855d871c"
+    },
+    "analysis/shading-ledger-analysis.md": {
+      "bytes": 2319,
+      "sha256": "7c28581b14094eecd72d72d79d5f9b2aa40dd2cdbf1f9b89a73088ed0b171da1"
+    },
+    "browser/console.json": {
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "browser/diagnostic-restored-ui.jpg": {
+      "bytes": 78710,
+      "sha256": "dc29c8fafa5160b30a33dcc72c9d34504b8e069b421ad1102417ea0d6ed53163"
+    },
+    "browser/final-ordinary-console.json": {
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "browser/final-ordinary-ui.jpg": {
+      "bytes": 79544,
+      "sha256": "1758be777d1d3d34647d1b6de21e786b21c76a62c3ec094c66eb977ad48278bd"
+    },
+    "browser/restored-native-bitmap-alias.json": {
+      "bytes": 714,
+      "sha256": "767c3044d9c8d59a42b6825f3786bd785cfa882d4342ac5c51c5786297f4aa26"
+    },
+    "browser/restored-native.json": {
+      "bytes": 13064,
+      "sha256": "6075a9907ffca498bac614ded40fe7f6e6e246a6d519276627fa46eb4f202b39"
+    },
+    "browser/shading-ledger.json": {
+      "bytes": 62893,
+      "sha256": "b0fc343ea49b161f6f7922fcd086852137d93e383d8fb2bdb76b64790d37cadc"
+    },
+    "face-witness-reuse/INDEX.json": {
+      "bytes": 1057,
+      "sha256": "71dd65fc048005bc957047b1e370797ba30e7fbefd28251d29026c51806ff36c"
+    },
+    "face-witness-reuse/README.md": {
+      "bytes": 3581,
+      "sha256": "92c249c4ea4adf326ccdc5146520c495dbe411f5ac6a4c7751d701b069641de2"
+    },
+    "face-witness-reuse/faces12.json": {
+      "bytes": 23863,
+      "sha256": "d8420acc356e1026cc1ae5278c43ec631568030cf8c19fd96d92e06cf10b708a"
+    },
+    "face-witness-reuse/installed-shadow-witness.original.json": {
+      "bytes": 62341,
+      "sha256": "ec3187ebc895e0aed4e3bd723d995e0196aa2825fa3167ea4e03c78898348d43"
+    },
+    "face-witness-reuse/provenance.json": {
+      "bytes": 6560,
+      "sha256": "484d7eea9b9e961257b684b5ad29358e39cda109ef5cb9ce70a0dff48034b370"
+    },
+    "face-witness-reuse/terrainShadowWitness.original.ts": {
+      "bytes": 19495,
+      "sha256": "65be405e55d9cbb5c3a7f5ae03cda2c16c3240c22a63c042ca066e5180cdf276"
+    },
+    "face-witness-reuse/v61-final-default-native.original.json": {
+      "bytes": 13072,
+      "sha256": "28a7c881211523a99df76022e2bc8c4e1babce9dd8ffa8d1c5636327fb228eaf"
+    },
+    "review/integration-review.md": {
+      "bytes": 6574,
+      "sha256": "350350a2c00f6ee7f9f8128aedad8b866eeaa5d1d0c81d041ea04cdf6c0c67f0"
+    },
+    "review/numeric-review.md": {
+      "bytes": 7403,
+      "sha256": "f5671eaef3b873b34ded6c84ce4990b47c964dbb7c65c5ae3575fec0b7601929"
+    },
+    "run/PRE-RUN-PROTOCOL.json": {
+      "bytes": 3432,
+      "sha256": "bbca8612bf866526778b7d82b2af85fb711e043f94081e2430fd249deac72595"
+    },
+    "run/SOURCE-FREEZE.json": {
+      "bytes": 15388,
+      "sha256": "f9c855d5ca1c52d710521b28b05c29be1c00a101d10cea2dab3b445f805bcd1a"
+    },
+    "run/build.log": {
+      "bytes": 1570,
+      "sha256": "36f03cd7d0e89e13bb30e0e9358f405901ad5d863a1c2fc3e17f10e1dc440c1c"
+    },
+    "run/tests.log": {
+      "bytes": 303,
+      "sha256": "62a84bbeb67c13bc6351f4e61150bdc052d276a09adab516029bb5a137e69a21"
+    },
+    "run/typecheck.log": {
+      "bytes": 43,
+      "sha256": "0e16a3edbb514aa8bffdbf94899f6caaad53fcb431e899221770792223f367c1"
+    },
+    "run/validation.json": {
+      "bytes": 769,
+      "sha256": "e424a2ae1af865491b9870bf09c9212d189ad14c94d44e45e345200c309f91c0"
+    },
+    "source/README.md": {
+      "bytes": 491,
+      "sha256": "f5708fd3dcf9282cbf7307e35201b6183f226f167ef47a607cc19b923c907012"
+    },
+    "source/baseline-manifest.json": {
+      "bytes": 15037,
+      "sha256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73"
+    },
+    "source/experiment-manifest.json": {
+      "bytes": 15388,
+      "sha256": "f9c855d5ca1c52d710521b28b05c29be1c00a101d10cea2dab3b445f805bcd1a"
+    },
+    "source/overlay/src/cumulonimbus/GPUSceneEngine.ts": {
+      "bytes": 90565,
+      "sha256": "b8ee292262da2e3e6bbfecccd9f92ebf1bc882bb60562f83cce63de94a4b5f80"
+    },
+    "source/overlay/src/cumulonimbus/lifecycle.test.ts": {
+      "bytes": 90306,
+      "sha256": "b589e201c44c2b15b20782cb726ff2c9b68786c59b96fe10c14f7e7d5ec87a05"
+    },
+    "source/overlay/src/cumulonimbus/terrainMesh.ts": {
+      "bytes": 54085,
+      "sha256": "763fa49c5f9ae7196c5eb16d188c38b6de74f430d1388a8e286d7219624e987a"
+    },
+    "source/overlay/src/cumulonimbus/terrainShadingLedger.test.ts": {
+      "bytes": 3910,
+      "sha256": "549a94aaa4ce948124475acf9160ff49fbf0f831824f4751579c2628ae5c5948"
+    },
+    "source/overlay/src/cumulonimbus/terrainShadingLedger.ts": {
+      "bytes": 2496,
+      "sha256": "9f2715908df14940032fbc4ace19c2b7f3430105e6e405f6303647801db6fb9b"
+    },
+    "source/overlay/src/cumulonimbus/terrainShadingProbe.test.ts": {
+      "bytes": 12615,
+      "sha256": "d67b412760ce6c0dc2b68d329684feee4a61acf1c5f995ef891c860d8faa266f"
+    },
+    "verify_saved.py": {
+      "bytes": 2225,
+      "sha256": "809673e8b5718fd6282f8066ca1c47bea104ac780e99121d11197fd93b417695"
+    }
+  }
+}

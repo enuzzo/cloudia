@@ -1,0 +1,50 @@
+{
+  "status": "PASS_SAVED_ONLY",
+  "goalStatus": "active",
+  "productRenderer": "observatory-v61-observed-terrain-material",
+  "productBaselineCommit": "8a9535f9cb849292f5dd868020ef7f514567109a",
+  "product141ManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "experiment144ManifestSHA256": "f9c855d5ca1c52d710521b28b05c29be1c00a101d10cea2dab3b445f805bcd1a",
+  "payloadFiles": 38,
+  "payloadBytes": 777947,
+  "manifestSHA256": "e862c7beee687482057f26b3dfe9db06adec28190ad13f30ff4fe1e8c18355c5",
+  "actualGPUAudit": {
+    "status": "COMPLETE_IDENTICAL_F32",
+    "fullTargetSHA256": "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9",
+    "all36DistanceWordsIdentical": true,
+    "fourCurrentCPUArraysCanonical": true,
+    "normalFactorBounds": true,
+    "drain": "fulfilled"
+  },
+  "newProductCorrectionAdopted": false,
+  "photorealismComplete": false,
+  "FPSMeasuredThisCycle": false,
+  "QA": {
+    "tests": 600,
+    "files": 55,
+    "typecheck": "PASS",
+    "appBuild": "PASS",
+    "heroBuildThisCycle": false,
+    "browserPath": "Browser plugin unavailable; existing CUA Playwright in IAB",
+    "viewportCSS": [
+      1237,
+      922
+    ],
+    "nativeCanvas": [
+      2474,
+      1844
+    ],
+    "consoleErrorsWarnings": []
+  },
+  "preview": {
+    "url": "http://127.0.0.1:4196/?seed=74",
+    "ownerSession": 48736,
+    "renderer": "observatory-v61-observed-terrain-material",
+    "animated": true,
+    "quality": "256^3/128^3/384/full configured output",
+    "experimentalServer53784": "closed intentional exit0"
+  },
+  "command": "python3 docs/measurements/terrain-shading-ledger-2026-10-17/verify_saved.py --current",
+  "scope": "Saved bytes/contracts only; actual prior GPU/native export reports retained. This verifier does not replay model/GPU, measure FPS or grant artistic acceptance.",
+  "gitWhitespace": "Plain stagedcheck flags only original final blank lines in tests.log and typecheck.log. Preserve exact log bytes; one-shot core.whitespace=-blank-at-eof check, no persistent Git config."
+}

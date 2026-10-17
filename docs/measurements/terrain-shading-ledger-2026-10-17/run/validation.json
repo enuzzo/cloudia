@@ -1,0 +1,37 @@
+[
+  {
+    "name": "typecheck",
+    "command": [
+      "npm",
+      "run",
+      "typecheck"
+    ],
+    "wallSeconds": 1.7115852090064436,
+    "capSeconds": 30,
+    "exitCode": 0,
+    "logSHA256": "0e16a3edbb514aa8bffdbf94899f6caaad53fcb431e899221770792223f367c1"
+  },
+  {
+    "name": "tests",
+    "command": [
+      "npm",
+      "test"
+    ],
+    "wallSeconds": 9.672012958093546,
+    "capSeconds": 60,
+    "exitCode": 0,
+    "logSHA256": "62a84bbeb67c13bc6351f4e61150bdc052d276a09adab516029bb5a137e69a21"
+  },
+  {
+    "name": "build",
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "wallSeconds": 4.444506834028289,
+    "capSeconds": 90,
+    "exitCode": 0,
+    "logSHA256": "36f03cd7d0e89e13bb30e0e9358f405901ad5d863a1c2fc3e17f10e1dc440c1c"
+  }
+]

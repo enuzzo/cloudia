@@ -1,0 +1,2199 @@
+{
+  "schema": "cloudia-shading-ledger-saved-analysis-v1",
+  "status": "QUALIFIED_SAVED_ARITHMETIC",
+  "inputs": {
+    "ledger": {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle37/browser/shading-ledger.json",
+      "bytes": 62893,
+      "sha256": "b0fc343ea49b161f6f7922fcd086852137d93e383d8fb2bdb76b64790d37cadc"
+    },
+    "faces": {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle37/face-witness-reuse/faces12.json",
+      "bytes": 23863,
+      "sha256": "d8420acc356e1026cc1ae5278c43ec631568030cf8c19fd96d92e06cf10b708a"
+    }
+  },
+  "protocolSHA256": "a636e5330aaa094fdc184582cdeae0e6b90707128c188f9c6b62b48ce233cc50",
+  "scriptSHA256": "3c003461a6e86b576687bf20ce9f7dcb3f62226597bbb59344b8a47c7b5d6b18",
+  "gates": [
+    {
+      "name": "engine.ledgerDistanceQualified",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "engine.ledgerValuesQualified",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "engine.shadingQualified",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "engine.stable",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "engine.cacheStateQualified",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "engine.identical",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "engine.shadingAudit",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "engine.status",
+      "passed": true,
+      "actual": "COMPLETE_IDENTICAL_F32",
+      "expected": "COMPLETE_IDENTICAL_F32"
+    },
+    {
+      "name": "probe.stateRestored",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "probe.inputsStable",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "probe.status",
+      "passed": true,
+      "actual": "COMPLETE",
+      "expected": "COMPLETE"
+    },
+    {
+      "name": "probe.drain",
+      "passed": true,
+      "actual": {
+        "requested": true,
+        "settled": true,
+        "status": "fulfilled",
+        "error": null
+      },
+      "expected": "requested/settled/fulfilled"
+    },
+    {
+      "name": "probe.readCount",
+      "passed": true,
+      "actual": 36,
+      "expected": 36
+    },
+    {
+      "name": "installedCPU.position",
+      "passed": true,
+      "actual": {
+        "sha256": "4c7e3f0b92c294850dad4014d3c260e0cb922ba5ade13a952722240a2e5ecc64",
+        "bytes": 7101456,
+        "expectedSHA256": "4c7e3f0b92c294850dad4014d3c260e0cb922ba5ade13a952722240a2e5ecc64",
+        "identical": true
+      },
+      "expected": {
+        "sha256": "4c7e3f0b92c294850dad4014d3c260e0cb922ba5ade13a952722240a2e5ecc64",
+        "bytes": 7101456
+      }
+    },
+    {
+      "name": "historicalCPU.position",
+      "passed": true,
+      "actual": "4c7e3f0b92c294850dad4014d3c260e0cb922ba5ade13a952722240a2e5ecc64",
+      "expected": "4c7e3f0b92c294850dad4014d3c260e0cb922ba5ade13a952722240a2e5ecc64"
+    },
+    {
+      "name": "installedCPU.normal",
+      "passed": true,
+      "actual": {
+        "sha256": "3cb820d4d203c89f61e8e26809ddbdcd2f8ce2645dce0842b758a1b0ea6dcbfd",
+        "bytes": 7101456,
+        "expectedSHA256": "3cb820d4d203c89f61e8e26809ddbdcd2f8ce2645dce0842b758a1b0ea6dcbfd",
+        "identical": true
+      },
+      "expected": {
+        "sha256": "3cb820d4d203c89f61e8e26809ddbdcd2f8ce2645dce0842b758a1b0ea6dcbfd",
+        "bytes": 7101456
+      }
+    },
+    {
+      "name": "historicalCPU.normal",
+      "passed": true,
+      "actual": "3cb820d4d203c89f61e8e26809ddbdcd2f8ce2645dce0842b758a1b0ea6dcbfd",
+      "expected": "3cb820d4d203c89f61e8e26809ddbdcd2f8ce2645dce0842b758a1b0ea6dcbfd"
+    },
+    {
+      "name": "installedCPU.terrainSurface",
+      "passed": true,
+      "actual": {
+        "sha256": "7595b45c14d4d249df98d99145fcaa485b21d62e419764b99ce4fedc780c76f2",
+        "bytes": 4734304,
+        "expectedSHA256": "7595b45c14d4d249df98d99145fcaa485b21d62e419764b99ce4fedc780c76f2",
+        "identical": true
+      },
+      "expected": {
+        "sha256": "7595b45c14d4d249df98d99145fcaa485b21d62e419764b99ce4fedc780c76f2",
+        "bytes": 4734304
+      }
+    },
+    {
+      "name": "historicalCPU.terrainSurface",
+      "passed": true,
+      "actual": "7595b45c14d4d249df98d99145fcaa485b21d62e419764b99ce4fedc780c76f2",
+      "expected": "7595b45c14d4d249df98d99145fcaa485b21d62e419764b99ce4fedc780c76f2"
+    },
+    {
+      "name": "installedCPU.index",
+      "passed": true,
+      "actual": {
+        "sha256": "87e1b8d5b569577c291efefb1698ca66b657ecb3f9c73dcf6ddc73316a1030ae",
+        "bytes": 14190600,
+        "expectedSHA256": "87e1b8d5b569577c291efefb1698ca66b657ecb3f9c73dcf6ddc73316a1030ae",
+        "identical": true
+      },
+      "expected": {
+        "sha256": "87e1b8d5b569577c291efefb1698ca66b657ecb3f9c73dcf6ddc73316a1030ae",
+        "bytes": 14190600
+      }
+    },
+    {
+      "name": "historicalCPU.index",
+      "passed": true,
+      "actual": "87e1b8d5b569577c291efefb1698ca66b657ecb3f9c73dcf6ddc73316a1030ae",
+      "expected": "87e1b8d5b569577c291efefb1698ca66b657ecb3f9c73dcf6ddc73316a1030ae"
+    },
+    {
+      "name": "historical.facesSHA256",
+      "passed": true,
+      "actual": "d8420acc356e1026cc1ae5278c43ec631568030cf8c19fd96d92e06cf10b708a",
+      "expected": "d8420acc356e1026cc1ae5278c43ec631568030cf8c19fd96d92e06cf10b708a"
+    },
+    {
+      "name": "historical.schema",
+      "passed": true,
+      "actual": "cloudia-historical-cpu-face-reuse-v1",
+      "expected": "cloudia-historical-cpu-face-reuse-v1"
+    },
+    {
+      "name": "historical.sourceReport",
+      "passed": true,
+      "actual": "ec3187ebc895e0aed4e3bd723d995e0196aa2825fa3167ea4e03c78898348d43",
+      "expected": "ec3187ebc895e0aed4e3bd723d995e0196aa2825fa3167ea4e03c78898348d43"
+    },
+    {
+      "name": "cached.dimensions",
+      "passed": true,
+      "actual": [
+        2474,
+        1844
+      ],
+      "expected": [
+        2474,
+        1844
+      ]
+    },
+    {
+      "name": "cached.fixedWitness",
+      "passed": true,
+      "actual": null,
+      "expected": "fixed twelve IDs/coordinates in order"
+    },
+    {
+      "name": "fresh.dimensions",
+      "passed": true,
+      "actual": [
+        2474,
+        1844
+      ],
+      "expected": [
+        2474,
+        1844
+      ]
+    },
+    {
+      "name": "fresh.fixedWitness",
+      "passed": true,
+      "actual": null,
+      "expected": "fixed twelve IDs/coordinates in order"
+    },
+    {
+      "name": "restored.dimensions",
+      "passed": true,
+      "actual": [
+        2474,
+        1844
+      ],
+      "expected": [
+        2474,
+        1844
+      ]
+    },
+    {
+      "name": "restored.fixedWitness",
+      "passed": true,
+      "actual": null,
+      "expected": "fixed twelve IDs/coordinates in order"
+    },
+    {
+      "name": "ordinary.wholeHashes",
+      "passed": true,
+      "actual": [
+        "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9",
+        "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9",
+        "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9"
+      ],
+      "expected": "three identical SHA256 values"
+    },
+    {
+      "name": "ordinary.witnessBits",
+      "passed": true,
+      "actual": null,
+      "expected": "all 48 ordinary words identical across phases"
+    },
+    {
+      "name": "probe.fixedWitness",
+      "passed": true,
+      "actual": null,
+      "expected": "fixed twelve IDs/coordinates in order"
+    },
+    {
+      "name": "historical.fixedIDs",
+      "passed": true,
+      "actual": null,
+      "expected": "fixed twelve IDs in order"
+    },
+    {
+      "name": "sun.unitLength",
+      "passed": true,
+      "actual": 0.9999999999999999,
+      "expected": 1
+    },
+    {
+      "name": "historical.sunContinuity",
+      "passed": true,
+      "actual": 1.1102230246251565e-16,
+      "expected": "absolute error <= 1e-12"
+    },
+    {
+      "name": "historical.camera.origin",
+      "passed": true,
+      "actual": [
+        15.459708213806152,
+        7.558173179626465,
+        2.780613899230957
+      ],
+      "expected": [
+        15.459708213806152,
+        7.558173179626465,
+        2.780613899230957
+      ]
+    },
+    {
+      "name": "historical.camera.forward",
+      "passed": true,
+      "actual": [
+        -0.9442591071128845,
+        -0.27743953466415405,
+        -0.17720633745193481
+      ],
+      "expected": [
+        -0.9442591071128845,
+        -0.27743953466415405,
+        -0.17720633745193481
+      ]
+    },
+    {
+      "name": "historical.camera.right",
+      "passed": true,
+      "actual": [
+        0.18444715440273285,
+        0.0,
+        -0.9828424453735352
+      ],
+      "expected": [
+        0.18444715440273285,
+        0,
+        -0.9828424453735352
+      ]
+    },
+    {
+      "name": "historical.camera.up",
+      "passed": true,
+      "actual": [
+        -0.27267932891845703,
+        0.9607431292533875,
+        -0.05117293447256088
+      ],
+      "expected": [
+        -0.27267932891845703,
+        0.9607431292533875,
+        -0.05117293447256088
+      ]
+    },
+    {
+      "name": "historical.camera.aspect",
+      "passed": true,
+      "actual": 1.3416485786437988,
+      "expected": 1.3416485786437988
+    },
+    {
+      "name": "historical.camera.tanFov",
+      "passed": true,
+      "actual": 0.2867000102996826,
+      "expected": 0.2867000102996826
+    },
+    {
+      "name": "historical.camera.inspection",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0
+    },
+    {
+      "name": "historical.camera.dimensions",
+      "passed": true,
+      "actual": null,
+      "expected": [
+        2474,
+        1844
+      ]
+    },
+    {
+      "name": "distance.L1-artifact.macro-normal",
+      "passed": true,
+      "actual": 1108492214,
+      "expected": 1108492214
+    },
+    {
+      "name": "distance.L1-artifact.final-normal",
+      "passed": true,
+      "actual": 1108492214,
+      "expected": 1108492214
+    },
+    {
+      "name": "distance.L1-artifact.factors",
+      "passed": true,
+      "actual": 1108492214,
+      "expected": 1108492214
+    },
+    {
+      "name": "distance.L1-control.macro-normal",
+      "passed": true,
+      "actual": 1108490810,
+      "expected": 1108490810
+    },
+    {
+      "name": "distance.L1-control.final-normal",
+      "passed": true,
+      "actual": 1108490810,
+      "expected": 1108490810
+    },
+    {
+      "name": "distance.L1-control.factors",
+      "passed": true,
+      "actual": 1108490810,
+      "expected": 1108490810
+    },
+    {
+      "name": "distance.L2-artifact.macro-normal",
+      "passed": true,
+      "actual": 1108360074,
+      "expected": 1108360074
+    },
+    {
+      "name": "distance.L2-artifact.final-normal",
+      "passed": true,
+      "actual": 1108360074,
+      "expected": 1108360074
+    },
+    {
+      "name": "distance.L2-artifact.factors",
+      "passed": true,
+      "actual": 1108360074,
+      "expected": 1108360074
+    },
+    {
+      "name": "distance.L2-control.macro-normal",
+      "passed": true,
+      "actual": 1108379899,
+      "expected": 1108379899
+    },
+    {
+      "name": "distance.L2-control.final-normal",
+      "passed": true,
+      "actual": 1108379899,
+      "expected": 1108379899
+    },
+    {
+      "name": "distance.L2-control.factors",
+      "passed": true,
+      "actual": 1108379899,
+      "expected": 1108379899
+    },
+    {
+      "name": "distance.L3-artifact.macro-normal",
+      "passed": true,
+      "actual": 1110407544,
+      "expected": 1110407544
+    },
+    {
+      "name": "distance.L3-artifact.final-normal",
+      "passed": true,
+      "actual": 1110407544,
+      "expected": 1110407544
+    },
+    {
+      "name": "distance.L3-artifact.factors",
+      "passed": true,
+      "actual": 1110407544,
+      "expected": 1110407544
+    },
+    {
+      "name": "distance.L3-control.macro-normal",
+      "passed": true,
+      "actual": 1110417567,
+      "expected": 1110417567
+    },
+    {
+      "name": "distance.L3-control.final-normal",
+      "passed": true,
+      "actual": 1110417567,
+      "expected": 1110417567
+    },
+    {
+      "name": "distance.L3-control.factors",
+      "passed": true,
+      "actual": 1110417567,
+      "expected": 1110417567
+    },
+    {
+      "name": "distance.C1-ocean.macro-normal",
+      "passed": true,
+      "actual": 1107400533,
+      "expected": 1107400533
+    },
+    {
+      "name": "distance.C1-ocean.final-normal",
+      "passed": true,
+      "actual": 1107400533,
+      "expected": 1107400533
+    },
+    {
+      "name": "distance.C1-ocean.factors",
+      "passed": true,
+      "actual": 1107400533,
+      "expected": 1107400533
+    },
+    {
+      "name": "distance.C2-coastal-lowland.macro-normal",
+      "passed": true,
+      "actual": 1108434205,
+      "expected": 1108434205
+    },
+    {
+      "name": "distance.C2-coastal-lowland.final-normal",
+      "passed": true,
+      "actual": 1108434205,
+      "expected": 1108434205
+    },
+    {
+      "name": "distance.C2-coastal-lowland.factors",
+      "passed": true,
+      "actual": 1108434205,
+      "expected": 1108434205
+    },
+    {
+      "name": "distance.C3-plain.macro-normal",
+      "passed": true,
+      "actual": 1111381691,
+      "expected": 1111381691
+    },
+    {
+      "name": "distance.C3-plain.final-normal",
+      "passed": true,
+      "actual": 1111381691,
+      "expected": 1111381691
+    },
+    {
+      "name": "distance.C3-plain.factors",
+      "passed": true,
+      "actual": 1111381691,
+      "expected": 1111381691
+    },
+    {
+      "name": "distance.C4-ridge-L1.macro-normal",
+      "passed": true,
+      "actual": 1108782277,
+      "expected": 1108782277
+    },
+    {
+      "name": "distance.C4-ridge-L1.final-normal",
+      "passed": true,
+      "actual": 1108782277,
+      "expected": 1108782277
+    },
+    {
+      "name": "distance.C4-ridge-L1.factors",
+      "passed": true,
+      "actual": 1108782277,
+      "expected": 1108782277
+    },
+    {
+      "name": "distance.C5-ridge-L2.macro-normal",
+      "passed": true,
+      "actual": 1108984283,
+      "expected": 1108984283
+    },
+    {
+      "name": "distance.C5-ridge-L2.final-normal",
+      "passed": true,
+      "actual": 1108984283,
+      "expected": 1108984283
+    },
+    {
+      "name": "distance.C5-ridge-L2.factors",
+      "passed": true,
+      "actual": 1108984283,
+      "expected": 1108984283
+    },
+    {
+      "name": "distance.C6-ridge-L3.macro-normal",
+      "passed": true,
+      "actual": 1111344119,
+      "expected": 1111344119
+    },
+    {
+      "name": "distance.C6-ridge-L3.final-normal",
+      "passed": true,
+      "actual": 1111344119,
+      "expected": 1111344119
+    },
+    {
+      "name": "distance.C6-ridge-L3.factors",
+      "passed": true,
+      "actual": 1111344119,
+      "expected": 1111344119
+    }
+  ],
+  "rows": [
+    {
+      "id": "L1-artifact",
+      "pixel": [
+        71,
+        856
+      ],
+      "ordinary": {
+        "rgba": [
+          0.010302993468940258,
+          0.014199471101164818,
+          0.015455827116966248,
+          36.562217712402344
+        ],
+        "bits": [
+          1009307107,
+          1013490918,
+          1014839920,
+          1108492214
+        ],
+        "linearLuminance": 0.013461788860894738
+      },
+      "macro": {
+        "normal": [
+          0.734571635723114,
+          0.6599579453468323,
+          -0.15767072141170502
+        ],
+        "length": 1.0000000170129155,
+        "unitLengthError": 1.7012915520808747e-08,
+        "dotSun": -0.05416577439818763
+      },
+      "final": {
+        "normal": [
+          0.7347930669784546,
+          0.6595398783683777,
+          -0.15838660299777985
+        ],
+        "length": 1.000000009223477,
+        "unitLengthError": 9.223477093200927e-09,
+        "dotSun": -0.05476471746620537
+      },
+      "macroToFinal": {
+        "angleDegrees": 0.04916426179409816,
+        "dotSunDelta": -0.0005989430680177418,
+        "strictSignCrossing": false,
+        "crossingOutsideNearZeroBand": false,
+        "macroNearZero": false,
+        "finalNearZero": false
+      },
+      "factors": {
+        "D": 0.0,
+        "S": 0.8706251382827759,
+        "V": 0.0,
+        "maxFinalDotSun": 0,
+        "DResidual": 0.0,
+        "DAbsoluteResidual": 0.0,
+        "DConsistencyPassed": true,
+        "rangesPassed": true
+      },
+      "groundBranchLightMultiplierRGB": [
+        0.08076758024256238,
+        0.10451219075014262,
+        0.15602480923164264
+      ],
+      "historicalCPUFaceReference": {
+        "faceIndex": 471806,
+        "indices": [
+          506253,
+          506477,
+          195387
+        ],
+        "vertices": [
+          [
+            -19.07200050354004,
+            -2.7979049682617188,
+            8.960000038146973
+          ],
+          [
+            -18.944000244140625,
+            -2.886260509490967,
+            9.08799934387207
+          ],
+          [
+            -18.944000244140625,
+            -2.9350156784057617,
+            8.960000038146973
+          ]
+        ],
+        "point": [
+          -19.047444802042513,
+          -2.817937360808111,
+          8.976463774513672
+        ],
+        "distanceKm": 36.562218681085966,
+        "geometricNormal": [
+          0.7074660604510763,
+          0.6604578093052323,
+          -0.25156958368922006
+        ],
+        "normalDotSun": -0.05577520612923133,
+        "interpolatedVertexNormal": [
+          0.7311333474748082,
+          0.6568672335131843,
+          -0.15694732827940583
+        ],
+        "interpolatedVertexNormalDotSun": -0.05391655331674684,
+        "interpolatedVertexNormalLength": 0.9953205504293712,
+        "dotWithCurrentRecordedSun": -0.05577520612923137,
+        "faceToMacroAngleDegrees": 5.601983691455697,
+        "faceToFinalAngleDegrees": 5.566277309882399,
+        "distanceMinusCurrentGPUKm": 9.686836222044803e-07,
+        "currentGPURasterWinnerCertified": false
+      }
+    },
+    {
+      "id": "L1-control",
+      "pixel": [
+        64,
+        856
+      ],
+      "ordinary": {
+        "rgba": [
+          0.008368724025785923,
+          0.012483187019824982,
+          0.013630012050271034,
+          36.556861877441406
+        ],
+        "bits": [
+          1007230201,
+          1011648072,
+          1012879466,
+          1108490810
+        ],
+        "linearLuminance": 0.011691252954490482
+      },
+      "macro": {
+        "normal": [
+          0.7002588510513306,
+          0.6711974143981934,
+          -0.24316996335983276
+        ],
+        "length": 1.0000000293254856,
+        "unitLengthError": 2.9325485595421696e-08,
+        "dotSun": -0.04151025796201467
+      },
+      "final": {
+        "normal": [
+          0.7002935409545898,
+          0.6712415814399719,
+          -0.24294821918010712
+        ],
+        "length": 1.0000000706797663,
+        "unitLengthError": 7.067976626196071e-08,
+        "dotSun": -0.041454549736794126
+      },
+      "macroToFinal": {
+        "angleDegrees": 0.013106162671021873,
+        "dotSunDelta": 5.570822522054514e-05,
+        "strictSignCrossing": false,
+        "crossingOutsideNearZeroBand": false,
+        "macroNearZero": false,
+        "finalNearZero": false
+      },
+      "factors": {
+        "D": 0.0,
+        "S": 0.8750718235969543,
+        "V": 1.0,
+        "maxFinalDotSun": 0,
+        "DResidual": 0.0,
+        "DAbsoluteResidual": 0.0,
+        "DConsistencyPassed": true,
+        "rangesPassed": true
+      },
+      "groundBranchLightMultiplierRGB": [
+        0.08118009763625345,
+        0.10504598285345579,
+        0.15682170010620006
+      ],
+      "historicalCPUFaceReference": {
+        "faceIndex": 471807,
+        "indices": [
+          506476,
+          506477,
+          506253
+        ],
+        "vertices": [
+          [
+            -19.07200050354004,
+            -2.751357316970825,
+            9.08799934387207
+          ],
+          [
+            -18.944000244140625,
+            -2.886260509490967,
+            9.08799934387207
+          ],
+          [
+            -19.07200050354004,
+            -2.7979049682617188,
+            8.960000038146973
+          ]
+        ],
+        "point": [
+          -19.032087103328486,
+          -2.8091742834578373,
+          9.044686168709767
+        ],
+        "distanceKm": 36.55686582595238,
+        "geometricNormal": [
+          0.7037130435612537,
+          0.6677043770120045,
+          -0.24281436786312222
+        ],
+        "normalDotSun": -0.04623144657808337,
+        "interpolatedVertexNormal": [
+          0.6957284636014944,
+          0.6668525862112107,
+          -0.24159843187355345
+        ],
+        "interpolatedVertexNormalDotSun": -0.04124381300156403,
+        "interpolatedVertexNormalLength": 0.9935291989094414,
+        "dotWithCurrentRecordedSun": -0.046231446578083354,
+        "faceToMacroAngleDegrees": 0.2822028142396827,
+        "faceToFinalAngleDegrees": 0.281990575767926,
+        "distanceMinusCurrentGPUKm": 3.948510972406893e-06,
+        "currentGPURasterWinnerCertified": false
+      }
+    },
+    {
+      "id": "L2-artifact",
+      "pixel": [
+        431,
+        849
+      ],
+      "ordinary": {
+        "rgba": [
+          0.037994351238012314,
+          0.03565721586346626,
+          0.030546927824616432,
+          36.058143615722656
+        ],
+        "bits": [
+          1025220599,
+          1024593229,
+          1023032717,
+          1108360074
+        ],
+        "linearLuminance": 0.035785128047689796
+      },
+      "macro": {
+        "normal": [
+          0.12949272990226746,
+          0.6444872617721558,
+          -0.7535700798034668
+        ],
+        "length": 1.0000000314295576,
+        "unitLengthError": 3.142955762314159e-08,
+        "dotSun": 0.211674479812451
+      },
+      "final": {
+        "normal": [
+          0.12949050962924957,
+          0.6444766521453857,
+          -0.7535794973373413
+        ],
+        "length": 1.0000000030258835,
+        "unitLengthError": 3.025883543728014e-09,
+        "dotSun": 0.21166638861699016
+      },
+      "macroToFinal": {
+        "angleDegrees": 0.0008227135805604263,
+        "dotSunDelta": -8.091195460829814e-06,
+        "strictSignCrossing": false,
+        "crossingOutsideNearZeroBand": false,
+        "macroNearZero": false,
+        "finalNearZero": false
+      },
+      "factors": {
+        "D": 0.21166637539863586,
+        "S": 0.8649011254310608,
+        "V": 1.0,
+        "maxFinalDotSun": 0.21166638861699016,
+        "DResidual": -1.3218354300015278e-08,
+        "DAbsoluteResidual": 1.3218354300015278e-08,
+        "DConsistencyPassed": true,
+        "rangesPassed": true
+      },
+      "groundBranchLightMultiplierRGB": [
+        0.25765709424676086,
+        0.2641084373094921,
+        0.2918255789980123
+      ],
+      "historicalCPUFaceReference": {
+        "faceIndex": 461845,
+        "indices": [
+          503270,
+          503466,
+          193437
+        ],
+        "vertices": [
+          [
+            -19.07200050354004,
+            -2.9814541339874268,
+            5.119999885559082
+          ],
+          [
+            -18.944000244140625,
+            -2.91731858253479,
+            5.248000144958496
+          ],
+          [
+            -18.944000244140625,
+            -3.0581376552581787,
+            5.119999885559082
+          ]
+        ],
+        "point": [
+          -18.952877942268742,
+          -2.9272411286207944,
+          5.23414647025076
+        ],
+        "distanceKm": 36.05814500555913,
+        "geometricNormal": [
+          0.3737572956041669,
+          0.6238762904593429,
+          -0.6863554896592211
+        ],
+        "normalDotSun": 0.04815655429093532,
+        "interpolatedVertexNormal": [
+          0.12872272082264566,
+          0.6406451836369295,
+          -0.7490679839348426
+        ],
+        "interpolatedVertexNormalDotSun": 0.21041336620216666,
+        "interpolatedVertexNormalLength": 0.9940315059038065,
+        "dotWithCurrentRecordedSun": 0.04815655429093535,
+        "faceToMacroAngleDegrees": 14.602969429850567,
+        "faceToFinalAngleDegrees": 14.603187066207115,
+        "distanceMinusCurrentGPUKm": 1.3898364770170701e-06,
+        "currentGPURasterWinnerCertified": false
+      }
+    },
+    {
+      "id": "L2-control",
+      "pixel": [
+        431,
+        844
+      ],
+      "ordinary": {
+        "rgba": [
+          0.024521270766854286,
+          0.025326302275061607,
+          0.02478175237774849,
+          36.13376998901367
+        ],
+        "bits": [
+          1019797717,
+          1020229915,
+          1019937562,
+          1108379899
+        ],
+        "linearLuminance": 0.025115836073830725
+      },
+      "macro": {
+        "normal": [
+          0.31913819909095764,
+          0.6488169431686401,
+          -0.6907874345779419
+        ],
+        "length": 0.9999999478162449,
+        "unitLengthError": 5.218375509485895e-08,
+        "dotSun": 0.10147588723207016
+      },
+      "final": {
+        "normal": [
+          0.31902918219566345,
+          0.6487776637077332,
+          -0.6908747553825378
+        ],
+        "length": 1.00000000182169,
+        "unitLengthError": 1.8216899100309547e-09,
+        "dotSun": 0.10150206185712496
+      },
+      "macroToFinal": {
+        "angleDegrees": 0.008313315660725594,
+        "dotSunDelta": 2.617462505480339e-05,
+        "strictSignCrossing": false,
+        "crossingOutsideNearZeroBand": false,
+        "macroNearZero": false,
+        "finalNearZero": false
+      },
+      "factors": {
+        "D": 0.10150207579135895,
+        "S": 0.866535484790802,
+        "V": 1.0,
+        "maxFinalDotSun": 0.10150206185712496,
+        "DResidual": 1.3934233988877054e-08,
+        "DAbsoluteResidual": 1.3934233988877054e-08,
+        "DConsistencyPassed": true,
+        "rangesPassed": true
+      },
+      "groundBranchLightMultiplierRGB": [
+        0.16546807459357316,
+        0.18088322973397197,
+        0.22090544561874517
+      ],
+      "historicalCPUFaceReference": {
+        "faceIndex": 461846,
+        "indices": [
+          503465,
+          503466,
+          503270
+        ],
+        "vertices": [
+          [
+            -19.07200050354004,
+            -2.8787431716918945,
+            5.248000144958496
+          ],
+          [
+            -18.944000244140625,
+            -2.91731858253479,
+            5.248000144958496
+          ],
+          [
+            -19.07200050354004,
+            -2.9814541339874268,
+            5.119999885559082
+          ]
+        ],
+        "point": [
+          -19.041042880324326,
+          -2.897232651276953,
+          5.236585052327888
+        ],
+        "distanceKm": 36.133767191546454,
+        "geometricNormal": [
+          0.22881566844567597,
+          0.7592521835989972,
+          -0.6092450340986895
+        ],
+        "normalDotSun": 0.25796028087143,
+        "interpolatedVertexNormal": [
+          0.31612638322846226,
+          0.642726308665438,
+          -0.684311635242879
+        ],
+        "interpolatedVertexNormalDotSun": 0.1005320881643966,
+        "interpolatedVertexNormalLength": 0.9906136543338132,
+        "dotWithCurrentRecordedSun": 0.25796028087142997,
+        "faceToMacroAngleDegrees": 9.42585244678592,
+        "faceToFinalAngleDegrees": 9.42641964622401,
+        "distanceMinusCurrentGPUKm": -2.7974672178743276e-06,
+        "currentGPURasterWinnerCertified": false
+      }
+    },
+    {
+      "id": "L3-artifact",
+      "pixel": [
+        903,
+        651
+      ],
+      "ordinary": {
+        "rgba": [
+          0.010727212764322758,
+          0.013398812152445316,
+          0.015592668205499649,
+          43.868621826171875
+        ],
+        "bits": [
+          1009762609,
+          1012631217,
+          1014986852,
+          1110407544
+        ],
+        "linearLuminance": 0.012989226529560983
+      },
+      "macro": {
+        "normal": [
+          0.751492440700531,
+          0.5881879925727844,
+          -0.29882100224494934
+        ],
+        "length": 0.9999999972097595,
+        "unitLengthError": 2.790240483108164e-09,
+        "dotSun": -0.14679719104476652
+      },
+      "final": {
+        "normal": [
+          0.7514958381652832,
+          0.5881891846656799,
+          -0.298810213804245
+        ],
+        "length": 1.0000000278055783,
+        "unitLengthError": 2.780557828430119e-08,
+        "dotSun": -0.1467963048402992
+      },
+      "macroToFinal": {
+        "angleDegrees": 0.0006516457766995179,
+        "dotSunDelta": 8.862044673096925e-07,
+        "strictSignCrossing": false,
+        "crossingOutsideNearZeroBand": false,
+        "macroNearZero": false,
+        "finalNearZero": false
+      },
+      "factors": {
+        "D": 0.0,
+        "S": 0.8435118794441223,
+        "V": 1.0,
+        "maxFinalDotSun": 0,
+        "DResidual": 0.0,
+        "DAbsoluteResidual": 0.0,
+        "DConsistencyPassed": true,
+        "rangesPassed": true
+      },
+      "groundBranchLightMultiplierRGB": [
+        0.07825229299366944,
+        0.10125744200122355,
+        0.151165839679841
+      ],
+      "historicalCPUFaceReference": {
+        "faceIndex": 446724,
+        "indices": [
+          498942,
+          498941,
+          190546
+        ],
+        "vertices": [
+          [
+            -27.007999420166016,
+            -2.9572901725769043,
+            -0.6399999856948853
+          ],
+          [
+            -27.007999420166016,
+            -2.8833603858947754,
+            -0.5120000243186951
+          ],
+          [
+            -26.8799991607666,
+            -3.088256597518921,
+            -0.5120000243186951
+          ]
+        ],
+        "point": [
+          -27.001599935760026,
+          -2.9370695746405655,
+          -0.5872544958449488
+        ],
+        "distanceKm": 43.86861460964958,
+        "geometricNormal": [
+          0.8109874788096179,
+          0.5066301950361441,
+          -0.2926177620918773
+        ],
+        "normalDotSun": -0.2433448144498767,
+        "interpolatedVertexNormal": [
+          0.7490448543548958,
+          0.5862772709785915,
+          -0.2978465478458793
+        ],
+        "interpolatedVertexNormalDotSun": -0.14631526550795546,
+        "interpolatedVertexNormalLength": 0.9967456036348289,
+        "dotWithCurrentRecordedSun": -0.2433448144498766,
+        "faceToMacroAngleDegrees": 5.797513812917025,
+        "faceToFinalAngleDegrees": 5.797416295486461,
+        "distanceMinusCurrentGPUKm": -7.216522291741967e-06,
+        "currentGPURasterWinnerCertified": false
+      }
+    },
+    {
+      "id": "L3-control",
+      "pixel": [
+        903,
+        646
+      ],
+      "ordinary": {
+        "rgba": [
+          0.011557547375559807,
+          0.014112944714725018,
+          0.016019420698285103,
+          43.906856536865234
+        ],
+        "bits": [
+          1010654174,
+          1013398011,
+          1015233321,
+          1110417567
+        ],
+        "linearLuminance": 0.013707314806431533
+      },
+      "macro": {
+        "normal": [
+          0.6565065979957581,
+          0.6957637071609497,
+          -0.29139643907546997
+        ],
+        "length": 0.9999999670600873,
+        "unitLengthError": 3.2939912686380524e-08,
+        "dotSun": -0.005081439600816869
+      },
+      "final": {
+        "normal": [
+          0.6565065979957581,
+          0.6957637071609497,
+          -0.29139643907546997
+        ],
+        "length": 0.9999999670600873,
+        "unitLengthError": 3.2939912686380524e-08,
+        "dotSun": -0.005081439600816869
+      },
+      "macroToFinal": {
+        "angleDegrees": 0.0,
+        "dotSunDelta": 0.0,
+        "strictSignCrossing": false,
+        "crossingOutsideNearZeroBand": false,
+        "macroNearZero": false,
+        "finalNearZero": false
+      },
+      "factors": {
+        "D": 0.0,
+        "S": 0.8843902349472046,
+        "V": 1.0,
+        "maxFinalDotSun": 0,
+        "DResidual": 0.0,
+        "DAbsoluteResidual": 0.0,
+        "DConsistencyPassed": true,
+        "rangesPassed": true
+      },
+      "groundBranchLightMultiplierRGB": [
+        0.08204456329819036,
+        0.10616459009519767,
+        0.1584916534412628
+      ],
+      "historicalCPUFaceReference": {
+        "faceIndex": 446725,
+        "indices": [
+          498940,
+          498941,
+          498942
+        ],
+        "vertices": [
+          [
+            -27.13599967956543,
+            -2.8198437690734863,
+            -0.6399999856948853
+          ],
+          [
+            -27.007999420166016,
+            -2.8833603858947754,
+            -0.5120000243186951
+          ],
+          [
+            -27.007999420166016,
+            -2.9572901725769043,
+            -0.6399999856948853
+          ]
+        ],
+        "point": [
+          -27.05456811555554,
+          -2.880404571757868,
+          -0.5934602985774537
+        ],
+        "distanceKm": 43.90685566028768,
+        "geometricNormal": [
+          0.6809517972644437,
+          0.6341526912792482,
+          -0.366271776070189
+        ],
+        "normalDotSun": -0.08133053445461606,
+        "interpolatedVertexNormal": [
+          0.6449276532434537,
+          0.6834915722219616,
+          -0.286250431333296
+        ],
+        "interpolatedVertexNormalDotSun": -0.004990981967171092,
+        "interpolatedVertexNormalLength": 0.9823602784391556,
+        "dotWithCurrentRecordedSun": -0.081330534454616,
+        "faceToMacroAngleDegrees": 5.7319110175202495,
+        "faceToFinalAngleDegrees": 5.7319110175202495,
+        "distanceMinusCurrentGPUKm": -8.765775518781993e-07,
+        "currentGPURasterWinnerCertified": false
+      }
+    },
+    {
+      "id": "C1-ocean",
+      "pixel": [
+        2200,
+        1100
+      ],
+      "ordinary": {
+        "rgba": [
+          0.008158542215824127,
+          0.0251751895993948,
+          0.04044027999043465,
+          32.39778518676758
+        ],
+        "bits": [
+          1007004520,
+          1020148787,
+          1025877173,
+          1107400533
+        ],
+        "linearLuminance": 0.02265958989188075
+      },
+      "macro": {
+        "normal": [
+          -0.0017506333533674479,
+          0.9999967813491821,
+          -0.0018244573147967458
+        ],
+        "length": 0.9999999780351775,
+        "unitLengthError": 2.1964822516373772e-08,
+        "dotSun": 0.713445646132876
+      },
+      "final": {
+        "normal": [
+          -0.0017506333533674479,
+          0.9999967813491821,
+          -0.0018244573147967458
+        ],
+        "length": 0.9999999780351775,
+        "unitLengthError": 2.1964822516373772e-08,
+        "dotSun": 0.713445646132876
+      },
+      "macroToFinal": {
+        "angleDegrees": 0.0,
+        "dotSunDelta": 0.0,
+        "strictSignCrossing": false,
+        "crossingOutsideNearZeroBand": false,
+        "macroNearZero": false,
+        "finalNearZero": false
+      },
+      "factors": {
+        "D": 0.7134456634521484,
+        "S": 0.8799987435340881,
+        "V": 1.0,
+        "maxFinalDotSun": 0.713445646132876,
+        "DResidual": 1.7319272460625257e-08,
+        "DAbsoluteResidual": 1.7319272460625257e-08,
+        "DConsistencyPassed": true,
+        "rangesPassed": true
+      },
+      "groundBranchLightMultiplierRGB": [
+        0.6796532965978712,
+        0.6458908144686688,
+        0.6188942182151842
+      ],
+      "historicalCPUFaceReference": {
+        "faceIndex": 249937,
+        "indices": [
+          125518,
+          125776,
+          125519
+        ],
+        "vertices": [
+          [
+            -11.263999938964844,
+            -4.020605564117432,
+            -11.64799976348877
+          ],
+          [
+            -11.13599967956543,
+            -4.020147800445557,
+            -11.520000457763672
+          ],
+          [
+            -11.13599967956543,
+            -4.02038049697876,
+            -11.64799976348877
+          ]
+        ],
+        "point": [
+          -11.147112034891176,
+          -4.020365152069111,
+          -11.628811058342357
+        ],
+        "distanceKm": 32.397792536729575,
+        "geometricNormal": [
+          -0.0017583278337843942,
+          0.9999968016731943,
+          -0.0018179457118566158
+        ],
+        "normalDotSun": 0.713452193688164,
+        "interpolatedVertexNormal": [
+          -0.001750637705057353,
+          0.9999967902846678,
+          -0.0018244598644845205
+        ],
+        "interpolatedVertexNormalDotSun": 0.7134456548632693,
+        "interpolatedVertexNormalLength": 0.9999999869829046,
+        "dotWithCurrentRecordedSun": 0.7134521936881639,
+        "faceToMacroAngleDegrees": 0.0005775398513255619,
+        "faceToFinalAngleDegrees": 0.0005775398513255619,
+        "distanceMinusCurrentGPUKm": 7.349961997249466e-06,
+        "currentGPURasterWinnerCertified": false
+      }
+    },
+    {
+      "id": "C2-coastal-lowland",
+      "pixel": [
+        1800,
+        930
+      ],
+      "ordinary": {
+        "rgba": [
+          0.14028950035572052,
+          0.13013672828674316,
+          0.10517383366823196,
+          36.3409309387207
+        ],
+        "bits": [
+          1041213453,
+          1040532112,
+          1037526369,
+          1108434205
+        ],
+        "linearLuminance": 0.13049288663715125
+      },
+      "macro": {
+        "normal": [
+          0.00712174829095602,
+          0.9999507069587708,
+          -0.006921297870576382
+        ],
+        "length": 1.000000020005139,
+        "unitLengthError": 2.000513910083157e-08,
+        "dotSun": 0.7063952291504345
+      },
+      "final": {
+        "normal": [
+          0.008671234361827374,
+          0.9999454617500305,
+          -0.005822823848575354
+        ],
+        "length": 1.0000000110287055,
+        "unitLengthError": 1.102870550440116e-08,
+        "dotSun": 0.7055910925133084
+      },
+      "macroToFinal": {
+        "angleDegrees": 0.10882549784470424,
+        "dotSunDelta": -0.000804136637126085,
+        "strictSignCrossing": false,
+        "crossingOutsideNearZeroBand": false,
+        "macroNearZero": false,
+        "finalNearZero": false
+      },
+      "factors": {
+        "D": 0.705591082572937,
+        "S": 0.8799792528152466,
+        "V": 1.0,
+        "maxFinalDotSun": 0.7055910925133084,
+        "DResidual": -9.940371414884908e-09,
+        "DAbsoluteResidual": 9.940371414884908e-09,
+        "DConsistencyPassed": true,
+        "rangesPassed": true
+      },
+      "groundBranchLightMultiplierRGB": [
+        0.6730677129740562,
+        0.6399406301264198,
+        0.6138133228678185
+      ],
+      "historicalCPUFaceReference": {
+        "faceIndex": 426935,
+        "indices": [
+          185905,
+          186036,
+          185906
+        ],
+        "vertices": [
+          [
+            -16.895999908447266,
+            -4.026093006134033,
+            -9.727999687194824
+          ],
+          [
+            -16.639999389648438,
+            -4.027770042419434,
+            -9.472000122070312
+          ],
+          [
+            -16.639999389648438,
+            -4.02908182144165,
+            -9.727999687194824
+          ]
+        ],
+        "point": [
+          -16.673472652673944,
+          -4.028158854276249,
+          -9.624145179361728
+        ],
+        "distanceKm": 36.340919779164786,
+        "geometricNormal": [
+          0.011674087284516505,
+          0.999918728240738,
+          -0.005123729061765921
+        ],
+        "normalDotSun": 0.7037152213180345,
+        "interpolatedVertexNormal": [
+          0.007121205126892533,
+          0.9999454412544914,
+          -0.006920961989577026
+        ],
+        "interpolatedVertexNormalDotSun": 0.706391911163458,
+        "interpolatedVertexNormalLength": 0.9999947483676901,
+        "dotWithCurrentRecordedSun": 0.7037152213180344,
+        "faceToMacroAngleDegrees": 0.28043409723481894,
+        "faceToFinalAngleDegrees": 0.17665861277727304,
+        "distanceMinusCurrentGPUKm": -1.1159555917572561e-05,
+        "currentGPURasterWinnerCertified": false
+      }
+    },
+    {
+      "id": "C3-plain",
+      "pixel": [
+        2200,
+        700
+      ],
+      "ordinary": {
+        "rgba": [
+          0.008942077867686749,
+          0.027352871373295784,
+          0.03533002734184265,
+          47.58469772338867
+        ],
+        "bits": [
+          1007845835,
+          1021317921,
+          1024505400,
+          1111381691
+        ],
+        "linearLuminance": 0.024014687334932384
+      },
+      "macro": {
+        "normal": [
+          -0.003977463115006685,
+          0.9999877214431763,
+          -0.002945404965430498
+        ],
+        "length": 0.9999999693301781,
+        "unitLengthError": 3.066982190436107e-08,
+        "dotSun": 0.7146873344259698
+      },
+      "final": {
+        "normal": [
+          -0.003977463115006685,
+          0.9999877214431763,
+          -0.002945404965430498
+        ],
+        "length": 0.9999999693301781,
+        "unitLengthError": 3.066982190436107e-08,
+        "dotSun": 0.7146873344259698
+      },
+      "macroToFinal": {
+        "angleDegrees": 0.0,
+        "dotSunDelta": 0.0,
+        "strictSignCrossing": false,
+        "crossingOutsideNearZeroBand": false,
+        "macroNearZero": false,
+        "finalNearZero": false
+      },
+      "factors": {
+        "D": 0.7146873474121094,
+        "S": 0.8799953460693359,
+        "V": 1.0,
+        "maxFinalDotSun": 0.7146873344259698,
+        "DResidual": 1.298613960809547e-08,
+        "DAbsoluteResidual": 1.298613960809547e-08,
+        "DConsistencyPassed": true,
+        "rangesPassed": true
+      },
+      "groundBranchLightMultiplierRGB": [
+        0.6806937713109154,
+        0.6468306659973965,
+        0.6196962656945656
+      ],
+      "historicalCPUFaceReference": {
+        "faceIndex": 408902,
+        "indices": [
+          179796,
+          180053,
+          180054
+        ],
+        "vertices": [
+          [
+            -25.3439998626709,
+            -4.0785746574401855,
+            -18.944000244140625
+          ],
+          [
+            -25.3439998626709,
+            -4.077818870544434,
+            -18.687999725341797
+          ],
+          [
+            -25.08799934387207,
+            -4.076805591583252,
+            -18.687999725341797
+          ]
+        ],
+        "point": [
+          -25.339347204992848,
+          -4.078036294108676,
+          -18.767883335024774
+        ],
+        "distanceKm": 47.58468269346348,
+        "geometricNormal": [
+          -0.003958064667004308,
+          0.9999878088959704,
+          -0.0029522505869185077
+        ],
+        "normalDotSun": 0.7146729725344866,
+        "interpolatedVertexNormal": [
+          -0.003977409791647349,
+          0.9999877470990292,
+          -0.00294539711847041
+        ],
+        "interpolatedVertexNormalDotSun": 0.7146873187610142,
+        "interpolatedVertexNormalLength": 0.999999994750514,
+        "dotWithCurrentRecordedSun": 0.7146729725344865,
+        "faceToMacroAngleDegrees": 0.0011786353690429578,
+        "faceToFinalAngleDegrees": 0.0011786353690429578,
+        "distanceMinusCurrentGPUKm": -1.5029925194198768e-05,
+        "currentGPURasterWinnerCertified": false
+      }
+    },
+    {
+      "id": "C4-ridge-L1",
+      "pixel": [
+        170,
+        805
+      ],
+      "ordinary": {
+        "rgba": [
+          0.040221426635980606,
+          0.03778162598609924,
+          0.029715916141867638,
+          37.66872024536133
+        ],
+        "bits": [
+          1025818425,
+          1025163496,
+          1022586571,
+          1108782277
+        ],
+        "linearLuminance": 0.037717983353510495
+      },
+      "macro": {
+        "normal": [
+          0.4152197241783142,
+          0.8187355399131775,
+          -0.39656612277030945
+        ],
+        "length": 0.9999999966963569,
+        "unitLengthError": 3.3036431368316244e-09,
+        "dotSun": 0.22128154022714547
+      },
+      "final": {
+        "normal": [
+          0.4152197241783142,
+          0.8187355399131775,
+          -0.39656612277030945
+        ],
+        "length": 0.9999999966963569,
+        "unitLengthError": 3.3036431368316244e-09,
+        "dotSun": 0.22128154022714547
+      },
+      "macroToFinal": {
+        "angleDegrees": 0.0,
+        "dotSunDelta": 0.0,
+        "strictSignCrossing": false,
+        "crossingOutsideNearZeroBand": false,
+        "macroNearZero": false,
+        "finalNearZero": false
+      },
+      "factors": {
+        "D": 0.22128154337406158,
+        "S": 0.9311195015907288,
+        "V": 1.0,
+        "maxFinalDotSun": 0.22128154022714547,
+        "DResidual": 3.146916116580911e-09,
+        "DAbsoluteResidual": 3.146916116580911e-09,
+        "DConsistencyPassed": true,
+        "rangesPassed": true
+      },
+      "groundBranchLightMultiplierRGB": [
+        0.27185966345944435,
+        0.279338510822012,
+        0.30990807117871677
+      ],
+      "historicalCPUFaceReference": {
+        "faceIndex": 468996,
+        "indices": [
+          505604,
+          505605,
+          505606
+        ],
+        "vertices": [
+          [
+            -20.479999542236328,
+            -2.7013602256774902,
+            8.064000129699707
+          ],
+          [
+            -20.352001190185547,
+            -2.655198574066162,
+            8.192000389099121
+          ],
+          [
+            -20.352001190185547,
+            -2.7362711429595947,
+            8.064000129699707
+          ]
+        ],
+        "point": [
+          -20.392689148872186,
+          -2.6922714574045674,
+          8.115947367776
+        ],
+        "distanceKm": 37.668711089295314,
+        "geometricNormal": [
+          0.22453227399846098,
+          0.8232313353951781,
+          -0.521416749209835
+        ],
+        "normalDotSun": 0.3251957801849207,
+        "interpolatedVertexNormal": [
+          0.4132524833676705,
+          0.8148533222621385,
+          -0.39468081485978623
+        ],
+        "interpolatedVertexNormalDotSun": 0.22023225221161652,
+        "interpolatedVertexNormalLength": 0.9952570006935777,
+        "dotWithCurrentRecordedSun": 0.3251957801849206,
+        "faceToMacroAngleDegrees": 13.090077924314201,
+        "faceToFinalAngleDegrees": 13.090077924314201,
+        "distanceMinusCurrentGPUKm": -9.156066013815689e-06,
+        "currentGPURasterWinnerCertified": false
+      }
+    },
+    {
+      "id": "C5-ridge-L2",
+      "pixel": [
+        460,
+        800
+      ],
+      "ordinary": {
+        "rgba": [
+          0.019902193918824196,
+          0.02556551806628704,
+          0.018076056614518166,
+          38.43931198120117
+        ],
+        "bits": [
+          1017317869,
+          1020358343,
+          1016337469,
+          1108984283
+        ],
+        "linearLuminance": 0.023820756235718724
+      },
+      "macro": {
+        "normal": [
+          0.38946959376335144,
+          0.9198099970817566,
+          -0.04757087305188179
+        ],
+        "length": 0.9999999915803246,
+        "unitLengthError": 8.419675401327709e-09,
+        "dotSun": 0.38513381748528647
+      },
+      "final": {
+        "normal": [
+          0.38946959376335144,
+          0.9198099970817566,
+          -0.04757087305188179
+        ],
+        "length": 0.9999999915803246,
+        "unitLengthError": 8.419675401327709e-09,
+        "dotSun": 0.38513381748528647
+      },
+      "macroToFinal": {
+        "angleDegrees": 0.0,
+        "dotSunDelta": 0.0,
+        "strictSignCrossing": false,
+        "crossingOutsideNearZeroBand": false,
+        "macroNearZero": false,
+        "finalNearZero": false
+      },
+      "factors": {
+        "D": 0.3851338326931,
+        "S": 0.958198070526123,
+        "V": 1.0,
+        "maxFinalDotSun": 0.38513381748528647,
+        "DResidual": 1.5207813508499868e-08,
+        "DAbsoluteResidual": 1.5207813508499868e-08,
+        "DConsistencyPassed": true,
+        "rangesPassed": true
+      },
+      "groundBranchLightMultiplierRGB": [
+        0.4117140937458733,
+        0.40666547481865445,
+        0.4206791437308477
+      ],
+      "historicalCPUFaceReference": {
+        "faceIndex": 461127,
+        "indices": [
+          503241,
+          503242,
+          503243
+        ],
+        "vertices": [
+          [
+            -21.503999710083008,
+            -3.033137083053589,
+            4.991999626159668
+          ],
+          [
+            -21.375999450683594,
+            -3.1144795417785645,
+            5.119999885559082
+          ],
+          [
+            -21.375999450683594,
+            -3.1186792850494385,
+            4.991999626159668
+          ]
+        ],
+        "point": [
+          -21.40355259200554,
+          -3.098626899729741,
+          5.04194414142804
+        ],
+        "distanceKm": 38.43931580599392,
+        "geometricNormal": [
+          0.5554316943523594,
+          0.8311149268662447,
+          -0.02726923631098083
+        ],
+        "normalDotSun": 0.21538045435076864,
+        "interpolatedVertexNormal": [
+          0.3871870442142786,
+          0.9143909728870508,
+          -0.047289990304983875
+        ],
+        "interpolatedVertexNormalDotSun": 0.3828569352981241,
+        "interpolatedVertexNormalLength": 0.9941131734806468,
+        "dotWithCurrentRecordedSun": 0.21538045435076858,
+        "faceToMacroAngleDegrees": 10.860511622901061,
+        "faceToFinalAngleDegrees": 10.860511622901061,
+        "distanceMinusCurrentGPUKm": 3.824792749185235e-06,
+        "currentGPURasterWinnerCertified": false
+      }
+    },
+    {
+      "id": "C6-ridge-L3",
+      "pixel": [
+        925,
+        610
+      ],
+      "ordinary": {
+        "rgba": [
+          0.020122051239013672,
+          0.02112502232193947,
+          0.013217429630458355,
+          47.44137191772461
+        ],
+        "bits": [
+          1017435904,
+          1017974370,
+          1012436459,
+          1111344119
+        ],
+        "linearLuminance": 0.020340862477384505
+      },
+      "macro": {
+        "normal": [
+          0.13315069675445557,
+          0.8837928175926208,
+          -0.44853222370147705
+        ],
+        "length": 1.0000000040865462,
+        "unitLengthError": 4.086546212533904e-09,
+        "dotSun": 0.4449932431942703
+      },
+      "final": {
+        "normal": [
+          0.13315069675445557,
+          0.8837928175926208,
+          -0.44853222370147705
+        ],
+        "length": 1.0000000040865462,
+        "unitLengthError": 4.086546212533904e-09,
+        "dotSun": 0.4449932431942703
+      },
+      "macroToFinal": {
+        "angleDegrees": 0.0,
+        "dotSunDelta": 0.0,
+        "strictSignCrossing": false,
+        "crossingOutsideNearZeroBand": false,
+        "macroNearZero": false,
+        "finalNearZero": false
+      },
+      "factors": {
+        "D": 0.444993257522583,
+        "S": 0.9495928883552551,
+        "V": 1.0,
+        "maxFinalDotSun": 0.4449932431942703,
+        "DResidual": 1.4328312702982515e-08,
+        "DAbsoluteResidual": 1.4328312702982515e-08,
+        "DConsistencyPassed": true,
+        "rangesPassed": true
+      },
+      "groundBranchLightMultiplierRGB": [
+        0.46109046532615994,
+        0.45096075493676957,
+        0.45783167482537857
+      ],
+      "historicalCPUFaceReference": {
+        "faceIndex": 445322,
+        "indices": [
+          498510,
+          498511,
+          498325
+        ],
+        "vertices": [
+          [
+            -30.591999053955078,
+            -3.1777548789978027,
+            -1.1519999504089355
+          ],
+          [
+            -30.464000701904297,
+            -3.1966328620910645,
+            -1.1519999504089355
+          ],
+          [
+            -30.591999053955078,
+            -3.2540149688720703,
+            -1.2799999713897705
+          ]
+        ],
+        "point": [
+          -30.569561488188427,
+          -3.215511921835027,
+          -1.2098194569494938
+        ],
+        "distanceKm": 47.44143250719277,
+        "geometricNormal": [
+          0.1256985500610911,
+          0.8522736345036324,
+          -0.5077691664944891
+        ],
+        "normalDotSun": 0.41484460733325523,
+        "interpolatedVertexNormal": [
+          0.1331117239715999,
+          0.883524291059002,
+          -0.4484193141366334
+        ],
+        "interpolatedVertexNormalDotSun": 0.4448520517036519,
+        "interpolatedVertexNormalLength": 0.9997068496518228,
+        "dotWithCurrentRecordedSun": 0.4148446073332551,
+        "faceToMacroAngleDegrees": 3.868946504696044,
+        "faceToFinalAngleDegrees": 3.868946504696044,
+        "distanceMinusCurrentGPUKm": 6.0589468162675075e-05,
+        "currentGPURasterWinnerCertified": false
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "ids": [
+        "L1-artifact",
+        "L1-control"
+      ],
+      "labelsAreHistorical": true,
+      "ordinaryRGB": [
+        {
+          "artifact": 0.010302993468940258,
+          "control": 0.008368724025785923,
+          "delta": 0.001934269443154335,
+          "artifactOverControl": 1.2311307479126345
+        },
+        {
+          "artifact": 0.014199471101164818,
+          "control": 0.012483187019824982,
+          "delta": 0.0017162840813398361,
+          "artifactOverControl": 1.1374876526814943
+        },
+        {
+          "artifact": 0.015455827116966248,
+          "control": 0.013630012050271034,
+          "delta": 0.0018258150666952133,
+          "artifactOverControl": 1.133955499082549
+        }
+      ],
+      "ordinaryLuminance": {
+        "artifact": 0.013461788860894738,
+        "control": 0.011691252954490482,
+        "delta": 0.0017705359064042556,
+        "artifactOverControl": 1.151441074219869,
+        "relativeDeltaOverControl": 0.151441074219869,
+        "signedMichelson": 0.07039052848555605
+      },
+      "macroDotSun": {
+        "artifact": -0.05416577439818763,
+        "control": -0.04151025796201467,
+        "delta": -0.012655516436172957,
+        "artifactOverControl": 1.3048768438816691
+      },
+      "finalDotSun": {
+        "artifact": -0.05476471746620537,
+        "control": -0.041454549736794126,
+        "delta": -0.013310167729411244,
+        "artifactOverControl": 1.3210785743403561
+      },
+      "factors": {
+        "D": {
+          "artifact": 0.0,
+          "control": 0.0,
+          "delta": 0.0,
+          "artifactOverControl": null
+        },
+        "S": {
+          "artifact": 0.8706251382827759,
+          "control": 0.8750718235969543,
+          "delta": -0.004446685314178467,
+          "artifactOverControl": 0.9949184910377978
+        },
+        "V": {
+          "artifact": 0.0,
+          "control": 1.0,
+          "delta": -1.0,
+          "artifactOverControl": 0.0
+        }
+      }
+    },
+    {
+      "ids": [
+        "L2-artifact",
+        "L2-control"
+      ],
+      "labelsAreHistorical": true,
+      "ordinaryRGB": [
+        {
+          "artifact": 0.037994351238012314,
+          "control": 0.024521270766854286,
+          "delta": 0.013473080471158028,
+          "artifactOverControl": 1.5494446270447682
+        },
+        {
+          "artifact": 0.03565721586346626,
+          "control": 0.025326302275061607,
+          "delta": 0.010330913588404655,
+          "artifactOverControl": 1.4079124333352577
+        },
+        {
+          "artifact": 0.030546927824616432,
+          "control": 0.02478175237774849,
+          "delta": 0.005765175446867943,
+          "artifactOverControl": 1.232637924832325
+        }
+      ],
+      "ordinaryLuminance": {
+        "artifact": 0.035785128047689796,
+        "control": 0.025115836073830725,
+        "delta": 0.01066929197385907,
+        "artifactOverControl": 1.4248033767418902,
+        "relativeDeltaOverControl": 0.4248033767418902,
+        "signedMichelson": 0.17519085498498493
+      },
+      "macroDotSun": {
+        "artifact": 0.211674479812451,
+        "control": 0.10147588723207016,
+        "delta": 0.11019859258038084,
+        "artifactOverControl": 2.0859584043681463
+      },
+      "finalDotSun": {
+        "artifact": 0.21166638861699016,
+        "control": 0.10150206185712496,
+        "delta": 0.1101643267598652,
+        "artifactOverControl": 2.0853407777561537
+      },
+      "factors": {
+        "D": {
+          "artifact": 0.21166637539863586,
+          "control": 0.10150207579135895,
+          "delta": 0.11016429960727692,
+          "artifactOverControl": 2.085340361252547
+        },
+        "S": {
+          "artifact": 0.8649011254310608,
+          "control": 0.866535484790802,
+          "delta": -0.001634359359741211,
+          "artifactOverControl": 0.998113915253989
+        },
+        "V": {
+          "artifact": 1.0,
+          "control": 1.0,
+          "delta": 0.0,
+          "artifactOverControl": 1.0
+        }
+      }
+    },
+    {
+      "ids": [
+        "L3-artifact",
+        "L3-control"
+      ],
+      "labelsAreHistorical": true,
+      "ordinaryRGB": [
+        {
+          "artifact": 0.010727212764322758,
+          "control": 0.011557547375559807,
+          "delta": -0.0008303346112370491,
+          "artifactOverControl": 0.9281565037757995
+        },
+        {
+          "artifact": 0.013398812152445316,
+          "control": 0.014112944714725018,
+          "delta": -0.0007141325622797012,
+          "artifactOverControl": 0.9493987557724507
+        },
+        {
+          "artifact": 0.015592668205499649,
+          "control": 0.016019420698285103,
+          "delta": -0.0004267524927854538,
+          "artifactOverControl": 0.9733603042942035
+        }
+      ],
+      "ordinaryLuminance": {
+        "artifact": 0.012989226529560983,
+        "control": 0.013707314806431533,
+        "delta": -0.0007180882768705495,
+        "artifactOverControl": 0.9476127682911595,
+        "relativeDeltaOverControl": -0.05238723170884054,
+        "signedMichelson": -0.026898176352995077
+      },
+      "macroDotSun": {
+        "artifact": -0.14679719104476652,
+        "control": -0.005081439600816869,
+        "delta": -0.14171575144394966,
+        "artifactOverControl": 28.888898142402024
+      },
+      "finalDotSun": {
+        "artifact": -0.1467963048402992,
+        "control": -0.005081439600816869,
+        "delta": -0.14171486523948235,
+        "artifactOverControl": 28.88872374212633
+      },
+      "factors": {
+        "D": {
+          "artifact": 0.0,
+          "control": 0.0,
+          "delta": 0.0,
+          "artifactOverControl": null
+        },
+        "S": {
+          "artifact": 0.8435118794441223,
+          "control": 0.8843902349472046,
+          "delta": -0.040878355503082275,
+          "artifactOverControl": 0.9537779207777859
+        },
+        "V": {
+          "artifact": 1.0,
+          "control": 1.0,
+          "delta": 0.0,
+          "artifactOverControl": 1.0
+        }
+      }
+    }
+  ],
+  "thresholds": {
+    "unitAndArithmeticConsistency": 1e-05,
+    "signNearZeroBand": 1e-06
+  },
+  "limits": [
+    "Saved arithmetic only; no new CPU model, rays, browser or GPU work.",
+    "Installed hashes identify current CPU upload views; they do not read back GPU vertex buffers.",
+    "Historical CPU raycaster faces remain ideal references, not certified current GPU raster winners.",
+    "Twelve historical labels do not classify the current image or establish whole-ribbon causality.",
+    "No physical sunlight, geographic accuracy, artwork acceptance or FPS conclusion follows."
+  ],
+  "distanceBitComparison": {
+    "compared": 36,
+    "identical": 36,
+    "expected": 36
+  },
+  "ordinaryWholeSHA256": "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9",
+  "recordedSun": [
+    -0.668126592347077,
+    0.7126683651702156,
+    0.21380050955106467
+  ],
+  "allRequiredGatesPassed": true,
+  "arithmeticConsistencyPassed": true,
+  "summary": {
+    "points": 12,
+    "maxMacroUnitLengthError": 5.218375509485895e-08,
+    "maxFinalUnitLengthError": 7.067976626196071e-08,
+    "maxDAbsoluteResidual": 1.7319272460625257e-08,
+    "strictMacroToFinalSignCrossings": [],
+    "robustMacroToFinalSignCrossings": []
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "cloudia-cpu-face-reuse-index-v1",
+  "files": {
+    "README.md": {
+      "bytes": 3581,
+      "sha256": "92c249c4ea4adf326ccdc5146520c495dbe411f5ac6a4c7751d701b069641de2"
+    },
+    "faces12.json": {
+      "bytes": 23863,
+      "sha256": "d8420acc356e1026cc1ae5278c43ec631568030cf8c19fd96d92e06cf10b708a"
+    },
+    "installed-shadow-witness.original.json": {
+      "bytes": 62341,
+      "sha256": "ec3187ebc895e0aed4e3bd723d995e0196aa2825fa3167ea4e03c78898348d43"
+    },
+    "provenance.json": {
+      "bytes": 6560,
+      "sha256": "484d7eea9b9e961257b684b5ad29358e39cda109ef5cb9ce70a0dff48034b370"
+    },
+    "terrainShadowWitness.original.ts": {
+      "bytes": 19495,
+      "sha256": "65be405e55d9cbb5c3a7f5ae03cda2c16c3240c22a63c042ca066e5180cdf276"
+    },
+    "v61-final-default-native.original.json": {
+      "bytes": 13072,
+      "sha256": "28a7c881211523a99df76022e2bc8c4e1babce9dd8ffa8d1c5636327fb228eaf"
+    }
+  },
+  "payloadFiles": 6,
+  "payloadBytes": 128912,
+  "selfPolicy": "INDEX.json excluded; its SHA supplied separately."
+}

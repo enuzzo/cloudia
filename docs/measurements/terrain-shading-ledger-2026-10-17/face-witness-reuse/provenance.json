@@ -1,0 +1,158 @@
+{
+  "scope": "Saved evidence authentication and small arithmetic only; no mesh/DEM sampling, code evaluation, tests, GPU or browser.",
+  "authoritativeProductCommit": "8a9535f (parent-supplied, no Git operation)",
+  "checkedArchiveEntries": [
+    {
+      "path": "docs/measurements/terrain-installed-shadow-witness-2026-10-17/browser/installed-shadow-witness.json",
+      "bytes": 62341,
+      "sha256": "ec3187ebc895e0aed4e3bd723d995e0196aa2825fa3167ea4e03c78898348d43",
+      "archiveManifestSHA256": "4b06291c0f1d60549b3382debf2f7396009eac37f0985f26527026df69c1e24a"
+    },
+    {
+      "path": "docs/measurements/terrain-installed-shadow-witness-2026-10-17/source/diagnostic-overlay/src/cumulonimbus/terrainShadowWitness.ts",
+      "bytes": 19495,
+      "sha256": "65be405e55d9cbb5c3a7f5ae03cda2c16c3240c22a63c042ca066e5180cdf276",
+      "archiveManifestSHA256": "4b06291c0f1d60549b3382debf2f7396009eac37f0985f26527026df69c1e24a"
+    },
+    {
+      "path": "docs/measurements/terrain-installed-shadow-witness-2026-10-17/source/diagnostic-manifest.json",
+      "bytes": 13508,
+      "sha256": "4626d86d14d70325e4f397b8a0003a2f6c2af2c59933325fbf62e7ef0ec28b50",
+      "archiveManifestSHA256": "4b06291c0f1d60549b3382debf2f7396009eac37f0985f26527026df69c1e24a"
+    },
+    {
+      "path": "docs/measurements/terrain-optical-material-2026-10-17/browser/final-default-native.json",
+      "bytes": 13072,
+      "sha256": "28a7c881211523a99df76022e2bc8c4e1babce9dd8ffa8d1c5636327fb228eaf",
+      "archiveManifestSHA256": "13043696001b9cdbab8b31992277a99bd32294c7d07798a01d7843698496a595"
+    },
+    {
+      "path": "docs/measurements/terrain-optical-material-2026-10-17/source/final-manifest.json",
+      "bytes": 15037,
+      "sha256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+      "archiveManifestSHA256": "13043696001b9cdbab8b31992277a99bd32294c7d07798a01d7843698496a595"
+    },
+    {
+      "path": "docs/measurements/terrain-source-refinement-2026-10-16/witness/on/result.json.gz",
+      "bytes": 51467,
+      "sha256": "8a426c7eed131d9c9f8d9390c4a6b1d050eaab961761770ce71a3e5263a6a663",
+      "archiveManifestSHA256": "25e51c71de6949910be54dab93ed8bcdb309ca7ac48deb133139a84c9fe9a693"
+    }
+  ],
+  "oldSourceManifestSHA256": "4626d86d14d70325e4f397b8a0003a2f6c2af2c59933325fbf62e7ef0ec28b50",
+  "v61SourceManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "builderAndCameraBlock": {
+    "start": "export const TERRAIN_MESH_DEFAULTS",
+    "endExclusive": "export interface TerrainShadeInputs",
+    "bytes": 23204,
+    "sha256": "fe85515288d3009928daf92a28d2817f31e3e03a0e021d38295df600b908db8d",
+    "oldAndCurrentByteExact": true,
+    "priorWholeModuleSHA256": "c7bc36a93960a688102546f70fadffcf67005073e86889b0afd2ab659ba78e5a",
+    "v61WholeModuleSHA256": "00c170a8d4653817720b9dddc8eb10d647671128602dac55a1de52fe55216d72",
+    "reasonWholeModuleDiff": "v60 adds raster cache outside the unchanged builder/camera block"
+  },
+  "unchangedInputAndDependencies": [
+    {
+      "path": "src/cumulonimbus/terrainDem.ts",
+      "bytes": 4394,
+      "sha256": "335dfde27717448fa58b7e8d26fc4ce684a1d42ed6ead007f36fb345fe9dd386",
+      "samePriorBaseDiagnosticV61AndCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/terrainSurface.ts",
+      "bytes": 13659,
+      "sha256": "0ff8de3514feb3714ba4e931c246d0bd339634661aa37a7d87e79f61c1ddff3f",
+      "samePriorBaseDiagnosticV61AndCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/terrainSplitTriangle.ts",
+      "bytes": 1249,
+      "sha256": "e8a14126eedcea99390b9bf9503b9df53fae6ad85e2f39aa184817d104443163",
+      "samePriorBaseDiagnosticV61AndCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/landscape.ts",
+      "bytes": 5477,
+      "sha256": "8a0e17f79d6ec5759dd0615ffa94434c479b7961d1f9e007df583fb463ca98ab",
+      "samePriorBaseDiagnosticV61AndCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/camera.ts",
+      "bytes": 7127,
+      "sha256": "a7f7b113ee4251454e4f31fd8fa470f131dae3a9bc41ec5cf1d2480871066a69",
+      "samePriorBaseDiagnosticV61AndCurrent": true
+    },
+    {
+      "path": "src/cumulonimbus/assets/liguria-apuane-dem.bin",
+      "bytes": 4202532,
+      "sha256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d",
+      "samePriorBaseDiagnosticV61AndCurrent": true
+    }
+  ],
+  "geometryConfiguration": {
+    "cellsPerSide": 256,
+    "levels": 9,
+    "normalMode": "geometry",
+    "sourceGrid": {
+      "minXKm": -64,
+      "minZKm": -64,
+      "spacingKm": 0.125,
+      "columns": 1025,
+      "rows": 1025
+    },
+    "domain": {
+      "minXKm": -48,
+      "maxXKm": 48,
+      "minZKm": -48,
+      "maxZKm": 48
+    },
+    "maxErrorKm": 0.005,
+    "limits": {
+      "maxProbeCount": 600000,
+      "maxVertices": 1000000,
+      "maxTriangles": 2000000,
+      "maxGeometryBytes": 67108864
+    },
+    "callerSourceReviewed": "Installed source cycle31 vs current source; sampler/refinement/default spacing and construction options unchanged; material/cache changed."
+  },
+  "exactSavedNativeCameraMatch": true,
+  "exactSavedNativeSunMatch": true,
+  "geometryStatsFieldsExact": [
+    "vertices",
+    "triangles",
+    "levels",
+    "cellsPerSide",
+    "baseSpacingKm",
+    "geometryBytes",
+    "sampleCalls",
+    "normalMode",
+    "refinement"
+  ],
+  "output": [
+    2474,
+    1844
+  ],
+  "canonicalHistoricalMeshSHA256": {
+    "positions": "4c7e3f0b92c294850dad4014d3c260e0cb922ba5ade13a952722240a2e5ecc64",
+    "normals": "3cb820d4d203c89f61e8e26809ddbdcd2f8ce2645dce0842b758a1b0ea6dcbfd",
+    "surface": "7595b45c14d4d249df98d99145fcaa485b21d62e419764b99ce4fedc780c76f2",
+    "indices": "87e1b8d5b569577c291efefb1698ca66b657ecb3f9c73dcf6ddc73316a1030ae"
+  },
+  "canonicalHashesOrigin": {
+    "path": "docs/measurements/terrain-source-refinement-2026-10-16/witness/on/result.json.gz",
+    "uncompressedBytes": 2626762,
+    "uncompressedSHA256": "dcea70f1bdfd076c0b482fec87f31659e49a473d25f6f9458915c3bf5b4a2835"
+  },
+  "arithmeticCheck": {
+    "receivers": 12,
+    "maxAbsoluteNormalDifferenceFromCopiedCorners": 2.220446049250313e-16,
+    "maxAbsoluteDotSunDifference": 5.551115123125783e-17
+  },
+  "reuseQualification": {
+    "savedCPURecordsAuthentic": true,
+    "sourceInputConfigurationContinuityAuthenticated": true,
+    "sameActualBrowserFourBuffersHashMeasured": false,
+    "actualGPUFaceIdentityProven": false,
+    "policy": "Reference comparison only. Check new GPU receiver distances/ordinary full-target parity. If they differ, no historical face attribution."
+  }
+}
