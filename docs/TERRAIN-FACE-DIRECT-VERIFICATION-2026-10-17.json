@@ -1,0 +1,57 @@
+{
+  "status": "PASS_SAVED_ONLY",
+  "goalStatus": "active",
+  "visualVerdict": "FAIL_NOT_ADOPTED",
+  "productRenderer": "observatory-v61-observed-terrain-material",
+  "product141ManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "experiment143ManifestSHA256": "b3f253843ed7d57c8d45d37dce65775e0e1fe1f8f4a3b2400f380aaee9336a65",
+  "payloadFiles": 45,
+  "payloadBytes": 6436251,
+  "archiveManifestSHA256": "caebb0e3f67238b1c94f88067da17022b7229417be8df197bb3f012cb0f600b3",
+  "actualChecks": {
+    "threeCachedFreshAudits": "PASS",
+    "allWholeAlpha": "IDENTICAL",
+    "ordinaryReturnWholeF32": "EXACT_07fa",
+    "ordinaryReturnPNG": "EXACT_6d7",
+    "candidatePNG": "66aa0e659a0975b55960c151caa75eeb1063ae868636256fe44f735d40909d67",
+    "candidateBytes": 3804264,
+    "transferredParts": 78,
+    "savedArithmeticGates": 101,
+    "independentNativeVerdict": "FAIL",
+    "historicalFixedCrops": "1000x440 and330x240",
+    "supplementaryExpandedSecondary": "1030x780; initialwrongcrop documented and corrected",
+    "consoleErrorsWarnings": []
+  },
+  "QA": {
+    "tests": 575,
+    "testFiles": 54,
+    "typecheck": "PASS",
+    "APPbuild": "PASS",
+    "heroThisCycle": false,
+    "workerWeatherNavigationFPS": "notrun after visualFAIL",
+    "browser": "Browserpluginunavailable; existing CUAPlaywrightIAB",
+    "native": [
+      2474,
+      1844
+    ],
+    "viewport": [
+      1237,
+      922
+    ]
+  },
+  "preview": {
+    "url": "http://127.0.0.1:4196/?seed=74",
+    "renderer": "v61",
+    "animated": true,
+    "ownerSession": 48736,
+    "ownerConfirmedLive": true,
+    "QA53785": "closed intentional exit0"
+  },
+  "newProductCorrection": false,
+  "fullGoalComplete": false,
+  "noPushDeploy": true,
+  "nextAction": "Anatomy outflow anchored to source, proposalonly; no model or GPU yet.",
+  "command": "python3 docs/measurements/terrain-face-direct-trial-2026-10-17/verify_saved.py --current",
+  "scope": "Saved bytes/contracts, not newGPU/model/FPS replay or art acceptance.",
+  "gitWhitespace": "Plain stagedcheck flags only original final blank lines in tests.log/typecheck.log. Logs retained byteexact; one-shot core.whitespace=-blank-at-eof, no persistent configuration."
+}

@@ -1,0 +1,13 @@
+
+> cloudia@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.6 /Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle38/face-source
+
+
+ Test Files  54 passed (54)
+      Tests  575 passed (575)
+   Start at  04:46:21
+   Duration  7.37s (transform 3.73s, setup 0ms, import 5.73s, tests 12.03s, environment 22.63s)
+

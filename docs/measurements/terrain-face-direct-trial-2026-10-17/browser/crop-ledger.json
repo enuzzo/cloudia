@@ -1,0 +1,102 @@
+{
+  "kind": "native-exact-crop-ledger-v1",
+  "scope": "Explicit PIL L/T/R/B crop ledger. Historical primary box[0,560,1000,1000] and secondary box[700,540,1030,780]. Initial secondary exports used an expanded1030x780 ROI: retained as supplementary, not called the historical fixed ROI. Added exact330x240 historical secondary crops without overwriting the reviewed supplementary crops. Full native originals retained or exact-content aliased; all crops lossless/unresampled.",
+  "crops": [
+    {
+      "path": "baseline-a-native-primary.png",
+      "pixelSHA256": "22be9d3115f191e4ee65cf98ee082d505b75954829bd5ba75cee5dd7612b220c",
+      "pngSHA256": "5d1d4e55fd134e89e3b507498e98f0a8d31ff35f1fde45101287810d37007ea1",
+      "PIL_box_LTRB": [
+        0,
+        560,
+        1000,
+        1000
+      ],
+      "widthHeight": [
+        1000,
+        440
+      ],
+      "resampled": false
+    },
+    {
+      "path": "candidate-b-native-primary.png",
+      "pixelSHA256": "280d3d9c7e6fc428c74793ebfd1f88075de68b92c61eb781f42637b4d777b1bf",
+      "pngSHA256": "54a7b27cad75eaa9ffa385dba36bee0eca852e3599d1e3a7b5c405c2619d9eb4",
+      "PIL_box_LTRB": [
+        0,
+        560,
+        1000,
+        1000
+      ],
+      "widthHeight": [
+        1000,
+        440
+      ],
+      "resampled": false
+    },
+    {
+      "path": "baseline-a-native-secondary.png",
+      "pixelSHA256": "5ae5c4c1d848f66993336c552b7254f5c801069167977ebb191850d75029d6fd",
+      "pngSHA256": "ea222079319e57a051ed06ff19d3fe76db978bc504e6cc77e110fbcd9708f604",
+      "PIL_box_LTRB": [
+        700,
+        540,
+        1730,
+        1320
+      ],
+      "widthHeight": [
+        1030,
+        780
+      ],
+      "resampled": false
+    },
+    {
+      "path": "candidate-b-native-secondary.png",
+      "pixelSHA256": "8bb84247a72f385c6f289adba6792808ec69889521c5b38f0c056f7be591d0b1",
+      "pngSHA256": "633606bbe88c343e5f3f53ed9ef67a2afd1906ad419aa10a03e35b5414683a0d",
+      "PIL_box_LTRB": [
+        700,
+        540,
+        1730,
+        1320
+      ],
+      "widthHeight": [
+        1030,
+        780
+      ],
+      "resampled": false
+    },
+    {
+      "path": "baseline-a-native-secondary-fixed.png",
+      "PIL_box_LTRB": [
+        700,
+        540,
+        1030,
+        780
+      ],
+      "widthHeight": [
+        330,
+        240
+      ],
+      "pixelSHA256": "9d7edbb0502f59120836c0ca390a365055bd9c60fd8c28f1d7a6f500b5aea02a",
+      "pngSHA256": "5e22f4182b7a7d04490ca1ff004f5e76f7e9c01dca0a7d9e2c409ff8c13823ac",
+      "resampled": false
+    },
+    {
+      "path": "candidate-b-native-secondary-fixed.png",
+      "PIL_box_LTRB": [
+        700,
+        540,
+        1030,
+        780
+      ],
+      "widthHeight": [
+        330,
+        240
+      ],
+      "pixelSHA256": "c837cac9c67b668c1e7e32e4d5ec8086c9eb15f46792457daa032183fed1242b",
+      "pngSHA256": "98419d5ed58dd46bfaf03fa1799e85755e1ff0703352bc8b77fc56ba84e3171e",
+      "resampled": false
+    }
+  ]
+}

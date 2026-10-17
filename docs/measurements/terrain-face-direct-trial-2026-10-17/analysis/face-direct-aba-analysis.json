@@ -1,0 +1,2179 @@
+{
+  "schema": "cloudia-face-direct-saved-aba-analysis-v1",
+  "status": "QUALIFIED_SAVED_ABA_ARITHMETIC",
+  "inputs": {
+    "baseline-a.audit": {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle38/browser/baseline-a-audit.json",
+      "bytes": 35577,
+      "sha256": "0a666b7ad2a641824776332565be88ff7fa054d8ccc24fbf5725aac0863a3ae0"
+    },
+    "candidate-b.audit": {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle38/browser/candidate-b-audit.json",
+      "bytes": 35612,
+      "sha256": "bb82dfa047395ecf52bacd2000651599662af8194fcb49ce90a66a99892b4996"
+    },
+    "return-a.audit": {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle38/browser/return-a-audit.json",
+      "bytes": 35590,
+      "sha256": "44632c88b4e67fc70cdee4212e6dabaa70881978ab1fa13c3ada95424f92699d"
+    },
+    "baseline-a.alias": {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle38/browser/baseline-a-native-alias.json",
+      "bytes": 548,
+      "sha256": "cad2ca26647ac6dd4f829355da505ab09ca9c8d1f93822a312287e8b7f6d9d57"
+    },
+    "baseline-a.nativeMetadata": {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle38/browser/baseline-a-native.json",
+      "bytes": 13100,
+      "sha256": "07e76f46446e5a9796da29e51931b6a3502b5bd555a93e7ba8f3f8b6ddab77e5"
+    },
+    "baseline-a.existingBitmap": {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/terrain-optical-material-2026-10-17/browser/candidate-b-native.png",
+      "bytes": 3599836,
+      "sha256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9",
+      "dimensions": [
+        2474,
+        1844
+      ]
+    },
+    "return-a.alias": {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle38/browser/return-a-native-alias.json",
+      "bytes": 546,
+      "sha256": "ac6bcf071f6a28bd82a5dd2985cafb95c4a54e3e936a06a9500f8bd8ac3f147a"
+    },
+    "return-a.nativeMetadata": {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle38/browser/return-a-native.json",
+      "bytes": 13104,
+      "sha256": "db3aa6cb3fcfc7d20e5960e2c8c6c86e7cf57d00dab86ef9166ff4e6191dcb3a"
+    },
+    "return-a.existingBitmap": {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/terrain-optical-material-2026-10-17/browser/candidate-b-native.png",
+      "bytes": 3599836,
+      "sha256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9",
+      "dimensions": [
+        2474,
+        1844
+      ]
+    }
+  },
+  "gates": [
+    {
+      "name": "baseline-a.identical",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "baseline-a.stable",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "baseline-a.cacheStateQualified",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "baseline-a.status",
+      "passed": true,
+      "actual": "COMPLETE_IDENTICAL_F32",
+      "expected": "COMPLETE_IDENTICAL_F32"
+    },
+    {
+      "name": "baseline-a.mode",
+      "passed": true,
+      "actual": "ordinary-smooth",
+      "expected": "ordinary-smooth"
+    },
+    {
+      "name": "baseline-a.cached.dimensions",
+      "passed": true,
+      "actual": null,
+      "expected": [
+        2474,
+        1844
+      ]
+    },
+    {
+      "name": "baseline-a.cached.alphaBytes",
+      "passed": true,
+      "actual": 18248224,
+      "expected": 18248224
+    },
+    {
+      "name": "baseline-a.cached.points",
+      "passed": true,
+      "actual": null,
+      "expected": "fixed twelve IDs/coordinates/order"
+    },
+    {
+      "name": "baseline-a.fresh.dimensions",
+      "passed": true,
+      "actual": null,
+      "expected": [
+        2474,
+        1844
+      ]
+    },
+    {
+      "name": "baseline-a.fresh.alphaBytes",
+      "passed": true,
+      "actual": 18248224,
+      "expected": 18248224
+    },
+    {
+      "name": "baseline-a.fresh.points",
+      "passed": true,
+      "actual": null,
+      "expected": "fixed twelve IDs/coordinates/order"
+    },
+    {
+      "name": "baseline-a.cacheFreshWholeSHA",
+      "passed": true,
+      "actual": [
+        "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9",
+        "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9"
+      ],
+      "expected": "identical cached/fresh SHA256"
+    },
+    {
+      "name": "baseline-a.cacheFreshWitnessBits",
+      "passed": true,
+      "actual": null,
+      "expected": "48 cached/fresh witness words identical"
+    },
+    {
+      "name": "baseline-a.ordinaryWholeSHA",
+      "passed": true,
+      "actual": [
+        "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9",
+        "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9"
+      ],
+      "expected": "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9"
+    },
+    {
+      "name": "baseline-a.geometry.vertices",
+      "passed": true,
+      "actual": 591788,
+      "expected": 591788
+    },
+    {
+      "name": "baseline-a.geometry.triangles",
+      "passed": true,
+      "actual": 1182550,
+      "expected": 1182550
+    },
+    {
+      "name": "baseline-a.geometry.geometryBytes",
+      "passed": true,
+      "actual": 33127816,
+      "expected": 33127816
+    },
+    {
+      "name": "baseline-a.geometry.cpuTriangleLookupBytes",
+      "passed": true,
+      "actual": 2949120,
+      "expected": 2949120
+    },
+    {
+      "name": "baseline-a.geometry.perFrameCpuHeightSamples",
+      "passed": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "baseline-a.fullQuality",
+      "passed": true,
+      "actual": {
+        "quality": "ultra",
+        "nominalSteps": 384,
+        "volume": [
+          256,
+          256,
+          256
+        ],
+        "detailVolume": [
+          128,
+          128,
+          128
+        ]
+      },
+      "expected": "ultra/384/256cubed/128cubed"
+    },
+    {
+      "name": "baseline-a.nativeOutput",
+      "passed": true,
+      "actual": null,
+      "expected": "screen/native2474x1844"
+    },
+    {
+      "name": "baseline-a.fixedOpticalOwner",
+      "passed": true,
+      "actual": null,
+      "expected": "paused/noorbit/optical"
+    },
+    {
+      "name": "candidate-b.identical",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "candidate-b.stable",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "candidate-b.cacheStateQualified",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "candidate-b.status",
+      "passed": true,
+      "actual": "COMPLETE_IDENTICAL_F32",
+      "expected": "COMPLETE_IDENTICAL_F32"
+    },
+    {
+      "name": "candidate-b.mode",
+      "passed": true,
+      "actual": "geometric-fragment-Y-positive",
+      "expected": "geometric-fragment-Y-positive"
+    },
+    {
+      "name": "candidate-b.cached.dimensions",
+      "passed": true,
+      "actual": null,
+      "expected": [
+        2474,
+        1844
+      ]
+    },
+    {
+      "name": "candidate-b.cached.alphaBytes",
+      "passed": true,
+      "actual": 18248224,
+      "expected": 18248224
+    },
+    {
+      "name": "candidate-b.cached.points",
+      "passed": true,
+      "actual": null,
+      "expected": "fixed twelve IDs/coordinates/order"
+    },
+    {
+      "name": "candidate-b.fresh.dimensions",
+      "passed": true,
+      "actual": null,
+      "expected": [
+        2474,
+        1844
+      ]
+    },
+    {
+      "name": "candidate-b.fresh.alphaBytes",
+      "passed": true,
+      "actual": 18248224,
+      "expected": 18248224
+    },
+    {
+      "name": "candidate-b.fresh.points",
+      "passed": true,
+      "actual": null,
+      "expected": "fixed twelve IDs/coordinates/order"
+    },
+    {
+      "name": "candidate-b.cacheFreshWholeSHA",
+      "passed": true,
+      "actual": [
+        "efcfeab71e90f5c6a22b30f1473e75c414e661493c5aa70a5d8ff52419767a4d",
+        "efcfeab71e90f5c6a22b30f1473e75c414e661493c5aa70a5d8ff52419767a4d"
+      ],
+      "expected": "identical cached/fresh SHA256"
+    },
+    {
+      "name": "candidate-b.cacheFreshWitnessBits",
+      "passed": true,
+      "actual": null,
+      "expected": "48 cached/fresh witness words identical"
+    },
+    {
+      "name": "candidate-b.geometry.vertices",
+      "passed": true,
+      "actual": 591788,
+      "expected": 591788
+    },
+    {
+      "name": "candidate-b.geometry.triangles",
+      "passed": true,
+      "actual": 1182550,
+      "expected": 1182550
+    },
+    {
+      "name": "candidate-b.geometry.geometryBytes",
+      "passed": true,
+      "actual": 33127816,
+      "expected": 33127816
+    },
+    {
+      "name": "candidate-b.geometry.cpuTriangleLookupBytes",
+      "passed": true,
+      "actual": 2949120,
+      "expected": 2949120
+    },
+    {
+      "name": "candidate-b.geometry.perFrameCpuHeightSamples",
+      "passed": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "candidate-b.fullQuality",
+      "passed": true,
+      "actual": {
+        "quality": "ultra",
+        "nominalSteps": 384,
+        "volume": [
+          256,
+          256,
+          256
+        ],
+        "detailVolume": [
+          128,
+          128,
+          128
+        ]
+      },
+      "expected": "ultra/384/256cubed/128cubed"
+    },
+    {
+      "name": "candidate-b.nativeOutput",
+      "passed": true,
+      "actual": null,
+      "expected": "screen/native2474x1844"
+    },
+    {
+      "name": "candidate-b.fixedOpticalOwner",
+      "passed": true,
+      "actual": null,
+      "expected": "paused/noorbit/optical"
+    },
+    {
+      "name": "return-a.identical",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "return-a.stable",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "return-a.cacheStateQualified",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "return-a.status",
+      "passed": true,
+      "actual": "COMPLETE_IDENTICAL_F32",
+      "expected": "COMPLETE_IDENTICAL_F32"
+    },
+    {
+      "name": "return-a.mode",
+      "passed": true,
+      "actual": "ordinary-smooth",
+      "expected": "ordinary-smooth"
+    },
+    {
+      "name": "return-a.cached.dimensions",
+      "passed": true,
+      "actual": null,
+      "expected": [
+        2474,
+        1844
+      ]
+    },
+    {
+      "name": "return-a.cached.alphaBytes",
+      "passed": true,
+      "actual": 18248224,
+      "expected": 18248224
+    },
+    {
+      "name": "return-a.cached.points",
+      "passed": true,
+      "actual": null,
+      "expected": "fixed twelve IDs/coordinates/order"
+    },
+    {
+      "name": "return-a.fresh.dimensions",
+      "passed": true,
+      "actual": null,
+      "expected": [
+        2474,
+        1844
+      ]
+    },
+    {
+      "name": "return-a.fresh.alphaBytes",
+      "passed": true,
+      "actual": 18248224,
+      "expected": 18248224
+    },
+    {
+      "name": "return-a.fresh.points",
+      "passed": true,
+      "actual": null,
+      "expected": "fixed twelve IDs/coordinates/order"
+    },
+    {
+      "name": "return-a.cacheFreshWholeSHA",
+      "passed": true,
+      "actual": [
+        "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9",
+        "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9"
+      ],
+      "expected": "identical cached/fresh SHA256"
+    },
+    {
+      "name": "return-a.cacheFreshWitnessBits",
+      "passed": true,
+      "actual": null,
+      "expected": "48 cached/fresh witness words identical"
+    },
+    {
+      "name": "return-a.ordinaryWholeSHA",
+      "passed": true,
+      "actual": [
+        "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9",
+        "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9"
+      ],
+      "expected": "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9"
+    },
+    {
+      "name": "return-a.geometry.vertices",
+      "passed": true,
+      "actual": 591788,
+      "expected": 591788
+    },
+    {
+      "name": "return-a.geometry.triangles",
+      "passed": true,
+      "actual": 1182550,
+      "expected": 1182550
+    },
+    {
+      "name": "return-a.geometry.geometryBytes",
+      "passed": true,
+      "actual": 33127816,
+      "expected": 33127816
+    },
+    {
+      "name": "return-a.geometry.cpuTriangleLookupBytes",
+      "passed": true,
+      "actual": 2949120,
+      "expected": 2949120
+    },
+    {
+      "name": "return-a.geometry.perFrameCpuHeightSamples",
+      "passed": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "return-a.fullQuality",
+      "passed": true,
+      "actual": {
+        "quality": "ultra",
+        "nominalSteps": 384,
+        "volume": [
+          256,
+          256,
+          256
+        ],
+        "detailVolume": [
+          128,
+          128,
+          128
+        ]
+      },
+      "expected": "ultra/384/256cubed/128cubed"
+    },
+    {
+      "name": "return-a.nativeOutput",
+      "passed": true,
+      "actual": null,
+      "expected": "screen/native2474x1844"
+    },
+    {
+      "name": "return-a.fixedOpticalOwner",
+      "passed": true,
+      "actual": null,
+      "expected": "paused/noorbit/optical"
+    },
+    {
+      "name": "all.fullAlphaSHA",
+      "passed": true,
+      "actual": [
+        "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c",
+        "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c",
+        "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c",
+        "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c",
+        "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c",
+        "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c"
+      ],
+      "expected": "all six whole alpha digests identical"
+    },
+    {
+      "name": "candidate-b.controlsMatchA",
+      "passed": true,
+      "actual": null,
+      "expected": "selected camera/lighting/weather/quality controls identical"
+    },
+    {
+      "name": "candidate-b.geometryStatsMatchA",
+      "passed": true,
+      "actual": null,
+      "expected": "complete selected geometry stats identical"
+    },
+    {
+      "name": "return-a.controlsMatchA",
+      "passed": true,
+      "actual": null,
+      "expected": "selected camera/lighting/weather/quality controls identical"
+    },
+    {
+      "name": "return-a.geometryStatsMatchA",
+      "passed": true,
+      "actual": null,
+      "expected": "complete selected geometry stats identical"
+    },
+    {
+      "name": "all.pixelAlpha.L1-artifact",
+      "passed": true,
+      "actual": [
+        1108492214,
+        1108492214,
+        1108492214,
+        1108492214,
+        1108492214,
+        1108492214
+      ],
+      "expected": "same distance uint32 across six reads"
+    },
+    {
+      "name": "all.pixelAlpha.L1-control",
+      "passed": true,
+      "actual": [
+        1108490810,
+        1108490810,
+        1108490810,
+        1108490810,
+        1108490810,
+        1108490810
+      ],
+      "expected": "same distance uint32 across six reads"
+    },
+    {
+      "name": "all.pixelAlpha.L2-artifact",
+      "passed": true,
+      "actual": [
+        1108360074,
+        1108360074,
+        1108360074,
+        1108360074,
+        1108360074,
+        1108360074
+      ],
+      "expected": "same distance uint32 across six reads"
+    },
+    {
+      "name": "all.pixelAlpha.L2-control",
+      "passed": true,
+      "actual": [
+        1108379899,
+        1108379899,
+        1108379899,
+        1108379899,
+        1108379899,
+        1108379899
+      ],
+      "expected": "same distance uint32 across six reads"
+    },
+    {
+      "name": "all.pixelAlpha.L3-artifact",
+      "passed": true,
+      "actual": [
+        1110407544,
+        1110407544,
+        1110407544,
+        1110407544,
+        1110407544,
+        1110407544
+      ],
+      "expected": "same distance uint32 across six reads"
+    },
+    {
+      "name": "all.pixelAlpha.L3-control",
+      "passed": true,
+      "actual": [
+        1110417567,
+        1110417567,
+        1110417567,
+        1110417567,
+        1110417567,
+        1110417567
+      ],
+      "expected": "same distance uint32 across six reads"
+    },
+    {
+      "name": "all.pixelAlpha.C1-ocean",
+      "passed": true,
+      "actual": [
+        1107400533,
+        1107400533,
+        1107400533,
+        1107400533,
+        1107400533,
+        1107400533
+      ],
+      "expected": "same distance uint32 across six reads"
+    },
+    {
+      "name": "all.pixelAlpha.C2-coastal-lowland",
+      "passed": true,
+      "actual": [
+        1108434205,
+        1108434205,
+        1108434205,
+        1108434205,
+        1108434205,
+        1108434205
+      ],
+      "expected": "same distance uint32 across six reads"
+    },
+    {
+      "name": "all.pixelAlpha.C3-plain",
+      "passed": true,
+      "actual": [
+        1111381691,
+        1111381691,
+        1111381691,
+        1111381691,
+        1111381691,
+        1111381691
+      ],
+      "expected": "same distance uint32 across six reads"
+    },
+    {
+      "name": "all.pixelAlpha.C4-ridge-L1",
+      "passed": true,
+      "actual": [
+        1108782277,
+        1108782277,
+        1108782277,
+        1108782277,
+        1108782277,
+        1108782277
+      ],
+      "expected": "same distance uint32 across six reads"
+    },
+    {
+      "name": "all.pixelAlpha.C5-ridge-L2",
+      "passed": true,
+      "actual": [
+        1108984283,
+        1108984283,
+        1108984283,
+        1108984283,
+        1108984283,
+        1108984283
+      ],
+      "expected": "same distance uint32 across six reads"
+    },
+    {
+      "name": "all.pixelAlpha.C6-ridge-L3",
+      "passed": true,
+      "actual": [
+        1111344119,
+        1111344119,
+        1111344119,
+        1111344119,
+        1111344119,
+        1111344119
+      ],
+      "expected": "same distance uint32 across six reads"
+    },
+    {
+      "name": "return-a.allWitnessBitsMatchA",
+      "passed": true,
+      "actual": null,
+      "expected": "all 48 ordinary witness words return exactly"
+    },
+    {
+      "name": "baseline-a.aliasKind",
+      "passed": true,
+      "actual": "native-png-exact-content-alias-v1",
+      "expected": "native-png-exact-content-alias-v1"
+    },
+    {
+      "name": "baseline-a.metadataName",
+      "passed": true,
+      "actual": "baseline-a-native.json",
+      "expected": "baseline-a-native.json"
+    },
+    {
+      "name": "baseline-a.nativeReady",
+      "passed": true,
+      "actual": "ready",
+      "expected": "ready"
+    },
+    {
+      "name": "baseline-a.exportPngSHA",
+      "passed": true,
+      "actual": [
+        "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9",
+        "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9"
+      ],
+      "expected": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9"
+    },
+    {
+      "name": "baseline-a.nativeControls",
+      "passed": true,
+      "actual": null,
+      "expected": "native DTO and audit controls identical"
+    },
+    {
+      "name": "baseline-a.nativeMode",
+      "passed": true,
+      "actual": "ordinary-smooth",
+      "expected": "ordinary-smooth"
+    },
+    {
+      "name": "baseline-a.existingPngSHA",
+      "passed": true,
+      "actual": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9",
+      "expected": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9"
+    },
+    {
+      "name": "baseline-a.existingBytes",
+      "passed": true,
+      "actual": [
+        3599836,
+        3599836,
+        3599836
+      ],
+      "expected": "same exact encoded byte count"
+    },
+    {
+      "name": "baseline-a.nativeDimensions",
+      "passed": true,
+      "actual": [
+        [
+          2474,
+          1844
+        ],
+        [
+          2474,
+          1844
+        ],
+        [
+          2474,
+          1844
+        ]
+      ],
+      "expected": [
+        2474,
+        1844
+      ]
+    },
+    {
+      "name": "return-a.aliasKind",
+      "passed": true,
+      "actual": "native-png-exact-content-alias-v1",
+      "expected": "native-png-exact-content-alias-v1"
+    },
+    {
+      "name": "return-a.metadataName",
+      "passed": true,
+      "actual": "return-a-native.json",
+      "expected": "return-a-native.json"
+    },
+    {
+      "name": "return-a.nativeReady",
+      "passed": true,
+      "actual": "ready",
+      "expected": "ready"
+    },
+    {
+      "name": "return-a.exportPngSHA",
+      "passed": true,
+      "actual": [
+        "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9",
+        "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9"
+      ],
+      "expected": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9"
+    },
+    {
+      "name": "return-a.nativeControls",
+      "passed": true,
+      "actual": null,
+      "expected": "native DTO and audit controls identical"
+    },
+    {
+      "name": "return-a.nativeMode",
+      "passed": true,
+      "actual": "ordinary-smooth",
+      "expected": "ordinary-smooth"
+    },
+    {
+      "name": "return-a.existingPngSHA",
+      "passed": true,
+      "actual": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9",
+      "expected": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9"
+    },
+    {
+      "name": "return-a.existingBytes",
+      "passed": true,
+      "actual": [
+        3599836,
+        3599836,
+        3599836
+      ],
+      "expected": "same exact encoded byte count"
+    },
+    {
+      "name": "return-a.nativeDimensions",
+      "passed": true,
+      "actual": [
+        [
+          2474,
+          1844
+        ],
+        [
+          2474,
+          1844
+        ],
+        [
+          2474,
+          1844
+        ]
+      ],
+      "expected": [
+        2474,
+        1844
+      ]
+    }
+  ],
+  "scriptSHA256": "67116e80f2c50cc428b37bd0c7d071156a560f30792305992cc2dff4f598d5d0",
+  "protocolSHA256": "30ce22e9ffae036371c4b1493dd8b22d1beceb489487a30c12b8cadadc7fe534",
+  "rows": [
+    {
+      "id": "L1-artifact",
+      "pixel": [
+        71,
+        856
+      ],
+      "phases": {
+        "baseline-a": {
+          "rgba": [
+            0.010302993468940258,
+            0.014199471101164818,
+            0.015455827116966248,
+            36.562217712402344
+          ],
+          "bits": [
+            1009307107,
+            1013490918,
+            1014839920,
+            1108492214
+          ]
+        },
+        "candidate-b": {
+          "rgba": [
+            0.010302993468940258,
+            0.014199471101164818,
+            0.015455827116966248,
+            36.562217712402344
+          ],
+          "bits": [
+            1009307107,
+            1013490918,
+            1014839920,
+            1108492214
+          ]
+        },
+        "return-a": {
+          "rgba": [
+            0.010302993468940258,
+            0.014199471101164818,
+            0.015455827116966248,
+            36.562217712402344
+          ],
+          "bits": [
+            1009307107,
+            1013490918,
+            1014839920,
+            1108492214
+          ]
+        }
+      },
+      "linearLuminance": {
+        "baseline-a": 0.013461788860894738,
+        "candidate-b": 0.013461788860894738,
+        "return-a": 0.013461788860894738
+      },
+      "candidateMinusARGB": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "candidateOverARGB": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "candidateMinusAY": 0.0,
+      "candidateOverAY": 1.0,
+      "changedRGBWords": [],
+      "returnAWordsIdentical": true
+    },
+    {
+      "id": "L1-control",
+      "pixel": [
+        64,
+        856
+      ],
+      "phases": {
+        "baseline-a": {
+          "rgba": [
+            0.008368724025785923,
+            0.012483187019824982,
+            0.013630012050271034,
+            36.556861877441406
+          ],
+          "bits": [
+            1007230201,
+            1011648072,
+            1012879466,
+            1108490810
+          ]
+        },
+        "candidate-b": {
+          "rgba": [
+            0.008368724025785923,
+            0.012483187019824982,
+            0.013630012050271034,
+            36.556861877441406
+          ],
+          "bits": [
+            1007230201,
+            1011648072,
+            1012879466,
+            1108490810
+          ]
+        },
+        "return-a": {
+          "rgba": [
+            0.008368724025785923,
+            0.012483187019824982,
+            0.013630012050271034,
+            36.556861877441406
+          ],
+          "bits": [
+            1007230201,
+            1011648072,
+            1012879466,
+            1108490810
+          ]
+        }
+      },
+      "linearLuminance": {
+        "baseline-a": 0.011691252954490482,
+        "candidate-b": 0.011691252954490482,
+        "return-a": 0.011691252954490482
+      },
+      "candidateMinusARGB": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "candidateOverARGB": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "candidateMinusAY": 0.0,
+      "candidateOverAY": 1.0,
+      "changedRGBWords": [],
+      "returnAWordsIdentical": true
+    },
+    {
+      "id": "L2-artifact",
+      "pixel": [
+        431,
+        849
+      ],
+      "phases": {
+        "baseline-a": {
+          "rgba": [
+            0.037994351238012314,
+            0.03565721586346626,
+            0.030546927824616432,
+            36.058143615722656
+          ],
+          "bits": [
+            1025220599,
+            1024593229,
+            1023032717,
+            1108360074
+          ]
+        },
+        "candidate-b": {
+          "rgba": [
+            0.029736239463090897,
+            0.028826696798205376,
+            0.026026131585240364,
+            36.058143615722656
+          ],
+          "bits": [
+            1022597482,
+            1022109175,
+            1020605633,
+            1108360074
+          ]
+        },
+        "return-a": {
+          "rgba": [
+            0.037994351238012314,
+            0.03565721586346626,
+            0.030546927824616432,
+            36.058143615722656
+          ],
+          "bits": [
+            1025220599,
+            1024593229,
+            1023032717,
+            1108360074
+          ]
+        }
+      },
+      "linearLuminance": {
+        "baseline-a": 0.035785128047689796,
+        "candidate-b": 0.02881786476038396,
+        "return-a": 0.035785128047689796
+      },
+      "candidateMinusARGB": [
+        -0.008258111774921417,
+        -0.006830519065260887,
+        -0.004520796239376068
+      ],
+      "candidateOverARGB": [
+        0.7826489594942893,
+        0.8084393607337327,
+        0.8520048803162145
+      ],
+      "candidateMinusAY": -0.006967263287305837,
+      "candidateOverAY": 0.8053028264137894,
+      "changedRGBWords": [
+        0,
+        1,
+        2
+      ],
+      "returnAWordsIdentical": true
+    },
+    {
+      "id": "L2-control",
+      "pixel": [
+        431,
+        844
+      ],
+      "phases": {
+        "baseline-a": {
+          "rgba": [
+            0.024521270766854286,
+            0.025326302275061607,
+            0.02478175237774849,
+            36.13376998901367
+          ],
+          "bits": [
+            1019797717,
+            1020229915,
+            1019937562,
+            1108379899
+          ]
+        },
+        "candidate-b": {
+          "rgba": [
+            0.04395673796534538,
+            0.04191545769572258,
+            0.03612815961241722,
+            36.13376998901367
+          ],
+          "bits": [
+            1026821115,
+            1026273163,
+            1024719647,
+            1108379899
+          ]
+        },
+        "return-a": {
+          "rgba": [
+            0.024521270766854286,
+            0.025326302275061607,
+            0.02478175237774849,
+            36.13376998901367
+          ],
+          "bits": [
+            1019797717,
+            1020229915,
+            1019937562,
+            1108379899
+          ]
+        }
+      },
+      "linearLuminance": {
+        "baseline-a": 0.025115836073830725,
+        "candidate-b": 0.041931590959429735,
+        "return-a": 0.025115836073830725
+      },
+      "candidateMinusARGB": [
+        0.019435467198491096,
+        0.016589155420660973,
+        0.011346407234668732
+      ],
+      "candidateOverARGB": [
+        1.7925962476937478,
+        1.655016876940462,
+        1.4578533051946987
+      ],
+      "candidateMinusAY": 0.01681575488559901,
+      "candidateOverAY": 1.6695279757427655,
+      "changedRGBWords": [
+        0,
+        1,
+        2
+      ],
+      "returnAWordsIdentical": true
+    },
+    {
+      "id": "L3-artifact",
+      "pixel": [
+        903,
+        651
+      ],
+      "phases": {
+        "baseline-a": {
+          "rgba": [
+            0.010727212764322758,
+            0.013398812152445316,
+            0.015592668205499649,
+            43.868621826171875
+          ],
+          "bits": [
+            1009762609,
+            1012631217,
+            1014986852,
+            1110407544
+          ]
+        },
+        "candidate-b": {
+          "rgba": [
+            0.010727212764322758,
+            0.013398812152445316,
+            0.015592668205499649,
+            43.868621826171875
+          ],
+          "bits": [
+            1009762609,
+            1012631217,
+            1014986852,
+            1110407544
+          ]
+        },
+        "return-a": {
+          "rgba": [
+            0.010727212764322758,
+            0.013398812152445316,
+            0.015592668205499649,
+            43.868621826171875
+          ],
+          "bits": [
+            1009762609,
+            1012631217,
+            1014986852,
+            1110407544
+          ]
+        }
+      },
+      "linearLuminance": {
+        "baseline-a": 0.012989226529560983,
+        "candidate-b": 0.012989226529560983,
+        "return-a": 0.012989226529560983
+      },
+      "candidateMinusARGB": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "candidateOverARGB": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "candidateMinusAY": 0.0,
+      "candidateOverAY": 1.0,
+      "changedRGBWords": [],
+      "returnAWordsIdentical": true
+    },
+    {
+      "id": "L3-control",
+      "pixel": [
+        903,
+        646
+      ],
+      "phases": {
+        "baseline-a": {
+          "rgba": [
+            0.011557547375559807,
+            0.014112944714725018,
+            0.016019420698285103,
+            43.906856536865234
+          ],
+          "bits": [
+            1010654174,
+            1013398011,
+            1015233321,
+            1110417567
+          ]
+        },
+        "candidate-b": {
+          "rgba": [
+            0.011557547375559807,
+            0.014112944714725018,
+            0.016019420698285103,
+            43.906856536865234
+          ],
+          "bits": [
+            1010654174,
+            1013398011,
+            1015233321,
+            1110417567
+          ]
+        },
+        "return-a": {
+          "rgba": [
+            0.011557547375559807,
+            0.014112944714725018,
+            0.016019420698285103,
+            43.906856536865234
+          ],
+          "bits": [
+            1010654174,
+            1013398011,
+            1015233321,
+            1110417567
+          ]
+        }
+      },
+      "linearLuminance": {
+        "baseline-a": 0.013707314806431533,
+        "candidate-b": 0.013707314806431533,
+        "return-a": 0.013707314806431533
+      },
+      "candidateMinusARGB": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "candidateOverARGB": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "candidateMinusAY": 0.0,
+      "candidateOverAY": 1.0,
+      "changedRGBWords": [],
+      "returnAWordsIdentical": true
+    },
+    {
+      "id": "C1-ocean",
+      "pixel": [
+        2200,
+        1100
+      ],
+      "phases": {
+        "baseline-a": {
+          "rgba": [
+            0.008158542215824127,
+            0.0251751895993948,
+            0.04044027999043465,
+            32.39778518676758
+          ],
+          "bits": [
+            1007004520,
+            1020148787,
+            1025877173,
+            1107400533
+          ]
+        },
+        "candidate-b": {
+          "rgba": [
+            0.008158542215824127,
+            0.0251751895993948,
+            0.04044027999043465,
+            32.39778518676758
+          ],
+          "bits": [
+            1007004520,
+            1020148787,
+            1025877173,
+            1107400533
+          ]
+        },
+        "return-a": {
+          "rgba": [
+            0.008158542215824127,
+            0.0251751895993948,
+            0.04044027999043465,
+            32.39778518676758
+          ],
+          "bits": [
+            1007004520,
+            1020148787,
+            1025877173,
+            1107400533
+          ]
+        }
+      },
+      "linearLuminance": {
+        "baseline-a": 0.02265958989188075,
+        "candidate-b": 0.02265958989188075,
+        "return-a": 0.02265958989188075
+      },
+      "candidateMinusARGB": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "candidateOverARGB": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "candidateMinusAY": 0.0,
+      "candidateOverAY": 1.0,
+      "changedRGBWords": [],
+      "returnAWordsIdentical": true
+    },
+    {
+      "id": "C2-coastal-lowland",
+      "pixel": [
+        1800,
+        930
+      ],
+      "phases": {
+        "baseline-a": {
+          "rgba": [
+            0.14028950035572052,
+            0.13013672828674316,
+            0.10517383366823196,
+            36.3409309387207
+          ],
+          "bits": [
+            1041213453,
+            1040532112,
+            1037526369,
+            1108434205
+          ]
+        },
+        "candidate-b": {
+          "rgba": [
+            0.1399693489074707,
+            0.12987259030342102,
+            0.10499086230993271,
+            36.3409309387207
+          ],
+          "bits": [
+            1041191968,
+            1040514386,
+            1037501811,
+            1108434205
+          ]
+        },
+        "return-a": {
+          "rgba": [
+            0.14028950035572052,
+            0.13013672828674316,
+            0.10517383366823196,
+            36.3409309387207
+          ],
+          "bits": [
+            1041213453,
+            1040532112,
+            1037526369,
+            1108434205
+          ]
+        }
+      },
+      "linearLuminance": {
+        "baseline-a": 0.13049288663715122,
+        "candidate-b": 0.1302227004215121,
+        "return-a": 0.13049288663715122
+      },
+      "candidateMinusARGB": [
+        -0.0003201514482498169,
+        -0.00026413798332214355,
+        -0.00018297135829925537
+      ],
+      "candidateOverARGB": [
+        0.9977179229561868,
+        0.9979703041040026,
+        0.998260295817718
+      ],
+      "candidateMinusAY": -0.00027018621563912326,
+      "candidateOverAY": 0.997929494682799,
+      "changedRGBWords": [
+        0,
+        1,
+        2
+      ],
+      "returnAWordsIdentical": true
+    },
+    {
+      "id": "C3-plain",
+      "pixel": [
+        2200,
+        700
+      ],
+      "phases": {
+        "baseline-a": {
+          "rgba": [
+            0.008942077867686749,
+            0.027352871373295784,
+            0.03533002734184265,
+            47.58469772338867
+          ],
+          "bits": [
+            1007845835,
+            1021317921,
+            1024505400,
+            1111381691
+          ]
+        },
+        "candidate-b": {
+          "rgba": [
+            0.008942077867686749,
+            0.027352871373295784,
+            0.03533002734184265,
+            47.58469772338867
+          ],
+          "bits": [
+            1007845835,
+            1021317921,
+            1024505400,
+            1111381691
+          ]
+        },
+        "return-a": {
+          "rgba": [
+            0.008942077867686749,
+            0.027352871373295784,
+            0.03533002734184265,
+            47.58469772338867
+          ],
+          "bits": [
+            1007845835,
+            1021317921,
+            1024505400,
+            1111381691
+          ]
+        }
+      },
+      "linearLuminance": {
+        "baseline-a": 0.024014687334932384,
+        "candidate-b": 0.024014687334932384,
+        "return-a": 0.024014687334932384
+      },
+      "candidateMinusARGB": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "candidateOverARGB": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "candidateMinusAY": 0.0,
+      "candidateOverAY": 1.0,
+      "changedRGBWords": [],
+      "returnAWordsIdentical": true
+    },
+    {
+      "id": "C4-ridge-L1",
+      "pixel": [
+        170,
+        805
+      ],
+      "phases": {
+        "baseline-a": {
+          "rgba": [
+            0.040221426635980606,
+            0.03778162598609924,
+            0.029715916141867638,
+            37.66872024536133
+          ],
+          "bits": [
+            1025818425,
+            1025163496,
+            1022586571,
+            1108782277
+          ]
+        },
+        "candidate-b": {
+          "rgba": [
+            0.05310945585370064,
+            0.04842570796608925,
+            0.03615755960345268,
+            37.66872024536133
+          ],
+          "bits": [
+            1029278029,
+            1028020745,
+            1024727539,
+            1108782277
+          ]
+        },
+        "return-a": {
+          "rgba": [
+            0.040221426635980606,
+            0.03778162598609924,
+            0.029715916141867638,
+            37.66872024536133
+          ],
+          "bits": [
+            1025818425,
+            1025163496,
+            1022586571,
+            1108782277
+          ]
+        }
+      },
+      "linearLuminance": {
+        "baseline-a": 0.0377179833535105,
+        "candidate-b": 0.04853571245521307,
+        "return-a": 0.0377179833535105
+      },
+      "candidateMinusARGB": [
+        0.012888029217720032,
+        0.010644081979990005,
+        0.006441643461585045
+      ],
+      "candidateOverARGB": [
+        1.3204269538811155,
+        1.2817264133604578,
+        1.2167741836001893
+      ],
+      "candidateMinusAY": 0.010817729101702568,
+      "candidateOverAY": 1.2868056067662412,
+      "changedRGBWords": [
+        0,
+        1,
+        2
+      ],
+      "returnAWordsIdentical": true
+    },
+    {
+      "id": "C5-ridge-L2",
+      "pixel": [
+        460,
+        800
+      ],
+      "phases": {
+        "baseline-a": {
+          "rgba": [
+            0.019902193918824196,
+            0.02556551806628704,
+            0.018076056614518166,
+            38.43931198120117
+          ],
+          "bits": [
+            1017317869,
+            1020358343,
+            1016337469,
+            1108984283
+          ]
+        },
+        "candidate-b": {
+          "rgba": [
+            0.013025208376348019,
+            0.01748582534492016,
+            0.013361810706555843,
+            38.43931198120117
+          ],
+          "bits": [
+            1012230063,
+            1016020591,
+            1012591487,
+            1108984283
+          ]
+        },
+        "return-a": {
+          "rgba": [
+            0.019902193918824196,
+            0.02556551806628704,
+            0.018076056614518166,
+            38.43931198120117
+          ],
+          "bits": [
+            1017317869,
+            1020358343,
+            1016337469,
+            1108984283
+          ]
+        }
+      },
+      "linearLuminance": {
+        "baseline-a": 0.023820756235718724,
+        "candidate-b": 0.01623974432051182,
+        "return-a": 0.023820756235718724
+      },
+      "candidateMinusARGB": [
+        -0.006876985542476177,
+        -0.008079692721366882,
+        -0.004714245907962322
+      ],
+      "candidateOverARGB": [
+        0.6544609317683473,
+        0.6839613145950099,
+        0.7391994278123705
+      ],
+      "candidateMinusAY": -0.007581011915206905,
+      "candidateOverAY": 0.6817476388999214,
+      "changedRGBWords": [
+        0,
+        1,
+        2
+      ],
+      "returnAWordsIdentical": true
+    },
+    {
+      "id": "C6-ridge-L3",
+      "pixel": [
+        925,
+        610
+      ],
+      "phases": {
+        "baseline-a": {
+          "rgba": [
+            0.020122051239013672,
+            0.02112502232193947,
+            0.013217429630458355,
+            47.44137191772461
+          ],
+          "bits": [
+            1017435904,
+            1017974370,
+            1012436459,
+            1111344119
+          ]
+        },
+        "candidate-b": {
+          "rgba": [
+            0.019019870087504387,
+            0.020056189969182014,
+            0.012655121274292469,
+            47.44137191772461
+          ],
+          "bits": [
+            1016844175,
+            1017400545,
+            1011832685,
+            1111344119
+          ]
+        },
+        "return-a": {
+          "rgba": [
+            0.020122051239013672,
+            0.02112502232193947,
+            0.013217429630458355,
+            47.44137191772461
+          ],
+          "bits": [
+            1017435904,
+            1017974370,
+            1012436459,
+            1111344119
+          ]
+        }
+      },
+      "linearLuminance": {
+        "baseline-a": 0.020340862477384505,
+        "candidate-b": 0.019301511202566325,
+        "return-a": 0.020340862477384505
+      },
+      "candidateMinusARGB": [
+        -0.001102181151509285,
+        -0.001068832352757454,
+        -0.0005623083561658859
+      ],
+      "candidateOverARGB": [
+        0.9452252089800706,
+        0.9494044391305843,
+        0.957457056940171
+      ],
+      "candidateMinusAY": -0.0010393512748181795,
+      "candidateOverAY": 0.9489032839205438,
+      "changedRGBWords": [
+        0,
+        1,
+        2
+      ],
+      "returnAWordsIdentical": true
+    }
+  ],
+  "pairs": [
+    {
+      "ids": [
+        "L1-artifact",
+        "L1-control"
+      ],
+      "labelsAreHistorical": true,
+      "phases": {
+        "baseline-a": {
+          "artifactY": 0.013461788860894738,
+          "controlY": 0.011691252954490482,
+          "signedDeltaY": 0.0017705359064042556,
+          "artifactOverControl": 1.151441074219869,
+          "relativeDeltaOverControl": 0.151441074219869,
+          "signedMichelson": 0.07039052848555605
+        },
+        "candidate-b": {
+          "artifactY": 0.013461788860894738,
+          "controlY": 0.011691252954490482,
+          "signedDeltaY": 0.0017705359064042556,
+          "artifactOverControl": 1.151441074219869,
+          "relativeDeltaOverControl": 0.151441074219869,
+          "signedMichelson": 0.07039052848555605
+        },
+        "return-a": {
+          "artifactY": 0.013461788860894738,
+          "controlY": 0.011691252954490482,
+          "signedDeltaY": 0.0017705359064042556,
+          "artifactOverControl": 1.151441074219869,
+          "relativeDeltaOverControl": 0.151441074219869,
+          "signedMichelson": 0.07039052848555605
+        }
+      },
+      "candidateMinusA": {
+        "signedDeltaY": 0.0,
+        "artifactOverControl": 0.0,
+        "relativeDeltaOverControl": 0.0,
+        "signedMichelson": 0.0
+      }
+    },
+    {
+      "ids": [
+        "L2-artifact",
+        "L2-control"
+      ],
+      "labelsAreHistorical": true,
+      "phases": {
+        "baseline-a": {
+          "artifactY": 0.035785128047689796,
+          "controlY": 0.025115836073830725,
+          "signedDeltaY": 0.01066929197385907,
+          "artifactOverControl": 1.4248033767418902,
+          "relativeDeltaOverControl": 0.4248033767418902,
+          "signedMichelson": 0.17519085498498493
+        },
+        "candidate-b": {
+          "artifactY": 0.02881786476038396,
+          "controlY": 0.041931590959429735,
+          "signedDeltaY": -0.013113726199045776,
+          "artifactOverControl": 0.6872590355149234,
+          "relativeDeltaOverControl": -0.31274096448507666,
+          "signedMichelson": -0.1853544464141117
+        },
+        "return-a": {
+          "artifactY": 0.035785128047689796,
+          "controlY": 0.025115836073830725,
+          "signedDeltaY": 0.01066929197385907,
+          "artifactOverControl": 1.4248033767418902,
+          "relativeDeltaOverControl": 0.4248033767418902,
+          "signedMichelson": 0.17519085498498493
+        }
+      },
+      "candidateMinusA": {
+        "signedDeltaY": -0.023783018172904846,
+        "artifactOverControl": -0.7375443412269668,
+        "relativeDeltaOverControl": -0.7375443412269669,
+        "signedMichelson": -0.36054530139909663
+      }
+    },
+    {
+      "ids": [
+        "L3-artifact",
+        "L3-control"
+      ],
+      "labelsAreHistorical": true,
+      "phases": {
+        "baseline-a": {
+          "artifactY": 0.012989226529560983,
+          "controlY": 0.013707314806431533,
+          "signedDeltaY": -0.0007180882768705495,
+          "artifactOverControl": 0.9476127682911595,
+          "relativeDeltaOverControl": -0.05238723170884054,
+          "signedMichelson": -0.026898176352995077
+        },
+        "candidate-b": {
+          "artifactY": 0.012989226529560983,
+          "controlY": 0.013707314806431533,
+          "signedDeltaY": -0.0007180882768705495,
+          "artifactOverControl": 0.9476127682911595,
+          "relativeDeltaOverControl": -0.05238723170884054,
+          "signedMichelson": -0.026898176352995077
+        },
+        "return-a": {
+          "artifactY": 0.012989226529560983,
+          "controlY": 0.013707314806431533,
+          "signedDeltaY": -0.0007180882768705495,
+          "artifactOverControl": 0.9476127682911595,
+          "relativeDeltaOverControl": -0.05238723170884054,
+          "signedMichelson": -0.026898176352995077
+        }
+      },
+      "candidateMinusA": {
+        "signedDeltaY": 0.0,
+        "artifactOverControl": 0.0,
+        "relativeDeltaOverControl": 0.0,
+        "signedMichelson": 0.0
+      }
+    }
+  ],
+  "directFactorReadback": false,
+  "limits": [
+    "Saved JSON/bitmap authentication and arithmetic only; no GPU, browser, model or new ray.",
+    "No actual D or derivative normal is read by this A/B/A experiment.",
+    "Geometry equality is a snapshot-statistics check; whole alpha equality is fixed-view receiver-distance/miss parity, not raw depth or global geometry identity.",
+    "Historical artifact/control IDs do not classify current dark marks; twelve pixels do not measure a whole ribbon or frame.",
+    "RGB changes alone do not establish physical correctness, artistic improvement or FPS."
+  ],
+  "AEncodedPNGAliases": {
+    "baseline-a": {
+      "newActualExportSHA256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9",
+      "rehashExistingBitmapSHA256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9",
+      "bytes": 3599836,
+      "dimensions": [
+        2474,
+        1844
+      ],
+      "scope": "Exact encoded-content alias to a new actual export; no new pixel transfer or visual inspection by this analysis."
+    },
+    "return-a": {
+      "newActualExportSHA256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9",
+      "rehashExistingBitmapSHA256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9",
+      "bytes": 3599836,
+      "dimensions": [
+        2474,
+        1844
+      ],
+      "scope": "Exact encoded-content alias to a new actual export; no new pixel transfer or visual inspection by this analysis."
+    }
+  },
+  "alphaComparison": {
+    "wholeDigests": [
+      "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c",
+      "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c",
+      "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c",
+      "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c",
+      "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c",
+      "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c"
+    ],
+    "selectedPixelsComparedAcrossSixReads": 12,
+    "selectedPixelsIdentical": 12
+  },
+  "wholeHashes": {
+    "baseline-a": {
+      "cached": "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9",
+      "fresh": "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9"
+    },
+    "candidate-b": {
+      "cached": "efcfeab71e90f5c6a22b30f1473e75c414e661493c5aa70a5d8ff52419767a4d",
+      "fresh": "efcfeab71e90f5c6a22b30f1473e75c414e661493c5aa70a5d8ff52419767a4d"
+    },
+    "return-a": {
+      "cached": "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9",
+      "fresh": "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9"
+    }
+  },
+  "controlsCompared": {
+    "seed": 74,
+    "quality": "ultra",
+    "nominalSteps": 384,
+    "output": [
+      2474,
+      1844
+    ],
+    "internal": [
+      2474,
+      1844
+    ],
+    "canvas": [
+      2474,
+      1844
+    ],
+    "outputMode": "screen",
+    "volume": [
+      256,
+      256,
+      256
+    ],
+    "detailVolume": [
+      128,
+      128,
+      128
+    ],
+    "flowMode": "full",
+    "ablation": "full",
+    "ablationCode": 0,
+    "paused": true,
+    "orbit": false,
+    "speed": 1,
+    "densitySampling": {
+      "path": "macro-rgba8-r",
+      "format": "rgba8unorm",
+      "dimensions": [
+        256,
+        256,
+        256
+      ],
+      "textureBytes": 67108864,
+      "extraCpuPayloadBytes": 16777216,
+      "extraGpuPayloadBytes": 16777216,
+      "sampling": "same volumeSampler; linear/clamp-to-edge/mip0; NoColorSpace",
+      "reason": "dry weather; R8 retained but not bound",
+      "allocationAccounting": "nominal payload; GPU upload/residency not measured",
+      "fallback": null
+    },
+    "terrainOptical": {
+      "enabled": true,
+      "variant": "observed-premult-valid-land-v1",
+      "stats": {
+        "gridSize": [
+          2048,
+          2048
+        ],
+        "cellKm": 0.0625,
+        "minEdgeKm": [
+          -64,
+          -64
+        ],
+        "rowOrder": "south-to-north; v0=minZ",
+        "dataConvention": "premultiplied-linear-RGB-and-valid-area",
+        "sourceAssetBytes": 33554432,
+        "basePayloadBytes": 33554432,
+        "nominalMipPayloadBytes": 11184808,
+        "totalGpuPayloadBytes": 44739240,
+        "retainedCpuPayloadBytes": 33554432,
+        "mipLevels": 12
+      }
+    },
+    "executionThread": "main",
+    "camera": {
+      "origin": [
+        15.459707890770279,
+        7.558173047097125,
+        2.780613896133632
+      ],
+      "target": [
+        0.3515625,
+        3.119140625,
+        -0.0546875
+      ],
+      "forward": [
+        -0.9442590869231424,
+        -0.27743952638107033,
+        -0.177206337258352
+      ],
+      "right": [
+        0.18444716051358995,
+        0,
+        -0.9828424314092641
+      ],
+      "up": [
+        -0.27267933867740585,
+        0.9607431026041495,
+        -0.05117293285522365
+      ],
+      "yaw": 1.3852869846402587,
+      "pitch": 0.2811279826464208,
+      "approach": 0,
+      "aspect": 1.341648590021692,
+      "tanHalfVerticalFov": 0.2867,
+      "ground": 1,
+      "comparisonSurfaceKm": 0.7227685139973958,
+      "comparisonTargetKm": [
+        0.3515625,
+        3.119140625,
+        -0.0546875
+      ],
+      "probeSkipped": true,
+      "terrainClearanceKm": 0.2
+    },
+    "lighting": {
+      "sunDirection": [
+        -0.668126592347077,
+        0.7126683651702156,
+        0.21380050955106467
+      ],
+      "lightSide": 0,
+      "sunsetAmount": 0,
+      "solarColor": [
+        0.9313426391412541,
+        0.8413836906464631,
+        0.7182507029227312
+      ],
+      "ambientColor": [
+        0.08283003529291262,
+        0.10718098056640865,
+        0.1600090087683047
+      ],
+      "flash": [
+        0,
+        3.5,
+        0.5,
+        0
+      ],
+      "flashTop": [
+        0,
+        0,
+        0
+      ],
+      "flashBend": [
+        0,
+        0,
+        0
+      ],
+      "flashEnd": [
+        0,
+        0,
+        0
+      ],
+      "flashBranch": [
+        0,
+        0,
+        0
+      ],
+      "flashCount": 0
+    },
+    "weather": {
+      "skyIntent": "clear",
+      "rain": 0,
+      "targetRain": 0,
+      "haze": 1,
+      "overcast": 0,
+      "skyPending": false,
+      "atmosphereProgress": 1,
+      "atmosphereBlend": 1,
+      "windStrength": 0.55,
+      "dispersion": 0,
+      "precipitationBounds": [
+        -3.359375,
+        -2.0234375,
+        2.265625,
+        2.1328125
+      ],
+      "precipitationStepKm": 0.006,
+      "precipitationExtinctionPerKm": 0.85
+    }
+  },
+  "geometryStatsCompared": {
+    "vertices": 591788,
+    "triangles": 1182550,
+    "stitchedCells": 4096,
+    "levels": 9,
+    "cellsPerSide": 256,
+    "baseSpacingKm": 0.032,
+    "outerExtentKm": 1048.576,
+    "geometryBytes": 33127816,
+    "sampleCalls": 1183149,
+    "minimumHeightKm": 0,
+    "maximumHeightKm": 3.0260982513427734,
+    "normalMode": "geometry",
+    "refinement": {
+      "originalVertices": 465409,
+      "originalTriangles": 929792,
+      "probeSampleCalls": 591361,
+      "vertexSampleCalls": 591788,
+      "totalSampleCalls": 1183149,
+      "nodesAboveThreshold": 209659,
+      "eligibleNodesAboveThreshold": 209488,
+      "markedRedFaces": 69833,
+      "greenFaces": 21853,
+      "splitEdgeCount": 126379,
+      "addedVertices": 126379,
+      "addedTriangles": 252758,
+      "addedGeometryBytes": 7077224,
+      "sourceSpacingKm": 0.125,
+      "maxErrorKm": 0.005,
+      "sourceGrid": {
+        "minXKm": -64,
+        "minZKm": -64,
+        "spacingKm": 0.125,
+        "columns": 1025,
+        "rows": 1025
+      },
+      "selectionDomain": {
+        "minXKm": -48,
+        "maxXKm": 48,
+        "minZKm": -48,
+        "maxZKm": 48
+      },
+      "selectedNodeColumns": 769,
+      "selectedNodeRows": 769,
+      "originalFacesBySplitEdgeCount": [
+        838106,
+        7390,
+        7520,
+        76776
+      ],
+      "maximumCellTriangles": 20,
+      "cellTriangleCountBytes": 589824,
+      "midpointVerticesOutsideDomain": 405,
+      "boundsKm": {
+        "min": [
+          -1048.5760498046875,
+          -178.98373413085938,
+          -1048.5760498046875
+        ],
+        "max": [
+          1048.5760498046875,
+          -1.675218939781189,
+          1048.5760498046875
+        ]
+      }
+    },
+    "geometryScope": "First visible triangle of this static stitched mesh; not exact analytic-height intersection",
+    "cpuTriangleLookupBytes": 2949120,
+    "normalPolicy": "Shared incident-area-weighted actual mesh normal at every vertex; no bilinear-source gradient seams",
+    "perFrameCpuHeightSamples": 0
+  },
+  "allRequiredGatesPassed": true,
+  "summary": {
+    "changedSelectedPixels": 6,
+    "changedSelectedRGBWords": 18,
+    "maxAbsoluteSelectedRGBDelta": 0.019435467198491096,
+    "candidateWholeDifferentFromA": true,
+    "allReturnAWordsIdentical": true
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "kind": "terrain-face-direct-single-trial-protocol-v1",
+  "previousGoalTurn": "progress: qualifiedGPUledger+currentCPUhashes narrowednextaction; documentedcommit ebcca43",
+  "productBaselineCommit": "ebcca43fd64174b7e6825394d0c85c7ed7a5c82c",
+  "productRenderer": "observatory-v61-observed-terrain-material",
+  "baseline141ManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "oneChange": "D only from upward geometric fragment normal using position derivatives, protectednormalize and macro fallback; preserve all other shading/material/geometry/transport terms.",
+  "parameterSweep": false,
+  "productAdoptionBeforeNativeReview": false,
+  "immutableOwnerFlag": "profile=1&faceDirect=1; otherwise exact ordinary library",
+  "quality": {
+    "macro": 256,
+    "detail": 128,
+    "steps": 384,
+    "output": [
+      2474,
+      1844
+    ],
+    "flow": "full",
+    "cloudTime": 60,
+    "paused": true
+  },
+  "camera": {
+    "seed": 74,
+    "origin": [
+      15.459707890770279,
+      7.558173047097125,
+      2.780613896133632
+    ],
+    "target": [
+      0.3515625,
+      3.119140625,
+      -0.0546875
+    ],
+    "sun": [
+      -0.668126592347077,
+      0.7126683651702156,
+      0.21380050955106467
+    ]
+  },
+  "reference": {
+    "ordinaryF32SHA256": "07fa43ec5de6d77b9bdf83d5a78e73cb607ae573d875ce382b3c28f909fb2fb9",
+    "allAlphaSHA256": "29a4e01526e01077dad44a2fa4e45b10619c92292e8d3711bf0980174a55a79c",
+    "ordinaryNativePNG_SHA256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9"
+  },
+  "browserPath": "Browser plugin unavailable; existing CUA Playwright in singleIABtab. No new browser installation.",
+  "flowUnderTest": "New fixed native ordinary owner A \u2192 terrain cache audit+actualPNGmetadata \u2192 immutablefaceDirect owner B \u2192 fulltarget/alphaqualification+nativePNG \u2192 independent1:1review \u2192 return A exact.",
+  "nativeROIs": [
+    [
+      0,
+      560,
+      1000,
+      1000
+    ],
+    [
+      700,
+      540,
+      1030,
+      780
+    ]
+  ],
+  "predictionsNotMeasurements": {
+    "L2artifactD": "~.048157 vs current.211666",
+    "L2controlD": "~.257960 vs current.101502",
+    "L1L3D": "remain0 at historicalCPUface references; notGPUwinnerproof"
+  },
+  "acceptance": [
+    "OrdinaryAandreturn cached/freshfullF32 baseline exact, fullalphaexact andnativePNGdigestbaseline exact",
+    "Candidatecached=fresh andwholealphaexact; all12distancesexact andfixedcontrols/camera/lighting/dataquality",
+    "Nativecandidate complete transfer authentic PNGpixels; inspectfixedROIs1:1rootandindependentreview",
+    "Reject/stop if additional faceting/diagonals or no credible improvement. Do not tune slopes, blends or bias afterFAIL.",
+    "Only if visualPASS: broaderworker/weather/navigation/FPSqualification before anyadoption"
+  ],
+  "limits": [
+    "Onecausalshaderdifference can cause compilerDCE/algebra changes; notperfect operationidentity or physicalmodelproof.",
+    "HistoricalCPUfaces not currentGPUprimitivewinners; predictions remainreferences.",
+    "No FPSmeasurement infailedtrial; no60claim.",
+    "Derivativeflatnormal mayshowpiecewisefacets. Noasset/geometicdetailadded."
+  ],
+  "caps": {
+    "typecheckSeconds": 30,
+    "testSeconds": 60,
+    "buildSeconds": 90,
+    "browserQualificationWaitSeconds": 45,
+    "exportTransferSeconds": 60
+  },
+  "dependencyState": "existingcanonicalnode_modules Gitignored/untracked and Dropboxignore1 checked; symlinkexternal; noinstall/lockedit"
+}
