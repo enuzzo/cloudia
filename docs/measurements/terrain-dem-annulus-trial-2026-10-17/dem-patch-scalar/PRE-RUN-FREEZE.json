@@ -1,0 +1,144 @@
+{
+  "state": "FROZEN_NOT_EXECUTED",
+  "scope": "Preparation I/O and hashes only. One root scalar execution after operational review; no mesh/model/test/build/GPU and no alternate diagonal after FAIL.",
+  "sourceRoot": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia",
+  "dependencyRoot": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules",
+  "bunPath": "/Users/enuzzo/.bun/bin/bun",
+  "demPath": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/assets/liguria-apuane-dem.bin",
+  "pointsPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle43/terrain-grid-audit/POINTS.json",
+  "aResultPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle43/terrain-grid-audit/run/A/result.json",
+  "aRunPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle43/terrain-grid-audit/run/A/run.json",
+  "aStreamPath": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle43/terrain-grid-audit/run/A/errors.f64le.gz",
+  "expectedDemSHA256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d",
+  "expectedAMeshHashes": {
+    "positions": "4c7e3f0b92c294850dad4014d3c260e0cb922ba5ade13a952722240a2e5ecc64",
+    "normals": "3cb820d4d203c89f61e8e26809ddbdcd2f8ce2645dce0842b758a1b0ea6dcbfd",
+    "surface": "7595b45c14d4d249df98d99145fcaa485b21d62e419764b99ce4fedc780c76f2",
+    "indices": "87e1b8d5b569577c291efefb1698ca66b657ecb3f9c73dcf6ddc73316a1030ae",
+    "cellFirstIndex": "90c901563f05c3b73f3039ba64a1bface19b4d80811b576082330645afc06ac8",
+    "cellTriangleCount": "850e2b0edf48172d3ec82751b85eb0ff9e329846bcc7c2f6d382ffc8431497dd"
+  },
+  "sourceClosureFiles": 7,
+  "dependencyIgnoreReadback": "1",
+  "inputs": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/dem-patch-scalar/witness.ts",
+      "bytes": 6573,
+      "sha256": "fce5b33c9fdb0b04dfbc42dca5bde573393a03b2d956b2867e9dd6cc178a018d"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/dem-patch-scalar/run.py",
+      "bytes": 5370,
+      "sha256": "ac1029af2aee3d481cc4a7765569bed81b8fcedb650602e6cc6aa38f1bc52188"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/dem-patch-scalar/PROTOCOL.md",
+      "bytes": 2835,
+      "sha256": "26ecafe12ce3b898d46fe7e55e86241aac62dedf8eac3c4ac4281afcef6a3cb4"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle43/terrain-grid-audit/POINTS.json",
+      "bytes": 1201,
+      "sha256": "9cd4e10be6a6a66d21c550e9701a3fc0c003f645cf72196235592684e2340660"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle43/terrain-grid-audit/PRE-RUN-FREEZE.json",
+      "bytes": 6168,
+      "sha256": "3c3c394c0864ef6a1326b6265b1a73c90f9bccc753458aa63525e59bb2d7183b"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle43/terrain-grid-audit/run/A/result.json",
+      "bytes": 4852,
+      "sha256": "434a642b34c3d66b86164af5d00f7ce12fede07283dcdd3bb9be0f3132f61235"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle43/terrain-grid-audit/run/A/run.json",
+      "bytes": 711,
+      "sha256": "c6f78acd392f097c95619f88e2c9997b03841310aca0f758f442d81553c16e9b"
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle43/terrain-grid-audit/run/A/errors.f64le.gz",
+      "bytes": 8059196,
+      "sha256": "7a2825569bad7e57b954886307f5218e2abebaeeb3b0a6a28e18713e377cf227"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/terrainMesh.ts",
+      "bytes": 41782,
+      "sha256": "00c170a8d4653817720b9dddc8eb10d647671128602dac55a1de52fe55216d72"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/terrainDEM.ts",
+      "bytes": 4394,
+      "sha256": "335dfde27717448fa58b7e8d26fc4ce684a1d42ed6ead007f36fb345fe9dd386"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/terrainSurface.ts",
+      "bytes": 13659,
+      "sha256": "0ff8de3514feb3714ba4e931c246d0bd339634661aa37a7d87e79f61c1ddff3f"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/landscape.ts",
+      "bytes": 5477,
+      "sha256": "8a0e17f79d6ec5759dd0615ffa94434c479b7961d1f9e007df583fb463ca98ab"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/aerial.ts",
+      "bytes": 621,
+      "sha256": "a066cfe3664d77e4c448045010fa13c40eefb35add6c163d143bd2bb01af10da"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/TerrainShadow.ts",
+      "bytes": 16036,
+      "sha256": "ed628cb7e81a77d8fe1d57ecabd7f43b8072cfee0c8959a6d2b5746965640692"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/terrainSplitTriangle.ts",
+      "bytes": 1249,
+      "sha256": "e8a14126eedcea99390b9bf9503b9df53fae6ad85e2f39aa184817d104443163"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/package.json",
+      "bytes": 3672,
+      "sha256": "ab4ff6950aab522dfe6980f19914a5eb2cadb689a36c6c44f4d3869c5e46dc89"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/build/three.webgpu.js",
+      "bytes": 2284823,
+      "sha256": "a78400fa1d359e81fcc12b84ed0a89a7fbecb4b8373e28ae8f9d2b11f6ea13bc"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/build/three.tsl.js",
+      "bytes": 36854,
+      "sha256": "6e6b92d8ce467818944f73815a96abadc6392fb34de577d479a23810b6aeeed0"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/node_modules/three/build/three.core.js",
+      "bytes": 1458113,
+      "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6"
+    },
+    {
+      "path": "/Users/enuzzo/.bun/bin/bun",
+      "bytes": 61069216,
+      "sha256": "1d77af7bfd811aebb7d37bec496a5eed14fe227ded3ab7866d2f39786e8107b6"
+    },
+    {
+      "path": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/src/cumulonimbus/assets/liguria-apuane-dem.bin",
+      "bytes": 4202532,
+      "sha256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d"
+    }
+  ],
+  "limitsSingleChild": {
+    "cpuSeconds": 10,
+    "wallSeconds": 20,
+    "terminalDarwinRSSBytes": 402653184
+  },
+  "frozenGate": {
+    "landRMS": "B strictly lower than saved A",
+    "globalP99Abs": "B <= A at floor(.99*(n-1))",
+    "globalMaxAbs": "B <= A",
+    "onFailure": "Stop before topology; no alternate diagonal or spacing",
+    "onSuccess": "Necessary holdout potential only; mesh/seam/lookup/costs still unqualified"
+  },
+  "reuseDecision": "A six buffers and historical fit were authenticated in the pinned cycle43 A run; this run uses its saved complete error stream without rebuilding A. New B computes only the proposed triangle centre Y from two canonical Float32 endpoint heights.",
+  "selfDigestPolicy": "This file excludes itself. Root supplies its frozen SHA256 to the launcher."
+}

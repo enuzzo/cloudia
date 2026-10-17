@@ -1,0 +1,225 @@
+{
+  "scope": "Saved scalar A/B only, same DEM coast mask; no source/model evaluation. Fixed physical A bands, no new gate.",
+  "bands": [
+    {
+      "bandIndex": 0,
+      "radiusKm": {
+        "greaterThan": 0,
+        "atMost": 4.096,
+        "actualHoldoutMaximum": null
+      },
+      "all": {
+        "count": 4356,
+        "A": {
+          "rmsMetres": 0.0023775775110476817,
+          "p99AbsMetres": 0.003356487757955051,
+          "maxAbsMetres": 0.11786893437504276
+        },
+        "B": {
+          "rmsMetres": 0.3028610818146164,
+          "p99AbsMetres": 0.2817993245800565,
+          "maxAbsMetres": 13.061847627942935
+        },
+        "changes": {
+          "improved": 0,
+          "worsened": 4356,
+          "equal": 0
+        }
+      },
+      "land": {
+        "count": 56,
+        "A": {
+          "rmsMetres": 0.019770361643860437,
+          "p99AbsMetres": 0.0565799336524897,
+          "maxAbsMetres": 0.11786893437504276
+        },
+        "B": {
+          "rmsMetres": 2.587366687368014,
+          "p99AbsMetres": 10.156805897963306,
+          "maxAbsMetres": 13.061847627942935
+        },
+        "changes": {
+          "improved": 0,
+          "worsened": 56,
+          "equal": 0
+        }
+      }
+    },
+    {
+      "bandIndex": 1,
+      "radiusKm": {
+        "greaterThan": 4.096,
+        "atMost": 8.192,
+        "actualHoldoutMaximum": null
+      },
+      "all": {
+        "count": 13068,
+        "A": {
+          "rmsMetres": 0.11801112880547707,
+          "p99AbsMetres": 0.564352757503439,
+          "maxAbsMetres": 2.955731379922444
+        },
+        "B": {
+          "rmsMetres": 1.3723076240953136,
+          "p99AbsMetres": 6.813154724985004,
+          "maxAbsMetres": 20.31312536368768
+        },
+        "changes": {
+          "improved": 0,
+          "worsened": 13068,
+          "equal": 0
+        }
+      },
+      "land": {
+        "count": 3818,
+        "A": {
+          "rmsMetres": 0.21648149828933574,
+          "p99AbsMetres": 0.8760781601080403,
+          "maxAbsMetres": 2.955731379922444
+        },
+        "B": {
+          "rmsMetres": 2.525577693080489,
+          "p99AbsMetres": 9.84306070247376,
+          "maxAbsMetres": 20.31312536368768
+        },
+        "changes": {
+          "improved": 0,
+          "worsened": 3818,
+          "equal": 0
+        }
+      }
+    },
+    {
+      "bandIndex": 2,
+      "radiusKm": {
+        "greaterThan": 8.192,
+        "atMost": 16.384,
+        "actualHoldoutMaximum": null
+      },
+      "all": {
+        "count": 51220,
+        "A": {
+          "rmsMetres": 0.9939815285730188,
+          "p99AbsMetres": 4.471718387546897,
+          "maxAbsMetres": 19.995933568108804
+        },
+        "B": {
+          "rmsMetres": 3.218387283006152,
+          "p99AbsMetres": 13.499385280960396,
+          "maxAbsMetres": 34.9382159043583
+        },
+        "changes": {
+          "improved": 8469,
+          "worsened": 42751,
+          "equal": 0
+        }
+      },
+      "land": {
+        "count": 23025,
+        "A": {
+          "rmsMetres": 1.481095874365641,
+          "p99AbsMetres": 6.29755513011343,
+          "maxAbsMetres": 19.995933568108804
+        },
+        "B": {
+          "rmsMetres": 4.797258551102654,
+          "p99AbsMetres": 16.530690916430224,
+          "maxAbsMetres": 34.9382159043583
+        },
+        "changes": {
+          "improved": 3024,
+          "worsened": 20001,
+          "equal": 0
+        }
+      }
+    },
+    {
+      "bandIndex": 3,
+      "radiusKm": {
+        "greaterThan": 16.384,
+        "atMost": 32.768,
+        "actualHoldoutMaximum": null
+      },
+      "all": {
+        "count": 205932,
+        "A": {
+          "rmsMetres": 1.9369139678231841,
+          "p99AbsMetres": 7.5918251127622405,
+          "maxAbsMetres": 29.395758845051745
+        },
+        "B": {
+          "rmsMetres": 3.5216456984203033,
+          "p99AbsMetres": 13.374609225098588,
+          "maxAbsMetres": 31.344646163016687
+        },
+        "changes": {
+          "improved": 124266,
+          "worsened": 81666,
+          "equal": 0
+        }
+      },
+      "land": {
+        "count": 117277,
+        "A": {
+          "rmsMetres": 2.565891984424621,
+          "p99AbsMetres": 8.801354143529672,
+          "maxAbsMetres": 29.395758845051745
+        },
+        "B": {
+          "rmsMetres": 4.665599715302527,
+          "p99AbsMetres": 15.061932416544632,
+          "maxAbsMetres": 31.344646163016687
+        },
+        "changes": {
+          "improved": 39252,
+          "worsened": 78025,
+          "equal": 0
+        }
+      }
+    },
+    {
+      "bandIndex": 4,
+      "radiusKm": {
+        "greaterThan": 32.768,
+        "atMost": 65.536,
+        "actualHoldoutMaximum": 47.9375
+      },
+      "all": {
+        "count": 315248,
+        "A": {
+          "rmsMetres": 7.431974315123713,
+          "p99AbsMetres": 30.110169644209872,
+          "maxAbsMetres": 87.02977014615732
+        },
+        "B": {
+          "rmsMetres": 3.09034408739493,
+          "p99AbsMetres": 11.905984269995784,
+          "maxAbsMetres": 29.6560186900221
+        },
+        "changes": {
+          "improved": 261331,
+          "worsened": 53917,
+          "equal": 0
+        }
+      },
+      "land": {
+        "count": 189842,
+        "A": {
+          "rmsMetres": 9.574390117515778,
+          "p99AbsMetres": 34.261738526289776,
+          "maxAbsMetres": 87.02977014615732
+        },
+        "B": {
+          "rmsMetres": 3.981793728544257,
+          "p99AbsMetres": 13.312061945133902,
+          "maxAbsMetres": 29.6560186900221
+        },
+        "changes": {
+          "improved": 136227,
+          "worsened": 53615,
+          "equal": 0
+        }
+      }
+    }
+  ]
+}

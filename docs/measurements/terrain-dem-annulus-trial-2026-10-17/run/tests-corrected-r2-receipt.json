@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/Users/enuzzo/.bun/bin/bun",
+    "run",
+    "test",
+    "--maxWorkers=2"
+  ],
+  "cwd": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/patch-source",
+  "exitCode": 0,
+  "wallSeconds": 13.504885290982202,
+  "wallLimitSeconds": 180,
+  "wallKilled": false,
+  "sourceSHA256": "ee5c9d7747a27a100cc4faa04cd7748ac6a5afa743295eab39973d42f40b6fb5",
+  "sourceStable": true,
+  "dependencyIgnoreReadback": "1"
+}

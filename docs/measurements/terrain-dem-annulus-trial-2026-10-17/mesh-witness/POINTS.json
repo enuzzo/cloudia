@@ -1,0 +1,16 @@
+{
+  "schema": "terrain-grid-fixed-points-v1",
+  "domainKm": [-48, 48],
+  "sourceNodeSpacingKm": 0.125,
+  "order": "fit first, then holdout; each increasing iz then ix, X fastest",
+  "fit": {"side": 769, "count": 591361, "formulaXZKm": "-48 + i * 0.125, i=0..768 inclusive", "firstSourceIndex": 128, "lastSourceIndex": 896},
+  "holdout": {"side": 768, "count": 589824, "formulaXZKm": "-48 + (i + 0.5) * 0.125, i=0..767 inclusive", "selectsRefinement": false},
+  "totalCount": 1181185,
+  "streamRawBytes": 9449480,
+  "streamEncoding": "headerless Float64 little-endian signed error metres = 1000 * (spherical DEM reference Y - actual Float32 mesh lookup Y)",
+  "fitOffsetBytes": 0,
+  "holdoutOffsetBytes": 4730888,
+  "reference": "same canonical CDM1 GLO90 bilinear sampler and terrainMeshSurfaceY for A and B; no GLO30",
+  "maskForIndependentAnalysis": "same canonical bilinear coastKm >= 0 for land, <0 for sea; never select points from B",
+  "fixedPhysicalBandsForIndependentAnalysis": {"norm": "max(abs(x),abs(z))", "outerHalfExtentsKm": [4.096, 8.192, 16.384, 32.768, 65.536], "membership": "first boundary >= radius; identical A-based physical bands for both streams, not B's shifted ring IDs"}
+}

@@ -1,0 +1,52 @@
+{
+  "status": "FAIL_STOPPED",
+  "freezeSHA256": "2ec5aac86f440e792023b56d95d013786d20e953b06516246a86f8c6c49c66c8",
+  "children": [
+    {
+      "mode": "A",
+      "status": "PASS_EXECUTION_AND_PARITY_ONLY",
+      "error": null,
+      "launched": true,
+      "terminalObserved": true,
+      "exitCode": 0,
+      "wallKilled": false,
+      "childCPUSeconds": 3.666785,
+      "childWallSeconds": 3.3310504580149427,
+      "terminalChildPeakRSSBytes": 1196032000,
+      "limits": {
+        "cpuSeconds": 20,
+        "wallSeconds": 30,
+        "terminalRSSBytes": 1610612736
+      },
+      "RSSScope": "Darwin wait4 bytes for this child; terminal gate, not allocation limit. No AS/ps.",
+      "scope": "Execution, source stability, invariants and A parity only; independent saved-stream analysis decides geometry benefit.",
+      "resultSHA256": "30a99d855c0c10a9b29d2ad4a629d61efa98b8d24cb49907a6788e704d9a1a97"
+    },
+    {
+      "mode": "B",
+      "status": "FAIL",
+      "error": "RuntimeError: Child terminal resource gate failed",
+      "launched": true,
+      "terminalObserved": true,
+      "exitCode": 0,
+      "wallKilled": false,
+      "childCPUSeconds": 6.9122330000000005,
+      "childWallSeconds": 6.295945249963552,
+      "terminalChildPeakRSSBytes": 1740881920,
+      "limits": {
+        "cpuSeconds": 20,
+        "wallSeconds": 30,
+        "terminalRSSBytes": 1610612736
+      },
+      "RSSScope": "Darwin wait4 bytes for this child; terminal gate, not allocation limit. No AS/ps.",
+      "scope": "Execution, source stability, invariants and A parity only; independent saved-stream analysis decides geometry benefit.",
+      "resultSHA256": "f12d6c0225c65c40c5fa6b5d345509a5d8d6cb5711b2fa2a1d5c095cf25defb8"
+    }
+  ],
+  "launcherCPUSeconds": 0.23400900000000002,
+  "launcherWallSeconds": 9.859456834034063,
+  "launcherPeakRSSBytes": 29999104,
+  "noRetry": true,
+  "noConcurrentMeshes": true,
+  "noGPU": true
+}

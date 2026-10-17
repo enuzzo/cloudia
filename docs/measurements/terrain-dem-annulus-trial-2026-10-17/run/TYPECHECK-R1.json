@@ -1,0 +1,17 @@
+{
+  "command": "/Users/enuzzo/.bun/bin/bun run typecheck",
+  "scope": "Compile-only; no mesh/runtime/test execution.",
+  "firstOutput": "$ tsc --noEmit\n",
+  "firstTool": {
+    "session_id": 82937,
+    "wall_time_seconds": 1.000984584
+  },
+  "completion": {
+    "chunk_id": "e1a08d",
+    "wall_time_seconds": 0.000004959,
+    "exit_code": 0,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "totalWallNotMeasured": true
+}

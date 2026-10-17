@@ -1,0 +1,57 @@
+{
+  "state": "FROZEN_BEFORE_CANDIDATE_TEST_MODEL_OR_GPU",
+  "baseline": {
+    "actualDTO": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle41/browser/baseline-74-front.json",
+    "actualDTOSHA256": "d8fabea1c3a9f566e63829bda315efd0bdf9c258b496a490dfc2447e138306ea",
+    "existingExactPNG": "/Users/enuzzo/Library/CloudStorage/Dropbox/Mitnick/Cloudia/docs/measurements/terrain-optical-material-2026-10-17/browser/candidate-b-native.png",
+    "pngSHA256": "6d7a8c836c0ae51ca058c6b634e633481eb42e61f09f20b5be68bed128625fc9",
+    "bytes": 3599836
+  },
+  "preconditions": [
+    "Static/source review and meaningful fixture tests pass",
+    "Actualfullmesh AOFF authenticates6buffers/stats/fit+holdout andBfullholdout matches scalar81b2e470; fit/holdoutfrozennumericgates pass",
+    "Fullmesh manifold/winding/outeridentity/seamoracle/caps/runtimebudgets pass",
+    "Typecheck andAPPbuild pass; completecandidate sourcehash frozen"
+  ],
+  "firstPose": {
+    "seed": 74,
+    "quality": "256macro128detail384nominal,fullflow,output2474x1844 CSS1237x922 DPR2",
+    "urlQuery": "seed=74&profile=1&timing=off&surface=0.7227685139973958&target=0.3515625,3.119140625,-0.0546875",
+    "state": "Sunleftsettled,t60paused,forcing0rain0disp0wind.55orbitfalseautoStormfalseflashoff",
+    "frontCameraOrigin": [
+      15.459707890770279,
+      7.558173047097125,
+      2.780613896133632
+    ],
+    "target": [
+      0.3515625,
+      3.119140625,
+      -0.0546875
+    ],
+    "cameraRule": "Same entire actualcameraDTO; no geometry-bounds recenter or silentclearance adjustment"
+  },
+  "allowedInputDifferences": [
+    "renderer tag",
+    "terrainRaster.geometry counts/stats/sourcePatch/refinement/bounds derived from replacement",
+    "terrainRaster UUID/owner cache requests,hits,submissions,epoch withvalid=true",
+    "frame/skyUUID",
+    "weatherTime only underclearSunrain0flashoff",
+    "terrainRaster.cpuTriangleLookupBytes fromnewcore/seam routing",
+    "terrainRaster.shadow.depthFit derived fromnewgeometry boundingbox; shadowresolution/format/radius/bias/filter unchanged",
+    "terrainRaster.shadow.cache requests,hits,submissions,epoch ownerlocal withvalid=true"
+  ],
+  "notAllowed": [
+    "Any camera/quality/output/light/flow/cloudtime/controls change",
+    "Any material/asset/clouddensity source change"
+  ],
+  "artGate": "Root and independent fullnative read: convincing ridgearticulation improvement inmeasuredterrain, no regression to visiblycoarser/repetitiveplanes, exposedgrid/diagonals/emphasizedpyramids orcoast. No inventedsub125mrock detail claim. NumericPASSnotartistPASS.",
+  "failStop": "No tuning, furtherGPUposes/seeds/weather/worker/motion/FPS afterfirstclearartFAIL; restoreordinaryv61 andarchive.",
+  "ifFirstPoseBenefit": [
+    "matchedSunset andRain main",
+    "currentSun main-worker parity",
+    "camera motion/clearances includingroutedlookup",
+    "boundedRainmain A/B/Acost",
+    "finalfullsuite typecheck APPthenhero andsource/finalnativeparity beforeadoption"
+  ],
+  "scope": "Terrainincrement only; unchangedcloudanatomy/near andfullgoal/FPScompletion still requiretheirownevidence."
+}

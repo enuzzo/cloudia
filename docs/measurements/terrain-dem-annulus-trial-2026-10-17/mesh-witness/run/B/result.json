@@ -1,0 +1,481 @@
+{
+  "status": "COMPLETE_CPU_ONLY",
+  "mode": "B",
+  "scope": "One canonical mesh; fixed fit+holdout errors. No visual/GPU/FPS acceptance.",
+  "runtime": {
+    "bun": "1.3.11",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "sourceRoot": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/patch-source",
+  "pointPlanSHA256": "9cd4e10be6a6a66d21c550e9701a3fc0c003f645cf72196235592684e2340660",
+  "demSHA256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d",
+  "options": {
+    "cellsPerSide": 256,
+    "levels": 9,
+    "spacingKm": 0.032,
+    "normalMode": "geometry",
+    "sourcePatch": {
+      "coreHalfExtentKm": 48,
+      "outerCutKm": 48.12799835205078,
+      "retainedInnerHalfExtentKm": 32.768001556396484
+    },
+    "refinement": {
+      "sourceGrid": {
+        "minXKm": -64,
+        "minZKm": -64,
+        "spacingKm": 0.125,
+        "columns": 1025,
+        "rows": 1025
+      },
+      "domain": {
+        "minXKm": -48,
+        "maxXKm": 48,
+        "minZKm": -48,
+        "maxZKm": 48
+      },
+      "maxErrorKm": 0.005,
+      "limits": {
+        "maxProbeCount": 600000,
+        "maxVertices": 1000000,
+        "maxTriangles": 2000000,
+        "maxGeometryBytes": 67108864
+      }
+    }
+  },
+  "meshStats": {
+    "vertices": 858119,
+    "triangles": 1715212,
+    "stitchedCells": 3584,
+    "levels": 9,
+    "cellsPerSide": 256,
+    "baseSpacingKm": 0.032,
+    "outerExtentKm": 1048.576,
+    "geometryBytes": 48042352,
+    "sampleCalls": 1498885,
+    "minimumHeightKm": 0,
+    "maximumHeightKm": 3.0260982513427734,
+    "normalBlendStartRadiusKm": 32.768,
+    "normalBlendEndRadiusKm": 65.536,
+    "normalMode": "geometry",
+    "sourcePatch": {
+      "coreHalfExtentKm": 48,
+      "outerCutKm": 48.12799835205078,
+      "sourceSpacingKm": 0.125,
+      "retainedInnerHalfExtentKm": 32.768001556396484,
+      "sourceHoleHalfExtentKm": 32.875,
+      "sourceVertices": 315736,
+      "sourceTriangles": 626296,
+      "innerVertices": 311218,
+      "innerTriangles": 620910,
+      "outerVertices": 231165,
+      "outerTriangles": 460149,
+      "innerSeamTriangles": 3628,
+      "outerSeamTriangles": 4229,
+      "seamTriangles": 7857,
+      "newSampleCalls": 315736,
+      "lookupBytes": 3060396,
+      "prePatchSampleCalls": 1183149,
+      "prePatchStitchedCells": 4096,
+      "prePatchRefinement": {
+        "originalVertices": 465409,
+        "originalTriangles": 929792,
+        "probeSampleCalls": 591361,
+        "vertexSampleCalls": 591788,
+        "totalSampleCalls": 1183149,
+        "nodesAboveThreshold": 209659,
+        "eligibleNodesAboveThreshold": 209488,
+        "markedRedFaces": 69833,
+        "greenFaces": 21853,
+        "splitEdgeCount": 126379,
+        "addedVertices": 126379,
+        "addedTriangles": 252758,
+        "addedGeometryBytes": 7077224,
+        "sourceSpacingKm": 0.125,
+        "maxErrorKm": 0.005,
+        "sourceGrid": {
+          "minXKm": -64,
+          "minZKm": -64,
+          "spacingKm": 0.125,
+          "columns": 1025,
+          "rows": 1025
+        },
+        "selectionDomain": {
+          "minXKm": -48,
+          "maxXKm": 48,
+          "minZKm": -48,
+          "maxZKm": 48
+        },
+        "selectedNodeColumns": 769,
+        "selectedNodeRows": 769,
+        "originalFacesBySplitEdgeCount": [
+          838106,
+          7390,
+          7520,
+          76776
+        ],
+        "maximumCellTriangles": 20,
+        "cellTriangleCountBytes": 589824,
+        "midpointVerticesOutsideDomain": 405,
+        "boundsKm": {
+          "min": [
+            -1048.5760498046875,
+            -178.98373413085938,
+            -1048.5760498046875
+          ],
+          "max": [
+            1048.5760498046875,
+            -1.675218939781189,
+            1048.5760498046875
+          ]
+        }
+      }
+    }
+  },
+  "meshHashes": {
+    "positions": "4e639f9a25f0003a5c90e83cb652f779537f359cd37c866267626357813465ea",
+    "normals": "9d481a62b466bbd78cbf7e932a9395098f0b4e8a44701a61929e027121ee63a2",
+    "surface": "e433ef2bb1f124c872c1755c7d99fea46015b5d49bc18c844f5ee2f39ecb9a7e",
+    "indices": "eedb155af49b079cc23193e8da5f0ed0a6c6d005dde47c37e01b12d22d6974b1",
+    "cellFirstIndex": "b72e1243f15244d11e2102511091c9dd219bce7b18fd4fcf6a7b6d59fd728f90",
+    "cellTriangleCount": "6bcd8a3931ef9cb921835ebc2320904b59596e74bdedd38bbc59bd9c9abc5d73"
+  },
+  "buildSampleCalls": 1498885,
+  "invariants": {
+    "maxNormalUnitError": 4.127128594433316e-8,
+    "minimumWinding": 0.0010239812622785394,
+    "completeCellLookup": true
+  },
+  "historicalAAuthenticated": false,
+  "fitStreamSHA256": "4be13f59951b71bb0066d7d7128a808bb1d03bb73cdd3f2e87e857de8eb0ad8b",
+  "summaryOnly": {
+    "fit": {
+      "count": 591361,
+      "minSignedMetres": -53.760431164933124,
+      "maxSignedMetres": 68.53439660095573,
+      "rmsMetres": 3.688939605682734
+    },
+    "holdout": {
+      "count": 589824,
+      "minSignedMetres": -29.6560186900221,
+      "maxSignedMetres": 27.75109520764829,
+      "rmsMetres": 2.5456239004566523
+    }
+  },
+  "topology": {
+    "uniqueEdges": 2573330,
+    "boundaryEdges": 1024,
+    "euler": 1,
+    "allVerticesUsed": true
+  },
+  "outerIdentity": {
+    "triangles": 460149,
+    "xyzSurfaceTriangleSHA256": "90e27b7d9bd0c56663b3c0c9723c6317913dc75088e37ce7abeb0d3264fcbfb4"
+  },
+  "outerProbes": [
+    {
+      "x": 49.1,
+      "z": 2.3,
+      "y": -4.189626922215573
+    },
+    {
+      "x": -50.7,
+      "z": 19.3,
+      "y": -2.9868444184763754
+    },
+    {
+      "x": 32.1,
+      "z": 61.7,
+      "y": -4.334687677338033
+    },
+    {
+      "x": -77.9,
+      "z": -88.3,
+      "y": -3.643617811523251
+    },
+    {
+      "x": 100.1,
+      "z": 25.3,
+      "y": -4.836698690205192
+    }
+  ],
+  "innerIdentity": {
+    "triangles": 620910,
+    "xyzSurfaceTriangleSHA256": "3f069cfef0bc1c91241e12a2e048bf97ea9e079b6d07b4cda436c5856593261d"
+  },
+  "innerProbes": [
+    {
+      "x": 1.13,
+      "z": 2.27,
+      "y": -4.0005046128997
+    },
+    {
+      "x": -2.31,
+      "z": 8.13,
+      "y": -3.976466145553598
+    },
+    {
+      "x": 12.37,
+      "z": -19.41,
+      "y": -4.041578454238657
+    },
+    {
+      "x": -29.1,
+      "z": -31.8,
+      "y": -4.142810606937653
+    },
+    {
+      "x": 32.7,
+      "z": 1.9,
+      "y": -4.084204606874018
+    }
+  ],
+  "seamOracle": [
+    {
+      "x": 32.82150077819824,
+      "z": -32.82150077819824,
+      "actual": -4.169089317321777,
+      "oracle": -4.169089317321777,
+      "deltaKm": 0
+    },
+    {
+      "x": -32.82150077819824,
+      "z": -32.82150077819824,
+      "actual": -4.162761688232422,
+      "oracle": -4.162761688232422,
+      "deltaKm": 0
+    },
+    {
+      "x": -32.82150077819824,
+      "z": 32.82150077819824,
+      "actual": -2.6568363904953003,
+      "oracle": -2.6568363904953003,
+      "deltaKm": 0
+    },
+    {
+      "x": 32.82150077819824,
+      "z": -12.14395528793335,
+      "actual": -4.096118963780459,
+      "oracle": -4.096118963780459,
+      "deltaKm": 0
+    },
+    {
+      "x": -32.82150077819824,
+      "z": -12.14395528793335,
+      "actual": -3.796175561189484,
+      "oracle": -3.7961755611894845,
+      "deltaKm": 4.440892098500626e-16
+    },
+    {
+      "x": -12.14395528793335,
+      "z": 32.82150077819824,
+      "actual": -3.5116867628293766,
+      "oracle": -3.511686762829376,
+      "deltaKm": -4.440892098500626e-16
+    },
+    {
+      "x": -12.14395528793335,
+      "z": -32.82150077819824,
+      "actual": -4.096118963780459,
+      "oracle": -4.096118963780459,
+      "deltaKm": 0
+    },
+    {
+      "x": 32.82150077819824,
+      "z": 0,
+      "actual": -4.0845441818237305,
+      "oracle": -4.0845441818237305,
+      "deltaKm": 0
+    },
+    {
+      "x": -32.82150077819824,
+      "z": 0,
+      "actual": -3.568369507789612,
+      "oracle": -3.568369507789612,
+      "deltaKm": 0
+    },
+    {
+      "x": 0,
+      "z": 32.82150077819824,
+      "actual": -3.735438346862793,
+      "oracle": -3.735438346862793,
+      "deltaKm": 0
+    },
+    {
+      "x": 0,
+      "z": -32.82150077819824,
+      "actual": -4.0845441818237305,
+      "oracle": -4.0845441818237305,
+      "deltaKm": 0
+    },
+    {
+      "x": 32.82150077819824,
+      "z": 12.14395528793335,
+      "actual": -4.096119086025536,
+      "oracle": -4.096119086025536,
+      "deltaKm": 0
+    },
+    {
+      "x": -32.82150077819824,
+      "z": 12.14395528793335,
+      "actual": -3.8172918937160647,
+      "oracle": -3.8172918937160647,
+      "deltaKm": 0
+    },
+    {
+      "x": 12.14395528793335,
+      "z": 32.82150077819824,
+      "actual": -3.5629787660236976,
+      "oracle": -3.562978766023698,
+      "deltaKm": 4.440892098500626e-16
+    },
+    {
+      "x": 12.14395528793335,
+      "z": -32.82150077819824,
+      "actual": -4.096119086025536,
+      "oracle": -4.096119086025536,
+      "deltaKm": 0
+    },
+    {
+      "x": 32.82150077819824,
+      "z": 32.82150077819824,
+      "actual": -3.485604166984558,
+      "oracle": -3.485604166984558,
+      "deltaKm": 0
+    },
+    {
+      "x": 48.06399917602539,
+      "z": -48.06399917602539,
+      "actual": -4.362614631652832,
+      "oracle": -4.362614631652832,
+      "deltaKm": 0
+    },
+    {
+      "x": -48.06399917602539,
+      "z": -48.06399917602539,
+      "actual": -4.293548345565796,
+      "oracle": -4.293548345565796,
+      "deltaKm": 0
+    },
+    {
+      "x": -48.06399917602539,
+      "z": 48.06399917602539,
+      "actual": -3.6543190479278564,
+      "oracle": -3.6543190479278564,
+      "deltaKm": 0
+    },
+    {
+      "x": 48.06399917602539,
+      "z": -17.783679695129393,
+      "actual": -4.2061274151253745,
+      "oracle": -4.2061274151253745,
+      "deltaKm": 0
+    },
+    {
+      "x": -48.06399917602539,
+      "z": -17.783679695129393,
+      "actual": -4.192447913397643,
+      "oracle": -4.192447913397643,
+      "deltaKm": 0
+    },
+    {
+      "x": -17.783679695129393,
+      "z": 48.06399917602539,
+      "actual": -3.60261872626616,
+      "oracle": -3.6026187262661606,
+      "deltaKm": 4.440892098500626e-16
+    },
+    {
+      "x": -17.783679695129393,
+      "z": -48.06399917602539,
+      "actual": -4.206077347223763,
+      "oracle": -4.206077347223763,
+      "deltaKm": 0
+    },
+    {
+      "x": 48.06399917602539,
+      "z": 0,
+      "actual": -4.181304693222046,
+      "oracle": -4.181304693222046,
+      "deltaKm": 0
+    },
+    {
+      "x": -48.06399917602539,
+      "z": 0,
+      "actual": -3.797513484954834,
+      "oracle": -3.797513484954834,
+      "deltaKm": 0
+    },
+    {
+      "x": 0,
+      "z": 48.06399917602539,
+      "actual": -3.027177095413208,
+      "oracle": -3.027177095413208,
+      "deltaKm": 0
+    },
+    {
+      "x": 0,
+      "z": -48.06399917602539,
+      "actual": -4.181304693222046,
+      "oracle": -4.181304693222046,
+      "deltaKm": 0
+    },
+    {
+      "x": 48.06399917602539,
+      "z": 17.783679695129393,
+      "actual": -4.206127452737934,
+      "oracle": -4.206127452737934,
+      "deltaKm": 0
+    },
+    {
+      "x": -48.06399917602539,
+      "z": 17.783679695129393,
+      "actual": -3.0400665026760545,
+      "oracle": -3.0400665026760545,
+      "deltaKm": 0
+    },
+    {
+      "x": 17.783679695129393,
+      "z": 48.06399917602539,
+      "actual": -3.307366214838985,
+      "oracle": -3.307366214838985,
+      "deltaKm": 0
+    },
+    {
+      "x": 17.783679695129393,
+      "z": -48.06399917602539,
+      "actual": -4.206127452737934,
+      "oracle": -4.206127452737934,
+      "deltaKm": 0
+    },
+    {
+      "x": 48.06399917602539,
+      "z": 48.06399917602539,
+      "actual": -4.078160524368286,
+      "oracle": -4.078160524368286,
+      "deltaKm": 0
+    }
+  ],
+  "regionParity": {
+    "nearFit": 275625,
+    "nearHoldout": 274576,
+    "farHoldout": 313148
+  },
+  "errorStream": {
+    "path": "errors.f64le.gz",
+    "rawBytes": 9449480,
+    "rawSHA256": "ff89b192199a6ffe766ff49090d342c09b302715aab5d216ce0a04afdc9a461f",
+    "gzipBytes": 7461365,
+    "gzipSHA256": "cb3e8707ee3d6ecbeda5a54c68176792b1ad4a8c27038b044f05fc36ea7b0aa7",
+    "fitCount": 591361,
+    "holdoutCount": 589824,
+    "holdoutOffsetBytes": 4730888,
+    "encoding": "headerless Float64 little-endian signed error metres = 1000 * (spherical DEM reference Y - actual Float32 mesh lookup Y)"
+  },
+  "timings": {
+    "buildMs": 1892.545041,
+    "queryMs": 548.1834579999995,
+    "totalMs": 5321.4469579999995
+  },
+  "statisticsScope": "Small summaries use ordinary Float64 sums; independent analysis reads the full saved F64 stream and fixed physical bands."
+}

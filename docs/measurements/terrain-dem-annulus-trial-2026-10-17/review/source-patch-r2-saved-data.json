@@ -1,0 +1,1027 @@
+{
+  "scope": "Independent saved F64 streams+saved JSON and DEM coast codes only; no source/model/sampler/sphere evaluation. Full local differences retained in original streams.",
+  "status": {
+    "numeric": "PASS",
+    "execution": "FAIL_STOPPED",
+    "resourceB": "FAIL",
+    "overallQualification": "FAIL_RESOURCE_NO_ADOPTION"
+  },
+  "freezeSHA256": "2ec5aac86f440e792023b56d95d013786d20e953b06516246a86f8c6c49c66c8",
+  "checks": {
+    "fit": {
+      "landRMSStrictlyLower": true,
+      "allP99NotHigher": true,
+      "allMaxNotHigher": true
+    },
+    "holdout": {
+      "landRMSStrictlyLower": true,
+      "allP99NotHigher": true,
+      "allMaxNotHigher": true
+    },
+    "firstFourPhysicalBandsF64Identical": true
+  },
+  "sets": {
+    "fit": {
+      "all": {
+        "A": {
+          "count": 591361,
+          "rmsMetres": 8.76091915769878,
+          "p99AbsMetres": 36.111329337759734,
+          "p99Rank": 585446,
+          "maxAbsMetres": 96.06550239192968,
+          "minSignedMetres": -96.06550239192968,
+          "maxSignedMetres": 90.42770689763469
+        },
+        "B": {
+          "count": 591361,
+          "rmsMetres": 3.688939605683198,
+          "p99AbsMetres": 17.45730365128484,
+          "p99Rank": 585446,
+          "maxAbsMetres": 68.53439660095573,
+          "minSignedMetres": -53.760431164933124,
+          "maxSignedMetres": 68.53439660095573
+        },
+        "changes": {
+          "improved": 315709,
+          "worsened": 27,
+          "equal": 275625
+        },
+        "worstObservedRegression": {
+          "streamIndex": 66048,
+          "xKm": 37.375,
+          "zKm": -37.375,
+          "AErrorMetres": -4.022027155770047e-07,
+          "BErrorMetres": 0.0002017894278338872,
+          "absoluteErrorIncreaseMetres": 0.0002013872251183102
+        }
+      },
+      "land": {
+        "A": {
+          "count": 334589,
+          "rmsMetres": 11.641356606813309,
+          "p99AbsMetres": 41.92110253554748,
+          "p99Rank": 331242,
+          "maxAbsMetres": 96.06550239192968,
+          "minSignedMetres": -96.06550239192968,
+          "maxSignedMetres": 90.42770689763469
+        },
+        "B": {
+          "count": 334589,
+          "rmsMetres": 4.900162232700192,
+          "p99AbsMetres": 20.47064107782326,
+          "p99Rank": 331242,
+          "maxAbsMetres": 68.53439660095573,
+          "minSignedMetres": -53.760431164933124,
+          "maxSignedMetres": 68.53439660095573
+        },
+        "changes": {
+          "improved": 190054,
+          "worsened": 2,
+          "equal": 144533
+        },
+        "worstObservedRegression": {
+          "streamIndex": 65500,
+          "xKm": -31.125,
+          "zKm": -37.375,
+          "AErrorMetres": -4.5807399651209835e-05,
+          "BErrorMetres": 0.00019271953721755608,
+          "absoluteErrorIncreaseMetres": 0.00014691213756634625
+        }
+      },
+      "bands": [
+        {
+          "bandIndex": 0,
+          "maxRadiusKm": 4.096,
+          "all": {
+            "A": {
+              "count": 4225,
+              "rmsMetres": 0.024098216150366877,
+              "p99AbsMetres": 0.06381390179033275,
+              "p99Rank": 4181,
+              "maxAbsMetres": 0.728776394287145,
+              "minSignedMetres": -0.5795129730961079,
+              "maxSignedMetres": 0.728776394287145
+            },
+            "B": {
+              "count": 4225,
+              "rmsMetres": 0.024098216150366877,
+              "p99AbsMetres": 0.06381390179033275,
+              "p99Rank": 4181,
+              "maxAbsMetres": 0.728776394287145,
+              "minSignedMetres": -0.5795129730961079,
+              "maxSignedMetres": 0.728776394287145
+            },
+            "changes": {
+              "improved": 0,
+              "worsened": 0,
+              "equal": 4225
+            },
+            "worstObservedRegression": {
+              "streamIndex": 271040,
+              "xKm": -4.0,
+              "zKm": -4.0,
+              "AErrorMetres": 0.00012112805958253148,
+              "BErrorMetres": 0.00012112805958253148,
+              "absoluteErrorIncreaseMetres": 0.0
+            }
+          },
+          "land": {
+            "A": {
+              "count": 36,
+              "rmsMetres": 0.21331712767185024,
+              "p99AbsMetres": 0.5201140751354139,
+              "p99Rank": 34,
+              "maxAbsMetres": 0.728776394287145,
+              "minSignedMetres": -0.3937198082777371,
+              "maxSignedMetres": 0.728776394287145
+            },
+            "B": {
+              "count": 36,
+              "rmsMetres": 0.21331712767185024,
+              "p99AbsMetres": 0.5201140751354139,
+              "p99Rank": 34,
+              "maxAbsMetres": 0.728776394287145,
+              "minSignedMetres": -0.3937198082777371,
+              "maxSignedMetres": 0.728776394287145
+            },
+            "changes": {
+              "improved": 0,
+              "worsened": 0,
+              "equal": 36
+            },
+            "worstObservedRegression": {
+              "streamIndex": 315649,
+              "xKm": -3.125,
+              "zKm": 3.25,
+              "AErrorMetres": 0.2201321240136167,
+              "BErrorMetres": 0.2201321240136167,
+              "absoluteErrorIncreaseMetres": 0.0
+            }
+          }
+        },
+        {
+          "bandIndex": 1,
+          "maxRadiusKm": 8.192,
+          "all": {
+            "A": {
+              "count": 12936,
+              "rmsMetres": 1.0961126232216611,
+              "p99AbsMetres": 5.509498861743012,
+              "p99Rank": 12805,
+              "maxAbsMetres": 14.374055453478363,
+              "minSignedMetres": -14.374055453478363,
+              "maxSignedMetres": 11.303943431893337
+            },
+            "B": {
+              "count": 12936,
+              "rmsMetres": 1.0961126232216611,
+              "p99AbsMetres": 5.509498861743012,
+              "p99Rank": 12805,
+              "maxAbsMetres": 14.374055453478363,
+              "minSignedMetres": -14.374055453478363,
+              "maxSignedMetres": 11.303943431893337
+            },
+            "changes": {
+              "improved": 0,
+              "worsened": 0,
+              "equal": 12936
+            },
+            "worstObservedRegression": {
+              "streamIndex": 245630,
+              "xKm": -8.125,
+              "zKm": -8.125,
+              "AErrorMetres": 0.00023057463494069452,
+              "BErrorMetres": 0.00023057463494069452,
+              "absoluteErrorIncreaseMetres": 0.0
+            }
+          },
+          "land": {
+            "A": {
+              "count": 3696,
+              "rmsMetres": 2.015449508146951,
+              "p99AbsMetres": 8.102509668918678,
+              "p99Rank": 3658,
+              "maxAbsMetres": 14.374055453478363,
+              "minSignedMetres": -14.374055453478363,
+              "maxSignedMetres": 11.303943431893337
+            },
+            "B": {
+              "count": 3696,
+              "rmsMetres": 2.015449508146951,
+              "p99AbsMetres": 8.102509668918678,
+              "p99Rank": 3658,
+              "maxAbsMetres": 14.374055453478363,
+              "minSignedMetres": -14.374055453478363,
+              "maxSignedMetres": 11.303943431893337
+            },
+            "changes": {
+              "improved": 0,
+              "worsened": 0,
+              "equal": 3696
+            },
+            "worstObservedRegression": {
+              "streamIndex": 299460,
+              "xKm": -8.125,
+              "zKm": 0.625,
+              "AErrorMetres": -0.09331611737639633,
+              "BErrorMetres": -0.09331611737639633,
+              "absoluteErrorIncreaseMetres": 0.0
+            }
+          }
+        },
+        {
+          "bandIndex": 2,
+          "maxRadiusKm": 16.384,
+          "all": {
+            "A": {
+              "count": 52008,
+              "rmsMetres": 2.9075427057657746,
+              "p99AbsMetres": 11.719788575724088,
+              "p99Rank": 51486,
+              "maxAbsMetres": 29.407883722219363,
+              "minSignedMetres": -29.407883722219363,
+              "maxSignedMetres": 29.149309183940986
+            },
+            "B": {
+              "count": 52008,
+              "rmsMetres": 2.9075427057657746,
+              "p99AbsMetres": 11.719788575724088,
+              "p99Rank": 51486,
+              "maxAbsMetres": 29.407883722219363,
+              "minSignedMetres": -29.407883722219363,
+              "maxSignedMetres": 29.149309183940986
+            },
+            "changes": {
+              "improved": 0,
+              "worsened": 0,
+              "equal": 52008
+            },
+            "worstObservedRegression": {
+              "streamIndex": 194810,
+              "xKm": -16.375,
+              "zKm": -16.375,
+              "AErrorMetres": 0.0003255957530257092,
+              "BErrorMetres": 0.0003255957530257092,
+              "absoluteErrorIncreaseMetres": 0.0
+            }
+          },
+          "land": {
+            "A": {
+              "count": 23296,
+              "rmsMetres": 4.334224804178353,
+              "p99AbsMetres": 14.183897248177146,
+              "p99Rank": 23062,
+              "maxAbsMetres": 29.407883722219363,
+              "minSignedMetres": -29.407883722219363,
+              "maxSignedMetres": 29.149309183940986
+            },
+            "B": {
+              "count": 23296,
+              "rmsMetres": 4.334224804178353,
+              "p99AbsMetres": 14.183897248177146,
+              "p99Rank": 23062,
+              "maxAbsMetres": 29.407883722219363,
+              "minSignedMetres": -29.407883722219363,
+              "maxSignedMetres": 29.149309183940986
+            },
+            "changes": {
+              "improved": 0,
+              "worsened": 0,
+              "equal": 23296
+            },
+            "worstObservedRegression": {
+              "streamIndex": 240181,
+              "xKm": -16.375,
+              "zKm": -9.0,
+              "AErrorMetres": -0.024899285990365172,
+              "BErrorMetres": -0.024899285990365172,
+              "absoluteErrorIncreaseMetres": 0.0
+            }
+          }
+        },
+        {
+          "bandIndex": 3,
+          "maxRadiusKm": 32.768,
+          "all": {
+            "A": {
+              "count": 206456,
+              "rmsMetres": 6.064149147715923,
+              "p99AbsMetres": 22.934035676568598,
+              "p99Rank": 204390,
+              "maxAbsMetres": 68.53439660095573,
+              "minSignedMetres": -53.760431164933124,
+              "maxSignedMetres": 68.53439660095573
+            },
+            "B": {
+              "count": 206456,
+              "rmsMetres": 6.064149147715923,
+              "p99AbsMetres": 22.934035676568598,
+              "p99Rank": 204390,
+              "maxAbsMetres": 68.53439660095573,
+              "minSignedMetres": -53.760431164933124,
+              "maxSignedMetres": 68.53439660095573
+            },
+            "changes": {
+              "improved": 0,
+              "worsened": 0,
+              "equal": 206456
+            },
+            "worstObservedRegression": {
+              "streamIndex": 93940,
+              "xKm": -32.75,
+              "zKm": -32.75,
+              "AErrorMetres": 0.43153040941135146,
+              "BErrorMetres": 0.43153040941135146,
+              "absoluteErrorIncreaseMetres": 0.0
+            }
+          },
+          "land": {
+            "A": {
+              "count": 117505,
+              "rmsMetres": 8.032407346243184,
+              "p99AbsMetres": 25.875287035536765,
+              "p99Rank": 116328,
+              "maxAbsMetres": 68.53439660095573,
+              "minSignedMetres": -53.760431164933124,
+              "maxSignedMetres": 68.53439660095573
+            },
+            "B": {
+              "count": 117505,
+              "rmsMetres": 8.032407346243184,
+              "p99AbsMetres": 25.875287035536765,
+              "p99Rank": 116328,
+              "maxAbsMetres": 68.53439660095573,
+              "minSignedMetres": -53.760431164933124,
+              "maxSignedMetres": 68.53439660095573
+            },
+            "changes": {
+              "improved": 0,
+              "worsened": 0,
+              "equal": 117505
+            },
+            "worstObservedRegression": {
+              "streamIndex": 93940,
+              "xKm": -32.75,
+              "zKm": -32.75,
+              "AErrorMetres": 0.43153040941135146,
+              "BErrorMetres": 0.43153040941135146,
+              "absoluteErrorIncreaseMetres": 0.0
+            }
+          }
+        },
+        {
+          "bandIndex": 4,
+          "maxRadiusKm": 65.536,
+          "all": {
+            "A": {
+              "count": 315736,
+              "rmsMetres": 10.87514979837408,
+              "p99AbsMetres": 42.390566731131955,
+              "p99Rank": 312577,
+              "maxAbsMetres": 96.06550239192968,
+              "minSignedMetres": -96.06550239192968,
+              "maxSignedMetres": 90.42770689763469
+            },
+            "B": {
+              "count": 315736,
+              "rmsMetres": 0.00011141395162313683,
+              "p99AbsMetres": 0.0002340767979447378,
+              "p99Rank": 312577,
+              "maxAbsMetres": 0.00023841822649472988,
+              "minSignedMetres": -0.000238416825837362,
+              "maxSignedMetres": 0.00023841822649472988
+            },
+            "changes": {
+              "improved": 315709,
+              "worsened": 27,
+              "equal": 0
+            },
+            "worstObservedRegression": {
+              "streamIndex": 66048,
+              "xKm": 37.375,
+              "zKm": -37.375,
+              "AErrorMetres": -4.022027155770047e-07,
+              "BErrorMetres": 0.0002017894278338872,
+              "absoluteErrorIncreaseMetres": 0.0002013872251183102
+            }
+          },
+          "land": {
+            "A": {
+              "count": 190056,
+              "rmsMetres": 14.0110651956901,
+              "p99AbsMetres": 47.339675542473536,
+              "p99Rank": 188154,
+              "maxAbsMetres": 96.06550239192968,
+              "minSignedMetres": -96.06550239192968,
+              "maxSignedMetres": 90.42770689763469
+            },
+            "B": {
+              "count": 190056,
+              "rmsMetres": 8.988886215719692e-05,
+              "p99AbsMetres": 0.00022827785262080624,
+              "p99Rank": 188154,
+              "maxAbsMetres": 0.00023841822649472988,
+              "minSignedMetres": -0.000238416825837362,
+              "maxSignedMetres": 0.00023841822649472988
+            },
+            "changes": {
+              "improved": 190054,
+              "worsened": 2,
+              "equal": 0
+            },
+            "worstObservedRegression": {
+              "streamIndex": 65500,
+              "xKm": -31.125,
+              "zKm": -37.375,
+              "AErrorMetres": -4.5807399651209835e-05,
+              "BErrorMetres": 0.00019271953721755608,
+              "absoluteErrorIncreaseMetres": 0.00014691213756634625
+            }
+          }
+        }
+      ]
+    },
+    "holdout": {
+      "all": {
+        "A": {
+          "count": 589824,
+          "rmsMetres": 5.560346143708591,
+          "p99AbsMetres": 25.00927650918605,
+          "p99Rank": 583924,
+          "maxAbsMetres": 87.02977014615732,
+          "minSignedMetres": -83.43813179022108,
+          "maxSignedMetres": 87.02977014615732
+        },
+        "B": {
+          "count": 589824,
+          "rmsMetres": 2.5456239004566523,
+          "p99AbsMetres": 10.406288282261755,
+          "p99Rank": 583924,
+          "maxAbsMetres": 29.6560186900221,
+          "minSignedMetres": -29.6560186900221,
+          "maxSignedMetres": 27.75109520764829
+        },
+        "changes": {
+          "improved": 261501,
+          "worsened": 53747,
+          "equal": 274576
+        },
+        "worstObservedRegression": {
+          "streamIndex": 881784,
+          "xKm": -33.0625,
+          "zKm": -0.6875,
+          "AErrorMetres": 2.9382146760283945,
+          "BErrorMetres": -29.6560186900221,
+          "absoluteErrorIncreaseMetres": 26.717804013993707
+        }
+      },
+      "land": {
+        "A": {
+          "count": 334018,
+          "rmsMetres": 7.386759891967312,
+          "p99AbsMetres": 29.641118928163568,
+          "p99Rank": 330676,
+          "maxAbsMetres": 87.02977014615732,
+          "minSignedMetres": -83.43813179022108,
+          "maxSignedMetres": 87.02977014615732
+        },
+        "B": {
+          "count": 334018,
+          "rmsMetres": 3.3821611657065103,
+          "p99AbsMetres": 12.001307510825399,
+          "p99Rank": 330676,
+          "maxAbsMetres": 29.6560186900221,
+          "minSignedMetres": -29.6560186900221,
+          "maxSignedMetres": 27.75109520764829
+        },
+        "changes": {
+          "improved": 136412,
+          "worsened": 53430,
+          "equal": 144176
+        },
+        "worstObservedRegression": {
+          "streamIndex": 881784,
+          "xKm": -33.0625,
+          "zKm": -0.6875,
+          "AErrorMetres": 2.9382146760283945,
+          "BErrorMetres": -29.6560186900221,
+          "absoluteErrorIncreaseMetres": 26.717804013993707
+        }
+      },
+      "bands": [
+        {
+          "bandIndex": 0,
+          "maxRadiusKm": 4.096,
+          "all": {
+            "A": {
+              "count": 4356,
+              "rmsMetres": 0.0023775775110476817,
+              "p99AbsMetres": 0.003356487757955051,
+              "p99Rank": 4311,
+              "maxAbsMetres": 0.11786893437504276,
+              "minSignedMetres": -0.11786893437504276,
+              "maxSignedMetres": 0.0565799336524897
+            },
+            "B": {
+              "count": 4356,
+              "rmsMetres": 0.0023775775110476817,
+              "p99AbsMetres": 0.003356487757955051,
+              "p99Rank": 4311,
+              "maxAbsMetres": 0.11786893437504276,
+              "minSignedMetres": -0.11786893437504276,
+              "maxSignedMetres": 0.0565799336524897
+            },
+            "changes": {
+              "improved": 0,
+              "worsened": 0,
+              "equal": 4356
+            },
+            "worstObservedRegression": {
+              "streamIndex": 861280,
+              "xKm": -4.0625,
+              "zKm": -4.0625,
+              "AErrorMetres": 0.00016725608187329044,
+              "BErrorMetres": 0.00016725608187329044,
+              "absoluteErrorIncreaseMetres": 0.0
+            }
+          },
+          "land": {
+            "A": {
+              "count": 56,
+              "rmsMetres": 0.019770361643860437,
+              "p99AbsMetres": 0.0565799336524897,
+              "p99Rank": 54,
+              "maxAbsMetres": 0.11786893437504276,
+              "minSignedMetres": -0.11786893437504276,
+              "maxSignedMetres": 0.0565799336524897
+            },
+            "B": {
+              "count": 56,
+              "rmsMetres": 0.019770361643860437,
+              "p99AbsMetres": 0.0565799336524897,
+              "p99Rank": 54,
+              "maxAbsMetres": 0.11786893437504276,
+              "minSignedMetres": -0.11786893437504276,
+              "maxSignedMetres": 0.0565799336524897
+            },
+            "changes": {
+              "improved": 0,
+              "worsened": 0,
+              "equal": 56
+            },
+            "worstObservedRegression": {
+              "streamIndex": 906600,
+              "xKm": -3.0625,
+              "zKm": 3.3125,
+              "AErrorMetres": -0.019951374876647776,
+              "BErrorMetres": -0.019951374876647776,
+              "absoluteErrorIncreaseMetres": 0.0
+            }
+          }
+        },
+        {
+          "bandIndex": 1,
+          "maxRadiusKm": 8.192,
+          "all": {
+            "A": {
+              "count": 13068,
+              "rmsMetres": 0.11801112880547707,
+              "p99AbsMetres": 0.564352757503439,
+              "p99Rank": 12936,
+              "maxAbsMetres": 2.955731379922444,
+              "minSignedMetres": -2.955731379922444,
+              "maxSignedMetres": 1.2886178427020667
+            },
+            "B": {
+              "count": 13068,
+              "rmsMetres": 0.11801112880547707,
+              "p99AbsMetres": 0.564352757503439,
+              "p99Rank": 12936,
+              "maxAbsMetres": 2.955731379922444,
+              "minSignedMetres": -2.955731379922444,
+              "maxSignedMetres": 1.2886178427020667
+            },
+            "changes": {
+              "improved": 0,
+              "worsened": 0,
+              "equal": 13068
+            },
+            "worstObservedRegression": {
+              "streamIndex": 835903,
+              "xKm": -8.1875,
+              "zKm": -8.1875,
+              "AErrorMetres": -9.742302342630182e-05,
+              "BErrorMetres": -9.742302342630182e-05,
+              "absoluteErrorIncreaseMetres": 0.0
+            }
+          },
+          "land": {
+            "A": {
+              "count": 3818,
+              "rmsMetres": 0.21648149828933574,
+              "p99AbsMetres": 0.8760781601080403,
+              "p99Rank": 3778,
+              "maxAbsMetres": 2.955731379922444,
+              "minSignedMetres": -2.955731379922444,
+              "maxSignedMetres": 1.2886178427020667
+            },
+            "B": {
+              "count": 3818,
+              "rmsMetres": 0.21648149828933574,
+              "p99AbsMetres": 0.8760781601080403,
+              "p99Rank": 3778,
+              "maxAbsMetres": 2.955731379922444,
+              "minSignedMetres": -2.955731379922444,
+              "maxSignedMetres": 1.2886178427020667
+            },
+            "changes": {
+              "improved": 0,
+              "worsened": 0,
+              "equal": 3818
+            },
+            "worstObservedRegression": {
+              "streamIndex": 889663,
+              "xKm": -8.1875,
+              "zKm": 0.5625,
+              "AErrorMetres": 0.0029977384725654588,
+              "BErrorMetres": 0.0029977384725654588,
+              "absoluteErrorIncreaseMetres": 0.0
+            }
+          }
+        },
+        {
+          "bandIndex": 2,
+          "maxRadiusKm": 16.384,
+          "all": {
+            "A": {
+              "count": 51220,
+              "rmsMetres": 0.9939815285730188,
+              "p99AbsMetres": 4.471718387546897,
+              "p99Rank": 50706,
+              "maxAbsMetres": 19.995933568108804,
+              "minSignedMetres": -17.674928585544425,
+              "maxSignedMetres": 19.995933568108804
+            },
+            "B": {
+              "count": 51220,
+              "rmsMetres": 0.9939815285730188,
+              "p99AbsMetres": 4.471718387546897,
+              "p99Rank": 50706,
+              "maxAbsMetres": 19.995933568108804,
+              "minSignedMetres": -17.674928585544425,
+              "maxSignedMetres": 19.995933568108804
+            },
+            "changes": {
+              "improved": 0,
+              "worsened": 0,
+              "equal": 51220
+            },
+            "worstObservedRegression": {
+              "streamIndex": 785918,
+              "xKm": -16.3125,
+              "zKm": -16.3125,
+              "AErrorMetres": 0.0006202786906328583,
+              "BErrorMetres": 0.0006202786906328583,
+              "absoluteErrorIncreaseMetres": 0.0
+            }
+          },
+          "land": {
+            "A": {
+              "count": 23025,
+              "rmsMetres": 1.481095874365641,
+              "p99AbsMetres": 6.29755513011343,
+              "p99Rank": 22793,
+              "maxAbsMetres": 19.995933568108804,
+              "minSignedMetres": -17.674928585544425,
+              "maxSignedMetres": 19.995933568108804
+            },
+            "B": {
+              "count": 23025,
+              "rmsMetres": 1.481095874365641,
+              "p99AbsMetres": 6.29755513011343,
+              "p99Rank": 22793,
+              "maxAbsMetres": 19.995933568108804,
+              "minSignedMetres": -17.674928585544425,
+              "maxSignedMetres": 19.995933568108804
+            },
+            "changes": {
+              "improved": 0,
+              "worsened": 0,
+              "equal": 23025
+            },
+            "worstObservedRegression": {
+              "streamIndex": 831230,
+              "xKm": -16.3125,
+              "zKm": -8.9375,
+              "AErrorMetres": 0.0023781581983683964,
+              "BErrorMetres": 0.0023781581983683964,
+              "absoluteErrorIncreaseMetres": 0.0
+            }
+          }
+        },
+        {
+          "bandIndex": 3,
+          "maxRadiusKm": 32.768,
+          "all": {
+            "A": {
+              "count": 205932,
+              "rmsMetres": 1.9369139678231841,
+              "p99AbsMetres": 7.5918251127622405,
+              "p99Rank": 203871,
+              "maxAbsMetres": 29.395758845051745,
+              "minSignedMetres": -29.395758845051745,
+              "maxSignedMetres": 22.91205016454212
+            },
+            "B": {
+              "count": 205932,
+              "rmsMetres": 1.9369139678231841,
+              "p99AbsMetres": 7.5918251127622405,
+              "p99Rank": 203871,
+              "maxAbsMetres": 29.395758845051745,
+              "minSignedMetres": -29.395758845051745,
+              "maxSignedMetres": 22.91205016454212
+            },
+            "changes": {
+              "improved": 0,
+              "worsened": 0,
+              "equal": 205932
+            },
+            "worstObservedRegression": {
+              "streamIndex": 685179,
+              "xKm": -32.6875,
+              "zKm": -32.6875,
+              "AErrorMetres": -0.48403282825670857,
+              "BErrorMetres": -0.48403282825670857,
+              "absoluteErrorIncreaseMetres": 0.0
+            }
+          },
+          "land": {
+            "A": {
+              "count": 117277,
+              "rmsMetres": 2.565891984424621,
+              "p99AbsMetres": 8.801354143529672,
+              "p99Rank": 116103,
+              "maxAbsMetres": 29.395758845051745,
+              "minSignedMetres": -29.395758845051745,
+              "maxSignedMetres": 22.91205016454212
+            },
+            "B": {
+              "count": 117277,
+              "rmsMetres": 2.565891984424621,
+              "p99AbsMetres": 8.801354143529672,
+              "p99Rank": 116103,
+              "maxAbsMetres": 29.395758845051745,
+              "minSignedMetres": -29.395758845051745,
+              "maxSignedMetres": 22.91205016454212
+            },
+            "changes": {
+              "improved": 0,
+              "worsened": 0,
+              "equal": 117277
+            },
+            "worstObservedRegression": {
+              "streamIndex": 685179,
+              "xKm": -32.6875,
+              "zKm": -32.6875,
+              "AErrorMetres": -0.48403282825670857,
+              "BErrorMetres": -0.48403282825670857,
+              "absoluteErrorIncreaseMetres": 0.0
+            }
+          }
+        },
+        {
+          "bandIndex": 4,
+          "maxRadiusKm": 65.536,
+          "all": {
+            "A": {
+              "count": 315248,
+              "rmsMetres": 7.431974315123713,
+              "p99AbsMetres": 30.110169644209872,
+              "p99Rank": 312094,
+              "maxAbsMetres": 87.02977014615732,
+              "minSignedMetres": -83.43813179022108,
+              "maxSignedMetres": 87.02977014615732
+            },
+            "B": {
+              "count": 315248,
+              "rmsMetres": 3.0842404340635023,
+              "p99AbsMetres": 11.875910082388863,
+              "p99Rank": 312094,
+              "maxAbsMetres": 29.6560186900221,
+              "minSignedMetres": -29.6560186900221,
+              "maxSignedMetres": 27.75109520764829
+            },
+            "changes": {
+              "improved": 261501,
+              "worsened": 53747,
+              "equal": 0
+            },
+            "worstObservedRegression": {
+              "streamIndex": 881784,
+              "xKm": -33.0625,
+              "zKm": -0.6875,
+              "AErrorMetres": 2.9382146760283945,
+              "BErrorMetres": -29.6560186900221,
+              "absoluteErrorIncreaseMetres": 26.717804013993707
+            }
+          },
+          "land": {
+            "A": {
+              "count": 189842,
+              "rmsMetres": 9.574390117515778,
+              "p99AbsMetres": 34.261738526289776,
+              "p99Rank": 187942,
+              "maxAbsMetres": 87.02977014615732,
+              "minSignedMetres": -83.43813179022108,
+              "maxSignedMetres": 87.02977014615732
+            },
+            "B": {
+              "count": 189842,
+              "rmsMetres": 3.973938560519198,
+              "p99AbsMetres": 13.28205319076714,
+              "p99Rank": 187942,
+              "maxAbsMetres": 29.6560186900221,
+              "minSignedMetres": -29.6560186900221,
+              "maxSignedMetres": 27.75109520764829
+            },
+            "changes": {
+              "improved": 136412,
+              "worsened": 53430,
+              "equal": 0
+            },
+            "worstObservedRegression": {
+              "streamIndex": 881784,
+              "xKm": -33.0625,
+              "zKm": -0.6875,
+              "AErrorMetres": 2.9382146760283945,
+              "BErrorMetres": -29.6560186900221,
+              "absoluteErrorIncreaseMetres": 26.717804013993707
+            }
+          }
+        }
+      ]
+    }
+  },
+  "identity": {
+    "innerIdentity": {
+      "triangles": 620910,
+      "xyzSurfaceTriangleSHA256": "3f069cfef0bc1c91241e12a2e048bf97ea9e079b6d07b4cda436c5856593261d"
+    },
+    "outerIdentity": {
+      "triangles": 460149,
+      "xyzSurfaceTriangleSHA256": "90e27b7d9bd0c56663b3c0c9723c6317913dc75088e37ce7abeb0d3264fcbfb4"
+    }
+  },
+  "probes": {
+    "innerMatch": true,
+    "outerMatch": true,
+    "innerCount": 5,
+    "outerCount": 5,
+    "seamCount": 32,
+    "seamMaxAbsDeltaKm": 4.440892098500626e-16
+  },
+  "regionParity": {
+    "nearFitByteExact": 275625,
+    "nearHoldoutByteExact": 274576,
+    "farHoldoutCount": 313148,
+    "farHoldoutMaxAbsDeltaScalarMetres": 0
+  },
+  "resources": [
+    {
+      "mode": "A",
+      "status": "PASS_EXECUTION_AND_PARITY_ONLY",
+      "error": null,
+      "launched": true,
+      "terminalObserved": true,
+      "exitCode": 0,
+      "wallKilled": false,
+      "childCPUSeconds": 3.666785,
+      "childWallSeconds": 3.3310504580149427,
+      "terminalChildPeakRSSBytes": 1196032000,
+      "limits": {
+        "cpuSeconds": 20,
+        "wallSeconds": 30,
+        "terminalRSSBytes": 1610612736
+      },
+      "RSSScope": "Darwin wait4 bytes for this child; terminal gate, not allocation limit. No AS/ps.",
+      "scope": "Execution, source stability, invariants and A parity only; independent saved-stream analysis decides geometry benefit.",
+      "resultSHA256": "30a99d855c0c10a9b29d2ad4a629d61efa98b8d24cb49907a6788e704d9a1a97"
+    },
+    {
+      "mode": "B",
+      "status": "FAIL",
+      "error": "RuntimeError: Child terminal resource gate failed",
+      "launched": true,
+      "terminalObserved": true,
+      "exitCode": 0,
+      "wallKilled": false,
+      "childCPUSeconds": 6.9122330000000005,
+      "childWallSeconds": 6.295945249963552,
+      "terminalChildPeakRSSBytes": 1740881920,
+      "limits": {
+        "cpuSeconds": 20,
+        "wallSeconds": 30,
+        "terminalRSSBytes": 1610612736
+      },
+      "RSSScope": "Darwin wait4 bytes for this child; terminal gate, not allocation limit. No AS/ps.",
+      "scope": "Execution, source stability, invariants and A parity only; independent saved-stream analysis decides geometry benefit.",
+      "resultSHA256": "f12d6c0225c65c40c5fa6b5d345509a5d8d6cb5711b2fa2a1d5c095cf25defb8"
+    }
+  ],
+  "BMesh": {
+    "vertices": 858119,
+    "triangles": 1715212,
+    "stitchedCells": 3584,
+    "levels": 9,
+    "cellsPerSide": 256,
+    "baseSpacingKm": 0.032,
+    "outerExtentKm": 1048.576,
+    "geometryBytes": 48042352,
+    "sampleCalls": 1498885,
+    "minimumHeightKm": 0,
+    "maximumHeightKm": 3.0260982513427734,
+    "normalBlendStartRadiusKm": 32.768,
+    "normalBlendEndRadiusKm": 65.536,
+    "normalMode": "geometry",
+    "sourcePatch": {
+      "coreHalfExtentKm": 48,
+      "outerCutKm": 48.12799835205078,
+      "sourceSpacingKm": 0.125,
+      "retainedInnerHalfExtentKm": 32.768001556396484,
+      "sourceHoleHalfExtentKm": 32.875,
+      "sourceVertices": 315736,
+      "sourceTriangles": 626296,
+      "innerVertices": 311218,
+      "innerTriangles": 620910,
+      "outerVertices": 231165,
+      "outerTriangles": 460149,
+      "innerSeamTriangles": 3628,
+      "outerSeamTriangles": 4229,
+      "seamTriangles": 7857,
+      "newSampleCalls": 315736,
+      "lookupBytes": 3060396,
+      "prePatchSampleCalls": 1183149,
+      "prePatchStitchedCells": 4096,
+      "prePatchRefinement": {
+        "originalVertices": 465409,
+        "originalTriangles": 929792,
+        "probeSampleCalls": 591361,
+        "vertexSampleCalls": 591788,
+        "totalSampleCalls": 1183149,
+        "nodesAboveThreshold": 209659,
+        "eligibleNodesAboveThreshold": 209488,
+        "markedRedFaces": 69833,
+        "greenFaces": 21853,
+        "splitEdgeCount": 126379,
+        "addedVertices": 126379,
+        "addedTriangles": 252758,
+        "addedGeometryBytes": 7077224,
+        "sourceSpacingKm": 0.125,
+        "maxErrorKm": 0.005,
+        "sourceGrid": {
+          "minXKm": -64,
+          "minZKm": -64,
+          "spacingKm": 0.125,
+          "columns": 1025,
+          "rows": 1025
+        },
+        "selectionDomain": {
+          "minXKm": -48,
+          "maxXKm": 48,
+          "minZKm": -48,
+          "maxZKm": 48
+        },
+        "selectedNodeColumns": 769,
+        "selectedNodeRows": 769,
+        "originalFacesBySplitEdgeCount": [
+          838106,
+          7390,
+          7520,
+          76776
+        ],
+        "maximumCellTriangles": 20,
+        "cellTriangleCountBytes": 589824,
+        "midpointVerticesOutsideDomain": 405,
+        "boundsKm": {
+          "min": [
+            -1048.5760498046875,
+            -178.98373413085938,
+            -1048.5760498046875
+          ],
+          "max": [
+            1048.5760498046875,
+            -1.675218939781189,
+            1048.5760498046875
+          ]
+        }
+      }
+    }
+  },
+  "inputSHA256": {
+    "AResult": "30a99d855c0c10a9b29d2ad4a629d61efa98b8d24cb49907a6788e704d9a1a97",
+    "BResult": "f12d6c0225c65c40c5fa6b5d345509a5d8d6cb5711b2fa2a1d5c095cf25defb8",
+    "ARaw": "ef4836dae907207f904b851db56404df9f5cc40e370f56852246d9b2aac2189d",
+    "BRaw": "ff89b192199a6ffe766ff49090d342c09b302715aab5d216ce0a04afdc9a461f",
+    "DEM": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "status": "FAIL_STOPPED",
+  "freezeSHA256": "dc62ef00bb270432b7a6b0a29d7cb1b8dd00c1925f735e1583a291d685820fbf",
+  "children": [
+    {
+      "mode": "B",
+      "status": "FAIL",
+      "error": "RuntimeError: Child terminal resource gate failed",
+      "launched": true,
+      "terminalObserved": true,
+      "exitCode": 0,
+      "wallKilled": false,
+      "childCPUSeconds": 6.020296,
+      "childWallSeconds": 5.409140666015446,
+      "terminalChildPeakRSSBytes": 1634467840,
+      "limits": {
+        "cpuSeconds": 20,
+        "wallSeconds": 30,
+        "terminalRSSBytes": 1610612736
+      },
+      "RSSScope": "Darwin wait4 bytes for this child; terminal gate, not allocation limit. No AS/ps.",
+      "scope": "Execution, source stability, invariants and A parity only; independent saved-stream analysis decides geometry benefit.",
+      "resultSHA256": "2fb4bda5748dcca0a2b76378691298049e96eb998468bc8ffcf038e12c47fe7e"
+    }
+  ],
+  "reusedAResult": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/run/A/result.json",
+  "reusedAReason": "Authenticated actual A from preserved previous run; unchanged source OFF and complete six buffers/F64 pin. No new A launch.",
+  "launcherCPUSeconds": 0.11706099999999998,
+  "launcherWallSeconds": 5.525667625013739,
+  "launcherPeakRSSBytes": 27852800,
+  "noRetry": true,
+  "noConcurrentMeshes": true,
+  "noGPU": true
+}

@@ -1,0 +1,1 @@
+{"status":"COMPLETE_SCALAR_HOLDOUT_ONLY","gate":{"checks":{"landRMSStrictlyLower":true,"globalP99NotHigher":true,"globalMaxNotHigher":true},"pass":true,"status":"PASS_NECESSARY_HOLDOUT_ONLY"},"rawSHA256":"81b2e470cd4a9b48feb7bf9037b98d56ce107872fc6a98c4e37549c9e2d8db35"}

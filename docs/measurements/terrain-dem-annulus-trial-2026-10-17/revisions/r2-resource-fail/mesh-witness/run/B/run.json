@@ -1,0 +1,20 @@
+{
+  "mode": "B",
+  "status": "FAIL",
+  "error": "RuntimeError: Child terminal resource gate failed",
+  "launched": true,
+  "terminalObserved": true,
+  "exitCode": 0,
+  "wallKilled": false,
+  "childCPUSeconds": 6.9122330000000005,
+  "childWallSeconds": 6.295945249963552,
+  "terminalChildPeakRSSBytes": 1740881920,
+  "limits": {
+    "cpuSeconds": 20,
+    "wallSeconds": 30,
+    "terminalRSSBytes": 1610612736
+  },
+  "RSSScope": "Darwin wait4 bytes for this child; terminal gate, not allocation limit. No AS/ps.",
+  "scope": "Execution, source stability, invariants and A parity only; independent saved-stream analysis decides geometry benefit.",
+  "resultSHA256": "f12d6c0225c65c40c5fa6b5d345509a5d8d6cb5711b2fa2a1d5c095cf25defb8"
+}

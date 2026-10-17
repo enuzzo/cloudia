@@ -1,0 +1,631 @@
+{
+  "scope": "Exact evidence and five source deltas; no runtime caches or full source duplicate. Original external manifests may include excluded regenerable cache entries; archive MANIFEST is authoritative for packaged files.",
+  "files": [
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/dem-patch-scalar/PRE-RUN-FREEZE.json",
+      "archive": "dem-patch-scalar/PRE-RUN-FREEZE.json",
+      "sha256": "fc5005ab2b685a6474665b525f0da7421f5f2825ea7e9b67360faa3b865e6e16"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/dem-patch-scalar/PROTOCOL.md",
+      "archive": "dem-patch-scalar/PROTOCOL.md",
+      "sha256": "26ecafe12ce3b898d46fe7e55e86241aac62dedf8eac3c4ac4281afcef6a3cb4"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/dem-patch-scalar/run/errors.f64le.gz",
+      "archive": "dem-patch-scalar/run/errors.f64le.gz",
+      "sha256": "241d51fcf865aee737895e048848bf38eb663455e6d4b9f9e0db602262c4547b"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/dem-patch-scalar/run/execution.json",
+      "archive": "dem-patch-scalar/run/execution.json",
+      "sha256": "ba9d2c2a2214ae033a7f7f734acb610aa007c1750219d183ef4ec518d64d3d95"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/dem-patch-scalar/run/result.json",
+      "archive": "dem-patch-scalar/run/result.json",
+      "sha256": "e5fd704fed9e1c06a496083f824b5ae168b4ce2bc0f48aedb07604493c18e6b1"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/dem-patch-scalar/run/stderr.log",
+      "archive": "dem-patch-scalar/run/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/dem-patch-scalar/run/stdout.log",
+      "archive": "dem-patch-scalar/run/stdout.log",
+      "sha256": "c513cba607c72bd07d991174190cd5ec2068c61913f6502c8b55f2ddae5f3f5d"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/dem-patch-scalar/run.py",
+      "archive": "dem-patch-scalar/run.py",
+      "sha256": "ac1029af2aee3d481cc4a7765569bed81b8fcedb650602e6cc6aa38f1bc52188"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/dem-patch-scalar/witness.ts",
+      "archive": "dem-patch-scalar/witness.ts",
+      "sha256": "fce5b33c9fdb0b04dfbc42dca5bde573393a03b2d956b2867e9dd6cc178a018d"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/mesh-witness/MEMORY-REVISION.md",
+      "archive": "mesh-witness/MEMORY-REVISION.md",
+      "sha256": "ca02624a6ec84662650f55edf3ad59a722df4b289d9cbfa474180e923ec14ad0"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/mesh-witness/POINTS.json",
+      "archive": "mesh-witness/POINTS.json",
+      "sha256": "9cd4e10be6a6a66d21c550e9701a3fc0c003f645cf72196235592684e2340660"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/mesh-witness/PRE-RUN-FREEZE-PRE-FIXTURE.json",
+      "archive": "mesh-witness/PRE-RUN-FREEZE-PRE-FIXTURE.json",
+      "sha256": "4f24b742ef6663cfd16d5fd3ab9978b3922da29017d5b5a7cbf08ab5ed454a85"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/mesh-witness/PRE-RUN-FREEZE-RESOURCE-FAIL.json",
+      "archive": "mesh-witness/PRE-RUN-FREEZE-RESOURCE-FAIL.json",
+      "sha256": "2ec5aac86f440e792023b56d95d013786d20e953b06516246a86f8c6c49c66c8"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/mesh-witness/PRE-RUN-FREEZE.json",
+      "archive": "mesh-witness/PRE-RUN-FREEZE.json",
+      "sha256": "dc62ef00bb270432b7a6b0a29d7cb1b8dd00c1925f735e1583a291d685820fbf"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/mesh-witness/PROTOCOL-DRAFT.md",
+      "archive": "mesh-witness/PROTOCOL-DRAFT.md",
+      "sha256": "347e7999cabc193028a275cacd0380ebb5c8c1577120f37cf6599b1e6ae0ab3a"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/mesh-witness/freeze.py",
+      "archive": "mesh-witness/freeze.py",
+      "sha256": "b7388af8f349f76475935b85483d14f7a61d035489946b57b13d94bc4c59844f"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/mesh-witness/run/B/errors.f64le.gz",
+      "archive": "mesh-witness/run/B/errors.f64le.gz",
+      "sha256": "cb3e8707ee3d6ecbeda5a54c68176792b1ad4a8c27038b044f05fc36ea7b0aa7"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/mesh-witness/run/B/launcher-error.log",
+      "archive": "mesh-witness/run/B/launcher-error.log",
+      "sha256": "b8b413ab294b31c0fa84ab51b975809ebaab2f053dd3cdbe60242c7cd503aaf7"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/mesh-witness/run/B/result.json",
+      "archive": "mesh-witness/run/B/result.json",
+      "sha256": "2fb4bda5748dcca0a2b76378691298049e96eb998468bc8ffcf038e12c47fe7e"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/mesh-witness/run/B/run.json",
+      "archive": "mesh-witness/run/B/run.json",
+      "sha256": "e42d2cc57e2dacfe6ea2f1713e33f069a121ba09e1bd190a7601adefd294a7d7"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/mesh-witness/run/B/stderr.log",
+      "archive": "mesh-witness/run/B/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/mesh-witness/run/B/stdout.log",
+      "archive": "mesh-witness/run/B/stdout.log",
+      "sha256": "7c2605b830ceaf1f246ad9c5e08d017b884b57eccc2e58136b4f89e11cdc52ac"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/mesh-witness/run/execution.json",
+      "archive": "mesh-witness/run/execution.json",
+      "sha256": "07608dfa20a3b043c915f28eabeb8f04e8f4d4bec2e3bafadab5cec2d29d357a"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/mesh-witness/run.py",
+      "archive": "mesh-witness/run.py",
+      "sha256": "985bb02f64d1054d5228770b37a4a01aa4ad885229c4f8acf9e3121e00ba100b"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/mesh-witness/witness.ts",
+      "archive": "mesh-witness/witness.ts",
+      "sha256": "c74e6187eb46504c303ea8787cfd301e074d183b0417ce3bcb66f52080d7fd53"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/dem-patch-scalar-fixed-bands.json",
+      "archive": "review/dem-patch-scalar-fixed-bands.json",
+      "sha256": "e07ba28ee43ca75cf2563614687708254b19bced24788364e6987ec90eea471e"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/dem-patch-scalar-independent-data.json",
+      "archive": "review/dem-patch-scalar-independent-data.json",
+      "sha256": "f093d8755c8aad4ff0c3d85b49b5adc3429d87b88f7d62f03c6d2bf6b2b3b24f"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/dem-patch-scalar-result-independent.md",
+      "archive": "review/dem-patch-scalar-result-independent.md",
+      "sha256": "246fd3980ea9e068453278d82519778511ac0e28b764cebb9a650b45e78378c7"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/dem-patch-scalar-static.md",
+      "archive": "review/dem-patch-scalar-static.md",
+      "sha256": "160589046f25dd540050b3930d0a7ba122a63a7d6d91d635c22f6a5c44a1960b"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/fixture-selector-correction.json",
+      "archive": "review/fixture-selector-correction.json",
+      "sha256": "9a018d2f9429055a01eb2fe4024cde7f153b716d01d4f541e4d3deaf8587699d"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/fixture-selector-correction.patch",
+      "archive": "review/fixture-selector-correction.patch",
+      "sha256": "0d58de111e580d1e47a2a3fd9d9bdcd823a9fe419db2169e65647788f68325ec"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/fps-next-action.md",
+      "archive": "review/fps-next-action.md",
+      "sha256": "a49e65715e6b019a250cfa79ea8ed4e2fb3df958baff355d311c7cac5e5d15fb"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/memory-revision-resource-verdict.md",
+      "archive": "review/memory-revision-resource-verdict.md",
+      "sha256": "2cc4debfec5a9283e99748af2b007397f87f9d451e5392fb677a9efb90cff474"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/memory-static-independent.md",
+      "archive": "review/memory-static-independent.md",
+      "sha256": "b853b0bc87dbf89fa31b6dfc1e6803a0d046db8e989330d434cb71a37ca71e0e"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/memory-witness-revision-static.md",
+      "archive": "review/memory-witness-revision-static.md",
+      "sha256": "bfb1a78757b04041274bd637de1c6ff7b6678f7247f05d72d20b09702b1695b4"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/mesh-witness-static-review.md",
+      "archive": "review/mesh-witness-static-review.md",
+      "sha256": "7f34f3e2dee51f4df0271a69dc55d18b014f255c2db2de1580bc72e17d7fb810"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/patch-integration-outline-before-scalar.md",
+      "archive": "review/patch-integration-outline-before-scalar.md",
+      "sha256": "bc4f97794172393ef74d01c76c816cf960a3317900e4f5d3b65de22cd88a45d4"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/root-before-scalar.md",
+      "archive": "review/root-before-scalar.md",
+      "sha256": "b49a8ac346540df4d08fc58f4b6829c2baa9ba9ec4fc22561545d21c859542c6"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/source-patch-implementation-freeze.json",
+      "archive": "review/source-patch-implementation-freeze.json",
+      "sha256": "2b7c7106b1a52aaed1b1233cc38efbfdfdfb26f347292f140ab69b18712f0b64"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/source-patch-implementation-r2-freeze.json",
+      "archive": "review/source-patch-implementation-r2-freeze.json",
+      "sha256": "1d9418061285dd7ded2fd116816fe6de52763af80b59ac0b5ddc723a895f577e"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/source-patch-implementation.md",
+      "archive": "review/source-patch-implementation.md",
+      "sha256": "e8e5c1af1773895c06aa616d3fa9d800cc45358e8c4dd4a79a6d47b18dbc7186"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/source-patch-r2-feasibility.md",
+      "archive": "review/source-patch-r2-feasibility.md",
+      "sha256": "d0bb79a1d1aa6467d5aa57d75418ac80f574508e7f385446b3cfd205f57427cd"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/source-patch-r2-integrated-static.md",
+      "archive": "review/source-patch-r2-integrated-static.md",
+      "sha256": "0d204c880fa25a7e791febe7e08c79d32c392ca45617e27625d5f9e691f5ac9f"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/source-patch-r2-result-independent.md",
+      "archive": "review/source-patch-r2-result-independent.md",
+      "sha256": "c5c10a74ce410b15135dfa6a2394eb01f3ab606908ada5006cae85bf143464c7"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/source-patch-r2-saved-data.json",
+      "archive": "review/source-patch-r2-saved-data.json",
+      "sha256": "f70c998c8d4a9b253efc8594816e785c80b70d7a4c7387193f3e8220810a8516"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/source-patch-r2-test-selector-addendum.md",
+      "archive": "review/source-patch-r2-test-selector-addendum.md",
+      "sha256": "af06d5f771457e5c6d4bbfe3cddc205236f64a197cd412b5142a9fe9a6007e9d"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-before-fixture-predicate-correction/MANIFEST.json",
+      "archive": "revisions/r2-before-fixture-predicate-correction/MANIFEST.json",
+      "sha256": "3b38609ea24b14e7036bb1450c36da75ddb9fb489849beadc4a641ae1e067c47"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-before-fixture-predicate-correction/README.md",
+      "archive": "revisions/r2-before-fixture-predicate-correction/README.md",
+      "sha256": "188bb058627b31008d45a7d40efd5cdf6f08649a9079a3787b582cbad66c01a3"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-before-fixture-predicate-correction/mesh-witness/PRE-RUN-FREEZE.json",
+      "archive": "revisions/r2-before-fixture-predicate-correction/mesh-witness/PRE-RUN-FREEZE.json",
+      "sha256": "4f24b742ef6663cfd16d5fd3ab9978b3922da29017d5b5a7cbf08ab5ed454a85"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-before-fixture-predicate-correction/patch-source/src/cumulonimbus/terrainSourcePatch.test.ts",
+      "archive": "revisions/r2-before-fixture-predicate-correction/patch-source/src/cumulonimbus/terrainSourcePatch.test.ts",
+      "sha256": "612d71ddbbe1184eea1c50a476227d53feb5afd6926520b6d51652c451c8c18a"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-before-fixture-predicate-correction/review/source-patch-implementation-r2-freeze.json",
+      "archive": "revisions/r2-before-fixture-predicate-correction/review/source-patch-implementation-r2-freeze.json",
+      "sha256": "1d9418061285dd7ded2fd116816fe6de52763af80b59ac0b5ddc723a895f577e"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-before-fixture-predicate-correction/review/source-patch-r2-integrated-static.md",
+      "archive": "revisions/r2-before-fixture-predicate-correction/review/source-patch-r2-integrated-static.md",
+      "sha256": "0d204c880fa25a7e791febe7e08c79d32c392ca45617e27625d5f9e691f5ac9f"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-before-fixture-predicate-correction/run/SOURCE-FREEZE-R2.json",
+      "archive": "revisions/r2-before-fixture-predicate-correction/run/SOURCE-FREEZE-R2.json",
+      "sha256": "90c9ef5b1220e6caee248d54479c1d6c13d4884c2fef38fe60f6454bdd49a7a5"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-before-fixture-predicate-correction/run/tests-r2-receipt.json",
+      "archive": "revisions/r2-before-fixture-predicate-correction/run/tests-r2-receipt.json",
+      "sha256": "374429bc1787e40cf6d528f5666aee84e0a361a8661d8620163240811b627942"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-before-fixture-predicate-correction/run/tests-r2.log",
+      "archive": "revisions/r2-before-fixture-predicate-correction/run/tests-r2.log",
+      "sha256": "b05ec031c74ea444a4ea4dfa09ffae776f2d3261075c2e31e56368c0d3735461"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-before-fixture-predicate-correction/run/typecheck-r2.log",
+      "archive": "revisions/r2-before-fixture-predicate-correction/run/typecheck-r2.log",
+      "sha256": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/MANIFEST.json",
+      "archive": "revisions/r2-resource-fail/MANIFEST.json",
+      "sha256": "952501756840bae3461a55ca9e16a5e92166ae400f461ce75c2fd4a6fee7b164"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/README.md",
+      "archive": "revisions/r2-resource-fail/README.md",
+      "sha256": "3e61ef8f05dcec57a26dc4df23a78c409415e919d103b013e4b5a54cdc035212"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/POINTS.json",
+      "archive": "revisions/r2-resource-fail/mesh-witness/POINTS.json",
+      "sha256": "9cd4e10be6a6a66d21c550e9701a3fc0c003f645cf72196235592684e2340660"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/PRE-RUN-FREEZE-PRE-FIXTURE.json",
+      "archive": "revisions/r2-resource-fail/mesh-witness/PRE-RUN-FREEZE-PRE-FIXTURE.json",
+      "sha256": "4f24b742ef6663cfd16d5fd3ab9978b3922da29017d5b5a7cbf08ab5ed454a85"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/PRE-RUN-FREEZE.json",
+      "archive": "revisions/r2-resource-fail/mesh-witness/PRE-RUN-FREEZE.json",
+      "sha256": "2ec5aac86f440e792023b56d95d013786d20e953b06516246a86f8c6c49c66c8"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/PROTOCOL-DRAFT.md",
+      "archive": "revisions/r2-resource-fail/mesh-witness/PROTOCOL-DRAFT.md",
+      "sha256": "39be6bda8628bde74f72aa702f00ad2c9fb956f39fc1f6dac27321ab19258426"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/freeze.py",
+      "archive": "revisions/r2-resource-fail/mesh-witness/freeze.py",
+      "sha256": "6bb64ce4158911a7d50e3193337686185cb5eeaf45c43daf18aa73480662df36"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/run/A/errors.f64le.gz",
+      "archive": "revisions/r2-resource-fail/mesh-witness/run/A/errors.f64le.gz",
+      "sha256": "7a2825569bad7e57b954886307f5218e2abebaeeb3b0a6a28e18713e377cf227"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/run/A/result.json",
+      "archive": "revisions/r2-resource-fail/mesh-witness/run/A/result.json",
+      "sha256": "30a99d855c0c10a9b29d2ad4a629d61efa98b8d24cb49907a6788e704d9a1a97"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/run/A/run.json",
+      "archive": "revisions/r2-resource-fail/mesh-witness/run/A/run.json",
+      "sha256": "d113d31b26a85393acad9744d0f43690367f5b5ce892cd3c63e4fb6bdc37c1d4"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/run/A/stderr.log",
+      "archive": "revisions/r2-resource-fail/mesh-witness/run/A/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/run/A/stdout.log",
+      "archive": "revisions/r2-resource-fail/mesh-witness/run/A/stdout.log",
+      "sha256": "c1875250bd5b9506bf8cd666926a4608c4d1086535de5d09940a16a617a14579"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/run/B/errors.f64le.gz",
+      "archive": "revisions/r2-resource-fail/mesh-witness/run/B/errors.f64le.gz",
+      "sha256": "cb3e8707ee3d6ecbeda5a54c68176792b1ad4a8c27038b044f05fc36ea7b0aa7"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/run/B/launcher-error.log",
+      "archive": "revisions/r2-resource-fail/mesh-witness/run/B/launcher-error.log",
+      "sha256": "7faed9ab620f928dc709fcb07e39f7d75dc1d749e3f23129d4e9e32edf857732"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/run/B/result.json",
+      "archive": "revisions/r2-resource-fail/mesh-witness/run/B/result.json",
+      "sha256": "f12d6c0225c65c40c5fa6b5d345509a5d8d6cb5711b2fa2a1d5c095cf25defb8"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/run/B/run.json",
+      "archive": "revisions/r2-resource-fail/mesh-witness/run/B/run.json",
+      "sha256": "e53acd26e4249803acbcccfb8ca764b52d8ca0889482bbb27d88a155ab2decf8"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/run/B/stderr.log",
+      "archive": "revisions/r2-resource-fail/mesh-witness/run/B/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/run/B/stdout.log",
+      "archive": "revisions/r2-resource-fail/mesh-witness/run/B/stdout.log",
+      "sha256": "7c2605b830ceaf1f246ad9c5e08d017b884b57eccc2e58136b4f89e11cdc52ac"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/run/execution.json",
+      "archive": "revisions/r2-resource-fail/mesh-witness/run/execution.json",
+      "sha256": "f8c9b445e50ac9aba6c5795a12c09d28f3c0341ec1847bf7e264519a4f712fd1"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/run.py",
+      "archive": "revisions/r2-resource-fail/mesh-witness/run.py",
+      "sha256": "42bb3371ab6a94935105a7e0fb2a062fea128311c84730f1cc7c057e48660b9b"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/mesh-witness/witness.ts",
+      "archive": "revisions/r2-resource-fail/mesh-witness/witness.ts",
+      "sha256": "597dfa5e9251911ccef4734aa88779f03b434c9f4d52f024d545f15709900f75"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/overlay/src/cumulonimbus/GPUSceneEngine.ts",
+      "archive": "revisions/r2-resource-fail/overlay/src/cumulonimbus/GPUSceneEngine.ts",
+      "sha256": "e549f76942f312ddb95f133704168664eb33e7db36a8fae9b381e39fb73f3787"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/overlay/src/cumulonimbus/lifecycle.test.ts",
+      "archive": "revisions/r2-resource-fail/overlay/src/cumulonimbus/lifecycle.test.ts",
+      "sha256": "a2e7ba22637c209740aeda884b4c6aacc4a088c76963c17e0b3c6d2dc34f90c1"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/overlay/src/cumulonimbus/terrainMesh.ts",
+      "archive": "revisions/r2-resource-fail/overlay/src/cumulonimbus/terrainMesh.ts",
+      "sha256": "fe04355e93aa331092e545bc4e8d4012c9e6373a66b9a9c35bc3690505d81f8e"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/overlay/src/cumulonimbus/terrainSourcePatch.test.ts",
+      "archive": "revisions/r2-resource-fail/overlay/src/cumulonimbus/terrainSourcePatch.test.ts",
+      "sha256": "57c88030300e62bf4a15e66ee896bc95666bb2d8d68643ffc149409d4bfcbf43"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/overlay/src/cumulonimbus/terrainSourcePatch.ts",
+      "archive": "revisions/r2-resource-fail/overlay/src/cumulonimbus/terrainSourcePatch.ts",
+      "sha256": "d27e8ed82b8e8ffab762b20d752c54e3ee5337138ad0c806b5bbc28372bb71e2"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/review/source-patch-implementation-r2-freeze.json",
+      "archive": "revisions/r2-resource-fail/review/source-patch-implementation-r2-freeze.json",
+      "sha256": "1d9418061285dd7ded2fd116816fe6de52763af80b59ac0b5ddc723a895f577e"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/review/source-patch-r2-integrated-static.md",
+      "archive": "revisions/r2-resource-fail/review/source-patch-r2-integrated-static.md",
+      "sha256": "0d204c880fa25a7e791febe7e08c79d32c392ca45617e27625d5f9e691f5ac9f"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/r2-resource-fail/run/SOURCE-FREEZE-R2.json",
+      "archive": "revisions/r2-resource-fail/run/SOURCE-FREEZE-R2.json",
+      "sha256": "ee5c9d7747a27a100cc4faa04cd7748ac6a5afa743295eab39973d42f40b6fb5"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/uniform-r1-before-banded-qualification/MANIFEST.json",
+      "archive": "revisions/uniform-r1-before-banded-qualification/MANIFEST.json",
+      "sha256": "355718082ddf93f2fa18e86b7a42629f45a23b2978f28f67f2a7901a261591d5"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/uniform-r1-before-banded-qualification/README.md",
+      "archive": "revisions/uniform-r1-before-banded-qualification/README.md",
+      "sha256": "beffa118ecb413315fde3bd84fab6348e0f5e77c08548185092acd9cde435353"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/uniform-r1-before-banded-qualification/mesh-witness/POINTS.json",
+      "archive": "revisions/uniform-r1-before-banded-qualification/mesh-witness/POINTS.json",
+      "sha256": "9cd4e10be6a6a66d21c550e9701a3fc0c003f645cf72196235592684e2340660"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/uniform-r1-before-banded-qualification/mesh-witness/PROTOCOL-DRAFT.md",
+      "archive": "revisions/uniform-r1-before-banded-qualification/mesh-witness/PROTOCOL-DRAFT.md",
+      "sha256": "c04f9ce0b85ede05bc128e9c98c478861ced44c017e29e44b454a140f5696e19"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/uniform-r1-before-banded-qualification/mesh-witness/run.py",
+      "archive": "revisions/uniform-r1-before-banded-qualification/mesh-witness/run.py",
+      "sha256": "303a6c1ad35a1c92b0e98e4c8e8136a8380ac0b5a6b896317095100556a934ae"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/uniform-r1-before-banded-qualification/mesh-witness/witness.ts",
+      "archive": "revisions/uniform-r1-before-banded-qualification/mesh-witness/witness.ts",
+      "sha256": "ec94f2c641e2ceb8f5c6fc945fcfd701761e5c8d11af9122c46ebefbf31df322"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/uniform-r1-before-banded-qualification/overlay/src/cumulonimbus/GPUSceneEngine.ts",
+      "archive": "revisions/uniform-r1-before-banded-qualification/overlay/src/cumulonimbus/GPUSceneEngine.ts",
+      "sha256": "d5a9f959200ff1e82a719e06342ecb31facf34ff08319ac0b1dc43c322c7ef15"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/uniform-r1-before-banded-qualification/overlay/src/cumulonimbus/lifecycle.test.ts",
+      "archive": "revisions/uniform-r1-before-banded-qualification/overlay/src/cumulonimbus/lifecycle.test.ts",
+      "sha256": "91503f81679637a0ebbefb85b6330e07891da66a2542caf1822942c27b77299b"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/uniform-r1-before-banded-qualification/overlay/src/cumulonimbus/terrainMesh.ts",
+      "archive": "revisions/uniform-r1-before-banded-qualification/overlay/src/cumulonimbus/terrainMesh.ts",
+      "sha256": "fe04355e93aa331092e545bc4e8d4012c9e6373a66b9a9c35bc3690505d81f8e"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/uniform-r1-before-banded-qualification/overlay/src/cumulonimbus/terrainSourcePatch.test.ts",
+      "archive": "revisions/uniform-r1-before-banded-qualification/overlay/src/cumulonimbus/terrainSourcePatch.test.ts",
+      "sha256": "cc2dcec064ec03aa8eb3ecb1c9d01f406bae1729249947deeec63a3665401159"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/uniform-r1-before-banded-qualification/overlay/src/cumulonimbus/terrainSourcePatch.ts",
+      "archive": "revisions/uniform-r1-before-banded-qualification/overlay/src/cumulonimbus/terrainSourcePatch.ts",
+      "sha256": "67acf2ca38deba45569d1b5b97e79a8980f97d0368c0026808aa3c35610368aa"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/uniform-r1-before-banded-qualification/review/patch-integration-outline-before-scalar.md",
+      "archive": "revisions/uniform-r1-before-banded-qualification/review/patch-integration-outline-before-scalar.md",
+      "sha256": "bc4f97794172393ef74d01c76c816cf960a3317900e4f5d3b65de22cd88a45d4"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/uniform-r1-before-banded-qualification/review/source-patch-implementation-freeze.json",
+      "archive": "revisions/uniform-r1-before-banded-qualification/review/source-patch-implementation-freeze.json",
+      "sha256": "2b7c7106b1a52aaed1b1233cc38efbfdfdfb26f347292f140ab69b18712f0b64"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/uniform-r1-before-banded-qualification/review/source-patch-implementation.md",
+      "archive": "revisions/uniform-r1-before-banded-qualification/review/source-patch-implementation.md",
+      "sha256": "e8e5c1af1773895c06aa616d3fa9d800cc45358e8c4dd4a79a6d47b18dbc7186"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/uniform-r1-before-banded-qualification/run/NATIVE-PROTOCOL-BEFORE-B.json",
+      "archive": "revisions/uniform-r1-before-banded-qualification/run/NATIVE-PROTOCOL-BEFORE-B.json",
+      "sha256": "63248bf987172a1e6660c60e9fccf87aa6c75c5a084135c826d8e23d1af6ef4b"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/uniform-r1-before-banded-qualification/run/ROOT-ENGINE-OVERLAY.json",
+      "archive": "revisions/uniform-r1-before-banded-qualification/run/ROOT-ENGINE-OVERLAY.json",
+      "sha256": "0137bb465a5b11c584071f5b9c290598bad0a36a6def5ee6b79f632e7c3a1757"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/uniform-r1-before-banded-qualification/run/SOURCE-FREEZE-R1.json",
+      "archive": "revisions/uniform-r1-before-banded-qualification/run/SOURCE-FREEZE-R1.json",
+      "sha256": "8b9688716e7122463a0eaea3a20a314477b9daef61ad18772ab692e2abdcd7ee"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/revisions/uniform-r1-before-banded-qualification/run/TYPECHECK-R1.json",
+      "archive": "revisions/uniform-r1-before-banded-qualification/run/TYPECHECK-R1.json",
+      "sha256": "2931b5b041fa12082d98f1b03ee8e69171f1d073280528c3513b3afd57f7e518"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/run/NATIVE-PROTOCOL-BEFORE-B.json",
+      "archive": "run/NATIVE-PROTOCOL-BEFORE-B.json",
+      "sha256": "c8e919bd7c8f6e23c4f400b0dda3f02bd9b6b0c21b16de89c396aee57da9a964"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/run/POST-FAILURE-INTEGRITY.json",
+      "archive": "run/POST-FAILURE-INTEGRITY.json",
+      "sha256": "504fcb95b6c60f61e5678807de24b1c25c8f033adfcbbdd0b7cc63ccc27154a1"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/run/ROOT-ENGINE-OVERLAY.json",
+      "archive": "run/ROOT-ENGINE-OVERLAY.json",
+      "sha256": "9b0bd1fbd033367d455b16bf22d0efc0a17f97b253872c2a339be6abeb7d28d1"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/run/SOURCE-FREEZE-R1.json",
+      "archive": "run/SOURCE-FREEZE-R1.json",
+      "sha256": "8b9688716e7122463a0eaea3a20a314477b9daef61ad18772ab692e2abdcd7ee"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/run/SOURCE-FREEZE-R2.json",
+      "archive": "run/SOURCE-FREEZE-R2.json",
+      "sha256": "ee5c9d7747a27a100cc4faa04cd7748ac6a5afa743295eab39973d42f40b6fb5"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/run/TYPECHECK-R1.json",
+      "archive": "run/TYPECHECK-R1.json",
+      "sha256": "2931b5b041fa12082d98f1b03ee8e69171f1d073280528c3513b3afd57f7e518"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/run/TYPECHECK-R2.json",
+      "archive": "run/TYPECHECK-R2.json",
+      "sha256": "60ea18ec7b8b3ea78a1cae5b7b1bca689cc35a1055d7e3cad9f938a53d0c3f37"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/run/offline.py",
+      "archive": "run/offline.py",
+      "sha256": "bcc555bf8462ce87c5a43ffcb7a1d165af92e5fcfc8accabb9fdcaf13edb09a9"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/run/source-baseline141.json",
+      "archive": "run/source-baseline141.json",
+      "sha256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/run/tests-corrected-r2-receipt.json",
+      "archive": "run/tests-corrected-r2-receipt.json",
+      "sha256": "af6b697dde48f7a3d60b6c846b5d1530a3c1432460f2e1b0fbf7826e8130f5b4"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/run/tests-corrected-r2.log",
+      "archive": "run/tests-corrected-r2.log",
+      "sha256": "280dd9b90f47934849b146e46b15584837e2062c5a3ae3b8acfd6f1f8fd5ae25"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/run/tests-r2-receipt.json",
+      "archive": "run/tests-r2-receipt.json",
+      "sha256": "374429bc1787e40cf6d528f5666aee84e0a361a8661d8620163240811b627942"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/run/tests-r2.log",
+      "archive": "run/tests-r2.log",
+      "sha256": "b05ec031c74ea444a4ea4dfa09ffae776f2d3261075c2e31e56368c0d3735461"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/run/typecheck-r2.log",
+      "archive": "run/typecheck-r2.log",
+      "sha256": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/patch-source/src/cumulonimbus/GPUSceneEngine.ts",
+      "archive": "source/overlay/src/cumulonimbus/GPUSceneEngine.ts",
+      "sha256": "e549f76942f312ddb95f133704168664eb33e7db36a8fae9b381e39fb73f3787"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/patch-source/src/cumulonimbus/lifecycle.test.ts",
+      "archive": "source/overlay/src/cumulonimbus/lifecycle.test.ts",
+      "sha256": "a2e7ba22637c209740aeda884b4c6aacc4a088c76963c17e0b3c6d2dc34f90c1"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/patch-source/src/cumulonimbus/terrainMesh.ts",
+      "archive": "source/overlay/src/cumulonimbus/terrainMesh.ts",
+      "sha256": "fe04355e93aa331092e545bc4e8d4012c9e6373a66b9a9c35bc3690505d81f8e"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/patch-source/src/cumulonimbus/terrainSourcePatch.test.ts",
+      "archive": "source/overlay/src/cumulonimbus/terrainSourcePatch.test.ts",
+      "sha256": "57c88030300e62bf4a15e66ee896bc95666bb2d8d68643ffc149409d4bfcbf43"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/patch-source/src/cumulonimbus/terrainSourcePatch.ts",
+      "archive": "source/overlay/src/cumulonimbus/terrainSourcePatch.ts",
+      "sha256": "d27e8ed82b8e8ffab762b20d752c54e3ee5337138ad0c806b5bbc28372bb71e2"
+    },
+    {
+      "external": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/checkpoint-doc-review.md",
+      "archive": "review/checkpoint-doc-review.md",
+      "sha256": "8ef018e3b3f3f6ff6a7213273505968ae120a3fd94b2a7cd141dc4322d131e7c"
+    }
+  ],
+  "excludedRegenerableCaches": [
+    "dem-patch-scalar/run/transpiler-cache/21218ac038a83a0d.pile",
+    "dem-patch-scalar/run/transpiler-cache/af2a2d81c42e2eac.pile",
+    "mesh-witness/run/transpiler-cache/21218ac038a83a0d.pile",
+    "mesh-witness/run/transpiler-cache/af2a2d81c42e2eac.pile",
+    "revisions/r2-resource-fail/mesh-witness/run/transpiler-cache/21218ac038a83a0d.pile",
+    "revisions/r2-resource-fail/mesh-witness/run/transpiler-cache/af2a2d81c42e2eac.pile"
+  ],
+  "baseProductCommit": "8a9535f9cb849292f5dd868020ef7f514567109a",
+  "baseSourceManifest": "../terrain-optical-material-2026-10-17/source/final-manifest.json",
+  "candidateSourceManifest": "run/SOURCE-FREEZE-R2.json"
+}

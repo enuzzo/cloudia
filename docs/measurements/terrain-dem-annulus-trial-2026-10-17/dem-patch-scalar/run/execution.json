@@ -1,0 +1,27 @@
+{
+  "status": "PASS_NECESSARY_HOLDOUT_ONLY",
+  "error": null,
+  "freezeSHA256": "fc5005ab2b685a6474665b525f0da7421f5f2825ea7e9b67360faa3b865e6e16",
+  "launched": true,
+  "terminalObserved": true,
+  "exitCode": 0,
+  "wallKilled": false,
+  "childCPUSeconds": 0.46018,
+  "childWallSeconds": 0.4676731249783188,
+  "terminalChildPeakRSSBytes": 268255232,
+  "limits": {
+    "cpuSeconds": 10,
+    "wallSeconds": 20,
+    "terminalRSSBytes": 402653184
+  },
+  "RSSScope": "Darwin wait4 bytes for this PID; terminal gate, not reservation. No AS/ps.",
+  "executionPass": true,
+  "necessaryHoldoutPass": true,
+  "noRetry": true,
+  "noMeshBuild": true,
+  "noGPU": true,
+  "launcherCPUSeconds": 0.06873,
+  "launcherWallSeconds": 0.5424893329618499,
+  "launcherPeakRSSBytes": 28311552,
+  "resultSHA256": "e5fd704fed9e1c06a496083f824b5ae168b4ce2bc0f48aedb07604493c18e6b1"
+}

@@ -1,0 +1,3 @@
+# Uniform R1 superseded before mesh or native execution
+
+Root preserves the exact143-source freeze and five changed/new paths. Only TypeScript compile was executed and passed; no fixture test, actual mesh build, APPbuild or candidateGPU ran. Banded analysis of the prior scalar field showed nearcoarsening in the first4physicalbands, while globalgain came only frombeyond32.768km. Therefore R1isnotadopted orcalled anartist/modelFAIL. R2willretain actualv61geometry inside its32.768kmLODedge andreplaceonly theouter measuredannulus, usingtwoconformingzipperstrips. This preserves localdetail and moves toward thefullgoal rather thanusing theglobalaverage to hide alocalregression. No radius/diagonal sweep.

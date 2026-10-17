@@ -1,0 +1,642 @@
+{
+  "scope": "All packaged payloads; exact bytes only, not acceptance",
+  "payloadFiles": 127,
+  "payloadBytes": 28203504,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1572,
+      "sha256": "7afb679e629fdb81bc0a388395acb90c71ecccda50fcaa0f36648a77a10aaeaa"
+    },
+    {
+      "path": "RELOCATION.json",
+      "bytes": 37765,
+      "sha256": "c82dd591a94856ef92b4c9f77b233fec48f9518e041087d452ee76753e943422"
+    },
+    {
+      "path": "browser/ordinary-v61-console.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "browser/ordinary-v61-unchanged.png",
+      "bytes": 74467,
+      "sha256": "955446a1cce70a239f8b3b3e870e5370980c25e3d07b65b90e80e097a710299d"
+    },
+    {
+      "path": "dem-patch-scalar/PRE-RUN-FREEZE.json",
+      "bytes": 7259,
+      "sha256": "fc5005ab2b685a6474665b525f0da7421f5f2825ea7e9b67360faa3b865e6e16"
+    },
+    {
+      "path": "dem-patch-scalar/PROTOCOL.md",
+      "bytes": 2835,
+      "sha256": "26ecafe12ce3b898d46fe7e55e86241aac62dedf8eac3c4ac4281afcef6a3cb4"
+    },
+    {
+      "path": "dem-patch-scalar/run/errors.f64le.gz",
+      "bytes": 3755246,
+      "sha256": "241d51fcf865aee737895e048848bf38eb663455e6d4b9f9e0db602262c4547b"
+    },
+    {
+      "path": "dem-patch-scalar/run/execution.json",
+      "bytes": 857,
+      "sha256": "ba9d2c2a2214ae033a7f7f734acb610aa007c1750219d183ef4ec518d64d3d95"
+    },
+    {
+      "path": "dem-patch-scalar/run/result.json",
+      "bytes": 3539,
+      "sha256": "e5fd704fed9e1c06a496083f824b5ae168b4ce2bc0f48aedb07604493c18e6b1"
+    },
+    {
+      "path": "dem-patch-scalar/run/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "dem-patch-scalar/run/stdout.log",
+      "bytes": 272,
+      "sha256": "c513cba607c72bd07d991174190cd5ec2068c61913f6502c8b55f2ddae5f3f5d"
+    },
+    {
+      "path": "dem-patch-scalar/run.py",
+      "bytes": 5370,
+      "sha256": "ac1029af2aee3d481cc4a7765569bed81b8fcedb650602e6cc6aa38f1bc52188"
+    },
+    {
+      "path": "dem-patch-scalar/witness.ts",
+      "bytes": 6573,
+      "sha256": "fce5b33c9fdb0b04dfbc42dca5bde573393a03b2d956b2867e9dd6cc178a018d"
+    },
+    {
+      "path": "mesh-witness/MEMORY-REVISION.md",
+      "bytes": 1268,
+      "sha256": "ca02624a6ec84662650f55edf3ad59a722df4b289d9cbfa474180e923ec14ad0"
+    },
+    {
+      "path": "mesh-witness/POINTS.json",
+      "bytes": 1201,
+      "sha256": "9cd4e10be6a6a66d21c550e9701a3fc0c003f645cf72196235592684e2340660"
+    },
+    {
+      "path": "mesh-witness/PRE-RUN-FREEZE-PRE-FIXTURE.json",
+      "bytes": 42124,
+      "sha256": "4f24b742ef6663cfd16d5fd3ab9978b3922da29017d5b5a7cbf08ab5ed454a85"
+    },
+    {
+      "path": "mesh-witness/PRE-RUN-FREEZE-RESOURCE-FAIL.json",
+      "bytes": 42124,
+      "sha256": "2ec5aac86f440e792023b56d95d013786d20e953b06516246a86f8c6c49c66c8"
+    },
+    {
+      "path": "mesh-witness/PRE-RUN-FREEZE.json",
+      "bytes": 44361,
+      "sha256": "dc62ef00bb270432b7a6b0a29d7cb1b8dd00c1925f735e1583a291d685820fbf"
+    },
+    {
+      "path": "mesh-witness/PROTOCOL-DRAFT.md",
+      "bytes": 2933,
+      "sha256": "347e7999cabc193028a275cacd0380ebb5c8c1577120f37cf6599b1e6ae0ab3a"
+    },
+    {
+      "path": "mesh-witness/freeze.py",
+      "bytes": 3701,
+      "sha256": "b7388af8f349f76475935b85483d14f7a61d035489946b57b13d94bc4c59844f"
+    },
+    {
+      "path": "mesh-witness/run/B/errors.f64le.gz",
+      "bytes": 7461365,
+      "sha256": "cb3e8707ee3d6ecbeda5a54c68176792b1ad4a8c27038b044f05fc36ea7b0aa7"
+    },
+    {
+      "path": "mesh-witness/run/B/launcher-error.log",
+      "bytes": 254,
+      "sha256": "b8b413ab294b31c0fa84ab51b975809ebaab2f053dd3cdbe60242c7cd503aaf7"
+    },
+    {
+      "path": "mesh-witness/run/B/result.json",
+      "bytes": 12392,
+      "sha256": "2fb4bda5748dcca0a2b76378691298049e96eb998468bc8ffcf038e12c47fe7e"
+    },
+    {
+      "path": "mesh-witness/run/B/run.json",
+      "bytes": 722,
+      "sha256": "e42d2cc57e2dacfe6ea2f1713e33f069a121ba09e1bd190a7601adefd294a7d7"
+    },
+    {
+      "path": "mesh-witness/run/B/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mesh-witness/run/B/stdout.log",
+      "bytes": 200,
+      "sha256": "7c2605b830ceaf1f246ad9c5e08d017b884b57eccc2e58136b4f89e11cdc52ac"
+    },
+    {
+      "path": "mesh-witness/run/execution.json",
+      "bytes": 1417,
+      "sha256": "07608dfa20a3b043c915f28eabeb8f04e8f4d4bec2e3bafadab5cec2d29d357a"
+    },
+    {
+      "path": "mesh-witness/run.py",
+      "bytes": 8078,
+      "sha256": "985bb02f64d1054d5228770b37a4a01aa4ad885229c4f8acf9e3121e00ba100b"
+    },
+    {
+      "path": "mesh-witness/witness.ts",
+      "bytes": 15284,
+      "sha256": "c74e6187eb46504c303ea8787cfd301e074d183b0417ce3bcb66f52080d7fd53"
+    },
+    {
+      "path": "review/checkpoint-doc-review.md",
+      "bytes": 1716,
+      "sha256": "8ef018e3b3f3f6ff6a7213273505968ae120a3fd94b2a7cd141dc4322d131e7c"
+    },
+    {
+      "path": "review/dem-patch-scalar-fixed-bands.json",
+      "bytes": 5663,
+      "sha256": "e07ba28ee43ca75cf2563614687708254b19bced24788364e6987ec90eea471e"
+    },
+    {
+      "path": "review/dem-patch-scalar-independent-data.json",
+      "bytes": 2386,
+      "sha256": "f093d8755c8aad4ff0c3d85b49b5adc3429d87b88f7d62f03c6d2bf6b2b3b24f"
+    },
+    {
+      "path": "review/dem-patch-scalar-result-independent.md",
+      "bytes": 5439,
+      "sha256": "246fd3980ea9e068453278d82519778511ac0e28b764cebb9a650b45e78378c7"
+    },
+    {
+      "path": "review/dem-patch-scalar-static.md",
+      "bytes": 3822,
+      "sha256": "160589046f25dd540050b3930d0a7ba122a63a7d6d91d635c22f6a5c44a1960b"
+    },
+    {
+      "path": "review/fixture-selector-correction.json",
+      "bytes": 859,
+      "sha256": "9a018d2f9429055a01eb2fe4024cde7f153b716d01d4f541e4d3deaf8587699d"
+    },
+    {
+      "path": "review/fixture-selector-correction.patch",
+      "bytes": 1000,
+      "sha256": "0d58de111e580d1e47a2a3fd9d9bdcd823a9fe419db2169e65647788f68325ec"
+    },
+    {
+      "path": "review/fps-next-action.md",
+      "bytes": 3370,
+      "sha256": "a49e65715e6b019a250cfa79ea8ed4e2fb3df958baff355d311c7cac5e5d15fb"
+    },
+    {
+      "path": "review/memory-revision-resource-verdict.md",
+      "bytes": 1688,
+      "sha256": "2cc4debfec5a9283e99748af2b007397f87f9d451e5392fb677a9efb90cff474"
+    },
+    {
+      "path": "review/memory-static-independent.md",
+      "bytes": 3283,
+      "sha256": "b853b0bc87dbf89fa31b6dfc1e6803a0d046db8e989330d434cb71a37ca71e0e"
+    },
+    {
+      "path": "review/memory-witness-revision-static.md",
+      "bytes": 2159,
+      "sha256": "bfb1a78757b04041274bd637de1c6ff7b6678f7247f05d72d20b09702b1695b4"
+    },
+    {
+      "path": "review/mesh-witness-static-review.md",
+      "bytes": 2385,
+      "sha256": "7f34f3e2dee51f4df0271a69dc55d18b014f255c2db2de1580bc72e17d7fb810"
+    },
+    {
+      "path": "review/patch-integration-outline-before-scalar.md",
+      "bytes": 2873,
+      "sha256": "bc4f97794172393ef74d01c76c816cf960a3317900e4f5d3b65de22cd88a45d4"
+    },
+    {
+      "path": "review/root-before-scalar.md",
+      "bytes": 944,
+      "sha256": "b49a8ac346540df4d08fc58f4b6829c2baa9ba9ec4fc22561545d21c859542c6"
+    },
+    {
+      "path": "review/source-patch-implementation-freeze.json",
+      "bytes": 1552,
+      "sha256": "2b7c7106b1a52aaed1b1233cc38efbfdfdfb26f347292f140ab69b18712f0b64"
+    },
+    {
+      "path": "review/source-patch-implementation-r2-freeze.json",
+      "bytes": 1859,
+      "sha256": "1d9418061285dd7ded2fd116816fe6de52763af80b59ac0b5ddc723a895f577e"
+    },
+    {
+      "path": "review/source-patch-implementation.md",
+      "bytes": 3477,
+      "sha256": "e8e5c1af1773895c06aa616d3fa9d800cc45358e8c4dd4a79a6d47b18dbc7186"
+    },
+    {
+      "path": "review/source-patch-r2-feasibility.md",
+      "bytes": 1576,
+      "sha256": "d0bb79a1d1aa6467d5aa57d75418ac80f574508e7f385446b3cfd205f57427cd"
+    },
+    {
+      "path": "review/source-patch-r2-integrated-static.md",
+      "bytes": 4124,
+      "sha256": "0d204c880fa25a7e791febe7e08c79d32c392ca45617e27625d5f9e691f5ac9f"
+    },
+    {
+      "path": "review/source-patch-r2-result-independent.md",
+      "bytes": 3458,
+      "sha256": "c5c10a74ce410b15135dfa6a2394eb01f3ab606908ada5006cae85bf143464c7"
+    },
+    {
+      "path": "review/source-patch-r2-saved-data.json",
+      "bytes": 34398,
+      "sha256": "f70c998c8d4a9b253efc8594816e785c80b70d7a4c7387193f3e8220810a8516"
+    },
+    {
+      "path": "review/source-patch-r2-test-selector-addendum.md",
+      "bytes": 1260,
+      "sha256": "af06d5f771457e5c6d4bbfe3cddc205236f64a197cd412b5142a9fe9a6007e9d"
+    },
+    {
+      "path": "revisions/r2-before-fixture-predicate-correction/MANIFEST.json",
+      "bytes": 944,
+      "sha256": "3b38609ea24b14e7036bb1450c36da75ddb9fb489849beadc4a641ae1e067c47"
+    },
+    {
+      "path": "revisions/r2-before-fixture-predicate-correction/README.md",
+      "bytes": 474,
+      "sha256": "188bb058627b31008d45a7d40efd5cdf6f08649a9079a3787b582cbad66c01a3"
+    },
+    {
+      "path": "revisions/r2-before-fixture-predicate-correction/mesh-witness/PRE-RUN-FREEZE.json",
+      "bytes": 42124,
+      "sha256": "4f24b742ef6663cfd16d5fd3ab9978b3922da29017d5b5a7cbf08ab5ed454a85"
+    },
+    {
+      "path": "revisions/r2-before-fixture-predicate-correction/patch-source/src/cumulonimbus/terrainSourcePatch.test.ts",
+      "bytes": 13892,
+      "sha256": "612d71ddbbe1184eea1c50a476227d53feb5afd6926520b6d51652c451c8c18a"
+    },
+    {
+      "path": "revisions/r2-before-fixture-predicate-correction/review/source-patch-implementation-r2-freeze.json",
+      "bytes": 1859,
+      "sha256": "1d9418061285dd7ded2fd116816fe6de52763af80b59ac0b5ddc723a895f577e"
+    },
+    {
+      "path": "revisions/r2-before-fixture-predicate-correction/review/source-patch-r2-integrated-static.md",
+      "bytes": 4124,
+      "sha256": "0d204c880fa25a7e791febe7e08c79d32c392ca45617e27625d5f9e691f5ac9f"
+    },
+    {
+      "path": "revisions/r2-before-fixture-predicate-correction/run/SOURCE-FREEZE-R2.json",
+      "bytes": 15266,
+      "sha256": "90c9ef5b1220e6caee248d54479c1d6c13d4884c2fef38fe60f6454bdd49a7a5"
+    },
+    {
+      "path": "revisions/r2-before-fixture-predicate-correction/run/tests-r2-receipt.json",
+      "bytes": 434,
+      "sha256": "374429bc1787e40cf6d528f5666aee84e0a361a8661d8620163240811b627942"
+    },
+    {
+      "path": "revisions/r2-before-fixture-predicate-correction/run/tests-r2.log",
+      "bytes": 5221,
+      "sha256": "b05ec031c74ea444a4ea4dfa09ffae776f2d3261075c2e31e56368c0d3735461"
+    },
+    {
+      "path": "revisions/r2-before-fixture-predicate-correction/run/typecheck-r2.log",
+      "bytes": 15,
+      "sha256": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92"
+    },
+    {
+      "path": "revisions/r2-resource-fail/MANIFEST.json",
+      "bytes": 3239,
+      "sha256": "952501756840bae3461a55ca9e16a5e92166ae400f461ce75c2fd4a6fee7b164"
+    },
+    {
+      "path": "revisions/r2-resource-fail/README.md",
+      "bytes": 570,
+      "sha256": "3e61ef8f05dcec57a26dc4df23a78c409415e919d103b013e4b5a54cdc035212"
+    },
+    {
+      "path": "revisions/r2-resource-fail/mesh-witness/POINTS.json",
+      "bytes": 1201,
+      "sha256": "9cd4e10be6a6a66d21c550e9701a3fc0c003f645cf72196235592684e2340660"
+    },
+    {
+      "path": "revisions/r2-resource-fail/mesh-witness/PRE-RUN-FREEZE-PRE-FIXTURE.json",
+      "bytes": 42124,
+      "sha256": "4f24b742ef6663cfd16d5fd3ab9978b3922da29017d5b5a7cbf08ab5ed454a85"
+    },
+    {
+      "path": "revisions/r2-resource-fail/mesh-witness/PRE-RUN-FREEZE.json",
+      "bytes": 42124,
+      "sha256": "2ec5aac86f440e792023b56d95d013786d20e953b06516246a86f8c6c49c66c8"
+    },
+    {
+      "path": "revisions/r2-resource-fail/mesh-witness/PROTOCOL-DRAFT.md",
+      "bytes": 2625,
+      "sha256": "39be6bda8628bde74f72aa702f00ad2c9fb956f39fc1f6dac27321ab19258426"
+    },
+    {
+      "path": "revisions/r2-resource-fail/mesh-witness/freeze.py",
+      "bytes": 3066,
+      "sha256": "6bb64ce4158911a7d50e3193337686185cb5eeaf45c43daf18aa73480662df36"
+    },
+    {
+      "path": "revisions/r2-resource-fail/mesh-witness/run/A/errors.f64le.gz",
+      "bytes": 8059196,
+      "sha256": "7a2825569bad7e57b954886307f5218e2abebaeeb3b0a6a28e18713e377cf227"
+    },
+    {
+      "path": "revisions/r2-resource-fail/mesh-witness/run/A/result.json",
+      "bytes": 6203,
+      "sha256": "30a99d855c0c10a9b29d2ad4a629d61efa98b8d24cb49907a6788e704d9a1a97"
+    },
+    {
+      "path": "revisions/r2-resource-fail/mesh-witness/run/A/run.json",
+      "bytes": 702,
+      "sha256": "d113d31b26a85393acad9744d0f43690367f5b5ce892cd3c63e4fb6bdc37c1d4"
+    },
+    {
+      "path": "revisions/r2-resource-fail/mesh-witness/run/A/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "revisions/r2-resource-fail/mesh-witness/run/A/stdout.log",
+      "bytes": 200,
+      "sha256": "c1875250bd5b9506bf8cd666926a4608c4d1086535de5d09940a16a617a14579"
+    },
+    {
+      "path": "revisions/r2-resource-fail/mesh-witness/run/B/errors.f64le.gz",
+      "bytes": 7461365,
+      "sha256": "cb3e8707ee3d6ecbeda5a54c68176792b1ad4a8c27038b044f05fc36ea7b0aa7"
+    },
+    {
+      "path": "revisions/r2-resource-fail/mesh-witness/run/B/launcher-error.log",
+      "bytes": 254,
+      "sha256": "7faed9ab620f928dc709fcb07e39f7d75dc1d749e3f23129d4e9e32edf857732"
+    },
+    {
+      "path": "revisions/r2-resource-fail/mesh-witness/run/B/result.json",
+      "bytes": 12384,
+      "sha256": "f12d6c0225c65c40c5fa6b5d345509a5d8d6cb5711b2fa2a1d5c095cf25defb8"
+    },
+    {
+      "path": "revisions/r2-resource-fail/mesh-witness/run/B/run.json",
+      "bytes": 732,
+      "sha256": "e53acd26e4249803acbcccfb8ca764b52d8ca0889482bbb27d88a155ab2decf8"
+    },
+    {
+      "path": "revisions/r2-resource-fail/mesh-witness/run/B/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "revisions/r2-resource-fail/mesh-witness/run/B/stdout.log",
+      "bytes": 200,
+      "sha256": "7c2605b830ceaf1f246ad9c5e08d017b884b57eccc2e58136b4f89e11cdc52ac"
+    },
+    {
+      "path": "revisions/r2-resource-fail/mesh-witness/run/execution.json",
+      "bytes": 1924,
+      "sha256": "f8c9b445e50ac9aba6c5795a12c09d28f3c0341ec1847bf7e264519a4f712fd1"
+    },
+    {
+      "path": "revisions/r2-resource-fail/mesh-witness/run.py",
+      "bytes": 7572,
+      "sha256": "42bb3371ab6a94935105a7e0fb2a062fea128311c84730f1cc7c057e48660b9b"
+    },
+    {
+      "path": "revisions/r2-resource-fail/mesh-witness/witness.ts",
+      "bytes": 15096,
+      "sha256": "597dfa5e9251911ccef4734aa88779f03b434c9f4d52f024d545f15709900f75"
+    },
+    {
+      "path": "revisions/r2-resource-fail/overlay/src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 85104,
+      "sha256": "e549f76942f312ddb95f133704168664eb33e7db36a8fae9b381e39fb73f3787"
+    },
+    {
+      "path": "revisions/r2-resource-fail/overlay/src/cumulonimbus/lifecycle.test.ts",
+      "bytes": 78361,
+      "sha256": "a2e7ba22637c209740aeda884b4c6aacc4a088c76963c17e0b3c6d2dc34f90c1"
+    },
+    {
+      "path": "revisions/r2-resource-fail/overlay/src/cumulonimbus/terrainMesh.ts",
+      "bytes": 43298,
+      "sha256": "fe04355e93aa331092e545bc4e8d4012c9e6373a66b9a9c35bc3690505d81f8e"
+    },
+    {
+      "path": "revisions/r2-resource-fail/overlay/src/cumulonimbus/terrainSourcePatch.test.ts",
+      "bytes": 14066,
+      "sha256": "57c88030300e62bf4a15e66ee896bc95666bb2d8d68643ffc149409d4bfcbf43"
+    },
+    {
+      "path": "revisions/r2-resource-fail/overlay/src/cumulonimbus/terrainSourcePatch.ts",
+      "bytes": 15957,
+      "sha256": "d27e8ed82b8e8ffab762b20d752c54e3ee5337138ad0c806b5bbc28372bb71e2"
+    },
+    {
+      "path": "revisions/r2-resource-fail/review/source-patch-implementation-r2-freeze.json",
+      "bytes": 1859,
+      "sha256": "1d9418061285dd7ded2fd116816fe6de52763af80b59ac0b5ddc723a895f577e"
+    },
+    {
+      "path": "revisions/r2-resource-fail/review/source-patch-r2-integrated-static.md",
+      "bytes": 4124,
+      "sha256": "0d204c880fa25a7e791febe7e08c79d32c392ca45617e27625d5f9e691f5ac9f"
+    },
+    {
+      "path": "revisions/r2-resource-fail/run/SOURCE-FREEZE-R2.json",
+      "bytes": 15266,
+      "sha256": "ee5c9d7747a27a100cc4faa04cd7748ac6a5afa743295eab39973d42f40b6fb5"
+    },
+    {
+      "path": "revisions/uniform-r1-before-banded-qualification/MANIFEST.json",
+      "bytes": 1825,
+      "sha256": "355718082ddf93f2fa18e86b7a42629f45a23b2978f28f67f2a7901a261591d5"
+    },
+    {
+      "path": "revisions/uniform-r1-before-banded-qualification/README.md",
+      "bytes": 707,
+      "sha256": "beffa118ecb413315fde3bd84fab6348e0f5e77c08548185092acd9cde435353"
+    },
+    {
+      "path": "revisions/uniform-r1-before-banded-qualification/mesh-witness/POINTS.json",
+      "bytes": 1201,
+      "sha256": "9cd4e10be6a6a66d21c550e9701a3fc0c003f645cf72196235592684e2340660"
+    },
+    {
+      "path": "revisions/uniform-r1-before-banded-qualification/mesh-witness/PROTOCOL-DRAFT.md",
+      "bytes": 774,
+      "sha256": "c04f9ce0b85ede05bc128e9c98c478861ced44c017e29e44b454a140f5696e19"
+    },
+    {
+      "path": "revisions/uniform-r1-before-banded-qualification/mesh-witness/run.py",
+      "bytes": 7303,
+      "sha256": "303a6c1ad35a1c92b0e98e4c8e8136a8380ac0b5a6b896317095100556a934ae"
+    },
+    {
+      "path": "revisions/uniform-r1-before-banded-qualification/mesh-witness/witness.ts",
+      "bytes": 12679,
+      "sha256": "ec94f2c641e2ceb8f5c6fc945fcfd701761e5c8d11af9122c46ebefbf31df322"
+    },
+    {
+      "path": "revisions/uniform-r1-before-banded-qualification/overlay/src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 85059,
+      "sha256": "d5a9f959200ff1e82a719e06342ecb31facf34ff08319ac0b1dc43c322c7ef15"
+    },
+    {
+      "path": "revisions/uniform-r1-before-banded-qualification/overlay/src/cumulonimbus/lifecycle.test.ts",
+      "bytes": 78364,
+      "sha256": "91503f81679637a0ebbefb85b6330e07891da66a2542caf1822942c27b77299b"
+    },
+    {
+      "path": "revisions/uniform-r1-before-banded-qualification/overlay/src/cumulonimbus/terrainMesh.ts",
+      "bytes": 43298,
+      "sha256": "fe04355e93aa331092e545bc4e8d4012c9e6373a66b9a9c35bc3690505d81f8e"
+    },
+    {
+      "path": "revisions/uniform-r1-before-banded-qualification/overlay/src/cumulonimbus/terrainSourcePatch.test.ts",
+      "bytes": 10753,
+      "sha256": "cc2dcec064ec03aa8eb3ecb1c9d01f406bae1729249947deeec63a3665401159"
+    },
+    {
+      "path": "revisions/uniform-r1-before-banded-qualification/overlay/src/cumulonimbus/terrainSourcePatch.ts",
+      "bytes": 12452,
+      "sha256": "67acf2ca38deba45569d1b5b97e79a8980f97d0368c0026808aa3c35610368aa"
+    },
+    {
+      "path": "revisions/uniform-r1-before-banded-qualification/review/patch-integration-outline-before-scalar.md",
+      "bytes": 2873,
+      "sha256": "bc4f97794172393ef74d01c76c816cf960a3317900e4f5d3b65de22cd88a45d4"
+    },
+    {
+      "path": "revisions/uniform-r1-before-banded-qualification/review/source-patch-implementation-freeze.json",
+      "bytes": 1552,
+      "sha256": "2b7c7106b1a52aaed1b1233cc38efbfdfdfb26f347292f140ab69b18712f0b64"
+    },
+    {
+      "path": "revisions/uniform-r1-before-banded-qualification/review/source-patch-implementation.md",
+      "bytes": 3477,
+      "sha256": "e8e5c1af1773895c06aa616d3fa9d800cc45358e8c4dd4a79a6d47b18dbc7186"
+    },
+    {
+      "path": "revisions/uniform-r1-before-banded-qualification/run/NATIVE-PROTOCOL-BEFORE-B.json",
+      "bytes": 3121,
+      "sha256": "63248bf987172a1e6660c60e9fccf87aa6c75c5a084135c826d8e23d1af6ef4b"
+    },
+    {
+      "path": "revisions/uniform-r1-before-banded-qualification/run/ROOT-ENGINE-OVERLAY.json",
+      "bytes": 506,
+      "sha256": "0137bb465a5b11c584071f5b9c290598bad0a36a6def5ee6b79f632e7c3a1757"
+    },
+    {
+      "path": "revisions/uniform-r1-before-banded-qualification/run/SOURCE-FREEZE-R1.json",
+      "bytes": 15266,
+      "sha256": "8b9688716e7122463a0eaea3a20a314477b9daef61ad18772ab692e2abdcd7ee"
+    },
+    {
+      "path": "revisions/uniform-r1-before-banded-qualification/run/TYPECHECK-R1.json",
+      "bytes": 428,
+      "sha256": "2931b5b041fa12082d98f1b03ee8e69171f1d073280528c3513b3afd57f7e518"
+    },
+    {
+      "path": "run/NATIVE-PROTOCOL-BEFORE-B.json",
+      "bytes": 3482,
+      "sha256": "c8e919bd7c8f6e23c4f400b0dda3f02bd9b6b0c21b16de89c396aee57da9a964"
+    },
+    {
+      "path": "run/POST-FAILURE-INTEGRITY.json",
+      "bytes": 697,
+      "sha256": "504fcb95b6c60f61e5678807de24b1c25c8f033adfcbbdd0b7cc63ccc27154a1"
+    },
+    {
+      "path": "run/ROOT-ENGINE-OVERLAY.json",
+      "bytes": 609,
+      "sha256": "9b0bd1fbd033367d455b16bf22d0efc0a17f97b253872c2a339be6abeb7d28d1"
+    },
+    {
+      "path": "run/SOURCE-FREEZE-R1.json",
+      "bytes": 15266,
+      "sha256": "8b9688716e7122463a0eaea3a20a314477b9daef61ad18772ab692e2abdcd7ee"
+    },
+    {
+      "path": "run/SOURCE-FREEZE-R2.json",
+      "bytes": 15266,
+      "sha256": "ee5c9d7747a27a100cc4faa04cd7748ac6a5afa743295eab39973d42f40b6fb5"
+    },
+    {
+      "path": "run/TYPECHECK-R1.json",
+      "bytes": 428,
+      "sha256": "2931b5b041fa12082d98f1b03ee8e69171f1d073280528c3513b3afd57f7e518"
+    },
+    {
+      "path": "run/TYPECHECK-R2.json",
+      "bytes": 429,
+      "sha256": "60ea18ec7b8b3ea78a1cae5b7b1bca689cc35a1055d7e3cad9f938a53d0c3f37"
+    },
+    {
+      "path": "run/offline.py",
+      "bytes": 1828,
+      "sha256": "bcc555bf8462ce87c5a43ffcb7a1d165af92e5fcfc8accabb9fdcaf13edb09a9"
+    },
+    {
+      "path": "run/source-baseline141.json",
+      "bytes": 15037,
+      "sha256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73"
+    },
+    {
+      "path": "run/tests-corrected-r2-receipt.json",
+      "bytes": 435,
+      "sha256": "af6b697dde48f7a3d60b6c846b5d1530a3c1432460f2e1b0fbf7826e8130f5b4"
+    },
+    {
+      "path": "run/tests-corrected-r2.log",
+      "bytes": 295,
+      "sha256": "280dd9b90f47934849b146e46b15584837e2062c5a3ae3b8acfd6f1f8fd5ae25"
+    },
+    {
+      "path": "run/tests-r2-receipt.json",
+      "bytes": 434,
+      "sha256": "374429bc1787e40cf6d528f5666aee84e0a361a8661d8620163240811b627942"
+    },
+    {
+      "path": "run/tests-r2.log",
+      "bytes": 5221,
+      "sha256": "b05ec031c74ea444a4ea4dfa09ffae776f2d3261075c2e31e56368c0d3735461"
+    },
+    {
+      "path": "run/typecheck-r2.log",
+      "bytes": 15,
+      "sha256": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92"
+    },
+    {
+      "path": "source/overlay/src/cumulonimbus/GPUSceneEngine.ts",
+      "bytes": 85104,
+      "sha256": "e549f76942f312ddb95f133704168664eb33e7db36a8fae9b381e39fb73f3787"
+    },
+    {
+      "path": "source/overlay/src/cumulonimbus/lifecycle.test.ts",
+      "bytes": 78361,
+      "sha256": "a2e7ba22637c209740aeda884b4c6aacc4a088c76963c17e0b3c6d2dc34f90c1"
+    },
+    {
+      "path": "source/overlay/src/cumulonimbus/terrainMesh.ts",
+      "bytes": 43298,
+      "sha256": "fe04355e93aa331092e545bc4e8d4012c9e6373a66b9a9c35bc3690505d81f8e"
+    },
+    {
+      "path": "source/overlay/src/cumulonimbus/terrainSourcePatch.test.ts",
+      "bytes": 14066,
+      "sha256": "57c88030300e62bf4a15e66ee896bc95666bb2d8d68643ffc149409d4bfcbf43"
+    },
+    {
+      "path": "source/overlay/src/cumulonimbus/terrainSourcePatch.ts",
+      "bytes": 15957,
+      "sha256": "d27e8ed82b8e8ffab762b20d752c54e3ee5337138ad0c806b5bbc28372bb71e2"
+    }
+  ]
+}

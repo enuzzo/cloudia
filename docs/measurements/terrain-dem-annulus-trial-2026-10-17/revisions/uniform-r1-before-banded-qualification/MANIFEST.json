@@ -1,0 +1,19 @@
+{
+  "README.md": "beffa118ecb413315fde3bd84fab6348e0f5e77c08548185092acd9cde435353",
+  "mesh-witness/POINTS.json": "9cd4e10be6a6a66d21c550e9701a3fc0c003f645cf72196235592684e2340660",
+  "mesh-witness/PROTOCOL-DRAFT.md": "c04f9ce0b85ede05bc128e9c98c478861ced44c017e29e44b454a140f5696e19",
+  "mesh-witness/run.py": "303a6c1ad35a1c92b0e98e4c8e8136a8380ac0b5a6b896317095100556a934ae",
+  "mesh-witness/witness.ts": "ec94f2c641e2ceb8f5c6fc945fcfd701761e5c8d11af9122c46ebefbf31df322",
+  "overlay/src/cumulonimbus/GPUSceneEngine.ts": "d5a9f959200ff1e82a719e06342ecb31facf34ff08319ac0b1dc43c322c7ef15",
+  "overlay/src/cumulonimbus/lifecycle.test.ts": "91503f81679637a0ebbefb85b6330e07891da66a2542caf1822942c27b77299b",
+  "overlay/src/cumulonimbus/terrainMesh.ts": "fe04355e93aa331092e545bc4e8d4012c9e6373a66b9a9c35bc3690505d81f8e",
+  "overlay/src/cumulonimbus/terrainSourcePatch.test.ts": "cc2dcec064ec03aa8eb3ecb1c9d01f406bae1729249947deeec63a3665401159",
+  "overlay/src/cumulonimbus/terrainSourcePatch.ts": "67acf2ca38deba45569d1b5b97e79a8980f97d0368c0026808aa3c35610368aa",
+  "review/patch-integration-outline-before-scalar.md": "bc4f97794172393ef74d01c76c816cf960a3317900e4f5d3b65de22cd88a45d4",
+  "review/source-patch-implementation-freeze.json": "2b7c7106b1a52aaed1b1233cc38efbfdfdfb26f347292f140ab69b18712f0b64",
+  "review/source-patch-implementation.md": "e8e5c1af1773895c06aa616d3fa9d800cc45358e8c4dd4a79a6d47b18dbc7186",
+  "run/NATIVE-PROTOCOL-BEFORE-B.json": "63248bf987172a1e6660c60e9fccf87aa6c75c5a084135c826d8e23d1af6ef4b",
+  "run/ROOT-ENGINE-OVERLAY.json": "0137bb465a5b11c584071f5b9c290598bad0a36a6def5ee6b79f632e7c3a1757",
+  "run/SOURCE-FREEZE-R1.json": "8b9688716e7122463a0eaea3a20a314477b9daef61ad18772ab692e2abdcd7ee",
+  "run/TYPECHECK-R1.json": "2931b5b041fa12082d98f1b03ee8e69171f1d073280528c3513b3afd57f7e518"
+}

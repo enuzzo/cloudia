@@ -1,0 +1,13 @@
+{
+  "rendererVersion": "experiment-v61-dem-annulus-r2",
+  "changes": {
+    "GPUSceneEngine.ts": "Renderer tag plus sourcePatch core48, outer F32(94*.512), retainedInner F32(128*.256) only; sampler/refinement metadata/shader/assets unchanged",
+    "lifecycle.test.ts": "Existing version expectation only"
+  },
+  "sha256": {
+    "GPUSceneEngine.ts": "e549f76942f312ddb95f133704168664eb33e7db36a8fae9b381e39fb73f3787",
+    "lifecycle.test.ts": "a2e7ba22637c209740aeda884b4c6aacc4a088c76963c17e0b3c6d2dc34f90c1"
+  },
+  "noRunOrBuildR2": true,
+  "R1Preserved": "revisions/uniform-r1-before-banded-qualification"
+}

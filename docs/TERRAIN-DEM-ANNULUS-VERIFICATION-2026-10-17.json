@@ -1,0 +1,25 @@
+{
+  "status": "PASS_SAVED_EVIDENCE_INTEGRITY_ONLY",
+  "notAcceptance": "Candidate resourceFAIL, not adopted, no native/GPU/FPS qualification",
+  "payloadFiles": 127,
+  "payloadBytes": 28203504,
+  "manifestSHA256": "92ab09219fa1558912b3a9719e733c67306c75397168763f283bf4341b0cebfa",
+  "canonicalSourceFiles": 141,
+  "canonicalManifestSHA256": "2577f187602a3d4cbb3be2d2d23a9fd3e87e30c64f01a21aa93cf428ff4abf73",
+  "candidateSourceFiles": 143,
+  "candidateManifestSHA256": "ee5c9d7747a27a100cc4faa04cd7748ac6a5afa743295eab39973d42f40b6fb5",
+  "exactOverlayFiles": [
+    "src/cumulonimbus/GPUSceneEngine.ts",
+    "src/cumulonimbus/lifecycle.test.ts",
+    "src/cumulonimbus/terrainMesh.ts",
+    "src/cumulonimbus/terrainSourcePatch.test.ts",
+    "src/cumulonimbus/terrainSourcePatch.ts"
+  ],
+  "scope": "Packaged payload rehash, current canonical and candidate overlay identity. No model/calculation/test/build/GPU; cache omissions explicitly documented.",
+  "stagingCheck": {
+    "exactPaths": 131,
+    "whitespaceCheck": "PASS excluding one unchanged raw log with an intentional final blank line",
+    "rawLogExcludedOnly": "docs/measurements/terrain-dem-annulus-trial-2026-10-17/run/tests-corrected-r2.log",
+    "reason": "Preserve the authenticated raw test output byte-for-byte rather than edit evidence for whitespace style."
+  }
+}

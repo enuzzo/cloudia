@@ -1,0 +1,33 @@
+{
+  "state": "FROZEN_IMPLEMENTATION_NOT_EXECUTED",
+  "scope": "Only helper/runtime/test overlay owned by Optical; root owns Engine, lifecycle and complete source freeze. No implementation-agent tests/build/model/scalar/GPU execution.",
+  "files": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/patch-source/src/cumulonimbus/terrainMesh.ts",
+      "bytes": 43298,
+      "sha256": "fe04355e93aa331092e545bc4e8d4012c9e6373a66b9a9c35bc3690505d81f8e",
+      "lines": 577
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/patch-source/src/cumulonimbus/terrainSourcePatch.ts",
+      "bytes": 12452,
+      "sha256": "67acf2ca38deba45569d1b5b97e79a8980f97d0368c0026808aa3c35610368aa",
+      "lines": 154
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/patch-source/src/cumulonimbus/terrainSourcePatch.test.ts",
+      "bytes": 10753,
+      "sha256": "cc2dcec064ec03aa8eb3ecb1c9d01f406bae1729249947deeec63a3665401159",
+      "lines": 153
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/source-patch-implementation.md",
+      "bytes": 3477,
+      "sha256": "e8e5c1af1773895c06aa616d3fa9d800cc45358e8c4dd4a79a6d47b18dbc7186",
+      "lines": 15
+    }
+  ],
+  "api": "TerrainMeshOptions.sourcePatch?:{coreHalfExtentKm:number;outerCutKm:number}",
+  "limits": "Existing refinement geometry caps; fail on overflow; no truncation",
+  "reviewPending": "Root and independent static review before any execution"
+}

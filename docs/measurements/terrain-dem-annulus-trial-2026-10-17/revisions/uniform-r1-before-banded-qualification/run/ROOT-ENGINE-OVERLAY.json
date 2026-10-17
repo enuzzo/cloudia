@@ -1,0 +1,12 @@
+{
+  "rendererVersion": "experiment-v61-dem-node-patch-r1",
+  "changes": {
+    "GPUSceneEngine.ts": "Renderer tag plus sourcePatch2-field option only; sampler/refinement loaded metadata/shader/assets unchanged",
+    "lifecycle.test.ts": "Existing version expectation only"
+  },
+  "sha256": {
+    "GPUSceneEngine.ts": "d5a9f959200ff1e82a719e06342ecb31facf34ff08319ac0b1dc43c322c7ef15",
+    "lifecycle.test.ts": "91503f81679637a0ebbefb85b6330e07891da66a2542caf1822942c27b77299b"
+  },
+  "noRunOrBuild": true
+}

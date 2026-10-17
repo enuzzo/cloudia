@@ -1,0 +1,3 @@
+# Actual full mesh qualification, draft before source freeze
+
+No execution yet. Two sequentialchildren AoptionalOFF/BpatchON,20CPU30wall1.5GiBterminalRSSperchild, noAS/ps/retry. ExistingPOINTSfit+holdout samephysicalsurface. A6buffer+historicalfit and fullcombinederrorstream exact; Bcompleteholdoutmustbyte-matchscalar81b2e470…; corefiterrorsand alllocalregressionsretained. FullactualMeshmanifoldedgeincidence/winding/Euler/allverticesused; only1024globalouterboundaryedgesallowed, sointernalopenedges/Tjunctionsreject. OuterXYZ+surfacetrianglefingerprintandfixedouterqueriesmatchA/B; seamlookupfixed32probesagainstindependentplane/fulltriangleoracle≤1e−9km. NoGPUbeforestatics/tests/actualCPUcriteria. Guard20CPUincludesoracles/sort; RSSterminalnotallocationlimit.

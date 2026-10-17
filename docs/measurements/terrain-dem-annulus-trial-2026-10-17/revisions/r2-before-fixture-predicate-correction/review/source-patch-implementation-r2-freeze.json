@@ -1,0 +1,33 @@
+{
+  "state": "FROZEN_R2_IMPLEMENTATION_NOT_EXECUTED",
+  "scope": "Optical runtime/helper/test overlay only; root owns Engine/lifecycle and full143 source freeze. No agent runtime/model/test/build/GPU execution.",
+  "files": [
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/patch-source/src/cumulonimbus/terrainMesh.ts",
+      "bytes": 43298,
+      "sha256": "fe04355e93aa331092e545bc4e8d4012c9e6373a66b9a9c35bc3690505d81f8e",
+      "lines": 577
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/patch-source/src/cumulonimbus/terrainSourcePatch.ts",
+      "bytes": 15957,
+      "sha256": "d27e8ed82b8e8ffab762b20d752c54e3ee5337138ad0c806b5bbc28372bb71e2",
+      "lines": 179
+    },
+    {
+      "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/patch-source/src/cumulonimbus/terrainSourcePatch.test.ts",
+      "bytes": 13892,
+      "sha256": "612d71ddbbe1184eea1c50a476227d53feb5afd6926520b6d51652c451c8c18a",
+      "lines": 199
+    }
+  ],
+  "api": "sourcePatch:{coreHalfExtentKm,outerCutKm,retainedInnerHalfExtentKm?}",
+  "change": "Retain v61 near at actual Float32 I and outer beyond C; derive J as first source node strictly outside I; compact source annulus J..H with typed vertex/cell row offsets; four inner and four outer zipper strips.",
+  "R1": "Preserved by root; superseded for measured near scalar coarsening. No full R1 mesh was constructed. Omitted retainedInner retains uniform R1 geometry path.",
+  "rootTheoreticalUpperBound": {
+    "vertices": 889436,
+    "triangles": 1778870,
+    "geometryPayloadBytes": 49808392
+  },
+  "qualification": "Bounds are not measured runtime/RSS/visual/FPS. Root review and frozen execution protocol precede tests and actual A/B. OFF historical parity, near/outer identity, seam lookup and manifold remain to execute."
+}

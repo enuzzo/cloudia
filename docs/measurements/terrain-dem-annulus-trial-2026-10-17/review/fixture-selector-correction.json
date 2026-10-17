@@ -1,0 +1,15 @@
+{
+  "scope": "Only retainedTriangles fixture outer-domain selector; no helper/runtime change and no execution",
+  "failedOriginalTestSHA256": "612d71ddbbe1184eea1c50a476227d53feb5afd6926520b6d51652c451c8c18a",
+  "correctedTest": {
+    "bytes": 14066,
+    "sha256": "57c88030300e62bf4a15e66ee896bc95666bb2d8d68643ffc149409d4bfcbf43"
+  },
+  "patch": {
+    "path": "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/review/fixture-selector-correction.patch",
+    "bytes": 1000,
+    "sha256": "0d58de111e580d1e47a2a3fd9d9bdcd823a9fe419db2169e65647788f68325ec"
+  },
+  "change": "Exclude corner triangles whose max Chebyshev radius equals C; for outer faces require max(r)>C and assert every r>=C. No epsilon or model recomputation.",
+  "failurePreservedBy": "Root preserves original source/freeze/pre-run/log;568PASS/1FAIL remains historical failure."
+}

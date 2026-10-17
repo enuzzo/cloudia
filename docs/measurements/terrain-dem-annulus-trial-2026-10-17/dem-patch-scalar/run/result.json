@@ -1,0 +1,106 @@
+{
+  "status": "COMPLETE_SCALAR_HOLDOUT_ONLY",
+  "scope": "Necessary centre-cell potential only. No mesh/seam/frame/normal/lookup/GPU/model build.",
+  "runtime": {
+    "bun": "1.3.11",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "pointsSHA256": "9cd4e10be6a6a66d21c550e9701a3fc0c003f645cf72196235592684e2340660",
+  "demSHA256": "92b28f01e75692c8fba744f6b1161df578c29daa76d8d278ee20a8ce87ba071d",
+  "diagonal": "SW-to-NE",
+  "endpointY": "Math.fround(canonical terrainMeshSurfaceY(node))",
+  "centreY": "mean of two endpoint Y Float32 values; centre reference canonical bilinear then canonical sphere",
+  "A": {
+    "resultSHA256": "434a642b34c3d66b86164af5d00f7ce12fede07283dcdd3bb9be0f3132f61235",
+    "sourceStreamRawSHA256": "ef4836dae907207f904b851db56404df9f5cc40e370f56852246d9b2aac2189d",
+    "holdoutRawSHA256": "220af9c80136193046063f089a8e3f397bd7b576ff21a25f56871a80f195f905",
+    "holdoutOffsetBytes": 4730888,
+    "stats": {
+      "global": {
+        "count": 589824,
+        "sumSquaredMetres2": 18235853.579268586,
+        "rmsMetres": 5.560346143708591,
+        "p99AbsMetres": 25.00927650918605,
+        "p99Rank": 583924,
+        "maxAbsMetres": 87.02977014615732,
+        "minSignedMetres": -83.43813179022108,
+        "maxSignedMetres": 87.02977014615732
+      },
+      "land": {
+        "count": 334018,
+        "sumSquaredMetres2": 18225432.204317324,
+        "rmsMetres": 7.386759891967312,
+        "p99AbsMetres": 29.641118928163568,
+        "p99Rank": 330676,
+        "maxAbsMetres": 87.02977014615732,
+        "minSignedMetres": -83.43813179022108,
+        "maxSignedMetres": 87.02977014615732
+      }
+    }
+  },
+  "B": {
+    "stats": {
+      "global": {
+        "count": 589824,
+        "sumSquaredMetres2": 6120203.304041968,
+        "rmsMetres": 3.221229772686753,
+        "p99AbsMetres": 12.532219725643223,
+        "p99Rank": 583924,
+        "maxAbsMetres": 34.9382159043583,
+        "minSignedMetres": -29.6560186900221,
+        "maxSignedMetres": 34.9382159043583
+      },
+      "land": {
+        "count": 334018,
+        "sumSquaredMetres2": 6117367.484624312,
+        "rmsMetres": 4.27954255764613,
+        "p99AbsMetres": 14.218182577630856,
+        "p99Rank": 330676,
+        "maxAbsMetres": 34.9382159043583,
+        "minSignedMetres": -29.6560186900221,
+        "maxSignedMetres": 34.9382159043583
+      }
+    }
+  },
+  "maskSHA256": "c4f5ba0f9c978b444f036c94d08cce2d32f346c4048c7bd7b3a004abdd691b9e",
+  "changes": {
+    "global": {
+      "improved": 394066,
+      "worsened": 195758,
+      "equal": 0
+    },
+    "land": {
+      "improved": 178503,
+      "worsened": 155515,
+      "equal": 0
+    }
+  },
+  "gate": {
+    "checks": {
+      "landRMSStrictlyLower": true,
+      "globalP99NotHigher": true,
+      "globalMaxNotHigher": true
+    },
+    "pass": true,
+    "status": "PASS_NECESSARY_HOLDOUT_ONLY"
+  },
+  "errorStream": {
+    "path": "errors.f64le.gz",
+    "count": 589824,
+    "rawBytes": 4718592,
+    "rawSHA256": "81b2e470cd4a9b48feb7bf9037b98d56ce107872fc6a98c4e37549c9e2d8db35",
+    "gzipBytes": 3755246,
+    "gzipSHA256": "241d51fcf865aee737895e048848bf38eb663455e6d4b9f9e0db602262c4547b",
+    "encoding": "Float64LE 1000*(referenceY-triangleY), row-major Z then X"
+  },
+  "timings": {
+    "scalarMs": 59.54608300000001,
+    "totalMs": 376.115042
+  },
+  "limitations": [
+    "No fit/continuous-error or photorealism qualification",
+    "No alternate diagonal, spacing or retry after FAIL",
+    "Quantile floor(.99*(n-1)); Float64 compensated square sum; full errors retained"
+  ]
+}

@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/enuzzo/Documents/Codex/Cloudia-QA-2026-10-17-cycle44/mesh-witness/run.py", line 58, in main
+    raise RuntimeError('Child terminal resource gate failed')
+RuntimeError: Child terminal resource gate failed

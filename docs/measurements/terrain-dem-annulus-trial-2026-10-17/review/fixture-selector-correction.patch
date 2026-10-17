@@ -1,0 +1,20 @@
+--- a/src/cumulonimbus/terrainSourcePatch.test.ts
++++ b/src/cumulonimbus/terrainSourcePatch.test.ts
+@@ -41,10 +41,13 @@
+  const surface=new Uint32Array(data.surface.buffer,data.surface.byteOffset,data.surface.length),result:string[]=[];
+  for(let i=0;i<data.indices.length;i+=3){
+   const ids=Array.from(data.indices.subarray(i,i+3));
+-  if(!ids.every(id=>{
+-   const r=Math.max(Math.abs(data.positions[id*3]),Math.abs(data.positions[id*3+2]));
+-   return part==='inner'?r<=1:r>=3;
+-  }))continue;
++  const radii=ids.map(id=>Math.max(Math.abs(data.positions[id*3]),Math.abs(data.positions[id*3+2])));
++  if(part==='inner'){if(!radii.every(r=>r<=1))continue;}
++  else{
++   // A corner wedge can have all three r===C while its interior lies inside C.
++   if(Math.max(...radii)<=3)continue;
++   expect(radii.every(r=>r>=3)).toBe(true);
++  }
+   result.push(ids.map(id=>[positions[id*3],positions[id*3+1],positions[id*3+2],surface[id*2],surface[id*2+1]].join(',')).join('|'));
+  }
+  return result.sort();
